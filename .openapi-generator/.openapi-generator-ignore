@@ -1,0 +1,6 @@
+# OpenAPI Generator Ignore
+# Lines beginning with a # are comments
+
+# Exclude all recursively
+# We don't want to regenerate the tests automatically
+test/**
