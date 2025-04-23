@@ -26,7 +26,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/HewlettPackard/hpe-morpheus-client"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-client/client"
 )
 
 func main() {

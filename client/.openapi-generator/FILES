@@ -1,7 +1,6 @@
 .gitignore
 .travis.yml
 README.md
-api/openapi.yaml
 api_activity.go
 api_alerts.go
 api_appliance_settings.go
@@ -649,6 +648,11 @@ docs/AddWorkflowsRequestTaskSetTasks.md
 docs/Alarm.md
 docs/Alert.md
 docs/AlertsAPI.md
+docs/AllocateNetworkFloatingIp200Response.md
+docs/AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp.md
+docs/AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIpCloud.md
+docs/AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIpServer.md
+docs/AllocateNetworkFloatingIpRequest.md
 docs/App.md
 docs/AppCreate.md
 docs/AppCreateResponse.md
@@ -1248,9 +1252,6 @@ docs/GetNetworkFirewallRuleGroup200ResponseRuleGroupRulesInner.md
 docs/GetNetworkFirewallRuleGroups200Response.md
 docs/GetNetworkFirewallRules200Response.md
 docs/GetNetworkFloatingIp200Response.md
-docs/GetNetworkFloatingIp200ResponseNetworkFloatingIp.md
-docs/GetNetworkFloatingIp200ResponseNetworkFloatingIpCloud.md
-docs/GetNetworkFloatingIp200ResponseNetworkFloatingIpServer.md
 docs/GetNetworkGroup200Response.md
 docs/GetNetworkGroups200Response.md
 docs/GetNetworkGroups200ResponseNetworkGroupsInner.md
@@ -2207,9 +2208,9 @@ docs/Log.md
 docs/LogSettings.md
 docs/LogSettingsAPI.md
 docs/LogsAPI.md
-docs/MaangeHostPlacementRequest.md
-docs/MaangeHostPlacementRequestServer.md
-docs/MaangeHostPlacementRequestServerPreferredServer.md
+docs/ManageHostPlacementRequest.md
+docs/ManageHostPlacementRequestServer.md
+docs/ManageHostPlacementRequestServerPreferredServer.md
 docs/MaxContainersPolicyTypeConfiguration.md
 docs/MaxCoresPolicyTypeConfiguration.md
 docs/MaxCoresPolicyTypeConfiguration1.md
@@ -3491,6 +3492,11 @@ model_add_workflows_request_task_set.go
 model_add_workflows_request_task_set_tasks.go
 model_alarm.go
 model_alert.go
+model_allocate_network_floating_ip_200_response.go
+model_allocate_network_floating_ip_200_response_all_of_network_floating_ip.go
+model_allocate_network_floating_ip_200_response_all_of_network_floating_ip_cloud.go
+model_allocate_network_floating_ip_200_response_all_of_network_floating_ip_server.go
+model_allocate_network_floating_ip_request.go
 model_app.go
 model_app_create.go
 model_app_create_response.go
@@ -4064,9 +4070,6 @@ model_get_network_firewall_rule_group_200_response_rule_group_rules_inner.go
 model_get_network_firewall_rule_groups_200_response.go
 model_get_network_firewall_rules_200_response.go
 model_get_network_floating_ip_200_response.go
-model_get_network_floating_ip_200_response_network_floating_ip.go
-model_get_network_floating_ip_200_response_network_floating_ip_cloud.go
-model_get_network_floating_ip_200_response_network_floating_ip_server.go
 model_get_network_group_200_response.go
 model_get_network_groups_200_response.go
 model_get_network_groups_200_response_network_groups_inner.go
@@ -5004,9 +5007,9 @@ model_load_balancer_instance_update.go
 model_load_balancer_update.go
 model_log.go
 model_log_settings.go
-model_maange_host_placement_request.go
-model_maange_host_placement_request_server.go
-model_maange_host_placement_request_server_preferred_server.go
+model_manage_host_placement_request.go
+model_manage_host_placement_request_server.go
+model_manage_host_placement_request_server_preferred_server.go
 model_max_containers_policy_type_configuration.go
 model_max_cores_policy_type_configuration.go
 model_max_cores_policy_type_configuration_1.go

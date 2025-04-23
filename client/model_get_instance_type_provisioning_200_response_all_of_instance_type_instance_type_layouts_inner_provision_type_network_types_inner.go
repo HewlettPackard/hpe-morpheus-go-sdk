@@ -42,6 +42,7 @@ type GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsI
 	HasNetworkServer *bool `json:"hasNetworkServer,omitempty"`
 	HasCidr *bool `json:"hasCidr,omitempty"`
 	HasStaticRoutes *bool `json:"hasStaticRoutes,omitempty"`
+	HasFloatingIps *bool `json:"hasFloatingIps,omitempty"`
 	OptionTypes []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
 	RouteOptionTypes []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner `json:"routeOptionTypes,omitempty"`
 }
@@ -767,6 +768,38 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 	o.HasStaticRoutes = &v
 }
 
+// GetHasFloatingIps returns the HasFloatingIps field value if set, zero value otherwise.
+func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) GetHasFloatingIps() bool {
+	if o == nil || IsNil(o.HasFloatingIps) {
+		var ret bool
+		return ret
+	}
+	return *o.HasFloatingIps
+}
+
+// GetHasFloatingIpsOk returns a tuple with the HasFloatingIps field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) GetHasFloatingIpsOk() (*bool, bool) {
+	if o == nil || IsNil(o.HasFloatingIps) {
+		return nil, false
+	}
+	return o.HasFloatingIps, true
+}
+
+// IsSetHasFloatingIps returns a boolean if a field has been set.
+func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) IsSetHasFloatingIps() bool {
+	if o != nil && !IsNil(o.HasFloatingIps) {
+		return true
+	}
+
+	return false
+}
+
+// SetHasFloatingIps gets a reference to the given bool and assigns it to the HasFloatingIps field.
+func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) SetHasFloatingIps(v bool) {
+	o.HasFloatingIps = &v
+}
+
 // GetOptionTypes returns the OptionTypes field value if set, zero value otherwise.
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) GetOptionTypes() []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner {
 	if o == nil || IsNil(o.OptionTypes) {
@@ -906,6 +939,9 @@ func (o GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayou
 	}
 	if !IsNil(o.HasStaticRoutes) {
 		toSerialize["hasStaticRoutes"] = o.HasStaticRoutes
+	}
+	if !IsNil(o.HasFloatingIps) {
+		toSerialize["hasFloatingIps"] = o.HasFloatingIps
 	}
 	if !IsNil(o.OptionTypes) {
 		toSerialize["optionTypes"] = o.OptionTypes

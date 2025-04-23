@@ -20,7 +20,7 @@ var _ MappedNullable = &GetNetworkFloatingIp200Response{}
 
 // GetNetworkFloatingIp200Response struct for GetNetworkFloatingIp200Response
 type GetNetworkFloatingIp200Response struct {
-	NetworkFloatingIp *GetNetworkFloatingIp200ResponseNetworkFloatingIp `json:"networkFloatingIp,omitempty"`
+	NetworkFloatingIp *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp `json:"networkFloatingIp,omitempty"`
 }
 
 // NewGetNetworkFloatingIp200Response instantiates a new GetNetworkFloatingIp200Response object
@@ -41,9 +41,9 @@ func NewGetNetworkFloatingIp200ResponseWithDefaults() *GetNetworkFloatingIp200Re
 }
 
 // GetNetworkFloatingIp returns the NetworkFloatingIp field value if set, zero value otherwise.
-func (o *GetNetworkFloatingIp200Response) GetNetworkFloatingIp() GetNetworkFloatingIp200ResponseNetworkFloatingIp {
+func (o *GetNetworkFloatingIp200Response) GetNetworkFloatingIp() AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp {
 	if o == nil || IsNil(o.NetworkFloatingIp) {
-		var ret GetNetworkFloatingIp200ResponseNetworkFloatingIp
+		var ret AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp
 		return ret
 	}
 	return *o.NetworkFloatingIp
@@ -51,7 +51,7 @@ func (o *GetNetworkFloatingIp200Response) GetNetworkFloatingIp() GetNetworkFloat
 
 // GetNetworkFloatingIpOk returns a tuple with the NetworkFloatingIp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetNetworkFloatingIp200Response) GetNetworkFloatingIpOk() (*GetNetworkFloatingIp200ResponseNetworkFloatingIp, bool) {
+func (o *GetNetworkFloatingIp200Response) GetNetworkFloatingIpOk() (*AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp, bool) {
 	if o == nil || IsNil(o.NetworkFloatingIp) {
 		return nil, false
 	}
@@ -67,8 +67,8 @@ func (o *GetNetworkFloatingIp200Response) IsSetNetworkFloatingIp() bool {
 	return false
 }
 
-// SetNetworkFloatingIp gets a reference to the given GetNetworkFloatingIp200ResponseNetworkFloatingIp and assigns it to the NetworkFloatingIp field.
-func (o *GetNetworkFloatingIp200Response) SetNetworkFloatingIp(v GetNetworkFloatingIp200ResponseNetworkFloatingIp) {
+// SetNetworkFloatingIp gets a reference to the given AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp and assigns it to the NetworkFloatingIp field.
+func (o *GetNetworkFloatingIp200Response) SetNetworkFloatingIp(v AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) {
 	o.NetworkFloatingIp = &v
 }
 

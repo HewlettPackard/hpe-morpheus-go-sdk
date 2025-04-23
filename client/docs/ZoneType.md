@@ -23,7 +23,6 @@ Name | Type | Description | Notes
 **HasDiscovery** | Pointer to **bool** |  | [optional] 
 **HasCloudInit** | Pointer to **bool** |  | [optional] 
 **HasFolders** | Pointer to **bool** |  | [optional] 
-**HasFloatingIps** | Pointer to **bool** |  | [optional] 
 **HasMarketplace** | Pointer to **bool** |  | [optional] 
 **HasNativePlans** | Pointer to **bool** |  | [optional] 
 **CanCreateResourcePools** | Pointer to **bool** |  | [optional] 
@@ -532,31 +531,6 @@ SetHasFolders sets HasFolders field to given value.
 `func (o *ZoneType) HasHasFolders() bool`
 
 HasHasFolders returns a boolean if a field has been set.
-
-### GetHasFloatingIps
-
-`func (o *ZoneType) GetHasFloatingIps() bool`
-
-GetHasFloatingIps returns the HasFloatingIps field if non-nil, zero value otherwise.
-
-### GetHasFloatingIpsOk
-
-`func (o *ZoneType) GetHasFloatingIpsOk() (*bool, bool)`
-
-GetHasFloatingIpsOk returns a tuple with the HasFloatingIps field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHasFloatingIps
-
-`func (o *ZoneType) SetHasFloatingIps(v bool)`
-
-SetHasFloatingIps sets HasFloatingIps field to given value.
-
-### HasHasFloatingIps
-
-`func (o *ZoneType) HasHasFloatingIps() bool`
-
-HasHasFloatingIps returns a boolean if a field has been set.
 
 ### GetHasMarketplace
 

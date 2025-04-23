@@ -42,6 +42,7 @@ type NetworkType struct {
 	HasNetworkServer *bool `json:"hasNetworkServer,omitempty"`
 	HasCidr *bool `json:"hasCidr,omitempty"`
 	HasStaticRoutes *bool `json:"hasStaticRoutes,omitempty"`
+	HasFloatingIps *bool `json:"hasFloatingIps,omitempty"`
 	OptionTypes []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
 	RouteOptionTypes []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner `json:"routeOptionTypes,omitempty"`
 }
@@ -767,6 +768,38 @@ func (o *NetworkType) SetHasStaticRoutes(v bool) {
 	o.HasStaticRoutes = &v
 }
 
+// GetHasFloatingIps returns the HasFloatingIps field value if set, zero value otherwise.
+func (o *NetworkType) GetHasFloatingIps() bool {
+	if o == nil || IsNil(o.HasFloatingIps) {
+		var ret bool
+		return ret
+	}
+	return *o.HasFloatingIps
+}
+
+// GetHasFloatingIpsOk returns a tuple with the HasFloatingIps field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *NetworkType) GetHasFloatingIpsOk() (*bool, bool) {
+	if o == nil || IsNil(o.HasFloatingIps) {
+		return nil, false
+	}
+	return o.HasFloatingIps, true
+}
+
+// IsSetHasFloatingIps returns a boolean if a field has been set.
+func (o *NetworkType) IsSetHasFloatingIps() bool {
+	if o != nil && !IsNil(o.HasFloatingIps) {
+		return true
+	}
+
+	return false
+}
+
+// SetHasFloatingIps gets a reference to the given bool and assigns it to the HasFloatingIps field.
+func (o *NetworkType) SetHasFloatingIps(v bool) {
+	o.HasFloatingIps = &v
+}
+
 // GetOptionTypes returns the OptionTypes field value if set, zero value otherwise.
 func (o *NetworkType) GetOptionTypes() []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner {
 	if o == nil || IsNil(o.OptionTypes) {
@@ -906,6 +939,9 @@ func (o NetworkType) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.HasStaticRoutes) {
 		toSerialize["hasStaticRoutes"] = o.HasStaticRoutes
+	}
+	if !IsNil(o.HasFloatingIps) {
+		toSerialize["hasFloatingIps"] = o.HasFloatingIps
 	}
 	if !IsNil(o.OptionTypes) {
 		toSerialize["optionTypes"] = o.OptionTypes
