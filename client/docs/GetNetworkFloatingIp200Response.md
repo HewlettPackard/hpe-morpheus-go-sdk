@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**NetworkFloatingIp** | Pointer to [**GetNetworkFloatingIp200ResponseNetworkFloatingIp**](GetNetworkFloatingIp200ResponseNetworkFloatingIp.md) |  | [optional] 
+**NetworkFloatingIp** | Pointer to [**AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp**](AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetNetworkFloatingIp
 
-`func (o *GetNetworkFloatingIp200Response) GetNetworkFloatingIp() GetNetworkFloatingIp200ResponseNetworkFloatingIp`
+`func (o *GetNetworkFloatingIp200Response) GetNetworkFloatingIp() AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp`
 
 GetNetworkFloatingIp returns the NetworkFloatingIp field if non-nil, zero value otherwise.
 
 ### GetNetworkFloatingIpOk
 
-`func (o *GetNetworkFloatingIp200Response) GetNetworkFloatingIpOk() (*GetNetworkFloatingIp200ResponseNetworkFloatingIp, bool)`
+`func (o *GetNetworkFloatingIp200Response) GetNetworkFloatingIpOk() (*AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp, bool)`
 
 GetNetworkFloatingIpOk returns a tuple with the NetworkFloatingIp field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetworkFloatingIp
 
-`func (o *GetNetworkFloatingIp200Response) SetNetworkFloatingIp(v GetNetworkFloatingIp200ResponseNetworkFloatingIp)`
+`func (o *GetNetworkFloatingIp200Response) SetNetworkFloatingIp(v AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp)`
 
 SetNetworkFloatingIp sets NetworkFloatingIp field to given value.
 

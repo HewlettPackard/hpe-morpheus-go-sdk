@@ -2046,33 +2046,33 @@ func (a *HostsAPIService) ListServerServicePlansExecute(r ApiListServerServicePl
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiMaangeHostPlacementRequest struct {
+type ApiManageHostPlacementRequest struct {
 	ctx context.Context
 	ApiService *HostsAPIService
 	id int64
-	maangeHostPlacementRequest *MaangeHostPlacementRequest
+	manageHostPlacementRequest *ManageHostPlacementRequest
 }
 
-func (r ApiMaangeHostPlacementRequest) MaangeHostPlacementRequest(maangeHostPlacementRequest MaangeHostPlacementRequest) ApiMaangeHostPlacementRequest {
-	r.maangeHostPlacementRequest = &maangeHostPlacementRequest
+func (r ApiManageHostPlacementRequest) ManageHostPlacementRequest(manageHostPlacementRequest ManageHostPlacementRequest) ApiManageHostPlacementRequest {
+	r.manageHostPlacementRequest = &manageHostPlacementRequest
 	return r
 }
 
-func (r ApiMaangeHostPlacementRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
-	return r.ApiService.MaangeHostPlacementExecute(r)
+func (r ApiManageHostPlacementRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
+	return r.ApiService.ManageHostPlacementExecute(r)
 }
 
 /*
-MaangeHostPlacement Manage Host Placement
+ManageHostPlacement Manage Host Placement
 
 This will update the host placement settings for the virtual machine. Only available for supported server types such as HPE VM virtual machines.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id Morpheus ID of the Object being referenced
- @return ApiMaangeHostPlacementRequest
+ @return ApiManageHostPlacementRequest
 */
-func (a *HostsAPIService) MaangeHostPlacement(ctx context.Context, id int64) ApiMaangeHostPlacementRequest {
-	return ApiMaangeHostPlacementRequest{
+func (a *HostsAPIService) ManageHostPlacement(ctx context.Context, id int64) ApiManageHostPlacementRequest {
+	return ApiManageHostPlacementRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -2081,7 +2081,7 @@ func (a *HostsAPIService) MaangeHostPlacement(ctx context.Context, id int64) Api
 
 // Execute executes the request
 //  @return DeleteAlerts200Response
-func (a *HostsAPIService) MaangeHostPlacementExecute(r ApiMaangeHostPlacementRequest) (*DeleteAlerts200Response, *http.Response, error) {
+func (a *HostsAPIService) ManageHostPlacementExecute(r ApiManageHostPlacementRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -2089,7 +2089,7 @@ func (a *HostsAPIService) MaangeHostPlacementExecute(r ApiMaangeHostPlacementReq
 		localVarReturnValue  *DeleteAlerts200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HostsAPIService.MaangeHostPlacement")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HostsAPIService.ManageHostPlacement")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2119,7 +2119,7 @@ func (a *HostsAPIService) MaangeHostPlacementExecute(r ApiMaangeHostPlacementReq
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.maangeHostPlacementRequest
+	localVarPostBody = r.manageHostPlacementRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err

@@ -17,7 +17,7 @@ Method | HTTP request | Description
 [**ListHostTypes**](HostsAPI.md#ListHostTypes) | **Get** /api/server-types | Host Types
 [**ListHosts**](HostsAPI.md#ListHosts) | **Get** /api/servers | Get All Hosts
 [**ListServerServicePlans**](HostsAPI.md#ListServerServicePlans) | **Get** /api/servers/service-plans | Get Available Service Plans for a Host
-[**MaangeHostPlacement**](HostsAPI.md#MaangeHostPlacement) | **Put** /api/servers/{id}/placement | Manage Host Placement
+[**ManageHostPlacement**](HostsAPI.md#ManageHostPlacement) | **Put** /api/servers/{id}/placement | Manage Host Placement
 [**RemoveHost**](HostsAPI.md#RemoveHost) | **Delete** /api/servers/{id} | Delete a Host
 [**RestartHost**](HostsAPI.md#RestartHost) | **Put** /api/servers/{id}/restart | Restart a Host
 [**StartHost**](HostsAPI.md#StartHost) | **Put** /api/servers/{id}/start | Start a Host
@@ -51,7 +51,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/HewlettPackard/hpe-morpheus-client"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-client/client"
 )
 
 func main() {
@@ -117,7 +117,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/HewlettPackard/hpe-morpheus-client"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-client/client"
 )
 
 func main() {
@@ -192,7 +192,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/HewlettPackard/hpe-morpheus-client"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-client/client"
 )
 
 func main() {
@@ -265,7 +265,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/HewlettPackard/hpe-morpheus-client"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-client/client"
 )
 
 func main() {
@@ -338,7 +338,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/HewlettPackard/hpe-morpheus-client"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-client/client"
 )
 
 func main() {
@@ -410,7 +410,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/HewlettPackard/hpe-morpheus-client"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-client/client"
 )
 
 func main() {
@@ -480,7 +480,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/HewlettPackard/hpe-morpheus-client"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-client/client"
 )
 
 func main() {
@@ -550,7 +550,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/HewlettPackard/hpe-morpheus-client"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-client/client"
 )
 
 func main() {
@@ -620,7 +620,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/HewlettPackard/hpe-morpheus-client"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-client/client"
 )
 
 func main() {
@@ -690,7 +690,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/HewlettPackard/hpe-morpheus-client"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-client/client"
 )
 
 func main() {
@@ -760,7 +760,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/HewlettPackard/hpe-morpheus-client"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-client/client"
 )
 
 func main() {
@@ -845,7 +845,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/HewlettPackard/hpe-morpheus-client"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-client/client"
 )
 
 func main() {
@@ -957,7 +957,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/HewlettPackard/hpe-morpheus-client"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-client/client"
 )
 
 func main() {
@@ -1010,9 +1010,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## MaangeHostPlacement
+## ManageHostPlacement
 
-> DeleteAlerts200Response MaangeHostPlacement(ctx, id).MaangeHostPlacementRequest(maangeHostPlacementRequest).Execute()
+> DeleteAlerts200Response ManageHostPlacement(ctx, id).ManageHostPlacementRequest(manageHostPlacementRequest).Execute()
 
 Manage Host Placement
 
@@ -1027,22 +1027,22 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/HewlettPackard/hpe-morpheus-client"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-client/client"
 )
 
 func main() {
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
-	maangeHostPlacementRequest := *openapiclient.NewMaangeHostPlacementRequest() // MaangeHostPlacementRequest |  (optional)
+	manageHostPlacementRequest := *openapiclient.NewManageHostPlacementRequest() // ManageHostPlacementRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.HostsAPI.MaangeHostPlacement(context.Background(), id).MaangeHostPlacementRequest(maangeHostPlacementRequest).Execute()
+	resp, r, err := apiClient.HostsAPI.ManageHostPlacement(context.Background(), id).ManageHostPlacementRequest(manageHostPlacementRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `HostsAPI.MaangeHostPlacement``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `HostsAPI.ManageHostPlacement``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `MaangeHostPlacement`: DeleteAlerts200Response
-	fmt.Fprintf(os.Stdout, "Response from `HostsAPI.MaangeHostPlacement`: %v\n", resp)
+	// response from `ManageHostPlacement`: DeleteAlerts200Response
+	fmt.Fprintf(os.Stdout, "Response from `HostsAPI.ManageHostPlacement`: %v\n", resp)
 }
 ```
 
@@ -1056,13 +1056,13 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiMaangeHostPlacementRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiManageHostPlacementRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **maangeHostPlacementRequest** | [**MaangeHostPlacementRequest**](MaangeHostPlacementRequest.md) |  | 
+ **manageHostPlacementRequest** | [**ManageHostPlacementRequest**](ManageHostPlacementRequest.md) |  | 
 
 ### Return type
 
@@ -1099,7 +1099,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/HewlettPackard/hpe-morpheus-client"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-client/client"
 )
 
 func main() {
@@ -1181,7 +1181,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/HewlettPackard/hpe-morpheus-client"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-client/client"
 )
 
 func main() {
@@ -1251,7 +1251,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/HewlettPackard/hpe-morpheus-client"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-client/client"
 )
 
 func main() {
@@ -1321,7 +1321,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/HewlettPackard/hpe-morpheus-client"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-client/client"
 )
 
 func main() {
@@ -1391,7 +1391,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/HewlettPackard/hpe-morpheus-client"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-client/client"
 )
 
 func main() {
@@ -1463,7 +1463,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/HewlettPackard/hpe-morpheus-client"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-client/client"
 )
 
 func main() {
@@ -1537,7 +1537,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/HewlettPackard/hpe-morpheus-client"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-client/client"
 )
 
 func main() {
@@ -1603,7 +1603,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/HewlettPackard/hpe-morpheus-client"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-client/client"
 )
 
 func main() {
@@ -1679,7 +1679,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/HewlettPackard/hpe-morpheus-client"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-client/client"
 )
 
 func main() {
@@ -1751,7 +1751,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/HewlettPackard/hpe-morpheus-client"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-client/client"
 )
 
 func main() {
@@ -1823,7 +1823,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/HewlettPackard/hpe-morpheus-client"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-client/client"
 )
 
 func main() {
@@ -1895,7 +1895,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/HewlettPackard/hpe-morpheus-client"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-client/client"
 )
 
 func main() {
@@ -1965,7 +1965,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/HewlettPackard/hpe-morpheus-client"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-client/client"
 )
 
 func main() {

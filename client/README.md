@@ -24,7 +24,7 @@ go get golang.org/x/net/context
 Put the package under your project folder and add the following in import:
 
 ```go
-import client "github.com/HewlettPackard/hpe-morpheus-client"
+import client "github.com/HewlettPackard/hpe-morpheus-client/client"
 ```
 
 To use a proxy, set the environment variable `HTTP_PROXY`:
@@ -437,7 +437,7 @@ Class | Method | HTTP request | Description
 *HostsAPI* | [**ListHostTypes**](docs/HostsAPI.md#listhosttypes) | **Get** /api/server-types | Host Types
 *HostsAPI* | [**ListHosts**](docs/HostsAPI.md#listhosts) | **Get** /api/servers | Get All Hosts
 *HostsAPI* | [**ListServerServicePlans**](docs/HostsAPI.md#listserverserviceplans) | **Get** /api/servers/service-plans | Get Available Service Plans for a Host
-*HostsAPI* | [**MaangeHostPlacement**](docs/HostsAPI.md#maangehostplacement) | **Put** /api/servers/{id}/placement | Manage Host Placement
+*HostsAPI* | [**ManageHostPlacement**](docs/HostsAPI.md#managehostplacement) | **Put** /api/servers/{id}/placement | Manage Host Placement
 *HostsAPI* | [**RemoveHost**](docs/HostsAPI.md#removehost) | **Delete** /api/servers/{id} | Delete a Host
 *HostsAPI* | [**RestartHost**](docs/HostsAPI.md#restarthost) | **Put** /api/servers/{id}/restart | Restart a Host
 *HostsAPI* | [**StartHost**](docs/HostsAPI.md#starthost) | **Put** /api/servers/{id}/start | Start a Host
@@ -688,6 +688,7 @@ Class | Method | HTTP request | Description
 *LogsAPI* | [**ListLogs**](docs/LogsAPI.md#listlogs) | **Get** /api/logs | Retrieves Logs
 *MonitoringSettingsAPI* | [**GetMonitoringSettings**](docs/MonitoringSettingsAPI.md#getmonitoringsettings) | **Get** /api/monitoring-settings | Get Monitoring Settings
 *MonitoringSettingsAPI* | [**UpdateMonitoringSettings**](docs/MonitoringSettingsAPI.md#updatemonitoringsettings) | **Put** /api/monitoring-settings | Update Monitoring Settings
+*NetworksAPI* | [**AllocateNetworkFloatingIp**](docs/NetworksAPI.md#allocatenetworkfloatingip) | **Post** /api/networks/floating-ips | Allocate a Floating IP
 *NetworksAPI* | [**CreateNetworkDhcpRelay**](docs/NetworksAPI.md#createnetworkdhcprelay) | **Post** /api/networks/servers/{serverId}/dhcp-relays | Create a Network DHCP Relay
 *NetworksAPI* | [**CreateNetworkDhcpServer**](docs/NetworksAPI.md#createnetworkdhcpserver) | **Post** /api/networks/servers/{serverId}/dhcp-servers | Create a Network DHCP Server
 *NetworksAPI* | [**CreateNetworkDomain**](docs/NetworksAPI.md#createnetworkdomain) | **Post** /api/networks/domains | Create a Network Domain
@@ -1593,6 +1594,11 @@ Class | Method | HTTP request | Description
  - [AddWorkflowsRequestTaskSetTasks](docs/AddWorkflowsRequestTaskSetTasks.md)
  - [Alarm](docs/Alarm.md)
  - [Alert](docs/Alert.md)
+ - [AllocateNetworkFloatingIp200Response](docs/AllocateNetworkFloatingIp200Response.md)
+ - [AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp](docs/AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp.md)
+ - [AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIpCloud](docs/AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIpCloud.md)
+ - [AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIpServer](docs/AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIpServer.md)
+ - [AllocateNetworkFloatingIpRequest](docs/AllocateNetworkFloatingIpRequest.md)
  - [App](docs/App.md)
  - [AppCreate](docs/AppCreate.md)
  - [AppCreateResponse](docs/AppCreateResponse.md)
@@ -2166,9 +2172,6 @@ Class | Method | HTTP request | Description
  - [GetNetworkFirewallRuleGroups200Response](docs/GetNetworkFirewallRuleGroups200Response.md)
  - [GetNetworkFirewallRules200Response](docs/GetNetworkFirewallRules200Response.md)
  - [GetNetworkFloatingIp200Response](docs/GetNetworkFloatingIp200Response.md)
- - [GetNetworkFloatingIp200ResponseNetworkFloatingIp](docs/GetNetworkFloatingIp200ResponseNetworkFloatingIp.md)
- - [GetNetworkFloatingIp200ResponseNetworkFloatingIpCloud](docs/GetNetworkFloatingIp200ResponseNetworkFloatingIpCloud.md)
- - [GetNetworkFloatingIp200ResponseNetworkFloatingIpServer](docs/GetNetworkFloatingIp200ResponseNetworkFloatingIpServer.md)
  - [GetNetworkGroup200Response](docs/GetNetworkGroup200Response.md)
  - [GetNetworkGroups200Response](docs/GetNetworkGroups200Response.md)
  - [GetNetworkGroups200ResponseNetworkGroupsInner](docs/GetNetworkGroups200ResponseNetworkGroupsInner.md)
@@ -3106,9 +3109,9 @@ Class | Method | HTTP request | Description
  - [LoadBalancerUpdate](docs/LoadBalancerUpdate.md)
  - [Log](docs/Log.md)
  - [LogSettings](docs/LogSettings.md)
- - [MaangeHostPlacementRequest](docs/MaangeHostPlacementRequest.md)
- - [MaangeHostPlacementRequestServer](docs/MaangeHostPlacementRequestServer.md)
- - [MaangeHostPlacementRequestServerPreferredServer](docs/MaangeHostPlacementRequestServerPreferredServer.md)
+ - [ManageHostPlacementRequest](docs/ManageHostPlacementRequest.md)
+ - [ManageHostPlacementRequestServer](docs/ManageHostPlacementRequestServer.md)
+ - [ManageHostPlacementRequestServerPreferredServer](docs/ManageHostPlacementRequestServerPreferredServer.md)
  - [MaxContainersPolicyTypeConfiguration](docs/MaxContainersPolicyTypeConfiguration.md)
  - [MaxCoresPolicyTypeConfiguration](docs/MaxCoresPolicyTypeConfiguration.md)
  - [MaxCoresPolicyTypeConfiguration1](docs/MaxCoresPolicyTypeConfiguration1.md)

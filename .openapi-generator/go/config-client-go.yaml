@@ -4,3 +4,4 @@ packageName: client
 
 additionalProperties:
   goVersion: 1.24
+  isGoSubmodule: true

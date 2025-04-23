@@ -39,7 +39,6 @@ type ListCloudTypes200ResponseAllOfZoneTypesInner struct {
 	HasDiscovery *bool `json:"hasDiscovery,omitempty"`
 	HasCloudInit *bool `json:"hasCloudInit,omitempty"`
 	HasFolders *bool `json:"hasFolders,omitempty"`
-	HasFloatingIps *bool `json:"hasFloatingIps,omitempty"`
 	HasMarketplace *bool `json:"hasMarketplace,omitempty"`
 	HasNativePlans *bool `json:"hasNativePlans,omitempty"`
 	CanCreateResourcePools *bool `json:"canCreateResourcePools,omitempty"`
@@ -681,38 +680,6 @@ func (o *ListCloudTypes200ResponseAllOfZoneTypesInner) SetHasFolders(v bool) {
 	o.HasFolders = &v
 }
 
-// GetHasFloatingIps returns the HasFloatingIps field value if set, zero value otherwise.
-func (o *ListCloudTypes200ResponseAllOfZoneTypesInner) GetHasFloatingIps() bool {
-	if o == nil || IsNil(o.HasFloatingIps) {
-		var ret bool
-		return ret
-	}
-	return *o.HasFloatingIps
-}
-
-// GetHasFloatingIpsOk returns a tuple with the HasFloatingIps field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListCloudTypes200ResponseAllOfZoneTypesInner) GetHasFloatingIpsOk() (*bool, bool) {
-	if o == nil || IsNil(o.HasFloatingIps) {
-		return nil, false
-	}
-	return o.HasFloatingIps, true
-}
-
-// IsSetHasFloatingIps returns a boolean if a field has been set.
-func (o *ListCloudTypes200ResponseAllOfZoneTypesInner) IsSetHasFloatingIps() bool {
-	if o != nil && !IsNil(o.HasFloatingIps) {
-		return true
-	}
-
-	return false
-}
-
-// SetHasFloatingIps gets a reference to the given bool and assigns it to the HasFloatingIps field.
-func (o *ListCloudTypes200ResponseAllOfZoneTypesInner) SetHasFloatingIps(v bool) {
-	o.HasFloatingIps = &v
-}
-
 // GetHasMarketplace returns the HasMarketplace field value if set, zero value otherwise.
 func (o *ListCloudTypes200ResponseAllOfZoneTypesInner) GetHasMarketplace() bool {
 	if o == nil || IsNil(o.HasMarketplace) {
@@ -1227,9 +1194,6 @@ func (o ListCloudTypes200ResponseAllOfZoneTypesInner) ToMap() (map[string]interf
 	}
 	if !IsNil(o.HasFolders) {
 		toSerialize["hasFolders"] = o.HasFolders
-	}
-	if !IsNil(o.HasFloatingIps) {
-		toSerialize["hasFloatingIps"] = o.HasFloatingIps
 	}
 	if !IsNil(o.HasMarketplace) {
 		toSerialize["hasMarketplace"] = o.HasMarketplace

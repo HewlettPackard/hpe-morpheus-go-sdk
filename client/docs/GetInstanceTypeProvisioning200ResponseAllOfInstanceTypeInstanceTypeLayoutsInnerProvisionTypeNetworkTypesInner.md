@@ -26,6 +26,7 @@ Name | Type | Description | Notes
 **HasNetworkServer** | Pointer to **bool** |  | [optional] 
 **HasCidr** | Pointer to **bool** |  | [optional] 
 **HasStaticRoutes** | Pointer to **bool** |  | [optional] 
+**HasFloatingIps** | Pointer to **bool** |  | [optional] 
 **OptionTypes** | Pointer to [**[]ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner**](ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner.md) |  | [optional] 
 **RouteOptionTypes** | Pointer to [**[]GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner**](GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner.md) |  | [optional] 
 
@@ -597,6 +598,31 @@ SetHasStaticRoutes sets HasStaticRoutes field to given value.
 `func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) HasHasStaticRoutes() bool`
 
 HasHasStaticRoutes returns a boolean if a field has been set.
+
+### GetHasFloatingIps
+
+`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) GetHasFloatingIps() bool`
+
+GetHasFloatingIps returns the HasFloatingIps field if non-nil, zero value otherwise.
+
+### GetHasFloatingIpsOk
+
+`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) GetHasFloatingIpsOk() (*bool, bool)`
+
+GetHasFloatingIpsOk returns a tuple with the HasFloatingIps field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHasFloatingIps
+
+`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) SetHasFloatingIps(v bool)`
+
+SetHasFloatingIps sets HasFloatingIps field to given value.
+
+### HasHasFloatingIps
+
+`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) HasHasFloatingIps() bool`
+
+HasHasFloatingIps returns a boolean if a field has been set.
 
 ### GetOptionTypes
 
