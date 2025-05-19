@@ -1,0 +1,34 @@
+name: "Update the SDK from git"
+on:
+  workflow_dispatch:
+    inputs:
+      git_ref:
+        description: "branch name, tag name or git hash"
+        default: main
+        required: false
+  schedule:
+    - cron: '30 10 * * *'
+
+jobs:
+  create-pr:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+    - name: Install Task
+      uses: arduino/setup-task@v2
+      with:
+        version: 3.x
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+    - name: "Update client code"
+      run: task update-client
+      env:
+        GITREF: ${{ inputs.git_ref }}
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v7
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        title: "Bump the SDK to OpenAPI spec version: ${{ inputs.git_ref }}"
+        commit-message: |
+          Bump the SDK to OpenAPI spec version: ${{ inputs.git_ref }}
