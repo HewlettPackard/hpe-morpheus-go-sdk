@@ -16,13 +16,29 @@ tasks:
     cmds:
       - task -l
 
+  install-redocly:
+    internal: true
+    cmds:
+      - npm i -g @redocly/cli@1.34.3
+  
+  install-openapi-generator:
+    internal: true
+    cmds:
+      - npm install @openapitools/openapi-generator-cli -g
+      - openapi-generator-cli version-manager set 7.12.0
+
+  # perform tooling installations in parallel
+  install-tools:
+    desc: install redocly, openapi-generator
+    deps: [install-redocly, install-openapi-generator]
+
   generate:
     desc: generate a Go SDK from the local OpenAPI spec
     env:
       _JAVA_OPTIONS: -DmaxYamlCodePoints=99999999
     cmds:
       - cmd: >-
-          openapi-generator generate 
+          openapi-generator-cli generate 
           -g {{.GENERATOR}}
           -i {{.BUNDLEDSPEC}}
           -c {{.GENERATORCONFIG}}
