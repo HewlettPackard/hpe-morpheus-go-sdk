@@ -4,10 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ClientId** | **string** | ClientId | 
-**ClientSecret** | Pointer to **string** | ClientSecret | [optional] 
+**ClientId** | **string** | Client ID | 
+**ClientSecret** | Pointer to **string** | Client Secret | [optional] 
 **AccessTokenValiditySeconds** | **int32** | Length of time accessToken is valid in seconds. | 
 **RefreshTokenValiditySeconds** | **int32** | Length of time refreshToken is valid in seconds. | 
+**RedirectUris** | Pointer to **[]string** | List of Redirect URIs for use with the OpenID Authorization Code Flow | [optional] 
 
 ## Methods
 
@@ -112,6 +113,31 @@ and a boolean to check if the value has been set.
 
 SetRefreshTokenValiditySeconds sets RefreshTokenValiditySeconds field to given value.
 
+
+### GetRedirectUris
+
+`func (o *AddClientRequestClient) GetRedirectUris() []string`
+
+GetRedirectUris returns the RedirectUris field if non-nil, zero value otherwise.
+
+### GetRedirectUrisOk
+
+`func (o *AddClientRequestClient) GetRedirectUrisOk() (*[]string, bool)`
+
+GetRedirectUrisOk returns a tuple with the RedirectUris field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRedirectUris
+
+`func (o *AddClientRequestClient) SetRedirectUris(v []string)`
+
+SetRedirectUris sets RedirectUris field to given value.
+
+### HasRedirectUris
+
+`func (o *AddClientRequestClient) HasRedirectUris() bool`
+
+HasRedirectUris returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

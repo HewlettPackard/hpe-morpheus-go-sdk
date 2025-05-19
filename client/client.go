@@ -98,6 +98,8 @@ type APIClient struct {
 
 	CypherAPI *CypherAPIService
 
+	DatastoresAPI *DatastoresAPIService
+
 	DeploymentsAPI *DeploymentsAPIService
 
 	DeploysAPI *DeploysAPIService
@@ -243,6 +245,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.ContainersAPI = (*ContainersAPIService)(&c.common)
 	c.CredentialsAPI = (*CredentialsAPIService)(&c.common)
 	c.CypherAPI = (*CypherAPIService)(&c.common)
+	c.DatastoresAPI = (*DatastoresAPIService)(&c.common)
 	c.DeploymentsAPI = (*DeploymentsAPIService)(&c.common)
 	c.DeploysAPI = (*DeploysAPIService)(&c.common)
 	c.EmailTemplatesAPI = (*EmailTemplatesAPIService)(&c.common)

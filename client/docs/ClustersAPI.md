@@ -4725,7 +4725,7 @@ Name | Type | Description  | Notes
 
 ## SaveClusterDatastore
 
-> SaveClusterDatastore200Response SaveClusterDatastore(ctx, clusterId).SaveClusterDatastoreRequest(saveClusterDatastoreRequest).Execute()
+> SaveCloudDatastore200Response SaveClusterDatastore(ctx, clusterId).SaveClusterDatastoreRequest(saveClusterDatastoreRequest).Execute()
 
 Create a Cluster Datastore
 
@@ -4754,7 +4754,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ClustersAPI.SaveClusterDatastore``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `SaveClusterDatastore`: SaveClusterDatastore200Response
+	// response from `SaveClusterDatastore`: SaveCloudDatastore200Response
 	fmt.Fprintf(os.Stdout, "Response from `ClustersAPI.SaveClusterDatastore`: %v\n", resp)
 }
 ```
@@ -4779,7 +4779,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SaveClusterDatastore200Response**](SaveClusterDatastore200Response.md)
+[**SaveCloudDatastore200Response**](SaveCloudDatastore200Response.md)
 
 ### Authorization
 

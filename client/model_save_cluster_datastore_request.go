@@ -20,7 +20,7 @@ var _ MappedNullable = &SaveClusterDatastoreRequest{}
 
 // SaveClusterDatastoreRequest struct for SaveClusterDatastoreRequest
 type SaveClusterDatastoreRequest struct {
-	Cluster *SaveClusterDatastoreRequestCluster `json:"cluster,omitempty"`
+	Datastore *SaveClusterDatastoreRequestDatastore `json:"datastore,omitempty"`
 }
 
 // NewSaveClusterDatastoreRequest instantiates a new SaveClusterDatastoreRequest object
@@ -40,36 +40,36 @@ func NewSaveClusterDatastoreRequestWithDefaults() *SaveClusterDatastoreRequest {
 	return &this
 }
 
-// GetCluster returns the Cluster field value if set, zero value otherwise.
-func (o *SaveClusterDatastoreRequest) GetCluster() SaveClusterDatastoreRequestCluster {
-	if o == nil || IsNil(o.Cluster) {
-		var ret SaveClusterDatastoreRequestCluster
+// GetDatastore returns the Datastore field value if set, zero value otherwise.
+func (o *SaveClusterDatastoreRequest) GetDatastore() SaveClusterDatastoreRequestDatastore {
+	if o == nil || IsNil(o.Datastore) {
+		var ret SaveClusterDatastoreRequestDatastore
 		return ret
 	}
-	return *o.Cluster
+	return *o.Datastore
 }
 
-// GetClusterOk returns a tuple with the Cluster field value if set, nil otherwise
+// GetDatastoreOk returns a tuple with the Datastore field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SaveClusterDatastoreRequest) GetClusterOk() (*SaveClusterDatastoreRequestCluster, bool) {
-	if o == nil || IsNil(o.Cluster) {
+func (o *SaveClusterDatastoreRequest) GetDatastoreOk() (*SaveClusterDatastoreRequestDatastore, bool) {
+	if o == nil || IsNil(o.Datastore) {
 		return nil, false
 	}
-	return o.Cluster, true
+	return o.Datastore, true
 }
 
-// IsSetCluster returns a boolean if a field has been set.
-func (o *SaveClusterDatastoreRequest) IsSetCluster() bool {
-	if o != nil && !IsNil(o.Cluster) {
+// IsSetDatastore returns a boolean if a field has been set.
+func (o *SaveClusterDatastoreRequest) IsSetDatastore() bool {
+	if o != nil && !IsNil(o.Datastore) {
 		return true
 	}
 
 	return false
 }
 
-// SetCluster gets a reference to the given SaveClusterDatastoreRequestCluster and assigns it to the Cluster field.
-func (o *SaveClusterDatastoreRequest) SetCluster(v SaveClusterDatastoreRequestCluster) {
-	o.Cluster = &v
+// SetDatastore gets a reference to the given SaveClusterDatastoreRequestDatastore and assigns it to the Datastore field.
+func (o *SaveClusterDatastoreRequest) SetDatastore(v SaveClusterDatastoreRequestDatastore) {
+	o.Datastore = &v
 }
 
 func (o SaveClusterDatastoreRequest) MarshalJSON() ([]byte, error) {
@@ -82,8 +82,8 @@ func (o SaveClusterDatastoreRequest) MarshalJSON() ([]byte, error) {
 
 func (o SaveClusterDatastoreRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Cluster) {
-		toSerialize["cluster"] = o.Cluster
+	if !IsNil(o.Datastore) {
+		toSerialize["datastore"] = o.Datastore
 	}
 	return toSerialize, nil
 }

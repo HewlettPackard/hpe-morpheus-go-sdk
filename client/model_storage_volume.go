@@ -23,6 +23,7 @@ type StorageVolume struct {
 	Id *int64 `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
 	Description *string `json:"description,omitempty"`
+	Controller *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"controller,omitempty"`
 	ControllerId *int64 `json:"controllerId,omitempty"`
 	ControllerMountPoint *string `json:"controllerMountPoint,omitempty"`
 	Resizeable *bool `json:"resizeable,omitempty"`
@@ -30,6 +31,13 @@ type StorageVolume struct {
 	UnitNumber *string `json:"unitNumber,omitempty"`
 	DeviceName *string `json:"deviceName,omitempty"`
 	DeviceDisplayName *string `json:"deviceDisplayName,omitempty"`
+	VolumeName *string `json:"volumeName,omitempty"`
+	VolumePath *string `json:"volumePath,omitempty"`
+	VolumeType *string `json:"volumeType,omitempty"`
+	RefType *string `json:"refType,omitempty"`
+	RefId *int64 `json:"refId,omitempty"`
+	DiskMode *string `json:"diskMode,omitempty"`
+	DiskType *string `json:"diskType,omitempty"`
 	Type *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"type,omitempty"`
 	TypeId *int64 `json:"typeId,omitempty"`
 	Category *string `json:"category,omitempty"`
@@ -37,18 +45,38 @@ type StorageVolume struct {
 	StatusMessage *string `json:"statusMessage,omitempty"`
 	ConfigurableIOPS *bool `json:"configurableIOPS,omitempty"`
 	MaxStorage *int64 `json:"maxStorage,omitempty"`
+	UsedStorage *int64 `json:"usedStorage,omitempty"`
 	DisplayOrder *int64 `json:"displayOrder,omitempty"`
 	MaxIOPS *string `json:"maxIOPS,omitempty"`
 	Uuid *string `json:"uuid,omitempty"`
 	Active *bool `json:"active,omitempty"`
+	ReadOnly *bool `json:"readOnly,omitempty"`
+	Removable *bool `json:"removable,omitempty"`
+	PoolName *string `json:"poolName,omitempty"`
 	Zone *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"zone,omitempty"`
 	ZoneId *int64 `json:"zoneId,omitempty"`
 	Datastore *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"datastore,omitempty"`
 	DatastoreId *int64 `json:"datastoreId,omitempty"`
+	DatastoreOption *string `json:"datastoreOption,omitempty"`
 	StorageGroup *string `json:"storageGroup,omitempty"`
 	Namespace *string `json:"namespace,omitempty"`
 	StorageServer *string `json:"storageServer,omitempty"`
 	Source *string `json:"source,omitempty"`
+	UniqueId *string `json:"uniqueId,omitempty"`
+	InternalId *string `json:"internalId,omitempty"`
+	ExternalId *string `json:"externalId,omitempty"`
+	ProvisionType *string `json:"provisionType,omitempty"`
+	CopyType *string `json:"copyType,omitempty"`
+	FiberWwn *string `json:"fiberWwn,omitempty"`
+	FileName *string `json:"fileName,omitempty"`
+	ClaimName *string `json:"claimName,omitempty"`
+	SharePath *string `json:"sharePath,omitempty"`
+	SourceId *string `json:"sourceId,omitempty"`
+	SourceImage *string `json:"sourceImage,omitempty"`
+	ImageType *string `json:"imageType,omitempty"`
+	Online *bool `json:"online,omitempty"`
+	RawData *string `json:"rawData,omitempty"`
+	Account *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
 	Owner *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"owner,omitempty"`
 }
 
@@ -163,6 +191,38 @@ func (o *StorageVolume) IsSetDescription() bool {
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *StorageVolume) SetDescription(v string) {
 	o.Description = &v
+}
+
+// GetController returns the Controller field value if set, zero value otherwise.
+func (o *StorageVolume) GetController() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
+	if o == nil || IsNil(o.Controller) {
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+		return ret
+	}
+	return *o.Controller
+}
+
+// GetControllerOk returns a tuple with the Controller field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *StorageVolume) GetControllerOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
+	if o == nil || IsNil(o.Controller) {
+		return nil, false
+	}
+	return o.Controller, true
+}
+
+// IsSetController returns a boolean if a field has been set.
+func (o *StorageVolume) IsSetController() bool {
+	if o != nil && !IsNil(o.Controller) {
+		return true
+	}
+
+	return false
+}
+
+// SetController gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Controller field.
+func (o *StorageVolume) SetController(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
+	o.Controller = &v
 }
 
 // GetControllerId returns the ControllerId field value if set, zero value otherwise.
@@ -389,6 +449,230 @@ func (o *StorageVolume) SetDeviceDisplayName(v string) {
 	o.DeviceDisplayName = &v
 }
 
+// GetVolumeName returns the VolumeName field value if set, zero value otherwise.
+func (o *StorageVolume) GetVolumeName() string {
+	if o == nil || IsNil(o.VolumeName) {
+		var ret string
+		return ret
+	}
+	return *o.VolumeName
+}
+
+// GetVolumeNameOk returns a tuple with the VolumeName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *StorageVolume) GetVolumeNameOk() (*string, bool) {
+	if o == nil || IsNil(o.VolumeName) {
+		return nil, false
+	}
+	return o.VolumeName, true
+}
+
+// IsSetVolumeName returns a boolean if a field has been set.
+func (o *StorageVolume) IsSetVolumeName() bool {
+	if o != nil && !IsNil(o.VolumeName) {
+		return true
+	}
+
+	return false
+}
+
+// SetVolumeName gets a reference to the given string and assigns it to the VolumeName field.
+func (o *StorageVolume) SetVolumeName(v string) {
+	o.VolumeName = &v
+}
+
+// GetVolumePath returns the VolumePath field value if set, zero value otherwise.
+func (o *StorageVolume) GetVolumePath() string {
+	if o == nil || IsNil(o.VolumePath) {
+		var ret string
+		return ret
+	}
+	return *o.VolumePath
+}
+
+// GetVolumePathOk returns a tuple with the VolumePath field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *StorageVolume) GetVolumePathOk() (*string, bool) {
+	if o == nil || IsNil(o.VolumePath) {
+		return nil, false
+	}
+	return o.VolumePath, true
+}
+
+// IsSetVolumePath returns a boolean if a field has been set.
+func (o *StorageVolume) IsSetVolumePath() bool {
+	if o != nil && !IsNil(o.VolumePath) {
+		return true
+	}
+
+	return false
+}
+
+// SetVolumePath gets a reference to the given string and assigns it to the VolumePath field.
+func (o *StorageVolume) SetVolumePath(v string) {
+	o.VolumePath = &v
+}
+
+// GetVolumeType returns the VolumeType field value if set, zero value otherwise.
+func (o *StorageVolume) GetVolumeType() string {
+	if o == nil || IsNil(o.VolumeType) {
+		var ret string
+		return ret
+	}
+	return *o.VolumeType
+}
+
+// GetVolumeTypeOk returns a tuple with the VolumeType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *StorageVolume) GetVolumeTypeOk() (*string, bool) {
+	if o == nil || IsNil(o.VolumeType) {
+		return nil, false
+	}
+	return o.VolumeType, true
+}
+
+// IsSetVolumeType returns a boolean if a field has been set.
+func (o *StorageVolume) IsSetVolumeType() bool {
+	if o != nil && !IsNil(o.VolumeType) {
+		return true
+	}
+
+	return false
+}
+
+// SetVolumeType gets a reference to the given string and assigns it to the VolumeType field.
+func (o *StorageVolume) SetVolumeType(v string) {
+	o.VolumeType = &v
+}
+
+// GetRefType returns the RefType field value if set, zero value otherwise.
+func (o *StorageVolume) GetRefType() string {
+	if o == nil || IsNil(o.RefType) {
+		var ret string
+		return ret
+	}
+	return *o.RefType
+}
+
+// GetRefTypeOk returns a tuple with the RefType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *StorageVolume) GetRefTypeOk() (*string, bool) {
+	if o == nil || IsNil(o.RefType) {
+		return nil, false
+	}
+	return o.RefType, true
+}
+
+// IsSetRefType returns a boolean if a field has been set.
+func (o *StorageVolume) IsSetRefType() bool {
+	if o != nil && !IsNil(o.RefType) {
+		return true
+	}
+
+	return false
+}
+
+// SetRefType gets a reference to the given string and assigns it to the RefType field.
+func (o *StorageVolume) SetRefType(v string) {
+	o.RefType = &v
+}
+
+// GetRefId returns the RefId field value if set, zero value otherwise.
+func (o *StorageVolume) GetRefId() int64 {
+	if o == nil || IsNil(o.RefId) {
+		var ret int64
+		return ret
+	}
+	return *o.RefId
+}
+
+// GetRefIdOk returns a tuple with the RefId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *StorageVolume) GetRefIdOk() (*int64, bool) {
+	if o == nil || IsNil(o.RefId) {
+		return nil, false
+	}
+	return o.RefId, true
+}
+
+// IsSetRefId returns a boolean if a field has been set.
+func (o *StorageVolume) IsSetRefId() bool {
+	if o != nil && !IsNil(o.RefId) {
+		return true
+	}
+
+	return false
+}
+
+// SetRefId gets a reference to the given int64 and assigns it to the RefId field.
+func (o *StorageVolume) SetRefId(v int64) {
+	o.RefId = &v
+}
+
+// GetDiskMode returns the DiskMode field value if set, zero value otherwise.
+func (o *StorageVolume) GetDiskMode() string {
+	if o == nil || IsNil(o.DiskMode) {
+		var ret string
+		return ret
+	}
+	return *o.DiskMode
+}
+
+// GetDiskModeOk returns a tuple with the DiskMode field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *StorageVolume) GetDiskModeOk() (*string, bool) {
+	if o == nil || IsNil(o.DiskMode) {
+		return nil, false
+	}
+	return o.DiskMode, true
+}
+
+// IsSetDiskMode returns a boolean if a field has been set.
+func (o *StorageVolume) IsSetDiskMode() bool {
+	if o != nil && !IsNil(o.DiskMode) {
+		return true
+	}
+
+	return false
+}
+
+// SetDiskMode gets a reference to the given string and assigns it to the DiskMode field.
+func (o *StorageVolume) SetDiskMode(v string) {
+	o.DiskMode = &v
+}
+
+// GetDiskType returns the DiskType field value if set, zero value otherwise.
+func (o *StorageVolume) GetDiskType() string {
+	if o == nil || IsNil(o.DiskType) {
+		var ret string
+		return ret
+	}
+	return *o.DiskType
+}
+
+// GetDiskTypeOk returns a tuple with the DiskType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *StorageVolume) GetDiskTypeOk() (*string, bool) {
+	if o == nil || IsNil(o.DiskType) {
+		return nil, false
+	}
+	return o.DiskType, true
+}
+
+// IsSetDiskType returns a boolean if a field has been set.
+func (o *StorageVolume) IsSetDiskType() bool {
+	if o != nil && !IsNil(o.DiskType) {
+		return true
+	}
+
+	return false
+}
+
+// SetDiskType gets a reference to the given string and assigns it to the DiskType field.
+func (o *StorageVolume) SetDiskType(v string) {
+	o.DiskType = &v
+}
+
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *StorageVolume) GetType() ListBackupSettings200ResponseBackupSettingsDefaultSchedule {
 	if o == nil || IsNil(o.Type) {
@@ -613,6 +897,38 @@ func (o *StorageVolume) SetMaxStorage(v int64) {
 	o.MaxStorage = &v
 }
 
+// GetUsedStorage returns the UsedStorage field value if set, zero value otherwise.
+func (o *StorageVolume) GetUsedStorage() int64 {
+	if o == nil || IsNil(o.UsedStorage) {
+		var ret int64
+		return ret
+	}
+	return *o.UsedStorage
+}
+
+// GetUsedStorageOk returns a tuple with the UsedStorage field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *StorageVolume) GetUsedStorageOk() (*int64, bool) {
+	if o == nil || IsNil(o.UsedStorage) {
+		return nil, false
+	}
+	return o.UsedStorage, true
+}
+
+// IsSetUsedStorage returns a boolean if a field has been set.
+func (o *StorageVolume) IsSetUsedStorage() bool {
+	if o != nil && !IsNil(o.UsedStorage) {
+		return true
+	}
+
+	return false
+}
+
+// SetUsedStorage gets a reference to the given int64 and assigns it to the UsedStorage field.
+func (o *StorageVolume) SetUsedStorage(v int64) {
+	o.UsedStorage = &v
+}
+
 // GetDisplayOrder returns the DisplayOrder field value if set, zero value otherwise.
 func (o *StorageVolume) GetDisplayOrder() int64 {
 	if o == nil || IsNil(o.DisplayOrder) {
@@ -739,6 +1055,102 @@ func (o *StorageVolume) IsSetActive() bool {
 // SetActive gets a reference to the given bool and assigns it to the Active field.
 func (o *StorageVolume) SetActive(v bool) {
 	o.Active = &v
+}
+
+// GetReadOnly returns the ReadOnly field value if set, zero value otherwise.
+func (o *StorageVolume) GetReadOnly() bool {
+	if o == nil || IsNil(o.ReadOnly) {
+		var ret bool
+		return ret
+	}
+	return *o.ReadOnly
+}
+
+// GetReadOnlyOk returns a tuple with the ReadOnly field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *StorageVolume) GetReadOnlyOk() (*bool, bool) {
+	if o == nil || IsNil(o.ReadOnly) {
+		return nil, false
+	}
+	return o.ReadOnly, true
+}
+
+// IsSetReadOnly returns a boolean if a field has been set.
+func (o *StorageVolume) IsSetReadOnly() bool {
+	if o != nil && !IsNil(o.ReadOnly) {
+		return true
+	}
+
+	return false
+}
+
+// SetReadOnly gets a reference to the given bool and assigns it to the ReadOnly field.
+func (o *StorageVolume) SetReadOnly(v bool) {
+	o.ReadOnly = &v
+}
+
+// GetRemovable returns the Removable field value if set, zero value otherwise.
+func (o *StorageVolume) GetRemovable() bool {
+	if o == nil || IsNil(o.Removable) {
+		var ret bool
+		return ret
+	}
+	return *o.Removable
+}
+
+// GetRemovableOk returns a tuple with the Removable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *StorageVolume) GetRemovableOk() (*bool, bool) {
+	if o == nil || IsNil(o.Removable) {
+		return nil, false
+	}
+	return o.Removable, true
+}
+
+// IsSetRemovable returns a boolean if a field has been set.
+func (o *StorageVolume) IsSetRemovable() bool {
+	if o != nil && !IsNil(o.Removable) {
+		return true
+	}
+
+	return false
+}
+
+// SetRemovable gets a reference to the given bool and assigns it to the Removable field.
+func (o *StorageVolume) SetRemovable(v bool) {
+	o.Removable = &v
+}
+
+// GetPoolName returns the PoolName field value if set, zero value otherwise.
+func (o *StorageVolume) GetPoolName() string {
+	if o == nil || IsNil(o.PoolName) {
+		var ret string
+		return ret
+	}
+	return *o.PoolName
+}
+
+// GetPoolNameOk returns a tuple with the PoolName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *StorageVolume) GetPoolNameOk() (*string, bool) {
+	if o == nil || IsNil(o.PoolName) {
+		return nil, false
+	}
+	return o.PoolName, true
+}
+
+// IsSetPoolName returns a boolean if a field has been set.
+func (o *StorageVolume) IsSetPoolName() bool {
+	if o != nil && !IsNil(o.PoolName) {
+		return true
+	}
+
+	return false
+}
+
+// SetPoolName gets a reference to the given string and assigns it to the PoolName field.
+func (o *StorageVolume) SetPoolName(v string) {
+	o.PoolName = &v
 }
 
 // GetZone returns the Zone field value if set, zero value otherwise.
@@ -869,6 +1281,38 @@ func (o *StorageVolume) SetDatastoreId(v int64) {
 	o.DatastoreId = &v
 }
 
+// GetDatastoreOption returns the DatastoreOption field value if set, zero value otherwise.
+func (o *StorageVolume) GetDatastoreOption() string {
+	if o == nil || IsNil(o.DatastoreOption) {
+		var ret string
+		return ret
+	}
+	return *o.DatastoreOption
+}
+
+// GetDatastoreOptionOk returns a tuple with the DatastoreOption field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *StorageVolume) GetDatastoreOptionOk() (*string, bool) {
+	if o == nil || IsNil(o.DatastoreOption) {
+		return nil, false
+	}
+	return o.DatastoreOption, true
+}
+
+// IsSetDatastoreOption returns a boolean if a field has been set.
+func (o *StorageVolume) IsSetDatastoreOption() bool {
+	if o != nil && !IsNil(o.DatastoreOption) {
+		return true
+	}
+
+	return false
+}
+
+// SetDatastoreOption gets a reference to the given string and assigns it to the DatastoreOption field.
+func (o *StorageVolume) SetDatastoreOption(v string) {
+	o.DatastoreOption = &v
+}
+
 // GetStorageGroup returns the StorageGroup field value if set, zero value otherwise.
 func (o *StorageVolume) GetStorageGroup() string {
 	if o == nil || IsNil(o.StorageGroup) {
@@ -997,6 +1441,486 @@ func (o *StorageVolume) SetSource(v string) {
 	o.Source = &v
 }
 
+// GetUniqueId returns the UniqueId field value if set, zero value otherwise.
+func (o *StorageVolume) GetUniqueId() string {
+	if o == nil || IsNil(o.UniqueId) {
+		var ret string
+		return ret
+	}
+	return *o.UniqueId
+}
+
+// GetUniqueIdOk returns a tuple with the UniqueId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *StorageVolume) GetUniqueIdOk() (*string, bool) {
+	if o == nil || IsNil(o.UniqueId) {
+		return nil, false
+	}
+	return o.UniqueId, true
+}
+
+// IsSetUniqueId returns a boolean if a field has been set.
+func (o *StorageVolume) IsSetUniqueId() bool {
+	if o != nil && !IsNil(o.UniqueId) {
+		return true
+	}
+
+	return false
+}
+
+// SetUniqueId gets a reference to the given string and assigns it to the UniqueId field.
+func (o *StorageVolume) SetUniqueId(v string) {
+	o.UniqueId = &v
+}
+
+// GetInternalId returns the InternalId field value if set, zero value otherwise.
+func (o *StorageVolume) GetInternalId() string {
+	if o == nil || IsNil(o.InternalId) {
+		var ret string
+		return ret
+	}
+	return *o.InternalId
+}
+
+// GetInternalIdOk returns a tuple with the InternalId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *StorageVolume) GetInternalIdOk() (*string, bool) {
+	if o == nil || IsNil(o.InternalId) {
+		return nil, false
+	}
+	return o.InternalId, true
+}
+
+// IsSetInternalId returns a boolean if a field has been set.
+func (o *StorageVolume) IsSetInternalId() bool {
+	if o != nil && !IsNil(o.InternalId) {
+		return true
+	}
+
+	return false
+}
+
+// SetInternalId gets a reference to the given string and assigns it to the InternalId field.
+func (o *StorageVolume) SetInternalId(v string) {
+	o.InternalId = &v
+}
+
+// GetExternalId returns the ExternalId field value if set, zero value otherwise.
+func (o *StorageVolume) GetExternalId() string {
+	if o == nil || IsNil(o.ExternalId) {
+		var ret string
+		return ret
+	}
+	return *o.ExternalId
+}
+
+// GetExternalIdOk returns a tuple with the ExternalId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *StorageVolume) GetExternalIdOk() (*string, bool) {
+	if o == nil || IsNil(o.ExternalId) {
+		return nil, false
+	}
+	return o.ExternalId, true
+}
+
+// IsSetExternalId returns a boolean if a field has been set.
+func (o *StorageVolume) IsSetExternalId() bool {
+	if o != nil && !IsNil(o.ExternalId) {
+		return true
+	}
+
+	return false
+}
+
+// SetExternalId gets a reference to the given string and assigns it to the ExternalId field.
+func (o *StorageVolume) SetExternalId(v string) {
+	o.ExternalId = &v
+}
+
+// GetProvisionType returns the ProvisionType field value if set, zero value otherwise.
+func (o *StorageVolume) GetProvisionType() string {
+	if o == nil || IsNil(o.ProvisionType) {
+		var ret string
+		return ret
+	}
+	return *o.ProvisionType
+}
+
+// GetProvisionTypeOk returns a tuple with the ProvisionType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *StorageVolume) GetProvisionTypeOk() (*string, bool) {
+	if o == nil || IsNil(o.ProvisionType) {
+		return nil, false
+	}
+	return o.ProvisionType, true
+}
+
+// IsSetProvisionType returns a boolean if a field has been set.
+func (o *StorageVolume) IsSetProvisionType() bool {
+	if o != nil && !IsNil(o.ProvisionType) {
+		return true
+	}
+
+	return false
+}
+
+// SetProvisionType gets a reference to the given string and assigns it to the ProvisionType field.
+func (o *StorageVolume) SetProvisionType(v string) {
+	o.ProvisionType = &v
+}
+
+// GetCopyType returns the CopyType field value if set, zero value otherwise.
+func (o *StorageVolume) GetCopyType() string {
+	if o == nil || IsNil(o.CopyType) {
+		var ret string
+		return ret
+	}
+	return *o.CopyType
+}
+
+// GetCopyTypeOk returns a tuple with the CopyType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *StorageVolume) GetCopyTypeOk() (*string, bool) {
+	if o == nil || IsNil(o.CopyType) {
+		return nil, false
+	}
+	return o.CopyType, true
+}
+
+// IsSetCopyType returns a boolean if a field has been set.
+func (o *StorageVolume) IsSetCopyType() bool {
+	if o != nil && !IsNil(o.CopyType) {
+		return true
+	}
+
+	return false
+}
+
+// SetCopyType gets a reference to the given string and assigns it to the CopyType field.
+func (o *StorageVolume) SetCopyType(v string) {
+	o.CopyType = &v
+}
+
+// GetFiberWwn returns the FiberWwn field value if set, zero value otherwise.
+func (o *StorageVolume) GetFiberWwn() string {
+	if o == nil || IsNil(o.FiberWwn) {
+		var ret string
+		return ret
+	}
+	return *o.FiberWwn
+}
+
+// GetFiberWwnOk returns a tuple with the FiberWwn field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *StorageVolume) GetFiberWwnOk() (*string, bool) {
+	if o == nil || IsNil(o.FiberWwn) {
+		return nil, false
+	}
+	return o.FiberWwn, true
+}
+
+// IsSetFiberWwn returns a boolean if a field has been set.
+func (o *StorageVolume) IsSetFiberWwn() bool {
+	if o != nil && !IsNil(o.FiberWwn) {
+		return true
+	}
+
+	return false
+}
+
+// SetFiberWwn gets a reference to the given string and assigns it to the FiberWwn field.
+func (o *StorageVolume) SetFiberWwn(v string) {
+	o.FiberWwn = &v
+}
+
+// GetFileName returns the FileName field value if set, zero value otherwise.
+func (o *StorageVolume) GetFileName() string {
+	if o == nil || IsNil(o.FileName) {
+		var ret string
+		return ret
+	}
+	return *o.FileName
+}
+
+// GetFileNameOk returns a tuple with the FileName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *StorageVolume) GetFileNameOk() (*string, bool) {
+	if o == nil || IsNil(o.FileName) {
+		return nil, false
+	}
+	return o.FileName, true
+}
+
+// IsSetFileName returns a boolean if a field has been set.
+func (o *StorageVolume) IsSetFileName() bool {
+	if o != nil && !IsNil(o.FileName) {
+		return true
+	}
+
+	return false
+}
+
+// SetFileName gets a reference to the given string and assigns it to the FileName field.
+func (o *StorageVolume) SetFileName(v string) {
+	o.FileName = &v
+}
+
+// GetClaimName returns the ClaimName field value if set, zero value otherwise.
+func (o *StorageVolume) GetClaimName() string {
+	if o == nil || IsNil(o.ClaimName) {
+		var ret string
+		return ret
+	}
+	return *o.ClaimName
+}
+
+// GetClaimNameOk returns a tuple with the ClaimName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *StorageVolume) GetClaimNameOk() (*string, bool) {
+	if o == nil || IsNil(o.ClaimName) {
+		return nil, false
+	}
+	return o.ClaimName, true
+}
+
+// IsSetClaimName returns a boolean if a field has been set.
+func (o *StorageVolume) IsSetClaimName() bool {
+	if o != nil && !IsNil(o.ClaimName) {
+		return true
+	}
+
+	return false
+}
+
+// SetClaimName gets a reference to the given string and assigns it to the ClaimName field.
+func (o *StorageVolume) SetClaimName(v string) {
+	o.ClaimName = &v
+}
+
+// GetSharePath returns the SharePath field value if set, zero value otherwise.
+func (o *StorageVolume) GetSharePath() string {
+	if o == nil || IsNil(o.SharePath) {
+		var ret string
+		return ret
+	}
+	return *o.SharePath
+}
+
+// GetSharePathOk returns a tuple with the SharePath field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *StorageVolume) GetSharePathOk() (*string, bool) {
+	if o == nil || IsNil(o.SharePath) {
+		return nil, false
+	}
+	return o.SharePath, true
+}
+
+// IsSetSharePath returns a boolean if a field has been set.
+func (o *StorageVolume) IsSetSharePath() bool {
+	if o != nil && !IsNil(o.SharePath) {
+		return true
+	}
+
+	return false
+}
+
+// SetSharePath gets a reference to the given string and assigns it to the SharePath field.
+func (o *StorageVolume) SetSharePath(v string) {
+	o.SharePath = &v
+}
+
+// GetSourceId returns the SourceId field value if set, zero value otherwise.
+func (o *StorageVolume) GetSourceId() string {
+	if o == nil || IsNil(o.SourceId) {
+		var ret string
+		return ret
+	}
+	return *o.SourceId
+}
+
+// GetSourceIdOk returns a tuple with the SourceId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *StorageVolume) GetSourceIdOk() (*string, bool) {
+	if o == nil || IsNil(o.SourceId) {
+		return nil, false
+	}
+	return o.SourceId, true
+}
+
+// IsSetSourceId returns a boolean if a field has been set.
+func (o *StorageVolume) IsSetSourceId() bool {
+	if o != nil && !IsNil(o.SourceId) {
+		return true
+	}
+
+	return false
+}
+
+// SetSourceId gets a reference to the given string and assigns it to the SourceId field.
+func (o *StorageVolume) SetSourceId(v string) {
+	o.SourceId = &v
+}
+
+// GetSourceImage returns the SourceImage field value if set, zero value otherwise.
+func (o *StorageVolume) GetSourceImage() string {
+	if o == nil || IsNil(o.SourceImage) {
+		var ret string
+		return ret
+	}
+	return *o.SourceImage
+}
+
+// GetSourceImageOk returns a tuple with the SourceImage field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *StorageVolume) GetSourceImageOk() (*string, bool) {
+	if o == nil || IsNil(o.SourceImage) {
+		return nil, false
+	}
+	return o.SourceImage, true
+}
+
+// IsSetSourceImage returns a boolean if a field has been set.
+func (o *StorageVolume) IsSetSourceImage() bool {
+	if o != nil && !IsNil(o.SourceImage) {
+		return true
+	}
+
+	return false
+}
+
+// SetSourceImage gets a reference to the given string and assigns it to the SourceImage field.
+func (o *StorageVolume) SetSourceImage(v string) {
+	o.SourceImage = &v
+}
+
+// GetImageType returns the ImageType field value if set, zero value otherwise.
+func (o *StorageVolume) GetImageType() string {
+	if o == nil || IsNil(o.ImageType) {
+		var ret string
+		return ret
+	}
+	return *o.ImageType
+}
+
+// GetImageTypeOk returns a tuple with the ImageType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *StorageVolume) GetImageTypeOk() (*string, bool) {
+	if o == nil || IsNil(o.ImageType) {
+		return nil, false
+	}
+	return o.ImageType, true
+}
+
+// IsSetImageType returns a boolean if a field has been set.
+func (o *StorageVolume) IsSetImageType() bool {
+	if o != nil && !IsNil(o.ImageType) {
+		return true
+	}
+
+	return false
+}
+
+// SetImageType gets a reference to the given string and assigns it to the ImageType field.
+func (o *StorageVolume) SetImageType(v string) {
+	o.ImageType = &v
+}
+
+// GetOnline returns the Online field value if set, zero value otherwise.
+func (o *StorageVolume) GetOnline() bool {
+	if o == nil || IsNil(o.Online) {
+		var ret bool
+		return ret
+	}
+	return *o.Online
+}
+
+// GetOnlineOk returns a tuple with the Online field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *StorageVolume) GetOnlineOk() (*bool, bool) {
+	if o == nil || IsNil(o.Online) {
+		return nil, false
+	}
+	return o.Online, true
+}
+
+// IsSetOnline returns a boolean if a field has been set.
+func (o *StorageVolume) IsSetOnline() bool {
+	if o != nil && !IsNil(o.Online) {
+		return true
+	}
+
+	return false
+}
+
+// SetOnline gets a reference to the given bool and assigns it to the Online field.
+func (o *StorageVolume) SetOnline(v bool) {
+	o.Online = &v
+}
+
+// GetRawData returns the RawData field value if set, zero value otherwise.
+func (o *StorageVolume) GetRawData() string {
+	if o == nil || IsNil(o.RawData) {
+		var ret string
+		return ret
+	}
+	return *o.RawData
+}
+
+// GetRawDataOk returns a tuple with the RawData field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *StorageVolume) GetRawDataOk() (*string, bool) {
+	if o == nil || IsNil(o.RawData) {
+		return nil, false
+	}
+	return o.RawData, true
+}
+
+// IsSetRawData returns a boolean if a field has been set.
+func (o *StorageVolume) IsSetRawData() bool {
+	if o != nil && !IsNil(o.RawData) {
+		return true
+	}
+
+	return false
+}
+
+// SetRawData gets a reference to the given string and assigns it to the RawData field.
+func (o *StorageVolume) SetRawData(v string) {
+	o.RawData = &v
+}
+
+// GetAccount returns the Account field value if set, zero value otherwise.
+func (o *StorageVolume) GetAccount() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+	if o == nil || IsNil(o.Account) {
+		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		return ret
+	}
+	return *o.Account
+}
+
+// GetAccountOk returns a tuple with the Account field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *StorageVolume) GetAccountOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+	if o == nil || IsNil(o.Account) {
+		return nil, false
+	}
+	return o.Account, true
+}
+
+// IsSetAccount returns a boolean if a field has been set.
+func (o *StorageVolume) IsSetAccount() bool {
+	if o != nil && !IsNil(o.Account) {
+		return true
+	}
+
+	return false
+}
+
+// SetAccount gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Account field.
+func (o *StorageVolume) SetAccount(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+	o.Account = &v
+}
+
 // GetOwner returns the Owner field value if set, zero value otherwise.
 func (o *StorageVolume) GetOwner() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
 	if o == nil || IsNil(o.Owner) {
@@ -1048,6 +1972,9 @@ func (o StorageVolume) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
+	if !IsNil(o.Controller) {
+		toSerialize["controller"] = o.Controller
+	}
 	if !IsNil(o.ControllerId) {
 		toSerialize["controllerId"] = o.ControllerId
 	}
@@ -1068,6 +1995,27 @@ func (o StorageVolume) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.DeviceDisplayName) {
 		toSerialize["deviceDisplayName"] = o.DeviceDisplayName
+	}
+	if !IsNil(o.VolumeName) {
+		toSerialize["volumeName"] = o.VolumeName
+	}
+	if !IsNil(o.VolumePath) {
+		toSerialize["volumePath"] = o.VolumePath
+	}
+	if !IsNil(o.VolumeType) {
+		toSerialize["volumeType"] = o.VolumeType
+	}
+	if !IsNil(o.RefType) {
+		toSerialize["refType"] = o.RefType
+	}
+	if !IsNil(o.RefId) {
+		toSerialize["refId"] = o.RefId
+	}
+	if !IsNil(o.DiskMode) {
+		toSerialize["diskMode"] = o.DiskMode
+	}
+	if !IsNil(o.DiskType) {
+		toSerialize["diskType"] = o.DiskType
 	}
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
@@ -1090,6 +2038,9 @@ func (o StorageVolume) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.MaxStorage) {
 		toSerialize["maxStorage"] = o.MaxStorage
 	}
+	if !IsNil(o.UsedStorage) {
+		toSerialize["usedStorage"] = o.UsedStorage
+	}
 	if !IsNil(o.DisplayOrder) {
 		toSerialize["displayOrder"] = o.DisplayOrder
 	}
@@ -1101,6 +2052,15 @@ func (o StorageVolume) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Active) {
 		toSerialize["active"] = o.Active
+	}
+	if !IsNil(o.ReadOnly) {
+		toSerialize["readOnly"] = o.ReadOnly
+	}
+	if !IsNil(o.Removable) {
+		toSerialize["removable"] = o.Removable
+	}
+	if !IsNil(o.PoolName) {
+		toSerialize["poolName"] = o.PoolName
 	}
 	if !IsNil(o.Zone) {
 		toSerialize["zone"] = o.Zone
@@ -1114,6 +2074,9 @@ func (o StorageVolume) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.DatastoreId) {
 		toSerialize["datastoreId"] = o.DatastoreId
 	}
+	if !IsNil(o.DatastoreOption) {
+		toSerialize["datastoreOption"] = o.DatastoreOption
+	}
 	if !IsNil(o.StorageGroup) {
 		toSerialize["storageGroup"] = o.StorageGroup
 	}
@@ -1125,6 +2088,51 @@ func (o StorageVolume) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Source) {
 		toSerialize["source"] = o.Source
+	}
+	if !IsNil(o.UniqueId) {
+		toSerialize["uniqueId"] = o.UniqueId
+	}
+	if !IsNil(o.InternalId) {
+		toSerialize["internalId"] = o.InternalId
+	}
+	if !IsNil(o.ExternalId) {
+		toSerialize["externalId"] = o.ExternalId
+	}
+	if !IsNil(o.ProvisionType) {
+		toSerialize["provisionType"] = o.ProvisionType
+	}
+	if !IsNil(o.CopyType) {
+		toSerialize["copyType"] = o.CopyType
+	}
+	if !IsNil(o.FiberWwn) {
+		toSerialize["fiberWwn"] = o.FiberWwn
+	}
+	if !IsNil(o.FileName) {
+		toSerialize["fileName"] = o.FileName
+	}
+	if !IsNil(o.ClaimName) {
+		toSerialize["claimName"] = o.ClaimName
+	}
+	if !IsNil(o.SharePath) {
+		toSerialize["sharePath"] = o.SharePath
+	}
+	if !IsNil(o.SourceId) {
+		toSerialize["sourceId"] = o.SourceId
+	}
+	if !IsNil(o.SourceImage) {
+		toSerialize["sourceImage"] = o.SourceImage
+	}
+	if !IsNil(o.ImageType) {
+		toSerialize["imageType"] = o.ImageType
+	}
+	if !IsNil(o.Online) {
+		toSerialize["online"] = o.Online
+	}
+	if !IsNil(o.RawData) {
+		toSerialize["rawData"] = o.RawData
+	}
+	if !IsNil(o.Account) {
+		toSerialize["account"] = o.Account
 	}
 	if !IsNil(o.Owner) {
 		toSerialize["owner"] = o.Owner

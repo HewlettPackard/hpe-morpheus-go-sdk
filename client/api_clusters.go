@@ -8903,7 +8903,7 @@ func (r ApiSaveClusterDatastoreRequest) SaveClusterDatastoreRequest(saveClusterD
 	return r
 }
 
-func (r ApiSaveClusterDatastoreRequest) Execute() (*SaveClusterDatastore200Response, *http.Response, error) {
+func (r ApiSaveClusterDatastoreRequest) Execute() (*SaveCloudDatastore200Response, *http.Response, error) {
 	return r.ApiService.SaveClusterDatastoreExecute(r)
 }
 
@@ -8925,13 +8925,13 @@ func (a *ClustersAPIService) SaveClusterDatastore(ctx context.Context, clusterId
 }
 
 // Execute executes the request
-//  @return SaveClusterDatastore200Response
-func (a *ClustersAPIService) SaveClusterDatastoreExecute(r ApiSaveClusterDatastoreRequest) (*SaveClusterDatastore200Response, *http.Response, error) {
+//  @return SaveCloudDatastore200Response
+func (a *ClustersAPIService) SaveClusterDatastoreExecute(r ApiSaveClusterDatastoreRequest) (*SaveCloudDatastore200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SaveClusterDatastore200Response
+		localVarReturnValue  *SaveCloudDatastore200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.SaveClusterDatastore")

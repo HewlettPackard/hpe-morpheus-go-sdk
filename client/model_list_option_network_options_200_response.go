@@ -20,14 +20,7 @@ var _ MappedNullable = &ListOptionNetworkOptions200Response{}
 
 // ListOptionNetworkOptions200Response struct for ListOptionNetworkOptions200Response
 type ListOptionNetworkOptions200Response struct {
-	Networks []ListOptionNetworkOptions200ResponseAllOfNetworksInner `json:"networks,omitempty"`
-	NetworkGroups []map[string]interface{} `json:"networkGroups,omitempty"`
-	NetworkTypes []ListOptionNetworkOptions200ResponseAllOfNetworkTypesInner `json:"networkTypes,omitempty"`
-	NetworkSubnets []map[string]interface{} `json:"networkSubnets,omitempty"`
-	HasNetworks *bool `json:"hasNetworks,omitempty"`
-	MaxNetworks *int64 `json:"maxNetworks,omitempty"`
-	EnableNetworkTypeSelection *string `json:"enableNetworkTypeSelection,omitempty"`
-	SupportsNetworkSelection *bool `json:"supportsNetworkSelection,omitempty"`
+	Data map[string]interface{} `json:"data,omitempty"`
 	Success *bool `json:"success,omitempty"`
 }
 
@@ -48,260 +41,36 @@ func NewListOptionNetworkOptions200ResponseWithDefaults() *ListOptionNetworkOpti
 	return &this
 }
 
-// GetNetworks returns the Networks field value if set, zero value otherwise.
-func (o *ListOptionNetworkOptions200Response) GetNetworks() []ListOptionNetworkOptions200ResponseAllOfNetworksInner {
-	if o == nil || IsNil(o.Networks) {
-		var ret []ListOptionNetworkOptions200ResponseAllOfNetworksInner
+// GetData returns the Data field value if set, zero value otherwise.
+func (o *ListOptionNetworkOptions200Response) GetData() map[string]interface{} {
+	if o == nil || IsNil(o.Data) {
+		var ret map[string]interface{}
 		return ret
 	}
-	return o.Networks
+	return o.Data
 }
 
-// GetNetworksOk returns a tuple with the Networks field value if set, nil otherwise
+// GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListOptionNetworkOptions200Response) GetNetworksOk() ([]ListOptionNetworkOptions200ResponseAllOfNetworksInner, bool) {
-	if o == nil || IsNil(o.Networks) {
-		return nil, false
+func (o *ListOptionNetworkOptions200Response) GetDataOk() (map[string]interface{}, bool) {
+	if o == nil || IsNil(o.Data) {
+		return map[string]interface{}{}, false
 	}
-	return o.Networks, true
+	return o.Data, true
 }
 
-// IsSetNetworks returns a boolean if a field has been set.
-func (o *ListOptionNetworkOptions200Response) IsSetNetworks() bool {
-	if o != nil && !IsNil(o.Networks) {
+// IsSetData returns a boolean if a field has been set.
+func (o *ListOptionNetworkOptions200Response) IsSetData() bool {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
 	return false
 }
 
-// SetNetworks gets a reference to the given []ListOptionNetworkOptions200ResponseAllOfNetworksInner and assigns it to the Networks field.
-func (o *ListOptionNetworkOptions200Response) SetNetworks(v []ListOptionNetworkOptions200ResponseAllOfNetworksInner) {
-	o.Networks = v
-}
-
-// GetNetworkGroups returns the NetworkGroups field value if set, zero value otherwise.
-func (o *ListOptionNetworkOptions200Response) GetNetworkGroups() []map[string]interface{} {
-	if o == nil || IsNil(o.NetworkGroups) {
-		var ret []map[string]interface{}
-		return ret
-	}
-	return o.NetworkGroups
-}
-
-// GetNetworkGroupsOk returns a tuple with the NetworkGroups field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListOptionNetworkOptions200Response) GetNetworkGroupsOk() ([]map[string]interface{}, bool) {
-	if o == nil || IsNil(o.NetworkGroups) {
-		return nil, false
-	}
-	return o.NetworkGroups, true
-}
-
-// IsSetNetworkGroups returns a boolean if a field has been set.
-func (o *ListOptionNetworkOptions200Response) IsSetNetworkGroups() bool {
-	if o != nil && !IsNil(o.NetworkGroups) {
-		return true
-	}
-
-	return false
-}
-
-// SetNetworkGroups gets a reference to the given []map[string]interface{} and assigns it to the NetworkGroups field.
-func (o *ListOptionNetworkOptions200Response) SetNetworkGroups(v []map[string]interface{}) {
-	o.NetworkGroups = v
-}
-
-// GetNetworkTypes returns the NetworkTypes field value if set, zero value otherwise.
-func (o *ListOptionNetworkOptions200Response) GetNetworkTypes() []ListOptionNetworkOptions200ResponseAllOfNetworkTypesInner {
-	if o == nil || IsNil(o.NetworkTypes) {
-		var ret []ListOptionNetworkOptions200ResponseAllOfNetworkTypesInner
-		return ret
-	}
-	return o.NetworkTypes
-}
-
-// GetNetworkTypesOk returns a tuple with the NetworkTypes field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListOptionNetworkOptions200Response) GetNetworkTypesOk() ([]ListOptionNetworkOptions200ResponseAllOfNetworkTypesInner, bool) {
-	if o == nil || IsNil(o.NetworkTypes) {
-		return nil, false
-	}
-	return o.NetworkTypes, true
-}
-
-// IsSetNetworkTypes returns a boolean if a field has been set.
-func (o *ListOptionNetworkOptions200Response) IsSetNetworkTypes() bool {
-	if o != nil && !IsNil(o.NetworkTypes) {
-		return true
-	}
-
-	return false
-}
-
-// SetNetworkTypes gets a reference to the given []ListOptionNetworkOptions200ResponseAllOfNetworkTypesInner and assigns it to the NetworkTypes field.
-func (o *ListOptionNetworkOptions200Response) SetNetworkTypes(v []ListOptionNetworkOptions200ResponseAllOfNetworkTypesInner) {
-	o.NetworkTypes = v
-}
-
-// GetNetworkSubnets returns the NetworkSubnets field value if set, zero value otherwise.
-func (o *ListOptionNetworkOptions200Response) GetNetworkSubnets() []map[string]interface{} {
-	if o == nil || IsNil(o.NetworkSubnets) {
-		var ret []map[string]interface{}
-		return ret
-	}
-	return o.NetworkSubnets
-}
-
-// GetNetworkSubnetsOk returns a tuple with the NetworkSubnets field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListOptionNetworkOptions200Response) GetNetworkSubnetsOk() ([]map[string]interface{}, bool) {
-	if o == nil || IsNil(o.NetworkSubnets) {
-		return nil, false
-	}
-	return o.NetworkSubnets, true
-}
-
-// IsSetNetworkSubnets returns a boolean if a field has been set.
-func (o *ListOptionNetworkOptions200Response) IsSetNetworkSubnets() bool {
-	if o != nil && !IsNil(o.NetworkSubnets) {
-		return true
-	}
-
-	return false
-}
-
-// SetNetworkSubnets gets a reference to the given []map[string]interface{} and assigns it to the NetworkSubnets field.
-func (o *ListOptionNetworkOptions200Response) SetNetworkSubnets(v []map[string]interface{}) {
-	o.NetworkSubnets = v
-}
-
-// GetHasNetworks returns the HasNetworks field value if set, zero value otherwise.
-func (o *ListOptionNetworkOptions200Response) GetHasNetworks() bool {
-	if o == nil || IsNil(o.HasNetworks) {
-		var ret bool
-		return ret
-	}
-	return *o.HasNetworks
-}
-
-// GetHasNetworksOk returns a tuple with the HasNetworks field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListOptionNetworkOptions200Response) GetHasNetworksOk() (*bool, bool) {
-	if o == nil || IsNil(o.HasNetworks) {
-		return nil, false
-	}
-	return o.HasNetworks, true
-}
-
-// IsSetHasNetworks returns a boolean if a field has been set.
-func (o *ListOptionNetworkOptions200Response) IsSetHasNetworks() bool {
-	if o != nil && !IsNil(o.HasNetworks) {
-		return true
-	}
-
-	return false
-}
-
-// SetHasNetworks gets a reference to the given bool and assigns it to the HasNetworks field.
-func (o *ListOptionNetworkOptions200Response) SetHasNetworks(v bool) {
-	o.HasNetworks = &v
-}
-
-// GetMaxNetworks returns the MaxNetworks field value if set, zero value otherwise.
-func (o *ListOptionNetworkOptions200Response) GetMaxNetworks() int64 {
-	if o == nil || IsNil(o.MaxNetworks) {
-		var ret int64
-		return ret
-	}
-	return *o.MaxNetworks
-}
-
-// GetMaxNetworksOk returns a tuple with the MaxNetworks field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListOptionNetworkOptions200Response) GetMaxNetworksOk() (*int64, bool) {
-	if o == nil || IsNil(o.MaxNetworks) {
-		return nil, false
-	}
-	return o.MaxNetworks, true
-}
-
-// IsSetMaxNetworks returns a boolean if a field has been set.
-func (o *ListOptionNetworkOptions200Response) IsSetMaxNetworks() bool {
-	if o != nil && !IsNil(o.MaxNetworks) {
-		return true
-	}
-
-	return false
-}
-
-// SetMaxNetworks gets a reference to the given int64 and assigns it to the MaxNetworks field.
-func (o *ListOptionNetworkOptions200Response) SetMaxNetworks(v int64) {
-	o.MaxNetworks = &v
-}
-
-// GetEnableNetworkTypeSelection returns the EnableNetworkTypeSelection field value if set, zero value otherwise.
-func (o *ListOptionNetworkOptions200Response) GetEnableNetworkTypeSelection() string {
-	if o == nil || IsNil(o.EnableNetworkTypeSelection) {
-		var ret string
-		return ret
-	}
-	return *o.EnableNetworkTypeSelection
-}
-
-// GetEnableNetworkTypeSelectionOk returns a tuple with the EnableNetworkTypeSelection field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListOptionNetworkOptions200Response) GetEnableNetworkTypeSelectionOk() (*string, bool) {
-	if o == nil || IsNil(o.EnableNetworkTypeSelection) {
-		return nil, false
-	}
-	return o.EnableNetworkTypeSelection, true
-}
-
-// IsSetEnableNetworkTypeSelection returns a boolean if a field has been set.
-func (o *ListOptionNetworkOptions200Response) IsSetEnableNetworkTypeSelection() bool {
-	if o != nil && !IsNil(o.EnableNetworkTypeSelection) {
-		return true
-	}
-
-	return false
-}
-
-// SetEnableNetworkTypeSelection gets a reference to the given string and assigns it to the EnableNetworkTypeSelection field.
-func (o *ListOptionNetworkOptions200Response) SetEnableNetworkTypeSelection(v string) {
-	o.EnableNetworkTypeSelection = &v
-}
-
-// GetSupportsNetworkSelection returns the SupportsNetworkSelection field value if set, zero value otherwise.
-func (o *ListOptionNetworkOptions200Response) GetSupportsNetworkSelection() bool {
-	if o == nil || IsNil(o.SupportsNetworkSelection) {
-		var ret bool
-		return ret
-	}
-	return *o.SupportsNetworkSelection
-}
-
-// GetSupportsNetworkSelectionOk returns a tuple with the SupportsNetworkSelection field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListOptionNetworkOptions200Response) GetSupportsNetworkSelectionOk() (*bool, bool) {
-	if o == nil || IsNil(o.SupportsNetworkSelection) {
-		return nil, false
-	}
-	return o.SupportsNetworkSelection, true
-}
-
-// IsSetSupportsNetworkSelection returns a boolean if a field has been set.
-func (o *ListOptionNetworkOptions200Response) IsSetSupportsNetworkSelection() bool {
-	if o != nil && !IsNil(o.SupportsNetworkSelection) {
-		return true
-	}
-
-	return false
-}
-
-// SetSupportsNetworkSelection gets a reference to the given bool and assigns it to the SupportsNetworkSelection field.
-func (o *ListOptionNetworkOptions200Response) SetSupportsNetworkSelection(v bool) {
-	o.SupportsNetworkSelection = &v
+// SetData gets a reference to the given map[string]interface{} and assigns it to the Data field.
+func (o *ListOptionNetworkOptions200Response) SetData(v map[string]interface{}) {
+	o.Data = v
 }
 
 // GetSuccess returns the Success field value if set, zero value otherwise.
@@ -346,29 +115,8 @@ func (o ListOptionNetworkOptions200Response) MarshalJSON() ([]byte, error) {
 
 func (o ListOptionNetworkOptions200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Networks) {
-		toSerialize["networks"] = o.Networks
-	}
-	if !IsNil(o.NetworkGroups) {
-		toSerialize["networkGroups"] = o.NetworkGroups
-	}
-	if !IsNil(o.NetworkTypes) {
-		toSerialize["networkTypes"] = o.NetworkTypes
-	}
-	if !IsNil(o.NetworkSubnets) {
-		toSerialize["networkSubnets"] = o.NetworkSubnets
-	}
-	if !IsNil(o.HasNetworks) {
-		toSerialize["hasNetworks"] = o.HasNetworks
-	}
-	if !IsNil(o.MaxNetworks) {
-		toSerialize["maxNetworks"] = o.MaxNetworks
-	}
-	if !IsNil(o.EnableNetworkTypeSelection) {
-		toSerialize["enableNetworkTypeSelection"] = o.EnableNetworkTypeSelection
-	}
-	if !IsNil(o.SupportsNetworkSelection) {
-		toSerialize["supportsNetworkSelection"] = o.SupportsNetworkSelection
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
 	}
 	if !IsNil(o.Success) {
 		toSerialize["success"] = o.Success

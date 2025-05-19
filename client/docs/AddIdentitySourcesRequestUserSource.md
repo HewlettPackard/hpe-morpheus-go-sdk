@@ -4,10 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Account** | Pointer to [**AddIdentitySourcesRequestUserSourceAccount**](AddIdentitySourcesRequestUserSourceAccount.md) |  | [optional] 
 **Name** | **string** | A name for the Identity Source | 
 **Type** | **string** | IDM type code | 
 **Description** | Pointer to **string** | description | [optional] 
-**DefaultAccountRole** | [**AddIdentitySourcesRequestUserSourceDefaultAccountRole**](AddIdentitySourcesRequestUserSourceDefaultAccountRole.md) |  | 
+**DefaultAccountRole** | Pointer to [**AddIdentitySourcesRequestUserSourceDefaultAccountRole**](AddIdentitySourcesRequestUserSourceDefaultAccountRole.md) |  | [optional] 
 **RoleMappings** | Pointer to [**AddIdentitySourcesRequestUserSourceRoleMappings**](AddIdentitySourcesRequestUserSourceRoleMappings.md) |  | [optional] 
 **RoleMappingNames** | Pointer to **map[string]string** | Map of Morpheus &#39;&#x60;Role ID&#x60;&#39;:&#39;&#x60;Role Name&#x60;&#39;.  | [optional] 
 **AllowCustomMappings** | Pointer to **bool** | Enable Role Mapping Permission | [optional] 
@@ -18,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewAddIdentitySourcesRequestUserSource
 
-`func NewAddIdentitySourcesRequestUserSource(name string, type_ string, defaultAccountRole AddIdentitySourcesRequestUserSourceDefaultAccountRole, ) *AddIdentitySourcesRequestUserSource`
+`func NewAddIdentitySourcesRequestUserSource(name string, type_ string, ) *AddIdentitySourcesRequestUserSource`
 
 NewAddIdentitySourcesRequestUserSource instantiates a new AddIdentitySourcesRequestUserSource object
 This constructor will assign default values to properties that have it defined,
@@ -32,6 +33,31 @@ will change when the set of required properties is changed
 NewAddIdentitySourcesRequestUserSourceWithDefaults instantiates a new AddIdentitySourcesRequestUserSource object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAccount
+
+`func (o *AddIdentitySourcesRequestUserSource) GetAccount() AddIdentitySourcesRequestUserSourceAccount`
+
+GetAccount returns the Account field if non-nil, zero value otherwise.
+
+### GetAccountOk
+
+`func (o *AddIdentitySourcesRequestUserSource) GetAccountOk() (*AddIdentitySourcesRequestUserSourceAccount, bool)`
+
+GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAccount
+
+`func (o *AddIdentitySourcesRequestUserSource) SetAccount(v AddIdentitySourcesRequestUserSourceAccount)`
+
+SetAccount sets Account field to given value.
+
+### HasAccount
+
+`func (o *AddIdentitySourcesRequestUserSource) HasAccount() bool`
+
+HasAccount returns a boolean if a field has been set.
 
 ### GetName
 
@@ -117,6 +143,11 @@ and a boolean to check if the value has been set.
 
 SetDefaultAccountRole sets DefaultAccountRole field to given value.
 
+### HasDefaultAccountRole
+
+`func (o *AddIdentitySourcesRequestUserSource) HasDefaultAccountRole() bool`
+
+HasDefaultAccountRole returns a boolean if a field has been set.
 
 ### GetRoleMappings
 

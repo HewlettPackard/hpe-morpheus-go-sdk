@@ -20,7 +20,7 @@ var _ MappedNullable = &AddStorageVolumes200Response{}
 
 // AddStorageVolumes200Response struct for AddStorageVolumes200Response
 type AddStorageVolumes200Response struct {
-	StorageVolume *ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner `json:"storageVolume,omitempty"`
+	StorageVolume *ListClusterVolumes200ResponseAllOfVolumesInner `json:"storageVolume,omitempty"`
 	Success *bool `json:"success,omitempty"`
 }
 
@@ -42,9 +42,9 @@ func NewAddStorageVolumes200ResponseWithDefaults() *AddStorageVolumes200Response
 }
 
 // GetStorageVolume returns the StorageVolume field value if set, zero value otherwise.
-func (o *AddStorageVolumes200Response) GetStorageVolume() ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner {
+func (o *AddStorageVolumes200Response) GetStorageVolume() ListClusterVolumes200ResponseAllOfVolumesInner {
 	if o == nil || IsNil(o.StorageVolume) {
-		var ret ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner
+		var ret ListClusterVolumes200ResponseAllOfVolumesInner
 		return ret
 	}
 	return *o.StorageVolume
@@ -52,7 +52,7 @@ func (o *AddStorageVolumes200Response) GetStorageVolume() ListClusterVolumeclaim
 
 // GetStorageVolumeOk returns a tuple with the StorageVolume field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddStorageVolumes200Response) GetStorageVolumeOk() (*ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner, bool) {
+func (o *AddStorageVolumes200Response) GetStorageVolumeOk() (*ListClusterVolumes200ResponseAllOfVolumesInner, bool) {
 	if o == nil || IsNil(o.StorageVolume) {
 		return nil, false
 	}
@@ -68,8 +68,8 @@ func (o *AddStorageVolumes200Response) IsSetStorageVolume() bool {
 	return false
 }
 
-// SetStorageVolume gets a reference to the given ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner and assigns it to the StorageVolume field.
-func (o *AddStorageVolumes200Response) SetStorageVolume(v ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner) {
+// SetStorageVolume gets a reference to the given ListClusterVolumes200ResponseAllOfVolumesInner and assigns it to the StorageVolume field.
+func (o *AddStorageVolumes200Response) SetStorageVolume(v ListClusterVolumes200ResponseAllOfVolumesInner) {
 	o.StorageVolume = &v
 }
 
