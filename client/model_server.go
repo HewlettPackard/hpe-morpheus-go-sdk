@@ -84,7 +84,7 @@ type Server struct {
 	HourlyPrice *float32 `json:"hourlyPrice,omitempty"`
 	SourceImage *ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType `json:"sourceImage,omitempty"`
 	ServerOs *ListHosts200ResponseAllOfServersInnerServerOs `json:"serverOs,omitempty"`
-	Volumes []ListHosts200ResponseAllOfServersInnerVolumesInner `json:"volumes,omitempty"`
+	Volumes []ListClusterVolumes200ResponseAllOfVolumesInner `json:"volumes,omitempty"`
 	Controllers []ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner `json:"controllers,omitempty"`
 	Interfaces []ListHosts200ResponseAllOfServersInnerInterfacesInner `json:"interfaces,omitempty"`
 	Labels []map[string]interface{} `json:"labels,omitempty"`
@@ -2135,9 +2135,9 @@ func (o *Server) SetServerOs(v ListHosts200ResponseAllOfServersInnerServerOs) {
 }
 
 // GetVolumes returns the Volumes field value if set, zero value otherwise.
-func (o *Server) GetVolumes() []ListHosts200ResponseAllOfServersInnerVolumesInner {
+func (o *Server) GetVolumes() []ListClusterVolumes200ResponseAllOfVolumesInner {
 	if o == nil || IsNil(o.Volumes) {
-		var ret []ListHosts200ResponseAllOfServersInnerVolumesInner
+		var ret []ListClusterVolumes200ResponseAllOfVolumesInner
 		return ret
 	}
 	return o.Volumes
@@ -2145,7 +2145,7 @@ func (o *Server) GetVolumes() []ListHosts200ResponseAllOfServersInnerVolumesInne
 
 // GetVolumesOk returns a tuple with the Volumes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Server) GetVolumesOk() ([]ListHosts200ResponseAllOfServersInnerVolumesInner, bool) {
+func (o *Server) GetVolumesOk() ([]ListClusterVolumes200ResponseAllOfVolumesInner, bool) {
 	if o == nil || IsNil(o.Volumes) {
 		return nil, false
 	}
@@ -2161,8 +2161,8 @@ func (o *Server) IsSetVolumes() bool {
 	return false
 }
 
-// SetVolumes gets a reference to the given []ListHosts200ResponseAllOfServersInnerVolumesInner and assigns it to the Volumes field.
-func (o *Server) SetVolumes(v []ListHosts200ResponseAllOfServersInnerVolumesInner) {
+// SetVolumes gets a reference to the given []ListClusterVolumes200ResponseAllOfVolumesInner and assigns it to the Volumes field.
+func (o *Server) SetVolumes(v []ListClusterVolumes200ResponseAllOfVolumesInner) {
 	o.Volumes = v
 }
 

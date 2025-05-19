@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **StatusDate** | Pointer to **time.Time** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **Account** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
-**User** | Pointer to [**AddCredentials200ResponseAllOfCredentialUser**](AddCredentials200ResponseAllOfCredentialUser.md) |  | [optional] 
+**User** | Pointer to [**ListCredentials200ResponseAllOfCredentialsInnerUser**](ListCredentials200ResponseAllOfCredentialsInnerUser.md) |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
 **Config** | Pointer to [**AddCredentials200ResponseAllOfCredentialConfig**](AddCredentials200ResponseAllOfCredentialConfig.md) |  | [optional] 
@@ -550,20 +550,20 @@ HasAccount returns a boolean if a field has been set.
 
 ### GetUser
 
-`func (o *Credential) GetUser() AddCredentials200ResponseAllOfCredentialUser`
+`func (o *Credential) GetUser() ListCredentials200ResponseAllOfCredentialsInnerUser`
 
 GetUser returns the User field if non-nil, zero value otherwise.
 
 ### GetUserOk
 
-`func (o *Credential) GetUserOk() (*AddCredentials200ResponseAllOfCredentialUser, bool)`
+`func (o *Credential) GetUserOk() (*ListCredentials200ResponseAllOfCredentialsInnerUser, bool)`
 
 GetUserOk returns a tuple with the User field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUser
 
-`func (o *Credential) SetUser(v AddCredentials200ResponseAllOfCredentialUser)`
+`func (o *Credential) SetUser(v ListCredentials200ResponseAllOfCredentialsInnerUser)`
 
 SetUser sets User field to given value.
 

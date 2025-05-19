@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Cluster** | Pointer to [**SaveClusterDatastoreRequestCluster**](SaveClusterDatastoreRequestCluster.md) |  | [optional] 
+**Datastore** | Pointer to [**SaveClusterDatastoreRequestDatastore**](SaveClusterDatastoreRequestDatastore.md) |  | [optional] 
 
 ## Methods
 
@@ -25,30 +25,30 @@ NewSaveClusterDatastoreRequestWithDefaults instantiates a new SaveClusterDatasto
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetCluster
+### GetDatastore
 
-`func (o *SaveClusterDatastoreRequest) GetCluster() SaveClusterDatastoreRequestCluster`
+`func (o *SaveClusterDatastoreRequest) GetDatastore() SaveClusterDatastoreRequestDatastore`
 
-GetCluster returns the Cluster field if non-nil, zero value otherwise.
+GetDatastore returns the Datastore field if non-nil, zero value otherwise.
 
-### GetClusterOk
+### GetDatastoreOk
 
-`func (o *SaveClusterDatastoreRequest) GetClusterOk() (*SaveClusterDatastoreRequestCluster, bool)`
+`func (o *SaveClusterDatastoreRequest) GetDatastoreOk() (*SaveClusterDatastoreRequestDatastore, bool)`
 
-GetClusterOk returns a tuple with the Cluster field if it's non-nil, zero value otherwise
+GetDatastoreOk returns a tuple with the Datastore field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCluster
+### SetDatastore
 
-`func (o *SaveClusterDatastoreRequest) SetCluster(v SaveClusterDatastoreRequestCluster)`
+`func (o *SaveClusterDatastoreRequest) SetDatastore(v SaveClusterDatastoreRequestDatastore)`
 
-SetCluster sets Cluster field to given value.
+SetDatastore sets Datastore field to given value.
 
-### HasCluster
+### HasDatastore
 
-`func (o *SaveClusterDatastoreRequest) HasCluster() bool`
+`func (o *SaveClusterDatastoreRequest) HasDatastore() bool`
 
-HasCluster returns a boolean if a field has been set.
+HasDatastore returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

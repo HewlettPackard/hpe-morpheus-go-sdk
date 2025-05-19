@@ -291,7 +291,6 @@ func (a *IdentitySourcesAPIService) GetIdentitySourcesExecute(r ApiGetIdentitySo
 type ApiListIdentitySourcesRequest struct {
 	ctx context.Context
 	ApiService *IdentitySourcesAPIService
-	type_ *string
 	max *int64
 	offset *int64
 	sort *string
@@ -299,12 +298,6 @@ type ApiListIdentitySourcesRequest struct {
 	phrase *string
 	name *string
 	accountId *int64
-}
-
-// If specified will return all tasks by &#x60;task type&#x60; code. Refer to &#x60;Task Types&#x60; API for up to date listings. 
-func (r ApiListIdentitySourcesRequest) Type_(type_ string) ApiListIdentitySourcesRequest {
-	r.type_ = &type_
-	return r
 }
 
 // Maximum number of records to return
@@ -390,9 +383,6 @@ func (a *IdentitySourcesAPIService) ListIdentitySourcesExecute(r ApiListIdentity
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if r.type_ != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "type", r.type_, "form", "")
-	}
 	if r.max != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "max", r.max, "form", "")
 	} else {

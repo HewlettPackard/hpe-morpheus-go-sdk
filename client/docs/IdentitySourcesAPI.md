@@ -35,7 +35,7 @@ import (
 
 func main() {
 	accountId := int64(3) // int64 | Filter by Tenant ID. This is only available to master tenant users with permission to manage tenants and users. (optional)
-	addIdentitySourcesRequest := *openapiclient.NewAddIdentitySourcesRequest(*openapiclient.NewAddIdentitySourcesRequestUserSource("mydomain AD", "Type_example", *openapiclient.NewAddIdentitySourcesRequestUserSourceDefaultAccountRole(int64(19)))) // AddIdentitySourcesRequest |  (optional)
+	addIdentitySourcesRequest := *openapiclient.NewAddIdentitySourcesRequest(*openapiclient.NewAddIdentitySourcesRequestUserSource("mydomain AD", "Type_example")) // AddIdentitySourcesRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -153,7 +153,7 @@ Name | Type | Description  | Notes
 
 ## ListIdentitySources
 
-> ListIdentitySources200Response ListIdentitySources(ctx).Type_(type_).Max(max).Offset(offset).Sort(sort).Direction(direction).Phrase(phrase).Name(name).AccountId(accountId).Execute()
+> ListIdentitySources200Response ListIdentitySources(ctx).Max(max).Offset(offset).Sort(sort).Direction(direction).Phrase(phrase).Name(name).AccountId(accountId).Execute()
 
 Retrieves all Identity Sources
 
@@ -172,7 +172,6 @@ import (
 )
 
 func main() {
-	type_ := "type__example" // string | If specified will return all tasks by `task type` code. Refer to `Task Types` API for up to date listings.  (optional)
 	max := int64(789) // int64 | Maximum number of records to return (optional) (default to 25)
 	offset := int64(789) // int64 | Offset records, the number of records to skip, for paginating requests (optional) (default to 0)
 	sort := "sort_example" // string | Sort order, the name of the property to sort by (optional) (default to "name")
@@ -183,7 +182,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IdentitySourcesAPI.ListIdentitySources(context.Background()).Type_(type_).Max(max).Offset(offset).Sort(sort).Direction(direction).Phrase(phrase).Name(name).AccountId(accountId).Execute()
+	resp, r, err := apiClient.IdentitySourcesAPI.ListIdentitySources(context.Background()).Max(max).Offset(offset).Sort(sort).Direction(direction).Phrase(phrase).Name(name).AccountId(accountId).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IdentitySourcesAPI.ListIdentitySources``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -204,7 +203,6 @@ Other parameters are passed through a pointer to a apiListIdentitySourcesRequest
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **type_** | **string** | If specified will return all tasks by &#x60;task type&#x60; code. Refer to &#x60;Task Types&#x60; API for up to date listings.  | 
  **max** | **int64** | Maximum number of records to return | [default to 25]
  **offset** | **int64** | Offset records, the number of records to skip, for paginating requests | [default to 0]
  **sort** | **string** | Sort order, the name of the property to sort by | [default to &quot;name&quot;]
@@ -395,7 +393,7 @@ import (
 
 func main() {
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
-	addIdentitySourcesRequest := *openapiclient.NewAddIdentitySourcesRequest(*openapiclient.NewAddIdentitySourcesRequestUserSource("mydomain AD", "Type_example", *openapiclient.NewAddIdentitySourcesRequestUserSourceDefaultAccountRole(int64(19)))) // AddIdentitySourcesRequest |  (optional)
+	addIdentitySourcesRequest := *openapiclient.NewAddIdentitySourcesRequest(*openapiclient.NewAddIdentitySourcesRequestUserSource("mydomain AD", "Type_example")) // AddIdentitySourcesRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

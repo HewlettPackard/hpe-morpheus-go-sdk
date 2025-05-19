@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Networks** | Pointer to [**[]ListOptionNetworkOptions200ResponseAllOfNetworksInner**](ListOptionNetworkOptions200ResponseAllOfNetworksInner.md) |  | [optional] 
-**NetworkGroups** | Pointer to **[]map[string]interface{}** |  | [optional] 
-**NetworkTypes** | Pointer to [**[]ListOptionNetworkOptions200ResponseAllOfNetworkTypesInner**](ListOptionNetworkOptions200ResponseAllOfNetworkTypesInner.md) |  | [optional] 
-**NetworkSubnets** | Pointer to **[]map[string]interface{}** |  | [optional] 
+**Networks** | Pointer to [**[]ZoneNetworkOptionsNetworksInner**](ZoneNetworkOptionsNetworksInner.md) |  | [optional] 
+**NetworkGroups** | Pointer to [**[]ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner**](ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner.md) |  | [optional] 
+**NetworkTypes** | Pointer to [**[]ZoneNetworkOptionsNetworkTypesInner**](ZoneNetworkOptionsNetworkTypesInner.md) |  | [optional] 
+**NetworkSubnets** | Pointer to [**[]ZoneNetworkOptionsNetworkSubnetsInner**](ZoneNetworkOptionsNetworkSubnetsInner.md) |  | [optional] 
 **HasNetworks** | Pointer to **bool** |  | [optional] 
 **MaxNetworks** | Pointer to **int64** |  | [optional] 
 **EnableNetworkTypeSelection** | Pointer to **string** |  | [optional] 
@@ -34,20 +34,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetNetworks
 
-`func (o *ZoneNetworkOptions) GetNetworks() []ListOptionNetworkOptions200ResponseAllOfNetworksInner`
+`func (o *ZoneNetworkOptions) GetNetworks() []ZoneNetworkOptionsNetworksInner`
 
 GetNetworks returns the Networks field if non-nil, zero value otherwise.
 
 ### GetNetworksOk
 
-`func (o *ZoneNetworkOptions) GetNetworksOk() (*[]ListOptionNetworkOptions200ResponseAllOfNetworksInner, bool)`
+`func (o *ZoneNetworkOptions) GetNetworksOk() (*[]ZoneNetworkOptionsNetworksInner, bool)`
 
 GetNetworksOk returns a tuple with the Networks field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetworks
 
-`func (o *ZoneNetworkOptions) SetNetworks(v []ListOptionNetworkOptions200ResponseAllOfNetworksInner)`
+`func (o *ZoneNetworkOptions) SetNetworks(v []ZoneNetworkOptionsNetworksInner)`
 
 SetNetworks sets Networks field to given value.
 
@@ -59,20 +59,20 @@ HasNetworks returns a boolean if a field has been set.
 
 ### GetNetworkGroups
 
-`func (o *ZoneNetworkOptions) GetNetworkGroups() []map[string]interface{}`
+`func (o *ZoneNetworkOptions) GetNetworkGroups() []ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner`
 
 GetNetworkGroups returns the NetworkGroups field if non-nil, zero value otherwise.
 
 ### GetNetworkGroupsOk
 
-`func (o *ZoneNetworkOptions) GetNetworkGroupsOk() (*[]map[string]interface{}, bool)`
+`func (o *ZoneNetworkOptions) GetNetworkGroupsOk() (*[]ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner, bool)`
 
 GetNetworkGroupsOk returns a tuple with the NetworkGroups field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetworkGroups
 
-`func (o *ZoneNetworkOptions) SetNetworkGroups(v []map[string]interface{})`
+`func (o *ZoneNetworkOptions) SetNetworkGroups(v []ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner)`
 
 SetNetworkGroups sets NetworkGroups field to given value.
 
@@ -84,20 +84,20 @@ HasNetworkGroups returns a boolean if a field has been set.
 
 ### GetNetworkTypes
 
-`func (o *ZoneNetworkOptions) GetNetworkTypes() []ListOptionNetworkOptions200ResponseAllOfNetworkTypesInner`
+`func (o *ZoneNetworkOptions) GetNetworkTypes() []ZoneNetworkOptionsNetworkTypesInner`
 
 GetNetworkTypes returns the NetworkTypes field if non-nil, zero value otherwise.
 
 ### GetNetworkTypesOk
 
-`func (o *ZoneNetworkOptions) GetNetworkTypesOk() (*[]ListOptionNetworkOptions200ResponseAllOfNetworkTypesInner, bool)`
+`func (o *ZoneNetworkOptions) GetNetworkTypesOk() (*[]ZoneNetworkOptionsNetworkTypesInner, bool)`
 
 GetNetworkTypesOk returns a tuple with the NetworkTypes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetworkTypes
 
-`func (o *ZoneNetworkOptions) SetNetworkTypes(v []ListOptionNetworkOptions200ResponseAllOfNetworkTypesInner)`
+`func (o *ZoneNetworkOptions) SetNetworkTypes(v []ZoneNetworkOptionsNetworkTypesInner)`
 
 SetNetworkTypes sets NetworkTypes field to given value.
 
@@ -109,20 +109,20 @@ HasNetworkTypes returns a boolean if a field has been set.
 
 ### GetNetworkSubnets
 
-`func (o *ZoneNetworkOptions) GetNetworkSubnets() []map[string]interface{}`
+`func (o *ZoneNetworkOptions) GetNetworkSubnets() []ZoneNetworkOptionsNetworkSubnetsInner`
 
 GetNetworkSubnets returns the NetworkSubnets field if non-nil, zero value otherwise.
 
 ### GetNetworkSubnetsOk
 
-`func (o *ZoneNetworkOptions) GetNetworkSubnetsOk() (*[]map[string]interface{}, bool)`
+`func (o *ZoneNetworkOptions) GetNetworkSubnetsOk() (*[]ZoneNetworkOptionsNetworkSubnetsInner, bool)`
 
 GetNetworkSubnetsOk returns a tuple with the NetworkSubnets field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetworkSubnets
 
-`func (o *ZoneNetworkOptions) SetNetworkSubnets(v []map[string]interface{})`
+`func (o *ZoneNetworkOptions) SetNetworkSubnets(v []ZoneNetworkOptionsNetworkSubnetsInner)`
 
 SetNetworkSubnets sets NetworkSubnets field to given value.
 
