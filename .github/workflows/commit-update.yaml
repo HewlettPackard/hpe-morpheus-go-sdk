@@ -21,7 +21,7 @@ jobs:
       with:
         version: 3.x
         repo-token: ${{ secrets.GITHUB_TOKEN }}
-    - name: "Updace client code"
+    - name: "Update client code"
       run: task update-client
       env:
         GITREF: ${{ inputs.git_ref }}
