@@ -7,7 +7,7 @@ on:
         default: main
         required: false
   schedule:
-    - cron: '30 10 * * *'
+    - cron: '30 10 * * Wed'
 
 jobs:
   create-pr:
@@ -16,11 +16,14 @@ jobs:
       contents: write
       pull-requests: write
     steps:
+    - uses: actions/checkout@v4
     - name: Install Task
       uses: arduino/setup-task@v2
       with:
         version: 3.x
         repo-token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Install tools
+      run: task install-tools
     - name: "Update client code"
       run: task update-client
       env:
