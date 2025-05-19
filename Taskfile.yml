@@ -6,9 +6,10 @@ vars:
   GENERATOR: "go"
   BUNDLEDSPEC: ".api/bundled.yaml"
   GENERATORCONFIG: ".openapi-generator/go/config-client-go.yaml"
+  GENERATORIGNOREFILE: ".openapi-generator/.openapi-generator-ignore"
   TEMPLATEDIR: ".openapi-generator/go/templates"
   SPECREPO: "https://github.com/gomorpheus/morpheus-openapi"
-  OUTPUTDIR: "client"
+  OUTPUTDIR: "sdk"
 
 tasks:
   default:
@@ -37,6 +38,8 @@ tasks:
     env:
       _JAVA_OPTIONS: -DmaxYamlCodePoints=99999999
     cmds:
+      - if [ ! -d {{.OUTPUTDIR}} ]; then mkdir {{.OUTPUTDIR}}; fi
+      - cp {{.GENERATORIGNOREFILE}} {{.OUTPUTDIR}}
       - cmd: >-
           openapi-generator-cli generate 
           -g {{.GENERATOR}}
