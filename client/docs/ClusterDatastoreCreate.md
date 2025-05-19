@@ -10,9 +10,9 @@ Name | Type | Description | Notes
 **Visibility** | Pointer to **string** |  | [optional] 
 **Active** | Pointer to **bool** |  | [optional] 
 **DefaultStore** | Pointer to **bool** |  | [optional] 
-**Config** | Pointer to [**SaveClusterDatastoreRequestClusterConfig**](SaveClusterDatastoreRequestClusterConfig.md) |  | [optional] 
+**Config** | Pointer to [**SaveClusterDatastoreRequestDatastoreConfig**](SaveClusterDatastoreRequestDatastoreConfig.md) |  | [optional] 
 **Tenants** | Pointer to [**[]ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner**](ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner.md) |  | [optional] 
-**ResourcePermissions** | Pointer to [**SaveClusterDatastoreRequestClusterResourcePermissions**](SaveClusterDatastoreRequestClusterResourcePermissions.md) |  | [optional] 
+**ResourcePermissions** | Pointer to [**SaveCloudDatastoreRequestDatastoreResourcePermissions**](SaveCloudDatastoreRequestDatastoreResourcePermissions.md) |  | [optional] 
 **Datastores** | Pointer to **[]map[string]interface{}** |  | [optional] 
 
 ## Methods
@@ -186,20 +186,20 @@ HasDefaultStore returns a boolean if a field has been set.
 
 ### GetConfig
 
-`func (o *ClusterDatastoreCreate) GetConfig() SaveClusterDatastoreRequestClusterConfig`
+`func (o *ClusterDatastoreCreate) GetConfig() SaveClusterDatastoreRequestDatastoreConfig`
 
 GetConfig returns the Config field if non-nil, zero value otherwise.
 
 ### GetConfigOk
 
-`func (o *ClusterDatastoreCreate) GetConfigOk() (*SaveClusterDatastoreRequestClusterConfig, bool)`
+`func (o *ClusterDatastoreCreate) GetConfigOk() (*SaveClusterDatastoreRequestDatastoreConfig, bool)`
 
 GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfig
 
-`func (o *ClusterDatastoreCreate) SetConfig(v SaveClusterDatastoreRequestClusterConfig)`
+`func (o *ClusterDatastoreCreate) SetConfig(v SaveClusterDatastoreRequestDatastoreConfig)`
 
 SetConfig sets Config field to given value.
 
@@ -236,20 +236,20 @@ HasTenants returns a boolean if a field has been set.
 
 ### GetResourcePermissions
 
-`func (o *ClusterDatastoreCreate) GetResourcePermissions() SaveClusterDatastoreRequestClusterResourcePermissions`
+`func (o *ClusterDatastoreCreate) GetResourcePermissions() SaveCloudDatastoreRequestDatastoreResourcePermissions`
 
 GetResourcePermissions returns the ResourcePermissions field if non-nil, zero value otherwise.
 
 ### GetResourcePermissionsOk
 
-`func (o *ClusterDatastoreCreate) GetResourcePermissionsOk() (*SaveClusterDatastoreRequestClusterResourcePermissions, bool)`
+`func (o *ClusterDatastoreCreate) GetResourcePermissionsOk() (*SaveCloudDatastoreRequestDatastoreResourcePermissions, bool)`
 
 GetResourcePermissionsOk returns a tuple with the ResourcePermissions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResourcePermissions
 
-`func (o *ClusterDatastoreCreate) SetResourcePermissions(v SaveClusterDatastoreRequestClusterResourcePermissions)`
+`func (o *ClusterDatastoreCreate) SetResourcePermissions(v SaveCloudDatastoreRequestDatastoreResourcePermissions)`
 
 SetResourcePermissions sets ResourcePermissions field to given value.
 

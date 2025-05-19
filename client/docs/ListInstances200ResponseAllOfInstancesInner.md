@@ -71,7 +71,7 @@ Name | Type | Description | Notes
 **ShutdownWarningSent** | Pointer to **bool** |  | [optional] 
 **RemovalDate** | Pointer to **time.Time** |  | [optional] 
 **CreatedBy** | Pointer to [**ListActivity200ResponseAllOfActivityInnerActivityInnerUser**](ListActivity200ResponseAllOfActivityInnerActivityInnerUser.md) |  | [optional] 
-**Owner** | Pointer to [**ListActivity200ResponseAllOfActivityInnerActivityInnerUser**](ListActivity200ResponseAllOfActivityInnerActivityInnerUser.md) |  | [optional] 
+**Owner** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerCreatedBy**](GetAlerts200ResponseAllOfChecksInnerCreatedBy.md) |  | [optional] 
 **Notes** | Pointer to **string** |  | [optional] 
 **Stats** | Pointer to [**ListInstances200ResponseAllOfInstancesInnerStats**](ListInstances200ResponseAllOfInstancesInnerStats.md) |  | [optional] 
 **PowerSchedule** | Pointer to **string** |  | [optional] 
@@ -1776,20 +1776,20 @@ HasCreatedBy returns a boolean if a field has been set.
 
 ### GetOwner
 
-`func (o *ListInstances200ResponseAllOfInstancesInner) GetOwner() ListActivity200ResponseAllOfActivityInnerActivityInnerUser`
+`func (o *ListInstances200ResponseAllOfInstancesInner) GetOwner() GetAlerts200ResponseAllOfChecksInnerCreatedBy`
 
 GetOwner returns the Owner field if non-nil, zero value otherwise.
 
 ### GetOwnerOk
 
-`func (o *ListInstances200ResponseAllOfInstancesInner) GetOwnerOk() (*ListActivity200ResponseAllOfActivityInnerActivityInnerUser, bool)`
+`func (o *ListInstances200ResponseAllOfInstancesInner) GetOwnerOk() (*GetAlerts200ResponseAllOfChecksInnerCreatedBy, bool)`
 
 GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOwner
 
-`func (o *ListInstances200ResponseAllOfInstancesInner) SetOwner(v ListActivity200ResponseAllOfActivityInnerActivityInnerUser)`
+`func (o *ListInstances200ResponseAllOfInstancesInner) SetOwner(v GetAlerts200ResponseAllOfChecksInnerCreatedBy)`
 
 SetOwner sets Owner field to given value.
 

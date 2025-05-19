@@ -25,6 +25,139 @@ import (
 // TenantsAPIService TenantsAPI service
 type TenantsAPIService service
 
+type ApiAddSubtenantIdentitySourcesRequest struct {
+	ctx context.Context
+	ApiService *TenantsAPIService
+	accountId int64
+	addIdentitySourcesRequest *AddIdentitySourcesRequest
+}
+
+func (r ApiAddSubtenantIdentitySourcesRequest) AddIdentitySourcesRequest(addIdentitySourcesRequest AddIdentitySourcesRequest) ApiAddSubtenantIdentitySourcesRequest {
+	r.addIdentitySourcesRequest = &addIdentitySourcesRequest
+	return r
+}
+
+func (r ApiAddSubtenantIdentitySourcesRequest) Execute() (*AddIdentitySources200Response, *http.Response, error) {
+	return r.ApiService.AddSubtenantIdentitySourcesExecute(r)
+}
+
+/*
+AddSubtenantIdentitySources Creates a Subtenant Identity Source
+
+Creates an identity source for the provided subtenant ID.
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param accountId The ID of the subtenant account
+ @return ApiAddSubtenantIdentitySourcesRequest
+*/
+func (a *TenantsAPIService) AddSubtenantIdentitySources(ctx context.Context, accountId int64) ApiAddSubtenantIdentitySourcesRequest {
+	return ApiAddSubtenantIdentitySourcesRequest{
+		ApiService: a,
+		ctx: ctx,
+		accountId: accountId,
+	}
+}
+
+// Execute executes the request
+//  @return AddIdentitySources200Response
+func (a *TenantsAPIService) AddSubtenantIdentitySourcesExecute(r ApiAddSubtenantIdentitySourcesRequest) (*AddIdentitySources200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *AddIdentitySources200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenantsAPIService.AddSubtenantIdentitySources")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/api/accounts/{accountId}/user-sources"
+	localVarPath = strings.Replace(localVarPath, "{"+"accountId"+"}", url.PathEscape(parameterValueToString(r.accountId, "accountId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.addIdentitySourcesRequest
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
+			var v ListActivity4XXResponse
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode >= 500 {
+			var v ListActivity5XXResponse
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type ApiAddTenantRequest struct {
 	ctx context.Context
 	ApiService *TenantsAPIService
@@ -129,7 +262,7 @@ func (a *TenantsAPIService) AddTenantExecute(r ApiAddTenantRequest) (*AddTenant2
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -261,7 +394,7 @@ func (a *TenantsAPIService) AddUserTenantExecute(r ApiAddUserTenantRequest) (*Ad
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -393,7 +526,7 @@ func (a *TenantsAPIService) CreateTenantSubtenantGroupExecute(r ApiCreateTenantS
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -517,7 +650,7 @@ func (a *TenantsAPIService) GetTenantExecute(r ApiGetTenantRequest) (*GetTenant2
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -645,7 +778,7 @@ func (a *TenantsAPIService) GetTenantSubtenantGroupExecute(r ApiGetTenantSubtena
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -802,7 +935,191 @@ func (a *TenantsAPIService) ListTenantSubtenantGroupsExecute(r ApiListTenantSubt
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
+			var v ListActivity5XXResponse
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiListTenantSubtenantIdentitySourcesRequest struct {
+	ctx context.Context
+	ApiService *TenantsAPIService
+	accountId int64
+	max *int64
+	offset *int64
+	direction *string
+	phrase *string
+	name *string
+}
+
+// Maximum number of records to return
+func (r ApiListTenantSubtenantIdentitySourcesRequest) Max(max int64) ApiListTenantSubtenantIdentitySourcesRequest {
+	r.max = &max
+	return r
+}
+
+// Offset records, the number of records to skip, for paginating requests
+func (r ApiListTenantSubtenantIdentitySourcesRequest) Offset(offset int64) ApiListTenantSubtenantIdentitySourcesRequest {
+	r.offset = &offset
+	return r
+}
+
+// Sort direction, use &#39;desc&#39; to reverse sort
+func (r ApiListTenantSubtenantIdentitySourcesRequest) Direction(direction string) ApiListTenantSubtenantIdentitySourcesRequest {
+	r.direction = &direction
+	return r
+}
+
+// Search phrase for partial matches on name or description
+func (r ApiListTenantSubtenantIdentitySourcesRequest) Phrase(phrase string) ApiListTenantSubtenantIdentitySourcesRequest {
+	r.phrase = &phrase
+	return r
+}
+
+// Filter by name
+func (r ApiListTenantSubtenantIdentitySourcesRequest) Name(name string) ApiListTenantSubtenantIdentitySourcesRequest {
+	r.name = &name
+	return r
+}
+
+func (r ApiListTenantSubtenantIdentitySourcesRequest) Execute() (*ListIdentitySources200Response, *http.Response, error) {
+	return r.ApiService.ListTenantSubtenantIdentitySourcesExecute(r)
+}
+
+/*
+ListTenantSubtenantIdentitySources Get Subtenant Identity Sources
+
+This endpoint retrieves all identity sources associated with the subtenant by id.
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param accountId The ID of the subtenant account
+ @return ApiListTenantSubtenantIdentitySourcesRequest
+*/
+func (a *TenantsAPIService) ListTenantSubtenantIdentitySources(ctx context.Context, accountId int64) ApiListTenantSubtenantIdentitySourcesRequest {
+	return ApiListTenantSubtenantIdentitySourcesRequest{
+		ApiService: a,
+		ctx: ctx,
+		accountId: accountId,
+	}
+}
+
+// Execute executes the request
+//  @return ListIdentitySources200Response
+func (a *TenantsAPIService) ListTenantSubtenantIdentitySourcesExecute(r ApiListTenantSubtenantIdentitySourcesRequest) (*ListIdentitySources200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *ListIdentitySources200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenantsAPIService.ListTenantSubtenantIdentitySources")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/api/accounts/{accountId}/user-sources"
+	localVarPath = strings.Replace(localVarPath, "{"+"accountId"+"}", url.PathEscape(parameterValueToString(r.accountId, "accountId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if r.max != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "max", r.max, "form", "")
+	} else {
+		var defaultValue int64 = 25
+		r.max = &defaultValue
+	}
+	if r.offset != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "form", "")
+	} else {
+		var defaultValue int64 = 0
+		r.offset = &defaultValue
+	}
+	if r.direction != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "direction", r.direction, "form", "")
+	} else {
+		var defaultValue string = "asc"
+		r.direction = &defaultValue
+	}
+	if r.phrase != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "phrase", r.phrase, "form", "")
+	}
+	if r.name != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "name", r.name, "form", "")
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode >= 500 {
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1004,7 +1321,7 @@ func (a *TenantsAPIService) ListTenantsExecute(r ApiListTenantsRequest) (*ListTe
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1124,7 +1441,7 @@ func (a *TenantsAPIService) ListTenantsAvailableRolesExecute(r ApiListTenantsAva
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1250,7 +1567,7 @@ func (a *TenantsAPIService) RemoveTenantExecute(r ApiRemoveTenantRequest) (*Dele
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v DeleteRole400Response
+			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1272,7 +1589,7 @@ func (a *TenantsAPIService) RemoveTenantExecute(r ApiRemoveTenantRequest) (*Dele
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1400,7 +1717,7 @@ func (a *TenantsAPIService) RemoveTenantSubtenantGroupExecute(r ApiRemoveTenantS
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1532,7 +1849,7 @@ func (a *TenantsAPIService) UpdateTenantExecute(r ApiUpdateTenantRequest) (*Upda
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1668,7 +1985,7 @@ func (a *TenantsAPIService) UpdateTenantSubtenantGroupExecute(r ApiUpdateTenantS
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1804,7 +2121,7 @@ func (a *TenantsAPIService) UpdateTenantSubtenantGroupZonesExecute(r ApiUpdateTe
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

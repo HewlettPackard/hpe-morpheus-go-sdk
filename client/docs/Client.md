@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **Authorities** | Pointer to **[]string** |  | [optional] 
 **AuthorizedGrantTypes** | Pointer to **[]string** |  | [optional] 
 **Scopes** | Pointer to **[]string** |  | [optional] 
+**RedirectUris** | Pointer to **[]string** |  | [optional] 
 
 ## Methods
 
@@ -205,6 +206,31 @@ SetScopes sets Scopes field to given value.
 `func (o *Client) HasScopes() bool`
 
 HasScopes returns a boolean if a field has been set.
+
+### GetRedirectUris
+
+`func (o *Client) GetRedirectUris() []string`
+
+GetRedirectUris returns the RedirectUris field if non-nil, zero value otherwise.
+
+### GetRedirectUrisOk
+
+`func (o *Client) GetRedirectUrisOk() (*[]string, bool)`
+
+GetRedirectUrisOk returns a tuple with the RedirectUris field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRedirectUris
+
+`func (o *Client) SetRedirectUris(v []string)`
+
+SetRedirectUris sets RedirectUris field to given value.
+
+### HasRedirectUris
+
+`func (o *Client) HasRedirectUris() bool`
+
+HasRedirectUris returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

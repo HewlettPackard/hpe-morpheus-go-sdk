@@ -27,6 +27,7 @@ type ListClients200ResponseAllOfClientsInner struct {
 	Authorities []string `json:"authorities,omitempty"`
 	AuthorizedGrantTypes []string `json:"authorizedGrantTypes,omitempty"`
 	Scopes []string `json:"scopes,omitempty"`
+	RedirectUris []string `json:"redirectUris,omitempty"`
 }
 
 // NewListClients200ResponseAllOfClientsInner instantiates a new ListClients200ResponseAllOfClientsInner object
@@ -270,6 +271,38 @@ func (o *ListClients200ResponseAllOfClientsInner) SetScopes(v []string) {
 	o.Scopes = v
 }
 
+// GetRedirectUris returns the RedirectUris field value if set, zero value otherwise.
+func (o *ListClients200ResponseAllOfClientsInner) GetRedirectUris() []string {
+	if o == nil || IsNil(o.RedirectUris) {
+		var ret []string
+		return ret
+	}
+	return o.RedirectUris
+}
+
+// GetRedirectUrisOk returns a tuple with the RedirectUris field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ListClients200ResponseAllOfClientsInner) GetRedirectUrisOk() ([]string, bool) {
+	if o == nil || IsNil(o.RedirectUris) {
+		return nil, false
+	}
+	return o.RedirectUris, true
+}
+
+// IsSetRedirectUris returns a boolean if a field has been set.
+func (o *ListClients200ResponseAllOfClientsInner) IsSetRedirectUris() bool {
+	if o != nil && !IsNil(o.RedirectUris) {
+		return true
+	}
+
+	return false
+}
+
+// SetRedirectUris gets a reference to the given []string and assigns it to the RedirectUris field.
+func (o *ListClients200ResponseAllOfClientsInner) SetRedirectUris(v []string) {
+	o.RedirectUris = v
+}
+
 func (o ListClients200ResponseAllOfClientsInner) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -300,6 +333,9 @@ func (o ListClients200ResponseAllOfClientsInner) ToMap() (map[string]interface{}
 	}
 	if !IsNil(o.Scopes) {
 		toSerialize["scopes"] = o.Scopes
+	}
+	if !IsNil(o.RedirectUris) {
+		toSerialize["redirectUris"] = o.RedirectUris
 	}
 	return toSerialize, nil
 }

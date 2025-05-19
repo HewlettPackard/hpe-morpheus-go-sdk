@@ -32,7 +32,7 @@ type ListHosts200ResponseAllOfServersInner struct {
 	ParentServer *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"parentServer,omitempty"`
 	AccountId *int64 `json:"accountId,omitempty"`
 	Account *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
-	Owner *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"owner,omitempty"`
+	Owner *GetAlerts200ResponseAllOfChecksInnerCreatedBy `json:"owner,omitempty"`
 	Zone *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"zone,omitempty"`
 	Plan *ListHosts200ResponseAllOfServersInnerPlan `json:"plan,omitempty"`
 	ComputeServerType *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType `json:"computeServerType,omitempty"`
@@ -84,7 +84,7 @@ type ListHosts200ResponseAllOfServersInner struct {
 	HourlyPrice *float32 `json:"hourlyPrice,omitempty"`
 	SourceImage *ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType `json:"sourceImage,omitempty"`
 	ServerOs *ListHosts200ResponseAllOfServersInnerServerOs `json:"serverOs,omitempty"`
-	Volumes []ListHosts200ResponseAllOfServersInnerVolumesInner `json:"volumes,omitempty"`
+	Volumes []ListClusterVolumes200ResponseAllOfVolumesInner `json:"volumes,omitempty"`
 	Controllers []ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner `json:"controllers,omitempty"`
 	Interfaces []ListHosts200ResponseAllOfServersInnerInterfacesInner `json:"interfaces,omitempty"`
 	Labels []map[string]interface{} `json:"labels,omitempty"`
@@ -471,9 +471,9 @@ func (o *ListHosts200ResponseAllOfServersInner) SetAccount(v ListApplianceSettin
 }
 
 // GetOwner returns the Owner field value if set, zero value otherwise.
-func (o *ListHosts200ResponseAllOfServersInner) GetOwner() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
+func (o *ListHosts200ResponseAllOfServersInner) GetOwner() GetAlerts200ResponseAllOfChecksInnerCreatedBy {
 	if o == nil || IsNil(o.Owner) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+		var ret GetAlerts200ResponseAllOfChecksInnerCreatedBy
 		return ret
 	}
 	return *o.Owner
@@ -481,7 +481,7 @@ func (o *ListHosts200ResponseAllOfServersInner) GetOwner() GetAlerts200ResponseA
 
 // GetOwnerOk returns a tuple with the Owner field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListHosts200ResponseAllOfServersInner) GetOwnerOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
+func (o *ListHosts200ResponseAllOfServersInner) GetOwnerOk() (*GetAlerts200ResponseAllOfChecksInnerCreatedBy, bool) {
 	if o == nil || IsNil(o.Owner) {
 		return nil, false
 	}
@@ -497,8 +497,8 @@ func (o *ListHosts200ResponseAllOfServersInner) IsSetOwner() bool {
 	return false
 }
 
-// SetOwner gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Owner field.
-func (o *ListHosts200ResponseAllOfServersInner) SetOwner(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
+// SetOwner gets a reference to the given GetAlerts200ResponseAllOfChecksInnerCreatedBy and assigns it to the Owner field.
+func (o *ListHosts200ResponseAllOfServersInner) SetOwner(v GetAlerts200ResponseAllOfChecksInnerCreatedBy) {
 	o.Owner = &v
 }
 
@@ -2135,9 +2135,9 @@ func (o *ListHosts200ResponseAllOfServersInner) SetServerOs(v ListHosts200Respon
 }
 
 // GetVolumes returns the Volumes field value if set, zero value otherwise.
-func (o *ListHosts200ResponseAllOfServersInner) GetVolumes() []ListHosts200ResponseAllOfServersInnerVolumesInner {
+func (o *ListHosts200ResponseAllOfServersInner) GetVolumes() []ListClusterVolumes200ResponseAllOfVolumesInner {
 	if o == nil || IsNil(o.Volumes) {
-		var ret []ListHosts200ResponseAllOfServersInnerVolumesInner
+		var ret []ListClusterVolumes200ResponseAllOfVolumesInner
 		return ret
 	}
 	return o.Volumes
@@ -2145,7 +2145,7 @@ func (o *ListHosts200ResponseAllOfServersInner) GetVolumes() []ListHosts200Respo
 
 // GetVolumesOk returns a tuple with the Volumes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListHosts200ResponseAllOfServersInner) GetVolumesOk() ([]ListHosts200ResponseAllOfServersInnerVolumesInner, bool) {
+func (o *ListHosts200ResponseAllOfServersInner) GetVolumesOk() ([]ListClusterVolumes200ResponseAllOfVolumesInner, bool) {
 	if o == nil || IsNil(o.Volumes) {
 		return nil, false
 	}
@@ -2161,8 +2161,8 @@ func (o *ListHosts200ResponseAllOfServersInner) IsSetVolumes() bool {
 	return false
 }
 
-// SetVolumes gets a reference to the given []ListHosts200ResponseAllOfServersInnerVolumesInner and assigns it to the Volumes field.
-func (o *ListHosts200ResponseAllOfServersInner) SetVolumes(v []ListHosts200ResponseAllOfServersInnerVolumesInner) {
+// SetVolumes gets a reference to the given []ListClusterVolumes200ResponseAllOfVolumesInner and assigns it to the Volumes field.
+func (o *ListHosts200ResponseAllOfServersInner) SetVolumes(v []ListClusterVolumes200ResponseAllOfVolumesInner) {
 	o.Volumes = v
 }
 

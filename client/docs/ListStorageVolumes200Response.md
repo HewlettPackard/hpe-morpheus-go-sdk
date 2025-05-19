@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**StorageVolumes** | Pointer to [**[]ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner**](ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner.md) |  | [optional] 
+**StorageVolumes** | Pointer to [**[]ListClusterVolumes200ResponseAllOfVolumesInner**](ListClusterVolumes200ResponseAllOfVolumesInner.md) |  | [optional] 
 **Meta** | Pointer to [**ListActivity200ResponseAllOfMeta**](ListActivity200ResponseAllOfMeta.md) |  | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetStorageVolumes
 
-`func (o *ListStorageVolumes200Response) GetStorageVolumes() []ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner`
+`func (o *ListStorageVolumes200Response) GetStorageVolumes() []ListClusterVolumes200ResponseAllOfVolumesInner`
 
 GetStorageVolumes returns the StorageVolumes field if non-nil, zero value otherwise.
 
 ### GetStorageVolumesOk
 
-`func (o *ListStorageVolumes200Response) GetStorageVolumesOk() (*[]ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner, bool)`
+`func (o *ListStorageVolumes200Response) GetStorageVolumesOk() (*[]ListClusterVolumes200ResponseAllOfVolumesInner, bool)`
 
 GetStorageVolumesOk returns a tuple with the StorageVolumes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStorageVolumes
 
-`func (o *ListStorageVolumes200Response) SetStorageVolumes(v []ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner)`
+`func (o *ListStorageVolumes200Response) SetStorageVolumes(v []ListClusterVolumes200ResponseAllOfVolumesInner)`
 
 SetStorageVolumes sets StorageVolumes field to given value.
 

@@ -20,7 +20,7 @@ var _ MappedNullable = &UpdateClusterDatastore200Response{}
 
 // UpdateClusterDatastore200Response struct for UpdateClusterDatastore200Response
 type UpdateClusterDatastore200Response struct {
-	Datastore *SaveClusterDatastore200ResponseAllOfCluster `json:"datastore,omitempty"`
+	Datastore *SaveCloudDatastore200ResponseAllOfDatastore `json:"datastore,omitempty"`
 	Success *bool `json:"success,omitempty"`
 }
 
@@ -42,9 +42,9 @@ func NewUpdateClusterDatastore200ResponseWithDefaults() *UpdateClusterDatastore2
 }
 
 // GetDatastore returns the Datastore field value if set, zero value otherwise.
-func (o *UpdateClusterDatastore200Response) GetDatastore() SaveClusterDatastore200ResponseAllOfCluster {
+func (o *UpdateClusterDatastore200Response) GetDatastore() SaveCloudDatastore200ResponseAllOfDatastore {
 	if o == nil || IsNil(o.Datastore) {
-		var ret SaveClusterDatastore200ResponseAllOfCluster
+		var ret SaveCloudDatastore200ResponseAllOfDatastore
 		return ret
 	}
 	return *o.Datastore
@@ -52,7 +52,7 @@ func (o *UpdateClusterDatastore200Response) GetDatastore() SaveClusterDatastore2
 
 // GetDatastoreOk returns a tuple with the Datastore field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateClusterDatastore200Response) GetDatastoreOk() (*SaveClusterDatastore200ResponseAllOfCluster, bool) {
+func (o *UpdateClusterDatastore200Response) GetDatastoreOk() (*SaveCloudDatastore200ResponseAllOfDatastore, bool) {
 	if o == nil || IsNil(o.Datastore) {
 		return nil, false
 	}
@@ -68,8 +68,8 @@ func (o *UpdateClusterDatastore200Response) IsSetDatastore() bool {
 	return false
 }
 
-// SetDatastore gets a reference to the given SaveClusterDatastore200ResponseAllOfCluster and assigns it to the Datastore field.
-func (o *UpdateClusterDatastore200Response) SetDatastore(v SaveClusterDatastore200ResponseAllOfCluster) {
+// SetDatastore gets a reference to the given SaveCloudDatastore200ResponseAllOfDatastore and assigns it to the Datastore field.
+func (o *UpdateClusterDatastore200Response) SetDatastore(v SaveCloudDatastore200ResponseAllOfDatastore) {
 	o.Datastore = &v
 }
 

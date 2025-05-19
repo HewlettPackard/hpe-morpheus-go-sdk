@@ -41,7 +41,7 @@ type Credential struct {
 	StatusDate *time.Time `json:"statusDate,omitempty"`
 	Enabled *bool `json:"enabled,omitempty"`
 	Account *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
-	User *AddCredentials200ResponseAllOfCredentialUser `json:"user,omitempty"`
+	User *ListCredentials200ResponseAllOfCredentialsInnerUser `json:"user,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
 	Config *AddCredentials200ResponseAllOfCredentialConfig `json:"config,omitempty"`
@@ -708,9 +708,9 @@ func (o *Credential) SetAccount(v ListApplianceSettings200ResponseApplianceSetti
 }
 
 // GetUser returns the User field value if set, zero value otherwise.
-func (o *Credential) GetUser() AddCredentials200ResponseAllOfCredentialUser {
+func (o *Credential) GetUser() ListCredentials200ResponseAllOfCredentialsInnerUser {
 	if o == nil || IsNil(o.User) {
-		var ret AddCredentials200ResponseAllOfCredentialUser
+		var ret ListCredentials200ResponseAllOfCredentialsInnerUser
 		return ret
 	}
 	return *o.User
@@ -718,7 +718,7 @@ func (o *Credential) GetUser() AddCredentials200ResponseAllOfCredentialUser {
 
 // GetUserOk returns a tuple with the User field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Credential) GetUserOk() (*AddCredentials200ResponseAllOfCredentialUser, bool) {
+func (o *Credential) GetUserOk() (*ListCredentials200ResponseAllOfCredentialsInnerUser, bool) {
 	if o == nil || IsNil(o.User) {
 		return nil, false
 	}
@@ -734,8 +734,8 @@ func (o *Credential) IsSetUser() bool {
 	return false
 }
 
-// SetUser gets a reference to the given AddCredentials200ResponseAllOfCredentialUser and assigns it to the User field.
-func (o *Credential) SetUser(v AddCredentials200ResponseAllOfCredentialUser) {
+// SetUser gets a reference to the given ListCredentials200ResponseAllOfCredentialsInnerUser and assigns it to the User field.
+func (o *Credential) SetUser(v ListCredentials200ResponseAllOfCredentialsInnerUser) {
 	o.User = &v
 }
 

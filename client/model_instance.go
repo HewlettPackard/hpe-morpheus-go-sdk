@@ -88,7 +88,7 @@ type Instance struct {
 	ShutdownWarningSent *bool `json:"shutdownWarningSent,omitempty"`
 	RemovalDate *time.Time `json:"removalDate,omitempty"`
 	CreatedBy *ListActivity200ResponseAllOfActivityInnerActivityInnerUser `json:"createdBy,omitempty"`
-	Owner *ListActivity200ResponseAllOfActivityInnerActivityInnerUser `json:"owner,omitempty"`
+	Owner *GetAlerts200ResponseAllOfChecksInnerCreatedBy `json:"owner,omitempty"`
 	Notes *string `json:"notes,omitempty"`
 	Stats *ListInstances200ResponseAllOfInstancesInnerStats `json:"stats,omitempty"`
 	PowerSchedule *string `json:"powerSchedule,omitempty"`
@@ -2260,9 +2260,9 @@ func (o *Instance) SetCreatedBy(v ListActivity200ResponseAllOfActivityInnerActiv
 }
 
 // GetOwner returns the Owner field value if set, zero value otherwise.
-func (o *Instance) GetOwner() ListActivity200ResponseAllOfActivityInnerActivityInnerUser {
+func (o *Instance) GetOwner() GetAlerts200ResponseAllOfChecksInnerCreatedBy {
 	if o == nil || IsNil(o.Owner) {
-		var ret ListActivity200ResponseAllOfActivityInnerActivityInnerUser
+		var ret GetAlerts200ResponseAllOfChecksInnerCreatedBy
 		return ret
 	}
 	return *o.Owner
@@ -2270,7 +2270,7 @@ func (o *Instance) GetOwner() ListActivity200ResponseAllOfActivityInnerActivityI
 
 // GetOwnerOk returns a tuple with the Owner field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Instance) GetOwnerOk() (*ListActivity200ResponseAllOfActivityInnerActivityInnerUser, bool) {
+func (o *Instance) GetOwnerOk() (*GetAlerts200ResponseAllOfChecksInnerCreatedBy, bool) {
 	if o == nil || IsNil(o.Owner) {
 		return nil, false
 	}
@@ -2286,8 +2286,8 @@ func (o *Instance) IsSetOwner() bool {
 	return false
 }
 
-// SetOwner gets a reference to the given ListActivity200ResponseAllOfActivityInnerActivityInnerUser and assigns it to the Owner field.
-func (o *Instance) SetOwner(v ListActivity200ResponseAllOfActivityInnerActivityInnerUser) {
+// SetOwner gets a reference to the given GetAlerts200ResponseAllOfChecksInnerCreatedBy and assigns it to the Owner field.
+func (o *Instance) SetOwner(v GetAlerts200ResponseAllOfChecksInnerCreatedBy) {
 	o.Owner = &v
 }
 

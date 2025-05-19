@@ -4,12 +4,14 @@ All URIs are relative to *https://CHANGEME*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**AddSubtenantIdentitySources**](TenantsAPI.md#AddSubtenantIdentitySources) | **Post** /api/accounts/{accountId}/user-sources | Creates a Subtenant Identity Source
 [**AddTenant**](TenantsAPI.md#AddTenant) | **Post** /api/accounts | Create a Tenant
 [**AddUserTenant**](TenantsAPI.md#AddUserTenant) | **Post** /api/accounts/{accountId}/users | Create a User For a Tenant
 [**CreateTenantSubtenantGroup**](TenantsAPI.md#CreateTenantSubtenantGroup) | **Post** /api/accounts/{accountId}/groups | Create a Group for Subtenant
 [**GetTenant**](TenantsAPI.md#GetTenant) | **Get** /api/accounts/{id} | Get tenant
 [**GetTenantSubtenantGroup**](TenantsAPI.md#GetTenantSubtenantGroup) | **Get** /api/accounts/{accountId}/groups/{id} | Get a Specific Group for Subtenant
 [**ListTenantSubtenantGroups**](TenantsAPI.md#ListTenantSubtenantGroups) | **Get** /api/accounts/{accountId}/groups | Get Subtenant Groups
+[**ListTenantSubtenantIdentitySources**](TenantsAPI.md#ListTenantSubtenantIdentitySources) | **Get** /api/accounts/{accountId}/user-sources | Get Subtenant Identity Sources
 [**ListTenants**](TenantsAPI.md#ListTenants) | **Get** /api/accounts | List All Tenants
 [**ListTenantsAvailableRoles**](TenantsAPI.md#ListTenantsAvailableRoles) | **Get** /api/accounts/available-roles | List available roles for a tenant
 [**RemoveTenant**](TenantsAPI.md#RemoveTenant) | **Delete** /api/accounts/{id} | Delete a Specific Tenant
@@ -18,6 +20,78 @@ Method | HTTP request | Description
 [**UpdateTenantSubtenantGroup**](TenantsAPI.md#UpdateTenantSubtenantGroup) | **Put** /api/accounts/{accountId}/groups/{id} | Updating a Group for Subtenant
 [**UpdateTenantSubtenantGroupZones**](TenantsAPI.md#UpdateTenantSubtenantGroupZones) | **Put** /api/accounts/{accountId}/groups/{id}/update-zones | Updating Group Zones for Subtenant
 
+
+
+## AddSubtenantIdentitySources
+
+> AddIdentitySources200Response AddSubtenantIdentitySources(ctx, accountId).AddIdentitySourcesRequest(addIdentitySourcesRequest).Execute()
+
+Creates a Subtenant Identity Source
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-client/client"
+)
+
+func main() {
+	accountId := int64(7) // int64 | The ID of the subtenant account
+	addIdentitySourcesRequest := *openapiclient.NewAddIdentitySourcesRequest(*openapiclient.NewAddIdentitySourcesRequestUserSource("mydomain AD", "Type_example")) // AddIdentitySourcesRequest |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TenantsAPI.AddSubtenantIdentitySources(context.Background(), accountId).AddIdentitySourcesRequest(addIdentitySourcesRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TenantsAPI.AddSubtenantIdentitySources``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `AddSubtenantIdentitySources`: AddIdentitySources200Response
+	fmt.Fprintf(os.Stdout, "Response from `TenantsAPI.AddSubtenantIdentitySources`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**accountId** | **int64** | The ID of the subtenant account | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiAddSubtenantIdentitySourcesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **addIdentitySourcesRequest** | [**AddIdentitySourcesRequest**](AddIdentitySourcesRequest.md) |  | 
+
+### Return type
+
+[**AddIdentitySources200Response**](AddIdentitySources200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## AddTenant
@@ -435,6 +509,86 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ListTenantSubtenantGroups200Response**](ListTenantSubtenantGroups200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListTenantSubtenantIdentitySources
+
+> ListIdentitySources200Response ListTenantSubtenantIdentitySources(ctx, accountId).Max(max).Offset(offset).Direction(direction).Phrase(phrase).Name(name).Execute()
+
+Get Subtenant Identity Sources
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-client/client"
+)
+
+func main() {
+	accountId := int64(7) // int64 | The ID of the subtenant account
+	max := int64(789) // int64 | Maximum number of records to return (optional) (default to 25)
+	offset := int64(789) // int64 | Offset records, the number of records to skip, for paginating requests (optional) (default to 0)
+	direction := "asc" // string | Sort direction, use 'desc' to reverse sort (optional) (default to "asc")
+	phrase := "phrase_example" // string | Search phrase for partial matches on name or description (optional)
+	name := "example" // string | Filter by name (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TenantsAPI.ListTenantSubtenantIdentitySources(context.Background(), accountId).Max(max).Offset(offset).Direction(direction).Phrase(phrase).Name(name).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TenantsAPI.ListTenantSubtenantIdentitySources``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListTenantSubtenantIdentitySources`: ListIdentitySources200Response
+	fmt.Fprintf(os.Stdout, "Response from `TenantsAPI.ListTenantSubtenantIdentitySources`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**accountId** | **int64** | The ID of the subtenant account | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListTenantSubtenantIdentitySourcesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **max** | **int64** | Maximum number of records to return | [default to 25]
+ **offset** | **int64** | Offset records, the number of records to skip, for paginating requests | [default to 0]
+ **direction** | **string** | Sort direction, use &#39;desc&#39; to reverse sort | [default to &quot;asc&quot;]
+ **phrase** | **string** | Search phrase for partial matches on name or description | 
+ **name** | **string** | Filter by name | 
+
+### Return type
+
+[**ListIdentitySources200Response**](ListIdentitySources200Response.md)
 
 ### Authorization
 

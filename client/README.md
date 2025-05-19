@@ -254,6 +254,7 @@ Class | Method | HTTP request | Description
 *CloudsAPI* | [**RefreshClouds**](docs/CloudsAPI.md#refreshclouds) | **Post** /api/zones/{id}/refresh | Refreshes a Cloud
 *CloudsAPI* | [**RemoveCloudResourcePools**](docs/CloudsAPI.md#removecloudresourcepools) | **Delete** /api/zones/{zoneId}/resource-pools/{id} | Deletes a Resource Pool for Specified Cloud
 *CloudsAPI* | [**RemoveClouds**](docs/CloudsAPI.md#removeclouds) | **Delete** /api/zones/{id} | Deletes a Cloud
+*CloudsAPI* | [**SaveCloudDatastore**](docs/CloudsAPI.md#saveclouddatastore) | **Post** /api/zones/{zoneId}/data-stores | Create a Datastore for Specified Cloud
 *CloudsAPI* | [**UpdateCloudDatastores**](docs/CloudsAPI.md#updateclouddatastores) | **Put** /api/zones/{zoneId}/data-stores/{id} | Updates a Specified Datastore for Specified Cloud
 *CloudsAPI* | [**UpdateCloudFolders**](docs/CloudsAPI.md#updatecloudfolders) | **Put** /api/zones/{zoneId}/folders/{id} | Updates a Resource Folder for Specified Cloud
 *CloudsAPI* | [**UpdateCloudLogo**](docs/CloudsAPI.md#updatecloudlogo) | **Post** /api/zones/{id}/update-logo | Update Logo For Cloud
@@ -369,6 +370,10 @@ Class | Method | HTTP request | Description
 *CypherAPI* | [**GetCypherKey**](docs/CypherAPI.md#getcypherkey) | **Get** /api/cypher/{cypherPath} | Read or Create a Cypher Key
 *CypherAPI* | [**ListCypherKeys**](docs/CypherAPI.md#listcypherkeys) | **Get** /api/cypher | List Cypher Keys
 *CypherAPI* | [**RemoveCypher**](docs/CypherAPI.md#removecypher) | **Delete** /api/cypher/{cypherPath} | Delete a Cypher
+*DatastoresAPI* | [**GetDatastores**](docs/DatastoresAPI.md#getdatastores) | **Get** /api/data-stores/{id} | Retrieves a Datastore
+*DatastoresAPI* | [**ListDatastores**](docs/DatastoresAPI.md#listdatastores) | **Get** /api/data-stores | Retrieves all Datastores
+*DatastoresAPI* | [**SaveDatastore**](docs/DatastoresAPI.md#savedatastore) | **Post** /api/data-stores | Create a Datastore
+*DatastoresAPI* | [**UpdateDatastores**](docs/DatastoresAPI.md#updatedatastores) | **Put** /api/data-stores/{id} | Updates a Specified Datastore
 *DeploymentsAPI* | [**AddDeploymentFile**](docs/DeploymentsAPI.md#adddeploymentfile) | **Post** /api/deployments/{deploymentId}/versions/{id}/files{filepath} | Upload a Deployment File
 *DeploymentsAPI* | [**AddDeploymentVersion**](docs/DeploymentsAPI.md#adddeploymentversion) | **Post** /api/deployments/{deploymentId}/versions | Create a new Deployment Version
 *DeploymentsAPI* | [**AddDeployments**](docs/DeploymentsAPI.md#adddeployments) | **Post** /api/deployments | Create a new Deployment
@@ -816,8 +821,13 @@ Class | Method | HTTP request | Description
 *NetworksAPI* | [**UpdateSubnet**](docs/NetworksAPI.md#updatesubnet) | **Put** /api/subnets/{id} | Update a Subnet
 *OptionsAPI* | [**GetOptionSourceData**](docs/OptionsAPI.md#getoptionsourcedata) | **Get** /api/options/{optionSource} | Get Option Source Data
 *OptionsAPI* | [**ListCodeRepositories**](docs/OptionsAPI.md#listcoderepositories) | **Get** /api/options/codeRepositories | Retrieves a list of Code/GIT Repositories
+*OptionsAPI* | [**ListOptionAnsibleTowerInventoryOptions**](docs/OptionsAPI.md#listoptionansibletowerinventoryoptions) | **Get** /api/options/ansibleTowerInventory | Retrieves available Ansible Tower Inventories
+*OptionsAPI* | [**ListOptionAnsibleTowerJobTemplateOptions**](docs/OptionsAPI.md#listoptionansibletowerjobtemplateoptions) | **Get** /api/options/ansibleTowerJobTemplate | Retrieves available Ansible Tower Job Templates
+*OptionsAPI* | [**ListOptionChefServerOptions**](docs/OptionsAPI.md#listoptionchefserveroptions) | **Get** /api/options/chefServer | Retrieves available Chef Servers
 *OptionsAPI* | [**ListOptionNetworkOptions**](docs/OptionsAPI.md#listoptionnetworkoptions) | **Get** /api/options/zoneNetworkOptions | Retrieves network options by zone/cloud
+*OptionsAPI* | [**ListOptionServiceNowWorkflowsOptions**](docs/OptionsAPI.md#listoptionservicenowworkflowsoptions) | **Get** /api/options/serviceNowWorkflows | Retrieves available ServiceNow workflows
 *OptionsAPI* | [**ListOptionValues**](docs/OptionsAPI.md#listoptionvalues) | **Get** /api/options/list | Retrieves input option values
+*OptionsAPI* | [**ListOptionZoneTypesOptions**](docs/OptionsAPI.md#listoptionzonetypesoptions) | **Get** /api/options/zoneTypes | Retrieves enabled zones/clouds
 *PingAPI* | [**Ping**](docs/PingAPI.md#ping) | **Get** /api/ping | Basic information about current Morpheus Installation
 *PluginsAPI* | [**GetPlugin**](docs/PluginsAPI.md#getplugin) | **Get** /api/plugins/{id} | Retrieves a Specific Plugin
 *PluginsAPI* | [**ListPlugins**](docs/PluginsAPI.md#listplugins) | **Get** /api/plugins | Retrieves all Plugins
@@ -934,6 +944,8 @@ Class | Method | HTTP request | Description
 *StorageAPI* | [**AddStorageBuckets**](docs/StorageAPI.md#addstoragebuckets) | **Post** /api/storage-buckets | Creates a Storage Bucket
 *StorageAPI* | [**AddStorageServers**](docs/StorageAPI.md#addstorageservers) | **Post** /api/storage-servers | Creates a Storage Server
 *StorageAPI* | [**AddStorageVolumes**](docs/StorageAPI.md#addstoragevolumes) | **Post** /api/storage-volumes | Creates a Storage Volume
+*StorageAPI* | [**AttachServerVolume**](docs/StorageAPI.md#attachservervolume) | **Put** /api/servers/{id}/volumes/{volumeId}/attach | Attach existing storage volume
+*StorageAPI* | [**DetachServerVolume**](docs/StorageAPI.md#detachservervolume) | **Put** /api/servers/{id}/volumes/{volumeId}/detach | Detach storage volume
 *StorageAPI* | [**GetStorageBuckets**](docs/StorageAPI.md#getstoragebuckets) | **Get** /api/storage-buckets/{id} | Retrieves a Specific Storage Bucket
 *StorageAPI* | [**GetStorageServerTypes**](docs/StorageAPI.md#getstorageservertypes) | **Get** /api/storage-server-types/{id} | Retrieves a Specific Storage Server Type
 *StorageAPI* | [**GetStorageServers**](docs/StorageAPI.md#getstorageservers) | **Get** /api/storage-servers/{id} | Retrieves a Specific Storage Server
@@ -950,12 +962,14 @@ Class | Method | HTTP request | Description
 *StorageAPI* | [**UpdateStorageBuckets**](docs/StorageAPI.md#updatestoragebuckets) | **Put** /api/storage-buckets/{id} | Updates a Storage Bucket
 *StorageAPI* | [**UpdateStorageServers**](docs/StorageAPI.md#updatestorageservers) | **Put** /api/storage-servers/{id} | Updates a Storage Server
 *StorageAPI* | [**UpdateStorageVolumes**](docs/StorageAPI.md#updatestoragevolumes) | **Put** /api/storage-volumes/{id} | Updates a Storage Volume
+*TenantsAPI* | [**AddSubtenantIdentitySources**](docs/TenantsAPI.md#addsubtenantidentitysources) | **Post** /api/accounts/{accountId}/user-sources | Creates a Subtenant Identity Source
 *TenantsAPI* | [**AddTenant**](docs/TenantsAPI.md#addtenant) | **Post** /api/accounts | Create a Tenant
 *TenantsAPI* | [**AddUserTenant**](docs/TenantsAPI.md#addusertenant) | **Post** /api/accounts/{accountId}/users | Create a User For a Tenant
 *TenantsAPI* | [**CreateTenantSubtenantGroup**](docs/TenantsAPI.md#createtenantsubtenantgroup) | **Post** /api/accounts/{accountId}/groups | Create a Group for Subtenant
 *TenantsAPI* | [**GetTenant**](docs/TenantsAPI.md#gettenant) | **Get** /api/accounts/{id} | Get tenant
 *TenantsAPI* | [**GetTenantSubtenantGroup**](docs/TenantsAPI.md#gettenantsubtenantgroup) | **Get** /api/accounts/{accountId}/groups/{id} | Get a Specific Group for Subtenant
 *TenantsAPI* | [**ListTenantSubtenantGroups**](docs/TenantsAPI.md#listtenantsubtenantgroups) | **Get** /api/accounts/{accountId}/groups | Get Subtenant Groups
+*TenantsAPI* | [**ListTenantSubtenantIdentitySources**](docs/TenantsAPI.md#listtenantsubtenantidentitysources) | **Get** /api/accounts/{accountId}/user-sources | Get Subtenant Identity Sources
 *TenantsAPI* | [**ListTenants**](docs/TenantsAPI.md#listtenants) | **Get** /api/accounts | List All Tenants
 *TenantsAPI* | [**ListTenantsAvailableRoles**](docs/TenantsAPI.md#listtenantsavailableroles) | **Get** /api/accounts/available-roles | List available roles for a tenant
 *TenantsAPI* | [**RemoveTenant**](docs/TenantsAPI.md#removetenant) | **Delete** /api/accounts/{id} | Delete a Specific Tenant
@@ -965,16 +979,21 @@ Class | Method | HTTP request | Description
 *TenantsAPI* | [**UpdateTenantSubtenantGroupZones**](docs/TenantsAPI.md#updatetenantsubtenantgroupzones) | **Put** /api/accounts/{accountId}/groups/{id}/update-zones | Updating Group Zones for Subtenant
 *UsageAPI* | [**ListUsages**](docs/UsageAPI.md#listusages) | **Get** /api/usage | Retrieves Usage Records
 *UsersAPI* | [**AddUser**](docs/UsersAPI.md#adduser) | **Post** /api/users | Create a New User
+*UsersAPI* | [**AddUserGroup**](docs/UsersAPI.md#addusergroup) | **Post** /api/user-groups | Creates a User Group
 *UsersAPI* | [**DeleteUser**](docs/UsersAPI.md#deleteuser) | **Delete** /api/users/{id} | Delete a User
+*UsersAPI* | [**DeleteUserGroup**](docs/UsersAPI.md#deleteusergroup) | **Delete** /api/user-groups/{id} | Delete User Group
 *UsersAPI* | [**DeleteUserSettingsAccessToken**](docs/UsersAPI.md#deleteusersettingsaccesstoken) | **Put** /api/user-settings/clear-access-token | Revoke API Access Token
 *UsersAPI* | [**DeleteUserSettingsAvatar**](docs/UsersAPI.md#deleteusersettingsavatar) | **Delete** /api/user-settings/avatar | Delete Avatar
 *UsersAPI* | [**DeleteUserSettingsDesktopBackground**](docs/UsersAPI.md#deleteusersettingsdesktopbackground) | **Delete** /api/user-settings/desktop-background | Delete Desktop Background
 *UsersAPI* | [**GetUser**](docs/UsersAPI.md#getuser) | **Get** /api/users/{id} | Get a Specific User
+*UsersAPI* | [**GetUserGroup**](docs/UsersAPI.md#getusergroup) | **Get** /api/user-groups/{id} | Get a Specific User Group
 *UsersAPI* | [**GetUserPermissions**](docs/UsersAPI.md#getuserpermissions) | **Get** /api/users/{id}/permissions | Get a Specific User Permissions
 *UsersAPI* | [**GetUserSettingsApiClients**](docs/UsersAPI.md#getusersettingsapiclients) | **Get** /api/user-settings/api-clients | Get Available API Clients
+*UsersAPI* | [**ListUserGroups**](docs/UsersAPI.md#listusergroups) | **Get** /api/user-groups | Retrieves all User Groups
 *UsersAPI* | [**ListUserSettings**](docs/UsersAPI.md#listusersettings) | **Get** /api/user-settings | User Settings
 *UsersAPI* | [**ListUsers**](docs/UsersAPI.md#listusers) | **Get** /api/users | List All Users
 *UsersAPI* | [**ListUsersAvailableRoles**](docs/UsersAPI.md#listusersavailableroles) | **Get** /api/users/available-roles | List available roles for a user
+*UsersAPI* | [**UpdateUserGroup**](docs/UsersAPI.md#updateusergroup) | **Put** /api/user-groups/{id} | Update User Group
 *UsersAPI* | [**UpdateUserSettings**](docs/UsersAPI.md#updateusersettings) | **Put** /api/user-settings | Update User Settings
 *UsersAPI* | [**UpdateUserSettingsAccessToken**](docs/UsersAPI.md#updateusersettingsaccesstoken) | **Put** /api/user-settings/regenerate-access-token | Regenerate API Access Token
 *UsersAPI* | [**UpdateUserSettingsAvatar**](docs/UsersAPI.md#updateusersettingsavatar) | **Post** /api/user-settings/avatar | Update Avatar
@@ -1241,7 +1260,6 @@ Class | Method | HTTP request | Description
  - [AddCredentials200Response](docs/AddCredentials200Response.md)
  - [AddCredentials200ResponseAllOfCredential](docs/AddCredentials200ResponseAllOfCredential.md)
  - [AddCredentials200ResponseAllOfCredentialConfig](docs/AddCredentials200ResponseAllOfCredentialConfig.md)
- - [AddCredentials200ResponseAllOfCredentialUser](docs/AddCredentials200ResponseAllOfCredentialUser.md)
  - [AddCredentialsRequest](docs/AddCredentialsRequest.md)
  - [AddCredentialsRequestCredential](docs/AddCredentialsRequestCredential.md)
  - [AddCredentialsRequestCredentialOneOf](docs/AddCredentialsRequestCredentialOneOf.md)
@@ -1285,6 +1303,7 @@ Class | Method | HTTP request | Description
  - [AddIdentitySources200ResponseAllOfTask](docs/AddIdentitySources200ResponseAllOfTask.md)
  - [AddIdentitySourcesRequest](docs/AddIdentitySourcesRequest.md)
  - [AddIdentitySourcesRequestUserSource](docs/AddIdentitySourcesRequestUserSource.md)
+ - [AddIdentitySourcesRequestUserSourceAccount](docs/AddIdentitySourcesRequestUserSourceAccount.md)
  - [AddIdentitySourcesRequestUserSourceConfig](docs/AddIdentitySourcesRequestUserSourceConfig.md)
  - [AddIdentitySourcesRequestUserSourceConfigOneOf](docs/AddIdentitySourcesRequestUserSourceConfigOneOf.md)
  - [AddIdentitySourcesRequestUserSourceConfigOneOf1](docs/AddIdentitySourcesRequestUserSourceConfigOneOf1.md)
@@ -1549,6 +1568,9 @@ Class | Method | HTTP request | Description
  - [AddTenantRequest](docs/AddTenantRequest.md)
  - [AddTenantRequestAccount](docs/AddTenantRequestAccount.md)
  - [AddTenantRequestAccountRole](docs/AddTenantRequestAccountRole.md)
+ - [AddUserGroup200Response](docs/AddUserGroup200Response.md)
+ - [AddUserGroupRequest](docs/AddUserGroupRequest.md)
+ - [AddUserGroupRequestUserGroup](docs/AddUserGroupRequestUserGroup.md)
  - [AddUserTenant200Response](docs/AddUserTenant200Response.md)
  - [AddUserTenant200ResponseAllOfUser](docs/AddUserTenant200ResponseAllOfUser.md)
  - [AddUserTenant200ResponseAllOfUserAccess](docs/AddUserTenant200ResponseAllOfUserAccess.md)
@@ -1599,6 +1621,8 @@ Class | Method | HTTP request | Description
  - [AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIpCloud](docs/AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIpCloud.md)
  - [AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIpServer](docs/AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIpServer.md)
  - [AllocateNetworkFloatingIpRequest](docs/AllocateNetworkFloatingIpRequest.md)
+ - [AnsibleTowerInventoryOptions](docs/AnsibleTowerInventoryOptions.md)
+ - [AnsibleTowerJobTemplateOptions](docs/AnsibleTowerJobTemplateOptions.md)
  - [App](docs/App.md)
  - [AppCreate](docs/AppCreate.md)
  - [AppCreateResponse](docs/AppCreateResponse.md)
@@ -1622,6 +1646,9 @@ Class | Method | HTTP request | Description
  - [ArchiveBucketUpdate](docs/ArchiveBucketUpdate.md)
  - [ArchiveFileLinks](docs/ArchiveFileLinks.md)
  - [AssignDeviceRequest](docs/AssignDeviceRequest.md)
+ - [AttachServerVolumeRequest](docs/AttachServerVolumeRequest.md)
+ - [AttachServerVolumeRequestMountPoint](docs/AttachServerVolumeRequestMountPoint.md)
+ - [AttachServerVolumeRequestMountPointController](docs/AttachServerVolumeRequestMountPointController.md)
  - [AwsResourcePoolConfig](docs/AwsResourcePoolConfig.md)
  - [Backup](docs/Backup.md)
  - [BackupCreationPolicyTypeConfiguration](docs/BackupCreationPolicyTypeConfiguration.md)
@@ -1699,6 +1726,7 @@ Class | Method | HTTP request | Description
  - [CheckWeb](docs/CheckWeb.md)
  - [CheckWebConfig](docs/CheckWebConfig.md)
  - [Checkbox](docs/Checkbox.md)
+ - [ChefServerOptions](docs/ChefServerOptions.md)
  - [Client](docs/Client.md)
  - [ClientUpdate](docs/ClientUpdate.md)
  - [CloneImageContainerActionRequest](docs/CloneImageContainerActionRequest.md)
@@ -1743,7 +1771,6 @@ Class | Method | HTTP request | Description
  - [ClusterTypes](docs/ClusterTypes.md)
  - [ClusterUpdate](docs/ClusterUpdate.md)
  - [ClusterUpdatePermissions](docs/ClusterUpdatePermissions.md)
- - [ClusterVolumes](docs/ClusterVolumes.md)
  - [ClusterWorkers](docs/ClusterWorkers.md)
  - [Clusters](docs/Clusters.md)
  - [Contact](docs/Contact.md)
@@ -1901,7 +1928,6 @@ Class | Method | HTTP request | Description
  - [DelayedDeletePolicyTypeConfiguration](docs/DelayedDeletePolicyTypeConfiguration.md)
  - [DeleteAlerts200Response](docs/DeleteAlerts200Response.md)
  - [DeleteClusterDatastore200Response](docs/DeleteClusterDatastore200Response.md)
- - [DeleteRole400Response](docs/DeleteRole400Response.md)
  - [Deployment](docs/Deployment.md)
  - [DeploymentCreate](docs/DeploymentCreate.md)
  - [DeploymentCreateSuccess](docs/DeploymentCreateSuccess.md)
@@ -2064,6 +2090,7 @@ Class | Method | HTTP request | Description
  - [GetCredentials200Response](docs/GetCredentials200Response.md)
  - [GetCypherKey200Response](docs/GetCypherKey200Response.md)
  - [GetCypherKey200ResponseAllOfData](docs/GetCypherKey200ResponseAllOfData.md)
+ - [GetDatastores200Response](docs/GetDatastores200Response.md)
  - [GetDeployment200Response](docs/GetDeployment200Response.md)
  - [GetDeployment200ResponseDeployment](docs/GetDeployment200ResponseDeployment.md)
  - [GetDeployment200ResponseDeploymentVersionsInner](docs/GetDeployment200ResponseDeploymentVersionsInner.md)
@@ -2287,6 +2314,7 @@ Class | Method | HTTP request | Description
  - [GetTenant200Response](docs/GetTenant200Response.md)
  - [GetTenantSubtenantGroup200Response](docs/GetTenantSubtenantGroup200Response.md)
  - [GetUser200Response](docs/GetUser200Response.md)
+ - [GetUserGroup200Response](docs/GetUserGroup200Response.md)
  - [GetUserPermissions200Response](docs/GetUserPermissions200Response.md)
  - [GetUserSettingsApiClients200Response](docs/GetUserSettingsApiClients200Response.md)
  - [GetUserSettingsApiClients200ResponseClientsInner](docs/GetUserSettingsApiClients200ResponseClientsInner.md)
@@ -2409,6 +2437,7 @@ Class | Method | HTTP request | Description
  - [ListActivity200ResponseAllOfActivityInnerActivityInnerUser](docs/ListActivity200ResponseAllOfActivityInnerActivityInnerUser.md)
  - [ListActivity200ResponseAllOfMeta](docs/ListActivity200ResponseAllOfMeta.md)
  - [ListActivity4XXResponse](docs/ListActivity4XXResponse.md)
+ - [ListActivity5XXResponse](docs/ListActivity5XXResponse.md)
  - [ListAlerts200Response](docs/ListAlerts200Response.md)
  - [ListAlerts200ResponseAllOfAlertsInner](docs/ListAlerts200ResponseAllOfAlertsInner.md)
  - [ListAlerts200ResponseAllOfAlertsInnerContactsInner](docs/ListAlerts200ResponseAllOfAlertsInnerContactsInner.md)
@@ -2581,7 +2610,6 @@ Class | Method | HTTP request | Description
  - [ListClusterTypes200ResponseAllOfClusterTypesInner](docs/ListClusterTypes200ResponseAllOfClusterTypesInner.md)
  - [ListClusterTypes200ResponseAllOfClusterTypesInnerControllerTypesInner](docs/ListClusterTypes200ResponseAllOfClusterTypesInnerControllerTypesInner.md)
  - [ListClusterVolumeclaims200Response](docs/ListClusterVolumeclaims200Response.md)
- - [ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner](docs/ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner.md)
  - [ListClusterVolumes200Response](docs/ListClusterVolumes200Response.md)
  - [ListClusterVolumes200ResponseAllOfVolumesInner](docs/ListClusterVolumes200ResponseAllOfVolumesInner.md)
  - [ListClusterWorkers200Response](docs/ListClusterWorkers200Response.md)
@@ -2691,7 +2719,6 @@ Class | Method | HTTP request | Description
  - [ListHosts200ResponseAllOfServersInnerPlan](docs/ListHosts200ResponseAllOfServersInnerPlan.md)
  - [ListHosts200ResponseAllOfServersInnerServerOs](docs/ListHosts200ResponseAllOfServersInnerServerOs.md)
  - [ListHosts200ResponseAllOfServersInnerStats](docs/ListHosts200ResponseAllOfServersInnerStats.md)
- - [ListHosts200ResponseAllOfServersInnerVolumesInner](docs/ListHosts200ResponseAllOfServersInnerVolumesInner.md)
  - [ListIdentitySources200Response](docs/ListIdentitySources200Response.md)
  - [ListIdentitySources200ResponseAllOfUserSourcesInner](docs/ListIdentitySources200ResponseAllOfUserSourcesInner.md)
  - [ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf](docs/ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf.md)
@@ -2869,6 +2896,7 @@ Class | Method | HTTP request | Description
  - [ListNetworks200ResponseAllOfNetworksInnerType](docs/ListNetworks200ResponseAllOfNetworksInnerType.md)
  - [ListNetworks200ResponseAllOfNetworksInnerZone](docs/ListNetworks200ResponseAllOfNetworksInnerZone.md)
  - [ListNodeTypes200Response](docs/ListNodeTypes200Response.md)
+ - [ListOptionAnsibleTowerInventoryOptions200Response](docs/ListOptionAnsibleTowerInventoryOptions200Response.md)
  - [ListOptionForms200Response](docs/ListOptionForms200Response.md)
  - [ListOptionForms200ResponseAllOfOptionTypesInner](docs/ListOptionForms200ResponseAllOfOptionTypesInner.md)
  - [ListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner](docs/ListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner.md)
@@ -2878,10 +2906,10 @@ Class | Method | HTTP request | Description
  - [ListOptionLists200ResponseAllOfOptionTypesInnerConfig](docs/ListOptionLists200ResponseAllOfOptionTypesInnerConfig.md)
  - [ListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner](docs/ListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner.md)
  - [ListOptionNetworkOptions200Response](docs/ListOptionNetworkOptions200Response.md)
- - [ListOptionNetworkOptions200ResponseAllOfNetworkTypesInner](docs/ListOptionNetworkOptions200ResponseAllOfNetworkTypesInner.md)
- - [ListOptionNetworkOptions200ResponseAllOfNetworksInner](docs/ListOptionNetworkOptions200ResponseAllOfNetworksInner.md)
  - [ListOptionValues200Response](docs/ListOptionValues200Response.md)
  - [ListOptionValues200ResponseAllOfDataInner](docs/ListOptionValues200ResponseAllOfDataInner.md)
+ - [ListOptionZoneTypesOptions200Response](docs/ListOptionZoneTypesOptions200Response.md)
+ - [ListOptionZoneTypesOptions200ResponseAllOfDataInner](docs/ListOptionZoneTypesOptions200ResponseAllOfDataInner.md)
  - [ListOsTypes200Response](docs/ListOsTypes200Response.md)
  - [ListOsTypes200ResponseAllOfOsTypesInner](docs/ListOsTypes200ResponseAllOfOsTypesInner.md)
  - [ListOsTypes200ResponseAllOfOsTypesInnerImagesInner](docs/ListOsTypes200ResponseAllOfOsTypesInnerImagesInner.md)
@@ -3058,6 +3086,8 @@ Class | Method | HTTP request | Description
  - [ListUsages200Response](docs/ListUsages200Response.md)
  - [ListUsages200ResponseActivityInner](docs/ListUsages200ResponseActivityInner.md)
  - [ListUsages200ResponseMeta](docs/ListUsages200ResponseMeta.md)
+ - [ListUserGroups200Response](docs/ListUserGroups200Response.md)
+ - [ListUserGroups200ResponseAllOfUserGroupsInner](docs/ListUserGroups200ResponseAllOfUserGroupsInner.md)
  - [ListUserSettings200Response](docs/ListUserSettings200Response.md)
  - [ListUserSettings200ResponseAllOfAccessTokensInner](docs/ListUserSettings200ResponseAllOfAccessTokensInner.md)
  - [ListUserSettings200ResponseAllOfUser](docs/ListUserSettings200ResponseAllOfUser.md)
@@ -3301,14 +3331,18 @@ Class | Method | HTTP request | Description
  - [RunWorkflowInstance200Response](docs/RunWorkflowInstance200Response.md)
  - [RunWorkflowInstanceRequest](docs/RunWorkflowInstanceRequest.md)
  - [RunWorkflowInstanceRequestTaskSet](docs/RunWorkflowInstanceRequestTaskSet.md)
- - [SaveClusterDatastore200Response](docs/SaveClusterDatastore200Response.md)
- - [SaveClusterDatastore200ResponseAllOfCluster](docs/SaveClusterDatastore200ResponseAllOfCluster.md)
+ - [SaveCloudDatastore200Response](docs/SaveCloudDatastore200Response.md)
+ - [SaveCloudDatastore200ResponseAllOfDatastore](docs/SaveCloudDatastore200ResponseAllOfDatastore.md)
+ - [SaveCloudDatastoreRequest](docs/SaveCloudDatastoreRequest.md)
+ - [SaveCloudDatastoreRequestDatastore](docs/SaveCloudDatastoreRequestDatastore.md)
+ - [SaveCloudDatastoreRequestDatastoreResourcePermissions](docs/SaveCloudDatastoreRequestDatastoreResourcePermissions.md)
  - [SaveClusterDatastoreRequest](docs/SaveClusterDatastoreRequest.md)
- - [SaveClusterDatastoreRequestCluster](docs/SaveClusterDatastoreRequestCluster.md)
- - [SaveClusterDatastoreRequestClusterConfig](docs/SaveClusterDatastoreRequestClusterConfig.md)
- - [SaveClusterDatastoreRequestClusterConfigAnyOf](docs/SaveClusterDatastoreRequestClusterConfigAnyOf.md)
- - [SaveClusterDatastoreRequestClusterConfigAnyOf1](docs/SaveClusterDatastoreRequestClusterConfigAnyOf1.md)
- - [SaveClusterDatastoreRequestClusterResourcePermissions](docs/SaveClusterDatastoreRequestClusterResourcePermissions.md)
+ - [SaveClusterDatastoreRequestDatastore](docs/SaveClusterDatastoreRequestDatastore.md)
+ - [SaveClusterDatastoreRequestDatastoreConfig](docs/SaveClusterDatastoreRequestDatastoreConfig.md)
+ - [SaveClusterDatastoreRequestDatastoreConfigAnyOf](docs/SaveClusterDatastoreRequestDatastoreConfigAnyOf.md)
+ - [SaveClusterDatastoreRequestDatastoreConfigAnyOf1](docs/SaveClusterDatastoreRequestDatastoreConfigAnyOf1.md)
+ - [SaveDatastoreRequest](docs/SaveDatastoreRequest.md)
+ - [SaveDatastoreRequestDatastore](docs/SaveDatastoreRequestDatastore.md)
  - [ScaleThreshold](docs/ScaleThreshold.md)
  - [Script](docs/Script.md)
  - [ScriptCreate](docs/ScriptCreate.md)
@@ -3333,6 +3367,7 @@ Class | Method | HTTP request | Description
  - [ServerDevice](docs/ServerDevice.md)
  - [ServerServicePlans](docs/ServerServicePlans.md)
  - [ServerType](docs/ServerType.md)
+ - [ServiceNowWorkflowsOptions](docs/ServiceNowWorkflowsOptions.md)
  - [ServicePlan](docs/ServicePlan.md)
  - [ServicePlanOptions](docs/ServicePlanOptions.md)
  - [SetAppSecurityGroups200Response](docs/SetAppSecurityGroups200Response.md)
@@ -3365,6 +3400,8 @@ Class | Method | HTTP request | Description
  - [SpecTemplateCreate](docs/SpecTemplateCreate.md)
  - [SpecTemplateUpdate](docs/SpecTemplateUpdate.md)
  - [StorageBucket](docs/StorageBucket.md)
+ - [StorageDatastore](docs/StorageDatastore.md)
+ - [StorageDatastoreCreate](docs/StorageDatastoreCreate.md)
  - [StorageServer](docs/StorageServer.md)
  - [StorageServerStorageQuotaPolicyTypeConfiguration](docs/StorageServerStorageQuotaPolicyTypeConfiguration.md)
  - [StorageServerType](docs/StorageServerType.md)
@@ -3474,6 +3511,8 @@ Class | Method | HTTP request | Description
  - [UpdateContactsRequestContact](docs/UpdateContactsRequestContact.md)
  - [UpdateCredentialsRequest](docs/UpdateCredentialsRequest.md)
  - [UpdateCredentialsRequestCredential](docs/UpdateCredentialsRequestCredential.md)
+ - [UpdateDatastores200Response](docs/UpdateDatastores200Response.md)
+ - [UpdateDatastores200ResponseDatastore](docs/UpdateDatastores200ResponseDatastore.md)
  - [UpdateDeploy200Response](docs/UpdateDeploy200Response.md)
  - [UpdateDeployRequest](docs/UpdateDeployRequest.md)
  - [UpdateDeployRequestAppDeploy](docs/UpdateDeployRequestAppDeploy.md)
@@ -3733,7 +3772,10 @@ Class | Method | HTTP request | Description
  - [User](docs/User.md)
  - [UserCreate](docs/UserCreate.md)
  - [UserCreationPolicyTypeConfiguration](docs/UserCreationPolicyTypeConfiguration.md)
+ - [UserGroup](docs/UserGroup.md)
+ - [UserGroupCreate](docs/UserGroupCreate.md)
  - [UserGroupCreationPolicyTypeConfiguration](docs/UserGroupCreationPolicyTypeConfiguration.md)
+ - [UserGroupUpdate](docs/UserGroupUpdate.md)
  - [UserPermissions](docs/UserPermissions.md)
  - [UserSettings](docs/UserSettings.md)
  - [UserSettingsRegenerateAccessToken](docs/UserSettingsRegenerateAccessToken.md)
@@ -3775,12 +3817,17 @@ Class | Method | HTTP request | Description
  - [ZoneAzureConfig](docs/ZoneAzureConfig.md)
  - [ZoneCreate](docs/ZoneCreate.md)
  - [ZoneDatastore](docs/ZoneDatastore.md)
+ - [ZoneDatastoreCreate](docs/ZoneDatastoreCreate.md)
  - [ZoneFolder](docs/ZoneFolder.md)
  - [ZoneGcpConfig](docs/ZoneGcpConfig.md)
  - [ZoneNetworkOptions](docs/ZoneNetworkOptions.md)
+ - [ZoneNetworkOptionsNetworkSubnetsInner](docs/ZoneNetworkOptionsNetworkSubnetsInner.md)
+ - [ZoneNetworkOptionsNetworkTypesInner](docs/ZoneNetworkOptionsNetworkTypesInner.md)
+ - [ZoneNetworkOptionsNetworksInner](docs/ZoneNetworkOptionsNetworksInner.md)
  - [ZoneResourcePool](docs/ZoneResourcePool.md)
  - [ZoneSecurityGroup](docs/ZoneSecurityGroup.md)
  - [ZoneType](docs/ZoneType.md)
+ - [ZoneTypesOptions](docs/ZoneTypesOptions.md)
  - [ZoneVcenterConfig](docs/ZoneVcenterConfig.md)
 
 

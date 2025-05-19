@@ -20,10 +20,10 @@ var _ MappedNullable = &ZoneNetworkOptions{}
 
 // ZoneNetworkOptions struct for ZoneNetworkOptions
 type ZoneNetworkOptions struct {
-	Networks []ListOptionNetworkOptions200ResponseAllOfNetworksInner `json:"networks,omitempty"`
-	NetworkGroups []map[string]interface{} `json:"networkGroups,omitempty"`
-	NetworkTypes []ListOptionNetworkOptions200ResponseAllOfNetworkTypesInner `json:"networkTypes,omitempty"`
-	NetworkSubnets []map[string]interface{} `json:"networkSubnets,omitempty"`
+	Networks []ZoneNetworkOptionsNetworksInner `json:"networks,omitempty"`
+	NetworkGroups []ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner `json:"networkGroups,omitempty"`
+	NetworkTypes []ZoneNetworkOptionsNetworkTypesInner `json:"networkTypes,omitempty"`
+	NetworkSubnets []ZoneNetworkOptionsNetworkSubnetsInner `json:"networkSubnets,omitempty"`
 	HasNetworks *bool `json:"hasNetworks,omitempty"`
 	MaxNetworks *int64 `json:"maxNetworks,omitempty"`
 	EnableNetworkTypeSelection *string `json:"enableNetworkTypeSelection,omitempty"`
@@ -48,9 +48,9 @@ func NewZoneNetworkOptionsWithDefaults() *ZoneNetworkOptions {
 }
 
 // GetNetworks returns the Networks field value if set, zero value otherwise.
-func (o *ZoneNetworkOptions) GetNetworks() []ListOptionNetworkOptions200ResponseAllOfNetworksInner {
+func (o *ZoneNetworkOptions) GetNetworks() []ZoneNetworkOptionsNetworksInner {
 	if o == nil || IsNil(o.Networks) {
-		var ret []ListOptionNetworkOptions200ResponseAllOfNetworksInner
+		var ret []ZoneNetworkOptionsNetworksInner
 		return ret
 	}
 	return o.Networks
@@ -58,7 +58,7 @@ func (o *ZoneNetworkOptions) GetNetworks() []ListOptionNetworkOptions200Response
 
 // GetNetworksOk returns a tuple with the Networks field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ZoneNetworkOptions) GetNetworksOk() ([]ListOptionNetworkOptions200ResponseAllOfNetworksInner, bool) {
+func (o *ZoneNetworkOptions) GetNetworksOk() ([]ZoneNetworkOptionsNetworksInner, bool) {
 	if o == nil || IsNil(o.Networks) {
 		return nil, false
 	}
@@ -74,15 +74,15 @@ func (o *ZoneNetworkOptions) IsSetNetworks() bool {
 	return false
 }
 
-// SetNetworks gets a reference to the given []ListOptionNetworkOptions200ResponseAllOfNetworksInner and assigns it to the Networks field.
-func (o *ZoneNetworkOptions) SetNetworks(v []ListOptionNetworkOptions200ResponseAllOfNetworksInner) {
+// SetNetworks gets a reference to the given []ZoneNetworkOptionsNetworksInner and assigns it to the Networks field.
+func (o *ZoneNetworkOptions) SetNetworks(v []ZoneNetworkOptionsNetworksInner) {
 	o.Networks = v
 }
 
 // GetNetworkGroups returns the NetworkGroups field value if set, zero value otherwise.
-func (o *ZoneNetworkOptions) GetNetworkGroups() []map[string]interface{} {
+func (o *ZoneNetworkOptions) GetNetworkGroups() []ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner {
 	if o == nil || IsNil(o.NetworkGroups) {
-		var ret []map[string]interface{}
+		var ret []ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner
 		return ret
 	}
 	return o.NetworkGroups
@@ -90,7 +90,7 @@ func (o *ZoneNetworkOptions) GetNetworkGroups() []map[string]interface{} {
 
 // GetNetworkGroupsOk returns a tuple with the NetworkGroups field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ZoneNetworkOptions) GetNetworkGroupsOk() ([]map[string]interface{}, bool) {
+func (o *ZoneNetworkOptions) GetNetworkGroupsOk() ([]ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner, bool) {
 	if o == nil || IsNil(o.NetworkGroups) {
 		return nil, false
 	}
@@ -106,15 +106,15 @@ func (o *ZoneNetworkOptions) IsSetNetworkGroups() bool {
 	return false
 }
 
-// SetNetworkGroups gets a reference to the given []map[string]interface{} and assigns it to the NetworkGroups field.
-func (o *ZoneNetworkOptions) SetNetworkGroups(v []map[string]interface{}) {
+// SetNetworkGroups gets a reference to the given []ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner and assigns it to the NetworkGroups field.
+func (o *ZoneNetworkOptions) SetNetworkGroups(v []ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner) {
 	o.NetworkGroups = v
 }
 
 // GetNetworkTypes returns the NetworkTypes field value if set, zero value otherwise.
-func (o *ZoneNetworkOptions) GetNetworkTypes() []ListOptionNetworkOptions200ResponseAllOfNetworkTypesInner {
+func (o *ZoneNetworkOptions) GetNetworkTypes() []ZoneNetworkOptionsNetworkTypesInner {
 	if o == nil || IsNil(o.NetworkTypes) {
-		var ret []ListOptionNetworkOptions200ResponseAllOfNetworkTypesInner
+		var ret []ZoneNetworkOptionsNetworkTypesInner
 		return ret
 	}
 	return o.NetworkTypes
@@ -122,7 +122,7 @@ func (o *ZoneNetworkOptions) GetNetworkTypes() []ListOptionNetworkOptions200Resp
 
 // GetNetworkTypesOk returns a tuple with the NetworkTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ZoneNetworkOptions) GetNetworkTypesOk() ([]ListOptionNetworkOptions200ResponseAllOfNetworkTypesInner, bool) {
+func (o *ZoneNetworkOptions) GetNetworkTypesOk() ([]ZoneNetworkOptionsNetworkTypesInner, bool) {
 	if o == nil || IsNil(o.NetworkTypes) {
 		return nil, false
 	}
@@ -138,15 +138,15 @@ func (o *ZoneNetworkOptions) IsSetNetworkTypes() bool {
 	return false
 }
 
-// SetNetworkTypes gets a reference to the given []ListOptionNetworkOptions200ResponseAllOfNetworkTypesInner and assigns it to the NetworkTypes field.
-func (o *ZoneNetworkOptions) SetNetworkTypes(v []ListOptionNetworkOptions200ResponseAllOfNetworkTypesInner) {
+// SetNetworkTypes gets a reference to the given []ZoneNetworkOptionsNetworkTypesInner and assigns it to the NetworkTypes field.
+func (o *ZoneNetworkOptions) SetNetworkTypes(v []ZoneNetworkOptionsNetworkTypesInner) {
 	o.NetworkTypes = v
 }
 
 // GetNetworkSubnets returns the NetworkSubnets field value if set, zero value otherwise.
-func (o *ZoneNetworkOptions) GetNetworkSubnets() []map[string]interface{} {
+func (o *ZoneNetworkOptions) GetNetworkSubnets() []ZoneNetworkOptionsNetworkSubnetsInner {
 	if o == nil || IsNil(o.NetworkSubnets) {
-		var ret []map[string]interface{}
+		var ret []ZoneNetworkOptionsNetworkSubnetsInner
 		return ret
 	}
 	return o.NetworkSubnets
@@ -154,7 +154,7 @@ func (o *ZoneNetworkOptions) GetNetworkSubnets() []map[string]interface{} {
 
 // GetNetworkSubnetsOk returns a tuple with the NetworkSubnets field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ZoneNetworkOptions) GetNetworkSubnetsOk() ([]map[string]interface{}, bool) {
+func (o *ZoneNetworkOptions) GetNetworkSubnetsOk() ([]ZoneNetworkOptionsNetworkSubnetsInner, bool) {
 	if o == nil || IsNil(o.NetworkSubnets) {
 		return nil, false
 	}
@@ -170,8 +170,8 @@ func (o *ZoneNetworkOptions) IsSetNetworkSubnets() bool {
 	return false
 }
 
-// SetNetworkSubnets gets a reference to the given []map[string]interface{} and assigns it to the NetworkSubnets field.
-func (o *ZoneNetworkOptions) SetNetworkSubnets(v []map[string]interface{}) {
+// SetNetworkSubnets gets a reference to the given []ZoneNetworkOptionsNetworkSubnetsInner and assigns it to the NetworkSubnets field.
+func (o *ZoneNetworkOptions) SetNetworkSubnets(v []ZoneNetworkOptionsNetworkSubnetsInner) {
 	o.NetworkSubnets = v
 }
 
