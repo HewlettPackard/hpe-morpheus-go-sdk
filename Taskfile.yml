@@ -1,0 +1,63 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  GENERATOR: "go"
+  BUNDLEDSPEC: ".api/bundled.yaml"
+  GENERATORCONFIG: ".openapi-generator/go/config-client-go.yaml"
+  TEMPLATEDIR: ".openapi-generator/go/templates"
+  SPECREPO: "https://github.com/gomorpheus/morpheus-openapi"
+  OUTPUTDIR: "client"
+
+tasks:
+  default:
+    silent: true
+    cmds:
+      - task -l
+
+  generate:
+    desc: generate a Go SDK from the local OpenAPI spec
+    env:
+      _JAVA_OPTIONS: -DmaxYamlCodePoints=99999999
+    cmds:
+      - cmd: >-
+          openapi-generator generate 
+          -g {{.GENERATOR}}
+          -i {{.BUNDLEDSPEC}}
+          -c {{.GENERATORCONFIG}}
+          {{if .TEMPLATEDIR -}}-t {{.TEMPLATEDIR}} {{end}}
+          -o {{.OUTPUTDIR}}
+  
+  clone-spec:
+    silent: true
+    internal: true
+    cmds:
+      - git clone {{.SPECREPO}}
+
+  bundle-spec:
+    internal: true
+    cmds:
+      - >-
+        redocly bundle 
+        --dereferenced 
+        --output {{.BUNDLEDSPEC}}
+        morpheus-openapi/openapi.yaml
+  
+  update-spec:
+    desc: "update OpenAPI spec to match the morpheus-openapi GITREF"
+    vars:
+      GITREF: '{{if (empty .GITREF)}}main{{else}}{{.GITREF}}{{end}}'
+    dir: morpheus-openapi
+    cmds:
+      - task: clone-spec
+      - defer: rm -rf ../morpheus-openapi
+      - git checkout {{.GITREF}}
+      - task: bundle-spec
+      - git rev-parse HEAD > ../.api/latest-commit-sha
+  
+  update-client:
+    desc: "update Go SDK to match the morpheus-openapi GITREF"
+    cmds:
+      - task: update-spec
+      - task: generate
