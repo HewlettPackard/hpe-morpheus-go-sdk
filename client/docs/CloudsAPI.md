@@ -20,6 +20,7 @@ Method | HTTP request | Description
 [**RefreshClouds**](CloudsAPI.md#RefreshClouds) | **Post** /api/zones/{id}/refresh | Refreshes a Cloud
 [**RemoveCloudResourcePools**](CloudsAPI.md#RemoveCloudResourcePools) | **Delete** /api/zones/{zoneId}/resource-pools/{id} | Deletes a Resource Pool for Specified Cloud
 [**RemoveClouds**](CloudsAPI.md#RemoveClouds) | **Delete** /api/zones/{id} | Deletes a Cloud
+[**SaveCloudDatastore**](CloudsAPI.md#SaveCloudDatastore) | **Post** /api/zones/{zoneId}/data-stores | Create a Datastore for Specified Cloud
 [**UpdateCloudDatastores**](CloudsAPI.md#UpdateCloudDatastores) | **Put** /api/zones/{zoneId}/data-stores/{id} | Updates a Specified Datastore for Specified Cloud
 [**UpdateCloudFolders**](CloudsAPI.md#UpdateCloudFolders) | **Put** /api/zones/{zoneId}/folders/{id} | Updates a Resource Folder for Specified Cloud
 [**UpdateCloudLogo**](CloudsAPI.md#UpdateCloudLogo) | **Post** /api/zones/{id}/update-logo | Update Logo For Cloud
@@ -1203,6 +1204,78 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## SaveCloudDatastore
+
+> SaveCloudDatastore200Response SaveCloudDatastore(ctx, zoneId).SaveCloudDatastoreRequest(saveCloudDatastoreRequest).Execute()
+
+Create a Datastore for Specified Cloud
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-client/client"
+)
+
+func main() {
+	zoneId := float32(7) // float32 | The ID of the cloud
+	saveCloudDatastoreRequest := *openapiclient.NewSaveCloudDatastoreRequest() // SaveCloudDatastoreRequest |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CloudsAPI.SaveCloudDatastore(context.Background(), zoneId).SaveCloudDatastoreRequest(saveCloudDatastoreRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CloudsAPI.SaveCloudDatastore``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SaveCloudDatastore`: SaveCloudDatastore200Response
+	fmt.Fprintf(os.Stdout, "Response from `CloudsAPI.SaveCloudDatastore`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**zoneId** | **float32** | The ID of the cloud | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiSaveCloudDatastoreRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **saveCloudDatastoreRequest** | [**SaveCloudDatastoreRequest**](SaveCloudDatastoreRequest.md) |  | 
+
+### Return type
+
+[**SaveCloudDatastore200Response**](SaveCloudDatastore200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

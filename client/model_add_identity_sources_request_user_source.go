@@ -22,13 +22,14 @@ var _ MappedNullable = &AddIdentitySourcesRequestUserSource{}
 
 // AddIdentitySourcesRequestUserSource struct for AddIdentitySourcesRequestUserSource
 type AddIdentitySourcesRequestUserSource struct {
+	Account *AddIdentitySourcesRequestUserSourceAccount `json:"account,omitempty"`
 	// A name for the Identity Source
 	Name string `json:"name"`
 	// IDM type code
 	Type string `json:"type"`
 	// description
 	Description *string `json:"description,omitempty"`
-	DefaultAccountRole AddIdentitySourcesRequestUserSourceDefaultAccountRole `json:"defaultAccountRole"`
+	DefaultAccountRole *AddIdentitySourcesRequestUserSourceDefaultAccountRole `json:"defaultAccountRole,omitempty"`
 	RoleMappings *AddIdentitySourcesRequestUserSourceRoleMappings `json:"roleMappings,omitempty"`
 	// Map of Morpheus '`Role ID`':'`Role Name`'. 
 	// Deprecated
@@ -46,11 +47,10 @@ type _AddIdentitySourcesRequestUserSource AddIdentitySourcesRequestUserSource
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddIdentitySourcesRequestUserSource(name string, type_ string, defaultAccountRole AddIdentitySourcesRequestUserSourceDefaultAccountRole) *AddIdentitySourcesRequestUserSource {
+func NewAddIdentitySourcesRequestUserSource(name string, type_ string) *AddIdentitySourcesRequestUserSource {
 	this := AddIdentitySourcesRequestUserSource{}
 	this.Name = name
 	this.Type = type_
-	this.DefaultAccountRole = defaultAccountRole
 	return &this
 }
 
@@ -60,6 +60,38 @@ func NewAddIdentitySourcesRequestUserSource(name string, type_ string, defaultAc
 func NewAddIdentitySourcesRequestUserSourceWithDefaults() *AddIdentitySourcesRequestUserSource {
 	this := AddIdentitySourcesRequestUserSource{}
 	return &this
+}
+
+// GetAccount returns the Account field value if set, zero value otherwise.
+func (o *AddIdentitySourcesRequestUserSource) GetAccount() AddIdentitySourcesRequestUserSourceAccount {
+	if o == nil || IsNil(o.Account) {
+		var ret AddIdentitySourcesRequestUserSourceAccount
+		return ret
+	}
+	return *o.Account
+}
+
+// GetAccountOk returns a tuple with the Account field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddIdentitySourcesRequestUserSource) GetAccountOk() (*AddIdentitySourcesRequestUserSourceAccount, bool) {
+	if o == nil || IsNil(o.Account) {
+		return nil, false
+	}
+	return o.Account, true
+}
+
+// IsSetAccount returns a boolean if a field has been set.
+func (o *AddIdentitySourcesRequestUserSource) IsSetAccount() bool {
+	if o != nil && !IsNil(o.Account) {
+		return true
+	}
+
+	return false
+}
+
+// SetAccount gets a reference to the given AddIdentitySourcesRequestUserSourceAccount and assigns it to the Account field.
+func (o *AddIdentitySourcesRequestUserSource) SetAccount(v AddIdentitySourcesRequestUserSourceAccount) {
+	o.Account = &v
 }
 
 // GetName returns the Name field value
@@ -142,28 +174,36 @@ func (o *AddIdentitySourcesRequestUserSource) SetDescription(v string) {
 	o.Description = &v
 }
 
-// GetDefaultAccountRole returns the DefaultAccountRole field value
+// GetDefaultAccountRole returns the DefaultAccountRole field value if set, zero value otherwise.
 func (o *AddIdentitySourcesRequestUserSource) GetDefaultAccountRole() AddIdentitySourcesRequestUserSourceDefaultAccountRole {
-	if o == nil {
+	if o == nil || IsNil(o.DefaultAccountRole) {
 		var ret AddIdentitySourcesRequestUserSourceDefaultAccountRole
 		return ret
 	}
-
-	return o.DefaultAccountRole
+	return *o.DefaultAccountRole
 }
 
-// GetDefaultAccountRoleOk returns a tuple with the DefaultAccountRole field value
+// GetDefaultAccountRoleOk returns a tuple with the DefaultAccountRole field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddIdentitySourcesRequestUserSource) GetDefaultAccountRoleOk() (*AddIdentitySourcesRequestUserSourceDefaultAccountRole, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.DefaultAccountRole) {
 		return nil, false
 	}
-	return &o.DefaultAccountRole, true
+	return o.DefaultAccountRole, true
 }
 
-// SetDefaultAccountRole sets field value
+// IsSetDefaultAccountRole returns a boolean if a field has been set.
+func (o *AddIdentitySourcesRequestUserSource) IsSetDefaultAccountRole() bool {
+	if o != nil && !IsNil(o.DefaultAccountRole) {
+		return true
+	}
+
+	return false
+}
+
+// SetDefaultAccountRole gets a reference to the given AddIdentitySourcesRequestUserSourceDefaultAccountRole and assigns it to the DefaultAccountRole field.
 func (o *AddIdentitySourcesRequestUserSource) SetDefaultAccountRole(v AddIdentitySourcesRequestUserSourceDefaultAccountRole) {
-	o.DefaultAccountRole = v
+	o.DefaultAccountRole = &v
 }
 
 // GetRoleMappings returns the RoleMappings field value if set, zero value otherwise.
@@ -339,12 +379,17 @@ func (o AddIdentitySourcesRequestUserSource) MarshalJSON() ([]byte, error) {
 
 func (o AddIdentitySourcesRequestUserSource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Account) {
+		toSerialize["account"] = o.Account
+	}
 	toSerialize["name"] = o.Name
 	toSerialize["type"] = o.Type
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-	toSerialize["defaultAccountRole"] = o.DefaultAccountRole
+	if !IsNil(o.DefaultAccountRole) {
+		toSerialize["defaultAccountRole"] = o.DefaultAccountRole
+	}
 	if !IsNil(o.RoleMappings) {
 		toSerialize["roleMappings"] = o.RoleMappings
 	}
@@ -370,7 +415,6 @@ func (o *AddIdentitySourcesRequestUserSource) UnmarshalJSON(data []byte) (err er
 	requiredProperties := []string{
 		"name",
 		"type",
-		"defaultAccountRole",
 	}
 
 	allProperties := make(map[string]interface{})

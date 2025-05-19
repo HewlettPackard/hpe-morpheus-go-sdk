@@ -20,7 +20,7 @@ var _ MappedNullable = &ListClusterVolumeclaims200Response{}
 
 // ListClusterVolumeclaims200Response struct for ListClusterVolumeclaims200Response
 type ListClusterVolumeclaims200Response struct {
-	Volumeclaims []ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner `json:"volumeclaims,omitempty"`
+	Volumeclaims []ListClusterVolumes200ResponseAllOfVolumesInner `json:"volumeclaims,omitempty"`
 	Meta *ListActivity200ResponseAllOfMeta `json:"meta,omitempty"`
 }
 
@@ -42,9 +42,9 @@ func NewListClusterVolumeclaims200ResponseWithDefaults() *ListClusterVolumeclaim
 }
 
 // GetVolumeclaims returns the Volumeclaims field value if set, zero value otherwise.
-func (o *ListClusterVolumeclaims200Response) GetVolumeclaims() []ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner {
+func (o *ListClusterVolumeclaims200Response) GetVolumeclaims() []ListClusterVolumes200ResponseAllOfVolumesInner {
 	if o == nil || IsNil(o.Volumeclaims) {
-		var ret []ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner
+		var ret []ListClusterVolumes200ResponseAllOfVolumesInner
 		return ret
 	}
 	return o.Volumeclaims
@@ -52,7 +52,7 @@ func (o *ListClusterVolumeclaims200Response) GetVolumeclaims() []ListClusterVolu
 
 // GetVolumeclaimsOk returns a tuple with the Volumeclaims field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListClusterVolumeclaims200Response) GetVolumeclaimsOk() ([]ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner, bool) {
+func (o *ListClusterVolumeclaims200Response) GetVolumeclaimsOk() ([]ListClusterVolumes200ResponseAllOfVolumesInner, bool) {
 	if o == nil || IsNil(o.Volumeclaims) {
 		return nil, false
 	}
@@ -68,8 +68,8 @@ func (o *ListClusterVolumeclaims200Response) IsSetVolumeclaims() bool {
 	return false
 }
 
-// SetVolumeclaims gets a reference to the given []ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner and assigns it to the Volumeclaims field.
-func (o *ListClusterVolumeclaims200Response) SetVolumeclaims(v []ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner) {
+// SetVolumeclaims gets a reference to the given []ListClusterVolumes200ResponseAllOfVolumesInner and assigns it to the Volumeclaims field.
+func (o *ListClusterVolumeclaims200Response) SetVolumeclaims(v []ListClusterVolumes200ResponseAllOfVolumesInner) {
 	o.Volumeclaims = v
 }
 

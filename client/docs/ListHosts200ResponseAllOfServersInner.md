@@ -67,7 +67,7 @@ Name | Type | Description | Notes
 **HourlyPrice** | Pointer to **float32** |  | [optional] 
 **SourceImage** | Pointer to [**ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType**](ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType.md) |  | [optional] 
 **ServerOs** | Pointer to [**ListHosts200ResponseAllOfServersInnerServerOs**](ListHosts200ResponseAllOfServersInnerServerOs.md) |  | [optional] 
-**Volumes** | Pointer to [**[]ListHosts200ResponseAllOfServersInnerVolumesInner**](ListHosts200ResponseAllOfServersInnerVolumesInner.md) |  | [optional] 
+**Volumes** | Pointer to [**[]ListClusterVolumes200ResponseAllOfVolumesInner**](ListClusterVolumes200ResponseAllOfVolumesInner.md) |  | [optional] 
 **Controllers** | Pointer to [**[]ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner**](ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner.md) |  | [optional] 
 **Interfaces** | Pointer to [**[]ListHosts200ResponseAllOfServersInnerInterfacesInner**](ListHosts200ResponseAllOfServersInnerInterfacesInner.md) |  | [optional] 
 **Labels** | Pointer to **[]map[string]interface{}** |  | [optional] 
@@ -1679,20 +1679,20 @@ HasServerOs returns a boolean if a field has been set.
 
 ### GetVolumes
 
-`func (o *ListHosts200ResponseAllOfServersInner) GetVolumes() []ListHosts200ResponseAllOfServersInnerVolumesInner`
+`func (o *ListHosts200ResponseAllOfServersInner) GetVolumes() []ListClusterVolumes200ResponseAllOfVolumesInner`
 
 GetVolumes returns the Volumes field if non-nil, zero value otherwise.
 
 ### GetVolumesOk
 
-`func (o *ListHosts200ResponseAllOfServersInner) GetVolumesOk() (*[]ListHosts200ResponseAllOfServersInnerVolumesInner, bool)`
+`func (o *ListHosts200ResponseAllOfServersInner) GetVolumesOk() (*[]ListClusterVolumes200ResponseAllOfVolumesInner, bool)`
 
 GetVolumesOk returns a tuple with the Volumes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVolumes
 
-`func (o *ListHosts200ResponseAllOfServersInner) SetVolumes(v []ListHosts200ResponseAllOfServersInnerVolumesInner)`
+`func (o *ListHosts200ResponseAllOfServersInner) SetVolumes(v []ListClusterVolumes200ResponseAllOfVolumesInner)`
 
 SetVolumes sets Volumes field to given value.
 

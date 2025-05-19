@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **ClientId** | Pointer to **string** |  | [optional] 
 **AccessTokenValiditySeconds** | Pointer to **int64** |  | [optional] 
 **RefreshTokenValiditySeconds** | Pointer to **int64** |  | [optional] 
+**RedirectUris** | Pointer to **[]string** | List of Redirect URIs for use with the OpenID Authorization Code Flow | [optional] 
 
 ## Methods
 
@@ -101,6 +102,31 @@ SetRefreshTokenValiditySeconds sets RefreshTokenValiditySeconds field to given v
 `func (o *ClientUpdate) HasRefreshTokenValiditySeconds() bool`
 
 HasRefreshTokenValiditySeconds returns a boolean if a field has been set.
+
+### GetRedirectUris
+
+`func (o *ClientUpdate) GetRedirectUris() []string`
+
+GetRedirectUris returns the RedirectUris field if non-nil, zero value otherwise.
+
+### GetRedirectUrisOk
+
+`func (o *ClientUpdate) GetRedirectUrisOk() (*[]string, bool)`
+
+GetRedirectUrisOk returns a tuple with the RedirectUris field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRedirectUris
+
+`func (o *ClientUpdate) SetRedirectUris(v []string)`
+
+SetRedirectUris sets RedirectUris field to given value.
+
+### HasRedirectUris
+
+`func (o *ClientUpdate) HasRedirectUris() bool`
+
+HasRedirectUris returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
