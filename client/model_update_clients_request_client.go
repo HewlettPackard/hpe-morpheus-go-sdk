@@ -23,6 +23,8 @@ type UpdateClientsRequestClient struct {
 	ClientId *string `json:"clientId,omitempty"`
 	AccessTokenValiditySeconds *int64 `json:"accessTokenValiditySeconds,omitempty"`
 	RefreshTokenValiditySeconds *int64 `json:"refreshTokenValiditySeconds,omitempty"`
+	// List of Redirect URIs for use with the OpenID Authorization Code Flow
+	RedirectUris []string `json:"redirectUris,omitempty"`
 }
 
 // NewUpdateClientsRequestClient instantiates a new UpdateClientsRequestClient object
@@ -138,6 +140,38 @@ func (o *UpdateClientsRequestClient) SetRefreshTokenValiditySeconds(v int64) {
 	o.RefreshTokenValiditySeconds = &v
 }
 
+// GetRedirectUris returns the RedirectUris field value if set, zero value otherwise.
+func (o *UpdateClientsRequestClient) GetRedirectUris() []string {
+	if o == nil || IsNil(o.RedirectUris) {
+		var ret []string
+		return ret
+	}
+	return o.RedirectUris
+}
+
+// GetRedirectUrisOk returns a tuple with the RedirectUris field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UpdateClientsRequestClient) GetRedirectUrisOk() ([]string, bool) {
+	if o == nil || IsNil(o.RedirectUris) {
+		return nil, false
+	}
+	return o.RedirectUris, true
+}
+
+// IsSetRedirectUris returns a boolean if a field has been set.
+func (o *UpdateClientsRequestClient) IsSetRedirectUris() bool {
+	if o != nil && !IsNil(o.RedirectUris) {
+		return true
+	}
+
+	return false
+}
+
+// SetRedirectUris gets a reference to the given []string and assigns it to the RedirectUris field.
+func (o *UpdateClientsRequestClient) SetRedirectUris(v []string) {
+	o.RedirectUris = v
+}
+
 func (o UpdateClientsRequestClient) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -156,6 +190,9 @@ func (o UpdateClientsRequestClient) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.RefreshTokenValiditySeconds) {
 		toSerialize["refreshTokenValiditySeconds"] = o.RefreshTokenValiditySeconds
+	}
+	if !IsNil(o.RedirectUris) {
+		toSerialize["redirectUris"] = o.RedirectUris
 	}
 	return toSerialize, nil
 }

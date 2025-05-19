@@ -7,6 +7,8 @@ Method | HTTP request | Description
 [**AddStorageBuckets**](StorageAPI.md#AddStorageBuckets) | **Post** /api/storage-buckets | Creates a Storage Bucket
 [**AddStorageServers**](StorageAPI.md#AddStorageServers) | **Post** /api/storage-servers | Creates a Storage Server
 [**AddStorageVolumes**](StorageAPI.md#AddStorageVolumes) | **Post** /api/storage-volumes | Creates a Storage Volume
+[**AttachServerVolume**](StorageAPI.md#AttachServerVolume) | **Put** /api/servers/{id}/volumes/{volumeId}/attach | Attach existing storage volume
+[**DetachServerVolume**](StorageAPI.md#DetachServerVolume) | **Put** /api/servers/{id}/volumes/{volumeId}/detach | Detach storage volume
 [**GetStorageBuckets**](StorageAPI.md#GetStorageBuckets) | **Get** /api/storage-buckets/{id} | Retrieves a Specific Storage Bucket
 [**GetStorageServerTypes**](StorageAPI.md#GetStorageServerTypes) | **Get** /api/storage-server-types/{id} | Retrieves a Specific Storage Server Type
 [**GetStorageServers**](StorageAPI.md#GetStorageServers) | **Get** /api/storage-servers/{id} | Retrieves a Specific Storage Server
@@ -217,6 +219,154 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## AttachServerVolume
+
+> DeleteAlerts200Response AttachServerVolume(ctx, id, volumeId).AttachServerVolumeRequest(attachServerVolumeRequest).Execute()
+
+Attach existing storage volume
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-client/client"
+)
+
+func main() {
+	id := int64(789) // int64 | The ID of the server
+	volumeId := int64(789) // int64 | The ID of the storage volume
+	attachServerVolumeRequest := *openapiclient.NewAttachServerVolumeRequest(*openapiclient.NewAttachServerVolumeRequestMountPoint(*openapiclient.NewAttachServerVolumeRequestMountPointController(int64(123)), "UnitNumber_example")) // AttachServerVolumeRequest |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.StorageAPI.AttachServerVolume(context.Background(), id, volumeId).AttachServerVolumeRequest(attachServerVolumeRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `StorageAPI.AttachServerVolume``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `AttachServerVolume`: DeleteAlerts200Response
+	fmt.Fprintf(os.Stdout, "Response from `StorageAPI.AttachServerVolume`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int64** | The ID of the server | 
+**volumeId** | **int64** | The ID of the storage volume | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiAttachServerVolumeRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **attachServerVolumeRequest** | [**AttachServerVolumeRequest**](AttachServerVolumeRequest.md) |  | 
+
+### Return type
+
+[**DeleteAlerts200Response**](DeleteAlerts200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DetachServerVolume
+
+> DeleteAlerts200Response DetachServerVolume(ctx, id, volumeId).Execute()
+
+Detach storage volume
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-client/client"
+)
+
+func main() {
+	id := int64(789) // int64 | The ID of the server
+	volumeId := int64(789) // int64 | The ID of the storage volume
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.StorageAPI.DetachServerVolume(context.Background(), id, volumeId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `StorageAPI.DetachServerVolume``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `DetachServerVolume`: DeleteAlerts200Response
+	fmt.Fprintf(os.Stdout, "Response from `StorageAPI.DetachServerVolume`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int64** | The ID of the server | 
+**volumeId** | **int64** | The ID of the storage volume | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDetachServerVolumeRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+[**DeleteAlerts200Response**](DeleteAlerts200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

@@ -41,7 +41,7 @@ type AddCredentials200ResponseAllOfCredential struct {
 	StatusDate *time.Time `json:"statusDate,omitempty"`
 	Enabled *bool `json:"enabled,omitempty"`
 	Account *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
-	User *AddCredentials200ResponseAllOfCredentialUser `json:"user,omitempty"`
+	User *ListCredentials200ResponseAllOfCredentialsInnerUser `json:"user,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
 	Config *AddCredentials200ResponseAllOfCredentialConfig `json:"config,omitempty"`
@@ -708,9 +708,9 @@ func (o *AddCredentials200ResponseAllOfCredential) SetAccount(v ListApplianceSet
 }
 
 // GetUser returns the User field value if set, zero value otherwise.
-func (o *AddCredentials200ResponseAllOfCredential) GetUser() AddCredentials200ResponseAllOfCredentialUser {
+func (o *AddCredentials200ResponseAllOfCredential) GetUser() ListCredentials200ResponseAllOfCredentialsInnerUser {
 	if o == nil || IsNil(o.User) {
-		var ret AddCredentials200ResponseAllOfCredentialUser
+		var ret ListCredentials200ResponseAllOfCredentialsInnerUser
 		return ret
 	}
 	return *o.User
@@ -718,7 +718,7 @@ func (o *AddCredentials200ResponseAllOfCredential) GetUser() AddCredentials200Re
 
 // GetUserOk returns a tuple with the User field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddCredentials200ResponseAllOfCredential) GetUserOk() (*AddCredentials200ResponseAllOfCredentialUser, bool) {
+func (o *AddCredentials200ResponseAllOfCredential) GetUserOk() (*ListCredentials200ResponseAllOfCredentialsInnerUser, bool) {
 	if o == nil || IsNil(o.User) {
 		return nil, false
 	}
@@ -734,8 +734,8 @@ func (o *AddCredentials200ResponseAllOfCredential) IsSetUser() bool {
 	return false
 }
 
-// SetUser gets a reference to the given AddCredentials200ResponseAllOfCredentialUser and assigns it to the User field.
-func (o *AddCredentials200ResponseAllOfCredential) SetUser(v AddCredentials200ResponseAllOfCredentialUser) {
+// SetUser gets a reference to the given ListCredentials200ResponseAllOfCredentialsInnerUser and assigns it to the User field.
+func (o *AddCredentials200ResponseAllOfCredential) SetUser(v ListCredentials200ResponseAllOfCredentialsInnerUser) {
 	o.User = &v
 }
 
