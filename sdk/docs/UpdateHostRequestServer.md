@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **Labels** | Pointer to **[]string** |  | [optional] 
 **Tags** | Pointer to [**[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner**](AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner.md) | Metadata tags, Array of objects having a name and value. | [optional] 
 **AddTags** | Pointer to [**[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner**](AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner.md) | Add or update value of Metadata tags, Array of objects having a name and value. | [optional] 
-**RemoveTags** | Pointer to [**[]UpdateInstanceRequestInstanceRemoveTagsInner**](UpdateInstanceRequestInstanceRemoveTagsInner.md) | Remove Metadata tags, Array of objects having a name and an optional value. If value is passed, it must match to be removed. | [optional] 
+**RemoveTags** | Pointer to [**[]ListInstances200ResponseAllOfInstancesInnerTagsInner**](ListInstances200ResponseAllOfInstancesInnerTagsInner.md) | Remove Metadata tags, Array of objects having a name and an optional value. If value is passed, it must match to be removed. | [optional] 
 **GuestConsoleType** | Pointer to **string** | The Type of guest console this server provides such as disabled, vnc, rdp, ssh | [optional] 
 **GuestConsoleUsername** | Pointer to **string** | The optional guest console username if you don&#39;t want to use the user defaults | [optional] 
 **GuestConsolePassword** | Pointer to **string** | The optional guest console password if not using the accessing users creds | [optional] 
@@ -344,20 +344,20 @@ HasAddTags returns a boolean if a field has been set.
 
 ### GetRemoveTags
 
-`func (o *UpdateHostRequestServer) GetRemoveTags() []UpdateInstanceRequestInstanceRemoveTagsInner`
+`func (o *UpdateHostRequestServer) GetRemoveTags() []ListInstances200ResponseAllOfInstancesInnerTagsInner`
 
 GetRemoveTags returns the RemoveTags field if non-nil, zero value otherwise.
 
 ### GetRemoveTagsOk
 
-`func (o *UpdateHostRequestServer) GetRemoveTagsOk() (*[]UpdateInstanceRequestInstanceRemoveTagsInner, bool)`
+`func (o *UpdateHostRequestServer) GetRemoveTagsOk() (*[]ListInstances200ResponseAllOfInstancesInnerTagsInner, bool)`
 
 GetRemoveTagsOk returns a tuple with the RemoveTags field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRemoveTags
 
-`func (o *UpdateHostRequestServer) SetRemoveTags(v []UpdateInstanceRequestInstanceRemoveTagsInner)`
+`func (o *UpdateHostRequestServer) SetRemoveTags(v []ListInstances200ResponseAllOfInstancesInnerTagsInner)`
 
 SetRemoveTags sets RemoveTags field to given value.
 

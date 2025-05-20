@@ -22,7 +22,7 @@ var _ MappedNullable = &UpdateInstance200Response{}
 
 // UpdateInstance200Response struct for UpdateInstance200Response
 type UpdateInstance200Response struct {
-	Instance AddInstance200ResponseAllOfOneOfInstance `json:"instance"`
+	Instance UpdateInstance200ResponseAllOfOneOfInstance `json:"instance"`
 	// The Cloud ID to provision the instance onto.
 	ZoneId int64 `json:"zoneId"`
 	Success *bool `json:"success,omitempty"`
@@ -35,7 +35,7 @@ type _UpdateInstance200Response UpdateInstance200Response
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUpdateInstance200Response(instance AddInstance200ResponseAllOfOneOfInstance, zoneId int64) *UpdateInstance200Response {
+func NewUpdateInstance200Response(instance UpdateInstance200ResponseAllOfOneOfInstance, zoneId int64) *UpdateInstance200Response {
 	this := UpdateInstance200Response{}
 	this.Instance = instance
 	this.ZoneId = zoneId
@@ -51,9 +51,9 @@ func NewUpdateInstance200ResponseWithDefaults() *UpdateInstance200Response {
 }
 
 // GetInstance returns the Instance field value
-func (o *UpdateInstance200Response) GetInstance() AddInstance200ResponseAllOfOneOfInstance {
+func (o *UpdateInstance200Response) GetInstance() UpdateInstance200ResponseAllOfOneOfInstance {
 	if o == nil {
-		var ret AddInstance200ResponseAllOfOneOfInstance
+		var ret UpdateInstance200ResponseAllOfOneOfInstance
 		return ret
 	}
 
@@ -62,7 +62,7 @@ func (o *UpdateInstance200Response) GetInstance() AddInstance200ResponseAllOfOne
 
 // GetInstanceOk returns a tuple with the Instance field value
 // and a boolean to check if the value has been set.
-func (o *UpdateInstance200Response) GetInstanceOk() (*AddInstance200ResponseAllOfOneOfInstance, bool) {
+func (o *UpdateInstance200Response) GetInstanceOk() (*UpdateInstance200ResponseAllOfOneOfInstance, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -70,7 +70,7 @@ func (o *UpdateInstance200Response) GetInstanceOk() (*AddInstance200ResponseAllO
 }
 
 // SetInstance sets field value
-func (o *UpdateInstance200Response) SetInstance(v AddInstance200ResponseAllOfOneOfInstance) {
+func (o *UpdateInstance200Response) SetInstance(v UpdateInstance200ResponseAllOfOneOfInstance) {
 	o.Instance = v
 }
 

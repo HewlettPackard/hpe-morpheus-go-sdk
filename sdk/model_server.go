@@ -32,7 +32,7 @@ type Server struct {
 	ParentServer *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"parentServer,omitempty"`
 	AccountId *int64 `json:"accountId,omitempty"`
 	Account *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
-	Owner *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"owner,omitempty"`
+	Owner *GetAlerts200ResponseAllOfChecksInnerCreatedBy `json:"owner,omitempty"`
 	Zone *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"zone,omitempty"`
 	Plan *ListHosts200ResponseAllOfServersInnerPlan `json:"plan,omitempty"`
 	ComputeServerType *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType `json:"computeServerType,omitempty"`
@@ -471,9 +471,9 @@ func (o *Server) SetAccount(v ListApplianceSettings200ResponseApplianceSettingsE
 }
 
 // GetOwner returns the Owner field value if set, zero value otherwise.
-func (o *Server) GetOwner() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
+func (o *Server) GetOwner() GetAlerts200ResponseAllOfChecksInnerCreatedBy {
 	if o == nil || IsNil(o.Owner) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+		var ret GetAlerts200ResponseAllOfChecksInnerCreatedBy
 		return ret
 	}
 	return *o.Owner
@@ -481,7 +481,7 @@ func (o *Server) GetOwner() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 
 // GetOwnerOk returns a tuple with the Owner field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Server) GetOwnerOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
+func (o *Server) GetOwnerOk() (*GetAlerts200ResponseAllOfChecksInnerCreatedBy, bool) {
 	if o == nil || IsNil(o.Owner) {
 		return nil, false
 	}
@@ -497,8 +497,8 @@ func (o *Server) IsSetOwner() bool {
 	return false
 }
 
-// SetOwner gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Owner field.
-func (o *Server) SetOwner(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
+// SetOwner gets a reference to the given GetAlerts200ResponseAllOfChecksInnerCreatedBy and assigns it to the Owner field.
+func (o *Server) SetOwner(v GetAlerts200ResponseAllOfChecksInnerCreatedBy) {
 	o.Owner = &v
 }
 

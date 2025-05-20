@@ -33,7 +33,7 @@ type UpdateInstanceRequestInstance struct {
 	// Add or update value of Metadata tags, Array of objects having a name and value.
 	AddTags []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner `json:"addTags,omitempty"`
 	// Remove Metadata tags, Array of objects having a name and an optional value. If value is passed, it must match to be removed.
-	RemoveTags []UpdateInstanceRequestInstanceRemoveTagsInner `json:"removeTags,omitempty"`
+	RemoveTags []ListInstances200ResponseAllOfInstancesInnerTagsInner `json:"removeTags,omitempty"`
 	// Power schedule ID.
 	PowerScheduleType *int64 `json:"powerScheduleType,omitempty"`
 	Site *UpdateInstanceRequestInstanceSite `json:"site,omitempty"`
@@ -253,9 +253,9 @@ func (o *UpdateInstanceRequestInstance) SetAddTags(v []AddCatalogItemTypeRequest
 }
 
 // GetRemoveTags returns the RemoveTags field value if set, zero value otherwise.
-func (o *UpdateInstanceRequestInstance) GetRemoveTags() []UpdateInstanceRequestInstanceRemoveTagsInner {
+func (o *UpdateInstanceRequestInstance) GetRemoveTags() []ListInstances200ResponseAllOfInstancesInnerTagsInner {
 	if o == nil || IsNil(o.RemoveTags) {
-		var ret []UpdateInstanceRequestInstanceRemoveTagsInner
+		var ret []ListInstances200ResponseAllOfInstancesInnerTagsInner
 		return ret
 	}
 	return o.RemoveTags
@@ -263,7 +263,7 @@ func (o *UpdateInstanceRequestInstance) GetRemoveTags() []UpdateInstanceRequestI
 
 // GetRemoveTagsOk returns a tuple with the RemoveTags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateInstanceRequestInstance) GetRemoveTagsOk() ([]UpdateInstanceRequestInstanceRemoveTagsInner, bool) {
+func (o *UpdateInstanceRequestInstance) GetRemoveTagsOk() ([]ListInstances200ResponseAllOfInstancesInnerTagsInner, bool) {
 	if o == nil || IsNil(o.RemoveTags) {
 		return nil, false
 	}
@@ -279,8 +279,8 @@ func (o *UpdateInstanceRequestInstance) IsSetRemoveTags() bool {
 	return false
 }
 
-// SetRemoveTags gets a reference to the given []UpdateInstanceRequestInstanceRemoveTagsInner and assigns it to the RemoveTags field.
-func (o *UpdateInstanceRequestInstance) SetRemoveTags(v []UpdateInstanceRequestInstanceRemoveTagsInner) {
+// SetRemoveTags gets a reference to the given []ListInstances200ResponseAllOfInstancesInnerTagsInner and assigns it to the RemoveTags field.
+func (o *UpdateInstanceRequestInstance) SetRemoveTags(v []ListInstances200ResponseAllOfInstancesInnerTagsInner) {
 	o.RemoveTags = v
 }
 

@@ -13,212 +13,124 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
+	"gopkg.in/validator.v2"
 )
 
-// checks if the AddInstance200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &AddInstance200Response{}
-
-// AddInstance200Response struct for AddInstance200Response
+// AddInstance200Response - struct for AddInstance200Response
 type AddInstance200Response struct {
-	Instance AddInstance200ResponseAllOfOneOfInstance `json:"instance"`
-	// The Cloud ID to provision the instance onto.
-	ZoneId int64 `json:"zoneId"`
-	Success *bool `json:"success,omitempty"`
-	Errors map[string]interface{} `json:"errors,omitempty"`
+	AddInstance200ResponseOneOf *AddInstance200ResponseOneOf
+	RestartClusterContainer200Response *RestartClusterContainer200Response
 }
 
-type _AddInstance200Response AddInstance200Response
-
-// NewAddInstance200Response instantiates a new AddInstance200Response object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddInstance200Response(instance AddInstance200ResponseAllOfOneOfInstance, zoneId int64) *AddInstance200Response {
-	this := AddInstance200Response{}
-	this.Instance = instance
-	this.ZoneId = zoneId
-	return &this
-}
-
-// NewAddInstance200ResponseWithDefaults instantiates a new AddInstance200Response object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddInstance200ResponseWithDefaults() *AddInstance200Response {
-	this := AddInstance200Response{}
-	return &this
-}
-
-// GetInstance returns the Instance field value
-func (o *AddInstance200Response) GetInstance() AddInstance200ResponseAllOfOneOfInstance {
-	if o == nil {
-		var ret AddInstance200ResponseAllOfOneOfInstance
-		return ret
+// AddInstance200ResponseOneOfAsAddInstance200Response is a convenience function that returns AddInstance200ResponseOneOf wrapped in AddInstance200Response
+func AddInstance200ResponseOneOfAsAddInstance200Response(v *AddInstance200ResponseOneOf) AddInstance200Response {
+	return AddInstance200Response{
+		AddInstance200ResponseOneOf: v,
 	}
-
-	return o.Instance
 }
 
-// GetInstanceOk returns a tuple with the Instance field value
-// and a boolean to check if the value has been set.
-func (o *AddInstance200Response) GetInstanceOk() (*AddInstance200ResponseAllOfOneOfInstance, bool) {
-	if o == nil {
-		return nil, false
+// RestartClusterContainer200ResponseAsAddInstance200Response is a convenience function that returns RestartClusterContainer200Response wrapped in AddInstance200Response
+func RestartClusterContainer200ResponseAsAddInstance200Response(v *RestartClusterContainer200Response) AddInstance200Response {
+	return AddInstance200Response{
+		RestartClusterContainer200Response: v,
 	}
-	return &o.Instance, true
 }
 
-// SetInstance sets field value
-func (o *AddInstance200Response) SetInstance(v AddInstance200ResponseAllOfOneOfInstance) {
-	o.Instance = v
-}
 
-// GetZoneId returns the ZoneId field value
-func (o *AddInstance200Response) GetZoneId() int64 {
-	if o == nil {
-		var ret int64
-		return ret
-	}
-
-	return o.ZoneId
-}
-
-// GetZoneIdOk returns a tuple with the ZoneId field value
-// and a boolean to check if the value has been set.
-func (o *AddInstance200Response) GetZoneIdOk() (*int64, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ZoneId, true
-}
-
-// SetZoneId sets field value
-func (o *AddInstance200Response) SetZoneId(v int64) {
-	o.ZoneId = v
-}
-
-// GetSuccess returns the Success field value if set, zero value otherwise.
-func (o *AddInstance200Response) GetSuccess() bool {
-	if o == nil || IsNil(o.Success) {
-		var ret bool
-		return ret
-	}
-	return *o.Success
-}
-
-// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddInstance200Response) GetSuccessOk() (*bool, bool) {
-	if o == nil || IsNil(o.Success) {
-		return nil, false
-	}
-	return o.Success, true
-}
-
-// IsSetSuccess returns a boolean if a field has been set.
-func (o *AddInstance200Response) IsSetSuccess() bool {
-	if o != nil && !IsNil(o.Success) {
-		return true
-	}
-
-	return false
-}
-
-// SetSuccess gets a reference to the given bool and assigns it to the Success field.
-func (o *AddInstance200Response) SetSuccess(v bool) {
-	o.Success = &v
-}
-
-// GetErrors returns the Errors field value if set, zero value otherwise.
-func (o *AddInstance200Response) GetErrors() map[string]interface{} {
-	if o == nil || IsNil(o.Errors) {
-		var ret map[string]interface{}
-		return ret
-	}
-	return o.Errors
-}
-
-// GetErrorsOk returns a tuple with the Errors field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddInstance200Response) GetErrorsOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Errors) {
-		return map[string]interface{}{}, false
-	}
-	return o.Errors, true
-}
-
-// IsSetErrors returns a boolean if a field has been set.
-func (o *AddInstance200Response) IsSetErrors() bool {
-	if o != nil && !IsNil(o.Errors) {
-		return true
-	}
-
-	return false
-}
-
-// SetErrors gets a reference to the given map[string]interface{} and assigns it to the Errors field.
-func (o *AddInstance200Response) SetErrors(v map[string]interface{}) {
-	o.Errors = v
-}
-
-func (o AddInstance200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o AddInstance200Response) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["instance"] = o.Instance
-	toSerialize["zoneId"] = o.ZoneId
-	if !IsNil(o.Success) {
-		toSerialize["success"] = o.Success
-	}
-	if !IsNil(o.Errors) {
-		toSerialize["errors"] = o.Errors
-	}
-	return toSerialize, nil
-}
-
-func (o *AddInstance200Response) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"instance",
-		"zoneId",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
+// Unmarshal JSON data into one of the pointers in the struct
+func (dst *AddInstance200Response) UnmarshalJSON(data []byte) error {
+	var err error
+	match := 0
+	// try to unmarshal data into AddInstance200ResponseOneOf
+	err = newStrictDecoder(data).Decode(&dst.AddInstance200ResponseOneOf)
+	if err == nil {
+		jsonAddInstance200ResponseOneOf, _ := json.Marshal(dst.AddInstance200ResponseOneOf)
+		if string(jsonAddInstance200ResponseOneOf) == "{}" { // empty struct
+			dst.AddInstance200ResponseOneOf = nil
+		} else {
+			if err = validator.Validate(dst.AddInstance200ResponseOneOf); err != nil {
+				dst.AddInstance200ResponseOneOf = nil
+			} else {
+				match++
+			}
 		}
+	} else {
+		dst.AddInstance200ResponseOneOf = nil
 	}
 
-	varAddInstance200Response := _AddInstance200Response{}
-
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddInstance200Response)
-
-	if err != nil {
-		return err
+	// try to unmarshal data into RestartClusterContainer200Response
+	err = newStrictDecoder(data).Decode(&dst.RestartClusterContainer200Response)
+	if err == nil {
+		jsonRestartClusterContainer200Response, _ := json.Marshal(dst.RestartClusterContainer200Response)
+		if string(jsonRestartClusterContainer200Response) == "{}" { // empty struct
+			dst.RestartClusterContainer200Response = nil
+		} else {
+			if err = validator.Validate(dst.RestartClusterContainer200Response); err != nil {
+				dst.RestartClusterContainer200Response = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.RestartClusterContainer200Response = nil
 	}
 
-	*o = AddInstance200Response(varAddInstance200Response)
+	if match > 1 { // more than 1 match
+		// reset to nil
+		dst.AddInstance200ResponseOneOf = nil
+		dst.RestartClusterContainer200Response = nil
 
-	return err
+		return fmt.Errorf("data matches more than one schema in oneOf(AddInstance200Response)")
+	} else if match == 1 {
+		return nil // exactly one match
+	} else { // no match
+		return fmt.Errorf("data failed to match schemas in oneOf(AddInstance200Response)")
+	}
+}
+
+// Marshal data from the first non-nil pointers in the struct to JSON
+func (src AddInstance200Response) MarshalJSON() ([]byte, error) {
+	if src.AddInstance200ResponseOneOf != nil {
+		return json.Marshal(&src.AddInstance200ResponseOneOf)
+	}
+
+	if src.RestartClusterContainer200Response != nil {
+		return json.Marshal(&src.RestartClusterContainer200Response)
+	}
+
+	return nil, nil // no data in oneOf schemas
+}
+
+// Get the actual instance
+func (obj *AddInstance200Response) GetActualInstance() (interface{}) {
+	if obj == nil {
+		return nil
+	}
+	if obj.AddInstance200ResponseOneOf != nil {
+		return obj.AddInstance200ResponseOneOf
+	}
+
+	if obj.RestartClusterContainer200Response != nil {
+		return obj.RestartClusterContainer200Response
+	}
+
+	// all schemas are nil
+	return nil
+}
+
+// Get the actual instance value
+func (obj AddInstance200Response) GetActualInstanceValue() (interface{}) {
+	if obj.AddInstance200ResponseOneOf != nil {
+		return *obj.AddInstance200ResponseOneOf
+	}
+
+	if obj.RestartClusterContainer200Response != nil {
+		return *obj.RestartClusterContainer200Response
+	}
+
+	// all schemas are nil
+	return nil
 }
 
 type NullableAddInstance200Response struct {

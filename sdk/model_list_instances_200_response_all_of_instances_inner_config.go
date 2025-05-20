@@ -23,15 +23,15 @@ type ListInstances200ResponseAllOfInstancesInnerConfig struct {
 	CreateUser *bool `json:"createUser,omitempty"`
 	IsEC2 *bool `json:"isEC2,omitempty"`
 	IsVpcSelectable *bool `json:"isVpcSelectable,omitempty"`
-	NoAgent *bool `json:"noAgent,omitempty"`
+	NoAgent *ListInstances200ResponseAllOfInstancesInnerConfigNoAgent `json:"noAgent,omitempty"`
 	SecurityGroups []ListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner `json:"securityGroups,omitempty"`
 	SmbiosAssetTag *string `json:"smbiosAssetTag,omitempty"`
 	NestedVirtualization *string `json:"nestedVirtualization,omitempty"`
 	VmwareFolderId *string `json:"vmwareFolderId,omitempty"`
 	CustomOptions map[string]interface{} `json:"customOptions,omitempty"`
-	ResourcePoolId *int64 `json:"resourcePoolId,omitempty"`
+	ResourcePoolId *ListInstances200ResponseAllOfInstancesInnerConfigResourcePoolId `json:"resourcePoolId,omitempty"`
 	PoolProviderType *string `json:"poolProviderType,omitempty"`
-	UserGroup *ListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner `json:"userGroup,omitempty"`
+	UserGroup *ListInstances200ResponseAllOfInstancesInnerConfigUserGroup `json:"userGroup,omitempty"`
 	ExpireDays *string `json:"expireDays,omitempty"`
 	ShutdownDays *string `json:"shutdownDays,omitempty"`
 	Name *string `json:"name,omitempty"`
@@ -49,7 +49,10 @@ type ListInstances200ResponseAllOfInstancesInnerConfig struct {
 	ReplicationGroup *ListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup `json:"replicationGroup,omitempty"`
 	LayoutSize *int64 `json:"layoutSize,omitempty"`
 	LbInstances []map[string]interface{} `json:"lbInstances,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListInstances200ResponseAllOfInstancesInnerConfig ListInstances200ResponseAllOfInstancesInnerConfig
 
 // NewListInstances200ResponseAllOfInstancesInnerConfig instantiates a new ListInstances200ResponseAllOfInstancesInnerConfig object
 // This constructor will assign default values to properties that have it defined,
@@ -165,9 +168,9 @@ func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetIsVpcSelectable(v
 }
 
 // GetNoAgent returns the NoAgent field value if set, zero value otherwise.
-func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetNoAgent() bool {
+func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetNoAgent() ListInstances200ResponseAllOfInstancesInnerConfigNoAgent {
 	if o == nil || IsNil(o.NoAgent) {
-		var ret bool
+		var ret ListInstances200ResponseAllOfInstancesInnerConfigNoAgent
 		return ret
 	}
 	return *o.NoAgent
@@ -175,7 +178,7 @@ func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetNoAgent() bool {
 
 // GetNoAgentOk returns a tuple with the NoAgent field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetNoAgentOk() (*bool, bool) {
+func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetNoAgentOk() (*ListInstances200ResponseAllOfInstancesInnerConfigNoAgent, bool) {
 	if o == nil || IsNil(o.NoAgent) {
 		return nil, false
 	}
@@ -191,8 +194,8 @@ func (o *ListInstances200ResponseAllOfInstancesInnerConfig) IsSetNoAgent() bool 
 	return false
 }
 
-// SetNoAgent gets a reference to the given bool and assigns it to the NoAgent field.
-func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetNoAgent(v bool) {
+// SetNoAgent gets a reference to the given ListInstances200ResponseAllOfInstancesInnerConfigNoAgent and assigns it to the NoAgent field.
+func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetNoAgent(v ListInstances200ResponseAllOfInstancesInnerConfigNoAgent) {
 	o.NoAgent = &v
 }
 
@@ -357,9 +360,9 @@ func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetCustomOptions(v m
 }
 
 // GetResourcePoolId returns the ResourcePoolId field value if set, zero value otherwise.
-func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetResourcePoolId() int64 {
+func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetResourcePoolId() ListInstances200ResponseAllOfInstancesInnerConfigResourcePoolId {
 	if o == nil || IsNil(o.ResourcePoolId) {
-		var ret int64
+		var ret ListInstances200ResponseAllOfInstancesInnerConfigResourcePoolId
 		return ret
 	}
 	return *o.ResourcePoolId
@@ -367,7 +370,7 @@ func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetResourcePoolId() 
 
 // GetResourcePoolIdOk returns a tuple with the ResourcePoolId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetResourcePoolIdOk() (*int64, bool) {
+func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetResourcePoolIdOk() (*ListInstances200ResponseAllOfInstancesInnerConfigResourcePoolId, bool) {
 	if o == nil || IsNil(o.ResourcePoolId) {
 		return nil, false
 	}
@@ -383,8 +386,8 @@ func (o *ListInstances200ResponseAllOfInstancesInnerConfig) IsSetResourcePoolId(
 	return false
 }
 
-// SetResourcePoolId gets a reference to the given int64 and assigns it to the ResourcePoolId field.
-func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetResourcePoolId(v int64) {
+// SetResourcePoolId gets a reference to the given ListInstances200ResponseAllOfInstancesInnerConfigResourcePoolId and assigns it to the ResourcePoolId field.
+func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetResourcePoolId(v ListInstances200ResponseAllOfInstancesInnerConfigResourcePoolId) {
 	o.ResourcePoolId = &v
 }
 
@@ -421,9 +424,9 @@ func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetPoolProviderType(
 }
 
 // GetUserGroup returns the UserGroup field value if set, zero value otherwise.
-func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetUserGroup() ListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner {
+func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetUserGroup() ListInstances200ResponseAllOfInstancesInnerConfigUserGroup {
 	if o == nil || IsNil(o.UserGroup) {
-		var ret ListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner
+		var ret ListInstances200ResponseAllOfInstancesInnerConfigUserGroup
 		return ret
 	}
 	return *o.UserGroup
@@ -431,7 +434,7 @@ func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetUserGroup() ListI
 
 // GetUserGroupOk returns a tuple with the UserGroup field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetUserGroupOk() (*ListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner, bool) {
+func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetUserGroupOk() (*ListInstances200ResponseAllOfInstancesInnerConfigUserGroup, bool) {
 	if o == nil || IsNil(o.UserGroup) {
 		return nil, false
 	}
@@ -447,8 +450,8 @@ func (o *ListInstances200ResponseAllOfInstancesInnerConfig) IsSetUserGroup() boo
 	return false
 }
 
-// SetUserGroup gets a reference to the given ListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner and assigns it to the UserGroup field.
-func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetUserGroup(v ListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner) {
+// SetUserGroup gets a reference to the given ListInstances200ResponseAllOfInstancesInnerConfigUserGroup and assigns it to the UserGroup field.
+func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetUserGroup(v ListInstances200ResponseAllOfInstancesInnerConfigUserGroup) {
 	o.UserGroup = &v
 }
 
@@ -1093,7 +1096,61 @@ func (o ListInstances200ResponseAllOfInstancesInnerConfig) ToMap() (map[string]i
 	if !IsNil(o.LbInstances) {
 		toSerialize["lbInstances"] = o.LbInstances
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListInstances200ResponseAllOfInstancesInnerConfig) UnmarshalJSON(data []byte) (err error) {
+	varListInstances200ResponseAllOfInstancesInnerConfig := _ListInstances200ResponseAllOfInstancesInnerConfig{}
+
+	err = json.Unmarshal(data, &varListInstances200ResponseAllOfInstancesInnerConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListInstances200ResponseAllOfInstancesInnerConfig(varListInstances200ResponseAllOfInstancesInnerConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "createUser")
+		delete(additionalProperties, "isEC2")
+		delete(additionalProperties, "isVpcSelectable")
+		delete(additionalProperties, "noAgent")
+		delete(additionalProperties, "securityGroups")
+		delete(additionalProperties, "smbiosAssetTag")
+		delete(additionalProperties, "nestedVirtualization")
+		delete(additionalProperties, "vmwareFolderId")
+		delete(additionalProperties, "customOptions")
+		delete(additionalProperties, "resourcePoolId")
+		delete(additionalProperties, "poolProviderType")
+		delete(additionalProperties, "userGroup")
+		delete(additionalProperties, "expireDays")
+		delete(additionalProperties, "shutdownDays")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "hostName")
+		delete(additionalProperties, "instanceType")
+		delete(additionalProperties, "site")
+		delete(additionalProperties, "environmentPrefix")
+		delete(additionalProperties, "layout")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "instanceContext")
+		delete(additionalProperties, "memoryDisplay")
+		delete(additionalProperties, "expose")
+		delete(additionalProperties, "createBackup")
+		delete(additionalProperties, "backup")
+		delete(additionalProperties, "replicationGroup")
+		delete(additionalProperties, "layoutSize")
+		delete(additionalProperties, "lbInstances")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListInstances200ResponseAllOfInstancesInnerConfig struct {

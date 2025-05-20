@@ -22,7 +22,7 @@ var _ MappedNullable = &ListSecurityScans200ResponseAllOfSecurityScansInner{}
 // ListSecurityScans200ResponseAllOfSecurityScansInner struct for ListSecurityScans200ResponseAllOfSecurityScansInner
 type ListSecurityScans200ResponseAllOfSecurityScansInner struct {
 	Id *int64 `json:"id,omitempty"`
-	SecurityPackage *ListSecurityScans200ResponseAllOfSecurityScansInnerSecurityPackage `json:"securityPackage,omitempty"`
+	SecurityPackage *ListInstances200ResponseAllOfInstancesInnerCluster `json:"securityPackage,omitempty"`
 	Status *string `json:"status,omitempty"`
 	ScanDate *time.Time `json:"scanDate,omitempty"`
 	ScanDuration *int64 `json:"scanDuration,omitempty"`
@@ -91,9 +91,9 @@ func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) SetId(v int64) {
 }
 
 // GetSecurityPackage returns the SecurityPackage field value if set, zero value otherwise.
-func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) GetSecurityPackage() ListSecurityScans200ResponseAllOfSecurityScansInnerSecurityPackage {
+func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) GetSecurityPackage() ListInstances200ResponseAllOfInstancesInnerCluster {
 	if o == nil || IsNil(o.SecurityPackage) {
-		var ret ListSecurityScans200ResponseAllOfSecurityScansInnerSecurityPackage
+		var ret ListInstances200ResponseAllOfInstancesInnerCluster
 		return ret
 	}
 	return *o.SecurityPackage
@@ -101,7 +101,7 @@ func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) GetSecurityPackage
 
 // GetSecurityPackageOk returns a tuple with the SecurityPackage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) GetSecurityPackageOk() (*ListSecurityScans200ResponseAllOfSecurityScansInnerSecurityPackage, bool) {
+func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) GetSecurityPackageOk() (*ListInstances200ResponseAllOfInstancesInnerCluster, bool) {
 	if o == nil || IsNil(o.SecurityPackage) {
 		return nil, false
 	}
@@ -117,8 +117,8 @@ func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) IsSetSecurityPacka
 	return false
 }
 
-// SetSecurityPackage gets a reference to the given ListSecurityScans200ResponseAllOfSecurityScansInnerSecurityPackage and assigns it to the SecurityPackage field.
-func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) SetSecurityPackage(v ListSecurityScans200ResponseAllOfSecurityScansInnerSecurityPackage) {
+// SetSecurityPackage gets a reference to the given ListInstances200ResponseAllOfInstancesInnerCluster and assigns it to the SecurityPackage field.
+func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) SetSecurityPackage(v ListInstances200ResponseAllOfInstancesInnerCluster) {
 	o.SecurityPackage = &v
 }
 

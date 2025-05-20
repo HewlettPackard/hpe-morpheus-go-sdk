@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Instance** | Pointer to [**ListInstances200ResponseAllOfInstancesInner**](ListInstances200ResponseAllOfInstancesInner.md) |  | [optional] 
+**Instance** | Pointer to [**GetInstance200ResponseInstance**](GetInstance200ResponseInstance.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetInstance
 
-`func (o *GetInstance200Response) GetInstance() ListInstances200ResponseAllOfInstancesInner`
+`func (o *GetInstance200Response) GetInstance() GetInstance200ResponseInstance`
 
 GetInstance returns the Instance field if non-nil, zero value otherwise.
 
 ### GetInstanceOk
 
-`func (o *GetInstance200Response) GetInstanceOk() (*ListInstances200ResponseAllOfInstancesInner, bool)`
+`func (o *GetInstance200Response) GetInstanceOk() (*GetInstance200ResponseInstance, bool)`
 
 GetInstanceOk returns a tuple with the Instance field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInstance
 
-`func (o *GetInstance200Response) SetInstance(v ListInstances200ResponseAllOfInstancesInner)`
+`func (o *GetInstance200Response) SetInstance(v GetInstance200ResponseInstance)`
 
 SetInstance sets Instance field to given value.
 

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
-**SecurityPackage** | Pointer to [**ListSecurityScans200ResponseAllOfSecurityScansInnerSecurityPackage**](ListSecurityScans200ResponseAllOfSecurityScansInnerSecurityPackage.md) |  | [optional] 
+**SecurityPackage** | Pointer to [**ListInstances200ResponseAllOfInstancesInnerCluster**](ListInstances200ResponseAllOfInstancesInnerCluster.md) |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
 **ScanDate** | Pointer to **time.Time** |  | [optional] 
 **ScanDuration** | Pointer to **int64** |  | [optional] 
@@ -68,20 +68,20 @@ HasId returns a boolean if a field has been set.
 
 ### GetSecurityPackage
 
-`func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) GetSecurityPackage() ListSecurityScans200ResponseAllOfSecurityScansInnerSecurityPackage`
+`func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) GetSecurityPackage() ListInstances200ResponseAllOfInstancesInnerCluster`
 
 GetSecurityPackage returns the SecurityPackage field if non-nil, zero value otherwise.
 
 ### GetSecurityPackageOk
 
-`func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) GetSecurityPackageOk() (*ListSecurityScans200ResponseAllOfSecurityScansInnerSecurityPackage, bool)`
+`func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) GetSecurityPackageOk() (*ListInstances200ResponseAllOfInstancesInnerCluster, bool)`
 
 GetSecurityPackageOk returns a tuple with the SecurityPackage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSecurityPackage
 
-`func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) SetSecurityPackage(v ListSecurityScans200ResponseAllOfSecurityScansInnerSecurityPackage)`
+`func (o *ListSecurityScans200ResponseAllOfSecurityScansInner) SetSecurityPackage(v ListInstances200ResponseAllOfInstancesInnerCluster)`
 
 SetSecurityPackage sets SecurityPackage field to given value.
 
