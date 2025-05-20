@@ -38,7 +38,7 @@ tasks:
     env:
       _JAVA_OPTIONS: -DmaxYamlCodePoints=99999999
     cmds:
-      - if [ ! -d {{.OUTPUTDIR}} ]; then mkdir {{.OUTPUTDIR}}; fi
+      - mkdir -p {{.OUTPUTDIR}}
       - cp {{.GENERATORIGNOREFILE}} {{.OUTPUTDIR}}
       - cmd: >-
           openapi-generator-cli generate 
