@@ -128,7 +128,7 @@ func (a *LogSettingsAPIService) AddLogSettingsSyslogRulesExecute(r ApiAddLogSett
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -252,7 +252,7 @@ func (a *LogSettingsAPIService) DeleteLogSettingsSyslogRulesExecute(r ApiDeleteL
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -372,7 +372,7 @@ func (a *LogSettingsAPIService) ListLogSettingsExecute(r ApiListLogSettingsReque
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -500,7 +500,7 @@ func (a *LogSettingsAPIService) UpdateLogSettingsExecute(r ApiUpdateLogSettingsR
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

@@ -18,9 +18,14 @@ import (
 // checks if the ListActivity4XXResponse type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ListActivity4XXResponse{}
 
-// ListActivity4XXResponse struct for ListActivity4XXResponse
+// ListActivity4XXResponse The standard response object that is returned when a request fails to complete successfully
 type ListActivity4XXResponse struct {
+	// Success indicator, true when the request succeeded and false when an error occurred
+	Success *bool `json:"success,omitempty"`
+	// Message containing a description of the result, usually a message about the error that occurred
 	Msg *string `json:"msg,omitempty"`
+	// Validation errors, with a key for Object containing error messages for each invalid parameter (key)
+	Errors map[string]interface{} `json:"errors,omitempty"`
 }
 
 // NewListActivity4XXResponse instantiates a new ListActivity4XXResponse object
@@ -29,6 +34,8 @@ type ListActivity4XXResponse struct {
 // will change when the set of required properties is changed
 func NewListActivity4XXResponse() *ListActivity4XXResponse {
 	this := ListActivity4XXResponse{}
+	var success bool = true
+	this.Success = &success
 	return &this
 }
 
@@ -37,7 +44,41 @@ func NewListActivity4XXResponse() *ListActivity4XXResponse {
 // but it doesn't guarantee that properties required by API are set
 func NewListActivity4XXResponseWithDefaults() *ListActivity4XXResponse {
 	this := ListActivity4XXResponse{}
+	var success bool = true
+	this.Success = &success
 	return &this
+}
+
+// GetSuccess returns the Success field value if set, zero value otherwise.
+func (o *ListActivity4XXResponse) GetSuccess() bool {
+	if o == nil || IsNil(o.Success) {
+		var ret bool
+		return ret
+	}
+	return *o.Success
+}
+
+// GetSuccessOk returns a tuple with the Success field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ListActivity4XXResponse) GetSuccessOk() (*bool, bool) {
+	if o == nil || IsNil(o.Success) {
+		return nil, false
+	}
+	return o.Success, true
+}
+
+// IsSetSuccess returns a boolean if a field has been set.
+func (o *ListActivity4XXResponse) IsSetSuccess() bool {
+	if o != nil && !IsNil(o.Success) {
+		return true
+	}
+
+	return false
+}
+
+// SetSuccess gets a reference to the given bool and assigns it to the Success field.
+func (o *ListActivity4XXResponse) SetSuccess(v bool) {
+	o.Success = &v
 }
 
 // GetMsg returns the Msg field value if set, zero value otherwise.
@@ -72,6 +113,38 @@ func (o *ListActivity4XXResponse) SetMsg(v string) {
 	o.Msg = &v
 }
 
+// GetErrors returns the Errors field value if set, zero value otherwise.
+func (o *ListActivity4XXResponse) GetErrors() map[string]interface{} {
+	if o == nil || IsNil(o.Errors) {
+		var ret map[string]interface{}
+		return ret
+	}
+	return o.Errors
+}
+
+// GetErrorsOk returns a tuple with the Errors field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ListActivity4XXResponse) GetErrorsOk() (map[string]interface{}, bool) {
+	if o == nil || IsNil(o.Errors) {
+		return map[string]interface{}{}, false
+	}
+	return o.Errors, true
+}
+
+// IsSetErrors returns a boolean if a field has been set.
+func (o *ListActivity4XXResponse) IsSetErrors() bool {
+	if o != nil && !IsNil(o.Errors) {
+		return true
+	}
+
+	return false
+}
+
+// SetErrors gets a reference to the given map[string]interface{} and assigns it to the Errors field.
+func (o *ListActivity4XXResponse) SetErrors(v map[string]interface{}) {
+	o.Errors = v
+}
+
 func (o ListActivity4XXResponse) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -82,8 +155,14 @@ func (o ListActivity4XXResponse) MarshalJSON() ([]byte, error) {
 
 func (o ListActivity4XXResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Success) {
+		toSerialize["success"] = o.Success
+	}
 	if !IsNil(o.Msg) {
 		toSerialize["msg"] = o.Msg
+	}
+	if !IsNil(o.Errors) {
+		toSerialize["errors"] = o.Errors
 	}
 	return toSerialize, nil
 }

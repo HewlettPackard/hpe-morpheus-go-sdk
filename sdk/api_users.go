@@ -139,7 +139,7 @@ func (a *UsersAPIService) AddUserExecute(r ApiAddUserRequest) (*AddUserTenant200
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -268,7 +268,7 @@ func (a *UsersAPIService) AddUserGroupExecute(r ApiAddUserGroupRequest) (*AddUse
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -392,7 +392,7 @@ func (a *UsersAPIService) DeleteUserExecute(r ApiDeleteUserRequest) (*DeleteAler
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -516,7 +516,7 @@ func (a *UsersAPIService) DeleteUserGroupExecute(r ApiDeleteUserGroupRequest) (*
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -656,7 +656,7 @@ func (a *UsersAPIService) DeleteUserSettingsAccessTokenExecute(r ApiDeleteUserSe
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -786,7 +786,7 @@ func (a *UsersAPIService) DeleteUserSettingsAvatarExecute(r ApiDeleteUserSetting
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -916,7 +916,7 @@ func (a *UsersAPIService) DeleteUserSettingsDesktopBackgroundExecute(r ApiDelete
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1050,7 +1050,7 @@ func (a *UsersAPIService) GetUserExecute(r ApiGetUserRequest) (*GetUser200Respon
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1174,7 +1174,7 @@ func (a *UsersAPIService) GetUserGroupExecute(r ApiGetUserGroupRequest) (*GetUse
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1298,7 +1298,7 @@ func (a *UsersAPIService) GetUserPermissionsExecute(r ApiGetUserPermissionsReque
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1428,7 +1428,7 @@ func (a *UsersAPIService) GetUserSettingsApiClientsExecute(r ApiGetUserSettingsA
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1621,7 +1621,7 @@ func (a *UsersAPIService) ListUserGroupsExecute(r ApiListUserGroupsRequest) (*Li
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1754,7 +1754,7 @@ func (a *UsersAPIService) ListUserSettingsExecute(r ApiListUserSettingsRequest) 
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1997,7 +1997,7 @@ func (a *UsersAPIService) ListUsersExecute(r ApiListUsersRequest) (*ListUsers200
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2127,7 +2127,7 @@ func (a *UsersAPIService) ListUsersAvailableRolesExecute(r ApiListUsersAvailable
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2259,7 +2259,7 @@ func (a *UsersAPIService) UpdateUserGroupExecute(r ApiUpdateUserGroupRequest) (*
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2398,7 +2398,7 @@ func (a *UsersAPIService) UpdateUserSettingsExecute(r ApiUpdateUserSettingsReque
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2538,7 +2538,7 @@ func (a *UsersAPIService) UpdateUserSettingsAccessTokenExecute(r ApiUpdateUserSe
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2677,7 +2677,7 @@ func (a *UsersAPIService) UpdateUserSettingsAvatarExecute(r ApiUpdateUserSetting
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2816,7 +2816,7 @@ func (a *UsersAPIService) UpdateUserSettingsDesktopBackgroundExecute(r ApiUpdate
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2948,7 +2948,7 @@ func (a *UsersAPIService) UpdateUsersExecute(r ApiUpdateUsersRequest) (*AddUserT
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

@@ -119,7 +119,7 @@ func (a *ApplianceSettingsAPIService) ListApplianceSettingsExecute(r ApiListAppl
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -239,7 +239,7 @@ func (a *ApplianceSettingsAPIService) ReindexExecute(r ApiReindexRequest) (*Dele
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -369,7 +369,7 @@ func (a *ApplianceSettingsAPIService) SetApplianceSettingsMaintenanceModeExecute
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -497,7 +497,7 @@ func (a *ApplianceSettingsAPIService) UpdateApplianceSettingsExecute(r ApiUpdate
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

@@ -3023,7 +3023,7 @@ Name | Type | Description  | Notes
 
 ## ResizeInstance
 
-> UpdateInstance200Response ResizeInstance(ctx, id).ResizeInstanceRequest(resizeInstanceRequest).Execute()
+> ResizeInstance200Response ResizeInstance(ctx, id).ResizeInstanceRequest(resizeInstanceRequest).Execute()
 
 Resize an Instance
 
@@ -3052,7 +3052,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `InstancesAPI.ResizeInstance``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ResizeInstance`: UpdateInstance200Response
+	// response from `ResizeInstance`: ResizeInstance200Response
 	fmt.Fprintf(os.Stdout, "Response from `InstancesAPI.ResizeInstance`: %v\n", resp)
 }
 ```
@@ -3077,7 +3077,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UpdateInstance200Response**](UpdateInstance200Response.md)
+[**ResizeInstance200Response**](ResizeInstance200Response.md)
 
 ### Authorization
 

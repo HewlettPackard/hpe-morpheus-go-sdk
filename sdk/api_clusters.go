@@ -128,7 +128,7 @@ func (a *ClustersAPIService) AddClusterExecute(r ApiAddClusterRequest) (*AddClus
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -260,7 +260,7 @@ func (a *ClustersAPIService) AddClusterNamespaceExecute(r ApiAddClusterNamespace
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -392,7 +392,7 @@ func (a *ClustersAPIService) AddClusterWorkerExecute(r ApiAddClusterWorkerReques
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -527,7 +527,7 @@ func (a *ClustersAPIService) ApplyTemplateExecute(r ApiApplyTemplateRequest) (*A
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -729,7 +729,7 @@ func (a *ClustersAPIService) DeleteClusterExecute(r ApiDeleteClusterRequest) (*D
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -870,7 +870,7 @@ func (a *ClustersAPIService) DeleteClusterContainerExecute(r ApiDeleteClusterCon
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1001,7 +1001,7 @@ func (a *ClustersAPIService) DeleteClusterDatastoreExecute(r ApiDeleteClusterDat
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1142,7 +1142,7 @@ func (a *ClustersAPIService) DeleteClusterDeploymentExecute(r ApiDeleteClusterDe
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1283,7 +1283,7 @@ func (a *ClustersAPIService) DeleteClusterJobExecute(r ApiDeleteClusterJobReques
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1424,7 +1424,7 @@ func (a *ClustersAPIService) DeleteClusterNamespaceExecute(r ApiDeleteClusterNam
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1565,7 +1565,7 @@ func (a *ClustersAPIService) DeleteClusterServiceExecute(r ApiDeleteClusterServi
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1706,7 +1706,7 @@ func (a *ClustersAPIService) DeleteClusterStatefulSetExecute(r ApiDeleteClusterS
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1847,7 +1847,7 @@ func (a *ClustersAPIService) DeleteClusterVolumeExecute(r ApiDeleteClusterVolume
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1988,7 +1988,7 @@ func (a *ClustersAPIService) DeleteClusterWorkerExecute(r ApiDeleteClusterWorker
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2112,7 +2112,7 @@ func (a *ClustersAPIService) GetClusterExecute(r ApiGetClusterRequest) (*GetClus
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2236,7 +2236,7 @@ func (a *ClustersAPIService) GetClusterApiConfigExecute(r ApiGetClusterApiConfig
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2364,7 +2364,7 @@ func (a *ClustersAPIService) GetClusterConfigmapExecute(r ApiGetClusterConfigmap
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2492,7 +2492,7 @@ func (a *ClustersAPIService) GetClusterContainerExecute(r ApiGetClusterContainer
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2620,7 +2620,7 @@ func (a *ClustersAPIService) GetClusterDaemonsetExecute(r ApiGetClusterDaemonset
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2748,7 +2748,7 @@ func (a *ClustersAPIService) GetClusterDatastoreExecute(r ApiGetClusterDatastore
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2876,7 +2876,7 @@ func (a *ClustersAPIService) GetClusterDeploymentExecute(r ApiGetClusterDeployme
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3000,7 +3000,7 @@ func (a *ClustersAPIService) GetClusterHistoryExecute(r ApiGetClusterHistoryRequ
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3128,7 +3128,7 @@ func (a *ClustersAPIService) GetClusterHistoryDetailExecute(r ApiGetClusterHisto
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3256,7 +3256,7 @@ func (a *ClustersAPIService) GetClusterHistoryEventDetailExecute(r ApiGetCluster
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3384,7 +3384,7 @@ func (a *ClustersAPIService) GetClusterIngressExecute(r ApiGetClusterIngressRequ
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3512,7 +3512,7 @@ func (a *ClustersAPIService) GetClusterJobExecute(r ApiGetClusterJobRequest) (*G
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3646,7 +3646,7 @@ func (a *ClustersAPIService) GetClusterMastersExecute(r ApiGetClusterMastersRequ
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3774,7 +3774,7 @@ func (a *ClustersAPIService) GetClusterNamespaceExecute(r ApiGetClusterNamespace
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3898,7 +3898,7 @@ func (a *ClustersAPIService) GetClusterNamespacesExecute(r ApiGetClusterNamespac
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -4026,7 +4026,7 @@ func (a *ClustersAPIService) GetClusterNetworkEndpoingExecute(r ApiGetClusterNet
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -4154,7 +4154,7 @@ func (a *ClustersAPIService) GetClusterPodExecute(r ApiGetClusterPodRequest) (*G
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -4282,7 +4282,7 @@ func (a *ClustersAPIService) GetClusterPolicyExecute(r ApiGetClusterPolicyReques
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -4410,7 +4410,7 @@ func (a *ClustersAPIService) GetClusterReplicasetExecute(r ApiGetClusterReplicas
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -4538,7 +4538,7 @@ func (a *ClustersAPIService) GetClusterSecretExecute(r ApiGetClusterSecretReques
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -4666,7 +4666,7 @@ func (a *ClustersAPIService) GetClusterServiceExecute(r ApiGetClusterServiceRequ
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -4794,7 +4794,7 @@ func (a *ClustersAPIService) GetClusterStatefulsetExecute(r ApiGetClusterStatefu
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -4918,7 +4918,7 @@ func (a *ClustersAPIService) GetClusterUpgradeVersionsExecute(r ApiGetClusterUpg
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -5046,7 +5046,7 @@ func (a *ClustersAPIService) GetClusterVolumeExecute(r ApiGetClusterVolumeReques
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -5174,7 +5174,7 @@ func (a *ClustersAPIService) GetClusterVolumeclaimExecute(r ApiGetClusterVolumec
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -5298,7 +5298,7 @@ func (a *ClustersAPIService) ListClusterConfigmapsExecute(r ApiListClusterConfig
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -5491,7 +5491,7 @@ func (a *ClustersAPIService) ListClusterContainersExecute(r ApiListClusterContai
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -5615,7 +5615,7 @@ func (a *ClustersAPIService) ListClusterDaemonsetsExecute(r ApiListClusterDaemon
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -5834,7 +5834,7 @@ func (a *ClustersAPIService) ListClusterDatastoresExecute(r ApiListClusterDatast
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -6030,7 +6030,7 @@ func (a *ClustersAPIService) ListClusterDeploymentsExecute(r ApiListClusterDeplo
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -6154,7 +6154,7 @@ func (a *ClustersAPIService) ListClusterIngressesExecute(r ApiListClusterIngress
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -6340,7 +6340,7 @@ func (a *ClustersAPIService) ListClusterJobsExecute(r ApiListClusterJobsRequest)
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -6464,7 +6464,7 @@ func (a *ClustersAPIService) ListClusterNetworkEndpointsExecute(r ApiListCluster
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -6660,7 +6660,7 @@ func (a *ClustersAPIService) ListClusterPodsExecute(r ApiListClusterPodsRequest)
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -6784,7 +6784,7 @@ func (a *ClustersAPIService) ListClusterPoliciesExecute(r ApiListClusterPolicies
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -6908,7 +6908,7 @@ func (a *ClustersAPIService) ListClusterReplicasetsExecute(r ApiListClusterRepli
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -7032,7 +7032,7 @@ func (a *ClustersAPIService) ListClusterSecretsExecute(r ApiListClusterSecretsRe
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -7218,7 +7218,7 @@ func (a *ClustersAPIService) ListClusterServicesExecute(r ApiListClusterServices
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -7414,7 +7414,7 @@ func (a *ClustersAPIService) ListClusterStatefulSetsExecute(r ApiListClusterStat
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -7626,7 +7626,7 @@ func (a *ClustersAPIService) ListClusterTypesExecute(r ApiListClusterTypesReques
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -7750,7 +7750,7 @@ func (a *ClustersAPIService) ListClusterVolumeclaimsExecute(r ApiListClusterVolu
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -7874,7 +7874,7 @@ func (a *ClustersAPIService) ListClusterVolumesExecute(r ApiListClusterVolumesRe
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -7998,7 +7998,7 @@ func (a *ClustersAPIService) ListClusterWorkersExecute(r ApiListClusterWorkersRe
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -8230,7 +8230,7 @@ func (a *ClustersAPIService) ListClustersExecute(r ApiListClustersRequest) (*Lis
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -8355,7 +8355,7 @@ func (a *ClustersAPIService) RefreshClusterExecute(r ApiRefreshClusterRequest) (
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -8483,7 +8483,7 @@ func (a *ClustersAPIService) RestartClusterContainerExecute(r ApiRestartClusterC
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -8611,7 +8611,7 @@ func (a *ClustersAPIService) RestartClusterDeploymentExecute(r ApiRestartCluster
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -8739,7 +8739,7 @@ func (a *ClustersAPIService) RestartClusterPodExecute(r ApiRestartClusterPodRequ
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -8867,7 +8867,7 @@ func (a *ClustersAPIService) RestartClusterStatefulSetExecute(r ApiRestartCluste
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -8999,7 +8999,7 @@ func (a *ClustersAPIService) SaveClusterDatastoreExecute(r ApiSaveClusterDatasto
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -9131,7 +9131,7 @@ func (a *ClustersAPIService) UpdateClusterExecute(r ApiUpdateClusterRequest) (*A
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -9267,7 +9267,7 @@ func (a *ClustersAPIService) UpdateClusterDatastoreExecute(r ApiUpdateClusterDat
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -9403,7 +9403,7 @@ func (a *ClustersAPIService) UpdateClusterNamespaceExecute(r ApiUpdateClusterNam
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -9535,7 +9535,7 @@ func (a *ClustersAPIService) UpdateClusterPermissionsExecute(r ApiUpdateClusterP
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -9670,7 +9670,7 @@ func (a *ClustersAPIService) UpdateClusterUpgradeVersionsExecute(r ApiUpdateClus
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -9805,7 +9805,7 @@ func (a *ClustersAPIService) UpdateClusterWorkerCountExecute(r ApiUpdateClusterW
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

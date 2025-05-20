@@ -43,7 +43,7 @@ type HostUpdate struct {
 	// Add or update value of Metadata tags, Array of objects having a name and value.
 	AddTags []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner `json:"addTags,omitempty"`
 	// Remove Metadata tags, Array of objects having a name and an optional value. If value is passed, it must match to be removed.
-	RemoveTags []UpdateInstanceRequestInstanceRemoveTagsInner `json:"removeTags,omitempty"`
+	RemoveTags []ListInstances200ResponseAllOfInstancesInnerTagsInner `json:"removeTags,omitempty"`
 	// The Type of guest console this server provides such as disabled, vnc, rdp, ssh
 	GuestConsoleType *string `json:"guestConsoleType,omitempty"`
 	// The optional guest console username if you don't want to use the user defaults
@@ -474,9 +474,9 @@ func (o *HostUpdate) SetAddTags(v []AddCatalogItemTypeRequestCatalogItemTypeOneO
 }
 
 // GetRemoveTags returns the RemoveTags field value if set, zero value otherwise.
-func (o *HostUpdate) GetRemoveTags() []UpdateInstanceRequestInstanceRemoveTagsInner {
+func (o *HostUpdate) GetRemoveTags() []ListInstances200ResponseAllOfInstancesInnerTagsInner {
 	if o == nil || IsNil(o.RemoveTags) {
-		var ret []UpdateInstanceRequestInstanceRemoveTagsInner
+		var ret []ListInstances200ResponseAllOfInstancesInnerTagsInner
 		return ret
 	}
 	return o.RemoveTags
@@ -484,7 +484,7 @@ func (o *HostUpdate) GetRemoveTags() []UpdateInstanceRequestInstanceRemoveTagsIn
 
 // GetRemoveTagsOk returns a tuple with the RemoveTags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *HostUpdate) GetRemoveTagsOk() ([]UpdateInstanceRequestInstanceRemoveTagsInner, bool) {
+func (o *HostUpdate) GetRemoveTagsOk() ([]ListInstances200ResponseAllOfInstancesInnerTagsInner, bool) {
 	if o == nil || IsNil(o.RemoveTags) {
 		return nil, false
 	}
@@ -500,8 +500,8 @@ func (o *HostUpdate) IsSetRemoveTags() bool {
 	return false
 }
 
-// SetRemoveTags gets a reference to the given []UpdateInstanceRequestInstanceRemoveTagsInner and assigns it to the RemoveTags field.
-func (o *HostUpdate) SetRemoveTags(v []UpdateInstanceRequestInstanceRemoveTagsInner) {
+// SetRemoveTags gets a reference to the given []ListInstances200ResponseAllOfInstancesInnerTagsInner and assigns it to the RemoveTags field.
+func (o *HostUpdate) SetRemoveTags(v []ListInstances200ResponseAllOfInstancesInnerTagsInner) {
 	o.RemoveTags = v
 }
 

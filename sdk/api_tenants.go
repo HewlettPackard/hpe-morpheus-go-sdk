@@ -134,7 +134,7 @@ func (a *TenantsAPIService) AddSubtenantIdentitySourcesExecute(r ApiAddSubtenant
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -262,7 +262,7 @@ func (a *TenantsAPIService) AddTenantExecute(r ApiAddTenantRequest) (*AddTenant2
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -394,7 +394,7 @@ func (a *TenantsAPIService) AddUserTenantExecute(r ApiAddUserTenantRequest) (*Ad
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -526,7 +526,7 @@ func (a *TenantsAPIService) CreateTenantSubtenantGroupExecute(r ApiCreateTenantS
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -650,7 +650,7 @@ func (a *TenantsAPIService) GetTenantExecute(r ApiGetTenantRequest) (*GetTenant2
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -778,7 +778,7 @@ func (a *TenantsAPIService) GetTenantSubtenantGroupExecute(r ApiGetTenantSubtena
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -935,7 +935,7 @@ func (a *TenantsAPIService) ListTenantSubtenantGroupsExecute(r ApiListTenantSubt
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1119,7 +1119,7 @@ func (a *TenantsAPIService) ListTenantSubtenantIdentitySourcesExecute(r ApiListT
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1321,7 +1321,7 @@ func (a *TenantsAPIService) ListTenantsExecute(r ApiListTenantsRequest) (*ListTe
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1441,7 +1441,7 @@ func (a *TenantsAPIService) ListTenantsAvailableRolesExecute(r ApiListTenantsAva
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1567,7 +1567,7 @@ func (a *TenantsAPIService) RemoveTenantExecute(r ApiRemoveTenantRequest) (*Dele
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v DeleteRole400Response
+			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1589,7 +1589,7 @@ func (a *TenantsAPIService) RemoveTenantExecute(r ApiRemoveTenantRequest) (*Dele
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1717,7 +1717,7 @@ func (a *TenantsAPIService) RemoveTenantSubtenantGroupExecute(r ApiRemoveTenantS
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1849,7 +1849,7 @@ func (a *TenantsAPIService) UpdateTenantExecute(r ApiUpdateTenantRequest) (*Upda
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1985,7 +1985,7 @@ func (a *TenantsAPIService) UpdateTenantSubtenantGroupExecute(r ApiUpdateTenantS
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2121,7 +2121,7 @@ func (a *TenantsAPIService) UpdateTenantSubtenantGroupZonesExecute(r ApiUpdateTe
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity4XXResponse
+			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

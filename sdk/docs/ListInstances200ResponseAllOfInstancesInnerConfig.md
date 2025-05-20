@@ -7,15 +7,15 @@ Name | Type | Description | Notes
 **CreateUser** | Pointer to **bool** |  | [optional] 
 **IsEC2** | Pointer to **bool** |  | [optional] 
 **IsVpcSelectable** | Pointer to **bool** |  | [optional] 
-**NoAgent** | Pointer to **bool** |  | [optional] 
+**NoAgent** | Pointer to [**ListInstances200ResponseAllOfInstancesInnerConfigNoAgent**](ListInstances200ResponseAllOfInstancesInnerConfigNoAgent.md) |  | [optional] 
 **SecurityGroups** | Pointer to [**[]ListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner**](ListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner.md) |  | [optional] 
 **SmbiosAssetTag** | Pointer to **string** |  | [optional] 
 **NestedVirtualization** | Pointer to **string** |  | [optional] 
 **VmwareFolderId** | Pointer to **string** |  | [optional] 
 **CustomOptions** | Pointer to **map[string]interface{}** |  | [optional] 
-**ResourcePoolId** | Pointer to **int64** |  | [optional] 
+**ResourcePoolId** | Pointer to [**ListInstances200ResponseAllOfInstancesInnerConfigResourcePoolId**](ListInstances200ResponseAllOfInstancesInnerConfigResourcePoolId.md) |  | [optional] 
 **PoolProviderType** | Pointer to **string** |  | [optional] 
-**UserGroup** | Pointer to [**ListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner**](ListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner.md) |  | [optional] 
+**UserGroup** | Pointer to [**ListInstances200ResponseAllOfInstancesInnerConfigUserGroup**](ListInstances200ResponseAllOfInstancesInnerConfigUserGroup.md) |  | [optional] 
 **ExpireDays** | Pointer to **string** |  | [optional] 
 **ShutdownDays** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
@@ -130,20 +130,20 @@ HasIsVpcSelectable returns a boolean if a field has been set.
 
 ### GetNoAgent
 
-`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetNoAgent() bool`
+`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetNoAgent() ListInstances200ResponseAllOfInstancesInnerConfigNoAgent`
 
 GetNoAgent returns the NoAgent field if non-nil, zero value otherwise.
 
 ### GetNoAgentOk
 
-`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetNoAgentOk() (*bool, bool)`
+`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetNoAgentOk() (*ListInstances200ResponseAllOfInstancesInnerConfigNoAgent, bool)`
 
 GetNoAgentOk returns a tuple with the NoAgent field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNoAgent
 
-`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetNoAgent(v bool)`
+`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetNoAgent(v ListInstances200ResponseAllOfInstancesInnerConfigNoAgent)`
 
 SetNoAgent sets NoAgent field to given value.
 
@@ -280,20 +280,20 @@ HasCustomOptions returns a boolean if a field has been set.
 
 ### GetResourcePoolId
 
-`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetResourcePoolId() int64`
+`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetResourcePoolId() ListInstances200ResponseAllOfInstancesInnerConfigResourcePoolId`
 
 GetResourcePoolId returns the ResourcePoolId field if non-nil, zero value otherwise.
 
 ### GetResourcePoolIdOk
 
-`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetResourcePoolIdOk() (*int64, bool)`
+`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetResourcePoolIdOk() (*ListInstances200ResponseAllOfInstancesInnerConfigResourcePoolId, bool)`
 
 GetResourcePoolIdOk returns a tuple with the ResourcePoolId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResourcePoolId
 
-`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetResourcePoolId(v int64)`
+`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetResourcePoolId(v ListInstances200ResponseAllOfInstancesInnerConfigResourcePoolId)`
 
 SetResourcePoolId sets ResourcePoolId field to given value.
 
@@ -330,20 +330,20 @@ HasPoolProviderType returns a boolean if a field has been set.
 
 ### GetUserGroup
 
-`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetUserGroup() ListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner`
+`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetUserGroup() ListInstances200ResponseAllOfInstancesInnerConfigUserGroup`
 
 GetUserGroup returns the UserGroup field if non-nil, zero value otherwise.
 
 ### GetUserGroupOk
 
-`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetUserGroupOk() (*ListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner, bool)`
+`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetUserGroupOk() (*ListInstances200ResponseAllOfInstancesInnerConfigUserGroup, bool)`
 
 GetUserGroupOk returns a tuple with the UserGroup field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUserGroup
 
-`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetUserGroup(v ListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner)`
+`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetUserGroup(v ListInstances200ResponseAllOfInstancesInnerConfigUserGroup)`
 
 SetUserGroup sets UserGroup field to given value.
 

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Labels** | Pointer to **[]string** | Array of strings (keywords). | [optional] 
 **Tags** | Pointer to [**[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner**](AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner.md) | Metadata tags, Array of objects having a name and value. | [optional] 
 **AddTags** | Pointer to [**[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner**](AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner.md) | Add or update value of Metadata tags, Array of objects having a name and value. | [optional] 
-**RemoveTags** | Pointer to [**[]UpdateInstanceRequestInstanceRemoveTagsInner**](UpdateInstanceRequestInstanceRemoveTagsInner.md) | Remove Metadata tags, Array of objects having a name and an optional value. If value is passed, it must match to be removed. | [optional] 
+**RemoveTags** | Pointer to [**[]ListInstances200ResponseAllOfInstancesInnerTagsInner**](ListInstances200ResponseAllOfInstancesInnerTagsInner.md) | Remove Metadata tags, Array of objects having a name and an optional value. If value is passed, it must match to be removed. | [optional] 
 **PowerScheduleType** | Pointer to **int64** | Power schedule ID. | [optional] 
 **Site** | Pointer to [**UpdateInstanceRequestInstanceSite**](UpdateInstanceRequestInstanceSite.md) |  | [optional] 
 **OwnerId** | Pointer to **int64** | User ID, can be used to change instance owner. | [optional] 
@@ -187,20 +187,20 @@ HasAddTags returns a boolean if a field has been set.
 
 ### GetRemoveTags
 
-`func (o *UpdateInstanceRequestInstance) GetRemoveTags() []UpdateInstanceRequestInstanceRemoveTagsInner`
+`func (o *UpdateInstanceRequestInstance) GetRemoveTags() []ListInstances200ResponseAllOfInstancesInnerTagsInner`
 
 GetRemoveTags returns the RemoveTags field if non-nil, zero value otherwise.
 
 ### GetRemoveTagsOk
 
-`func (o *UpdateInstanceRequestInstance) GetRemoveTagsOk() (*[]UpdateInstanceRequestInstanceRemoveTagsInner, bool)`
+`func (o *UpdateInstanceRequestInstance) GetRemoveTagsOk() (*[]ListInstances200ResponseAllOfInstancesInnerTagsInner, bool)`
 
 GetRemoveTagsOk returns a tuple with the RemoveTags field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRemoveTags
 
-`func (o *UpdateInstanceRequestInstance) SetRemoveTags(v []UpdateInstanceRequestInstanceRemoveTagsInner)`
+`func (o *UpdateInstanceRequestInstance) SetRemoveTags(v []ListInstances200ResponseAllOfInstancesInnerTagsInner)`
 
 SetRemoveTags sets RemoveTags field to given value.
 

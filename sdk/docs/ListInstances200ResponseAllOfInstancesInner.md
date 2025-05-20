@@ -10,13 +10,15 @@ Name | Type | Description | Notes
 **Tenant** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
 **InstanceType** | Pointer to [**ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner**](ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner.md) |  | [optional] 
 **Group** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
-**Cloud** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
+**Cloud** | Pointer to [**ListApps200ResponseAllOfAppsInnerBlueprint**](ListApps200ResponseAllOfAppsInnerBlueprint.md) |  | [optional] 
+**Cluster** | Pointer to [**ListInstances200ResponseAllOfInstancesInnerCluster**](ListInstances200ResponseAllOfInstancesInnerCluster.md) |  | [optional] 
 **Containers** | Pointer to **[]int64** |  | [optional] 
 **Servers** | Pointer to **[]int64** |  | [optional] 
 **ConnectionInfo** | Pointer to [**[]ListInstances200ResponseAllOfInstancesInnerConnectionInfoInner**](ListInstances200ResponseAllOfInstancesInnerConnectionInfoInner.md) |  | [optional] 
 **Layout** | Pointer to [**ListInstances200ResponseAllOfInstancesInnerLayout**](ListInstances200ResponseAllOfInstancesInnerLayout.md) |  | [optional] 
 **Plan** | Pointer to [**ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
+**DisplayName** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Environment** | Pointer to **string** |  | [optional] 
 **Config** | Pointer to [**ListInstances200ResponseAllOfInstancesInnerConfig**](ListInstances200ResponseAllOfInstancesInnerConfig.md) |  | [optional] 
@@ -29,8 +31,8 @@ Name | Type | Description | Notes
 **CustomOptions** | Pointer to **map[string]interface{}** |  | [optional] 
 **InstanceVersion** | Pointer to **string** |  | [optional] 
 **Labels** | Pointer to **[]string** |  | [optional] 
-**Tags** | Pointer to **[]map[string]interface{}** |  | [optional] 
-**Evars** | Pointer to **[]map[string]interface{}** |  | [optional] 
+**Tags** | Pointer to [**[]ListInstances200ResponseAllOfInstancesInnerTagsInner**](ListInstances200ResponseAllOfInstancesInnerTagsInner.md) |  | [optional] 
+**Evars** | Pointer to [**[]ListInstances200ResponseAllOfInstancesInnerEvarsInner**](ListInstances200ResponseAllOfInstancesInnerEvarsInner.md) |  | [optional] 
 **MaxMemory** | Pointer to **int64** |  | [optional] 
 **MaxStorage** | Pointer to **int64** |  | [optional] 
 **MaxCores** | Pointer to **int64** |  | [optional] 
@@ -71,7 +73,7 @@ Name | Type | Description | Notes
 **ShutdownWarningSent** | Pointer to **bool** |  | [optional] 
 **RemovalDate** | Pointer to **time.Time** |  | [optional] 
 **CreatedBy** | Pointer to [**ListActivity200ResponseAllOfActivityInnerActivityInnerUser**](ListActivity200ResponseAllOfActivityInnerActivityInnerUser.md) |  | [optional] 
-**Owner** | Pointer to [**ListActivity200ResponseAllOfActivityInnerActivityInnerUser**](ListActivity200ResponseAllOfActivityInnerActivityInnerUser.md) |  | [optional] 
+**Owner** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerCreatedBy**](GetAlerts200ResponseAllOfChecksInnerCreatedBy.md) |  | [optional] 
 **Notes** | Pointer to **string** |  | [optional] 
 **Stats** | Pointer to [**ListInstances200ResponseAllOfInstancesInnerStats**](ListInstances200ResponseAllOfInstancesInnerStats.md) |  | [optional] 
 **PowerSchedule** | Pointer to **string** |  | [optional] 
@@ -251,20 +253,20 @@ HasGroup returns a boolean if a field has been set.
 
 ### GetCloud
 
-`func (o *ListInstances200ResponseAllOfInstancesInner) GetCloud() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner`
+`func (o *ListInstances200ResponseAllOfInstancesInner) GetCloud() ListApps200ResponseAllOfAppsInnerBlueprint`
 
 GetCloud returns the Cloud field if non-nil, zero value otherwise.
 
 ### GetCloudOk
 
-`func (o *ListInstances200ResponseAllOfInstancesInner) GetCloudOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool)`
+`func (o *ListInstances200ResponseAllOfInstancesInner) GetCloudOk() (*ListApps200ResponseAllOfAppsInnerBlueprint, bool)`
 
 GetCloudOk returns a tuple with the Cloud field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCloud
 
-`func (o *ListInstances200ResponseAllOfInstancesInner) SetCloud(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)`
+`func (o *ListInstances200ResponseAllOfInstancesInner) SetCloud(v ListApps200ResponseAllOfAppsInnerBlueprint)`
 
 SetCloud sets Cloud field to given value.
 
@@ -273,6 +275,31 @@ SetCloud sets Cloud field to given value.
 `func (o *ListInstances200ResponseAllOfInstancesInner) HasCloud() bool`
 
 HasCloud returns a boolean if a field has been set.
+
+### GetCluster
+
+`func (o *ListInstances200ResponseAllOfInstancesInner) GetCluster() ListInstances200ResponseAllOfInstancesInnerCluster`
+
+GetCluster returns the Cluster field if non-nil, zero value otherwise.
+
+### GetClusterOk
+
+`func (o *ListInstances200ResponseAllOfInstancesInner) GetClusterOk() (*ListInstances200ResponseAllOfInstancesInnerCluster, bool)`
+
+GetClusterOk returns a tuple with the Cluster field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCluster
+
+`func (o *ListInstances200ResponseAllOfInstancesInner) SetCluster(v ListInstances200ResponseAllOfInstancesInnerCluster)`
+
+SetCluster sets Cluster field to given value.
+
+### HasCluster
+
+`func (o *ListInstances200ResponseAllOfInstancesInner) HasCluster() bool`
+
+HasCluster returns a boolean if a field has been set.
 
 ### GetContainers
 
@@ -423,6 +450,31 @@ SetName sets Name field to given value.
 `func (o *ListInstances200ResponseAllOfInstancesInner) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+### GetDisplayName
+
+`func (o *ListInstances200ResponseAllOfInstancesInner) GetDisplayName() string`
+
+GetDisplayName returns the DisplayName field if non-nil, zero value otherwise.
+
+### GetDisplayNameOk
+
+`func (o *ListInstances200ResponseAllOfInstancesInner) GetDisplayNameOk() (*string, bool)`
+
+GetDisplayNameOk returns a tuple with the DisplayName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisplayName
+
+`func (o *ListInstances200ResponseAllOfInstancesInner) SetDisplayName(v string)`
+
+SetDisplayName sets DisplayName field to given value.
+
+### HasDisplayName
+
+`func (o *ListInstances200ResponseAllOfInstancesInner) HasDisplayName() bool`
+
+HasDisplayName returns a boolean if a field has been set.
 
 ### GetDescription
 
@@ -726,20 +778,20 @@ HasLabels returns a boolean if a field has been set.
 
 ### GetTags
 
-`func (o *ListInstances200ResponseAllOfInstancesInner) GetTags() []map[string]interface{}`
+`func (o *ListInstances200ResponseAllOfInstancesInner) GetTags() []ListInstances200ResponseAllOfInstancesInnerTagsInner`
 
 GetTags returns the Tags field if non-nil, zero value otherwise.
 
 ### GetTagsOk
 
-`func (o *ListInstances200ResponseAllOfInstancesInner) GetTagsOk() (*[]map[string]interface{}, bool)`
+`func (o *ListInstances200ResponseAllOfInstancesInner) GetTagsOk() (*[]ListInstances200ResponseAllOfInstancesInnerTagsInner, bool)`
 
 GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTags
 
-`func (o *ListInstances200ResponseAllOfInstancesInner) SetTags(v []map[string]interface{})`
+`func (o *ListInstances200ResponseAllOfInstancesInner) SetTags(v []ListInstances200ResponseAllOfInstancesInnerTagsInner)`
 
 SetTags sets Tags field to given value.
 
@@ -751,20 +803,20 @@ HasTags returns a boolean if a field has been set.
 
 ### GetEvars
 
-`func (o *ListInstances200ResponseAllOfInstancesInner) GetEvars() []map[string]interface{}`
+`func (o *ListInstances200ResponseAllOfInstancesInner) GetEvars() []ListInstances200ResponseAllOfInstancesInnerEvarsInner`
 
 GetEvars returns the Evars field if non-nil, zero value otherwise.
 
 ### GetEvarsOk
 
-`func (o *ListInstances200ResponseAllOfInstancesInner) GetEvarsOk() (*[]map[string]interface{}, bool)`
+`func (o *ListInstances200ResponseAllOfInstancesInner) GetEvarsOk() (*[]ListInstances200ResponseAllOfInstancesInnerEvarsInner, bool)`
 
 GetEvarsOk returns a tuple with the Evars field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEvars
 
-`func (o *ListInstances200ResponseAllOfInstancesInner) SetEvars(v []map[string]interface{})`
+`func (o *ListInstances200ResponseAllOfInstancesInner) SetEvars(v []ListInstances200ResponseAllOfInstancesInnerEvarsInner)`
 
 SetEvars sets Evars field to given value.
 
@@ -1776,20 +1828,20 @@ HasCreatedBy returns a boolean if a field has been set.
 
 ### GetOwner
 
-`func (o *ListInstances200ResponseAllOfInstancesInner) GetOwner() ListActivity200ResponseAllOfActivityInnerActivityInnerUser`
+`func (o *ListInstances200ResponseAllOfInstancesInner) GetOwner() GetAlerts200ResponseAllOfChecksInnerCreatedBy`
 
 GetOwner returns the Owner field if non-nil, zero value otherwise.
 
 ### GetOwnerOk
 
-`func (o *ListInstances200ResponseAllOfInstancesInner) GetOwnerOk() (*ListActivity200ResponseAllOfActivityInnerActivityInnerUser, bool)`
+`func (o *ListInstances200ResponseAllOfInstancesInner) GetOwnerOk() (*GetAlerts200ResponseAllOfChecksInnerCreatedBy, bool)`
 
 GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOwner
 
-`func (o *ListInstances200ResponseAllOfInstancesInner) SetOwner(v ListActivity200ResponseAllOfActivityInnerActivityInnerUser)`
+`func (o *ListInstances200ResponseAllOfInstancesInner) SetOwner(v GetAlerts200ResponseAllOfChecksInnerCreatedBy)`
 
 SetOwner sets Owner field to given value.
 

@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **ParentServer** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
 **AccountId** | Pointer to **int64** |  | [optional] 
 **Account** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
-**Owner** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Owner** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerCreatedBy**](GetAlerts200ResponseAllOfChecksInnerCreatedBy.md) |  | [optional] 
 **Zone** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
 **Plan** | Pointer to [**ListHosts200ResponseAllOfServersInnerPlan**](ListHosts200ResponseAllOfServersInnerPlan.md) |  | [optional] 
 **ComputeServerType** | Pointer to [**ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType**](ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType.md) |  | [optional] 
@@ -379,20 +379,20 @@ HasAccount returns a boolean if a field has been set.
 
 ### GetOwner
 
-`func (o *Server) GetOwner() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *Server) GetOwner() GetAlerts200ResponseAllOfChecksInnerCreatedBy`
 
 GetOwner returns the Owner field if non-nil, zero value otherwise.
 
 ### GetOwnerOk
 
-`func (o *Server) GetOwnerOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *Server) GetOwnerOk() (*GetAlerts200ResponseAllOfChecksInnerCreatedBy, bool)`
 
 GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOwner
 
-`func (o *Server) SetOwner(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *Server) SetOwner(v GetAlerts200ResponseAllOfChecksInnerCreatedBy)`
 
 SetOwner sets Owner field to given value.
 
