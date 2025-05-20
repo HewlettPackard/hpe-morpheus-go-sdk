@@ -32,7 +32,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/HewlettPackard/hpe-morpheus-client/sdk"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-go-sdk/sdk"
 )
 
 func main() {
@@ -126,7 +126,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/HewlettPackard/hpe-morpheus-client/sdk"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-go-sdk/sdk"
 )
 
 func main() {
@@ -212,7 +212,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/HewlettPackard/hpe-morpheus-client/sdk"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-go-sdk/sdk"
 )
 
 func main() {
@@ -298,7 +298,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/HewlettPackard/hpe-morpheus-client/sdk"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-go-sdk/sdk"
 )
 
 func main() {
@@ -392,7 +392,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/HewlettPackard/hpe-morpheus-client/sdk"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-go-sdk/sdk"
 )
 
 func main() {
@@ -480,7 +480,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/HewlettPackard/hpe-morpheus-client/sdk"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-go-sdk/sdk"
 )
 
 func main() {
@@ -560,7 +560,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/HewlettPackard/hpe-morpheus-client/sdk"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-go-sdk/sdk"
 )
 
 func main() {
@@ -640,7 +640,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/HewlettPackard/hpe-morpheus-client/sdk"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-go-sdk/sdk"
 )
 
 func main() {

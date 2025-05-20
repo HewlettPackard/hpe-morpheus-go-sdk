@@ -1,4 +1,4 @@
-module github.com/HewlettPackard/hpe-morpheus-client/sdk
+module github.com/HewlettPackard/hpe-morpheus-go-sdk/sdk
 
 go 1.24
 

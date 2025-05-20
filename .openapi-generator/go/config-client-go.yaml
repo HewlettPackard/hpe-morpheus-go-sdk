@@ -1,5 +1,5 @@
 gitUserId: HewlettPackard
-gitRepoId: hpe-morpheus-client
+gitRepoId: hpe-morpheus-go-sdk
 packageName: sdk
 
 additionalProperties:

@@ -24,7 +24,7 @@ go get golang.org/x/net/context
 Put the package under your project folder and add the following in import:
 
 ```go
-import sdk "github.com/HewlettPackard/hpe-morpheus-client/sdk"
+import sdk "github.com/HewlettPackard/hpe-morpheus-go-sdk/sdk"
 ```
 
 To use a proxy, set the environment variable `HTTP_PROXY`:
