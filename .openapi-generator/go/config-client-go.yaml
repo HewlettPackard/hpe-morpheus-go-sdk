@@ -1,6 +1,6 @@
 gitUserId: HewlettPackard
-gitRepoId: hpe-morpheus-client
-packageName: client
+gitRepoId: hpe-morpheus-go-sdk
+packageName: sdk
 
 additionalProperties:
   goVersion: 1.24
