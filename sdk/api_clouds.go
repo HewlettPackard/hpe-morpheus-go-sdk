@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.6
+API version: 8.0.7
 Contact: dev@morpheusdata.com
 */
 
@@ -2268,7 +2268,14 @@ type ApiRemoveCloudsRequest struct {
 	ctx context.Context
 	ApiService *CloudsAPIService
 	id int64
+	force *bool
 	removeResources *bool
+}
+
+// Force the deletion of the cloud.
+func (r ApiRemoveCloudsRequest) Force(force bool) ApiRemoveCloudsRequest {
+	r.force = &force
+	return r
 }
 
 // Removing associated resources will delete the instances and the associated resources underneath.  This includes Virtual Machines and other forms of compute.
@@ -2321,6 +2328,12 @@ func (a *CloudsAPIService) RemoveCloudsExecute(r ApiRemoveCloudsRequest) (*Delet
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.force != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "force", r.force, "form", "")
+	} else {
+		var defaultValue bool = false
+		r.force = &defaultValue
+	}
 	if r.removeResources != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "removeResources", r.removeResources, "form", "")
 	} else {
