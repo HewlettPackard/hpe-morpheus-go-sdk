@@ -1141,7 +1141,7 @@ Name | Type | Description  | Notes
 
 ## RemoveClouds
 
-> DeleteAlerts200Response RemoveClouds(ctx, id).RemoveResources(removeResources).Execute()
+> DeleteAlerts200Response RemoveClouds(ctx, id).Force(force).RemoveResources(removeResources).Execute()
 
 Deletes a Cloud
 
@@ -1161,11 +1161,12 @@ import (
 
 func main() {
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
+	force := true // bool | Force the deletion of the cloud. (optional) (default to false)
 	removeResources := true // bool | Removing associated resources will delete the instances and the associated resources underneath.  This includes Virtual Machines and other forms of compute. (optional) (default to false)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CloudsAPI.RemoveClouds(context.Background(), id).RemoveResources(removeResources).Execute()
+	resp, r, err := apiClient.CloudsAPI.RemoveClouds(context.Background(), id).Force(force).RemoveResources(removeResources).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `CloudsAPI.RemoveClouds``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1191,6 +1192,7 @@ Other parameters are passed through a pointer to a apiRemoveCloudsRequest struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **force** | **bool** | Force the deletion of the cloud. | [default to false]
  **removeResources** | **bool** | Removing associated resources will delete the instances and the associated resources underneath.  This includes Virtual Machines and other forms of compute. | [default to false]
 
 ### Return type

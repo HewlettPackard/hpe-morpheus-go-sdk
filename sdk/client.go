@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.6
+API version: 8.0.7
 Contact: dev@morpheusdata.com
 */
 
@@ -42,7 +42,7 @@ var (
 	queryDescape    = strings.NewReplacer( "%5B", "[", "%5D", "]" )
 )
 
-// APIClient manages communication with the Morpheus API API v8.0.6
+// APIClient manages communication with the Morpheus API API v8.0.7
 // In most cases there should be only one, shared, APIClient.
 type APIClient struct {
 	cfg    *Configuration
