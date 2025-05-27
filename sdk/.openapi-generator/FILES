@@ -2953,8 +2953,6 @@ docs/ZoneType.md
 docs/ZoneTypesOptions.md
 docs/ZoneVcenterConfig.md
 git_push.sh
-go.mod
-go.sum
 model_200_success.go
 model_200_success_expanded.go
 model_400_error.go
