@@ -5,3 +5,4 @@ packageName: sdk
 additionalProperties:
   goVersion: 1.24
   isGoSubmodule: true
+  withGoMod: false
