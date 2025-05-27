@@ -4,7 +4,7 @@ on:
     inputs:
       git_ref:
         description: "branch name, tag name or git hash"
-        default: main
+        default: tf-dev
         required: false
   schedule:
     - cron: '30 10 * * Wed'
