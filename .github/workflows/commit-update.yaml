@@ -9,6 +9,9 @@ on:
   schedule:
     - cron: '30 10 * * Wed'
 
+env:
+  DEFAULT_GITREF: tf-dev
+
 jobs:
   create-pr:
     runs-on: ubuntu-latest
@@ -27,12 +30,12 @@ jobs:
     - name: "Update client code"
       run: task update-client
       env:
-        GITREF: ${{ inputs.git_ref }}
+        GITREF: ${{ inputs.git_ref || env.DEFAULT_GITREF }}
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v7
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
-        branch: client-update-${{ inputs.git_ref }}
-        title: "Bump the SDK to OpenAPI spec version: ${{ inputs.git_ref }}"
+        branch: client-update-${{ inputs.git_ref || env.DEFAULT_GITREF }}
+        title: "Bump the SDK to OpenAPI spec version: ${{ inputs.git_ref || env.DEFAULT_GITREF }}"
         commit-message: |
-          Bump the SDK to OpenAPI spec version: ${{ inputs.git_ref }}
+          Bump the SDK to OpenAPI spec version: ${{ inputs.git_ref || env.DEFAULT_GITREF }}
