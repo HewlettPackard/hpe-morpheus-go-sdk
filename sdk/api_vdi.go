@@ -14,6 +14,7 @@ package sdk
 import (
 	"bytes"
 	"context"
+	"errors"
 	"io"
 	"net/http"
 	"net/url"
@@ -123,6 +124,7 @@ func (a *VDIAPIService) AddVDIAppsExecute(r ApiAddVDIAppsRequest) (*AddVDIApps20
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -133,6 +135,7 @@ func (a *VDIAPIService) AddVDIAppsExecute(r ApiAddVDIAppsRequest) (*AddVDIApps20
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -249,6 +252,7 @@ func (a *VDIAPIService) AddVDIGatewaysExecute(r ApiAddVDIGatewaysRequest) (*AddV
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -259,6 +263,7 @@ func (a *VDIAPIService) AddVDIGatewaysExecute(r ApiAddVDIGatewaysRequest) (*AddV
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -375,6 +380,7 @@ func (a *VDIAPIService) AddVDIPoolsExecute(r ApiAddVDIPoolsRequest) (*AddVDIPool
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -385,6 +391,7 @@ func (a *VDIAPIService) AddVDIPoolsExecute(r ApiAddVDIPoolsRequest) (*AddVDIPool
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -497,6 +504,7 @@ func (a *VDIAPIService) AddVdiAllocationExecute(r ApiAddVdiAllocationRequest) (*
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -507,6 +515,7 @@ func (a *VDIAPIService) AddVdiAllocationExecute(r ApiAddVdiAllocationRequest) (*
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -619,6 +628,7 @@ func (a *VDIAPIService) GetVDIAllocationsExecute(r ApiGetVDIAllocationsRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -629,6 +639,7 @@ func (a *VDIAPIService) GetVDIAllocationsExecute(r ApiGetVDIAllocationsRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -741,6 +752,7 @@ func (a *VDIAPIService) GetVDIAppsExecute(r ApiGetVDIAppsRequest) (*AddVDIApps20
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -751,6 +763,7 @@ func (a *VDIAPIService) GetVDIAppsExecute(r ApiGetVDIAppsRequest) (*AddVDIApps20
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -863,6 +876,7 @@ func (a *VDIAPIService) GetVDIGatewaysExecute(r ApiGetVDIGatewaysRequest) (*AddV
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -873,6 +887,7 @@ func (a *VDIAPIService) GetVDIGatewaysExecute(r ApiGetVDIGatewaysRequest) (*AddV
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -985,6 +1000,7 @@ func (a *VDIAPIService) GetVDIPoolsExecute(r ApiGetVDIPoolsRequest) (*AddVDIPool
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -995,6 +1011,7 @@ func (a *VDIAPIService) GetVDIPoolsExecute(r ApiGetVDIPoolsRequest) (*AddVDIPool
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1107,6 +1124,7 @@ func (a *VDIAPIService) GetVdiExecute(r ApiGetVdiRequest) (*GetVdi200Response, *
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1117,6 +1135,7 @@ func (a *VDIAPIService) GetVdiExecute(r ApiGetVdiRequest) (*GetVdi200Response, *
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1337,6 +1356,7 @@ func (a *VDIAPIService) ListVDIAllocationsExecute(r ApiListVDIAllocationsRequest
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1347,6 +1367,7 @@ func (a *VDIAPIService) ListVDIAllocationsExecute(r ApiListVDIAllocationsRequest
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1537,6 +1558,7 @@ func (a *VDIAPIService) ListVDIAppsExecute(r ApiListVDIAppsRequest) (*ListVDIApp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1547,6 +1569,7 @@ func (a *VDIAPIService) ListVDIAppsExecute(r ApiListVDIAppsRequest) (*ListVDIApp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1737,6 +1760,7 @@ func (a *VDIAPIService) ListVDIGatewaysExecute(r ApiListVDIGatewaysRequest) (*Li
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1747,6 +1771,7 @@ func (a *VDIAPIService) ListVDIGatewaysExecute(r ApiListVDIGatewaysRequest) (*Li
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1947,6 +1972,7 @@ func (a *VDIAPIService) ListVDIPoolsExecute(r ApiListVDIPoolsRequest) (*ListVDIP
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1957,6 +1983,7 @@ func (a *VDIAPIService) ListVDIPoolsExecute(r ApiListVDIPoolsRequest) (*ListVDIP
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -2147,6 +2174,7 @@ func (a *VDIAPIService) ListVdiExecute(r ApiListVdiRequest) (*ListVdi200Response
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -2157,6 +2185,7 @@ func (a *VDIAPIService) ListVdiExecute(r ApiListVdiRequest) (*ListVdi200Response
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -2269,6 +2298,7 @@ func (a *VDIAPIService) RemoveVDIAppsExecute(r ApiRemoveVDIAppsRequest) (*Delete
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -2279,6 +2309,7 @@ func (a *VDIAPIService) RemoveVDIAppsExecute(r ApiRemoveVDIAppsRequest) (*Delete
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -2391,6 +2422,7 @@ func (a *VDIAPIService) RemoveVDIGatewaysExecute(r ApiRemoveVDIGatewaysRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -2401,6 +2433,7 @@ func (a *VDIAPIService) RemoveVDIGatewaysExecute(r ApiRemoveVDIGatewaysRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -2513,6 +2546,7 @@ func (a *VDIAPIService) RemoveVDIPoolsExecute(r ApiRemoveVDIPoolsRequest) (*Dele
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -2523,6 +2557,7 @@ func (a *VDIAPIService) RemoveVDIPoolsExecute(r ApiRemoveVDIPoolsRequest) (*Dele
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -2643,6 +2678,7 @@ func (a *VDIAPIService) UpdateVDIAppsExecute(r ApiUpdateVDIAppsRequest) (*AddVDI
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -2653,6 +2689,7 @@ func (a *VDIAPIService) UpdateVDIAppsExecute(r ApiUpdateVDIAppsRequest) (*AddVDI
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -2773,6 +2810,7 @@ func (a *VDIAPIService) UpdateVDIGatewaysExecute(r ApiUpdateVDIGatewaysRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -2783,6 +2821,7 @@ func (a *VDIAPIService) UpdateVDIGatewaysExecute(r ApiUpdateVDIGatewaysRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -2903,6 +2942,7 @@ func (a *VDIAPIService) UpdateVDIPoolsExecute(r ApiUpdateVDIPoolsRequest) (*AddV
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -2913,6 +2953,7 @@ func (a *VDIAPIService) UpdateVDIPoolsExecute(r ApiUpdateVDIPoolsRequest) (*AddV
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

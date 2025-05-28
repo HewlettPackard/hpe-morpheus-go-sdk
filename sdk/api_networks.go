@@ -14,6 +14,7 @@ package sdk
 import (
 	"bytes"
 	"context"
+	"errors"
 	"io"
 	"net/http"
 	"net/url"
@@ -123,6 +124,7 @@ func (a *NetworksAPIService) AllocateNetworkFloatingIpExecute(r ApiAllocateNetwo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -133,6 +135,7 @@ func (a *NetworksAPIService) AllocateNetworkFloatingIpExecute(r ApiAllocateNetwo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -253,6 +256,7 @@ func (a *NetworksAPIService) CreateNetworkDhcpRelayExecute(r ApiCreateNetworkDhc
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -263,6 +267,7 @@ func (a *NetworksAPIService) CreateNetworkDhcpRelayExecute(r ApiCreateNetworkDhc
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -383,6 +388,7 @@ func (a *NetworksAPIService) CreateNetworkDhcpServerExecute(r ApiCreateNetworkDh
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -393,6 +399,7 @@ func (a *NetworksAPIService) CreateNetworkDhcpServerExecute(r ApiCreateNetworkDh
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -509,6 +516,7 @@ func (a *NetworksAPIService) CreateNetworkDomainExecute(r ApiCreateNetworkDomain
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -519,6 +527,7 @@ func (a *NetworksAPIService) CreateNetworkDomainExecute(r ApiCreateNetworkDomain
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -639,6 +648,7 @@ func (a *NetworksAPIService) CreateNetworkFirewallRuleExecute(r ApiCreateNetwork
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -649,6 +659,7 @@ func (a *NetworksAPIService) CreateNetworkFirewallRuleExecute(r ApiCreateNetwork
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -769,6 +780,7 @@ func (a *NetworksAPIService) CreateNetworkFirewallRuleGroupExecute(r ApiCreateNe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -779,6 +791,7 @@ func (a *NetworksAPIService) CreateNetworkFirewallRuleGroupExecute(r ApiCreateNe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -895,6 +908,7 @@ func (a *NetworksAPIService) CreateNetworkGroupExecute(r ApiCreateNetworkGroupRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -905,6 +919,7 @@ func (a *NetworksAPIService) CreateNetworkGroupExecute(r ApiCreateNetworkGroupRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1021,6 +1036,7 @@ func (a *NetworksAPIService) CreateNetworkPoolExecute(r ApiCreateNetworkPoolRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1031,6 +1047,7 @@ func (a *NetworksAPIService) CreateNetworkPoolExecute(r ApiCreateNetworkPoolRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1151,6 +1168,7 @@ func (a *NetworksAPIService) CreateNetworkPoolIpExecute(r ApiCreateNetworkPoolIp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1161,6 +1179,7 @@ func (a *NetworksAPIService) CreateNetworkPoolIpExecute(r ApiCreateNetworkPoolIp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1171,6 +1190,7 @@ func (a *NetworksAPIService) CreateNetworkPoolIpExecute(r ApiCreateNetworkPoolIp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1181,6 +1201,7 @@ func (a *NetworksAPIService) CreateNetworkPoolIpExecute(r ApiCreateNetworkPoolIp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1191,6 +1212,7 @@ func (a *NetworksAPIService) CreateNetworkPoolIpExecute(r ApiCreateNetworkPoolIp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1201,6 +1223,7 @@ func (a *NetworksAPIService) CreateNetworkPoolIpExecute(r ApiCreateNetworkPoolIp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1211,6 +1234,7 @@ func (a *NetworksAPIService) CreateNetworkPoolIpExecute(r ApiCreateNetworkPoolIp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1221,6 +1245,7 @@ func (a *NetworksAPIService) CreateNetworkPoolIpExecute(r ApiCreateNetworkPoolIp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1231,6 +1256,7 @@ func (a *NetworksAPIService) CreateNetworkPoolIpExecute(r ApiCreateNetworkPoolIp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1241,6 +1267,7 @@ func (a *NetworksAPIService) CreateNetworkPoolIpExecute(r ApiCreateNetworkPoolIp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1356,6 +1383,7 @@ func (a *NetworksAPIService) CreateNetworkPoolServerExecute(r ApiCreateNetworkPo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1366,6 +1394,7 @@ func (a *NetworksAPIService) CreateNetworkPoolServerExecute(r ApiCreateNetworkPo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1482,6 +1511,7 @@ func (a *NetworksAPIService) CreateNetworkProxyExecute(r ApiCreateNetworkProxyRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1492,6 +1522,7 @@ func (a *NetworksAPIService) CreateNetworkProxyExecute(r ApiCreateNetworkProxyRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1608,6 +1639,7 @@ func (a *NetworksAPIService) CreateNetworkRouterExecute(r ApiCreateNetworkRouter
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1618,6 +1650,7 @@ func (a *NetworksAPIService) CreateNetworkRouterExecute(r ApiCreateNetworkRouter
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1737,6 +1770,7 @@ func (a *NetworksAPIService) CreateNetworkRouterBgpNeighborExecute(r ApiCreateNe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1747,6 +1781,7 @@ func (a *NetworksAPIService) CreateNetworkRouterBgpNeighborExecute(r ApiCreateNe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1867,6 +1902,7 @@ func (a *NetworksAPIService) CreateNetworkRouterFirewallRuleExecute(r ApiCreateN
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1877,6 +1913,7 @@ func (a *NetworksAPIService) CreateNetworkRouterFirewallRuleExecute(r ApiCreateN
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1997,6 +2034,7 @@ func (a *NetworksAPIService) CreateNetworkRouterFirewallRuleGroupExecute(r ApiCr
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -2007,6 +2045,7 @@ func (a *NetworksAPIService) CreateNetworkRouterFirewallRuleGroupExecute(r ApiCr
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -2126,6 +2165,7 @@ func (a *NetworksAPIService) CreateNetworkRouterNatExecute(r ApiCreateNetworkRou
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -2136,6 +2176,7 @@ func (a *NetworksAPIService) CreateNetworkRouterNatExecute(r ApiCreateNetworkRou
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -2255,6 +2296,7 @@ func (a *NetworksAPIService) CreateNetworkRouterRouteExecute(r ApiCreateNetworkR
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -2265,6 +2307,7 @@ func (a *NetworksAPIService) CreateNetworkRouterRouteExecute(r ApiCreateNetworkR
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -2380,6 +2423,7 @@ func (a *NetworksAPIService) CreateNetworkServerExecute(r ApiCreateNetworkServer
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -2390,6 +2434,7 @@ func (a *NetworksAPIService) CreateNetworkServerExecute(r ApiCreateNetworkServer
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -2511,6 +2556,7 @@ func (a *NetworksAPIService) CreateNetworkServerGroupExecute(r ApiCreateNetworkS
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -2521,6 +2567,7 @@ func (a *NetworksAPIService) CreateNetworkServerGroupExecute(r ApiCreateNetworkS
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -2640,6 +2687,7 @@ func (a *NetworksAPIService) CreateNetworkTransportZoneExecute(r ApiCreateNetwor
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -2650,6 +2698,7 @@ func (a *NetworksAPIService) CreateNetworkTransportZoneExecute(r ApiCreateNetwor
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -2765,6 +2814,7 @@ func (a *NetworksAPIService) CreateNetworksExecute(r ApiCreateNetworksRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -2775,6 +2825,7 @@ func (a *NetworksAPIService) CreateNetworksExecute(r ApiCreateNetworksRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -2895,6 +2946,7 @@ func (a *NetworksAPIService) CreateStaticRouteExecute(r ApiCreateStaticRouteRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -2905,6 +2957,7 @@ func (a *NetworksAPIService) CreateStaticRouteExecute(r ApiCreateStaticRouteRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -3020,6 +3073,7 @@ func (a *NetworksAPIService) CreateSubnetExecute(r ApiCreateSubnetRequest) (*Cre
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -3030,6 +3084,7 @@ func (a *NetworksAPIService) CreateSubnetExecute(r ApiCreateSubnetRequest) (*Cre
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -3141,6 +3196,7 @@ func (a *NetworksAPIService) DeleteNetworkExecute(r ApiDeleteNetworkRequest) (*D
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -3151,6 +3207,7 @@ func (a *NetworksAPIService) DeleteNetworkExecute(r ApiDeleteNetworkRequest) (*D
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -3266,6 +3323,7 @@ func (a *NetworksAPIService) DeleteNetworkDhcpRelayExecute(r ApiDeleteNetworkDhc
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -3276,6 +3334,7 @@ func (a *NetworksAPIService) DeleteNetworkDhcpRelayExecute(r ApiDeleteNetworkDhc
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -3391,6 +3450,7 @@ func (a *NetworksAPIService) DeleteNetworkDhcpServerExecute(r ApiDeleteNetworkDh
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -3401,6 +3461,7 @@ func (a *NetworksAPIService) DeleteNetworkDhcpServerExecute(r ApiDeleteNetworkDh
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -3512,6 +3573,7 @@ func (a *NetworksAPIService) DeleteNetworkDomainExecute(r ApiDeleteNetworkDomain
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -3522,6 +3584,7 @@ func (a *NetworksAPIService) DeleteNetworkDomainExecute(r ApiDeleteNetworkDomain
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -3637,6 +3700,7 @@ func (a *NetworksAPIService) DeleteNetworkFirewallRuleExecute(r ApiDeleteNetwork
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -3647,6 +3711,7 @@ func (a *NetworksAPIService) DeleteNetworkFirewallRuleExecute(r ApiDeleteNetwork
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -3762,6 +3827,7 @@ func (a *NetworksAPIService) DeleteNetworkFirewallRuleGroupExecute(r ApiDeleteNe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -3772,6 +3838,7 @@ func (a *NetworksAPIService) DeleteNetworkFirewallRuleGroupExecute(r ApiDeleteNe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -3883,6 +3950,7 @@ func (a *NetworksAPIService) DeleteNetworkGroupExecute(r ApiDeleteNetworkGroupRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -3893,6 +3961,7 @@ func (a *NetworksAPIService) DeleteNetworkGroupExecute(r ApiDeleteNetworkGroupRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -4004,6 +4073,7 @@ func (a *NetworksAPIService) DeleteNetworkPoolExecute(r ApiDeleteNetworkPoolRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -4014,6 +4084,7 @@ func (a *NetworksAPIService) DeleteNetworkPoolExecute(r ApiDeleteNetworkPoolRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -4129,6 +4200,7 @@ func (a *NetworksAPIService) DeleteNetworkPoolIpExecute(r ApiDeleteNetworkPoolIp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -4139,6 +4211,7 @@ func (a *NetworksAPIService) DeleteNetworkPoolIpExecute(r ApiDeleteNetworkPoolIp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -4149,6 +4222,7 @@ func (a *NetworksAPIService) DeleteNetworkPoolIpExecute(r ApiDeleteNetworkPoolIp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -4159,6 +4233,7 @@ func (a *NetworksAPIService) DeleteNetworkPoolIpExecute(r ApiDeleteNetworkPoolIp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -4169,6 +4244,7 @@ func (a *NetworksAPIService) DeleteNetworkPoolIpExecute(r ApiDeleteNetworkPoolIp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -4179,6 +4255,7 @@ func (a *NetworksAPIService) DeleteNetworkPoolIpExecute(r ApiDeleteNetworkPoolIp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -4189,6 +4266,7 @@ func (a *NetworksAPIService) DeleteNetworkPoolIpExecute(r ApiDeleteNetworkPoolIp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -4199,6 +4277,7 @@ func (a *NetworksAPIService) DeleteNetworkPoolIpExecute(r ApiDeleteNetworkPoolIp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -4209,6 +4288,7 @@ func (a *NetworksAPIService) DeleteNetworkPoolIpExecute(r ApiDeleteNetworkPoolIp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -4219,6 +4299,7 @@ func (a *NetworksAPIService) DeleteNetworkPoolIpExecute(r ApiDeleteNetworkPoolIp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -4330,6 +4411,7 @@ func (a *NetworksAPIService) DeleteNetworkPoolServerExecute(r ApiDeleteNetworkPo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -4340,6 +4422,7 @@ func (a *NetworksAPIService) DeleteNetworkPoolServerExecute(r ApiDeleteNetworkPo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -4451,6 +4534,7 @@ func (a *NetworksAPIService) DeleteNetworkProxyExecute(r ApiDeleteNetworkProxyRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -4461,6 +4545,7 @@ func (a *NetworksAPIService) DeleteNetworkProxyExecute(r ApiDeleteNetworkProxyRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -4572,6 +4657,7 @@ func (a *NetworksAPIService) DeleteNetworkRouterExecute(r ApiDeleteNetworkRouter
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -4582,6 +4668,7 @@ func (a *NetworksAPIService) DeleteNetworkRouterExecute(r ApiDeleteNetworkRouter
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -4697,6 +4784,7 @@ func (a *NetworksAPIService) DeleteNetworkRouterBgpNeighborExecute(r ApiDeleteNe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -4707,6 +4795,7 @@ func (a *NetworksAPIService) DeleteNetworkRouterBgpNeighborExecute(r ApiDeleteNe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -4822,6 +4911,7 @@ func (a *NetworksAPIService) DeleteNetworkRouterFirewallRuleExecute(r ApiDeleteN
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -4832,6 +4922,7 @@ func (a *NetworksAPIService) DeleteNetworkRouterFirewallRuleExecute(r ApiDeleteN
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -4947,6 +5038,7 @@ func (a *NetworksAPIService) DeleteNetworkRouterFirewallRuleGroupExecute(r ApiDe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -4957,6 +5049,7 @@ func (a *NetworksAPIService) DeleteNetworkRouterFirewallRuleGroupExecute(r ApiDe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -5072,6 +5165,7 @@ func (a *NetworksAPIService) DeleteNetworkRouterNatExecute(r ApiDeleteNetworkRou
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -5082,6 +5176,7 @@ func (a *NetworksAPIService) DeleteNetworkRouterNatExecute(r ApiDeleteNetworkRou
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -5197,6 +5292,7 @@ func (a *NetworksAPIService) DeleteNetworkRouterRouteExecute(r ApiDeleteNetworkR
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -5207,6 +5303,7 @@ func (a *NetworksAPIService) DeleteNetworkRouterRouteExecute(r ApiDeleteNetworkR
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -5318,6 +5415,7 @@ func (a *NetworksAPIService) DeleteNetworkServerExecute(r ApiDeleteNetworkServer
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -5328,6 +5426,7 @@ func (a *NetworksAPIService) DeleteNetworkServerExecute(r ApiDeleteNetworkServer
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -5445,6 +5544,7 @@ func (a *NetworksAPIService) DeleteNetworkServerGroupExecute(r ApiDeleteNetworkS
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -5455,6 +5555,7 @@ func (a *NetworksAPIService) DeleteNetworkServerGroupExecute(r ApiDeleteNetworkS
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -5570,6 +5671,7 @@ func (a *NetworksAPIService) DeleteNetworkTransportZoneExecute(r ApiDeleteNetwor
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -5580,6 +5682,7 @@ func (a *NetworksAPIService) DeleteNetworkTransportZoneExecute(r ApiDeleteNetwor
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -5695,6 +5798,7 @@ func (a *NetworksAPIService) DeleteStaticRouteExecute(r ApiDeleteStaticRouteRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -5705,6 +5809,7 @@ func (a *NetworksAPIService) DeleteStaticRouteExecute(r ApiDeleteStaticRouteRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -5816,6 +5921,7 @@ func (a *NetworksAPIService) DeleteSubnetExecute(r ApiDeleteSubnetRequest) (*Del
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -5826,6 +5932,7 @@ func (a *NetworksAPIService) DeleteSubnetExecute(r ApiDeleteSubnetRequest) (*Del
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -5984,6 +6091,7 @@ func (a *NetworksAPIService) GetAllNetworkFloatingIpsExecute(r ApiGetAllNetworkF
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -5994,6 +6102,7 @@ func (a *NetworksAPIService) GetAllNetworkFloatingIpsExecute(r ApiGetAllNetworkF
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -6106,6 +6215,7 @@ func (a *NetworksAPIService) GetNetworkExecute(r ApiGetNetworkRequest) (*GetNetw
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -6116,6 +6226,7 @@ func (a *NetworksAPIService) GetNetworkExecute(r ApiGetNetworkRequest) (*GetNetw
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -6232,6 +6343,7 @@ func (a *NetworksAPIService) GetNetworkDhcpRelayExecute(r ApiGetNetworkDhcpRelay
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -6242,6 +6354,7 @@ func (a *NetworksAPIService) GetNetworkDhcpRelayExecute(r ApiGetNetworkDhcpRelay
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -6416,6 +6529,7 @@ func (a *NetworksAPIService) GetNetworkDhcpRelaysExecute(r ApiGetNetworkDhcpRela
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -6426,6 +6540,7 @@ func (a *NetworksAPIService) GetNetworkDhcpRelaysExecute(r ApiGetNetworkDhcpRela
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -6542,6 +6657,7 @@ func (a *NetworksAPIService) GetNetworkDhcpServerExecute(r ApiGetNetworkDhcpServ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -6552,6 +6668,7 @@ func (a *NetworksAPIService) GetNetworkDhcpServerExecute(r ApiGetNetworkDhcpServ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -6726,6 +6843,7 @@ func (a *NetworksAPIService) GetNetworkDhcpServersExecute(r ApiGetNetworkDhcpSer
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -6736,6 +6854,7 @@ func (a *NetworksAPIService) GetNetworkDhcpServersExecute(r ApiGetNetworkDhcpSer
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -6848,6 +6967,7 @@ func (a *NetworksAPIService) GetNetworkDomainExecute(r ApiGetNetworkDomainReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -6858,6 +6978,7 @@ func (a *NetworksAPIService) GetNetworkDomainExecute(r ApiGetNetworkDomainReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -6986,6 +7107,7 @@ func (a *NetworksAPIService) GetNetworkDomainsExecute(r ApiGetNetworkDomainsRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -6996,6 +7118,7 @@ func (a *NetworksAPIService) GetNetworkDomainsExecute(r ApiGetNetworkDomainsRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -7112,6 +7235,7 @@ func (a *NetworksAPIService) GetNetworkEdgeClusterExecute(r ApiGetNetworkEdgeClu
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -7122,6 +7246,7 @@ func (a *NetworksAPIService) GetNetworkEdgeClusterExecute(r ApiGetNetworkEdgeClu
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -7296,6 +7421,7 @@ func (a *NetworksAPIService) GetNetworkEdgeClustersExecute(r ApiGetNetworkEdgeCl
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -7306,6 +7432,7 @@ func (a *NetworksAPIService) GetNetworkEdgeClustersExecute(r ApiGetNetworkEdgeCl
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -7422,6 +7549,7 @@ func (a *NetworksAPIService) GetNetworkFirewallRuleExecute(r ApiGetNetworkFirewa
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -7432,6 +7560,7 @@ func (a *NetworksAPIService) GetNetworkFirewallRuleExecute(r ApiGetNetworkFirewa
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -7548,6 +7677,7 @@ func (a *NetworksAPIService) GetNetworkFirewallRuleGroupExecute(r ApiGetNetworkF
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -7558,6 +7688,7 @@ func (a *NetworksAPIService) GetNetworkFirewallRuleGroupExecute(r ApiGetNetworkF
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -7732,6 +7863,7 @@ func (a *NetworksAPIService) GetNetworkFirewallRuleGroupsExecute(r ApiGetNetwork
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -7742,6 +7874,7 @@ func (a *NetworksAPIService) GetNetworkFirewallRuleGroupsExecute(r ApiGetNetwork
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -7916,6 +8049,7 @@ func (a *NetworksAPIService) GetNetworkFirewallRulesExecute(r ApiGetNetworkFirew
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -7926,6 +8060,7 @@ func (a *NetworksAPIService) GetNetworkFirewallRulesExecute(r ApiGetNetworkFirew
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -8038,6 +8173,7 @@ func (a *NetworksAPIService) GetNetworkFloatingIpExecute(r ApiGetNetworkFloating
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -8048,6 +8184,7 @@ func (a *NetworksAPIService) GetNetworkFloatingIpExecute(r ApiGetNetworkFloating
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -8160,6 +8297,7 @@ func (a *NetworksAPIService) GetNetworkGroupExecute(r ApiGetNetworkGroupRequest)
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -8170,6 +8308,7 @@ func (a *NetworksAPIService) GetNetworkGroupExecute(r ApiGetNetworkGroupRequest)
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -8278,6 +8417,7 @@ func (a *NetworksAPIService) GetNetworkGroupsExecute(r ApiGetNetworkGroupsReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -8288,6 +8428,7 @@ func (a *NetworksAPIService) GetNetworkGroupsExecute(r ApiGetNetworkGroupsReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -8400,6 +8541,7 @@ func (a *NetworksAPIService) GetNetworkPoolExecute(r ApiGetNetworkPoolRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -8410,6 +8552,7 @@ func (a *NetworksAPIService) GetNetworkPoolExecute(r ApiGetNetworkPoolRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -8526,6 +8669,7 @@ func (a *NetworksAPIService) GetNetworkPoolIpExecute(r ApiGetNetworkPoolIpReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -8536,6 +8680,7 @@ func (a *NetworksAPIService) GetNetworkPoolIpExecute(r ApiGetNetworkPoolIpReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -8546,6 +8691,7 @@ func (a *NetworksAPIService) GetNetworkPoolIpExecute(r ApiGetNetworkPoolIpReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -8556,6 +8702,7 @@ func (a *NetworksAPIService) GetNetworkPoolIpExecute(r ApiGetNetworkPoolIpReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -8566,6 +8713,7 @@ func (a *NetworksAPIService) GetNetworkPoolIpExecute(r ApiGetNetworkPoolIpReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -8576,6 +8724,7 @@ func (a *NetworksAPIService) GetNetworkPoolIpExecute(r ApiGetNetworkPoolIpReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -8586,6 +8735,7 @@ func (a *NetworksAPIService) GetNetworkPoolIpExecute(r ApiGetNetworkPoolIpReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -8596,6 +8746,7 @@ func (a *NetworksAPIService) GetNetworkPoolIpExecute(r ApiGetNetworkPoolIpReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -8606,6 +8757,7 @@ func (a *NetworksAPIService) GetNetworkPoolIpExecute(r ApiGetNetworkPoolIpReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -8616,6 +8768,7 @@ func (a *NetworksAPIService) GetNetworkPoolIpExecute(r ApiGetNetworkPoolIpReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -8758,6 +8911,7 @@ func (a *NetworksAPIService) GetNetworkPoolIpsExecute(r ApiGetNetworkPoolIpsRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -8768,6 +8922,7 @@ func (a *NetworksAPIService) GetNetworkPoolIpsExecute(r ApiGetNetworkPoolIpsRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -8778,6 +8933,7 @@ func (a *NetworksAPIService) GetNetworkPoolIpsExecute(r ApiGetNetworkPoolIpsRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -8788,6 +8944,7 @@ func (a *NetworksAPIService) GetNetworkPoolIpsExecute(r ApiGetNetworkPoolIpsRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -8798,6 +8955,7 @@ func (a *NetworksAPIService) GetNetworkPoolIpsExecute(r ApiGetNetworkPoolIpsRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -8808,6 +8966,7 @@ func (a *NetworksAPIService) GetNetworkPoolIpsExecute(r ApiGetNetworkPoolIpsRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -8818,6 +8977,7 @@ func (a *NetworksAPIService) GetNetworkPoolIpsExecute(r ApiGetNetworkPoolIpsRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -8828,6 +8988,7 @@ func (a *NetworksAPIService) GetNetworkPoolIpsExecute(r ApiGetNetworkPoolIpsRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -8838,6 +8999,7 @@ func (a *NetworksAPIService) GetNetworkPoolIpsExecute(r ApiGetNetworkPoolIpsRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -8848,6 +9010,7 @@ func (a *NetworksAPIService) GetNetworkPoolIpsExecute(r ApiGetNetworkPoolIpsRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -8960,6 +9123,7 @@ func (a *NetworksAPIService) GetNetworkPoolServerExecute(r ApiGetNetworkPoolServ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -8970,6 +9134,7 @@ func (a *NetworksAPIService) GetNetworkPoolServerExecute(r ApiGetNetworkPoolServ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -9082,6 +9247,7 @@ func (a *NetworksAPIService) GetNetworkPoolServerTypeExecute(r ApiGetNetworkPool
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -9092,6 +9258,7 @@ func (a *NetworksAPIService) GetNetworkPoolServerTypeExecute(r ApiGetNetworkPool
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -9220,6 +9387,7 @@ func (a *NetworksAPIService) GetNetworkPoolsExecute(r ApiGetNetworkPoolsRequest)
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -9230,6 +9398,7 @@ func (a *NetworksAPIService) GetNetworkPoolsExecute(r ApiGetNetworkPoolsRequest)
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -9358,6 +9527,7 @@ func (a *NetworksAPIService) GetNetworkProxiesExecute(r ApiGetNetworkProxiesRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -9368,6 +9538,7 @@ func (a *NetworksAPIService) GetNetworkProxiesExecute(r ApiGetNetworkProxiesRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -9480,6 +9651,7 @@ func (a *NetworksAPIService) GetNetworkProxyExecute(r ApiGetNetworkProxyRequest)
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -9490,6 +9662,7 @@ func (a *NetworksAPIService) GetNetworkProxyExecute(r ApiGetNetworkProxyRequest)
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -9602,6 +9775,7 @@ func (a *NetworksAPIService) GetNetworkRouterExecute(r ApiGetNetworkRouterReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -9612,6 +9786,7 @@ func (a *NetworksAPIService) GetNetworkRouterExecute(r ApiGetNetworkRouterReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -9727,6 +9902,7 @@ func (a *NetworksAPIService) GetNetworkRouterBgpNeighborExecute(r ApiGetNetworkR
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -9737,6 +9913,7 @@ func (a *NetworksAPIService) GetNetworkRouterBgpNeighborExecute(r ApiGetNetworkR
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -9853,6 +10030,7 @@ func (a *NetworksAPIService) GetNetworkRouterFirewallRuleExecute(r ApiGetNetwork
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -9863,6 +10041,7 @@ func (a *NetworksAPIService) GetNetworkRouterFirewallRuleExecute(r ApiGetNetwork
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -9979,6 +10158,7 @@ func (a *NetworksAPIService) GetNetworkRouterFirewallRuleGroupExecute(r ApiGetNe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -9989,6 +10169,7 @@ func (a *NetworksAPIService) GetNetworkRouterFirewallRuleGroupExecute(r ApiGetNe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -10101,6 +10282,7 @@ func (a *NetworksAPIService) GetNetworkRouterFirewallRuleGroupsExecute(r ApiGetN
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -10111,6 +10293,7 @@ func (a *NetworksAPIService) GetNetworkRouterFirewallRuleGroupsExecute(r ApiGetN
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -10226,6 +10409,7 @@ func (a *NetworksAPIService) GetNetworkRouterNatExecute(r ApiGetNetworkRouterNat
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -10236,6 +10420,7 @@ func (a *NetworksAPIService) GetNetworkRouterNatExecute(r ApiGetNetworkRouterNat
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -10352,6 +10537,7 @@ func (a *NetworksAPIService) GetNetworkRouterRouteExecute(r ApiGetNetworkRouterR
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -10362,6 +10548,7 @@ func (a *NetworksAPIService) GetNetworkRouterRouteExecute(r ApiGetNetworkRouterR
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -10474,6 +10661,7 @@ func (a *NetworksAPIService) GetNetworkRouterTypeExecute(r ApiGetNetworkRouterTy
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -10484,6 +10672,7 @@ func (a *NetworksAPIService) GetNetworkRouterTypeExecute(r ApiGetNetworkRouterTy
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -10592,6 +10781,7 @@ func (a *NetworksAPIService) GetNetworkRoutersExecute(r ApiGetNetworkRoutersRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -10602,6 +10792,7 @@ func (a *NetworksAPIService) GetNetworkRoutersExecute(r ApiGetNetworkRoutersRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -10713,6 +10904,7 @@ func (a *NetworksAPIService) GetNetworkRoutersBgpNeighborsExecute(r ApiGetNetwor
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -10723,6 +10915,7 @@ func (a *NetworksAPIService) GetNetworkRoutersBgpNeighborsExecute(r ApiGetNetwor
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -10835,6 +11028,7 @@ func (a *NetworksAPIService) GetNetworkRoutersFirewallRulesExecute(r ApiGetNetwo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -10845,6 +11039,7 @@ func (a *NetworksAPIService) GetNetworkRoutersFirewallRulesExecute(r ApiGetNetwo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -10957,6 +11152,7 @@ func (a *NetworksAPIService) GetNetworkRoutersNatsExecute(r ApiGetNetworkRouters
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -10967,6 +11163,7 @@ func (a *NetworksAPIService) GetNetworkRoutersNatsExecute(r ApiGetNetworkRouters
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -11079,6 +11276,7 @@ func (a *NetworksAPIService) GetNetworkRoutersRoutesExecute(r ApiGetNetworkRoute
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -11089,6 +11287,7 @@ func (a *NetworksAPIService) GetNetworkRoutersRoutesExecute(r ApiGetNetworkRoute
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -11201,6 +11400,7 @@ func (a *NetworksAPIService) GetNetworkServerExecute(r ApiGetNetworkServerReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -11211,6 +11411,7 @@ func (a *NetworksAPIService) GetNetworkServerExecute(r ApiGetNetworkServerReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -11328,6 +11529,7 @@ func (a *NetworksAPIService) GetNetworkServerGroupExecute(r ApiGetNetworkServerG
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -11338,6 +11540,7 @@ func (a *NetworksAPIService) GetNetworkServerGroupExecute(r ApiGetNetworkServerG
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -11450,6 +11653,7 @@ func (a *NetworksAPIService) GetNetworkSubnetsExecute(r ApiGetNetworkSubnetsRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -11460,6 +11664,7 @@ func (a *NetworksAPIService) GetNetworkSubnetsExecute(r ApiGetNetworkSubnetsRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -11576,6 +11781,7 @@ func (a *NetworksAPIService) GetNetworkTransportZoneExecute(r ApiGetNetworkTrans
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -11586,6 +11792,7 @@ func (a *NetworksAPIService) GetNetworkTransportZoneExecute(r ApiGetNetworkTrans
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -11759,6 +11966,7 @@ func (a *NetworksAPIService) GetNetworkTransportZonesExecute(r ApiGetNetworkTran
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -11769,6 +11977,7 @@ func (a *NetworksAPIService) GetNetworkTransportZonesExecute(r ApiGetNetworkTran
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -11880,6 +12089,7 @@ func (a *NetworksAPIService) GetNetworkTypeExecute(r ApiGetNetworkTypeRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -11890,6 +12100,7 @@ func (a *NetworksAPIService) GetNetworkTypeExecute(r ApiGetNetworkTypeRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -12006,6 +12217,7 @@ func (a *NetworksAPIService) GetStaticRouteExecute(r ApiGetStaticRouteRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -12016,6 +12228,7 @@ func (a *NetworksAPIService) GetStaticRouteExecute(r ApiGetStaticRouteRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -12128,6 +12341,7 @@ func (a *NetworksAPIService) GetStaticRoutesExecute(r ApiGetStaticRoutesRequest)
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -12138,6 +12352,7 @@ func (a *NetworksAPIService) GetStaticRoutesExecute(r ApiGetStaticRoutesRequest)
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -12250,6 +12465,7 @@ func (a *NetworksAPIService) GetSubnetExecute(r ApiGetSubnetRequest) (*CreateSub
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -12260,6 +12476,7 @@ func (a *NetworksAPIService) GetSubnetExecute(r ApiGetSubnetRequest) (*CreateSub
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -12450,6 +12667,7 @@ func (a *NetworksAPIService) ListNetworkPoolServerTypesExecute(r ApiListNetworkP
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -12460,6 +12678,7 @@ func (a *NetworksAPIService) ListNetworkPoolServerTypesExecute(r ApiListNetworkP
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -12640,6 +12859,7 @@ func (a *NetworksAPIService) ListNetworkPoolServersExecute(r ApiListNetworkPoolS
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -12650,6 +12870,7 @@ func (a *NetworksAPIService) ListNetworkPoolServersExecute(r ApiListNetworkPoolS
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -12758,6 +12979,7 @@ func (a *NetworksAPIService) ListNetworkRouterTypesExecute(r ApiListNetworkRoute
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -12768,6 +12990,7 @@ func (a *NetworksAPIService) ListNetworkRouterTypesExecute(r ApiListNetworkRoute
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -12943,6 +13166,7 @@ func (a *NetworksAPIService) ListNetworkServerGroupsExecute(r ApiListNetworkServ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -12953,6 +13177,7 @@ func (a *NetworksAPIService) ListNetworkServerGroupsExecute(r ApiListNetworkServ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -13133,6 +13358,7 @@ func (a *NetworksAPIService) ListNetworkServersExecute(r ApiListNetworkServersRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -13143,6 +13369,7 @@ func (a *NetworksAPIService) ListNetworkServersExecute(r ApiListNetworkServersRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -13270,6 +13497,7 @@ func (a *NetworksAPIService) ListNetworkServicesExecute(r ApiListNetworkServices
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -13280,6 +13508,7 @@ func (a *NetworksAPIService) ListNetworkServicesExecute(r ApiListNetworkServices
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -13420,6 +13649,7 @@ func (a *NetworksAPIService) ListNetworkTypesExecute(r ApiListNetworkTypesReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -13430,6 +13660,7 @@ func (a *NetworksAPIService) ListNetworkTypesExecute(r ApiListNetworkTypesReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -13598,6 +13829,7 @@ func (a *NetworksAPIService) ListNetworksExecute(r ApiListNetworksRequest) (*Lis
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -13608,6 +13840,7 @@ func (a *NetworksAPIService) ListNetworksExecute(r ApiListNetworksRequest) (*Lis
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -13738,6 +13971,7 @@ func (a *NetworksAPIService) ListSubnetTypesExecute(r ApiListSubnetTypesRequest)
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -13748,6 +13982,7 @@ func (a *NetworksAPIService) ListSubnetTypesExecute(r ApiListSubnetTypesRequest)
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -13896,6 +14131,7 @@ func (a *NetworksAPIService) ListSubnetsExecute(r ApiListSubnetsRequest) (*GetNe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -13906,6 +14142,7 @@ func (a *NetworksAPIService) ListSubnetsExecute(r ApiListSubnetsRequest) (*GetNe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -14018,6 +14255,7 @@ func (a *NetworksAPIService) RefreshNetworkServerExecute(r ApiRefreshNetworkServ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -14028,6 +14266,7 @@ func (a *NetworksAPIService) RefreshNetworkServerExecute(r ApiRefreshNetworkServ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -14140,6 +14379,7 @@ func (a *NetworksAPIService) ReleaseNetworkFloatingIpExecute(r ApiReleaseNetwork
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -14150,6 +14390,7 @@ func (a *NetworksAPIService) ReleaseNetworkFloatingIpExecute(r ApiReleaseNetwork
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -14270,6 +14511,7 @@ func (a *NetworksAPIService) UpdateNetworkExecute(r ApiUpdateNetworkRequest) (*C
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -14280,6 +14522,7 @@ func (a *NetworksAPIService) UpdateNetworkExecute(r ApiUpdateNetworkRequest) (*C
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -14404,6 +14647,7 @@ func (a *NetworksAPIService) UpdateNetworkDhcpRelayExecute(r ApiUpdateNetworkDhc
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -14414,6 +14658,7 @@ func (a *NetworksAPIService) UpdateNetworkDhcpRelayExecute(r ApiUpdateNetworkDhc
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -14538,6 +14783,7 @@ func (a *NetworksAPIService) UpdateNetworkDhcpServerExecute(r ApiUpdateNetworkDh
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -14548,6 +14794,7 @@ func (a *NetworksAPIService) UpdateNetworkDhcpServerExecute(r ApiUpdateNetworkDh
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -14668,6 +14915,7 @@ func (a *NetworksAPIService) UpdateNetworkDomainExecute(r ApiUpdateNetworkDomain
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -14678,6 +14926,7 @@ func (a *NetworksAPIService) UpdateNetworkDomainExecute(r ApiUpdateNetworkDomain
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -14802,6 +15051,7 @@ func (a *NetworksAPIService) UpdateNetworkEdgeClusterExecute(r ApiUpdateNetworkE
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -14812,6 +15062,7 @@ func (a *NetworksAPIService) UpdateNetworkEdgeClusterExecute(r ApiUpdateNetworkE
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -14936,6 +15187,7 @@ func (a *NetworksAPIService) UpdateNetworkFirewallRuleExecute(r ApiUpdateNetwork
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -14946,6 +15198,7 @@ func (a *NetworksAPIService) UpdateNetworkFirewallRuleExecute(r ApiUpdateNetwork
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -15070,6 +15323,7 @@ func (a *NetworksAPIService) UpdateNetworkFirewallRuleGroupExecute(r ApiUpdateNe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -15080,6 +15334,7 @@ func (a *NetworksAPIService) UpdateNetworkFirewallRuleGroupExecute(r ApiUpdateNe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -15200,6 +15455,7 @@ func (a *NetworksAPIService) UpdateNetworkGroupExecute(r ApiUpdateNetworkGroupRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -15210,6 +15466,7 @@ func (a *NetworksAPIService) UpdateNetworkGroupExecute(r ApiUpdateNetworkGroupRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -15330,6 +15587,7 @@ func (a *NetworksAPIService) UpdateNetworkPoolExecute(r ApiUpdateNetworkPoolRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -15340,6 +15598,7 @@ func (a *NetworksAPIService) UpdateNetworkPoolExecute(r ApiUpdateNetworkPoolRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -15460,6 +15719,7 @@ func (a *NetworksAPIService) UpdateNetworkPoolServerExecute(r ApiUpdateNetworkPo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -15470,6 +15730,7 @@ func (a *NetworksAPIService) UpdateNetworkPoolServerExecute(r ApiUpdateNetworkPo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -15590,6 +15851,7 @@ func (a *NetworksAPIService) UpdateNetworkProxyExecute(r ApiUpdateNetworkProxyRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -15600,6 +15862,7 @@ func (a *NetworksAPIService) UpdateNetworkProxyExecute(r ApiUpdateNetworkProxyRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -15720,6 +15983,7 @@ func (a *NetworksAPIService) UpdateNetworkRouterExecute(r ApiUpdateNetworkRouter
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -15730,6 +15994,7 @@ func (a *NetworksAPIService) UpdateNetworkRouterExecute(r ApiUpdateNetworkRouter
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -15854,6 +16119,7 @@ func (a *NetworksAPIService) UpdateNetworkRouterBgpNeighborExecute(r ApiUpdateNe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -15864,6 +16130,7 @@ func (a *NetworksAPIService) UpdateNetworkRouterBgpNeighborExecute(r ApiUpdateNe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -15988,6 +16255,7 @@ func (a *NetworksAPIService) UpdateNetworkRouterFirewallRuleExecute(r ApiUpdateN
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -15998,6 +16266,7 @@ func (a *NetworksAPIService) UpdateNetworkRouterFirewallRuleExecute(r ApiUpdateN
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -16122,6 +16391,7 @@ func (a *NetworksAPIService) UpdateNetworkRouterFirewallRuleGroupExecute(r ApiUp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -16132,6 +16402,7 @@ func (a *NetworksAPIService) UpdateNetworkRouterFirewallRuleGroupExecute(r ApiUp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -16256,6 +16527,7 @@ func (a *NetworksAPIService) UpdateNetworkRouterNatExecute(r ApiUpdateNetworkRou
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -16266,6 +16538,7 @@ func (a *NetworksAPIService) UpdateNetworkRouterNatExecute(r ApiUpdateNetworkRou
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -16386,6 +16659,7 @@ func (a *NetworksAPIService) UpdateNetworkRouterPermissionsExecute(r ApiUpdateNe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -16396,6 +16670,7 @@ func (a *NetworksAPIService) UpdateNetworkRouterPermissionsExecute(r ApiUpdateNe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -16516,6 +16791,7 @@ func (a *NetworksAPIService) UpdateNetworkServerExecute(r ApiUpdateNetworkServer
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -16526,6 +16802,7 @@ func (a *NetworksAPIService) UpdateNetworkServerExecute(r ApiUpdateNetworkServer
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -16651,6 +16928,7 @@ func (a *NetworksAPIService) UpdateNetworkServerGroupExecute(r ApiUpdateNetworkS
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -16661,6 +16939,7 @@ func (a *NetworksAPIService) UpdateNetworkServerGroupExecute(r ApiUpdateNetworkS
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -16785,6 +17064,7 @@ func (a *NetworksAPIService) UpdateNetworkTransportZoneExecute(r ApiUpdateNetwor
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -16795,6 +17075,7 @@ func (a *NetworksAPIService) UpdateNetworkTransportZoneExecute(r ApiUpdateNetwor
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -16919,6 +17200,7 @@ func (a *NetworksAPIService) UpdateStaticRouteExecute(r ApiUpdateStaticRouteRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -16929,6 +17211,7 @@ func (a *NetworksAPIService) UpdateStaticRouteExecute(r ApiUpdateStaticRouteRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -17049,6 +17332,7 @@ func (a *NetworksAPIService) UpdateSubnetExecute(r ApiUpdateSubnetRequest) (*Cre
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -17059,6 +17343,7 @@ func (a *NetworksAPIService) UpdateSubnetExecute(r ApiUpdateSubnetRequest) (*Cre
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
