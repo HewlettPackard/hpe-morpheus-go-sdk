@@ -16,6 +16,9 @@ import (
 	"fmt"
 )
 
+// very silly way of avoiding `"fmt" imported and not used` errors
+var _ fmt.Stringer
+
 
 // AddSecurityGroupsRequestSecurityGroupCustomOptions struct for AddSecurityGroupsRequestSecurityGroupCustomOptions
 type AddSecurityGroupsRequestSecurityGroupCustomOptions struct {
@@ -66,7 +69,7 @@ func (dst *AddSecurityGroupsRequestSecurityGroupCustomOptions) UnmarshalJSON(dat
 		dst.CustomOptionsForOpenstackOpenTelekomHuawei = nil
 	}
 
-	return fmt.Errorf("data failed to match schemas in anyOf(AddSecurityGroupsRequestSecurityGroupCustomOptions)")
+	return NewResponseValidationError("data failed to match schemas in anyOf(AddSecurityGroupsRequestSecurityGroupCustomOptions)")
 }
 
 // Marshal data from the first non-nil pointers in the struct to JSON

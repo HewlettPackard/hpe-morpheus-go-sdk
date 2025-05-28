@@ -16,6 +16,9 @@ import (
 	"fmt"
 )
 
+// very silly way of avoiding `"fmt" imported and not used` errors
+var _ fmt.Stringer
+
 
 // AddCloudsRequestZoneZoneType struct for AddCloudsRequestZoneZoneType
 type AddCloudsRequestZoneZoneType struct {
@@ -52,7 +55,7 @@ func (dst *AddCloudsRequestZoneZoneType) UnmarshalJSON(data []byte) error {
 		dst.AddCloudsRequestZoneZoneTypeAnyOf1 = nil
 	}
 
-	return fmt.Errorf("data failed to match schemas in anyOf(AddCloudsRequestZoneZoneType)")
+	return NewResponseValidationError("data failed to match schemas in anyOf(AddCloudsRequestZoneZoneType)")
 }
 
 // Marshal data from the first non-nil pointers in the struct to JSON

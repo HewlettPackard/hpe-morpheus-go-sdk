@@ -109,7 +109,7 @@ func (v *CurrencyCode) UnmarshalJSON(src []byte) error {
 		}
 	}
 
-	return fmt.Errorf("%+v is not a valid CurrencyCode", value)
+	return NewResponseValidationError(fmt.Sprintf("%+v is not a valid CurrencyCode", value))
 }
 
 // NewCurrencyCodeFromValue returns a pointer to a valid CurrencyCode

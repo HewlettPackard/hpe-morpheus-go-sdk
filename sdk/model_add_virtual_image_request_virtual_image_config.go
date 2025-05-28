@@ -17,6 +17,9 @@ import (
 	"gopkg.in/validator.v2"
 )
 
+// very silly way of avoiding `"fmt" imported and not used` errors
+var _ fmt.Stringer
+
 // AddVirtualImageRequestVirtualImageConfig - Map of configuration properties, varies by image type.
 type AddVirtualImageRequestVirtualImageConfig struct {
 	AddVirtualImageRequestVirtualImageConfigOneOf *AddVirtualImageRequestVirtualImageConfigOneOf
@@ -81,11 +84,11 @@ func (dst *AddVirtualImageRequestVirtualImageConfig) UnmarshalJSON(data []byte) 
 		dst.AddVirtualImageRequestVirtualImageConfigOneOf = nil
 		dst.MapmapOfStringAny = nil
 
-		return fmt.Errorf("data matches more than one schema in oneOf(AddVirtualImageRequestVirtualImageConfig)")
+		return NewResponseValidationError("data matches more than one schema in oneOf(AddVirtualImageRequestVirtualImageConfig)")
 	} else if match == 1 {
 		return nil // exactly one match
 	} else { // no match
-		return fmt.Errorf("data failed to match schemas in oneOf(AddVirtualImageRequestVirtualImageConfig)")
+		return NewResponseValidationError("data failed to match schemas in oneOf(AddVirtualImageRequestVirtualImageConfig)")
 	}
 }
 

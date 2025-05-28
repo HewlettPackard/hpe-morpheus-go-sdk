@@ -16,6 +16,9 @@ import (
 	"fmt"
 )
 
+// very silly way of avoiding `"fmt" imported and not used` errors
+var _ fmt.Stringer
+
 
 // AddVDIPools200Response struct for AddVDIPools200Response
 type AddVDIPools200Response struct {
@@ -52,7 +55,7 @@ func (dst *AddVDIPools200Response) UnmarshalJSON(data []byte) error {
 		dst.DeleteAlerts200Response = nil
 	}
 
-	return fmt.Errorf("data failed to match schemas in anyOf(AddVDIPools200Response)")
+	return NewResponseValidationError("data failed to match schemas in anyOf(AddVDIPools200Response)")
 }
 
 // Marshal data from the first non-nil pointers in the struct to JSON

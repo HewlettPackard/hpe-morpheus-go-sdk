@@ -17,6 +17,9 @@ import (
 	"gopkg.in/validator.v2"
 )
 
+// very silly way of avoiding `"fmt" imported and not used` errors
+var _ fmt.Stringer
+
 // GetInstance200ResponseInstanceConfigNoAgent - struct for GetInstance200ResponseInstanceConfigNoAgent
 type GetInstance200ResponseInstanceConfigNoAgent struct {
 	Bool *bool
@@ -81,11 +84,11 @@ func (dst *GetInstance200ResponseInstanceConfigNoAgent) UnmarshalJSON(data []byt
 		dst.Bool = nil
 		dst.String = nil
 
-		return fmt.Errorf("data matches more than one schema in oneOf(GetInstance200ResponseInstanceConfigNoAgent)")
+		return NewResponseValidationError("data matches more than one schema in oneOf(GetInstance200ResponseInstanceConfigNoAgent)")
 	} else if match == 1 {
 		return nil // exactly one match
 	} else { // no match
-		return fmt.Errorf("data failed to match schemas in oneOf(GetInstance200ResponseInstanceConfigNoAgent)")
+		return NewResponseValidationError("data failed to match schemas in oneOf(GetInstance200ResponseInstanceConfigNoAgent)")
 	}
 }
 

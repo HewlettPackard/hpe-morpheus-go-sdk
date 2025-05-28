@@ -17,6 +17,9 @@ import (
 	"gopkg.in/validator.v2"
 )
 
+// very silly way of avoiding `"fmt" imported and not used` errors
+var _ fmt.Stringer
+
 // ListInstances200ResponseAllOfInstancesInnerEvarsInnerValue - struct for ListInstances200ResponseAllOfInstancesInnerEvarsInnerValue
 type ListInstances200ResponseAllOfInstancesInnerEvarsInnerValue struct {
 	Float32 *float32
@@ -81,11 +84,11 @@ func (dst *ListInstances200ResponseAllOfInstancesInnerEvarsInnerValue) Unmarshal
 		dst.Float32 = nil
 		dst.String = nil
 
-		return fmt.Errorf("data matches more than one schema in oneOf(ListInstances200ResponseAllOfInstancesInnerEvarsInnerValue)")
+		return NewResponseValidationError("data matches more than one schema in oneOf(ListInstances200ResponseAllOfInstancesInnerEvarsInnerValue)")
 	} else if match == 1 {
 		return nil // exactly one match
 	} else { // no match
-		return fmt.Errorf("data failed to match schemas in oneOf(ListInstances200ResponseAllOfInstancesInnerEvarsInnerValue)")
+		return NewResponseValidationError("data failed to match schemas in oneOf(ListInstances200ResponseAllOfInstancesInnerEvarsInnerValue)")
 	}
 }
 

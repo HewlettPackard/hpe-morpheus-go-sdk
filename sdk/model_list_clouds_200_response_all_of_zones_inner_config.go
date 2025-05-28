@@ -16,6 +16,9 @@ import (
 	"fmt"
 )
 
+// very silly way of avoiding `"fmt" imported and not used` errors
+var _ fmt.Stringer
+
 
 // ListClouds200ResponseAllOfZonesInnerConfig struct for ListClouds200ResponseAllOfZonesInnerConfig
 type ListClouds200ResponseAllOfZonesInnerConfig struct {
@@ -80,7 +83,7 @@ func (dst *ListClouds200ResponseAllOfZonesInnerConfig) UnmarshalJSON(data []byte
 		dst.ListClouds200ResponseAllOfZonesInnerConfigAnyOf3 = nil
 	}
 
-	return fmt.Errorf("data failed to match schemas in anyOf(ListClouds200ResponseAllOfZonesInnerConfig)")
+	return NewResponseValidationError("data failed to match schemas in anyOf(ListClouds200ResponseAllOfZonesInnerConfig)")
 }
 
 // Marshal data from the first non-nil pointers in the struct to JSON

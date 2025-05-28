@@ -67,7 +67,7 @@ func (a *ArchivesAPIService) AddArchiveBucketExecute(r ApiAddArchiveBucketReques
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArchivesAPIService.AddArchiveBucket")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/archives/buckets"
@@ -115,16 +115,14 @@ func (a *ArchivesAPIService) AddArchiveBucketExecute(r ApiAddArchiveBucketReques
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -132,10 +130,9 @@ func (a *ArchivesAPIService) AddArchiveBucketExecute(r ApiAddArchiveBucketReques
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -145,7 +142,7 @@ func (a *ArchivesAPIService) AddArchiveBucketExecute(r ApiAddArchiveBucketReques
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -211,7 +208,7 @@ func (a *ArchivesAPIService) AddArchiveFileExecute(r ApiAddArchiveFileRequest) (
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArchivesAPIService.AddArchiveFile")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/archives/buckets/{bucket}/files/{filepath}"
@@ -277,16 +274,14 @@ func (a *ArchivesAPIService) AddArchiveFileExecute(r ApiAddArchiveFileRequest) (
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -294,10 +289,9 @@ func (a *ArchivesAPIService) AddArchiveFileExecute(r ApiAddArchiveFileRequest) (
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -307,7 +301,7 @@ func (a *ArchivesAPIService) AddArchiveFileExecute(r ApiAddArchiveFileRequest) (
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -361,7 +355,7 @@ func (a *ArchivesAPIService) AddArchiveFileLinkExecute(r ApiAddArchiveFileLinkRe
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArchivesAPIService.AddArchiveFileLink")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/archives/files/{id}/links"
@@ -414,16 +408,14 @@ func (a *ArchivesAPIService) AddArchiveFileLinkExecute(r ApiAddArchiveFileLinkRe
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -431,10 +423,9 @@ func (a *ArchivesAPIService) AddArchiveFileLinkExecute(r ApiAddArchiveFileLinkRe
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -444,7 +435,7 @@ func (a *ArchivesAPIService) AddArchiveFileLinkExecute(r ApiAddArchiveFileLinkRe
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -491,7 +482,7 @@ func (a *ArchivesAPIService) DeleteArchiveBucketExecute(r ApiDeleteArchiveBucket
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArchivesAPIService.DeleteArchiveBucket")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/archives/buckets/{id}"
@@ -538,16 +529,14 @@ func (a *ArchivesAPIService) DeleteArchiveBucketExecute(r ApiDeleteArchiveBucket
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -555,10 +544,9 @@ func (a *ArchivesAPIService) DeleteArchiveBucketExecute(r ApiDeleteArchiveBucket
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -568,7 +556,7 @@ func (a *ArchivesAPIService) DeleteArchiveBucketExecute(r ApiDeleteArchiveBucket
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -618,7 +606,7 @@ func (a *ArchivesAPIService) DeleteArchiveFileExecute(r ApiDeleteArchiveFileRequ
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArchivesAPIService.DeleteArchiveFile")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/archives/files/{id}"
@@ -665,16 +653,14 @@ func (a *ArchivesAPIService) DeleteArchiveFileExecute(r ApiDeleteArchiveFileRequ
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -682,10 +668,9 @@ func (a *ArchivesAPIService) DeleteArchiveFileExecute(r ApiDeleteArchiveFileRequ
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -695,7 +680,7 @@ func (a *ArchivesAPIService) DeleteArchiveFileExecute(r ApiDeleteArchiveFileRequ
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -745,7 +730,7 @@ func (a *ArchivesAPIService) DeleteArchiveFileLinkExecute(r ApiDeleteArchiveFile
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArchivesAPIService.DeleteArchiveFileLink")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/archives/files/{id}/links/{linkId}"
@@ -793,16 +778,14 @@ func (a *ArchivesAPIService) DeleteArchiveFileLinkExecute(r ApiDeleteArchiveFile
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -810,10 +793,9 @@ func (a *ArchivesAPIService) DeleteArchiveFileLinkExecute(r ApiDeleteArchiveFile
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -823,7 +805,7 @@ func (a *ArchivesAPIService) DeleteArchiveFileLinkExecute(r ApiDeleteArchiveFile
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -870,7 +852,7 @@ func (a *ArchivesAPIService) GetArchiveBucketExecute(r ApiGetArchiveBucketReques
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArchivesAPIService.GetArchiveBucket")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/archives/buckets/{id}"
@@ -917,16 +899,14 @@ func (a *ArchivesAPIService) GetArchiveBucketExecute(r ApiGetArchiveBucketReques
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -934,10 +914,9 @@ func (a *ArchivesAPIService) GetArchiveBucketExecute(r ApiGetArchiveBucketReques
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -947,7 +926,7 @@ func (a *ArchivesAPIService) GetArchiveBucketExecute(r ApiGetArchiveBucketReques
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -998,7 +977,7 @@ func (a *ArchivesAPIService) GetArchiveFileExecute(r ApiGetArchiveFileRequest) (
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArchivesAPIService.GetArchiveFile")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/archives/download/{bucket}/{filepath}"
@@ -1046,16 +1025,14 @@ func (a *ArchivesAPIService) GetArchiveFileExecute(r ApiGetArchiveFileRequest) (
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
@@ -1063,10 +1040,9 @@ func (a *ArchivesAPIService) GetArchiveFileExecute(r ApiGetArchiveFileRequest) (
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarHTTPResponse, newErr
@@ -1114,7 +1090,7 @@ func (a *ArchivesAPIService) GetArchiveFileDetailExecute(r ApiGetArchiveFileDeta
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArchivesAPIService.GetArchiveFileDetail")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/archives/files/{id}"
@@ -1161,16 +1137,14 @@ func (a *ArchivesAPIService) GetArchiveFileDetailExecute(r ApiGetArchiveFileDeta
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1178,10 +1152,9 @@ func (a *ArchivesAPIService) GetArchiveFileDetailExecute(r ApiGetArchiveFileDeta
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1191,7 +1164,7 @@ func (a *ArchivesAPIService) GetArchiveFileDetailExecute(r ApiGetArchiveFileDeta
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1238,7 +1211,7 @@ func (a *ArchivesAPIService) GetArchiveFileLinksExecute(r ApiGetArchiveFileLinks
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArchivesAPIService.GetArchiveFileLinks")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/archives/files/{id}/links"
@@ -1285,16 +1258,14 @@ func (a *ArchivesAPIService) GetArchiveFileLinksExecute(r ApiGetArchiveFileLinks
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1302,10 +1273,9 @@ func (a *ArchivesAPIService) GetArchiveFileLinksExecute(r ApiGetArchiveFileLinks
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1315,7 +1285,7 @@ func (a *ArchivesAPIService) GetArchiveFileLinksExecute(r ApiGetArchiveFileLinks
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1363,7 +1333,7 @@ func (a *ArchivesAPIService) GetArchivePublicFileExecute(r ApiGetArchivePublicFi
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArchivesAPIService.GetArchivePublicFile")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/public-archives/download/{bucket}/{filepath}"
@@ -1411,16 +1381,14 @@ func (a *ArchivesAPIService) GetArchivePublicFileExecute(r ApiGetArchivePublicFi
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
@@ -1428,10 +1396,9 @@ func (a *ArchivesAPIService) GetArchivePublicFileExecute(r ApiGetArchivePublicFi
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarHTTPResponse, newErr
@@ -1481,7 +1448,7 @@ func (a *ArchivesAPIService) GetArchivePublicFileLinkExecute(r ApiGetArchivePubl
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArchivesAPIService.GetArchivePublicFileLink")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/public-archives/link"
@@ -1531,16 +1498,14 @@ func (a *ArchivesAPIService) GetArchivePublicFileLinkExecute(r ApiGetArchivePubl
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
@@ -1548,10 +1513,9 @@ func (a *ArchivesAPIService) GetArchivePublicFileLinkExecute(r ApiGetArchivePubl
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarHTTPResponse, newErr
@@ -1610,7 +1574,7 @@ func (a *ArchivesAPIService) ListArchiveBucketsExecute(r ApiListArchiveBucketsRe
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArchivesAPIService.ListArchiveBuckets")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/archives/buckets"
@@ -1662,16 +1626,14 @@ func (a *ArchivesAPIService) ListArchiveBucketsExecute(r ApiListArchiveBucketsRe
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1679,10 +1641,9 @@ func (a *ArchivesAPIService) ListArchiveBucketsExecute(r ApiListArchiveBucketsRe
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1692,7 +1653,7 @@ func (a *ArchivesAPIService) ListArchiveBucketsExecute(r ApiListArchiveBucketsRe
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1763,7 +1724,7 @@ func (a *ArchivesAPIService) ListArchiveFilesExecute(r ApiListArchiveFilesReques
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArchivesAPIService.ListArchiveFiles")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/archives/buckets/{bucket}/files/{filepath}"
@@ -1823,16 +1784,14 @@ func (a *ArchivesAPIService) ListArchiveFilesExecute(r ApiListArchiveFilesReques
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1840,10 +1799,9 @@ func (a *ArchivesAPIService) ListArchiveFilesExecute(r ApiListArchiveFilesReques
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1853,7 +1811,7 @@ func (a *ArchivesAPIService) ListArchiveFilesExecute(r ApiListArchiveFilesReques
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1906,7 +1864,7 @@ func (a *ArchivesAPIService) UpdateArchiveBucketExecute(r ApiUpdateArchiveBucket
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArchivesAPIService.UpdateArchiveBucket")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/archives/buckets/{id}"
@@ -1955,16 +1913,14 @@ func (a *ArchivesAPIService) UpdateArchiveBucketExecute(r ApiUpdateArchiveBucket
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1972,10 +1928,9 @@ func (a *ArchivesAPIService) UpdateArchiveBucketExecute(r ApiUpdateArchiveBucket
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1985,7 +1940,7 @@ func (a *ArchivesAPIService) UpdateArchiveBucketExecute(r ApiUpdateArchiveBucket
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

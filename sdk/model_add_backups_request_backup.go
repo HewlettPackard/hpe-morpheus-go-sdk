@@ -16,6 +16,9 @@ import (
 	"fmt"
 )
 
+// very silly way of avoiding `"fmt" imported and not used` errors
+var _ fmt.Stringer
+
 
 // AddBackupsRequestBackup struct for AddBackupsRequestBackup
 type AddBackupsRequestBackup struct {
@@ -66,7 +69,7 @@ func (dst *AddBackupsRequestBackup) UnmarshalJSON(data []byte) error {
 		dst.BackupStorageProvider = nil
 	}
 
-	return fmt.Errorf("data failed to match schemas in anyOf(AddBackupsRequestBackup)")
+	return NewResponseValidationError("data failed to match schemas in anyOf(AddBackupsRequestBackup)")
 }
 
 // Marshal data from the first non-nil pointers in the struct to JSON

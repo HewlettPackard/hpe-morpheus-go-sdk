@@ -16,6 +16,9 @@ import (
 	"fmt"
 )
 
+// very silly way of avoiding `"fmt" imported and not used` errors
+var _ fmt.Stringer
+
 
 // AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInnerDatastoreId The ID of the specific datastore. Auto selection can be specified as auto or autoCluster (for clusters).
 type AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInnerDatastoreId struct {
@@ -52,7 +55,7 @@ func (dst *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInnerDatast
 		dst.String = nil
 	}
 
-	return fmt.Errorf("data failed to match schemas in anyOf(AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInnerDatastoreId)")
+	return NewResponseValidationError("data failed to match schemas in anyOf(AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInnerDatastoreId)")
 }
 
 // Marshal data from the first non-nil pointers in the struct to JSON

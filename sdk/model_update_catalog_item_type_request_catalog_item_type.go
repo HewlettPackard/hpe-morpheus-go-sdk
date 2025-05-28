@@ -16,6 +16,9 @@ import (
 	"fmt"
 )
 
+// very silly way of avoiding `"fmt" imported and not used` errors
+var _ fmt.Stringer
+
 
 // UpdateCatalogItemTypeRequestCatalogItemType struct for UpdateCatalogItemTypeRequestCatalogItemType
 type UpdateCatalogItemTypeRequestCatalogItemType struct {
@@ -66,7 +69,7 @@ func (dst *UpdateCatalogItemTypeRequestCatalogItemType) UnmarshalJSON(data []byt
 		dst.UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2 = nil
 	}
 
-	return fmt.Errorf("data failed to match schemas in anyOf(UpdateCatalogItemTypeRequestCatalogItemType)")
+	return NewResponseValidationError("data failed to match schemas in anyOf(UpdateCatalogItemTypeRequestCatalogItemType)")
 }
 
 // Marshal data from the first non-nil pointers in the struct to JSON

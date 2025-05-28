@@ -2952,6 +2952,7 @@ docs/ZoneSecurityGroup.md
 docs/ZoneType.md
 docs/ZoneTypesOptions.md
 docs/ZoneVcenterConfig.md
+errors.go
 git_push.sh
 model_200_success.go
 model_200_success_expanded.go

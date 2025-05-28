@@ -17,6 +17,9 @@ import (
 	"gopkg.in/validator.v2"
 )
 
+// very silly way of avoiding `"fmt" imported and not used` errors
+var _ fmt.Stringer
+
 // ListInstances200ResponseAllOfInstancesInnerConfigNoAgent - struct for ListInstances200ResponseAllOfInstancesInnerConfigNoAgent
 type ListInstances200ResponseAllOfInstancesInnerConfigNoAgent struct {
 	Bool *bool
@@ -81,11 +84,11 @@ func (dst *ListInstances200ResponseAllOfInstancesInnerConfigNoAgent) UnmarshalJS
 		dst.Bool = nil
 		dst.String = nil
 
-		return fmt.Errorf("data matches more than one schema in oneOf(ListInstances200ResponseAllOfInstancesInnerConfigNoAgent)")
+		return NewResponseValidationError("data matches more than one schema in oneOf(ListInstances200ResponseAllOfInstancesInnerConfigNoAgent)")
 	} else if match == 1 {
 		return nil // exactly one match
 	} else { // no match
-		return fmt.Errorf("data failed to match schemas in oneOf(ListInstances200ResponseAllOfInstancesInnerConfigNoAgent)")
+		return NewResponseValidationError("data failed to match schemas in oneOf(ListInstances200ResponseAllOfInstancesInnerConfigNoAgent)")
 	}
 }
 

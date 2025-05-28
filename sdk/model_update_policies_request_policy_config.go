@@ -16,6 +16,9 @@ import (
 	"fmt"
 )
 
+// very silly way of avoiding `"fmt" imported and not used` errors
+var _ fmt.Stringer
+
 
 // UpdatePoliciesRequestPolicyConfig A map of config values. The expected values vary by policy type. See `Retrieves all Policy Types` endpoint for `fieldName`(s) of required options.
 type UpdatePoliciesRequestPolicyConfig struct {
@@ -444,7 +447,7 @@ func (dst *UpdatePoliciesRequestPolicyConfig) UnmarshalJSON(data []byte) error {
 		dst.WorkflowPolicyTypeConfiguration = nil
 	}
 
-	return fmt.Errorf("data failed to match schemas in anyOf(UpdatePoliciesRequestPolicyConfig)")
+	return NewResponseValidationError("data failed to match schemas in anyOf(UpdatePoliciesRequestPolicyConfig)")
 }
 
 // Marshal data from the first non-nil pointers in the struct to JSON

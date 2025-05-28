@@ -17,6 +17,9 @@ import (
 	"gopkg.in/validator.v2"
 )
 
+// very silly way of avoiding `"fmt" imported and not used` errors
+var _ fmt.Stringer
+
 // GetInstance200ResponseInstanceConfigResourcePoolId - struct for GetInstance200ResponseInstanceConfigResourcePoolId
 type GetInstance200ResponseInstanceConfigResourcePoolId struct {
 	Int64 *int64
@@ -81,11 +84,11 @@ func (dst *GetInstance200ResponseInstanceConfigResourcePoolId) UnmarshalJSON(dat
 		dst.Int64 = nil
 		dst.String = nil
 
-		return fmt.Errorf("data matches more than one schema in oneOf(GetInstance200ResponseInstanceConfigResourcePoolId)")
+		return NewResponseValidationError("data matches more than one schema in oneOf(GetInstance200ResponseInstanceConfigResourcePoolId)")
 	} else if match == 1 {
 		return nil // exactly one match
 	} else { // no match
-		return fmt.Errorf("data failed to match schemas in oneOf(GetInstance200ResponseInstanceConfigResourcePoolId)")
+		return NewResponseValidationError("data failed to match schemas in oneOf(GetInstance200ResponseInstanceConfigResourcePoolId)")
 	}
 }
 

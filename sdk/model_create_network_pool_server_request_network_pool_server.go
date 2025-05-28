@@ -16,6 +16,9 @@ import (
 	"fmt"
 )
 
+// very silly way of avoiding `"fmt" imported and not used` errors
+var _ fmt.Stringer
+
 
 // CreateNetworkPoolServerRequestNetworkPoolServer Payload for creating a new Network Pool Server
 type CreateNetworkPoolServerRequestNetworkPoolServer struct {
@@ -80,7 +83,7 @@ func (dst *CreateNetworkPoolServerRequestNetworkPoolServer) UnmarshalJSON(data [
 		dst.SolarWindsNetworkPoolServer = nil
 	}
 
-	return fmt.Errorf("data failed to match schemas in anyOf(CreateNetworkPoolServerRequestNetworkPoolServer)")
+	return NewResponseValidationError("data failed to match schemas in anyOf(CreateNetworkPoolServerRequestNetworkPoolServer)")
 }
 
 // Marshal data from the first non-nil pointers in the struct to JSON

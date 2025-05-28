@@ -17,6 +17,9 @@ import (
 	"gopkg.in/validator.v2"
 )
 
+// very silly way of avoiding `"fmt" imported and not used` errors
+var _ fmt.Stringer
+
 // AddSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYAUTOEXPAND - struct for AddSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYAUTOEXPAND
 type AddSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYAUTOEXPAND struct {
 	Bool *bool
@@ -81,11 +84,11 @@ func (dst *AddSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYAUTOE
 		dst.Bool = nil
 		dst.String = nil
 
-		return fmt.Errorf("data matches more than one schema in oneOf(AddSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYAUTOEXPAND)")
+		return NewResponseValidationError("data matches more than one schema in oneOf(AddSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYAUTOEXPAND)")
 	} else if match == 1 {
 		return nil // exactly one match
 	} else { // no match
-		return fmt.Errorf("data failed to match schemas in oneOf(AddSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYAUTOEXPAND)")
+		return NewResponseValidationError("data failed to match schemas in oneOf(AddSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYAUTOEXPAND)")
 	}
 }
 

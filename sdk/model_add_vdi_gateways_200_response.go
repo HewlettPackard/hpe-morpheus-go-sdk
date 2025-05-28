@@ -16,6 +16,9 @@ import (
 	"fmt"
 )
 
+// very silly way of avoiding `"fmt" imported and not used` errors
+var _ fmt.Stringer
+
 
 // AddVDIGateways200Response struct for AddVDIGateways200Response
 type AddVDIGateways200Response struct {
@@ -52,7 +55,7 @@ func (dst *AddVDIGateways200Response) UnmarshalJSON(data []byte) error {
 		dst.DeleteAlerts200Response = nil
 	}
 
-	return fmt.Errorf("data failed to match schemas in anyOf(AddVDIGateways200Response)")
+	return NewResponseValidationError("data failed to match schemas in anyOf(AddVDIGateways200Response)")
 }
 
 // Marshal data from the first non-nil pointers in the struct to JSON

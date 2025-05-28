@@ -17,6 +17,9 @@ import (
 	"gopkg.in/validator.v2"
 )
 
+// very silly way of avoiding `"fmt" imported and not used` errors
+var _ fmt.Stringer
+
 // AddVDIPoolsRequestVdiPoolOneOfConfigPlan - struct for AddVDIPoolsRequestVdiPoolOneOfConfigPlan
 type AddVDIPoolsRequestVdiPoolOneOfConfigPlan struct {
 	Int64 *int64
@@ -81,11 +84,11 @@ func (dst *AddVDIPoolsRequestVdiPoolOneOfConfigPlan) UnmarshalJSON(data []byte) 
 		dst.Int64 = nil
 		dst.String = nil
 
-		return fmt.Errorf("data matches more than one schema in oneOf(AddVDIPoolsRequestVdiPoolOneOfConfigPlan)")
+		return NewResponseValidationError("data matches more than one schema in oneOf(AddVDIPoolsRequestVdiPoolOneOfConfigPlan)")
 	} else if match == 1 {
 		return nil // exactly one match
 	} else { // no match
-		return fmt.Errorf("data failed to match schemas in oneOf(AddVDIPoolsRequestVdiPoolOneOfConfigPlan)")
+		return NewResponseValidationError("data failed to match schemas in oneOf(AddVDIPoolsRequestVdiPoolOneOfConfigPlan)")
 	}
 }
 

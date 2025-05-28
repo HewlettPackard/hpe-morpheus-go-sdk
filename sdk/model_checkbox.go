@@ -45,7 +45,7 @@ func (v *Checkbox) UnmarshalJSON(src []byte) error {
 		}
 	}
 
-	return fmt.Errorf("%+v is not a valid Checkbox", value)
+	return NewResponseValidationError(fmt.Sprintf("%+v is not a valid Checkbox", value))
 }
 
 // NewCheckboxFromValue returns a pointer to a valid Checkbox
