@@ -35,7 +35,10 @@ type ListSecurityGroups200ResponseAllOfSecurityGroupsInner struct {
 	Rules []ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner `json:"rules,omitempty"`
 	Tenants []ListSecurityGroups200ResponseAllOfSecurityGroupsInnerTenantsInner `json:"tenants,omitempty"`
 	ResourcePermission *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions `json:"resourcePermission,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListSecurityGroups200ResponseAllOfSecurityGroupsInner ListSecurityGroups200ResponseAllOfSecurityGroupsInner
 
 // NewListSecurityGroups200ResponseAllOfSecurityGroupsInner instantiates a new ListSecurityGroups200ResponseAllOfSecurityGroupsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -589,7 +592,47 @@ func (o ListSecurityGroups200ResponseAllOfSecurityGroupsInner) ToMap() (map[stri
 	if !IsNil(o.ResourcePermission) {
 		toSerialize["resourcePermission"] = o.ResourcePermission
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInner) UnmarshalJSON(data []byte) (err error) {
+	varListSecurityGroups200ResponseAllOfSecurityGroupsInner := _ListSecurityGroups200ResponseAllOfSecurityGroupsInner{}
+
+	err = json.Unmarshal(data, &varListSecurityGroups200ResponseAllOfSecurityGroupsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListSecurityGroups200ResponseAllOfSecurityGroupsInner(varListSecurityGroups200ResponseAllOfSecurityGroupsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "groupSource")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "syncSource")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "zone")
+		delete(additionalProperties, "locations")
+		delete(additionalProperties, "rules")
+		delete(additionalProperties, "tenants")
+		delete(additionalProperties, "resourcePermission")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListSecurityGroups200ResponseAllOfSecurityGroupsInner struct {

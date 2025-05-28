@@ -36,7 +36,10 @@ type ListArchiveBuckets200ResponseAllOfArchiveBucketsInner struct {
 	Accounts []map[string]interface{} `json:"accounts,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListArchiveBuckets200ResponseAllOfArchiveBucketsInner ListArchiveBuckets200ResponseAllOfArchiveBucketsInner
 
 // NewListArchiveBuckets200ResponseAllOfArchiveBucketsInner instantiates a new ListArchiveBuckets200ResponseAllOfArchiveBucketsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -590,7 +593,47 @@ func (o ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) ToMap() (map[stri
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) UnmarshalJSON(data []byte) (err error) {
+	varListArchiveBuckets200ResponseAllOfArchiveBucketsInner := _ListArchiveBuckets200ResponseAllOfArchiveBucketsInner{}
+
+	err = json.Unmarshal(data, &varListArchiveBuckets200ResponseAllOfArchiveBucketsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListArchiveBuckets200ResponseAllOfArchiveBucketsInner(varListArchiveBuckets200ResponseAllOfArchiveBucketsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "storageProvider")
+		delete(additionalProperties, "owner")
+		delete(additionalProperties, "createdBy")
+		delete(additionalProperties, "isPublic")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "filePath")
+		delete(additionalProperties, "rawSize")
+		delete(additionalProperties, "fileCount")
+		delete(additionalProperties, "accounts")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListArchiveBuckets200ResponseAllOfArchiveBucketsInner struct {

@@ -24,7 +24,10 @@ type ListHosts200Response struct {
 	Stats map[string]interface{} `json:"stats,omitempty"`
 	Multitenant *bool `json:"multitenant,omitempty"`
 	Meta *ListActivity200ResponseAllOfMeta `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListHosts200Response ListHosts200Response
 
 // NewListHosts200Response instantiates a new ListHosts200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -193,7 +196,36 @@ func (o ListHosts200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Meta) {
 		toSerialize["meta"] = o.Meta
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListHosts200Response) UnmarshalJSON(data []byte) (err error) {
+	varListHosts200Response := _ListHosts200Response{}
+
+	err = json.Unmarshal(data, &varListHosts200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListHosts200Response(varListHosts200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "servers")
+		delete(additionalProperties, "stats")
+		delete(additionalProperties, "multitenant")
+		delete(additionalProperties, "meta")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListHosts200Response struct {

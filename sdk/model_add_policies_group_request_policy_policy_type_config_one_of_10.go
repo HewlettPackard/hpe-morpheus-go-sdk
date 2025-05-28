@@ -23,7 +23,10 @@ type AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf10 struct {
 	NamingType *string `json:"namingType,omitempty"`
 	NamingPattern *string `json:"namingPattern,omitempty"`
 	NamingConflict *bool `json:"namingConflict,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf10 AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf10
 
 // NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf10 instantiates a new AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf10 object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf10) ToMap() (map[strin
 	if !IsNil(o.NamingConflict) {
 		toSerialize["namingConflict"] = o.NamingConflict
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf10) UnmarshalJSON(data []byte) (err error) {
+	varAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf10 := _AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf10{}
+
+	err = json.Unmarshal(data, &varAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf10)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf10(varAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf10)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "namingType")
+		delete(additionalProperties, "namingPattern")
+		delete(additionalProperties, "namingConflict")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf10 struct {

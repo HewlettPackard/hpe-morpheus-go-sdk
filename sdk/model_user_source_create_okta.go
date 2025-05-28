@@ -26,7 +26,10 @@ type UserSourceCreateOkta struct {
 	AdministratorAPIToken *string `json:"administratorAPIToken,omitempty"`
 	// Required Group
 	RequiredGroup *string `json:"requiredGroup,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UserSourceCreateOkta UserSourceCreateOkta
 
 // NewUserSourceCreateOkta instantiates a new UserSourceCreateOkta object
 // This constructor will assign default values to properties that have it defined,
@@ -160,7 +163,35 @@ func (o UserSourceCreateOkta) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.RequiredGroup) {
 		toSerialize["requiredGroup"] = o.RequiredGroup
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UserSourceCreateOkta) UnmarshalJSON(data []byte) (err error) {
+	varUserSourceCreateOkta := _UserSourceCreateOkta{}
+
+	err = json.Unmarshal(data, &varUserSourceCreateOkta)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UserSourceCreateOkta(varUserSourceCreateOkta)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "url")
+		delete(additionalProperties, "administratorAPIToken")
+		delete(additionalProperties, "requiredGroup")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUserSourceCreateOkta struct {

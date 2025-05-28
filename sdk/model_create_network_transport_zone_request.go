@@ -21,7 +21,10 @@ var _ MappedNullable = &CreateNetworkTransportZoneRequest{}
 // CreateNetworkTransportZoneRequest The parameters for creating a network transport zone is type dependent. The following lists the common parameters. See get a specific type to list available options for the network server type.
 type CreateNetworkTransportZoneRequest struct {
 	NetworkScope *CreateNetworkTransportZoneRequestNetworkScope `json:"networkScope,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _CreateNetworkTransportZoneRequest CreateNetworkTransportZoneRequest
 
 // NewCreateNetworkTransportZoneRequest instantiates a new CreateNetworkTransportZoneRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o CreateNetworkTransportZoneRequest) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.NetworkScope) {
 		toSerialize["networkScope"] = o.NetworkScope
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *CreateNetworkTransportZoneRequest) UnmarshalJSON(data []byte) (err error) {
+	varCreateNetworkTransportZoneRequest := _CreateNetworkTransportZoneRequest{}
+
+	err = json.Unmarshal(data, &varCreateNetworkTransportZoneRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CreateNetworkTransportZoneRequest(varCreateNetworkTransportZoneRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "networkScope")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCreateNetworkTransportZoneRequest struct {

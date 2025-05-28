@@ -24,7 +24,10 @@ type MessageOfTheDayPolicyTypeConfigurationMotd struct {
 	Message *string `json:"message,omitempty"`
 	Type *string `json:"type,omitempty"`
 	FullPage *bool `json:"_fullPage,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _MessageOfTheDayPolicyTypeConfigurationMotd MessageOfTheDayPolicyTypeConfigurationMotd
 
 // NewMessageOfTheDayPolicyTypeConfigurationMotd instantiates a new MessageOfTheDayPolicyTypeConfigurationMotd object
 // This constructor will assign default values to properties that have it defined,
@@ -193,7 +196,36 @@ func (o MessageOfTheDayPolicyTypeConfigurationMotd) ToMap() (map[string]interfac
 	if !IsNil(o.FullPage) {
 		toSerialize["_fullPage"] = o.FullPage
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *MessageOfTheDayPolicyTypeConfigurationMotd) UnmarshalJSON(data []byte) (err error) {
+	varMessageOfTheDayPolicyTypeConfigurationMotd := _MessageOfTheDayPolicyTypeConfigurationMotd{}
+
+	err = json.Unmarshal(data, &varMessageOfTheDayPolicyTypeConfigurationMotd)
+
+	if err != nil {
+		return err
+	}
+
+	*o = MessageOfTheDayPolicyTypeConfigurationMotd(varMessageOfTheDayPolicyTypeConfigurationMotd)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "title")
+		delete(additionalProperties, "message")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "_fullPage")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableMessageOfTheDayPolicyTypeConfigurationMotd struct {

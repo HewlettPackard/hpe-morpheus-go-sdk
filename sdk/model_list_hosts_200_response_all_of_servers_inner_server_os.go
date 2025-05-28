@@ -30,7 +30,10 @@ type ListHosts200ResponseAllOfServersInnerServerOs struct {
 	OsVersion *string `json:"osVersion,omitempty"`
 	BitCount *int64 `json:"bitCount,omitempty"`
 	Platform *string `json:"platform,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListHosts200ResponseAllOfServersInnerServerOs ListHosts200ResponseAllOfServersInnerServerOs
 
 // NewListHosts200ResponseAllOfServersInnerServerOs instantiates a new ListHosts200ResponseAllOfServersInnerServerOs object
 // This constructor will assign default values to properties that have it defined,
@@ -409,7 +412,42 @@ func (o ListHosts200ResponseAllOfServersInnerServerOs) ToMap() (map[string]inter
 	if !IsNil(o.Platform) {
 		toSerialize["platform"] = o.Platform
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListHosts200ResponseAllOfServersInnerServerOs) UnmarshalJSON(data []byte) (err error) {
+	varListHosts200ResponseAllOfServersInnerServerOs := _ListHosts200ResponseAllOfServersInnerServerOs{}
+
+	err = json.Unmarshal(data, &varListHosts200ResponseAllOfServersInnerServerOs)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListHosts200ResponseAllOfServersInnerServerOs(varListHosts200ResponseAllOfServersInnerServerOs)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "vendor")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "osFamily")
+		delete(additionalProperties, "osVersion")
+		delete(additionalProperties, "bitCount")
+		delete(additionalProperties, "platform")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListHosts200ResponseAllOfServersInnerServerOs struct {

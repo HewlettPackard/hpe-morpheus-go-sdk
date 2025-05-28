@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -39,6 +38,7 @@ type AddChecksRequestCheckOneOfConfig struct {
 	// Password for user, if not using key based authentication
 	SshPassword *string `json:"sshPassword,omitempty"`
 	CheckPasswordHash *string `json:"checkPasswordHash,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddChecksRequestCheckOneOfConfig AddChecksRequestCheckOneOfConfig
@@ -511,6 +511,11 @@ func (o AddChecksRequestCheckOneOfConfig) ToMap() (map[string]interface{}, error
 	if !IsNil(o.CheckPasswordHash) {
 		toSerialize["checkPasswordHash"] = o.CheckPasswordHash
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -539,15 +544,32 @@ func (o *AddChecksRequestCheckOneOfConfig) UnmarshalJSON(data []byte) (err error
 
 	varAddChecksRequestCheckOneOfConfig := _AddChecksRequestCheckOneOfConfig{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddChecksRequestCheckOneOfConfig)
+	err = json.Unmarshal(data, &varAddChecksRequestCheckOneOfConfig)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddChecksRequestCheckOneOfConfig(varAddChecksRequestCheckOneOfConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "webMethod")
+		delete(additionalProperties, "webUrl")
+		delete(additionalProperties, "ignoreSSL")
+		delete(additionalProperties, "checkUser")
+		delete(additionalProperties, "checkPassword")
+		delete(additionalProperties, "textCheckOn")
+		delete(additionalProperties, "webTextMatch")
+		delete(additionalProperties, "tunnelOn")
+		delete(additionalProperties, "sshHost")
+		delete(additionalProperties, "sshPort")
+		delete(additionalProperties, "sshUser")
+		delete(additionalProperties, "sshPassword")
+		delete(additionalProperties, "checkPasswordHash")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

@@ -47,7 +47,10 @@ type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner s
 	Type *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"type,omitempty"`
 	IpMode *string `json:"ipMode,omitempty"`
 	MacAddress *string `json:"macAddress,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner
 
 // NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner instantiates a new ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -1021,7 +1024,59 @@ func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInne
 	if !IsNil(o.MacAddress) {
 		toSerialize["macAddress"] = o.MacAddress
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner) UnmarshalJSON(data []byte) (err error) {
+	varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner := _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner{}
+
+	err = json.Unmarshal(data, &varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner(varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "refId")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "internalId")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "uniqueId")
+		delete(additionalProperties, "publicIpAddress")
+		delete(additionalProperties, "publicIpv6Address")
+		delete(additionalProperties, "ipAddress")
+		delete(additionalProperties, "ipv6Address")
+		delete(additionalProperties, "ipSubnet")
+		delete(additionalProperties, "ipv6Subnet")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "dhcp")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "poolAssigned")
+		delete(additionalProperties, "primaryInterface")
+		delete(additionalProperties, "network")
+		delete(additionalProperties, "subnet")
+		delete(additionalProperties, "networkGroup")
+		delete(additionalProperties, "networkPosition")
+		delete(additionalProperties, "networkPool")
+		delete(additionalProperties, "networkDomain")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "ipMode")
+		delete(additionalProperties, "macAddress")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner struct {

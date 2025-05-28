@@ -22,7 +22,10 @@ var _ MappedNullable = &UpdateProvisioningSettingsRequestProvisioningSettingsDef
 type UpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType struct {
 	// Default blueprint type ID
 	Id *int64 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType UpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType
 
 // NewUpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType instantiates a new UpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o UpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType) UnmarshalJSON(data []byte) (err error) {
+	varUpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType := _UpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType{}
+
+	err = json.Unmarshal(data, &varUpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType(varUpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType struct {

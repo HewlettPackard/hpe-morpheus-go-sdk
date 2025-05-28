@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -24,6 +23,7 @@ var _ MappedNullable = &UpdateVirtualImageRequestVirtualImageRemoveTagsInner{}
 type UpdateVirtualImageRequestVirtualImageRemoveTagsInner struct {
 	Name string `json:"name"`
 	Value *string `json:"value,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateVirtualImageRequestVirtualImageRemoveTagsInner UpdateVirtualImageRequestVirtualImageRemoveTagsInner
@@ -116,6 +116,11 @@ func (o UpdateVirtualImageRequestVirtualImageRemoveTagsInner) ToMap() (map[strin
 	if !IsNil(o.Value) {
 		toSerialize["value"] = o.Value
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -143,15 +148,21 @@ func (o *UpdateVirtualImageRequestVirtualImageRemoveTagsInner) UnmarshalJSON(dat
 
 	varUpdateVirtualImageRequestVirtualImageRemoveTagsInner := _UpdateVirtualImageRequestVirtualImageRemoveTagsInner{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varUpdateVirtualImageRequestVirtualImageRemoveTagsInner)
+	err = json.Unmarshal(data, &varUpdateVirtualImageRequestVirtualImageRemoveTagsInner)
 
 	if err != nil {
 		return err
 	}
 
 	*o = UpdateVirtualImageRequestVirtualImageRemoveTagsInner(varUpdateVirtualImageRequestVirtualImageRemoveTagsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "value")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

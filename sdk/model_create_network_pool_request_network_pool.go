@@ -27,7 +27,10 @@ type CreateNetworkPoolRequestNetworkPool struct {
 	IpRanges []CreateNetworkPoolRequestNetworkPoolIpRangesInner `json:"ipRanges,omitempty"`
 	// Configuration object with parameters that vary by pool type.
 	Config map[string]interface{} `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _CreateNetworkPoolRequestNetworkPool CreateNetworkPoolRequestNetworkPool
 
 // NewCreateNetworkPoolRequestNetworkPool instantiates a new CreateNetworkPoolRequestNetworkPool object
 // This constructor will assign default values to properties that have it defined,
@@ -196,7 +199,36 @@ func (o CreateNetworkPoolRequestNetworkPool) ToMap() (map[string]interface{}, er
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *CreateNetworkPoolRequestNetworkPool) UnmarshalJSON(data []byte) (err error) {
+	varCreateNetworkPoolRequestNetworkPool := _CreateNetworkPoolRequestNetworkPool{}
+
+	err = json.Unmarshal(data, &varCreateNetworkPoolRequestNetworkPool)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CreateNetworkPoolRequestNetworkPool(varCreateNetworkPoolRequestNetworkPool)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "ipRanges")
+		delete(additionalProperties, "config")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCreateNetworkPoolRequestNetworkPool struct {

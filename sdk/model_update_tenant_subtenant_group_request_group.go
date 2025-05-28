@@ -28,7 +28,10 @@ type UpdateTenantSubtenantGroupRequestGroup struct {
 	Code *string `json:"code,omitempty"`
 	// location
 	Location *string `json:"location,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateTenantSubtenantGroupRequestGroup UpdateTenantSubtenantGroupRequestGroup
 
 // NewUpdateTenantSubtenantGroupRequestGroup instantiates a new UpdateTenantSubtenantGroupRequestGroup object
 // This constructor will assign default values to properties that have it defined,
@@ -197,7 +200,36 @@ func (o UpdateTenantSubtenantGroupRequestGroup) ToMap() (map[string]interface{},
 	if !IsNil(o.Location) {
 		toSerialize["location"] = o.Location
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateTenantSubtenantGroupRequestGroup) UnmarshalJSON(data []byte) (err error) {
+	varUpdateTenantSubtenantGroupRequestGroup := _UpdateTenantSubtenantGroupRequestGroup{}
+
+	err = json.Unmarshal(data, &varUpdateTenantSubtenantGroupRequestGroup)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateTenantSubtenantGroupRequestGroup(varUpdateTenantSubtenantGroupRequestGroup)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "location")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateTenantSubtenantGroupRequestGroup struct {

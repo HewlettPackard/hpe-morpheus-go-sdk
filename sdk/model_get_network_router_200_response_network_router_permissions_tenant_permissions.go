@@ -21,7 +21,10 @@ var _ MappedNullable = &GetNetworkRouter200ResponseNetworkRouterPermissionsTenan
 // GetNetworkRouter200ResponseNetworkRouterPermissionsTenantPermissions struct for GetNetworkRouter200ResponseNetworkRouterPermissionsTenantPermissions
 type GetNetworkRouter200ResponseNetworkRouterPermissionsTenantPermissions struct {
 	Accounts []int64 `json:"accounts,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetNetworkRouter200ResponseNetworkRouterPermissionsTenantPermissions GetNetworkRouter200ResponseNetworkRouterPermissionsTenantPermissions
 
 // NewGetNetworkRouter200ResponseNetworkRouterPermissionsTenantPermissions instantiates a new GetNetworkRouter200ResponseNetworkRouterPermissionsTenantPermissions object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o GetNetworkRouter200ResponseNetworkRouterPermissionsTenantPermissions) To
 	if !IsNil(o.Accounts) {
 		toSerialize["accounts"] = o.Accounts
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetNetworkRouter200ResponseNetworkRouterPermissionsTenantPermissions) UnmarshalJSON(data []byte) (err error) {
+	varGetNetworkRouter200ResponseNetworkRouterPermissionsTenantPermissions := _GetNetworkRouter200ResponseNetworkRouterPermissionsTenantPermissions{}
+
+	err = json.Unmarshal(data, &varGetNetworkRouter200ResponseNetworkRouterPermissionsTenantPermissions)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetNetworkRouter200ResponseNetworkRouterPermissionsTenantPermissions(varGetNetworkRouter200ResponseNetworkRouterPermissionsTenantPermissions)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "accounts")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetNetworkRouter200ResponseNetworkRouterPermissionsTenantPermissions struct {

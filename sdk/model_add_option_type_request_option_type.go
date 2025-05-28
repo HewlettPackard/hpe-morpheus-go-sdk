@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -47,6 +46,7 @@ type AddOptionTypeRequestOptionType struct {
 	// Used primarily on tasks and workflows. Basically wether or not the field can be overridden optionally when the object is run
 	Editable *bool `json:"editable,omitempty"`
 	OptionList *AddOptionTypeRequestOptionTypeOptionList `json:"optionList,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddOptionTypeRequestOptionType AddOptionTypeRequestOptionType
@@ -540,6 +540,11 @@ func (o AddOptionTypeRequestOptionType) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.OptionList) {
 		toSerialize["optionList"] = o.OptionList
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -567,15 +572,32 @@ func (o *AddOptionTypeRequestOptionType) UnmarshalJSON(data []byte) (err error) 
 
 	varAddOptionTypeRequestOptionType := _AddOptionTypeRequestOptionType{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddOptionTypeRequestOptionType)
+	err = json.Unmarshal(data, &varAddOptionTypeRequestOptionType)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddOptionTypeRequestOptionType(varAddOptionTypeRequestOptionType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "fieldName")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "fieldLabel")
+		delete(additionalProperties, "placeHolder")
+		delete(additionalProperties, "verifyPattern")
+		delete(additionalProperties, "defaultValue")
+		delete(additionalProperties, "required")
+		delete(additionalProperties, "exportMeta")
+		delete(additionalProperties, "editable")
+		delete(additionalProperties, "optionList")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

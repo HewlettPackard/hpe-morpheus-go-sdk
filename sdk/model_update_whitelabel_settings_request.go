@@ -21,7 +21,10 @@ var _ MappedNullable = &UpdateWhitelabelSettingsRequest{}
 // UpdateWhitelabelSettingsRequest struct for UpdateWhitelabelSettingsRequest
 type UpdateWhitelabelSettingsRequest struct {
 	WhitelabelSettings *UpdateWhitelabelSettingsRequestWhitelabelSettings `json:"whitelabelSettings,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateWhitelabelSettingsRequest UpdateWhitelabelSettingsRequest
 
 // NewUpdateWhitelabelSettingsRequest instantiates a new UpdateWhitelabelSettingsRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o UpdateWhitelabelSettingsRequest) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.WhitelabelSettings) {
 		toSerialize["whitelabelSettings"] = o.WhitelabelSettings
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateWhitelabelSettingsRequest) UnmarshalJSON(data []byte) (err error) {
+	varUpdateWhitelabelSettingsRequest := _UpdateWhitelabelSettingsRequest{}
+
+	err = json.Unmarshal(data, &varUpdateWhitelabelSettingsRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateWhitelabelSettingsRequest(varUpdateWhitelabelSettingsRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "whitelabelSettings")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateWhitelabelSettingsRequest struct {

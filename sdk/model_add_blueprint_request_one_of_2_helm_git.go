@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -30,6 +29,7 @@ type AddBlueprintRequestOneOf2HelmGit struct {
 	IntegrationId int64 `json:"integrationId"`
 	// Branch Name
 	Branch string `json:"branch"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddBlueprintRequestOneOf2HelmGit AddBlueprintRequestOneOf2HelmGit
@@ -165,6 +165,11 @@ func (o AddBlueprintRequestOneOf2HelmGit) ToMap() (map[string]interface{}, error
 	toSerialize["path"] = o.Path
 	toSerialize["integrationId"] = o.IntegrationId
 	toSerialize["branch"] = o.Branch
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -195,15 +200,23 @@ func (o *AddBlueprintRequestOneOf2HelmGit) UnmarshalJSON(data []byte) (err error
 
 	varAddBlueprintRequestOneOf2HelmGit := _AddBlueprintRequestOneOf2HelmGit{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddBlueprintRequestOneOf2HelmGit)
+	err = json.Unmarshal(data, &varAddBlueprintRequestOneOf2HelmGit)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddBlueprintRequestOneOf2HelmGit(varAddBlueprintRequestOneOf2HelmGit)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "repoId")
+		delete(additionalProperties, "path")
+		delete(additionalProperties, "integrationId")
+		delete(additionalProperties, "branch")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

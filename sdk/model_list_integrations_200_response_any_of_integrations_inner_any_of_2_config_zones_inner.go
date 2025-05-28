@@ -22,7 +22,10 @@ var _ MappedNullable = &ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2C
 type ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2ConfigZonesInner struct {
 	ZoneName *string `json:"zoneName,omitempty"`
 	ReverseZone *string `json:"reverseZone,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2ConfigZonesInner ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2ConfigZonesInner
 
 // NewListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2ConfigZonesInner instantiates a new ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2ConfigZonesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2ConfigZonesInner)
 	if !IsNil(o.ReverseZone) {
 		toSerialize["reverseZone"] = o.ReverseZone
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2ConfigZonesInner) UnmarshalJSON(data []byte) (err error) {
+	varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2ConfigZonesInner := _ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2ConfigZonesInner{}
+
+	err = json.Unmarshal(data, &varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2ConfigZonesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2ConfigZonesInner(varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2ConfigZonesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "zoneName")
+		delete(additionalProperties, "reverseZone")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2ConfigZonesInner struct {

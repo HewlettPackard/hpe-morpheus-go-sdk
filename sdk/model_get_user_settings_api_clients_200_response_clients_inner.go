@@ -21,7 +21,10 @@ var _ MappedNullable = &GetUserSettingsApiClients200ResponseClientsInner{}
 // GetUserSettingsApiClients200ResponseClientsInner struct for GetUserSettingsApiClients200ResponseClientsInner
 type GetUserSettingsApiClients200ResponseClientsInner struct {
 	ClientId *string `json:"clientId,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetUserSettingsApiClients200ResponseClientsInner GetUserSettingsApiClients200ResponseClientsInner
 
 // NewGetUserSettingsApiClients200ResponseClientsInner instantiates a new GetUserSettingsApiClients200ResponseClientsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o GetUserSettingsApiClients200ResponseClientsInner) ToMap() (map[string]in
 	if !IsNil(o.ClientId) {
 		toSerialize["clientId"] = o.ClientId
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetUserSettingsApiClients200ResponseClientsInner) UnmarshalJSON(data []byte) (err error) {
+	varGetUserSettingsApiClients200ResponseClientsInner := _GetUserSettingsApiClients200ResponseClientsInner{}
+
+	err = json.Unmarshal(data, &varGetUserSettingsApiClients200ResponseClientsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetUserSettingsApiClients200ResponseClientsInner(varGetUserSettingsApiClients200ResponseClientsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "clientId")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetUserSettingsApiClients200ResponseClientsInner struct {

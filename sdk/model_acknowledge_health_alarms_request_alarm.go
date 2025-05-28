@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -28,6 +27,7 @@ type AcknowledgeHealthAlarmsRequestAlarm struct {
 	Ids []int64 `json:"ids,omitempty"`
 	// Pass `true` to update all alarms instead of passing ids. This will update any active alarm that is not already acknowledged. 
 	All *bool `json:"all,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AcknowledgeHealthAlarmsRequestAlarm AcknowledgeHealthAlarmsRequestAlarm
@@ -159,6 +159,11 @@ func (o AcknowledgeHealthAlarmsRequestAlarm) ToMap() (map[string]interface{}, er
 	if !IsNil(o.All) {
 		toSerialize["all"] = o.All
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -186,15 +191,22 @@ func (o *AcknowledgeHealthAlarmsRequestAlarm) UnmarshalJSON(data []byte) (err er
 
 	varAcknowledgeHealthAlarmsRequestAlarm := _AcknowledgeHealthAlarmsRequestAlarm{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAcknowledgeHealthAlarmsRequestAlarm)
+	err = json.Unmarshal(data, &varAcknowledgeHealthAlarmsRequestAlarm)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AcknowledgeHealthAlarmsRequestAlarm(varAcknowledgeHealthAlarmsRequestAlarm)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "acknowledged")
+		delete(additionalProperties, "ids")
+		delete(additionalProperties, "all")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

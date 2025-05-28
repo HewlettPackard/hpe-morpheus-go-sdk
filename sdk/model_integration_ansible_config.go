@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -23,6 +22,7 @@ var _ MappedNullable = &IntegrationAnsibleConfig{}
 // IntegrationAnsibleConfig struct for IntegrationAnsibleConfig
 type IntegrationAnsibleConfig struct {
 	Integration AddIntegrationsRequestOneOf1Integration `json:"integration"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _IntegrationAnsibleConfig IntegrationAnsibleConfig
@@ -80,6 +80,11 @@ func (o IntegrationAnsibleConfig) MarshalJSON() ([]byte, error) {
 func (o IntegrationAnsibleConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["integration"] = o.Integration
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -107,15 +112,20 @@ func (o *IntegrationAnsibleConfig) UnmarshalJSON(data []byte) (err error) {
 
 	varIntegrationAnsibleConfig := _IntegrationAnsibleConfig{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varIntegrationAnsibleConfig)
+	err = json.Unmarshal(data, &varIntegrationAnsibleConfig)
 
 	if err != nil {
 		return err
 	}
 
 	*o = IntegrationAnsibleConfig(varIntegrationAnsibleConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "integration")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

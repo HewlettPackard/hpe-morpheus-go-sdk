@@ -32,7 +32,10 @@ type VdiAllocation struct {
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
 	LastReserved *time.Time `json:"lastReserved,omitempty"`
 	ReleaseDate *time.Time `json:"releaseDate,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _VdiAllocation VdiAllocation
 
 // NewVdiAllocation instantiates a new VdiAllocation object
 // This constructor will assign default values to properties that have it defined,
@@ -446,7 +449,43 @@ func (o VdiAllocation) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ReleaseDate) {
 		toSerialize["releaseDate"] = o.ReleaseDate
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *VdiAllocation) UnmarshalJSON(data []byte) (err error) {
+	varVdiAllocation := _VdiAllocation{}
+
+	err = json.Unmarshal(data, &varVdiAllocation)
+
+	if err != nil {
+		return err
+	}
+
+	*o = VdiAllocation(varVdiAllocation)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "pool")
+		delete(additionalProperties, "instance")
+		delete(additionalProperties, "user")
+		delete(additionalProperties, "localUserCreated")
+		delete(additionalProperties, "persistent")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "lastReserved")
+		delete(additionalProperties, "releaseDate")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableVdiAllocation struct {

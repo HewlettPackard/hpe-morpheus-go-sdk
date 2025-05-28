@@ -22,7 +22,10 @@ var _ MappedNullable = &UpdateHostCloudRequestServersInner{}
 type UpdateHostCloudRequestServersInner struct {
 	Source *int64 `json:"source,omitempty"`
 	Target *int64 `json:"target,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateHostCloudRequestServersInner UpdateHostCloudRequestServersInner
 
 // NewUpdateHostCloudRequestServersInner instantiates a new UpdateHostCloudRequestServersInner object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o UpdateHostCloudRequestServersInner) ToMap() (map[string]interface{}, err
 	if !IsNil(o.Target) {
 		toSerialize["target"] = o.Target
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateHostCloudRequestServersInner) UnmarshalJSON(data []byte) (err error) {
+	varUpdateHostCloudRequestServersInner := _UpdateHostCloudRequestServersInner{}
+
+	err = json.Unmarshal(data, &varUpdateHostCloudRequestServersInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateHostCloudRequestServersInner(varUpdateHostCloudRequestServersInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "source")
+		delete(additionalProperties, "target")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateHostCloudRequestServersInner struct {

@@ -21,7 +21,10 @@ var _ MappedNullable = &Whoami200ResponseAppliance{}
 // Whoami200ResponseAppliance struct for Whoami200ResponseAppliance
 type Whoami200ResponseAppliance struct {
 	BuildVersion *string `json:"buildVersion,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _Whoami200ResponseAppliance Whoami200ResponseAppliance
 
 // NewWhoami200ResponseAppliance instantiates a new Whoami200ResponseAppliance object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o Whoami200ResponseAppliance) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.BuildVersion) {
 		toSerialize["buildVersion"] = o.BuildVersion
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *Whoami200ResponseAppliance) UnmarshalJSON(data []byte) (err error) {
+	varWhoami200ResponseAppliance := _Whoami200ResponseAppliance{}
+
+	err = json.Unmarshal(data, &varWhoami200ResponseAppliance)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Whoami200ResponseAppliance(varWhoami200ResponseAppliance)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "buildVersion")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableWhoami200ResponseAppliance struct {

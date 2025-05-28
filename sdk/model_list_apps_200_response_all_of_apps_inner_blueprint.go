@@ -23,7 +23,10 @@ type ListApps200ResponseAllOfAppsInnerBlueprint struct {
 	Id *int64 `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
 	Type *string `json:"type,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListApps200ResponseAllOfAppsInnerBlueprint ListApps200ResponseAllOfAppsInnerBlueprint
 
 // NewListApps200ResponseAllOfAppsInnerBlueprint instantiates a new ListApps200ResponseAllOfAppsInnerBlueprint object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o ListApps200ResponseAllOfAppsInnerBlueprint) ToMap() (map[string]interfac
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListApps200ResponseAllOfAppsInnerBlueprint) UnmarshalJSON(data []byte) (err error) {
+	varListApps200ResponseAllOfAppsInnerBlueprint := _ListApps200ResponseAllOfAppsInnerBlueprint{}
+
+	err = json.Unmarshal(data, &varListApps200ResponseAllOfAppsInnerBlueprint)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListApps200ResponseAllOfAppsInnerBlueprint(varListApps200ResponseAllOfAppsInnerBlueprint)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "type")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListApps200ResponseAllOfAppsInnerBlueprint struct {

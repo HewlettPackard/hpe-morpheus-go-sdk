@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -26,6 +25,7 @@ type UpdateRoleWorkflowAccessRequestOneOf1 struct {
 	AllTaskSets bool `json:"allTaskSets"`
 	// The new access level.
 	Access string `json:"access"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateRoleWorkflowAccessRequestOneOf1 UpdateRoleWorkflowAccessRequestOneOf1
@@ -109,6 +109,11 @@ func (o UpdateRoleWorkflowAccessRequestOneOf1) ToMap() (map[string]interface{}, 
 	toSerialize := map[string]interface{}{}
 	toSerialize["allTaskSets"] = o.AllTaskSets
 	toSerialize["access"] = o.Access
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -137,15 +142,21 @@ func (o *UpdateRoleWorkflowAccessRequestOneOf1) UnmarshalJSON(data []byte) (err 
 
 	varUpdateRoleWorkflowAccessRequestOneOf1 := _UpdateRoleWorkflowAccessRequestOneOf1{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varUpdateRoleWorkflowAccessRequestOneOf1)
+	err = json.Unmarshal(data, &varUpdateRoleWorkflowAccessRequestOneOf1)
 
 	if err != nil {
 		return err
 	}
 
 	*o = UpdateRoleWorkflowAccessRequestOneOf1(varUpdateRoleWorkflowAccessRequestOneOf1)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "allTaskSets")
+		delete(additionalProperties, "access")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

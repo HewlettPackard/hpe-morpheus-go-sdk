@@ -66,7 +66,10 @@ type GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsI
 	StorageTypes []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner `json:"storageTypes,omitempty"`
 	RootStorageTypes []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner `json:"rootStorageTypes,omitempty"`
 	ControllerTypes []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeControllerTypesInner `json:"controllerTypes,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionType GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionType
 
 // NewGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionType instantiates a new GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionType object
 // This constructor will assign default values to properties that have it defined,
@@ -1705,7 +1708,78 @@ func (o GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayou
 	if !IsNil(o.ControllerTypes) {
 		toSerialize["controllerTypes"] = o.ControllerTypes
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionType) UnmarshalJSON(data []byte) (err error) {
+	varGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionType := _GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionType{}
+
+	err = json.Unmarshal(data, &varGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionType(varGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "aclEnabled")
+		delete(additionalProperties, "multiTenant")
+		delete(additionalProperties, "managed")
+		delete(additionalProperties, "hostNetwork")
+		delete(additionalProperties, "customSupported")
+		delete(additionalProperties, "mapPorts")
+		delete(additionalProperties, "exportServer")
+		delete(additionalProperties, "viewSet")
+		delete(additionalProperties, "serverType")
+		delete(additionalProperties, "hostType")
+		delete(additionalProperties, "addVolumes")
+		delete(additionalProperties, "hasVolumes")
+		delete(additionalProperties, "hasDatastore")
+		delete(additionalProperties, "hasNetworks")
+		delete(additionalProperties, "maxNetworks")
+		delete(additionalProperties, "customizeVolume")
+		delete(additionalProperties, "rootDiskCustomizable")
+		delete(additionalProperties, "rootDiskSizeKnown")
+		delete(additionalProperties, "rootDiskResizable")
+		delete(additionalProperties, "lvmSupported")
+		delete(additionalProperties, "hostDiskMode")
+		delete(additionalProperties, "minDisk")
+		delete(additionalProperties, "maxDisk")
+		delete(additionalProperties, "resizeCopiesVolumes")
+		delete(additionalProperties, "supportsAutoDatastore")
+		delete(additionalProperties, "hasZonePools")
+		delete(additionalProperties, "hasSecurityGroups")
+		delete(additionalProperties, "hasParameters")
+		delete(additionalProperties, "canEnforceTags")
+		delete(additionalProperties, "disableRootDatastore")
+		delete(additionalProperties, "hasSnapshots")
+		delete(additionalProperties, "hasSpecTemplates")
+		delete(additionalProperties, "hasPreview")
+		delete(additionalProperties, "zonePoolRequired")
+		delete(additionalProperties, "planRequiresPool")
+		delete(additionalProperties, "hasFolders")
+		delete(additionalProperties, "optionTypes")
+		delete(additionalProperties, "customOptionTypes")
+		delete(additionalProperties, "networkTypes")
+		delete(additionalProperties, "storageTypes")
+		delete(additionalProperties, "rootStorageTypes")
+		delete(additionalProperties, "controllerTypes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionType struct {

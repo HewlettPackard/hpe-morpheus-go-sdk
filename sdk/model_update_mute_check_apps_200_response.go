@@ -22,7 +22,10 @@ var _ MappedNullable = &UpdateMuteCheckApps200Response{}
 type UpdateMuteCheckApps200Response struct {
 	Success *bool `json:"success,omitempty"`
 	Muted *bool `json:"muted,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateMuteCheckApps200Response UpdateMuteCheckApps200Response
 
 // NewUpdateMuteCheckApps200Response instantiates a new UpdateMuteCheckApps200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o UpdateMuteCheckApps200Response) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.Muted) {
 		toSerialize["muted"] = o.Muted
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateMuteCheckApps200Response) UnmarshalJSON(data []byte) (err error) {
+	varUpdateMuteCheckApps200Response := _UpdateMuteCheckApps200Response{}
+
+	err = json.Unmarshal(data, &varUpdateMuteCheckApps200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateMuteCheckApps200Response(varUpdateMuteCheckApps200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "success")
+		delete(additionalProperties, "muted")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateMuteCheckApps200Response struct {

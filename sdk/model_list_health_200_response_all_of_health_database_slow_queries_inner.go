@@ -23,7 +23,10 @@ type ListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner struct {
 	Count *int64 `json:"count,omitempty"`
 	Time *int64 `json:"time,omitempty"`
 	Query *string `json:"query,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner ListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner
 
 // NewListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner instantiates a new ListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o ListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner) ToMap() (map[s
 	if !IsNil(o.Query) {
 		toSerialize["query"] = o.Query
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner) UnmarshalJSON(data []byte) (err error) {
+	varListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner := _ListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner{}
+
+	err = json.Unmarshal(data, &varListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner(varListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "count")
+		delete(additionalProperties, "time")
+		delete(additionalProperties, "query")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner struct {

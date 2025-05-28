@@ -36,7 +36,10 @@ type BlueprintTerraformCreateSuccess struct {
 	Owner map[string]interface{} `json:"owner,omitempty"`
 	// Tenant
 	Tenant map[string]interface{} `json:"tenant,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _BlueprintTerraformCreateSuccess BlueprintTerraformCreateSuccess
 
 // NewBlueprintTerraformCreateSuccess instantiates a new BlueprintTerraformCreateSuccess object
 // This constructor will assign default values to properties that have it defined,
@@ -384,7 +387,41 @@ func (o BlueprintTerraformCreateSuccess) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.Tenant) {
 		toSerialize["tenant"] = o.Tenant
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *BlueprintTerraformCreateSuccess) UnmarshalJSON(data []byte) (err error) {
+	varBlueprintTerraformCreateSuccess := _BlueprintTerraformCreateSuccess{}
+
+	err = json.Unmarshal(data, &varBlueprintTerraformCreateSuccess)
+
+	if err != nil {
+		return err
+	}
+
+	*o = BlueprintTerraformCreateSuccess(varBlueprintTerraformCreateSuccess)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "image")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "terraform")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "resourcePermission")
+		delete(additionalProperties, "owner")
+		delete(additionalProperties, "tenant")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableBlueprintTerraformCreateSuccess struct {

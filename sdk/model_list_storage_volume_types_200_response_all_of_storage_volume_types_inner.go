@@ -34,7 +34,10 @@ type ListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner struct {
 	Category *string `json:"category,omitempty"`
 	Enabled *bool `json:"enabled,omitempty"`
 	OptionTypes []ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner ListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner
 
 // NewListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner instantiates a new ListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -553,7 +556,46 @@ func (o ListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner) ToMap() (
 	if !IsNil(o.OptionTypes) {
 		toSerialize["optionTypes"] = o.OptionTypes
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner) UnmarshalJSON(data []byte) (err error) {
+	varListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner := _ListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner{}
+
+	err = json.Unmarshal(data, &varListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner(varListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "displayOrder")
+		delete(additionalProperties, "defaultType")
+		delete(additionalProperties, "customLabel")
+		delete(additionalProperties, "customSize")
+		delete(additionalProperties, "customSizeOptions")
+		delete(additionalProperties, "configurableIOPS")
+		delete(additionalProperties, "hasDatastore")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "optionTypes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner struct {

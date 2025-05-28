@@ -21,7 +21,10 @@ var _ MappedNullable = &GetOptionListItems200Response{}
 // GetOptionListItems200Response struct for GetOptionListItems200Response
 type GetOptionListItems200Response struct {
 	ListItems []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner `json:"listItems,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetOptionListItems200Response GetOptionListItems200Response
 
 // NewGetOptionListItems200Response instantiates a new GetOptionListItems200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o GetOptionListItems200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ListItems) {
 		toSerialize["listItems"] = o.ListItems
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetOptionListItems200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetOptionListItems200Response := _GetOptionListItems200Response{}
+
+	err = json.Unmarshal(data, &varGetOptionListItems200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetOptionListItems200Response(varGetOptionListItems200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "listItems")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetOptionListItems200Response struct {

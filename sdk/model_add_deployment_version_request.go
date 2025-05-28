@@ -21,7 +21,10 @@ var _ MappedNullable = &AddDeploymentVersionRequest{}
 // AddDeploymentVersionRequest struct for AddDeploymentVersionRequest
 type AddDeploymentVersionRequest struct {
 	Version *AddDeploymentVersionRequestVersion `json:"version,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddDeploymentVersionRequest AddDeploymentVersionRequest
 
 // NewAddDeploymentVersionRequest instantiates a new AddDeploymentVersionRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o AddDeploymentVersionRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Version) {
 		toSerialize["version"] = o.Version
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddDeploymentVersionRequest) UnmarshalJSON(data []byte) (err error) {
+	varAddDeploymentVersionRequest := _AddDeploymentVersionRequest{}
+
+	err = json.Unmarshal(data, &varAddDeploymentVersionRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddDeploymentVersionRequest(varAddDeploymentVersionRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "version")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddDeploymentVersionRequest struct {

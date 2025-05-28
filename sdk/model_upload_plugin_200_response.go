@@ -22,7 +22,10 @@ var _ MappedNullable = &UploadPlugin200Response{}
 type UploadPlugin200Response struct {
 	Plugin *ListPlugins200ResponseAllOfPluginsInner `json:"plugin,omitempty"`
 	Success *bool `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UploadPlugin200Response UploadPlugin200Response
 
 // NewUploadPlugin200Response instantiates a new UploadPlugin200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o UploadPlugin200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Success) {
 		toSerialize["success"] = o.Success
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UploadPlugin200Response) UnmarshalJSON(data []byte) (err error) {
+	varUploadPlugin200Response := _UploadPlugin200Response{}
+
+	err = json.Unmarshal(data, &varUploadPlugin200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UploadPlugin200Response(varUploadPlugin200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "plugin")
+		delete(additionalProperties, "success")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUploadPlugin200Response struct {

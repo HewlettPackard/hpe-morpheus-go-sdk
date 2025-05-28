@@ -24,7 +24,10 @@ type AwsResourcePoolConfig struct {
 	CidrBlock *string `json:"cidrBlock,omitempty"`
 	// default or dedicated
 	Tenancy *string `json:"tenancy,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AwsResourcePoolConfig AwsResourcePoolConfig
 
 // NewAwsResourcePoolConfig instantiates a new AwsResourcePoolConfig object
 // This constructor will assign default values to properties that have it defined,
@@ -127,7 +130,34 @@ func (o AwsResourcePoolConfig) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Tenancy) {
 		toSerialize["tenancy"] = o.Tenancy
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AwsResourcePoolConfig) UnmarshalJSON(data []byte) (err error) {
+	varAwsResourcePoolConfig := _AwsResourcePoolConfig{}
+
+	err = json.Unmarshal(data, &varAwsResourcePoolConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AwsResourcePoolConfig(varAwsResourcePoolConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "cidrBlock")
+		delete(additionalProperties, "tenancy")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAwsResourcePoolConfig struct {

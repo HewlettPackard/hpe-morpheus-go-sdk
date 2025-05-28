@@ -21,7 +21,10 @@ var _ MappedNullable = &GetSecurityGroupRules200Response{}
 // GetSecurityGroupRules200Response struct for GetSecurityGroupRules200Response
 type GetSecurityGroupRules200Response struct {
 	Rule *ListSecurityGroupRules200ResponseAllOfRulesInner `json:"rule,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetSecurityGroupRules200Response GetSecurityGroupRules200Response
 
 // NewGetSecurityGroupRules200Response instantiates a new GetSecurityGroupRules200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o GetSecurityGroupRules200Response) ToMap() (map[string]interface{}, error
 	if !IsNil(o.Rule) {
 		toSerialize["rule"] = o.Rule
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetSecurityGroupRules200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetSecurityGroupRules200Response := _GetSecurityGroupRules200Response{}
+
+	err = json.Unmarshal(data, &varGetSecurityGroupRules200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetSecurityGroupRules200Response(varGetSecurityGroupRules200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "rule")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetSecurityGroupRules200Response struct {

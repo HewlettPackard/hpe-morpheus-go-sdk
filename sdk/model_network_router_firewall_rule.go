@@ -43,7 +43,10 @@ type NetworkRouterFirewallRule struct {
 	SourceGroup *string `json:"sourceGroup,omitempty"`
 	SourceTier *string `json:"sourceTier,omitempty"`
 	Applications []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"applications,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _NetworkRouterFirewallRule NetworkRouterFirewallRule
 
 // NewNetworkRouterFirewallRule instantiates a new NetworkRouterFirewallRule object
 // This constructor will assign default values to properties that have it defined,
@@ -877,7 +880,55 @@ func (o NetworkRouterFirewallRule) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Applications) {
 		toSerialize["applications"] = o.Applications
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *NetworkRouterFirewallRule) UnmarshalJSON(data []byte) (err error) {
+	varNetworkRouterFirewallRule := _NetworkRouterFirewallRule{}
+
+	err = json.Unmarshal(data, &varNetworkRouterFirewallRule)
+
+	if err != nil {
+		return err
+	}
+
+	*o = NetworkRouterFirewallRule(varNetworkRouterFirewallRule)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "priority")
+		delete(additionalProperties, "groupName")
+		delete(additionalProperties, "direction")
+		delete(additionalProperties, "ruleType")
+		delete(additionalProperties, "policy")
+		delete(additionalProperties, "source")
+		delete(additionalProperties, "sourceType")
+		delete(additionalProperties, "destination")
+		delete(additionalProperties, "destinationType")
+		delete(additionalProperties, "profiles")
+		delete(additionalProperties, "protocol")
+		delete(additionalProperties, "application")
+		delete(additionalProperties, "applicationType")
+		delete(additionalProperties, "portRange")
+		delete(additionalProperties, "sourcePortRange")
+		delete(additionalProperties, "destinationPortRange")
+		delete(additionalProperties, "sourceGroup")
+		delete(additionalProperties, "sourceTier")
+		delete(additionalProperties, "applications")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableNetworkRouterFirewallRule struct {

@@ -32,7 +32,10 @@ type AddKeyPairs200ResponseAllOfAccount struct {
 	Fingerprint *string `json:"fingerprint,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddKeyPairs200ResponseAllOfAccount AddKeyPairs200ResponseAllOfAccount
 
 // NewAddKeyPairs200ResponseAllOfAccount instantiates a new AddKeyPairs200ResponseAllOfAccount object
 // This constructor will assign default values to properties that have it defined,
@@ -411,7 +414,42 @@ func (o AddKeyPairs200ResponseAllOfAccount) ToMap() (map[string]interface{}, err
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddKeyPairs200ResponseAllOfAccount) UnmarshalJSON(data []byte) (err error) {
+	varAddKeyPairs200ResponseAllOfAccount := _AddKeyPairs200ResponseAllOfAccount{}
+
+	err = json.Unmarshal(data, &varAddKeyPairs200ResponseAllOfAccount)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddKeyPairs200ResponseAllOfAccount(varAddKeyPairs200ResponseAllOfAccount)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "publicKey")
+		delete(additionalProperties, "hasPrivateKey")
+		delete(additionalProperties, "privateKeyHash")
+		delete(additionalProperties, "privateKey")
+		delete(additionalProperties, "fingerprint")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddKeyPairs200ResponseAllOfAccount struct {

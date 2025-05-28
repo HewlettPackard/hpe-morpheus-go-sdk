@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -58,6 +57,7 @@ type AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig struct {
 	TaskSetId *int64 `json:"taskSetId,omitempty"`
 	// The Workflow Name to execute.
 	TaskSetName *string `json:"taskSetName,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig
@@ -752,6 +752,11 @@ func (o AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig) ToMap() (map[string
 	if !IsNil(o.TaskSetName) {
 		toSerialize["taskSetName"] = o.TaskSetName
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -786,15 +791,40 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig) UnmarshalJSON(data
 
 	varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfig := _AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfig)
+	err = json.Unmarshal(data, &varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfig)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig(varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "group")
+		delete(additionalProperties, "cloud")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "volumes")
+		delete(additionalProperties, "hostName")
+		delete(additionalProperties, "environment")
+		delete(additionalProperties, "layout")
+		delete(additionalProperties, "plan")
+		delete(additionalProperties, "version")
+		delete(additionalProperties, "evars")
+		delete(additionalProperties, "servicePlanOptions")
+		delete(additionalProperties, "securityGroups")
+		delete(additionalProperties, "networkInterfaces")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "tags")
+		delete(additionalProperties, "metadata")
+		delete(additionalProperties, "ports")
+		delete(additionalProperties, "taskSetId")
+		delete(additionalProperties, "taskSetName")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

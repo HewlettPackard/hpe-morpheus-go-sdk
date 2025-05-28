@@ -21,7 +21,10 @@ var _ MappedNullable = &Model400Error{}
 // Model400Error struct for Model400Error
 type Model400Error struct {
 	Msg *string `json:"msg,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _Model400Error Model400Error
 
 // NewModel400Error instantiates a new Model400Error object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o Model400Error) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Msg) {
 		toSerialize["msg"] = o.Msg
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *Model400Error) UnmarshalJSON(data []byte) (err error) {
+	varModel400Error := _Model400Error{}
+
+	err = json.Unmarshal(data, &varModel400Error)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Model400Error(varModel400Error)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "msg")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableModel400Error struct {

@@ -21,7 +21,10 @@ var _ MappedNullable = &AddCertificateRequest{}
 // AddCertificateRequest struct for AddCertificateRequest
 type AddCertificateRequest struct {
 	Certificate *AddCertificateRequestCertificate `json:"certificate,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddCertificateRequest AddCertificateRequest
 
 // NewAddCertificateRequest instantiates a new AddCertificateRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o AddCertificateRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Certificate) {
 		toSerialize["certificate"] = o.Certificate
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddCertificateRequest) UnmarshalJSON(data []byte) (err error) {
+	varAddCertificateRequest := _AddCertificateRequest{}
+
+	err = json.Unmarshal(data, &varAddCertificateRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddCertificateRequest(varAddCertificateRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "certificate")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddCertificateRequest struct {

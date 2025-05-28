@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -35,6 +34,7 @@ type AddIntegrationsRequestOneOf6Integration struct {
 	// Key Pair ID
 	ServiceKey *int64 `json:"serviceKey,omitempty"`
 	Config *AddIntegrationsRequestOneOf6IntegrationConfig `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddIntegrationsRequestOneOf6Integration AddIntegrationsRequestOneOf6Integration
@@ -284,6 +284,11 @@ func (o AddIntegrationsRequestOneOf6Integration) ToMap() (map[string]interface{}
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -313,15 +318,26 @@ func (o *AddIntegrationsRequestOneOf6Integration) UnmarshalJSON(data []byte) (er
 
 	varAddIntegrationsRequestOneOf6Integration := _AddIntegrationsRequestOneOf6Integration{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddIntegrationsRequestOneOf6Integration)
+	err = json.Unmarshal(data, &varAddIntegrationsRequestOneOf6Integration)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddIntegrationsRequestOneOf6Integration(varAddIntegrationsRequestOneOf6Integration)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "serviceUsername")
+		delete(additionalProperties, "servicePassword")
+		delete(additionalProperties, "serviceToken")
+		delete(additionalProperties, "serviceKey")
+		delete(additionalProperties, "config")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

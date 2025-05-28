@@ -23,7 +23,10 @@ type ListPreseedScripts200Response struct {
 	PreseedScripts []ListPreseedScripts200ResponseAllOfPreseedScriptsInner `json:"preseedScripts,omitempty"`
 	PreseedScriptCount *int64 `json:"preseedScriptCount,omitempty"`
 	Meta *ListActivity200ResponseAllOfMeta `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListPreseedScripts200Response ListPreseedScripts200Response
 
 // NewListPreseedScripts200Response instantiates a new ListPreseedScripts200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o ListPreseedScripts200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Meta) {
 		toSerialize["meta"] = o.Meta
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListPreseedScripts200Response) UnmarshalJSON(data []byte) (err error) {
+	varListPreseedScripts200Response := _ListPreseedScripts200Response{}
+
+	err = json.Unmarshal(data, &varListPreseedScripts200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListPreseedScripts200Response(varListPreseedScripts200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "preseedScripts")
+		delete(additionalProperties, "preseedScriptCount")
+		delete(additionalProperties, "meta")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListPreseedScripts200Response struct {

@@ -30,7 +30,10 @@ type AddIdentitySourcesRequestUserSourceConfigOneOf4 struct {
 	ClientId *string `json:"clientId,omitempty"`
 	// Required Role
 	RequiredRole *string `json:"requiredRole,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddIdentitySourcesRequestUserSourceConfigOneOf4 AddIdentitySourcesRequestUserSourceConfigOneOf4
 
 // NewAddIdentitySourcesRequestUserSourceConfigOneOf4 instantiates a new AddIdentitySourcesRequestUserSourceConfigOneOf4 object
 // This constructor will assign default values to properties that have it defined,
@@ -234,7 +237,37 @@ func (o AddIdentitySourcesRequestUserSourceConfigOneOf4) ToMap() (map[string]int
 	if !IsNil(o.RequiredRole) {
 		toSerialize["requiredRole"] = o.RequiredRole
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddIdentitySourcesRequestUserSourceConfigOneOf4) UnmarshalJSON(data []byte) (err error) {
+	varAddIdentitySourcesRequestUserSourceConfigOneOf4 := _AddIdentitySourcesRequestUserSourceConfigOneOf4{}
+
+	err = json.Unmarshal(data, &varAddIdentitySourcesRequestUserSourceConfigOneOf4)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddIdentitySourcesRequestUserSourceConfigOneOf4(varAddIdentitySourcesRequestUserSourceConfigOneOf4)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "subdomain")
+		delete(additionalProperties, "region")
+		delete(additionalProperties, "clientSecret")
+		delete(additionalProperties, "clientId")
+		delete(additionalProperties, "requiredRole")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddIdentitySourcesRequestUserSourceConfigOneOf4 struct {

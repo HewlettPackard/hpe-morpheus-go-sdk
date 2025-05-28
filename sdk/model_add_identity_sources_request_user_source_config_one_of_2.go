@@ -34,7 +34,10 @@ type AddIdentitySourcesRequestUserSourceConfigOneOf2 struct {
 	RequiredGroup *string `json:"requiredGroup,omitempty"`
 	// Include Member Groups
 	SearchMemberGroups *bool `json:"searchMemberGroups,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddIdentitySourcesRequestUserSourceConfigOneOf2 AddIdentitySourcesRequestUserSourceConfigOneOf2
 
 // NewAddIdentitySourcesRequestUserSourceConfigOneOf2 instantiates a new AddIdentitySourcesRequestUserSourceConfigOneOf2 object
 // This constructor will assign default values to properties that have it defined,
@@ -312,7 +315,39 @@ func (o AddIdentitySourcesRequestUserSourceConfigOneOf2) ToMap() (map[string]int
 	if !IsNil(o.SearchMemberGroups) {
 		toSerialize["searchMemberGroups"] = o.SearchMemberGroups
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddIdentitySourcesRequestUserSourceConfigOneOf2) UnmarshalJSON(data []byte) (err error) {
+	varAddIdentitySourcesRequestUserSourceConfigOneOf2 := _AddIdentitySourcesRequestUserSourceConfigOneOf2{}
+
+	err = json.Unmarshal(data, &varAddIdentitySourcesRequestUserSourceConfigOneOf2)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddIdentitySourcesRequestUserSourceConfigOneOf2(varAddIdentitySourcesRequestUserSourceConfigOneOf2)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "url")
+		delete(additionalProperties, "domain")
+		delete(additionalProperties, "useSSL")
+		delete(additionalProperties, "bindingUsername")
+		delete(additionalProperties, "bindingPassword")
+		delete(additionalProperties, "requiredGroup")
+		delete(additionalProperties, "searchMemberGroups")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddIdentitySourcesRequestUserSourceConfigOneOf2 struct {

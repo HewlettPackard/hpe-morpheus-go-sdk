@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -26,6 +25,7 @@ type RolePermissionBlueprintAll struct {
 	AllAppTemplates bool `json:"allAppTemplates"`
 	// The new access level.
 	Access string `json:"access"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _RolePermissionBlueprintAll RolePermissionBlueprintAll
@@ -109,6 +109,11 @@ func (o RolePermissionBlueprintAll) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["allAppTemplates"] = o.AllAppTemplates
 	toSerialize["access"] = o.Access
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -137,15 +142,21 @@ func (o *RolePermissionBlueprintAll) UnmarshalJSON(data []byte) (err error) {
 
 	varRolePermissionBlueprintAll := _RolePermissionBlueprintAll{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varRolePermissionBlueprintAll)
+	err = json.Unmarshal(data, &varRolePermissionBlueprintAll)
 
 	if err != nil {
 		return err
 	}
 
 	*o = RolePermissionBlueprintAll(varRolePermissionBlueprintAll)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "allAppTemplates")
+		delete(additionalProperties, "access")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

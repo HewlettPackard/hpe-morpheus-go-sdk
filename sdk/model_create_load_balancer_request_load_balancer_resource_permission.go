@@ -24,7 +24,10 @@ type CreateLoadBalancerRequestLoadBalancerResourcePermission struct {
 	All *bool `json:"all,omitempty"`
 	// Array of groups that are allowed access
 	Sites []int64 `json:"sites,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _CreateLoadBalancerRequestLoadBalancerResourcePermission CreateLoadBalancerRequestLoadBalancerResourcePermission
 
 // NewCreateLoadBalancerRequestLoadBalancerResourcePermission instantiates a new CreateLoadBalancerRequestLoadBalancerResourcePermission object
 // This constructor will assign default values to properties that have it defined,
@@ -123,7 +126,34 @@ func (o CreateLoadBalancerRequestLoadBalancerResourcePermission) ToMap() (map[st
 	if !IsNil(o.Sites) {
 		toSerialize["sites"] = o.Sites
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *CreateLoadBalancerRequestLoadBalancerResourcePermission) UnmarshalJSON(data []byte) (err error) {
+	varCreateLoadBalancerRequestLoadBalancerResourcePermission := _CreateLoadBalancerRequestLoadBalancerResourcePermission{}
+
+	err = json.Unmarshal(data, &varCreateLoadBalancerRequestLoadBalancerResourcePermission)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CreateLoadBalancerRequestLoadBalancerResourcePermission(varCreateLoadBalancerRequestLoadBalancerResourcePermission)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "all")
+		delete(additionalProperties, "sites")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCreateLoadBalancerRequestLoadBalancerResourcePermission struct {

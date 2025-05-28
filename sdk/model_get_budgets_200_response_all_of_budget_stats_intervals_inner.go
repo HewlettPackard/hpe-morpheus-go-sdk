@@ -29,7 +29,10 @@ type GetBudgets200ResponseAllOfBudgetStatsIntervalsInner struct {
 	Cost *float32 `json:"cost,omitempty"`
 	StartDate *time.Time `json:"startDate,omitempty"`
 	EndDate *time.Time `json:"endDate,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetBudgets200ResponseAllOfBudgetStatsIntervalsInner GetBudgets200ResponseAllOfBudgetStatsIntervalsInner
 
 // NewGetBudgets200ResponseAllOfBudgetStatsIntervalsInner instantiates a new GetBudgets200ResponseAllOfBudgetStatsIntervalsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -338,7 +341,40 @@ func (o GetBudgets200ResponseAllOfBudgetStatsIntervalsInner) ToMap() (map[string
 	if !IsNil(o.EndDate) {
 		toSerialize["endDate"] = o.EndDate
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetBudgets200ResponseAllOfBudgetStatsIntervalsInner) UnmarshalJSON(data []byte) (err error) {
+	varGetBudgets200ResponseAllOfBudgetStatsIntervalsInner := _GetBudgets200ResponseAllOfBudgetStatsIntervalsInner{}
+
+	err = json.Unmarshal(data, &varGetBudgets200ResponseAllOfBudgetStatsIntervalsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetBudgets200ResponseAllOfBudgetStatsIntervalsInner(varGetBudgets200ResponseAllOfBudgetStatsIntervalsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "index")
+		delete(additionalProperties, "month")
+		delete(additionalProperties, "shortName")
+		delete(additionalProperties, "chartName")
+		delete(additionalProperties, "budget")
+		delete(additionalProperties, "cost")
+		delete(additionalProperties, "startDate")
+		delete(additionalProperties, "endDate")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetBudgets200ResponseAllOfBudgetStatsIntervalsInner struct {

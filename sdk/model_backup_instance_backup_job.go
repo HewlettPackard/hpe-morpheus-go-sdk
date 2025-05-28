@@ -24,7 +24,10 @@ type BackupInstanceBackupJob struct {
 	SyntheticFullEnabled *bool `json:"syntheticFullEnabled,omitempty"`
 	// the ID of the execute schedule for the synthetic full backup to be created. Only applies to `kvm` backup type.
 	SyntheticFullSchedule *int64 `json:"syntheticFullSchedule,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _BackupInstanceBackupJob BackupInstanceBackupJob
 
 // NewBackupInstanceBackupJob instantiates a new BackupInstanceBackupJob object
 // This constructor will assign default values to properties that have it defined,
@@ -123,7 +126,34 @@ func (o BackupInstanceBackupJob) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.SyntheticFullSchedule) {
 		toSerialize["syntheticFullSchedule"] = o.SyntheticFullSchedule
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *BackupInstanceBackupJob) UnmarshalJSON(data []byte) (err error) {
+	varBackupInstanceBackupJob := _BackupInstanceBackupJob{}
+
+	err = json.Unmarshal(data, &varBackupInstanceBackupJob)
+
+	if err != nil {
+		return err
+	}
+
+	*o = BackupInstanceBackupJob(varBackupInstanceBackupJob)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "syntheticFullEnabled")
+		delete(additionalProperties, "syntheticFullSchedule")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableBackupInstanceBackupJob struct {

@@ -23,7 +23,10 @@ type InstanceNamePolicyTypeConfiguration struct {
 	NamingType *string `json:"namingType,omitempty"`
 	NamingPattern *string `json:"namingPattern,omitempty"`
 	NamingConflict *bool `json:"namingConflict,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _InstanceNamePolicyTypeConfiguration InstanceNamePolicyTypeConfiguration
 
 // NewInstanceNamePolicyTypeConfiguration instantiates a new InstanceNamePolicyTypeConfiguration object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o InstanceNamePolicyTypeConfiguration) ToMap() (map[string]interface{}, er
 	if !IsNil(o.NamingConflict) {
 		toSerialize["namingConflict"] = o.NamingConflict
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *InstanceNamePolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
+	varInstanceNamePolicyTypeConfiguration := _InstanceNamePolicyTypeConfiguration{}
+
+	err = json.Unmarshal(data, &varInstanceNamePolicyTypeConfiguration)
+
+	if err != nil {
+		return err
+	}
+
+	*o = InstanceNamePolicyTypeConfiguration(varInstanceNamePolicyTypeConfiguration)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "namingType")
+		delete(additionalProperties, "namingPattern")
+		delete(additionalProperties, "namingConflict")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableInstanceNamePolicyTypeConfiguration struct {

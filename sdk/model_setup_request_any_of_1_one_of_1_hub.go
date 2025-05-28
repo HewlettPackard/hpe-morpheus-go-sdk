@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -34,6 +33,7 @@ type SetupRequestAnyOf1OneOf1Hub struct {
 	Password string `json:"password"`
 	// Job title of new Morpheus Hub user
 	JobTitle string `json:"jobTitle"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _SetupRequestAnyOf1OneOf1Hub SetupRequestAnyOf1OneOf1Hub
@@ -221,6 +221,11 @@ func (o SetupRequestAnyOf1OneOf1Hub) ToMap() (map[string]interface{}, error) {
 	toSerialize["email"] = o.Email
 	toSerialize["password"] = o.Password
 	toSerialize["jobTitle"] = o.JobTitle
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -253,15 +258,25 @@ func (o *SetupRequestAnyOf1OneOf1Hub) UnmarshalJSON(data []byte) (err error) {
 
 	varSetupRequestAnyOf1OneOf1Hub := _SetupRequestAnyOf1OneOf1Hub{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varSetupRequestAnyOf1OneOf1Hub)
+	err = json.Unmarshal(data, &varSetupRequestAnyOf1OneOf1Hub)
 
 	if err != nil {
 		return err
 	}
 
 	*o = SetupRequestAnyOf1OneOf1Hub(varSetupRequestAnyOf1OneOf1Hub)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "companyName")
+		delete(additionalProperties, "firstName")
+		delete(additionalProperties, "lastName")
+		delete(additionalProperties, "email")
+		delete(additionalProperties, "password")
+		delete(additionalProperties, "jobTitle")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

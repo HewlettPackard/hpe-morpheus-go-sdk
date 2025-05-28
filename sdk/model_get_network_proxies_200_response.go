@@ -23,7 +23,10 @@ type GetNetworkProxies200Response struct {
 	NetworkProxies interface{} `json:"networkProxies,omitempty"`
 	NetworkProxyCount *int32 `json:"networkProxyCount,omitempty"`
 	Meta *ListActivity200ResponseAllOfMeta `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetNetworkProxies200Response GetNetworkProxies200Response
 
 // NewGetNetworkProxies200Response instantiates a new GetNetworkProxies200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -158,7 +161,35 @@ func (o GetNetworkProxies200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Meta) {
 		toSerialize["meta"] = o.Meta
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetNetworkProxies200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetNetworkProxies200Response := _GetNetworkProxies200Response{}
+
+	err = json.Unmarshal(data, &varGetNetworkProxies200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetNetworkProxies200Response(varGetNetworkProxies200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "networkProxies")
+		delete(additionalProperties, "networkProxyCount")
+		delete(additionalProperties, "meta")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetNetworkProxies200Response struct {

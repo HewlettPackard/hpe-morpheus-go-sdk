@@ -24,7 +24,10 @@ type ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner struct {
 	Name *string `json:"name,omitempty"`
 	Code *string `json:"code,omitempty"`
 	Category *string `json:"category,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner
 
 // NewListClusterNetworkEndpoints200ResponseAllOfEndpointsInner instantiates a new ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -193,7 +196,36 @@ func (o ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner) ToMap() (map[
 	if !IsNil(o.Category) {
 		toSerialize["category"] = o.Category
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner) UnmarshalJSON(data []byte) (err error) {
+	varListClusterNetworkEndpoints200ResponseAllOfEndpointsInner := _ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner{}
+
+	err = json.Unmarshal(data, &varListClusterNetworkEndpoints200ResponseAllOfEndpointsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner(varListClusterNetworkEndpoints200ResponseAllOfEndpointsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "category")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListClusterNetworkEndpoints200ResponseAllOfEndpointsInner struct {

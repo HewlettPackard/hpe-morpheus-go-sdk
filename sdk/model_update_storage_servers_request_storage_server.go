@@ -34,7 +34,10 @@ type UpdateStorageServersRequestStorageServer struct {
 	Visibility *string `json:"visibility,omitempty"`
 	// Array of tenant account ids that are allowed access
 	Tenants []GetAlerts200ResponseAllOfChecksInnerAccount `json:"tenants,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateStorageServersRequestStorageServer UpdateStorageServersRequestStorageServer
 
 // NewUpdateStorageServersRequestStorageServer instantiates a new UpdateStorageServersRequestStorageServer object
 // This constructor will assign default values to properties that have it defined,
@@ -316,7 +319,39 @@ func (o UpdateStorageServersRequestStorageServer) ToMap() (map[string]interface{
 	if !IsNil(o.Tenants) {
 		toSerialize["tenants"] = o.Tenants
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateStorageServersRequestStorageServer) UnmarshalJSON(data []byte) (err error) {
+	varUpdateStorageServersRequestStorageServer := _UpdateStorageServersRequestStorageServer{}
+
+	err = json.Unmarshal(data, &varUpdateStorageServersRequestStorageServer)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateStorageServersRequestStorageServer(varUpdateStorageServersRequestStorageServer)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "tenants")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateStorageServersRequestStorageServer struct {

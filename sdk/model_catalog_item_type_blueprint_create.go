@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -50,6 +49,7 @@ type CatalogItemTypeBlueprintCreate struct {
 	Form *AddCatalogItemTypeRequestCatalogItemTypeOneOfForm `json:"form,omitempty"`
 	// Array of option type IDs, see Inputs. Only applies to formType 'optionTypes'.
 	OptionTypes []int64 `json:"optionTypes,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _CatalogItemTypeBlueprintCreate CatalogItemTypeBlueprintCreate
@@ -605,6 +605,11 @@ func (o CatalogItemTypeBlueprintCreate) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.OptionTypes) {
 		toSerialize["optionTypes"] = o.OptionTypes
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -632,15 +637,34 @@ func (o *CatalogItemTypeBlueprintCreate) UnmarshalJSON(data []byte) (err error) 
 
 	varCatalogItemTypeBlueprintCreate := _CatalogItemTypeBlueprintCreate{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varCatalogItemTypeBlueprintCreate)
+	err = json.Unmarshal(data, &varCatalogItemTypeBlueprintCreate)
 
 	if err != nil {
 		return err
 	}
 
 	*o = CatalogItemTypeBlueprintCreate(varCatalogItemTypeBlueprintCreate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "layoutCode")
+		delete(additionalProperties, "iconPath")
+		delete(additionalProperties, "allowQuantity")
+		delete(additionalProperties, "blueprint")
+		delete(additionalProperties, "appSpec")
+		delete(additionalProperties, "formType")
+		delete(additionalProperties, "form")
+		delete(additionalProperties, "optionTypes")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

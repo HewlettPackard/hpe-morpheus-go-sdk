@@ -21,7 +21,10 @@ var _ MappedNullable = &AddBaremetalHostRequestServerCloud{}
 // AddBaremetalHostRequestServerCloud struct for AddBaremetalHostRequestServerCloud
 type AddBaremetalHostRequestServerCloud struct {
 	Id *int32 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddBaremetalHostRequestServerCloud AddBaremetalHostRequestServerCloud
 
 // NewAddBaremetalHostRequestServerCloud instantiates a new AddBaremetalHostRequestServerCloud object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o AddBaremetalHostRequestServerCloud) ToMap() (map[string]interface{}, err
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddBaremetalHostRequestServerCloud) UnmarshalJSON(data []byte) (err error) {
+	varAddBaremetalHostRequestServerCloud := _AddBaremetalHostRequestServerCloud{}
+
+	err = json.Unmarshal(data, &varAddBaremetalHostRequestServerCloud)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddBaremetalHostRequestServerCloud(varAddBaremetalHostRequestServerCloud)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddBaremetalHostRequestServerCloud struct {

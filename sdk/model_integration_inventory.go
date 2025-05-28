@@ -26,7 +26,10 @@ type IntegrationInventory struct {
 	ExternalId *string `json:"externalId,omitempty"`
 	Owner *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"owner,omitempty"`
 	Tenants []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"tenants,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _IntegrationInventory IntegrationInventory
 
 // NewIntegrationInventory instantiates a new IntegrationInventory object
 // This constructor will assign default values to properties that have it defined,
@@ -265,7 +268,38 @@ func (o IntegrationInventory) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Tenants) {
 		toSerialize["tenants"] = o.Tenants
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *IntegrationInventory) UnmarshalJSON(data []byte) (err error) {
+	varIntegrationInventory := _IntegrationInventory{}
+
+	err = json.Unmarshal(data, &varIntegrationInventory)
+
+	if err != nil {
+		return err
+	}
+
+	*o = IntegrationInventory(varIntegrationInventory)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "owner")
+		delete(additionalProperties, "tenants")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableIntegrationInventory struct {

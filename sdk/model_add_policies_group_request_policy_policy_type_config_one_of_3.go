@@ -23,7 +23,10 @@ type AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf3 struct {
 	MaxPrice *float32 `json:"maxPrice,omitempty"`
 	MaxPriceCurrency *string `json:"maxPriceCurrency,omitempty"`
 	MaxPriceUnit *string `json:"maxPriceUnit,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf3 AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf3
 
 // NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf3 instantiates a new AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf3 object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf3) ToMap() (map[string
 	if !IsNil(o.MaxPriceUnit) {
 		toSerialize["maxPriceUnit"] = o.MaxPriceUnit
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf3) UnmarshalJSON(data []byte) (err error) {
+	varAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf3 := _AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf3{}
+
+	err = json.Unmarshal(data, &varAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf3)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf3(varAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf3)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "maxPrice")
+		delete(additionalProperties, "maxPriceCurrency")
+		delete(additionalProperties, "maxPriceUnit")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf3 struct {

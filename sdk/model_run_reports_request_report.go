@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -32,6 +31,7 @@ type RunReportsRequestReport struct {
 	GroupId *float32 `json:"groupId,omitempty"`
 	// The Cloud ID filter for the report
 	CloudId *float32 `json:"cloudId,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _RunReportsRequestReport RunReportsRequestReport
@@ -299,6 +299,11 @@ func (o RunReportsRequestReport) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CloudId) {
 		toSerialize["cloudId"] = o.CloudId
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -326,15 +331,26 @@ func (o *RunReportsRequestReport) UnmarshalJSON(data []byte) (err error) {
 
 	varRunReportsRequestReport := _RunReportsRequestReport{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varRunReportsRequestReport)
+	err = json.Unmarshal(data, &varRunReportsRequestReport)
 
 	if err != nil {
 		return err
 	}
 
 	*o = RunReportsRequestReport(varRunReportsRequestReport)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "startDate")
+		delete(additionalProperties, "endDate")
+		delete(additionalProperties, "startMonth")
+		delete(additionalProperties, "endMonth")
+		delete(additionalProperties, "groupId")
+		delete(additionalProperties, "cloudId")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

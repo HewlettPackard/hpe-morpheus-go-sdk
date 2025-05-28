@@ -22,7 +22,10 @@ var _ MappedNullable = &AddBaremetalHost200Response{}
 type AddBaremetalHost200Response struct {
 	Success *bool `json:"success,omitempty"`
 	Server *ListHosts200ResponseAllOfServersInner `json:"server,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddBaremetalHost200Response AddBaremetalHost200Response
 
 // NewAddBaremetalHost200Response instantiates a new AddBaremetalHost200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o AddBaremetalHost200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Server) {
 		toSerialize["server"] = o.Server
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddBaremetalHost200Response) UnmarshalJSON(data []byte) (err error) {
+	varAddBaremetalHost200Response := _AddBaremetalHost200Response{}
+
+	err = json.Unmarshal(data, &varAddBaremetalHost200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddBaremetalHost200Response(varAddBaremetalHost200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "success")
+		delete(additionalProperties, "server")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddBaremetalHost200Response struct {

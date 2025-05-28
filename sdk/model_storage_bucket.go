@@ -35,7 +35,10 @@ type StorageBucket struct {
 	RetentionPolicyType *string `json:"retentionPolicyType,omitempty"`
 	RetentionPolicyDays *string `json:"retentionPolicyDays,omitempty"`
 	RetentionProvider *string `json:"retentionProvider,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _StorageBucket StorageBucket
 
 // NewStorageBucket instantiates a new StorageBucket object
 // This constructor will assign default values to properties that have it defined,
@@ -589,7 +592,47 @@ func (o StorageBucket) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.RetentionProvider) {
 		toSerialize["retentionProvider"] = o.RetentionProvider
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *StorageBucket) UnmarshalJSON(data []byte) (err error) {
+	varStorageBucket := _StorageBucket{}
+
+	err = json.Unmarshal(data, &varStorageBucket)
+
+	if err != nil {
+		return err
+	}
+
+	*o = StorageBucket(varStorageBucket)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "providerType")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "bucketName")
+		delete(additionalProperties, "readOnly")
+		delete(additionalProperties, "defaultBackupTarget")
+		delete(additionalProperties, "defaultDeploymentTarget")
+		delete(additionalProperties, "defaultVirtualImageTarget")
+		delete(additionalProperties, "copyToStore")
+		delete(additionalProperties, "retentionPolicyType")
+		delete(additionalProperties, "retentionPolicyDays")
+		delete(additionalProperties, "retentionProvider")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableStorageBucket struct {

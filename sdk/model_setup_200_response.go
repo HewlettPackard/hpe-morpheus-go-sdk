@@ -29,7 +29,10 @@ type Setup200Response struct {
 	ApplianceUrl *string `json:"applianceUrl,omitempty"`
 	// Flag to determine if the appliance has been setup, only true when appliance is a fresh install and has not been initialized.
 	SetupNeeded *bool `json:"setupNeeded,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _Setup200Response Setup200Response
 
 // NewSetup200Response instantiates a new Setup200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -233,7 +236,37 @@ func (o Setup200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.SetupNeeded) {
 		toSerialize["setupNeeded"] = o.SetupNeeded
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *Setup200Response) UnmarshalJSON(data []byte) (err error) {
+	varSetup200Response := _Setup200Response{}
+
+	err = json.Unmarshal(data, &varSetup200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Setup200Response(varSetup200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "success")
+		delete(additionalProperties, "buildVersion")
+		delete(additionalProperties, "uuid")
+		delete(additionalProperties, "applianceUrl")
+		delete(additionalProperties, "setupNeeded")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableSetup200Response struct {

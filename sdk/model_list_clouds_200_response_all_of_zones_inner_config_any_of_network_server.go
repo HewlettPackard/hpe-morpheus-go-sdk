@@ -21,7 +21,10 @@ var _ MappedNullable = &ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkSe
 // ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer struct for ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer
 type ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer struct {
 	Id *string `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer
 
 // NewListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer instantiates a new ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer) ToMap() (m
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer) UnmarshalJSON(data []byte) (err error) {
+	varListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer := _ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer{}
+
+	err = json.Unmarshal(data, &varListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer(varListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer struct {

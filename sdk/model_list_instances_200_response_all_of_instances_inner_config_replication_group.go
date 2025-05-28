@@ -21,7 +21,10 @@ var _ MappedNullable = &ListInstances200ResponseAllOfInstancesInnerConfigReplica
 // ListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup struct for ListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup
 type ListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup struct {
 	ProviderMethod *string `json:"providerMethod,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup ListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup
 
 // NewListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup instantiates a new ListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o ListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup) ToMap
 	if !IsNil(o.ProviderMethod) {
 		toSerialize["providerMethod"] = o.ProviderMethod
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup) UnmarshalJSON(data []byte) (err error) {
+	varListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup := _ListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup{}
+
+	err = json.Unmarshal(data, &varListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup(varListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "providerMethod")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup struct {

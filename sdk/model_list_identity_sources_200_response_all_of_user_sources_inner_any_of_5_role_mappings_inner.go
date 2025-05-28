@@ -23,7 +23,10 @@ type ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5RoleMappingsInner 
 	SourceRoleName *string `json:"sourceRoleName,omitempty"`
 	SourceRoleFqn *string `json:"sourceRoleFqn,omitempty"`
 	MappedRole *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfDefaultAccountRole `json:"mappedRole,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5RoleMappingsInner ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5RoleMappingsInner
 
 // NewListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5RoleMappingsInner instantiates a new ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5RoleMappingsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5RoleMappingsInn
 	if !IsNil(o.MappedRole) {
 		toSerialize["mappedRole"] = o.MappedRole
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5RoleMappingsInner) UnmarshalJSON(data []byte) (err error) {
+	varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5RoleMappingsInner := _ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5RoleMappingsInner{}
+
+	err = json.Unmarshal(data, &varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5RoleMappingsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5RoleMappingsInner(varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5RoleMappingsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "sourceRoleName")
+		delete(additionalProperties, "sourceRoleFqn")
+		delete(additionalProperties, "mappedRole")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5RoleMappingsInner struct {

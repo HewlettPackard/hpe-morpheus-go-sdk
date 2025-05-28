@@ -28,7 +28,10 @@ type GetAppState200ResponseAllOfWorkloadsInner struct {
 	StateDate *time.Time `json:"stateDate,omitempty"`
 	Status *string `json:"status,omitempty"`
 	IacDrift *bool `json:"iacDrift,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetAppState200ResponseAllOfWorkloadsInner GetAppState200ResponseAllOfWorkloadsInner
 
 // NewGetAppState200ResponseAllOfWorkloadsInner instantiates a new GetAppState200ResponseAllOfWorkloadsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -302,7 +305,39 @@ func (o GetAppState200ResponseAllOfWorkloadsInner) ToMap() (map[string]interface
 	if !IsNil(o.IacDrift) {
 		toSerialize["iacDrift"] = o.IacDrift
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetAppState200ResponseAllOfWorkloadsInner) UnmarshalJSON(data []byte) (err error) {
+	varGetAppState200ResponseAllOfWorkloadsInner := _GetAppState200ResponseAllOfWorkloadsInner{}
+
+	err = json.Unmarshal(data, &varGetAppState200ResponseAllOfWorkloadsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetAppState200ResponseAllOfWorkloadsInner(varGetAppState200ResponseAllOfWorkloadsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "refId")
+		delete(additionalProperties, "refName")
+		delete(additionalProperties, "subRefName")
+		delete(additionalProperties, "stateDate")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "iacDrift")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetAppState200ResponseAllOfWorkloadsInner struct {

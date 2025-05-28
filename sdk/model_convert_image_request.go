@@ -23,7 +23,10 @@ type ConvertImageRequest struct {
 	Name *string `json:"name,omitempty"`
 	Format *string `json:"format,omitempty"`
 	StorageProvider *GetAlerts200ResponseAllOfChecksInnerAccount `json:"storageProvider,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ConvertImageRequest ConvertImageRequest
 
 // NewConvertImageRequest instantiates a new ConvertImageRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o ConvertImageRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.StorageProvider) {
 		toSerialize["storageProvider"] = o.StorageProvider
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ConvertImageRequest) UnmarshalJSON(data []byte) (err error) {
+	varConvertImageRequest := _ConvertImageRequest{}
+
+	err = json.Unmarshal(data, &varConvertImageRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ConvertImageRequest(varConvertImageRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "format")
+		delete(additionalProperties, "storageProvider")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableConvertImageRequest struct {

@@ -22,7 +22,10 @@ var _ MappedNullable = &ExecuteContainerAction200Response{}
 type ExecuteContainerAction200Response struct {
 	Success *bool `json:"success,omitempty"`
 	Msg *string `json:"msg,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ExecuteContainerAction200Response ExecuteContainerAction200Response
 
 // NewExecuteContainerAction200Response instantiates a new ExecuteContainerAction200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o ExecuteContainerAction200Response) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.Msg) {
 		toSerialize["msg"] = o.Msg
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ExecuteContainerAction200Response) UnmarshalJSON(data []byte) (err error) {
+	varExecuteContainerAction200Response := _ExecuteContainerAction200Response{}
+
+	err = json.Unmarshal(data, &varExecuteContainerAction200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ExecuteContainerAction200Response(varExecuteContainerAction200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "success")
+		delete(additionalProperties, "msg")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableExecuteContainerAction200Response struct {

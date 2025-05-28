@@ -32,7 +32,10 @@ type ListLogs200Response struct {
 	Success *bool `json:"success,omitempty"`
 	Count *int64 `json:"count,omitempty"`
 	Meta *ListActivity200ResponseAllOfMeta `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListLogs200Response ListLogs200Response
 
 // NewListLogs200Response instantiates a new ListLogs200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -446,7 +449,43 @@ func (o ListLogs200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Meta) {
 		toSerialize["meta"] = o.Meta
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListLogs200Response) UnmarshalJSON(data []byte) (err error) {
+	varListLogs200Response := _ListLogs200Response{}
+
+	err = json.Unmarshal(data, &varListLogs200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListLogs200Response(varListLogs200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "sort")
+		delete(additionalProperties, "offset")
+		delete(additionalProperties, "start")
+		delete(additionalProperties, "end")
+		delete(additionalProperties, "data")
+		delete(additionalProperties, "max")
+		delete(additionalProperties, "grandTotal")
+		delete(additionalProperties, "total")
+		delete(additionalProperties, "success")
+		delete(additionalProperties, "count")
+		delete(additionalProperties, "meta")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListLogs200Response struct {

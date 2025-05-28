@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -30,6 +29,7 @@ type CreateTenantSubtenantGroupRequestGroup struct {
 	Code *string `json:"code,omitempty"`
 	// location
 	Location *string `json:"location,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _CreateTenantSubtenantGroupRequestGroup CreateTenantSubtenantGroupRequestGroup
@@ -192,6 +192,11 @@ func (o CreateTenantSubtenantGroupRequestGroup) ToMap() (map[string]interface{},
 	if !IsNil(o.Location) {
 		toSerialize["location"] = o.Location
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -219,15 +224,23 @@ func (o *CreateTenantSubtenantGroupRequestGroup) UnmarshalJSON(data []byte) (err
 
 	varCreateTenantSubtenantGroupRequestGroup := _CreateTenantSubtenantGroupRequestGroup{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varCreateTenantSubtenantGroupRequestGroup)
+	err = json.Unmarshal(data, &varCreateTenantSubtenantGroupRequestGroup)
 
 	if err != nil {
 		return err
 	}
 
 	*o = CreateTenantSubtenantGroupRequestGroup(varCreateTenantSubtenantGroupRequestGroup)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "location")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

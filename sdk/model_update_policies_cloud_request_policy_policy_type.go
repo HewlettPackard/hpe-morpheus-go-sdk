@@ -33,7 +33,10 @@ type UpdatePoliciesCloudRequestPolicyPolicyType struct {
 	Accounts []int64 `json:"accounts,omitempty"`
 	// Apply individually to each user in role.  Only when `refType` equals `Role`
 	EachUser *bool `json:"eachUser,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdatePoliciesCloudRequestPolicyPolicyType UpdatePoliciesCloudRequestPolicyPolicyType
 
 // NewUpdatePoliciesCloudRequestPolicyPolicyType instantiates a new UpdatePoliciesCloudRequestPolicyPolicyType object
 // This constructor will assign default values to properties that have it defined,
@@ -311,7 +314,39 @@ func (o UpdatePoliciesCloudRequestPolicyPolicyType) ToMap() (map[string]interfac
 	if !IsNil(o.EachUser) {
 		toSerialize["eachUser"] = o.EachUser
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdatePoliciesCloudRequestPolicyPolicyType) UnmarshalJSON(data []byte) (err error) {
+	varUpdatePoliciesCloudRequestPolicyPolicyType := _UpdatePoliciesCloudRequestPolicyPolicyType{}
+
+	err = json.Unmarshal(data, &varUpdatePoliciesCloudRequestPolicyPolicyType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdatePoliciesCloudRequestPolicyPolicyType(varUpdatePoliciesCloudRequestPolicyPolicyType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "refId")
+		delete(additionalProperties, "accounts")
+		delete(additionalProperties, "eachUser")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdatePoliciesCloudRequestPolicyPolicyType struct {

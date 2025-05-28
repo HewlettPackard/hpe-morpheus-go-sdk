@@ -24,7 +24,10 @@ type AddBootScriptRequestBootScript struct {
 	FileName *string `json:"fileName,omitempty"`
 	// The script content
 	Content *string `json:"content,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddBootScriptRequestBootScript AddBootScriptRequestBootScript
 
 // NewAddBootScriptRequestBootScript instantiates a new AddBootScriptRequestBootScript object
 // This constructor will assign default values to properties that have it defined,
@@ -123,7 +126,34 @@ func (o AddBootScriptRequestBootScript) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.Content) {
 		toSerialize["content"] = o.Content
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddBootScriptRequestBootScript) UnmarshalJSON(data []byte) (err error) {
+	varAddBootScriptRequestBootScript := _AddBootScriptRequestBootScript{}
+
+	err = json.Unmarshal(data, &varAddBootScriptRequestBootScript)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddBootScriptRequestBootScript(varAddBootScriptRequestBootScript)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "fileName")
+		delete(additionalProperties, "content")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddBootScriptRequestBootScript struct {

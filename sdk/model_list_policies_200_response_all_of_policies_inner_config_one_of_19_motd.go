@@ -24,7 +24,10 @@ type ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19Motd struct {
 	Message *string `json:"message,omitempty"`
 	Type *string `json:"type,omitempty"`
 	FullPage *string `json:"_fullPage,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19Motd ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19Motd
 
 // NewListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19Motd instantiates a new ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19Motd object
 // This constructor will assign default values to properties that have it defined,
@@ -193,7 +196,36 @@ func (o ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19Motd) ToMap() (map
 	if !IsNil(o.FullPage) {
 		toSerialize["_fullPage"] = o.FullPage
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19Motd) UnmarshalJSON(data []byte) (err error) {
+	varListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19Motd := _ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19Motd{}
+
+	err = json.Unmarshal(data, &varListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19Motd)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19Motd(varListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19Motd)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "title")
+		delete(additionalProperties, "message")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "_fullPage")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19Motd struct {

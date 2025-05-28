@@ -30,7 +30,10 @@ type ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner struct 
 	Status *string `json:"status,omitempty"`
 	Priority *string `json:"priority,omitempty"`
 	GroupLayer *string `json:"groupLayer,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner
 
 // NewListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner instantiates a new ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -409,7 +412,42 @@ func (o ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner) ToM
 	if !IsNil(o.GroupLayer) {
 		toSerialize["groupLayer"] = o.GroupLayer
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner) UnmarshalJSON(data []byte) (err error) {
+	varListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner := _ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner{}
+
+	err = json.Unmarshal(data, &varListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner(varListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "iacId")
+		delete(additionalProperties, "zone")
+		delete(additionalProperties, "zonePool")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "priority")
+		delete(additionalProperties, "groupLayer")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner struct {

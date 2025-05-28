@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -26,6 +25,7 @@ type DefaultVDIPoolPermission struct {
 	PermissionCode string `json:"permissionCode"`
 	// The new access level.
 	Access string `json:"access"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _DefaultVDIPoolPermission DefaultVDIPoolPermission
@@ -109,6 +109,11 @@ func (o DefaultVDIPoolPermission) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["permissionCode"] = o.PermissionCode
 	toSerialize["access"] = o.Access
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -137,15 +142,21 @@ func (o *DefaultVDIPoolPermission) UnmarshalJSON(data []byte) (err error) {
 
 	varDefaultVDIPoolPermission := _DefaultVDIPoolPermission{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varDefaultVDIPoolPermission)
+	err = json.Unmarshal(data, &varDefaultVDIPoolPermission)
 
 	if err != nil {
 		return err
 	}
 
 	*o = DefaultVDIPoolPermission(varDefaultVDIPoolPermission)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "permissionCode")
+		delete(additionalProperties, "access")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

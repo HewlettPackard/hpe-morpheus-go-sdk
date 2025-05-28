@@ -38,7 +38,10 @@ type ListHosts200ResponseAllOfServersInnerStats struct {
 	NetTxUsage *int64 `json:"netTxUsage,omitempty"`
 	NetRxUsage *int64 `json:"netRxUsage,omitempty"`
 	NetworkBandwidth *int64 `json:"networkBandwidth,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListHosts200ResponseAllOfServersInnerStats ListHosts200ResponseAllOfServersInnerStats
 
 // NewListHosts200ResponseAllOfServersInnerStats instantiates a new ListHosts200ResponseAllOfServersInnerStats object
 // This constructor will assign default values to properties that have it defined,
@@ -662,7 +665,49 @@ func (o ListHosts200ResponseAllOfServersInnerStats) ToMap() (map[string]interfac
 	if !IsNil(o.NetworkBandwidth) {
 		toSerialize["networkBandwidth"] = o.NetworkBandwidth
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListHosts200ResponseAllOfServersInnerStats) UnmarshalJSON(data []byte) (err error) {
+	varListHosts200ResponseAllOfServersInnerStats := _ListHosts200ResponseAllOfServersInnerStats{}
+
+	err = json.Unmarshal(data, &varListHosts200ResponseAllOfServersInnerStats)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListHosts200ResponseAllOfServersInnerStats(varListHosts200ResponseAllOfServersInnerStats)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "ts")
+		delete(additionalProperties, "freeSwap")
+		delete(additionalProperties, "usedSwap")
+		delete(additionalProperties, "cpuIdleTime")
+		delete(additionalProperties, "cpuSystemTime")
+		delete(additionalProperties, "cpuUserTime")
+		delete(additionalProperties, "cpuTotalTime")
+		delete(additionalProperties, "maxMemory")
+		delete(additionalProperties, "usedMemory")
+		delete(additionalProperties, "maxStorage")
+		delete(additionalProperties, "usedStorage")
+		delete(additionalProperties, "reservedStorage")
+		delete(additionalProperties, "cpuUsage")
+		delete(additionalProperties, "freeMemory")
+		delete(additionalProperties, "netTxUsage")
+		delete(additionalProperties, "netRxUsage")
+		delete(additionalProperties, "networkBandwidth")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListHosts200ResponseAllOfServersInnerStats struct {

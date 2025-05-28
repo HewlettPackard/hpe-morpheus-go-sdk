@@ -21,7 +21,10 @@ var _ MappedNullable = &GetInstanceSchedules200Response{}
 // GetInstanceSchedules200Response struct for GetInstanceSchedules200Response
 type GetInstanceSchedules200Response struct {
 	InstanceSchedules []GetInstanceThreshold200ResponseInstanceSchedulesInner `json:"instanceSchedules,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetInstanceSchedules200Response GetInstanceSchedules200Response
 
 // NewGetInstanceSchedules200Response instantiates a new GetInstanceSchedules200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o GetInstanceSchedules200Response) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.InstanceSchedules) {
 		toSerialize["instanceSchedules"] = o.InstanceSchedules
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetInstanceSchedules200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetInstanceSchedules200Response := _GetInstanceSchedules200Response{}
+
+	err = json.Unmarshal(data, &varGetInstanceSchedules200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetInstanceSchedules200Response(varGetInstanceSchedules200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "instanceSchedules")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetInstanceSchedules200Response struct {

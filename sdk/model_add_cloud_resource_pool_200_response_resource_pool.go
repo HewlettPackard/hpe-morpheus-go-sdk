@@ -41,7 +41,10 @@ type AddCloudResourcePool200ResponseResourcePool struct {
 	ResourcePermission *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission `json:"resourcePermission,omitempty"`
 	Depth *int64 `json:"depth,omitempty"`
 	Success *bool `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddCloudResourcePool200ResponseResourcePool AddCloudResourcePool200ResponseResourcePool
 
 // NewAddCloudResourcePool200ResponseResourcePool instantiates a new AddCloudResourcePool200ResponseResourcePool object
 // This constructor will assign default values to properties that have it defined,
@@ -805,7 +808,53 @@ func (o AddCloudResourcePool200ResponseResourcePool) ToMap() (map[string]interfa
 	if !IsNil(o.Success) {
 		toSerialize["success"] = o.Success
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddCloudResourcePool200ResponseResourcePool) UnmarshalJSON(data []byte) (err error) {
+	varAddCloudResourcePool200ResponseResourcePool := _AddCloudResourcePool200ResponseResourcePool{}
+
+	err = json.Unmarshal(data, &varAddCloudResourcePool200ResponseResourcePool)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddCloudResourcePool200ResponseResourcePool(varAddCloudResourcePool200ResponseResourcePool)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "zone")
+		delete(additionalProperties, "parent")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "regionCode")
+		delete(additionalProperties, "iacId")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "readOnly")
+		delete(additionalProperties, "defaultPool")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "inventory")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "displayName")
+		delete(additionalProperties, "tenants")
+		delete(additionalProperties, "resourcePermission")
+		delete(additionalProperties, "depth")
+		delete(additionalProperties, "success")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddCloudResourcePool200ResponseResourcePool struct {

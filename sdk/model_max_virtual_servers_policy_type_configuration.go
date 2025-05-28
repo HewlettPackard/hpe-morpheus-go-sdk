@@ -21,7 +21,10 @@ var _ MappedNullable = &MaxVirtualServersPolicyTypeConfiguration{}
 // MaxVirtualServersPolicyTypeConfiguration Configuration settings for the following policy types: - Max Virtual Servers 
 type MaxVirtualServersPolicyTypeConfiguration struct {
 	MaxVirtualServers *string `json:"maxVirtualServers,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _MaxVirtualServersPolicyTypeConfiguration MaxVirtualServersPolicyTypeConfiguration
 
 // NewMaxVirtualServersPolicyTypeConfiguration instantiates a new MaxVirtualServersPolicyTypeConfiguration object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o MaxVirtualServersPolicyTypeConfiguration) ToMap() (map[string]interface{
 	if !IsNil(o.MaxVirtualServers) {
 		toSerialize["maxVirtualServers"] = o.MaxVirtualServers
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *MaxVirtualServersPolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
+	varMaxVirtualServersPolicyTypeConfiguration := _MaxVirtualServersPolicyTypeConfiguration{}
+
+	err = json.Unmarshal(data, &varMaxVirtualServersPolicyTypeConfiguration)
+
+	if err != nil {
+		return err
+	}
+
+	*o = MaxVirtualServersPolicyTypeConfiguration(varMaxVirtualServersPolicyTypeConfiguration)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "maxVirtualServers")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableMaxVirtualServersPolicyTypeConfiguration struct {

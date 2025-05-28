@@ -34,7 +34,10 @@ type ListProvisioningSettings200ResponseProvisioningSettings struct {
 	PxeRootPassword *string `json:"pxeRootPassword,omitempty"`
 	DefaultTemplateType *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"defaultTemplateType,omitempty"`
 	DeployStorageProvider *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"deployStorageProvider,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListProvisioningSettings200ResponseProvisioningSettings ListProvisioningSettings200ResponseProvisioningSettings
 
 // NewListProvisioningSettings200ResponseProvisioningSettings instantiates a new ListProvisioningSettings200ResponseProvisioningSettings object
 // This constructor will assign default values to properties that have it defined,
@@ -553,7 +556,46 @@ func (o ListProvisioningSettings200ResponseProvisioningSettings) ToMap() (map[st
 	if !IsNil(o.DeployStorageProvider) {
 		toSerialize["deployStorageProvider"] = o.DeployStorageProvider
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListProvisioningSettings200ResponseProvisioningSettings) UnmarshalJSON(data []byte) (err error) {
+	varListProvisioningSettings200ResponseProvisioningSettings := _ListProvisioningSettings200ResponseProvisioningSettings{}
+
+	err = json.Unmarshal(data, &varListProvisioningSettings200ResponseProvisioningSettings)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListProvisioningSettings200ResponseProvisioningSettings(varListProvisioningSettings200ResponseProvisioningSettings)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "allowZoneSelection")
+		delete(additionalProperties, "allowServerSelection")
+		delete(additionalProperties, "requireEnvironments")
+		delete(additionalProperties, "showPricing")
+		delete(additionalProperties, "hideDatastoreStats")
+		delete(additionalProperties, "crossTenantNamingPolicies")
+		delete(additionalProperties, "reuseSequence")
+		delete(additionalProperties, "cloudInitUsername")
+		delete(additionalProperties, "cloudInitPassword")
+		delete(additionalProperties, "cloudInitKeyPair")
+		delete(additionalProperties, "windowsPassword")
+		delete(additionalProperties, "pxeRootPassword")
+		delete(additionalProperties, "defaultTemplateType")
+		delete(additionalProperties, "deployStorageProvider")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListProvisioningSettings200ResponseProvisioningSettings struct {

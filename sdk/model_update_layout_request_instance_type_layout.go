@@ -48,7 +48,10 @@ type UpdateLayoutRequestInstanceTypeLayout struct {
 	// Array of price set objects
 	PriceSets []AddInstanceTypeRequestInstanceTypePriceSetsInner `json:"priceSets,omitempty"`
 	Permissions *AddLayoutRequestInstanceTypeLayoutPermissions `json:"permissions,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateLayoutRequestInstanceTypeLayout UpdateLayoutRequestInstanceTypeLayout
 
 // NewUpdateLayoutRequestInstanceTypeLayout instantiates a new UpdateLayoutRequestInstanceTypeLayout object
 // This constructor will assign default values to properties that have it defined,
@@ -614,7 +617,47 @@ func (o UpdateLayoutRequestInstanceTypeLayout) ToMap() (map[string]interface{}, 
 	if !IsNil(o.Permissions) {
 		toSerialize["permissions"] = o.Permissions
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateLayoutRequestInstanceTypeLayout) UnmarshalJSON(data []byte) (err error) {
+	varUpdateLayoutRequestInstanceTypeLayout := _UpdateLayoutRequestInstanceTypeLayout{}
+
+	err = json.Unmarshal(data, &varUpdateLayoutRequestInstanceTypeLayout)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateLayoutRequestInstanceTypeLayout(varUpdateLayoutRequestInstanceTypeLayout)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "instanceVersion")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "creatable")
+		delete(additionalProperties, "provisionTypeCode")
+		delete(additionalProperties, "memoryRequirement")
+		delete(additionalProperties, "hasAutoScale")
+		delete(additionalProperties, "supportsConvertToManaged")
+		delete(additionalProperties, "containerTypes")
+		delete(additionalProperties, "optionTypes")
+		delete(additionalProperties, "specTemplates")
+		delete(additionalProperties, "environmentVariables")
+		delete(additionalProperties, "priceSets")
+		delete(additionalProperties, "permissions")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateLayoutRequestInstanceTypeLayout struct {

@@ -22,7 +22,10 @@ var _ MappedNullable = &BackupCreationPolicyTypeConfiguration{}
 type BackupCreationPolicyTypeConfiguration struct {
 	CreateBackupType *string `json:"createBackupType,omitempty"`
 	CreateBackup *bool `json:"createBackup,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _BackupCreationPolicyTypeConfiguration BackupCreationPolicyTypeConfiguration
 
 // NewBackupCreationPolicyTypeConfiguration instantiates a new BackupCreationPolicyTypeConfiguration object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o BackupCreationPolicyTypeConfiguration) ToMap() (map[string]interface{}, 
 	if !IsNil(o.CreateBackup) {
 		toSerialize["createBackup"] = o.CreateBackup
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *BackupCreationPolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
+	varBackupCreationPolicyTypeConfiguration := _BackupCreationPolicyTypeConfiguration{}
+
+	err = json.Unmarshal(data, &varBackupCreationPolicyTypeConfiguration)
+
+	if err != nil {
+		return err
+	}
+
+	*o = BackupCreationPolicyTypeConfiguration(varBackupCreationPolicyTypeConfiguration)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "createBackupType")
+		delete(additionalProperties, "createBackup")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableBackupCreationPolicyTypeConfiguration struct {

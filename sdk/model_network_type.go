@@ -45,7 +45,10 @@ type NetworkType struct {
 	HasFloatingIps *bool `json:"hasFloatingIps,omitempty"`
 	OptionTypes []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
 	RouteOptionTypes []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner `json:"routeOptionTypes,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _NetworkType NetworkType
 
 // NewNetworkType instantiates a new NetworkType object
 // This constructor will assign default values to properties that have it defined,
@@ -949,7 +952,57 @@ func (o NetworkType) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.RouteOptionTypes) {
 		toSerialize["routeOptionTypes"] = o.RouteOptionTypes
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *NetworkType) UnmarshalJSON(data []byte) (err error) {
+	varNetworkType := _NetworkType{}
+
+	err = json.Unmarshal(data, &varNetworkType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = NetworkType(varNetworkType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "externalType")
+		delete(additionalProperties, "creatable")
+		delete(additionalProperties, "overlay")
+		delete(additionalProperties, "nameEditable")
+		delete(additionalProperties, "cidrRequired")
+		delete(additionalProperties, "cidrEditable")
+		delete(additionalProperties, "dhcpServerEditable")
+		delete(additionalProperties, "dnsEditable")
+		delete(additionalProperties, "gatewayEditable")
+		delete(additionalProperties, "vlanIdEditable")
+		delete(additionalProperties, "staticOverrideEditable")
+		delete(additionalProperties, "networkDomainEditable")
+		delete(additionalProperties, "canAssignPool")
+		delete(additionalProperties, "deletable")
+		delete(additionalProperties, "hasNetworkServer")
+		delete(additionalProperties, "hasCidr")
+		delete(additionalProperties, "hasStaticRoutes")
+		delete(additionalProperties, "hasFloatingIps")
+		delete(additionalProperties, "optionTypes")
+		delete(additionalProperties, "routeOptionTypes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableNetworkType struct {

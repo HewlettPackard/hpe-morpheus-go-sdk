@@ -52,7 +52,10 @@ type ServicePlan struct {
 	Config *ListServicePlans200ResponseAllOfServicePlansInnerConfig `json:"config,omitempty"`
 	Zones []ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"zones,omitempty"`
 	Permissions *ListServicePlans200ResponseAllOfServicePlansInnerPermissions `json:"permissions,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ServicePlan ServicePlan
 
 // NewServicePlan instantiates a new ServicePlan object
 // This constructor will assign default values to properties that have it defined,
@@ -1166,7 +1169,63 @@ func (o ServicePlan) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Permissions) {
 		toSerialize["permissions"] = o.Permissions
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ServicePlan) UnmarshalJSON(data []byte) (err error) {
+	varServicePlan := _ServicePlan{}
+
+	err = json.Unmarshal(data, &varServicePlan)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ServicePlan(varServicePlan)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "sortOrder")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "maxStorage")
+		delete(additionalProperties, "maxMemory")
+		delete(additionalProperties, "maxCpu")
+		delete(additionalProperties, "maxCores")
+		delete(additionalProperties, "maxDisks")
+		delete(additionalProperties, "coresPerSocket")
+		delete(additionalProperties, "customCpu")
+		delete(additionalProperties, "customCores")
+		delete(additionalProperties, "customMaxStorage")
+		delete(additionalProperties, "customMaxDataStorage")
+		delete(additionalProperties, "customMaxMemory")
+		delete(additionalProperties, "addVolumes")
+		delete(additionalProperties, "memoryOptionSource")
+		delete(additionalProperties, "cpuOptionSource")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "regionCode")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "editable")
+		delete(additionalProperties, "provisionType")
+		delete(additionalProperties, "tenants")
+		delete(additionalProperties, "priceSets")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "zones")
+		delete(additionalProperties, "permissions")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableServicePlan struct {

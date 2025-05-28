@@ -21,7 +21,10 @@ var _ MappedNullable = &GetArchiveFileLinks200Response{}
 // GetArchiveFileLinks200Response struct for GetArchiveFileLinks200Response
 type GetArchiveFileLinks200Response struct {
 	ArchiveFileLinks []GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner `json:"archiveFileLinks,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetArchiveFileLinks200Response GetArchiveFileLinks200Response
 
 // NewGetArchiveFileLinks200Response instantiates a new GetArchiveFileLinks200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o GetArchiveFileLinks200Response) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.ArchiveFileLinks) {
 		toSerialize["archiveFileLinks"] = o.ArchiveFileLinks
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetArchiveFileLinks200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetArchiveFileLinks200Response := _GetArchiveFileLinks200Response{}
+
+	err = json.Unmarshal(data, &varGetArchiveFileLinks200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetArchiveFileLinks200Response(varGetArchiveFileLinks200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "archiveFileLinks")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetArchiveFileLinks200Response struct {

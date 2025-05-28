@@ -21,7 +21,10 @@ var _ MappedNullable = &GetClusterHistoryEventDetail200Response{}
 // GetClusterHistoryEventDetail200Response struct for GetClusterHistoryEventDetail200Response
 type GetClusterHistoryEventDetail200Response struct {
 	ProcessEvent *GetClusterHistoryEventDetail200ResponseProcessEvent `json:"processEvent,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetClusterHistoryEventDetail200Response GetClusterHistoryEventDetail200Response
 
 // NewGetClusterHistoryEventDetail200Response instantiates a new GetClusterHistoryEventDetail200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o GetClusterHistoryEventDetail200Response) ToMap() (map[string]interface{}
 	if !IsNil(o.ProcessEvent) {
 		toSerialize["processEvent"] = o.ProcessEvent
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetClusterHistoryEventDetail200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetClusterHistoryEventDetail200Response := _GetClusterHistoryEventDetail200Response{}
+
+	err = json.Unmarshal(data, &varGetClusterHistoryEventDetail200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetClusterHistoryEventDetail200Response(varGetClusterHistoryEventDetail200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "processEvent")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetClusterHistoryEventDetail200Response struct {

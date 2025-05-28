@@ -22,7 +22,10 @@ var _ MappedNullable = &AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf9{}
 type AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf9 struct {
 	HostNamingType *string `json:"hostNamingType,omitempty"`
 	HostNamingPattern *string `json:"hostNamingPattern,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf9 AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf9
 
 // NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf9 instantiates a new AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf9 object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf9) ToMap() (map[string
 	if !IsNil(o.HostNamingPattern) {
 		toSerialize["hostNamingPattern"] = o.HostNamingPattern
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf9) UnmarshalJSON(data []byte) (err error) {
+	varAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf9 := _AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf9{}
+
+	err = json.Unmarshal(data, &varAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf9)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf9(varAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf9)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "hostNamingType")
+		delete(additionalProperties, "hostNamingPattern")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf9 struct {

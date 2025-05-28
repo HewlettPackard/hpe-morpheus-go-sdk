@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -30,6 +29,7 @@ type CreateNetworkRouterRequestNetworkRouter struct {
 	Enabled *bool `json:"enabled,omitempty"`
 	Zone *CreateNetworkRouterRequestNetworkRouterZone `json:"zone,omitempty"`
 	NetworkServer *CreateNetworkRouterRequestNetworkRouterNetworkServer `json:"networkServer,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _CreateNetworkRouterRequestNetworkRouter CreateNetworkRouterRequestNetworkRouter
@@ -244,6 +244,11 @@ func (o CreateNetworkRouterRequestNetworkRouter) ToMap() (map[string]interface{}
 	if !IsNil(o.NetworkServer) {
 		toSerialize["networkServer"] = o.NetworkServer
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -273,15 +278,25 @@ func (o *CreateNetworkRouterRequestNetworkRouter) UnmarshalJSON(data []byte) (er
 
 	varCreateNetworkRouterRequestNetworkRouter := _CreateNetworkRouterRequestNetworkRouter{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varCreateNetworkRouterRequestNetworkRouter)
+	err = json.Unmarshal(data, &varCreateNetworkRouterRequestNetworkRouter)
 
 	if err != nil {
 		return err
 	}
 
 	*o = CreateNetworkRouterRequestNetworkRouter(varCreateNetworkRouterRequestNetworkRouter)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "site")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "zone")
+		delete(additionalProperties, "networkServer")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

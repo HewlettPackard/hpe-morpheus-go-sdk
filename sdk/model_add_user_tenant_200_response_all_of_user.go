@@ -48,7 +48,10 @@ type AddUserTenant200ResponseAllOfUser struct {
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
 	Access *AddUserTenant200ResponseAllOfUserAccess `json:"access,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddUserTenant200ResponseAllOfUser AddUserTenant200ResponseAllOfUser
 
 // NewAddUserTenant200ResponseAllOfUser instantiates a new AddUserTenant200ResponseAllOfUser object
 // This constructor will assign default values to properties that have it defined,
@@ -1022,7 +1025,59 @@ func (o AddUserTenant200ResponseAllOfUser) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.Access) {
 		toSerialize["access"] = o.Access
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddUserTenant200ResponseAllOfUser) UnmarshalJSON(data []byte) (err error) {
+	varAddUserTenant200ResponseAllOfUser := _AddUserTenant200ResponseAllOfUser{}
+
+	err = json.Unmarshal(data, &varAddUserTenant200ResponseAllOfUser)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddUserTenant200ResponseAllOfUser(varAddUserTenant200ResponseAllOfUser)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "username")
+		delete(additionalProperties, "displayName")
+		delete(additionalProperties, "email")
+		delete(additionalProperties, "firstName")
+		delete(additionalProperties, "lastName")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "receiveNotifications")
+		delete(additionalProperties, "isUsing2FA")
+		delete(additionalProperties, "accountExpired")
+		delete(additionalProperties, "accountLocked")
+		delete(additionalProperties, "passwordExpired")
+		delete(additionalProperties, "loginCount")
+		delete(additionalProperties, "loginAttempts")
+		delete(additionalProperties, "lastLoginDate")
+		delete(additionalProperties, "roles")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "linuxUsername")
+		delete(additionalProperties, "linuxPassword")
+		delete(additionalProperties, "linuxKeyPairId")
+		delete(additionalProperties, "windowsUsername")
+		delete(additionalProperties, "windowsPassword")
+		delete(additionalProperties, "defaultPersona")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "access")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddUserTenant200ResponseAllOfUser struct {

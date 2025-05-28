@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -23,6 +22,7 @@ var _ MappedNullable = &UpdatePluginRequest{}
 // UpdatePluginRequest struct for UpdatePluginRequest
 type UpdatePluginRequest struct {
 	Plugin UpdatePluginRequestPlugin `json:"plugin"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdatePluginRequest UpdatePluginRequest
@@ -80,6 +80,11 @@ func (o UpdatePluginRequest) MarshalJSON() ([]byte, error) {
 func (o UpdatePluginRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["plugin"] = o.Plugin
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -107,15 +112,20 @@ func (o *UpdatePluginRequest) UnmarshalJSON(data []byte) (err error) {
 
 	varUpdatePluginRequest := _UpdatePluginRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varUpdatePluginRequest)
+	err = json.Unmarshal(data, &varUpdatePluginRequest)
 
 	if err != nil {
 		return err
 	}
 
 	*o = UpdatePluginRequest(varUpdatePluginRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "plugin")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

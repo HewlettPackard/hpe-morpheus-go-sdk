@@ -32,7 +32,10 @@ type PolicyType struct {
 	EnforceOnProvision *bool `json:"enforceOnProvision,omitempty"`
 	EnforceOnManaged *bool `json:"enforceOnManaged,omitempty"`
 	OptionTypes []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _PolicyType PolicyType
 
 // NewPolicyType instantiates a new PolicyType object
 // This constructor will assign default values to properties that have it defined,
@@ -481,7 +484,44 @@ func (o PolicyType) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.OptionTypes) {
 		toSerialize["optionTypes"] = o.OptionTypes
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *PolicyType) UnmarshalJSON(data []byte) (err error) {
+	varPolicyType := _PolicyType{}
+
+	err = json.Unmarshal(data, &varPolicyType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = PolicyType(varPolicyType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "loadMethod")
+		delete(additionalProperties, "enforceMethod")
+		delete(additionalProperties, "prepareMethod")
+		delete(additionalProperties, "validateMethod")
+		delete(additionalProperties, "enforceOnProvision")
+		delete(additionalProperties, "enforceOnManaged")
+		delete(additionalProperties, "optionTypes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullablePolicyType struct {

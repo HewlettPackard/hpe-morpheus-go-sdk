@@ -21,7 +21,10 @@ var _ MappedNullable = &GetOsType200Response{}
 // GetOsType200Response struct for GetOsType200Response
 type GetOsType200Response struct {
 	OsType *ListOsTypes200ResponseAllOfOsTypesInner `json:"osType,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetOsType200Response GetOsType200Response
 
 // NewGetOsType200Response instantiates a new GetOsType200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o GetOsType200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.OsType) {
 		toSerialize["osType"] = o.OsType
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetOsType200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetOsType200Response := _GetOsType200Response{}
+
+	err = json.Unmarshal(data, &varGetOsType200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetOsType200Response(varGetOsType200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "osType")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetOsType200Response struct {

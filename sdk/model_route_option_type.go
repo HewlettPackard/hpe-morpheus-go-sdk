@@ -59,7 +59,10 @@ type RouteOptionType struct {
 	DisplayValueOnDetails *bool `json:"displayValueOnDetails,omitempty"`
 	ShowOnCreate *bool `json:"showOnCreate,omitempty"`
 	ShowOnEdit *bool `json:"showOnEdit,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _RouteOptionType RouteOptionType
 
 // NewRouteOptionType instantiates a new RouteOptionType object
 // This constructor will assign default values to properties that have it defined,
@@ -1453,7 +1456,71 @@ func (o RouteOptionType) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ShowOnEdit) {
 		toSerialize["showOnEdit"] = o.ShowOnEdit
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *RouteOptionType) UnmarshalJSON(data []byte) (err error) {
+	varRouteOptionType := _RouteOptionType{}
+
+	err = json.Unmarshal(data, &varRouteOptionType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = RouteOptionType(varRouteOptionType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "fieldName")
+		delete(additionalProperties, "fieldLabel")
+		delete(additionalProperties, "fieldCode")
+		delete(additionalProperties, "fieldContext")
+		delete(additionalProperties, "fieldGroup")
+		delete(additionalProperties, "fieldClass")
+		delete(additionalProperties, "fieldAddOn")
+		delete(additionalProperties, "fieldComponent")
+		delete(additionalProperties, "fieldInput")
+		delete(additionalProperties, "placeHolder")
+		delete(additionalProperties, "verifyPattern")
+		delete(additionalProperties, "helpBlock")
+		delete(additionalProperties, "helpBlockFieldCode")
+		delete(additionalProperties, "defaultValue")
+		delete(additionalProperties, "optionSource")
+		delete(additionalProperties, "optionSourceType")
+		delete(additionalProperties, "optionList")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "advanced")
+		delete(additionalProperties, "required")
+		delete(additionalProperties, "exportMeta")
+		delete(additionalProperties, "editable")
+		delete(additionalProperties, "creatable")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "displayOrder")
+		delete(additionalProperties, "wrapperClass")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "noBlank")
+		delete(additionalProperties, "dependsOnCode")
+		delete(additionalProperties, "visibleOnCode")
+		delete(additionalProperties, "requireOnCode")
+		delete(additionalProperties, "contextualDefault")
+		delete(additionalProperties, "displayValueOnDetails")
+		delete(additionalProperties, "showOnCreate")
+		delete(additionalProperties, "showOnEdit")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableRouteOptionType struct {

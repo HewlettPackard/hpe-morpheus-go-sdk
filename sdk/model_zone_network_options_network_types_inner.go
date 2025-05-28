@@ -27,7 +27,10 @@ type ZoneNetworkOptionsNetworkTypesInner struct {
 	DefaultType *bool `json:"defaultType,omitempty"`
 	ExternalId *string `json:"externalId,omitempty"`
 	Code *string `json:"code,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ZoneNetworkOptionsNetworkTypesInner ZoneNetworkOptionsNetworkTypesInner
 
 // NewZoneNetworkOptionsNetworkTypesInner instantiates a new ZoneNetworkOptionsNetworkTypesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -301,7 +304,39 @@ func (o ZoneNetworkOptionsNetworkTypesInner) ToMap() (map[string]interface{}, er
 	if !IsNil(o.Code) {
 		toSerialize["code"] = o.Code
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ZoneNetworkOptionsNetworkTypesInner) UnmarshalJSON(data []byte) (err error) {
+	varZoneNetworkOptionsNetworkTypesInner := _ZoneNetworkOptionsNetworkTypesInner{}
+
+	err = json.Unmarshal(data, &varZoneNetworkOptionsNetworkTypesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ZoneNetworkOptionsNetworkTypesInner(varZoneNetworkOptionsNetworkTypesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "displayOrder")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "defaultType")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "code")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableZoneNetworkOptionsNetworkTypesInner struct {

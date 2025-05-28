@@ -31,7 +31,10 @@ type UpdateCloudDatastores200ResponseDatastore struct {
 	Tenants []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner `json:"tenants,omitempty"`
 	ResourcePermission *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission `json:"resourcePermission,omitempty"`
 	Success *bool `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateCloudDatastores200ResponseDatastore UpdateCloudDatastores200ResponseDatastore
 
 // NewUpdateCloudDatastores200ResponseDatastore instantiates a new UpdateCloudDatastores200ResponseDatastore object
 // This constructor will assign default values to properties that have it defined,
@@ -445,7 +448,43 @@ func (o UpdateCloudDatastores200ResponseDatastore) ToMap() (map[string]interface
 	if !IsNil(o.Success) {
 		toSerialize["success"] = o.Success
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateCloudDatastores200ResponseDatastore) UnmarshalJSON(data []byte) (err error) {
+	varUpdateCloudDatastores200ResponseDatastore := _UpdateCloudDatastores200ResponseDatastore{}
+
+	err = json.Unmarshal(data, &varUpdateCloudDatastores200ResponseDatastore)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateCloudDatastores200ResponseDatastore(varUpdateCloudDatastores200ResponseDatastore)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "zone")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "freeSpace")
+		delete(additionalProperties, "online")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "tenants")
+		delete(additionalProperties, "resourcePermission")
+		delete(additionalProperties, "success")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateCloudDatastores200ResponseDatastore struct {

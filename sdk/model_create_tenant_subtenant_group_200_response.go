@@ -21,7 +21,10 @@ var _ MappedNullable = &CreateTenantSubtenantGroup200Response{}
 // CreateTenantSubtenantGroup200Response struct for CreateTenantSubtenantGroup200Response
 type CreateTenantSubtenantGroup200Response struct {
 	Account *CreateTenantSubtenantGroup200ResponseAccount `json:"account,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _CreateTenantSubtenantGroup200Response CreateTenantSubtenantGroup200Response
 
 // NewCreateTenantSubtenantGroup200Response instantiates a new CreateTenantSubtenantGroup200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o CreateTenantSubtenantGroup200Response) ToMap() (map[string]interface{}, 
 	if !IsNil(o.Account) {
 		toSerialize["account"] = o.Account
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *CreateTenantSubtenantGroup200Response) UnmarshalJSON(data []byte) (err error) {
+	varCreateTenantSubtenantGroup200Response := _CreateTenantSubtenantGroup200Response{}
+
+	err = json.Unmarshal(data, &varCreateTenantSubtenantGroup200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CreateTenantSubtenantGroup200Response(varCreateTenantSubtenantGroup200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "account")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCreateTenantSubtenantGroup200Response struct {

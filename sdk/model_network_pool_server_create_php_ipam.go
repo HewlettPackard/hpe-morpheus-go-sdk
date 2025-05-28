@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -42,6 +41,7 @@ type NetworkPoolServerCreatePhpIpam struct {
 	NetworkFilter *string `json:"networkFilter,omitempty"`
 	Config PhpIPAMNetworkPoolServerConfig `json:"config"`
 	Credential *NSXNetworkServerCredential `json:"credential,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _NetworkPoolServerCreatePhpIpam NetworkPoolServerCreatePhpIpam
@@ -434,6 +434,11 @@ func (o NetworkPoolServerCreatePhpIpam) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.Credential) {
 		toSerialize["credential"] = o.Credential
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -464,15 +469,30 @@ func (o *NetworkPoolServerCreatePhpIpam) UnmarshalJSON(data []byte) (err error) 
 
 	varNetworkPoolServerCreatePhpIpam := _NetworkPoolServerCreatePhpIpam{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varNetworkPoolServerCreatePhpIpam)
+	err = json.Unmarshal(data, &varNetworkPoolServerCreatePhpIpam)
 
 	if err != nil {
 		return err
 	}
 
 	*o = NetworkPoolServerCreatePhpIpam(varNetworkPoolServerCreatePhpIpam)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "serviceUrl")
+		delete(additionalProperties, "serviceUsername")
+		delete(additionalProperties, "servicePassword")
+		delete(additionalProperties, "serviceThrottleRate")
+		delete(additionalProperties, "ignoreSsl")
+		delete(additionalProperties, "networkFilter")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "credential")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

@@ -24,7 +24,10 @@ type ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential struct {
 	Name *string `json:"name,omitempty"`
 	Type *string `json:"type,omitempty"`
 	Types []string `json:"types,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential
 
 // NewListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential instantiates a new ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential object
 // This constructor will assign default values to properties that have it defined,
@@ -193,7 +196,36 @@ func (o ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential) ToMap(
 	if !IsNil(o.Types) {
 		toSerialize["types"] = o.Types
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential) UnmarshalJSON(data []byte) (err error) {
+	varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential := _ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential{}
+
+	err = json.Unmarshal(data, &varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential(varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "types")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential struct {

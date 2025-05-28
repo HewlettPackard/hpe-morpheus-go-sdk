@@ -40,7 +40,10 @@ type NetworkRouterRoute struct {
 	ExternalType *string `json:"externalType,omitempty"`
 	Enabled *bool `json:"enabled,omitempty"`
 	Visible *bool `json:"visible,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _NetworkRouterRoute NetworkRouterRoute
 
 // NewNetworkRouterRoute instantiates a new NetworkRouterRoute object
 // This constructor will assign default values to properties that have it defined,
@@ -769,7 +772,52 @@ func (o NetworkRouterRoute) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Visible) {
 		toSerialize["visible"] = o.Visible
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *NetworkRouterRoute) UnmarshalJSON(data []byte) (err error) {
+	varNetworkRouterRoute := _NetworkRouterRoute{}
+
+	err = json.Unmarshal(data, &varNetworkRouterRoute)
+
+	if err != nil {
+		return err
+	}
+
+	*o = NetworkRouterRoute(varNetworkRouterRoute)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "priority")
+		delete(additionalProperties, "routeType")
+		delete(additionalProperties, "source")
+		delete(additionalProperties, "sourceType")
+		delete(additionalProperties, "destination")
+		delete(additionalProperties, "destinationType")
+		delete(additionalProperties, "defaultRoute")
+		delete(additionalProperties, "networkMtu")
+		delete(additionalProperties, "externalInterface")
+		delete(additionalProperties, "internalId")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "uniqueId")
+		delete(additionalProperties, "providerId")
+		delete(additionalProperties, "externalType")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "visible")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableNetworkRouterRoute struct {

@@ -23,7 +23,10 @@ type UpdateWikiAppRequestPage struct {
 	Name *string `json:"name,omitempty"`
 	Category *string `json:"category,omitempty"`
 	Content *string `json:"content,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateWikiAppRequestPage UpdateWikiAppRequestPage
 
 // NewUpdateWikiAppRequestPage instantiates a new UpdateWikiAppRequestPage object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o UpdateWikiAppRequestPage) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Content) {
 		toSerialize["content"] = o.Content
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateWikiAppRequestPage) UnmarshalJSON(data []byte) (err error) {
+	varUpdateWikiAppRequestPage := _UpdateWikiAppRequestPage{}
+
+	err = json.Unmarshal(data, &varUpdateWikiAppRequestPage)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateWikiAppRequestPage(varUpdateWikiAppRequestPage)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "content")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateWikiAppRequestPage struct {

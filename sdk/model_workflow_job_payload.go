@@ -14,7 +14,6 @@ package sdk
 import (
 	"encoding/json"
 	"time"
-	"bytes"
 	"fmt"
 )
 
@@ -47,6 +46,7 @@ type WorkflowJobPayload struct {
 	DateTime *time.Time `json:"dateTime,omitempty"`
 	// If true, executes job
 	Run *bool `json:"run,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _WorkflowJobPayload WorkflowJobPayload
@@ -536,6 +536,11 @@ func (o WorkflowJobPayload) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Run) {
 		toSerialize["run"] = o.Run
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -566,15 +571,33 @@ func (o *WorkflowJobPayload) UnmarshalJSON(data []byte) (err error) {
 
 	varWorkflowJobPayload := _WorkflowJobPayload{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varWorkflowJobPayload)
+	err = json.Unmarshal(data, &varWorkflowJobPayload)
 
 	if err != nil {
 		return err
 	}
 
 	*o = WorkflowJobPayload(varWorkflowJobPayload)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "task")
+		delete(additionalProperties, "workflow")
+		delete(additionalProperties, "targetType")
+		delete(additionalProperties, "targets")
+		delete(additionalProperties, "instanceLabel")
+		delete(additionalProperties, "serverLabel")
+		delete(additionalProperties, "scheduleMode")
+		delete(additionalProperties, "customOptions")
+		delete(additionalProperties, "customConfig")
+		delete(additionalProperties, "dateTime")
+		delete(additionalProperties, "run")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

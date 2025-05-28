@@ -33,7 +33,10 @@ type CreateNetworkPool200ResponseNetworkPoolIpRangesInner struct {
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
 	Cidr *string `json:"cidr,omitempty"`
 	CidrIPv6 *string `json:"cidrIPv6,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _CreateNetworkPool200ResponseNetworkPoolIpRangesInner CreateNetworkPool200ResponseNetworkPoolIpRangesInner
 
 // NewCreateNetworkPool200ResponseNetworkPoolIpRangesInner instantiates a new CreateNetworkPool200ResponseNetworkPoolIpRangesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -482,7 +485,44 @@ func (o CreateNetworkPool200ResponseNetworkPoolIpRangesInner) ToMap() (map[strin
 	if !IsNil(o.CidrIPv6) {
 		toSerialize["cidrIPv6"] = o.CidrIPv6
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) UnmarshalJSON(data []byte) (err error) {
+	varCreateNetworkPool200ResponseNetworkPoolIpRangesInner := _CreateNetworkPool200ResponseNetworkPoolIpRangesInner{}
+
+	err = json.Unmarshal(data, &varCreateNetworkPool200ResponseNetworkPoolIpRangesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CreateNetworkPool200ResponseNetworkPoolIpRangesInner(varCreateNetworkPool200ResponseNetworkPoolIpRangesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "startAddress")
+		delete(additionalProperties, "endAddress")
+		delete(additionalProperties, "internalId")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "addressCount")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "cidr")
+		delete(additionalProperties, "cidrIPv6")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCreateNetworkPool200ResponseNetworkPoolIpRangesInner struct {

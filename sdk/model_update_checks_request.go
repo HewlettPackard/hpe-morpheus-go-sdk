@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -23,6 +22,7 @@ var _ MappedNullable = &UpdateChecksRequest{}
 // UpdateChecksRequest struct for UpdateChecksRequest
 type UpdateChecksRequest struct {
 	Check UpdateChecksRequestCheck `json:"check"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateChecksRequest UpdateChecksRequest
@@ -80,6 +80,11 @@ func (o UpdateChecksRequest) MarshalJSON() ([]byte, error) {
 func (o UpdateChecksRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["check"] = o.Check
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -107,15 +112,20 @@ func (o *UpdateChecksRequest) UnmarshalJSON(data []byte) (err error) {
 
 	varUpdateChecksRequest := _UpdateChecksRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varUpdateChecksRequest)
+	err = json.Unmarshal(data, &varUpdateChecksRequest)
 
 	if err != nil {
 		return err
 	}
 
 	*o = UpdateChecksRequest(varUpdateChecksRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "check")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

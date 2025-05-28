@@ -28,7 +28,10 @@ type CreateLoadBalancerMonitorRequestLoadBalancerMonitor struct {
 	MonitorTimeout *int64 `json:"monitorTimeout,omitempty"`
 	// Configuration object with parameters that vary by type.
 	Config map[string]interface{} `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _CreateLoadBalancerMonitorRequestLoadBalancerMonitor CreateLoadBalancerMonitorRequestLoadBalancerMonitor
 
 // NewCreateLoadBalancerMonitorRequestLoadBalancerMonitor instantiates a new CreateLoadBalancerMonitorRequestLoadBalancerMonitor object
 // This constructor will assign default values to properties that have it defined,
@@ -232,7 +235,37 @@ func (o CreateLoadBalancerMonitorRequestLoadBalancerMonitor) ToMap() (map[string
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *CreateLoadBalancerMonitorRequestLoadBalancerMonitor) UnmarshalJSON(data []byte) (err error) {
+	varCreateLoadBalancerMonitorRequestLoadBalancerMonitor := _CreateLoadBalancerMonitorRequestLoadBalancerMonitor{}
+
+	err = json.Unmarshal(data, &varCreateLoadBalancerMonitorRequestLoadBalancerMonitor)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CreateLoadBalancerMonitorRequestLoadBalancerMonitor(varCreateLoadBalancerMonitorRequestLoadBalancerMonitor)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "monitorType")
+		delete(additionalProperties, "monitorTimeout")
+		delete(additionalProperties, "config")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCreateLoadBalancerMonitorRequestLoadBalancerMonitor struct {

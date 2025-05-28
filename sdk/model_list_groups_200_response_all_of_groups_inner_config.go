@@ -26,7 +26,10 @@ type ListGroups200ResponseAllOfGroupsInnerConfig struct {
 	ServiceRegistryId *string `json:"serviceRegistryId,omitempty"`
 	ConfigManagementId *string `json:"configManagementId,omitempty"`
 	ConfigCmdbDiscovery *bool `json:"configCmdbDiscovery,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListGroups200ResponseAllOfGroupsInnerConfig ListGroups200ResponseAllOfGroupsInnerConfig
 
 // NewListGroups200ResponseAllOfGroupsInnerConfig instantiates a new ListGroups200ResponseAllOfGroupsInnerConfig object
 // This constructor will assign default values to properties that have it defined,
@@ -265,7 +268,38 @@ func (o ListGroups200ResponseAllOfGroupsInnerConfig) ToMap() (map[string]interfa
 	if !IsNil(o.ConfigCmdbDiscovery) {
 		toSerialize["configCmdbDiscovery"] = o.ConfigCmdbDiscovery
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListGroups200ResponseAllOfGroupsInnerConfig) UnmarshalJSON(data []byte) (err error) {
+	varListGroups200ResponseAllOfGroupsInnerConfig := _ListGroups200ResponseAllOfGroupsInnerConfig{}
+
+	err = json.Unmarshal(data, &varListGroups200ResponseAllOfGroupsInnerConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListGroups200ResponseAllOfGroupsInnerConfig(varListGroups200ResponseAllOfGroupsInnerConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "dnsIntegrationId")
+		delete(additionalProperties, "configCmdbId")
+		delete(additionalProperties, "configCmId")
+		delete(additionalProperties, "serviceRegistryId")
+		delete(additionalProperties, "configManagementId")
+		delete(additionalProperties, "configCmdbDiscovery")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListGroups200ResponseAllOfGroupsInnerConfig struct {

@@ -22,7 +22,10 @@ var _ MappedNullable = &NSXVirtualServerConfigObject{}
 type NSXVirtualServerConfigObject struct {
 	// The Load Balancer Application Profile ID The Options API `/api/options/nsxt/nsxtLBVirtualServerApplicationProfile?loadBalancerId=42&loadBalancerInstance.vipProtocol=tcp` can be used to see which options are available. 
 	ApplicationProfile *string `json:"applicationProfile,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _NSXVirtualServerConfigObject NSXVirtualServerConfigObject
 
 // NewNSXVirtualServerConfigObject instantiates a new NSXVirtualServerConfigObject object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o NSXVirtualServerConfigObject) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ApplicationProfile) {
 		toSerialize["applicationProfile"] = o.ApplicationProfile
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *NSXVirtualServerConfigObject) UnmarshalJSON(data []byte) (err error) {
+	varNSXVirtualServerConfigObject := _NSXVirtualServerConfigObject{}
+
+	err = json.Unmarshal(data, &varNSXVirtualServerConfigObject)
+
+	if err != nil {
+		return err
+	}
+
+	*o = NSXVirtualServerConfigObject(varNSXVirtualServerConfigObject)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "applicationProfile")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableNSXVirtualServerConfigObject struct {

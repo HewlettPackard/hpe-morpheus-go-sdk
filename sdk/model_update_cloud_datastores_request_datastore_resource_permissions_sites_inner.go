@@ -21,7 +21,10 @@ var _ MappedNullable = &UpdateCloudDatastoresRequestDatastoreResourcePermissions
 // UpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner struct for UpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner
 type UpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner struct {
 	Id *int64 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner UpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner
 
 // NewUpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner instantiates a new UpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o UpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner) ToMa
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner) UnmarshalJSON(data []byte) (err error) {
+	varUpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner := _UpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner{}
+
+	err = json.Unmarshal(data, &varUpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner(varUpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner struct {

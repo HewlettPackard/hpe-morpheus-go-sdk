@@ -30,7 +30,10 @@ type AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7 struct {
 	LifecycleExtensionsBeforeApproval *string `json:"lifecycleExtensionsBeforeApproval,omitempty"`
 	AccountIntegrationId *string `json:"accountIntegrationId,omitempty"`
 	LifecycleHideFixed *bool `json:"lifecycleHideFixed,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7 AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7
 
 // NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7 instantiates a new AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7 object
 // This constructor will assign default values to properties that have it defined,
@@ -417,7 +420,42 @@ func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7) ToMap() (map[string
 	if !IsNil(o.LifecycleHideFixed) {
 		toSerialize["lifecycleHideFixed"] = o.LifecycleHideFixed
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7) UnmarshalJSON(data []byte) (err error) {
+	varAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7 := _AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7{}
+
+	err = json.Unmarshal(data, &varAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7(varAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "lifecycleType")
+		delete(additionalProperties, "lifecycleAge")
+		delete(additionalProperties, "lifecycleRenewal")
+		delete(additionalProperties, "lifecycleNotify")
+		delete(additionalProperties, "lifecycleMessage")
+		delete(additionalProperties, "lifecycleAutoRenew")
+		delete(additionalProperties, "lifecycleAllowExtend")
+		delete(additionalProperties, "lifecycleExtensionsBeforeApproval")
+		delete(additionalProperties, "accountIntegrationId")
+		delete(additionalProperties, "lifecycleHideFixed")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7 struct {

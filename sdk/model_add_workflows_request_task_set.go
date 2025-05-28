@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -35,6 +34,7 @@ type AddWorkflowsRequestTaskSet struct {
 	// List of option type IDs for use with operational workflow configuration.
 	OptionTypes []int64 `json:"optionTypes,omitempty"`
 	Tasks *AddWorkflowsRequestTaskSetTasks `json:"tasks,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddWorkflowsRequestTaskSet AddWorkflowsRequestTaskSet
@@ -310,6 +310,11 @@ func (o AddWorkflowsRequestTaskSet) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Tasks) {
 		toSerialize["tasks"] = o.Tasks
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -337,15 +342,26 @@ func (o *AddWorkflowsRequestTaskSet) UnmarshalJSON(data []byte) (err error) {
 
 	varAddWorkflowsRequestTaskSet := _AddWorkflowsRequestTaskSet{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddWorkflowsRequestTaskSet)
+	err = json.Unmarshal(data, &varAddWorkflowsRequestTaskSet)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddWorkflowsRequestTaskSet(varAddWorkflowsRequestTaskSet)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "optionTypes")
+		delete(additionalProperties, "tasks")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

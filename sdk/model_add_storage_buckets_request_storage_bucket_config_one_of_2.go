@@ -26,7 +26,10 @@ type AddStorageBucketsRequestStorageBucketConfigOneOf2 struct {
 	Username *string `json:"username,omitempty"`
 	// password
 	Password *string `json:"password,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddStorageBucketsRequestStorageBucketConfigOneOf2 AddStorageBucketsRequestStorageBucketConfigOneOf2
 
 // NewAddStorageBucketsRequestStorageBucketConfigOneOf2 instantiates a new AddStorageBucketsRequestStorageBucketConfigOneOf2 object
 // This constructor will assign default values to properties that have it defined,
@@ -160,7 +163,35 @@ func (o AddStorageBucketsRequestStorageBucketConfigOneOf2) ToMap() (map[string]i
 	if !IsNil(o.Password) {
 		toSerialize["password"] = o.Password
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddStorageBucketsRequestStorageBucketConfigOneOf2) UnmarshalJSON(data []byte) (err error) {
+	varAddStorageBucketsRequestStorageBucketConfigOneOf2 := _AddStorageBucketsRequestStorageBucketConfigOneOf2{}
+
+	err = json.Unmarshal(data, &varAddStorageBucketsRequestStorageBucketConfigOneOf2)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddStorageBucketsRequestStorageBucketConfigOneOf2(varAddStorageBucketsRequestStorageBucketConfigOneOf2)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "host")
+		delete(additionalProperties, "username")
+		delete(additionalProperties, "password")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddStorageBucketsRequestStorageBucketConfigOneOf2 struct {

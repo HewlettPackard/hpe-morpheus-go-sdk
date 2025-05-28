@@ -24,7 +24,10 @@ type CreateNetworkGroupRequestNetworkGroup struct {
 	Description *string `json:"description,omitempty"`
 	Networks []int64 `json:"networks,omitempty"`
 	Subnets []map[string]interface{} `json:"subnets,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _CreateNetworkGroupRequestNetworkGroup CreateNetworkGroupRequestNetworkGroup
 
 // NewCreateNetworkGroupRequestNetworkGroup instantiates a new CreateNetworkGroupRequestNetworkGroup object
 // This constructor will assign default values to properties that have it defined,
@@ -193,7 +196,36 @@ func (o CreateNetworkGroupRequestNetworkGroup) ToMap() (map[string]interface{}, 
 	if !IsNil(o.Subnets) {
 		toSerialize["subnets"] = o.Subnets
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *CreateNetworkGroupRequestNetworkGroup) UnmarshalJSON(data []byte) (err error) {
+	varCreateNetworkGroupRequestNetworkGroup := _CreateNetworkGroupRequestNetworkGroup{}
+
+	err = json.Unmarshal(data, &varCreateNetworkGroupRequestNetworkGroup)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CreateNetworkGroupRequestNetworkGroup(varCreateNetworkGroupRequestNetworkGroup)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "networks")
+		delete(additionalProperties, "subnets")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCreateNetworkGroupRequestNetworkGroup struct {

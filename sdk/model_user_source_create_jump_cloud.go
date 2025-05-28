@@ -28,7 +28,10 @@ type UserSourceCreateJumpCloud struct {
 	BindingPassword *string `json:"bindingPassword,omitempty"`
 	// Required group name
 	RequiredRole *string `json:"requiredRole,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UserSourceCreateJumpCloud UserSourceCreateJumpCloud
 
 // NewUserSourceCreateJumpCloud instantiates a new UserSourceCreateJumpCloud object
 // This constructor will assign default values to properties that have it defined,
@@ -201,7 +204,36 @@ func (o UserSourceCreateJumpCloud) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.RequiredRole) {
 		toSerialize["requiredRole"] = o.RequiredRole
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UserSourceCreateJumpCloud) UnmarshalJSON(data []byte) (err error) {
+	varUserSourceCreateJumpCloud := _UserSourceCreateJumpCloud{}
+
+	err = json.Unmarshal(data, &varUserSourceCreateJumpCloud)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UserSourceCreateJumpCloud(varUserSourceCreateJumpCloud)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "organizationId")
+		delete(additionalProperties, "bindingUsername")
+		delete(additionalProperties, "bindingPassword")
+		delete(additionalProperties, "requiredRole")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUserSourceCreateJumpCloud struct {

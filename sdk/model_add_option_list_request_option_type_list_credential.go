@@ -22,7 +22,10 @@ var _ MappedNullable = &AddOptionListRequestOptionTypeListCredential{}
 type AddOptionListRequestOptionTypeListCredential struct {
 	Type *string `json:"type,omitempty"`
 	Id *int64 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddOptionListRequestOptionTypeListCredential AddOptionListRequestOptionTypeListCredential
 
 // NewAddOptionListRequestOptionTypeListCredential instantiates a new AddOptionListRequestOptionTypeListCredential object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o AddOptionListRequestOptionTypeListCredential) ToMap() (map[string]interf
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddOptionListRequestOptionTypeListCredential) UnmarshalJSON(data []byte) (err error) {
+	varAddOptionListRequestOptionTypeListCredential := _AddOptionListRequestOptionTypeListCredential{}
+
+	err = json.Unmarshal(data, &varAddOptionListRequestOptionTypeListCredential)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddOptionListRequestOptionTypeListCredential(varAddOptionListRequestOptionTypeListCredential)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddOptionListRequestOptionTypeListCredential struct {

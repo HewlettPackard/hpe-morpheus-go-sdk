@@ -22,7 +22,10 @@ var _ MappedNullable = &RestartInstance200Response{}
 type RestartInstance200Response struct {
 	Results map[string]interface{} `json:"results,omitempty"`
 	Success *bool `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _RestartInstance200Response RestartInstance200Response
 
 // NewRestartInstance200Response instantiates a new RestartInstance200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o RestartInstance200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Success) {
 		toSerialize["success"] = o.Success
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *RestartInstance200Response) UnmarshalJSON(data []byte) (err error) {
+	varRestartInstance200Response := _RestartInstance200Response{}
+
+	err = json.Unmarshal(data, &varRestartInstance200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = RestartInstance200Response(varRestartInstance200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "results")
+		delete(additionalProperties, "success")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableRestartInstance200Response struct {

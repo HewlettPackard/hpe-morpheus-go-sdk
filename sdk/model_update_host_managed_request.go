@@ -27,7 +27,10 @@ type UpdateHostManagedRequest struct {
 	InstanceTypeId *int64 `json:"instanceTypeId,omitempty"`
 	// Layout ID for the new Instance
 	Layout *int64 `json:"layout,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateHostManagedRequest UpdateHostManagedRequest
 
 // NewUpdateHostManagedRequest instantiates a new UpdateHostManagedRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -200,7 +203,36 @@ func (o UpdateHostManagedRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Layout) {
 		toSerialize["layout"] = o.Layout
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateHostManagedRequest) UnmarshalJSON(data []byte) (err error) {
+	varUpdateHostManagedRequest := _UpdateHostManagedRequest{}
+
+	err = json.Unmarshal(data, &varUpdateHostManagedRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateHostManagedRequest(varUpdateHostManagedRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "server")
+		delete(additionalProperties, "installAgent")
+		delete(additionalProperties, "instanceTypeId")
+		delete(additionalProperties, "layout")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateHostManagedRequest struct {

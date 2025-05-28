@@ -36,7 +36,10 @@ type AddBlueprint200ResponseAllOfBlueprintConfigOneOf3 struct {
 	Owner map[string]interface{} `json:"owner,omitempty"`
 	// Tenant
 	Tenant map[string]interface{} `json:"tenant,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddBlueprint200ResponseAllOfBlueprintConfigOneOf3 AddBlueprint200ResponseAllOfBlueprintConfigOneOf3
 
 // NewAddBlueprint200ResponseAllOfBlueprintConfigOneOf3 instantiates a new AddBlueprint200ResponseAllOfBlueprintConfigOneOf3 object
 // This constructor will assign default values to properties that have it defined,
@@ -384,7 +387,41 @@ func (o AddBlueprint200ResponseAllOfBlueprintConfigOneOf3) ToMap() (map[string]i
 	if !IsNil(o.Tenant) {
 		toSerialize["tenant"] = o.Tenant
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf3) UnmarshalJSON(data []byte) (err error) {
+	varAddBlueprint200ResponseAllOfBlueprintConfigOneOf3 := _AddBlueprint200ResponseAllOfBlueprintConfigOneOf3{}
+
+	err = json.Unmarshal(data, &varAddBlueprint200ResponseAllOfBlueprintConfigOneOf3)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddBlueprint200ResponseAllOfBlueprintConfigOneOf3(varAddBlueprint200ResponseAllOfBlueprintConfigOneOf3)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "image")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "kubernetes")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "resourcePermission")
+		delete(additionalProperties, "owner")
+		delete(additionalProperties, "tenant")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddBlueprint200ResponseAllOfBlueprintConfigOneOf3 struct {

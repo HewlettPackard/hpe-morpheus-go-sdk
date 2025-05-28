@@ -34,7 +34,10 @@ type UserSourceCreateActiveDirectory struct {
 	RequiredGroup *string `json:"requiredGroup,omitempty"`
 	// Include Member Groups
 	SearchMemberGroups *bool `json:"searchMemberGroups,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UserSourceCreateActiveDirectory UserSourceCreateActiveDirectory
 
 // NewUserSourceCreateActiveDirectory instantiates a new UserSourceCreateActiveDirectory object
 // This constructor will assign default values to properties that have it defined,
@@ -312,7 +315,39 @@ func (o UserSourceCreateActiveDirectory) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.SearchMemberGroups) {
 		toSerialize["searchMemberGroups"] = o.SearchMemberGroups
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UserSourceCreateActiveDirectory) UnmarshalJSON(data []byte) (err error) {
+	varUserSourceCreateActiveDirectory := _UserSourceCreateActiveDirectory{}
+
+	err = json.Unmarshal(data, &varUserSourceCreateActiveDirectory)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UserSourceCreateActiveDirectory(varUserSourceCreateActiveDirectory)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "url")
+		delete(additionalProperties, "domain")
+		delete(additionalProperties, "useSSL")
+		delete(additionalProperties, "bindingUsername")
+		delete(additionalProperties, "bindingPassword")
+		delete(additionalProperties, "requiredGroup")
+		delete(additionalProperties, "searchMemberGroups")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUserSourceCreateActiveDirectory struct {

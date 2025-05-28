@@ -22,7 +22,10 @@ var _ MappedNullable = &GetInvoices200Response{}
 type GetInvoices200Response struct {
 	Invoice *ListInvoices200ResponseAllOfInvoicesInner `json:"invoice,omitempty"`
 	MasterAccount *bool `json:"masterAccount,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetInvoices200Response GetInvoices200Response
 
 // NewGetInvoices200Response instantiates a new GetInvoices200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o GetInvoices200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.MasterAccount) {
 		toSerialize["masterAccount"] = o.MasterAccount
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetInvoices200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetInvoices200Response := _GetInvoices200Response{}
+
+	err = json.Unmarshal(data, &varGetInvoices200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetInvoices200Response(varGetInvoices200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "invoice")
+		delete(additionalProperties, "masterAccount")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetInvoices200Response struct {

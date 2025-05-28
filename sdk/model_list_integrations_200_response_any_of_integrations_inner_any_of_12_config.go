@@ -23,7 +23,10 @@ type ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf12Config struct {
 	ApprovalUser *string `json:"approvalUser,omitempty"`
 	Company *string `json:"company,omitempty"`
 	RemedyIgnoreSSLErrors *string `json:"remedyIgnoreSSLErrors,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf12Config ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf12Config
 
 // NewListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf12Config instantiates a new ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf12Config object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf12Config) ToMap() 
 	if !IsNil(o.RemedyIgnoreSSLErrors) {
 		toSerialize["remedyIgnoreSSLErrors"] = o.RemedyIgnoreSSLErrors
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf12Config) UnmarshalJSON(data []byte) (err error) {
+	varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf12Config := _ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf12Config{}
+
+	err = json.Unmarshal(data, &varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf12Config)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf12Config(varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf12Config)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "approvalUser")
+		delete(additionalProperties, "company")
+		delete(additionalProperties, "remedyIgnoreSSLErrors")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf12Config struct {

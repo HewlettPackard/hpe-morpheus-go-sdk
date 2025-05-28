@@ -36,7 +36,10 @@ type SolarWindsNetworkPoolServerUpdate struct {
 	IgnoreSsl *bool `json:"ignoreSsl,omitempty"`
 	Config *BluecatNetworkPoolServerConfig `json:"config,omitempty"`
 	Credential *NSXNetworkServerCredential `json:"credential,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _SolarWindsNetworkPoolServerUpdate SolarWindsNetworkPoolServerUpdate
 
 // NewSolarWindsNetworkPoolServerUpdate instantiates a new SolarWindsNetworkPoolServerUpdate object
 // This constructor will assign default values to properties that have it defined,
@@ -388,7 +391,41 @@ func (o SolarWindsNetworkPoolServerUpdate) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.Credential) {
 		toSerialize["credential"] = o.Credential
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *SolarWindsNetworkPoolServerUpdate) UnmarshalJSON(data []byte) (err error) {
+	varSolarWindsNetworkPoolServerUpdate := _SolarWindsNetworkPoolServerUpdate{}
+
+	err = json.Unmarshal(data, &varSolarWindsNetworkPoolServerUpdate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = SolarWindsNetworkPoolServerUpdate(varSolarWindsNetworkPoolServerUpdate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "serviceUrl")
+		delete(additionalProperties, "serviceUsername")
+		delete(additionalProperties, "servicePassword")
+		delete(additionalProperties, "serviceThrottleRate")
+		delete(additionalProperties, "ignoreSsl")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "credential")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableSolarWindsNetworkPoolServerUpdate struct {

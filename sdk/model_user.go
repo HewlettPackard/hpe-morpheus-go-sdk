@@ -48,7 +48,10 @@ type User struct {
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
 	Access *AddUserTenant200ResponseAllOfUserAccess `json:"access,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _User User
 
 // NewUser instantiates a new User object
 // This constructor will assign default values to properties that have it defined,
@@ -1022,7 +1025,59 @@ func (o User) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Access) {
 		toSerialize["access"] = o.Access
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *User) UnmarshalJSON(data []byte) (err error) {
+	varUser := _User{}
+
+	err = json.Unmarshal(data, &varUser)
+
+	if err != nil {
+		return err
+	}
+
+	*o = User(varUser)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "username")
+		delete(additionalProperties, "displayName")
+		delete(additionalProperties, "email")
+		delete(additionalProperties, "firstName")
+		delete(additionalProperties, "lastName")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "receiveNotifications")
+		delete(additionalProperties, "isUsing2FA")
+		delete(additionalProperties, "accountExpired")
+		delete(additionalProperties, "accountLocked")
+		delete(additionalProperties, "passwordExpired")
+		delete(additionalProperties, "loginCount")
+		delete(additionalProperties, "loginAttempts")
+		delete(additionalProperties, "lastLoginDate")
+		delete(additionalProperties, "roles")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "linuxUsername")
+		delete(additionalProperties, "linuxPassword")
+		delete(additionalProperties, "linuxKeyPairId")
+		delete(additionalProperties, "windowsUsername")
+		delete(additionalProperties, "windowsPassword")
+		delete(additionalProperties, "defaultPersona")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "access")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUser struct {

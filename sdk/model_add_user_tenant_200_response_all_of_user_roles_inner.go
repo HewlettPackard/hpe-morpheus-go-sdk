@@ -24,7 +24,10 @@ type AddUserTenant200ResponseAllOfUserRolesInner struct {
 	Name *string `json:"name,omitempty"`
 	Authority *string `json:"authority,omitempty"`
 	Description *string `json:"description,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddUserTenant200ResponseAllOfUserRolesInner AddUserTenant200ResponseAllOfUserRolesInner
 
 // NewAddUserTenant200ResponseAllOfUserRolesInner instantiates a new AddUserTenant200ResponseAllOfUserRolesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -193,7 +196,36 @@ func (o AddUserTenant200ResponseAllOfUserRolesInner) ToMap() (map[string]interfa
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddUserTenant200ResponseAllOfUserRolesInner) UnmarshalJSON(data []byte) (err error) {
+	varAddUserTenant200ResponseAllOfUserRolesInner := _AddUserTenant200ResponseAllOfUserRolesInner{}
+
+	err = json.Unmarshal(data, &varAddUserTenant200ResponseAllOfUserRolesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddUserTenant200ResponseAllOfUserRolesInner(varAddUserTenant200ResponseAllOfUserRolesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "authority")
+		delete(additionalProperties, "description")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddUserTenant200ResponseAllOfUserRolesInner struct {

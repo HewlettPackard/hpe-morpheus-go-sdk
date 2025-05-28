@@ -27,7 +27,10 @@ type ListNetworks200ResponseAllOfNetworksInnerConfig struct {
 	DhcpRange *string `json:"dhcpRange,omitempty"`
 	SubnetDhcpServerAddress *string `json:"subnetDhcpServerAddress,omitempty"`
 	SubnetDhcpLeaseTime *string `json:"subnetDhcpLeaseTime,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListNetworks200ResponseAllOfNetworksInnerConfig ListNetworks200ResponseAllOfNetworksInnerConfig
 
 // NewListNetworks200ResponseAllOfNetworksInnerConfig instantiates a new ListNetworks200ResponseAllOfNetworksInnerConfig object
 // This constructor will assign default values to properties that have it defined,
@@ -301,7 +304,39 @@ func (o ListNetworks200ResponseAllOfNetworksInnerConfig) ToMap() (map[string]int
 	if !IsNil(o.SubnetDhcpLeaseTime) {
 		toSerialize["subnetDhcpLeaseTime"] = o.SubnetDhcpLeaseTime
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListNetworks200ResponseAllOfNetworksInnerConfig) UnmarshalJSON(data []byte) (err error) {
+	varListNetworks200ResponseAllOfNetworksInnerConfig := _ListNetworks200ResponseAllOfNetworksInnerConfig{}
+
+	err = json.Unmarshal(data, &varListNetworks200ResponseAllOfNetworksInnerConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListNetworks200ResponseAllOfNetworksInnerConfig(varListNetworks200ResponseAllOfNetworksInnerConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "vlanIDs")
+		delete(additionalProperties, "connectedGateway")
+		delete(additionalProperties, "subnetIpManagementType")
+		delete(additionalProperties, "subnetIpServerId")
+		delete(additionalProperties, "dhcpRange")
+		delete(additionalProperties, "subnetDhcpServerAddress")
+		delete(additionalProperties, "subnetDhcpLeaseTime")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListNetworks200ResponseAllOfNetworksInnerConfig struct {

@@ -30,7 +30,10 @@ type ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15Config struct {
 	WebServiceOperationUrl *string `json:"webServiceOperationUrl,omitempty"`
 	CmdbMode *string `json:"cmdbMode,omitempty"`
 	PreparedForSync *bool `json:"preparedForSync,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15Config ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15Config
 
 // NewListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15Config instantiates a new ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15Config object
 // This constructor will assign default values to properties that have it defined,
@@ -413,7 +416,42 @@ func (o ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15Config) ToMap() 
 	if !IsNil(o.PreparedForSync) {
 		toSerialize["preparedForSync"] = o.PreparedForSync
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15Config) UnmarshalJSON(data []byte) (err error) {
+	varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15Config := _ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15Config{}
+
+	err = json.Unmarshal(data, &varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15Config)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15Config(varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15Config)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "incidentAccess")
+		delete(additionalProperties, "requestAccess")
+		delete(additionalProperties, "serviceNowCMDBBusinessObject")
+		delete(additionalProperties, "serviceNowCustomCmdbMapping")
+		delete(additionalProperties, "serviceNowCmdbClassMapping")
+		delete(additionalProperties, "webServiceImportUrl")
+		delete(additionalProperties, "webServiceImportSysId")
+		delete(additionalProperties, "webServiceOperationUrl")
+		delete(additionalProperties, "cmdbMode")
+		delete(additionalProperties, "preparedForSync")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15Config struct {

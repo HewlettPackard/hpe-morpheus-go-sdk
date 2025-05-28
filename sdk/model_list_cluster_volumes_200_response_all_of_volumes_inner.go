@@ -78,7 +78,10 @@ type ListClusterVolumes200ResponseAllOfVolumesInner struct {
 	RawData *string `json:"rawData,omitempty"`
 	Account *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
 	Owner *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"owner,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListClusterVolumes200ResponseAllOfVolumesInner ListClusterVolumes200ResponseAllOfVolumesInner
 
 // NewListClusterVolumes200ResponseAllOfVolumesInner instantiates a new ListClusterVolumes200ResponseAllOfVolumesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -2137,7 +2140,90 @@ func (o ListClusterVolumes200ResponseAllOfVolumesInner) ToMap() (map[string]inte
 	if !IsNil(o.Owner) {
 		toSerialize["owner"] = o.Owner
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) UnmarshalJSON(data []byte) (err error) {
+	varListClusterVolumes200ResponseAllOfVolumesInner := _ListClusterVolumes200ResponseAllOfVolumesInner{}
+
+	err = json.Unmarshal(data, &varListClusterVolumes200ResponseAllOfVolumesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListClusterVolumes200ResponseAllOfVolumesInner(varListClusterVolumes200ResponseAllOfVolumesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "controller")
+		delete(additionalProperties, "controllerId")
+		delete(additionalProperties, "controllerMountPoint")
+		delete(additionalProperties, "resizeable")
+		delete(additionalProperties, "rootVolume")
+		delete(additionalProperties, "unitNumber")
+		delete(additionalProperties, "deviceName")
+		delete(additionalProperties, "deviceDisplayName")
+		delete(additionalProperties, "volumeName")
+		delete(additionalProperties, "volumePath")
+		delete(additionalProperties, "volumeType")
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "refId")
+		delete(additionalProperties, "diskMode")
+		delete(additionalProperties, "diskType")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "typeId")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "statusMessage")
+		delete(additionalProperties, "configurableIOPS")
+		delete(additionalProperties, "maxStorage")
+		delete(additionalProperties, "usedStorage")
+		delete(additionalProperties, "displayOrder")
+		delete(additionalProperties, "maxIOPS")
+		delete(additionalProperties, "uuid")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "readOnly")
+		delete(additionalProperties, "removable")
+		delete(additionalProperties, "poolName")
+		delete(additionalProperties, "zone")
+		delete(additionalProperties, "zoneId")
+		delete(additionalProperties, "datastore")
+		delete(additionalProperties, "datastoreId")
+		delete(additionalProperties, "datastoreOption")
+		delete(additionalProperties, "storageGroup")
+		delete(additionalProperties, "namespace")
+		delete(additionalProperties, "storageServer")
+		delete(additionalProperties, "source")
+		delete(additionalProperties, "uniqueId")
+		delete(additionalProperties, "internalId")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "provisionType")
+		delete(additionalProperties, "copyType")
+		delete(additionalProperties, "fiberWwn")
+		delete(additionalProperties, "fileName")
+		delete(additionalProperties, "claimName")
+		delete(additionalProperties, "sharePath")
+		delete(additionalProperties, "sourceId")
+		delete(additionalProperties, "sourceImage")
+		delete(additionalProperties, "imageType")
+		delete(additionalProperties, "online")
+		delete(additionalProperties, "rawData")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "owner")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListClusterVolumes200ResponseAllOfVolumesInner struct {

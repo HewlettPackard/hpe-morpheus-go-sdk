@@ -98,7 +98,10 @@ type Instance struct {
 	InstanceThreshold map[string]interface{} `json:"instanceThreshold,omitempty"`
 	IsBusy *bool `json:"isBusy,omitempty"`
 	Apps []map[string]interface{} `json:"apps,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _Instance Instance
 
 // NewInstance instantiates a new Instance object
 // This constructor will assign default values to properties that have it defined,
@@ -2822,7 +2825,109 @@ func (o Instance) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Apps) {
 		toSerialize["apps"] = o.Apps
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *Instance) UnmarshalJSON(data []byte) (err error) {
+	varInstance := _Instance{}
+
+	err = json.Unmarshal(data, &varInstance)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Instance(varInstance)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "uuid")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "tenant")
+		delete(additionalProperties, "instanceType")
+		delete(additionalProperties, "group")
+		delete(additionalProperties, "cloud")
+		delete(additionalProperties, "cluster")
+		delete(additionalProperties, "containers")
+		delete(additionalProperties, "servers")
+		delete(additionalProperties, "connectionInfo")
+		delete(additionalProperties, "layout")
+		delete(additionalProperties, "plan")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "displayName")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "environment")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "configGroup")
+		delete(additionalProperties, "configId")
+		delete(additionalProperties, "configRole")
+		delete(additionalProperties, "volumes")
+		delete(additionalProperties, "controllers")
+		delete(additionalProperties, "interfaces")
+		delete(additionalProperties, "customOptions")
+		delete(additionalProperties, "instanceVersion")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "tags")
+		delete(additionalProperties, "evars")
+		delete(additionalProperties, "maxMemory")
+		delete(additionalProperties, "maxStorage")
+		delete(additionalProperties, "maxCores")
+		delete(additionalProperties, "coresPerSocket")
+		delete(additionalProperties, "maxCpu")
+		delete(additionalProperties, "hourlyCost")
+		delete(additionalProperties, "hourlyPrice")
+		delete(additionalProperties, "instancePrice")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "hostName")
+		delete(additionalProperties, "domainName")
+		delete(additionalProperties, "environmentPrefix")
+		delete(additionalProperties, "firewallEnabled")
+		delete(additionalProperties, "networkLevel")
+		delete(additionalProperties, "autoScale")
+		delete(additionalProperties, "instanceContext")
+		delete(additionalProperties, "currentDeployId")
+		delete(additionalProperties, "locked")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "statusMessage")
+		delete(additionalProperties, "errorMessage")
+		delete(additionalProperties, "statusDate")
+		delete(additionalProperties, "statusPercent")
+		delete(additionalProperties, "statusEta")
+		delete(additionalProperties, "userStatus")
+		delete(additionalProperties, "expireDays")
+		delete(additionalProperties, "renewDays")
+		delete(additionalProperties, "expireCount")
+		delete(additionalProperties, "expireDate")
+		delete(additionalProperties, "expireWarningDate")
+		delete(additionalProperties, "expireWarningSent")
+		delete(additionalProperties, "shutdownDays")
+		delete(additionalProperties, "shutdownRenewDays")
+		delete(additionalProperties, "shutdownCount")
+		delete(additionalProperties, "shutdownDate")
+		delete(additionalProperties, "shutdownWarningDate")
+		delete(additionalProperties, "shutdownWarningSent")
+		delete(additionalProperties, "removalDate")
+		delete(additionalProperties, "createdBy")
+		delete(additionalProperties, "owner")
+		delete(additionalProperties, "notes")
+		delete(additionalProperties, "stats")
+		delete(additionalProperties, "powerSchedule")
+		delete(additionalProperties, "isScalable")
+		delete(additionalProperties, "instanceThreshold")
+		delete(additionalProperties, "isBusy")
+		delete(additionalProperties, "apps")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableInstance struct {

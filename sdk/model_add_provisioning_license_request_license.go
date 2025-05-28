@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -42,6 +41,7 @@ type AddProvisioningLicenseRequestLicense struct {
 	VirtualImages []int64 `json:"virtualImages,omitempty"`
 	// Tenants - Array of tenants that are allowed to use the key.
 	Tenants []int64 `json:"tenants,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddProvisioningLicenseRequestLicense AddProvisioningLicenseRequestLicense
@@ -400,6 +400,11 @@ func (o AddProvisioningLicenseRequestLicense) ToMap() (map[string]interface{}, e
 	if !IsNil(o.Tenants) {
 		toSerialize["tenants"] = o.Tenants
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -429,15 +434,29 @@ func (o *AddProvisioningLicenseRequestLicense) UnmarshalJSON(data []byte) (err e
 
 	varAddProvisioningLicenseRequestLicense := _AddProvisioningLicenseRequestLicense{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddProvisioningLicenseRequestLicense)
+	err = json.Unmarshal(data, &varAddProvisioningLicenseRequestLicense)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddProvisioningLicenseRequestLicense(varAddProvisioningLicenseRequestLicense)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "licenseType")
+		delete(additionalProperties, "licenseKey")
+		delete(additionalProperties, "orgName")
+		delete(additionalProperties, "fullName")
+		delete(additionalProperties, "licenseVersion")
+		delete(additionalProperties, "copies")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "virtualImages")
+		delete(additionalProperties, "tenants")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

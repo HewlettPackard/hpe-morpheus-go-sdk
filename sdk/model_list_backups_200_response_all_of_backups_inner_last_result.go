@@ -27,7 +27,10 @@ type ListBackups200ResponseAllOfBackupsInnerLastResult struct {
 	Name *string `json:"name,omitempty"`
 	// Last Result Date Created
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListBackups200ResponseAllOfBackupsInnerLastResult ListBackups200ResponseAllOfBackupsInnerLastResult
 
 // NewListBackups200ResponseAllOfBackupsInnerLastResult instantiates a new ListBackups200ResponseAllOfBackupsInnerLastResult object
 // This constructor will assign default values to properties that have it defined,
@@ -161,7 +164,35 @@ func (o ListBackups200ResponseAllOfBackupsInnerLastResult) ToMap() (map[string]i
 	if !IsNil(o.DateCreated) {
 		toSerialize["dateCreated"] = o.DateCreated
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListBackups200ResponseAllOfBackupsInnerLastResult) UnmarshalJSON(data []byte) (err error) {
+	varListBackups200ResponseAllOfBackupsInnerLastResult := _ListBackups200ResponseAllOfBackupsInnerLastResult{}
+
+	err = json.Unmarshal(data, &varListBackups200ResponseAllOfBackupsInnerLastResult)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListBackups200ResponseAllOfBackupsInnerLastResult(varListBackups200ResponseAllOfBackupsInnerLastResult)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "dateCreated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListBackups200ResponseAllOfBackupsInnerLastResult struct {

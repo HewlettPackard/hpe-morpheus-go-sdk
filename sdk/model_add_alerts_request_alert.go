@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -40,6 +39,7 @@ type AddAlertsRequestAlert struct {
 	Groups []int32 `json:"groups,omitempty"`
 	Apps []int32 `json:"apps,omitempty"`
 	Contacts []ListAlerts200ResponseAllOfAlertsInnerContactsInner `json:"contacts,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddAlertsRequestAlert AddAlertsRequestAlert
@@ -471,6 +471,11 @@ func (o AddAlertsRequestAlert) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Contacts) {
 		toSerialize["contacts"] = o.Contacts
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -498,15 +503,30 @@ func (o *AddAlertsRequestAlert) UnmarshalJSON(data []byte) (err error) {
 
 	varAddAlertsRequestAlert := _AddAlertsRequestAlert{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddAlertsRequestAlert)
+	err = json.Unmarshal(data, &varAddAlertsRequestAlert)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddAlertsRequestAlert(varAddAlertsRequestAlert)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "minDuration")
+		delete(additionalProperties, "minSeverity")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "allChecks")
+		delete(additionalProperties, "allGroups")
+		delete(additionalProperties, "allApps")
+		delete(additionalProperties, "checks")
+		delete(additionalProperties, "groups")
+		delete(additionalProperties, "apps")
+		delete(additionalProperties, "contacts")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

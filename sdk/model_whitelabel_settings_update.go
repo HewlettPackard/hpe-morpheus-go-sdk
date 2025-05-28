@@ -67,7 +67,10 @@ type WhitelabelSettingsUpdate struct {
 	// Privacy policy content
 	PrivacyPolicy *string `json:"privacyPolicy,omitempty"`
 	SupportMenuLinks []UpdateWhitelabelSettingsRequestWhitelabelSettingsSupportMenuLinksInner `json:"supportMenuLinks,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _WhitelabelSettingsUpdate WhitelabelSettingsUpdate
 
 // NewWhitelabelSettingsUpdate instantiates a new WhitelabelSettingsUpdate object
 // This constructor will assign default values to properties that have it defined,
@@ -936,7 +939,56 @@ func (o WhitelabelSettingsUpdate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.SupportMenuLinks) {
 		toSerialize["supportMenuLinks"] = o.SupportMenuLinks
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *WhitelabelSettingsUpdate) UnmarshalJSON(data []byte) (err error) {
+	varWhitelabelSettingsUpdate := _WhitelabelSettingsUpdate{}
+
+	err = json.Unmarshal(data, &varWhitelabelSettingsUpdate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = WhitelabelSettingsUpdate(varWhitelabelSettingsUpdate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "applianceName")
+		delete(additionalProperties, "disableSupportMenu")
+		delete(additionalProperties, "resetHeaderLogo")
+		delete(additionalProperties, "resetFooterLogo")
+		delete(additionalProperties, "resetLoginLogo")
+		delete(additionalProperties, "resetFavicon")
+		delete(additionalProperties, "headerBgColor")
+		delete(additionalProperties, "headerFgColor")
+		delete(additionalProperties, "navBgColor")
+		delete(additionalProperties, "navFgColor")
+		delete(additionalProperties, "navHoverColor")
+		delete(additionalProperties, "primaryButtonBgColor")
+		delete(additionalProperties, "primaryButtonFgColor")
+		delete(additionalProperties, "primaryButtonHoverBgColor")
+		delete(additionalProperties, "primaryButtonHoverFgColor")
+		delete(additionalProperties, "footerBgColor")
+		delete(additionalProperties, "footerFgColor")
+		delete(additionalProperties, "loginBgColor")
+		delete(additionalProperties, "copyrightString")
+		delete(additionalProperties, "overrideCss")
+		delete(additionalProperties, "termsOfUse")
+		delete(additionalProperties, "privacyPolicy")
+		delete(additionalProperties, "supportMenuLinks")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableWhitelabelSettingsUpdate struct {

@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -26,6 +25,7 @@ type SetupRequestAnyOf1OneOfHub struct {
 	Email string `json:"email"`
 	// Password for existing Morpheus Hub user
 	Password string `json:"password"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _SetupRequestAnyOf1OneOfHub SetupRequestAnyOf1OneOfHub
@@ -109,6 +109,11 @@ func (o SetupRequestAnyOf1OneOfHub) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["email"] = o.Email
 	toSerialize["password"] = o.Password
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -137,15 +142,21 @@ func (o *SetupRequestAnyOf1OneOfHub) UnmarshalJSON(data []byte) (err error) {
 
 	varSetupRequestAnyOf1OneOfHub := _SetupRequestAnyOf1OneOfHub{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varSetupRequestAnyOf1OneOfHub)
+	err = json.Unmarshal(data, &varSetupRequestAnyOf1OneOfHub)
 
 	if err != nil {
 		return err
 	}
 
 	*o = SetupRequestAnyOf1OneOfHub(varSetupRequestAnyOf1OneOfHub)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "email")
+		delete(additionalProperties, "password")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

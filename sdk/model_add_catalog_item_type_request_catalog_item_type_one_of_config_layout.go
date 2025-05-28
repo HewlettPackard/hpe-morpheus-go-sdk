@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -23,6 +22,7 @@ var _ MappedNullable = &AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigLayou
 // AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigLayout struct for AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigLayout
 type AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigLayout struct {
 	Id AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigLayoutId `json:"id"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigLayout AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigLayout
@@ -80,6 +80,11 @@ func (o AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigLayout) MarshalJSON()
 func (o AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigLayout) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -107,15 +112,20 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigLayout) UnmarshalJSO
 
 	varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigLayout := _AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigLayout{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigLayout)
+	err = json.Unmarshal(data, &varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigLayout)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigLayout(varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigLayout)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

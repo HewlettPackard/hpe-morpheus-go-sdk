@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -27,6 +26,7 @@ type AddBlueprintRequestOneOf3Kubernetes struct {
 	// Kubernetes Spec in YAML
 	Yaml *string `json:"yaml,omitempty"`
 	Git *AddBlueprintRequestOneOf3KubernetesGit `json:"git,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddBlueprintRequestOneOf3Kubernetes AddBlueprintRequestOneOf3Kubernetes
@@ -154,6 +154,11 @@ func (o AddBlueprintRequestOneOf3Kubernetes) ToMap() (map[string]interface{}, er
 	if !IsNil(o.Git) {
 		toSerialize["git"] = o.Git
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -181,15 +186,22 @@ func (o *AddBlueprintRequestOneOf3Kubernetes) UnmarshalJSON(data []byte) (err er
 
 	varAddBlueprintRequestOneOf3Kubernetes := _AddBlueprintRequestOneOf3Kubernetes{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddBlueprintRequestOneOf3Kubernetes)
+	err = json.Unmarshal(data, &varAddBlueprintRequestOneOf3Kubernetes)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddBlueprintRequestOneOf3Kubernetes(varAddBlueprintRequestOneOf3Kubernetes)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "configType")
+		delete(additionalProperties, "yaml")
+		delete(additionalProperties, "git")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

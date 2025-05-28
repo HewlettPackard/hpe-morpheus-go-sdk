@@ -45,7 +45,10 @@ type ListBackupJobs200ResponseAllOfJobsInner struct {
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
 	// Backups associated with this job
 	Backups []ListBackupJobs200ResponseAllOfJobsInnerBackupsInner `json:"backups,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListBackupJobs200ResponseAllOfJobsInner ListBackupJobs200ResponseAllOfJobsInner
 
 // NewListBackupJobs200ResponseAllOfJobsInner instantiates a new ListBackupJobs200ResponseAllOfJobsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -634,7 +637,48 @@ func (o ListBackupJobs200ResponseAllOfJobsInner) ToMap() (map[string]interface{}
 	if !IsNil(o.Backups) {
 		toSerialize["backups"] = o.Backups
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListBackupJobs200ResponseAllOfJobsInner) UnmarshalJSON(data []byte) (err error) {
+	varListBackupJobs200ResponseAllOfJobsInner := _ListBackupJobs200ResponseAllOfJobsInner{}
+
+	err = json.Unmarshal(data, &varListBackupJobs200ResponseAllOfJobsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListBackupJobs200ResponseAllOfJobsInner(varListBackupJobs200ResponseAllOfJobsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "schedule")
+		delete(additionalProperties, "retentionCount")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "backupProvider")
+		delete(additionalProperties, "backupRespository")
+		delete(additionalProperties, "cronExpression")
+		delete(additionalProperties, "nextFire")
+		delete(additionalProperties, "source")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "backups")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListBackupJobs200ResponseAllOfJobsInner struct {

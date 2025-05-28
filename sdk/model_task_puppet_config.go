@@ -39,7 +39,10 @@ type TaskPuppetConfig struct {
 	Credential *ListClouds200ResponseAllOfZonesInnerCredentialAnyOf `json:"credential,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _TaskPuppetConfig TaskPuppetConfig
 
 // NewTaskPuppetConfig instantiates a new TaskPuppetConfig object
 // This constructor will assign default values to properties that have it defined,
@@ -698,7 +701,50 @@ func (o TaskPuppetConfig) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *TaskPuppetConfig) UnmarshalJSON(data []byte) (err error) {
+	varTaskPuppetConfig := _TaskPuppetConfig{}
+
+	err = json.Unmarshal(data, &varTaskPuppetConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = TaskPuppetConfig(varTaskPuppetConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "taskType")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "taskOptions")
+		delete(additionalProperties, "file")
+		delete(additionalProperties, "resultType")
+		delete(additionalProperties, "executeTarget")
+		delete(additionalProperties, "retryable")
+		delete(additionalProperties, "retryCount")
+		delete(additionalProperties, "retryDelaySeconds")
+		delete(additionalProperties, "allowCustomConfig")
+		delete(additionalProperties, "credential")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableTaskPuppetConfig struct {

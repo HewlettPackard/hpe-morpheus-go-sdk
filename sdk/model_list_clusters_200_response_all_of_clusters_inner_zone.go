@@ -23,7 +23,10 @@ type ListClusters200ResponseAllOfClustersInnerZone struct {
 	Id *int64 `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
 	ZoneType *GetAlerts200ResponseAllOfChecksInnerAccount `json:"zoneType,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListClusters200ResponseAllOfClustersInnerZone ListClusters200ResponseAllOfClustersInnerZone
 
 // NewListClusters200ResponseAllOfClustersInnerZone instantiates a new ListClusters200ResponseAllOfClustersInnerZone object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o ListClusters200ResponseAllOfClustersInnerZone) ToMap() (map[string]inter
 	if !IsNil(o.ZoneType) {
 		toSerialize["zoneType"] = o.ZoneType
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListClusters200ResponseAllOfClustersInnerZone) UnmarshalJSON(data []byte) (err error) {
+	varListClusters200ResponseAllOfClustersInnerZone := _ListClusters200ResponseAllOfClustersInnerZone{}
+
+	err = json.Unmarshal(data, &varListClusters200ResponseAllOfClustersInnerZone)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListClusters200ResponseAllOfClustersInnerZone(varListClusters200ResponseAllOfClustersInnerZone)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "zoneType")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListClusters200ResponseAllOfClustersInnerZone struct {

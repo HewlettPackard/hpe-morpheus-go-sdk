@@ -34,7 +34,10 @@ type GetContainer200ResponseContainerStats struct {
 	TotalIOPS *float32 `json:"totalIOPS,omitempty"`
 	NetTxUsage *int32 `json:"netTxUsage,omitempty"`
 	NetRxUsage *int32 `json:"netRxUsage,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetContainer200ResponseContainerStats GetContainer200ResponseContainerStats
 
 // NewGetContainer200ResponseContainerStats instantiates a new GetContainer200ResponseContainerStats object
 // This constructor will assign default values to properties that have it defined,
@@ -553,7 +556,46 @@ func (o GetContainer200ResponseContainerStats) ToMap() (map[string]interface{}, 
 	if !IsNil(o.NetRxUsage) {
 		toSerialize["netRxUsage"] = o.NetRxUsage
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetContainer200ResponseContainerStats) UnmarshalJSON(data []byte) (err error) {
+	varGetContainer200ResponseContainerStats := _GetContainer200ResponseContainerStats{}
+
+	err = json.Unmarshal(data, &varGetContainer200ResponseContainerStats)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetContainer200ResponseContainerStats(varGetContainer200ResponseContainerStats)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "ts")
+		delete(additionalProperties, "running")
+		delete(additionalProperties, "userCpuUsage")
+		delete(additionalProperties, "systemCpuUsage")
+		delete(additionalProperties, "usedMemory")
+		delete(additionalProperties, "maxMemory")
+		delete(additionalProperties, "cacheMemory")
+		delete(additionalProperties, "maxStorage")
+		delete(additionalProperties, "usedStorage")
+		delete(additionalProperties, "readIOPS")
+		delete(additionalProperties, "writeIOPS")
+		delete(additionalProperties, "totalIOPS")
+		delete(additionalProperties, "netTxUsage")
+		delete(additionalProperties, "netRxUsage")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetContainer200ResponseContainerStats struct {

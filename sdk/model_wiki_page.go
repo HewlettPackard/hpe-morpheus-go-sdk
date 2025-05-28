@@ -33,7 +33,10 @@ type WikiPage struct {
 	UpdatedBy *ListActivity200ResponseAllOfActivityInnerActivityInnerUser `json:"updatedBy,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _WikiPage WikiPage
 
 // NewWikiPage instantiates a new WikiPage object
 // This constructor will assign default values to properties that have it defined,
@@ -482,7 +485,44 @@ func (o WikiPage) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *WikiPage) UnmarshalJSON(data []byte) (err error) {
+	varWikiPage := _WikiPage{}
+
+	err = json.Unmarshal(data, &varWikiPage)
+
+	if err != nil {
+		return err
+	}
+
+	*o = WikiPage(varWikiPage)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "urlName")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "refId")
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "format")
+		delete(additionalProperties, "content")
+		delete(additionalProperties, "createdBy")
+		delete(additionalProperties, "updatedBy")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableWikiPage struct {

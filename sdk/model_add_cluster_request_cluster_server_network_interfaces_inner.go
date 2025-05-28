@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -27,6 +26,7 @@ type AddClusterRequestClusterServerNetworkInterfacesInner struct {
 	NetworkInterfaceTypeId *int64 `json:"networkInterfaceTypeId,omitempty"`
 	// The ip address. Not applicable when using DHCP or IP Pools.
 	IpAddress *string `json:"ipAddress,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddClusterRequestClusterServerNetworkInterfacesInner AddClusterRequestClusterServerNetworkInterfacesInner
@@ -154,6 +154,11 @@ func (o AddClusterRequestClusterServerNetworkInterfacesInner) ToMap() (map[strin
 	if !IsNil(o.IpAddress) {
 		toSerialize["ipAddress"] = o.IpAddress
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -181,15 +186,22 @@ func (o *AddClusterRequestClusterServerNetworkInterfacesInner) UnmarshalJSON(dat
 
 	varAddClusterRequestClusterServerNetworkInterfacesInner := _AddClusterRequestClusterServerNetworkInterfacesInner{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddClusterRequestClusterServerNetworkInterfacesInner)
+	err = json.Unmarshal(data, &varAddClusterRequestClusterServerNetworkInterfacesInner)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddClusterRequestClusterServerNetworkInterfacesInner(varAddClusterRequestClusterServerNetworkInterfacesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "network")
+		delete(additionalProperties, "networkInterfaceTypeId")
+		delete(additionalProperties, "ipAddress")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

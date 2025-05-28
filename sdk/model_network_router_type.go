@@ -36,7 +36,10 @@ type NetworkRouterType struct {
 	RuleGroupOptionTypes []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"ruleGroupOptionTypes,omitempty"`
 	NatOptionTypes []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"natOptionTypes,omitempty"`
 	BgpOptionTypes []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"bgpOptionTypes,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _NetworkRouterType NetworkRouterType
 
 // NewNetworkRouterType instantiates a new NetworkRouterType object
 // This constructor will assign default values to properties that have it defined,
@@ -625,7 +628,48 @@ func (o NetworkRouterType) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.BgpOptionTypes) {
 		toSerialize["bgpOptionTypes"] = o.BgpOptionTypes
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *NetworkRouterType) UnmarshalJSON(data []byte) (err error) {
+	varNetworkRouterType := _NetworkRouterType{}
+
+	err = json.Unmarshal(data, &varNetworkRouterType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = NetworkRouterType(varNetworkRouterType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "creatable")
+		delete(additionalProperties, "selectable")
+		delete(additionalProperties, "hasFirewall")
+		delete(additionalProperties, "hasDhcp")
+		delete(additionalProperties, "hasRouting")
+		delete(additionalProperties, "hasNetworkServer")
+		delete(additionalProperties, "optionTypes")
+		delete(additionalProperties, "ruleOptionTypes")
+		delete(additionalProperties, "ruleGroupOptionTypes")
+		delete(additionalProperties, "natOptionTypes")
+		delete(additionalProperties, "bgpOptionTypes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableNetworkRouterType struct {

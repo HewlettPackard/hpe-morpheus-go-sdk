@@ -38,7 +38,10 @@ type AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf struct {
 	DiagnosticsStorageAccount *string `json:"diagnosticsStorageAccount,omitempty"`
 	// Create User
 	CreateUser *bool `json:"createUser,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf
 
 // NewAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf instantiates a new AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf object
 // This constructor will assign default values to properties that have it defined,
@@ -386,7 +389,41 @@ func (o AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) ToMap() 
 	if !IsNil(o.CreateUser) {
 		toSerialize["createUser"] = o.CreateUser
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) UnmarshalJSON(data []byte) (err error) {
+	varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf := _AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf{}
+
+	err = json.Unmarshal(data, &varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf(varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "resourcePoolId")
+		delete(additionalProperties, "availabilityOptions")
+		delete(additionalProperties, "availabilitySet")
+		delete(additionalProperties, "availabilityZone")
+		delete(additionalProperties, "azurefloatingIp")
+		delete(additionalProperties, "bootDiagnostics")
+		delete(additionalProperties, "osGuestDiagnostics")
+		delete(additionalProperties, "diagnosticsStorageAccount")
+		delete(additionalProperties, "createUser")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf struct {

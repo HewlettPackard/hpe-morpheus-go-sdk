@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -54,6 +53,7 @@ type AddClusterRequestClusterServer struct {
 	// SSH Password
 	SshPassword *string `json:"sshPassword,omitempty"`
 	SshKeyPair *AddClusterRequestClusterServerSshKeyPair `json:"sshKeyPair,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddClusterRequestClusterServer AddClusterRequestClusterServer
@@ -727,6 +727,11 @@ func (o AddClusterRequestClusterServer) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.SshKeyPair) {
 		toSerialize["sshKeyPair"] = o.SshKeyPair
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -756,15 +761,38 @@ func (o *AddClusterRequestClusterServer) UnmarshalJSON(data []byte) (err error) 
 
 	varAddClusterRequestClusterServer := _AddClusterRequestClusterServer{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddClusterRequestClusterServer)
+	err = json.Unmarshal(data, &varAddClusterRequestClusterServer)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddClusterRequestClusterServer(varAddClusterRequestClusterServer)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "serverType")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "plan")
+		delete(additionalProperties, "servicePlanOptions")
+		delete(additionalProperties, "volumes")
+		delete(additionalProperties, "networkInterfaces")
+		delete(additionalProperties, "securityGroups")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "userGroup")
+		delete(additionalProperties, "networkDomain")
+		delete(additionalProperties, "hostname")
+		delete(additionalProperties, "nodeCount")
+		delete(additionalProperties, "tags")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "sshHosts")
+		delete(additionalProperties, "sshUsername")
+		delete(additionalProperties, "sshPassword")
+		delete(additionalProperties, "sshKeyPair")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

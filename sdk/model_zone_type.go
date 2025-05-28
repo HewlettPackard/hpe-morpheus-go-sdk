@@ -53,7 +53,10 @@ type ZoneType struct {
 	ZoneInstanceTypeLayoutId *int64 `json:"zoneInstanceTypeLayoutId,omitempty"`
 	ServerTypes []ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner `json:"serverTypes,omitempty"`
 	OptionTypes []ListCloudTypes200ResponseAllOfZoneTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ZoneType ZoneType
 
 // NewZoneType instantiates a new ZoneType object
 // This constructor will assign default values to properties that have it defined,
@@ -1237,7 +1240,65 @@ func (o ZoneType) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.OptionTypes) {
 		toSerialize["optionTypes"] = o.OptionTypes
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ZoneType) UnmarshalJSON(data []byte) (err error) {
+	varZoneType := _ZoneType{}
+
+	err = json.Unmarshal(data, &varZoneType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ZoneType(varZoneType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "provision")
+		delete(additionalProperties, "autoCapacity")
+		delete(additionalProperties, "migrationTarget")
+		delete(additionalProperties, "hasDatastores")
+		delete(additionalProperties, "hasNetworks")
+		delete(additionalProperties, "hasResourcePools")
+		delete(additionalProperties, "hasSecurityGroups")
+		delete(additionalProperties, "hasContainers")
+		delete(additionalProperties, "hasBareMetal")
+		delete(additionalProperties, "hasServices")
+		delete(additionalProperties, "hasFunctions")
+		delete(additionalProperties, "hasJobs")
+		delete(additionalProperties, "hasDiscovery")
+		delete(additionalProperties, "hasCloudInit")
+		delete(additionalProperties, "hasFolders")
+		delete(additionalProperties, "hasMarketplace")
+		delete(additionalProperties, "hasNativePlans")
+		delete(additionalProperties, "canCreateResourcePools")
+		delete(additionalProperties, "canDeleteResourcePools")
+		delete(additionalProperties, "canCreateDatastores")
+		delete(additionalProperties, "canCreateNetworks")
+		delete(additionalProperties, "canChooseContainerMode")
+		delete(additionalProperties, "provisionRequiresResourcePool")
+		delete(additionalProperties, "supportsDistributedWorker")
+		delete(additionalProperties, "cloud")
+		delete(additionalProperties, "provisionTypes")
+		delete(additionalProperties, "zoneInstanceTypeLayoutId")
+		delete(additionalProperties, "serverTypes")
+		delete(additionalProperties, "optionTypes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableZoneType struct {

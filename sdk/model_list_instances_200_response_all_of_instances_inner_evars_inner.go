@@ -24,7 +24,10 @@ type ListInstances200ResponseAllOfInstancesInnerEvarsInner struct {
 	Value *ListInstances200ResponseAllOfInstancesInnerEvarsInnerValue `json:"value,omitempty"`
 	Export *bool `json:"export,omitempty"`
 	Masked *bool `json:"masked,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListInstances200ResponseAllOfInstancesInnerEvarsInner ListInstances200ResponseAllOfInstancesInnerEvarsInner
 
 // NewListInstances200ResponseAllOfInstancesInnerEvarsInner instantiates a new ListInstances200ResponseAllOfInstancesInnerEvarsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -193,7 +196,36 @@ func (o ListInstances200ResponseAllOfInstancesInnerEvarsInner) ToMap() (map[stri
 	if !IsNil(o.Masked) {
 		toSerialize["masked"] = o.Masked
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListInstances200ResponseAllOfInstancesInnerEvarsInner) UnmarshalJSON(data []byte) (err error) {
+	varListInstances200ResponseAllOfInstancesInnerEvarsInner := _ListInstances200ResponseAllOfInstancesInnerEvarsInner{}
+
+	err = json.Unmarshal(data, &varListInstances200ResponseAllOfInstancesInnerEvarsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListInstances200ResponseAllOfInstancesInnerEvarsInner(varListInstances200ResponseAllOfInstancesInnerEvarsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "value")
+		delete(additionalProperties, "export")
+		delete(additionalProperties, "masked")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListInstances200ResponseAllOfInstancesInnerEvarsInner struct {

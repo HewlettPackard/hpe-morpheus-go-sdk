@@ -22,7 +22,10 @@ var _ MappedNullable = &AddClusterRequestClusterLayout{}
 type AddClusterRequestClusterLayout struct {
 	// The Layout ID for the host type(s) that will be provisioned for the cluster
 	Id *int64 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddClusterRequestClusterLayout AddClusterRequestClusterLayout
 
 // NewAddClusterRequestClusterLayout instantiates a new AddClusterRequestClusterLayout object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o AddClusterRequestClusterLayout) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddClusterRequestClusterLayout) UnmarshalJSON(data []byte) (err error) {
+	varAddClusterRequestClusterLayout := _AddClusterRequestClusterLayout{}
+
+	err = json.Unmarshal(data, &varAddClusterRequestClusterLayout)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddClusterRequestClusterLayout(varAddClusterRequestClusterLayout)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddClusterRequestClusterLayout struct {

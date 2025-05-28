@@ -35,7 +35,10 @@ type ContainerPort struct {
 	Link *bool `json:"link,omitempty"`
 	ExternalIp *string `json:"externalIp,omitempty"`
 	InternalIp *string `json:"internalIp,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ContainerPort ContainerPort
 
 // NewContainerPort instantiates a new ContainerPort object
 // This constructor will assign default values to properties that have it defined,
@@ -589,7 +592,47 @@ func (o ContainerPort) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.InternalIp) {
 		toSerialize["internalIp"] = o.InternalIp
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ContainerPort) UnmarshalJSON(data []byte) (err error) {
+	varContainerPort := _ContainerPort{}
+
+	err = json.Unmarshal(data, &varContainerPort)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ContainerPort(varContainerPort)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "index")
+		delete(additionalProperties, "external")
+		delete(additionalProperties, "internal")
+		delete(additionalProperties, "displayName")
+		delete(additionalProperties, "primaryPort")
+		delete(additionalProperties, "export")
+		delete(additionalProperties, "visible")
+		delete(additionalProperties, "exportName")
+		delete(additionalProperties, "loadBalanceProtocol")
+		delete(additionalProperties, "loadBalance")
+		delete(additionalProperties, "protocol")
+		delete(additionalProperties, "link")
+		delete(additionalProperties, "externalIp")
+		delete(additionalProperties, "internalIp")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableContainerPort struct {

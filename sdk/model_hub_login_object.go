@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -23,6 +22,7 @@ var _ MappedNullable = &HubLoginObject{}
 // HubLoginObject Object for logging in to the [Morpheus Hub](https://morpheushub.com) with existing credentials. This is only required for `hubmode=login`.
 type HubLoginObject struct {
 	Hub SetupRequestAnyOf1OneOfHub `json:"hub"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _HubLoginObject HubLoginObject
@@ -80,6 +80,11 @@ func (o HubLoginObject) MarshalJSON() ([]byte, error) {
 func (o HubLoginObject) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["hub"] = o.Hub
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -107,15 +112,20 @@ func (o *HubLoginObject) UnmarshalJSON(data []byte) (err error) {
 
 	varHubLoginObject := _HubLoginObject{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varHubLoginObject)
+	err = json.Unmarshal(data, &varHubLoginObject)
 
 	if err != nil {
 		return err
 	}
 
 	*o = HubLoginObject(varHubLoginObject)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "hub")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

@@ -34,7 +34,10 @@ type ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions struct {
 	AnsibleTags *string `json:"ansibleTags,omitempty"`
 	Username *string `json:"username,omitempty"`
 	AnsibleGitRef *string `json:"ansibleGitRef,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions
 
 // NewListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions instantiates a new ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions object
 // This constructor will assign default values to properties that have it defined,
@@ -553,7 +556,46 @@ func (o ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) ToMap() (map[string
 	if !IsNil(o.AnsibleGitRef) {
 		toSerialize["ansibleGitRef"] = o.AnsibleGitRef
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions) UnmarshalJSON(data []byte) (err error) {
+	varListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions := _ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions{}
+
+	err = json.Unmarshal(data, &varListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions(varListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "ansibleOptions")
+		delete(additionalProperties, "ansiblePlaybook")
+		delete(additionalProperties, "sshKey")
+		delete(additionalProperties, "port")
+		delete(additionalProperties, "localScriptGitRef")
+		delete(additionalProperties, "password")
+		delete(additionalProperties, "passwordHash")
+		delete(additionalProperties, "localScriptGitId")
+		delete(additionalProperties, "ansibleGitId")
+		delete(additionalProperties, "host")
+		delete(additionalProperties, "ansibleSkipTags")
+		delete(additionalProperties, "ansibleTags")
+		delete(additionalProperties, "username")
+		delete(additionalProperties, "ansibleGitRef")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions struct {

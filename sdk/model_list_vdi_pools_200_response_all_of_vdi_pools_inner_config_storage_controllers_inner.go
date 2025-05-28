@@ -33,7 +33,10 @@ type ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner stru
 	ReservedUnitNumber *float32 `json:"reservedUnitNumber,omitempty"`
 	Category *string `json:"category,omitempty"`
 	DisplayOrder *float32 `json:"displayOrder,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner
 
 // NewListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner instantiates a new ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner object
 // This constructor will assign default values to properties that have it defined,
@@ -517,7 +520,45 @@ func (o ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner) 
 	if !IsNil(o.DisplayOrder) {
 		toSerialize["displayOrder"] = o.DisplayOrder
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner) UnmarshalJSON(data []byte) (err error) {
+	varListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner := _ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner{}
+
+	err = json.Unmarshal(data, &varListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner(varListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "typeId")
+		delete(additionalProperties, "typeName")
+		delete(additionalProperties, "unitNumber")
+		delete(additionalProperties, "busNumber")
+		delete(additionalProperties, "maxDevices")
+		delete(additionalProperties, "removable")
+		delete(additionalProperties, "editable")
+		delete(additionalProperties, "reservedUnitNumber")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "displayOrder")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner struct {

@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -23,6 +22,7 @@ var _ MappedNullable = &UpdateCloudDatastoresRequest{}
 // UpdateCloudDatastoresRequest struct for UpdateCloudDatastoresRequest
 type UpdateCloudDatastoresRequest struct {
 	Datastore UpdateCloudDatastoresRequestDatastore `json:"datastore"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateCloudDatastoresRequest UpdateCloudDatastoresRequest
@@ -80,6 +80,11 @@ func (o UpdateCloudDatastoresRequest) MarshalJSON() ([]byte, error) {
 func (o UpdateCloudDatastoresRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["datastore"] = o.Datastore
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -107,15 +112,20 @@ func (o *UpdateCloudDatastoresRequest) UnmarshalJSON(data []byte) (err error) {
 
 	varUpdateCloudDatastoresRequest := _UpdateCloudDatastoresRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varUpdateCloudDatastoresRequest)
+	err = json.Unmarshal(data, &varUpdateCloudDatastoresRequest)
 
 	if err != nil {
 		return err
 	}
 
 	*o = UpdateCloudDatastoresRequest(varUpdateCloudDatastoresRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "datastore")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

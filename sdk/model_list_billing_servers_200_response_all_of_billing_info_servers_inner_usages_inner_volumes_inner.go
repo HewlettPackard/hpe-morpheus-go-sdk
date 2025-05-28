@@ -23,7 +23,10 @@ type ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumes
 	Size *int64 `json:"size,omitempty"`
 	TypeCode *string `json:"typeCode,omitempty"`
 	Datastore *string `json:"datastore,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner
 
 // NewListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner instantiates a new ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolu
 	if !IsNil(o.Datastore) {
 		toSerialize["datastore"] = o.Datastore
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner) UnmarshalJSON(data []byte) (err error) {
+	varListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner := _ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner{}
+
+	err = json.Unmarshal(data, &varListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner(varListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "size")
+		delete(additionalProperties, "typeCode")
+		delete(additionalProperties, "datastore")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerVolumesInner struct {

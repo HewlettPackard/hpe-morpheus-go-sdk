@@ -21,7 +21,10 @@ var _ MappedNullable = &ListIntegrations200ResponseAnyOf{}
 // ListIntegrations200ResponseAnyOf struct for ListIntegrations200ResponseAnyOf
 type ListIntegrations200ResponseAnyOf struct {
 	Integrations []ListIntegrations200ResponseAnyOfIntegrationsInner `json:"integrations,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListIntegrations200ResponseAnyOf ListIntegrations200ResponseAnyOf
 
 // NewListIntegrations200ResponseAnyOf instantiates a new ListIntegrations200ResponseAnyOf object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o ListIntegrations200ResponseAnyOf) ToMap() (map[string]interface{}, error
 	if !IsNil(o.Integrations) {
 		toSerialize["integrations"] = o.Integrations
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListIntegrations200ResponseAnyOf) UnmarshalJSON(data []byte) (err error) {
+	varListIntegrations200ResponseAnyOf := _ListIntegrations200ResponseAnyOf{}
+
+	err = json.Unmarshal(data, &varListIntegrations200ResponseAnyOf)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListIntegrations200ResponseAnyOf(varListIntegrations200ResponseAnyOf)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "integrations")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListIntegrations200ResponseAnyOf struct {

@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -30,6 +29,7 @@ type NetworkTransportZoneCreate struct {
 	Visibility *string `json:"visibility,omitempty"`
 	// Array of tenant account ids that are allowed access
 	Tenants []GetAlerts200ResponseAllOfChecksInnerAccount `json:"tenants,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _NetworkTransportZoneCreate NetworkTransportZoneCreate
@@ -192,6 +192,11 @@ func (o NetworkTransportZoneCreate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Tenants) {
 		toSerialize["tenants"] = o.Tenants
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -219,15 +224,23 @@ func (o *NetworkTransportZoneCreate) UnmarshalJSON(data []byte) (err error) {
 
 	varNetworkTransportZoneCreate := _NetworkTransportZoneCreate{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varNetworkTransportZoneCreate)
+	err = json.Unmarshal(data, &varNetworkTransportZoneCreate)
 
 	if err != nil {
 		return err
 	}
 
 	*o = NetworkTransportZoneCreate(varNetworkTransportZoneCreate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "tenants")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

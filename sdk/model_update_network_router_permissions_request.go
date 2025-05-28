@@ -21,7 +21,10 @@ var _ MappedNullable = &UpdateNetworkRouterPermissionsRequest{}
 // UpdateNetworkRouterPermissionsRequest struct for UpdateNetworkRouterPermissionsRequest
 type UpdateNetworkRouterPermissionsRequest struct {
 	Permissions *UpdateNetworkRouterPermissionsRequestPermissions `json:"permissions,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateNetworkRouterPermissionsRequest UpdateNetworkRouterPermissionsRequest
 
 // NewUpdateNetworkRouterPermissionsRequest instantiates a new UpdateNetworkRouterPermissionsRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o UpdateNetworkRouterPermissionsRequest) ToMap() (map[string]interface{}, 
 	if !IsNil(o.Permissions) {
 		toSerialize["permissions"] = o.Permissions
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateNetworkRouterPermissionsRequest) UnmarshalJSON(data []byte) (err error) {
+	varUpdateNetworkRouterPermissionsRequest := _UpdateNetworkRouterPermissionsRequest{}
+
+	err = json.Unmarshal(data, &varUpdateNetworkRouterPermissionsRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateNetworkRouterPermissionsRequest(varUpdateNetworkRouterPermissionsRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "permissions")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateNetworkRouterPermissionsRequest struct {

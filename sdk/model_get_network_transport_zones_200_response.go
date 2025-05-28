@@ -22,7 +22,10 @@ var _ MappedNullable = &GetNetworkTransportZones200Response{}
 type GetNetworkTransportZones200Response struct {
 	NetworkScopes interface{} `json:"networkScopes,omitempty"`
 	Meta *ListActivity200ResponseAllOfMeta `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetNetworkTransportZones200Response GetNetworkTransportZones200Response
 
 // NewGetNetworkTransportZones200Response instantiates a new GetNetworkTransportZones200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -122,7 +125,34 @@ func (o GetNetworkTransportZones200Response) ToMap() (map[string]interface{}, er
 	if !IsNil(o.Meta) {
 		toSerialize["meta"] = o.Meta
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetNetworkTransportZones200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetNetworkTransportZones200Response := _GetNetworkTransportZones200Response{}
+
+	err = json.Unmarshal(data, &varGetNetworkTransportZones200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetNetworkTransportZones200Response(varGetNetworkTransportZones200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "networkScopes")
+		delete(additionalProperties, "meta")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetNetworkTransportZones200Response struct {

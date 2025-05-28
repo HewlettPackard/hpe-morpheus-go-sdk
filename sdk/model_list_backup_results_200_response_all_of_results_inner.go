@@ -46,7 +46,10 @@ type ListBackupResults200ResponseAllOfResultsInner struct {
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	// Last Updated
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListBackupResults200ResponseAllOfResultsInner ListBackupResults200ResponseAllOfResultsInner
 
 // NewListBackupResults200ResponseAllOfResultsInner instantiates a new ListBackupResults200ResponseAllOfResultsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -845,7 +848,54 @@ func (o ListBackupResults200ResponseAllOfResultsInner) ToMap() (map[string]inter
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListBackupResults200ResponseAllOfResultsInner) UnmarshalJSON(data []byte) (err error) {
+	varListBackupResults200ResponseAllOfResultsInner := _ListBackupResults200ResponseAllOfResultsInner{}
+
+	err = json.Unmarshal(data, &varListBackupResults200ResponseAllOfResultsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListBackupResults200ResponseAllOfResultsInner(varListBackupResults200ResponseAllOfResultsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "backup")
+		delete(additionalProperties, "backupSetId")
+		delete(additionalProperties, "instanceId")
+		delete(additionalProperties, "containerId")
+		delete(additionalProperties, "serverId")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "errorMessage")
+		delete(additionalProperties, "startDate")
+		delete(additionalProperties, "endDate")
+		delete(additionalProperties, "durationMillis")
+		delete(additionalProperties, "sizeInBytes")
+		delete(additionalProperties, "sizeInMb")
+		delete(additionalProperties, "volumePath")
+		delete(additionalProperties, "resultArchive")
+		delete(additionalProperties, "resultPath")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "snapshotId")
+		delete(additionalProperties, "snapshotExternalId")
+		delete(additionalProperties, "createdBy")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListBackupResults200ResponseAllOfResultsInner struct {

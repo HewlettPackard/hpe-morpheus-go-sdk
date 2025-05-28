@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -40,6 +39,7 @@ type ScriptCreate struct {
 	RunAsUser *string `json:"runAsUser,omitempty"`
 	// Sudo, whether or not to run with sudo.
 	SudoUser *bool `json:"sudoUser,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ScriptCreate ScriptCreate
@@ -389,6 +389,11 @@ func (o ScriptCreate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.SudoUser) {
 		toSerialize["sudoUser"] = o.SudoUser
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -416,15 +421,28 @@ func (o *ScriptCreate) UnmarshalJSON(data []byte) (err error) {
 
 	varScriptCreate := _ScriptCreate{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varScriptCreate)
+	err = json.Unmarshal(data, &varScriptCreate)
 
 	if err != nil {
 		return err
 	}
 
 	*o = ScriptCreate(varScriptCreate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "scriptVersion")
+		delete(additionalProperties, "scriptPhase")
+		delete(additionalProperties, "scriptType")
+		delete(additionalProperties, "script")
+		delete(additionalProperties, "runAsUser")
+		delete(additionalProperties, "sudoUser")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

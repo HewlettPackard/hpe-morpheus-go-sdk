@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -25,6 +24,7 @@ type AddSecurityGroupLocationsRequestSecurityGroupLocation struct {
 	// The ID of the Zone (Cloud)
 	ZoneId int64 `json:"zoneId"`
 	CustomOptions AddSecurityGroupsRequestSecurityGroupCustomOptions `json:"customOptions"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddSecurityGroupLocationsRequestSecurityGroupLocation AddSecurityGroupLocationsRequestSecurityGroupLocation
@@ -108,6 +108,11 @@ func (o AddSecurityGroupLocationsRequestSecurityGroupLocation) ToMap() (map[stri
 	toSerialize := map[string]interface{}{}
 	toSerialize["zoneId"] = o.ZoneId
 	toSerialize["customOptions"] = o.CustomOptions
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -136,15 +141,21 @@ func (o *AddSecurityGroupLocationsRequestSecurityGroupLocation) UnmarshalJSON(da
 
 	varAddSecurityGroupLocationsRequestSecurityGroupLocation := _AddSecurityGroupLocationsRequestSecurityGroupLocation{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddSecurityGroupLocationsRequestSecurityGroupLocation)
+	err = json.Unmarshal(data, &varAddSecurityGroupLocationsRequestSecurityGroupLocation)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddSecurityGroupLocationsRequestSecurityGroupLocation(varAddSecurityGroupLocationsRequestSecurityGroupLocation)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "zoneId")
+		delete(additionalProperties, "customOptions")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

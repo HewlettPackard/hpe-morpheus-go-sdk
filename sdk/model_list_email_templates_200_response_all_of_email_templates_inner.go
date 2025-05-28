@@ -29,7 +29,10 @@ type ListEmailTemplates200ResponseAllOfEmailTemplatesInner struct {
 	Accounts []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"accounts,omitempty"`
 	// The email template. This is the actual email template that is sent to the user. This uses handlebars notation (not javascript) 
 	Template *string `json:"template,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListEmailTemplates200ResponseAllOfEmailTemplatesInner ListEmailTemplates200ResponseAllOfEmailTemplatesInner
 
 // NewListEmailTemplates200ResponseAllOfEmailTemplatesInner instantiates a new ListEmailTemplates200ResponseAllOfEmailTemplatesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -268,7 +271,38 @@ func (o ListEmailTemplates200ResponseAllOfEmailTemplatesInner) ToMap() (map[stri
 	if !IsNil(o.Template) {
 		toSerialize["template"] = o.Template
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListEmailTemplates200ResponseAllOfEmailTemplatesInner) UnmarshalJSON(data []byte) (err error) {
+	varListEmailTemplates200ResponseAllOfEmailTemplatesInner := _ListEmailTemplates200ResponseAllOfEmailTemplatesInner{}
+
+	err = json.Unmarshal(data, &varListEmailTemplates200ResponseAllOfEmailTemplatesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListEmailTemplates200ResponseAllOfEmailTemplatesInner(varListEmailTemplates200ResponseAllOfEmailTemplatesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "owner")
+		delete(additionalProperties, "accounts")
+		delete(additionalProperties, "template")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListEmailTemplates200ResponseAllOfEmailTemplatesInner struct {

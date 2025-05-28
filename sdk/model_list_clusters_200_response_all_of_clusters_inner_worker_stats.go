@@ -28,7 +28,10 @@ type ListClusters200ResponseAllOfClustersInnerWorkerStats struct {
 	CpuUsage *float32 `json:"cpuUsage,omitempty"`
 	CpuUsagePeak *float32 `json:"cpuUsagePeak,omitempty"`
 	CpuUsageAvg *float32 `json:"cpuUsageAvg,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListClusters200ResponseAllOfClustersInnerWorkerStats ListClusters200ResponseAllOfClustersInnerWorkerStats
 
 // NewListClusters200ResponseAllOfClustersInnerWorkerStats instantiates a new ListClusters200ResponseAllOfClustersInnerWorkerStats object
 // This constructor will assign default values to properties that have it defined,
@@ -337,7 +340,40 @@ func (o ListClusters200ResponseAllOfClustersInnerWorkerStats) ToMap() (map[strin
 	if !IsNil(o.CpuUsageAvg) {
 		toSerialize["cpuUsageAvg"] = o.CpuUsageAvg
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListClusters200ResponseAllOfClustersInnerWorkerStats) UnmarshalJSON(data []byte) (err error) {
+	varListClusters200ResponseAllOfClustersInnerWorkerStats := _ListClusters200ResponseAllOfClustersInnerWorkerStats{}
+
+	err = json.Unmarshal(data, &varListClusters200ResponseAllOfClustersInnerWorkerStats)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListClusters200ResponseAllOfClustersInnerWorkerStats(varListClusters200ResponseAllOfClustersInnerWorkerStats)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "usedStorage")
+		delete(additionalProperties, "maxStorage")
+		delete(additionalProperties, "usedMemory")
+		delete(additionalProperties, "maxMemory")
+		delete(additionalProperties, "usedCpu")
+		delete(additionalProperties, "cpuUsage")
+		delete(additionalProperties, "cpuUsagePeak")
+		delete(additionalProperties, "cpuUsageAvg")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListClusters200ResponseAllOfClustersInnerWorkerStats struct {

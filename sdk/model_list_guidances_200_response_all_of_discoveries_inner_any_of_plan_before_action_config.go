@@ -23,7 +23,10 @@ type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfig st
 	StorageSizeType *string `json:"storageSizeType,omitempty"`
 	MemorySizeType *string `json:"memorySizeType,omitempty"`
 	Ranges *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfigRanges `json:"ranges,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfig ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfig
 
 // NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfig instantiates a new ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfig object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfig
 	if !IsNil(o.Ranges) {
 		toSerialize["ranges"] = o.Ranges
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfig) UnmarshalJSON(data []byte) (err error) {
+	varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfig := _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfig{}
+
+	err = json.Unmarshal(data, &varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfig(varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "storageSizeType")
+		delete(additionalProperties, "memorySizeType")
+		delete(additionalProperties, "ranges")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfig struct {

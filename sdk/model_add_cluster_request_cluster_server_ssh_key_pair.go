@@ -22,7 +22,10 @@ var _ MappedNullable = &AddClusterRequestClusterServerSshKeyPair{}
 type AddClusterRequestClusterServerSshKeyPair struct {
 	// Key Pair ID
 	Id *int64 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddClusterRequestClusterServerSshKeyPair AddClusterRequestClusterServerSshKeyPair
 
 // NewAddClusterRequestClusterServerSshKeyPair instantiates a new AddClusterRequestClusterServerSshKeyPair object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o AddClusterRequestClusterServerSshKeyPair) ToMap() (map[string]interface{
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddClusterRequestClusterServerSshKeyPair) UnmarshalJSON(data []byte) (err error) {
+	varAddClusterRequestClusterServerSshKeyPair := _AddClusterRequestClusterServerSshKeyPair{}
+
+	err = json.Unmarshal(data, &varAddClusterRequestClusterServerSshKeyPair)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddClusterRequestClusterServerSshKeyPair(varAddClusterRequestClusterServerSshKeyPair)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddClusterRequestClusterServerSshKeyPair struct {

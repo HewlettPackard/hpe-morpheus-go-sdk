@@ -22,7 +22,10 @@ var _ MappedNullable = &SetAppSecurityGroups200Response{}
 type SetAppSecurityGroups200Response struct {
 	SecurityGroups []GetAppSecurityGroups200ResponseAllOfSecurityGroupsInner `json:"securityGroups,omitempty"`
 	Success *bool `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _SetAppSecurityGroups200Response SetAppSecurityGroups200Response
 
 // NewSetAppSecurityGroups200Response instantiates a new SetAppSecurityGroups200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o SetAppSecurityGroups200Response) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.Success) {
 		toSerialize["success"] = o.Success
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *SetAppSecurityGroups200Response) UnmarshalJSON(data []byte) (err error) {
+	varSetAppSecurityGroups200Response := _SetAppSecurityGroups200Response{}
+
+	err = json.Unmarshal(data, &varSetAppSecurityGroups200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = SetAppSecurityGroups200Response(varSetAppSecurityGroups200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "securityGroups")
+		delete(additionalProperties, "success")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableSetAppSecurityGroups200Response struct {

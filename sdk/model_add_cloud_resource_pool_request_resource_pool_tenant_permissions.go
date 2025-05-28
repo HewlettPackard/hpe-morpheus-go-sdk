@@ -22,7 +22,10 @@ var _ MappedNullable = &AddCloudResourcePoolRequestResourcePoolTenantPermissions
 type AddCloudResourcePoolRequestResourcePoolTenantPermissions struct {
 	// Array of tenant account ids that are allowed access
 	Accounts []int64 `json:"accounts,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddCloudResourcePoolRequestResourcePoolTenantPermissions AddCloudResourcePoolRequestResourcePoolTenantPermissions
 
 // NewAddCloudResourcePoolRequestResourcePoolTenantPermissions instantiates a new AddCloudResourcePoolRequestResourcePoolTenantPermissions object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o AddCloudResourcePoolRequestResourcePoolTenantPermissions) ToMap() (map[s
 	if !IsNil(o.Accounts) {
 		toSerialize["accounts"] = o.Accounts
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddCloudResourcePoolRequestResourcePoolTenantPermissions) UnmarshalJSON(data []byte) (err error) {
+	varAddCloudResourcePoolRequestResourcePoolTenantPermissions := _AddCloudResourcePoolRequestResourcePoolTenantPermissions{}
+
+	err = json.Unmarshal(data, &varAddCloudResourcePoolRequestResourcePoolTenantPermissions)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddCloudResourcePoolRequestResourcePoolTenantPermissions(varAddCloudResourcePoolRequestResourcePoolTenantPermissions)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "accounts")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddCloudResourcePoolRequestResourcePoolTenantPermissions struct {

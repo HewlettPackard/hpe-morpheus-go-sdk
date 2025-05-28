@@ -21,7 +21,10 @@ var _ MappedNullable = &ListInstances200ResponseAllOfInstancesInnerConfigUserGro
 // ListInstances200ResponseAllOfInstancesInnerConfigUserGroup struct for ListInstances200ResponseAllOfInstancesInnerConfigUserGroup
 type ListInstances200ResponseAllOfInstancesInnerConfigUserGroup struct {
 	Id *string `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListInstances200ResponseAllOfInstancesInnerConfigUserGroup ListInstances200ResponseAllOfInstancesInnerConfigUserGroup
 
 // NewListInstances200ResponseAllOfInstancesInnerConfigUserGroup instantiates a new ListInstances200ResponseAllOfInstancesInnerConfigUserGroup object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o ListInstances200ResponseAllOfInstancesInnerConfigUserGroup) ToMap() (map
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListInstances200ResponseAllOfInstancesInnerConfigUserGroup) UnmarshalJSON(data []byte) (err error) {
+	varListInstances200ResponseAllOfInstancesInnerConfigUserGroup := _ListInstances200ResponseAllOfInstancesInnerConfigUserGroup{}
+
+	err = json.Unmarshal(data, &varListInstances200ResponseAllOfInstancesInnerConfigUserGroup)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListInstances200ResponseAllOfInstancesInnerConfigUserGroup(varListInstances200ResponseAllOfInstancesInnerConfigUserGroup)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListInstances200ResponseAllOfInstancesInnerConfigUserGroup struct {

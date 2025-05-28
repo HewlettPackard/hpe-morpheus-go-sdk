@@ -27,7 +27,10 @@ type ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4Config struct {
 	RequiredRole *string `json:"requiredRole,omitempty"`
 	RequiredRoleId *string `json:"requiredRoleId,omitempty"`
 	ClientSecretHash *string `json:"clientSecretHash,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4Config ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4Config
 
 // NewListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4Config instantiates a new ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4Config object
 // This constructor will assign default values to properties that have it defined,
@@ -301,7 +304,39 @@ func (o ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4Config) ToMap()
 	if !IsNil(o.ClientSecretHash) {
 		toSerialize["clientSecretHash"] = o.ClientSecretHash
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4Config) UnmarshalJSON(data []byte) (err error) {
+	varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4Config := _ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4Config{}
+
+	err = json.Unmarshal(data, &varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4Config)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4Config(varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4Config)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "subdomain")
+		delete(additionalProperties, "region")
+		delete(additionalProperties, "clientSecret")
+		delete(additionalProperties, "clientId")
+		delete(additionalProperties, "requiredRole")
+		delete(additionalProperties, "requiredRoleId")
+		delete(additionalProperties, "clientSecretHash")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4Config struct {

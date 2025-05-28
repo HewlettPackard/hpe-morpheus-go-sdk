@@ -24,7 +24,10 @@ type ZoneSecurityGroup struct {
 	AccountId *int32 `json:"accountId,omitempty"`
 	Name *string `json:"name,omitempty"`
 	Description *string `json:"description,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ZoneSecurityGroup ZoneSecurityGroup
 
 // NewZoneSecurityGroup instantiates a new ZoneSecurityGroup object
 // This constructor will assign default values to properties that have it defined,
@@ -193,7 +196,36 @@ func (o ZoneSecurityGroup) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ZoneSecurityGroup) UnmarshalJSON(data []byte) (err error) {
+	varZoneSecurityGroup := _ZoneSecurityGroup{}
+
+	err = json.Unmarshal(data, &varZoneSecurityGroup)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ZoneSecurityGroup(varZoneSecurityGroup)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableZoneSecurityGroup struct {

@@ -29,7 +29,10 @@ type UpdateTenantRequestAccount struct {
 	Subdomain *string `json:"subdomain,omitempty"`
 	// Currency Code (ISO 4217)
 	Currency *string `json:"currency,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateTenantRequestAccount UpdateTenantRequestAccount
 
 // NewUpdateTenantRequestAccount instantiates a new UpdateTenantRequestAccount object
 // This constructor will assign default values to properties that have it defined,
@@ -237,7 +240,37 @@ func (o UpdateTenantRequestAccount) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Currency) {
 		toSerialize["currency"] = o.Currency
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateTenantRequestAccount) UnmarshalJSON(data []byte) (err error) {
+	varUpdateTenantRequestAccount := _UpdateTenantRequestAccount{}
+
+	err = json.Unmarshal(data, &varUpdateTenantRequestAccount)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateTenantRequestAccount(varUpdateTenantRequestAccount)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "role")
+		delete(additionalProperties, "subdomain")
+		delete(additionalProperties, "currency")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateTenantRequestAccount struct {

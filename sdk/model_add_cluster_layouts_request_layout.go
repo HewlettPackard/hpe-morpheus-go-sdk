@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -49,6 +48,7 @@ type AddClusterLayoutsRequestLayout struct {
 	Masters []AddClusterLayoutsRequestLayoutMastersInner `json:"masters,omitempty"`
 	// Array of cluster layout worker nodes
 	Workers []AddClusterLayoutsRequestLayoutMastersInner `json:"workers,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddClusterLayoutsRequestLayout AddClusterLayoutsRequestLayout
@@ -581,6 +581,11 @@ func (o AddClusterLayoutsRequestLayout) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.Workers) {
 		toSerialize["workers"] = o.Workers
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -611,15 +616,34 @@ func (o *AddClusterLayoutsRequestLayout) UnmarshalJSON(data []byte) (err error) 
 
 	varAddClusterLayoutsRequestLayout := _AddClusterLayoutsRequestLayout{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddClusterLayoutsRequestLayout)
+	err = json.Unmarshal(data, &varAddClusterLayoutsRequestLayout)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddClusterLayoutsRequestLayout(varAddClusterLayoutsRequestLayout)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "computeVersion")
+		delete(additionalProperties, "creatable")
+		delete(additionalProperties, "hasAutoScale")
+		delete(additionalProperties, "installContainerRuntime")
+		delete(additionalProperties, "memoryRequirement")
+		delete(additionalProperties, "groupType")
+		delete(additionalProperties, "provisionType")
+		delete(additionalProperties, "optionTypes")
+		delete(additionalProperties, "taskSets")
+		delete(additionalProperties, "environmentVariables")
+		delete(additionalProperties, "masters")
+		delete(additionalProperties, "workers")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

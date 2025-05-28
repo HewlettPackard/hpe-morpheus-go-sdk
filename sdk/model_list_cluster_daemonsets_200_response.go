@@ -22,7 +22,10 @@ var _ MappedNullable = &ListClusterDaemonsets200Response{}
 type ListClusterDaemonsets200Response struct {
 	Daemonsets []ListClusterReplicasets200ResponseAllOfReplicasetsInner `json:"daemonsets,omitempty"`
 	Meta *ListActivity200ResponseAllOfMeta `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListClusterDaemonsets200Response ListClusterDaemonsets200Response
 
 // NewListClusterDaemonsets200Response instantiates a new ListClusterDaemonsets200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o ListClusterDaemonsets200Response) ToMap() (map[string]interface{}, error
 	if !IsNil(o.Meta) {
 		toSerialize["meta"] = o.Meta
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListClusterDaemonsets200Response) UnmarshalJSON(data []byte) (err error) {
+	varListClusterDaemonsets200Response := _ListClusterDaemonsets200Response{}
+
+	err = json.Unmarshal(data, &varListClusterDaemonsets200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListClusterDaemonsets200Response(varListClusterDaemonsets200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "daemonsets")
+		delete(additionalProperties, "meta")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListClusterDaemonsets200Response struct {

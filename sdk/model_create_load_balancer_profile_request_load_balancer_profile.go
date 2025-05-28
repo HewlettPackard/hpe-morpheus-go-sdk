@@ -28,7 +28,10 @@ type CreateLoadBalancerProfileRequestLoadBalancerProfile struct {
 	ServiceType *string `json:"serviceType,omitempty"`
 	// Configuration object with parameters that vary by type.
 	Config map[string]interface{} `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _CreateLoadBalancerProfileRequestLoadBalancerProfile CreateLoadBalancerProfileRequestLoadBalancerProfile
 
 // NewCreateLoadBalancerProfileRequestLoadBalancerProfile instantiates a new CreateLoadBalancerProfileRequestLoadBalancerProfile object
 // This constructor will assign default values to properties that have it defined,
@@ -197,7 +200,36 @@ func (o CreateLoadBalancerProfileRequestLoadBalancerProfile) ToMap() (map[string
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *CreateLoadBalancerProfileRequestLoadBalancerProfile) UnmarshalJSON(data []byte) (err error) {
+	varCreateLoadBalancerProfileRequestLoadBalancerProfile := _CreateLoadBalancerProfileRequestLoadBalancerProfile{}
+
+	err = json.Unmarshal(data, &varCreateLoadBalancerProfileRequestLoadBalancerProfile)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CreateLoadBalancerProfileRequestLoadBalancerProfile(varCreateLoadBalancerProfileRequestLoadBalancerProfile)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "serviceType")
+		delete(additionalProperties, "config")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCreateLoadBalancerProfileRequestLoadBalancerProfile struct {

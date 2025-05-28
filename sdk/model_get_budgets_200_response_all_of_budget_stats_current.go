@@ -22,7 +22,10 @@ var _ MappedNullable = &GetBudgets200ResponseAllOfBudgetStatsCurrent{}
 type GetBudgets200ResponseAllOfBudgetStatsCurrent struct {
 	EstimatedCost *string `json:"estimatedCost,omitempty"`
 	LastCost *string `json:"lastCost,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetBudgets200ResponseAllOfBudgetStatsCurrent GetBudgets200ResponseAllOfBudgetStatsCurrent
 
 // NewGetBudgets200ResponseAllOfBudgetStatsCurrent instantiates a new GetBudgets200ResponseAllOfBudgetStatsCurrent object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o GetBudgets200ResponseAllOfBudgetStatsCurrent) ToMap() (map[string]interf
 	if !IsNil(o.LastCost) {
 		toSerialize["lastCost"] = o.LastCost
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetBudgets200ResponseAllOfBudgetStatsCurrent) UnmarshalJSON(data []byte) (err error) {
+	varGetBudgets200ResponseAllOfBudgetStatsCurrent := _GetBudgets200ResponseAllOfBudgetStatsCurrent{}
+
+	err = json.Unmarshal(data, &varGetBudgets200ResponseAllOfBudgetStatsCurrent)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetBudgets200ResponseAllOfBudgetStatsCurrent(varGetBudgets200ResponseAllOfBudgetStatsCurrent)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "estimatedCost")
+		delete(additionalProperties, "lastCost")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetBudgets200ResponseAllOfBudgetStatsCurrent struct {

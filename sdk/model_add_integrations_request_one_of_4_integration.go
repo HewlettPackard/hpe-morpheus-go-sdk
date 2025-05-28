@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -34,6 +33,7 @@ type AddIntegrationsRequestOneOf4Integration struct {
 	ServicePassword *string `json:"servicePassword,omitempty"`
 	// Access Token
 	ServiceToken *string `json:"serviceToken,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddIntegrationsRequestOneOf4Integration AddIntegrationsRequestOneOf4Integration
@@ -257,6 +257,11 @@ func (o AddIntegrationsRequestOneOf4Integration) ToMap() (map[string]interface{}
 	if !IsNil(o.ServiceToken) {
 		toSerialize["serviceToken"] = o.ServiceToken
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -285,15 +290,25 @@ func (o *AddIntegrationsRequestOneOf4Integration) UnmarshalJSON(data []byte) (er
 
 	varAddIntegrationsRequestOneOf4Integration := _AddIntegrationsRequestOneOf4Integration{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddIntegrationsRequestOneOf4Integration)
+	err = json.Unmarshal(data, &varAddIntegrationsRequestOneOf4Integration)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddIntegrationsRequestOneOf4Integration(varAddIntegrationsRequestOneOf4Integration)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "serviceUrl")
+		delete(additionalProperties, "serviceUsername")
+		delete(additionalProperties, "servicePassword")
+		delete(additionalProperties, "serviceToken")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

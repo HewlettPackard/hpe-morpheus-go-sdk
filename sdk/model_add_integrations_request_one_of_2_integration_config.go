@@ -26,7 +26,10 @@ type AddIntegrationsRequestOneOf2IntegrationConfig struct {
 	// Ignore SSL Errors.
 	IgnoreCertErrors *bool `json:"ignoreCertErrors,omitempty"`
 	CmdbMode *string `json:"cmdbMode,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddIntegrationsRequestOneOf2IntegrationConfig AddIntegrationsRequestOneOf2IntegrationConfig
 
 // NewAddIntegrationsRequestOneOf2IntegrationConfig instantiates a new AddIntegrationsRequestOneOf2IntegrationConfig object
 // This constructor will assign default values to properties that have it defined,
@@ -238,7 +241,37 @@ func (o AddIntegrationsRequestOneOf2IntegrationConfig) ToMap() (map[string]inter
 	if !IsNil(o.CmdbMode) {
 		toSerialize["cmdbMode"] = o.CmdbMode
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddIntegrationsRequestOneOf2IntegrationConfig) UnmarshalJSON(data []byte) (err error) {
+	varAddIntegrationsRequestOneOf2IntegrationConfig := _AddIntegrationsRequestOneOf2IntegrationConfig{}
+
+	err = json.Unmarshal(data, &varAddIntegrationsRequestOneOf2IntegrationConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddIntegrationsRequestOneOf2IntegrationConfig(varAddIntegrationsRequestOneOf2IntegrationConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "serviceNowCustomCmdbMapping")
+		delete(additionalProperties, "serviceNowCmdbClassMapping")
+		delete(additionalProperties, "serviceNowCMDBBusinessObject")
+		delete(additionalProperties, "ignoreCertErrors")
+		delete(additionalProperties, "cmdbMode")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddIntegrationsRequestOneOf2IntegrationConfig struct {

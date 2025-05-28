@@ -26,7 +26,10 @@ type UpdateBackupsRequestBackup struct {
 	JobId *int64 `json:"jobId,omitempty"`
 	// Can be used to enable or disable the backup
 	Enabled *bool `json:"enabled,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateBackupsRequestBackup UpdateBackupsRequestBackup
 
 // NewUpdateBackupsRequestBackup instantiates a new UpdateBackupsRequestBackup object
 // This constructor will assign default values to properties that have it defined,
@@ -160,7 +163,35 @@ func (o UpdateBackupsRequestBackup) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateBackupsRequestBackup) UnmarshalJSON(data []byte) (err error) {
+	varUpdateBackupsRequestBackup := _UpdateBackupsRequestBackup{}
+
+	err = json.Unmarshal(data, &varUpdateBackupsRequestBackup)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateBackupsRequestBackup(varUpdateBackupsRequestBackup)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "jobId")
+		delete(additionalProperties, "enabled")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateBackupsRequestBackup struct {

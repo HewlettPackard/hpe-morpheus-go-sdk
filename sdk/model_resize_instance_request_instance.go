@@ -21,7 +21,10 @@ var _ MappedNullable = &ResizeInstanceRequestInstance{}
 // ResizeInstanceRequestInstance The map containing the id of the service plan you wish to apply to the containers in this instance.
 type ResizeInstanceRequestInstance struct {
 	Plan *ResizeInstanceRequestInstancePlan `json:"plan,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ResizeInstanceRequestInstance ResizeInstanceRequestInstance
 
 // NewResizeInstanceRequestInstance instantiates a new ResizeInstanceRequestInstance object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o ResizeInstanceRequestInstance) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Plan) {
 		toSerialize["plan"] = o.Plan
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ResizeInstanceRequestInstance) UnmarshalJSON(data []byte) (err error) {
+	varResizeInstanceRequestInstance := _ResizeInstanceRequestInstance{}
+
+	err = json.Unmarshal(data, &varResizeInstanceRequestInstance)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ResizeInstanceRequestInstance(varResizeInstanceRequestInstance)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "plan")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableResizeInstanceRequestInstance struct {

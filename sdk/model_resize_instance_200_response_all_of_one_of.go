@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -25,6 +24,7 @@ type ResizeInstance200ResponseAllOfOneOf struct {
 	Instance UpdateInstance200ResponseAllOfOneOfInstance `json:"instance"`
 	// The Cloud ID to provision the instance onto.
 	ZoneId int64 `json:"zoneId"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ResizeInstance200ResponseAllOfOneOf ResizeInstance200ResponseAllOfOneOf
@@ -108,6 +108,11 @@ func (o ResizeInstance200ResponseAllOfOneOf) ToMap() (map[string]interface{}, er
 	toSerialize := map[string]interface{}{}
 	toSerialize["instance"] = o.Instance
 	toSerialize["zoneId"] = o.ZoneId
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -136,15 +141,21 @@ func (o *ResizeInstance200ResponseAllOfOneOf) UnmarshalJSON(data []byte) (err er
 
 	varResizeInstance200ResponseAllOfOneOf := _ResizeInstance200ResponseAllOfOneOf{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varResizeInstance200ResponseAllOfOneOf)
+	err = json.Unmarshal(data, &varResizeInstance200ResponseAllOfOneOf)
 
 	if err != nil {
 		return err
 	}
 
 	*o = ResizeInstance200ResponseAllOfOneOf(varResizeInstance200ResponseAllOfOneOf)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "instance")
+		delete(additionalProperties, "zoneId")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

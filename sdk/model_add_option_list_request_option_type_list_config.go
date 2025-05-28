@@ -21,7 +21,10 @@ var _ MappedNullable = &AddOptionListRequestOptionTypeListConfig{}
 // AddOptionListRequestOptionTypeListConfig Array of source headers to use when requesting data
 type AddOptionListRequestOptionTypeListConfig struct {
 	SourceHeaders []AddOptionListRequestOptionTypeListConfigSourceHeadersInner `json:"sourceHeaders,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddOptionListRequestOptionTypeListConfig AddOptionListRequestOptionTypeListConfig
 
 // NewAddOptionListRequestOptionTypeListConfig instantiates a new AddOptionListRequestOptionTypeListConfig object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o AddOptionListRequestOptionTypeListConfig) ToMap() (map[string]interface{
 	if !IsNil(o.SourceHeaders) {
 		toSerialize["sourceHeaders"] = o.SourceHeaders
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddOptionListRequestOptionTypeListConfig) UnmarshalJSON(data []byte) (err error) {
+	varAddOptionListRequestOptionTypeListConfig := _AddOptionListRequestOptionTypeListConfig{}
+
+	err = json.Unmarshal(data, &varAddOptionListRequestOptionTypeListConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddOptionListRequestOptionTypeListConfig(varAddOptionListRequestOptionTypeListConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "sourceHeaders")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddOptionListRequestOptionTypeListConfig struct {

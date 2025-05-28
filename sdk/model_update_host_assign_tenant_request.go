@@ -22,7 +22,10 @@ var _ MappedNullable = &UpdateHostAssignTenantRequest{}
 type UpdateHostAssignTenantRequest struct {
 	// Move associated instances to specified Tenant account.
 	MoveAssociatedInstances *bool `json:"moveAssociatedInstances,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateHostAssignTenantRequest UpdateHostAssignTenantRequest
 
 // NewUpdateHostAssignTenantRequest instantiates a new UpdateHostAssignTenantRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -90,7 +93,33 @@ func (o UpdateHostAssignTenantRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.MoveAssociatedInstances) {
 		toSerialize["moveAssociatedInstances"] = o.MoveAssociatedInstances
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateHostAssignTenantRequest) UnmarshalJSON(data []byte) (err error) {
+	varUpdateHostAssignTenantRequest := _UpdateHostAssignTenantRequest{}
+
+	err = json.Unmarshal(data, &varUpdateHostAssignTenantRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateHostAssignTenantRequest(varUpdateHostAssignTenantRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "moveAssociatedInstances")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateHostAssignTenantRequest struct {

@@ -48,7 +48,10 @@ type InstanceTypeUpdate struct {
 	PriceSets []AddInstanceTypeRequestInstanceTypePriceSetsInner `json:"priceSets,omitempty"`
 	// Array of instance type option type IDs
 	OptionTypes []int64 `json:"optionTypes,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _InstanceTypeUpdate InstanceTypeUpdate
 
 // NewInstanceTypeUpdate instantiates a new InstanceTypeUpdate object
 // This constructor will assign default values to properties that have it defined,
@@ -571,7 +574,46 @@ func (o InstanceTypeUpdate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.OptionTypes) {
 		toSerialize["optionTypes"] = o.OptionTypes
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *InstanceTypeUpdate) UnmarshalJSON(data []byte) (err error) {
+	varInstanceTypeUpdate := _InstanceTypeUpdate{}
+
+	err = json.Unmarshal(data, &varInstanceTypeUpdate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = InstanceTypeUpdate(varInstanceTypeUpdate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "featured")
+		delete(additionalProperties, "hasSettings")
+		delete(additionalProperties, "hasAutoScale")
+		delete(additionalProperties, "hasDeployment")
+		delete(additionalProperties, "environmentPrefix")
+		delete(additionalProperties, "environmentVariables")
+		delete(additionalProperties, "priceSets")
+		delete(additionalProperties, "optionTypes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableInstanceTypeUpdate struct {

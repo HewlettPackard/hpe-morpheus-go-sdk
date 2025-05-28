@@ -43,7 +43,10 @@ type BillingServer struct {
 	ServerInternalId *string `json:"serverInternalId,omitempty"`
 	ResourcePoolId *int64 `json:"resourcePoolId,omitempty"`
 	ResourcePoolName *string `json:"resourcePoolName,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _BillingServer BillingServer
 
 // NewBillingServer instantiates a new BillingServer object
 // This constructor will assign default values to properties that have it defined,
@@ -842,7 +845,54 @@ func (o BillingServer) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ResourcePoolName) {
 		toSerialize["resourcePoolName"] = o.ResourcePoolName
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *BillingServer) UnmarshalJSON(data []byte) (err error) {
+	varBillingServer := _BillingServer{}
+
+	err = json.Unmarshal(data, &varBillingServer)
+
+	if err != nil {
+		return err
+	}
+
+	*o = BillingServer(varBillingServer)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "refUUID")
+		delete(additionalProperties, "refId")
+		delete(additionalProperties, "startDate")
+		delete(additionalProperties, "endDate")
+		delete(additionalProperties, "cost")
+		delete(additionalProperties, "price")
+		delete(additionalProperties, "numUnits")
+		delete(additionalProperties, "unit")
+		delete(additionalProperties, "currency")
+		delete(additionalProperties, "usages")
+		delete(additionalProperties, "numUsages")
+		delete(additionalProperties, "totalUsages")
+		delete(additionalProperties, "hasMoreUsages")
+		delete(additionalProperties, "foundPricing")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "serverUUID")
+		delete(additionalProperties, "serverUniqueId")
+		delete(additionalProperties, "serverExternalId")
+		delete(additionalProperties, "serverInternalId")
+		delete(additionalProperties, "resourcePoolId")
+		delete(additionalProperties, "resourcePoolName")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableBillingServer struct {

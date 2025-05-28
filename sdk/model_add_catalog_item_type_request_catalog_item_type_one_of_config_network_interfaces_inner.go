@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -31,6 +30,7 @@ type AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInner s
 	IpAddress *string `json:"ipAddress,omitempty"`
 	// The interface id. Applicable when resizing and you want to identify an interface to update that already exists.
 	Id *int64 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInner AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInner
@@ -232,6 +232,11 @@ func (o AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInne
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -259,15 +264,24 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInn
 
 	varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInner := _AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInner{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInner)
+	err = json.Unmarshal(data, &varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInner)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInner(varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "network")
+		delete(additionalProperties, "networkInterfaceTypeId")
+		delete(additionalProperties, "ipMode")
+		delete(additionalProperties, "ipAddress")
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

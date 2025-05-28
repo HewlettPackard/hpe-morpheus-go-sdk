@@ -27,7 +27,10 @@ type ListVdi200ResponseAllOfDesktopsInner struct {
 	Status *string `json:"status,omitempty"`
 	AllocationStatus *string `json:"allocationStatus,omitempty"`
 	Allocation *ListVdi200ResponseAllOfDesktopsInnerAllocation `json:"allocation,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListVdi200ResponseAllOfDesktopsInner ListVdi200ResponseAllOfDesktopsInner
 
 // NewListVdi200ResponseAllOfDesktopsInner instantiates a new ListVdi200ResponseAllOfDesktopsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -301,7 +304,39 @@ func (o ListVdi200ResponseAllOfDesktopsInner) ToMap() (map[string]interface{}, e
 	if !IsNil(o.Allocation) {
 		toSerialize["allocation"] = o.Allocation
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListVdi200ResponseAllOfDesktopsInner) UnmarshalJSON(data []byte) (err error) {
+	varListVdi200ResponseAllOfDesktopsInner := _ListVdi200ResponseAllOfDesktopsInner{}
+
+	err = json.Unmarshal(data, &varListVdi200ResponseAllOfDesktopsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListVdi200ResponseAllOfDesktopsInner(varListVdi200ResponseAllOfDesktopsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "logo")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "allocationStatus")
+		delete(additionalProperties, "allocation")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListVdi200ResponseAllOfDesktopsInner struct {

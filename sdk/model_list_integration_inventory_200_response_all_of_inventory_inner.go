@@ -26,7 +26,10 @@ type ListIntegrationInventory200ResponseAllOfInventoryInner struct {
 	ExternalId *string `json:"externalId,omitempty"`
 	Owner *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"owner,omitempty"`
 	Tenants []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"tenants,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListIntegrationInventory200ResponseAllOfInventoryInner ListIntegrationInventory200ResponseAllOfInventoryInner
 
 // NewListIntegrationInventory200ResponseAllOfInventoryInner instantiates a new ListIntegrationInventory200ResponseAllOfInventoryInner object
 // This constructor will assign default values to properties that have it defined,
@@ -265,7 +268,38 @@ func (o ListIntegrationInventory200ResponseAllOfInventoryInner) ToMap() (map[str
 	if !IsNil(o.Tenants) {
 		toSerialize["tenants"] = o.Tenants
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListIntegrationInventory200ResponseAllOfInventoryInner) UnmarshalJSON(data []byte) (err error) {
+	varListIntegrationInventory200ResponseAllOfInventoryInner := _ListIntegrationInventory200ResponseAllOfInventoryInner{}
+
+	err = json.Unmarshal(data, &varListIntegrationInventory200ResponseAllOfInventoryInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListIntegrationInventory200ResponseAllOfInventoryInner(varListIntegrationInventory200ResponseAllOfInventoryInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "owner")
+		delete(additionalProperties, "tenants")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListIntegrationInventory200ResponseAllOfInventoryInner struct {

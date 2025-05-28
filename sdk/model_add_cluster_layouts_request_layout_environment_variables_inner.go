@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -30,6 +29,7 @@ type AddClusterLayoutsRequestLayoutEnvironmentVariablesInner struct {
 	Masked *bool `json:"masked,omitempty"`
 	// Can be used to enable / disable export of variable
 	Export *bool `json:"export,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddClusterLayoutsRequestLayoutEnvironmentVariablesInner AddClusterLayoutsRequestLayoutEnvironmentVariablesInner
@@ -200,6 +200,11 @@ func (o AddClusterLayoutsRequestLayoutEnvironmentVariablesInner) ToMap() (map[st
 	if !IsNil(o.Export) {
 		toSerialize["export"] = o.Export
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -227,15 +232,23 @@ func (o *AddClusterLayoutsRequestLayoutEnvironmentVariablesInner) UnmarshalJSON(
 
 	varAddClusterLayoutsRequestLayoutEnvironmentVariablesInner := _AddClusterLayoutsRequestLayoutEnvironmentVariablesInner{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddClusterLayoutsRequestLayoutEnvironmentVariablesInner)
+	err = json.Unmarshal(data, &varAddClusterLayoutsRequestLayoutEnvironmentVariablesInner)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddClusterLayoutsRequestLayoutEnvironmentVariablesInner(varAddClusterLayoutsRequestLayoutEnvironmentVariablesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "value")
+		delete(additionalProperties, "masked")
+		delete(additionalProperties, "export")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

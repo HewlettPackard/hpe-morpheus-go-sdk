@@ -27,7 +27,10 @@ type GetClusterMasters200ResponseMastersInnerStats struct {
 	ReservedMemory *int64 `json:"reservedMemory,omitempty"`
 	MaxMemory *int64 `json:"maxMemory,omitempty"`
 	CpuUsage *float32 `json:"cpuUsage,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetClusterMasters200ResponseMastersInnerStats GetClusterMasters200ResponseMastersInnerStats
 
 // NewGetClusterMasters200ResponseMastersInnerStats instantiates a new GetClusterMasters200ResponseMastersInnerStats object
 // This constructor will assign default values to properties that have it defined,
@@ -301,7 +304,39 @@ func (o GetClusterMasters200ResponseMastersInnerStats) ToMap() (map[string]inter
 	if !IsNil(o.CpuUsage) {
 		toSerialize["cpuUsage"] = o.CpuUsage
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetClusterMasters200ResponseMastersInnerStats) UnmarshalJSON(data []byte) (err error) {
+	varGetClusterMasters200ResponseMastersInnerStats := _GetClusterMasters200ResponseMastersInnerStats{}
+
+	err = json.Unmarshal(data, &varGetClusterMasters200ResponseMastersInnerStats)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetClusterMasters200ResponseMastersInnerStats(varGetClusterMasters200ResponseMastersInnerStats)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "usedStorage")
+		delete(additionalProperties, "reservedStorage")
+		delete(additionalProperties, "maxStorage")
+		delete(additionalProperties, "usedMemory")
+		delete(additionalProperties, "reservedMemory")
+		delete(additionalProperties, "maxMemory")
+		delete(additionalProperties, "cpuUsage")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetClusterMasters200ResponseMastersInnerStats struct {

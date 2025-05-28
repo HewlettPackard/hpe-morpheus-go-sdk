@@ -21,7 +21,10 @@ var _ MappedNullable = &AddImageBuildRequestImageBuildBootScript{}
 // AddImageBuildRequestImageBuildBootScript Boot Script
 type AddImageBuildRequestImageBuildBootScript struct {
 	Id *int64 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddImageBuildRequestImageBuildBootScript AddImageBuildRequestImageBuildBootScript
 
 // NewAddImageBuildRequestImageBuildBootScript instantiates a new AddImageBuildRequestImageBuildBootScript object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o AddImageBuildRequestImageBuildBootScript) ToMap() (map[string]interface{
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddImageBuildRequestImageBuildBootScript) UnmarshalJSON(data []byte) (err error) {
+	varAddImageBuildRequestImageBuildBootScript := _AddImageBuildRequestImageBuildBootScript{}
+
+	err = json.Unmarshal(data, &varAddImageBuildRequestImageBuildBootScript)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddImageBuildRequestImageBuildBootScript(varAddImageBuildRequestImageBuildBootScript)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddImageBuildRequestImageBuildBootScript struct {

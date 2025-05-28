@@ -23,7 +23,10 @@ type ListImageBuilds200Response struct {
 	ImageBuilds []ListImageBuilds200ResponseAllOfImageBuildsInner `json:"imageBuilds,omitempty"`
 	ImageBuildCount *int64 `json:"imageBuildCount,omitempty"`
 	Meta *ListActivity200ResponseAllOfMeta `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListImageBuilds200Response ListImageBuilds200Response
 
 // NewListImageBuilds200Response instantiates a new ListImageBuilds200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o ListImageBuilds200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Meta) {
 		toSerialize["meta"] = o.Meta
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListImageBuilds200Response) UnmarshalJSON(data []byte) (err error) {
+	varListImageBuilds200Response := _ListImageBuilds200Response{}
+
+	err = json.Unmarshal(data, &varListImageBuilds200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListImageBuilds200Response(varListImageBuilds200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "imageBuilds")
+		delete(additionalProperties, "imageBuildCount")
+		delete(additionalProperties, "meta")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListImageBuilds200Response struct {

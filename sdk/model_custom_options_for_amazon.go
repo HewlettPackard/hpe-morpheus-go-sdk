@@ -22,7 +22,10 @@ var _ MappedNullable = &CustomOptionsForAmazon{}
 type CustomOptionsForAmazon struct {
 	// External ID of Amazon VPC
 	Vpc *string `json:"vpc,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _CustomOptionsForAmazon CustomOptionsForAmazon
 
 // NewCustomOptionsForAmazon instantiates a new CustomOptionsForAmazon object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o CustomOptionsForAmazon) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Vpc) {
 		toSerialize["vpc"] = o.Vpc
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *CustomOptionsForAmazon) UnmarshalJSON(data []byte) (err error) {
+	varCustomOptionsForAmazon := _CustomOptionsForAmazon{}
+
+	err = json.Unmarshal(data, &varCustomOptionsForAmazon)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CustomOptionsForAmazon(varCustomOptionsForAmazon)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "vpc")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCustomOptionsForAmazon struct {

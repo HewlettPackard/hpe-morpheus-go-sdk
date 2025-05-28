@@ -47,7 +47,10 @@ type CreateNetworkPoolIp200ResponseNetworkPool struct {
 	SubRefId *int64 `json:"subRefId,omitempty"`
 	NetworkDomain *string `json:"networkDomain,omitempty"`
 	CreatedBy *ListActivity200ResponseAllOfActivityInnerActivityInnerUser `json:"createdBy,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _CreateNetworkPoolIp200ResponseNetworkPool CreateNetworkPoolIp200ResponseNetworkPool
 
 // NewCreateNetworkPoolIp200ResponseNetworkPool instantiates a new CreateNetworkPoolIp200ResponseNetworkPool object
 // This constructor will assign default values to properties that have it defined,
@@ -986,7 +989,58 @@ func (o CreateNetworkPoolIp200ResponseNetworkPool) ToMap() (map[string]interface
 	if !IsNil(o.CreatedBy) {
 		toSerialize["createdBy"] = o.CreatedBy
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *CreateNetworkPoolIp200ResponseNetworkPool) UnmarshalJSON(data []byte) (err error) {
+	varCreateNetworkPoolIp200ResponseNetworkPool := _CreateNetworkPoolIp200ResponseNetworkPool{}
+
+	err = json.Unmarshal(data, &varCreateNetworkPoolIp200ResponseNetworkPool)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CreateNetworkPoolIp200ResponseNetworkPool(varCreateNetworkPoolIp200ResponseNetworkPool)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "networkPoolId")
+		delete(additionalProperties, "ipType")
+		delete(additionalProperties, "ipAddress")
+		delete(additionalProperties, "gatewayAddress")
+		delete(additionalProperties, "subnetMask")
+		delete(additionalProperties, "dnsServer")
+		delete(additionalProperties, "interfaceName")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "staticIp")
+		delete(additionalProperties, "fqdn")
+		delete(additionalProperties, "domainName")
+		delete(additionalProperties, "hostname")
+		delete(additionalProperties, "internalId")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "ptrId")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "startDate")
+		delete(additionalProperties, "endDate")
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "refId")
+		delete(additionalProperties, "subRefId")
+		delete(additionalProperties, "networkDomain")
+		delete(additionalProperties, "createdBy")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCreateNetworkPoolIp200ResponseNetworkPool struct {

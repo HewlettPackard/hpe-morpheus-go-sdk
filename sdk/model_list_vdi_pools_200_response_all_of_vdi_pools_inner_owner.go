@@ -23,7 +23,10 @@ type ListVDIPools200ResponseAllOfVdiPoolsInnerOwner struct {
 	Id *int64 `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
 	Username *string `json:"username,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListVDIPools200ResponseAllOfVdiPoolsInnerOwner ListVDIPools200ResponseAllOfVdiPoolsInnerOwner
 
 // NewListVDIPools200ResponseAllOfVdiPoolsInnerOwner instantiates a new ListVDIPools200ResponseAllOfVdiPoolsInnerOwner object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o ListVDIPools200ResponseAllOfVdiPoolsInnerOwner) ToMap() (map[string]inte
 	if !IsNil(o.Username) {
 		toSerialize["username"] = o.Username
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerOwner) UnmarshalJSON(data []byte) (err error) {
+	varListVDIPools200ResponseAllOfVdiPoolsInnerOwner := _ListVDIPools200ResponseAllOfVdiPoolsInnerOwner{}
+
+	err = json.Unmarshal(data, &varListVDIPools200ResponseAllOfVdiPoolsInnerOwner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListVDIPools200ResponseAllOfVdiPoolsInnerOwner(varListVDIPools200ResponseAllOfVdiPoolsInnerOwner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "username")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListVDIPools200ResponseAllOfVdiPoolsInnerOwner struct {

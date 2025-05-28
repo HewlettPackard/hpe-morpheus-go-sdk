@@ -34,7 +34,10 @@ type ClusterDeployments struct {
 	Owner *GetAlerts200ResponseAllOfChecksInnerAccount `json:"owner,omitempty"`
 	TotalCpuUsage *int64 `json:"totalCpuUsage,omitempty"`
 	Stats map[string]interface{} `json:"stats,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ClusterDeployments ClusterDeployments
 
 // NewClusterDeployments instantiates a new ClusterDeployments object
 // This constructor will assign default values to properties that have it defined,
@@ -518,7 +521,45 @@ func (o ClusterDeployments) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Stats) {
 		toSerialize["stats"] = o.Stats
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ClusterDeployments) UnmarshalJSON(data []byte) (err error) {
+	varClusterDeployments := _ClusterDeployments{}
+
+	err = json.Unmarshal(data, &varClusterDeployments)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ClusterDeployments(varClusterDeployments)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "resourceLevel")
+		delete(additionalProperties, "resourceType")
+		delete(additionalProperties, "managed")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "owner")
+		delete(additionalProperties, "totalCpuUsage")
+		delete(additionalProperties, "stats")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableClusterDeployments struct {

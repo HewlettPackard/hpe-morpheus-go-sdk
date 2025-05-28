@@ -33,7 +33,10 @@ type UpdateLoadBalancerRequestLoadBalancer struct {
 	// Array of tenant account ids that are allowed access
 	Tenants []CreateLoadBalancerRequestLoadBalancerTenantsInner `json:"tenants,omitempty"`
 	ResourcePermission *CreateLoadBalancerRequestLoadBalancerResourcePermission `json:"resourcePermission,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateLoadBalancerRequestLoadBalancer UpdateLoadBalancerRequestLoadBalancer
 
 // NewUpdateLoadBalancerRequestLoadBalancer instantiates a new UpdateLoadBalancerRequestLoadBalancer object
 // This constructor will assign default values to properties that have it defined,
@@ -311,7 +314,39 @@ func (o UpdateLoadBalancerRequestLoadBalancer) ToMap() (map[string]interface{}, 
 	if !IsNil(o.ResourcePermission) {
 		toSerialize["resourcePermission"] = o.ResourcePermission
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateLoadBalancerRequestLoadBalancer) UnmarshalJSON(data []byte) (err error) {
+	varUpdateLoadBalancerRequestLoadBalancer := _UpdateLoadBalancerRequestLoadBalancer{}
+
+	err = json.Unmarshal(data, &varUpdateLoadBalancerRequestLoadBalancer)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateLoadBalancerRequestLoadBalancer(varUpdateLoadBalancerRequestLoadBalancer)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "tenants")
+		delete(additionalProperties, "resourcePermission")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateLoadBalancerRequestLoadBalancer struct {

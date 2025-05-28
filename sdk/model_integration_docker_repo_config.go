@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -23,6 +22,7 @@ var _ MappedNullable = &IntegrationDockerRepoConfig{}
 // IntegrationDockerRepoConfig struct for IntegrationDockerRepoConfig
 type IntegrationDockerRepoConfig struct {
 	Integration AddIntegrationsRequestOneOf4Integration `json:"integration"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _IntegrationDockerRepoConfig IntegrationDockerRepoConfig
@@ -80,6 +80,11 @@ func (o IntegrationDockerRepoConfig) MarshalJSON() ([]byte, error) {
 func (o IntegrationDockerRepoConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["integration"] = o.Integration
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -107,15 +112,20 @@ func (o *IntegrationDockerRepoConfig) UnmarshalJSON(data []byte) (err error) {
 
 	varIntegrationDockerRepoConfig := _IntegrationDockerRepoConfig{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varIntegrationDockerRepoConfig)
+	err = json.Unmarshal(data, &varIntegrationDockerRepoConfig)
 
 	if err != nil {
 		return err
 	}
 
 	*o = IntegrationDockerRepoConfig(varIntegrationDockerRepoConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "integration")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

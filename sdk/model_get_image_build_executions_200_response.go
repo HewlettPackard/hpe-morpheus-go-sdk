@@ -24,7 +24,10 @@ type GetImageBuildExecutions200Response struct {
 	ImageBuildExecutionCount *int64 `json:"imageBuildExecutionCount,omitempty"`
 	ImageBuild *AddImageBuild200ResponseAllOfImageBuild `json:"imageBuild,omitempty"`
 	Meta *ListActivity200ResponseAllOfMeta `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetImageBuildExecutions200Response GetImageBuildExecutions200Response
 
 // NewGetImageBuildExecutions200Response instantiates a new GetImageBuildExecutions200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -193,7 +196,36 @@ func (o GetImageBuildExecutions200Response) ToMap() (map[string]interface{}, err
 	if !IsNil(o.Meta) {
 		toSerialize["meta"] = o.Meta
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetImageBuildExecutions200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetImageBuildExecutions200Response := _GetImageBuildExecutions200Response{}
+
+	err = json.Unmarshal(data, &varGetImageBuildExecutions200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetImageBuildExecutions200Response(varGetImageBuildExecutions200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "imageBuildExecutions")
+		delete(additionalProperties, "imageBuildExecutionCount")
+		delete(additionalProperties, "imageBuild")
+		delete(additionalProperties, "meta")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetImageBuildExecutions200Response struct {

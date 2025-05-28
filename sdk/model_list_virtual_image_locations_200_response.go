@@ -22,7 +22,10 @@ var _ MappedNullable = &ListVirtualImageLocations200Response{}
 type ListVirtualImageLocations200Response struct {
 	Locations []ListVirtualImageLocations200ResponseAllOfLocationsInner `json:"locations,omitempty"`
 	Meta *ListActivity200ResponseAllOfMeta `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListVirtualImageLocations200Response ListVirtualImageLocations200Response
 
 // NewListVirtualImageLocations200Response instantiates a new ListVirtualImageLocations200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o ListVirtualImageLocations200Response) ToMap() (map[string]interface{}, e
 	if !IsNil(o.Meta) {
 		toSerialize["meta"] = o.Meta
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListVirtualImageLocations200Response) UnmarshalJSON(data []byte) (err error) {
+	varListVirtualImageLocations200Response := _ListVirtualImageLocations200Response{}
+
+	err = json.Unmarshal(data, &varListVirtualImageLocations200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListVirtualImageLocations200Response(varListVirtualImageLocations200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "locations")
+		delete(additionalProperties, "meta")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListVirtualImageLocations200Response struct {

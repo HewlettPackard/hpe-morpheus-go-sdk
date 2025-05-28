@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -23,6 +22,7 @@ var _ MappedNullable = &AddExecuteSchedulesRequest{}
 // AddExecuteSchedulesRequest struct for AddExecuteSchedulesRequest
 type AddExecuteSchedulesRequest struct {
 	Schedule AddExecuteSchedulesRequestSchedule `json:"schedule"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddExecuteSchedulesRequest AddExecuteSchedulesRequest
@@ -80,6 +80,11 @@ func (o AddExecuteSchedulesRequest) MarshalJSON() ([]byte, error) {
 func (o AddExecuteSchedulesRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["schedule"] = o.Schedule
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -107,15 +112,20 @@ func (o *AddExecuteSchedulesRequest) UnmarshalJSON(data []byte) (err error) {
 
 	varAddExecuteSchedulesRequest := _AddExecuteSchedulesRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddExecuteSchedulesRequest)
+	err = json.Unmarshal(data, &varAddExecuteSchedulesRequest)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddExecuteSchedulesRequest(varAddExecuteSchedulesRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "schedule")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

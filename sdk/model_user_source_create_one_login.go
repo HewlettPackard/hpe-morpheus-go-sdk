@@ -30,7 +30,10 @@ type UserSourceCreateOneLogin struct {
 	ClientId *string `json:"clientId,omitempty"`
 	// Required Role
 	RequiredRole *string `json:"requiredRole,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UserSourceCreateOneLogin UserSourceCreateOneLogin
 
 // NewUserSourceCreateOneLogin instantiates a new UserSourceCreateOneLogin object
 // This constructor will assign default values to properties that have it defined,
@@ -234,7 +237,37 @@ func (o UserSourceCreateOneLogin) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.RequiredRole) {
 		toSerialize["requiredRole"] = o.RequiredRole
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UserSourceCreateOneLogin) UnmarshalJSON(data []byte) (err error) {
+	varUserSourceCreateOneLogin := _UserSourceCreateOneLogin{}
+
+	err = json.Unmarshal(data, &varUserSourceCreateOneLogin)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UserSourceCreateOneLogin(varUserSourceCreateOneLogin)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "subdomain")
+		delete(additionalProperties, "region")
+		delete(additionalProperties, "clientSecret")
+		delete(additionalProperties, "clientId")
+		delete(additionalProperties, "requiredRole")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUserSourceCreateOneLogin struct {

@@ -22,7 +22,10 @@ var _ MappedNullable = &GetContainer200ResponseContainerInstance{}
 type GetContainer200ResponseContainerInstance struct {
 	Id *int32 `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetContainer200ResponseContainerInstance GetContainer200ResponseContainerInstance
 
 // NewGetContainer200ResponseContainerInstance instantiates a new GetContainer200ResponseContainerInstance object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o GetContainer200ResponseContainerInstance) ToMap() (map[string]interface{
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetContainer200ResponseContainerInstance) UnmarshalJSON(data []byte) (err error) {
+	varGetContainer200ResponseContainerInstance := _GetContainer200ResponseContainerInstance{}
+
+	err = json.Unmarshal(data, &varGetContainer200ResponseContainerInstance)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetContainer200ResponseContainerInstance(varGetContainer200ResponseContainerInstance)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetContainer200ResponseContainerInstance struct {

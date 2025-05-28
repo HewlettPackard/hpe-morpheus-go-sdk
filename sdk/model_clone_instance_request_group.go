@@ -22,7 +22,10 @@ var _ MappedNullable = &CloneInstanceRequestGroup{}
 type CloneInstanceRequestGroup struct {
 	// The id of the server group you would like to clone into.
 	Id *int64 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _CloneInstanceRequestGroup CloneInstanceRequestGroup
 
 // NewCloneInstanceRequestGroup instantiates a new CloneInstanceRequestGroup object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o CloneInstanceRequestGroup) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *CloneInstanceRequestGroup) UnmarshalJSON(data []byte) (err error) {
+	varCloneInstanceRequestGroup := _CloneInstanceRequestGroup{}
+
+	err = json.Unmarshal(data, &varCloneInstanceRequestGroup)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CloneInstanceRequestGroup(varCloneInstanceRequestGroup)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCloneInstanceRequestGroup struct {

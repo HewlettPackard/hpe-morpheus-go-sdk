@@ -27,7 +27,10 @@ type ListBootScripts200ResponseAllOfBootScriptsInner struct {
 	Content *string `json:"content,omitempty"`
 	CreatedBy *ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy `json:"createdBy,omitempty"`
 	Visibility *string `json:"visibility,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListBootScripts200ResponseAllOfBootScriptsInner ListBootScripts200ResponseAllOfBootScriptsInner
 
 // NewListBootScripts200ResponseAllOfBootScriptsInner instantiates a new ListBootScripts200ResponseAllOfBootScriptsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -301,7 +304,39 @@ func (o ListBootScripts200ResponseAllOfBootScriptsInner) ToMap() (map[string]int
 	if !IsNil(o.Visibility) {
 		toSerialize["visibility"] = o.Visibility
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListBootScripts200ResponseAllOfBootScriptsInner) UnmarshalJSON(data []byte) (err error) {
+	varListBootScripts200ResponseAllOfBootScriptsInner := _ListBootScripts200ResponseAllOfBootScriptsInner{}
+
+	err = json.Unmarshal(data, &varListBootScripts200ResponseAllOfBootScriptsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListBootScripts200ResponseAllOfBootScriptsInner(varListBootScripts200ResponseAllOfBootScriptsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "fileName")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "content")
+		delete(additionalProperties, "createdBy")
+		delete(additionalProperties, "visibility")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListBootScripts200ResponseAllOfBootScriptsInner struct {

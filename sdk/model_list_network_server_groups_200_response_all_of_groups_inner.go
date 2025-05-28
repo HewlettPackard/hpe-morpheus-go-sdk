@@ -32,7 +32,10 @@ type ListNetworkServerGroups200ResponseAllOfGroupsInner struct {
 	Permissions *ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions `json:"permissions,omitempty"`
 	Tags []ListNetworkServerGroups200ResponseAllOfGroupsInnerTagsInner `json:"tags,omitempty"`
 	Members []ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner `json:"members,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListNetworkServerGroups200ResponseAllOfGroupsInner ListNetworkServerGroups200ResponseAllOfGroupsInner
 
 // NewListNetworkServerGroups200ResponseAllOfGroupsInner instantiates a new ListNetworkServerGroups200ResponseAllOfGroupsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -481,7 +484,44 @@ func (o ListNetworkServerGroups200ResponseAllOfGroupsInner) ToMap() (map[string]
 	if !IsNil(o.Members) {
 		toSerialize["members"] = o.Members
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListNetworkServerGroups200ResponseAllOfGroupsInner) UnmarshalJSON(data []byte) (err error) {
+	varListNetworkServerGroups200ResponseAllOfGroupsInner := _ListNetworkServerGroups200ResponseAllOfGroupsInner{}
+
+	err = json.Unmarshal(data, &varListNetworkServerGroups200ResponseAllOfGroupsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListNetworkServerGroups200ResponseAllOfGroupsInner(varListNetworkServerGroups200ResponseAllOfGroupsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "internalId")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "owner")
+		delete(additionalProperties, "networkServer")
+		delete(additionalProperties, "permissions")
+		delete(additionalProperties, "tags")
+		delete(additionalProperties, "members")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListNetworkServerGroups200ResponseAllOfGroupsInner struct {

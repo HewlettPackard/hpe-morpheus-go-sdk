@@ -26,7 +26,10 @@ type CypherAccessPolicyTypeConfiguration struct {
 	Update *bool `json:"update,omitempty"`
 	Delete *bool `json:"delete,omitempty"`
 	List *bool `json:"list,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _CypherAccessPolicyTypeConfiguration CypherAccessPolicyTypeConfiguration
 
 // NewCypherAccessPolicyTypeConfiguration instantiates a new CypherAccessPolicyTypeConfiguration object
 // This constructor will assign default values to properties that have it defined,
@@ -265,7 +268,38 @@ func (o CypherAccessPolicyTypeConfiguration) ToMap() (map[string]interface{}, er
 	if !IsNil(o.List) {
 		toSerialize["list"] = o.List
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *CypherAccessPolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
+	varCypherAccessPolicyTypeConfiguration := _CypherAccessPolicyTypeConfiguration{}
+
+	err = json.Unmarshal(data, &varCypherAccessPolicyTypeConfiguration)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CypherAccessPolicyTypeConfiguration(varCypherAccessPolicyTypeConfiguration)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "keyPattern")
+		delete(additionalProperties, "read")
+		delete(additionalProperties, "write")
+		delete(additionalProperties, "update")
+		delete(additionalProperties, "delete")
+		delete(additionalProperties, "list")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCypherAccessPolicyTypeConfiguration struct {

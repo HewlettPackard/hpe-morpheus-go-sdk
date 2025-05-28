@@ -22,7 +22,10 @@ var _ MappedNullable = &UpdateInstanceRequest{}
 type UpdateInstanceRequest struct {
 	Instance *UpdateInstanceRequestInstance `json:"instance,omitempty"`
 	Config *UpdateInstanceRequestConfig `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateInstanceRequest UpdateInstanceRequest
 
 // NewUpdateInstanceRequest instantiates a new UpdateInstanceRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o UpdateInstanceRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateInstanceRequest) UnmarshalJSON(data []byte) (err error) {
+	varUpdateInstanceRequest := _UpdateInstanceRequest{}
+
+	err = json.Unmarshal(data, &varUpdateInstanceRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateInstanceRequest(varUpdateInstanceRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "instance")
+		delete(additionalProperties, "config")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateInstanceRequest struct {

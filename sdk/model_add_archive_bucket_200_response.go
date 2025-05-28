@@ -22,7 +22,10 @@ var _ MappedNullable = &AddArchiveBucket200Response{}
 type AddArchiveBucket200Response struct {
 	ArchiveBucket *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner `json:"archiveBucket,omitempty"`
 	Success *bool `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddArchiveBucket200Response AddArchiveBucket200Response
 
 // NewAddArchiveBucket200Response instantiates a new AddArchiveBucket200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o AddArchiveBucket200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Success) {
 		toSerialize["success"] = o.Success
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddArchiveBucket200Response) UnmarshalJSON(data []byte) (err error) {
+	varAddArchiveBucket200Response := _AddArchiveBucket200Response{}
+
+	err = json.Unmarshal(data, &varAddArchiveBucket200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddArchiveBucket200Response(varAddArchiveBucket200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "archiveBucket")
+		delete(additionalProperties, "success")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddArchiveBucket200Response struct {

@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -23,6 +22,7 @@ var _ MappedNullable = &UpdateCloudFoldersRequest{}
 // UpdateCloudFoldersRequest struct for UpdateCloudFoldersRequest
 type UpdateCloudFoldersRequest struct {
 	Folder UpdateCloudFoldersRequestFolder `json:"folder"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateCloudFoldersRequest UpdateCloudFoldersRequest
@@ -80,6 +80,11 @@ func (o UpdateCloudFoldersRequest) MarshalJSON() ([]byte, error) {
 func (o UpdateCloudFoldersRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["folder"] = o.Folder
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -107,15 +112,20 @@ func (o *UpdateCloudFoldersRequest) UnmarshalJSON(data []byte) (err error) {
 
 	varUpdateCloudFoldersRequest := _UpdateCloudFoldersRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varUpdateCloudFoldersRequest)
+	err = json.Unmarshal(data, &varUpdateCloudFoldersRequest)
 
 	if err != nil {
 		return err
 	}
 
 	*o = UpdateCloudFoldersRequest(varUpdateCloudFoldersRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "folder")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

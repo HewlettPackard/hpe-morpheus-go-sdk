@@ -38,7 +38,10 @@ type ListUserSettings200ResponseAllOfUser struct {
 	DefaultPersona *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"defaultPersona,omitempty"`
 	IsUsing2FA *bool `json:"isUsing2FA,omitempty"`
 	Tenant *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"tenant,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListUserSettings200ResponseAllOfUser ListUserSettings200ResponseAllOfUser
 
 // NewListUserSettings200ResponseAllOfUser instantiates a new ListUserSettings200ResponseAllOfUser object
 // This constructor will assign default values to properties that have it defined,
@@ -697,7 +700,50 @@ func (o ListUserSettings200ResponseAllOfUser) ToMap() (map[string]interface{}, e
 	if !IsNil(o.Tenant) {
 		toSerialize["tenant"] = o.Tenant
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListUserSettings200ResponseAllOfUser) UnmarshalJSON(data []byte) (err error) {
+	varListUserSettings200ResponseAllOfUser := _ListUserSettings200ResponseAllOfUser{}
+
+	err = json.Unmarshal(data, &varListUserSettings200ResponseAllOfUser)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListUserSettings200ResponseAllOfUser(varListUserSettings200ResponseAllOfUser)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "username")
+		delete(additionalProperties, "firstName")
+		delete(additionalProperties, "lastName")
+		delete(additionalProperties, "email")
+		delete(additionalProperties, "linuxUsername")
+		delete(additionalProperties, "linuxPassword")
+		delete(additionalProperties, "linuxKeyPairId")
+		delete(additionalProperties, "windowsUsername")
+		delete(additionalProperties, "windowsPassword")
+		delete(additionalProperties, "avatar")
+		delete(additionalProperties, "desktopBackground")
+		delete(additionalProperties, "receiveNotifications")
+		delete(additionalProperties, "defaultGroup")
+		delete(additionalProperties, "defaultCloud")
+		delete(additionalProperties, "defaultPersona")
+		delete(additionalProperties, "isUsing2FA")
+		delete(additionalProperties, "tenant")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListUserSettings200ResponseAllOfUser struct {

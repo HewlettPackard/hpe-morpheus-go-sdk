@@ -22,7 +22,10 @@ var _ MappedNullable = &ClusterDatastoreConfigGFS2{}
 type ClusterDatastoreConfigGFS2 struct {
 	// Block device for target GFS2.
 	BlockDevice *string `json:"blockDevice,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ClusterDatastoreConfigGFS2 ClusterDatastoreConfigGFS2
 
 // NewClusterDatastoreConfigGFS2 instantiates a new ClusterDatastoreConfigGFS2 object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o ClusterDatastoreConfigGFS2) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.BlockDevice) {
 		toSerialize["blockDevice"] = o.BlockDevice
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ClusterDatastoreConfigGFS2) UnmarshalJSON(data []byte) (err error) {
+	varClusterDatastoreConfigGFS2 := _ClusterDatastoreConfigGFS2{}
+
+	err = json.Unmarshal(data, &varClusterDatastoreConfigGFS2)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ClusterDatastoreConfigGFS2(varClusterDatastoreConfigGFS2)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "blockDevice")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableClusterDatastoreConfigGFS2 struct {

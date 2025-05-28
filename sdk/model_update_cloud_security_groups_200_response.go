@@ -22,7 +22,10 @@ var _ MappedNullable = &UpdateCloudSecurityGroups200Response{}
 type UpdateCloudSecurityGroups200Response struct {
 	Success *bool `json:"success,omitempty"`
 	SecurityGroups []ListCloudSecurityGroups200ResponseAllOfSecurityGroupsInner `json:"securityGroups,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateCloudSecurityGroups200Response UpdateCloudSecurityGroups200Response
 
 // NewUpdateCloudSecurityGroups200Response instantiates a new UpdateCloudSecurityGroups200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o UpdateCloudSecurityGroups200Response) ToMap() (map[string]interface{}, e
 	if !IsNil(o.SecurityGroups) {
 		toSerialize["securityGroups"] = o.SecurityGroups
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateCloudSecurityGroups200Response) UnmarshalJSON(data []byte) (err error) {
+	varUpdateCloudSecurityGroups200Response := _UpdateCloudSecurityGroups200Response{}
+
+	err = json.Unmarshal(data, &varUpdateCloudSecurityGroups200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateCloudSecurityGroups200Response(varUpdateCloudSecurityGroups200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "success")
+		delete(additionalProperties, "securityGroups")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateCloudSecurityGroups200Response struct {

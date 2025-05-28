@@ -21,7 +21,10 @@ var _ MappedNullable = &CreateInstanceScheduleRequest{}
 // CreateInstanceScheduleRequest struct for CreateInstanceScheduleRequest
 type CreateInstanceScheduleRequest struct {
 	InstanceSchedule *CreateInstanceScheduleRequestInstanceSchedule `json:"instanceSchedule,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _CreateInstanceScheduleRequest CreateInstanceScheduleRequest
 
 // NewCreateInstanceScheduleRequest instantiates a new CreateInstanceScheduleRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o CreateInstanceScheduleRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.InstanceSchedule) {
 		toSerialize["instanceSchedule"] = o.InstanceSchedule
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *CreateInstanceScheduleRequest) UnmarshalJSON(data []byte) (err error) {
+	varCreateInstanceScheduleRequest := _CreateInstanceScheduleRequest{}
+
+	err = json.Unmarshal(data, &varCreateInstanceScheduleRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CreateInstanceScheduleRequest(varCreateInstanceScheduleRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "instanceSchedule")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCreateInstanceScheduleRequest struct {

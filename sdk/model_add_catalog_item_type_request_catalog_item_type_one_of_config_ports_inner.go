@@ -26,7 +26,10 @@ type AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner struct {
 	Name *string `json:"name,omitempty"`
 	// The load balancer protocol. HTTP, HTTPS, or TCP.
 	Lb *string `json:"lb,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner
 
 // NewAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner instantiates a new AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -160,7 +163,35 @@ func (o AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner) ToMap() (
 	if !IsNil(o.Lb) {
 		toSerialize["lb"] = o.Lb
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner) UnmarshalJSON(data []byte) (err error) {
+	varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner := _AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner{}
+
+	err = json.Unmarshal(data, &varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner(varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "port")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "lb")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner struct {

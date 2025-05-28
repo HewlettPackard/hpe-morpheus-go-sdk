@@ -22,7 +22,10 @@ var _ MappedNullable = &AddClusterRequestClusterServerUserGroup{}
 type AddClusterRequestClusterServerUserGroup struct {
 	// User Group ID for server host
 	Id *int64 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddClusterRequestClusterServerUserGroup AddClusterRequestClusterServerUserGroup
 
 // NewAddClusterRequestClusterServerUserGroup instantiates a new AddClusterRequestClusterServerUserGroup object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o AddClusterRequestClusterServerUserGroup) ToMap() (map[string]interface{}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddClusterRequestClusterServerUserGroup) UnmarshalJSON(data []byte) (err error) {
+	varAddClusterRequestClusterServerUserGroup := _AddClusterRequestClusterServerUserGroup{}
+
+	err = json.Unmarshal(data, &varAddClusterRequestClusterServerUserGroup)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddClusterRequestClusterServerUserGroup(varAddClusterRequestClusterServerUserGroup)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddClusterRequestClusterServerUserGroup struct {

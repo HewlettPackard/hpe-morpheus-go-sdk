@@ -21,7 +21,10 @@ var _ MappedNullable = &UpdateLoadBalancerRequest{}
 // UpdateLoadBalancerRequest struct for UpdateLoadBalancerRequest
 type UpdateLoadBalancerRequest struct {
 	LoadBalancer *UpdateLoadBalancerRequestLoadBalancer `json:"loadBalancer,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateLoadBalancerRequest UpdateLoadBalancerRequest
 
 // NewUpdateLoadBalancerRequest instantiates a new UpdateLoadBalancerRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o UpdateLoadBalancerRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.LoadBalancer) {
 		toSerialize["loadBalancer"] = o.LoadBalancer
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateLoadBalancerRequest) UnmarshalJSON(data []byte) (err error) {
+	varUpdateLoadBalancerRequest := _UpdateLoadBalancerRequest{}
+
+	err = json.Unmarshal(data, &varUpdateLoadBalancerRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateLoadBalancerRequest(varUpdateLoadBalancerRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "loadBalancer")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateLoadBalancerRequest struct {

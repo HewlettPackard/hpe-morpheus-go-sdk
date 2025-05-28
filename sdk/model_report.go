@@ -33,7 +33,10 @@ type Report struct {
 	Config *ListReports200ResponseAllOfReportResultsInnerConfig `json:"config,omitempty"`
 	CreatedBy *ListActivity200ResponseAllOfActivityInnerActivityInnerUser `json:"createdBy,omitempty"`
 	Rows []ListReports200ResponseAllOfReportResultsInnerRowsInner `json:"rows,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _Report Report
 
 // NewReport instantiates a new Report object
 // This constructor will assign default values to properties that have it defined,
@@ -482,7 +485,44 @@ func (o Report) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Rows) {
 		toSerialize["rows"] = o.Rows
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *Report) UnmarshalJSON(data []byte) (err error) {
+	varReport := _Report{}
+
+	err = json.Unmarshal(data, &varReport)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Report(varReport)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "reportTitle")
+		delete(additionalProperties, "filterTitle")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "startDate")
+		delete(additionalProperties, "endDate")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "createdBy")
+		delete(additionalProperties, "rows")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableReport struct {

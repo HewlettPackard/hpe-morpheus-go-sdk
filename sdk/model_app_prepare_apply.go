@@ -21,7 +21,10 @@ var _ MappedNullable = &AppPrepareApply{}
 // AppPrepareApply struct for AppPrepareApply
 type AppPrepareApply struct {
 	Data *PrepareAppApply200ResponseAllOfData `json:"data,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AppPrepareApply AppPrepareApply
 
 // NewAppPrepareApply instantiates a new AppPrepareApply object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o AppPrepareApply) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Data) {
 		toSerialize["data"] = o.Data
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AppPrepareApply) UnmarshalJSON(data []byte) (err error) {
+	varAppPrepareApply := _AppPrepareApply{}
+
+	err = json.Unmarshal(data, &varAppPrepareApply)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AppPrepareApply(varAppPrepareApply)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "data")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAppPrepareApply struct {

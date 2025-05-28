@@ -33,7 +33,10 @@ type UpdateCheckGroupsRequestCheckGroup struct {
 	// Used to determine if check group is active
 	Active *bool `json:"active,omitempty"`
 	Checks []int32 `json:"checks,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateCheckGroupsRequestCheckGroup UpdateCheckGroupsRequestCheckGroup
 
 // NewUpdateCheckGroupsRequestCheckGroup instantiates a new UpdateCheckGroupsRequestCheckGroup object
 // This constructor will assign default values to properties that have it defined,
@@ -323,7 +326,39 @@ func (o UpdateCheckGroupsRequestCheckGroup) ToMap() (map[string]interface{}, err
 	if !IsNil(o.Checks) {
 		toSerialize["checks"] = o.Checks
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateCheckGroupsRequestCheckGroup) UnmarshalJSON(data []byte) (err error) {
+	varUpdateCheckGroupsRequestCheckGroup := _UpdateCheckGroupsRequestCheckGroup{}
+
+	err = json.Unmarshal(data, &varUpdateCheckGroupsRequestCheckGroup)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateCheckGroupsRequestCheckGroup(varUpdateCheckGroupsRequestCheckGroup)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "minHappy")
+		delete(additionalProperties, "inUptime")
+		delete(additionalProperties, "severity")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "checks")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateCheckGroupsRequestCheckGroup struct {

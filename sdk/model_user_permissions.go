@@ -31,7 +31,10 @@ type UserPermissions struct {
 	ReportTypes []map[string]interface{} `json:"reportTypes,omitempty"`
 	Tasks []map[string]interface{} `json:"tasks,omitempty"`
 	TaskSets []map[string]interface{} `json:"taskSets,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UserPermissions UserPermissions
 
 // NewUserPermissions instantiates a new UserPermissions object
 // This constructor will assign default values to properties that have it defined,
@@ -445,7 +448,43 @@ func (o UserPermissions) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.TaskSets) {
 		toSerialize["taskSets"] = o.TaskSets
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UserPermissions) UnmarshalJSON(data []byte) (err error) {
+	varUserPermissions := _UserPermissions{}
+
+	err = json.Unmarshal(data, &varUserPermissions)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UserPermissions(varUserPermissions)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "features")
+		delete(additionalProperties, "zones")
+		delete(additionalProperties, "sites")
+		delete(additionalProperties, "instanceTypes")
+		delete(additionalProperties, "appTemplates")
+		delete(additionalProperties, "catalogItemTypes")
+		delete(additionalProperties, "personas")
+		delete(additionalProperties, "vdiPools")
+		delete(additionalProperties, "reportTypes")
+		delete(additionalProperties, "tasks")
+		delete(additionalProperties, "taskSets")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUserPermissions struct {

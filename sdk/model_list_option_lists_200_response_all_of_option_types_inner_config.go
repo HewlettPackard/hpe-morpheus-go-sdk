@@ -21,7 +21,10 @@ var _ MappedNullable = &ListOptionLists200ResponseAllOfOptionTypesInnerConfig{}
 // ListOptionLists200ResponseAllOfOptionTypesInnerConfig struct for ListOptionLists200ResponseAllOfOptionTypesInnerConfig
 type ListOptionLists200ResponseAllOfOptionTypesInnerConfig struct {
 	SourceHeaders []ListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner `json:"sourceHeaders,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListOptionLists200ResponseAllOfOptionTypesInnerConfig ListOptionLists200ResponseAllOfOptionTypesInnerConfig
 
 // NewListOptionLists200ResponseAllOfOptionTypesInnerConfig instantiates a new ListOptionLists200ResponseAllOfOptionTypesInnerConfig object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o ListOptionLists200ResponseAllOfOptionTypesInnerConfig) ToMap() (map[stri
 	if !IsNil(o.SourceHeaders) {
 		toSerialize["sourceHeaders"] = o.SourceHeaders
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListOptionLists200ResponseAllOfOptionTypesInnerConfig) UnmarshalJSON(data []byte) (err error) {
+	varListOptionLists200ResponseAllOfOptionTypesInnerConfig := _ListOptionLists200ResponseAllOfOptionTypesInnerConfig{}
+
+	err = json.Unmarshal(data, &varListOptionLists200ResponseAllOfOptionTypesInnerConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListOptionLists200ResponseAllOfOptionTypesInnerConfig(varListOptionLists200ResponseAllOfOptionTypesInnerConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "sourceHeaders")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListOptionLists200ResponseAllOfOptionTypesInnerConfig struct {

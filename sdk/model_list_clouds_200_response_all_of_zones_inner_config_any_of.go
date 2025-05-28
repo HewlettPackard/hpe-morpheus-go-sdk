@@ -54,7 +54,10 @@ type ListClouds200ResponseAllOfZonesInnerConfigAnyOf struct {
 	ConfigCmdbDiscovery *bool `json:"configCmdbDiscovery,omitempty"`
 	DistributedWorkerId *string `json:"distributedWorkerId,omitempty"`
 	PasswordHash *string `json:"passwordHash,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListClouds200ResponseAllOfZonesInnerConfigAnyOf ListClouds200ResponseAllOfZonesInnerConfigAnyOf
 
 // NewListClouds200ResponseAllOfZonesInnerConfigAnyOf instantiates a new ListClouds200ResponseAllOfZonesInnerConfigAnyOf object
 // This constructor will assign default values to properties that have it defined,
@@ -1273,7 +1276,66 @@ func (o ListClouds200ResponseAllOfZonesInnerConfigAnyOf) ToMap() (map[string]int
 	if !IsNil(o.PasswordHash) {
 		toSerialize["passwordHash"] = o.PasswordHash
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf) UnmarshalJSON(data []byte) (err error) {
+	varListClouds200ResponseAllOfZonesInnerConfigAnyOf := _ListClouds200ResponseAllOfZonesInnerConfigAnyOf{}
+
+	err = json.Unmarshal(data, &varListClouds200ResponseAllOfZonesInnerConfigAnyOf)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListClouds200ResponseAllOfZonesInnerConfigAnyOf(varListClouds200ResponseAllOfZonesInnerConfigAnyOf)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "apiUrl")
+		delete(additionalProperties, "username")
+		delete(additionalProperties, "password")
+		delete(additionalProperties, "datacenter")
+		delete(additionalProperties, "cluster")
+		delete(additionalProperties, "resourcePoolId")
+		delete(additionalProperties, "resourcePool")
+		delete(additionalProperties, "rpcMode")
+		delete(additionalProperties, "hideHostSelection")
+		delete(additionalProperties, "importExisting")
+		delete(additionalProperties, "enableVnc")
+		delete(additionalProperties, "enableDiskTypeSelection")
+		delete(additionalProperties, "enableNetworkTypeSelection")
+		delete(additionalProperties, "diskStorageType")
+		delete(additionalProperties, "applianceUrl")
+		delete(additionalProperties, "datacenterName")
+		delete(additionalProperties, "networkServer.id")
+		delete(additionalProperties, "networkServer")
+		delete(additionalProperties, "securityMode")
+		delete(additionalProperties, "certificateProvider")
+		delete(additionalProperties, "backupMode")
+		delete(additionalProperties, "replicationMode")
+		delete(additionalProperties, "dnsIntegrationId")
+		delete(additionalProperties, "configCmdbId")
+		delete(additionalProperties, "configManagementId")
+		delete(additionalProperties, "configCmId")
+		delete(additionalProperties, "securityServer")
+		delete(additionalProperties, "serviceRegistryId")
+		delete(additionalProperties, "kubeUrl")
+		delete(additionalProperties, "apiVersion")
+		delete(additionalProperties, "datacenterId")
+		delete(additionalProperties, "configCmdbDiscovery")
+		delete(additionalProperties, "distributedWorkerId")
+		delete(additionalProperties, "passwordHash")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListClouds200ResponseAllOfZonesInnerConfigAnyOf struct {

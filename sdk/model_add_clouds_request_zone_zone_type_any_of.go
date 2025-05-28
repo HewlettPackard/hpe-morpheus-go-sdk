@@ -21,7 +21,10 @@ var _ MappedNullable = &AddCloudsRequestZoneZoneTypeAnyOf{}
 // AddCloudsRequestZoneZoneTypeAnyOf Map containing the Cloud (zone) type ID. See the zone-types API to fetch a list of all available Cloud (zone) types and their IDs.
 type AddCloudsRequestZoneZoneTypeAnyOf struct {
 	Id *int64 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddCloudsRequestZoneZoneTypeAnyOf AddCloudsRequestZoneZoneTypeAnyOf
 
 // NewAddCloudsRequestZoneZoneTypeAnyOf instantiates a new AddCloudsRequestZoneZoneTypeAnyOf object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o AddCloudsRequestZoneZoneTypeAnyOf) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddCloudsRequestZoneZoneTypeAnyOf) UnmarshalJSON(data []byte) (err error) {
+	varAddCloudsRequestZoneZoneTypeAnyOf := _AddCloudsRequestZoneZoneTypeAnyOf{}
+
+	err = json.Unmarshal(data, &varAddCloudsRequestZoneZoneTypeAnyOf)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddCloudsRequestZoneZoneTypeAnyOf(varAddCloudsRequestZoneZoneTypeAnyOf)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddCloudsRequestZoneZoneTypeAnyOf struct {

@@ -21,7 +21,10 @@ var _ MappedNullable = &ExecuteExecutionRequest200Response{}
 // ExecuteExecutionRequest200Response struct for ExecuteExecutionRequest200Response
 type ExecuteExecutionRequest200Response struct {
 	ExecutionRequest *ExecuteExecutionRequest200ResponseExecutionRequest `json:"executionRequest,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ExecuteExecutionRequest200Response ExecuteExecutionRequest200Response
 
 // NewExecuteExecutionRequest200Response instantiates a new ExecuteExecutionRequest200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o ExecuteExecutionRequest200Response) ToMap() (map[string]interface{}, err
 	if !IsNil(o.ExecutionRequest) {
 		toSerialize["executionRequest"] = o.ExecutionRequest
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ExecuteExecutionRequest200Response) UnmarshalJSON(data []byte) (err error) {
+	varExecuteExecutionRequest200Response := _ExecuteExecutionRequest200Response{}
+
+	err = json.Unmarshal(data, &varExecuteExecutionRequest200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ExecuteExecutionRequest200Response(varExecuteExecutionRequest200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "executionRequest")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableExecuteExecutionRequest200Response struct {

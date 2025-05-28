@@ -29,7 +29,10 @@ type NetworkPoolServerType struct {
 	Enabled *bool `json:"enabled,omitempty"`
 	Description *string `json:"description,omitempty"`
 	OptionTypes []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _NetworkPoolServerType NetworkPoolServerType
 
 // NewNetworkPoolServerType instantiates a new NetworkPoolServerType object
 // This constructor will assign default values to properties that have it defined,
@@ -373,7 +376,41 @@ func (o NetworkPoolServerType) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.OptionTypes) {
 		toSerialize["optionTypes"] = o.OptionTypes
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *NetworkPoolServerType) UnmarshalJSON(data []byte) (err error) {
+	varNetworkPoolServerType := _NetworkPoolServerType{}
+
+	err = json.Unmarshal(data, &varNetworkPoolServerType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = NetworkPoolServerType(varNetworkPoolServerType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "poolService")
+		delete(additionalProperties, "selectable")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "integrationCode")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "optionTypes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableNetworkPoolServerType struct {

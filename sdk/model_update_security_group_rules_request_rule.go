@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -50,6 +49,7 @@ type UpdateSecurityGroupRulesRequestRule struct {
 	Policy *string `json:"policy,omitempty"`
 	// The id of an Instance Type. If specified, the source CIDR will have access to all ports exposed by the particular instance in the cloud, app, or instance. Required if customRule is false, otherwise ignored. 
 	InstanceTypeId *int64 `json:"instanceTypeId,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateSecurityGroupRulesRequestRule UpdateSecurityGroupRulesRequestRule
@@ -637,6 +637,11 @@ func (o UpdateSecurityGroupRulesRequestRule) ToMap() (map[string]interface{}, er
 	if !IsNil(o.InstanceTypeId) {
 		toSerialize["instanceTypeId"] = o.InstanceTypeId
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -665,15 +670,35 @@ func (o *UpdateSecurityGroupRulesRequestRule) UnmarshalJSON(data []byte) (err er
 
 	varUpdateSecurityGroupRulesRequestRule := _UpdateSecurityGroupRulesRequestRule{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varUpdateSecurityGroupRulesRequestRule)
+	err = json.Unmarshal(data, &varUpdateSecurityGroupRulesRequestRule)
 
 	if err != nil {
 		return err
 	}
 
 	*o = UpdateSecurityGroupRulesRequestRule(varUpdateSecurityGroupRulesRequestRule)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "direction")
+		delete(additionalProperties, "sourceType")
+		delete(additionalProperties, "source")
+		delete(additionalProperties, "sourceGroup")
+		delete(additionalProperties, "sourceTier")
+		delete(additionalProperties, "portRange")
+		delete(additionalProperties, "destinationPortRange")
+		delete(additionalProperties, "protocol")
+		delete(additionalProperties, "destinationType")
+		delete(additionalProperties, "destination")
+		delete(additionalProperties, "destinationGroup")
+		delete(additionalProperties, "destinationTier")
+		delete(additionalProperties, "ruleType")
+		delete(additionalProperties, "policy")
+		delete(additionalProperties, "instanceTypeId")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

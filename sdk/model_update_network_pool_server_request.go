@@ -21,7 +21,10 @@ var _ MappedNullable = &UpdateNetworkPoolServerRequest{}
 // UpdateNetworkPoolServerRequest struct for UpdateNetworkPoolServerRequest
 type UpdateNetworkPoolServerRequest struct {
 	NetworkPoolServer *UpdateNetworkPoolServerRequestNetworkPoolServer `json:"networkPoolServer,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateNetworkPoolServerRequest UpdateNetworkPoolServerRequest
 
 // NewUpdateNetworkPoolServerRequest instantiates a new UpdateNetworkPoolServerRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o UpdateNetworkPoolServerRequest) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.NetworkPoolServer) {
 		toSerialize["networkPoolServer"] = o.NetworkPoolServer
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateNetworkPoolServerRequest) UnmarshalJSON(data []byte) (err error) {
+	varUpdateNetworkPoolServerRequest := _UpdateNetworkPoolServerRequest{}
+
+	err = json.Unmarshal(data, &varUpdateNetworkPoolServerRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateNetworkPoolServerRequest(varUpdateNetworkPoolServerRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "networkPoolServer")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateNetworkPoolServerRequest struct {

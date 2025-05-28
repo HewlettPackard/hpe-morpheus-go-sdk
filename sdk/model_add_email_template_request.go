@@ -21,7 +21,10 @@ var _ MappedNullable = &AddEmailTemplateRequest{}
 // AddEmailTemplateRequest struct for AddEmailTemplateRequest
 type AddEmailTemplateRequest struct {
 	EmailTemplate *ListEmailTemplates200ResponseAllOfEmailTemplatesInner `json:"emailTemplate,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddEmailTemplateRequest AddEmailTemplateRequest
 
 // NewAddEmailTemplateRequest instantiates a new AddEmailTemplateRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o AddEmailTemplateRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.EmailTemplate) {
 		toSerialize["emailTemplate"] = o.EmailTemplate
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddEmailTemplateRequest) UnmarshalJSON(data []byte) (err error) {
+	varAddEmailTemplateRequest := _AddEmailTemplateRequest{}
+
+	err = json.Unmarshal(data, &varAddEmailTemplateRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddEmailTemplateRequest(varAddEmailTemplateRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "emailTemplate")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddEmailTemplateRequest struct {

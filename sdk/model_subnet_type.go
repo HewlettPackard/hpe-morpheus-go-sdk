@@ -29,7 +29,10 @@ type SubnetType struct {
 	DhcpServerEditable *bool `json:"dhcpServerEditable,omitempty"`
 	CanAssignPool *bool `json:"canAssignPool,omitempty"`
 	OptionTypes []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _SubnetType SubnetType
 
 // NewSubnetType instantiates a new SubnetType object
 // This constructor will assign default values to properties that have it defined,
@@ -373,7 +376,41 @@ func (o SubnetType) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.OptionTypes) {
 		toSerialize["optionTypes"] = o.OptionTypes
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *SubnetType) UnmarshalJSON(data []byte) (err error) {
+	varSubnetType := _SubnetType{}
+
+	err = json.Unmarshal(data, &varSubnetType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = SubnetType(varSubnetType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "creatable")
+		delete(additionalProperties, "deletable")
+		delete(additionalProperties, "dhcpServerEditable")
+		delete(additionalProperties, "canAssignPool")
+		delete(additionalProperties, "optionTypes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableSubnetType struct {

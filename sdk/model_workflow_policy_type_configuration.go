@@ -21,7 +21,10 @@ var _ MappedNullable = &WorkflowPolicyTypeConfiguration{}
 // WorkflowPolicyTypeConfiguration Configuration settings for the following policy types: - Workflow 
 type WorkflowPolicyTypeConfiguration struct {
 	WorkflowId *string `json:"workflowId,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _WorkflowPolicyTypeConfiguration WorkflowPolicyTypeConfiguration
 
 // NewWorkflowPolicyTypeConfiguration instantiates a new WorkflowPolicyTypeConfiguration object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o WorkflowPolicyTypeConfiguration) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.WorkflowId) {
 		toSerialize["workflowId"] = o.WorkflowId
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *WorkflowPolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
+	varWorkflowPolicyTypeConfiguration := _WorkflowPolicyTypeConfiguration{}
+
+	err = json.Unmarshal(data, &varWorkflowPolicyTypeConfiguration)
+
+	if err != nil {
+		return err
+	}
+
+	*o = WorkflowPolicyTypeConfiguration(varWorkflowPolicyTypeConfiguration)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "workflowId")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableWorkflowPolicyTypeConfiguration struct {

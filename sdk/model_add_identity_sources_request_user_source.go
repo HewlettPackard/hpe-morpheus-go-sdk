@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -39,6 +38,7 @@ type AddIdentitySourcesRequestUserSource struct {
 	// Manual Role Assignment
 	ManualRoleAssignment *bool `json:"manualRoleAssignment,omitempty"`
 	Config *AddIdentitySourcesRequestUserSourceConfig `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddIdentitySourcesRequestUserSource AddIdentitySourcesRequestUserSource
@@ -405,6 +405,11 @@ func (o AddIdentitySourcesRequestUserSource) ToMap() (map[string]interface{}, er
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -433,15 +438,29 @@ func (o *AddIdentitySourcesRequestUserSource) UnmarshalJSON(data []byte) (err er
 
 	varAddIdentitySourcesRequestUserSource := _AddIdentitySourcesRequestUserSource{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddIdentitySourcesRequestUserSource)
+	err = json.Unmarshal(data, &varAddIdentitySourcesRequestUserSource)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddIdentitySourcesRequestUserSource(varAddIdentitySourcesRequestUserSource)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "defaultAccountRole")
+		delete(additionalProperties, "roleMappings")
+		delete(additionalProperties, "roleMappingNames")
+		delete(additionalProperties, "allowCustomMappings")
+		delete(additionalProperties, "manualRoleAssignment")
+		delete(additionalProperties, "config")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

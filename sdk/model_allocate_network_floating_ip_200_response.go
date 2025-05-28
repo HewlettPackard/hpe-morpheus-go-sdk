@@ -22,7 +22,10 @@ var _ MappedNullable = &AllocateNetworkFloatingIp200Response{}
 type AllocateNetworkFloatingIp200Response struct {
 	Success *bool `json:"success,omitempty"`
 	NetworkFloatingIp *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp `json:"networkFloatingIp,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AllocateNetworkFloatingIp200Response AllocateNetworkFloatingIp200Response
 
 // NewAllocateNetworkFloatingIp200Response instantiates a new AllocateNetworkFloatingIp200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o AllocateNetworkFloatingIp200Response) ToMap() (map[string]interface{}, e
 	if !IsNil(o.NetworkFloatingIp) {
 		toSerialize["networkFloatingIp"] = o.NetworkFloatingIp
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AllocateNetworkFloatingIp200Response) UnmarshalJSON(data []byte) (err error) {
+	varAllocateNetworkFloatingIp200Response := _AllocateNetworkFloatingIp200Response{}
+
+	err = json.Unmarshal(data, &varAllocateNetworkFloatingIp200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AllocateNetworkFloatingIp200Response(varAllocateNetworkFloatingIp200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "success")
+		delete(additionalProperties, "networkFloatingIp")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAllocateNetworkFloatingIp200Response struct {

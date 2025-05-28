@@ -38,7 +38,10 @@ type GetStaticRoutes200ResponseNetworkRoutesInner struct {
 	ExternalType *string `json:"externalType,omitempty"`
 	Enabled *bool `json:"enabled,omitempty"`
 	Visible *bool `json:"visible,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetStaticRoutes200ResponseNetworkRoutesInner GetStaticRoutes200ResponseNetworkRoutesInner
 
 // NewGetStaticRoutes200ResponseNetworkRoutesInner instantiates a new GetStaticRoutes200ResponseNetworkRoutesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -697,7 +700,50 @@ func (o GetStaticRoutes200ResponseNetworkRoutesInner) ToMap() (map[string]interf
 	if !IsNil(o.Visible) {
 		toSerialize["visible"] = o.Visible
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetStaticRoutes200ResponseNetworkRoutesInner) UnmarshalJSON(data []byte) (err error) {
+	varGetStaticRoutes200ResponseNetworkRoutesInner := _GetStaticRoutes200ResponseNetworkRoutesInner{}
+
+	err = json.Unmarshal(data, &varGetStaticRoutes200ResponseNetworkRoutesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetStaticRoutes200ResponseNetworkRoutesInner(varGetStaticRoutes200ResponseNetworkRoutesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "priority")
+		delete(additionalProperties, "routeType")
+		delete(additionalProperties, "source")
+		delete(additionalProperties, "sourceType")
+		delete(additionalProperties, "destination")
+		delete(additionalProperties, "destinationType")
+		delete(additionalProperties, "defaultRoute")
+		delete(additionalProperties, "networkMtu")
+		delete(additionalProperties, "externalInterface")
+		delete(additionalProperties, "internalId")
+		delete(additionalProperties, "uniqueId")
+		delete(additionalProperties, "externalType")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "visible")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetStaticRoutes200ResponseNetworkRoutesInner struct {

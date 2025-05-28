@@ -23,7 +23,10 @@ type ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfDefaultAccountRole 
 	Id *int64 `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
 	Authority *string `json:"authority,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfDefaultAccountRole ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfDefaultAccountRole
 
 // NewListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfDefaultAccountRole instantiates a new ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfDefaultAccountRole object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfDefaultAccountRo
 	if !IsNil(o.Authority) {
 		toSerialize["authority"] = o.Authority
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfDefaultAccountRole) UnmarshalJSON(data []byte) (err error) {
+	varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfDefaultAccountRole := _ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfDefaultAccountRole{}
+
+	err = json.Unmarshal(data, &varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfDefaultAccountRole)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfDefaultAccountRole(varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfDefaultAccountRole)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "authority")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfDefaultAccountRole struct {

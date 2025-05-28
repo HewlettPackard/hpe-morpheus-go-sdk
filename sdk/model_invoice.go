@@ -120,7 +120,10 @@ type Invoice struct {
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
 	LineItemCount *int64 `json:"lineItemCount,omitempty"`
 	LineItems []ListInvoices200ResponseAllOfInvoicesInnerLineItemsInner `json:"lineItems,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _Invoice Invoice
 
 // NewInvoice instantiates a new Invoice object
 // This constructor will assign default values to properties that have it defined,
@@ -3614,7 +3617,131 @@ func (o Invoice) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.LineItems) {
 		toSerialize["lineItems"] = o.LineItems
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *Invoice) UnmarshalJSON(data []byte) (err error) {
+	varInvoice := _Invoice{}
+
+	err = json.Unmarshal(data, &varInvoice)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Invoice(varInvoice)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "ownerId")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "group")
+		delete(additionalProperties, "cloud")
+		delete(additionalProperties, "instance")
+		delete(additionalProperties, "server")
+		delete(additionalProperties, "cluster")
+		delete(additionalProperties, "user")
+		delete(additionalProperties, "plan")
+		delete(additionalProperties, "tags")
+		delete(additionalProperties, "project")
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "refId")
+		delete(additionalProperties, "refUuid")
+		delete(additionalProperties, "refName")
+		delete(additionalProperties, "refCategory")
+		delete(additionalProperties, "resourceId")
+		delete(additionalProperties, "resourceUuid")
+		delete(additionalProperties, "resourceType")
+		delete(additionalProperties, "resourceName")
+		delete(additionalProperties, "resourceExternalId")
+		delete(additionalProperties, "resourceInternalId")
+		delete(additionalProperties, "interval")
+		delete(additionalProperties, "period")
+		delete(additionalProperties, "estimate")
+		delete(additionalProperties, "summaryInvoice")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "startDate")
+		delete(additionalProperties, "endDate")
+		delete(additionalProperties, "refStart")
+		delete(additionalProperties, "refEnd")
+		delete(additionalProperties, "estimatedComputePrice")
+		delete(additionalProperties, "estimatedComputeCost")
+		delete(additionalProperties, "estimatedMemoryPrice")
+		delete(additionalProperties, "estimatedMemoryCost")
+		delete(additionalProperties, "estimatedStoragePrice")
+		delete(additionalProperties, "estimatedStorageCost")
+		delete(additionalProperties, "estimatedNetworkPrice")
+		delete(additionalProperties, "estimatedNetworkCost")
+		delete(additionalProperties, "estimatedLicensePrice")
+		delete(additionalProperties, "estimatedLicenseCost")
+		delete(additionalProperties, "estimatedExtraPrice")
+		delete(additionalProperties, "estimatedExtraCost")
+		delete(additionalProperties, "estimatedTotalPrice")
+		delete(additionalProperties, "estimatedTotalCost")
+		delete(additionalProperties, "estimatedRunningPrice")
+		delete(additionalProperties, "estimatedRunningCost")
+		delete(additionalProperties, "estimatedCurrency")
+		delete(additionalProperties, "estimatedConversionRate")
+		delete(additionalProperties, "actualComputePrice")
+		delete(additionalProperties, "actualComputeCost")
+		delete(additionalProperties, "actualMemoryPrice")
+		delete(additionalProperties, "actualMemoryCost")
+		delete(additionalProperties, "actualStoragePrice")
+		delete(additionalProperties, "actualStorageCost")
+		delete(additionalProperties, "actualNetworkPrice")
+		delete(additionalProperties, "actualNetworkCost")
+		delete(additionalProperties, "actualLicensePrice")
+		delete(additionalProperties, "actualLicenseCost")
+		delete(additionalProperties, "actualExtraPrice")
+		delete(additionalProperties, "actualExtraCost")
+		delete(additionalProperties, "actualTotalPrice")
+		delete(additionalProperties, "actualTotalCost")
+		delete(additionalProperties, "actualRunningPrice")
+		delete(additionalProperties, "actualRunningCost")
+		delete(additionalProperties, "actualCurrency")
+		delete(additionalProperties, "actualConversionRate")
+		delete(additionalProperties, "computePrice")
+		delete(additionalProperties, "computeCost")
+		delete(additionalProperties, "memoryPrice")
+		delete(additionalProperties, "memoryCost")
+		delete(additionalProperties, "storagePrice")
+		delete(additionalProperties, "storageCost")
+		delete(additionalProperties, "networkPrice")
+		delete(additionalProperties, "networkCost")
+		delete(additionalProperties, "licensePrice")
+		delete(additionalProperties, "licenseCost")
+		delete(additionalProperties, "extraPrice")
+		delete(additionalProperties, "extraCost")
+		delete(additionalProperties, "totalPrice")
+		delete(additionalProperties, "totalCost")
+		delete(additionalProperties, "runningPrice")
+		delete(additionalProperties, "runningCost")
+		delete(additionalProperties, "currency")
+		delete(additionalProperties, "conversionRate")
+		delete(additionalProperties, "costType")
+		delete(additionalProperties, "offTime")
+		delete(additionalProperties, "powerState")
+		delete(additionalProperties, "powerDate")
+		delete(additionalProperties, "runningMultiplier")
+		delete(additionalProperties, "usageType")
+		delete(additionalProperties, "usageCategory")
+		delete(additionalProperties, "lastCostDate")
+		delete(additionalProperties, "lastActualDate")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "lineItemCount")
+		delete(additionalProperties, "lineItems")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableInvoice struct {

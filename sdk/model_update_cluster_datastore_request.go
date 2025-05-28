@@ -21,7 +21,10 @@ var _ MappedNullable = &UpdateClusterDatastoreRequest{}
 // UpdateClusterDatastoreRequest struct for UpdateClusterDatastoreRequest
 type UpdateClusterDatastoreRequest struct {
 	Datastore *UpdateClusterDatastoreRequestDatastore `json:"datastore,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateClusterDatastoreRequest UpdateClusterDatastoreRequest
 
 // NewUpdateClusterDatastoreRequest instantiates a new UpdateClusterDatastoreRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o UpdateClusterDatastoreRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Datastore) {
 		toSerialize["datastore"] = o.Datastore
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateClusterDatastoreRequest) UnmarshalJSON(data []byte) (err error) {
+	varUpdateClusterDatastoreRequest := _UpdateClusterDatastoreRequest{}
+
+	err = json.Unmarshal(data, &varUpdateClusterDatastoreRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateClusterDatastoreRequest(varUpdateClusterDatastoreRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "datastore")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateClusterDatastoreRequest struct {

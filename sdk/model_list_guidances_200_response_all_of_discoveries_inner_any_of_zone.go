@@ -23,7 +23,10 @@ type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone struct {
 	Id *int64 `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
 	ZoneType *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"zoneType,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone
 
 // NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone instantiates a new ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) ToMap() (map[str
 	if !IsNil(o.ZoneType) {
 		toSerialize["zoneType"] = o.ZoneType
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) UnmarshalJSON(data []byte) (err error) {
+	varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone := _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone{}
+
+	err = json.Unmarshal(data, &varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone(varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "zoneType")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone struct {

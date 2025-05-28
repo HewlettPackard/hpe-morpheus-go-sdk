@@ -48,7 +48,10 @@ type GetAlerts200ResponseAllOfCheckGroupsInner struct {
 	Availability *float32 `json:"availability,omitempty"`
 	CheckType *GetAlerts200ResponseAllOfChecksInnerCheckType `json:"checkType,omitempty"`
 	Checks []int64 `json:"checks,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetAlerts200ResponseAllOfCheckGroupsInner GetAlerts200ResponseAllOfCheckGroupsInner
 
 // NewGetAlerts200ResponseAllOfCheckGroupsInner instantiates a new GetAlerts200ResponseAllOfCheckGroupsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -1022,7 +1025,59 @@ func (o GetAlerts200ResponseAllOfCheckGroupsInner) ToMap() (map[string]interface
 	if !IsNil(o.Checks) {
 		toSerialize["checks"] = o.Checks
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetAlerts200ResponseAllOfCheckGroupsInner) UnmarshalJSON(data []byte) (err error) {
+	varGetAlerts200ResponseAllOfCheckGroupsInner := _GetAlerts200ResponseAllOfCheckGroupsInner{}
+
+	err = json.Unmarshal(data, &varGetAlerts200ResponseAllOfCheckGroupsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetAlerts200ResponseAllOfCheckGroupsInner(varGetAlerts200ResponseAllOfCheckGroupsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "instance")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "inUptime")
+		delete(additionalProperties, "lastCheckStatus")
+		delete(additionalProperties, "lastWarningDate")
+		delete(additionalProperties, "lastErrorDate")
+		delete(additionalProperties, "lastSuccessDate")
+		delete(additionalProperties, "lastRunDate")
+		delete(additionalProperties, "lastError")
+		delete(additionalProperties, "outageTime")
+		delete(additionalProperties, "lastTimer")
+		delete(additionalProperties, "health")
+		delete(additionalProperties, "history")
+		delete(additionalProperties, "minHappy")
+		delete(additionalProperties, "lastMetric")
+		delete(additionalProperties, "severity")
+		delete(additionalProperties, "createIncident")
+		delete(additionalProperties, "muted")
+		delete(additionalProperties, "createdBy")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "availability")
+		delete(additionalProperties, "checkType")
+		delete(additionalProperties, "checks")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetAlerts200ResponseAllOfCheckGroupsInner struct {

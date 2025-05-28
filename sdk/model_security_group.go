@@ -35,7 +35,10 @@ type SecurityGroup struct {
 	Rules []ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner `json:"rules,omitempty"`
 	Tenants []ListSecurityGroups200ResponseAllOfSecurityGroupsInnerTenantsInner `json:"tenants,omitempty"`
 	ResourcePermission *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions `json:"resourcePermission,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _SecurityGroup SecurityGroup
 
 // NewSecurityGroup instantiates a new SecurityGroup object
 // This constructor will assign default values to properties that have it defined,
@@ -589,7 +592,47 @@ func (o SecurityGroup) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ResourcePermission) {
 		toSerialize["resourcePermission"] = o.ResourcePermission
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *SecurityGroup) UnmarshalJSON(data []byte) (err error) {
+	varSecurityGroup := _SecurityGroup{}
+
+	err = json.Unmarshal(data, &varSecurityGroup)
+
+	if err != nil {
+		return err
+	}
+
+	*o = SecurityGroup(varSecurityGroup)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "groupSource")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "syncSource")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "zone")
+		delete(additionalProperties, "locations")
+		delete(additionalProperties, "rules")
+		delete(additionalProperties, "tenants")
+		delete(additionalProperties, "resourcePermission")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableSecurityGroup struct {

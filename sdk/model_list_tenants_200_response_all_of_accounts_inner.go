@@ -36,7 +36,10 @@ type ListTenants200ResponseAllOfAccountsInner struct {
 	Stats *ListTenants200ResponseAllOfAccountsInnerStats `json:"stats,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListTenants200ResponseAllOfAccountsInner ListTenants200ResponseAllOfAccountsInner
 
 // NewListTenants200ResponseAllOfAccountsInner instantiates a new ListTenants200ResponseAllOfAccountsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -590,7 +593,47 @@ func (o ListTenants200ResponseAllOfAccountsInner) ToMap() (map[string]interface{
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListTenants200ResponseAllOfAccountsInner) UnmarshalJSON(data []byte) (err error) {
+	varListTenants200ResponseAllOfAccountsInner := _ListTenants200ResponseAllOfAccountsInner{}
+
+	err = json.Unmarshal(data, &varListTenants200ResponseAllOfAccountsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListTenants200ResponseAllOfAccountsInner(varListTenants200ResponseAllOfAccountsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "subdomain")
+		delete(additionalProperties, "currency")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "customerNumber")
+		delete(additionalProperties, "accountNumber")
+		delete(additionalProperties, "accountName")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "master")
+		delete(additionalProperties, "role")
+		delete(additionalProperties, "stats")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListTenants200ResponseAllOfAccountsInner struct {

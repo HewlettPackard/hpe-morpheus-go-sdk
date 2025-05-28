@@ -38,7 +38,10 @@ type GetNetworkRouter200ResponseNetworkRouterType struct {
 	RuleOptionTypes []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"ruleOptionTypes,omitempty"`
 	FirewallGroupOptionTypes []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"firewallGroupOptionTypes,omitempty"`
 	NatOptionTypes []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"natOptionTypes,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetNetworkRouter200ResponseNetworkRouterType GetNetworkRouter200ResponseNetworkRouterType
 
 // NewGetNetworkRouter200ResponseNetworkRouterType instantiates a new GetNetworkRouter200ResponseNetworkRouterType object
 // This constructor will assign default values to properties that have it defined,
@@ -697,7 +700,50 @@ func (o GetNetworkRouter200ResponseNetworkRouterType) ToMap() (map[string]interf
 	if !IsNil(o.NatOptionTypes) {
 		toSerialize["natOptionTypes"] = o.NatOptionTypes
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetNetworkRouter200ResponseNetworkRouterType) UnmarshalJSON(data []byte) (err error) {
+	varGetNetworkRouter200ResponseNetworkRouterType := _GetNetworkRouter200ResponseNetworkRouterType{}
+
+	err = json.Unmarshal(data, &varGetNetworkRouter200ResponseNetworkRouterType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetNetworkRouter200ResponseNetworkRouterType(varGetNetworkRouter200ResponseNetworkRouterType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "creatable")
+		delete(additionalProperties, "selectable")
+		delete(additionalProperties, "hasFirewall")
+		delete(additionalProperties, "hasDhcp")
+		delete(additionalProperties, "hasRouting")
+		delete(additionalProperties, "hasNat")
+		delete(additionalProperties, "hasNetworkServer")
+		delete(additionalProperties, "hasFirewallGroups")
+		delete(additionalProperties, "hasSecurityGroupPriority")
+		delete(additionalProperties, "optionTypes")
+		delete(additionalProperties, "ruleOptionTypes")
+		delete(additionalProperties, "firewallGroupOptionTypes")
+		delete(additionalProperties, "natOptionTypes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetNetworkRouter200ResponseNetworkRouterType struct {

@@ -44,7 +44,10 @@ type ListApps200ResponseAllOfAppsInner struct {
 	AppTiers []map[string]interface{} `json:"appTiers,omitempty"`
 	Instances []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"instances,omitempty"`
 	Stats *ListApps200ResponseAllOfAppsInnerStats `json:"stats,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListApps200ResponseAllOfAppsInner ListApps200ResponseAllOfAppsInner
 
 // NewListApps200ResponseAllOfAppsInner instantiates a new ListApps200ResponseAllOfAppsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -878,7 +881,55 @@ func (o ListApps200ResponseAllOfAppsInner) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.Stats) {
 		toSerialize["stats"] = o.Stats
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListApps200ResponseAllOfAppsInner) UnmarshalJSON(data []byte) (err error) {
+	varListApps200ResponseAllOfAppsInner := _ListApps200ResponseAllOfAppsInner{}
+
+	err = json.Unmarshal(data, &varListApps200ResponseAllOfAppsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListApps200ResponseAllOfAppsInner(varListApps200ResponseAllOfAppsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "environment")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "owner")
+		delete(additionalProperties, "siteId")
+		delete(additionalProperties, "group")
+		delete(additionalProperties, "blueprint")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "removalDate")
+		delete(additionalProperties, "appContext")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "appStatus")
+		delete(additionalProperties, "instanceCount")
+		delete(additionalProperties, "containerCount")
+		delete(additionalProperties, "appTiers")
+		delete(additionalProperties, "instances")
+		delete(additionalProperties, "stats")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListApps200ResponseAllOfAppsInner struct {

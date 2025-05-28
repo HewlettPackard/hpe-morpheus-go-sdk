@@ -27,7 +27,10 @@ type AddImageBuild200ResponseAllOfImageBuildConfigVolumesInner struct {
 	RootVolume *bool `json:"rootVolume,omitempty"`
 	StorageType *int64 `json:"storageType,omitempty"`
 	DatastoreId *string `json:"datastoreId,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddImageBuild200ResponseAllOfImageBuildConfigVolumesInner AddImageBuild200ResponseAllOfImageBuildConfigVolumesInner
 
 // NewAddImageBuild200ResponseAllOfImageBuildConfigVolumesInner instantiates a new AddImageBuild200ResponseAllOfImageBuildConfigVolumesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -301,7 +304,39 @@ func (o AddImageBuild200ResponseAllOfImageBuildConfigVolumesInner) ToMap() (map[
 	if !IsNil(o.DatastoreId) {
 		toSerialize["datastoreId"] = o.DatastoreId
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddImageBuild200ResponseAllOfImageBuildConfigVolumesInner) UnmarshalJSON(data []byte) (err error) {
+	varAddImageBuild200ResponseAllOfImageBuildConfigVolumesInner := _AddImageBuild200ResponseAllOfImageBuildConfigVolumesInner{}
+
+	err = json.Unmarshal(data, &varAddImageBuild200ResponseAllOfImageBuildConfigVolumesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddImageBuild200ResponseAllOfImageBuildConfigVolumesInner(varAddImageBuild200ResponseAllOfImageBuildConfigVolumesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "size")
+		delete(additionalProperties, "maxIOPS")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "rootVolume")
+		delete(additionalProperties, "storageType")
+		delete(additionalProperties, "datastoreId")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddImageBuild200ResponseAllOfImageBuildConfigVolumesInner struct {

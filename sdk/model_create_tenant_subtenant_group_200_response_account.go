@@ -34,7 +34,10 @@ type CreateTenantSubtenantGroup200ResponseAccount struct {
 	Stats *ListGroups200ResponseAllOfGroupsInnerStats `json:"stats,omitempty"`
 	ServerCount *int64 `json:"serverCount,omitempty"`
 	Success *bool `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _CreateTenantSubtenantGroup200ResponseAccount CreateTenantSubtenantGroup200ResponseAccount
 
 // NewCreateTenantSubtenantGroup200ResponseAccount instantiates a new CreateTenantSubtenantGroup200ResponseAccount object
 // This constructor will assign default values to properties that have it defined,
@@ -518,7 +521,45 @@ func (o CreateTenantSubtenantGroup200ResponseAccount) ToMap() (map[string]interf
 	if !IsNil(o.Success) {
 		toSerialize["success"] = o.Success
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *CreateTenantSubtenantGroup200ResponseAccount) UnmarshalJSON(data []byte) (err error) {
+	varCreateTenantSubtenantGroup200ResponseAccount := _CreateTenantSubtenantGroup200ResponseAccount{}
+
+	err = json.Unmarshal(data, &varCreateTenantSubtenantGroup200ResponseAccount)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CreateTenantSubtenantGroup200ResponseAccount(varCreateTenantSubtenantGroup200ResponseAccount)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "location")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "zones")
+		delete(additionalProperties, "stats")
+		delete(additionalProperties, "serverCount")
+		delete(additionalProperties, "success")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCreateTenantSubtenantGroup200ResponseAccount struct {

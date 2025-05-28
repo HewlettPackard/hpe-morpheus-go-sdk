@@ -37,7 +37,10 @@ type CreateInstanceScheduleRequestInstanceSchedule struct {
 	// End Date. Only used and required for scheduleType `exact`
 	EndDate *time.Time `json:"endDate,omitempty"`
 	Threshold *CreateInstanceScheduleRequestInstanceScheduleThreshold `json:"threshold,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _CreateInstanceScheduleRequestInstanceSchedule CreateInstanceScheduleRequestInstanceSchedule
 
 // NewCreateInstanceScheduleRequestInstanceSchedule instantiates a new CreateInstanceScheduleRequestInstanceSchedule object
 // This constructor will assign default values to properties that have it defined,
@@ -389,7 +392,41 @@ func (o CreateInstanceScheduleRequestInstanceSchedule) ToMap() (map[string]inter
 	if !IsNil(o.Threshold) {
 		toSerialize["threshold"] = o.Threshold
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *CreateInstanceScheduleRequestInstanceSchedule) UnmarshalJSON(data []byte) (err error) {
+	varCreateInstanceScheduleRequestInstanceSchedule := _CreateInstanceScheduleRequestInstanceSchedule{}
+
+	err = json.Unmarshal(data, &varCreateInstanceScheduleRequestInstanceSchedule)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CreateInstanceScheduleRequestInstanceSchedule(varCreateInstanceScheduleRequestInstanceSchedule)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "scheduleType")
+		delete(additionalProperties, "scheduleTimezone")
+		delete(additionalProperties, "startDayOfWeek")
+		delete(additionalProperties, "startTime")
+		delete(additionalProperties, "endDayOfWeek")
+		delete(additionalProperties, "endTime")
+		delete(additionalProperties, "startDate")
+		delete(additionalProperties, "endDate")
+		delete(additionalProperties, "threshold")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCreateInstanceScheduleRequestInstanceSchedule struct {

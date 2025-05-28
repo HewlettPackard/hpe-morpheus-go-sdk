@@ -23,7 +23,10 @@ type AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf22 struct {
 	PowerScheduleType *string `json:"powerScheduleType,omitempty"`
 	PowerSchedule *string `json:"powerSchedule,omitempty"`
 	PowerScheduleHideFixed *bool `json:"powerScheduleHideFixed,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf22 AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf22
 
 // NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf22 instantiates a new AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf22 object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf22) ToMap() (map[strin
 	if !IsNil(o.PowerScheduleHideFixed) {
 		toSerialize["powerScheduleHideFixed"] = o.PowerScheduleHideFixed
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf22) UnmarshalJSON(data []byte) (err error) {
+	varAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf22 := _AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf22{}
+
+	err = json.Unmarshal(data, &varAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf22)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf22(varAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf22)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "powerScheduleType")
+		delete(additionalProperties, "powerSchedule")
+		delete(additionalProperties, "powerScheduleHideFixed")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf22 struct {

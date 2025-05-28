@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -26,6 +25,7 @@ type AddLogSettingsSyslogRulesRequestSyslogRule struct {
 	Name string `json:"name"`
 	// Rule configuration
 	Rule string `json:"rule"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddLogSettingsSyslogRulesRequestSyslogRule AddLogSettingsSyslogRulesRequestSyslogRule
@@ -109,6 +109,11 @@ func (o AddLogSettingsSyslogRulesRequestSyslogRule) ToMap() (map[string]interfac
 	toSerialize := map[string]interface{}{}
 	toSerialize["name"] = o.Name
 	toSerialize["rule"] = o.Rule
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -137,15 +142,21 @@ func (o *AddLogSettingsSyslogRulesRequestSyslogRule) UnmarshalJSON(data []byte) 
 
 	varAddLogSettingsSyslogRulesRequestSyslogRule := _AddLogSettingsSyslogRulesRequestSyslogRule{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddLogSettingsSyslogRulesRequestSyslogRule)
+	err = json.Unmarshal(data, &varAddLogSettingsSyslogRulesRequestSyslogRule)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddLogSettingsSyslogRulesRequestSyslogRule(varAddLogSettingsSyslogRulesRequestSyslogRule)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "rule")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

@@ -21,7 +21,10 @@ var _ MappedNullable = &GetApprovals200Response{}
 // GetApprovals200Response struct for GetApprovals200Response
 type GetApprovals200Response struct {
 	Approval *GetApprovals200ResponseApproval `json:"approval,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetApprovals200Response GetApprovals200Response
 
 // NewGetApprovals200Response instantiates a new GetApprovals200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o GetApprovals200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Approval) {
 		toSerialize["approval"] = o.Approval
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetApprovals200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetApprovals200Response := _GetApprovals200Response{}
+
+	err = json.Unmarshal(data, &varGetApprovals200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetApprovals200Response(varGetApprovals200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "approval")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetApprovals200Response struct {

@@ -22,7 +22,10 @@ var _ MappedNullable = &ApplyTemplate200Response{}
 type ApplyTemplate200Response struct {
 	Success *bool `json:"success,omitempty"`
 	ExecutionId *string `json:"executionId,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ApplyTemplate200Response ApplyTemplate200Response
 
 // NewApplyTemplate200Response instantiates a new ApplyTemplate200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o ApplyTemplate200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ExecutionId) {
 		toSerialize["executionId"] = o.ExecutionId
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ApplyTemplate200Response) UnmarshalJSON(data []byte) (err error) {
+	varApplyTemplate200Response := _ApplyTemplate200Response{}
+
+	err = json.Unmarshal(data, &varApplyTemplate200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ApplyTemplate200Response(varApplyTemplate200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "success")
+		delete(additionalProperties, "executionId")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableApplyTemplate200Response struct {

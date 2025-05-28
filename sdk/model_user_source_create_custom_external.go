@@ -30,7 +30,10 @@ type UserSourceCreateCustomExternal struct {
 	EncryptionAlgo *string `json:"encryptionAlgo,omitempty"`
 	// Encryption Key
 	EncryptionKey *string `json:"encryptionKey,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UserSourceCreateCustomExternal UserSourceCreateCustomExternal
 
 // NewUserSourceCreateCustomExternal instantiates a new UserSourceCreateCustomExternal object
 // This constructor will assign default values to properties that have it defined,
@@ -238,7 +241,37 @@ func (o UserSourceCreateCustomExternal) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.EncryptionKey) {
 		toSerialize["encryptionKey"] = o.EncryptionKey
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UserSourceCreateCustomExternal) UnmarshalJSON(data []byte) (err error) {
+	varUserSourceCreateCustomExternal := _UserSourceCreateCustomExternal{}
+
+	err = json.Unmarshal(data, &varUserSourceCreateCustomExternal)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UserSourceCreateCustomExternal(varUserSourceCreateCustomExternal)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "loginUrl")
+		delete(additionalProperties, "doNotIncludeSAMLRequest")
+		delete(additionalProperties, "logout")
+		delete(additionalProperties, "encryptionAlgo")
+		delete(additionalProperties, "encryptionKey")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUserSourceCreateCustomExternal struct {

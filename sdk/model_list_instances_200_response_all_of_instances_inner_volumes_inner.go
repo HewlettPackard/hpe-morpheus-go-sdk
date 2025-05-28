@@ -36,7 +36,10 @@ type ListInstances200ResponseAllOfInstancesInnerVolumesInner struct {
 	StorageType *int64 `json:"storageType,omitempty"`
 	UnitNumber *string `json:"unitNumber,omitempty"`
 	ControllerMountPoint *string `json:"controllerMountPoint,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListInstances200ResponseAllOfInstancesInnerVolumesInner ListInstances200ResponseAllOfInstancesInnerVolumesInner
 
 // NewListInstances200ResponseAllOfInstancesInnerVolumesInner instantiates a new ListInstances200ResponseAllOfInstancesInnerVolumesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -625,7 +628,48 @@ func (o ListInstances200ResponseAllOfInstancesInnerVolumesInner) ToMap() (map[st
 	if !IsNil(o.ControllerMountPoint) {
 		toSerialize["controllerMountPoint"] = o.ControllerMountPoint
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) UnmarshalJSON(data []byte) (err error) {
+	varListInstances200ResponseAllOfInstancesInnerVolumesInner := _ListInstances200ResponseAllOfInstancesInnerVolumesInner{}
+
+	err = json.Unmarshal(data, &varListInstances200ResponseAllOfInstancesInnerVolumesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListInstances200ResponseAllOfInstancesInnerVolumesInner(varListInstances200ResponseAllOfInstancesInnerVolumesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "controllerId")
+		delete(additionalProperties, "datastoreId")
+		delete(additionalProperties, "displayOrder")
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "uuid")
+		delete(additionalProperties, "maxIOPS")
+		delete(additionalProperties, "maxStorage")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "shortName")
+		delete(additionalProperties, "resizeable")
+		delete(additionalProperties, "planResizable")
+		delete(additionalProperties, "rootVolume")
+		delete(additionalProperties, "size")
+		delete(additionalProperties, "storageType")
+		delete(additionalProperties, "unitNumber")
+		delete(additionalProperties, "controllerMountPoint")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListInstances200ResponseAllOfInstancesInnerVolumesInner struct {

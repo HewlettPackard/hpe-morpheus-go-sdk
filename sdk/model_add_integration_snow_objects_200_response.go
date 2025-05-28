@@ -22,7 +22,10 @@ var _ MappedNullable = &AddIntegrationSnowObjects200Response{}
 type AddIntegrationSnowObjects200Response struct {
 	Object *GetAlerts200ResponseAllOfChecksInnerAccount `json:"object,omitempty"`
 	Success *bool `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddIntegrationSnowObjects200Response AddIntegrationSnowObjects200Response
 
 // NewAddIntegrationSnowObjects200Response instantiates a new AddIntegrationSnowObjects200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o AddIntegrationSnowObjects200Response) ToMap() (map[string]interface{}, e
 	if !IsNil(o.Success) {
 		toSerialize["success"] = o.Success
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddIntegrationSnowObjects200Response) UnmarshalJSON(data []byte) (err error) {
+	varAddIntegrationSnowObjects200Response := _AddIntegrationSnowObjects200Response{}
+
+	err = json.Unmarshal(data, &varAddIntegrationSnowObjects200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddIntegrationSnowObjects200Response(varAddIntegrationSnowObjects200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "object")
+		delete(additionalProperties, "success")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddIntegrationSnowObjects200Response struct {

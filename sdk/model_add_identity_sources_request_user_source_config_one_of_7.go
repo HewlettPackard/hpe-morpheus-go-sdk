@@ -28,7 +28,10 @@ type AddIdentitySourcesRequestUserSourceConfigOneOf7 struct {
 	EncryptionAlgo *string `json:"encryptionAlgo,omitempty"`
 	// Encryption Key
 	EncryptionKey *string `json:"encryptionKey,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddIdentitySourcesRequestUserSourceConfigOneOf7 AddIdentitySourcesRequestUserSourceConfigOneOf7
 
 // NewAddIdentitySourcesRequestUserSourceConfigOneOf7 instantiates a new AddIdentitySourcesRequestUserSourceConfigOneOf7 object
 // This constructor will assign default values to properties that have it defined,
@@ -197,7 +200,36 @@ func (o AddIdentitySourcesRequestUserSourceConfigOneOf7) ToMap() (map[string]int
 	if !IsNil(o.EncryptionKey) {
 		toSerialize["encryptionKey"] = o.EncryptionKey
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddIdentitySourcesRequestUserSourceConfigOneOf7) UnmarshalJSON(data []byte) (err error) {
+	varAddIdentitySourcesRequestUserSourceConfigOneOf7 := _AddIdentitySourcesRequestUserSourceConfigOneOf7{}
+
+	err = json.Unmarshal(data, &varAddIdentitySourcesRequestUserSourceConfigOneOf7)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddIdentitySourcesRequestUserSourceConfigOneOf7(varAddIdentitySourcesRequestUserSourceConfigOneOf7)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "endpoint")
+		delete(additionalProperties, "apiStyle")
+		delete(additionalProperties, "encryptionAlgo")
+		delete(additionalProperties, "encryptionKey")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddIdentitySourcesRequestUserSourceConfigOneOf7 struct {

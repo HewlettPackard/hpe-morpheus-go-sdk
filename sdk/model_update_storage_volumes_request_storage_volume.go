@@ -28,7 +28,10 @@ type UpdateStorageVolumesRequestStorageVolume struct {
 	Config map[string]interface{} `json:"config,omitempty"`
 	StorageServer *AddClusterLayoutsRequestLayoutMastersInnerContainerType `json:"storageServer,omitempty"`
 	StorageGroup *AddClusterLayoutsRequestLayoutMastersInnerContainerType `json:"storageGroup,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateStorageVolumesRequestStorageVolume UpdateStorageVolumesRequestStorageVolume
 
 // NewUpdateStorageVolumesRequestStorageVolume instantiates a new UpdateStorageVolumesRequestStorageVolume object
 // This constructor will assign default values to properties that have it defined,
@@ -232,7 +235,37 @@ func (o UpdateStorageVolumesRequestStorageVolume) ToMap() (map[string]interface{
 	if !IsNil(o.StorageGroup) {
 		toSerialize["storageGroup"] = o.StorageGroup
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateStorageVolumesRequestStorageVolume) UnmarshalJSON(data []byte) (err error) {
+	varUpdateStorageVolumesRequestStorageVolume := _UpdateStorageVolumesRequestStorageVolume{}
+
+	err = json.Unmarshal(data, &varUpdateStorageVolumesRequestStorageVolume)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateStorageVolumesRequestStorageVolume(varUpdateStorageVolumesRequestStorageVolume)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "storageServer")
+		delete(additionalProperties, "storageGroup")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateStorageVolumesRequestStorageVolume struct {

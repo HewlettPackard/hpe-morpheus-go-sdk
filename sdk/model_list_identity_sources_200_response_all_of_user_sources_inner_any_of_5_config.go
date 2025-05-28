@@ -41,7 +41,10 @@ type ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config struct {
 	DoNotValidateSubjectRecipients *bool `json:"doNotValidateSubjectRecipients,omitempty"`
 	SAMLSignatureMode *string `json:"SAMLSignatureMode,omitempty"`
 	ForceAuthn *bool `json:"forceAuthn,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config
 
 // NewListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config instantiates a new ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config object
 // This constructor will assign default values to properties that have it defined,
@@ -805,7 +808,53 @@ func (o ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config) ToMap()
 	if !IsNil(o.ForceAuthn) {
 		toSerialize["forceAuthn"] = o.ForceAuthn
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config) UnmarshalJSON(data []byte) (err error) {
+	varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config := _ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config{}
+
+	err = json.Unmarshal(data, &varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config(varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "roleAttributeName")
+		delete(additionalProperties, "requiredAttributeValue")
+		delete(additionalProperties, "givenNameAttribute")
+		delete(additionalProperties, "surnameAttribute")
+		delete(additionalProperties, "logoutUrl")
+		delete(additionalProperties, "doNotIncludeSAMLRequest")
+		delete(additionalProperties, "publicKey")
+		delete(additionalProperties, "emailAttribute")
+		delete(additionalProperties, "url")
+		delete(additionalProperties, "doNotValidateSignature")
+		delete(additionalProperties, "doNotValidateStatusCode")
+		delete(additionalProperties, "doNotValidateDestination")
+		delete(additionalProperties, "doNotValidateIssueInstants")
+		delete(additionalProperties, "doNotValidateAssertions")
+		delete(additionalProperties, "doNotValidateAuthStatements")
+		delete(additionalProperties, "doNotValidateSubject")
+		delete(additionalProperties, "doNotValidateConditions")
+		delete(additionalProperties, "doNotValidateAudiences")
+		delete(additionalProperties, "doNotValidateSubjectRecipients")
+		delete(additionalProperties, "SAMLSignatureMode")
+		delete(additionalProperties, "forceAuthn")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5Config struct {

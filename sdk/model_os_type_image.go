@@ -33,7 +33,10 @@ type OsTypeImage struct {
 	ComputeZoneType *int64 `json:"computeZoneType,omitempty"`
 	// The cloud that is attached to osTypeImage. 
 	Zone *int64 `json:"zone,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _OsTypeImage OsTypeImage
 
 // NewOsTypeImage instantiates a new OsTypeImage object
 // This constructor will assign default values to properties that have it defined,
@@ -307,7 +310,39 @@ func (o OsTypeImage) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Zone) {
 		toSerialize["zone"] = o.Zone
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *OsTypeImage) UnmarshalJSON(data []byte) (err error) {
+	varOsTypeImage := _OsTypeImage{}
+
+	err = json.Unmarshal(data, &varOsTypeImage)
+
+	if err != nil {
+		return err
+	}
+
+	*o = OsTypeImage(varOsTypeImage)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "virtualImageId")
+		delete(additionalProperties, "virtualImageName")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "provisionType")
+		delete(additionalProperties, "computeZoneType")
+		delete(additionalProperties, "zone")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableOsTypeImage struct {

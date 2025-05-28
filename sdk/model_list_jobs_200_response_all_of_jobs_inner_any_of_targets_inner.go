@@ -24,7 +24,10 @@ type ListJobs200ResponseAllOfJobsInnerAnyOfTargetsInner struct {
 	Name *string `json:"name,omitempty"`
 	TargetType *string `json:"targetType,omitempty"`
 	RefId *int64 `json:"refId,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListJobs200ResponseAllOfJobsInnerAnyOfTargetsInner ListJobs200ResponseAllOfJobsInnerAnyOfTargetsInner
 
 // NewListJobs200ResponseAllOfJobsInnerAnyOfTargetsInner instantiates a new ListJobs200ResponseAllOfJobsInnerAnyOfTargetsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -193,7 +196,36 @@ func (o ListJobs200ResponseAllOfJobsInnerAnyOfTargetsInner) ToMap() (map[string]
 	if !IsNil(o.RefId) {
 		toSerialize["refId"] = o.RefId
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListJobs200ResponseAllOfJobsInnerAnyOfTargetsInner) UnmarshalJSON(data []byte) (err error) {
+	varListJobs200ResponseAllOfJobsInnerAnyOfTargetsInner := _ListJobs200ResponseAllOfJobsInnerAnyOfTargetsInner{}
+
+	err = json.Unmarshal(data, &varListJobs200ResponseAllOfJobsInnerAnyOfTargetsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListJobs200ResponseAllOfJobsInnerAnyOfTargetsInner(varListJobs200ResponseAllOfJobsInnerAnyOfTargetsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "targetType")
+		delete(additionalProperties, "refId")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListJobs200ResponseAllOfJobsInnerAnyOfTargetsInner struct {

@@ -22,7 +22,10 @@ var _ MappedNullable = &UpdateNetworkRouterRequestNetworkRouterZone{}
 type UpdateNetworkRouterRequestNetworkRouterZone struct {
 	// Cloud ID
 	Id *int64 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateNetworkRouterRequestNetworkRouterZone UpdateNetworkRouterRequestNetworkRouterZone
 
 // NewUpdateNetworkRouterRequestNetworkRouterZone instantiates a new UpdateNetworkRouterRequestNetworkRouterZone object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o UpdateNetworkRouterRequestNetworkRouterZone) ToMap() (map[string]interfa
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateNetworkRouterRequestNetworkRouterZone) UnmarshalJSON(data []byte) (err error) {
+	varUpdateNetworkRouterRequestNetworkRouterZone := _UpdateNetworkRouterRequestNetworkRouterZone{}
+
+	err = json.Unmarshal(data, &varUpdateNetworkRouterRequestNetworkRouterZone)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateNetworkRouterRequestNetworkRouterZone(varUpdateNetworkRouterRequestNetworkRouterZone)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateNetworkRouterRequestNetworkRouterZone struct {

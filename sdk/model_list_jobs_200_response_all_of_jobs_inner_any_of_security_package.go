@@ -22,7 +22,10 @@ var _ MappedNullable = &ListJobs200ResponseAllOfJobsInnerAnyOfSecurityPackage{}
 type ListJobs200ResponseAllOfJobsInnerAnyOfSecurityPackage struct {
 	Id *int64 `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListJobs200ResponseAllOfJobsInnerAnyOfSecurityPackage ListJobs200ResponseAllOfJobsInnerAnyOfSecurityPackage
 
 // NewListJobs200ResponseAllOfJobsInnerAnyOfSecurityPackage instantiates a new ListJobs200ResponseAllOfJobsInnerAnyOfSecurityPackage object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o ListJobs200ResponseAllOfJobsInnerAnyOfSecurityPackage) ToMap() (map[stri
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListJobs200ResponseAllOfJobsInnerAnyOfSecurityPackage) UnmarshalJSON(data []byte) (err error) {
+	varListJobs200ResponseAllOfJobsInnerAnyOfSecurityPackage := _ListJobs200ResponseAllOfJobsInnerAnyOfSecurityPackage{}
+
+	err = json.Unmarshal(data, &varListJobs200ResponseAllOfJobsInnerAnyOfSecurityPackage)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListJobs200ResponseAllOfJobsInnerAnyOfSecurityPackage(varListJobs200ResponseAllOfJobsInnerAnyOfSecurityPackage)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListJobs200ResponseAllOfJobsInnerAnyOfSecurityPackage struct {

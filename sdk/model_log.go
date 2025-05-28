@@ -31,7 +31,10 @@ type Log struct {
 	Total *int64 `json:"total,omitempty"`
 	Success *bool `json:"success,omitempty"`
 	Count *int64 `json:"count,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _Log Log
 
 // NewLog instantiates a new Log object
 // This constructor will assign default values to properties that have it defined,
@@ -410,7 +413,42 @@ func (o Log) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Count) {
 		toSerialize["count"] = o.Count
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *Log) UnmarshalJSON(data []byte) (err error) {
+	varLog := _Log{}
+
+	err = json.Unmarshal(data, &varLog)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Log(varLog)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "sort")
+		delete(additionalProperties, "offset")
+		delete(additionalProperties, "start")
+		delete(additionalProperties, "end")
+		delete(additionalProperties, "data")
+		delete(additionalProperties, "max")
+		delete(additionalProperties, "grandTotal")
+		delete(additionalProperties, "total")
+		delete(additionalProperties, "success")
+		delete(additionalProperties, "count")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableLog struct {

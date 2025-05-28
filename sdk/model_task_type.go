@@ -34,7 +34,10 @@ type TaskType struct {
 	AllowLocalRepo *bool `json:"allowLocalRepo,omitempty"`
 	AllowRemoteKeyAuth *bool `json:"allowRemoteKeyAuth,omitempty"`
 	OptionTypes []ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _TaskType TaskType
 
 // NewTaskType instantiates a new TaskType object
 // This constructor will assign default values to properties that have it defined,
@@ -553,7 +556,46 @@ func (o TaskType) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.OptionTypes) {
 		toSerialize["optionTypes"] = o.OptionTypes
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *TaskType) UnmarshalJSON(data []byte) (err error) {
+	varTaskType := _TaskType{}
+
+	err = json.Unmarshal(data, &varTaskType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = TaskType(varTaskType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "scriptable")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "hasResults")
+		delete(additionalProperties, "allowExecuteLocal")
+		delete(additionalProperties, "allowExecuteRemote")
+		delete(additionalProperties, "allowExecuteResource")
+		delete(additionalProperties, "allowLocalRepo")
+		delete(additionalProperties, "allowRemoteKeyAuth")
+		delete(additionalProperties, "optionTypes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableTaskType struct {

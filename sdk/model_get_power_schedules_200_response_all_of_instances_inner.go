@@ -22,7 +22,10 @@ var _ MappedNullable = &GetPowerSchedules200ResponseAllOfInstancesInner{}
 type GetPowerSchedules200ResponseAllOfInstancesInner struct {
 	Id *int64 `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetPowerSchedules200ResponseAllOfInstancesInner GetPowerSchedules200ResponseAllOfInstancesInner
 
 // NewGetPowerSchedules200ResponseAllOfInstancesInner instantiates a new GetPowerSchedules200ResponseAllOfInstancesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o GetPowerSchedules200ResponseAllOfInstancesInner) ToMap() (map[string]int
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetPowerSchedules200ResponseAllOfInstancesInner) UnmarshalJSON(data []byte) (err error) {
+	varGetPowerSchedules200ResponseAllOfInstancesInner := _GetPowerSchedules200ResponseAllOfInstancesInner{}
+
+	err = json.Unmarshal(data, &varGetPowerSchedules200ResponseAllOfInstancesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetPowerSchedules200ResponseAllOfInstancesInner(varGetPowerSchedules200ResponseAllOfInstancesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetPowerSchedules200ResponseAllOfInstancesInner struct {

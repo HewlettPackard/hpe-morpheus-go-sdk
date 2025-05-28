@@ -53,7 +53,10 @@ type UpdateInstanceNetworkInterface200ResponseAllOfOneOfServer struct {
 	ComputeServerType *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType `json:"computeServerType,omitempty"`
 	Interfaces []UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerInterfacesInner `json:"interfaces,omitempty"`
 	Zone *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone `json:"zone,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateInstanceNetworkInterface200ResponseAllOfOneOfServer UpdateInstanceNetworkInterface200ResponseAllOfOneOfServer
 
 // NewUpdateInstanceNetworkInterface200ResponseAllOfOneOfServer instantiates a new UpdateInstanceNetworkInterface200ResponseAllOfOneOfServer object
 // This constructor will assign default values to properties that have it defined,
@@ -1202,7 +1205,64 @@ func (o UpdateInstanceNetworkInterface200ResponseAllOfOneOfServer) ToMap() (map[
 	if !IsNil(o.Zone) {
 		toSerialize["zone"] = o.Zone
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServer) UnmarshalJSON(data []byte) (err error) {
+	varUpdateInstanceNetworkInterface200ResponseAllOfOneOfServer := _UpdateInstanceNetworkInterface200ResponseAllOfOneOfServer{}
+
+	err = json.Unmarshal(data, &varUpdateInstanceNetworkInterface200ResponseAllOfOneOfServer)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateInstanceNetworkInterface200ResponseAllOfOneOfServer(varUpdateInstanceNetworkInterface200ResponseAllOfOneOfServer)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "displayName")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "zoneId")
+		delete(additionalProperties, "siteId")
+		delete(additionalProperties, "sshHost")
+		delete(additionalProperties, "sshPort")
+		delete(additionalProperties, "externalIp")
+		delete(additionalProperties, "internalIp")
+		delete(additionalProperties, "volumeId")
+		delete(additionalProperties, "platform")
+		delete(additionalProperties, "platformVersion")
+		delete(additionalProperties, "sshUsername")
+		delete(additionalProperties, "sshPassword")
+		delete(additionalProperties, "osDevice")
+		delete(additionalProperties, "dataDevice")
+		delete(additionalProperties, "lvmEnabled")
+		delete(additionalProperties, "apiKey")
+		delete(additionalProperties, "softwareRaid")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "capacityInfo")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "lastStats")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "computeServerType")
+		delete(additionalProperties, "interfaces")
+		delete(additionalProperties, "zone")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServer struct {

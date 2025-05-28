@@ -34,7 +34,10 @@ type ListCloudFolders200ResponseAllOfFoldersInner struct {
 	Tenants []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner `json:"tenants,omitempty"`
 	ResourcePermissions *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission `json:"resourcePermissions,omitempty"`
 	Depth *int64 `json:"depth,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListCloudFolders200ResponseAllOfFoldersInner ListCloudFolders200ResponseAllOfFoldersInner
 
 // NewListCloudFolders200ResponseAllOfFoldersInner instantiates a new ListCloudFolders200ResponseAllOfFoldersInner object
 // This constructor will assign default values to properties that have it defined,
@@ -553,7 +556,46 @@ func (o ListCloudFolders200ResponseAllOfFoldersInner) ToMap() (map[string]interf
 	if !IsNil(o.Depth) {
 		toSerialize["depth"] = o.Depth
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListCloudFolders200ResponseAllOfFoldersInner) UnmarshalJSON(data []byte) (err error) {
+	varListCloudFolders200ResponseAllOfFoldersInner := _ListCloudFolders200ResponseAllOfFoldersInner{}
+
+	err = json.Unmarshal(data, &varListCloudFolders200ResponseAllOfFoldersInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListCloudFolders200ResponseAllOfFoldersInner(varListCloudFolders200ResponseAllOfFoldersInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "zone")
+		delete(additionalProperties, "parent")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "readOnly")
+		delete(additionalProperties, "defaultFolder")
+		delete(additionalProperties, "defaultStore")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "tenants")
+		delete(additionalProperties, "resourcePermissions")
+		delete(additionalProperties, "depth")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListCloudFolders200ResponseAllOfFoldersInner struct {

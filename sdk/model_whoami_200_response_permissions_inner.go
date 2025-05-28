@@ -23,7 +23,10 @@ type Whoami200ResponsePermissionsInner struct {
 	Name *string `json:"name,omitempty"`
 	Code *string `json:"code,omitempty"`
 	Access *string `json:"access,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _Whoami200ResponsePermissionsInner Whoami200ResponsePermissionsInner
 
 // NewWhoami200ResponsePermissionsInner instantiates a new Whoami200ResponsePermissionsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o Whoami200ResponsePermissionsInner) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.Access) {
 		toSerialize["access"] = o.Access
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *Whoami200ResponsePermissionsInner) UnmarshalJSON(data []byte) (err error) {
+	varWhoami200ResponsePermissionsInner := _Whoami200ResponsePermissionsInner{}
+
+	err = json.Unmarshal(data, &varWhoami200ResponsePermissionsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Whoami200ResponsePermissionsInner(varWhoami200ResponsePermissionsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "access")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableWhoami200ResponsePermissionsInner struct {

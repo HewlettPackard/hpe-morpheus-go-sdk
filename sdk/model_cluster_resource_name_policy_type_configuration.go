@@ -23,7 +23,10 @@ type ClusterResourceNamePolicyTypeConfiguration struct {
 	ServerNamingType *string `json:"serverNamingType,omitempty"`
 	ServerNamingPattern *string `json:"serverNamingPattern,omitempty"`
 	ServerNamingConflict *bool `json:"serverNamingConflict,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ClusterResourceNamePolicyTypeConfiguration ClusterResourceNamePolicyTypeConfiguration
 
 // NewClusterResourceNamePolicyTypeConfiguration instantiates a new ClusterResourceNamePolicyTypeConfiguration object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o ClusterResourceNamePolicyTypeConfiguration) ToMap() (map[string]interfac
 	if !IsNil(o.ServerNamingConflict) {
 		toSerialize["serverNamingConflict"] = o.ServerNamingConflict
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ClusterResourceNamePolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
+	varClusterResourceNamePolicyTypeConfiguration := _ClusterResourceNamePolicyTypeConfiguration{}
+
+	err = json.Unmarshal(data, &varClusterResourceNamePolicyTypeConfiguration)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ClusterResourceNamePolicyTypeConfiguration(varClusterResourceNamePolicyTypeConfiguration)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "serverNamingType")
+		delete(additionalProperties, "serverNamingPattern")
+		delete(additionalProperties, "serverNamingConflict")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableClusterResourceNamePolicyTypeConfiguration struct {

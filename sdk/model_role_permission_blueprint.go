@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -26,6 +25,7 @@ type RolePermissionBlueprint struct {
 	AppTemplateId int32 `json:"appTemplateId"`
 	// The new access level.
 	Access string `json:"access"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _RolePermissionBlueprint RolePermissionBlueprint
@@ -109,6 +109,11 @@ func (o RolePermissionBlueprint) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["appTemplateId"] = o.AppTemplateId
 	toSerialize["access"] = o.Access
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -137,15 +142,21 @@ func (o *RolePermissionBlueprint) UnmarshalJSON(data []byte) (err error) {
 
 	varRolePermissionBlueprint := _RolePermissionBlueprint{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varRolePermissionBlueprint)
+	err = json.Unmarshal(data, &varRolePermissionBlueprint)
 
 	if err != nil {
 		return err
 	}
 
 	*o = RolePermissionBlueprint(varRolePermissionBlueprint)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "appTemplateId")
+		delete(additionalProperties, "access")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

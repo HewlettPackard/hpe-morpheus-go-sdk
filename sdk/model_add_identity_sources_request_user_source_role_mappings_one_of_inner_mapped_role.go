@@ -24,7 +24,10 @@ type AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole struct 
 	Id *int64 `json:"id,omitempty"`
 	// Role authority of the Morpheus role in the identity source tenant
 	Authority *string `json:"authority,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole
 
 // NewAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole instantiates a new AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole object
 // This constructor will assign default values to properties that have it defined,
@@ -123,7 +126,34 @@ func (o AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole) ToM
 	if !IsNil(o.Authority) {
 		toSerialize["authority"] = o.Authority
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole) UnmarshalJSON(data []byte) (err error) {
+	varAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole := _AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole{}
+
+	err = json.Unmarshal(data, &varAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole(varAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "authority")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole struct {

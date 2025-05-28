@@ -21,7 +21,10 @@ var _ MappedNullable = &UpdateWikiAppRequest{}
 // UpdateWikiAppRequest struct for UpdateWikiAppRequest
 type UpdateWikiAppRequest struct {
 	Page *UpdateWikiAppRequestPage `json:"page,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateWikiAppRequest UpdateWikiAppRequest
 
 // NewUpdateWikiAppRequest instantiates a new UpdateWikiAppRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o UpdateWikiAppRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Page) {
 		toSerialize["page"] = o.Page
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateWikiAppRequest) UnmarshalJSON(data []byte) (err error) {
+	varUpdateWikiAppRequest := _UpdateWikiAppRequest{}
+
+	err = json.Unmarshal(data, &varUpdateWikiAppRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateWikiAppRequest(varUpdateWikiAppRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "page")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateWikiAppRequest struct {

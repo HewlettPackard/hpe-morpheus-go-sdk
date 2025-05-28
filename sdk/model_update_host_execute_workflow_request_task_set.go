@@ -22,7 +22,10 @@ var _ MappedNullable = &UpdateHostExecuteWorkflowRequestTaskSet{}
 type UpdateHostExecuteWorkflowRequestTaskSet struct {
 	// Object containing any custom option type configuration parameters
 	CustomOptions map[string]interface{} `json:"customOptions,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateHostExecuteWorkflowRequestTaskSet UpdateHostExecuteWorkflowRequestTaskSet
 
 // NewUpdateHostExecuteWorkflowRequestTaskSet instantiates a new UpdateHostExecuteWorkflowRequestTaskSet object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o UpdateHostExecuteWorkflowRequestTaskSet) ToMap() (map[string]interface{}
 	if !IsNil(o.CustomOptions) {
 		toSerialize["customOptions"] = o.CustomOptions
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateHostExecuteWorkflowRequestTaskSet) UnmarshalJSON(data []byte) (err error) {
+	varUpdateHostExecuteWorkflowRequestTaskSet := _UpdateHostExecuteWorkflowRequestTaskSet{}
+
+	err = json.Unmarshal(data, &varUpdateHostExecuteWorkflowRequestTaskSet)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateHostExecuteWorkflowRequestTaskSet(varUpdateHostExecuteWorkflowRequestTaskSet)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "customOptions")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateHostExecuteWorkflowRequestTaskSet struct {

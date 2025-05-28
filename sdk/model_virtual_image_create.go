@@ -60,7 +60,10 @@ type VirtualImageCreate struct {
 	Tags []AddVirtualImageRequestVirtualImageTagsInner `json:"tags,omitempty"`
 	// Image File URL, a virtual image file will be created by fetching the specified URL
 	Url *string `json:"url,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _VirtualImageCreate VirtualImageCreate
 
 // NewVirtualImageCreate instantiates a new VirtualImageCreate object
 // This constructor will assign default values to properties that have it defined,
@@ -895,7 +898,54 @@ func (o VirtualImageCreate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Url) {
 		toSerialize["url"] = o.Url
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *VirtualImageCreate) UnmarshalJSON(data []byte) (err error) {
+	varVirtualImageCreate := _VirtualImageCreate{}
+
+	err = json.Unmarshal(data, &varVirtualImageCreate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = VirtualImageCreate(varVirtualImageCreate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "imageType")
+		delete(additionalProperties, "storageProvider")
+		delete(additionalProperties, "isCloudInit")
+		delete(additionalProperties, "userData")
+		delete(additionalProperties, "installAgent")
+		delete(additionalProperties, "sshUsername")
+		delete(additionalProperties, "sshPassword")
+		delete(additionalProperties, "sshKey")
+		delete(additionalProperties, "osType")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "accounts")
+		delete(additionalProperties, "isAutoJoinDomain")
+		delete(additionalProperties, "virtioSupported")
+		delete(additionalProperties, "vmToolsInstalled")
+		delete(additionalProperties, "isForceCustomization")
+		delete(additionalProperties, "trialVersion")
+		delete(additionalProperties, "isSysprep")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "tags")
+		delete(additionalProperties, "url")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableVirtualImageCreate struct {

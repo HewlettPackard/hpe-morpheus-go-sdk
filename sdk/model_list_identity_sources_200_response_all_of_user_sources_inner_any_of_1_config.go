@@ -25,7 +25,10 @@ type ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1Config struct {
 	BindingPassword *string `json:"bindingPassword,omitempty"`
 	RequiredRole *string `json:"requiredRole,omitempty"`
 	BindingPasswordHash *string `json:"bindingPasswordHash,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1Config ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1Config
 
 // NewListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1Config instantiates a new ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1Config object
 // This constructor will assign default values to properties that have it defined,
@@ -229,7 +232,37 @@ func (o ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1Config) ToMap()
 	if !IsNil(o.BindingPasswordHash) {
 		toSerialize["bindingPasswordHash"] = o.BindingPasswordHash
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1Config) UnmarshalJSON(data []byte) (err error) {
+	varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1Config := _ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1Config{}
+
+	err = json.Unmarshal(data, &varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1Config)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1Config(varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1Config)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "organizationId")
+		delete(additionalProperties, "bindingUsername")
+		delete(additionalProperties, "bindingPassword")
+		delete(additionalProperties, "requiredRole")
+		delete(additionalProperties, "bindingPasswordHash")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1Config struct {

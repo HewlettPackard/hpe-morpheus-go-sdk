@@ -21,7 +21,10 @@ var _ MappedNullable = &AddScriptRequest{}
 // AddScriptRequest struct for AddScriptRequest
 type AddScriptRequest struct {
 	ContainerScript *AddScriptRequestContainerScript `json:"containerScript,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddScriptRequest AddScriptRequest
 
 // NewAddScriptRequest instantiates a new AddScriptRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o AddScriptRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ContainerScript) {
 		toSerialize["containerScript"] = o.ContainerScript
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddScriptRequest) UnmarshalJSON(data []byte) (err error) {
+	varAddScriptRequest := _AddScriptRequest{}
+
+	err = json.Unmarshal(data, &varAddScriptRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddScriptRequest(varAddScriptRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "containerScript")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddScriptRequest struct {

@@ -24,7 +24,10 @@ type ListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner struct {
 	RefId *int64 `json:"refId,omitempty"`
 	Status *string `json:"status,omitempty"`
 	StatusMessage *string `json:"statusMessage,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner ListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner
 
 // NewListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner instantiates a new ListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -193,7 +196,36 @@ func (o ListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner) ToMa
 	if !IsNil(o.StatusMessage) {
 		toSerialize["statusMessage"] = o.StatusMessage
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner) UnmarshalJSON(data []byte) (err error) {
+	varListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner := _ListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner{}
+
+	err = json.Unmarshal(data, &varListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner(varListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "refId")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "statusMessage")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner struct {

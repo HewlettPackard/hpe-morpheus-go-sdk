@@ -27,7 +27,10 @@ type ListImageBuilds200ResponseAllOfImageBuildsInnerConfig struct {
 	ZoneId *int64 `json:"zoneId,omitempty"`
 	Config *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigConfig `json:"config,omitempty"`
 	Plan *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigPlan `json:"plan,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListImageBuilds200ResponseAllOfImageBuildsInnerConfig ListImageBuilds200ResponseAllOfImageBuildsInnerConfig
 
 // NewListImageBuilds200ResponseAllOfImageBuildsInnerConfig instantiates a new ListImageBuilds200ResponseAllOfImageBuildsInnerConfig object
 // This constructor will assign default values to properties that have it defined,
@@ -301,7 +304,39 @@ func (o ListImageBuilds200ResponseAllOfImageBuildsInnerConfig) ToMap() (map[stri
 	if !IsNil(o.Plan) {
 		toSerialize["plan"] = o.Plan
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfig) UnmarshalJSON(data []byte) (err error) {
+	varListImageBuilds200ResponseAllOfImageBuildsInnerConfig := _ListImageBuilds200ResponseAllOfImageBuildsInnerConfig{}
+
+	err = json.Unmarshal(data, &varListImageBuilds200ResponseAllOfImageBuildsInnerConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListImageBuilds200ResponseAllOfImageBuildsInnerConfig(varListImageBuilds200ResponseAllOfImageBuildsInnerConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "instance")
+		delete(additionalProperties, "networkInterfaces")
+		delete(additionalProperties, "volumes")
+		delete(additionalProperties, "storageControllers")
+		delete(additionalProperties, "zoneId")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "plan")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListImageBuilds200ResponseAllOfImageBuildsInnerConfig struct {

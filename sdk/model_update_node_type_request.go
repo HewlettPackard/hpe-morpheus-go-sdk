@@ -21,7 +21,10 @@ var _ MappedNullable = &UpdateNodeTypeRequest{}
 // UpdateNodeTypeRequest struct for UpdateNodeTypeRequest
 type UpdateNodeTypeRequest struct {
 	ContainerType *UpdateNodeTypeRequestContainerType `json:"containerType,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateNodeTypeRequest UpdateNodeTypeRequest
 
 // NewUpdateNodeTypeRequest instantiates a new UpdateNodeTypeRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o UpdateNodeTypeRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ContainerType) {
 		toSerialize["containerType"] = o.ContainerType
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateNodeTypeRequest) UnmarshalJSON(data []byte) (err error) {
+	varUpdateNodeTypeRequest := _UpdateNodeTypeRequest{}
+
+	err = json.Unmarshal(data, &varUpdateNodeTypeRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateNodeTypeRequest(varUpdateNodeTypeRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "containerType")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateNodeTypeRequest struct {

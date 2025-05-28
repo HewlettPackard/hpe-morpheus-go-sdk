@@ -26,7 +26,10 @@ type UpdateCloudDatastoresRequestDatastoreTenantPermissions struct {
 	DefaultTarget []int64 `json:"defaultTarget,omitempty"`
 	// Array of tenant account ids which should use the data store as the Image Target
 	DefaultStore []int64 `json:"defaultStore,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateCloudDatastoresRequestDatastoreTenantPermissions UpdateCloudDatastoresRequestDatastoreTenantPermissions
 
 // NewUpdateCloudDatastoresRequestDatastoreTenantPermissions instantiates a new UpdateCloudDatastoresRequestDatastoreTenantPermissions object
 // This constructor will assign default values to properties that have it defined,
@@ -160,7 +163,35 @@ func (o UpdateCloudDatastoresRequestDatastoreTenantPermissions) ToMap() (map[str
 	if !IsNil(o.DefaultStore) {
 		toSerialize["defaultStore"] = o.DefaultStore
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateCloudDatastoresRequestDatastoreTenantPermissions) UnmarshalJSON(data []byte) (err error) {
+	varUpdateCloudDatastoresRequestDatastoreTenantPermissions := _UpdateCloudDatastoresRequestDatastoreTenantPermissions{}
+
+	err = json.Unmarshal(data, &varUpdateCloudDatastoresRequestDatastoreTenantPermissions)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateCloudDatastoresRequestDatastoreTenantPermissions(varUpdateCloudDatastoresRequestDatastoreTenantPermissions)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "accounts")
+		delete(additionalProperties, "defaultTarget")
+		delete(additionalProperties, "defaultStore")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateCloudDatastoresRequestDatastoreTenantPermissions struct {

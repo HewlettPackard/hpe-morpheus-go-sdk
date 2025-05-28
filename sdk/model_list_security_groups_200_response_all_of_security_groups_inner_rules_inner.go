@@ -39,7 +39,10 @@ type ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner struct {
 	DestinationTier *string `json:"destinationTier,omitempty"`
 	ExternalId *string `json:"externalId,omitempty"`
 	Enabled *string `json:"enabled,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner
 
 // NewListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner instantiates a new ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -733,7 +736,51 @@ func (o ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) ToMap()
 	if !IsNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) UnmarshalJSON(data []byte) (err error) {
+	varListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner := _ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner{}
+
+	err = json.Unmarshal(data, &varListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner(varListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "ruleType")
+		delete(additionalProperties, "customRule")
+		delete(additionalProperties, "instanceTypeId")
+		delete(additionalProperties, "direction")
+		delete(additionalProperties, "policy")
+		delete(additionalProperties, "sourceType")
+		delete(additionalProperties, "source")
+		delete(additionalProperties, "sourceGroup")
+		delete(additionalProperties, "sourceTier")
+		delete(additionalProperties, "portRange")
+		delete(additionalProperties, "protocol")
+		delete(additionalProperties, "destinationType")
+		delete(additionalProperties, "destination")
+		delete(additionalProperties, "destinationGroup")
+		delete(additionalProperties, "destinationTier")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "enabled")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner struct {

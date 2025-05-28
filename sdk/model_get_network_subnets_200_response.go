@@ -22,7 +22,10 @@ var _ MappedNullable = &GetNetworkSubnets200Response{}
 type GetNetworkSubnets200Response struct {
 	Subnets []GetNetworkSubnets200ResponseAllOfSubnetsInner `json:"subnets,omitempty"`
 	Meta *ListActivity200ResponseAllOfMeta `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetNetworkSubnets200Response GetNetworkSubnets200Response
 
 // NewGetNetworkSubnets200Response instantiates a new GetNetworkSubnets200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o GetNetworkSubnets200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Meta) {
 		toSerialize["meta"] = o.Meta
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetNetworkSubnets200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetNetworkSubnets200Response := _GetNetworkSubnets200Response{}
+
+	err = json.Unmarshal(data, &varGetNetworkSubnets200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetNetworkSubnets200Response(varGetNetworkSubnets200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "subnets")
+		delete(additionalProperties, "meta")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetNetworkSubnets200Response struct {

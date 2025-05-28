@@ -35,7 +35,10 @@ type Snapshot struct {
 	SnapshotFiles []SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInner `json:"snapshotFiles,omitempty"`
 	CurrentlyActive *bool `json:"currentlyActive,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _Snapshot Snapshot
 
 // NewSnapshot instantiates a new Snapshot object
 // This constructor will assign default values to properties that have it defined,
@@ -554,7 +557,46 @@ func (o Snapshot) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.DateCreated) {
 		toSerialize["dateCreated"] = o.DateCreated
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *Snapshot) UnmarshalJSON(data []byte) (err error) {
+	varSnapshot := _Snapshot{}
+
+	err = json.Unmarshal(data, &varSnapshot)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Snapshot(varSnapshot)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "state")
+		delete(additionalProperties, "snapshotType")
+		delete(additionalProperties, "snapshotCreated")
+		delete(additionalProperties, "zone")
+		delete(additionalProperties, "datastore")
+		delete(additionalProperties, "parentSnapshot")
+		delete(additionalProperties, "snapshotFiles")
+		delete(additionalProperties, "currentlyActive")
+		delete(additionalProperties, "dateCreated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableSnapshot struct {

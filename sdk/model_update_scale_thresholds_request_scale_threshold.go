@@ -48,7 +48,10 @@ type UpdateScaleThresholdsRequestScaleThreshold struct {
 	MinDisk *float32 `json:"minDisk,omitempty"`
 	// Max Disk (%)
 	MaxDisk *float32 `json:"maxDisk,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateScaleThresholdsRequestScaleThreshold UpdateScaleThresholdsRequestScaleThreshold
 
 // NewUpdateScaleThresholdsRequestScaleThreshold instantiates a new UpdateScaleThresholdsRequestScaleThreshold object
 // This constructor will assign default values to properties that have it defined,
@@ -611,7 +614,46 @@ func (o UpdateScaleThresholdsRequestScaleThreshold) ToMap() (map[string]interfac
 	if !IsNil(o.MaxDisk) {
 		toSerialize["maxDisk"] = o.MaxDisk
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateScaleThresholdsRequestScaleThreshold) UnmarshalJSON(data []byte) (err error) {
+	varUpdateScaleThresholdsRequestScaleThreshold := _UpdateScaleThresholdsRequestScaleThreshold{}
+
+	err = json.Unmarshal(data, &varUpdateScaleThresholdsRequestScaleThreshold)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateScaleThresholdsRequestScaleThreshold(varUpdateScaleThresholdsRequestScaleThreshold)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "autoUp")
+		delete(additionalProperties, "autoDown")
+		delete(additionalProperties, "minCount")
+		delete(additionalProperties, "maxCount")
+		delete(additionalProperties, "cpuEnabled")
+		delete(additionalProperties, "minCpu")
+		delete(additionalProperties, "maxCpu")
+		delete(additionalProperties, "memoryEnabled")
+		delete(additionalProperties, "minMemory")
+		delete(additionalProperties, "maxMemory")
+		delete(additionalProperties, "diskEnabled")
+		delete(additionalProperties, "minDisk")
+		delete(additionalProperties, "maxDisk")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateScaleThresholdsRequestScaleThreshold struct {

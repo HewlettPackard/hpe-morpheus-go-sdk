@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -30,6 +29,7 @@ type AddBlueprintRequestOneOf1CloudFormationGit struct {
 	IntegrationId int64 `json:"integrationId"`
 	// Branch Name
 	Branch string `json:"branch"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddBlueprintRequestOneOf1CloudFormationGit AddBlueprintRequestOneOf1CloudFormationGit
@@ -165,6 +165,11 @@ func (o AddBlueprintRequestOneOf1CloudFormationGit) ToMap() (map[string]interfac
 	toSerialize["path"] = o.Path
 	toSerialize["integrationId"] = o.IntegrationId
 	toSerialize["branch"] = o.Branch
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -195,15 +200,23 @@ func (o *AddBlueprintRequestOneOf1CloudFormationGit) UnmarshalJSON(data []byte) 
 
 	varAddBlueprintRequestOneOf1CloudFormationGit := _AddBlueprintRequestOneOf1CloudFormationGit{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddBlueprintRequestOneOf1CloudFormationGit)
+	err = json.Unmarshal(data, &varAddBlueprintRequestOneOf1CloudFormationGit)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddBlueprintRequestOneOf1CloudFormationGit(varAddBlueprintRequestOneOf1CloudFormationGit)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "repoId")
+		delete(additionalProperties, "path")
+		delete(additionalProperties, "integrationId")
+		delete(additionalProperties, "branch")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

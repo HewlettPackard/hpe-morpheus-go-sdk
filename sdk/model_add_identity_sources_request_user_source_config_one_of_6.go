@@ -30,7 +30,10 @@ type AddIdentitySourcesRequestUserSourceConfigOneOf6 struct {
 	EncryptionAlgo *string `json:"encryptionAlgo,omitempty"`
 	// Encryption Key
 	EncryptionKey *string `json:"encryptionKey,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddIdentitySourcesRequestUserSourceConfigOneOf6 AddIdentitySourcesRequestUserSourceConfigOneOf6
 
 // NewAddIdentitySourcesRequestUserSourceConfigOneOf6 instantiates a new AddIdentitySourcesRequestUserSourceConfigOneOf6 object
 // This constructor will assign default values to properties that have it defined,
@@ -238,7 +241,37 @@ func (o AddIdentitySourcesRequestUserSourceConfigOneOf6) ToMap() (map[string]int
 	if !IsNil(o.EncryptionKey) {
 		toSerialize["encryptionKey"] = o.EncryptionKey
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddIdentitySourcesRequestUserSourceConfigOneOf6) UnmarshalJSON(data []byte) (err error) {
+	varAddIdentitySourcesRequestUserSourceConfigOneOf6 := _AddIdentitySourcesRequestUserSourceConfigOneOf6{}
+
+	err = json.Unmarshal(data, &varAddIdentitySourcesRequestUserSourceConfigOneOf6)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddIdentitySourcesRequestUserSourceConfigOneOf6(varAddIdentitySourcesRequestUserSourceConfigOneOf6)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "loginUrl")
+		delete(additionalProperties, "doNotIncludeSAMLRequest")
+		delete(additionalProperties, "logout")
+		delete(additionalProperties, "encryptionAlgo")
+		delete(additionalProperties, "encryptionKey")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddIdentitySourcesRequestUserSourceConfigOneOf6 struct {

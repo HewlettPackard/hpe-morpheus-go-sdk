@@ -21,7 +21,10 @@ var _ MappedNullable = &AddVDIPools200ResponseAnyOf{}
 // AddVDIPools200ResponseAnyOf struct for AddVDIPools200ResponseAnyOf
 type AddVDIPools200ResponseAnyOf struct {
 	VdiPool *ListVDIPools200ResponseAllOfVdiPoolsInner `json:"vdiPool,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddVDIPools200ResponseAnyOf AddVDIPools200ResponseAnyOf
 
 // NewAddVDIPools200ResponseAnyOf instantiates a new AddVDIPools200ResponseAnyOf object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o AddVDIPools200ResponseAnyOf) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.VdiPool) {
 		toSerialize["vdiPool"] = o.VdiPool
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddVDIPools200ResponseAnyOf) UnmarshalJSON(data []byte) (err error) {
+	varAddVDIPools200ResponseAnyOf := _AddVDIPools200ResponseAnyOf{}
+
+	err = json.Unmarshal(data, &varAddVDIPools200ResponseAnyOf)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddVDIPools200ResponseAnyOf(varAddVDIPools200ResponseAnyOf)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "vdiPool")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddVDIPools200ResponseAnyOf struct {

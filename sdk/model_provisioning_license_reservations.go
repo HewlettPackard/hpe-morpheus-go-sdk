@@ -22,7 +22,10 @@ var _ MappedNullable = &ProvisioningLicenseReservations{}
 type ProvisioningLicenseReservations struct {
 	ResourceId *int64 `json:"resourceId,omitempty"`
 	ResourceType *string `json:"resourceType,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ProvisioningLicenseReservations ProvisioningLicenseReservations
 
 // NewProvisioningLicenseReservations instantiates a new ProvisioningLicenseReservations object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o ProvisioningLicenseReservations) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.ResourceType) {
 		toSerialize["resourceType"] = o.ResourceType
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ProvisioningLicenseReservations) UnmarshalJSON(data []byte) (err error) {
+	varProvisioningLicenseReservations := _ProvisioningLicenseReservations{}
+
+	err = json.Unmarshal(data, &varProvisioningLicenseReservations)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ProvisioningLicenseReservations(varProvisioningLicenseReservations)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "resourceId")
+		delete(additionalProperties, "resourceType")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableProvisioningLicenseReservations struct {

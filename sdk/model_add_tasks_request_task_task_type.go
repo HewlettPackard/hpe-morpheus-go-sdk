@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -24,6 +23,7 @@ var _ MappedNullable = &AddTasksRequestTaskTaskType{}
 type AddTasksRequestTaskTaskType struct {
 	// The type of task
 	Code string `json:"code"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddTasksRequestTaskTaskType AddTasksRequestTaskTaskType
@@ -81,6 +81,11 @@ func (o AddTasksRequestTaskTaskType) MarshalJSON() ([]byte, error) {
 func (o AddTasksRequestTaskTaskType) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["code"] = o.Code
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -108,15 +113,20 @@ func (o *AddTasksRequestTaskTaskType) UnmarshalJSON(data []byte) (err error) {
 
 	varAddTasksRequestTaskTaskType := _AddTasksRequestTaskTaskType{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddTasksRequestTaskTaskType)
+	err = json.Unmarshal(data, &varAddTasksRequestTaskTaskType)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddTasksRequestTaskTaskType(varAddTasksRequestTaskTaskType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "code")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

@@ -51,7 +51,10 @@ type CreateNetworkPool200ResponseNetworkPool struct {
 	ParentId *string `json:"parentId,omitempty"`
 	PoolGroup *string `json:"poolGroup,omitempty"`
 	IpRanges []CreateNetworkPool200ResponseNetworkPoolIpRangesInner `json:"ipRanges,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _CreateNetworkPool200ResponseNetworkPool CreateNetworkPool200ResponseNetworkPool
 
 // NewCreateNetworkPool200ResponseNetworkPool instantiates a new CreateNetworkPool200ResponseNetworkPool object
 // This constructor will assign default values to properties that have it defined,
@@ -1165,7 +1168,63 @@ func (o CreateNetworkPool200ResponseNetworkPool) ToMap() (map[string]interface{}
 	if !IsNil(o.IpRanges) {
 		toSerialize["ipRanges"] = o.IpRanges
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *CreateNetworkPool200ResponseNetworkPool) UnmarshalJSON(data []byte) (err error) {
+	varCreateNetworkPool200ResponseNetworkPool := _CreateNetworkPool200ResponseNetworkPool{}
+
+	err = json.Unmarshal(data, &varCreateNetworkPool200ResponseNetworkPool)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CreateNetworkPool200ResponseNetworkPool(varCreateNetworkPool200ResponseNetworkPool)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "displayName")
+		delete(additionalProperties, "internalId")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "dnsDomain")
+		delete(additionalProperties, "dnsSearchPath")
+		delete(additionalProperties, "hostPrefix")
+		delete(additionalProperties, "httpProxy")
+		delete(additionalProperties, "dnsServers")
+		delete(additionalProperties, "dnsSuffixList")
+		delete(additionalProperties, "dhcpServer")
+		delete(additionalProperties, "dhcpIp")
+		delete(additionalProperties, "gateway")
+		delete(additionalProperties, "netmask")
+		delete(additionalProperties, "subnetAddress")
+		delete(additionalProperties, "ipCount")
+		delete(additionalProperties, "freeCount")
+		delete(additionalProperties, "poolEnabled")
+		delete(additionalProperties, "tftpServer")
+		delete(additionalProperties, "bootFile")
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "refId")
+		delete(additionalProperties, "parentType")
+		delete(additionalProperties, "parentId")
+		delete(additionalProperties, "poolGroup")
+		delete(additionalProperties, "ipRanges")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCreateNetworkPool200ResponseNetworkPool struct {

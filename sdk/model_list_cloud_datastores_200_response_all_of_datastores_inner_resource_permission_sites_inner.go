@@ -23,7 +23,10 @@ type ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesIn
 	Id *int64 `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
 	Default *bool `json:"default,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner
 
 // NewListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner instantiates a new ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSite
 	if !IsNil(o.Default) {
 		toSerialize["default"] = o.Default
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner) UnmarshalJSON(data []byte) (err error) {
+	varListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner := _ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner{}
+
+	err = json.Unmarshal(data, &varListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner(varListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "default")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner struct {

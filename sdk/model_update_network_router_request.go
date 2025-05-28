@@ -21,7 +21,10 @@ var _ MappedNullable = &UpdateNetworkRouterRequest{}
 // UpdateNetworkRouterRequest The parameters for creating a network router is type dependent. The following lists the common parameters. See get a specific type to list available options for that network router type. 
 type UpdateNetworkRouterRequest struct {
 	NetworkRouter *UpdateNetworkRouterRequestNetworkRouter `json:"networkRouter,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateNetworkRouterRequest UpdateNetworkRouterRequest
 
 // NewUpdateNetworkRouterRequest instantiates a new UpdateNetworkRouterRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o UpdateNetworkRouterRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.NetworkRouter) {
 		toSerialize["networkRouter"] = o.NetworkRouter
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateNetworkRouterRequest) UnmarshalJSON(data []byte) (err error) {
+	varUpdateNetworkRouterRequest := _UpdateNetworkRouterRequest{}
+
+	err = json.Unmarshal(data, &varUpdateNetworkRouterRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateNetworkRouterRequest(varUpdateNetworkRouterRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "networkRouter")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateNetworkRouterRequest struct {

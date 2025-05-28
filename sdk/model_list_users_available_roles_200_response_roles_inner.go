@@ -25,7 +25,10 @@ type ListUsersAvailableRoles200ResponseRolesInner struct {
 	Description *string `json:"description,omitempty"`
 	RoleType *string `json:"roleType,omitempty"`
 	Owner *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"owner,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListUsersAvailableRoles200ResponseRolesInner ListUsersAvailableRoles200ResponseRolesInner
 
 // NewListUsersAvailableRoles200ResponseRolesInner instantiates a new ListUsersAvailableRoles200ResponseRolesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -229,7 +232,37 @@ func (o ListUsersAvailableRoles200ResponseRolesInner) ToMap() (map[string]interf
 	if !IsNil(o.Owner) {
 		toSerialize["owner"] = o.Owner
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListUsersAvailableRoles200ResponseRolesInner) UnmarshalJSON(data []byte) (err error) {
+	varListUsersAvailableRoles200ResponseRolesInner := _ListUsersAvailableRoles200ResponseRolesInner{}
+
+	err = json.Unmarshal(data, &varListUsersAvailableRoles200ResponseRolesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListUsersAvailableRoles200ResponseRolesInner(varListUsersAvailableRoles200ResponseRolesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "authority")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "roleType")
+		delete(additionalProperties, "owner")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListUsersAvailableRoles200ResponseRolesInner struct {

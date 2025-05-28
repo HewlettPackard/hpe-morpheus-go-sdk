@@ -22,7 +22,10 @@ var _ MappedNullable = &AddPricesRequestPriceVolumeType{}
 type AddPricesRequestPriceVolumeType struct {
 	// Volume type ID, required for `storage` price type. The endpoint /api/prices/volume-types provides a list of available volume type options. 
 	Id *int64 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddPricesRequestPriceVolumeType AddPricesRequestPriceVolumeType
 
 // NewAddPricesRequestPriceVolumeType instantiates a new AddPricesRequestPriceVolumeType object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o AddPricesRequestPriceVolumeType) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddPricesRequestPriceVolumeType) UnmarshalJSON(data []byte) (err error) {
+	varAddPricesRequestPriceVolumeType := _AddPricesRequestPriceVolumeType{}
+
+	err = json.Unmarshal(data, &varAddPricesRequestPriceVolumeType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddPricesRequestPriceVolumeType(varAddPricesRequestPriceVolumeType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddPricesRequestPriceVolumeType struct {

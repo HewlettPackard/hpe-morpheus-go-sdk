@@ -42,7 +42,10 @@ type FileTemplate struct {
 	Permissions *string `json:"permissions,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _FileTemplate FileTemplate
 
 // NewFileTemplate instantiates a new FileTemplate object
 // This constructor will assign default values to properties that have it defined,
@@ -806,7 +809,53 @@ func (o FileTemplate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *FileTemplate) UnmarshalJSON(data []byte) (err error) {
+	varFileTemplate := _FileTemplate{}
+
+	err = json.Unmarshal(data, &varFileTemplate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = FileTemplate(varFileTemplate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "fileName")
+		delete(additionalProperties, "filePath")
+		delete(additionalProperties, "templateType")
+		delete(additionalProperties, "templatePhase")
+		delete(additionalProperties, "template")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "settingCategory")
+		delete(additionalProperties, "settingName")
+		delete(additionalProperties, "autoRun")
+		delete(additionalProperties, "runOnScale")
+		delete(additionalProperties, "runOnDeploy")
+		delete(additionalProperties, "fileOwner")
+		delete(additionalProperties, "fileGroup")
+		delete(additionalProperties, "permissions")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableFileTemplate struct {

@@ -62,7 +62,10 @@ type VirtualImageUpdate struct {
 	AddTags []AddVirtualImageRequestVirtualImageTagsInner `json:"addTags,omitempty"`
 	// Remove Metadata tags, Array of objects having a name and an optional value. If value is passed, it must match to be removed.
 	RemoveTags []UpdateVirtualImageRequestVirtualImageRemoveTagsInner `json:"removeTags,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _VirtualImageUpdate VirtualImageUpdate
 
 // NewVirtualImageUpdate instantiates a new VirtualImageUpdate object
 // This constructor will assign default values to properties that have it defined,
@@ -932,7 +935,55 @@ func (o VirtualImageUpdate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.RemoveTags) {
 		toSerialize["removeTags"] = o.RemoveTags
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *VirtualImageUpdate) UnmarshalJSON(data []byte) (err error) {
+	varVirtualImageUpdate := _VirtualImageUpdate{}
+
+	err = json.Unmarshal(data, &varVirtualImageUpdate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = VirtualImageUpdate(varVirtualImageUpdate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "imageType")
+		delete(additionalProperties, "storageProvider")
+		delete(additionalProperties, "isCloudInit")
+		delete(additionalProperties, "userData")
+		delete(additionalProperties, "installAgent")
+		delete(additionalProperties, "sshUsername")
+		delete(additionalProperties, "sshPassword")
+		delete(additionalProperties, "sshKey")
+		delete(additionalProperties, "osType")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "accounts")
+		delete(additionalProperties, "isAutoJoinDomain")
+		delete(additionalProperties, "virtioSupported")
+		delete(additionalProperties, "vmToolsInstalled")
+		delete(additionalProperties, "isForceCustomization")
+		delete(additionalProperties, "trialVersion")
+		delete(additionalProperties, "isSysprep")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "tags")
+		delete(additionalProperties, "addTags")
+		delete(additionalProperties, "removeTags")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableVirtualImageUpdate struct {

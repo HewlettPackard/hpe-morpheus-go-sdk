@@ -35,7 +35,10 @@ type ListApprovals200ResponseAllOfApprovalsInner struct {
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
 	RequestBy *string `json:"requestBy,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListApprovals200ResponseAllOfApprovalsInner ListApprovals200ResponseAllOfApprovalsInner
 
 // NewListApprovals200ResponseAllOfApprovalsInner instantiates a new ListApprovals200ResponseAllOfApprovalsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -554,7 +557,46 @@ func (o ListApprovals200ResponseAllOfApprovalsInner) ToMap() (map[string]interfa
 	if !IsNil(o.RequestBy) {
 		toSerialize["requestBy"] = o.RequestBy
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListApprovals200ResponseAllOfApprovalsInner) UnmarshalJSON(data []byte) (err error) {
+	varListApprovals200ResponseAllOfApprovalsInner := _ListApprovals200ResponseAllOfApprovalsInner{}
+
+	err = json.Unmarshal(data, &varListApprovals200ResponseAllOfApprovalsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListApprovals200ResponseAllOfApprovalsInner(varListApprovals200ResponseAllOfApprovalsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "internalId")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "externalName")
+		delete(additionalProperties, "requestType")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "approver")
+		delete(additionalProperties, "accountIntegration")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "errorMessage")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "requestBy")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListApprovals200ResponseAllOfApprovalsInner struct {

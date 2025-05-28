@@ -24,7 +24,10 @@ type ListVirtualImageLocations200ResponseAllOfLocationsInnerVirtualImage struct 
 	Code *string `json:"code,omitempty"`
 	Name *string `json:"name,omitempty"`
 	ImageType *string `json:"imageType,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListVirtualImageLocations200ResponseAllOfLocationsInnerVirtualImage ListVirtualImageLocations200ResponseAllOfLocationsInnerVirtualImage
 
 // NewListVirtualImageLocations200ResponseAllOfLocationsInnerVirtualImage instantiates a new ListVirtualImageLocations200ResponseAllOfLocationsInnerVirtualImage object
 // This constructor will assign default values to properties that have it defined,
@@ -193,7 +196,36 @@ func (o ListVirtualImageLocations200ResponseAllOfLocationsInnerVirtualImage) ToM
 	if !IsNil(o.ImageType) {
 		toSerialize["imageType"] = o.ImageType
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListVirtualImageLocations200ResponseAllOfLocationsInnerVirtualImage) UnmarshalJSON(data []byte) (err error) {
+	varListVirtualImageLocations200ResponseAllOfLocationsInnerVirtualImage := _ListVirtualImageLocations200ResponseAllOfLocationsInnerVirtualImage{}
+
+	err = json.Unmarshal(data, &varListVirtualImageLocations200ResponseAllOfLocationsInnerVirtualImage)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListVirtualImageLocations200ResponseAllOfLocationsInnerVirtualImage(varListVirtualImageLocations200ResponseAllOfLocationsInnerVirtualImage)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "imageType")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListVirtualImageLocations200ResponseAllOfLocationsInnerVirtualImage struct {

@@ -42,7 +42,10 @@ type ListClusterJobs200ResponseAllOfJobsInner struct {
 	Targets []map[string]interface{} `json:"targets,omitempty"`
 	CustomConfig map[string]interface{} `json:"customConfig,omitempty"`
 	CustomOptions map[string]interface{} `json:"customOptions,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListClusterJobs200ResponseAllOfJobsInner ListClusterJobs200ResponseAllOfJobsInner
 
 // NewListClusterJobs200ResponseAllOfJobsInner instantiates a new ListClusterJobs200ResponseAllOfJobsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -806,7 +809,53 @@ func (o ListClusterJobs200ResponseAllOfJobsInner) ToMap() (map[string]interface{
 	if !IsNil(o.CustomOptions) {
 		toSerialize["customOptions"] = o.CustomOptions
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListClusterJobs200ResponseAllOfJobsInner) UnmarshalJSON(data []byte) (err error) {
+	varListClusterJobs200ResponseAllOfJobsInner := _ListClusterJobs200ResponseAllOfJobsInner{}
+
+	err = json.Unmarshal(data, &varListClusterJobs200ResponseAllOfJobsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListClusterJobs200ResponseAllOfJobsInner(varListClusterJobs200ResponseAllOfJobsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "jobSummary")
+		delete(additionalProperties, "scheduleMode")
+		delete(additionalProperties, "dateTime")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "namespace")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "lastRun")
+		delete(additionalProperties, "lastResult")
+		delete(additionalProperties, "createdBy")
+		delete(additionalProperties, "targetType")
+		delete(additionalProperties, "targets")
+		delete(additionalProperties, "customConfig")
+		delete(additionalProperties, "customOptions")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListClusterJobs200ResponseAllOfJobsInner struct {

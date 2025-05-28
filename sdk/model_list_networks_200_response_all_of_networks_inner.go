@@ -97,7 +97,10 @@ type ListNetworks200ResponseAllOfNetworksInner struct {
 	AllowStaticOverride *bool `json:"allowStaticOverride,omitempty"`
 	Config *ListNetworks200ResponseAllOfNetworksInnerConfig `json:"config,omitempty"`
 	Tenants []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"tenants,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListNetworks200ResponseAllOfNetworksInner ListNetworks200ResponseAllOfNetworksInner
 
 // NewListNetworks200ResponseAllOfNetworksInner instantiates a new ListNetworks200ResponseAllOfNetworksInner object
 // This constructor will assign default values to properties that have it defined,
@@ -2331,7 +2334,95 @@ func (o ListNetworks200ResponseAllOfNetworksInner) ToMap() (map[string]interface
 	if !IsNil(o.Tenants) {
 		toSerialize["tenants"] = o.Tenants
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListNetworks200ResponseAllOfNetworksInner) UnmarshalJSON(data []byte) (err error) {
+	varListNetworks200ResponseAllOfNetworksInner := _ListNetworks200ResponseAllOfNetworksInner{}
+
+	err = json.Unmarshal(data, &varListNetworks200ResponseAllOfNetworksInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListNetworks200ResponseAllOfNetworksInner(varListNetworks200ResponseAllOfNetworksInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "displayName")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "zone")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "owner")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "ipv4Enabled")
+		delete(additionalProperties, "ipv6Enabled")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "interfaceName")
+		delete(additionalProperties, "bridgeName")
+		delete(additionalProperties, "bridgeInterface")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "internalId")
+		delete(additionalProperties, "uniqueId")
+		delete(additionalProperties, "externalType")
+		delete(additionalProperties, "refUrl")
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "refId")
+		delete(additionalProperties, "vlanId")
+		delete(additionalProperties, "vswitchName")
+		delete(additionalProperties, "dhcpServer")
+		delete(additionalProperties, "dhcpIp")
+		delete(additionalProperties, "dhcpServerIPv6")
+		delete(additionalProperties, "gateway")
+		delete(additionalProperties, "netmask")
+		delete(additionalProperties, "broadcast")
+		delete(additionalProperties, "subnetAddress")
+		delete(additionalProperties, "dnsPrimary")
+		delete(additionalProperties, "dnsSecondary")
+		delete(additionalProperties, "cidr")
+		delete(additionalProperties, "gatewayIPv6")
+		delete(additionalProperties, "netmaskIPv6")
+		delete(additionalProperties, "dnsPrimaryIPv6")
+		delete(additionalProperties, "dnsSecondaryIPv6")
+		delete(additionalProperties, "cidrIPv6")
+		delete(additionalProperties, "tftpServer")
+		delete(additionalProperties, "bootFile")
+		delete(additionalProperties, "switchId")
+		delete(additionalProperties, "fabricId")
+		delete(additionalProperties, "networkRole")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "availabilityZone")
+		delete(additionalProperties, "pool")
+		delete(additionalProperties, "poolIPv6")
+		delete(additionalProperties, "networkProxy")
+		delete(additionalProperties, "networkDomain")
+		delete(additionalProperties, "searchDomains")
+		delete(additionalProperties, "prefixLength")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "enableAdmin")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "defaultNetwork")
+		delete(additionalProperties, "assignPublicIp")
+		delete(additionalProperties, "noProxy")
+		delete(additionalProperties, "applianceUrlProxyBypass")
+		delete(additionalProperties, "zonePool")
+		delete(additionalProperties, "allowStaticOverride")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "tenants")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListNetworks200ResponseAllOfNetworksInner struct {

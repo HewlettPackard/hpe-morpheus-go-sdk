@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -24,6 +23,7 @@ var _ MappedNullable = &CreateNetworksRequestNetworkConfigAnyOf1ZonePool{}
 type CreateNetworksRequestNetworkConfigAnyOf1ZonePool struct {
 	// Morpheus resource pool ID of the VPC for the network.
 	Id int32 `json:"id"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _CreateNetworksRequestNetworkConfigAnyOf1ZonePool CreateNetworksRequestNetworkConfigAnyOf1ZonePool
@@ -81,6 +81,11 @@ func (o CreateNetworksRequestNetworkConfigAnyOf1ZonePool) MarshalJSON() ([]byte,
 func (o CreateNetworksRequestNetworkConfigAnyOf1ZonePool) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -108,15 +113,20 @@ func (o *CreateNetworksRequestNetworkConfigAnyOf1ZonePool) UnmarshalJSON(data []
 
 	varCreateNetworksRequestNetworkConfigAnyOf1ZonePool := _CreateNetworksRequestNetworkConfigAnyOf1ZonePool{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varCreateNetworksRequestNetworkConfigAnyOf1ZonePool)
+	err = json.Unmarshal(data, &varCreateNetworksRequestNetworkConfigAnyOf1ZonePool)
 
 	if err != nil {
 		return err
 	}
 
 	*o = CreateNetworksRequestNetworkConfigAnyOf1ZonePool(varCreateNetworksRequestNetworkConfigAnyOf1ZonePool)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

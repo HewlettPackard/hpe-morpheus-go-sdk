@@ -39,7 +39,10 @@ type GetNetworkRouter200ResponseNetworkRouterNetworkServerIntegration struct {
 	StatusMessage *string `json:"statusMessage,omitempty"`
 	LastSync *time.Time `json:"lastSync,omitempty"`
 	LastSyncDuration *int64 `json:"lastSyncDuration,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetNetworkRouter200ResponseNetworkRouterNetworkServerIntegration GetNetworkRouter200ResponseNetworkRouterNetworkServerIntegration
 
 // NewGetNetworkRouter200ResponseNetworkRouterNetworkServerIntegration instantiates a new GetNetworkRouter200ResponseNetworkRouterNetworkServerIntegration object
 // This constructor will assign default values to properties that have it defined,
@@ -698,7 +701,50 @@ func (o GetNetworkRouter200ResponseNetworkRouterNetworkServerIntegration) ToMap(
 	if !IsNil(o.LastSyncDuration) {
 		toSerialize["lastSyncDuration"] = o.LastSyncDuration
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetNetworkRouter200ResponseNetworkRouterNetworkServerIntegration) UnmarshalJSON(data []byte) (err error) {
+	varGetNetworkRouter200ResponseNetworkRouterNetworkServerIntegration := _GetNetworkRouter200ResponseNetworkRouterNetworkServerIntegration{}
+
+	err = json.Unmarshal(data, &varGetNetworkRouter200ResponseNetworkRouterNetworkServerIntegration)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetNetworkRouter200ResponseNetworkRouterNetworkServerIntegration(varGetNetworkRouter200ResponseNetworkRouterNetworkServerIntegration)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "integrationType")
+		delete(additionalProperties, "url")
+		delete(additionalProperties, "port")
+		delete(additionalProperties, "username")
+		delete(additionalProperties, "password")
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "refId")
+		delete(additionalProperties, "isPlugin")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "statusDate")
+		delete(additionalProperties, "statusMessage")
+		delete(additionalProperties, "lastSync")
+		delete(additionalProperties, "lastSyncDuration")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetNetworkRouter200ResponseNetworkRouterNetworkServerIntegration struct {

@@ -27,7 +27,10 @@ type AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20 struct {
 	MotdType *string `json:"motd.type,omitempty"`
 	MotdFullPage *bool `json:"motd._fullPage,omitempty"`
 	MotdDate *time.Time `json:"motd.date,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20 AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20
 
 // NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20 instantiates a new AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20 object
 // This constructor will assign default values to properties that have it defined,
@@ -266,7 +269,38 @@ func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) ToMap() (map[strin
 	if !IsNil(o.MotdDate) {
 		toSerialize["motd.date"] = o.MotdDate
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) UnmarshalJSON(data []byte) (err error) {
+	varAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20 := _AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20{}
+
+	err = json.Unmarshal(data, &varAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20(varAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "motd.title")
+		delete(additionalProperties, "motd")
+		delete(additionalProperties, "motd.message")
+		delete(additionalProperties, "motd.type")
+		delete(additionalProperties, "motd._fullPage")
+		delete(additionalProperties, "motd.date")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20 struct {

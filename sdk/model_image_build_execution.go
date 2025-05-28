@@ -34,7 +34,10 @@ type ImageBuildExecution struct {
 	CreatedBy *GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy `json:"createdBy,omitempty"`
 	TempInstance *string `json:"tempInstance,omitempty"`
 	VirtualImages []map[string]interface{} `json:"virtualImages,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ImageBuildExecution ImageBuildExecution
 
 // NewImageBuildExecution instantiates a new ImageBuildExecution object
 // This constructor will assign default values to properties that have it defined,
@@ -518,7 +521,45 @@ func (o ImageBuildExecution) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.VirtualImages) {
 		toSerialize["virtualImages"] = o.VirtualImages
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ImageBuildExecution) UnmarshalJSON(data []byte) (err error) {
+	varImageBuildExecution := _ImageBuildExecution{}
+
+	err = json.Unmarshal(data, &varImageBuildExecution)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ImageBuildExecution(varImageBuildExecution)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "imageBuild")
+		delete(additionalProperties, "buildNumber")
+		delete(additionalProperties, "startDate")
+		delete(additionalProperties, "endDate")
+		delete(additionalProperties, "statusMessage")
+		delete(additionalProperties, "statusPercent")
+		delete(additionalProperties, "statusEta")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "errorMessage")
+		delete(additionalProperties, "createdBy")
+		delete(additionalProperties, "tempInstance")
+		delete(additionalProperties, "virtualImages")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableImageBuildExecution struct {

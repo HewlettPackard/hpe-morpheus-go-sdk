@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -29,6 +28,7 @@ type NetworkTypeAwsConfig struct {
 	// Assign public IPs by default.
 	AssignPublicIp bool `json:"assignPublicIp"`
 	ZonePool CreateNetworksRequestNetworkConfigAnyOf1ZonePool `json:"zonePool"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _NetworkTypeAwsConfig NetworkTypeAwsConfig
@@ -164,6 +164,11 @@ func (o NetworkTypeAwsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize["cidr"] = o.Cidr
 	toSerialize["assignPublicIp"] = o.AssignPublicIp
 	toSerialize["zonePool"] = o.ZonePool
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -194,15 +199,23 @@ func (o *NetworkTypeAwsConfig) UnmarshalJSON(data []byte) (err error) {
 
 	varNetworkTypeAwsConfig := _NetworkTypeAwsConfig{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varNetworkTypeAwsConfig)
+	err = json.Unmarshal(data, &varNetworkTypeAwsConfig)
 
 	if err != nil {
 		return err
 	}
 
 	*o = NetworkTypeAwsConfig(varNetworkTypeAwsConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "availabilityZone")
+		delete(additionalProperties, "cidr")
+		delete(additionalProperties, "assignPublicIp")
+		delete(additionalProperties, "zonePool")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

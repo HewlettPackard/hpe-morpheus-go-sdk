@@ -78,7 +78,10 @@ type StorageVolume struct {
 	RawData *string `json:"rawData,omitempty"`
 	Account *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
 	Owner *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"owner,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _StorageVolume StorageVolume
 
 // NewStorageVolume instantiates a new StorageVolume object
 // This constructor will assign default values to properties that have it defined,
@@ -2137,7 +2140,90 @@ func (o StorageVolume) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Owner) {
 		toSerialize["owner"] = o.Owner
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *StorageVolume) UnmarshalJSON(data []byte) (err error) {
+	varStorageVolume := _StorageVolume{}
+
+	err = json.Unmarshal(data, &varStorageVolume)
+
+	if err != nil {
+		return err
+	}
+
+	*o = StorageVolume(varStorageVolume)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "controller")
+		delete(additionalProperties, "controllerId")
+		delete(additionalProperties, "controllerMountPoint")
+		delete(additionalProperties, "resizeable")
+		delete(additionalProperties, "rootVolume")
+		delete(additionalProperties, "unitNumber")
+		delete(additionalProperties, "deviceName")
+		delete(additionalProperties, "deviceDisplayName")
+		delete(additionalProperties, "volumeName")
+		delete(additionalProperties, "volumePath")
+		delete(additionalProperties, "volumeType")
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "refId")
+		delete(additionalProperties, "diskMode")
+		delete(additionalProperties, "diskType")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "typeId")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "statusMessage")
+		delete(additionalProperties, "configurableIOPS")
+		delete(additionalProperties, "maxStorage")
+		delete(additionalProperties, "usedStorage")
+		delete(additionalProperties, "displayOrder")
+		delete(additionalProperties, "maxIOPS")
+		delete(additionalProperties, "uuid")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "readOnly")
+		delete(additionalProperties, "removable")
+		delete(additionalProperties, "poolName")
+		delete(additionalProperties, "zone")
+		delete(additionalProperties, "zoneId")
+		delete(additionalProperties, "datastore")
+		delete(additionalProperties, "datastoreId")
+		delete(additionalProperties, "datastoreOption")
+		delete(additionalProperties, "storageGroup")
+		delete(additionalProperties, "namespace")
+		delete(additionalProperties, "storageServer")
+		delete(additionalProperties, "source")
+		delete(additionalProperties, "uniqueId")
+		delete(additionalProperties, "internalId")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "provisionType")
+		delete(additionalProperties, "copyType")
+		delete(additionalProperties, "fiberWwn")
+		delete(additionalProperties, "fileName")
+		delete(additionalProperties, "claimName")
+		delete(additionalProperties, "sharePath")
+		delete(additionalProperties, "sourceId")
+		delete(additionalProperties, "sourceImage")
+		delete(additionalProperties, "imageType")
+		delete(additionalProperties, "online")
+		delete(additionalProperties, "rawData")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "owner")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableStorageVolume struct {

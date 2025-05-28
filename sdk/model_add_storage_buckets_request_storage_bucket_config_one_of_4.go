@@ -24,7 +24,10 @@ type AddStorageBucketsRequestStorageBucketConfigOneOf4 struct {
 	Host *string `json:"host,omitempty"`
 	// Export Folder
 	ExportFolder *string `json:"exportFolder,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddStorageBucketsRequestStorageBucketConfigOneOf4 AddStorageBucketsRequestStorageBucketConfigOneOf4
 
 // NewAddStorageBucketsRequestStorageBucketConfigOneOf4 instantiates a new AddStorageBucketsRequestStorageBucketConfigOneOf4 object
 // This constructor will assign default values to properties that have it defined,
@@ -123,7 +126,34 @@ func (o AddStorageBucketsRequestStorageBucketConfigOneOf4) ToMap() (map[string]i
 	if !IsNil(o.ExportFolder) {
 		toSerialize["exportFolder"] = o.ExportFolder
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddStorageBucketsRequestStorageBucketConfigOneOf4) UnmarshalJSON(data []byte) (err error) {
+	varAddStorageBucketsRequestStorageBucketConfigOneOf4 := _AddStorageBucketsRequestStorageBucketConfigOneOf4{}
+
+	err = json.Unmarshal(data, &varAddStorageBucketsRequestStorageBucketConfigOneOf4)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddStorageBucketsRequestStorageBucketConfigOneOf4(varAddStorageBucketsRequestStorageBucketConfigOneOf4)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "host")
+		delete(additionalProperties, "exportFolder")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddStorageBucketsRequestStorageBucketConfigOneOf4 struct {

@@ -44,7 +44,10 @@ type GetLicense200ResponseCurrentUsage struct {
 	DistributedWorkers *int64 `json:"distributedWorkers,omitempty"`
 	// Total Discovered Objects
 	DiscoveredObjects *int64 `json:"discoveredObjects,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetLicense200ResponseCurrentUsage GetLicense200ResponseCurrentUsage
 
 // NewGetLicense200ResponseCurrentUsage instantiates a new GetLicense200ResponseCurrentUsage object
 // This constructor will assign default values to properties that have it defined,
@@ -493,7 +496,44 @@ func (o GetLicense200ResponseCurrentUsage) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.DiscoveredObjects) {
 		toSerialize["discoveredObjects"] = o.DiscoveredObjects
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetLicense200ResponseCurrentUsage) UnmarshalJSON(data []byte) (err error) {
+	varGetLicense200ResponseCurrentUsage := _GetLicense200ResponseCurrentUsage{}
+
+	err = json.Unmarshal(data, &varGetLicense200ResponseCurrentUsage)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetLicense200ResponseCurrentUsage(varGetLicense200ResponseCurrentUsage)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "memory")
+		delete(additionalProperties, "storage")
+		delete(additionalProperties, "workloads")
+		delete(additionalProperties, "discoveredServers")
+		delete(additionalProperties, "hosts")
+		delete(additionalProperties, "mvm")
+		delete(additionalProperties, "mvmSockets")
+		delete(additionalProperties, "iac")
+		delete(additionalProperties, "xaas")
+		delete(additionalProperties, "executions")
+		delete(additionalProperties, "distributedWorkers")
+		delete(additionalProperties, "discoveredObjects")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetLicense200ResponseCurrentUsage struct {

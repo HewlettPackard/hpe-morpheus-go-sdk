@@ -21,7 +21,10 @@ var _ MappedNullable = &GetScaleThresholds200Response{}
 // GetScaleThresholds200Response struct for GetScaleThresholds200Response
 type GetScaleThresholds200Response struct {
 	ScaleThreshold *ListScaleThresholds200ResponseAllOfScaleThresholdsInner `json:"scaleThreshold,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetScaleThresholds200Response GetScaleThresholds200Response
 
 // NewGetScaleThresholds200Response instantiates a new GetScaleThresholds200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o GetScaleThresholds200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ScaleThreshold) {
 		toSerialize["scaleThreshold"] = o.ScaleThreshold
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetScaleThresholds200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetScaleThresholds200Response := _GetScaleThresholds200Response{}
+
+	err = json.Unmarshal(data, &varGetScaleThresholds200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetScaleThresholds200Response(varGetScaleThresholds200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "scaleThreshold")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetScaleThresholds200Response struct {

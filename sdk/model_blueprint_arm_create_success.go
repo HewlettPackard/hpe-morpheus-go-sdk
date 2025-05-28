@@ -35,7 +35,10 @@ type BlueprintARMCreateSuccess struct {
 	Owner map[string]interface{} `json:"owner,omitempty"`
 	// Tenant
 	Tenant map[string]interface{} `json:"tenant,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _BlueprintARMCreateSuccess BlueprintARMCreateSuccess
 
 // NewBlueprintARMCreateSuccess instantiates a new BlueprintARMCreateSuccess object
 // This constructor will assign default values to properties that have it defined,
@@ -348,7 +351,40 @@ func (o BlueprintARMCreateSuccess) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Tenant) {
 		toSerialize["tenant"] = o.Tenant
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *BlueprintARMCreateSuccess) UnmarshalJSON(data []byte) (err error) {
+	varBlueprintARMCreateSuccess := _BlueprintARMCreateSuccess{}
+
+	err = json.Unmarshal(data, &varBlueprintARMCreateSuccess)
+
+	if err != nil {
+		return err
+	}
+
+	*o = BlueprintARMCreateSuccess(varBlueprintARMCreateSuccess)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "image")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "arm")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "resourcePermission")
+		delete(additionalProperties, "owner")
+		delete(additionalProperties, "tenant")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableBlueprintARMCreateSuccess struct {

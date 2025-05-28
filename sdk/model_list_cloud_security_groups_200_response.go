@@ -23,7 +23,10 @@ type ListCloudSecurityGroups200Response struct {
 	Success *bool `json:"success,omitempty"`
 	FirewallEnabled *bool `json:"firewallEnabled,omitempty"`
 	SecurityGroups []ListCloudSecurityGroups200ResponseAllOfSecurityGroupsInner `json:"securityGroups,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListCloudSecurityGroups200Response ListCloudSecurityGroups200Response
 
 // NewListCloudSecurityGroups200Response instantiates a new ListCloudSecurityGroups200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o ListCloudSecurityGroups200Response) ToMap() (map[string]interface{}, err
 	if !IsNil(o.SecurityGroups) {
 		toSerialize["securityGroups"] = o.SecurityGroups
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListCloudSecurityGroups200Response) UnmarshalJSON(data []byte) (err error) {
+	varListCloudSecurityGroups200Response := _ListCloudSecurityGroups200Response{}
+
+	err = json.Unmarshal(data, &varListCloudSecurityGroups200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListCloudSecurityGroups200Response(varListCloudSecurityGroups200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "success")
+		delete(additionalProperties, "firewallEnabled")
+		delete(additionalProperties, "securityGroups")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListCloudSecurityGroups200Response struct {

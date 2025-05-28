@@ -22,7 +22,10 @@ var _ MappedNullable = &SaveClusterDatastoreRequestDatastoreConfigAnyOf1{}
 type SaveClusterDatastoreRequestDatastoreConfigAnyOf1 struct {
 	// Block device for target GFS2.
 	BlockDevice *string `json:"blockDevice,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _SaveClusterDatastoreRequestDatastoreConfigAnyOf1 SaveClusterDatastoreRequestDatastoreConfigAnyOf1
 
 // NewSaveClusterDatastoreRequestDatastoreConfigAnyOf1 instantiates a new SaveClusterDatastoreRequestDatastoreConfigAnyOf1 object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o SaveClusterDatastoreRequestDatastoreConfigAnyOf1) ToMap() (map[string]in
 	if !IsNil(o.BlockDevice) {
 		toSerialize["blockDevice"] = o.BlockDevice
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *SaveClusterDatastoreRequestDatastoreConfigAnyOf1) UnmarshalJSON(data []byte) (err error) {
+	varSaveClusterDatastoreRequestDatastoreConfigAnyOf1 := _SaveClusterDatastoreRequestDatastoreConfigAnyOf1{}
+
+	err = json.Unmarshal(data, &varSaveClusterDatastoreRequestDatastoreConfigAnyOf1)
+
+	if err != nil {
+		return err
+	}
+
+	*o = SaveClusterDatastoreRequestDatastoreConfigAnyOf1(varSaveClusterDatastoreRequestDatastoreConfigAnyOf1)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "blockDevice")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableSaveClusterDatastoreRequestDatastoreConfigAnyOf1 struct {

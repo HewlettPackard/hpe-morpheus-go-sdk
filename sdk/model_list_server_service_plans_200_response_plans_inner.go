@@ -55,7 +55,10 @@ type ListServerServicePlans200ResponsePlansInner struct {
 	CustomCores *bool `json:"customCores,omitempty"`
 	MaxDisks *string `json:"maxDisks,omitempty"`
 	MemorySizeType *string `json:"memorySizeType,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListServerServicePlans200ResponsePlansInner ListServerServicePlans200ResponsePlansInner
 
 // NewListServerServicePlans200ResponsePlansInner instantiates a new ListServerServicePlans200ResponsePlansInner object
 // This constructor will assign default values to properties that have it defined,
@@ -1309,7 +1312,67 @@ func (o ListServerServicePlans200ResponsePlansInner) ToMap() (map[string]interfa
 	if !IsNil(o.MemorySizeType) {
 		toSerialize["memorySizeType"] = o.MemorySizeType
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListServerServicePlans200ResponsePlansInner) UnmarshalJSON(data []byte) (err error) {
+	varListServerServicePlans200ResponsePlansInner := _ListServerServicePlans200ResponsePlansInner{}
+
+	err = json.Unmarshal(data, &varListServerServicePlans200ResponsePlansInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListServerServicePlans200ResponsePlansInner(varListServerServicePlans200ResponsePlansInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "value")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "maxStorage")
+		delete(additionalProperties, "maxMemory")
+		delete(additionalProperties, "maxCpu")
+		delete(additionalProperties, "maxCores")
+		delete(additionalProperties, "maxDataStorage")
+		delete(additionalProperties, "customCpu")
+		delete(additionalProperties, "customMaxMemory")
+		delete(additionalProperties, "customMaxStorage")
+		delete(additionalProperties, "customMaxDataStorage")
+		delete(additionalProperties, "customCoresPerSocket")
+		delete(additionalProperties, "coresPerSocket")
+		delete(additionalProperties, "storageTypes")
+		delete(additionalProperties, "rootStorageTypes")
+		delete(additionalProperties, "addVolumes")
+		delete(additionalProperties, "customizeVolume")
+		delete(additionalProperties, "rootDiskCustomizable")
+		delete(additionalProperties, "hostDiskMode")
+		delete(additionalProperties, "hasDatastore")
+		delete(additionalProperties, "lvmSupported")
+		delete(additionalProperties, "minDisk")
+		delete(additionalProperties, "maxDisk")
+		delete(additionalProperties, "datastores")
+		delete(additionalProperties, "supportsAutoDatastore")
+		delete(additionalProperties, "autoOptions")
+		delete(additionalProperties, "cpuOptions")
+		delete(additionalProperties, "memoryOptions")
+		delete(additionalProperties, "rootCustomSizeOptions")
+		delete(additionalProperties, "customSizeOptions")
+		delete(additionalProperties, "customCores")
+		delete(additionalProperties, "maxDisks")
+		delete(additionalProperties, "memorySizeType")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListServerServicePlans200ResponsePlansInner struct {

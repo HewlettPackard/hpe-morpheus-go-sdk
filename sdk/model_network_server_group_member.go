@@ -31,7 +31,10 @@ type NetworkServerGroupMember struct {
 	InternalId *string `json:"internalId,omitempty"`
 	ExternalId *string `json:"externalId,omitempty"`
 	Members []map[string]interface{} `json:"members,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _NetworkServerGroupMember NetworkServerGroupMember
 
 // NewNetworkServerGroupMember instantiates a new NetworkServerGroupMember object
 // This constructor will assign default values to properties that have it defined,
@@ -445,7 +448,43 @@ func (o NetworkServerGroupMember) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Members) {
 		toSerialize["members"] = o.Members
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *NetworkServerGroupMember) UnmarshalJSON(data []byte) (err error) {
+	varNetworkServerGroupMember := _NetworkServerGroupMember{}
+
+	err = json.Unmarshal(data, &varNetworkServerGroupMember)
+
+	if err != nil {
+		return err
+	}
+
+	*o = NetworkServerGroupMember(varNetworkServerGroupMember)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "memberName")
+		delete(additionalProperties, "memberType")
+		delete(additionalProperties, "memberValue")
+		delete(additionalProperties, "memberExpression")
+		delete(additionalProperties, "displayOrder")
+		delete(additionalProperties, "internalId")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "members")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableNetworkServerGroupMember struct {

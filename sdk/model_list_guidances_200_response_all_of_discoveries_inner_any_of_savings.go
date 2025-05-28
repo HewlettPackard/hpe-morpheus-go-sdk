@@ -22,7 +22,10 @@ var _ MappedNullable = &ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfSaving
 type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfSavings struct {
 	Amount *float32 `json:"amount,omitempty"`
 	Currency *string `json:"currency,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfSavings ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfSavings
 
 // NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOfSavings instantiates a new ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfSavings object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfSavings) ToMap() (map[
 	if !IsNil(o.Currency) {
 		toSerialize["currency"] = o.Currency
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfSavings) UnmarshalJSON(data []byte) (err error) {
+	varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfSavings := _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfSavings{}
+
+	err = json.Unmarshal(data, &varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfSavings)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfSavings(varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfSavings)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "amount")
+		delete(additionalProperties, "currency")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfSavings struct {

@@ -24,7 +24,10 @@ type GetGuidanceStats200ResponseStatsType struct {
 	Shutdown *int64 `json:"shutdown,omitempty"`
 	Move *int64 `json:"move,omitempty"`
 	Schedule *int64 `json:"schedule,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetGuidanceStats200ResponseStatsType GetGuidanceStats200ResponseStatsType
 
 // NewGetGuidanceStats200ResponseStatsType instantiates a new GetGuidanceStats200ResponseStatsType object
 // This constructor will assign default values to properties that have it defined,
@@ -193,7 +196,36 @@ func (o GetGuidanceStats200ResponseStatsType) ToMap() (map[string]interface{}, e
 	if !IsNil(o.Schedule) {
 		toSerialize["schedule"] = o.Schedule
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetGuidanceStats200ResponseStatsType) UnmarshalJSON(data []byte) (err error) {
+	varGetGuidanceStats200ResponseStatsType := _GetGuidanceStats200ResponseStatsType{}
+
+	err = json.Unmarshal(data, &varGetGuidanceStats200ResponseStatsType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetGuidanceStats200ResponseStatsType(varGetGuidanceStats200ResponseStatsType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "size")
+		delete(additionalProperties, "shutdown")
+		delete(additionalProperties, "move")
+		delete(additionalProperties, "schedule")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetGuidanceStats200ResponseStatsType struct {

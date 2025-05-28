@@ -22,7 +22,10 @@ var _ MappedNullable = &AddServicePlansRequestServicePlanPriceSetsInner{}
 type AddServicePlansRequestServicePlanPriceSetsInner struct {
 	// Price Set ID
 	Id *int64 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddServicePlansRequestServicePlanPriceSetsInner AddServicePlansRequestServicePlanPriceSetsInner
 
 // NewAddServicePlansRequestServicePlanPriceSetsInner instantiates a new AddServicePlansRequestServicePlanPriceSetsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o AddServicePlansRequestServicePlanPriceSetsInner) ToMap() (map[string]int
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddServicePlansRequestServicePlanPriceSetsInner) UnmarshalJSON(data []byte) (err error) {
+	varAddServicePlansRequestServicePlanPriceSetsInner := _AddServicePlansRequestServicePlanPriceSetsInner{}
+
+	err = json.Unmarshal(data, &varAddServicePlansRequestServicePlanPriceSetsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddServicePlansRequestServicePlanPriceSetsInner(varAddServicePlansRequestServicePlanPriceSetsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddServicePlansRequestServicePlanPriceSetsInner struct {

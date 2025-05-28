@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -30,6 +29,7 @@ type AddBackupJobsRequestJob struct {
 	ScheduleId *int64 `json:"scheduleId,omitempty"`
 	// Retention Count. By default the backup settings value will be used.
 	RetentionCount *int64 `json:"retentionCount,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddBackupJobsRequestJob AddBackupJobsRequestJob
@@ -192,6 +192,11 @@ func (o AddBackupJobsRequestJob) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.RetentionCount) {
 		toSerialize["retentionCount"] = o.RetentionCount
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -219,15 +224,23 @@ func (o *AddBackupJobsRequestJob) UnmarshalJSON(data []byte) (err error) {
 
 	varAddBackupJobsRequestJob := _AddBackupJobsRequestJob{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddBackupJobsRequestJob)
+	err = json.Unmarshal(data, &varAddBackupJobsRequestJob)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddBackupJobsRequestJob(varAddBackupJobsRequestJob)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "scheduleId")
+		delete(additionalProperties, "retentionCount")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

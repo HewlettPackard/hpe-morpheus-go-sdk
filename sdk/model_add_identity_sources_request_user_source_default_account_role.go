@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -24,6 +23,7 @@ var _ MappedNullable = &AddIdentitySourcesRequestUserSourceDefaultAccountRole{}
 type AddIdentitySourcesRequestUserSourceDefaultAccountRole struct {
 	// Default `Role ID`
 	Id int64 `json:"id"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddIdentitySourcesRequestUserSourceDefaultAccountRole AddIdentitySourcesRequestUserSourceDefaultAccountRole
@@ -81,6 +81,11 @@ func (o AddIdentitySourcesRequestUserSourceDefaultAccountRole) MarshalJSON() ([]
 func (o AddIdentitySourcesRequestUserSourceDefaultAccountRole) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -108,15 +113,20 @@ func (o *AddIdentitySourcesRequestUserSourceDefaultAccountRole) UnmarshalJSON(da
 
 	varAddIdentitySourcesRequestUserSourceDefaultAccountRole := _AddIdentitySourcesRequestUserSourceDefaultAccountRole{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddIdentitySourcesRequestUserSourceDefaultAccountRole)
+	err = json.Unmarshal(data, &varAddIdentitySourcesRequestUserSourceDefaultAccountRole)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddIdentitySourcesRequestUserSourceDefaultAccountRole(varAddIdentitySourcesRequestUserSourceDefaultAccountRole)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

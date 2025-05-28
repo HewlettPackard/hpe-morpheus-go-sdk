@@ -35,7 +35,10 @@ type SnapshotsInstance200ResponseSnapshotsInner struct {
 	SnapshotFiles []SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInner `json:"snapshotFiles,omitempty"`
 	CurrentlyActive *bool `json:"currentlyActive,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _SnapshotsInstance200ResponseSnapshotsInner SnapshotsInstance200ResponseSnapshotsInner
 
 // NewSnapshotsInstance200ResponseSnapshotsInner instantiates a new SnapshotsInstance200ResponseSnapshotsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -554,7 +557,46 @@ func (o SnapshotsInstance200ResponseSnapshotsInner) ToMap() (map[string]interfac
 	if !IsNil(o.DateCreated) {
 		toSerialize["dateCreated"] = o.DateCreated
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *SnapshotsInstance200ResponseSnapshotsInner) UnmarshalJSON(data []byte) (err error) {
+	varSnapshotsInstance200ResponseSnapshotsInner := _SnapshotsInstance200ResponseSnapshotsInner{}
+
+	err = json.Unmarshal(data, &varSnapshotsInstance200ResponseSnapshotsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = SnapshotsInstance200ResponseSnapshotsInner(varSnapshotsInstance200ResponseSnapshotsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "state")
+		delete(additionalProperties, "snapshotType")
+		delete(additionalProperties, "snapshotCreated")
+		delete(additionalProperties, "zone")
+		delete(additionalProperties, "datastore")
+		delete(additionalProperties, "parentSnapshot")
+		delete(additionalProperties, "snapshotFiles")
+		delete(additionalProperties, "currentlyActive")
+		delete(additionalProperties, "dateCreated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableSnapshotsInstance200ResponseSnapshotsInner struct {

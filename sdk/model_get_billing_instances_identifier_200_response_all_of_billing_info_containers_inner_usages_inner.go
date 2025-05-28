@@ -53,7 +53,10 @@ type GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsag
 	ServicePlanName *string `json:"servicePlanName,omitempty"`
 	ResourcePoolId *int64 `json:"resourcePoolId,omitempty"`
 	ResourcePoolName *string `json:"resourcePoolName,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInner GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInner
 
 // NewGetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInner instantiates a new GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -1202,7 +1205,64 @@ func (o GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerU
 	if !IsNil(o.ResourcePoolName) {
 		toSerialize["resourcePoolName"] = o.ResourcePoolName
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInner) UnmarshalJSON(data []byte) (err error) {
+	varGetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInner := _GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInner{}
+
+	err = json.Unmarshal(data, &varGetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInner(varGetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "instanceName")
+		delete(additionalProperties, "zoneName")
+		delete(additionalProperties, "accountName")
+		delete(additionalProperties, "volumes")
+		delete(additionalProperties, "maxMemory")
+		delete(additionalProperties, "maxCpu")
+		delete(additionalProperties, "maxCores")
+		delete(additionalProperties, "serverExternalId")
+		delete(additionalProperties, "serverInternalId")
+		delete(additionalProperties, "planName")
+		delete(additionalProperties, "hourlyPrice")
+		delete(additionalProperties, "hourlyCost")
+		delete(additionalProperties, "currency")
+		delete(additionalProperties, "pricesUsed")
+		delete(additionalProperties, "cost")
+		delete(additionalProperties, "price")
+		delete(additionalProperties, "createdByUser")
+		delete(additionalProperties, "createdByUserId")
+		delete(additionalProperties, "siteId")
+		delete(additionalProperties, "siteName")
+		delete(additionalProperties, "siteUUID")
+		delete(additionalProperties, "siteCode")
+		delete(additionalProperties, "startDate")
+		delete(additionalProperties, "endDate")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "tags")
+		delete(additionalProperties, "applicablePrices")
+		delete(additionalProperties, "servicePlanId")
+		delete(additionalProperties, "servicePlanName")
+		delete(additionalProperties, "resourcePoolId")
+		delete(additionalProperties, "resourcePoolName")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInner struct {

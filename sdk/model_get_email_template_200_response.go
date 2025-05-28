@@ -22,7 +22,10 @@ var _ MappedNullable = &GetEmailTemplate200Response{}
 type GetEmailTemplate200Response struct {
 	EmailTemplate *ListEmailTemplates200ResponseAllOfEmailTemplatesInner `json:"emailTemplate,omitempty"`
 	Success *bool `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetEmailTemplate200Response GetEmailTemplate200Response
 
 // NewGetEmailTemplate200Response instantiates a new GetEmailTemplate200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o GetEmailTemplate200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Success) {
 		toSerialize["success"] = o.Success
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetEmailTemplate200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetEmailTemplate200Response := _GetEmailTemplate200Response{}
+
+	err = json.Unmarshal(data, &varGetEmailTemplate200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetEmailTemplate200Response(varGetEmailTemplate200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "emailTemplate")
+		delete(additionalProperties, "success")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetEmailTemplate200Response struct {

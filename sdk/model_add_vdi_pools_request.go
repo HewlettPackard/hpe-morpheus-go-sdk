@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -23,6 +22,7 @@ var _ MappedNullable = &AddVDIPoolsRequest{}
 // AddVDIPoolsRequest Create Pool Object
 type AddVDIPoolsRequest struct {
 	VdiPool AddVDIPoolsRequestVdiPool `json:"vdiPool"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddVDIPoolsRequest AddVDIPoolsRequest
@@ -80,6 +80,11 @@ func (o AddVDIPoolsRequest) MarshalJSON() ([]byte, error) {
 func (o AddVDIPoolsRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["vdiPool"] = o.VdiPool
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -107,15 +112,20 @@ func (o *AddVDIPoolsRequest) UnmarshalJSON(data []byte) (err error) {
 
 	varAddVDIPoolsRequest := _AddVDIPoolsRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddVDIPoolsRequest)
+	err = json.Unmarshal(data, &varAddVDIPoolsRequest)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddVDIPoolsRequest(varAddVDIPoolsRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "vdiPool")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

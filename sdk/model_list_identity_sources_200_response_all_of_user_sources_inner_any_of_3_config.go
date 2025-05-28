@@ -25,7 +25,10 @@ type ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3Config struct {
 	RequiredGroup *string `json:"requiredGroup,omitempty"`
 	RequiredGroupId *string `json:"requiredGroupId,omitempty"`
 	AdministratorAPITokenHash *string `json:"administratorAPITokenHash,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3Config ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3Config
 
 // NewListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3Config instantiates a new ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3Config object
 // This constructor will assign default values to properties that have it defined,
@@ -229,7 +232,37 @@ func (o ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3Config) ToMap()
 	if !IsNil(o.AdministratorAPITokenHash) {
 		toSerialize["administratorAPITokenHash"] = o.AdministratorAPITokenHash
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3Config) UnmarshalJSON(data []byte) (err error) {
+	varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3Config := _ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3Config{}
+
+	err = json.Unmarshal(data, &varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3Config)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3Config(varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3Config)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "url")
+		delete(additionalProperties, "administratorAPIToken")
+		delete(additionalProperties, "requiredGroup")
+		delete(additionalProperties, "requiredGroupId")
+		delete(additionalProperties, "administratorAPITokenHash")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3Config struct {

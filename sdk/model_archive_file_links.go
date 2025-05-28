@@ -30,7 +30,10 @@ type ArchiveFileLinks struct {
 	LastAccessDate *time.Time `json:"lastAccessDate,omitempty"`
 	ExpirationDate *time.Time `json:"expirationDate,omitempty"`
 	DownloadCount *int64 `json:"downloadCount,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ArchiveFileLinks ArchiveFileLinks
 
 // NewArchiveFileLinks instantiates a new ArchiveFileLinks object
 // This constructor will assign default values to properties that have it defined,
@@ -374,7 +377,41 @@ func (o ArchiveFileLinks) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.DownloadCount) {
 		toSerialize["downloadCount"] = o.DownloadCount
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ArchiveFileLinks) UnmarshalJSON(data []byte) (err error) {
+	varArchiveFileLinks := _ArchiveFileLinks{}
+
+	err = json.Unmarshal(data, &varArchiveFileLinks)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ArchiveFileLinks(varArchiveFileLinks)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "secretAccessKey")
+		delete(additionalProperties, "archiveFile")
+		delete(additionalProperties, "createdBy")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "lastAccessDate")
+		delete(additionalProperties, "expirationDate")
+		delete(additionalProperties, "downloadCount")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableArchiveFileLinks struct {

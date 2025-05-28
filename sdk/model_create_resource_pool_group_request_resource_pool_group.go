@@ -28,7 +28,10 @@ type CreateResourcePoolGroupRequestResourcePoolGroup struct {
 	Pools []int64 `json:"pools,omitempty"`
 	Tenants []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"tenants,omitempty"`
 	ResourcePermission *GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission `json:"resourcePermission,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _CreateResourcePoolGroupRequestResourcePoolGroup CreateResourcePoolGroupRequestResourcePoolGroup
 
 // NewCreateResourcePoolGroupRequestResourcePoolGroup instantiates a new CreateResourcePoolGroupRequestResourcePoolGroup object
 // This constructor will assign default values to properties that have it defined,
@@ -302,7 +305,39 @@ func (o CreateResourcePoolGroupRequestResourcePoolGroup) ToMap() (map[string]int
 	if !IsNil(o.ResourcePermission) {
 		toSerialize["resourcePermission"] = o.ResourcePermission
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *CreateResourcePoolGroupRequestResourcePoolGroup) UnmarshalJSON(data []byte) (err error) {
+	varCreateResourcePoolGroupRequestResourcePoolGroup := _CreateResourcePoolGroupRequestResourcePoolGroup{}
+
+	err = json.Unmarshal(data, &varCreateResourcePoolGroupRequestResourcePoolGroup)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CreateResourcePoolGroupRequestResourcePoolGroup(varCreateResourcePoolGroupRequestResourcePoolGroup)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "mode")
+		delete(additionalProperties, "pools")
+		delete(additionalProperties, "tenants")
+		delete(additionalProperties, "resourcePermission")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCreateResourcePoolGroupRequestResourcePoolGroup struct {

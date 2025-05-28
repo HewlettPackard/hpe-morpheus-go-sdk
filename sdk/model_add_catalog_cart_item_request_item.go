@@ -29,7 +29,10 @@ type AddCatalogCartItemRequestItem struct {
 	Context *string `json:"context,omitempty"`
 	// Resource (Instance or Server) ID for context when running the `workflow`. Only applies to type `workflow` and only required when context is `instance` or `server`. 
 	Target *int64 `json:"target,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddCatalogCartItemRequestItem AddCatalogCartItemRequestItem
 
 // NewAddCatalogCartItemRequestItem instantiates a new AddCatalogCartItemRequestItem object
 // This constructor will assign default values to properties that have it defined,
@@ -233,7 +236,37 @@ func (o AddCatalogCartItemRequestItem) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Target) {
 		toSerialize["target"] = o.Target
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddCatalogCartItemRequestItem) UnmarshalJSON(data []byte) (err error) {
+	varAddCatalogCartItemRequestItem := _AddCatalogCartItemRequestItem{}
+
+	err = json.Unmarshal(data, &varAddCatalogCartItemRequestItem)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddCatalogCartItemRequestItem(varAddCatalogCartItemRequestItem)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "quantity")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "context")
+		delete(additionalProperties, "target")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddCatalogCartItemRequestItem struct {

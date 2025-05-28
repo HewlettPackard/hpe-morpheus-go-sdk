@@ -49,7 +49,10 @@ type ClusterLayout struct {
 	SpecTemplates []ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner `json:"specTemplates,omitempty"`
 	TaskSets []map[string]interface{} `json:"taskSets,omitempty"`
 	Type *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"type,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ClusterLayout ClusterLayout
 
 // NewClusterLayout instantiates a new ClusterLayout object
 // This constructor will assign default values to properties that have it defined,
@@ -1058,7 +1061,60 @@ func (o ClusterLayout) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ClusterLayout) UnmarshalJSON(data []byte) (err error) {
+	varClusterLayout := _ClusterLayout{}
+
+	err = json.Unmarshal(data, &varClusterLayout)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ClusterLayout(varClusterLayout)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "internalId")
+		delete(additionalProperties, "serverCount")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "hasAutoScale")
+		delete(additionalProperties, "memoryRequirement")
+		delete(additionalProperties, "clusterVersion")
+		delete(additionalProperties, "computeVersion")
+		delete(additionalProperties, "hasSettings")
+		delete(additionalProperties, "sortOrder")
+		delete(additionalProperties, "hasConfig")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "creatable")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "groupType")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "environmentVariables")
+		delete(additionalProperties, "optionTypes")
+		delete(additionalProperties, "actions")
+		delete(additionalProperties, "computeServers")
+		delete(additionalProperties, "installContainerRuntime")
+		delete(additionalProperties, "provisionType")
+		delete(additionalProperties, "specTemplates")
+		delete(additionalProperties, "taskSets")
+		delete(additionalProperties, "type")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableClusterLayout struct {

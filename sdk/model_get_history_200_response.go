@@ -21,7 +21,10 @@ var _ MappedNullable = &GetHistory200Response{}
 // GetHistory200Response struct for GetHistory200Response
 type GetHistory200Response struct {
 	Process *ListHistory200ResponseAllOfProcessesInner `json:"process,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetHistory200Response GetHistory200Response
 
 // NewGetHistory200Response instantiates a new GetHistory200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o GetHistory200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Process) {
 		toSerialize["process"] = o.Process
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetHistory200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetHistory200Response := _GetHistory200Response{}
+
+	err = json.Unmarshal(data, &varGetHistory200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetHistory200Response(varGetHistory200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "process")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetHistory200Response struct {

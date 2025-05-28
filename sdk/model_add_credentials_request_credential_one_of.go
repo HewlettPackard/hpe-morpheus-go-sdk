@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -35,6 +34,7 @@ type AddCredentialsRequestCredentialOneOf struct {
 	Username string `json:"username"`
 	// Secret Key
 	Password string `json:"password"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddCredentialsRequestCredentialOneOf AddCredentialsRequestCredentialOneOf
@@ -279,6 +279,11 @@ func (o AddCredentialsRequestCredentialOneOf) ToMap() (map[string]interface{}, e
 	}
 	toSerialize["username"] = o.Username
 	toSerialize["password"] = o.Password
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -309,15 +314,26 @@ func (o *AddCredentialsRequestCredentialOneOf) UnmarshalJSON(data []byte) (err e
 
 	varAddCredentialsRequestCredentialOneOf := _AddCredentialsRequestCredentialOneOf{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddCredentialsRequestCredentialOneOf)
+	err = json.Unmarshal(data, &varAddCredentialsRequestCredentialOneOf)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddCredentialsRequestCredentialOneOf(varAddCredentialsRequestCredentialOneOf)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "integration")
+		delete(additionalProperties, "username")
+		delete(additionalProperties, "password")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

@@ -21,7 +21,10 @@ var _ MappedNullable = &GetNetworkEdgeCluster200Response{}
 // GetNetworkEdgeCluster200Response struct for GetNetworkEdgeCluster200Response
 type GetNetworkEdgeCluster200Response struct {
 	NetworkEdgeCluster *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster `json:"networkEdgeCluster,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetNetworkEdgeCluster200Response GetNetworkEdgeCluster200Response
 
 // NewGetNetworkEdgeCluster200Response instantiates a new GetNetworkEdgeCluster200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o GetNetworkEdgeCluster200Response) ToMap() (map[string]interface{}, error
 	if !IsNil(o.NetworkEdgeCluster) {
 		toSerialize["networkEdgeCluster"] = o.NetworkEdgeCluster
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetNetworkEdgeCluster200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetNetworkEdgeCluster200Response := _GetNetworkEdgeCluster200Response{}
+
+	err = json.Unmarshal(data, &varGetNetworkEdgeCluster200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetNetworkEdgeCluster200Response(varGetNetworkEdgeCluster200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "networkEdgeCluster")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetNetworkEdgeCluster200Response struct {

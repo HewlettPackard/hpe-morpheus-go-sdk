@@ -33,7 +33,10 @@ type ListHealthLogs200ResponseAllOfLogsInner struct {
 	Seq *int64 `json:"seq,omitempty"`
 	Id *string `json:"_id,omitempty"`
 	SignatureVerified *bool `json:"signatureVerified,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListHealthLogs200ResponseAllOfLogsInner ListHealthLogs200ResponseAllOfLogsInner
 
 // NewListHealthLogs200ResponseAllOfLogsInner instantiates a new ListHealthLogs200ResponseAllOfLogsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -482,7 +485,44 @@ func (o ListHealthLogs200ResponseAllOfLogsInner) ToMap() (map[string]interface{}
 	if !IsNil(o.SignatureVerified) {
 		toSerialize["signatureVerified"] = o.SignatureVerified
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListHealthLogs200ResponseAllOfLogsInner) UnmarshalJSON(data []byte) (err error) {
+	varListHealthLogs200ResponseAllOfLogsInner := _ListHealthLogs200ResponseAllOfLogsInner{}
+
+	err = json.Unmarshal(data, &varListHealthLogs200ResponseAllOfLogsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListHealthLogs200ResponseAllOfLogsInner(varListHealthLogs200ResponseAllOfLogsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "typeCode")
+		delete(additionalProperties, "ts")
+		delete(additionalProperties, "level")
+		delete(additionalProperties, "sourceType")
+		delete(additionalProperties, "message")
+		delete(additionalProperties, "hostname")
+		delete(additionalProperties, "title")
+		delete(additionalProperties, "logSignature")
+		delete(additionalProperties, "objectId")
+		delete(additionalProperties, "seq")
+		delete(additionalProperties, "_id")
+		delete(additionalProperties, "signatureVerified")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListHealthLogs200ResponseAllOfLogsInner struct {

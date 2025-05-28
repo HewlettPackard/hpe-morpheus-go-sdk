@@ -23,7 +23,10 @@ type ListCredentials200ResponseAllOfCredentialsInnerUser struct {
 	Id *int64 `json:"id,omitempty"`
 	Username *string `json:"username,omitempty"`
 	DisplayName *string `json:"displayName,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListCredentials200ResponseAllOfCredentialsInnerUser ListCredentials200ResponseAllOfCredentialsInnerUser
 
 // NewListCredentials200ResponseAllOfCredentialsInnerUser instantiates a new ListCredentials200ResponseAllOfCredentialsInnerUser object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o ListCredentials200ResponseAllOfCredentialsInnerUser) ToMap() (map[string
 	if !IsNil(o.DisplayName) {
 		toSerialize["displayName"] = o.DisplayName
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListCredentials200ResponseAllOfCredentialsInnerUser) UnmarshalJSON(data []byte) (err error) {
+	varListCredentials200ResponseAllOfCredentialsInnerUser := _ListCredentials200ResponseAllOfCredentialsInnerUser{}
+
+	err = json.Unmarshal(data, &varListCredentials200ResponseAllOfCredentialsInnerUser)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListCredentials200ResponseAllOfCredentialsInnerUser(varListCredentials200ResponseAllOfCredentialsInnerUser)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "username")
+		delete(additionalProperties, "displayName")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListCredentials200ResponseAllOfCredentialsInnerUser struct {

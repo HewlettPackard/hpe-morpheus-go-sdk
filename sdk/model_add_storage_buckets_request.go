@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -23,6 +22,7 @@ var _ MappedNullable = &AddStorageBucketsRequest{}
 // AddStorageBucketsRequest struct for AddStorageBucketsRequest
 type AddStorageBucketsRequest struct {
 	StorageBucket AddStorageBucketsRequestStorageBucket `json:"storageBucket"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddStorageBucketsRequest AddStorageBucketsRequest
@@ -80,6 +80,11 @@ func (o AddStorageBucketsRequest) MarshalJSON() ([]byte, error) {
 func (o AddStorageBucketsRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["storageBucket"] = o.StorageBucket
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -107,15 +112,20 @@ func (o *AddStorageBucketsRequest) UnmarshalJSON(data []byte) (err error) {
 
 	varAddStorageBucketsRequest := _AddStorageBucketsRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddStorageBucketsRequest)
+	err = json.Unmarshal(data, &varAddStorageBucketsRequest)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddStorageBucketsRequest(varAddStorageBucketsRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "storageBucket")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

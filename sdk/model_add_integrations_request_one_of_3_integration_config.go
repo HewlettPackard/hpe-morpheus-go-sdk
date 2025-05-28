@@ -22,7 +22,10 @@ var _ MappedNullable = &AddIntegrationsRequestOneOf3IntegrationConfig{}
 type AddIntegrationsRequestOneOf3IntegrationConfig struct {
 	// Apply state via Minion instead of Master (salt-call)
 	SaltApplyOnMinion *bool `json:"saltApplyOnMinion,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddIntegrationsRequestOneOf3IntegrationConfig AddIntegrationsRequestOneOf3IntegrationConfig
 
 // NewAddIntegrationsRequestOneOf3IntegrationConfig instantiates a new AddIntegrationsRequestOneOf3IntegrationConfig object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o AddIntegrationsRequestOneOf3IntegrationConfig) ToMap() (map[string]inter
 	if !IsNil(o.SaltApplyOnMinion) {
 		toSerialize["saltApplyOnMinion"] = o.SaltApplyOnMinion
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddIntegrationsRequestOneOf3IntegrationConfig) UnmarshalJSON(data []byte) (err error) {
+	varAddIntegrationsRequestOneOf3IntegrationConfig := _AddIntegrationsRequestOneOf3IntegrationConfig{}
+
+	err = json.Unmarshal(data, &varAddIntegrationsRequestOneOf3IntegrationConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddIntegrationsRequestOneOf3IntegrationConfig(varAddIntegrationsRequestOneOf3IntegrationConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "saltApplyOnMinion")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddIntegrationsRequestOneOf3IntegrationConfig struct {

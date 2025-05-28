@@ -41,7 +41,10 @@ type ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner struct {
 	NameSuffix *string `json:"nameSuffix,omitempty"`
 	ForceNameIndex *bool `json:"forceNameIndex,omitempty"`
 	LoadBalance *bool `json:"loadBalance,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner
 
 // NewListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner instantiates a new ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner object
 // This constructor will assign default values to properties that have it defined,
@@ -805,7 +808,53 @@ func (o ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) ToMap
 	if !IsNil(o.LoadBalance) {
 		toSerialize["loadBalance"] = o.LoadBalance
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) UnmarshalJSON(data []byte) (err error) {
+	varListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner := _ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner{}
+
+	err = json.Unmarshal(data, &varListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner(varListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "priorityOrder")
+		delete(additionalProperties, "nodeCount")
+		delete(additionalProperties, "nodeType")
+		delete(additionalProperties, "minNodeCount")
+		delete(additionalProperties, "maxNodeCount")
+		delete(additionalProperties, "dynamicCount")
+		delete(additionalProperties, "installContainerRuntime")
+		delete(additionalProperties, "installStorageRuntime")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "containerType")
+		delete(additionalProperties, "computeServerType")
+		delete(additionalProperties, "provisionService")
+		delete(additionalProperties, "planCategory")
+		delete(additionalProperties, "namePrefix")
+		delete(additionalProperties, "nameSuffix")
+		delete(additionalProperties, "forceNameIndex")
+		delete(additionalProperties, "loadBalance")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner struct {

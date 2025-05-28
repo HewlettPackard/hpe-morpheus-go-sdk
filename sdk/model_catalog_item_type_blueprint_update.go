@@ -52,7 +52,10 @@ type CatalogItemTypeBlueprintUpdate struct {
 	Form *AddCatalogItemTypeRequestCatalogItemTypeOneOfForm `json:"form,omitempty"`
 	// Array of option type IDs, see Inputs. Only applies to formType 'optionTypes'.
 	OptionTypes []int64 `json:"optionTypes,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _CatalogItemTypeBlueprintUpdate CatalogItemTypeBlueprintUpdate
 
 // NewCatalogItemTypeBlueprintUpdate instantiates a new CatalogItemTypeBlueprintUpdate object
 // This constructor will assign default values to properties that have it defined,
@@ -696,7 +699,49 @@ func (o CatalogItemTypeBlueprintUpdate) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.OptionTypes) {
 		toSerialize["optionTypes"] = o.OptionTypes
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *CatalogItemTypeBlueprintUpdate) UnmarshalJSON(data []byte) (err error) {
+	varCatalogItemTypeBlueprintUpdate := _CatalogItemTypeBlueprintUpdate{}
+
+	err = json.Unmarshal(data, &varCatalogItemTypeBlueprintUpdate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CatalogItemTypeBlueprintUpdate(varCatalogItemTypeBlueprintUpdate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "layoutCode")
+		delete(additionalProperties, "iconPath")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "featured")
+		delete(additionalProperties, "allowQuantity")
+		delete(additionalProperties, "blueprint")
+		delete(additionalProperties, "appSpec")
+		delete(additionalProperties, "formType")
+		delete(additionalProperties, "form")
+		delete(additionalProperties, "optionTypes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCatalogItemTypeBlueprintUpdate struct {

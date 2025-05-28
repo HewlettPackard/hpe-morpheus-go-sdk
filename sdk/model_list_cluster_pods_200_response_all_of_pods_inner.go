@@ -34,7 +34,10 @@ type ListClusterPods200ResponseAllOfPodsInner struct {
 	Owner *GetAlerts200ResponseAllOfChecksInnerAccount `json:"owner,omitempty"`
 	TotalCpuUsage *int64 `json:"totalCpuUsage,omitempty"`
 	Stats map[string]interface{} `json:"stats,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListClusterPods200ResponseAllOfPodsInner ListClusterPods200ResponseAllOfPodsInner
 
 // NewListClusterPods200ResponseAllOfPodsInner instantiates a new ListClusterPods200ResponseAllOfPodsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -518,7 +521,45 @@ func (o ListClusterPods200ResponseAllOfPodsInner) ToMap() (map[string]interface{
 	if !IsNil(o.Stats) {
 		toSerialize["stats"] = o.Stats
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListClusterPods200ResponseAllOfPodsInner) UnmarshalJSON(data []byte) (err error) {
+	varListClusterPods200ResponseAllOfPodsInner := _ListClusterPods200ResponseAllOfPodsInner{}
+
+	err = json.Unmarshal(data, &varListClusterPods200ResponseAllOfPodsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListClusterPods200ResponseAllOfPodsInner(varListClusterPods200ResponseAllOfPodsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "resourceLevel")
+		delete(additionalProperties, "resourceType")
+		delete(additionalProperties, "managed")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "owner")
+		delete(additionalProperties, "totalCpuUsage")
+		delete(additionalProperties, "stats")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListClusterPods200ResponseAllOfPodsInner struct {

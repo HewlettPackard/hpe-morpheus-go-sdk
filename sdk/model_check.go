@@ -58,7 +58,10 @@ type Check struct {
 	Severity *string `json:"severity,omitempty"`
 	StartDate *time.Time `json:"startDate,omitempty"`
 	Deleted *bool `json:"deleted,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _Check Check
 
 // NewCheck instantiates a new Check object
 // This constructor will assign default values to properties that have it defined,
@@ -1382,7 +1385,69 @@ func (o Check) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Deleted) {
 		toSerialize["deleted"] = o.Deleted
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *Check) UnmarshalJSON(data []byte) (err error) {
+	varCheck := _Check{}
+
+	err = json.Unmarshal(data, &varCheck)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Check(varCheck)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "apiKey")
+		delete(additionalProperties, "availability")
+		delete(additionalProperties, "checkAgent")
+		delete(additionalProperties, "checkInterval")
+		delete(additionalProperties, "checkSpec")
+		delete(additionalProperties, "checkType")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "container")
+		delete(additionalProperties, "createIncident")
+		delete(additionalProperties, "muted")
+		delete(additionalProperties, "createdBy")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "endDate")
+		delete(additionalProperties, "health")
+		delete(additionalProperties, "inUptime")
+		delete(additionalProperties, "lastBoxStats")
+		delete(additionalProperties, "lastCheckStatus")
+		delete(additionalProperties, "lastError")
+		delete(additionalProperties, "lastErrorDate")
+		delete(additionalProperties, "lastMessage")
+		delete(additionalProperties, "lastMetric")
+		delete(additionalProperties, "lastRunDate")
+		delete(additionalProperties, "lastStats")
+		delete(additionalProperties, "lastSuccessDate")
+		delete(additionalProperties, "lastTimer")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "lastWarningDate")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "nextRunDate")
+		delete(additionalProperties, "outageTime")
+		delete(additionalProperties, "severity")
+		delete(additionalProperties, "startDate")
+		delete(additionalProperties, "deleted")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCheck struct {

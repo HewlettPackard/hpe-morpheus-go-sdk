@@ -34,7 +34,10 @@ type ListTaskTypes200ResponseTaskTypesInner struct {
 	AllowLocalRepo *bool `json:"allowLocalRepo,omitempty"`
 	AllowRemoteKeyAuth *bool `json:"allowRemoteKeyAuth,omitempty"`
 	OptionTypes []ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListTaskTypes200ResponseTaskTypesInner ListTaskTypes200ResponseTaskTypesInner
 
 // NewListTaskTypes200ResponseTaskTypesInner instantiates a new ListTaskTypes200ResponseTaskTypesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -553,7 +556,46 @@ func (o ListTaskTypes200ResponseTaskTypesInner) ToMap() (map[string]interface{},
 	if !IsNil(o.OptionTypes) {
 		toSerialize["optionTypes"] = o.OptionTypes
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListTaskTypes200ResponseTaskTypesInner) UnmarshalJSON(data []byte) (err error) {
+	varListTaskTypes200ResponseTaskTypesInner := _ListTaskTypes200ResponseTaskTypesInner{}
+
+	err = json.Unmarshal(data, &varListTaskTypes200ResponseTaskTypesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListTaskTypes200ResponseTaskTypesInner(varListTaskTypes200ResponseTaskTypesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "scriptable")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "hasResults")
+		delete(additionalProperties, "allowExecuteLocal")
+		delete(additionalProperties, "allowExecuteRemote")
+		delete(additionalProperties, "allowExecuteResource")
+		delete(additionalProperties, "allowLocalRepo")
+		delete(additionalProperties, "allowRemoteKeyAuth")
+		delete(additionalProperties, "optionTypes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListTaskTypes200ResponseTaskTypesInner struct {

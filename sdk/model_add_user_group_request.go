@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -23,6 +22,7 @@ var _ MappedNullable = &AddUserGroupRequest{}
 // AddUserGroupRequest struct for AddUserGroupRequest
 type AddUserGroupRequest struct {
 	UserGroup AddUserGroupRequestUserGroup `json:"userGroup"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddUserGroupRequest AddUserGroupRequest
@@ -80,6 +80,11 @@ func (o AddUserGroupRequest) MarshalJSON() ([]byte, error) {
 func (o AddUserGroupRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["userGroup"] = o.UserGroup
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -107,15 +112,20 @@ func (o *AddUserGroupRequest) UnmarshalJSON(data []byte) (err error) {
 
 	varAddUserGroupRequest := _AddUserGroupRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddUserGroupRequest)
+	err = json.Unmarshal(data, &varAddUserGroupRequest)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddUserGroupRequest(varAddUserGroupRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "userGroup")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

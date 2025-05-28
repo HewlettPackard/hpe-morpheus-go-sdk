@@ -30,7 +30,10 @@ type ListImageBuilds200ResponseAllOfImageBuildsInnerConfigVolumesInner struct {
 	StorageType *int64 `json:"storageType,omitempty"`
 	DatastoreId *string `json:"datastoreId,omitempty"`
 	MaxStorage *int64 `json:"maxStorage,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListImageBuilds200ResponseAllOfImageBuildsInnerConfigVolumesInner ListImageBuilds200ResponseAllOfImageBuildsInnerConfigVolumesInner
 
 // NewListImageBuilds200ResponseAllOfImageBuildsInnerConfigVolumesInner instantiates a new ListImageBuilds200ResponseAllOfImageBuildsInnerConfigVolumesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -409,7 +412,42 @@ func (o ListImageBuilds200ResponseAllOfImageBuildsInnerConfigVolumesInner) ToMap
 	if !IsNil(o.MaxStorage) {
 		toSerialize["maxStorage"] = o.MaxStorage
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigVolumesInner) UnmarshalJSON(data []byte) (err error) {
+	varListImageBuilds200ResponseAllOfImageBuildsInnerConfigVolumesInner := _ListImageBuilds200ResponseAllOfImageBuildsInnerConfigVolumesInner{}
+
+	err = json.Unmarshal(data, &varListImageBuilds200ResponseAllOfImageBuildsInnerConfigVolumesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListImageBuilds200ResponseAllOfImageBuildsInnerConfigVolumesInner(varListImageBuilds200ResponseAllOfImageBuildsInnerConfigVolumesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "volumeCustomizable")
+		delete(additionalProperties, "vId")
+		delete(additionalProperties, "readonlyName")
+		delete(additionalProperties, "size")
+		delete(additionalProperties, "maxIOPS")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "rootVolume")
+		delete(additionalProperties, "storageType")
+		delete(additionalProperties, "datastoreId")
+		delete(additionalProperties, "maxStorage")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListImageBuilds200ResponseAllOfImageBuildsInnerConfigVolumesInner struct {

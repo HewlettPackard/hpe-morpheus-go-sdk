@@ -32,7 +32,10 @@ type StorageDatastoreCreate struct {
 	Tenants []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner `json:"tenants,omitempty"`
 	ResourcePermissions *SaveCloudDatastoreRequestDatastoreResourcePermissions `json:"resourcePermissions,omitempty"`
 	Datastores []map[string]interface{} `json:"datastores,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _StorageDatastoreCreate StorageDatastoreCreate
 
 // NewStorageDatastoreCreate instantiates a new StorageDatastoreCreate object
 // This constructor will assign default values to properties that have it defined,
@@ -446,7 +449,43 @@ func (o StorageDatastoreCreate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Datastores) {
 		toSerialize["datastores"] = o.Datastores
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *StorageDatastoreCreate) UnmarshalJSON(data []byte) (err error) {
+	varStorageDatastoreCreate := _StorageDatastoreCreate{}
+
+	err = json.Unmarshal(data, &varStorageDatastoreCreate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = StorageDatastoreCreate(varStorageDatastoreCreate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "datastoreType")
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "refId")
+		delete(additionalProperties, "storageServer")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "defaultStore")
+		delete(additionalProperties, "tenants")
+		delete(additionalProperties, "resourcePermissions")
+		delete(additionalProperties, "datastores")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableStorageDatastoreCreate struct {

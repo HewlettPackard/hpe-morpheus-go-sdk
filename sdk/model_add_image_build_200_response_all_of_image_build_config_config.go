@@ -24,7 +24,10 @@ type AddImageBuild200ResponseAllOfImageBuildConfigConfig struct {
 	VmwareFolderId *string `json:"vmwareFolderId,omitempty"`
 	ResourcePoolId *int64 `json:"resourcePoolId,omitempty"`
 	NestedVirtualization *string `json:"nestedVirtualization,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddImageBuild200ResponseAllOfImageBuildConfigConfig AddImageBuild200ResponseAllOfImageBuildConfigConfig
 
 // NewAddImageBuild200ResponseAllOfImageBuildConfigConfig instantiates a new AddImageBuild200ResponseAllOfImageBuildConfigConfig object
 // This constructor will assign default values to properties that have it defined,
@@ -193,7 +196,36 @@ func (o AddImageBuild200ResponseAllOfImageBuildConfigConfig) ToMap() (map[string
 	if !IsNil(o.NestedVirtualization) {
 		toSerialize["nestedVirtualization"] = o.NestedVirtualization
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddImageBuild200ResponseAllOfImageBuildConfigConfig) UnmarshalJSON(data []byte) (err error) {
+	varAddImageBuild200ResponseAllOfImageBuildConfigConfig := _AddImageBuild200ResponseAllOfImageBuildConfigConfig{}
+
+	err = json.Unmarshal(data, &varAddImageBuild200ResponseAllOfImageBuildConfigConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddImageBuild200ResponseAllOfImageBuildConfigConfig(varAddImageBuild200ResponseAllOfImageBuildConfigConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "template")
+		delete(additionalProperties, "vmwareFolderId")
+		delete(additionalProperties, "resourcePoolId")
+		delete(additionalProperties, "nestedVirtualization")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddImageBuild200ResponseAllOfImageBuildConfigConfig struct {

@@ -21,7 +21,10 @@ var _ MappedNullable = &UpdateOsTypeRequest{}
 // UpdateOsTypeRequest struct for UpdateOsTypeRequest
 type UpdateOsTypeRequest struct {
 	OsType *UpdateOsTypeRequestOsType `json:"osType,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateOsTypeRequest UpdateOsTypeRequest
 
 // NewUpdateOsTypeRequest instantiates a new UpdateOsTypeRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o UpdateOsTypeRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.OsType) {
 		toSerialize["osType"] = o.OsType
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateOsTypeRequest) UnmarshalJSON(data []byte) (err error) {
+	varUpdateOsTypeRequest := _UpdateOsTypeRequest{}
+
+	err = json.Unmarshal(data, &varUpdateOsTypeRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateOsTypeRequest(varUpdateOsTypeRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "osType")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateOsTypeRequest struct {

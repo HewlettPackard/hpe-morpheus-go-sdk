@@ -22,7 +22,10 @@ var _ MappedNullable = &ForgotPassword200Response{}
 type ForgotPassword200Response struct {
 	Success *bool `json:"success,omitempty"`
 	Msg *string `json:"msg,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ForgotPassword200Response ForgotPassword200Response
 
 // NewForgotPassword200Response instantiates a new ForgotPassword200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o ForgotPassword200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Msg) {
 		toSerialize["msg"] = o.Msg
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ForgotPassword200Response) UnmarshalJSON(data []byte) (err error) {
+	varForgotPassword200Response := _ForgotPassword200Response{}
+
+	err = json.Unmarshal(data, &varForgotPassword200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ForgotPassword200Response(varForgotPassword200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "success")
+		delete(additionalProperties, "msg")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableForgotPassword200Response struct {

@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -31,6 +30,7 @@ type AddSpecTemplateRequestSpecTemplateFile struct {
 	// Content Ref, the branch/tag. Only used when sourceType is repo.
 	ContentRef *string `json:"contentRef,omitempty"`
 	Repository *AddSpecTemplateRequestSpecTemplateFileRepository `json:"repository,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddSpecTemplateRequestSpecTemplateFile AddSpecTemplateRequestSpecTemplateFile
@@ -230,6 +230,11 @@ func (o AddSpecTemplateRequestSpecTemplateFile) ToMap() (map[string]interface{},
 	if !IsNil(o.Repository) {
 		toSerialize["repository"] = o.Repository
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -257,15 +262,24 @@ func (o *AddSpecTemplateRequestSpecTemplateFile) UnmarshalJSON(data []byte) (err
 
 	varAddSpecTemplateRequestSpecTemplateFile := _AddSpecTemplateRequestSpecTemplateFile{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddSpecTemplateRequestSpecTemplateFile)
+	err = json.Unmarshal(data, &varAddSpecTemplateRequestSpecTemplateFile)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddSpecTemplateRequestSpecTemplateFile(varAddSpecTemplateRequestSpecTemplateFile)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "sourceType")
+		delete(additionalProperties, "content")
+		delete(additionalProperties, "contentPath")
+		delete(additionalProperties, "contentRef")
+		delete(additionalProperties, "repository")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

@@ -24,7 +24,10 @@ type ZoneTypesOptions struct {
 	Value *string `json:"value,omitempty"`
 	Id *int64 `json:"id,omitempty"`
 	Code *string `json:"code,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ZoneTypesOptions ZoneTypesOptions
 
 // NewZoneTypesOptions instantiates a new ZoneTypesOptions object
 // This constructor will assign default values to properties that have it defined,
@@ -193,7 +196,36 @@ func (o ZoneTypesOptions) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Code) {
 		toSerialize["code"] = o.Code
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ZoneTypesOptions) UnmarshalJSON(data []byte) (err error) {
+	varZoneTypesOptions := _ZoneTypesOptions{}
+
+	err = json.Unmarshal(data, &varZoneTypesOptions)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ZoneTypesOptions(varZoneTypesOptions)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "value")
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableZoneTypesOptions struct {

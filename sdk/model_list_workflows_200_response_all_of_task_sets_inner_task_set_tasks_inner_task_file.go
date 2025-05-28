@@ -26,7 +26,10 @@ type ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile struct 
 	ContentPath *string `json:"contentPath,omitempty"`
 	Repository *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"repository,omitempty"`
 	Content *string `json:"content,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile
 
 // NewListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile instantiates a new ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile object
 // This constructor will assign default values to properties that have it defined,
@@ -265,7 +268,38 @@ func (o ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile) ToM
 	if !IsNil(o.Content) {
 		toSerialize["content"] = o.Content
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile) UnmarshalJSON(data []byte) (err error) {
+	varListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile := _ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile{}
+
+	err = json.Unmarshal(data, &varListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile(varListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "sourceType")
+		delete(additionalProperties, "contentRef")
+		delete(additionalProperties, "contentPath")
+		delete(additionalProperties, "repository")
+		delete(additionalProperties, "content")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile struct {

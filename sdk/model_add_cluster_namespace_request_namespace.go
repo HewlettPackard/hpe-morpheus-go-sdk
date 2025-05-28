@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -29,6 +28,7 @@ type AddClusterNamespaceRequestNamespace struct {
 	// Namespace active
 	Active *bool `json:"active,omitempty"`
 	ResourcePermissions *AddClusterNamespaceRequestNamespaceResourcePermissions `json:"resourcePermissions,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddClusterNamespaceRequestNamespace AddClusterNamespaceRequestNamespace
@@ -195,6 +195,11 @@ func (o AddClusterNamespaceRequestNamespace) ToMap() (map[string]interface{}, er
 	if !IsNil(o.ResourcePermissions) {
 		toSerialize["resourcePermissions"] = o.ResourcePermissions
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -222,15 +227,23 @@ func (o *AddClusterNamespaceRequestNamespace) UnmarshalJSON(data []byte) (err er
 
 	varAddClusterNamespaceRequestNamespace := _AddClusterNamespaceRequestNamespace{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddClusterNamespaceRequestNamespace)
+	err = json.Unmarshal(data, &varAddClusterNamespaceRequestNamespace)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddClusterNamespaceRequestNamespace(varAddClusterNamespaceRequestNamespace)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "resourcePermissions")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

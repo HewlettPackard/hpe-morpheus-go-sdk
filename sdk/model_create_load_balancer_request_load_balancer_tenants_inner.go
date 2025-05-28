@@ -21,7 +21,10 @@ var _ MappedNullable = &CreateLoadBalancerRequestLoadBalancerTenantsInner{}
 // CreateLoadBalancerRequestLoadBalancerTenantsInner struct for CreateLoadBalancerRequestLoadBalancerTenantsInner
 type CreateLoadBalancerRequestLoadBalancerTenantsInner struct {
 	Id *int32 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _CreateLoadBalancerRequestLoadBalancerTenantsInner CreateLoadBalancerRequestLoadBalancerTenantsInner
 
 // NewCreateLoadBalancerRequestLoadBalancerTenantsInner instantiates a new CreateLoadBalancerRequestLoadBalancerTenantsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o CreateLoadBalancerRequestLoadBalancerTenantsInner) ToMap() (map[string]i
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *CreateLoadBalancerRequestLoadBalancerTenantsInner) UnmarshalJSON(data []byte) (err error) {
+	varCreateLoadBalancerRequestLoadBalancerTenantsInner := _CreateLoadBalancerRequestLoadBalancerTenantsInner{}
+
+	err = json.Unmarshal(data, &varCreateLoadBalancerRequestLoadBalancerTenantsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CreateLoadBalancerRequestLoadBalancerTenantsInner(varCreateLoadBalancerRequestLoadBalancerTenantsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCreateLoadBalancerRequestLoadBalancerTenantsInner struct {

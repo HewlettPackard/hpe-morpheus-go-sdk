@@ -28,7 +28,10 @@ type AddCluster200ResponseAllOfClusterPermissionsResourcePermissions struct {
 	Account *GetAlerts200ResponseAllOfChecksInnerAccount `json:"account,omitempty"`
 	Sites []map[string]interface{} `json:"sites,omitempty"`
 	Plans []map[string]interface{} `json:"plans,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddCluster200ResponseAllOfClusterPermissionsResourcePermissions AddCluster200ResponseAllOfClusterPermissionsResourcePermissions
 
 // NewAddCluster200ResponseAllOfClusterPermissionsResourcePermissions instantiates a new AddCluster200ResponseAllOfClusterPermissionsResourcePermissions object
 // This constructor will assign default values to properties that have it defined,
@@ -337,7 +340,40 @@ func (o AddCluster200ResponseAllOfClusterPermissionsResourcePermissions) ToMap()
 	if !IsNil(o.Plans) {
 		toSerialize["plans"] = o.Plans
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddCluster200ResponseAllOfClusterPermissionsResourcePermissions) UnmarshalJSON(data []byte) (err error) {
+	varAddCluster200ResponseAllOfClusterPermissionsResourcePermissions := _AddCluster200ResponseAllOfClusterPermissionsResourcePermissions{}
+
+	err = json.Unmarshal(data, &varAddCluster200ResponseAllOfClusterPermissionsResourcePermissions)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddCluster200ResponseAllOfClusterPermissionsResourcePermissions(varAddCluster200ResponseAllOfClusterPermissionsResourcePermissions)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "defaultStore")
+		delete(additionalProperties, "allPlans")
+		delete(additionalProperties, "defaultTarget")
+		delete(additionalProperties, "canManage")
+		delete(additionalProperties, "all")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "sites")
+		delete(additionalProperties, "plans")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddCluster200ResponseAllOfClusterPermissionsResourcePermissions struct {

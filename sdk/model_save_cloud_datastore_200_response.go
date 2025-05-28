@@ -23,7 +23,10 @@ type SaveCloudDatastore200Response struct {
 	Datastore *SaveCloudDatastore200ResponseAllOfDatastore `json:"datastore,omitempty"`
 	Success *bool `json:"success,omitempty"`
 	ExecutionId *string `json:"executionId,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _SaveCloudDatastore200Response SaveCloudDatastore200Response
 
 // NewSaveCloudDatastore200Response instantiates a new SaveCloudDatastore200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o SaveCloudDatastore200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ExecutionId) {
 		toSerialize["executionId"] = o.ExecutionId
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *SaveCloudDatastore200Response) UnmarshalJSON(data []byte) (err error) {
+	varSaveCloudDatastore200Response := _SaveCloudDatastore200Response{}
+
+	err = json.Unmarshal(data, &varSaveCloudDatastore200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = SaveCloudDatastore200Response(varSaveCloudDatastore200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "datastore")
+		delete(additionalProperties, "success")
+		delete(additionalProperties, "executionId")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableSaveCloudDatastore200Response struct {

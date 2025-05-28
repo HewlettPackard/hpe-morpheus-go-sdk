@@ -34,7 +34,10 @@ type ListVdi200ResponseAllOfDesktopsInnerAllocation struct {
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
 	LastReserved *time.Time `json:"lastReserved,omitempty"`
 	ReleaseDate *time.Time `json:"releaseDate,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListVdi200ResponseAllOfDesktopsInnerAllocation ListVdi200ResponseAllOfDesktopsInnerAllocation
 
 // NewListVdi200ResponseAllOfDesktopsInnerAllocation instantiates a new ListVdi200ResponseAllOfDesktopsInnerAllocation object
 // This constructor will assign default values to properties that have it defined,
@@ -518,7 +521,45 @@ func (o ListVdi200ResponseAllOfDesktopsInnerAllocation) ToMap() (map[string]inte
 	if !IsNil(o.ReleaseDate) {
 		toSerialize["releaseDate"] = o.ReleaseDate
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) UnmarshalJSON(data []byte) (err error) {
+	varListVdi200ResponseAllOfDesktopsInnerAllocation := _ListVdi200ResponseAllOfDesktopsInnerAllocation{}
+
+	err = json.Unmarshal(data, &varListVdi200ResponseAllOfDesktopsInnerAllocation)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListVdi200ResponseAllOfDesktopsInnerAllocation(varListVdi200ResponseAllOfDesktopsInnerAllocation)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "poolId")
+		delete(additionalProperties, "pool")
+		delete(additionalProperties, "instance")
+		delete(additionalProperties, "user")
+		delete(additionalProperties, "localUserCreated")
+		delete(additionalProperties, "persistent")
+		delete(additionalProperties, "recyclable")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "lastReserved")
+		delete(additionalProperties, "releaseDate")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListVdi200ResponseAllOfDesktopsInnerAllocation struct {

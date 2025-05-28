@@ -43,7 +43,10 @@ type GetBillingServersIdentifier200ResponseAllOfBillingInfo struct {
 	ServerInternalId *string `json:"serverInternalId,omitempty"`
 	ResourcePoolId *int64 `json:"resourcePoolId,omitempty"`
 	ResourcePoolName *string `json:"resourcePoolName,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetBillingServersIdentifier200ResponseAllOfBillingInfo GetBillingServersIdentifier200ResponseAllOfBillingInfo
 
 // NewGetBillingServersIdentifier200ResponseAllOfBillingInfo instantiates a new GetBillingServersIdentifier200ResponseAllOfBillingInfo object
 // This constructor will assign default values to properties that have it defined,
@@ -842,7 +845,54 @@ func (o GetBillingServersIdentifier200ResponseAllOfBillingInfo) ToMap() (map[str
 	if !IsNil(o.ResourcePoolName) {
 		toSerialize["resourcePoolName"] = o.ResourcePoolName
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfo) UnmarshalJSON(data []byte) (err error) {
+	varGetBillingServersIdentifier200ResponseAllOfBillingInfo := _GetBillingServersIdentifier200ResponseAllOfBillingInfo{}
+
+	err = json.Unmarshal(data, &varGetBillingServersIdentifier200ResponseAllOfBillingInfo)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetBillingServersIdentifier200ResponseAllOfBillingInfo(varGetBillingServersIdentifier200ResponseAllOfBillingInfo)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "refUUID")
+		delete(additionalProperties, "refId")
+		delete(additionalProperties, "startDate")
+		delete(additionalProperties, "endDate")
+		delete(additionalProperties, "cost")
+		delete(additionalProperties, "price")
+		delete(additionalProperties, "numUnits")
+		delete(additionalProperties, "unit")
+		delete(additionalProperties, "currency")
+		delete(additionalProperties, "usages")
+		delete(additionalProperties, "numUsages")
+		delete(additionalProperties, "totalUsages")
+		delete(additionalProperties, "hasMoreUsages")
+		delete(additionalProperties, "foundPricing")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "serverUUID")
+		delete(additionalProperties, "serverUniqueId")
+		delete(additionalProperties, "serverExternalId")
+		delete(additionalProperties, "serverInternalId")
+		delete(additionalProperties, "resourcePoolId")
+		delete(additionalProperties, "resourcePoolName")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetBillingServersIdentifier200ResponseAllOfBillingInfo struct {

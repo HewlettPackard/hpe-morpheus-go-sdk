@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -25,6 +24,7 @@ type AddNodeTypeRequestContainerTypeContainerPortsInner struct {
 	Name string `json:"name"`
 	Port int64 `json:"port"`
 	LoadBalanceProtocol *string `json:"loadBalanceProtocol,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddNodeTypeRequestContainerTypeContainerPortsInner AddNodeTypeRequestContainerTypeContainerPortsInner
@@ -143,6 +143,11 @@ func (o AddNodeTypeRequestContainerTypeContainerPortsInner) ToMap() (map[string]
 	if !IsNil(o.LoadBalanceProtocol) {
 		toSerialize["loadBalanceProtocol"] = o.LoadBalanceProtocol
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -171,15 +176,22 @@ func (o *AddNodeTypeRequestContainerTypeContainerPortsInner) UnmarshalJSON(data 
 
 	varAddNodeTypeRequestContainerTypeContainerPortsInner := _AddNodeTypeRequestContainerTypeContainerPortsInner{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddNodeTypeRequestContainerTypeContainerPortsInner)
+	err = json.Unmarshal(data, &varAddNodeTypeRequestContainerTypeContainerPortsInner)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddNodeTypeRequestContainerTypeContainerPortsInner(varAddNodeTypeRequestContainerTypeContainerPortsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "port")
+		delete(additionalProperties, "loadBalanceProtocol")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

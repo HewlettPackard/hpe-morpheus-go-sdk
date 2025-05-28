@@ -24,7 +24,10 @@ type ListReports200ResponseAllOfReportResultsInnerConfig struct {
 	StartDate *string `json:"startDate,omitempty"`
 	EndDate *string `json:"endDate,omitempty"`
 	CloudId *string `json:"cloudId,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListReports200ResponseAllOfReportResultsInnerConfig ListReports200ResponseAllOfReportResultsInnerConfig
 
 // NewListReports200ResponseAllOfReportResultsInnerConfig instantiates a new ListReports200ResponseAllOfReportResultsInnerConfig object
 // This constructor will assign default values to properties that have it defined,
@@ -193,7 +196,36 @@ func (o ListReports200ResponseAllOfReportResultsInnerConfig) ToMap() (map[string
 	if !IsNil(o.CloudId) {
 		toSerialize["cloudId"] = o.CloudId
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListReports200ResponseAllOfReportResultsInnerConfig) UnmarshalJSON(data []byte) (err error) {
+	varListReports200ResponseAllOfReportResultsInnerConfig := _ListReports200ResponseAllOfReportResultsInnerConfig{}
+
+	err = json.Unmarshal(data, &varListReports200ResponseAllOfReportResultsInnerConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListReports200ResponseAllOfReportResultsInnerConfig(varListReports200ResponseAllOfReportResultsInnerConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "reportType")
+		delete(additionalProperties, "startDate")
+		delete(additionalProperties, "endDate")
+		delete(additionalProperties, "cloudId")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListReports200ResponseAllOfReportResultsInnerConfig struct {
