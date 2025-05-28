@@ -24,7 +24,10 @@ type InfobloxNetworkPoolServerConfig struct {
 	InventoryExisting *string `json:"inventoryExisting,omitempty"`
 	// Extra Attributes
 	ExtraAttributes *string `json:"extraAttributes,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _InfobloxNetworkPoolServerConfig InfobloxNetworkPoolServerConfig
 
 // NewInfobloxNetworkPoolServerConfig instantiates a new InfobloxNetworkPoolServerConfig object
 // This constructor will assign default values to properties that have it defined,
@@ -127,7 +130,34 @@ func (o InfobloxNetworkPoolServerConfig) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.ExtraAttributes) {
 		toSerialize["extraAttributes"] = o.ExtraAttributes
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *InfobloxNetworkPoolServerConfig) UnmarshalJSON(data []byte) (err error) {
+	varInfobloxNetworkPoolServerConfig := _InfobloxNetworkPoolServerConfig{}
+
+	err = json.Unmarshal(data, &varInfobloxNetworkPoolServerConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = InfobloxNetworkPoolServerConfig(varInfobloxNetworkPoolServerConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "inventoryExisting")
+		delete(additionalProperties, "extraAttributes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableInfobloxNetworkPoolServerConfig struct {

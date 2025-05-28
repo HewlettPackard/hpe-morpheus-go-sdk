@@ -29,7 +29,10 @@ type DeploymentVersionCreate struct {
 	GitUrl *string `json:"gitUrl,omitempty"`
 	GitRef *string `json:"gitRef,omitempty"`
 	FetchUrl *string `json:"fetchUrl,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _DeploymentVersionCreate DeploymentVersionCreate
 
 // NewDeploymentVersionCreate instantiates a new DeploymentVersionCreate object
 // This constructor will assign default values to properties that have it defined,
@@ -268,7 +271,38 @@ func (o DeploymentVersionCreate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.FetchUrl) {
 		toSerialize["fetchUrl"] = o.FetchUrl
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *DeploymentVersionCreate) UnmarshalJSON(data []byte) (err error) {
+	varDeploymentVersionCreate := _DeploymentVersionCreate{}
+
+	err = json.Unmarshal(data, &varDeploymentVersionCreate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = DeploymentVersionCreate(varDeploymentVersionCreate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "version")
+		delete(additionalProperties, "userVersion")
+		delete(additionalProperties, "deployType")
+		delete(additionalProperties, "gitUrl")
+		delete(additionalProperties, "gitRef")
+		delete(additionalProperties, "fetchUrl")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableDeploymentVersionCreate struct {

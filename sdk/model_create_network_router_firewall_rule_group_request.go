@@ -21,7 +21,10 @@ var _ MappedNullable = &CreateNetworkRouterFirewallRuleGroupRequest{}
 // CreateNetworkRouterFirewallRuleGroupRequest struct for CreateNetworkRouterFirewallRuleGroupRequest
 type CreateNetworkRouterFirewallRuleGroupRequest struct {
 	RuleGroup *CreateNetworkRouterFirewallRuleGroupRequestRuleGroup `json:"ruleGroup,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _CreateNetworkRouterFirewallRuleGroupRequest CreateNetworkRouterFirewallRuleGroupRequest
 
 // NewCreateNetworkRouterFirewallRuleGroupRequest instantiates a new CreateNetworkRouterFirewallRuleGroupRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o CreateNetworkRouterFirewallRuleGroupRequest) ToMap() (map[string]interfa
 	if !IsNil(o.RuleGroup) {
 		toSerialize["ruleGroup"] = o.RuleGroup
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *CreateNetworkRouterFirewallRuleGroupRequest) UnmarshalJSON(data []byte) (err error) {
+	varCreateNetworkRouterFirewallRuleGroupRequest := _CreateNetworkRouterFirewallRuleGroupRequest{}
+
+	err = json.Unmarshal(data, &varCreateNetworkRouterFirewallRuleGroupRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CreateNetworkRouterFirewallRuleGroupRequest(varCreateNetworkRouterFirewallRuleGroupRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "ruleGroup")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCreateNetworkRouterFirewallRuleGroupRequest struct {

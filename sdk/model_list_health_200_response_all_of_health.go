@@ -34,7 +34,10 @@ type ListHealth200ResponseAllOfHealth struct {
 	Database *ListHealth200ResponseAllOfHealthDatabase `json:"database,omitempty"`
 	Elastic *ListHealth200ResponseAllOfHealthElastic `json:"elastic,omitempty"`
 	Rabbit *ListHealth200ResponseAllOfHealthRabbit `json:"rabbit,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListHealth200ResponseAllOfHealth ListHealth200ResponseAllOfHealth
 
 // NewListHealth200ResponseAllOfHealth instantiates a new ListHealth200ResponseAllOfHealth object
 // This constructor will assign default values to properties that have it defined,
@@ -518,7 +521,45 @@ func (o ListHealth200ResponseAllOfHealth) ToMap() (map[string]interface{}, error
 	if !IsNil(o.Rabbit) {
 		toSerialize["rabbit"] = o.Rabbit
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListHealth200ResponseAllOfHealth) UnmarshalJSON(data []byte) (err error) {
+	varListHealth200ResponseAllOfHealth := _ListHealth200ResponseAllOfHealth{}
+
+	err = json.Unmarshal(data, &varListHealth200ResponseAllOfHealth)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListHealth200ResponseAllOfHealth(varListHealth200ResponseAllOfHealth)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "success")
+		delete(additionalProperties, "statusMessage")
+		delete(additionalProperties, "applianceUrl")
+		delete(additionalProperties, "buildVersion")
+		delete(additionalProperties, "uuid")
+		delete(additionalProperties, "setupNeeded")
+		delete(additionalProperties, "date")
+		delete(additionalProperties, "cpu")
+		delete(additionalProperties, "memory")
+		delete(additionalProperties, "threads")
+		delete(additionalProperties, "database")
+		delete(additionalProperties, "elastic")
+		delete(additionalProperties, "rabbit")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListHealth200ResponseAllOfHealth struct {

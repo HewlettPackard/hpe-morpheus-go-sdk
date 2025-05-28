@@ -28,7 +28,10 @@ type ListActivity200ResponseAllOfMeta struct {
 	Size *int64 `json:"size,omitempty"`
 	// Total number of records found
 	Total *int64 `json:"total,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListActivity200ResponseAllOfMeta ListActivity200ResponseAllOfMeta
 
 // NewListActivity200ResponseAllOfMeta instantiates a new ListActivity200ResponseAllOfMeta object
 // This constructor will assign default values to properties that have it defined,
@@ -213,7 +216,36 @@ func (o ListActivity200ResponseAllOfMeta) ToMap() (map[string]interface{}, error
 	if !IsNil(o.Total) {
 		toSerialize["total"] = o.Total
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListActivity200ResponseAllOfMeta) UnmarshalJSON(data []byte) (err error) {
+	varListActivity200ResponseAllOfMeta := _ListActivity200ResponseAllOfMeta{}
+
+	err = json.Unmarshal(data, &varListActivity200ResponseAllOfMeta)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListActivity200ResponseAllOfMeta(varListActivity200ResponseAllOfMeta)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "offset")
+		delete(additionalProperties, "max")
+		delete(additionalProperties, "size")
+		delete(additionalProperties, "total")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListActivity200ResponseAllOfMeta struct {

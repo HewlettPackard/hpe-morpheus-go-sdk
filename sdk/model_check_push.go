@@ -33,7 +33,10 @@ type CheckPush struct {
 	Active *bool `json:"active,omitempty"`
 	// Severity level threshold for sending notifications.
 	Severity *string `json:"severity,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _CheckPush CheckPush
 
 // NewCheckPush instantiates a new CheckPush object
 // This constructor will assign default values to properties that have it defined,
@@ -323,7 +326,39 @@ func (o CheckPush) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Severity) {
 		toSerialize["severity"] = o.Severity
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *CheckPush) UnmarshalJSON(data []byte) (err error) {
+	varCheckPush := _CheckPush{}
+
+	err = json.Unmarshal(data, &varCheckPush)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CheckPush(varCheckPush)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "checkType")
+		delete(additionalProperties, "checkInterval")
+		delete(additionalProperties, "inUptime")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "severity")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCheckPush struct {

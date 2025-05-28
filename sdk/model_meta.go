@@ -21,7 +21,10 @@ var _ MappedNullable = &Meta{}
 // Meta struct for Meta
 type Meta struct {
 	Meta *ListActivity200ResponseAllOfMeta `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _Meta Meta
 
 // NewMeta instantiates a new Meta object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o Meta) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Meta) {
 		toSerialize["meta"] = o.Meta
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *Meta) UnmarshalJSON(data []byte) (err error) {
+	varMeta := _Meta{}
+
+	err = json.Unmarshal(data, &varMeta)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Meta(varMeta)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "meta")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableMeta struct {

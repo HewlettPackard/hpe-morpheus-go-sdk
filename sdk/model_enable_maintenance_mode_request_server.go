@@ -28,7 +28,10 @@ type EnableMaintenanceModeRequestServer struct {
 	DeleteEmptyDir *bool `json:"deleteEmptyDir,omitempty"`
 	// option relevant to kubernetes nodes
 	DeleteLocalData *bool `json:"deleteLocalData,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _EnableMaintenanceModeRequestServer EnableMaintenanceModeRequestServer
 
 // NewEnableMaintenanceModeRequestServer instantiates a new EnableMaintenanceModeRequestServer object
 // This constructor will assign default values to properties that have it defined,
@@ -197,7 +200,36 @@ func (o EnableMaintenanceModeRequestServer) ToMap() (map[string]interface{}, err
 	if !IsNil(o.DeleteLocalData) {
 		toSerialize["deleteLocalData"] = o.DeleteLocalData
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *EnableMaintenanceModeRequestServer) UnmarshalJSON(data []byte) (err error) {
+	varEnableMaintenanceModeRequestServer := _EnableMaintenanceModeRequestServer{}
+
+	err = json.Unmarshal(data, &varEnableMaintenanceModeRequestServer)
+
+	if err != nil {
+		return err
+	}
+
+	*o = EnableMaintenanceModeRequestServer(varEnableMaintenanceModeRequestServer)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "ignoreDaemonsets")
+		delete(additionalProperties, "force")
+		delete(additionalProperties, "deleteEmptyDir")
+		delete(additionalProperties, "deleteLocalData")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableEnableMaintenanceModeRequestServer struct {

@@ -28,7 +28,10 @@ type UpdateBackupJobsRequestJob struct {
 	ScheduleId *int64 `json:"scheduleId,omitempty"`
 	// Retention Count
 	RetentionCount *int64 `json:"retentionCount,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateBackupJobsRequestJob UpdateBackupJobsRequestJob
 
 // NewUpdateBackupJobsRequestJob instantiates a new UpdateBackupJobsRequestJob object
 // This constructor will assign default values to properties that have it defined,
@@ -197,7 +200,36 @@ func (o UpdateBackupJobsRequestJob) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.RetentionCount) {
 		toSerialize["retentionCount"] = o.RetentionCount
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateBackupJobsRequestJob) UnmarshalJSON(data []byte) (err error) {
+	varUpdateBackupJobsRequestJob := _UpdateBackupJobsRequestJob{}
+
+	err = json.Unmarshal(data, &varUpdateBackupJobsRequestJob)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateBackupJobsRequestJob(varUpdateBackupJobsRequestJob)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "scheduleId")
+		delete(additionalProperties, "retentionCount")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateBackupJobsRequestJob struct {

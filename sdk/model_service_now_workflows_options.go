@@ -22,7 +22,10 @@ var _ MappedNullable = &ServiceNowWorkflowsOptions{}
 type ServiceNowWorkflowsOptions struct {
 	Name *string `json:"name,omitempty"`
 	Value *int64 `json:"value,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ServiceNowWorkflowsOptions ServiceNowWorkflowsOptions
 
 // NewServiceNowWorkflowsOptions instantiates a new ServiceNowWorkflowsOptions object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o ServiceNowWorkflowsOptions) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Value) {
 		toSerialize["value"] = o.Value
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ServiceNowWorkflowsOptions) UnmarshalJSON(data []byte) (err error) {
+	varServiceNowWorkflowsOptions := _ServiceNowWorkflowsOptions{}
+
+	err = json.Unmarshal(data, &varServiceNowWorkflowsOptions)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ServiceNowWorkflowsOptions(varServiceNowWorkflowsOptions)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "value")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableServiceNowWorkflowsOptions struct {

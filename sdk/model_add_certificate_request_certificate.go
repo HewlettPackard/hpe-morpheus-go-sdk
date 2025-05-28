@@ -38,7 +38,10 @@ type AddCertificateRequestCertificate struct {
 	Type *string `json:"type,omitempty"`
 	// ID of the Service (Trust Integration) to create the certificate with, if using a type other than 'internal'. eg. Internal, NSXT or Venafi
 	IntegrationId *int64 `json:"integrationId,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddCertificateRequestCertificate AddCertificateRequestCertificate
 
 // NewAddCertificateRequestCertificate instantiates a new AddCertificateRequestCertificate object
 // This constructor will assign default values to properties that have it defined,
@@ -390,7 +393,41 @@ func (o AddCertificateRequestCertificate) ToMap() (map[string]interface{}, error
 	if !IsNil(o.IntegrationId) {
 		toSerialize["integrationId"] = o.IntegrationId
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddCertificateRequestCertificate) UnmarshalJSON(data []byte) (err error) {
+	varAddCertificateRequestCertificate := _AddCertificateRequestCertificate{}
+
+	err = json.Unmarshal(data, &varAddCertificateRequestCertificate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddCertificateRequestCertificate(varAddCertificateRequestCertificate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "certFile")
+		delete(additionalProperties, "keyFile")
+		delete(additionalProperties, "chainFile")
+		delete(additionalProperties, "domainName")
+		delete(additionalProperties, "wildcard")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "integrationId")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddCertificateRequestCertificate struct {

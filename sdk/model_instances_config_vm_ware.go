@@ -32,7 +32,10 @@ type InstancesConfigVMWare struct {
 	NestedVirtualization *string `json:"nestedVirtualization,omitempty"`
 	// VMWare Folder External ID (as a String) or ID (as an Integer or String)
 	VmwareFolderId *string `json:"vmwareFolderId,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _InstancesConfigVMWare InstancesConfigVMWare
 
 // NewInstancesConfigVMWare instantiates a new InstancesConfigVMWare object
 // This constructor will assign default values to properties that have it defined,
@@ -279,7 +282,38 @@ func (o InstancesConfigVMWare) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.VmwareFolderId) {
 		toSerialize["vmwareFolderId"] = o.VmwareFolderId
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *InstancesConfigVMWare) UnmarshalJSON(data []byte) (err error) {
+	varInstancesConfigVMWare := _InstancesConfigVMWare{}
+
+	err = json.Unmarshal(data, &varInstancesConfigVMWare)
+
+	if err != nil {
+		return err
+	}
+
+	*o = InstancesConfigVMWare(varInstancesConfigVMWare)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "noAgent")
+		delete(additionalProperties, "resourcePoolId")
+		delete(additionalProperties, "hostId")
+		delete(additionalProperties, "smbiosAssetTag")
+		delete(additionalProperties, "nestedVirtualization")
+		delete(additionalProperties, "vmwareFolderId")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableInstancesConfigVMWare struct {

@@ -22,7 +22,10 @@ var _ MappedNullable = &AddCatalogOrderRequestOrderItemsInnerType{}
 type AddCatalogOrderRequestOrderItemsInnerType struct {
 	// Order Name as a way to identify the order.
 	Name *string `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddCatalogOrderRequestOrderItemsInnerType AddCatalogOrderRequestOrderItemsInnerType
 
 // NewAddCatalogOrderRequestOrderItemsInnerType instantiates a new AddCatalogOrderRequestOrderItemsInnerType object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o AddCatalogOrderRequestOrderItemsInnerType) ToMap() (map[string]interface
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddCatalogOrderRequestOrderItemsInnerType) UnmarshalJSON(data []byte) (err error) {
+	varAddCatalogOrderRequestOrderItemsInnerType := _AddCatalogOrderRequestOrderItemsInnerType{}
+
+	err = json.Unmarshal(data, &varAddCatalogOrderRequestOrderItemsInnerType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddCatalogOrderRequestOrderItemsInnerType(varAddCatalogOrderRequestOrderItemsInnerType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddCatalogOrderRequestOrderItemsInnerType struct {

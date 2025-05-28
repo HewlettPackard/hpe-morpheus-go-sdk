@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -53,6 +52,7 @@ type ContainerTypeCreate struct {
 	EnvironmentVariables []AddClusterLayoutsRequestLayoutEnvironmentVariablesInner `json:"environmentVariables,omitempty"`
 	// Config object varies with node type.  If using docker, scvmm, ARM, hyperv, or cloudformation, look up provision type details (customOptionTypes) for information.
 	Config map[string]interface{} `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ContainerTypeCreate ContainerTypeCreate
@@ -608,6 +608,11 @@ func (o ContainerTypeCreate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -638,15 +643,35 @@ func (o *ContainerTypeCreate) UnmarshalJSON(data []byte) (err error) {
 
 	varContainerTypeCreate := _ContainerTypeCreate{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varContainerTypeCreate)
+	err = json.Unmarshal(data, &varContainerTypeCreate)
 
 	if err != nil {
 		return err
 	}
 
 	*o = ContainerTypeCreate(varContainerTypeCreate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "shortName")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "containerVersion")
+		delete(additionalProperties, "provisionTypeCode")
+		delete(additionalProperties, "scripts")
+		delete(additionalProperties, "templates")
+		delete(additionalProperties, "virtualImageId")
+		delete(additionalProperties, "osTypeId")
+		delete(additionalProperties, "statTypeCode")
+		delete(additionalProperties, "logTypeCode")
+		delete(additionalProperties, "serverType")
+		delete(additionalProperties, "containerPorts")
+		delete(additionalProperties, "environmentVariables")
+		delete(additionalProperties, "config")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

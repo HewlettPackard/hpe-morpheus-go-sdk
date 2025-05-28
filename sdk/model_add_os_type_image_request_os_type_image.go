@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -30,6 +29,7 @@ type AddOsTypeImageRequestOsTypeImage struct {
 	ProvisionType *int32 `json:"provisionType,omitempty"`
 	// id of cloud/zone
 	Zone *int32 `json:"zone,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddOsTypeImageRequestOsTypeImage AddOsTypeImageRequestOsTypeImage
@@ -183,6 +183,11 @@ func (o AddOsTypeImageRequestOsTypeImage) ToMap() (map[string]interface{}, error
 	if !IsNil(o.Zone) {
 		toSerialize["zone"] = o.Zone
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -211,15 +216,23 @@ func (o *AddOsTypeImageRequestOsTypeImage) UnmarshalJSON(data []byte) (err error
 
 	varAddOsTypeImageRequestOsTypeImage := _AddOsTypeImageRequestOsTypeImage{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddOsTypeImageRequestOsTypeImage)
+	err = json.Unmarshal(data, &varAddOsTypeImageRequestOsTypeImage)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddOsTypeImageRequestOsTypeImage(varAddOsTypeImageRequestOsTypeImage)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "osType")
+		delete(additionalProperties, "virtualImage")
+		delete(additionalProperties, "provisionType")
+		delete(additionalProperties, "zone")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

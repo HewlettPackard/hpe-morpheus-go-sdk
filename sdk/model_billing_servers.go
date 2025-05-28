@@ -26,7 +26,10 @@ type BillingServers struct {
 	StartDate *time.Time `json:"startDate,omitempty"`
 	EndDate *time.Time `json:"endDate,omitempty"`
 	Servers []ListBillingServers200ResponseAllOfBillingInfoServersInner `json:"servers,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _BillingServers BillingServers
 
 // NewBillingServers instantiates a new BillingServers object
 // This constructor will assign default values to properties that have it defined,
@@ -230,7 +233,37 @@ func (o BillingServers) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Servers) {
 		toSerialize["servers"] = o.Servers
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *BillingServers) UnmarshalJSON(data []byte) (err error) {
+	varBillingServers := _BillingServers{}
+
+	err = json.Unmarshal(data, &varBillingServers)
+
+	if err != nil {
+		return err
+	}
+
+	*o = BillingServers(varBillingServers)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "price")
+		delete(additionalProperties, "cost")
+		delete(additionalProperties, "startDate")
+		delete(additionalProperties, "endDate")
+		delete(additionalProperties, "servers")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableBillingServers struct {

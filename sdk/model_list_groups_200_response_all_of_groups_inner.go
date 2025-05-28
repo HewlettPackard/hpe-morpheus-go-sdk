@@ -35,7 +35,10 @@ type ListGroups200ResponseAllOfGroupsInner struct {
 	Zones []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"zones,omitempty"`
 	Stats *ListGroups200ResponseAllOfGroupsInnerStats `json:"stats,omitempty"`
 	ServerCount *int64 `json:"serverCount,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListGroups200ResponseAllOfGroupsInner ListGroups200ResponseAllOfGroupsInner
 
 // NewListGroups200ResponseAllOfGroupsInner instantiates a new ListGroups200ResponseAllOfGroupsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -554,7 +557,46 @@ func (o ListGroups200ResponseAllOfGroupsInner) ToMap() (map[string]interface{}, 
 	if !IsNil(o.ServerCount) {
 		toSerialize["serverCount"] = o.ServerCount
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListGroups200ResponseAllOfGroupsInner) UnmarshalJSON(data []byte) (err error) {
+	varListGroups200ResponseAllOfGroupsInner := _ListGroups200ResponseAllOfGroupsInner{}
+
+	err = json.Unmarshal(data, &varListGroups200ResponseAllOfGroupsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListGroups200ResponseAllOfGroupsInner(varListGroups200ResponseAllOfGroupsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "uuid")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "location")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "zones")
+		delete(additionalProperties, "stats")
+		delete(additionalProperties, "serverCount")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListGroups200ResponseAllOfGroupsInner struct {

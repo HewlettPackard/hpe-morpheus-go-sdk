@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -23,6 +22,7 @@ var _ MappedNullable = &AddUserTenantRequest{}
 // AddUserTenantRequest struct for AddUserTenantRequest
 type AddUserTenantRequest struct {
 	User AddUserTenantRequestUser `json:"user"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddUserTenantRequest AddUserTenantRequest
@@ -80,6 +80,11 @@ func (o AddUserTenantRequest) MarshalJSON() ([]byte, error) {
 func (o AddUserTenantRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["user"] = o.User
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -107,15 +112,20 @@ func (o *AddUserTenantRequest) UnmarshalJSON(data []byte) (err error) {
 
 	varAddUserTenantRequest := _AddUserTenantRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddUserTenantRequest)
+	err = json.Unmarshal(data, &varAddUserTenantRequest)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddUserTenantRequest(varAddUserTenantRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "user")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

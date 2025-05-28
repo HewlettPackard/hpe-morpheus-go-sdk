@@ -38,7 +38,10 @@ type ExecuteExecutionRequest200ResponseExecutionRequest struct {
 	ErrorMessage *string `json:"errorMessage,omitempty"`
 	Config map[string]interface{} `json:"config,omitempty"`
 	RawData *string `json:"rawData,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ExecuteExecutionRequest200ResponseExecutionRequest ExecuteExecutionRequest200ResponseExecutionRequest
 
 // NewExecuteExecutionRequest200ResponseExecutionRequest instantiates a new ExecuteExecutionRequest200ResponseExecutionRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -662,7 +665,49 @@ func (o ExecuteExecutionRequest200ResponseExecutionRequest) ToMap() (map[string]
 	if !IsNil(o.RawData) {
 		toSerialize["rawData"] = o.RawData
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ExecuteExecutionRequest200ResponseExecutionRequest) UnmarshalJSON(data []byte) (err error) {
+	varExecuteExecutionRequest200ResponseExecutionRequest := _ExecuteExecutionRequest200ResponseExecutionRequest{}
+
+	err = json.Unmarshal(data, &varExecuteExecutionRequest200ResponseExecutionRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ExecuteExecutionRequest200ResponseExecutionRequest(varExecuteExecutionRequest200ResponseExecutionRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "uniqueId")
+		delete(additionalProperties, "containerId")
+		delete(additionalProperties, "serverId")
+		delete(additionalProperties, "instanceId")
+		delete(additionalProperties, "resourceId")
+		delete(additionalProperties, "appId")
+		delete(additionalProperties, "stdOut")
+		delete(additionalProperties, "stdErr")
+		delete(additionalProperties, "exitCode")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "expiresAt")
+		delete(additionalProperties, "createdById")
+		delete(additionalProperties, "statusMessage")
+		delete(additionalProperties, "errorMessage")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "rawData")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableExecuteExecutionRequest200ResponseExecutionRequest struct {

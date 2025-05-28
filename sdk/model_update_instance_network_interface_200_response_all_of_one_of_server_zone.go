@@ -30,7 +30,10 @@ type UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone struct {
 	ZoneTypeId *int64 `json:"zoneTypeId,omitempty"`
 	NetworkServer *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServer `json:"networkServer,omitempty"`
 	SecurityServer *string `json:"securityServer,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone
 
 // NewUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone instantiates a new UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone object
 // This constructor will assign default values to properties that have it defined,
@@ -409,7 +412,42 @@ func (o UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone) ToMap() (
 	if !IsNil(o.SecurityServer) {
 		toSerialize["securityServer"] = o.SecurityServer
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone) UnmarshalJSON(data []byte) (err error) {
+	varUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone := _UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone{}
+
+	err = json.Unmarshal(data, &varUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone(varUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "groups")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "location")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "zoneTypeId")
+		delete(additionalProperties, "networkServer")
+		delete(additionalProperties, "securityServer")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone struct {

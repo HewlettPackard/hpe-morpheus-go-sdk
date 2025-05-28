@@ -21,7 +21,10 @@ var _ MappedNullable = &GetStorageServerTypes200Response{}
 // GetStorageServerTypes200Response struct for GetStorageServerTypes200Response
 type GetStorageServerTypes200Response struct {
 	StorageServerType *ListStorageServerTypes200ResponseAllOfStorageServerTypesInner `json:"storageServerType,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetStorageServerTypes200Response GetStorageServerTypes200Response
 
 // NewGetStorageServerTypes200Response instantiates a new GetStorageServerTypes200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o GetStorageServerTypes200Response) ToMap() (map[string]interface{}, error
 	if !IsNil(o.StorageServerType) {
 		toSerialize["storageServerType"] = o.StorageServerType
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetStorageServerTypes200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetStorageServerTypes200Response := _GetStorageServerTypes200Response{}
+
+	err = json.Unmarshal(data, &varGetStorageServerTypes200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetStorageServerTypes200Response(varGetStorageServerTypes200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "storageServerType")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetStorageServerTypes200Response struct {

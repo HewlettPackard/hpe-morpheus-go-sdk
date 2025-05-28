@@ -24,7 +24,10 @@ type ListInstances200ResponseAllOfInstancesInnerConfigBackup struct {
 	JobAction *string `json:"jobAction,omitempty"`
 	JobRetentionCount *string `json:"jobRetentionCount,omitempty"`
 	ProviderBackupType *int64 `json:"providerBackupType,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListInstances200ResponseAllOfInstancesInnerConfigBackup ListInstances200ResponseAllOfInstancesInnerConfigBackup
 
 // NewListInstances200ResponseAllOfInstancesInnerConfigBackup instantiates a new ListInstances200ResponseAllOfInstancesInnerConfigBackup object
 // This constructor will assign default values to properties that have it defined,
@@ -193,7 +196,36 @@ func (o ListInstances200ResponseAllOfInstancesInnerConfigBackup) ToMap() (map[st
 	if !IsNil(o.ProviderBackupType) {
 		toSerialize["providerBackupType"] = o.ProviderBackupType
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListInstances200ResponseAllOfInstancesInnerConfigBackup) UnmarshalJSON(data []byte) (err error) {
+	varListInstances200ResponseAllOfInstancesInnerConfigBackup := _ListInstances200ResponseAllOfInstancesInnerConfigBackup{}
+
+	err = json.Unmarshal(data, &varListInstances200ResponseAllOfInstancesInnerConfigBackup)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListInstances200ResponseAllOfInstancesInnerConfigBackup(varListInstances200ResponseAllOfInstancesInnerConfigBackup)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "createBackup")
+		delete(additionalProperties, "jobAction")
+		delete(additionalProperties, "jobRetentionCount")
+		delete(additionalProperties, "providerBackupType")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListInstances200ResponseAllOfInstancesInnerConfigBackup struct {

@@ -21,7 +21,10 @@ var _ MappedNullable = &GenerateKeyPairs200Response{}
 // GenerateKeyPairs200Response struct for GenerateKeyPairs200Response
 type GenerateKeyPairs200Response struct {
 	KeyPair *AddKeyPairs200ResponseAllOfAccount `json:"keyPair,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GenerateKeyPairs200Response GenerateKeyPairs200Response
 
 // NewGenerateKeyPairs200Response instantiates a new GenerateKeyPairs200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o GenerateKeyPairs200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.KeyPair) {
 		toSerialize["keyPair"] = o.KeyPair
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GenerateKeyPairs200Response) UnmarshalJSON(data []byte) (err error) {
+	varGenerateKeyPairs200Response := _GenerateKeyPairs200Response{}
+
+	err = json.Unmarshal(data, &varGenerateKeyPairs200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GenerateKeyPairs200Response(varGenerateKeyPairs200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "keyPair")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGenerateKeyPairs200Response struct {

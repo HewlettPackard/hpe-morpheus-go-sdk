@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -24,6 +23,7 @@ var _ MappedNullable = &AddInstanceRequestInstanceInstanceType{}
 type AddInstanceRequestInstanceInstanceType struct {
 	// The type of instance by code we want to fetch.
 	Code string `json:"code"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddInstanceRequestInstanceInstanceType AddInstanceRequestInstanceInstanceType
@@ -81,6 +81,11 @@ func (o AddInstanceRequestInstanceInstanceType) MarshalJSON() ([]byte, error) {
 func (o AddInstanceRequestInstanceInstanceType) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["code"] = o.Code
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -108,15 +113,20 @@ func (o *AddInstanceRequestInstanceInstanceType) UnmarshalJSON(data []byte) (err
 
 	varAddInstanceRequestInstanceInstanceType := _AddInstanceRequestInstanceInstanceType{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddInstanceRequestInstanceInstanceType)
+	err = json.Unmarshal(data, &varAddInstanceRequestInstanceInstanceType)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddInstanceRequestInstanceInstanceType(varAddInstanceRequestInstanceInstanceType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "code")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

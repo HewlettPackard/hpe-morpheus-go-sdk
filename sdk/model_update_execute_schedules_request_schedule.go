@@ -32,7 +32,10 @@ type UpdateExecuteSchedulesRequestSchedule struct {
 	Cron *string `json:"cron,omitempty"`
 	// Is enabled
 	Enabled *bool `json:"enabled,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateExecuteSchedulesRequestSchedule UpdateExecuteSchedulesRequestSchedule
 
 // NewUpdateExecuteSchedulesRequestSchedule instantiates a new UpdateExecuteSchedulesRequestSchedule object
 // This constructor will assign default values to properties that have it defined,
@@ -283,7 +286,38 @@ func (o UpdateExecuteSchedulesRequestSchedule) ToMap() (map[string]interface{}, 
 	if !IsNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateExecuteSchedulesRequestSchedule) UnmarshalJSON(data []byte) (err error) {
+	varUpdateExecuteSchedulesRequestSchedule := _UpdateExecuteSchedulesRequestSchedule{}
+
+	err = json.Unmarshal(data, &varUpdateExecuteSchedulesRequestSchedule)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateExecuteSchedulesRequestSchedule(varUpdateExecuteSchedulesRequestSchedule)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "scheduleType")
+		delete(additionalProperties, "scheduleTimezone")
+		delete(additionalProperties, "cron")
+		delete(additionalProperties, "enabled")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateExecuteSchedulesRequestSchedule struct {

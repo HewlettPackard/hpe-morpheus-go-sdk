@@ -38,7 +38,10 @@ type ServerDevice struct {
 	IommuGroup *int32 `json:"iommuGroup,omitempty"`
 	IommuDeviceCount *int32 `json:"iommuDeviceCount,omitempty"`
 	Type *ListHostDevices200ResponseDevicesInnerType `json:"type,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ServerDevice ServerDevice
 
 // NewServerDevice instantiates a new ServerDevice object
 // This constructor will assign default values to properties that have it defined,
@@ -662,7 +665,49 @@ func (o ServerDevice) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ServerDevice) UnmarshalJSON(data []byte) (err error) {
+	varServerDevice := _ServerDevice{}
+
+	err = json.Unmarshal(data, &varServerDevice)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ServerDevice(varServerDevice)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "refId")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "domainId")
+		delete(additionalProperties, "bus")
+		delete(additionalProperties, "slot")
+		delete(additionalProperties, "device")
+		delete(additionalProperties, "vendorId")
+		delete(additionalProperties, "productId")
+		delete(additionalProperties, "functionId")
+		delete(additionalProperties, "uniqueId")
+		delete(additionalProperties, "iommuGroup")
+		delete(additionalProperties, "iommuDeviceCount")
+		delete(additionalProperties, "type")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableServerDevice struct {

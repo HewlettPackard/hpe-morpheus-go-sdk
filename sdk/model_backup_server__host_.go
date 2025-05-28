@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -39,6 +38,7 @@ type BackupServerHost struct {
 	JobSchedule *int64 `json:"jobSchedule,omitempty"`
 	// Retention Count for new job. By default the backup settings value will be used. Only applies to jobAction `new` and `clone`.
 	RetentionCount *int64 `json:"retentionCount,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _BackupServerHost BackupServerHost
@@ -349,6 +349,11 @@ func (o BackupServerHost) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.RetentionCount) {
 		toSerialize["retentionCount"] = o.RetentionCount
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -379,15 +384,28 @@ func (o *BackupServerHost) UnmarshalJSON(data []byte) (err error) {
 
 	varBackupServerHost := _BackupServerHost{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varBackupServerHost)
+	err = json.Unmarshal(data, &varBackupServerHost)
 
 	if err != nil {
 		return err
 	}
 
 	*o = BackupServerHost(varBackupServerHost)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "locationType")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "serverId")
+		delete(additionalProperties, "backupType")
+		delete(additionalProperties, "jobAction")
+		delete(additionalProperties, "jobId")
+		delete(additionalProperties, "jobName")
+		delete(additionalProperties, "jobSchedule")
+		delete(additionalProperties, "retentionCount")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

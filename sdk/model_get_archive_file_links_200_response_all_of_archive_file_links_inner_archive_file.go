@@ -23,7 +23,10 @@ type GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile struct 
 	Id *int64 `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
 	FilePath *string `json:"filePath,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile
 
 // NewGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile instantiates a new GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile) ToM
 	if !IsNil(o.FilePath) {
 		toSerialize["filePath"] = o.FilePath
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile) UnmarshalJSON(data []byte) (err error) {
+	varGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile := _GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile{}
+
+	err = json.Unmarshal(data, &varGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile(varGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "filePath")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile struct {

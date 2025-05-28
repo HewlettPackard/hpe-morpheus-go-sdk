@@ -22,7 +22,10 @@ var _ MappedNullable = &AddIntegrationsRequestOneOf6IntegrationConfig{}
 type AddIntegrationsRequestOneOf6IntegrationConfig struct {
 	// Enable Git Repository Caching
 	CacheEnabled *bool `json:"cacheEnabled,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddIntegrationsRequestOneOf6IntegrationConfig AddIntegrationsRequestOneOf6IntegrationConfig
 
 // NewAddIntegrationsRequestOneOf6IntegrationConfig instantiates a new AddIntegrationsRequestOneOf6IntegrationConfig object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o AddIntegrationsRequestOneOf6IntegrationConfig) ToMap() (map[string]inter
 	if !IsNil(o.CacheEnabled) {
 		toSerialize["cacheEnabled"] = o.CacheEnabled
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddIntegrationsRequestOneOf6IntegrationConfig) UnmarshalJSON(data []byte) (err error) {
+	varAddIntegrationsRequestOneOf6IntegrationConfig := _AddIntegrationsRequestOneOf6IntegrationConfig{}
+
+	err = json.Unmarshal(data, &varAddIntegrationsRequestOneOf6IntegrationConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddIntegrationsRequestOneOf6IntegrationConfig(varAddIntegrationsRequestOneOf6IntegrationConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "cacheEnabled")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddIntegrationsRequestOneOf6IntegrationConfig struct {

@@ -38,7 +38,10 @@ type UpdateLoadBalancerVirtualServerRequestLoadBalancerInstance struct {
 	// SSL Server Certificate ID
 	SslServerCert *int64 `json:"sslServerCert,omitempty"`
 	Config *CreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateLoadBalancerVirtualServerRequestLoadBalancerInstance UpdateLoadBalancerVirtualServerRequestLoadBalancerInstance
 
 // NewUpdateLoadBalancerVirtualServerRequestLoadBalancerInstance instantiates a new UpdateLoadBalancerVirtualServerRequestLoadBalancerInstance object
 // This constructor will assign default values to properties that have it defined,
@@ -417,7 +420,42 @@ func (o UpdateLoadBalancerVirtualServerRequestLoadBalancerInstance) ToMap() (map
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateLoadBalancerVirtualServerRequestLoadBalancerInstance) UnmarshalJSON(data []byte) (err error) {
+	varUpdateLoadBalancerVirtualServerRequestLoadBalancerInstance := _UpdateLoadBalancerVirtualServerRequestLoadBalancerInstance{}
+
+	err = json.Unmarshal(data, &varUpdateLoadBalancerVirtualServerRequestLoadBalancerInstance)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateLoadBalancerVirtualServerRequestLoadBalancerInstance(varUpdateLoadBalancerVirtualServerRequestLoadBalancerInstance)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "vipName")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "vipAddress")
+		delete(additionalProperties, "vipPort")
+		delete(additionalProperties, "vipProtocol")
+		delete(additionalProperties, "vipHostname")
+		delete(additionalProperties, "pool")
+		delete(additionalProperties, "sslCert")
+		delete(additionalProperties, "sslServerCert")
+		delete(additionalProperties, "config")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateLoadBalancerVirtualServerRequestLoadBalancerInstance struct {

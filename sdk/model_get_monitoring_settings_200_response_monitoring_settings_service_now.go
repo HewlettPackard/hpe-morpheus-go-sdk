@@ -33,7 +33,10 @@ type GetMonitoringSettings200ResponseMonitoringSettingsServiceNow struct {
 	WarningMapping *string `json:"warningMapping,omitempty"`
 	// Critical Mapping
 	CriticalMapping *string `json:"criticalMapping,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetMonitoringSettings200ResponseMonitoringSettingsServiceNow GetMonitoringSettings200ResponseMonitoringSettingsServiceNow
 
 // NewGetMonitoringSettings200ResponseMonitoringSettingsServiceNow instantiates a new GetMonitoringSettings200ResponseMonitoringSettingsServiceNow object
 // This constructor will assign default values to properties that have it defined,
@@ -307,7 +310,39 @@ func (o GetMonitoringSettings200ResponseMonitoringSettingsServiceNow) ToMap() (m
 	if !IsNil(o.CriticalMapping) {
 		toSerialize["criticalMapping"] = o.CriticalMapping
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetMonitoringSettings200ResponseMonitoringSettingsServiceNow) UnmarshalJSON(data []byte) (err error) {
+	varGetMonitoringSettings200ResponseMonitoringSettingsServiceNow := _GetMonitoringSettings200ResponseMonitoringSettingsServiceNow{}
+
+	err = json.Unmarshal(data, &varGetMonitoringSettings200ResponseMonitoringSettingsServiceNow)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetMonitoringSettings200ResponseMonitoringSettingsServiceNow(varGetMonitoringSettings200ResponseMonitoringSettingsServiceNow)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "integration")
+		delete(additionalProperties, "newIncidentAction")
+		delete(additionalProperties, "closeIncidentAction")
+		delete(additionalProperties, "infoMapping")
+		delete(additionalProperties, "warningMapping")
+		delete(additionalProperties, "criticalMapping")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetMonitoringSettings200ResponseMonitoringSettingsServiceNow struct {

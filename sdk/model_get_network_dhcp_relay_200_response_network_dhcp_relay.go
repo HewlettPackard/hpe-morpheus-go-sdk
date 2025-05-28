@@ -30,7 +30,10 @@ type GetNetworkDhcpRelay200ResponseNetworkDhcpRelay struct {
 	ServerIpAddresses []string `json:"serverIpAddresses,omitempty"`
 	Owner *GetAlerts200ResponseAllOfChecksInnerAccount `json:"owner,omitempty"`
 	NetworkServer *GetAlerts200ResponseAllOfChecksInnerAccount `json:"networkServer,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetNetworkDhcpRelay200ResponseNetworkDhcpRelay GetNetworkDhcpRelay200ResponseNetworkDhcpRelay
 
 // NewGetNetworkDhcpRelay200ResponseNetworkDhcpRelay instantiates a new GetNetworkDhcpRelay200ResponseNetworkDhcpRelay object
 // This constructor will assign default values to properties that have it defined,
@@ -374,7 +377,41 @@ func (o GetNetworkDhcpRelay200ResponseNetworkDhcpRelay) ToMap() (map[string]inte
 	if !IsNil(o.NetworkServer) {
 		toSerialize["networkServer"] = o.NetworkServer
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetNetworkDhcpRelay200ResponseNetworkDhcpRelay) UnmarshalJSON(data []byte) (err error) {
+	varGetNetworkDhcpRelay200ResponseNetworkDhcpRelay := _GetNetworkDhcpRelay200ResponseNetworkDhcpRelay{}
+
+	err = json.Unmarshal(data, &varGetNetworkDhcpRelay200ResponseNetworkDhcpRelay)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetNetworkDhcpRelay200ResponseNetworkDhcpRelay(varGetNetworkDhcpRelay200ResponseNetworkDhcpRelay)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "providerId")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "serverIpAddresses")
+		delete(additionalProperties, "owner")
+		delete(additionalProperties, "networkServer")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetNetworkDhcpRelay200ResponseNetworkDhcpRelay struct {

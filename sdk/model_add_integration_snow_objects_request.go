@@ -21,7 +21,10 @@ var _ MappedNullable = &AddIntegrationSnowObjectsRequest{}
 // AddIntegrationSnowObjectsRequest struct for AddIntegrationSnowObjectsRequest
 type AddIntegrationSnowObjectsRequest struct {
 	Object *AddIntegrationSnowObjectsRequestObject `json:"object,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddIntegrationSnowObjectsRequest AddIntegrationSnowObjectsRequest
 
 // NewAddIntegrationSnowObjectsRequest instantiates a new AddIntegrationSnowObjectsRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o AddIntegrationSnowObjectsRequest) ToMap() (map[string]interface{}, error
 	if !IsNil(o.Object) {
 		toSerialize["object"] = o.Object
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddIntegrationSnowObjectsRequest) UnmarshalJSON(data []byte) (err error) {
+	varAddIntegrationSnowObjectsRequest := _AddIntegrationSnowObjectsRequest{}
+
+	err = json.Unmarshal(data, &varAddIntegrationSnowObjectsRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddIntegrationSnowObjectsRequest(varAddIntegrationSnowObjectsRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "object")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddIntegrationSnowObjectsRequest struct {

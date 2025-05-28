@@ -24,7 +24,10 @@ type ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInner
 	Pool *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"pool,omitempty"`
 	Id *string `json:"id,omitempty"`
 	HasPool *bool `json:"hasPool,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork
 
 // NewListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork instantiates a new ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork object
 // This constructor will assign default values to properties that have it defined,
@@ -193,7 +196,36 @@ func (o ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesIn
 	if !IsNil(o.HasPool) {
 		toSerialize["hasPool"] = o.HasPool
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork) UnmarshalJSON(data []byte) (err error) {
+	varListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork := _ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork{}
+
+	err = json.Unmarshal(data, &varListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork(varListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "idName")
+		delete(additionalProperties, "pool")
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "hasPool")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork struct {

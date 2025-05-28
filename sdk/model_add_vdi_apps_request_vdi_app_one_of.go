@@ -14,7 +14,6 @@ package sdk
 import (
 	"encoding/json"
 	"os"
-	"bytes"
 	"fmt"
 )
 
@@ -31,6 +30,7 @@ type AddVDIAppsRequestVdiAppOneOf struct {
 	IconPath **os.File `json:"iconPath,omitempty"`
 	// The RDS App Name Prefix.  Must start with '||'
 	LaunchPrefix *string `json:"launchPrefix,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddVDIAppsRequestVdiAppOneOf AddVDIAppsRequestVdiAppOneOf
@@ -193,6 +193,11 @@ func (o AddVDIAppsRequestVdiAppOneOf) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.LaunchPrefix) {
 		toSerialize["launchPrefix"] = o.LaunchPrefix
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -220,15 +225,23 @@ func (o *AddVDIAppsRequestVdiAppOneOf) UnmarshalJSON(data []byte) (err error) {
 
 	varAddVDIAppsRequestVdiAppOneOf := _AddVDIAppsRequestVdiAppOneOf{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddVDIAppsRequestVdiAppOneOf)
+	err = json.Unmarshal(data, &varAddVDIAppsRequestVdiAppOneOf)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddVDIAppsRequestVdiAppOneOf(varAddVDIAppsRequestVdiAppOneOf)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "iconPath")
+		delete(additionalProperties, "launchPrefix")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

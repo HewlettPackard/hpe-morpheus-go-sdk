@@ -21,7 +21,10 @@ var _ MappedNullable = &GetVirtualImage200Response{}
 // GetVirtualImage200Response struct for GetVirtualImage200Response
 type GetVirtualImage200Response struct {
 	VirtualImage *ListVirtualImages200ResponseAllOfVirtualImagesInner `json:"virtualImage,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetVirtualImage200Response GetVirtualImage200Response
 
 // NewGetVirtualImage200Response instantiates a new GetVirtualImage200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o GetVirtualImage200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.VirtualImage) {
 		toSerialize["virtualImage"] = o.VirtualImage
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetVirtualImage200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetVirtualImage200Response := _GetVirtualImage200Response{}
+
+	err = json.Unmarshal(data, &varGetVirtualImage200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetVirtualImage200Response(varGetVirtualImage200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "virtualImage")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetVirtualImage200Response struct {

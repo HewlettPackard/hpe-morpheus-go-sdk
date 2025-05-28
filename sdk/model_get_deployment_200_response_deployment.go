@@ -30,7 +30,10 @@ type GetDeployment200ResponseDeployment struct {
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
 	VersionCount *int64 `json:"versionCount,omitempty"`
 	Versions []GetDeployment200ResponseDeploymentVersionsInner `json:"versions,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetDeployment200ResponseDeployment GetDeployment200ResponseDeployment
 
 // NewGetDeployment200ResponseDeployment instantiates a new GetDeployment200ResponseDeployment object
 // This constructor will assign default values to properties that have it defined,
@@ -374,7 +377,41 @@ func (o GetDeployment200ResponseDeployment) ToMap() (map[string]interface{}, err
 	if !IsNil(o.Versions) {
 		toSerialize["versions"] = o.Versions
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetDeployment200ResponseDeployment) UnmarshalJSON(data []byte) (err error) {
+	varGetDeployment200ResponseDeployment := _GetDeployment200ResponseDeployment{}
+
+	err = json.Unmarshal(data, &varGetDeployment200ResponseDeployment)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetDeployment200ResponseDeployment(varGetDeployment200ResponseDeployment)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "versionCount")
+		delete(additionalProperties, "versions")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetDeployment200ResponseDeployment struct {

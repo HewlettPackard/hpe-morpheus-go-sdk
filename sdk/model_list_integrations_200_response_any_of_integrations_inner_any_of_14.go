@@ -44,7 +44,10 @@ type ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14 struct {
 	LastSync *string `json:"lastSync,omitempty"`
 	LastSyncDuration *string `json:"lastSyncDuration,omitempty"`
 	Credential *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential `json:"credential,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14 ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14
 
 // NewListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14 instantiates a new ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14 object
 // This constructor will assign default values to properties that have it defined,
@@ -878,7 +881,55 @@ func (o ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14) ToMap() (map[s
 	if !IsNil(o.Credential) {
 		toSerialize["credential"] = o.Credential
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14) UnmarshalJSON(data []byte) (err error) {
+	varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14 := _ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14{}
+
+	err = json.Unmarshal(data, &varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14(varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "integrationType")
+		delete(additionalProperties, "url")
+		delete(additionalProperties, "port")
+		delete(additionalProperties, "username")
+		delete(additionalProperties, "password")
+		delete(additionalProperties, "passwordHash")
+		delete(additionalProperties, "path")
+		delete(additionalProperties, "version")
+		delete(additionalProperties, "windowsVersion")
+		delete(additionalProperties, "repoUrl")
+		delete(additionalProperties, "serviceMode")
+		delete(additionalProperties, "isPlugin")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "statusDate")
+		delete(additionalProperties, "statusMessage")
+		delete(additionalProperties, "lastSync")
+		delete(additionalProperties, "lastSyncDuration")
+		delete(additionalProperties, "credential")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14 struct {

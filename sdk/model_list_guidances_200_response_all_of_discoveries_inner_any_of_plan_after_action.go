@@ -50,7 +50,10 @@ type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction struct {
 	Tenants *string `json:"tenants,omitempty"`
 	PriceSets []ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionPriceSetsInner `json:"priceSets,omitempty"`
 	Config *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfig `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction
 
 // NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction instantiates a new ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction object
 // This constructor will assign default values to properties that have it defined,
@@ -1094,7 +1097,61 @@ func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) ToMap
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) UnmarshalJSON(data []byte) (err error) {
+	varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction := _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction{}
+
+	err = json.Unmarshal(data, &varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction(varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "sortOrder")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "maxStorage")
+		delete(additionalProperties, "maxMemory")
+		delete(additionalProperties, "maxCpu")
+		delete(additionalProperties, "maxCores")
+		delete(additionalProperties, "maxDisks")
+		delete(additionalProperties, "coresPerSocket")
+		delete(additionalProperties, "customCpu")
+		delete(additionalProperties, "customCores")
+		delete(additionalProperties, "customMaxStorage")
+		delete(additionalProperties, "customMaxDataStorage")
+		delete(additionalProperties, "customMaxMemory")
+		delete(additionalProperties, "addVolumes")
+		delete(additionalProperties, "memoryOptionSource")
+		delete(additionalProperties, "cpuOptionSource")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "regionCode")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "editable")
+		delete(additionalProperties, "provisionType")
+		delete(additionalProperties, "tenants")
+		delete(additionalProperties, "priceSets")
+		delete(additionalProperties, "config")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction struct {

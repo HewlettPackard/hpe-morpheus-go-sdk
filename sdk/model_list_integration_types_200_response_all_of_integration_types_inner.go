@@ -35,7 +35,10 @@ type ListIntegrationTypes200ResponseAllOfIntegrationTypesInner struct {
 	HasDeleteApprovals *bool `json:"hasDeleteApprovals,omitempty"`
 	HasReconfigureApprovals *bool `json:"hasReconfigureApprovals,omitempty"`
 	IsPlugin *bool `json:"isPlugin,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListIntegrationTypes200ResponseAllOfIntegrationTypesInner ListIntegrationTypes200ResponseAllOfIntegrationTypesInner
 
 // NewListIntegrationTypes200ResponseAllOfIntegrationTypesInner instantiates a new ListIntegrationTypes200ResponseAllOfIntegrationTypesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -589,7 +592,47 @@ func (o ListIntegrationTypes200ResponseAllOfIntegrationTypesInner) ToMap() (map[
 	if !IsNil(o.IsPlugin) {
 		toSerialize["isPlugin"] = o.IsPlugin
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListIntegrationTypes200ResponseAllOfIntegrationTypesInner) UnmarshalJSON(data []byte) (err error) {
+	varListIntegrationTypes200ResponseAllOfIntegrationTypesInner := _ListIntegrationTypes200ResponseAllOfIntegrationTypesInner{}
+
+	err = json.Unmarshal(data, &varListIntegrationTypes200ResponseAllOfIntegrationTypesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListIntegrationTypes200ResponseAllOfIntegrationTypesInner(varListIntegrationTypes200ResponseAllOfIntegrationTypesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "creatable")
+		delete(additionalProperties, "hasCMDB")
+		delete(additionalProperties, "hasCMDBDiscovery")
+		delete(additionalProperties, "hasCM")
+		delete(additionalProperties, "hasDNS")
+		delete(additionalProperties, "hasApprovals")
+		delete(additionalProperties, "hasDeleteApprovals")
+		delete(additionalProperties, "hasReconfigureApprovals")
+		delete(additionalProperties, "isPlugin")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListIntegrationTypes200ResponseAllOfIntegrationTypesInner struct {

@@ -59,7 +59,10 @@ type AddPowerSchedules200ResponseAllOfSchedule struct {
 	TotalMonthlyHoursSaved *float32 `json:"totalMonthlyHoursSaved,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddPowerSchedules200ResponseAllOfSchedule AddPowerSchedules200ResponseAllOfSchedule
 
 // NewAddPowerSchedules200ResponseAllOfSchedule instantiates a new AddPowerSchedules200ResponseAllOfSchedule object
 // This constructor will assign default values to properties that have it defined,
@@ -1418,7 +1421,70 @@ func (o AddPowerSchedules200ResponseAllOfSchedule) ToMap() (map[string]interface
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddPowerSchedules200ResponseAllOfSchedule) UnmarshalJSON(data []byte) (err error) {
+	varAddPowerSchedules200ResponseAllOfSchedule := _AddPowerSchedules200ResponseAllOfSchedule{}
+
+	err = json.Unmarshal(data, &varAddPowerSchedules200ResponseAllOfSchedule)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddPowerSchedules200ResponseAllOfSchedule(varAddPowerSchedules200ResponseAllOfSchedule)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "scheduleType")
+		delete(additionalProperties, "scheduleTimezone")
+		delete(additionalProperties, "mondayOn")
+		delete(additionalProperties, "mondayOnTime")
+		delete(additionalProperties, "mondayOff")
+		delete(additionalProperties, "mondayOffTime")
+		delete(additionalProperties, "tuesdayOn")
+		delete(additionalProperties, "tuesdayOnTime")
+		delete(additionalProperties, "tuesdayOff")
+		delete(additionalProperties, "tuesdayOffTime")
+		delete(additionalProperties, "wednesdayOn")
+		delete(additionalProperties, "wednesdayOnTime")
+		delete(additionalProperties, "wednesdayOff")
+		delete(additionalProperties, "wednesdayOffTime")
+		delete(additionalProperties, "thursdayOn")
+		delete(additionalProperties, "thursdayOnTime")
+		delete(additionalProperties, "thursdayOff")
+		delete(additionalProperties, "thursdayOffTime")
+		delete(additionalProperties, "fridayOn")
+		delete(additionalProperties, "fridayOnTime")
+		delete(additionalProperties, "fridayOff")
+		delete(additionalProperties, "fridayOffTime")
+		delete(additionalProperties, "saturdayOn")
+		delete(additionalProperties, "saturdayOnTime")
+		delete(additionalProperties, "saturdayOff")
+		delete(additionalProperties, "saturdayOffTime")
+		delete(additionalProperties, "sundayOn")
+		delete(additionalProperties, "sundayOnTime")
+		delete(additionalProperties, "sundayOff")
+		delete(additionalProperties, "sundayOffTime")
+		delete(additionalProperties, "totalMonthlyHoursSaved")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddPowerSchedules200ResponseAllOfSchedule struct {

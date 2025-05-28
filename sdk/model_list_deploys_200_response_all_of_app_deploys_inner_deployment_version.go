@@ -23,7 +23,10 @@ type ListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion struct {
 	Id *int64 `json:"id,omitempty"`
 	UserVersion *string `json:"userVersion,omitempty"`
 	DeployType *string `json:"deployType,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion ListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion
 
 // NewListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion instantiates a new ListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o ListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion) ToMap() (ma
 	if !IsNil(o.DeployType) {
 		toSerialize["deployType"] = o.DeployType
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion) UnmarshalJSON(data []byte) (err error) {
+	varListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion := _ListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion{}
+
+	err = json.Unmarshal(data, &varListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion(varListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "userVersion")
+		delete(additionalProperties, "deployType")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion struct {

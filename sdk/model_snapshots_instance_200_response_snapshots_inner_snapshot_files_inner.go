@@ -28,7 +28,10 @@ type SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInner struct {
 	ExportPath *string `json:"exportPath,omitempty"`
 	Volume *SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume `json:"volume,omitempty"`
 	DiskIndex *int32 `json:"diskIndex,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInner SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInner
 
 // NewSnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInner instantiates a new SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -337,7 +340,40 @@ func (o SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInner) ToMap() (m
 	if !IsNil(o.DiskIndex) {
 		toSerialize["diskIndex"] = o.DiskIndex
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInner) UnmarshalJSON(data []byte) (err error) {
+	varSnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInner := _SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInner{}
+
+	err = json.Unmarshal(data, &varSnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInner(varSnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "path")
+		delete(additionalProperties, "exportPath")
+		delete(additionalProperties, "volume")
+		delete(additionalProperties, "diskIndex")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableSnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInner struct {

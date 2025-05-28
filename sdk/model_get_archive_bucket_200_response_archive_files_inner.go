@@ -33,7 +33,10 @@ type GetArchiveBucket200ResponseArchiveFilesInner struct {
 	DownloadCount *int64 `json:"downloadCount,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetArchiveBucket200ResponseArchiveFilesInner GetArchiveBucket200ResponseArchiveFilesInner
 
 // NewGetArchiveBucket200ResponseArchiveFilesInner instantiates a new GetArchiveBucket200ResponseArchiveFilesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -482,7 +485,44 @@ func (o GetArchiveBucket200ResponseArchiveFilesInner) ToMap() (map[string]interf
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetArchiveBucket200ResponseArchiveFilesInner) UnmarshalJSON(data []byte) (err error) {
+	varGetArchiveBucket200ResponseArchiveFilesInner := _GetArchiveBucket200ResponseArchiveFilesInner{}
+
+	err = json.Unmarshal(data, &varGetArchiveBucket200ResponseArchiveFilesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetArchiveBucket200ResponseArchiveFilesInner(varGetArchiveBucket200ResponseArchiveFilesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "filePath")
+		delete(additionalProperties, "archiveBucket")
+		delete(additionalProperties, "createdBy")
+		delete(additionalProperties, "isDirectory")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "rawSize")
+		delete(additionalProperties, "contentType")
+		delete(additionalProperties, "downloadCount")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetArchiveBucket200ResponseArchiveFilesInner struct {

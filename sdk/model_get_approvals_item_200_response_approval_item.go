@@ -36,7 +36,10 @@ type GetApprovalsItem200ResponseApprovalItem struct {
 	DateDenied *time.Time `json:"dateDenied,omitempty"`
 	Approval *GetAlerts200ResponseAllOfChecksInnerAccount `json:"approval,omitempty"`
 	Reference *GetApprovalsItem200ResponseApprovalItemReference `json:"reference,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetApprovalsItem200ResponseApprovalItem GetApprovalsItem200ResponseApprovalItem
 
 // NewGetApprovalsItem200ResponseApprovalItem instantiates a new GetApprovalsItem200ResponseApprovalItem object
 // This constructor will assign default values to properties that have it defined,
@@ -590,7 +593,47 @@ func (o GetApprovalsItem200ResponseApprovalItem) ToMap() (map[string]interface{}
 	if !IsNil(o.Reference) {
 		toSerialize["reference"] = o.Reference
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetApprovalsItem200ResponseApprovalItem) UnmarshalJSON(data []byte) (err error) {
+	varGetApprovalsItem200ResponseApprovalItem := _GetApprovalsItem200ResponseApprovalItem{}
+
+	err = json.Unmarshal(data, &varGetApprovalsItem200ResponseApprovalItem)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetApprovalsItem200ResponseApprovalItem(varGetApprovalsItem200ResponseApprovalItem)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "externalName")
+		delete(additionalProperties, "internalId")
+		delete(additionalProperties, "approvedBy")
+		delete(additionalProperties, "deniedBy")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "errorMessage")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "dateApproved")
+		delete(additionalProperties, "dateDenied")
+		delete(additionalProperties, "approval")
+		delete(additionalProperties, "reference")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetApprovalsItem200ResponseApprovalItem struct {

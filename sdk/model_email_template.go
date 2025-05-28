@@ -29,7 +29,10 @@ type EmailTemplate struct {
 	Accounts []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"accounts,omitempty"`
 	// The email template. This is the actual email template that is sent to the user. This uses handlebars notation (not javascript) 
 	Template *string `json:"template,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _EmailTemplate EmailTemplate
 
 // NewEmailTemplate instantiates a new EmailTemplate object
 // This constructor will assign default values to properties that have it defined,
@@ -268,7 +271,38 @@ func (o EmailTemplate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Template) {
 		toSerialize["template"] = o.Template
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *EmailTemplate) UnmarshalJSON(data []byte) (err error) {
+	varEmailTemplate := _EmailTemplate{}
+
+	err = json.Unmarshal(data, &varEmailTemplate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = EmailTemplate(varEmailTemplate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "owner")
+		delete(additionalProperties, "accounts")
+		delete(additionalProperties, "template")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableEmailTemplate struct {

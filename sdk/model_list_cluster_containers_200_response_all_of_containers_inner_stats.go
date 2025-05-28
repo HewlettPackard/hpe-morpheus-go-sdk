@@ -35,7 +35,10 @@ type ListClusterContainers200ResponseAllOfContainersInnerStats struct {
 	TotalIOPS *int64 `json:"totalIOPS,omitempty"`
 	NetTxUsage *int64 `json:"netTxUsage,omitempty"`
 	NetRxUsage *int64 `json:"netRxUsage,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListClusterContainers200ResponseAllOfContainersInnerStats ListClusterContainers200ResponseAllOfContainersInnerStats
 
 // NewListClusterContainers200ResponseAllOfContainersInnerStats instantiates a new ListClusterContainers200ResponseAllOfContainersInnerStats object
 // This constructor will assign default values to properties that have it defined,
@@ -554,7 +557,46 @@ func (o ListClusterContainers200ResponseAllOfContainersInnerStats) ToMap() (map[
 	if !IsNil(o.NetRxUsage) {
 		toSerialize["netRxUsage"] = o.NetRxUsage
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListClusterContainers200ResponseAllOfContainersInnerStats) UnmarshalJSON(data []byte) (err error) {
+	varListClusterContainers200ResponseAllOfContainersInnerStats := _ListClusterContainers200ResponseAllOfContainersInnerStats{}
+
+	err = json.Unmarshal(data, &varListClusterContainers200ResponseAllOfContainersInnerStats)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListClusterContainers200ResponseAllOfContainersInnerStats(varListClusterContainers200ResponseAllOfContainersInnerStats)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "ts")
+		delete(additionalProperties, "running")
+		delete(additionalProperties, "userCpuUsage")
+		delete(additionalProperties, "systemCpuUsage")
+		delete(additionalProperties, "usedMemory")
+		delete(additionalProperties, "maxMemory")
+		delete(additionalProperties, "cacheMemory")
+		delete(additionalProperties, "maxStorage")
+		delete(additionalProperties, "usedStorage")
+		delete(additionalProperties, "readIOPS")
+		delete(additionalProperties, "writeIOPS")
+		delete(additionalProperties, "totalIOPS")
+		delete(additionalProperties, "netTxUsage")
+		delete(additionalProperties, "netRxUsage")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListClusterContainers200ResponseAllOfContainersInnerStats struct {

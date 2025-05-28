@@ -22,7 +22,10 @@ var _ MappedNullable = &LoadBalancerInstanceNSXTConfig{}
 type LoadBalancerInstanceNSXTConfig struct {
 	// The Load Balancer Application Profile ID The Options API `/api/options/nsxt/nsxtLBVirtualServerApplicationProfile?loadBalancerId=42&loadBalancerInstance.vipProtocol=tcp` can be used to see which options are available. 
 	ApplicationProfile *string `json:"applicationProfile,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _LoadBalancerInstanceNSXTConfig LoadBalancerInstanceNSXTConfig
 
 // NewLoadBalancerInstanceNSXTConfig instantiates a new LoadBalancerInstanceNSXTConfig object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o LoadBalancerInstanceNSXTConfig) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.ApplicationProfile) {
 		toSerialize["applicationProfile"] = o.ApplicationProfile
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *LoadBalancerInstanceNSXTConfig) UnmarshalJSON(data []byte) (err error) {
+	varLoadBalancerInstanceNSXTConfig := _LoadBalancerInstanceNSXTConfig{}
+
+	err = json.Unmarshal(data, &varLoadBalancerInstanceNSXTConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = LoadBalancerInstanceNSXTConfig(varLoadBalancerInstanceNSXTConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "applicationProfile")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableLoadBalancerInstanceNSXTConfig struct {

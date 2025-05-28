@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -24,6 +23,7 @@ var _ MappedNullable = &AddInstanceRequestInstanceLayout{}
 type AddInstanceRequestInstanceLayout struct {
 	// The layout id for the instance type that you want to provision. i.e. single process or cluster
 	Id int64 `json:"id"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddInstanceRequestInstanceLayout AddInstanceRequestInstanceLayout
@@ -81,6 +81,11 @@ func (o AddInstanceRequestInstanceLayout) MarshalJSON() ([]byte, error) {
 func (o AddInstanceRequestInstanceLayout) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -108,15 +113,20 @@ func (o *AddInstanceRequestInstanceLayout) UnmarshalJSON(data []byte) (err error
 
 	varAddInstanceRequestInstanceLayout := _AddInstanceRequestInstanceLayout{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddInstanceRequestInstanceLayout)
+	err = json.Unmarshal(data, &varAddInstanceRequestInstanceLayout)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddInstanceRequestInstanceLayout(varAddInstanceRequestInstanceLayout)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

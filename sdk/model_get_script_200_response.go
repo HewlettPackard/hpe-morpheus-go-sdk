@@ -21,7 +21,10 @@ var _ MappedNullable = &GetScript200Response{}
 // GetScript200Response struct for GetScript200Response
 type GetScript200Response struct {
 	ContainerScript *ListScripts200ResponseAllOfContainerScriptsInner `json:"containerScript,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetScript200Response GetScript200Response
 
 // NewGetScript200Response instantiates a new GetScript200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o GetScript200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ContainerScript) {
 		toSerialize["containerScript"] = o.ContainerScript
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetScript200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetScript200Response := _GetScript200Response{}
+
+	err = json.Unmarshal(data, &varGetScript200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetScript200Response(varGetScript200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "containerScript")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetScript200Response struct {

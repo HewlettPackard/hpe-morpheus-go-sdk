@@ -24,7 +24,10 @@ type AddRoles200ResponseAllOfInstanceTypePermissionsInner struct {
 	Code *string `json:"code,omitempty"`
 	Name *string `json:"name,omitempty"`
 	Access *string `json:"access,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddRoles200ResponseAllOfInstanceTypePermissionsInner AddRoles200ResponseAllOfInstanceTypePermissionsInner
 
 // NewAddRoles200ResponseAllOfInstanceTypePermissionsInner instantiates a new AddRoles200ResponseAllOfInstanceTypePermissionsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -193,7 +196,36 @@ func (o AddRoles200ResponseAllOfInstanceTypePermissionsInner) ToMap() (map[strin
 	if !IsNil(o.Access) {
 		toSerialize["access"] = o.Access
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddRoles200ResponseAllOfInstanceTypePermissionsInner) UnmarshalJSON(data []byte) (err error) {
+	varAddRoles200ResponseAllOfInstanceTypePermissionsInner := _AddRoles200ResponseAllOfInstanceTypePermissionsInner{}
+
+	err = json.Unmarshal(data, &varAddRoles200ResponseAllOfInstanceTypePermissionsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddRoles200ResponseAllOfInstanceTypePermissionsInner(varAddRoles200ResponseAllOfInstanceTypePermissionsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "access")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddRoles200ResponseAllOfInstanceTypePermissionsInner struct {

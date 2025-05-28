@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -24,6 +23,7 @@ var _ MappedNullable = &CreateNetworkRouterRequestNetworkRouterType{}
 type CreateNetworkRouterRequestNetworkRouterType struct {
 	// Network router type ID
 	Id int64 `json:"id"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _CreateNetworkRouterRequestNetworkRouterType CreateNetworkRouterRequestNetworkRouterType
@@ -81,6 +81,11 @@ func (o CreateNetworkRouterRequestNetworkRouterType) MarshalJSON() ([]byte, erro
 func (o CreateNetworkRouterRequestNetworkRouterType) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -108,15 +113,20 @@ func (o *CreateNetworkRouterRequestNetworkRouterType) UnmarshalJSON(data []byte)
 
 	varCreateNetworkRouterRequestNetworkRouterType := _CreateNetworkRouterRequestNetworkRouterType{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varCreateNetworkRouterRequestNetworkRouterType)
+	err = json.Unmarshal(data, &varCreateNetworkRouterRequestNetworkRouterType)
 
 	if err != nil {
 		return err
 	}
 
 	*o = CreateNetworkRouterRequestNetworkRouterType(varCreateNetworkRouterRequestNetworkRouterType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

@@ -22,7 +22,10 @@ var _ MappedNullable = &ListApplianceSettings200ResponseApplianceSettingsEnabled
 type ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner struct {
 	Id *int64 `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
 
 // NewListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner instantiates a new ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) 
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) UnmarshalJSON(data []byte) (err error) {
+	varListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner := _ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner{}
+
+	err = json.Unmarshal(data, &varListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner(varListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner struct {

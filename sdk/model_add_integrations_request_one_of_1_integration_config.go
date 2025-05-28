@@ -38,7 +38,10 @@ type AddIntegrationsRequestOneOf1IntegrationConfig struct {
 	AnsibleCommandBus *bool `json:"ansibleCommandBus,omitempty"`
 	// Enable Git repository caching
 	CacheEnabled *bool `json:"cacheEnabled,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddIntegrationsRequestOneOf1IntegrationConfig AddIntegrationsRequestOneOf1IntegrationConfig
 
 // NewAddIntegrationsRequestOneOf1IntegrationConfig instantiates a new AddIntegrationsRequestOneOf1IntegrationConfig object
 // This constructor will assign default values to properties that have it defined,
@@ -382,7 +385,41 @@ func (o AddIntegrationsRequestOneOf1IntegrationConfig) ToMap() (map[string]inter
 	if !IsNil(o.CacheEnabled) {
 		toSerialize["cacheEnabled"] = o.CacheEnabled
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddIntegrationsRequestOneOf1IntegrationConfig) UnmarshalJSON(data []byte) (err error) {
+	varAddIntegrationsRequestOneOf1IntegrationConfig := _AddIntegrationsRequestOneOf1IntegrationConfig{}
+
+	err = json.Unmarshal(data, &varAddIntegrationsRequestOneOf1IntegrationConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddIntegrationsRequestOneOf1IntegrationConfig(varAddIntegrationsRequestOneOf1IntegrationConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "defaultBranch")
+		delete(additionalProperties, "ansiblePlaybooks")
+		delete(additionalProperties, "ansibleRoles")
+		delete(additionalProperties, "ansibleGroupVars")
+		delete(additionalProperties, "ansibleHostVars")
+		delete(additionalProperties, "ansibleGalaxyEnabled")
+		delete(additionalProperties, "ansibleVerbose")
+		delete(additionalProperties, "ansibleCommandBus")
+		delete(additionalProperties, "cacheEnabled")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddIntegrationsRequestOneOf1IntegrationConfig struct {

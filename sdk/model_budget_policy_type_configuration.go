@@ -23,7 +23,10 @@ type BudgetPolicyTypeConfiguration struct {
 	MaxPrice *float32 `json:"maxPrice,omitempty"`
 	MaxPriceCurrency *string `json:"maxPriceCurrency,omitempty"`
 	MaxPriceUnit *string `json:"maxPriceUnit,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _BudgetPolicyTypeConfiguration BudgetPolicyTypeConfiguration
 
 // NewBudgetPolicyTypeConfiguration instantiates a new BudgetPolicyTypeConfiguration object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o BudgetPolicyTypeConfiguration) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.MaxPriceUnit) {
 		toSerialize["maxPriceUnit"] = o.MaxPriceUnit
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *BudgetPolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
+	varBudgetPolicyTypeConfiguration := _BudgetPolicyTypeConfiguration{}
+
+	err = json.Unmarshal(data, &varBudgetPolicyTypeConfiguration)
+
+	if err != nil {
+		return err
+	}
+
+	*o = BudgetPolicyTypeConfiguration(varBudgetPolicyTypeConfiguration)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "maxPrice")
+		delete(additionalProperties, "maxPriceCurrency")
+		delete(additionalProperties, "maxPriceUnit")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableBudgetPolicyTypeConfiguration struct {

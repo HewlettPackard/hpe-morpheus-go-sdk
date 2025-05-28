@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -27,6 +26,7 @@ type NetworkTypeGcpConfig struct {
 	ZonePool CreateNetworksRequestNetworkConfigAnyOf2ZonePool `json:"zonePool"`
 	// Auto create subnets
 	AutoCreate bool `json:"autoCreate"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _NetworkTypeGcpConfig NetworkTypeGcpConfig
@@ -140,6 +140,11 @@ func (o NetworkTypeGcpConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize["mtu"] = o.Mtu
 	toSerialize["zonePool"] = o.ZonePool
 	toSerialize["autoCreate"] = o.AutoCreate
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -169,15 +174,22 @@ func (o *NetworkTypeGcpConfig) UnmarshalJSON(data []byte) (err error) {
 
 	varNetworkTypeGcpConfig := _NetworkTypeGcpConfig{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varNetworkTypeGcpConfig)
+	err = json.Unmarshal(data, &varNetworkTypeGcpConfig)
 
 	if err != nil {
 		return err
 	}
 
 	*o = NetworkTypeGcpConfig(varNetworkTypeGcpConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "mtu")
+		delete(additionalProperties, "zonePool")
+		delete(additionalProperties, "autoCreate")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

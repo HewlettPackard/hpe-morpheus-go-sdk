@@ -32,7 +32,10 @@ type UserGroup struct {
 	Account *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UserGroup UserGroup
 
 // NewUserGroup instantiates a new UserGroup object
 // This constructor will assign default values to properties that have it defined,
@@ -446,7 +449,43 @@ func (o UserGroup) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UserGroup) UnmarshalJSON(data []byte) (err error) {
+	varUserGroup := _UserGroup{}
+
+	err = json.Unmarshal(data, &varUserGroup)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UserGroup(varUserGroup)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "sudoUser")
+		delete(additionalProperties, "serverGroup")
+		delete(additionalProperties, "users")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUserGroup struct {

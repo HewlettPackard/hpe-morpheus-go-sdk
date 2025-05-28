@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -53,6 +52,7 @@ type AddInstance200ResponseOneOf struct {
 	// The Workflow Name to execute.
 	TaskSetName *string `json:"taskSetName,omitempty"`
 	Success *bool `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddInstance200ResponseOneOf AddInstance200ResponseOneOf
@@ -669,6 +669,11 @@ func (o AddInstance200ResponseOneOf) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Success) {
 		toSerialize["success"] = o.Success
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -697,15 +702,36 @@ func (o *AddInstance200ResponseOneOf) UnmarshalJSON(data []byte) (err error) {
 
 	varAddInstance200ResponseOneOf := _AddInstance200ResponseOneOf{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddInstance200ResponseOneOf)
+	err = json.Unmarshal(data, &varAddInstance200ResponseOneOf)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddInstance200ResponseOneOf(varAddInstance200ResponseOneOf)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "instance")
+		delete(additionalProperties, "zoneId")
+		delete(additionalProperties, "evars")
+		delete(additionalProperties, "copies")
+		delete(additionalProperties, "layoutSize")
+		delete(additionalProperties, "servicePlanOptions")
+		delete(additionalProperties, "securityGroups")
+		delete(additionalProperties, "volumes")
+		delete(additionalProperties, "networkInterfaces")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "tags")
+		delete(additionalProperties, "metadata")
+		delete(additionalProperties, "ports")
+		delete(additionalProperties, "taskSetId")
+		delete(additionalProperties, "taskSetName")
+		delete(additionalProperties, "success")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

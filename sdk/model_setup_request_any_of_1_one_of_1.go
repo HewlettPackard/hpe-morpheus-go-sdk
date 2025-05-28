@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -23,6 +22,7 @@ var _ MappedNullable = &SetupRequestAnyOf1OneOf1{}
 // SetupRequestAnyOf1OneOf1 Object for registering with the [Morpheus Hub](https://morpheushub.com). This is only required for `hubmode=register`.
 type SetupRequestAnyOf1OneOf1 struct {
 	Hub SetupRequestAnyOf1OneOf1Hub `json:"hub"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _SetupRequestAnyOf1OneOf1 SetupRequestAnyOf1OneOf1
@@ -80,6 +80,11 @@ func (o SetupRequestAnyOf1OneOf1) MarshalJSON() ([]byte, error) {
 func (o SetupRequestAnyOf1OneOf1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["hub"] = o.Hub
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -107,15 +112,20 @@ func (o *SetupRequestAnyOf1OneOf1) UnmarshalJSON(data []byte) (err error) {
 
 	varSetupRequestAnyOf1OneOf1 := _SetupRequestAnyOf1OneOf1{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varSetupRequestAnyOf1OneOf1)
+	err = json.Unmarshal(data, &varSetupRequestAnyOf1OneOf1)
 
 	if err != nil {
 		return err
 	}
 
 	*o = SetupRequestAnyOf1OneOf1(varSetupRequestAnyOf1OneOf1)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "hub")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

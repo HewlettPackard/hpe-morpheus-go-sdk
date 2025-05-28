@@ -21,7 +21,10 @@ var _ MappedNullable = &UpdateNetworkDhcpServerRequest{}
 // UpdateNetworkDhcpServerRequest The parameters for update a Network DHCP Server is type dependent. The following lists the common parameters. Get a specific network type to list available options for the network server type. 
 type UpdateNetworkDhcpServerRequest struct {
 	NetworkDhcpServer map[string]interface{} `json:"networkDhcpServer,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateNetworkDhcpServerRequest UpdateNetworkDhcpServerRequest
 
 // NewUpdateNetworkDhcpServerRequest instantiates a new UpdateNetworkDhcpServerRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o UpdateNetworkDhcpServerRequest) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.NetworkDhcpServer) {
 		toSerialize["networkDhcpServer"] = o.NetworkDhcpServer
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateNetworkDhcpServerRequest) UnmarshalJSON(data []byte) (err error) {
+	varUpdateNetworkDhcpServerRequest := _UpdateNetworkDhcpServerRequest{}
+
+	err = json.Unmarshal(data, &varUpdateNetworkDhcpServerRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateNetworkDhcpServerRequest(varUpdateNetworkDhcpServerRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "networkDhcpServer")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateNetworkDhcpServerRequest struct {

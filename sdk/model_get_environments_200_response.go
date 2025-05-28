@@ -21,7 +21,10 @@ var _ MappedNullable = &GetEnvironments200Response{}
 // GetEnvironments200Response struct for GetEnvironments200Response
 type GetEnvironments200Response struct {
 	Environment *ListEnvironments200ResponseAllOfEnvironmentsInner `json:"environment,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetEnvironments200Response GetEnvironments200Response
 
 // NewGetEnvironments200Response instantiates a new GetEnvironments200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o GetEnvironments200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Environment) {
 		toSerialize["environment"] = o.Environment
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetEnvironments200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetEnvironments200Response := _GetEnvironments200Response{}
+
+	err = json.Unmarshal(data, &varGetEnvironments200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetEnvironments200Response(varGetEnvironments200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "environment")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetEnvironments200Response struct {

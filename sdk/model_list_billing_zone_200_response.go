@@ -22,7 +22,10 @@ var _ MappedNullable = &ListBillingZone200Response{}
 type ListBillingZone200Response struct {
 	BillingInfo *ListBillingZone200ResponseAllOfBillingInfo `json:"billingInfo,omitempty"`
 	Success *bool `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListBillingZone200Response ListBillingZone200Response
 
 // NewListBillingZone200Response instantiates a new ListBillingZone200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o ListBillingZone200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Success) {
 		toSerialize["success"] = o.Success
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListBillingZone200Response) UnmarshalJSON(data []byte) (err error) {
+	varListBillingZone200Response := _ListBillingZone200Response{}
+
+	err = json.Unmarshal(data, &varListBillingZone200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListBillingZone200Response(varListBillingZone200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "billingInfo")
+		delete(additionalProperties, "success")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListBillingZone200Response struct {

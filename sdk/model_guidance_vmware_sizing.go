@@ -50,7 +50,10 @@ type GuidanceVmwareSizing struct {
 	PlanBeforeAction *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeAction `json:"planBeforeAction,omitempty"`
 	PlanAfterAction *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction `json:"planAfterAction,omitempty"`
 	Config *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GuidanceVmwareSizing GuidanceVmwareSizing
 
 // NewGuidanceVmwareSizing instantiates a new GuidanceVmwareSizing object
 // This constructor will assign default values to properties that have it defined,
@@ -1094,7 +1097,61 @@ func (o GuidanceVmwareSizing) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GuidanceVmwareSizing) UnmarshalJSON(data []byte) (err error) {
+	varGuidanceVmwareSizing := _GuidanceVmwareSizing{}
+
+	err = json.Unmarshal(data, &varGuidanceVmwareSizing)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GuidanceVmwareSizing(varGuidanceVmwareSizing)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "actionCategory")
+		delete(additionalProperties, "actionMessage")
+		delete(additionalProperties, "actionTitle")
+		delete(additionalProperties, "actionType")
+		delete(additionalProperties, "actionValue")
+		delete(additionalProperties, "actionValueType")
+		delete(additionalProperties, "actionPlanId")
+		delete(additionalProperties, "statusMessage")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "userId")
+		delete(additionalProperties, "siteId")
+		delete(additionalProperties, "zone")
+		delete(additionalProperties, "state")
+		delete(additionalProperties, "stateMessage")
+		delete(additionalProperties, "severity")
+		delete(additionalProperties, "resolved")
+		delete(additionalProperties, "resolvedMessage")
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "refId")
+		delete(additionalProperties, "refName")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "savings")
+		delete(additionalProperties, "resource")
+		delete(additionalProperties, "planBeforeAction")
+		delete(additionalProperties, "planAfterAction")
+		delete(additionalProperties, "config")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGuidanceVmwareSizing struct {

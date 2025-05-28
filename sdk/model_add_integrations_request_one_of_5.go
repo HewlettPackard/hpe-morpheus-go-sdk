@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -23,6 +22,7 @@ var _ MappedNullable = &AddIntegrationsRequestOneOf5{}
 // AddIntegrationsRequestOneOf5 struct for AddIntegrationsRequestOneOf5
 type AddIntegrationsRequestOneOf5 struct {
 	Integration AddIntegrationsRequestOneOf5Integration `json:"integration"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddIntegrationsRequestOneOf5 AddIntegrationsRequestOneOf5
@@ -80,6 +80,11 @@ func (o AddIntegrationsRequestOneOf5) MarshalJSON() ([]byte, error) {
 func (o AddIntegrationsRequestOneOf5) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["integration"] = o.Integration
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -107,15 +112,20 @@ func (o *AddIntegrationsRequestOneOf5) UnmarshalJSON(data []byte) (err error) {
 
 	varAddIntegrationsRequestOneOf5 := _AddIntegrationsRequestOneOf5{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddIntegrationsRequestOneOf5)
+	err = json.Unmarshal(data, &varAddIntegrationsRequestOneOf5)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddIntegrationsRequestOneOf5(varAddIntegrationsRequestOneOf5)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "integration")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

@@ -21,7 +21,10 @@ var _ MappedNullable = &GetCloudTypes200Response{}
 // GetCloudTypes200Response struct for GetCloudTypes200Response
 type GetCloudTypes200Response struct {
 	ZoneType *ListCloudTypes200ResponseAllOfZoneTypesInner `json:"zoneType,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetCloudTypes200Response GetCloudTypes200Response
 
 // NewGetCloudTypes200Response instantiates a new GetCloudTypes200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o GetCloudTypes200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ZoneType) {
 		toSerialize["zoneType"] = o.ZoneType
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetCloudTypes200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetCloudTypes200Response := _GetCloudTypes200Response{}
+
+	err = json.Unmarshal(data, &varGetCloudTypes200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetCloudTypes200Response(varGetCloudTypes200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "zoneType")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetCloudTypes200Response struct {

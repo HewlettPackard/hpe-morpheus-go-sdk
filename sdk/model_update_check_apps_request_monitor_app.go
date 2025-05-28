@@ -32,7 +32,10 @@ type UpdateCheckAppsRequestMonitorApp struct {
 	Active *bool `json:"active,omitempty"`
 	Checks []int32 `json:"checks,omitempty"`
 	CheckGroups []int32 `json:"checkGroups,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateCheckAppsRequestMonitorApp UpdateCheckAppsRequestMonitorApp
 
 // NewUpdateCheckAppsRequestMonitorApp instantiates a new UpdateCheckAppsRequestMonitorApp object
 // This constructor will assign default values to properties that have it defined,
@@ -318,7 +321,39 @@ func (o UpdateCheckAppsRequestMonitorApp) ToMap() (map[string]interface{}, error
 	if !IsNil(o.CheckGroups) {
 		toSerialize["checkGroups"] = o.CheckGroups
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateCheckAppsRequestMonitorApp) UnmarshalJSON(data []byte) (err error) {
+	varUpdateCheckAppsRequestMonitorApp := _UpdateCheckAppsRequestMonitorApp{}
+
+	err = json.Unmarshal(data, &varUpdateCheckAppsRequestMonitorApp)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateCheckAppsRequestMonitorApp(varUpdateCheckAppsRequestMonitorApp)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "inUptime")
+		delete(additionalProperties, "severity")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "checks")
+		delete(additionalProperties, "checkGroups")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateCheckAppsRequestMonitorApp struct {

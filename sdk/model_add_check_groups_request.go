@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -23,6 +22,7 @@ var _ MappedNullable = &AddCheckGroupsRequest{}
 // AddCheckGroupsRequest struct for AddCheckGroupsRequest
 type AddCheckGroupsRequest struct {
 	CheckGroup AddCheckGroupsRequestCheckGroup `json:"checkGroup"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddCheckGroupsRequest AddCheckGroupsRequest
@@ -80,6 +80,11 @@ func (o AddCheckGroupsRequest) MarshalJSON() ([]byte, error) {
 func (o AddCheckGroupsRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["checkGroup"] = o.CheckGroup
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -107,15 +112,20 @@ func (o *AddCheckGroupsRequest) UnmarshalJSON(data []byte) (err error) {
 
 	varAddCheckGroupsRequest := _AddCheckGroupsRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddCheckGroupsRequest)
+	err = json.Unmarshal(data, &varAddCheckGroupsRequest)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddCheckGroupsRequest(varAddCheckGroupsRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "checkGroup")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

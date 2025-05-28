@@ -37,7 +37,10 @@ type GetNetworkFirewallRuleGroup200ResponseRuleGroupRulesInner struct {
 	Scopes []ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner `json:"scopes,omitempty"`
 	Profiles []ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner `json:"profiles,omitempty"`
 	AppliedTargets []map[string]interface{} `json:"appliedTargets,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetNetworkFirewallRuleGroup200ResponseRuleGroupRulesInner GetNetworkFirewallRuleGroup200ResponseRuleGroupRulesInner
 
 // NewGetNetworkFirewallRuleGroup200ResponseRuleGroupRulesInner instantiates a new GetNetworkFirewallRuleGroup200ResponseRuleGroupRulesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -661,7 +664,49 @@ func (o GetNetworkFirewallRuleGroup200ResponseRuleGroupRulesInner) ToMap() (map[
 	if !IsNil(o.AppliedTargets) {
 		toSerialize["appliedTargets"] = o.AppliedTargets
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetNetworkFirewallRuleGroup200ResponseRuleGroupRulesInner) UnmarshalJSON(data []byte) (err error) {
+	varGetNetworkFirewallRuleGroup200ResponseRuleGroupRulesInner := _GetNetworkFirewallRuleGroup200ResponseRuleGroupRulesInner{}
+
+	err = json.Unmarshal(data, &varGetNetworkFirewallRuleGroup200ResponseRuleGroupRulesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetNetworkFirewallRuleGroup200ResponseRuleGroupRulesInner(varGetNetworkFirewallRuleGroup200ResponseRuleGroupRulesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "direction")
+		delete(additionalProperties, "sourceType")
+		delete(additionalProperties, "destinationType")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "policy")
+		delete(additionalProperties, "priority")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "ruleGroup")
+		delete(additionalProperties, "groupName")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "sources")
+		delete(additionalProperties, "destinations")
+		delete(additionalProperties, "applications")
+		delete(additionalProperties, "scopes")
+		delete(additionalProperties, "profiles")
+		delete(additionalProperties, "appliedTargets")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetNetworkFirewallRuleGroup200ResponseRuleGroupRulesInner struct {

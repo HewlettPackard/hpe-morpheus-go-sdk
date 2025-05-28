@@ -38,7 +38,10 @@ type LoadBalancerInstanceUpdate struct {
 	// SSL Server Certificate ID
 	SslServerCert *int64 `json:"sslServerCert,omitempty"`
 	Config *CreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _LoadBalancerInstanceUpdate LoadBalancerInstanceUpdate
 
 // NewLoadBalancerInstanceUpdate instantiates a new LoadBalancerInstanceUpdate object
 // This constructor will assign default values to properties that have it defined,
@@ -417,7 +420,42 @@ func (o LoadBalancerInstanceUpdate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *LoadBalancerInstanceUpdate) UnmarshalJSON(data []byte) (err error) {
+	varLoadBalancerInstanceUpdate := _LoadBalancerInstanceUpdate{}
+
+	err = json.Unmarshal(data, &varLoadBalancerInstanceUpdate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = LoadBalancerInstanceUpdate(varLoadBalancerInstanceUpdate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "vipName")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "vipAddress")
+		delete(additionalProperties, "vipPort")
+		delete(additionalProperties, "vipProtocol")
+		delete(additionalProperties, "vipHostname")
+		delete(additionalProperties, "pool")
+		delete(additionalProperties, "sslCert")
+		delete(additionalProperties, "sslServerCert")
+		delete(additionalProperties, "config")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableLoadBalancerInstanceUpdate struct {

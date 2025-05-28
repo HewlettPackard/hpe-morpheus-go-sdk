@@ -21,7 +21,10 @@ var _ MappedNullable = &GetSpecTemplate200Response{}
 // GetSpecTemplate200Response struct for GetSpecTemplate200Response
 type GetSpecTemplate200Response struct {
 	SpecTemplate *ListSpecTemplates200ResponseAllOfSpecTemplatesInner `json:"specTemplate,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetSpecTemplate200Response GetSpecTemplate200Response
 
 // NewGetSpecTemplate200Response instantiates a new GetSpecTemplate200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o GetSpecTemplate200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.SpecTemplate) {
 		toSerialize["specTemplate"] = o.SpecTemplate
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetSpecTemplate200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetSpecTemplate200Response := _GetSpecTemplate200Response{}
+
+	err = json.Unmarshal(data, &varGetSpecTemplate200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetSpecTemplate200Response(varGetSpecTemplate200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "specTemplate")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetSpecTemplate200Response struct {

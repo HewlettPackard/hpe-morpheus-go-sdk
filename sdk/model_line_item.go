@@ -58,7 +58,10 @@ type LineItem struct {
 	ConversionRate *int64 `json:"conversionRate,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _LineItem LineItem
 
 // NewLineItem instantiates a new LineItem object
 // This constructor will assign default values to properties that have it defined,
@@ -1382,7 +1385,69 @@ func (o LineItem) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *LineItem) UnmarshalJSON(data []byte) (err error) {
+	varLineItem := _LineItem{}
+
+	err = json.Unmarshal(data, &varLineItem)
+
+	if err != nil {
+		return err
+	}
+
+	*o = LineItem(varLineItem)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "invoiceId")
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "refId")
+		delete(additionalProperties, "refName")
+		delete(additionalProperties, "startDate")
+		delete(additionalProperties, "endDate")
+		delete(additionalProperties, "itemId")
+		delete(additionalProperties, "itemType")
+		delete(additionalProperties, "itemName")
+		delete(additionalProperties, "itemDescription")
+		delete(additionalProperties, "productId")
+		delete(additionalProperties, "productCode")
+		delete(additionalProperties, "productName")
+		delete(additionalProperties, "itemSeller")
+		delete(additionalProperties, "itemAction")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "rateId")
+		delete(additionalProperties, "rateClass")
+		delete(additionalProperties, "rateUnit")
+		delete(additionalProperties, "rateTerm")
+		delete(additionalProperties, "usageType")
+		delete(additionalProperties, "usageCategory")
+		delete(additionalProperties, "usageService")
+		delete(additionalProperties, "itemUsage")
+		delete(additionalProperties, "itemRate")
+		delete(additionalProperties, "itemCost")
+		delete(additionalProperties, "itemPriceRate")
+		delete(additionalProperties, "itemPrice")
+		delete(additionalProperties, "itemTax")
+		delete(additionalProperties, "itemTerm")
+		delete(additionalProperties, "taxType")
+		delete(additionalProperties, "regionCode")
+		delete(additionalProperties, "currency")
+		delete(additionalProperties, "conversionRate")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableLineItem struct {

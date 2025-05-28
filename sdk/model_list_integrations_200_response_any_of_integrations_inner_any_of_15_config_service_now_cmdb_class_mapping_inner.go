@@ -24,7 +24,10 @@ type ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15ConfigServiceNowCmd
 	Code *string `json:"code,omitempty"`
 	Name *string `json:"name,omitempty"`
 	NowClass *string `json:"nowClass,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15ConfigServiceNowCmdbClassMappingInner ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15ConfigServiceNowCmdbClassMappingInner
 
 // NewListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15ConfigServiceNowCmdbClassMappingInner instantiates a new ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15ConfigServiceNowCmdbClassMappingInner object
 // This constructor will assign default values to properties that have it defined,
@@ -193,7 +196,36 @@ func (o ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15ConfigServiceNow
 	if !IsNil(o.NowClass) {
 		toSerialize["nowClass"] = o.NowClass
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15ConfigServiceNowCmdbClassMappingInner) UnmarshalJSON(data []byte) (err error) {
+	varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15ConfigServiceNowCmdbClassMappingInner := _ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15ConfigServiceNowCmdbClassMappingInner{}
+
+	err = json.Unmarshal(data, &varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15ConfigServiceNowCmdbClassMappingInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15ConfigServiceNowCmdbClassMappingInner(varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15ConfigServiceNowCmdbClassMappingInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "nowClass")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15ConfigServiceNowCmdbClassMappingInner struct {

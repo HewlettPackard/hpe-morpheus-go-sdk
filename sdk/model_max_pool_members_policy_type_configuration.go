@@ -21,7 +21,10 @@ var _ MappedNullable = &MaxPoolMembersPolicyTypeConfiguration{}
 // MaxPoolMembersPolicyTypeConfiguration Configuration settings for the following policy types: - Max Pool Members 
 type MaxPoolMembersPolicyTypeConfiguration struct {
 	MaxPoolMembers *string `json:"maxPoolMembers,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _MaxPoolMembersPolicyTypeConfiguration MaxPoolMembersPolicyTypeConfiguration
 
 // NewMaxPoolMembersPolicyTypeConfiguration instantiates a new MaxPoolMembersPolicyTypeConfiguration object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o MaxPoolMembersPolicyTypeConfiguration) ToMap() (map[string]interface{}, 
 	if !IsNil(o.MaxPoolMembers) {
 		toSerialize["maxPoolMembers"] = o.MaxPoolMembers
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *MaxPoolMembersPolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
+	varMaxPoolMembersPolicyTypeConfiguration := _MaxPoolMembersPolicyTypeConfiguration{}
+
+	err = json.Unmarshal(data, &varMaxPoolMembersPolicyTypeConfiguration)
+
+	if err != nil {
+		return err
+	}
+
+	*o = MaxPoolMembersPolicyTypeConfiguration(varMaxPoolMembersPolicyTypeConfiguration)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "maxPoolMembers")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableMaxPoolMembersPolicyTypeConfiguration struct {

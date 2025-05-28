@@ -21,7 +21,10 @@ var _ MappedNullable = &GetClusterMasters200Response{}
 // GetClusterMasters200Response struct for GetClusterMasters200Response
 type GetClusterMasters200Response struct {
 	Masters []GetClusterMasters200ResponseMastersInner `json:"masters,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetClusterMasters200Response GetClusterMasters200Response
 
 // NewGetClusterMasters200Response instantiates a new GetClusterMasters200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o GetClusterMasters200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Masters) {
 		toSerialize["masters"] = o.Masters
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetClusterMasters200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetClusterMasters200Response := _GetClusterMasters200Response{}
+
+	err = json.Unmarshal(data, &varGetClusterMasters200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetClusterMasters200Response(varGetClusterMasters200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "masters")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetClusterMasters200Response struct {

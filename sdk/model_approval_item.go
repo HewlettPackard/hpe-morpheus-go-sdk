@@ -21,7 +21,10 @@ var _ MappedNullable = &ApprovalItem{}
 // ApprovalItem struct for ApprovalItem
 type ApprovalItem struct {
 	ApprovalItem *GetApprovalsItem200ResponseApprovalItem `json:"approvalItem,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ApprovalItem ApprovalItem
 
 // NewApprovalItem instantiates a new ApprovalItem object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o ApprovalItem) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ApprovalItem) {
 		toSerialize["approvalItem"] = o.ApprovalItem
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ApprovalItem) UnmarshalJSON(data []byte) (err error) {
+	varApprovalItem := _ApprovalItem{}
+
+	err = json.Unmarshal(data, &varApprovalItem)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ApprovalItem(varApprovalItem)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "approvalItem")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableApprovalItem struct {

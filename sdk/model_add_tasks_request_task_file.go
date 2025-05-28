@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -31,6 +30,7 @@ type AddTasksRequestTaskFile struct {
 	// Content Ref, the branch/tag. Only used when sourceType is `repository`.
 	ContentRef *string `json:"contentRef,omitempty"`
 	Repository *AddTasksRequestTaskFileRepository `json:"repository,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddTasksRequestTaskFile AddTasksRequestTaskFile
@@ -230,6 +230,11 @@ func (o AddTasksRequestTaskFile) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Repository) {
 		toSerialize["repository"] = o.Repository
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -257,15 +262,24 @@ func (o *AddTasksRequestTaskFile) UnmarshalJSON(data []byte) (err error) {
 
 	varAddTasksRequestTaskFile := _AddTasksRequestTaskFile{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddTasksRequestTaskFile)
+	err = json.Unmarshal(data, &varAddTasksRequestTaskFile)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddTasksRequestTaskFile(varAddTasksRequestTaskFile)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "sourceType")
+		delete(additionalProperties, "content")
+		delete(additionalProperties, "contentPath")
+		delete(additionalProperties, "contentRef")
+		delete(additionalProperties, "repository")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

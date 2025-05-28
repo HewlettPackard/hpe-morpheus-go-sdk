@@ -22,7 +22,10 @@ var _ MappedNullable = &GetResourcePoolGroups200ResponseResourcePoolGroupsInnerR
 type GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner struct {
 	Id *int64 `json:"id,omitempty"`
 	Default *bool `json:"default,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner
 
 // NewGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner instantiates a new GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissio
 	if !IsNil(o.Default) {
 		toSerialize["default"] = o.Default
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner) UnmarshalJSON(data []byte) (err error) {
+	varGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner := _GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner{}
+
+	err = json.Unmarshal(data, &varGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner(varGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "default")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner struct {

@@ -21,7 +21,10 @@ var _ MappedNullable = &GetResourcePoolGroups200Response{}
 // GetResourcePoolGroups200Response struct for GetResourcePoolGroups200Response
 type GetResourcePoolGroups200Response struct {
 	ResourcePoolGroups []GetResourcePoolGroups200ResponseResourcePoolGroupsInner `json:"resourcePoolGroups,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetResourcePoolGroups200Response GetResourcePoolGroups200Response
 
 // NewGetResourcePoolGroups200Response instantiates a new GetResourcePoolGroups200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o GetResourcePoolGroups200Response) ToMap() (map[string]interface{}, error
 	if !IsNil(o.ResourcePoolGroups) {
 		toSerialize["resourcePoolGroups"] = o.ResourcePoolGroups
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetResourcePoolGroups200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetResourcePoolGroups200Response := _GetResourcePoolGroups200Response{}
+
+	err = json.Unmarshal(data, &varGetResourcePoolGroups200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetResourcePoolGroups200Response(varGetResourcePoolGroups200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "resourcePoolGroups")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetResourcePoolGroups200Response struct {

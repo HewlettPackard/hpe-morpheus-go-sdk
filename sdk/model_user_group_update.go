@@ -26,7 +26,10 @@ type UserGroupUpdate struct {
 	ServerGroup *string `json:"serverGroup,omitempty"`
 	// A list of IDs of users that are in the user group
 	Users []int64 `json:"users,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UserGroupUpdate UserGroupUpdate
 
 // NewUserGroupUpdate instantiates a new UserGroupUpdate object
 // This constructor will assign default values to properties that have it defined,
@@ -230,7 +233,37 @@ func (o UserGroupUpdate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Users) {
 		toSerialize["users"] = o.Users
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UserGroupUpdate) UnmarshalJSON(data []byte) (err error) {
+	varUserGroupUpdate := _UserGroupUpdate{}
+
+	err = json.Unmarshal(data, &varUserGroupUpdate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UserGroupUpdate(varUserGroupUpdate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "sudoUser")
+		delete(additionalProperties, "serverGroup")
+		delete(additionalProperties, "users")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUserGroupUpdate struct {

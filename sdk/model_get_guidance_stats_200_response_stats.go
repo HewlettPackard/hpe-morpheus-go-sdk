@@ -24,7 +24,10 @@ type GetGuidanceStats200ResponseStats struct {
 	Savings *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfSavings `json:"savings,omitempty"`
 	Severity *GetGuidanceStats200ResponseStatsSeverity `json:"severity,omitempty"`
 	Type *GetGuidanceStats200ResponseStatsType `json:"type,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetGuidanceStats200ResponseStats GetGuidanceStats200ResponseStats
 
 // NewGetGuidanceStats200ResponseStats instantiates a new GetGuidanceStats200ResponseStats object
 // This constructor will assign default values to properties that have it defined,
@@ -193,7 +196,36 @@ func (o GetGuidanceStats200ResponseStats) ToMap() (map[string]interface{}, error
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetGuidanceStats200ResponseStats) UnmarshalJSON(data []byte) (err error) {
+	varGetGuidanceStats200ResponseStats := _GetGuidanceStats200ResponseStats{}
+
+	err = json.Unmarshal(data, &varGetGuidanceStats200ResponseStats)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetGuidanceStats200ResponseStats(varGetGuidanceStats200ResponseStats)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "total")
+		delete(additionalProperties, "savings")
+		delete(additionalProperties, "severity")
+		delete(additionalProperties, "type")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetGuidanceStats200ResponseStats struct {

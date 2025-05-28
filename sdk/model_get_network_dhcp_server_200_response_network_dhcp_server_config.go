@@ -23,7 +23,10 @@ type GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig struct {
 	EdgeCluster *string `json:"edgeCluster,omitempty"`
 	PreferredEdgeNode1 *string `json:"preferredEdgeNode1,omitempty"`
 	PreferredEdgeNode2 *string `json:"preferredEdgeNode2,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig
 
 // NewGetNetworkDhcpServer200ResponseNetworkDhcpServerConfig instantiates a new GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig) ToMap() (map[str
 	if !IsNil(o.PreferredEdgeNode2) {
 		toSerialize["preferredEdgeNode2"] = o.PreferredEdgeNode2
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig) UnmarshalJSON(data []byte) (err error) {
+	varGetNetworkDhcpServer200ResponseNetworkDhcpServerConfig := _GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig{}
+
+	err = json.Unmarshal(data, &varGetNetworkDhcpServer200ResponseNetworkDhcpServerConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig(varGetNetworkDhcpServer200ResponseNetworkDhcpServerConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "edgeCluster")
+		delete(additionalProperties, "preferredEdgeNode1")
+		delete(additionalProperties, "preferredEdgeNode2")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetNetworkDhcpServer200ResponseNetworkDhcpServerConfig struct {

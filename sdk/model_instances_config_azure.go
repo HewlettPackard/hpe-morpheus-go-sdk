@@ -38,7 +38,10 @@ type InstancesConfigAzure struct {
 	DiagnosticsStorageAccount *string `json:"diagnosticsStorageAccount,omitempty"`
 	// Create User
 	CreateUser *bool `json:"createUser,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _InstancesConfigAzure InstancesConfigAzure
 
 // NewInstancesConfigAzure instantiates a new InstancesConfigAzure object
 // This constructor will assign default values to properties that have it defined,
@@ -386,7 +389,41 @@ func (o InstancesConfigAzure) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CreateUser) {
 		toSerialize["createUser"] = o.CreateUser
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *InstancesConfigAzure) UnmarshalJSON(data []byte) (err error) {
+	varInstancesConfigAzure := _InstancesConfigAzure{}
+
+	err = json.Unmarshal(data, &varInstancesConfigAzure)
+
+	if err != nil {
+		return err
+	}
+
+	*o = InstancesConfigAzure(varInstancesConfigAzure)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "resourcePoolId")
+		delete(additionalProperties, "availabilityOptions")
+		delete(additionalProperties, "availabilitySet")
+		delete(additionalProperties, "availabilityZone")
+		delete(additionalProperties, "azurefloatingIp")
+		delete(additionalProperties, "bootDiagnostics")
+		delete(additionalProperties, "osGuestDiagnostics")
+		delete(additionalProperties, "diagnosticsStorageAccount")
+		delete(additionalProperties, "createUser")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableInstancesConfigAzure struct {

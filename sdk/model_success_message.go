@@ -22,7 +22,10 @@ var _ MappedNullable = &SuccessMessage{}
 type SuccessMessage struct {
 	Success *bool `json:"success,omitempty"`
 	Msg *string `json:"msg,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _SuccessMessage SuccessMessage
 
 // NewSuccessMessage instantiates a new SuccessMessage object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o SuccessMessage) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Msg) {
 		toSerialize["msg"] = o.Msg
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *SuccessMessage) UnmarshalJSON(data []byte) (err error) {
+	varSuccessMessage := _SuccessMessage{}
+
+	err = json.Unmarshal(data, &varSuccessMessage)
+
+	if err != nil {
+		return err
+	}
+
+	*o = SuccessMessage(varSuccessMessage)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "success")
+		delete(additionalProperties, "msg")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableSuccessMessage struct {

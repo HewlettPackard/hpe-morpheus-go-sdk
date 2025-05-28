@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -23,6 +22,7 @@ var _ MappedNullable = &UpdateInstanceThresholdRequest{}
 // UpdateInstanceThresholdRequest struct for UpdateInstanceThresholdRequest
 type UpdateInstanceThresholdRequest struct {
 	InstanceThreshold UpdateInstanceThresholdRequestInstanceThreshold `json:"instanceThreshold"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateInstanceThresholdRequest UpdateInstanceThresholdRequest
@@ -80,6 +80,11 @@ func (o UpdateInstanceThresholdRequest) MarshalJSON() ([]byte, error) {
 func (o UpdateInstanceThresholdRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["instanceThreshold"] = o.InstanceThreshold
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -107,15 +112,20 @@ func (o *UpdateInstanceThresholdRequest) UnmarshalJSON(data []byte) (err error) 
 
 	varUpdateInstanceThresholdRequest := _UpdateInstanceThresholdRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varUpdateInstanceThresholdRequest)
+	err = json.Unmarshal(data, &varUpdateInstanceThresholdRequest)
 
 	if err != nil {
 		return err
 	}
 
 	*o = UpdateInstanceThresholdRequest(varUpdateInstanceThresholdRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "instanceThreshold")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

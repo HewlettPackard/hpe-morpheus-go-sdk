@@ -24,7 +24,10 @@ type PhpIPAMNetworkPoolServerUpdateConfig struct {
 	AppId *string `json:"appId,omitempty"`
 	// Inventory Existing
 	InventoryExisting *string `json:"inventoryExisting,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _PhpIPAMNetworkPoolServerUpdateConfig PhpIPAMNetworkPoolServerUpdateConfig
 
 // NewPhpIPAMNetworkPoolServerUpdateConfig instantiates a new PhpIPAMNetworkPoolServerUpdateConfig object
 // This constructor will assign default values to properties that have it defined,
@@ -127,7 +130,34 @@ func (o PhpIPAMNetworkPoolServerUpdateConfig) ToMap() (map[string]interface{}, e
 	if !IsNil(o.InventoryExisting) {
 		toSerialize["inventoryExisting"] = o.InventoryExisting
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *PhpIPAMNetworkPoolServerUpdateConfig) UnmarshalJSON(data []byte) (err error) {
+	varPhpIPAMNetworkPoolServerUpdateConfig := _PhpIPAMNetworkPoolServerUpdateConfig{}
+
+	err = json.Unmarshal(data, &varPhpIPAMNetworkPoolServerUpdateConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = PhpIPAMNetworkPoolServerUpdateConfig(varPhpIPAMNetworkPoolServerUpdateConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "appId")
+		delete(additionalProperties, "inventoryExisting")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullablePhpIPAMNetworkPoolServerUpdateConfig struct {

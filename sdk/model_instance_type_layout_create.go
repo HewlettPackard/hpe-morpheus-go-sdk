@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -50,6 +49,7 @@ type InstanceTypeLayoutCreate struct {
 	// Array of price set objects
 	PriceSets []AddInstanceTypeRequestInstanceTypePriceSetsInner `json:"priceSets,omitempty"`
 	Permissions *AddLayoutRequestInstanceTypeLayoutPermissions `json:"permissions,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _InstanceTypeLayoutCreate InstanceTypeLayoutCreate
@@ -591,6 +591,11 @@ func (o InstanceTypeLayoutCreate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Permissions) {
 		toSerialize["permissions"] = o.Permissions
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -620,15 +625,34 @@ func (o *InstanceTypeLayoutCreate) UnmarshalJSON(data []byte) (err error) {
 
 	varInstanceTypeLayoutCreate := _InstanceTypeLayoutCreate{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varInstanceTypeLayoutCreate)
+	err = json.Unmarshal(data, &varInstanceTypeLayoutCreate)
 
 	if err != nil {
 		return err
 	}
 
 	*o = InstanceTypeLayoutCreate(varInstanceTypeLayoutCreate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "instanceVersion")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "creatable")
+		delete(additionalProperties, "provisionTypeCode")
+		delete(additionalProperties, "memoryRequirement")
+		delete(additionalProperties, "hasAutoScale")
+		delete(additionalProperties, "supportsConvertToManaged")
+		delete(additionalProperties, "containerTypes")
+		delete(additionalProperties, "optionTypes")
+		delete(additionalProperties, "specTemplates")
+		delete(additionalProperties, "environmentVariables")
+		delete(additionalProperties, "priceSets")
+		delete(additionalProperties, "permissions")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

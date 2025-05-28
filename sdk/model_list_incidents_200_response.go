@@ -23,7 +23,10 @@ type ListIncidents200Response struct {
 	Incidents []GetCheckApps200ResponseOpenIncidentsInner `json:"incidents,omitempty"`
 	Issues []ListIncidents200ResponseAllOfIssuesInner `json:"issues,omitempty"`
 	Meta *ListActivity200ResponseAllOfMeta `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListIncidents200Response ListIncidents200Response
 
 // NewListIncidents200Response instantiates a new ListIncidents200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o ListIncidents200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Meta) {
 		toSerialize["meta"] = o.Meta
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListIncidents200Response) UnmarshalJSON(data []byte) (err error) {
+	varListIncidents200Response := _ListIncidents200Response{}
+
+	err = json.Unmarshal(data, &varListIncidents200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListIncidents200Response(varListIncidents200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "incidents")
+		delete(additionalProperties, "issues")
+		delete(additionalProperties, "meta")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListIncidents200Response struct {

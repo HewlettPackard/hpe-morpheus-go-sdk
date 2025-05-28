@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -24,6 +23,7 @@ var _ MappedNullable = &AssignDeviceRequest{}
 type AssignDeviceRequest struct {
 	// Target Server (VM) ID
 	TargetServerId int64 `json:"targetServerId"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AssignDeviceRequest AssignDeviceRequest
@@ -81,6 +81,11 @@ func (o AssignDeviceRequest) MarshalJSON() ([]byte, error) {
 func (o AssignDeviceRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["targetServerId"] = o.TargetServerId
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -108,15 +113,20 @@ func (o *AssignDeviceRequest) UnmarshalJSON(data []byte) (err error) {
 
 	varAssignDeviceRequest := _AssignDeviceRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAssignDeviceRequest)
+	err = json.Unmarshal(data, &varAssignDeviceRequest)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AssignDeviceRequest(varAssignDeviceRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "targetServerId")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

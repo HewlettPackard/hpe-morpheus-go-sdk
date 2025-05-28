@@ -28,7 +28,10 @@ type GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsag
 	Price *float32 `json:"price,omitempty"`
 	Currency *string `json:"currency,omitempty"`
 	Prices []GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInnerApplicablePricesInnerPricesInner `json:"prices,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInnerApplicablePricesInner GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInnerApplicablePricesInner
 
 // NewGetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInnerApplicablePricesInner instantiates a new GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInnerApplicablePricesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -302,7 +305,39 @@ func (o GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerU
 	if !IsNil(o.Prices) {
 		toSerialize["prices"] = o.Prices
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInnerApplicablePricesInner) UnmarshalJSON(data []byte) (err error) {
+	varGetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInnerApplicablePricesInner := _GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInnerApplicablePricesInner{}
+
+	err = json.Unmarshal(data, &varGetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInnerApplicablePricesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInnerApplicablePricesInner(varGetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInnerApplicablePricesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "startDate")
+		delete(additionalProperties, "endDate")
+		delete(additionalProperties, "numUnits")
+		delete(additionalProperties, "cost")
+		delete(additionalProperties, "price")
+		delete(additionalProperties, "currency")
+		delete(additionalProperties, "prices")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInnerApplicablePricesInner struct {

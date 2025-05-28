@@ -48,7 +48,10 @@ type ListInstanceServicePlans200ResponsePlansInnerStorageTypesInner struct {
 	VolumeCategory *string `json:"volumeCategory,omitempty"`
 	ExternalId *string `json:"externalId,omitempty"`
 	MaxStorage *string `json:"maxStorage,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListInstanceServicePlans200ResponsePlansInnerStorageTypesInner ListInstanceServicePlans200ResponsePlansInnerStorageTypesInner
 
 // NewListInstanceServicePlans200ResponsePlansInnerStorageTypesInner instantiates a new ListInstanceServicePlans200ResponsePlansInnerStorageTypesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -1057,7 +1060,60 @@ func (o ListInstanceServicePlans200ResponsePlansInnerStorageTypesInner) ToMap() 
 	if !IsNil(o.MaxStorage) {
 		toSerialize["maxStorage"] = o.MaxStorage
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListInstanceServicePlans200ResponsePlansInnerStorageTypesInner) UnmarshalJSON(data []byte) (err error) {
+	varListInstanceServicePlans200ResponsePlansInnerStorageTypesInner := _ListInstanceServicePlans200ResponsePlansInnerStorageTypesInner{}
+
+	err = json.Unmarshal(data, &varListInstanceServicePlans200ResponsePlansInnerStorageTypesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListInstanceServicePlans200ResponsePlansInnerStorageTypesInner(varListInstanceServicePlans200ResponsePlansInnerStorageTypesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "editable")
+		delete(additionalProperties, "optionTypes")
+		delete(additionalProperties, "displayOrder")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "volumeType")
+		delete(additionalProperties, "minStorage")
+		delete(additionalProperties, "deletable")
+		delete(additionalProperties, "defaultType")
+		delete(additionalProperties, "createDatastore")
+		delete(additionalProperties, "resizable")
+		delete(additionalProperties, "storageType")
+		delete(additionalProperties, "allowSearch")
+		delete(additionalProperties, "volumeOptionSource")
+		delete(additionalProperties, "displayName")
+		delete(additionalProperties, "minIOPS")
+		delete(additionalProperties, "maxIOPS")
+		delete(additionalProperties, "hasDatastore")
+		delete(additionalProperties, "customSize")
+		delete(additionalProperties, "autoDelete")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "configurableIOPS")
+		delete(additionalProperties, "customLabel")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "volumeCategory")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "maxStorage")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListInstanceServicePlans200ResponsePlansInnerStorageTypesInner struct {

@@ -35,7 +35,10 @@ type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceVolumesInner stru
 	DisplayOrder *int64 `json:"displayOrder,omitempty"`
 	MaxIOPS *string `json:"maxIOPS,omitempty"`
 	Uuid *string `json:"uuid,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceVolumesInner ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceVolumesInner
 
 // NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceVolumesInner instantiates a new ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceVolumesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -589,7 +592,47 @@ func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceVolumesInner) 
 	if !IsNil(o.Uuid) {
 		toSerialize["uuid"] = o.Uuid
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceVolumesInner) UnmarshalJSON(data []byte) (err error) {
+	varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceVolumesInner := _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceVolumesInner{}
+
+	err = json.Unmarshal(data, &varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceVolumesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceVolumesInner(varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceVolumesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "controllerId")
+		delete(additionalProperties, "controllerMountPoint")
+		delete(additionalProperties, "resizeable")
+		delete(additionalProperties, "planResizable")
+		delete(additionalProperties, "rootVolume")
+		delete(additionalProperties, "unitNumber")
+		delete(additionalProperties, "typeId")
+		delete(additionalProperties, "configurableIOPS")
+		delete(additionalProperties, "datastoreId")
+		delete(additionalProperties, "maxStorage")
+		delete(additionalProperties, "displayOrder")
+		delete(additionalProperties, "maxIOPS")
+		delete(additionalProperties, "uuid")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceVolumesInner struct {

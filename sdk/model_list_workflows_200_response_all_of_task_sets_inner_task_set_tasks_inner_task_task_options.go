@@ -29,7 +29,10 @@ type ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptions 
 	Password *string `json:"password,omitempty"`
 	PasswordHash *string `json:"passwordHash,omitempty"`
 	ShellSudo *string `json:"shell.sudo,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptions ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptions
 
 // NewListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptions instantiates a new ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptions object
 // This constructor will assign default values to properties that have it defined,
@@ -373,7 +376,41 @@ func (o ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptio
 	if !IsNil(o.ShellSudo) {
 		toSerialize["shell.sudo"] = o.ShellSudo
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptions) UnmarshalJSON(data []byte) (err error) {
+	varListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptions := _ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptions{}
+
+	err = json.Unmarshal(data, &varListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptions)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptions(varListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptions)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "localScriptGitRef")
+		delete(additionalProperties, "username")
+		delete(additionalProperties, "localScriptGitId")
+		delete(additionalProperties, "host")
+		delete(additionalProperties, "sshKey")
+		delete(additionalProperties, "port")
+		delete(additionalProperties, "password")
+		delete(additionalProperties, "passwordHash")
+		delete(additionalProperties, "shell.sudo")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptions struct {

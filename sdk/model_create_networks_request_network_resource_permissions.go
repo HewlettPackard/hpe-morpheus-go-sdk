@@ -24,7 +24,10 @@ type CreateNetworksRequestNetworkResourcePermissions struct {
 	All *bool `json:"all,omitempty"`
 	// Array of groups that are allowed access
 	Sites []int64 `json:"sites,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _CreateNetworksRequestNetworkResourcePermissions CreateNetworksRequestNetworkResourcePermissions
 
 // NewCreateNetworksRequestNetworkResourcePermissions instantiates a new CreateNetworksRequestNetworkResourcePermissions object
 // This constructor will assign default values to properties that have it defined,
@@ -123,7 +126,34 @@ func (o CreateNetworksRequestNetworkResourcePermissions) ToMap() (map[string]int
 	if !IsNil(o.Sites) {
 		toSerialize["sites"] = o.Sites
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *CreateNetworksRequestNetworkResourcePermissions) UnmarshalJSON(data []byte) (err error) {
+	varCreateNetworksRequestNetworkResourcePermissions := _CreateNetworksRequestNetworkResourcePermissions{}
+
+	err = json.Unmarshal(data, &varCreateNetworksRequestNetworkResourcePermissions)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CreateNetworksRequestNetworkResourcePermissions(varCreateNetworksRequestNetworkResourcePermissions)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "all")
+		delete(additionalProperties, "sites")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCreateNetworksRequestNetworkResourcePermissions struct {

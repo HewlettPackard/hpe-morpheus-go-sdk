@@ -29,7 +29,10 @@ type UpdateVDIAppsRequestVdiAppOneOf struct {
 	IconPath **os.File `json:"iconPath,omitempty"`
 	// The RDS App Name Prefix.  Must start with '||'
 	LaunchPrefix *string `json:"launchPrefix,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateVDIAppsRequestVdiAppOneOf UpdateVDIAppsRequestVdiAppOneOf
 
 // NewUpdateVDIAppsRequestVdiAppOneOf instantiates a new UpdateVDIAppsRequestVdiAppOneOf object
 // This constructor will assign default values to properties that have it defined,
@@ -198,7 +201,36 @@ func (o UpdateVDIAppsRequestVdiAppOneOf) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.LaunchPrefix) {
 		toSerialize["launchPrefix"] = o.LaunchPrefix
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateVDIAppsRequestVdiAppOneOf) UnmarshalJSON(data []byte) (err error) {
+	varUpdateVDIAppsRequestVdiAppOneOf := _UpdateVDIAppsRequestVdiAppOneOf{}
+
+	err = json.Unmarshal(data, &varUpdateVDIAppsRequestVdiAppOneOf)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateVDIAppsRequestVdiAppOneOf(varUpdateVDIAppsRequestVdiAppOneOf)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "iconPath")
+		delete(additionalProperties, "launchPrefix")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateVDIAppsRequestVdiAppOneOf struct {

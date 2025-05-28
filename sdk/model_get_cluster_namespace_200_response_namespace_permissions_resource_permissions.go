@@ -31,7 +31,10 @@ type GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions struc
 	Account *GetAlerts200ResponseAllOfChecksInnerAccount `json:"account,omitempty"`
 	Sites []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner `json:"sites,omitempty"`
 	Plans []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner `json:"plans,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions
 
 // NewGetClusterNamespace200ResponseNamespacePermissionsResourcePermissions instantiates a new GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions object
 // This constructor will assign default values to properties that have it defined,
@@ -445,7 +448,43 @@ func (o GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) T
 	if !IsNil(o.Plans) {
 		toSerialize["plans"] = o.Plans
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) UnmarshalJSON(data []byte) (err error) {
+	varGetClusterNamespace200ResponseNamespacePermissionsResourcePermissions := _GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions{}
+
+	err = json.Unmarshal(data, &varGetClusterNamespace200ResponseNamespacePermissionsResourcePermissions)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions(varGetClusterNamespace200ResponseNamespacePermissionsResourcePermissions)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "allGroups")
+		delete(additionalProperties, "defaultStore")
+		delete(additionalProperties, "allPlans")
+		delete(additionalProperties, "defaultTarget")
+		delete(additionalProperties, "morpheusResourceType")
+		delete(additionalProperties, "morpheusResourceId")
+		delete(additionalProperties, "canManage")
+		delete(additionalProperties, "all")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "sites")
+		delete(additionalProperties, "plans")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetClusterNamespace200ResponseNamespacePermissionsResourcePermissions struct {

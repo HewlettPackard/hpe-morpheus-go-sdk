@@ -21,7 +21,10 @@ var _ MappedNullable = &GetCloudResourcePools200Response{}
 // GetCloudResourcePools200Response struct for GetCloudResourcePools200Response
 type GetCloudResourcePools200Response struct {
 	ResourcePool *GetCloudResourcePools200ResponseAllOfResourcePool `json:"resourcePool,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetCloudResourcePools200Response GetCloudResourcePools200Response
 
 // NewGetCloudResourcePools200Response instantiates a new GetCloudResourcePools200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o GetCloudResourcePools200Response) ToMap() (map[string]interface{}, error
 	if !IsNil(o.ResourcePool) {
 		toSerialize["resourcePool"] = o.ResourcePool
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetCloudResourcePools200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetCloudResourcePools200Response := _GetCloudResourcePools200Response{}
+
+	err = json.Unmarshal(data, &varGetCloudResourcePools200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetCloudResourcePools200Response(varGetCloudResourcePools200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "resourcePool")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetCloudResourcePools200Response struct {

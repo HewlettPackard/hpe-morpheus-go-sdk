@@ -27,7 +27,10 @@ type SpecTemplateUpdate struct {
 	Type *UpdateSpecTemplateRequestSpecTemplateType `json:"type,omitempty"`
 	File *UpdateSpecTemplateRequestSpecTemplateFile `json:"file,omitempty"`
 	Config *UpdateSpecTemplateRequestSpecTemplateConfig `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _SpecTemplateUpdate SpecTemplateUpdate
 
 // NewSpecTemplateUpdate instantiates a new SpecTemplateUpdate object
 // This constructor will assign default values to properties that have it defined,
@@ -231,7 +234,37 @@ func (o SpecTemplateUpdate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *SpecTemplateUpdate) UnmarshalJSON(data []byte) (err error) {
+	varSpecTemplateUpdate := _SpecTemplateUpdate{}
+
+	err = json.Unmarshal(data, &varSpecTemplateUpdate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = SpecTemplateUpdate(varSpecTemplateUpdate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "file")
+		delete(additionalProperties, "config")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableSpecTemplateUpdate struct {

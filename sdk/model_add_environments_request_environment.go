@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -32,6 +31,7 @@ type AddEnvironmentsRequestEnvironment struct {
 	Visibility *string `json:"visibility,omitempty"`
 	// Sort order
 	SortOrder *int64 `json:"sortOrder,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddEnvironmentsRequestEnvironment AddEnvironmentsRequestEnvironment
@@ -228,6 +228,11 @@ func (o AddEnvironmentsRequestEnvironment) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.SortOrder) {
 		toSerialize["sortOrder"] = o.SortOrder
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -256,15 +261,24 @@ func (o *AddEnvironmentsRequestEnvironment) UnmarshalJSON(data []byte) (err erro
 
 	varAddEnvironmentsRequestEnvironment := _AddEnvironmentsRequestEnvironment{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddEnvironmentsRequestEnvironment)
+	err = json.Unmarshal(data, &varAddEnvironmentsRequestEnvironment)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddEnvironmentsRequestEnvironment(varAddEnvironmentsRequestEnvironment)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "sortOrder")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

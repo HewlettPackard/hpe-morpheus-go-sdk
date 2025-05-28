@@ -21,7 +21,10 @@ var _ MappedNullable = &GetClusterNamespace200ResponseNamespacePermissions{}
 // GetClusterNamespace200ResponseNamespacePermissions struct for GetClusterNamespace200ResponseNamespacePermissions
 type GetClusterNamespace200ResponseNamespacePermissions struct {
 	ResourcePermissions *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions `json:"resourcePermissions,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetClusterNamespace200ResponseNamespacePermissions GetClusterNamespace200ResponseNamespacePermissions
 
 // NewGetClusterNamespace200ResponseNamespacePermissions instantiates a new GetClusterNamespace200ResponseNamespacePermissions object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o GetClusterNamespace200ResponseNamespacePermissions) ToMap() (map[string]
 	if !IsNil(o.ResourcePermissions) {
 		toSerialize["resourcePermissions"] = o.ResourcePermissions
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetClusterNamespace200ResponseNamespacePermissions) UnmarshalJSON(data []byte) (err error) {
+	varGetClusterNamespace200ResponseNamespacePermissions := _GetClusterNamespace200ResponseNamespacePermissions{}
+
+	err = json.Unmarshal(data, &varGetClusterNamespace200ResponseNamespacePermissions)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetClusterNamespace200ResponseNamespacePermissions(varGetClusterNamespace200ResponseNamespacePermissions)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "resourcePermissions")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetClusterNamespace200ResponseNamespacePermissions struct {

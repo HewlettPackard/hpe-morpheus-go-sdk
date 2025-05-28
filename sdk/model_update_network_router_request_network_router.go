@@ -28,7 +28,10 @@ type UpdateNetworkRouterRequestNetworkRouter struct {
 	Enabled *bool `json:"enabled,omitempty"`
 	Zone *UpdateNetworkRouterRequestNetworkRouterZone `json:"zone,omitempty"`
 	NetworkServer *UpdateNetworkRouterRequestNetworkRouterNetworkServer `json:"networkServer,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateNetworkRouterRequestNetworkRouter UpdateNetworkRouterRequestNetworkRouter
 
 // NewUpdateNetworkRouterRequestNetworkRouter instantiates a new UpdateNetworkRouterRequestNetworkRouter object
 // This constructor will assign default values to properties that have it defined,
@@ -267,7 +270,38 @@ func (o UpdateNetworkRouterRequestNetworkRouter) ToMap() (map[string]interface{}
 	if !IsNil(o.NetworkServer) {
 		toSerialize["networkServer"] = o.NetworkServer
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateNetworkRouterRequestNetworkRouter) UnmarshalJSON(data []byte) (err error) {
+	varUpdateNetworkRouterRequestNetworkRouter := _UpdateNetworkRouterRequestNetworkRouter{}
+
+	err = json.Unmarshal(data, &varUpdateNetworkRouterRequestNetworkRouter)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateNetworkRouterRequestNetworkRouter(varUpdateNetworkRouterRequestNetworkRouter)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "site")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "zone")
+		delete(additionalProperties, "networkServer")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateNetworkRouterRequestNetworkRouter struct {

@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -56,6 +55,7 @@ type CatalogItemTypeInstanceCreate struct {
 	OptionTypes []int64 `json:"optionTypes,omitempty"`
 	// Documentation content for this Catalog Item. Markdown-formatted text is accepted and displayed appropriately when the item is ordered from the Service Catalog. A new Catalog Item-type Wiki entry will also be added containing this information.
 	Content *string `json:"content,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _CatalogItemTypeInstanceCreate CatalogItemTypeInstanceCreate
@@ -728,6 +728,11 @@ func (o CatalogItemTypeInstanceCreate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Content) {
 		toSerialize["content"] = o.Content
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -755,15 +760,37 @@ func (o *CatalogItemTypeInstanceCreate) UnmarshalJSON(data []byte) (err error) {
 
 	varCatalogItemTypeInstanceCreate := _CatalogItemTypeInstanceCreate{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varCatalogItemTypeInstanceCreate)
+	err = json.Unmarshal(data, &varCatalogItemTypeInstanceCreate)
 
 	if err != nil {
 		return err
 	}
 
 	*o = CatalogItemTypeInstanceCreate(varCatalogItemTypeInstanceCreate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "layoutCode")
+		delete(additionalProperties, "iconPath")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "featured")
+		delete(additionalProperties, "allowQuantity")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "instanceSpec")
+		delete(additionalProperties, "formType")
+		delete(additionalProperties, "form")
+		delete(additionalProperties, "optionTypes")
+		delete(additionalProperties, "content")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

@@ -46,7 +46,10 @@ type ListLoadBalancers200ResponseAllOfLoadBalancersInner struct {
 	Credential *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential `json:"credential,omitempty"`
 	Tenants []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"tenants,omitempty"`
 	ResourcePermission *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission `json:"resourcePermission,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListLoadBalancers200ResponseAllOfLoadBalancersInner ListLoadBalancers200ResponseAllOfLoadBalancersInner
 
 // NewListLoadBalancers200ResponseAllOfLoadBalancersInner instantiates a new ListLoadBalancers200ResponseAllOfLoadBalancersInner object
 // This constructor will assign default values to properties that have it defined,
@@ -950,7 +953,57 @@ func (o ListLoadBalancers200ResponseAllOfLoadBalancersInner) ToMap() (map[string
 	if !IsNil(o.ResourcePermission) {
 		toSerialize["resourcePermission"] = o.ResourcePermission
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) UnmarshalJSON(data []byte) (err error) {
+	varListLoadBalancers200ResponseAllOfLoadBalancersInner := _ListLoadBalancers200ResponseAllOfLoadBalancersInner{}
+
+	err = json.Unmarshal(data, &varListLoadBalancers200ResponseAllOfLoadBalancersInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListLoadBalancers200ResponseAllOfLoadBalancersInner(varListLoadBalancers200ResponseAllOfLoadBalancersInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "uuid")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "cloud")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "owner")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "host")
+		delete(additionalProperties, "port")
+		delete(additionalProperties, "username")
+		delete(additionalProperties, "ip")
+		delete(additionalProperties, "internalIp")
+		delete(additionalProperties, "externalIp")
+		delete(additionalProperties, "apiPort")
+		delete(additionalProperties, "adminPort")
+		delete(additionalProperties, "sslEnabled")
+		delete(additionalProperties, "sslCert")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "credential")
+		delete(additionalProperties, "tenants")
+		delete(additionalProperties, "resourcePermission")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListLoadBalancers200ResponseAllOfLoadBalancersInner struct {

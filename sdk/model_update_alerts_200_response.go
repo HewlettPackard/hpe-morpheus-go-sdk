@@ -22,7 +22,10 @@ var _ MappedNullable = &UpdateAlerts200Response{}
 type UpdateAlerts200Response struct {
 	Success *bool `json:"success,omitempty"`
 	Alert *ListAlerts200ResponseAllOfAlertsInner `json:"alert,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateAlerts200Response UpdateAlerts200Response
 
 // NewUpdateAlerts200Response instantiates a new UpdateAlerts200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o UpdateAlerts200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Alert) {
 		toSerialize["alert"] = o.Alert
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateAlerts200Response) UnmarshalJSON(data []byte) (err error) {
+	varUpdateAlerts200Response := _UpdateAlerts200Response{}
+
+	err = json.Unmarshal(data, &varUpdateAlerts200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateAlerts200Response(varUpdateAlerts200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "success")
+		delete(additionalProperties, "alert")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateAlerts200Response struct {

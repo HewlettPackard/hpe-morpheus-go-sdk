@@ -28,7 +28,10 @@ type Client struct {
 	AuthorizedGrantTypes []string `json:"authorizedGrantTypes,omitempty"`
 	Scopes []string `json:"scopes,omitempty"`
 	RedirectUris []string `json:"redirectUris,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _Client Client
 
 // NewClient instantiates a new Client object
 // This constructor will assign default values to properties that have it defined,
@@ -337,7 +340,40 @@ func (o Client) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.RedirectUris) {
 		toSerialize["redirectUris"] = o.RedirectUris
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *Client) UnmarshalJSON(data []byte) (err error) {
+	varClient := _Client{}
+
+	err = json.Unmarshal(data, &varClient)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Client(varClient)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "clientId")
+		delete(additionalProperties, "accessTokenValiditySeconds")
+		delete(additionalProperties, "refreshTokenValiditySeconds")
+		delete(additionalProperties, "authorities")
+		delete(additionalProperties, "authorizedGrantTypes")
+		delete(additionalProperties, "scopes")
+		delete(additionalProperties, "redirectUris")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableClient struct {

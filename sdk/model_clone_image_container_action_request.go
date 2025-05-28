@@ -24,7 +24,10 @@ type CloneImageContainerActionRequest struct {
 	TemplateName *string `json:"templateName,omitempty"`
 	// Zone Folder externalId. This is required for VMware
 	ZoneFolder *string `json:"zoneFolder,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _CloneImageContainerActionRequest CloneImageContainerActionRequest
 
 // NewCloneImageContainerActionRequest instantiates a new CloneImageContainerActionRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -127,7 +130,34 @@ func (o CloneImageContainerActionRequest) ToMap() (map[string]interface{}, error
 	if !IsNil(o.ZoneFolder) {
 		toSerialize["zoneFolder"] = o.ZoneFolder
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *CloneImageContainerActionRequest) UnmarshalJSON(data []byte) (err error) {
+	varCloneImageContainerActionRequest := _CloneImageContainerActionRequest{}
+
+	err = json.Unmarshal(data, &varCloneImageContainerActionRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CloneImageContainerActionRequest(varCloneImageContainerActionRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "templateName")
+		delete(additionalProperties, "zoneFolder")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCloneImageContainerActionRequest struct {

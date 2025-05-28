@@ -21,7 +21,10 @@ var _ MappedNullable = &UpdateNetworkRouterNatRequestNetworkRouterNAT{}
 // UpdateNetworkRouterNatRequestNetworkRouterNAT For a full list of available NAT options, see natOptionTypes in the specific Network Router Type
 type UpdateNetworkRouterNatRequestNetworkRouterNAT struct {
 	Name interface{} `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateNetworkRouterNatRequestNetworkRouterNAT UpdateNetworkRouterNatRequestNetworkRouterNAT
 
 // NewUpdateNetworkRouterNatRequestNetworkRouterNAT instantiates a new UpdateNetworkRouterNatRequestNetworkRouterNAT object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o UpdateNetworkRouterNatRequestNetworkRouterNAT) ToMap() (map[string]inter
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateNetworkRouterNatRequestNetworkRouterNAT) UnmarshalJSON(data []byte) (err error) {
+	varUpdateNetworkRouterNatRequestNetworkRouterNAT := _UpdateNetworkRouterNatRequestNetworkRouterNAT{}
+
+	err = json.Unmarshal(data, &varUpdateNetworkRouterNatRequestNetworkRouterNAT)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateNetworkRouterNatRequestNetworkRouterNAT(varUpdateNetworkRouterNatRequestNetworkRouterNAT)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateNetworkRouterNatRequestNetworkRouterNAT struct {

@@ -24,7 +24,10 @@ type GetGuidanceStats200ResponseStatsSeverity struct {
 	Info *int64 `json:"info,omitempty"`
 	Warning *int64 `json:"warning,omitempty"`
 	Critical *int64 `json:"critical,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetGuidanceStats200ResponseStatsSeverity GetGuidanceStats200ResponseStatsSeverity
 
 // NewGetGuidanceStats200ResponseStatsSeverity instantiates a new GetGuidanceStats200ResponseStatsSeverity object
 // This constructor will assign default values to properties that have it defined,
@@ -193,7 +196,36 @@ func (o GetGuidanceStats200ResponseStatsSeverity) ToMap() (map[string]interface{
 	if !IsNil(o.Critical) {
 		toSerialize["critical"] = o.Critical
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetGuidanceStats200ResponseStatsSeverity) UnmarshalJSON(data []byte) (err error) {
+	varGetGuidanceStats200ResponseStatsSeverity := _GetGuidanceStats200ResponseStatsSeverity{}
+
+	err = json.Unmarshal(data, &varGetGuidanceStats200ResponseStatsSeverity)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetGuidanceStats200ResponseStatsSeverity(varGetGuidanceStats200ResponseStatsSeverity)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "low")
+		delete(additionalProperties, "info")
+		delete(additionalProperties, "warning")
+		delete(additionalProperties, "critical")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetGuidanceStats200ResponseStatsSeverity struct {

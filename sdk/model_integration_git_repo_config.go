@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -23,6 +22,7 @@ var _ MappedNullable = &IntegrationGitRepoConfig{}
 // IntegrationGitRepoConfig struct for IntegrationGitRepoConfig
 type IntegrationGitRepoConfig struct {
 	Integration AddIntegrationsRequestOneOf5Integration `json:"integration"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _IntegrationGitRepoConfig IntegrationGitRepoConfig
@@ -80,6 +80,11 @@ func (o IntegrationGitRepoConfig) MarshalJSON() ([]byte, error) {
 func (o IntegrationGitRepoConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["integration"] = o.Integration
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -107,15 +112,20 @@ func (o *IntegrationGitRepoConfig) UnmarshalJSON(data []byte) (err error) {
 
 	varIntegrationGitRepoConfig := _IntegrationGitRepoConfig{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varIntegrationGitRepoConfig)
+	err = json.Unmarshal(data, &varIntegrationGitRepoConfig)
 
 	if err != nil {
 		return err
 	}
 
 	*o = IntegrationGitRepoConfig(varIntegrationGitRepoConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "integration")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

@@ -26,7 +26,10 @@ type ListBillingZone200ResponseAllOfBillingInfo struct {
 	StartDate *time.Time `json:"startDate,omitempty"`
 	EndDate *time.Time `json:"endDate,omitempty"`
 	Zones []ListBillingAccount200ResponseAllOfBillingInfoZonesInner `json:"zones,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListBillingZone200ResponseAllOfBillingInfo ListBillingZone200ResponseAllOfBillingInfo
 
 // NewListBillingZone200ResponseAllOfBillingInfo instantiates a new ListBillingZone200ResponseAllOfBillingInfo object
 // This constructor will assign default values to properties that have it defined,
@@ -230,7 +233,37 @@ func (o ListBillingZone200ResponseAllOfBillingInfo) ToMap() (map[string]interfac
 	if !IsNil(o.Zones) {
 		toSerialize["zones"] = o.Zones
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListBillingZone200ResponseAllOfBillingInfo) UnmarshalJSON(data []byte) (err error) {
+	varListBillingZone200ResponseAllOfBillingInfo := _ListBillingZone200ResponseAllOfBillingInfo{}
+
+	err = json.Unmarshal(data, &varListBillingZone200ResponseAllOfBillingInfo)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListBillingZone200ResponseAllOfBillingInfo(varListBillingZone200ResponseAllOfBillingInfo)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "price")
+		delete(additionalProperties, "cost")
+		delete(additionalProperties, "startDate")
+		delete(additionalProperties, "endDate")
+		delete(additionalProperties, "zones")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListBillingZone200ResponseAllOfBillingInfo struct {

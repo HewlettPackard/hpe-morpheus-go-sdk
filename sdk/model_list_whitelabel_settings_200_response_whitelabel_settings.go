@@ -44,7 +44,10 @@ type ListWhitelabelSettings200ResponseWhitelabelSettings struct {
 	TermsOfUse *string `json:"termsOfUse,omitempty"`
 	PrivacyPolicy *string `json:"privacyPolicy,omitempty"`
 	SupportMenuLinks []ListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner `json:"supportMenuLinks,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListWhitelabelSettings200ResponseWhitelabelSettings ListWhitelabelSettings200ResponseWhitelabelSettings
 
 // NewListWhitelabelSettings200ResponseWhitelabelSettings instantiates a new ListWhitelabelSettings200ResponseWhitelabelSettings object
 // This constructor will assign default values to properties that have it defined,
@@ -913,7 +916,56 @@ func (o ListWhitelabelSettings200ResponseWhitelabelSettings) ToMap() (map[string
 	if !IsNil(o.SupportMenuLinks) {
 		toSerialize["supportMenuLinks"] = o.SupportMenuLinks
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListWhitelabelSettings200ResponseWhitelabelSettings) UnmarshalJSON(data []byte) (err error) {
+	varListWhitelabelSettings200ResponseWhitelabelSettings := _ListWhitelabelSettings200ResponseWhitelabelSettings{}
+
+	err = json.Unmarshal(data, &varListWhitelabelSettings200ResponseWhitelabelSettings)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListWhitelabelSettings200ResponseWhitelabelSettings(varListWhitelabelSettings200ResponseWhitelabelSettings)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "applianceName")
+		delete(additionalProperties, "disableSupportMenu")
+		delete(additionalProperties, "headerLogo")
+		delete(additionalProperties, "footerLogo")
+		delete(additionalProperties, "loginLogo")
+		delete(additionalProperties, "favicon")
+		delete(additionalProperties, "headerBgColor")
+		delete(additionalProperties, "headerFgColor")
+		delete(additionalProperties, "navBgColor")
+		delete(additionalProperties, "navFgColor")
+		delete(additionalProperties, "navHoverColor")
+		delete(additionalProperties, "primaryButtonBgColor")
+		delete(additionalProperties, "primaryButtonFgColor")
+		delete(additionalProperties, "primaryButtonHoverBgColor")
+		delete(additionalProperties, "primaryButtonHoverFgColor")
+		delete(additionalProperties, "footerBgColor")
+		delete(additionalProperties, "footerFgColor")
+		delete(additionalProperties, "loginBgColor")
+		delete(additionalProperties, "overrideCss")
+		delete(additionalProperties, "copyrightString")
+		delete(additionalProperties, "termsOfUse")
+		delete(additionalProperties, "privacyPolicy")
+		delete(additionalProperties, "supportMenuLinks")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListWhitelabelSettings200ResponseWhitelabelSettings struct {

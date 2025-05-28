@@ -28,7 +28,10 @@ type UserSourceCreateLDAP struct {
 	BindingPassword *string `json:"bindingPassword,omitempty"`
 	// User DN Expression
 	RequiredGroup *string `json:"requiredGroup,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UserSourceCreateLDAP UserSourceCreateLDAP
 
 // NewUserSourceCreateLDAP instantiates a new UserSourceCreateLDAP object
 // This constructor will assign default values to properties that have it defined,
@@ -197,7 +200,36 @@ func (o UserSourceCreateLDAP) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.RequiredGroup) {
 		toSerialize["requiredGroup"] = o.RequiredGroup
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UserSourceCreateLDAP) UnmarshalJSON(data []byte) (err error) {
+	varUserSourceCreateLDAP := _UserSourceCreateLDAP{}
+
+	err = json.Unmarshal(data, &varUserSourceCreateLDAP)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UserSourceCreateLDAP(varUserSourceCreateLDAP)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "url")
+		delete(additionalProperties, "bindingUsername")
+		delete(additionalProperties, "bindingPassword")
+		delete(additionalProperties, "requiredGroup")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUserSourceCreateLDAP struct {

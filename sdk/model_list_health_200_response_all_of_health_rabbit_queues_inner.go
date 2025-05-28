@@ -23,7 +23,10 @@ type ListHealth200ResponseAllOfHealthRabbitQueuesInner struct {
 	Name *string `json:"name,omitempty"`
 	Count *int64 `json:"count,omitempty"`
 	Status *string `json:"status,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListHealth200ResponseAllOfHealthRabbitQueuesInner ListHealth200ResponseAllOfHealthRabbitQueuesInner
 
 // NewListHealth200ResponseAllOfHealthRabbitQueuesInner instantiates a new ListHealth200ResponseAllOfHealthRabbitQueuesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o ListHealth200ResponseAllOfHealthRabbitQueuesInner) ToMap() (map[string]i
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListHealth200ResponseAllOfHealthRabbitQueuesInner) UnmarshalJSON(data []byte) (err error) {
+	varListHealth200ResponseAllOfHealthRabbitQueuesInner := _ListHealth200ResponseAllOfHealthRabbitQueuesInner{}
+
+	err = json.Unmarshal(data, &varListHealth200ResponseAllOfHealthRabbitQueuesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListHealth200ResponseAllOfHealthRabbitQueuesInner(varListHealth200ResponseAllOfHealthRabbitQueuesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "count")
+		delete(additionalProperties, "status")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListHealth200ResponseAllOfHealthRabbitQueuesInner struct {

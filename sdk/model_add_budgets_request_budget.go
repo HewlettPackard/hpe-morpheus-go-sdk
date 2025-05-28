@@ -14,7 +14,6 @@ package sdk
 import (
 	"encoding/json"
 	"time"
-	"bytes"
 	"fmt"
 )
 
@@ -42,6 +41,7 @@ type AddBudgetsRequestBudget struct {
 	Costs []int64 `json:"costs,omitempty"`
 	Enabled *bool `json:"enabled,omitempty"`
 	ForecastType *AddBudgetsRequestBudgetForecastType `json:"forecastType,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddBudgetsRequestBudget AddBudgetsRequestBudget
@@ -605,6 +605,11 @@ func (o AddBudgetsRequestBudget) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ForecastType) {
 		toSerialize["forecastType"] = o.ForecastType
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -632,15 +637,34 @@ func (o *AddBudgetsRequestBudget) UnmarshalJSON(data []byte) (err error) {
 
 	varAddBudgetsRequestBudget := _AddBudgetsRequestBudget{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddBudgetsRequestBudget)
+	err = json.Unmarshal(data, &varAddBudgetsRequestBudget)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddBudgetsRequestBudget(varAddBudgetsRequestBudget)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "scope")
+		delete(additionalProperties, "period")
+		delete(additionalProperties, "year")
+		delete(additionalProperties, "startDate")
+		delete(additionalProperties, "endDate")
+		delete(additionalProperties, "interval")
+		delete(additionalProperties, "scopeTenantId")
+		delete(additionalProperties, "scopeGroupId")
+		delete(additionalProperties, "scopeCloudId")
+		delete(additionalProperties, "scopeUserId")
+		delete(additionalProperties, "costs")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "forecastType")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

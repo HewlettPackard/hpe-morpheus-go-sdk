@@ -21,7 +21,10 @@ var _ MappedNullable = &Model503Error{}
 // Model503Error struct for Model503Error
 type Model503Error struct {
 	Msg *string `json:"msg,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _Model503Error Model503Error
 
 // NewModel503Error instantiates a new Model503Error object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o Model503Error) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Msg) {
 		toSerialize["msg"] = o.Msg
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *Model503Error) UnmarshalJSON(data []byte) (err error) {
+	varModel503Error := _Model503Error{}
+
+	err = json.Unmarshal(data, &varModel503Error)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Model503Error(varModel503Error)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "msg")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableModel503Error struct {

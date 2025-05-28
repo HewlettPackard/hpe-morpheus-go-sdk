@@ -37,7 +37,10 @@ type GetNetworkEdgeCluster200ResponseNetworkEdgeCluster struct {
 	NetworkServer *CreateLoadBalancerRequestLoadBalancerTenantsInner `json:"networkServer,omitempty"`
 	Zone *CreateLoadBalancerRequestLoadBalancerTenantsInner `json:"zone,omitempty"`
 	Tenants []SnapshotsInstance200ResponseSnapshotsInnerZone `json:"tenants,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetNetworkEdgeCluster200ResponseNetworkEdgeCluster GetNetworkEdgeCluster200ResponseNetworkEdgeCluster
 
 // NewGetNetworkEdgeCluster200ResponseNetworkEdgeCluster instantiates a new GetNetworkEdgeCluster200ResponseNetworkEdgeCluster object
 // This constructor will assign default values to properties that have it defined,
@@ -626,7 +629,48 @@ func (o GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) ToMap() (map[string]
 	if !IsNil(o.Tenants) {
 		toSerialize["tenants"] = o.Tenants
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) UnmarshalJSON(data []byte) (err error) {
+	varGetNetworkEdgeCluster200ResponseNetworkEdgeCluster := _GetNetworkEdgeCluster200ResponseNetworkEdgeCluster{}
+
+	err = json.Unmarshal(data, &varGetNetworkEdgeCluster200ResponseNetworkEdgeCluster)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetNetworkEdgeCluster200ResponseNetworkEdgeCluster(varGetNetworkEdgeCluster200ResponseNetworkEdgeCluster)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "internalId")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "providerId")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "displayName")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "owner")
+		delete(additionalProperties, "networkServer")
+		delete(additionalProperties, "zone")
+		delete(additionalProperties, "tenants")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetNetworkEdgeCluster200ResponseNetworkEdgeCluster struct {

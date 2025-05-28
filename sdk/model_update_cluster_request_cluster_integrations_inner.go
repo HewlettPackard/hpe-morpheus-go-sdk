@@ -22,7 +22,10 @@ var _ MappedNullable = &UpdateClusterRequestClusterIntegrationsInner{}
 type UpdateClusterRequestClusterIntegrationsInner struct {
 	// Integration ID. Only certain integration types may be associated to a cluster.
 	Id *int64 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateClusterRequestClusterIntegrationsInner UpdateClusterRequestClusterIntegrationsInner
 
 // NewUpdateClusterRequestClusterIntegrationsInner instantiates a new UpdateClusterRequestClusterIntegrationsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o UpdateClusterRequestClusterIntegrationsInner) ToMap() (map[string]interf
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateClusterRequestClusterIntegrationsInner) UnmarshalJSON(data []byte) (err error) {
+	varUpdateClusterRequestClusterIntegrationsInner := _UpdateClusterRequestClusterIntegrationsInner{}
+
+	err = json.Unmarshal(data, &varUpdateClusterRequestClusterIntegrationsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateClusterRequestClusterIntegrationsInner(varUpdateClusterRequestClusterIntegrationsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateClusterRequestClusterIntegrationsInner struct {

@@ -26,7 +26,10 @@ type AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigServicePlanOptions struc
 	CoresPerSocket *int64 `json:"coresPerSocket,omitempty"`
 	// Memory in bytes For backwards compatability, values less than 1048576 are treated as being in MB and will be converted to bytes
 	MaxMemory *int64 `json:"maxMemory,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigServicePlanOptions AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigServicePlanOptions
 
 // NewAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigServicePlanOptions instantiates a new AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigServicePlanOptions object
 // This constructor will assign default values to properties that have it defined,
@@ -160,7 +163,35 @@ func (o AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigServicePlanOptions) T
 	if !IsNil(o.MaxMemory) {
 		toSerialize["maxMemory"] = o.MaxMemory
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigServicePlanOptions) UnmarshalJSON(data []byte) (err error) {
+	varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigServicePlanOptions := _AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigServicePlanOptions{}
+
+	err = json.Unmarshal(data, &varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigServicePlanOptions)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigServicePlanOptions(varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigServicePlanOptions)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "maxCores")
+		delete(additionalProperties, "coresPerSocket")
+		delete(additionalProperties, "maxMemory")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigServicePlanOptions struct {

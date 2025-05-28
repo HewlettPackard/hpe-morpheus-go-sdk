@@ -21,7 +21,10 @@ var _ MappedNullable = &CreateStaticRouteRequest{}
 // CreateStaticRouteRequest struct for CreateStaticRouteRequest
 type CreateStaticRouteRequest struct {
 	NetworkRoute *CreateStaticRouteRequestNetworkRoute `json:"networkRoute,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _CreateStaticRouteRequest CreateStaticRouteRequest
 
 // NewCreateStaticRouteRequest instantiates a new CreateStaticRouteRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o CreateStaticRouteRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.NetworkRoute) {
 		toSerialize["networkRoute"] = o.NetworkRoute
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *CreateStaticRouteRequest) UnmarshalJSON(data []byte) (err error) {
+	varCreateStaticRouteRequest := _CreateStaticRouteRequest{}
+
+	err = json.Unmarshal(data, &varCreateStaticRouteRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CreateStaticRouteRequest(varCreateStaticRouteRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "networkRoute")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCreateStaticRouteRequest struct {

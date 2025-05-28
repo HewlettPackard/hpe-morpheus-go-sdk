@@ -21,7 +21,10 @@ var _ MappedNullable = &Model429Error{}
 // Model429Error struct for Model429Error
 type Model429Error struct {
 	Msg *string `json:"msg,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _Model429Error Model429Error
 
 // NewModel429Error instantiates a new Model429Error object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o Model429Error) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Msg) {
 		toSerialize["msg"] = o.Msg
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *Model429Error) UnmarshalJSON(data []byte) (err error) {
+	varModel429Error := _Model429Error{}
+
+	err = json.Unmarshal(data, &varModel429Error)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Model429Error(varModel429Error)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "msg")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableModel429Error struct {

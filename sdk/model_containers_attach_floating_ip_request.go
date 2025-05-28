@@ -21,7 +21,10 @@ var _ MappedNullable = &ContainersAttachFloatingIpRequest{}
 // ContainersAttachFloatingIpRequest struct for ContainersAttachFloatingIpRequest
 type ContainersAttachFloatingIpRequest struct {
 	Config *ContainersAttachFloatingIpRequestConfig `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ContainersAttachFloatingIpRequest ContainersAttachFloatingIpRequest
 
 // NewContainersAttachFloatingIpRequest instantiates a new ContainersAttachFloatingIpRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o ContainersAttachFloatingIpRequest) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ContainersAttachFloatingIpRequest) UnmarshalJSON(data []byte) (err error) {
+	varContainersAttachFloatingIpRequest := _ContainersAttachFloatingIpRequest{}
+
+	err = json.Unmarshal(data, &varContainersAttachFloatingIpRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ContainersAttachFloatingIpRequest(varContainersAttachFloatingIpRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "config")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableContainersAttachFloatingIpRequest struct {

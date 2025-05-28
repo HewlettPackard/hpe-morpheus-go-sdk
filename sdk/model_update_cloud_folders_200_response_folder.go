@@ -35,7 +35,10 @@ type UpdateCloudFolders200ResponseFolder struct {
 	ResourcePermissions *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission `json:"resourcePermissions,omitempty"`
 	Depth *int64 `json:"depth,omitempty"`
 	Success *bool `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateCloudFolders200ResponseFolder UpdateCloudFolders200ResponseFolder
 
 // NewUpdateCloudFolders200ResponseFolder instantiates a new UpdateCloudFolders200ResponseFolder object
 // This constructor will assign default values to properties that have it defined,
@@ -589,7 +592,47 @@ func (o UpdateCloudFolders200ResponseFolder) ToMap() (map[string]interface{}, er
 	if !IsNil(o.Success) {
 		toSerialize["success"] = o.Success
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateCloudFolders200ResponseFolder) UnmarshalJSON(data []byte) (err error) {
+	varUpdateCloudFolders200ResponseFolder := _UpdateCloudFolders200ResponseFolder{}
+
+	err = json.Unmarshal(data, &varUpdateCloudFolders200ResponseFolder)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateCloudFolders200ResponseFolder(varUpdateCloudFolders200ResponseFolder)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "zone")
+		delete(additionalProperties, "parent")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "readOnly")
+		delete(additionalProperties, "defaultFolder")
+		delete(additionalProperties, "defaultStore")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "tenants")
+		delete(additionalProperties, "resourcePermissions")
+		delete(additionalProperties, "depth")
+		delete(additionalProperties, "success")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateCloudFolders200ResponseFolder struct {

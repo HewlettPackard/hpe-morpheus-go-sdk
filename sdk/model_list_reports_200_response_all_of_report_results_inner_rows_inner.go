@@ -24,7 +24,10 @@ type ListReports200ResponseAllOfReportResultsInnerRowsInner struct {
 	Section *string `json:"section,omitempty"`
 	Data *string `json:"data,omitempty"`
 	DisplayOrder *string `json:"displayOrder,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListReports200ResponseAllOfReportResultsInnerRowsInner ListReports200ResponseAllOfReportResultsInnerRowsInner
 
 // NewListReports200ResponseAllOfReportResultsInnerRowsInner instantiates a new ListReports200ResponseAllOfReportResultsInnerRowsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -193,7 +196,36 @@ func (o ListReports200ResponseAllOfReportResultsInnerRowsInner) ToMap() (map[str
 	if !IsNil(o.DisplayOrder) {
 		toSerialize["displayOrder"] = o.DisplayOrder
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListReports200ResponseAllOfReportResultsInnerRowsInner) UnmarshalJSON(data []byte) (err error) {
+	varListReports200ResponseAllOfReportResultsInnerRowsInner := _ListReports200ResponseAllOfReportResultsInnerRowsInner{}
+
+	err = json.Unmarshal(data, &varListReports200ResponseAllOfReportResultsInnerRowsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListReports200ResponseAllOfReportResultsInnerRowsInner(varListReports200ResponseAllOfReportResultsInnerRowsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "section")
+		delete(additionalProperties, "data")
+		delete(additionalProperties, "displayOrder")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListReports200ResponseAllOfReportResultsInnerRowsInner struct {

@@ -21,7 +21,10 @@ var _ MappedNullable = &ListWhitelabelSettings200Response{}
 // ListWhitelabelSettings200Response struct for ListWhitelabelSettings200Response
 type ListWhitelabelSettings200Response struct {
 	WhitelabelSettings *ListWhitelabelSettings200ResponseWhitelabelSettings `json:"whitelabelSettings,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListWhitelabelSettings200Response ListWhitelabelSettings200Response
 
 // NewListWhitelabelSettings200Response instantiates a new ListWhitelabelSettings200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o ListWhitelabelSettings200Response) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.WhitelabelSettings) {
 		toSerialize["whitelabelSettings"] = o.WhitelabelSettings
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListWhitelabelSettings200Response) UnmarshalJSON(data []byte) (err error) {
+	varListWhitelabelSettings200Response := _ListWhitelabelSettings200Response{}
+
+	err = json.Unmarshal(data, &varListWhitelabelSettings200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListWhitelabelSettings200Response(varListWhitelabelSettings200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "whitelabelSettings")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListWhitelabelSettings200Response struct {

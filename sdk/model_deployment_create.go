@@ -24,7 +24,10 @@ type DeploymentCreate struct {
 	Name *string `json:"name,omitempty"`
 	// Description
 	Description *string `json:"description,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _DeploymentCreate DeploymentCreate
 
 // NewDeploymentCreate instantiates a new DeploymentCreate object
 // This constructor will assign default values to properties that have it defined,
@@ -123,7 +126,34 @@ func (o DeploymentCreate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *DeploymentCreate) UnmarshalJSON(data []byte) (err error) {
+	varDeploymentCreate := _DeploymentCreate{}
+
+	err = json.Unmarshal(data, &varDeploymentCreate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = DeploymentCreate(varDeploymentCreate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableDeploymentCreate struct {

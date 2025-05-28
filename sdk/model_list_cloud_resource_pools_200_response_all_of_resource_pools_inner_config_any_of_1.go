@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -26,6 +25,7 @@ type ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf1 struct
 	ProjectId *string `json:"projectId,omitempty"`
 	Parent interface{} `json:"parent"`
 	BillingAccount string `json:"billingAccount"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf1 ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf1
@@ -148,6 +148,11 @@ func (o ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf1) To
 		toSerialize["parent"] = o.Parent
 	}
 	toSerialize["billingAccount"] = o.BillingAccount
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -176,15 +181,22 @@ func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf1) U
 
 	varListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf1 := _ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf1{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf1)
+	err = json.Unmarshal(data, &varListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf1)
 
 	if err != nil {
 		return err
 	}
 
 	*o = ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf1(varListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf1)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "projectId")
+		delete(additionalProperties, "parent")
+		delete(additionalProperties, "billingAccount")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

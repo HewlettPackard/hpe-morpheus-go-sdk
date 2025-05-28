@@ -23,7 +23,10 @@ type ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions struct {
 	ResourcePool *AddCluster200ResponseAllOfClusterPermissionsResourcePool `json:"resourcePool,omitempty"`
 	ResourcePermissions *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission `json:"resourcePermissions,omitempty"`
 	TenantPermissions *AddCloudResourcePoolRequestResourcePoolTenantPermissions `json:"tenantPermissions,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions
 
 // NewListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions instantiates a new ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions) ToMap() (
 	if !IsNil(o.TenantPermissions) {
 		toSerialize["tenantPermissions"] = o.TenantPermissions
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions) UnmarshalJSON(data []byte) (err error) {
+	varListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions := _ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions{}
+
+	err = json.Unmarshal(data, &varListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions(varListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "resourcePool")
+		delete(additionalProperties, "resourcePermissions")
+		delete(additionalProperties, "tenantPermissions")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions struct {

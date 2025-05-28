@@ -55,7 +55,10 @@ type InstanceServicePlan struct {
 	CustomCores *bool `json:"customCores,omitempty"`
 	MaxDisks *string `json:"maxDisks,omitempty"`
 	MemorySizeType *string `json:"memorySizeType,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _InstanceServicePlan InstanceServicePlan
 
 // NewInstanceServicePlan instantiates a new InstanceServicePlan object
 // This constructor will assign default values to properties that have it defined,
@@ -1309,7 +1312,67 @@ func (o InstanceServicePlan) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.MemorySizeType) {
 		toSerialize["memorySizeType"] = o.MemorySizeType
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *InstanceServicePlan) UnmarshalJSON(data []byte) (err error) {
+	varInstanceServicePlan := _InstanceServicePlan{}
+
+	err = json.Unmarshal(data, &varInstanceServicePlan)
+
+	if err != nil {
+		return err
+	}
+
+	*o = InstanceServicePlan(varInstanceServicePlan)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "value")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "maxStorage")
+		delete(additionalProperties, "maxMemory")
+		delete(additionalProperties, "maxCpu")
+		delete(additionalProperties, "maxCores")
+		delete(additionalProperties, "customCpu")
+		delete(additionalProperties, "customMaxMemory")
+		delete(additionalProperties, "customMaxStorage")
+		delete(additionalProperties, "customMaxDataStorage")
+		delete(additionalProperties, "customCoresPerSocket")
+		delete(additionalProperties, "coresPerSocket")
+		delete(additionalProperties, "storageTypes")
+		delete(additionalProperties, "rootStorageTypes")
+		delete(additionalProperties, "addVolumes")
+		delete(additionalProperties, "customizeVolume")
+		delete(additionalProperties, "rootDiskCustomizable")
+		delete(additionalProperties, "noDisks")
+		delete(additionalProperties, "hasDatastore")
+		delete(additionalProperties, "minDisk")
+		delete(additionalProperties, "maxDisk")
+		delete(additionalProperties, "lvmSupported")
+		delete(additionalProperties, "datastores")
+		delete(additionalProperties, "supportsAutoDatastore")
+		delete(additionalProperties, "autoOptions")
+		delete(additionalProperties, "cpuOptions")
+		delete(additionalProperties, "coreOptions")
+		delete(additionalProperties, "memoryOptions")
+		delete(additionalProperties, "rootCustomSizeOptions")
+		delete(additionalProperties, "customSizeOptions")
+		delete(additionalProperties, "customCores")
+		delete(additionalProperties, "maxDisks")
+		delete(additionalProperties, "memorySizeType")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableInstanceServicePlan struct {

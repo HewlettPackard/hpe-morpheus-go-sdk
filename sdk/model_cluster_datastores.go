@@ -46,7 +46,10 @@ type ClusterDatastores struct {
 	Datastores []map[string]interface{} `json:"datastores,omitempty"`
 	Locations []ListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner `json:"locations,omitempty"`
 	ResourcePermissions *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions `json:"resourcePermissions,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ClusterDatastores ClusterDatastores
 
 // NewClusterDatastores instantiates a new ClusterDatastores object
 // This constructor will assign default values to properties that have it defined,
@@ -985,7 +988,58 @@ func (o ClusterDatastores) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ResourcePermissions) {
 		toSerialize["resourcePermissions"] = o.ResourcePermissions
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ClusterDatastores) UnmarshalJSON(data []byte) (err error) {
+	varClusterDatastores := _ClusterDatastores{}
+
+	err = json.Unmarshal(data, &varClusterDatastores)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ClusterDatastores(varClusterDatastores)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "storageSize")
+		delete(additionalProperties, "freeSpace")
+		delete(additionalProperties, "drsEnabled")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "allowWrite")
+		delete(additionalProperties, "defaultStore")
+		delete(additionalProperties, "online")
+		delete(additionalProperties, "allowRead")
+		delete(additionalProperties, "allowProvision")
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "refId")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "statusMessage")
+		delete(additionalProperties, "zone")
+		delete(additionalProperties, "zonePool")
+		delete(additionalProperties, "owner")
+		delete(additionalProperties, "tenants")
+		delete(additionalProperties, "datastores")
+		delete(additionalProperties, "locations")
+		delete(additionalProperties, "resourcePermissions")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableClusterDatastores struct {

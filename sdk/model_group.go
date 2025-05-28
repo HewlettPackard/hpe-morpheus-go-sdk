@@ -35,7 +35,10 @@ type Group struct {
 	Zones []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"zones,omitempty"`
 	Stats *ListGroups200ResponseAllOfGroupsInnerStats `json:"stats,omitempty"`
 	ServerCount *int64 `json:"serverCount,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _Group Group
 
 // NewGroup instantiates a new Group object
 // This constructor will assign default values to properties that have it defined,
@@ -554,7 +557,46 @@ func (o Group) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ServerCount) {
 		toSerialize["serverCount"] = o.ServerCount
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *Group) UnmarshalJSON(data []byte) (err error) {
+	varGroup := _Group{}
+
+	err = json.Unmarshal(data, &varGroup)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Group(varGroup)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "uuid")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "location")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "zones")
+		delete(additionalProperties, "stats")
+		delete(additionalProperties, "serverCount")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGroup struct {

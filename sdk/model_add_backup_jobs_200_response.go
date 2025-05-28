@@ -22,7 +22,10 @@ var _ MappedNullable = &AddBackupJobs200Response{}
 type AddBackupJobs200Response struct {
 	Job *ListBackupJobs200ResponseAllOfJobsInner `json:"job,omitempty"`
 	Success *bool `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddBackupJobs200Response AddBackupJobs200Response
 
 // NewAddBackupJobs200Response instantiates a new AddBackupJobs200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o AddBackupJobs200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Success) {
 		toSerialize["success"] = o.Success
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddBackupJobs200Response) UnmarshalJSON(data []byte) (err error) {
+	varAddBackupJobs200Response := _AddBackupJobs200Response{}
+
+	err = json.Unmarshal(data, &varAddBackupJobs200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddBackupJobs200Response(varAddBackupJobs200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "job")
+		delete(additionalProperties, "success")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddBackupJobs200Response struct {

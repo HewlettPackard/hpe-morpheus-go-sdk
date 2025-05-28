@@ -72,7 +72,10 @@ type GetLicense200ResponseLicenseFeatures struct {
 	IdentityServices *bool `json:"identityServices,omitempty"`
 	TrustServices *bool `json:"trustServices,omitempty"`
 	SecurityServices *bool `json:"securityServices,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetLicense200ResponseLicenseFeatures GetLicense200ResponseLicenseFeatures
 
 // NewGetLicense200ResponseLicenseFeatures instantiates a new GetLicense200ResponseLicenseFeatures object
 // This constructor will assign default values to properties that have it defined,
@@ -1921,7 +1924,84 @@ func (o GetLicense200ResponseLicenseFeatures) ToMap() (map[string]interface{}, e
 	if !IsNil(o.SecurityServices) {
 		toSerialize["securityServices"] = o.SecurityServices
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetLicense200ResponseLicenseFeatures) UnmarshalJSON(data []byte) (err error) {
+	varGetLicense200ResponseLicenseFeatures := _GetLicense200ResponseLicenseFeatures{}
+
+	err = json.Unmarshal(data, &varGetLicense200ResponseLicenseFeatures)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetLicense200ResponseLicenseFeatures(varGetLicense200ResponseLicenseFeatures)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "dashboard")
+		delete(additionalProperties, "guidance")
+		delete(additionalProperties, "discovery")
+		delete(additionalProperties, "analytics")
+		delete(additionalProperties, "scheduling")
+		delete(additionalProperties, "approvals")
+		delete(additionalProperties, "usage")
+		delete(additionalProperties, "activity")
+		delete(additionalProperties, "instances")
+		delete(additionalProperties, "apps")
+		delete(additionalProperties, "templates")
+		delete(additionalProperties, "automation")
+		delete(additionalProperties, "virtualImages")
+		delete(additionalProperties, "library")
+		delete(additionalProperties, "migrations")
+		delete(additionalProperties, "deployments")
+		delete(additionalProperties, "groups")
+		delete(additionalProperties, "clouds")
+		delete(additionalProperties, "hosts")
+		delete(additionalProperties, "network")
+		delete(additionalProperties, "loadBalancers")
+		delete(additionalProperties, "storage")
+		delete(additionalProperties, "keyPairs")
+		delete(additionalProperties, "sslCertificates")
+		delete(additionalProperties, "boot")
+		delete(additionalProperties, "backups")
+		delete(additionalProperties, "cypher")
+		delete(additionalProperties, "archives")
+		delete(additionalProperties, "imageBuilder")
+		delete(additionalProperties, "tenants")
+		delete(additionalProperties, "plans")
+		delete(additionalProperties, "pricing")
+		delete(additionalProperties, "users")
+		delete(additionalProperties, "userGroups")
+		delete(additionalProperties, "monitoring")
+		delete(additionalProperties, "logging")
+		delete(additionalProperties, "monitoringServices")
+		delete(additionalProperties, "loggingServices")
+		delete(additionalProperties, "backupServices")
+		delete(additionalProperties, "dnsServices")
+		delete(additionalProperties, "codeService")
+		delete(additionalProperties, "buildServices")
+		delete(additionalProperties, "loadBalancerServices")
+		delete(additionalProperties, "ipamServices")
+		delete(additionalProperties, "approvalServices")
+		delete(additionalProperties, "cmdbServices")
+		delete(additionalProperties, "deploymentServices")
+		delete(additionalProperties, "automationServices")
+		delete(additionalProperties, "serviceDiscoveryServices")
+		delete(additionalProperties, "identityServices")
+		delete(additionalProperties, "trustServices")
+		delete(additionalProperties, "securityServices")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetLicense200ResponseLicenseFeatures struct {

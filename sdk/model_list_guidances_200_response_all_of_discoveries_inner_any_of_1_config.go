@@ -24,7 +24,10 @@ type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Config struct {
 	DetailList []ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigDetailListInner `json:"detailList,omitempty"`
 	Services *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServices `json:"services,omitempty"`
 	Summary *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueSummary `json:"summary,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Config ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Config
 
 // NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Config instantiates a new ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Config object
 // This constructor will assign default values to properties that have it defined,
@@ -193,7 +196,36 @@ func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Config) ToMap() (map[
 	if !IsNil(o.Summary) {
 		toSerialize["summary"] = o.Summary
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Config) UnmarshalJSON(data []byte) (err error) {
+	varListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Config := _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Config{}
+
+	err = json.Unmarshal(data, &varListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Config)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Config(varListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Config)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "success")
+		delete(additionalProperties, "detailList")
+		delete(additionalProperties, "services")
+		delete(additionalProperties, "summary")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Config struct {

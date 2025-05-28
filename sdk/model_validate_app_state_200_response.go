@@ -22,7 +22,10 @@ var _ MappedNullable = &ValidateAppState200Response{}
 type ValidateAppState200Response struct {
 	ExecutionId *string `json:"executionId,omitempty"`
 	Success *bool `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ValidateAppState200Response ValidateAppState200Response
 
 // NewValidateAppState200Response instantiates a new ValidateAppState200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o ValidateAppState200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Success) {
 		toSerialize["success"] = o.Success
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ValidateAppState200Response) UnmarshalJSON(data []byte) (err error) {
+	varValidateAppState200Response := _ValidateAppState200Response{}
+
+	err = json.Unmarshal(data, &varValidateAppState200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ValidateAppState200Response(varValidateAppState200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "executionId")
+		delete(additionalProperties, "success")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableValidateAppState200Response struct {

@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -42,6 +41,7 @@ type SetupRequestAnyOf struct {
 	Hubmode *string `json:"hubmode,omitempty"`
 	// License Key to install on setup.
 	LicenseKey *string `json:"licenseKey,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _SetupRequestAnyOf SetupRequestAnyOf
@@ -382,6 +382,11 @@ func (o SetupRequestAnyOf) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.LicenseKey) {
 		toSerialize["licenseKey"] = o.LicenseKey
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -413,15 +418,29 @@ func (o *SetupRequestAnyOf) UnmarshalJSON(data []byte) (err error) {
 
 	varSetupRequestAnyOf := _SetupRequestAnyOf{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varSetupRequestAnyOf)
+	err = json.Unmarshal(data, &varSetupRequestAnyOf)
 
 	if err != nil {
 		return err
 	}
 
 	*o = SetupRequestAnyOf(varSetupRequestAnyOf)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "applianceName")
+		delete(additionalProperties, "applianceUrl")
+		delete(additionalProperties, "accountName")
+		delete(additionalProperties, "firstName")
+		delete(additionalProperties, "lastName")
+		delete(additionalProperties, "username")
+		delete(additionalProperties, "email")
+		delete(additionalProperties, "password")
+		delete(additionalProperties, "hubmode")
+		delete(additionalProperties, "licenseKey")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

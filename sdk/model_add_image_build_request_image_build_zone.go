@@ -21,7 +21,10 @@ var _ MappedNullable = &AddImageBuildRequestImageBuildZone{}
 // AddImageBuildRequestImageBuildZone Cloud
 type AddImageBuildRequestImageBuildZone struct {
 	Id *int64 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddImageBuildRequestImageBuildZone AddImageBuildRequestImageBuildZone
 
 // NewAddImageBuildRequestImageBuildZone instantiates a new AddImageBuildRequestImageBuildZone object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o AddImageBuildRequestImageBuildZone) ToMap() (map[string]interface{}, err
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddImageBuildRequestImageBuildZone) UnmarshalJSON(data []byte) (err error) {
+	varAddImageBuildRequestImageBuildZone := _AddImageBuildRequestImageBuildZone{}
+
+	err = json.Unmarshal(data, &varAddImageBuildRequestImageBuildZone)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddImageBuildRequestImageBuildZone(varAddImageBuildRequestImageBuildZone)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddImageBuildRequestImageBuildZone struct {

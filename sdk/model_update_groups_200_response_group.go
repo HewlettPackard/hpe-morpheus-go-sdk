@@ -36,7 +36,10 @@ type UpdateGroups200ResponseGroup struct {
 	Stats *ListGroups200ResponseAllOfGroupsInnerStats `json:"stats,omitempty"`
 	ServerCount *int64 `json:"serverCount,omitempty"`
 	Success *bool `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateGroups200ResponseGroup UpdateGroups200ResponseGroup
 
 // NewUpdateGroups200ResponseGroup instantiates a new UpdateGroups200ResponseGroup object
 // This constructor will assign default values to properties that have it defined,
@@ -590,7 +593,47 @@ func (o UpdateGroups200ResponseGroup) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Success) {
 		toSerialize["success"] = o.Success
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateGroups200ResponseGroup) UnmarshalJSON(data []byte) (err error) {
+	varUpdateGroups200ResponseGroup := _UpdateGroups200ResponseGroup{}
+
+	err = json.Unmarshal(data, &varUpdateGroups200ResponseGroup)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateGroups200ResponseGroup(varUpdateGroups200ResponseGroup)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "uuid")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "location")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "zones")
+		delete(additionalProperties, "stats")
+		delete(additionalProperties, "serverCount")
+		delete(additionalProperties, "success")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateGroups200ResponseGroup struct {

@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -30,6 +29,7 @@ type AddContactsRequestContact struct {
 	SmsAddress *string `json:"smsAddress,omitempty"`
 	// Slack Hook
 	SlackHook *string `json:"slackHook,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddContactsRequestContact AddContactsRequestContact
@@ -192,6 +192,11 @@ func (o AddContactsRequestContact) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.SlackHook) {
 		toSerialize["slackHook"] = o.SlackHook
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -219,15 +224,23 @@ func (o *AddContactsRequestContact) UnmarshalJSON(data []byte) (err error) {
 
 	varAddContactsRequestContact := _AddContactsRequestContact{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddContactsRequestContact)
+	err = json.Unmarshal(data, &varAddContactsRequestContact)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddContactsRequestContact(varAddContactsRequestContact)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "emailAddress")
+		delete(additionalProperties, "smsAddress")
+		delete(additionalProperties, "slackHook")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

@@ -29,7 +29,10 @@ type VdiApp struct {
 	Logo *string `json:"logo,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _VdiApp VdiApp
 
 // NewVdiApp instantiates a new VdiApp object
 // This constructor will assign default values to properties that have it defined,
@@ -338,7 +341,40 @@ func (o VdiApp) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *VdiApp) UnmarshalJSON(data []byte) (err error) {
+	varVdiApp := _VdiApp{}
+
+	err = json.Unmarshal(data, &varVdiApp)
+
+	if err != nil {
+		return err
+	}
+
+	*o = VdiApp(varVdiApp)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "launchPrefix")
+		delete(additionalProperties, "iconPath")
+		delete(additionalProperties, "logo")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableVdiApp struct {

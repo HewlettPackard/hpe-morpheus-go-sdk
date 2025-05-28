@@ -25,7 +25,10 @@ type GetNetworkRouter200ResponseNetworkRouterFirewall struct {
 	DefaultPolicy *string `json:"defaultPolicy,omitempty"`
 	Global *string `json:"global,omitempty"`
 	RuleGroups []GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInner `json:"ruleGroups,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetNetworkRouter200ResponseNetworkRouterFirewall GetNetworkRouter200ResponseNetworkRouterFirewall
 
 // NewGetNetworkRouter200ResponseNetworkRouterFirewall instantiates a new GetNetworkRouter200ResponseNetworkRouterFirewall object
 // This constructor will assign default values to properties that have it defined,
@@ -229,7 +232,37 @@ func (o GetNetworkRouter200ResponseNetworkRouterFirewall) ToMap() (map[string]in
 	if !IsNil(o.RuleGroups) {
 		toSerialize["ruleGroups"] = o.RuleGroups
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetNetworkRouter200ResponseNetworkRouterFirewall) UnmarshalJSON(data []byte) (err error) {
+	varGetNetworkRouter200ResponseNetworkRouterFirewall := _GetNetworkRouter200ResponseNetworkRouterFirewall{}
+
+	err = json.Unmarshal(data, &varGetNetworkRouter200ResponseNetworkRouterFirewall)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetNetworkRouter200ResponseNetworkRouterFirewall(varGetNetworkRouter200ResponseNetworkRouterFirewall)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "version")
+		delete(additionalProperties, "defaultPolicy")
+		delete(additionalProperties, "global")
+		delete(additionalProperties, "ruleGroups")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetNetworkRouter200ResponseNetworkRouterFirewall struct {

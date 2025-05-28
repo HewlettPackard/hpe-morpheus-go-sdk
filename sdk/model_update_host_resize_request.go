@@ -28,7 +28,10 @@ type UpdateHostResizeRequest struct {
 	DeleteOriginalVolumes *bool `json:"deleteOriginalVolumes,omitempty"`
 	// Key for network configurations. Include id to update an existing interface.
 	NetworkInterfaces []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInner `json:"networkInterfaces,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateHostResizeRequest UpdateHostResizeRequest
 
 // NewUpdateHostResizeRequest instantiates a new UpdateHostResizeRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -236,7 +239,37 @@ func (o UpdateHostResizeRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.NetworkInterfaces) {
 		toSerialize["networkInterfaces"] = o.NetworkInterfaces
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateHostResizeRequest) UnmarshalJSON(data []byte) (err error) {
+	varUpdateHostResizeRequest := _UpdateHostResizeRequest{}
+
+	err = json.Unmarshal(data, &varUpdateHostResizeRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateHostResizeRequest(varUpdateHostResizeRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "server")
+		delete(additionalProperties, "servicePlanOptions")
+		delete(additionalProperties, "volumes")
+		delete(additionalProperties, "deleteOriginalVolumes")
+		delete(additionalProperties, "networkInterfaces")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateHostResizeRequest struct {

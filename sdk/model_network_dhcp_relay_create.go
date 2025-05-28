@@ -22,7 +22,10 @@ var _ MappedNullable = &NetworkDhcpRelayCreate{}
 type NetworkDhcpRelayCreate struct {
 	Name *string `json:"name,omitempty"`
 	ServerIpAddresses []string `json:"serverIpAddresses,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _NetworkDhcpRelayCreate NetworkDhcpRelayCreate
 
 // NewNetworkDhcpRelayCreate instantiates a new NetworkDhcpRelayCreate object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o NetworkDhcpRelayCreate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ServerIpAddresses) {
 		toSerialize["serverIpAddresses"] = o.ServerIpAddresses
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *NetworkDhcpRelayCreate) UnmarshalJSON(data []byte) (err error) {
+	varNetworkDhcpRelayCreate := _NetworkDhcpRelayCreate{}
+
+	err = json.Unmarshal(data, &varNetworkDhcpRelayCreate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = NetworkDhcpRelayCreate(varNetworkDhcpRelayCreate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "serverIpAddresses")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableNetworkDhcpRelayCreate struct {

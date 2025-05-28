@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -31,6 +30,7 @@ type AddBlueprintRequestOneOf5Terraform struct {
 	Git *AddBlueprintRequestOneOf5TerraformGit `json:"git,omitempty"`
 	// tfvar secret from Morpheus Cypher
 	TfvarSecret *string `json:"tfvarSecret,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddBlueprintRequestOneOf5Terraform AddBlueprintRequestOneOf5Terraform
@@ -228,6 +228,11 @@ func (o AddBlueprintRequestOneOf5Terraform) ToMap() (map[string]interface{}, err
 	if !IsNil(o.TfvarSecret) {
 		toSerialize["tfvarSecret"] = o.TfvarSecret
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -255,15 +260,24 @@ func (o *AddBlueprintRequestOneOf5Terraform) UnmarshalJSON(data []byte) (err err
 
 	varAddBlueprintRequestOneOf5Terraform := _AddBlueprintRequestOneOf5Terraform{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddBlueprintRequestOneOf5Terraform)
+	err = json.Unmarshal(data, &varAddBlueprintRequestOneOf5Terraform)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddBlueprintRequestOneOf5Terraform(varAddBlueprintRequestOneOf5Terraform)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "configType")
+		delete(additionalProperties, "json")
+		delete(additionalProperties, "tf")
+		delete(additionalProperties, "git")
+		delete(additionalProperties, "tfvarSecret")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

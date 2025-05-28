@@ -22,7 +22,10 @@ var _ MappedNullable = &GetContainerActions200Response{}
 type GetContainerActions200Response struct {
 	ContainerIds []int64 `json:"containerIds,omitempty"`
 	Actions []ListClusterContainers200ResponseAllOfContainersInnerAvailableActionsInner `json:"actions,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetContainerActions200Response GetContainerActions200Response
 
 // NewGetContainerActions200Response instantiates a new GetContainerActions200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o GetContainerActions200Response) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.Actions) {
 		toSerialize["actions"] = o.Actions
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetContainerActions200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetContainerActions200Response := _GetContainerActions200Response{}
+
+	err = json.Unmarshal(data, &varGetContainerActions200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetContainerActions200Response(varGetContainerActions200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "containerIds")
+		delete(additionalProperties, "actions")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetContainerActions200Response struct {

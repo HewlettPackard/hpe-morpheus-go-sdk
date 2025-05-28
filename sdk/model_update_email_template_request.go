@@ -21,7 +21,10 @@ var _ MappedNullable = &UpdateEmailTemplateRequest{}
 // UpdateEmailTemplateRequest struct for UpdateEmailTemplateRequest
 type UpdateEmailTemplateRequest struct {
 	Policy *ListEmailTemplates200ResponseAllOfEmailTemplatesInner `json:"policy,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateEmailTemplateRequest UpdateEmailTemplateRequest
 
 // NewUpdateEmailTemplateRequest instantiates a new UpdateEmailTemplateRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o UpdateEmailTemplateRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Policy) {
 		toSerialize["policy"] = o.Policy
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateEmailTemplateRequest) UnmarshalJSON(data []byte) (err error) {
+	varUpdateEmailTemplateRequest := _UpdateEmailTemplateRequest{}
+
+	err = json.Unmarshal(data, &varUpdateEmailTemplateRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateEmailTemplateRequest(varUpdateEmailTemplateRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "policy")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateEmailTemplateRequest struct {

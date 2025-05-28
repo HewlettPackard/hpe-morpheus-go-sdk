@@ -39,7 +39,10 @@ type OptionTypeList struct {
 	TranslationScript *string `json:"translationScript,omitempty"`
 	RequestScript *string `json:"requestScript,omitempty"`
 	Account *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _OptionTypeList OptionTypeList
 
 // NewOptionTypeList instantiates a new OptionTypeList object
 // This constructor will assign default values to properties that have it defined,
@@ -733,7 +736,51 @@ func (o OptionTypeList) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Account) {
 		toSerialize["account"] = o.Account
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *OptionTypeList) UnmarshalJSON(data []byte) (err error) {
+	varOptionTypeList := _OptionTypeList{}
+
+	err = json.Unmarshal(data, &varOptionTypeList)
+
+	if err != nil {
+		return err
+	}
+
+	*o = OptionTypeList(varOptionTypeList)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "sourceUrl")
+		delete(additionalProperties, "sourceMethod")
+		delete(additionalProperties, "apiType")
+		delete(additionalProperties, "ignoreSSLErrors")
+		delete(additionalProperties, "realTime")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "credential")
+		delete(additionalProperties, "serviceUsername")
+		delete(additionalProperties, "servicePassword")
+		delete(additionalProperties, "initialDataset")
+		delete(additionalProperties, "translationScript")
+		delete(additionalProperties, "requestScript")
+		delete(additionalProperties, "account")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableOptionTypeList struct {

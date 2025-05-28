@@ -30,7 +30,10 @@ type GetBillingInstancesIdentifier200ResponseAllOfBillingInfo struct {
 	Cost *float32 `json:"cost,omitempty"`
 	Currency *string `json:"currency,omitempty"`
 	Containers []GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner `json:"containers,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetBillingInstancesIdentifier200ResponseAllOfBillingInfo GetBillingInstancesIdentifier200ResponseAllOfBillingInfo
 
 // NewGetBillingInstancesIdentifier200ResponseAllOfBillingInfo instantiates a new GetBillingInstancesIdentifier200ResponseAllOfBillingInfo object
 // This constructor will assign default values to properties that have it defined,
@@ -374,7 +377,41 @@ func (o GetBillingInstancesIdentifier200ResponseAllOfBillingInfo) ToMap() (map[s
 	if !IsNil(o.Containers) {
 		toSerialize["containers"] = o.Containers
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfo) UnmarshalJSON(data []byte) (err error) {
+	varGetBillingInstancesIdentifier200ResponseAllOfBillingInfo := _GetBillingInstancesIdentifier200ResponseAllOfBillingInfo{}
+
+	err = json.Unmarshal(data, &varGetBillingInstancesIdentifier200ResponseAllOfBillingInfo)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetBillingInstancesIdentifier200ResponseAllOfBillingInfo(varGetBillingInstancesIdentifier200ResponseAllOfBillingInfo)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "instanceId")
+		delete(additionalProperties, "instanceUUID")
+		delete(additionalProperties, "startDate")
+		delete(additionalProperties, "endDate")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "price")
+		delete(additionalProperties, "cost")
+		delete(additionalProperties, "currency")
+		delete(additionalProperties, "containers")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetBillingInstancesIdentifier200ResponseAllOfBillingInfo struct {

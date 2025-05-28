@@ -21,7 +21,10 @@ var _ MappedNullable = &ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Confi
 // ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServices struct for ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServices
 type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServices struct {
 	AzureVms *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVms `json:"azureVms,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServices ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServices
 
 // NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServices instantiates a new ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServices object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServices) ToMap
 	if !IsNil(o.AzureVms) {
 		toSerialize["azureVms"] = o.AzureVms
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServices) UnmarshalJSON(data []byte) (err error) {
+	varListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServices := _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServices{}
+
+	err = json.Unmarshal(data, &varListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServices)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServices(varListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServices)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "azureVms")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServices struct {

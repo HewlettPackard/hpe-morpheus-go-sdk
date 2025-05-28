@@ -28,7 +28,10 @@ type SetInstanceSecurityGroups200ResponseAllOfSecurityGroupsInner struct {
 	Name *string `json:"name,omitempty"`
 	// Security group description
 	Description *string `json:"description,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _SetInstanceSecurityGroups200ResponseAllOfSecurityGroupsInner SetInstanceSecurityGroups200ResponseAllOfSecurityGroupsInner
 
 // NewSetInstanceSecurityGroups200ResponseAllOfSecurityGroupsInner instantiates a new SetInstanceSecurityGroups200ResponseAllOfSecurityGroupsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -197,7 +200,36 @@ func (o SetInstanceSecurityGroups200ResponseAllOfSecurityGroupsInner) ToMap() (m
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *SetInstanceSecurityGroups200ResponseAllOfSecurityGroupsInner) UnmarshalJSON(data []byte) (err error) {
+	varSetInstanceSecurityGroups200ResponseAllOfSecurityGroupsInner := _SetInstanceSecurityGroups200ResponseAllOfSecurityGroupsInner{}
+
+	err = json.Unmarshal(data, &varSetInstanceSecurityGroups200ResponseAllOfSecurityGroupsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = SetInstanceSecurityGroups200ResponseAllOfSecurityGroupsInner(varSetInstanceSecurityGroups200ResponseAllOfSecurityGroupsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableSetInstanceSecurityGroups200ResponseAllOfSecurityGroupsInner struct {

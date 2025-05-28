@@ -29,7 +29,10 @@ type ListCypherKeys200ResponseAllOfCyphersInner struct {
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
 	LastAccessed *time.Time `json:"lastAccessed,omitempty"`
 	CreatedBy *string `json:"createdBy,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListCypherKeys200ResponseAllOfCyphersInner ListCypherKeys200ResponseAllOfCyphersInner
 
 // NewListCypherKeys200ResponseAllOfCyphersInner instantiates a new ListCypherKeys200ResponseAllOfCyphersInner object
 // This constructor will assign default values to properties that have it defined,
@@ -338,7 +341,40 @@ func (o ListCypherKeys200ResponseAllOfCyphersInner) ToMap() (map[string]interfac
 	if !IsNil(o.CreatedBy) {
 		toSerialize["createdBy"] = o.CreatedBy
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListCypherKeys200ResponseAllOfCyphersInner) UnmarshalJSON(data []byte) (err error) {
+	varListCypherKeys200ResponseAllOfCyphersInner := _ListCypherKeys200ResponseAllOfCyphersInner{}
+
+	err = json.Unmarshal(data, &varListCypherKeys200ResponseAllOfCyphersInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListCypherKeys200ResponseAllOfCyphersInner(varListCypherKeys200ResponseAllOfCyphersInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "itemKey")
+		delete(additionalProperties, "leaseTimeout")
+		delete(additionalProperties, "expireDate")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "lastAccessed")
+		delete(additionalProperties, "createdBy")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListCypherKeys200ResponseAllOfCyphersInner struct {

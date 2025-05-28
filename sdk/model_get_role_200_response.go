@@ -42,7 +42,10 @@ type GetRole200Response struct {
 	TaskPermissions []AddRoles200ResponseAllOfAppTemplatePermissionsInner `json:"taskPermissions,omitempty"`
 	GlobalTaskSetAccess *string `json:"globalTaskSetAccess,omitempty"`
 	TaskSetPermissions []AddRoles200ResponseAllOfAppTemplatePermissionsInner `json:"taskSetPermissions,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetRole200Response GetRole200Response
 
 // NewGetRole200Response instantiates a new GetRole200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -841,7 +844,54 @@ func (o GetRole200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.TaskSetPermissions) {
 		toSerialize["taskSetPermissions"] = o.TaskSetPermissions
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetRole200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetRole200Response := _GetRole200Response{}
+
+	err = json.Unmarshal(data, &varGetRole200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetRole200Response(varGetRole200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "role")
+		delete(additionalProperties, "featurePermissions")
+		delete(additionalProperties, "globalSiteAccess")
+		delete(additionalProperties, "sites")
+		delete(additionalProperties, "globalZoneAccess")
+		delete(additionalProperties, "zones")
+		delete(additionalProperties, "globalInstanceTypeAccess")
+		delete(additionalProperties, "instanceTypePermissions")
+		delete(additionalProperties, "globalAppTemplateAccess")
+		delete(additionalProperties, "appTemplatePermissions")
+		delete(additionalProperties, "globalCatalogItemTypeAccess")
+		delete(additionalProperties, "catalogItemTypePermissions")
+		delete(additionalProperties, "globalPersonaAccess")
+		delete(additionalProperties, "personaPermissions")
+		delete(additionalProperties, "globalVdiPoolAccess")
+		delete(additionalProperties, "vdiPoolPermissions")
+		delete(additionalProperties, "globalReportTypeAccess")
+		delete(additionalProperties, "reportTypePermissions")
+		delete(additionalProperties, "globalTaskAccess")
+		delete(additionalProperties, "taskPermissions")
+		delete(additionalProperties, "globalTaskSetAccess")
+		delete(additionalProperties, "taskSetPermissions")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetRole200Response struct {

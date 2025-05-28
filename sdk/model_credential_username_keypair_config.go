@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -34,6 +33,7 @@ type CredentialUsernameKeypairConfig struct {
 	// Username
 	Username string `json:"username"`
 	AuthKey AddCredentialsRequestCredentialOneOf2AuthKey `json:"authKey"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _CredentialUsernameKeypairConfig CredentialUsernameKeypairConfig
@@ -278,6 +278,11 @@ func (o CredentialUsernameKeypairConfig) ToMap() (map[string]interface{}, error)
 	}
 	toSerialize["username"] = o.Username
 	toSerialize["authKey"] = o.AuthKey
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -308,15 +313,26 @@ func (o *CredentialUsernameKeypairConfig) UnmarshalJSON(data []byte) (err error)
 
 	varCredentialUsernameKeypairConfig := _CredentialUsernameKeypairConfig{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varCredentialUsernameKeypairConfig)
+	err = json.Unmarshal(data, &varCredentialUsernameKeypairConfig)
 
 	if err != nil {
 		return err
 	}
 
 	*o = CredentialUsernameKeypairConfig(varCredentialUsernameKeypairConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "integration")
+		delete(additionalProperties, "username")
+		delete(additionalProperties, "authKey")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

@@ -21,7 +21,10 @@ var _ MappedNullable = &UpdateImageBuild200Response{}
 // UpdateImageBuild200Response struct for UpdateImageBuild200Response
 type UpdateImageBuild200Response struct {
 	ImageBuild *AddImageBuild200ResponseAllOfImageBuild `json:"imageBuild,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateImageBuild200Response UpdateImageBuild200Response
 
 // NewUpdateImageBuild200Response instantiates a new UpdateImageBuild200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o UpdateImageBuild200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ImageBuild) {
 		toSerialize["imageBuild"] = o.ImageBuild
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateImageBuild200Response) UnmarshalJSON(data []byte) (err error) {
+	varUpdateImageBuild200Response := _UpdateImageBuild200Response{}
+
+	err = json.Unmarshal(data, &varUpdateImageBuild200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateImageBuild200Response(varUpdateImageBuild200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "imageBuild")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateImageBuild200Response struct {

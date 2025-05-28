@@ -32,7 +32,10 @@ type KeyPair struct {
 	Fingerprint *string `json:"fingerprint,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _KeyPair KeyPair
 
 // NewKeyPair instantiates a new KeyPair object
 // This constructor will assign default values to properties that have it defined,
@@ -411,7 +414,42 @@ func (o KeyPair) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *KeyPair) UnmarshalJSON(data []byte) (err error) {
+	varKeyPair := _KeyPair{}
+
+	err = json.Unmarshal(data, &varKeyPair)
+
+	if err != nil {
+		return err
+	}
+
+	*o = KeyPair(varKeyPair)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "publicKey")
+		delete(additionalProperties, "hasPrivateKey")
+		delete(additionalProperties, "privateKeyHash")
+		delete(additionalProperties, "privateKey")
+		delete(additionalProperties, "fingerprint")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableKeyPair struct {

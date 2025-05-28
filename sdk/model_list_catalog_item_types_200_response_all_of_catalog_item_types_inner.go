@@ -55,7 +55,10 @@ type ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInner struct {
 	Owner *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"owner,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInner ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInner
 
 // NewListCatalogItemTypes200ResponseAllOfCatalogItemTypesInner instantiates a new ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -1099,7 +1102,61 @@ func (o ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInner) ToMap() (map[
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInner) UnmarshalJSON(data []byte) (err error) {
+	varListCatalogItemTypes200ResponseAllOfCatalogItemTypesInner := _ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInner{}
+
+	err = json.Unmarshal(data, &varListCatalogItemTypes200ResponseAllOfCatalogItemTypesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInner(varListCatalogItemTypes200ResponseAllOfCatalogItemTypesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "featured")
+		delete(additionalProperties, "allowQuantity")
+		delete(additionalProperties, "iconPath")
+		delete(additionalProperties, "imagePath")
+		delete(additionalProperties, "darkImagePath")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "layoutCode")
+		delete(additionalProperties, "blueprint")
+		delete(additionalProperties, "appSpec")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "instanceSpec")
+		delete(additionalProperties, "workflow")
+		delete(additionalProperties, "content")
+		delete(additionalProperties, "formType")
+		delete(additionalProperties, "form")
+		delete(additionalProperties, "formConfig")
+		delete(additionalProperties, "optionTypes")
+		delete(additionalProperties, "createdBy")
+		delete(additionalProperties, "owner")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListCatalogItemTypes200ResponseAllOfCatalogItemTypesInner struct {

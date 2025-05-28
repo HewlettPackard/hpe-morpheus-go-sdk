@@ -31,7 +31,10 @@ type Search200ResponseHitsInner struct {
 	Type *string `json:"type,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	Score *float32 `json:"score,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _Search200ResponseHitsInner Search200ResponseHitsInner
 
 // NewSearch200ResponseHitsInner instantiates a new Search200ResponseHitsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -305,7 +308,39 @@ func (o Search200ResponseHitsInner) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Score) {
 		toSerialize["score"] = o.Score
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *Search200ResponseHitsInner) UnmarshalJSON(data []byte) (err error) {
+	varSearch200ResponseHitsInner := _Search200ResponseHitsInner{}
+
+	err = json.Unmarshal(data, &varSearch200ResponseHitsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Search200ResponseHitsInner(varSearch200ResponseHitsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "uuid")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "score")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableSearch200ResponseHitsInner struct {

@@ -56,7 +56,10 @@ type CatalogItemTypeWorkflowUpdate struct {
 	OptionTypes []int64 `json:"optionTypes,omitempty"`
 	// Documentation content for this Catalog Item. Markdown-formatted text is accepted and displayed appropriately when the item is ordered from the Service Catalog. A new Catalog Item-type Wiki entry will also be added containing this information.
 	Content *string `json:"content,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _CatalogItemTypeWorkflowUpdate CatalogItemTypeWorkflowUpdate
 
 // NewCatalogItemTypeWorkflowUpdate instantiates a new CatalogItemTypeWorkflowUpdate object
 // This constructor will assign default values to properties that have it defined,
@@ -770,7 +773,51 @@ func (o CatalogItemTypeWorkflowUpdate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Content) {
 		toSerialize["content"] = o.Content
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *CatalogItemTypeWorkflowUpdate) UnmarshalJSON(data []byte) (err error) {
+	varCatalogItemTypeWorkflowUpdate := _CatalogItemTypeWorkflowUpdate{}
+
+	err = json.Unmarshal(data, &varCatalogItemTypeWorkflowUpdate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CatalogItemTypeWorkflowUpdate(varCatalogItemTypeWorkflowUpdate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "layoutCode")
+		delete(additionalProperties, "iconPath")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "featured")
+		delete(additionalProperties, "allowQuantity")
+		delete(additionalProperties, "workflow")
+		delete(additionalProperties, "context")
+		delete(additionalProperties, "workflowConfig")
+		delete(additionalProperties, "formType")
+		delete(additionalProperties, "form")
+		delete(additionalProperties, "optionTypes")
+		delete(additionalProperties, "content")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCatalogItemTypeWorkflowUpdate struct {

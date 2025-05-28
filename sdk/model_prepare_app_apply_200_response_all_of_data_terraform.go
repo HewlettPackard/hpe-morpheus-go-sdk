@@ -24,7 +24,10 @@ type PrepareAppApply200ResponseAllOfDataTerraform struct {
 	BackendType *string `json:"backendType,omitempty"`
 	TimeoutMode *string `json:"timeoutMode,omitempty"`
 	ConfigType *string `json:"configType,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _PrepareAppApply200ResponseAllOfDataTerraform PrepareAppApply200ResponseAllOfDataTerraform
 
 // NewPrepareAppApply200ResponseAllOfDataTerraform instantiates a new PrepareAppApply200ResponseAllOfDataTerraform object
 // This constructor will assign default values to properties that have it defined,
@@ -193,7 +196,36 @@ func (o PrepareAppApply200ResponseAllOfDataTerraform) ToMap() (map[string]interf
 	if !IsNil(o.ConfigType) {
 		toSerialize["configType"] = o.ConfigType
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *PrepareAppApply200ResponseAllOfDataTerraform) UnmarshalJSON(data []byte) (err error) {
+	varPrepareAppApply200ResponseAllOfDataTerraform := _PrepareAppApply200ResponseAllOfDataTerraform{}
+
+	err = json.Unmarshal(data, &varPrepareAppApply200ResponseAllOfDataTerraform)
+
+	if err != nil {
+		return err
+	}
+
+	*o = PrepareAppApply200ResponseAllOfDataTerraform(varPrepareAppApply200ResponseAllOfDataTerraform)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "refreshMode")
+		delete(additionalProperties, "backendType")
+		delete(additionalProperties, "timeoutMode")
+		delete(additionalProperties, "configType")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullablePrepareAppApply200ResponseAllOfDataTerraform struct {

@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -34,6 +33,7 @@ type AddSecurityPackagesRequestSecurityPackage struct {
 	Url string `json:"url"`
 	// Can be used to disable the security package
 	Enabled *bool `json:"enabled,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddSecurityPackagesRequestSecurityPackage AddSecurityPackagesRequestSecurityPackage
@@ -265,6 +265,11 @@ func (o AddSecurityPackagesRequestSecurityPackage) ToMap() (map[string]interface
 	if !IsNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -293,15 +298,25 @@ func (o *AddSecurityPackagesRequestSecurityPackage) UnmarshalJSON(data []byte) (
 
 	varAddSecurityPackagesRequestSecurityPackage := _AddSecurityPackagesRequestSecurityPackage{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddSecurityPackagesRequestSecurityPackage)
+	err = json.Unmarshal(data, &varAddSecurityPackagesRequestSecurityPackage)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddSecurityPackagesRequestSecurityPackage(varAddSecurityPackagesRequestSecurityPackage)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "url")
+		delete(additionalProperties, "enabled")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

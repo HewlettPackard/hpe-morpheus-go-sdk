@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -25,6 +24,7 @@ type ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf struct 
 	// Provide the base CIDR Block to use for this VPC (must be between a /16 and /28 Block)
 	CidrBlock string `json:"cidrBlock"`
 	Tenancy string `json:"tenancy"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf
@@ -110,6 +110,11 @@ func (o ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf) ToM
 	toSerialize := map[string]interface{}{}
 	toSerialize["cidrBlock"] = o.CidrBlock
 	toSerialize["tenancy"] = o.Tenancy
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -138,15 +143,21 @@ func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf) Un
 
 	varListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf := _ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf)
+	err = json.Unmarshal(data, &varListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf)
 
 	if err != nil {
 		return err
 	}
 
 	*o = ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf(varListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "cidrBlock")
+		delete(additionalProperties, "tenancy")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

@@ -25,7 +25,10 @@ type AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInner struct {
 	SourceRoleFqn *string `json:"sourceRoleFqn,omitempty"`
 	// Name of the role in the identity source
 	SourceRoleName *string `json:"sourceRoleName,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInner AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInner
 
 // NewAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInner instantiates a new AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInner object
 // This constructor will assign default values to properties that have it defined,
@@ -159,7 +162,35 @@ func (o AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInner) ToMap() (map[
 	if !IsNil(o.SourceRoleName) {
 		toSerialize["sourceRoleName"] = o.SourceRoleName
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInner) UnmarshalJSON(data []byte) (err error) {
+	varAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInner := _AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInner{}
+
+	err = json.Unmarshal(data, &varAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInner(varAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "mappedRole")
+		delete(additionalProperties, "sourceRoleFqn")
+		delete(additionalProperties, "sourceRoleName")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInner struct {

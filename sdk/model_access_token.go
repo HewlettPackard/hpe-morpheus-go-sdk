@@ -30,7 +30,10 @@ type AccessToken struct {
 	TokenType *string `json:"token_type,omitempty"`
 	// Scope granted
 	Scope *string `json:"scope,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AccessToken AccessToken
 
 // NewAccessToken instantiates a new AccessToken object
 // This constructor will assign default values to properties that have it defined,
@@ -234,7 +237,37 @@ func (o AccessToken) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Scope) {
 		toSerialize["scope"] = o.Scope
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AccessToken) UnmarshalJSON(data []byte) (err error) {
+	varAccessToken := _AccessToken{}
+
+	err = json.Unmarshal(data, &varAccessToken)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AccessToken(varAccessToken)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "access_token")
+		delete(additionalProperties, "refresh_token")
+		delete(additionalProperties, "expires_in")
+		delete(additionalProperties, "token_type")
+		delete(additionalProperties, "scope")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAccessToken struct {

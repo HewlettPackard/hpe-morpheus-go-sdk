@@ -45,7 +45,10 @@ type ImageBuildCreate struct {
 	ConversionFormats NullableString `json:"conversionFormats,omitempty"`
 	// Keep Results - Keep only the most recent builds. Older executions will be deleted along with their associated Virtual Images. The value 0 disables this functionality.
 	KeepResults *int64 `json:"keepResults,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ImageBuildCreate ImageBuildCreate
 
 // NewImageBuildCreate instantiates a new ImageBuildCreate object
 // This constructor will assign default values to properties that have it defined,
@@ -613,7 +616,47 @@ func (o ImageBuildCreate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.KeepResults) {
 		toSerialize["keepResults"] = o.KeepResults
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ImageBuildCreate) UnmarshalJSON(data []byte) (err error) {
+	varImageBuildCreate := _ImageBuildCreate{}
+
+	err = json.Unmarshal(data, &varImageBuildCreate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ImageBuildCreate(varImageBuildCreate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "site")
+		delete(additionalProperties, "zone")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "bootScript")
+		delete(additionalProperties, "preseedScript")
+		delete(additionalProperties, "sshUsername")
+		delete(additionalProperties, "sshPassword")
+		delete(additionalProperties, "storageProvider")
+		delete(additionalProperties, "isCloudInit")
+		delete(additionalProperties, "buildOutputName")
+		delete(additionalProperties, "conversionFormats")
+		delete(additionalProperties, "keepResults")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableImageBuildCreate struct {

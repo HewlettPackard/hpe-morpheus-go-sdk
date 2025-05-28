@@ -27,7 +27,10 @@ type ListUserSettings200ResponseAllOfAccessTokensInner struct {
 	TokenType *string `json:"tokenType,omitempty"`
 	MaskedAccessToken *string `json:"maskedAccessToken,omitempty"`
 	MaskedRefreshToken *string `json:"maskedRefreshToken,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListUserSettings200ResponseAllOfAccessTokensInner ListUserSettings200ResponseAllOfAccessTokensInner
 
 // NewListUserSettings200ResponseAllOfAccessTokensInner instantiates a new ListUserSettings200ResponseAllOfAccessTokensInner object
 // This constructor will assign default values to properties that have it defined,
@@ -266,7 +269,38 @@ func (o ListUserSettings200ResponseAllOfAccessTokensInner) ToMap() (map[string]i
 	if !IsNil(o.MaskedRefreshToken) {
 		toSerialize["maskedRefreshToken"] = o.MaskedRefreshToken
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListUserSettings200ResponseAllOfAccessTokensInner) UnmarshalJSON(data []byte) (err error) {
+	varListUserSettings200ResponseAllOfAccessTokensInner := _ListUserSettings200ResponseAllOfAccessTokensInner{}
+
+	err = json.Unmarshal(data, &varListUserSettings200ResponseAllOfAccessTokensInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListUserSettings200ResponseAllOfAccessTokensInner(varListUserSettings200ResponseAllOfAccessTokensInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "clientId")
+		delete(additionalProperties, "username")
+		delete(additionalProperties, "expiration")
+		delete(additionalProperties, "tokenType")
+		delete(additionalProperties, "maskedAccessToken")
+		delete(additionalProperties, "maskedRefreshToken")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListUserSettings200ResponseAllOfAccessTokensInner struct {

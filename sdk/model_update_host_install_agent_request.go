@@ -21,7 +21,10 @@ var _ MappedNullable = &UpdateHostInstallAgentRequest{}
 // UpdateHostInstallAgentRequest struct for UpdateHostInstallAgentRequest
 type UpdateHostInstallAgentRequest struct {
 	Server *UpdateHostInstallAgentRequestServer `json:"server,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateHostInstallAgentRequest UpdateHostInstallAgentRequest
 
 // NewUpdateHostInstallAgentRequest instantiates a new UpdateHostInstallAgentRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o UpdateHostInstallAgentRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Server) {
 		toSerialize["server"] = o.Server
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateHostInstallAgentRequest) UnmarshalJSON(data []byte) (err error) {
+	varUpdateHostInstallAgentRequest := _UpdateHostInstallAgentRequest{}
+
+	err = json.Unmarshal(data, &varUpdateHostInstallAgentRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateHostInstallAgentRequest(varUpdateHostInstallAgentRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "server")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateHostInstallAgentRequest struct {

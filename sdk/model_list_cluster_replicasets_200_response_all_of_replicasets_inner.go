@@ -34,7 +34,10 @@ type ListClusterReplicasets200ResponseAllOfReplicasetsInner struct {
 	Owner *GetAlerts200ResponseAllOfChecksInnerContainer `json:"owner,omitempty"`
 	TotalCpuUsage *int64 `json:"totalCpuUsage,omitempty"`
 	Stats map[string]interface{} `json:"stats,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListClusterReplicasets200ResponseAllOfReplicasetsInner ListClusterReplicasets200ResponseAllOfReplicasetsInner
 
 // NewListClusterReplicasets200ResponseAllOfReplicasetsInner instantiates a new ListClusterReplicasets200ResponseAllOfReplicasetsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -518,7 +521,45 @@ func (o ListClusterReplicasets200ResponseAllOfReplicasetsInner) ToMap() (map[str
 	if !IsNil(o.Stats) {
 		toSerialize["stats"] = o.Stats
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) UnmarshalJSON(data []byte) (err error) {
+	varListClusterReplicasets200ResponseAllOfReplicasetsInner := _ListClusterReplicasets200ResponseAllOfReplicasetsInner{}
+
+	err = json.Unmarshal(data, &varListClusterReplicasets200ResponseAllOfReplicasetsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListClusterReplicasets200ResponseAllOfReplicasetsInner(varListClusterReplicasets200ResponseAllOfReplicasetsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "resourceLevel")
+		delete(additionalProperties, "resourceType")
+		delete(additionalProperties, "managed")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "owner")
+		delete(additionalProperties, "totalCpuUsage")
+		delete(additionalProperties, "stats")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListClusterReplicasets200ResponseAllOfReplicasetsInner struct {

@@ -34,7 +34,10 @@ type ClusterApiConfig struct {
 	ServiceAccess *string `json:"serviceAccess,omitempty"`
 	ServiceCert *string `json:"serviceCert,omitempty"`
 	ServiceVersion *string `json:"serviceVersion,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ClusterApiConfig ClusterApiConfig
 
 // NewClusterApiConfig instantiates a new ClusterApiConfig object
 // This constructor will assign default values to properties that have it defined,
@@ -483,7 +486,44 @@ func (o ClusterApiConfig) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ServiceVersion) {
 		toSerialize["serviceVersion"] = o.ServiceVersion
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ClusterApiConfig) UnmarshalJSON(data []byte) (err error) {
+	varClusterApiConfig := _ClusterApiConfig{}
+
+	err = json.Unmarshal(data, &varClusterApiConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ClusterApiConfig(varClusterApiConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "serviceUrl")
+		delete(additionalProperties, "serviceHost")
+		delete(additionalProperties, "servicePath")
+		delete(additionalProperties, "serviceHostname")
+		delete(additionalProperties, "servicePort")
+		delete(additionalProperties, "serviceUsername")
+		delete(additionalProperties, "servicePassword")
+		delete(additionalProperties, "servicePasswordHash")
+		delete(additionalProperties, "serviceToken")
+		delete(additionalProperties, "serviceAccess")
+		delete(additionalProperties, "serviceCert")
+		delete(additionalProperties, "serviceVersion")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableClusterApiConfig struct {

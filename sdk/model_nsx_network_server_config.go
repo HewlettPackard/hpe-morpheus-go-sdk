@@ -22,7 +22,10 @@ var _ MappedNullable = &NSXNetworkServerConfig{}
 type NSXNetworkServerConfig struct {
 	// NSX Project (NSX 4.1+)
 	Project *string `json:"project,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _NSXNetworkServerConfig NSXNetworkServerConfig
 
 // NewNSXNetworkServerConfig instantiates a new NSXNetworkServerConfig object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o NSXNetworkServerConfig) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Project) {
 		toSerialize["project"] = o.Project
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *NSXNetworkServerConfig) UnmarshalJSON(data []byte) (err error) {
+	varNSXNetworkServerConfig := _NSXNetworkServerConfig{}
+
+	err = json.Unmarshal(data, &varNSXNetworkServerConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = NSXNetworkServerConfig(varNSXNetworkServerConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "project")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableNSXNetworkServerConfig struct {

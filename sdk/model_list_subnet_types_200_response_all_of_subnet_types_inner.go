@@ -29,7 +29,10 @@ type ListSubnetTypes200ResponseAllOfSubnetTypesInner struct {
 	DhcpServerEditable *bool `json:"dhcpServerEditable,omitempty"`
 	CanAssignPool *bool `json:"canAssignPool,omitempty"`
 	OptionTypes []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListSubnetTypes200ResponseAllOfSubnetTypesInner ListSubnetTypes200ResponseAllOfSubnetTypesInner
 
 // NewListSubnetTypes200ResponseAllOfSubnetTypesInner instantiates a new ListSubnetTypes200ResponseAllOfSubnetTypesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -373,7 +376,41 @@ func (o ListSubnetTypes200ResponseAllOfSubnetTypesInner) ToMap() (map[string]int
 	if !IsNil(o.OptionTypes) {
 		toSerialize["optionTypes"] = o.OptionTypes
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListSubnetTypes200ResponseAllOfSubnetTypesInner) UnmarshalJSON(data []byte) (err error) {
+	varListSubnetTypes200ResponseAllOfSubnetTypesInner := _ListSubnetTypes200ResponseAllOfSubnetTypesInner{}
+
+	err = json.Unmarshal(data, &varListSubnetTypes200ResponseAllOfSubnetTypesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListSubnetTypes200ResponseAllOfSubnetTypesInner(varListSubnetTypes200ResponseAllOfSubnetTypesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "creatable")
+		delete(additionalProperties, "deletable")
+		delete(additionalProperties, "dhcpServerEditable")
+		delete(additionalProperties, "canAssignPool")
+		delete(additionalProperties, "optionTypes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListSubnetTypes200ResponseAllOfSubnetTypesInner struct {

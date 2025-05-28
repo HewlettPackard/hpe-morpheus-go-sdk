@@ -23,7 +23,10 @@ type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPa
 	Code *string `json:"code,omitempty"`
 	Name *string `json:"name,omitempty"`
 	TermOptions map[string]ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValue `json:"termOptions,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValue ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValue
 
 // NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValue instantiates a new ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValue object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVm
 	if !IsNil(o.TermOptions) {
 		toSerialize["termOptions"] = o.TermOptions
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValue) UnmarshalJSON(data []byte) (err error) {
+	varListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValue := _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValue{}
+
+	err = json.Unmarshal(data, &varListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValue)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValue(varListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValue)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "termOptions")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValue struct {

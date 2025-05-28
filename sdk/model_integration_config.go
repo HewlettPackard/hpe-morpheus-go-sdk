@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -23,6 +22,7 @@ var _ MappedNullable = &IntegrationConfig{}
 // IntegrationConfig struct for IntegrationConfig
 type IntegrationConfig struct {
 	Integration AddIntegrationsRequestOneOfIntegration `json:"integration"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _IntegrationConfig IntegrationConfig
@@ -80,6 +80,11 @@ func (o IntegrationConfig) MarshalJSON() ([]byte, error) {
 func (o IntegrationConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["integration"] = o.Integration
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -107,15 +112,20 @@ func (o *IntegrationConfig) UnmarshalJSON(data []byte) (err error) {
 
 	varIntegrationConfig := _IntegrationConfig{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varIntegrationConfig)
+	err = json.Unmarshal(data, &varIntegrationConfig)
 
 	if err != nil {
 		return err
 	}
 
 	*o = IntegrationConfig(varIntegrationConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "integration")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

@@ -63,7 +63,10 @@ type ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInner struct {
 	Integration *ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerIntegration `json:"integration,omitempty"`
 	Pools []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"pools,omitempty"`
 	Credential *ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential `json:"credential,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInner ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInner
 
 // NewListNetworkPoolServers200ResponseAllOfNetworkPoolServersInner instantiates a new ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInner object
 // This constructor will assign default values to properties that have it defined,
@@ -1010,7 +1013,58 @@ func (o ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInner) ToMap() (
 	if !IsNil(o.Credential) {
 		toSerialize["credential"] = o.Credential
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInner) UnmarshalJSON(data []byte) (err error) {
+	varListNetworkPoolServers200ResponseAllOfNetworkPoolServersInner := _ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInner{}
+
+	err = json.Unmarshal(data, &varListNetworkPoolServers200ResponseAllOfNetworkPoolServersInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInner(varListNetworkPoolServers200ResponseAllOfNetworkPoolServersInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "serviceUrl")
+		delete(additionalProperties, "serviceHost")
+		delete(additionalProperties, "servicePort")
+		delete(additionalProperties, "serviceMode")
+		delete(additionalProperties, "serviceUsername")
+		delete(additionalProperties, "servicePassword")
+		delete(additionalProperties, "servicePasswordHash")
+		delete(additionalProperties, "serviceThrottleRate")
+		delete(additionalProperties, "ignoreSsl")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "statusMessage")
+		delete(additionalProperties, "statusDate")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "networkFilter")
+		delete(additionalProperties, "zoneFilter")
+		delete(additionalProperties, "tenantMatch")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "integration")
+		delete(additionalProperties, "pools")
+		delete(additionalProperties, "credential")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListNetworkPoolServers200ResponseAllOfNetworkPoolServersInner struct {

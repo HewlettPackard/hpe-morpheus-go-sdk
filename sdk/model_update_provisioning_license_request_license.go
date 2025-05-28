@@ -32,7 +32,10 @@ type UpdateProvisioningLicenseRequestLicense struct {
 	VirtualImages []int64 `json:"virtualImages,omitempty"`
 	// Tenants - Array of tenants that are allowed to use the key.
 	Tenants []int64 `json:"tenants,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateProvisioningLicenseRequestLicense UpdateProvisioningLicenseRequestLicense
 
 // NewUpdateProvisioningLicenseRequestLicense instantiates a new UpdateProvisioningLicenseRequestLicense object
 // This constructor will assign default values to properties that have it defined,
@@ -275,7 +278,38 @@ func (o UpdateProvisioningLicenseRequestLicense) ToMap() (map[string]interface{}
 	if !IsNil(o.Tenants) {
 		toSerialize["tenants"] = o.Tenants
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateProvisioningLicenseRequestLicense) UnmarshalJSON(data []byte) (err error) {
+	varUpdateProvisioningLicenseRequestLicense := _UpdateProvisioningLicenseRequestLicense{}
+
+	err = json.Unmarshal(data, &varUpdateProvisioningLicenseRequestLicense)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateProvisioningLicenseRequestLicense(varUpdateProvisioningLicenseRequestLicense)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "licenseVersion")
+		delete(additionalProperties, "copies")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "virtualImages")
+		delete(additionalProperties, "tenants")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateProvisioningLicenseRequestLicense struct {

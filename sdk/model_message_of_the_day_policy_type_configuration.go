@@ -27,7 +27,10 @@ type MessageOfTheDayPolicyTypeConfiguration struct {
 	MotdType *string `json:"motd.type,omitempty"`
 	MotdFullPage *bool `json:"motd._fullPage,omitempty"`
 	MotdDate *time.Time `json:"motd.date,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _MessageOfTheDayPolicyTypeConfiguration MessageOfTheDayPolicyTypeConfiguration
 
 // NewMessageOfTheDayPolicyTypeConfiguration instantiates a new MessageOfTheDayPolicyTypeConfiguration object
 // This constructor will assign default values to properties that have it defined,
@@ -266,7 +269,38 @@ func (o MessageOfTheDayPolicyTypeConfiguration) ToMap() (map[string]interface{},
 	if !IsNil(o.MotdDate) {
 		toSerialize["motd.date"] = o.MotdDate
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *MessageOfTheDayPolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
+	varMessageOfTheDayPolicyTypeConfiguration := _MessageOfTheDayPolicyTypeConfiguration{}
+
+	err = json.Unmarshal(data, &varMessageOfTheDayPolicyTypeConfiguration)
+
+	if err != nil {
+		return err
+	}
+
+	*o = MessageOfTheDayPolicyTypeConfiguration(varMessageOfTheDayPolicyTypeConfiguration)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "motd.title")
+		delete(additionalProperties, "motd")
+		delete(additionalProperties, "motd.message")
+		delete(additionalProperties, "motd.type")
+		delete(additionalProperties, "motd._fullPage")
+		delete(additionalProperties, "motd.date")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableMessageOfTheDayPolicyTypeConfiguration struct {

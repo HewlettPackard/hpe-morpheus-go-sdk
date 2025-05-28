@@ -27,7 +27,10 @@ type BootScript struct {
 	Content *string `json:"content,omitempty"`
 	CreatedBy *ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy `json:"createdBy,omitempty"`
 	Visibility *string `json:"visibility,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _BootScript BootScript
 
 // NewBootScript instantiates a new BootScript object
 // This constructor will assign default values to properties that have it defined,
@@ -301,7 +304,39 @@ func (o BootScript) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Visibility) {
 		toSerialize["visibility"] = o.Visibility
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *BootScript) UnmarshalJSON(data []byte) (err error) {
+	varBootScript := _BootScript{}
+
+	err = json.Unmarshal(data, &varBootScript)
+
+	if err != nil {
+		return err
+	}
+
+	*o = BootScript(varBootScript)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "fileName")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "content")
+		delete(additionalProperties, "createdBy")
+		delete(additionalProperties, "visibility")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableBootScript struct {

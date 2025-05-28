@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -23,6 +22,7 @@ var _ MappedNullable = &UpdatePriceSetsRequest{}
 // UpdatePriceSetsRequest struct for UpdatePriceSetsRequest
 type UpdatePriceSetsRequest struct {
 	PriceSet UpdatePriceSetsRequestPriceSet `json:"priceSet"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdatePriceSetsRequest UpdatePriceSetsRequest
@@ -80,6 +80,11 @@ func (o UpdatePriceSetsRequest) MarshalJSON() ([]byte, error) {
 func (o UpdatePriceSetsRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["priceSet"] = o.PriceSet
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -107,15 +112,20 @@ func (o *UpdatePriceSetsRequest) UnmarshalJSON(data []byte) (err error) {
 
 	varUpdatePriceSetsRequest := _UpdatePriceSetsRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varUpdatePriceSetsRequest)
+	err = json.Unmarshal(data, &varUpdatePriceSetsRequest)
 
 	if err != nil {
 		return err
 	}
 
 	*o = UpdatePriceSetsRequest(varUpdatePriceSetsRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "priceSet")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

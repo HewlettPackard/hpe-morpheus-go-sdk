@@ -21,7 +21,10 @@ var _ MappedNullable = &AddOptionFormRequest{}
 // AddOptionFormRequest struct for AddOptionFormRequest
 type AddOptionFormRequest struct {
 	OptionTypeForm *AddOptionFormRequestOptionTypeForm `json:"optionTypeForm,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddOptionFormRequest AddOptionFormRequest
 
 // NewAddOptionFormRequest instantiates a new AddOptionFormRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o AddOptionFormRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.OptionTypeForm) {
 		toSerialize["optionTypeForm"] = o.OptionTypeForm
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddOptionFormRequest) UnmarshalJSON(data []byte) (err error) {
+	varAddOptionFormRequest := _AddOptionFormRequest{}
+
+	err = json.Unmarshal(data, &varAddOptionFormRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddOptionFormRequest(varAddOptionFormRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "optionTypeForm")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddOptionFormRequest struct {

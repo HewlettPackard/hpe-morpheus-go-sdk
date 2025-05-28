@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -26,6 +25,7 @@ type ExecuteExecutionRequestRequest struct {
 	Script string `json:"script"`
 	// Pass true to send key mappings to the hypervisor console so commands such as <LEFT>, <RIGHT> and <WAIT> can be used.
 	SendKeys *bool `json:"sendKeys,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ExecuteExecutionRequestRequest ExecuteExecutionRequestRequest
@@ -122,6 +122,11 @@ func (o ExecuteExecutionRequestRequest) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.SendKeys) {
 		toSerialize["sendKeys"] = o.SendKeys
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -149,15 +154,21 @@ func (o *ExecuteExecutionRequestRequest) UnmarshalJSON(data []byte) (err error) 
 
 	varExecuteExecutionRequestRequest := _ExecuteExecutionRequestRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varExecuteExecutionRequestRequest)
+	err = json.Unmarshal(data, &varExecuteExecutionRequestRequest)
 
 	if err != nil {
 		return err
 	}
 
 	*o = ExecuteExecutionRequestRequest(varExecuteExecutionRequestRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "script")
+		delete(additionalProperties, "sendKeys")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

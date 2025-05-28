@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -40,6 +39,7 @@ type NetworkPoolServerCreateSolarWinds struct {
 	IgnoreSsl *bool `json:"ignoreSsl,omitempty"`
 	Config *BluecatNetworkPoolServerConfig `json:"config,omitempty"`
 	Credential *NSXNetworkServerCredential `json:"credential,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _NetworkPoolServerCreateSolarWinds NetworkPoolServerCreateSolarWinds
@@ -406,6 +406,11 @@ func (o NetworkPoolServerCreateSolarWinds) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.Credential) {
 		toSerialize["credential"] = o.Credential
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -435,15 +440,29 @@ func (o *NetworkPoolServerCreateSolarWinds) UnmarshalJSON(data []byte) (err erro
 
 	varNetworkPoolServerCreateSolarWinds := _NetworkPoolServerCreateSolarWinds{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varNetworkPoolServerCreateSolarWinds)
+	err = json.Unmarshal(data, &varNetworkPoolServerCreateSolarWinds)
 
 	if err != nil {
 		return err
 	}
 
 	*o = NetworkPoolServerCreateSolarWinds(varNetworkPoolServerCreateSolarWinds)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "serviceUrl")
+		delete(additionalProperties, "serviceUsername")
+		delete(additionalProperties, "servicePassword")
+		delete(additionalProperties, "serviceThrottleRate")
+		delete(additionalProperties, "ignoreSsl")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "credential")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

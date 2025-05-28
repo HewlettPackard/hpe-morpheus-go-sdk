@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -31,6 +30,7 @@ type AddTenantRequestAccount struct {
 	Subdomain *string `json:"subdomain,omitempty"`
 	// Currency Code (ISO 4217)
 	Currency *string `json:"currency,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddTenantRequestAccount AddTenantRequestAccount
@@ -232,6 +232,11 @@ func (o AddTenantRequestAccount) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Currency) {
 		toSerialize["currency"] = o.Currency
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -259,15 +264,24 @@ func (o *AddTenantRequestAccount) UnmarshalJSON(data []byte) (err error) {
 
 	varAddTenantRequestAccount := _AddTenantRequestAccount{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddTenantRequestAccount)
+	err = json.Unmarshal(data, &varAddTenantRequestAccount)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddTenantRequestAccount(varAddTenantRequestAccount)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "role")
+		delete(additionalProperties, "subdomain")
+		delete(additionalProperties, "currency")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

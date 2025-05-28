@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -23,6 +22,7 @@ var _ MappedNullable = &RunReportsRequest{}
 // RunReportsRequest struct for RunReportsRequest
 type RunReportsRequest struct {
 	Report RunReportsRequestReport `json:"report"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _RunReportsRequest RunReportsRequest
@@ -80,6 +80,11 @@ func (o RunReportsRequest) MarshalJSON() ([]byte, error) {
 func (o RunReportsRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["report"] = o.Report
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -107,15 +112,20 @@ func (o *RunReportsRequest) UnmarshalJSON(data []byte) (err error) {
 
 	varRunReportsRequest := _RunReportsRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varRunReportsRequest)
+	err = json.Unmarshal(data, &varRunReportsRequest)
 
 	if err != nil {
 		return err
 	}
 
 	*o = RunReportsRequest(varRunReportsRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "report")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

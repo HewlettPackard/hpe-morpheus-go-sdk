@@ -26,7 +26,10 @@ type UpdateVDIGatewaysRequestVdiGatewayOneOf struct {
 	Description *string `json:"description,omitempty"`
 	// Gateway URL
 	GatewayUrl *string `json:"gatewayUrl,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateVDIGatewaysRequestVdiGatewayOneOf UpdateVDIGatewaysRequestVdiGatewayOneOf
 
 // NewUpdateVDIGatewaysRequestVdiGatewayOneOf instantiates a new UpdateVDIGatewaysRequestVdiGatewayOneOf object
 // This constructor will assign default values to properties that have it defined,
@@ -160,7 +163,35 @@ func (o UpdateVDIGatewaysRequestVdiGatewayOneOf) ToMap() (map[string]interface{}
 	if !IsNil(o.GatewayUrl) {
 		toSerialize["gatewayUrl"] = o.GatewayUrl
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateVDIGatewaysRequestVdiGatewayOneOf) UnmarshalJSON(data []byte) (err error) {
+	varUpdateVDIGatewaysRequestVdiGatewayOneOf := _UpdateVDIGatewaysRequestVdiGatewayOneOf{}
+
+	err = json.Unmarshal(data, &varUpdateVDIGatewaysRequestVdiGatewayOneOf)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateVDIGatewaysRequestVdiGatewayOneOf(varUpdateVDIGatewaysRequestVdiGatewayOneOf)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "gatewayUrl")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateVDIGatewaysRequestVdiGatewayOneOf struct {

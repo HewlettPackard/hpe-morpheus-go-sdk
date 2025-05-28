@@ -22,7 +22,10 @@ var _ MappedNullable = &AddStorageBucketsRequestStorageBucketConfigOneOf3{}
 type AddStorageBucketsRequestStorageBucketConfigOneOf3 struct {
 	// Storage Path
 	BasePath *string `json:"basePath,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddStorageBucketsRequestStorageBucketConfigOneOf3 AddStorageBucketsRequestStorageBucketConfigOneOf3
 
 // NewAddStorageBucketsRequestStorageBucketConfigOneOf3 instantiates a new AddStorageBucketsRequestStorageBucketConfigOneOf3 object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o AddStorageBucketsRequestStorageBucketConfigOneOf3) ToMap() (map[string]i
 	if !IsNil(o.BasePath) {
 		toSerialize["basePath"] = o.BasePath
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddStorageBucketsRequestStorageBucketConfigOneOf3) UnmarshalJSON(data []byte) (err error) {
+	varAddStorageBucketsRequestStorageBucketConfigOneOf3 := _AddStorageBucketsRequestStorageBucketConfigOneOf3{}
+
+	err = json.Unmarshal(data, &varAddStorageBucketsRequestStorageBucketConfigOneOf3)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddStorageBucketsRequestStorageBucketConfigOneOf3(varAddStorageBucketsRequestStorageBucketConfigOneOf3)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "basePath")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddStorageBucketsRequestStorageBucketConfigOneOf3 struct {

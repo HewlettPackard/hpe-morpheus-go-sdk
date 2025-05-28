@@ -24,7 +24,10 @@ type AddBaremetalHostRequestServerConfig struct {
 	IloUsername *string `json:"iloUsername,omitempty"`
 	IloPassword *string `json:"iloPassword,omitempty"`
 	MacAddress *string `json:"macAddress,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddBaremetalHostRequestServerConfig AddBaremetalHostRequestServerConfig
 
 // NewAddBaremetalHostRequestServerConfig instantiates a new AddBaremetalHostRequestServerConfig object
 // This constructor will assign default values to properties that have it defined,
@@ -193,7 +196,36 @@ func (o AddBaremetalHostRequestServerConfig) ToMap() (map[string]interface{}, er
 	if !IsNil(o.MacAddress) {
 		toSerialize["macAddress"] = o.MacAddress
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddBaremetalHostRequestServerConfig) UnmarshalJSON(data []byte) (err error) {
+	varAddBaremetalHostRequestServerConfig := _AddBaremetalHostRequestServerConfig{}
+
+	err = json.Unmarshal(data, &varAddBaremetalHostRequestServerConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddBaremetalHostRequestServerConfig(varAddBaremetalHostRequestServerConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "iloIpAddress")
+		delete(additionalProperties, "iloUsername")
+		delete(additionalProperties, "iloPassword")
+		delete(additionalProperties, "macAddress")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddBaremetalHostRequestServerConfig struct {

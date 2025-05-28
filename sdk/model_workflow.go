@@ -35,7 +35,10 @@ type Workflow struct {
 	Tasks []int64 `json:"tasks,omitempty"`
 	OptionTypes []ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner `json:"optionTypes,omitempty"`
 	TaskSetTasks []ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInner `json:"taskSetTasks,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _Workflow Workflow
 
 // NewWorkflow instantiates a new Workflow object
 // This constructor will assign default values to properties that have it defined,
@@ -554,7 +557,46 @@ func (o Workflow) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.TaskSetTasks) {
 		toSerialize["taskSetTasks"] = o.TaskSetTasks
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *Workflow) UnmarshalJSON(data []byte) (err error) {
+	varWorkflow := _Workflow{}
+
+	err = json.Unmarshal(data, &varWorkflow)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Workflow(varWorkflow)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "platform")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "allowCustomConfig")
+		delete(additionalProperties, "tasks")
+		delete(additionalProperties, "optionTypes")
+		delete(additionalProperties, "taskSetTasks")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableWorkflow struct {

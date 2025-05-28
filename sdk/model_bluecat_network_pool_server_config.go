@@ -22,7 +22,10 @@ var _ MappedNullable = &BluecatNetworkPoolServerConfig{}
 type BluecatNetworkPoolServerConfig struct {
 	// Inventory Existing
 	InventoryExisting *string `json:"inventoryExisting,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _BluecatNetworkPoolServerConfig BluecatNetworkPoolServerConfig
 
 // NewBluecatNetworkPoolServerConfig instantiates a new BluecatNetworkPoolServerConfig object
 // This constructor will assign default values to properties that have it defined,
@@ -90,7 +93,33 @@ func (o BluecatNetworkPoolServerConfig) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.InventoryExisting) {
 		toSerialize["inventoryExisting"] = o.InventoryExisting
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *BluecatNetworkPoolServerConfig) UnmarshalJSON(data []byte) (err error) {
+	varBluecatNetworkPoolServerConfig := _BluecatNetworkPoolServerConfig{}
+
+	err = json.Unmarshal(data, &varBluecatNetworkPoolServerConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = BluecatNetworkPoolServerConfig(varBluecatNetworkPoolServerConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "inventoryExisting")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableBluecatNetworkPoolServerConfig struct {

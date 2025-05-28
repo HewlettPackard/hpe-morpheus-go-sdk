@@ -29,7 +29,10 @@ type ListHealth200ResponseAllOfHealthThreads struct {
 	TotalThreads *int64 `json:"totalThreads,omitempty"`
 	RunningWebThreads *int64 `json:"runningWebThreads,omitempty"`
 	Status *string `json:"status,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListHealth200ResponseAllOfHealthThreads ListHealth200ResponseAllOfHealthThreads
 
 // NewListHealth200ResponseAllOfHealthThreads instantiates a new ListHealth200ResponseAllOfHealthThreads object
 // This constructor will assign default values to properties that have it defined,
@@ -373,7 +376,41 @@ func (o ListHealth200ResponseAllOfHealthThreads) ToMap() (map[string]interface{}
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListHealth200ResponseAllOfHealthThreads) UnmarshalJSON(data []byte) (err error) {
+	varListHealth200ResponseAllOfHealthThreads := _ListHealth200ResponseAllOfHealthThreads{}
+
+	err = json.Unmarshal(data, &varListHealth200ResponseAllOfHealthThreads)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListHealth200ResponseAllOfHealthThreads(varListHealth200ResponseAllOfHealthThreads)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "success")
+		delete(additionalProperties, "threadList")
+		delete(additionalProperties, "busyThreads")
+		delete(additionalProperties, "blockedThreads")
+		delete(additionalProperties, "runningThreads")
+		delete(additionalProperties, "totalCpuTime")
+		delete(additionalProperties, "totalThreads")
+		delete(additionalProperties, "runningWebThreads")
+		delete(additionalProperties, "status")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListHealth200ResponseAllOfHealthThreads struct {

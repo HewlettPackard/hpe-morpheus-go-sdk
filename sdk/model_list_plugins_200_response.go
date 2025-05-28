@@ -22,7 +22,10 @@ var _ MappedNullable = &ListPlugins200Response{}
 type ListPlugins200Response struct {
 	Plugins []ListPlugins200ResponseAllOfPluginsInner `json:"plugins,omitempty"`
 	Meta *ListActivity200ResponseAllOfMeta `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListPlugins200Response ListPlugins200Response
 
 // NewListPlugins200Response instantiates a new ListPlugins200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o ListPlugins200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Meta) {
 		toSerialize["meta"] = o.Meta
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListPlugins200Response) UnmarshalJSON(data []byte) (err error) {
+	varListPlugins200Response := _ListPlugins200Response{}
+
+	err = json.Unmarshal(data, &varListPlugins200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListPlugins200Response(varListPlugins200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "plugins")
+		delete(additionalProperties, "meta")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListPlugins200Response struct {

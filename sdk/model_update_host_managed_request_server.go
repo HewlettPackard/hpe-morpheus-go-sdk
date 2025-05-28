@@ -32,7 +32,10 @@ type UpdateHostManagedRequestServer struct {
 	// Metadata tags, Array of objects having a name and value, this adds or updates the specified tags and removes any tags not specified.
 	Tags []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner `json:"tags,omitempty"`
 	Config *UpdateHostManagedRequestServerConfig `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateHostManagedRequestServer UpdateHostManagedRequestServer
 
 // NewUpdateHostManagedRequestServer instantiates a new UpdateHostManagedRequestServer object
 // This constructor will assign default values to properties that have it defined,
@@ -341,7 +344,40 @@ func (o UpdateHostManagedRequestServer) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateHostManagedRequestServer) UnmarshalJSON(data []byte) (err error) {
+	varUpdateHostManagedRequestServer := _UpdateHostManagedRequestServer{}
+
+	err = json.Unmarshal(data, &varUpdateHostManagedRequestServer)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateHostManagedRequestServer(varUpdateHostManagedRequestServer)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "sshUsername")
+		delete(additionalProperties, "sshPassword")
+		delete(additionalProperties, "serverOs")
+		delete(additionalProperties, "plan")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "provisionSiteId")
+		delete(additionalProperties, "tags")
+		delete(additionalProperties, "config")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateHostManagedRequestServer struct {

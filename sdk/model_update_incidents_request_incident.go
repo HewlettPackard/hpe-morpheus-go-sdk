@@ -37,7 +37,10 @@ type UpdateIncidentsRequestIncident struct {
 	EndDate *time.Time `json:"endDate,omitempty"`
 	// Set 'In Availability'
 	InUptime *bool `json:"inUptime,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateIncidentsRequestIncident UpdateIncidentsRequestIncident
 
 // NewUpdateIncidentsRequestIncident instantiates a new UpdateIncidentsRequestIncident object
 // This constructor will assign default values to properties that have it defined,
@@ -346,7 +349,40 @@ func (o UpdateIncidentsRequestIncident) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.InUptime) {
 		toSerialize["inUptime"] = o.InUptime
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateIncidentsRequestIncident) UnmarshalJSON(data []byte) (err error) {
+	varUpdateIncidentsRequestIncident := _UpdateIncidentsRequestIncident{}
+
+	err = json.Unmarshal(data, &varUpdateIncidentsRequestIncident)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateIncidentsRequestIncident(varUpdateIncidentsRequestIncident)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "resolution")
+		delete(additionalProperties, "comment")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "severity")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "startDate")
+		delete(additionalProperties, "endDate")
+		delete(additionalProperties, "inUptime")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateIncidentsRequestIncident struct {

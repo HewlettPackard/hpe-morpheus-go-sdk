@@ -41,7 +41,10 @@ type ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1 struct {
 	ProviderSettings map[string]interface{} `json:"providerSettings,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1 ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1
 
 // NewListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1 instantiates a new ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1 object
 // This constructor will assign default values to properties that have it defined,
@@ -770,7 +773,52 @@ func (o ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1) ToMap() (map[
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1) UnmarshalJSON(data []byte) (err error) {
+	varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1 := _ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1{}
+
+	err = json.Unmarshal(data, &varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1(varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "deleted")
+		delete(additionalProperties, "autoSyncOnLogin")
+		delete(additionalProperties, "externalLogin")
+		delete(additionalProperties, "allowCustomMappings")
+		delete(additionalProperties, "manualRoleAssignment")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "defaultAccountRole")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "roleMappings")
+		delete(additionalProperties, "subdomain")
+		delete(additionalProperties, "loginURL")
+		delete(additionalProperties, "providerSettings")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1 struct {

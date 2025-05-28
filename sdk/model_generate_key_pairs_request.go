@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -23,6 +22,7 @@ var _ MappedNullable = &GenerateKeyPairsRequest{}
 // GenerateKeyPairsRequest struct for GenerateKeyPairsRequest
 type GenerateKeyPairsRequest struct {
 	KeyPair GenerateKeyPairsRequestKeyPair `json:"keyPair"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _GenerateKeyPairsRequest GenerateKeyPairsRequest
@@ -80,6 +80,11 @@ func (o GenerateKeyPairsRequest) MarshalJSON() ([]byte, error) {
 func (o GenerateKeyPairsRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["keyPair"] = o.KeyPair
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -107,15 +112,20 @@ func (o *GenerateKeyPairsRequest) UnmarshalJSON(data []byte) (err error) {
 
 	varGenerateKeyPairsRequest := _GenerateKeyPairsRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varGenerateKeyPairsRequest)
+	err = json.Unmarshal(data, &varGenerateKeyPairsRequest)
 
 	if err != nil {
 		return err
 	}
 
 	*o = GenerateKeyPairsRequest(varGenerateKeyPairsRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "keyPair")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

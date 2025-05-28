@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -35,6 +34,7 @@ type AddCheckGroupsRequestCheckGroup struct {
 	// Used to determine if check group is active
 	Active *bool `json:"active,omitempty"`
 	Checks []int32 `json:"checks,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddCheckGroupsRequestCheckGroup AddCheckGroupsRequestCheckGroup
@@ -318,6 +318,11 @@ func (o AddCheckGroupsRequestCheckGroup) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.Checks) {
 		toSerialize["checks"] = o.Checks
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -345,15 +350,26 @@ func (o *AddCheckGroupsRequestCheckGroup) UnmarshalJSON(data []byte) (err error)
 
 	varAddCheckGroupsRequestCheckGroup := _AddCheckGroupsRequestCheckGroup{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddCheckGroupsRequestCheckGroup)
+	err = json.Unmarshal(data, &varAddCheckGroupsRequestCheckGroup)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddCheckGroupsRequestCheckGroup(varAddCheckGroupsRequestCheckGroup)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "minHappy")
+		delete(additionalProperties, "inUptime")
+		delete(additionalProperties, "severity")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "checks")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

@@ -32,7 +32,10 @@ type ClusterServices struct {
 	Status *string `json:"status,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ClusterServices ClusterServices
 
 // NewClusterServices instantiates a new ClusterServices object
 // This constructor will assign default values to properties that have it defined,
@@ -446,7 +449,43 @@ func (o ClusterServices) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ClusterServices) UnmarshalJSON(data []byte) (err error) {
+	varClusterServices := _ClusterServices{}
+
+	err = json.Unmarshal(data, &varClusterServices)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ClusterServices(varClusterServices)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "externalIp")
+		delete(additionalProperties, "internalIp")
+		delete(additionalProperties, "externalPort")
+		delete(additionalProperties, "internalPort")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableClusterServices struct {

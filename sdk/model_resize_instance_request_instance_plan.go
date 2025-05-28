@@ -21,7 +21,10 @@ var _ MappedNullable = &ResizeInstanceRequestInstancePlan{}
 // ResizeInstanceRequestInstancePlan struct for ResizeInstanceRequestInstancePlan
 type ResizeInstanceRequestInstancePlan struct {
 	Id *int64 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ResizeInstanceRequestInstancePlan ResizeInstanceRequestInstancePlan
 
 // NewResizeInstanceRequestInstancePlan instantiates a new ResizeInstanceRequestInstancePlan object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o ResizeInstanceRequestInstancePlan) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ResizeInstanceRequestInstancePlan) UnmarshalJSON(data []byte) (err error) {
+	varResizeInstanceRequestInstancePlan := _ResizeInstanceRequestInstancePlan{}
+
+	err = json.Unmarshal(data, &varResizeInstanceRequestInstancePlan)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ResizeInstanceRequestInstancePlan(varResizeInstanceRequestInstancePlan)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableResizeInstanceRequestInstancePlan struct {

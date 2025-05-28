@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -24,6 +23,7 @@ var _ MappedNullable = &AddInstanceRequestInstancePlan{}
 type AddInstanceRequestInstancePlan struct {
 	// The id for the memory and storage option pre-configured within Morpheus.
 	Id int64 `json:"id"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddInstanceRequestInstancePlan AddInstanceRequestInstancePlan
@@ -81,6 +81,11 @@ func (o AddInstanceRequestInstancePlan) MarshalJSON() ([]byte, error) {
 func (o AddInstanceRequestInstancePlan) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -108,15 +113,20 @@ func (o *AddInstanceRequestInstancePlan) UnmarshalJSON(data []byte) (err error) 
 
 	varAddInstanceRequestInstancePlan := _AddInstanceRequestInstancePlan{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddInstanceRequestInstancePlan)
+	err = json.Unmarshal(data, &varAddInstanceRequestInstancePlan)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddInstanceRequestInstancePlan(varAddInstanceRequestInstancePlan)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

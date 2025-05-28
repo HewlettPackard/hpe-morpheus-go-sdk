@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -50,6 +49,7 @@ type AddChecksRequestCheckOneOf1Config struct {
 	SshUser *string `json:"sshUser,omitempty"`
 	// Password for user, if not using key based authentication
 	SshPassword *string `json:"sshPassword,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddChecksRequestCheckOneOf1Config AddChecksRequestCheckOneOf1Config
@@ -692,6 +692,11 @@ func (o AddChecksRequestCheckOneOf1Config) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.SshPassword) {
 		toSerialize["sshPassword"] = o.SshPassword
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -724,15 +729,38 @@ func (o *AddChecksRequestCheckOneOf1Config) UnmarshalJSON(data []byte) (err erro
 
 	varAddChecksRequestCheckOneOf1Config := _AddChecksRequestCheckOneOf1Config{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddChecksRequestCheckOneOf1Config)
+	err = json.Unmarshal(data, &varAddChecksRequestCheckOneOf1Config)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddChecksRequestCheckOneOf1Config(varAddChecksRequestCheckOneOf1Config)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "dbHost")
+		delete(additionalProperties, "dbPort")
+		delete(additionalProperties, "dbUser")
+		delete(additionalProperties, "dbPassword")
+		delete(additionalProperties, "dbPasswordHash")
+		delete(additionalProperties, "dbName")
+		delete(additionalProperties, "dbQuery")
+		delete(additionalProperties, "checkOperator")
+		delete(additionalProperties, "checkResult")
+		delete(additionalProperties, "checkUser")
+		delete(additionalProperties, "textCheckOn")
+		delete(additionalProperties, "checkPassword")
+		delete(additionalProperties, "webTextMatch")
+		delete(additionalProperties, "checkPasswordHash")
+		delete(additionalProperties, "tunnelOn")
+		delete(additionalProperties, "sshHost")
+		delete(additionalProperties, "sshPort")
+		delete(additionalProperties, "sshUser")
+		delete(additionalProperties, "sshPassword")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

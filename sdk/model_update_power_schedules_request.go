@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -23,6 +22,7 @@ var _ MappedNullable = &UpdatePowerSchedulesRequest{}
 // UpdatePowerSchedulesRequest struct for UpdatePowerSchedulesRequest
 type UpdatePowerSchedulesRequest struct {
 	Schedule UpdatePowerSchedulesRequestSchedule `json:"schedule"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdatePowerSchedulesRequest UpdatePowerSchedulesRequest
@@ -80,6 +80,11 @@ func (o UpdatePowerSchedulesRequest) MarshalJSON() ([]byte, error) {
 func (o UpdatePowerSchedulesRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["schedule"] = o.Schedule
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -107,15 +112,20 @@ func (o *UpdatePowerSchedulesRequest) UnmarshalJSON(data []byte) (err error) {
 
 	varUpdatePowerSchedulesRequest := _UpdatePowerSchedulesRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varUpdatePowerSchedulesRequest)
+	err = json.Unmarshal(data, &varUpdatePowerSchedulesRequest)
 
 	if err != nil {
 		return err
 	}
 
 	*o = UpdatePowerSchedulesRequest(varUpdatePowerSchedulesRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "schedule")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

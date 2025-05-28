@@ -44,7 +44,10 @@ type OsTypeUpdate struct {
 	CloudInitVersion *string `json:"cloudInitVersion,omitempty"`
 	// Whether the morpheus agent is installed. 
 	InstallAgent *bool `json:"installAgent,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _OsTypeUpdate OsTypeUpdate
 
 // NewOsTypeUpdate instantiates a new OsTypeUpdate object
 // This constructor will assign default values to properties that have it defined,
@@ -493,7 +496,44 @@ func (o OsTypeUpdate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.InstallAgent) {
 		toSerialize["installAgent"] = o.InstallAgent
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *OsTypeUpdate) UnmarshalJSON(data []byte) (err error) {
+	varOsTypeUpdate := _OsTypeUpdate{}
+
+	err = json.Unmarshal(data, &varOsTypeUpdate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = OsTypeUpdate(varOsTypeUpdate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "platform")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "vendor")
+		delete(additionalProperties, "osName")
+		delete(additionalProperties, "osVersion")
+		delete(additionalProperties, "osCodename")
+		delete(additionalProperties, "osFamily")
+		delete(additionalProperties, "bitCount")
+		delete(additionalProperties, "cloudInitVersion")
+		delete(additionalProperties, "installAgent")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableOsTypeUpdate struct {

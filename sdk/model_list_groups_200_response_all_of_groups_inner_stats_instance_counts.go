@@ -21,7 +21,10 @@ var _ MappedNullable = &ListGroups200ResponseAllOfGroupsInnerStatsInstanceCounts
 // ListGroups200ResponseAllOfGroupsInnerStatsInstanceCounts struct for ListGroups200ResponseAllOfGroupsInnerStatsInstanceCounts
 type ListGroups200ResponseAllOfGroupsInnerStatsInstanceCounts struct {
 	All *int64 `json:"all,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListGroups200ResponseAllOfGroupsInnerStatsInstanceCounts ListGroups200ResponseAllOfGroupsInnerStatsInstanceCounts
 
 // NewListGroups200ResponseAllOfGroupsInnerStatsInstanceCounts instantiates a new ListGroups200ResponseAllOfGroupsInnerStatsInstanceCounts object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o ListGroups200ResponseAllOfGroupsInnerStatsInstanceCounts) ToMap() (map[s
 	if !IsNil(o.All) {
 		toSerialize["all"] = o.All
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListGroups200ResponseAllOfGroupsInnerStatsInstanceCounts) UnmarshalJSON(data []byte) (err error) {
+	varListGroups200ResponseAllOfGroupsInnerStatsInstanceCounts := _ListGroups200ResponseAllOfGroupsInnerStatsInstanceCounts{}
+
+	err = json.Unmarshal(data, &varListGroups200ResponseAllOfGroupsInnerStatsInstanceCounts)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListGroups200ResponseAllOfGroupsInnerStatsInstanceCounts(varListGroups200ResponseAllOfGroupsInnerStatsInstanceCounts)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "all")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListGroups200ResponseAllOfGroupsInnerStatsInstanceCounts struct {

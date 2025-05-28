@@ -21,7 +21,10 @@ var _ MappedNullable = &AddCredentialsRequestCredentialOneOfIntegration{}
 // AddCredentialsRequestCredentialOneOfIntegration Credential Store. ID of a Credential Integration. This can be set to store the credential in an external store. 
 type AddCredentialsRequestCredentialOneOfIntegration struct {
 	Id *AddCredentialsRequestCredentialOneOfIntegrationId `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddCredentialsRequestCredentialOneOfIntegration AddCredentialsRequestCredentialOneOfIntegration
 
 // NewAddCredentialsRequestCredentialOneOfIntegration instantiates a new AddCredentialsRequestCredentialOneOfIntegration object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o AddCredentialsRequestCredentialOneOfIntegration) ToMap() (map[string]int
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddCredentialsRequestCredentialOneOfIntegration) UnmarshalJSON(data []byte) (err error) {
+	varAddCredentialsRequestCredentialOneOfIntegration := _AddCredentialsRequestCredentialOneOfIntegration{}
+
+	err = json.Unmarshal(data, &varAddCredentialsRequestCredentialOneOfIntegration)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddCredentialsRequestCredentialOneOfIntegration(varAddCredentialsRequestCredentialOneOfIntegration)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddCredentialsRequestCredentialOneOfIntegration struct {

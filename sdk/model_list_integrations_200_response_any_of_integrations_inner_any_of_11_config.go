@@ -25,7 +25,10 @@ type ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11Config struct {
 	PuppetSshUser *string `json:"puppetSshUser,omitempty"`
 	PuppetSshPassword *string `json:"puppetSshPassword,omitempty"`
 	PuppetSshPasswordHash *string `json:"puppetSshPasswordHash,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11Config ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11Config
 
 // NewListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11Config instantiates a new ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11Config object
 // This constructor will assign default values to properties that have it defined,
@@ -229,7 +232,37 @@ func (o ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11Config) ToMap() 
 	if !IsNil(o.PuppetSshPasswordHash) {
 		toSerialize["puppetSshPasswordHash"] = o.PuppetSshPasswordHash
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11Config) UnmarshalJSON(data []byte) (err error) {
+	varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11Config := _ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11Config{}
+
+	err = json.Unmarshal(data, &varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11Config)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11Config(varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11Config)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "puppetMaster")
+		delete(additionalProperties, "puppetFireNow")
+		delete(additionalProperties, "puppetSshUser")
+		delete(additionalProperties, "puppetSshPassword")
+		delete(additionalProperties, "puppetSshPasswordHash")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11Config struct {

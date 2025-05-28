@@ -28,7 +28,10 @@ type ZoneNetworkOptions struct {
 	MaxNetworks *int64 `json:"maxNetworks,omitempty"`
 	EnableNetworkTypeSelection *string `json:"enableNetworkTypeSelection,omitempty"`
 	SupportsNetworkSelection *bool `json:"supportsNetworkSelection,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ZoneNetworkOptions ZoneNetworkOptions
 
 // NewZoneNetworkOptions instantiates a new ZoneNetworkOptions object
 // This constructor will assign default values to properties that have it defined,
@@ -337,7 +340,40 @@ func (o ZoneNetworkOptions) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.SupportsNetworkSelection) {
 		toSerialize["supportsNetworkSelection"] = o.SupportsNetworkSelection
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ZoneNetworkOptions) UnmarshalJSON(data []byte) (err error) {
+	varZoneNetworkOptions := _ZoneNetworkOptions{}
+
+	err = json.Unmarshal(data, &varZoneNetworkOptions)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ZoneNetworkOptions(varZoneNetworkOptions)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "networks")
+		delete(additionalProperties, "networkGroups")
+		delete(additionalProperties, "networkTypes")
+		delete(additionalProperties, "networkSubnets")
+		delete(additionalProperties, "hasNetworks")
+		delete(additionalProperties, "maxNetworks")
+		delete(additionalProperties, "enableNetworkTypeSelection")
+		delete(additionalProperties, "supportsNetworkSelection")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableZoneNetworkOptions struct {

@@ -30,7 +30,10 @@ type AddInstanceDeployRequestAppDeploy struct {
 	Config map[string]interface{} `json:"config,omitempty"`
 	// Stage Only, do not run the deploy right away and instead set status to staged so it can be deployed later on.
 	StageOnly *bool `json:"stageOnly,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddInstanceDeployRequestAppDeploy AddInstanceDeployRequestAppDeploy
 
 // NewAddInstanceDeployRequestAppDeploy instantiates a new AddInstanceDeployRequestAppDeploy object
 // This constructor will assign default values to properties that have it defined,
@@ -238,7 +241,37 @@ func (o AddInstanceDeployRequestAppDeploy) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.StageOnly) {
 		toSerialize["stageOnly"] = o.StageOnly
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddInstanceDeployRequestAppDeploy) UnmarshalJSON(data []byte) (err error) {
+	varAddInstanceDeployRequestAppDeploy := _AddInstanceDeployRequestAppDeploy{}
+
+	err = json.Unmarshal(data, &varAddInstanceDeployRequestAppDeploy)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddInstanceDeployRequestAppDeploy(varAddInstanceDeployRequestAppDeploy)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "deploymentId")
+		delete(additionalProperties, "version")
+		delete(additionalProperties, "versionId")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "stageOnly")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddInstanceDeployRequestAppDeploy struct {

@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -26,6 +25,7 @@ type ContainersAttachFloatingIpRequestConfig struct {
 	OsExternalNetworkId string `json:"osExternalNetworkId"`
 	// Bandwidth (Mbit/s) Only the following cloud types support this parameter: Huawei, OpenTelekom 
 	FloatingIpBandwidth *float32 `json:"floatingIpBandwidth,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ContainersAttachFloatingIpRequestConfig ContainersAttachFloatingIpRequestConfig
@@ -118,6 +118,11 @@ func (o ContainersAttachFloatingIpRequestConfig) ToMap() (map[string]interface{}
 	if !IsNil(o.FloatingIpBandwidth) {
 		toSerialize["floatingIpBandwidth"] = o.FloatingIpBandwidth
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -145,15 +150,21 @@ func (o *ContainersAttachFloatingIpRequestConfig) UnmarshalJSON(data []byte) (er
 
 	varContainersAttachFloatingIpRequestConfig := _ContainersAttachFloatingIpRequestConfig{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varContainersAttachFloatingIpRequestConfig)
+	err = json.Unmarshal(data, &varContainersAttachFloatingIpRequestConfig)
 
 	if err != nil {
 		return err
 	}
 
 	*o = ContainersAttachFloatingIpRequestConfig(varContainersAttachFloatingIpRequestConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "osExternalNetworkId")
+		delete(additionalProperties, "floatingIpBandwidth")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

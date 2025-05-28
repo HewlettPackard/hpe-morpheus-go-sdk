@@ -21,7 +21,10 @@ var _ MappedNullable = &GetClusterNamespace200Response{}
 // GetClusterNamespace200Response struct for GetClusterNamespace200Response
 type GetClusterNamespace200Response struct {
 	Namespace *GetClusterNamespace200ResponseNamespace `json:"namespace,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetClusterNamespace200Response GetClusterNamespace200Response
 
 // NewGetClusterNamespace200Response instantiates a new GetClusterNamespace200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o GetClusterNamespace200Response) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.Namespace) {
 		toSerialize["namespace"] = o.Namespace
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetClusterNamespace200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetClusterNamespace200Response := _GetClusterNamespace200Response{}
+
+	err = json.Unmarshal(data, &varGetClusterNamespace200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetClusterNamespace200Response(varGetClusterNamespace200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "namespace")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetClusterNamespace200Response struct {

@@ -23,7 +23,10 @@ type CreateLoadBalancerProfile200Response struct {
 	LoadBalancerProfile *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner `json:"loadBalancerProfile,omitempty"`
 	Success *bool `json:"success,omitempty"`
 	Msg *string `json:"msg,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _CreateLoadBalancerProfile200Response CreateLoadBalancerProfile200Response
 
 // NewCreateLoadBalancerProfile200Response instantiates a new CreateLoadBalancerProfile200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o CreateLoadBalancerProfile200Response) ToMap() (map[string]interface{}, e
 	if !IsNil(o.Msg) {
 		toSerialize["msg"] = o.Msg
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *CreateLoadBalancerProfile200Response) UnmarshalJSON(data []byte) (err error) {
+	varCreateLoadBalancerProfile200Response := _CreateLoadBalancerProfile200Response{}
+
+	err = json.Unmarshal(data, &varCreateLoadBalancerProfile200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CreateLoadBalancerProfile200Response(varCreateLoadBalancerProfile200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "loadBalancerProfile")
+		delete(additionalProperties, "success")
+		delete(additionalProperties, "msg")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCreateLoadBalancerProfile200Response struct {

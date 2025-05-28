@@ -24,7 +24,10 @@ type GetApprovalsItem200ResponseApprovalItemReference struct {
 	Type *string `json:"type,omitempty"`
 	Name *string `json:"name,omitempty"`
 	DisplayName *string `json:"displayName,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetApprovalsItem200ResponseApprovalItemReference GetApprovalsItem200ResponseApprovalItemReference
 
 // NewGetApprovalsItem200ResponseApprovalItemReference instantiates a new GetApprovalsItem200ResponseApprovalItemReference object
 // This constructor will assign default values to properties that have it defined,
@@ -193,7 +196,36 @@ func (o GetApprovalsItem200ResponseApprovalItemReference) ToMap() (map[string]in
 	if !IsNil(o.DisplayName) {
 		toSerialize["displayName"] = o.DisplayName
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetApprovalsItem200ResponseApprovalItemReference) UnmarshalJSON(data []byte) (err error) {
+	varGetApprovalsItem200ResponseApprovalItemReference := _GetApprovalsItem200ResponseApprovalItemReference{}
+
+	err = json.Unmarshal(data, &varGetApprovalsItem200ResponseApprovalItemReference)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetApprovalsItem200ResponseApprovalItemReference(varGetApprovalsItem200ResponseApprovalItemReference)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "displayName")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetApprovalsItem200ResponseApprovalItemReference struct {

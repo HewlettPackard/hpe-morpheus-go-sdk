@@ -22,7 +22,10 @@ var _ MappedNullable = &GetClusterUpgradeVersions200Response{}
 type GetClusterUpgradeVersions200Response struct {
 	Versions []string `json:"versions,omitempty"`
 	CurrentVersion *string `json:"currentVersion,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetClusterUpgradeVersions200Response GetClusterUpgradeVersions200Response
 
 // NewGetClusterUpgradeVersions200Response instantiates a new GetClusterUpgradeVersions200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o GetClusterUpgradeVersions200Response) ToMap() (map[string]interface{}, e
 	if !IsNil(o.CurrentVersion) {
 		toSerialize["currentVersion"] = o.CurrentVersion
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetClusterUpgradeVersions200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetClusterUpgradeVersions200Response := _GetClusterUpgradeVersions200Response{}
+
+	err = json.Unmarshal(data, &varGetClusterUpgradeVersions200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetClusterUpgradeVersions200Response(varGetClusterUpgradeVersions200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "versions")
+		delete(additionalProperties, "currentVersion")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetClusterUpgradeVersions200Response struct {

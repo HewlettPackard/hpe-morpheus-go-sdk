@@ -21,7 +21,10 @@ var _ MappedNullable = &ListApplianceSettings200Response{}
 // ListApplianceSettings200Response struct for ListApplianceSettings200Response
 type ListApplianceSettings200Response struct {
 	ApplianceSettings *ListApplianceSettings200ResponseApplianceSettings `json:"applianceSettings,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListApplianceSettings200Response ListApplianceSettings200Response
 
 // NewListApplianceSettings200Response instantiates a new ListApplianceSettings200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o ListApplianceSettings200Response) ToMap() (map[string]interface{}, error
 	if !IsNil(o.ApplianceSettings) {
 		toSerialize["applianceSettings"] = o.ApplianceSettings
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListApplianceSettings200Response) UnmarshalJSON(data []byte) (err error) {
+	varListApplianceSettings200Response := _ListApplianceSettings200Response{}
+
+	err = json.Unmarshal(data, &varListApplianceSettings200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListApplianceSettings200Response(varListApplianceSettings200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "applianceSettings")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListApplianceSettings200Response struct {

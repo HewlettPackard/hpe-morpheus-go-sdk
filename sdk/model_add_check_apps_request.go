@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -23,6 +22,7 @@ var _ MappedNullable = &AddCheckAppsRequest{}
 // AddCheckAppsRequest struct for AddCheckAppsRequest
 type AddCheckAppsRequest struct {
 	MonitorApp AddCheckAppsRequestMonitorApp `json:"monitorApp"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddCheckAppsRequest AddCheckAppsRequest
@@ -80,6 +80,11 @@ func (o AddCheckAppsRequest) MarshalJSON() ([]byte, error) {
 func (o AddCheckAppsRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["monitorApp"] = o.MonitorApp
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -107,15 +112,20 @@ func (o *AddCheckAppsRequest) UnmarshalJSON(data []byte) (err error) {
 
 	varAddCheckAppsRequest := _AddCheckAppsRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddCheckAppsRequest)
+	err = json.Unmarshal(data, &varAddCheckAppsRequest)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddCheckAppsRequest(varAddCheckAppsRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "monitorApp")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

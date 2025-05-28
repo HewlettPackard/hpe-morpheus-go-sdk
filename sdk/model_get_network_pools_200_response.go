@@ -23,7 +23,10 @@ type GetNetworkPools200Response struct {
 	NetworkPools interface{} `json:"networkPools,omitempty"`
 	NetworkPoolCount *int64 `json:"networkPoolCount,omitempty"`
 	Meta *ListActivity200ResponseAllOfMeta `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetNetworkPools200Response GetNetworkPools200Response
 
 // NewGetNetworkPools200Response instantiates a new GetNetworkPools200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -158,7 +161,35 @@ func (o GetNetworkPools200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Meta) {
 		toSerialize["meta"] = o.Meta
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetNetworkPools200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetNetworkPools200Response := _GetNetworkPools200Response{}
+
+	err = json.Unmarshal(data, &varGetNetworkPools200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetNetworkPools200Response(varGetNetworkPools200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "networkPools")
+		delete(additionalProperties, "networkPoolCount")
+		delete(additionalProperties, "meta")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetNetworkPools200Response struct {

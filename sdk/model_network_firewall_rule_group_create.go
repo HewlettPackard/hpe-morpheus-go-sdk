@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -31,6 +30,7 @@ type NetworkFirewallRuleGroupCreate struct {
 	// Use SecurityPolicy
 	ExternalType string `json:"externalType"`
 	GroupLayer *string `json:"groupLayer,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _NetworkFirewallRuleGroupCreate NetworkFirewallRuleGroupCreate
@@ -219,6 +219,11 @@ func (o NetworkFirewallRuleGroupCreate) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.GroupLayer) {
 		toSerialize["groupLayer"] = o.GroupLayer
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -247,15 +252,24 @@ func (o *NetworkFirewallRuleGroupCreate) UnmarshalJSON(data []byte) (err error) 
 
 	varNetworkFirewallRuleGroupCreate := _NetworkFirewallRuleGroupCreate{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varNetworkFirewallRuleGroupCreate)
+	err = json.Unmarshal(data, &varNetworkFirewallRuleGroupCreate)
 
 	if err != nil {
 		return err
 	}
 
 	*o = NetworkFirewallRuleGroupCreate(varNetworkFirewallRuleGroupCreate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "priority")
+		delete(additionalProperties, "externalType")
+		delete(additionalProperties, "groupLayer")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

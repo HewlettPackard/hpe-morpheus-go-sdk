@@ -23,7 +23,10 @@ type UpdateHostInstallAgent200Response struct {
 	// Public key to be put into `authorized_keys` on target VM
 	PublicKey *string `json:"publicKey,omitempty"`
 	Success *bool `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateHostInstallAgent200Response UpdateHostInstallAgent200Response
 
 // NewUpdateHostInstallAgent200Response instantiates a new UpdateHostInstallAgent200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -122,7 +125,34 @@ func (o UpdateHostInstallAgent200Response) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.Success) {
 		toSerialize["success"] = o.Success
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateHostInstallAgent200Response) UnmarshalJSON(data []byte) (err error) {
+	varUpdateHostInstallAgent200Response := _UpdateHostInstallAgent200Response{}
+
+	err = json.Unmarshal(data, &varUpdateHostInstallAgent200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateHostInstallAgent200Response(varUpdateHostInstallAgent200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "publicKey")
+		delete(additionalProperties, "success")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateHostInstallAgent200Response struct {

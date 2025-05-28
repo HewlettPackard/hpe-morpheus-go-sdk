@@ -23,7 +23,10 @@ type AddCypherKeyRequest struct {
 	Ttl *AddCypherKeyRequestTtl `json:"ttl,omitempty"`
 	// The secret value to be stored. This is only parsed if type is passed as `string`.
 	Value *string `json:"value,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddCypherKeyRequest AddCypherKeyRequest
 
 // NewAddCypherKeyRequest instantiates a new AddCypherKeyRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -122,7 +125,34 @@ func (o AddCypherKeyRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Value) {
 		toSerialize["value"] = o.Value
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddCypherKeyRequest) UnmarshalJSON(data []byte) (err error) {
+	varAddCypherKeyRequest := _AddCypherKeyRequest{}
+
+	err = json.Unmarshal(data, &varAddCypherKeyRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddCypherKeyRequest(varAddCypherKeyRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "ttl")
+		delete(additionalProperties, "value")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddCypherKeyRequest struct {

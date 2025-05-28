@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -23,6 +22,7 @@ var _ MappedNullable = &AddWikiRequest{}
 // AddWikiRequest struct for AddWikiRequest
 type AddWikiRequest struct {
 	Page AddWikiRequestPage `json:"page"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddWikiRequest AddWikiRequest
@@ -80,6 +80,11 @@ func (o AddWikiRequest) MarshalJSON() ([]byte, error) {
 func (o AddWikiRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["page"] = o.Page
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -107,15 +112,20 @@ func (o *AddWikiRequest) UnmarshalJSON(data []byte) (err error) {
 
 	varAddWikiRequest := _AddWikiRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddWikiRequest)
+	err = json.Unmarshal(data, &varAddWikiRequest)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddWikiRequest(varAddWikiRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "page")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

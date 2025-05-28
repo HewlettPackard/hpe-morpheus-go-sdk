@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -24,6 +23,7 @@ var _ MappedNullable = &UpdateGroupsZonesRequestGroup{}
 type UpdateGroupsZonesRequestGroup struct {
 	// An array of all the zones assigned to this group.
 	Zones []map[string]interface{} `json:"zones"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateGroupsZonesRequestGroup UpdateGroupsZonesRequestGroup
@@ -81,6 +81,11 @@ func (o UpdateGroupsZonesRequestGroup) MarshalJSON() ([]byte, error) {
 func (o UpdateGroupsZonesRequestGroup) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["zones"] = o.Zones
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -108,15 +113,20 @@ func (o *UpdateGroupsZonesRequestGroup) UnmarshalJSON(data []byte) (err error) {
 
 	varUpdateGroupsZonesRequestGroup := _UpdateGroupsZonesRequestGroup{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varUpdateGroupsZonesRequestGroup)
+	err = json.Unmarshal(data, &varUpdateGroupsZonesRequestGroup)
 
 	if err != nil {
 		return err
 	}
 
 	*o = UpdateGroupsZonesRequestGroup(varUpdateGroupsZonesRequestGroup)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "zones")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

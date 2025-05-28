@@ -21,7 +21,10 @@ var _ MappedNullable = &GetCloudFolders200Response{}
 // GetCloudFolders200Response struct for GetCloudFolders200Response
 type GetCloudFolders200Response struct {
 	Folder *ListCloudFolders200ResponseAllOfFoldersInner `json:"folder,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetCloudFolders200Response GetCloudFolders200Response
 
 // NewGetCloudFolders200Response instantiates a new GetCloudFolders200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o GetCloudFolders200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Folder) {
 		toSerialize["folder"] = o.Folder
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetCloudFolders200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetCloudFolders200Response := _GetCloudFolders200Response{}
+
+	err = json.Unmarshal(data, &varGetCloudFolders200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetCloudFolders200Response(varGetCloudFolders200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "folder")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetCloudFolders200Response struct {

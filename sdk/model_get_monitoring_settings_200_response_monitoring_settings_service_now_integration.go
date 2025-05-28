@@ -24,7 +24,10 @@ type GetMonitoringSettings200ResponseMonitoringSettingsServiceNowIntegration str
 	Id *int64 `json:"id,omitempty"`
 	// Service Now Integration Name
 	Name *string `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetMonitoringSettings200ResponseMonitoringSettingsServiceNowIntegration GetMonitoringSettings200ResponseMonitoringSettingsServiceNowIntegration
 
 // NewGetMonitoringSettings200ResponseMonitoringSettingsServiceNowIntegration instantiates a new GetMonitoringSettings200ResponseMonitoringSettingsServiceNowIntegration object
 // This constructor will assign default values to properties that have it defined,
@@ -123,7 +126,34 @@ func (o GetMonitoringSettings200ResponseMonitoringSettingsServiceNowIntegration)
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetMonitoringSettings200ResponseMonitoringSettingsServiceNowIntegration) UnmarshalJSON(data []byte) (err error) {
+	varGetMonitoringSettings200ResponseMonitoringSettingsServiceNowIntegration := _GetMonitoringSettings200ResponseMonitoringSettingsServiceNowIntegration{}
+
+	err = json.Unmarshal(data, &varGetMonitoringSettings200ResponseMonitoringSettingsServiceNowIntegration)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetMonitoringSettings200ResponseMonitoringSettingsServiceNowIntegration(varGetMonitoringSettings200ResponseMonitoringSettingsServiceNowIntegration)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetMonitoringSettings200ResponseMonitoringSettingsServiceNowIntegration struct {

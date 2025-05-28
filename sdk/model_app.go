@@ -44,7 +44,10 @@ type App struct {
 	AppTiers []map[string]interface{} `json:"appTiers,omitempty"`
 	Instances []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"instances,omitempty"`
 	Stats *ListApps200ResponseAllOfAppsInnerStats `json:"stats,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _App App
 
 // NewApp instantiates a new App object
 // This constructor will assign default values to properties that have it defined,
@@ -878,7 +881,55 @@ func (o App) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Stats) {
 		toSerialize["stats"] = o.Stats
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *App) UnmarshalJSON(data []byte) (err error) {
+	varApp := _App{}
+
+	err = json.Unmarshal(data, &varApp)
+
+	if err != nil {
+		return err
+	}
+
+	*o = App(varApp)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "environment")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "owner")
+		delete(additionalProperties, "siteId")
+		delete(additionalProperties, "group")
+		delete(additionalProperties, "blueprint")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "removalDate")
+		delete(additionalProperties, "appContext")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "appStatus")
+		delete(additionalProperties, "instanceCount")
+		delete(additionalProperties, "containerCount")
+		delete(additionalProperties, "appTiers")
+		delete(additionalProperties, "instances")
+		delete(additionalProperties, "stats")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableApp struct {

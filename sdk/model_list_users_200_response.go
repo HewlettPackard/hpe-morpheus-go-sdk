@@ -24,7 +24,10 @@ type ListUsers200Response struct {
 	Meta *ListActivity200ResponseAllOfMeta `json:"meta,omitempty"`
 	// Global (All Tenants), load users from all tenants. The default is to only see your own tenant. This is only available to master tenant users with permission to manage tenants and users.
 	Global *bool `json:"global,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListUsers200Response ListUsers200Response
 
 // NewListUsers200Response instantiates a new ListUsers200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -162,7 +165,35 @@ func (o ListUsers200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Global) {
 		toSerialize["global"] = o.Global
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListUsers200Response) UnmarshalJSON(data []byte) (err error) {
+	varListUsers200Response := _ListUsers200Response{}
+
+	err = json.Unmarshal(data, &varListUsers200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListUsers200Response(varListUsers200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "users")
+		delete(additionalProperties, "meta")
+		delete(additionalProperties, "global")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListUsers200Response struct {

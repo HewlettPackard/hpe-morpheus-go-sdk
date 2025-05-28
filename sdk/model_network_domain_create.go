@@ -46,7 +46,10 @@ type NetworkDomainCreate struct {
 	GuestUsername *string `json:"guestUsername,omitempty"`
 	// Guest Password
 	GuestPassword *string `json:"guestPassword,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _NetworkDomainCreate NetworkDomainCreate
 
 // NewNetworkDomainCreate instantiates a new NetworkDomainCreate object
 // This constructor will assign default values to properties that have it defined,
@@ -538,7 +541,45 @@ func (o NetworkDomainCreate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.GuestPassword) {
 		toSerialize["guestPassword"] = o.GuestPassword
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *NetworkDomainCreate) UnmarshalJSON(data []byte) (err error) {
+	varNetworkDomainCreate := _NetworkDomainCreate{}
+
+	err = json.Unmarshal(data, &varNetworkDomainCreate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = NetworkDomainCreate(varNetworkDomainCreate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "displayName")
+		delete(additionalProperties, "publicZone")
+		delete(additionalProperties, "taskSetId")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "domainController")
+		delete(additionalProperties, "domainUsername")
+		delete(additionalProperties, "domainPassword")
+		delete(additionalProperties, "dcServer")
+		delete(additionalProperties, "ouPath")
+		delete(additionalProperties, "guestUsername")
+		delete(additionalProperties, "guestPassword")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableNetworkDomainCreate struct {

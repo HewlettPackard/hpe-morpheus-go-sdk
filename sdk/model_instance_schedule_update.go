@@ -37,7 +37,10 @@ type InstanceScheduleUpdate struct {
 	// End Date. Only used and required for scheduleType `exact`
 	EndDate *time.Time `json:"endDate,omitempty"`
 	Threshold *UpdateInstanceScheduleRequestInstanceScheduleThreshold `json:"threshold,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _InstanceScheduleUpdate InstanceScheduleUpdate
 
 // NewInstanceScheduleUpdate instantiates a new InstanceScheduleUpdate object
 // This constructor will assign default values to properties that have it defined,
@@ -389,7 +392,41 @@ func (o InstanceScheduleUpdate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Threshold) {
 		toSerialize["threshold"] = o.Threshold
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *InstanceScheduleUpdate) UnmarshalJSON(data []byte) (err error) {
+	varInstanceScheduleUpdate := _InstanceScheduleUpdate{}
+
+	err = json.Unmarshal(data, &varInstanceScheduleUpdate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = InstanceScheduleUpdate(varInstanceScheduleUpdate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "scheduleType")
+		delete(additionalProperties, "scheduleTimezone")
+		delete(additionalProperties, "startDayOfWeek")
+		delete(additionalProperties, "startTime")
+		delete(additionalProperties, "endDayOfWeek")
+		delete(additionalProperties, "endTime")
+		delete(additionalProperties, "startDate")
+		delete(additionalProperties, "endDate")
+		delete(additionalProperties, "threshold")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableInstanceScheduleUpdate struct {

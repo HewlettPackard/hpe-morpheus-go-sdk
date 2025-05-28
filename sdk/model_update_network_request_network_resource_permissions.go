@@ -24,7 +24,10 @@ type UpdateNetworkRequestNetworkResourcePermissions struct {
 	All *bool `json:"all,omitempty"`
 	// Array of groups that are allowed access
 	Sites []UpdateClusterDatastoreRequestDatastorePermissionsResourcePermissionsSitesInner `json:"sites,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateNetworkRequestNetworkResourcePermissions UpdateNetworkRequestNetworkResourcePermissions
 
 // NewUpdateNetworkRequestNetworkResourcePermissions instantiates a new UpdateNetworkRequestNetworkResourcePermissions object
 // This constructor will assign default values to properties that have it defined,
@@ -123,7 +126,34 @@ func (o UpdateNetworkRequestNetworkResourcePermissions) ToMap() (map[string]inte
 	if !IsNil(o.Sites) {
 		toSerialize["sites"] = o.Sites
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateNetworkRequestNetworkResourcePermissions) UnmarshalJSON(data []byte) (err error) {
+	varUpdateNetworkRequestNetworkResourcePermissions := _UpdateNetworkRequestNetworkResourcePermissions{}
+
+	err = json.Unmarshal(data, &varUpdateNetworkRequestNetworkResourcePermissions)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateNetworkRequestNetworkResourcePermissions(varUpdateNetworkRequestNetworkResourcePermissions)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "all")
+		delete(additionalProperties, "sites")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateNetworkRequestNetworkResourcePermissions struct {

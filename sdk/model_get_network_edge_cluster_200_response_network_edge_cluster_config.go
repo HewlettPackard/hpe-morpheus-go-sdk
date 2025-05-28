@@ -24,7 +24,10 @@ type GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig struct {
 	Members *int32 `json:"members,omitempty"`
 	DeploymentType *string `json:"deploymentType,omitempty"`
 	MemberNodeType *string `json:"memberNodeType,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig
 
 // NewGetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig instantiates a new GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig object
 // This constructor will assign default values to properties that have it defined,
@@ -193,7 +196,36 @@ func (o GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig) ToMap() (map[s
 	if !IsNil(o.MemberNodeType) {
 		toSerialize["memberNodeType"] = o.MemberNodeType
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig) UnmarshalJSON(data []byte) (err error) {
+	varGetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig := _GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig{}
+
+	err = json.Unmarshal(data, &varGetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig(varGetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "clusterProfileBindings")
+		delete(additionalProperties, "members")
+		delete(additionalProperties, "deploymentType")
+		delete(additionalProperties, "memberNodeType")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig struct {

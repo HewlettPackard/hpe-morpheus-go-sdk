@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -30,6 +29,7 @@ type AddStorageVolumesRequestStorageVolume struct {
 	Config map[string]interface{} `json:"config,omitempty"`
 	StorageServer AddClusterLayoutsRequestLayoutMastersInnerContainerType `json:"storageServer"`
 	StorageGroup AddClusterLayoutsRequestLayoutMastersInnerContainerType `json:"storageGroup"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddStorageVolumesRequestStorageVolume AddStorageVolumesRequestStorageVolume
@@ -200,6 +200,11 @@ func (o AddStorageVolumesRequestStorageVolume) ToMap() (map[string]interface{}, 
 	}
 	toSerialize["storageServer"] = o.StorageServer
 	toSerialize["storageGroup"] = o.StorageGroup
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -230,15 +235,24 @@ func (o *AddStorageVolumesRequestStorageVolume) UnmarshalJSON(data []byte) (err 
 
 	varAddStorageVolumesRequestStorageVolume := _AddStorageVolumesRequestStorageVolume{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddStorageVolumesRequestStorageVolume)
+	err = json.Unmarshal(data, &varAddStorageVolumesRequestStorageVolume)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddStorageVolumesRequestStorageVolume(varAddStorageVolumesRequestStorageVolume)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "storageServer")
+		delete(additionalProperties, "storageGroup")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

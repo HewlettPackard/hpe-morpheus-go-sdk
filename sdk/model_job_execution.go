@@ -34,7 +34,10 @@ type JobExecution struct {
 	Status *string `json:"status,omitempty"`
 	StatusMessage *string `json:"statusMessage,omitempty"`
 	CreatedBy *string `json:"createdBy,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _JobExecution JobExecution
 
 // NewJobExecution instantiates a new JobExecution object
 // This constructor will assign default values to properties that have it defined,
@@ -518,7 +521,45 @@ func (o JobExecution) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CreatedBy) {
 		toSerialize["createdBy"] = o.CreatedBy
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *JobExecution) UnmarshalJSON(data []byte) (err error) {
+	varJobExecution := _JobExecution{}
+
+	err = json.Unmarshal(data, &varJobExecution)
+
+	if err != nil {
+		return err
+	}
+
+	*o = JobExecution(varJobExecution)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "process")
+		delete(additionalProperties, "job")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "startDate")
+		delete(additionalProperties, "endDate")
+		delete(additionalProperties, "duration")
+		delete(additionalProperties, "resultData")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "statusMessage")
+		delete(additionalProperties, "createdBy")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableJobExecution struct {

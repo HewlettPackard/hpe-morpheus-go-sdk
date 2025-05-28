@@ -23,7 +23,10 @@ type Permissions struct {
 	ResourcePool *AddCluster200ResponseAllOfClusterPermissionsResourcePool `json:"resourcePool,omitempty"`
 	ResourcePermissions *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission `json:"resourcePermissions,omitempty"`
 	TenantPermissions *AddCloudResourcePoolRequestResourcePoolTenantPermissions `json:"tenantPermissions,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _Permissions Permissions
 
 // NewPermissions instantiates a new Permissions object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o Permissions) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.TenantPermissions) {
 		toSerialize["tenantPermissions"] = o.TenantPermissions
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *Permissions) UnmarshalJSON(data []byte) (err error) {
+	varPermissions := _Permissions{}
+
+	err = json.Unmarshal(data, &varPermissions)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Permissions(varPermissions)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "resourcePool")
+		delete(additionalProperties, "resourcePermissions")
+		delete(additionalProperties, "tenantPermissions")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullablePermissions struct {

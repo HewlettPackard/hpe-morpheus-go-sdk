@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -44,6 +43,7 @@ type AddTasksRequestTask struct {
 	RetryDelaySeconds *float32 `json:"retryDelaySeconds,omitempty"`
 	File *AddTasksRequestTaskFile `json:"file,omitempty"`
 	Credential *AddTasksRequestTaskCredential `json:"credential,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddTasksRequestTask AddTasksRequestTask
@@ -511,6 +511,11 @@ func (o AddTasksRequestTask) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Credential) {
 		toSerialize["credential"] = o.Credential
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -540,15 +545,32 @@ func (o *AddTasksRequestTask) UnmarshalJSON(data []byte) (err error) {
 
 	varAddTasksRequestTask := _AddTasksRequestTask{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddTasksRequestTask)
+	err = json.Unmarshal(data, &varAddTasksRequestTask)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddTasksRequestTask(varAddTasksRequestTask)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "taskType")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "taskOptions")
+		delete(additionalProperties, "resultType")
+		delete(additionalProperties, "executeTarget")
+		delete(additionalProperties, "retryable")
+		delete(additionalProperties, "retryCount")
+		delete(additionalProperties, "retryDelaySeconds")
+		delete(additionalProperties, "file")
+		delete(additionalProperties, "credential")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

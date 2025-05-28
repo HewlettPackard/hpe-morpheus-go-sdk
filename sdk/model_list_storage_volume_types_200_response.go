@@ -22,7 +22,10 @@ var _ MappedNullable = &ListStorageVolumeTypes200Response{}
 type ListStorageVolumeTypes200Response struct {
 	StorageVolumeTypes []ListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner `json:"storageVolumeTypes,omitempty"`
 	Meta *ListActivity200ResponseAllOfMeta `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListStorageVolumeTypes200Response ListStorageVolumeTypes200Response
 
 // NewListStorageVolumeTypes200Response instantiates a new ListStorageVolumeTypes200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o ListStorageVolumeTypes200Response) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.Meta) {
 		toSerialize["meta"] = o.Meta
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListStorageVolumeTypes200Response) UnmarshalJSON(data []byte) (err error) {
+	varListStorageVolumeTypes200Response := _ListStorageVolumeTypes200Response{}
+
+	err = json.Unmarshal(data, &varListStorageVolumeTypes200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListStorageVolumeTypes200Response(varListStorageVolumeTypes200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "storageVolumeTypes")
+		delete(additionalProperties, "meta")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListStorageVolumeTypes200Response struct {

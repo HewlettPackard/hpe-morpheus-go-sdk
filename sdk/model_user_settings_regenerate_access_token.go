@@ -21,7 +21,10 @@ var _ MappedNullable = &UserSettingsRegenerateAccessToken{}
 // UserSettingsRegenerateAccessToken struct for UserSettingsRegenerateAccessToken
 type UserSettingsRegenerateAccessToken struct {
 	Token *string `json:"token,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UserSettingsRegenerateAccessToken UserSettingsRegenerateAccessToken
 
 // NewUserSettingsRegenerateAccessToken instantiates a new UserSettingsRegenerateAccessToken object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o UserSettingsRegenerateAccessToken) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.Token) {
 		toSerialize["token"] = o.Token
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UserSettingsRegenerateAccessToken) UnmarshalJSON(data []byte) (err error) {
+	varUserSettingsRegenerateAccessToken := _UserSettingsRegenerateAccessToken{}
+
+	err = json.Unmarshal(data, &varUserSettingsRegenerateAccessToken)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UserSettingsRegenerateAccessToken(varUserSettingsRegenerateAccessToken)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "token")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUserSettingsRegenerateAccessToken struct {

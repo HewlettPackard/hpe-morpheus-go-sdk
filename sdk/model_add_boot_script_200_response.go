@@ -29,7 +29,10 @@ type AddBootScript200Response struct {
 	Msg *string `json:"msg,omitempty"`
 	// Validation errors, with a key for Object containing error messages for each invalid parameter (key)
 	Errors map[string]interface{} `json:"errors,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddBootScript200Response AddBootScript200Response
 
 // NewAddBootScript200Response instantiates a new AddBootScript200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -272,7 +275,38 @@ func (o AddBootScript200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Errors) {
 		toSerialize["errors"] = o.Errors
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddBootScript200Response) UnmarshalJSON(data []byte) (err error) {
+	varAddBootScript200Response := _AddBootScript200Response{}
+
+	err = json.Unmarshal(data, &varAddBootScript200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddBootScript200Response(varAddBootScript200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "bootScript")
+		delete(additionalProperties, "errorCode")
+		delete(additionalProperties, "inProgress")
+		delete(additionalProperties, "success")
+		delete(additionalProperties, "msg")
+		delete(additionalProperties, "errors")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddBootScript200Response struct {

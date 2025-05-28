@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -24,6 +23,7 @@ var _ MappedNullable = &ForgotPasswordRequest{}
 type ForgotPasswordRequest struct {
 	// Specified as \"username\" or \"tenantId\\username\" with proper HTML encoding and used in conjunction with `password`. 
 	Username string `json:"username"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ForgotPasswordRequest ForgotPasswordRequest
@@ -81,6 +81,11 @@ func (o ForgotPasswordRequest) MarshalJSON() ([]byte, error) {
 func (o ForgotPasswordRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["username"] = o.Username
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -108,15 +113,20 @@ func (o *ForgotPasswordRequest) UnmarshalJSON(data []byte) (err error) {
 
 	varForgotPasswordRequest := _ForgotPasswordRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varForgotPasswordRequest)
+	err = json.Unmarshal(data, &varForgotPasswordRequest)
 
 	if err != nil {
 		return err
 	}
 
 	*o = ForgotPasswordRequest(varForgotPasswordRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "username")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

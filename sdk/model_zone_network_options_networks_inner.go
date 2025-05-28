@@ -25,7 +25,10 @@ type ZoneNetworkOptionsNetworksInner struct {
 	DhcpServer *bool `json:"dhcpServer,omitempty"`
 	AllowStaticOverride *bool `json:"allowStaticOverride,omitempty"`
 	Pool *string `json:"pool,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ZoneNetworkOptionsNetworksInner ZoneNetworkOptionsNetworksInner
 
 // NewZoneNetworkOptionsNetworksInner instantiates a new ZoneNetworkOptionsNetworksInner object
 // This constructor will assign default values to properties that have it defined,
@@ -229,7 +232,37 @@ func (o ZoneNetworkOptionsNetworksInner) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.Pool) {
 		toSerialize["pool"] = o.Pool
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ZoneNetworkOptionsNetworksInner) UnmarshalJSON(data []byte) (err error) {
+	varZoneNetworkOptionsNetworksInner := _ZoneNetworkOptionsNetworksInner{}
+
+	err = json.Unmarshal(data, &varZoneNetworkOptionsNetworksInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ZoneNetworkOptionsNetworksInner(varZoneNetworkOptionsNetworksInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "dhcpServer")
+		delete(additionalProperties, "allowStaticOverride")
+		delete(additionalProperties, "pool")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableZoneNetworkOptionsNetworksInner struct {

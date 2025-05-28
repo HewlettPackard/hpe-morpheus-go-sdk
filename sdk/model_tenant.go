@@ -36,7 +36,10 @@ type Tenant struct {
 	Stats *ListTenants200ResponseAllOfAccountsInnerStats `json:"stats,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _Tenant Tenant
 
 // NewTenant instantiates a new Tenant object
 // This constructor will assign default values to properties that have it defined,
@@ -590,7 +593,47 @@ func (o Tenant) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *Tenant) UnmarshalJSON(data []byte) (err error) {
+	varTenant := _Tenant{}
+
+	err = json.Unmarshal(data, &varTenant)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Tenant(varTenant)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "subdomain")
+		delete(additionalProperties, "currency")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "customerNumber")
+		delete(additionalProperties, "accountNumber")
+		delete(additionalProperties, "accountName")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "master")
+		delete(additionalProperties, "role")
+		delete(additionalProperties, "stats")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableTenant struct {

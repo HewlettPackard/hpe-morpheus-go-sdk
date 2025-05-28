@@ -22,7 +22,10 @@ var _ MappedNullable = &AddIdentitySources200Response{}
 type AddIdentitySources200Response struct {
 	Task *AddIdentitySources200ResponseAllOfTask `json:"task,omitempty"`
 	Success *bool `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddIdentitySources200Response AddIdentitySources200Response
 
 // NewAddIdentitySources200Response instantiates a new AddIdentitySources200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o AddIdentitySources200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Success) {
 		toSerialize["success"] = o.Success
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddIdentitySources200Response) UnmarshalJSON(data []byte) (err error) {
+	varAddIdentitySources200Response := _AddIdentitySources200Response{}
+
+	err = json.Unmarshal(data, &varAddIdentitySources200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddIdentitySources200Response(varAddIdentitySources200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "task")
+		delete(additionalProperties, "success")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddIdentitySources200Response struct {

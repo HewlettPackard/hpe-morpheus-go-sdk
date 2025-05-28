@@ -30,7 +30,10 @@ type Billing struct {
 	Price *float32 `json:"price,omitempty"`
 	Cost *float32 `json:"cost,omitempty"`
 	Zones []ListBillingAccount200ResponseAllOfBillingInfoZonesInner `json:"zones,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _Billing Billing
 
 // NewBilling instantiates a new Billing object
 // This constructor will assign default values to properties that have it defined,
@@ -374,7 +377,41 @@ func (o Billing) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Zones) {
 		toSerialize["zones"] = o.Zones
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *Billing) UnmarshalJSON(data []byte) (err error) {
+	varBilling := _Billing{}
+
+	err = json.Unmarshal(data, &varBilling)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Billing(varBilling)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "accountUUID")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "startDate")
+		delete(additionalProperties, "endDate")
+		delete(additionalProperties, "priceUnit")
+		delete(additionalProperties, "price")
+		delete(additionalProperties, "cost")
+		delete(additionalProperties, "zones")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableBilling struct {

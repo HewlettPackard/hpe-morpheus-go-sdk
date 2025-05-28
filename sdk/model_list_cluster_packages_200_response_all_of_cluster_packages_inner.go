@@ -34,7 +34,10 @@ type ListClusterPackages200ResponseAllOfClusterPackagesInner struct {
 	ImagePath *string `json:"imagePath,omitempty"`
 	DarkImagePath *string `json:"darkImagePath,omitempty"`
 	SpecTemplates []ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"specTemplates,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListClusterPackages200ResponseAllOfClusterPackagesInner ListClusterPackages200ResponseAllOfClusterPackagesInner
 
 // NewListClusterPackages200ResponseAllOfClusterPackagesInner instantiates a new ListClusterPackages200ResponseAllOfClusterPackagesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -553,7 +556,46 @@ func (o ListClusterPackages200ResponseAllOfClusterPackagesInner) ToMap() (map[st
 	if !IsNil(o.SpecTemplates) {
 		toSerialize["specTemplates"] = o.SpecTemplates
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) UnmarshalJSON(data []byte) (err error) {
+	varListClusterPackages200ResponseAllOfClusterPackagesInner := _ListClusterPackages200ResponseAllOfClusterPackagesInner{}
+
+	err = json.Unmarshal(data, &varListClusterPackages200ResponseAllOfClusterPackagesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListClusterPackages200ResponseAllOfClusterPackagesInner(varListClusterPackages200ResponseAllOfClusterPackagesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "repeatInstall")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "packageType")
+		delete(additionalProperties, "packageVersion")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "iconPath")
+		delete(additionalProperties, "imagePath")
+		delete(additionalProperties, "darkImagePath")
+		delete(additionalProperties, "specTemplates")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListClusterPackages200ResponseAllOfClusterPackagesInner struct {

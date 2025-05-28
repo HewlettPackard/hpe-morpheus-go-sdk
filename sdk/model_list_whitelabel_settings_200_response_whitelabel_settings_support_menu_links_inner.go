@@ -23,7 +23,10 @@ type ListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner st
 	Url *string `json:"url,omitempty"`
 	Label *string `json:"label,omitempty"`
 	LabelCode *string `json:"labelCode,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner ListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner
 
 // NewListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner instantiates a new ListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o ListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner
 	if !IsNil(o.LabelCode) {
 		toSerialize["labelCode"] = o.LabelCode
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner) UnmarshalJSON(data []byte) (err error) {
+	varListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner := _ListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner{}
+
+	err = json.Unmarshal(data, &varListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner(varListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "url")
+		delete(additionalProperties, "label")
+		delete(additionalProperties, "labelCode")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner struct {

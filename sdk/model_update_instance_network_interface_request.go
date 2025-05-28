@@ -22,7 +22,10 @@ var _ MappedNullable = &UpdateInstanceNetworkInterfaceRequest{}
 type UpdateInstanceNetworkInterfaceRequest struct {
 	// Desired Name for the Network Interface
 	Name *string `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateInstanceNetworkInterfaceRequest UpdateInstanceNetworkInterfaceRequest
 
 // NewUpdateInstanceNetworkInterfaceRequest instantiates a new UpdateInstanceNetworkInterfaceRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o UpdateInstanceNetworkInterfaceRequest) ToMap() (map[string]interface{}, 
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateInstanceNetworkInterfaceRequest) UnmarshalJSON(data []byte) (err error) {
+	varUpdateInstanceNetworkInterfaceRequest := _UpdateInstanceNetworkInterfaceRequest{}
+
+	err = json.Unmarshal(data, &varUpdateInstanceNetworkInterfaceRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateInstanceNetworkInterfaceRequest(varUpdateInstanceNetworkInterfaceRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateInstanceNetworkInterfaceRequest struct {

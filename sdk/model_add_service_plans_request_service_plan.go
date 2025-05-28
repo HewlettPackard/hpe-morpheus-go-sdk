@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -54,6 +53,7 @@ type AddServicePlansRequestServicePlan struct {
 	// List of price sets to include in service plan
 	PriceSets []AddServicePlansRequestServicePlanPriceSetsInner `json:"priceSets,omitempty"`
 	Config *AddServicePlansRequestServicePlanConfig `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddServicePlansRequestServicePlan AddServicePlansRequestServicePlan
@@ -659,6 +659,11 @@ func (o AddServicePlansRequestServicePlan) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -690,15 +695,36 @@ func (o *AddServicePlansRequestServicePlan) UnmarshalJSON(data []byte) (err erro
 
 	varAddServicePlansRequestServicePlan := _AddServicePlansRequestServicePlan{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddServicePlansRequestServicePlan)
+	err = json.Unmarshal(data, &varAddServicePlansRequestServicePlan)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddServicePlansRequestServicePlan(varAddServicePlansRequestServicePlan)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "editable")
+		delete(additionalProperties, "maxStorage")
+		delete(additionalProperties, "maxMemory")
+		delete(additionalProperties, "maxCores")
+		delete(additionalProperties, "maxDisks")
+		delete(additionalProperties, "provisionType")
+		delete(additionalProperties, "customCores")
+		delete(additionalProperties, "customMaxStorage")
+		delete(additionalProperties, "customMaxDataStorage")
+		delete(additionalProperties, "customMaxMemory")
+		delete(additionalProperties, "addVolumes")
+		delete(additionalProperties, "sortOrder")
+		delete(additionalProperties, "priceSets")
+		delete(additionalProperties, "config")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

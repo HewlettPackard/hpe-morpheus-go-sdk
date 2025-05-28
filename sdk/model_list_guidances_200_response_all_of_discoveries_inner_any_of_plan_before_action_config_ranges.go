@@ -26,7 +26,10 @@ type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfigRan
 	MaxMemory *string `json:"maxMemory,omitempty"`
 	MinCores *string `json:"minCores,omitempty"`
 	MaxCores *string `json:"maxCores,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfigRanges ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfigRanges
 
 // NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfigRanges instantiates a new ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfigRanges object
 // This constructor will assign default values to properties that have it defined,
@@ -265,7 +268,38 @@ func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfig
 	if !IsNil(o.MaxCores) {
 		toSerialize["maxCores"] = o.MaxCores
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfigRanges) UnmarshalJSON(data []byte) (err error) {
+	varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfigRanges := _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfigRanges{}
+
+	err = json.Unmarshal(data, &varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfigRanges)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfigRanges(varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfigRanges)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "minStorage")
+		delete(additionalProperties, "maxStorage")
+		delete(additionalProperties, "minMemory")
+		delete(additionalProperties, "maxMemory")
+		delete(additionalProperties, "minCores")
+		delete(additionalProperties, "maxCores")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfigRanges struct {

@@ -60,7 +60,10 @@ type NetworkUpdate struct {
 	// Array of tenant account ids that are allowed access
 	Tenants []GetAlerts200ResponseAllOfChecksInnerAccount `json:"tenants,omitempty"`
 	ResourcePermissions *UpdateNetworkRequestNetworkResourcePermissions `json:"resourcePermissions,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _NetworkUpdate NetworkUpdate
 
 // NewNetworkUpdate instantiates a new NetworkUpdate object
 // This constructor will assign default values to properties that have it defined,
@@ -863,7 +866,54 @@ func (o NetworkUpdate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ResourcePermissions) {
 		toSerialize["resourcePermissions"] = o.ResourcePermissions
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *NetworkUpdate) UnmarshalJSON(data []byte) (err error) {
+	varNetworkUpdate := _NetworkUpdate{}
+
+	err = json.Unmarshal(data, &varNetworkUpdate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = NetworkUpdate(varNetworkUpdate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "displayName")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "cidr")
+		delete(additionalProperties, "gateway")
+		delete(additionalProperties, "dnsPrimary")
+		delete(additionalProperties, "dnsSecondary")
+		delete(additionalProperties, "vlanId")
+		delete(additionalProperties, "pool")
+		delete(additionalProperties, "allowStaticOverride")
+		delete(additionalProperties, "assignPublicIp")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "dhcpServer")
+		delete(additionalProperties, "networkDomain")
+		delete(additionalProperties, "searchDomains")
+		delete(additionalProperties, "networkProxy")
+		delete(additionalProperties, "applianceUrlProxyBypass")
+		delete(additionalProperties, "noProxy")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "tenants")
+		delete(additionalProperties, "resourcePermissions")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableNetworkUpdate struct {

@@ -21,7 +21,10 @@ var _ MappedNullable = &AddPreseedScriptRequest{}
 // AddPreseedScriptRequest struct for AddPreseedScriptRequest
 type AddPreseedScriptRequest struct {
 	PreseedScript *AddPreseedScriptRequestPreseedScript `json:"preseedScript,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddPreseedScriptRequest AddPreseedScriptRequest
 
 // NewAddPreseedScriptRequest instantiates a new AddPreseedScriptRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o AddPreseedScriptRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.PreseedScript) {
 		toSerialize["preseedScript"] = o.PreseedScript
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddPreseedScriptRequest) UnmarshalJSON(data []byte) (err error) {
+	varAddPreseedScriptRequest := _AddPreseedScriptRequest{}
+
+	err = json.Unmarshal(data, &varAddPreseedScriptRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddPreseedScriptRequest(varAddPreseedScriptRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "preseedScript")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddPreseedScriptRequest struct {

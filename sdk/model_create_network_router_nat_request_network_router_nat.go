@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -23,6 +22,7 @@ var _ MappedNullable = &CreateNetworkRouterNatRequestNetworkRouterNAT{}
 // CreateNetworkRouterNatRequestNetworkRouterNAT For a full list of available NAT options, see natOptionTypes in the specific Network Router Type
 type CreateNetworkRouterNatRequestNetworkRouterNAT struct {
 	Name interface{} `json:"name"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _CreateNetworkRouterNatRequestNetworkRouterNAT CreateNetworkRouterNatRequestNetworkRouterNAT
@@ -84,6 +84,11 @@ func (o CreateNetworkRouterNatRequestNetworkRouterNAT) ToMap() (map[string]inter
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -111,15 +116,20 @@ func (o *CreateNetworkRouterNatRequestNetworkRouterNAT) UnmarshalJSON(data []byt
 
 	varCreateNetworkRouterNatRequestNetworkRouterNAT := _CreateNetworkRouterNatRequestNetworkRouterNAT{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varCreateNetworkRouterNatRequestNetworkRouterNAT)
+	err = json.Unmarshal(data, &varCreateNetworkRouterNatRequestNetworkRouterNAT)
 
 	if err != nil {
 		return err
 	}
 
 	*o = CreateNetworkRouterNatRequestNetworkRouterNAT(varCreateNetworkRouterNatRequestNetworkRouterNAT)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

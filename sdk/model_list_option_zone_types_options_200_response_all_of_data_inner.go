@@ -24,7 +24,10 @@ type ListOptionZoneTypesOptions200ResponseAllOfDataInner struct {
 	Value *string `json:"value,omitempty"`
 	Id *int64 `json:"id,omitempty"`
 	Code *string `json:"code,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListOptionZoneTypesOptions200ResponseAllOfDataInner ListOptionZoneTypesOptions200ResponseAllOfDataInner
 
 // NewListOptionZoneTypesOptions200ResponseAllOfDataInner instantiates a new ListOptionZoneTypesOptions200ResponseAllOfDataInner object
 // This constructor will assign default values to properties that have it defined,
@@ -193,7 +196,36 @@ func (o ListOptionZoneTypesOptions200ResponseAllOfDataInner) ToMap() (map[string
 	if !IsNil(o.Code) {
 		toSerialize["code"] = o.Code
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListOptionZoneTypesOptions200ResponseAllOfDataInner) UnmarshalJSON(data []byte) (err error) {
+	varListOptionZoneTypesOptions200ResponseAllOfDataInner := _ListOptionZoneTypesOptions200ResponseAllOfDataInner{}
+
+	err = json.Unmarshal(data, &varListOptionZoneTypesOptions200ResponseAllOfDataInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListOptionZoneTypesOptions200ResponseAllOfDataInner(varListOptionZoneTypesOptions200ResponseAllOfDataInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "value")
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListOptionZoneTypesOptions200ResponseAllOfDataInner struct {

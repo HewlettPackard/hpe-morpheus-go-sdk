@@ -35,7 +35,10 @@ type ListCertificates200ResponseCertificatesInner struct {
 	CommonName *string `json:"commonName,omitempty"`
 	CertType *string `json:"certType,omitempty"`
 	KeyFileMD5 *string `json:"keyFileMD5,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListCertificates200ResponseCertificatesInner ListCertificates200ResponseCertificatesInner
 
 // NewListCertificates200ResponseCertificatesInner instantiates a new ListCertificates200ResponseCertificatesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -589,7 +592,47 @@ func (o ListCertificates200ResponseCertificatesInner) ToMap() (map[string]interf
 	if !IsNil(o.KeyFileMD5) {
 		toSerialize["keyFileMD5"] = o.KeyFileMD5
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListCertificates200ResponseCertificatesInner) UnmarshalJSON(data []byte) (err error) {
+	varListCertificates200ResponseCertificatesInner := _ListCertificates200ResponseCertificatesInner{}
+
+	err = json.Unmarshal(data, &varListCertificates200ResponseCertificatesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListCertificates200ResponseCertificatesInner(varListCertificates200ResponseCertificatesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "domainName")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "integrationId")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "generated")
+		delete(additionalProperties, "wildcard")
+		delete(additionalProperties, "selfSigned")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "commonName")
+		delete(additionalProperties, "certType")
+		delete(additionalProperties, "keyFileMD5")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListCertificates200ResponseCertificatesInner struct {

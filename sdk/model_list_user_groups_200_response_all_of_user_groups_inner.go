@@ -32,7 +32,10 @@ type ListUserGroups200ResponseAllOfUserGroupsInner struct {
 	Account *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListUserGroups200ResponseAllOfUserGroupsInner ListUserGroups200ResponseAllOfUserGroupsInner
 
 // NewListUserGroups200ResponseAllOfUserGroupsInner instantiates a new ListUserGroups200ResponseAllOfUserGroupsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -446,7 +449,43 @@ func (o ListUserGroups200ResponseAllOfUserGroupsInner) ToMap() (map[string]inter
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListUserGroups200ResponseAllOfUserGroupsInner) UnmarshalJSON(data []byte) (err error) {
+	varListUserGroups200ResponseAllOfUserGroupsInner := _ListUserGroups200ResponseAllOfUserGroupsInner{}
+
+	err = json.Unmarshal(data, &varListUserGroups200ResponseAllOfUserGroupsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListUserGroups200ResponseAllOfUserGroupsInner(varListUserGroups200ResponseAllOfUserGroupsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "sudoUser")
+		delete(additionalProperties, "serverGroup")
+		delete(additionalProperties, "users")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListUserGroups200ResponseAllOfUserGroupsInner struct {

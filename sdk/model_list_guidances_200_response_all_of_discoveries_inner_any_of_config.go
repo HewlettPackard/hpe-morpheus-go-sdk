@@ -62,7 +62,10 @@ type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig struct {
 	FreeMemoryMax *float32 `json:"freeMemoryMax,omitempty"`
 	FreeMemoryAvg *float32 `json:"freeMemoryAvg,omitempty"`
 	FreeMemorySum *float32 `json:"freeMemorySum,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig
 
 // NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig instantiates a new ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig object
 // This constructor will assign default values to properties that have it defined,
@@ -1561,7 +1564,74 @@ func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) ToMap() (map[s
 	if !IsNil(o.FreeMemorySum) {
 		toSerialize["freeMemorySum"] = o.FreeMemorySum
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnmarshalJSON(data []byte) (err error) {
+	varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig := _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig{}
+
+	err = json.Unmarshal(data, &varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig(varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "exists")
+		delete(additionalProperties, "objectId")
+		delete(additionalProperties, "cpuTotalTimeCount")
+		delete(additionalProperties, "cpuTotalTimeMin")
+		delete(additionalProperties, "cpuTotalTimeMax")
+		delete(additionalProperties, "cpuTotalTimeAvg")
+		delete(additionalProperties, "cpuTotalTimeSum")
+		delete(additionalProperties, "cpuIdleTimeCount")
+		delete(additionalProperties, "cpuIdleTimeMin")
+		delete(additionalProperties, "cpuIdleTimeMax")
+		delete(additionalProperties, "cpuIdleTimeAvg")
+		delete(additionalProperties, "cpuIdleTimeSum")
+		delete(additionalProperties, "cpuUsageCount")
+		delete(additionalProperties, "cpuUsageMin")
+		delete(additionalProperties, "cpuUsageMax")
+		delete(additionalProperties, "cpuUsageAvg")
+		delete(additionalProperties, "cpuUsageSum")
+		delete(additionalProperties, "maxMemoryCount")
+		delete(additionalProperties, "maxMemoryMin")
+		delete(additionalProperties, "maxMemoryMax")
+		delete(additionalProperties, "maxMemoryAvg")
+		delete(additionalProperties, "maxMemorySum")
+		delete(additionalProperties, "cpuUserTimeCount")
+		delete(additionalProperties, "cpuUserTimeMin")
+		delete(additionalProperties, "cpuUserTimeMax")
+		delete(additionalProperties, "cpuUserTimeAvg")
+		delete(additionalProperties, "cpuUserTimeSum")
+		delete(additionalProperties, "cpuSystemTimeCount")
+		delete(additionalProperties, "cpuSystemTimeMin")
+		delete(additionalProperties, "cpuSystemTimeMax")
+		delete(additionalProperties, "cpuSystemTimeAvg")
+		delete(additionalProperties, "cpuSystemTimeSum")
+		delete(additionalProperties, "usedMemoryCount")
+		delete(additionalProperties, "usedMemoryMin")
+		delete(additionalProperties, "usedMemoryMax")
+		delete(additionalProperties, "usedMemoryAvg")
+		delete(additionalProperties, "usedMemorySum")
+		delete(additionalProperties, "freeMemoryCount")
+		delete(additionalProperties, "freeMemoryMin")
+		delete(additionalProperties, "freeMemoryMax")
+		delete(additionalProperties, "freeMemoryAvg")
+		delete(additionalProperties, "freeMemorySum")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig struct {

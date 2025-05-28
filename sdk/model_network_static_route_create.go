@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -26,6 +25,7 @@ type NetworkStaticRouteCreate struct {
 	Source string `json:"source"`
 	// Destination address
 	Destination string `json:"destination"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _NetworkStaticRouteCreate NetworkStaticRouteCreate
@@ -109,6 +109,11 @@ func (o NetworkStaticRouteCreate) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["source"] = o.Source
 	toSerialize["destination"] = o.Destination
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -137,15 +142,21 @@ func (o *NetworkStaticRouteCreate) UnmarshalJSON(data []byte) (err error) {
 
 	varNetworkStaticRouteCreate := _NetworkStaticRouteCreate{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varNetworkStaticRouteCreate)
+	err = json.Unmarshal(data, &varNetworkStaticRouteCreate)
 
 	if err != nil {
 		return err
 	}
 
 	*o = NetworkStaticRouteCreate(varNetworkStaticRouteCreate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "source")
+		delete(additionalProperties, "destination")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

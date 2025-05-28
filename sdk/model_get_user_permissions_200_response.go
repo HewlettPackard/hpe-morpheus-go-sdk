@@ -21,7 +21,10 @@ var _ MappedNullable = &GetUserPermissions200Response{}
 // GetUserPermissions200Response struct for GetUserPermissions200Response
 type GetUserPermissions200Response struct {
 	Access *AddUserTenant200ResponseAllOfUserAccess `json:"access,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetUserPermissions200Response GetUserPermissions200Response
 
 // NewGetUserPermissions200Response instantiates a new GetUserPermissions200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o GetUserPermissions200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Access) {
 		toSerialize["access"] = o.Access
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetUserPermissions200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetUserPermissions200Response := _GetUserPermissions200Response{}
+
+	err = json.Unmarshal(data, &varGetUserPermissions200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetUserPermissions200Response(varGetUserPermissions200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "access")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetUserPermissions200Response struct {

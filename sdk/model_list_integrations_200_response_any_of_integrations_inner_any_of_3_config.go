@@ -32,7 +32,10 @@ type ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config struct {
 	WindowsInstallUrl *string `json:"windowsInstallUrl,omitempty"`
 	UserKeyHash *string `json:"userKeyHash,omitempty"`
 	OrgKeyHash *string `json:"orgKeyHash,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config
 
 // NewListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config instantiates a new ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config object
 // This constructor will assign default values to properties that have it defined,
@@ -481,7 +484,44 @@ func (o ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config) ToMap() (
 	if !IsNil(o.OrgKeyHash) {
 		toSerialize["orgKeyHash"] = o.OrgKeyHash
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config) UnmarshalJSON(data []byte) (err error) {
+	varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config := _ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config{}
+
+	err = json.Unmarshal(data, &varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config(varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "databags")
+		delete(additionalProperties, "endpoint")
+		delete(additionalProperties, "org")
+		delete(additionalProperties, "chefUser")
+		delete(additionalProperties, "userKey")
+		delete(additionalProperties, "orgKey")
+		delete(additionalProperties, "version")
+		delete(additionalProperties, "chefUseFqdn")
+		delete(additionalProperties, "windowsVersion")
+		delete(additionalProperties, "windowsInstallUrl")
+		delete(additionalProperties, "userKeyHash")
+		delete(additionalProperties, "orgKeyHash")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config struct {

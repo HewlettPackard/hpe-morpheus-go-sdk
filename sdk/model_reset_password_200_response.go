@@ -22,7 +22,10 @@ var _ MappedNullable = &ResetPassword200Response{}
 type ResetPassword200Response struct {
 	Success *bool `json:"success,omitempty"`
 	Msg *string `json:"msg,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ResetPassword200Response ResetPassword200Response
 
 // NewResetPassword200Response instantiates a new ResetPassword200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o ResetPassword200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Msg) {
 		toSerialize["msg"] = o.Msg
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ResetPassword200Response) UnmarshalJSON(data []byte) (err error) {
+	varResetPassword200Response := _ResetPassword200Response{}
+
+	err = json.Unmarshal(data, &varResetPassword200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ResetPassword200Response(varResetPassword200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "success")
+		delete(additionalProperties, "msg")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableResetPassword200Response struct {

@@ -22,7 +22,10 @@ var _ MappedNullable = &StorageServerStorageQuotaPolicyTypeConfiguration{}
 type StorageServerStorageQuotaPolicyTypeConfiguration struct {
 	StorageServerId *string `json:"storageServerId,omitempty"`
 	MaxStorage *string `json:"maxStorage,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _StorageServerStorageQuotaPolicyTypeConfiguration StorageServerStorageQuotaPolicyTypeConfiguration
 
 // NewStorageServerStorageQuotaPolicyTypeConfiguration instantiates a new StorageServerStorageQuotaPolicyTypeConfiguration object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o StorageServerStorageQuotaPolicyTypeConfiguration) ToMap() (map[string]in
 	if !IsNil(o.MaxStorage) {
 		toSerialize["maxStorage"] = o.MaxStorage
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *StorageServerStorageQuotaPolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
+	varStorageServerStorageQuotaPolicyTypeConfiguration := _StorageServerStorageQuotaPolicyTypeConfiguration{}
+
+	err = json.Unmarshal(data, &varStorageServerStorageQuotaPolicyTypeConfiguration)
+
+	if err != nil {
+		return err
+	}
+
+	*o = StorageServerStorageQuotaPolicyTypeConfiguration(varStorageServerStorageQuotaPolicyTypeConfiguration)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "storageServerId")
+		delete(additionalProperties, "maxStorage")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableStorageServerStorageQuotaPolicyTypeConfiguration struct {

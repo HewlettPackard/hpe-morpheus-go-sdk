@@ -21,7 +21,10 @@ var _ MappedNullable = &CreateNetworkProxyRequest{}
 // CreateNetworkProxyRequest struct for CreateNetworkProxyRequest
 type CreateNetworkProxyRequest struct {
 	NetworkProxy *CreateNetworkProxyRequestNetworkProxy `json:"networkProxy,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _CreateNetworkProxyRequest CreateNetworkProxyRequest
 
 // NewCreateNetworkProxyRequest instantiates a new CreateNetworkProxyRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o CreateNetworkProxyRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.NetworkProxy) {
 		toSerialize["networkProxy"] = o.NetworkProxy
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *CreateNetworkProxyRequest) UnmarshalJSON(data []byte) (err error) {
+	varCreateNetworkProxyRequest := _CreateNetworkProxyRequest{}
+
+	err = json.Unmarshal(data, &varCreateNetworkProxyRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CreateNetworkProxyRequest(varCreateNetworkProxyRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "networkProxy")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCreateNetworkProxyRequest struct {

@@ -37,7 +37,10 @@ type UpdateTenant200ResponseAccount struct {
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
 	Success *bool `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateTenant200ResponseAccount UpdateTenant200ResponseAccount
 
 // NewUpdateTenant200ResponseAccount instantiates a new UpdateTenant200ResponseAccount object
 // This constructor will assign default values to properties that have it defined,
@@ -626,7 +629,48 @@ func (o UpdateTenant200ResponseAccount) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.Success) {
 		toSerialize["success"] = o.Success
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateTenant200ResponseAccount) UnmarshalJSON(data []byte) (err error) {
+	varUpdateTenant200ResponseAccount := _UpdateTenant200ResponseAccount{}
+
+	err = json.Unmarshal(data, &varUpdateTenant200ResponseAccount)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateTenant200ResponseAccount(varUpdateTenant200ResponseAccount)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "subdomain")
+		delete(additionalProperties, "currency")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "customerNumber")
+		delete(additionalProperties, "accountNumber")
+		delete(additionalProperties, "accountName")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "master")
+		delete(additionalProperties, "role")
+		delete(additionalProperties, "stats")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "success")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateTenant200ResponseAccount struct {

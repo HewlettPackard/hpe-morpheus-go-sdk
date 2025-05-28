@@ -28,7 +28,10 @@ type AddStorageBucketsRequestStorageBucketConfigOneOf struct {
 	Region *string `json:"region,omitempty"`
 	// Optional endpoint URL if pointing to an object store other than amazon that mimics the Amazon S3 APIs.
 	Endpoint *string `json:"endpoint,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddStorageBucketsRequestStorageBucketConfigOneOf AddStorageBucketsRequestStorageBucketConfigOneOf
 
 // NewAddStorageBucketsRequestStorageBucketConfigOneOf instantiates a new AddStorageBucketsRequestStorageBucketConfigOneOf object
 // This constructor will assign default values to properties that have it defined,
@@ -197,7 +200,36 @@ func (o AddStorageBucketsRequestStorageBucketConfigOneOf) ToMap() (map[string]in
 	if !IsNil(o.Endpoint) {
 		toSerialize["endpoint"] = o.Endpoint
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddStorageBucketsRequestStorageBucketConfigOneOf) UnmarshalJSON(data []byte) (err error) {
+	varAddStorageBucketsRequestStorageBucketConfigOneOf := _AddStorageBucketsRequestStorageBucketConfigOneOf{}
+
+	err = json.Unmarshal(data, &varAddStorageBucketsRequestStorageBucketConfigOneOf)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddStorageBucketsRequestStorageBucketConfigOneOf(varAddStorageBucketsRequestStorageBucketConfigOneOf)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "accessKey")
+		delete(additionalProperties, "secretKey")
+		delete(additionalProperties, "region")
+		delete(additionalProperties, "endpoint")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddStorageBucketsRequestStorageBucketConfigOneOf struct {

@@ -21,7 +21,10 @@ var _ MappedNullable = &GetHostType200Response{}
 // GetHostType200Response struct for GetHostType200Response
 type GetHostType200Response struct {
 	ServerType *ListHostTypes200ResponseAllOfServerTypesInner `json:"serverType,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetHostType200Response GetHostType200Response
 
 // NewGetHostType200Response instantiates a new GetHostType200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o GetHostType200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ServerType) {
 		toSerialize["serverType"] = o.ServerType
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetHostType200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetHostType200Response := _GetHostType200Response{}
+
+	err = json.Unmarshal(data, &varGetHostType200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetHostType200Response(varGetHostType200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "serverType")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetHostType200Response struct {

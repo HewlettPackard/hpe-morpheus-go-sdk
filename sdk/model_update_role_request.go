@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -23,6 +22,7 @@ var _ MappedNullable = &UpdateRoleRequest{}
 // UpdateRoleRequest struct for UpdateRoleRequest
 type UpdateRoleRequest struct {
 	Role UpdateRoleRequestRole `json:"role"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateRoleRequest UpdateRoleRequest
@@ -80,6 +80,11 @@ func (o UpdateRoleRequest) MarshalJSON() ([]byte, error) {
 func (o UpdateRoleRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["role"] = o.Role
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -107,15 +112,20 @@ func (o *UpdateRoleRequest) UnmarshalJSON(data []byte) (err error) {
 
 	varUpdateRoleRequest := _UpdateRoleRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varUpdateRoleRequest)
+	err = json.Unmarshal(data, &varUpdateRoleRequest)
 
 	if err != nil {
 		return err
 	}
 
 	*o = UpdateRoleRequest(varUpdateRoleRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "role")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

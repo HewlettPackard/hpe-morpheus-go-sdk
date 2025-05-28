@@ -22,7 +22,10 @@ var _ MappedNullable = &AddSecurityGroupRulesRequestRuleSourceGroup{}
 type AddSecurityGroupRulesRequestRuleSourceGroup struct {
 	// The source Security Group ID. Required for `sourceType`=group
 	Id *int64 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddSecurityGroupRulesRequestRuleSourceGroup AddSecurityGroupRulesRequestRuleSourceGroup
 
 // NewAddSecurityGroupRulesRequestRuleSourceGroup instantiates a new AddSecurityGroupRulesRequestRuleSourceGroup object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o AddSecurityGroupRulesRequestRuleSourceGroup) ToMap() (map[string]interfa
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddSecurityGroupRulesRequestRuleSourceGroup) UnmarshalJSON(data []byte) (err error) {
+	varAddSecurityGroupRulesRequestRuleSourceGroup := _AddSecurityGroupRulesRequestRuleSourceGroup{}
+
+	err = json.Unmarshal(data, &varAddSecurityGroupRulesRequestRuleSourceGroup)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddSecurityGroupRulesRequestRuleSourceGroup(varAddSecurityGroupRulesRequestRuleSourceGroup)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddSecurityGroupRulesRequestRuleSourceGroup struct {

@@ -23,7 +23,10 @@ type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVms s
 	Code *string `json:"code,omitempty"`
 	Name *string `json:"name,omitempty"`
 	PaymentOptions map[string]ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValue `json:"paymentOptions,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVms ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVms
 
 // NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVms instantiates a new ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVms object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVm
 	if !IsNil(o.PaymentOptions) {
 		toSerialize["paymentOptions"] = o.PaymentOptions
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVms) UnmarshalJSON(data []byte) (err error) {
+	varListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVms := _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVms{}
+
+	err = json.Unmarshal(data, &varListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVms)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVms(varListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVms)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "paymentOptions")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVms struct {

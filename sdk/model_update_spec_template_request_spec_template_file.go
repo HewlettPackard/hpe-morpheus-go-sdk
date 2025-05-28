@@ -29,7 +29,10 @@ type UpdateSpecTemplateRequestSpecTemplateFile struct {
 	// Content Ref, the branch/tag. Only used when sourceType is repo.
 	ContentRef *string `json:"contentRef,omitempty"`
 	Repository *UpdateSpecTemplateRequestSpecTemplateFileRepository `json:"repository,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateSpecTemplateRequestSpecTemplateFile UpdateSpecTemplateRequestSpecTemplateFile
 
 // NewUpdateSpecTemplateRequestSpecTemplateFile instantiates a new UpdateSpecTemplateRequestSpecTemplateFile object
 // This constructor will assign default values to properties that have it defined,
@@ -237,7 +240,37 @@ func (o UpdateSpecTemplateRequestSpecTemplateFile) ToMap() (map[string]interface
 	if !IsNil(o.Repository) {
 		toSerialize["repository"] = o.Repository
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateSpecTemplateRequestSpecTemplateFile) UnmarshalJSON(data []byte) (err error) {
+	varUpdateSpecTemplateRequestSpecTemplateFile := _UpdateSpecTemplateRequestSpecTemplateFile{}
+
+	err = json.Unmarshal(data, &varUpdateSpecTemplateRequestSpecTemplateFile)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateSpecTemplateRequestSpecTemplateFile(varUpdateSpecTemplateRequestSpecTemplateFile)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "sourceType")
+		delete(additionalProperties, "content")
+		delete(additionalProperties, "contentPath")
+		delete(additionalProperties, "contentRef")
+		delete(additionalProperties, "repository")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateSpecTemplateRequestSpecTemplateFile struct {

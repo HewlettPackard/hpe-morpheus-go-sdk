@@ -21,7 +21,10 @@ var _ MappedNullable = &WorkflowJobPayloadTask{}
 // WorkflowJobPayloadTask struct for WorkflowJobPayloadTask
 type WorkflowJobPayloadTask struct {
 	Id *int64 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _WorkflowJobPayloadTask WorkflowJobPayloadTask
 
 // NewWorkflowJobPayloadTask instantiates a new WorkflowJobPayloadTask object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o WorkflowJobPayloadTask) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *WorkflowJobPayloadTask) UnmarshalJSON(data []byte) (err error) {
+	varWorkflowJobPayloadTask := _WorkflowJobPayloadTask{}
+
+	err = json.Unmarshal(data, &varWorkflowJobPayloadTask)
+
+	if err != nil {
+		return err
+	}
+
+	*o = WorkflowJobPayloadTask(varWorkflowJobPayloadTask)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableWorkflowJobPayloadTask struct {

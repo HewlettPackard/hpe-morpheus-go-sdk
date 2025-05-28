@@ -21,7 +21,10 @@ var _ MappedNullable = &ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14
 // ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14Config struct for ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14Config
 type ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14Config struct {
 	SaltApplyOnMinion *bool `json:"saltApplyOnMinion,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14Config ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14Config
 
 // NewListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14Config instantiates a new ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14Config object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14Config) ToMap() 
 	if !IsNil(o.SaltApplyOnMinion) {
 		toSerialize["saltApplyOnMinion"] = o.SaltApplyOnMinion
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14Config) UnmarshalJSON(data []byte) (err error) {
+	varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14Config := _ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14Config{}
+
+	err = json.Unmarshal(data, &varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14Config)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14Config(varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14Config)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "saltApplyOnMinion")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14Config struct {

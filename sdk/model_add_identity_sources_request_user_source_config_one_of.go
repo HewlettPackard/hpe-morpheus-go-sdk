@@ -28,7 +28,10 @@ type AddIdentitySourcesRequestUserSourceConfigOneOf struct {
 	BindingPassword *string `json:"bindingPassword,omitempty"`
 	// User DN Expression
 	RequiredGroup *string `json:"requiredGroup,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddIdentitySourcesRequestUserSourceConfigOneOf AddIdentitySourcesRequestUserSourceConfigOneOf
 
 // NewAddIdentitySourcesRequestUserSourceConfigOneOf instantiates a new AddIdentitySourcesRequestUserSourceConfigOneOf object
 // This constructor will assign default values to properties that have it defined,
@@ -197,7 +200,36 @@ func (o AddIdentitySourcesRequestUserSourceConfigOneOf) ToMap() (map[string]inte
 	if !IsNil(o.RequiredGroup) {
 		toSerialize["requiredGroup"] = o.RequiredGroup
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddIdentitySourcesRequestUserSourceConfigOneOf) UnmarshalJSON(data []byte) (err error) {
+	varAddIdentitySourcesRequestUserSourceConfigOneOf := _AddIdentitySourcesRequestUserSourceConfigOneOf{}
+
+	err = json.Unmarshal(data, &varAddIdentitySourcesRequestUserSourceConfigOneOf)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddIdentitySourcesRequestUserSourceConfigOneOf(varAddIdentitySourcesRequestUserSourceConfigOneOf)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "url")
+		delete(additionalProperties, "bindingUsername")
+		delete(additionalProperties, "bindingPassword")
+		delete(additionalProperties, "requiredGroup")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddIdentitySourcesRequestUserSourceConfigOneOf struct {

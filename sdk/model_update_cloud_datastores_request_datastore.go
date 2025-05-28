@@ -26,7 +26,10 @@ type UpdateCloudDatastoresRequestDatastore struct {
 	Visibility *string `json:"visibility,omitempty"`
 	TenantPermissions *UpdateCloudDatastoresRequestDatastoreTenantPermissions `json:"tenantPermissions,omitempty"`
 	ResourcePermissions *UpdateCloudDatastoresRequestDatastoreResourcePermissions `json:"resourcePermissions,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateCloudDatastoresRequestDatastore UpdateCloudDatastoresRequestDatastore
 
 // NewUpdateCloudDatastoresRequestDatastore instantiates a new UpdateCloudDatastoresRequestDatastore object
 // This constructor will assign default values to properties that have it defined,
@@ -199,7 +202,36 @@ func (o UpdateCloudDatastoresRequestDatastore) ToMap() (map[string]interface{}, 
 	if !IsNil(o.ResourcePermissions) {
 		toSerialize["resourcePermissions"] = o.ResourcePermissions
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateCloudDatastoresRequestDatastore) UnmarshalJSON(data []byte) (err error) {
+	varUpdateCloudDatastoresRequestDatastore := _UpdateCloudDatastoresRequestDatastore{}
+
+	err = json.Unmarshal(data, &varUpdateCloudDatastoresRequestDatastore)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateCloudDatastoresRequestDatastore(varUpdateCloudDatastoresRequestDatastore)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "tenantPermissions")
+		delete(additionalProperties, "resourcePermissions")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateCloudDatastoresRequestDatastore struct {

@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -41,6 +40,7 @@ type AddChecksRequestCheckOneOf2Config struct {
 	SshUser *string `json:"sshUser,omitempty"`
 	// Password for user, if not using key based authentication
 	SshPassword *string `json:"sshPassword,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddChecksRequestCheckOneOf2Config AddChecksRequestCheckOneOf2Config
@@ -526,6 +526,11 @@ func (o AddChecksRequestCheckOneOf2Config) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.SshPassword) {
 		toSerialize["sshPassword"] = o.SshPassword
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -556,15 +561,33 @@ func (o *AddChecksRequestCheckOneOf2Config) UnmarshalJSON(data []byte) (err erro
 
 	varAddChecksRequestCheckOneOf2Config := _AddChecksRequestCheckOneOf2Config{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddChecksRequestCheckOneOf2Config)
+	err = json.Unmarshal(data, &varAddChecksRequestCheckOneOf2Config)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddChecksRequestCheckOneOf2Config(varAddChecksRequestCheckOneOf2Config)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "host")
+		delete(additionalProperties, "port")
+		delete(additionalProperties, "send")
+		delete(additionalProperties, "responseMatch")
+		delete(additionalProperties, "checkUser")
+		delete(additionalProperties, "textCheckOn")
+		delete(additionalProperties, "checkPassword")
+		delete(additionalProperties, "webTextMatch")
+		delete(additionalProperties, "checkPasswordHash")
+		delete(additionalProperties, "tunnelOn")
+		delete(additionalProperties, "sshHost")
+		delete(additionalProperties, "sshPort")
+		delete(additionalProperties, "sshUser")
+		delete(additionalProperties, "sshPassword")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

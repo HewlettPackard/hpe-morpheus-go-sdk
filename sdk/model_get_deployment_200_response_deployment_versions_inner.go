@@ -31,7 +31,10 @@ type GetDeployment200ResponseDeploymentVersionsInner struct {
 	Status *string `json:"status,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetDeployment200ResponseDeploymentVersionsInner GetDeployment200ResponseDeploymentVersionsInner
 
 // NewGetDeployment200ResponseDeploymentVersionsInner instantiates a new GetDeployment200ResponseDeploymentVersionsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -410,7 +413,42 @@ func (o GetDeployment200ResponseDeploymentVersionsInner) ToMap() (map[string]int
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetDeployment200ResponseDeploymentVersionsInner) UnmarshalJSON(data []byte) (err error) {
+	varGetDeployment200ResponseDeploymentVersionsInner := _GetDeployment200ResponseDeploymentVersionsInner{}
+
+	err = json.Unmarshal(data, &varGetDeployment200ResponseDeploymentVersionsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetDeployment200ResponseDeploymentVersionsInner(varGetDeployment200ResponseDeploymentVersionsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "deployType")
+		delete(additionalProperties, "fetchUrl")
+		delete(additionalProperties, "gitUrl")
+		delete(additionalProperties, "gitRef")
+		delete(additionalProperties, "userVersion")
+		delete(additionalProperties, "version")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetDeployment200ResponseDeploymentVersionsInner struct {

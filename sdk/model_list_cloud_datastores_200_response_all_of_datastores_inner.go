@@ -30,7 +30,10 @@ type ListCloudDatastores200ResponseAllOfDatastoresInner struct {
 	Visibility *string `json:"visibility,omitempty"`
 	Tenants []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner `json:"tenants,omitempty"`
 	ResourcePermission *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission `json:"resourcePermission,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListCloudDatastores200ResponseAllOfDatastoresInner ListCloudDatastores200ResponseAllOfDatastoresInner
 
 // NewListCloudDatastores200ResponseAllOfDatastoresInner instantiates a new ListCloudDatastores200ResponseAllOfDatastoresInner object
 // This constructor will assign default values to properties that have it defined,
@@ -409,7 +412,42 @@ func (o ListCloudDatastores200ResponseAllOfDatastoresInner) ToMap() (map[string]
 	if !IsNil(o.ResourcePermission) {
 		toSerialize["resourcePermission"] = o.ResourcePermission
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) UnmarshalJSON(data []byte) (err error) {
+	varListCloudDatastores200ResponseAllOfDatastoresInner := _ListCloudDatastores200ResponseAllOfDatastoresInner{}
+
+	err = json.Unmarshal(data, &varListCloudDatastores200ResponseAllOfDatastoresInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListCloudDatastores200ResponseAllOfDatastoresInner(varListCloudDatastores200ResponseAllOfDatastoresInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "zone")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "freeSpace")
+		delete(additionalProperties, "online")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "tenants")
+		delete(additionalProperties, "resourcePermission")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListCloudDatastores200ResponseAllOfDatastoresInner struct {

@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -42,6 +41,7 @@ type NetworkPoolServerCreateBluecat struct {
 	NetworkFilter *string `json:"networkFilter,omitempty"`
 	Config *BluecatNetworkPoolServerConfig `json:"config,omitempty"`
 	Credential *NSXNetworkServerCredential `json:"credential,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _NetworkPoolServerCreateBluecat NetworkPoolServerCreateBluecat
@@ -443,6 +443,11 @@ func (o NetworkPoolServerCreateBluecat) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.Credential) {
 		toSerialize["credential"] = o.Credential
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -472,15 +477,30 @@ func (o *NetworkPoolServerCreateBluecat) UnmarshalJSON(data []byte) (err error) 
 
 	varNetworkPoolServerCreateBluecat := _NetworkPoolServerCreateBluecat{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varNetworkPoolServerCreateBluecat)
+	err = json.Unmarshal(data, &varNetworkPoolServerCreateBluecat)
 
 	if err != nil {
 		return err
 	}
 
 	*o = NetworkPoolServerCreateBluecat(varNetworkPoolServerCreateBluecat)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "serviceUrl")
+		delete(additionalProperties, "serviceUsername")
+		delete(additionalProperties, "servicePassword")
+		delete(additionalProperties, "serviceThrottleRate")
+		delete(additionalProperties, "ignoreSsl")
+		delete(additionalProperties, "networkFilter")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "credential")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

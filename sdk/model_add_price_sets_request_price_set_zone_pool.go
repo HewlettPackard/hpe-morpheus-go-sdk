@@ -22,7 +22,10 @@ var _ MappedNullable = &AddPriceSetsRequestPriceSetZonePool{}
 type AddPriceSetsRequestPriceSetZonePool struct {
 	// Resource Pool ID
 	Id *int64 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddPriceSetsRequestPriceSetZonePool AddPriceSetsRequestPriceSetZonePool
 
 // NewAddPriceSetsRequestPriceSetZonePool instantiates a new AddPriceSetsRequestPriceSetZonePool object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o AddPriceSetsRequestPriceSetZonePool) ToMap() (map[string]interface{}, er
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddPriceSetsRequestPriceSetZonePool) UnmarshalJSON(data []byte) (err error) {
+	varAddPriceSetsRequestPriceSetZonePool := _AddPriceSetsRequestPriceSetZonePool{}
+
+	err = json.Unmarshal(data, &varAddPriceSetsRequestPriceSetZonePool)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddPriceSetsRequestPriceSetZonePool(varAddPriceSetsRequestPriceSetZonePool)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddPriceSetsRequestPriceSetZonePool struct {

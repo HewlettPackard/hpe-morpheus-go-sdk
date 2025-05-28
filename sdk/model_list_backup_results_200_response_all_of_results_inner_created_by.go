@@ -24,7 +24,10 @@ type ListBackupResults200ResponseAllOfResultsInnerCreatedBy struct {
 	Id *int64 `json:"id,omitempty"`
 	// Username
 	Username *string `json:"username,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListBackupResults200ResponseAllOfResultsInnerCreatedBy ListBackupResults200ResponseAllOfResultsInnerCreatedBy
 
 // NewListBackupResults200ResponseAllOfResultsInnerCreatedBy instantiates a new ListBackupResults200ResponseAllOfResultsInnerCreatedBy object
 // This constructor will assign default values to properties that have it defined,
@@ -123,7 +126,34 @@ func (o ListBackupResults200ResponseAllOfResultsInnerCreatedBy) ToMap() (map[str
 	if !IsNil(o.Username) {
 		toSerialize["username"] = o.Username
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListBackupResults200ResponseAllOfResultsInnerCreatedBy) UnmarshalJSON(data []byte) (err error) {
+	varListBackupResults200ResponseAllOfResultsInnerCreatedBy := _ListBackupResults200ResponseAllOfResultsInnerCreatedBy{}
+
+	err = json.Unmarshal(data, &varListBackupResults200ResponseAllOfResultsInnerCreatedBy)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListBackupResults200ResponseAllOfResultsInnerCreatedBy(varListBackupResults200ResponseAllOfResultsInnerCreatedBy)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "username")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListBackupResults200ResponseAllOfResultsInnerCreatedBy struct {

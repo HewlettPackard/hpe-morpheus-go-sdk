@@ -21,7 +21,10 @@ var _ MappedNullable = &AddImageBuildRequest{}
 // AddImageBuildRequest struct for AddImageBuildRequest
 type AddImageBuildRequest struct {
 	ImageBuild *AddImageBuildRequestImageBuild `json:"imageBuild,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddImageBuildRequest AddImageBuildRequest
 
 // NewAddImageBuildRequest instantiates a new AddImageBuildRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o AddImageBuildRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ImageBuild) {
 		toSerialize["imageBuild"] = o.ImageBuild
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddImageBuildRequest) UnmarshalJSON(data []byte) (err error) {
+	varAddImageBuildRequest := _AddImageBuildRequest{}
+
+	err = json.Unmarshal(data, &varAddImageBuildRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddImageBuildRequest(varAddImageBuildRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "imageBuild")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddImageBuildRequest struct {

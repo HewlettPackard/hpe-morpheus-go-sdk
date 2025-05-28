@@ -28,7 +28,10 @@ type ListInstances200ResponseAllOfInstancesInnerStats struct {
 	CpuUsage *float32 `json:"cpuUsage,omitempty"`
 	CpuUsagePeak *float32 `json:"cpuUsagePeak,omitempty"`
 	CpuUsageAvg *float32 `json:"cpuUsageAvg,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListInstances200ResponseAllOfInstancesInnerStats ListInstances200ResponseAllOfInstancesInnerStats
 
 // NewListInstances200ResponseAllOfInstancesInnerStats instantiates a new ListInstances200ResponseAllOfInstancesInnerStats object
 // This constructor will assign default values to properties that have it defined,
@@ -337,7 +340,40 @@ func (o ListInstances200ResponseAllOfInstancesInnerStats) ToMap() (map[string]in
 	if !IsNil(o.CpuUsageAvg) {
 		toSerialize["cpuUsageAvg"] = o.CpuUsageAvg
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListInstances200ResponseAllOfInstancesInnerStats) UnmarshalJSON(data []byte) (err error) {
+	varListInstances200ResponseAllOfInstancesInnerStats := _ListInstances200ResponseAllOfInstancesInnerStats{}
+
+	err = json.Unmarshal(data, &varListInstances200ResponseAllOfInstancesInnerStats)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListInstances200ResponseAllOfInstancesInnerStats(varListInstances200ResponseAllOfInstancesInnerStats)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "usedStorage")
+		delete(additionalProperties, "maxStorage")
+		delete(additionalProperties, "usedMemory")
+		delete(additionalProperties, "maxMemory")
+		delete(additionalProperties, "usedCpu")
+		delete(additionalProperties, "cpuUsage")
+		delete(additionalProperties, "cpuUsagePeak")
+		delete(additionalProperties, "cpuUsageAvg")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListInstances200ResponseAllOfInstancesInnerStats struct {

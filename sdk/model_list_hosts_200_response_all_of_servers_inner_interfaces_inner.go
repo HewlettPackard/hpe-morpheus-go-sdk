@@ -47,7 +47,10 @@ type ListHosts200ResponseAllOfServersInnerInterfacesInner struct {
 	Type *ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType `json:"type,omitempty"`
 	IpMode *string `json:"ipMode,omitempty"`
 	MacAddress *string `json:"macAddress,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListHosts200ResponseAllOfServersInnerInterfacesInner ListHosts200ResponseAllOfServersInnerInterfacesInner
 
 // NewListHosts200ResponseAllOfServersInnerInterfacesInner instantiates a new ListHosts200ResponseAllOfServersInnerInterfacesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -1021,7 +1024,59 @@ func (o ListHosts200ResponseAllOfServersInnerInterfacesInner) ToMap() (map[strin
 	if !IsNil(o.MacAddress) {
 		toSerialize["macAddress"] = o.MacAddress
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListHosts200ResponseAllOfServersInnerInterfacesInner) UnmarshalJSON(data []byte) (err error) {
+	varListHosts200ResponseAllOfServersInnerInterfacesInner := _ListHosts200ResponseAllOfServersInnerInterfacesInner{}
+
+	err = json.Unmarshal(data, &varListHosts200ResponseAllOfServersInnerInterfacesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListHosts200ResponseAllOfServersInnerInterfacesInner(varListHosts200ResponseAllOfServersInnerInterfacesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "refId")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "internalId")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "uniqueId")
+		delete(additionalProperties, "publicIpAddress")
+		delete(additionalProperties, "publicIpv6Address")
+		delete(additionalProperties, "ipAddress")
+		delete(additionalProperties, "ipv6Address")
+		delete(additionalProperties, "ipSubnet")
+		delete(additionalProperties, "ipv6Subnet")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "dhcp")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "poolAssigned")
+		delete(additionalProperties, "primaryInterface")
+		delete(additionalProperties, "network")
+		delete(additionalProperties, "subnet")
+		delete(additionalProperties, "networkGroup")
+		delete(additionalProperties, "networkPosition")
+		delete(additionalProperties, "networkPool")
+		delete(additionalProperties, "networkDomain")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "ipMode")
+		delete(additionalProperties, "macAddress")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListHosts200ResponseAllOfServersInnerInterfacesInner struct {

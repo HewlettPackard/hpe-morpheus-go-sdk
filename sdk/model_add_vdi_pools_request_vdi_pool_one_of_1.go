@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -73,6 +72,7 @@ type AddVDIPoolsRequestVdiPoolOneOf1 struct {
 	GuestConsoleJumpPassword *string `json:"guestConsoleJumpPassword,omitempty"`
 	// Guest Console Jump Key Pair. see `Key Pair`
 	GuestConsoleJumpKeypair *int64 `json:"guestConsoleJumpKeypair,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddVDIPoolsRequestVdiPoolOneOf1 AddVDIPoolsRequestVdiPoolOneOf1
@@ -1019,6 +1019,11 @@ func (o AddVDIPoolsRequestVdiPoolOneOf1) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.GuestConsoleJumpKeypair) {
 		toSerialize["guestConsoleJumpKeypair"] = o.GuestConsoleJumpKeypair
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -1048,15 +1053,45 @@ func (o *AddVDIPoolsRequestVdiPoolOneOf1) UnmarshalJSON(data []byte) (err error)
 
 	varAddVDIPoolsRequestVdiPoolOneOf1 := _AddVDIPoolsRequestVdiPoolOneOf1{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddVDIPoolsRequestVdiPoolOneOf1)
+	err = json.Unmarshal(data, &varAddVDIPoolsRequestVdiPoolOneOf1)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddVDIPoolsRequestVdiPoolOneOf1(varAddVDIPoolsRequestVdiPoolOneOf1)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "owner")
+		delete(additionalProperties, "minIdle")
+		delete(additionalProperties, "initialPoolSize")
+		delete(additionalProperties, "maxIdle")
+		delete(additionalProperties, "maxPoolSize")
+		delete(additionalProperties, "allocationTimeoutMinutes")
+		delete(additionalProperties, "persistentUser")
+		delete(additionalProperties, "recyclable")
+		delete(additionalProperties, "allowCopy")
+		delete(additionalProperties, "allowPrinter")
+		delete(additionalProperties, "allowFileshare")
+		delete(additionalProperties, "allowHypervisorConsole")
+		delete(additionalProperties, "autoCreateLocalUserOnReservation")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "iconPath")
+		delete(additionalProperties, "apps")
+		delete(additionalProperties, "gateway")
+		delete(additionalProperties, "instanceConfig")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "guestConsoleJumpHost")
+		delete(additionalProperties, "guestConsoleJumpPort")
+		delete(additionalProperties, "guestConsoleJumpUsername")
+		delete(additionalProperties, "guestConsoleJumpPassword")
+		delete(additionalProperties, "guestConsoleJumpKeypair")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

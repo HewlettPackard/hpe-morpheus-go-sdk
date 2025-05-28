@@ -26,7 +26,10 @@ type SecurityPackageType struct {
 	Description *string `json:"description,omitempty"`
 	Enabled *bool `json:"enabled,omitempty"`
 	OptionTypes []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _SecurityPackageType SecurityPackageType
 
 // NewSecurityPackageType instantiates a new SecurityPackageType object
 // This constructor will assign default values to properties that have it defined,
@@ -265,7 +268,38 @@ func (o SecurityPackageType) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.OptionTypes) {
 		toSerialize["optionTypes"] = o.OptionTypes
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *SecurityPackageType) UnmarshalJSON(data []byte) (err error) {
+	varSecurityPackageType := _SecurityPackageType{}
+
+	err = json.Unmarshal(data, &varSecurityPackageType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = SecurityPackageType(varSecurityPackageType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "optionTypes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableSecurityPackageType struct {

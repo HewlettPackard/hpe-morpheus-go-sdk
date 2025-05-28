@@ -27,7 +27,10 @@ type ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInner
 	Network *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork `json:"network,omitempty"`
 	NetworkInterfaceTypeId *int64 `json:"networkInterfaceTypeId,omitempty"`
 	NetworkInterfaceTypeIdName *string `json:"networkInterfaceTypeIdName,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInner ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInner
 
 // NewListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInner instantiates a new ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -301,7 +304,39 @@ func (o ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesIn
 	if !IsNil(o.NetworkInterfaceTypeIdName) {
 		toSerialize["networkInterfaceTypeIdName"] = o.NetworkInterfaceTypeIdName
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInner) UnmarshalJSON(data []byte) (err error) {
+	varListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInner := _ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInner{}
+
+	err = json.Unmarshal(data, &varListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInner(varListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "ipMode")
+		delete(additionalProperties, "primaryInterface")
+		delete(additionalProperties, "showNetworkPoolLabel")
+		delete(additionalProperties, "showNetworkDhcpLabel")
+		delete(additionalProperties, "network")
+		delete(additionalProperties, "networkInterfaceTypeId")
+		delete(additionalProperties, "networkInterfaceTypeIdName")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInner struct {

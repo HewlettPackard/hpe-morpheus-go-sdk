@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -36,6 +35,7 @@ type AddClusterRequestClusterServerVolumesInner struct {
 	StorageType *int64 `json:"storageType,omitempty"`
 	// The ID of the specific datastore. Auto selection can be specified as auto or `autoCluster` (for clusters).
 	DatastoreId string `json:"datastoreId"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddClusterRequestClusterServerVolumesInner AddClusterRequestClusterServerVolumesInner
@@ -304,6 +304,11 @@ func (o AddClusterRequestClusterServerVolumesInner) ToMap() (map[string]interfac
 		toSerialize["storageType"] = o.StorageType
 	}
 	toSerialize["datastoreId"] = o.DatastoreId
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -332,15 +337,26 @@ func (o *AddClusterRequestClusterServerVolumesInner) UnmarshalJSON(data []byte) 
 
 	varAddClusterRequestClusterServerVolumesInner := _AddClusterRequestClusterServerVolumesInner{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddClusterRequestClusterServerVolumesInner)
+	err = json.Unmarshal(data, &varAddClusterRequestClusterServerVolumesInner)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddClusterRequestClusterServerVolumesInner(varAddClusterRequestClusterServerVolumesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "rootVolume")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "size")
+		delete(additionalProperties, "sizeId")
+		delete(additionalProperties, "storageType")
+		delete(additionalProperties, "datastoreId")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

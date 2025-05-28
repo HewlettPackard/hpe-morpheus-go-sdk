@@ -22,7 +22,10 @@ var _ MappedNullable = &AddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint{
 type AddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint struct {
 	Id *int64 `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint AddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint
 
 // NewAddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint instantiates a new AddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o AddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint) ToMap() (map[st
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint) UnmarshalJSON(data []byte) (err error) {
+	varAddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint := _AddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint{}
+
+	err = json.Unmarshal(data, &varAddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint(varAddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint struct {

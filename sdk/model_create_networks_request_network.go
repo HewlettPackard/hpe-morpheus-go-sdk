@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -81,6 +80,7 @@ type CreateNetworksRequestNetwork struct {
 	// Array of tenant account ids that are allowed access
 	Tenants []GetAlerts200ResponseAllOfChecksInnerAccount `json:"tenants,omitempty"`
 	ResourcePermissions *CreateNetworksRequestNetworkResourcePermissions `json:"resourcePermissions,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _CreateNetworksRequestNetwork CreateNetworksRequestNetwork
@@ -1314,6 +1314,11 @@ func (o CreateNetworksRequestNetwork) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ResourcePermissions) {
 		toSerialize["resourcePermissions"] = o.ResourcePermissions
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -1343,15 +1348,54 @@ func (o *CreateNetworksRequestNetwork) UnmarshalJSON(data []byte) (err error) {
 
 	varCreateNetworksRequestNetwork := _CreateNetworksRequestNetwork{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varCreateNetworksRequestNetwork)
+	err = json.Unmarshal(data, &varCreateNetworksRequestNetwork)
 
 	if err != nil {
 		return err
 	}
 
 	*o = CreateNetworksRequestNetwork(varCreateNetworksRequestNetwork)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "displayName")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "site")
+		delete(additionalProperties, "zone")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "ipv4Enabled")
+		delete(additionalProperties, "ipv6Enabled")
+		delete(additionalProperties, "cidr")
+		delete(additionalProperties, "gateway")
+		delete(additionalProperties, "dnsPrimary")
+		delete(additionalProperties, "dnsSecondary")
+		delete(additionalProperties, "gatewayIPv6")
+		delete(additionalProperties, "netmaskIPv6")
+		delete(additionalProperties, "dnsPrimaryIPv6")
+		delete(additionalProperties, "dnsSecondaryIPv6")
+		delete(additionalProperties, "cidrIPv6")
+		delete(additionalProperties, "vlanId")
+		delete(additionalProperties, "pool")
+		delete(additionalProperties, "poolIPv6")
+		delete(additionalProperties, "allowStaticOverride")
+		delete(additionalProperties, "assignPublicIp")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "dhcpServer")
+		delete(additionalProperties, "dhcpServerIPv6")
+		delete(additionalProperties, "networkDomain")
+		delete(additionalProperties, "searchDomains")
+		delete(additionalProperties, "networkProxy")
+		delete(additionalProperties, "applianceUrlProxyBypass")
+		delete(additionalProperties, "noProxy")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "tenants")
+		delete(additionalProperties, "resourcePermissions")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

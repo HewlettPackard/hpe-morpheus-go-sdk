@@ -46,7 +46,10 @@ type CheckApp struct {
 	Availability *string `json:"availability,omitempty"`
 	Checks []int64 `json:"checks,omitempty"`
 	CheckGroups []int64 `json:"checkGroups,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _CheckApp CheckApp
 
 // NewCheckApp instantiates a new CheckApp object
 // This constructor will assign default values to properties that have it defined,
@@ -950,7 +953,57 @@ func (o CheckApp) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CheckGroups) {
 		toSerialize["checkGroups"] = o.CheckGroups
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *CheckApp) UnmarshalJSON(data []byte) (err error) {
+	varCheckApp := _CheckApp{}
+
+	err = json.Unmarshal(data, &varCheckApp)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CheckApp(varCheckApp)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "app")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "inUptime")
+		delete(additionalProperties, "lastCheckStatus")
+		delete(additionalProperties, "lastWarningDate")
+		delete(additionalProperties, "lastErrorDate")
+		delete(additionalProperties, "lastSuccessDate")
+		delete(additionalProperties, "lastRunDate")
+		delete(additionalProperties, "lastError")
+		delete(additionalProperties, "lastTimer")
+		delete(additionalProperties, "health")
+		delete(additionalProperties, "history")
+		delete(additionalProperties, "severity")
+		delete(additionalProperties, "createIncident")
+		delete(additionalProperties, "muted")
+		delete(additionalProperties, "createdBy")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "availability")
+		delete(additionalProperties, "checks")
+		delete(additionalProperties, "checkGroups")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCheckApp struct {

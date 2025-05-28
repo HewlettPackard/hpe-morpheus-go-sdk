@@ -36,7 +36,10 @@ type GuidanceSettings struct {
 	MemoryDownAvgStandardCutoffRightSize *int32 `json:"memoryDownAvgStandardCutoffRightSize,omitempty"`
 	// Memory Down-size Maximum Free Memory (%). Upper limit for peak memory usage
 	MemoryDownMaxStandardCutoffRightSize *int32 `json:"memoryDownMaxStandardCutoffRightSize,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GuidanceSettings GuidanceSettings
 
 // NewGuidanceSettings instantiates a new GuidanceSettings object
 // This constructor will assign default values to properties that have it defined,
@@ -345,7 +348,40 @@ func (o GuidanceSettings) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.MemoryDownMaxStandardCutoffRightSize) {
 		toSerialize["memoryDownMaxStandardCutoffRightSize"] = o.MemoryDownMaxStandardCutoffRightSize
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GuidanceSettings) UnmarshalJSON(data []byte) (err error) {
+	varGuidanceSettings := _GuidanceSettings{}
+
+	err = json.Unmarshal(data, &varGuidanceSettings)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GuidanceSettings(varGuidanceSettings)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "cpuAvgCutoffPower")
+		delete(additionalProperties, "cpuMaxCutoffPower")
+		delete(additionalProperties, "networkCutoffPower")
+		delete(additionalProperties, "cpuUpAvgStandardCutoffRightSize")
+		delete(additionalProperties, "cpuUpMaxStandardCutoffRightSize")
+		delete(additionalProperties, "memoryUpAvgStandardCutoffRightSize")
+		delete(additionalProperties, "memoryDownAvgStandardCutoffRightSize")
+		delete(additionalProperties, "memoryDownMaxStandardCutoffRightSize")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGuidanceSettings struct {

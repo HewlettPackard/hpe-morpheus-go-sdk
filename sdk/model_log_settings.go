@@ -24,7 +24,10 @@ type LogSettings struct {
 	RetentionDays *string `json:"retentionDays,omitempty"`
 	SyslogRules []map[string]interface{} `json:"syslogRules,omitempty"`
 	Integrations []map[string]interface{} `json:"integrations,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _LogSettings LogSettings
 
 // NewLogSettings instantiates a new LogSettings object
 // This constructor will assign default values to properties that have it defined,
@@ -193,7 +196,36 @@ func (o LogSettings) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Integrations) {
 		toSerialize["integrations"] = o.Integrations
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *LogSettings) UnmarshalJSON(data []byte) (err error) {
+	varLogSettings := _LogSettings{}
+
+	err = json.Unmarshal(data, &varLogSettings)
+
+	if err != nil {
+		return err
+	}
+
+	*o = LogSettings(varLogSettings)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "retentionDays")
+		delete(additionalProperties, "syslogRules")
+		delete(additionalProperties, "integrations")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableLogSettings struct {

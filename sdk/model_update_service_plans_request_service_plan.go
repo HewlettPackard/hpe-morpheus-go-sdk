@@ -52,7 +52,10 @@ type UpdateServicePlansRequestServicePlan struct {
 	// List of price sets to include in service plan
 	PriceSets []AddServicePlansRequestServicePlanPriceSetsInner `json:"priceSets,omitempty"`
 	Config *UpdateServicePlansRequestServicePlanConfig `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateServicePlansRequestServicePlan UpdateServicePlansRequestServicePlan
 
 // NewUpdateServicePlansRequestServicePlan instantiates a new UpdateServicePlansRequestServicePlan object
 // This constructor will assign default values to properties that have it defined,
@@ -700,7 +703,49 @@ func (o UpdateServicePlansRequestServicePlan) ToMap() (map[string]interface{}, e
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateServicePlansRequestServicePlan) UnmarshalJSON(data []byte) (err error) {
+	varUpdateServicePlansRequestServicePlan := _UpdateServicePlansRequestServicePlan{}
+
+	err = json.Unmarshal(data, &varUpdateServicePlansRequestServicePlan)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateServicePlansRequestServicePlan(varUpdateServicePlansRequestServicePlan)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "editable")
+		delete(additionalProperties, "maxStorage")
+		delete(additionalProperties, "maxMemory")
+		delete(additionalProperties, "maxCores")
+		delete(additionalProperties, "maxDisks")
+		delete(additionalProperties, "provisionType")
+		delete(additionalProperties, "customCores")
+		delete(additionalProperties, "customMaxStorage")
+		delete(additionalProperties, "customMaxDataStorage")
+		delete(additionalProperties, "customMaxMemory")
+		delete(additionalProperties, "addVolumes")
+		delete(additionalProperties, "sortOrder")
+		delete(additionalProperties, "priceSets")
+		delete(additionalProperties, "config")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateServicePlansRequestServicePlan struct {

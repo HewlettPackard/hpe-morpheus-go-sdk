@@ -31,7 +31,10 @@ type ListBlueprints200ResponseAllOfBlueprintsInner struct {
 	ResourcePermission map[string]interface{} `json:"resourcePermission,omitempty"`
 	Owner *ListActivity200ResponseAllOfActivityInnerActivityInnerUser `json:"owner,omitempty"`
 	Tenant *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"tenant,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListBlueprints200ResponseAllOfBlueprintsInner ListBlueprints200ResponseAllOfBlueprintsInner
 
 // NewListBlueprints200ResponseAllOfBlueprintsInner instantiates a new ListBlueprints200ResponseAllOfBlueprintsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -445,7 +448,43 @@ func (o ListBlueprints200ResponseAllOfBlueprintsInner) ToMap() (map[string]inter
 	if !IsNil(o.Tenant) {
 		toSerialize["tenant"] = o.Tenant
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListBlueprints200ResponseAllOfBlueprintsInner) UnmarshalJSON(data []byte) (err error) {
+	varListBlueprints200ResponseAllOfBlueprintsInner := _ListBlueprints200ResponseAllOfBlueprintsInner{}
+
+	err = json.Unmarshal(data, &varListBlueprints200ResponseAllOfBlueprintsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListBlueprints200ResponseAllOfBlueprintsInner(varListBlueprints200ResponseAllOfBlueprintsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "resourcePermission")
+		delete(additionalProperties, "owner")
+		delete(additionalProperties, "tenant")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListBlueprints200ResponseAllOfBlueprintsInner struct {

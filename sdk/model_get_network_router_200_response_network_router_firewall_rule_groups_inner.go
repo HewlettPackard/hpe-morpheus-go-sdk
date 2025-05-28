@@ -31,7 +31,10 @@ type GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInner struct {
 	Priority *int64 `json:"priority,omitempty"`
 	GroupLayer *string `json:"groupLayer,omitempty"`
 	Rules []GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner `json:"rules,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInner GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInner
 
 // NewGetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInner instantiates a new GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -445,7 +448,43 @@ func (o GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInner) ToMap()
 	if !IsNil(o.Rules) {
 		toSerialize["rules"] = o.Rules
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInner) UnmarshalJSON(data []byte) (err error) {
+	varGetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInner := _GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInner{}
+
+	err = json.Unmarshal(data, &varGetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInner(varGetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "iacId")
+		delete(additionalProperties, "zone")
+		delete(additionalProperties, "zonePool")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "priority")
+		delete(additionalProperties, "groupLayer")
+		delete(additionalProperties, "rules")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInner struct {

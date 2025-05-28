@@ -22,7 +22,10 @@ var _ MappedNullable = &ListActivity200ResponseAllOfActivityInnerActivityInnerUs
 type ListActivity200ResponseAllOfActivityInnerActivityInnerUser struct {
 	Id *int64 `json:"id,omitempty"`
 	Username *string `json:"username,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListActivity200ResponseAllOfActivityInnerActivityInnerUser ListActivity200ResponseAllOfActivityInnerActivityInnerUser
 
 // NewListActivity200ResponseAllOfActivityInnerActivityInnerUser instantiates a new ListActivity200ResponseAllOfActivityInnerActivityInnerUser object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o ListActivity200ResponseAllOfActivityInnerActivityInnerUser) ToMap() (map
 	if !IsNil(o.Username) {
 		toSerialize["username"] = o.Username
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListActivity200ResponseAllOfActivityInnerActivityInnerUser) UnmarshalJSON(data []byte) (err error) {
+	varListActivity200ResponseAllOfActivityInnerActivityInnerUser := _ListActivity200ResponseAllOfActivityInnerActivityInnerUser{}
+
+	err = json.Unmarshal(data, &varListActivity200ResponseAllOfActivityInnerActivityInnerUser)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListActivity200ResponseAllOfActivityInnerActivityInnerUser(varListActivity200ResponseAllOfActivityInnerActivityInnerUser)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "username")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListActivity200ResponseAllOfActivityInnerActivityInnerUser struct {

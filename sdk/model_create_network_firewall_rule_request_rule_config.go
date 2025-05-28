@@ -22,7 +22,10 @@ var _ MappedNullable = &CreateNetworkFirewallRuleRequestRuleConfig{}
 type CreateNetworkFirewallRuleRequestRuleConfig struct {
 	Application []string `json:"application,omitempty"`
 	Profile []string `json:"profile,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _CreateNetworkFirewallRuleRequestRuleConfig CreateNetworkFirewallRuleRequestRuleConfig
 
 // NewCreateNetworkFirewallRuleRequestRuleConfig instantiates a new CreateNetworkFirewallRuleRequestRuleConfig object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o CreateNetworkFirewallRuleRequestRuleConfig) ToMap() (map[string]interfac
 	if !IsNil(o.Profile) {
 		toSerialize["profile"] = o.Profile
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *CreateNetworkFirewallRuleRequestRuleConfig) UnmarshalJSON(data []byte) (err error) {
+	varCreateNetworkFirewallRuleRequestRuleConfig := _CreateNetworkFirewallRuleRequestRuleConfig{}
+
+	err = json.Unmarshal(data, &varCreateNetworkFirewallRuleRequestRuleConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CreateNetworkFirewallRuleRequestRuleConfig(varCreateNetworkFirewallRuleRequestRuleConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "application")
+		delete(additionalProperties, "profile")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCreateNetworkFirewallRuleRequestRuleConfig struct {

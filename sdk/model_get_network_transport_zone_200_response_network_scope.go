@@ -39,7 +39,10 @@ type GetNetworkTransportZone200ResponseNetworkScope struct {
 	NetworkServer *GetAlerts200ResponseAllOfChecksInnerAccount `json:"networkServer,omitempty"`
 	Zone *GetAlerts200ResponseAllOfChecksInnerAccount `json:"zone,omitempty"`
 	Tenants []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"tenants,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetNetworkTransportZone200ResponseNetworkScope GetNetworkTransportZone200ResponseNetworkScope
 
 // NewGetNetworkTransportZone200ResponseNetworkScope instantiates a new GetNetworkTransportZone200ResponseNetworkScope object
 // This constructor will assign default values to properties that have it defined,
@@ -698,7 +701,50 @@ func (o GetNetworkTransportZone200ResponseNetworkScope) ToMap() (map[string]inte
 	if !IsNil(o.Tenants) {
 		toSerialize["tenants"] = o.Tenants
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetNetworkTransportZone200ResponseNetworkScope) UnmarshalJSON(data []byte) (err error) {
+	varGetNetworkTransportZone200ResponseNetworkScope := _GetNetworkTransportZone200ResponseNetworkScope{}
+
+	err = json.Unmarshal(data, &varGetNetworkTransportZone200ResponseNetworkScope)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetNetworkTransportZone200ResponseNetworkScope(varGetNetworkTransportZone200ResponseNetworkScope)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "internalId")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "providerId")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "streamType")
+		delete(additionalProperties, "displayName")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "owner")
+		delete(additionalProperties, "networkServer")
+		delete(additionalProperties, "zone")
+		delete(additionalProperties, "tenants")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetNetworkTransportZone200ResponseNetworkScope struct {

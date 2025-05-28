@@ -31,7 +31,10 @@ type ListHealth200ResponseAllOfHealthElasticStats struct {
 	Unassigned *string `json:"unassigned,omitempty"`
 	PendingTasks *string `json:"pendingTasks,omitempty"`
 	ActivePercent *string `json:"activePercent,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListHealth200ResponseAllOfHealthElasticStats ListHealth200ResponseAllOfHealthElasticStats
 
 // NewListHealth200ResponseAllOfHealthElasticStats instantiates a new ListHealth200ResponseAllOfHealthElasticStats object
 // This constructor will assign default values to properties that have it defined,
@@ -445,7 +448,43 @@ func (o ListHealth200ResponseAllOfHealthElasticStats) ToMap() (map[string]interf
 	if !IsNil(o.ActivePercent) {
 		toSerialize["activePercent"] = o.ActivePercent
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListHealth200ResponseAllOfHealthElasticStats) UnmarshalJSON(data []byte) (err error) {
+	varListHealth200ResponseAllOfHealthElasticStats := _ListHealth200ResponseAllOfHealthElasticStats{}
+
+	err = json.Unmarshal(data, &varListHealth200ResponseAllOfHealthElasticStats)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListHealth200ResponseAllOfHealthElasticStats(varListHealth200ResponseAllOfHealthElasticStats)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "clusterName")
+		delete(additionalProperties, "nodeTotal")
+		delete(additionalProperties, "nodeData")
+		delete(additionalProperties, "shards")
+		delete(additionalProperties, "primary")
+		delete(additionalProperties, "relocating")
+		delete(additionalProperties, "initializing")
+		delete(additionalProperties, "unassigned")
+		delete(additionalProperties, "pendingTasks")
+		delete(additionalProperties, "activePercent")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListHealth200ResponseAllOfHealthElasticStats struct {

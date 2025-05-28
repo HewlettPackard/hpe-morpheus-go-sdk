@@ -42,7 +42,10 @@ type GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner s
 	SourceGroup *string `json:"sourceGroup,omitempty"`
 	SourceTier *string `json:"sourceTier,omitempty"`
 	Applications []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"applications,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner
 
 // NewGetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner instantiates a new GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -841,7 +844,54 @@ func (o GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInne
 	if !IsNil(o.Applications) {
 		toSerialize["applications"] = o.Applications
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner) UnmarshalJSON(data []byte) (err error) {
+	varGetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner := _GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner{}
+
+	err = json.Unmarshal(data, &varGetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner(varGetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "groupName")
+		delete(additionalProperties, "direction")
+		delete(additionalProperties, "ruleType")
+		delete(additionalProperties, "policy")
+		delete(additionalProperties, "source")
+		delete(additionalProperties, "sourceType")
+		delete(additionalProperties, "destination")
+		delete(additionalProperties, "destinationType")
+		delete(additionalProperties, "profiles")
+		delete(additionalProperties, "protocol")
+		delete(additionalProperties, "application")
+		delete(additionalProperties, "applicationType")
+		delete(additionalProperties, "portRange")
+		delete(additionalProperties, "sourcePortRange")
+		delete(additionalProperties, "destinationPortRange")
+		delete(additionalProperties, "sourceGroup")
+		delete(additionalProperties, "sourceTier")
+		delete(additionalProperties, "applications")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner struct {

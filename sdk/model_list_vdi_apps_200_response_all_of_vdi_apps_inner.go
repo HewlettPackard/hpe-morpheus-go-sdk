@@ -29,7 +29,10 @@ type ListVDIApps200ResponseAllOfVdiAppsInner struct {
 	Logo *string `json:"logo,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListVDIApps200ResponseAllOfVdiAppsInner ListVDIApps200ResponseAllOfVdiAppsInner
 
 // NewListVDIApps200ResponseAllOfVdiAppsInner instantiates a new ListVDIApps200ResponseAllOfVdiAppsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -338,7 +341,40 @@ func (o ListVDIApps200ResponseAllOfVdiAppsInner) ToMap() (map[string]interface{}
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListVDIApps200ResponseAllOfVdiAppsInner) UnmarshalJSON(data []byte) (err error) {
+	varListVDIApps200ResponseAllOfVdiAppsInner := _ListVDIApps200ResponseAllOfVdiAppsInner{}
+
+	err = json.Unmarshal(data, &varListVDIApps200ResponseAllOfVdiAppsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListVDIApps200ResponseAllOfVdiAppsInner(varListVDIApps200ResponseAllOfVdiAppsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "launchPrefix")
+		delete(additionalProperties, "iconPath")
+		delete(additionalProperties, "logo")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListVDIApps200ResponseAllOfVdiAppsInner struct {

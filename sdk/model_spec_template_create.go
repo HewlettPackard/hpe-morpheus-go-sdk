@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -29,6 +28,7 @@ type SpecTemplateCreate struct {
 	Type AddSpecTemplateRequestSpecTemplateType `json:"type"`
 	File AddSpecTemplateRequestSpecTemplateFile `json:"file"`
 	Config *AddSpecTemplateRequestSpecTemplateConfig `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _SpecTemplateCreate SpecTemplateCreate
@@ -208,6 +208,11 @@ func (o SpecTemplateCreate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -237,15 +242,24 @@ func (o *SpecTemplateCreate) UnmarshalJSON(data []byte) (err error) {
 
 	varSpecTemplateCreate := _SpecTemplateCreate{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varSpecTemplateCreate)
+	err = json.Unmarshal(data, &varSpecTemplateCreate)
 
 	if err != nil {
 		return err
 	}
 
 	*o = SpecTemplateCreate(varSpecTemplateCreate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "file")
+		delete(additionalProperties, "config")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

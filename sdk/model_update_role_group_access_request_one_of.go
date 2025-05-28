@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -26,6 +25,7 @@ type UpdateRoleGroupAccessRequestOneOf struct {
 	GroupId int32 `json:"groupId"`
 	// The new access level.
 	Access string `json:"access"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateRoleGroupAccessRequestOneOf UpdateRoleGroupAccessRequestOneOf
@@ -109,6 +109,11 @@ func (o UpdateRoleGroupAccessRequestOneOf) ToMap() (map[string]interface{}, erro
 	toSerialize := map[string]interface{}{}
 	toSerialize["groupId"] = o.GroupId
 	toSerialize["access"] = o.Access
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -137,15 +142,21 @@ func (o *UpdateRoleGroupAccessRequestOneOf) UnmarshalJSON(data []byte) (err erro
 
 	varUpdateRoleGroupAccessRequestOneOf := _UpdateRoleGroupAccessRequestOneOf{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varUpdateRoleGroupAccessRequestOneOf)
+	err = json.Unmarshal(data, &varUpdateRoleGroupAccessRequestOneOf)
 
 	if err != nil {
 		return err
 	}
 
 	*o = UpdateRoleGroupAccessRequestOneOf(varUpdateRoleGroupAccessRequestOneOf)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "groupId")
+		delete(additionalProperties, "access")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

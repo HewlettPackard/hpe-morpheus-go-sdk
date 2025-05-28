@@ -22,7 +22,10 @@ var _ MappedNullable = &AddBlueprintRequestOneOf5Config{}
 type AddBlueprintRequestOneOf5Config struct {
 	// Array of Terraform specs in Morpheus
 	Specs []AddBlueprintRequestOneOf3ConfigSpecsInner `json:"specs,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddBlueprintRequestOneOf5Config AddBlueprintRequestOneOf5Config
 
 // NewAddBlueprintRequestOneOf5Config instantiates a new AddBlueprintRequestOneOf5Config object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o AddBlueprintRequestOneOf5Config) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.Specs) {
 		toSerialize["specs"] = o.Specs
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddBlueprintRequestOneOf5Config) UnmarshalJSON(data []byte) (err error) {
+	varAddBlueprintRequestOneOf5Config := _AddBlueprintRequestOneOf5Config{}
+
+	err = json.Unmarshal(data, &varAddBlueprintRequestOneOf5Config)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddBlueprintRequestOneOf5Config(varAddBlueprintRequestOneOf5Config)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "specs")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddBlueprintRequestOneOf5Config struct {

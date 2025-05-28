@@ -22,7 +22,10 @@ var _ MappedNullable = &UpdateRoleBlueprintAccess200Response{}
 type UpdateRoleBlueprintAccess200Response struct {
 	Access *string `json:"access,omitempty"`
 	Success *bool `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateRoleBlueprintAccess200Response UpdateRoleBlueprintAccess200Response
 
 // NewUpdateRoleBlueprintAccess200Response instantiates a new UpdateRoleBlueprintAccess200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o UpdateRoleBlueprintAccess200Response) ToMap() (map[string]interface{}, e
 	if !IsNil(o.Success) {
 		toSerialize["success"] = o.Success
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateRoleBlueprintAccess200Response) UnmarshalJSON(data []byte) (err error) {
+	varUpdateRoleBlueprintAccess200Response := _UpdateRoleBlueprintAccess200Response{}
+
+	err = json.Unmarshal(data, &varUpdateRoleBlueprintAccess200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateRoleBlueprintAccess200Response(varUpdateRoleBlueprintAccess200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "access")
+		delete(additionalProperties, "success")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateRoleBlueprintAccess200Response struct {

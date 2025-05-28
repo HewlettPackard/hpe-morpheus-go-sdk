@@ -35,7 +35,10 @@ type BlueprintHelmCreateSuccess struct {
 	Owner map[string]interface{} `json:"owner,omitempty"`
 	// Tenant
 	Tenant map[string]interface{} `json:"tenant,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _BlueprintHelmCreateSuccess BlueprintHelmCreateSuccess
 
 // NewBlueprintHelmCreateSuccess instantiates a new BlueprintHelmCreateSuccess object
 // This constructor will assign default values to properties that have it defined,
@@ -348,7 +351,40 @@ func (o BlueprintHelmCreateSuccess) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Tenant) {
 		toSerialize["tenant"] = o.Tenant
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *BlueprintHelmCreateSuccess) UnmarshalJSON(data []byte) (err error) {
+	varBlueprintHelmCreateSuccess := _BlueprintHelmCreateSuccess{}
+
+	err = json.Unmarshal(data, &varBlueprintHelmCreateSuccess)
+
+	if err != nil {
+		return err
+	}
+
+	*o = BlueprintHelmCreateSuccess(varBlueprintHelmCreateSuccess)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "image")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "helm")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "resourcePermission")
+		delete(additionalProperties, "owner")
+		delete(additionalProperties, "tenant")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableBlueprintHelmCreateSuccess struct {

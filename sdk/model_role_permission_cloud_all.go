@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -26,6 +25,7 @@ type RolePermissionCloudAll struct {
 	AllClouds bool `json:"allClouds"`
 	// The new access level.
 	Access string `json:"access"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _RolePermissionCloudAll RolePermissionCloudAll
@@ -109,6 +109,11 @@ func (o RolePermissionCloudAll) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["allClouds"] = o.AllClouds
 	toSerialize["access"] = o.Access
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -137,15 +142,21 @@ func (o *RolePermissionCloudAll) UnmarshalJSON(data []byte) (err error) {
 
 	varRolePermissionCloudAll := _RolePermissionCloudAll{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varRolePermissionCloudAll)
+	err = json.Unmarshal(data, &varRolePermissionCloudAll)
 
 	if err != nil {
 		return err
 	}
 
 	*o = RolePermissionCloudAll(varRolePermissionCloudAll)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "allClouds")
+		delete(additionalProperties, "access")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

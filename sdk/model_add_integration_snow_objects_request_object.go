@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -28,6 +27,7 @@ type AddIntegrationSnowObjectsRequestObject struct {
 	Type string `json:"type"`
 	// Catalog Item Type ID
 	CatalogItemType int64 `json:"catalogItemType"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddIntegrationSnowObjectsRequestObject AddIntegrationSnowObjectsRequestObject
@@ -146,6 +146,11 @@ func (o AddIntegrationSnowObjectsRequestObject) ToMap() (map[string]interface{},
 	}
 	toSerialize["type"] = o.Type
 	toSerialize["catalogItemType"] = o.CatalogItemType
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -174,15 +179,22 @@ func (o *AddIntegrationSnowObjectsRequestObject) UnmarshalJSON(data []byte) (err
 
 	varAddIntegrationSnowObjectsRequestObject := _AddIntegrationSnowObjectsRequestObject{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddIntegrationSnowObjectsRequestObject)
+	err = json.Unmarshal(data, &varAddIntegrationSnowObjectsRequestObject)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddIntegrationSnowObjectsRequestObject(varAddIntegrationSnowObjectsRequestObject)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "catalogItemType")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

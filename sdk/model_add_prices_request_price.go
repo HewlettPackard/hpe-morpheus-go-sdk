@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -53,6 +52,7 @@ type AddPricesRequestPrice struct {
 	Datastore *AddPricesRequestPriceDatastore `json:"datastore,omitempty"`
 	// Apply price across clouds, optional true/false flag for datastore price type
 	CrossCloudApply *bool `json:"crossCloudApply,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddPricesRequestPrice AddPricesRequestPrice
@@ -616,6 +616,11 @@ func (o AddPricesRequestPrice) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CrossCloudApply) {
 		toSerialize["crossCloudApply"] = o.CrossCloudApply
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -649,15 +654,36 @@ func (o *AddPricesRequestPrice) UnmarshalJSON(data []byte) (err error) {
 
 	varAddPricesRequestPrice := _AddPricesRequestPrice{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddPricesRequestPrice)
+	err = json.Unmarshal(data, &varAddPricesRequestPrice)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddPricesRequestPrice(varAddPricesRequestPrice)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "priceType")
+		delete(additionalProperties, "priceUnit")
+		delete(additionalProperties, "incurCharges")
+		delete(additionalProperties, "currency")
+		delete(additionalProperties, "cost")
+		delete(additionalProperties, "markupType")
+		delete(additionalProperties, "markup")
+		delete(additionalProperties, "markupPercent")
+		delete(additionalProperties, "customPrice")
+		delete(additionalProperties, "platform")
+		delete(additionalProperties, "software")
+		delete(additionalProperties, "volumeType")
+		delete(additionalProperties, "datastore")
+		delete(additionalProperties, "crossCloudApply")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

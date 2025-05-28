@@ -37,7 +37,10 @@ type ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask struct {
 	AllowCustomConfig *bool `json:"allowCustomConfig,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask
 
 // NewListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask instantiates a new ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask object
 // This constructor will assign default values to properties that have it defined,
@@ -626,7 +629,48 @@ func (o ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask) ToMap()
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask) UnmarshalJSON(data []byte) (err error) {
+	varListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask := _ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask{}
+
+	err = json.Unmarshal(data, &varListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask(varListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "taskType")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "taskOptions")
+		delete(additionalProperties, "file")
+		delete(additionalProperties, "resultType")
+		delete(additionalProperties, "executeTarget")
+		delete(additionalProperties, "retryable")
+		delete(additionalProperties, "retryCount")
+		delete(additionalProperties, "retryDelaySeconds")
+		delete(additionalProperties, "allowCustomConfig")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask struct {

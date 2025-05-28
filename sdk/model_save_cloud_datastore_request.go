@@ -21,7 +21,10 @@ var _ MappedNullable = &SaveCloudDatastoreRequest{}
 // SaveCloudDatastoreRequest struct for SaveCloudDatastoreRequest
 type SaveCloudDatastoreRequest struct {
 	Datastore *SaveCloudDatastoreRequestDatastore `json:"datastore,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _SaveCloudDatastoreRequest SaveCloudDatastoreRequest
 
 // NewSaveCloudDatastoreRequest instantiates a new SaveCloudDatastoreRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o SaveCloudDatastoreRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Datastore) {
 		toSerialize["datastore"] = o.Datastore
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *SaveCloudDatastoreRequest) UnmarshalJSON(data []byte) (err error) {
+	varSaveCloudDatastoreRequest := _SaveCloudDatastoreRequest{}
+
+	err = json.Unmarshal(data, &varSaveCloudDatastoreRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = SaveCloudDatastoreRequest(varSaveCloudDatastoreRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "datastore")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableSaveCloudDatastoreRequest struct {

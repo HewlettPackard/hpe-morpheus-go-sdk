@@ -42,7 +42,10 @@ type ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner struct {
 	ProvisionType *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionType `json:"provisionType,omitempty"`
 	OptionTypes []ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
 	DisplayOrder *int64 `json:"displayOrder,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner
 
 // NewListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner instantiates a new ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -841,7 +844,54 @@ func (o ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner) ToMap() (m
 	if !IsNil(o.DisplayOrder) {
 		toSerialize["displayOrder"] = o.DisplayOrder
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner) UnmarshalJSON(data []byte) (err error) {
+	varListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner := _ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner{}
+
+	err = json.Unmarshal(data, &varListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner(varListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "nodeType")
+		delete(additionalProperties, "platform")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "selectable")
+		delete(additionalProperties, "externalDelete")
+		delete(additionalProperties, "managed")
+		delete(additionalProperties, "controlPower")
+		delete(additionalProperties, "controlSuspend")
+		delete(additionalProperties, "creatable")
+		delete(additionalProperties, "hasAgent")
+		delete(additionalProperties, "vmHypervisor")
+		delete(additionalProperties, "containerHypervisor")
+		delete(additionalProperties, "bareMetalHost")
+		delete(additionalProperties, "guestVm")
+		delete(additionalProperties, "hasAutomation")
+		delete(additionalProperties, "provisionType")
+		delete(additionalProperties, "optionTypes")
+		delete(additionalProperties, "displayOrder")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner struct {

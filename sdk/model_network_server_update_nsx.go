@@ -32,7 +32,10 @@ type NetworkServerUpdateNSX struct {
 	Visibility *string `json:"visibility,omitempty"`
 	// Array of tenant account ids that are allowed access
 	Tenants []GetAlerts200ResponseAllOfChecksInnerAccount `json:"tenants,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _NetworkServerUpdateNSX NetworkServerUpdateNSX
 
 // NewNetworkServerUpdateNSX instantiates a new NetworkServerUpdateNSX object
 // This constructor will assign default values to properties that have it defined,
@@ -275,7 +278,38 @@ func (o NetworkServerUpdateNSX) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Tenants) {
 		toSerialize["tenants"] = o.Tenants
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *NetworkServerUpdateNSX) UnmarshalJSON(data []byte) (err error) {
+	varNetworkServerUpdateNSX := _NetworkServerUpdateNSX{}
+
+	err = json.Unmarshal(data, &varNetworkServerUpdateNSX)
+
+	if err != nil {
+		return err
+	}
+
+	*o = NetworkServerUpdateNSX(varNetworkServerUpdateNSX)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "serviceUrl")
+		delete(additionalProperties, "serviceUsername")
+		delete(additionalProperties, "servicePassword")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "tenants")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableNetworkServerUpdateNSX struct {

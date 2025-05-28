@@ -21,7 +21,10 @@ var _ MappedNullable = &BackupTargetsPolicyTypeConfiguration{}
 // BackupTargetsPolicyTypeConfiguration Configuration settings for the following policy types: - Backup Targets 
 type BackupTargetsPolicyTypeConfiguration struct {
 	BackupStorageIds []int64 `json:"backupStorageIds,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _BackupTargetsPolicyTypeConfiguration BackupTargetsPolicyTypeConfiguration
 
 // NewBackupTargetsPolicyTypeConfiguration instantiates a new BackupTargetsPolicyTypeConfiguration object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o BackupTargetsPolicyTypeConfiguration) ToMap() (map[string]interface{}, e
 	if !IsNil(o.BackupStorageIds) {
 		toSerialize["backupStorageIds"] = o.BackupStorageIds
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *BackupTargetsPolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
+	varBackupTargetsPolicyTypeConfiguration := _BackupTargetsPolicyTypeConfiguration{}
+
+	err = json.Unmarshal(data, &varBackupTargetsPolicyTypeConfiguration)
+
+	if err != nil {
+		return err
+	}
+
+	*o = BackupTargetsPolicyTypeConfiguration(varBackupTargetsPolicyTypeConfiguration)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "backupStorageIds")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableBackupTargetsPolicyTypeConfiguration struct {

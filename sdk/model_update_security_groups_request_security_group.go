@@ -28,7 +28,10 @@ type UpdateSecurityGroupsRequestSecurityGroup struct {
 	Active *bool `json:"active,omitempty"`
 	TenantPermissions *AddSecurityGroupsRequestSecurityGroupTenantPermissions `json:"tenantPermissions,omitempty"`
 	ResourcePermissions *UpdateCloudDatastoresRequestDatastoreResourcePermissions `json:"resourcePermissions,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateSecurityGroupsRequestSecurityGroup UpdateSecurityGroupsRequestSecurityGroup
 
 // NewUpdateSecurityGroupsRequestSecurityGroup instantiates a new UpdateSecurityGroupsRequestSecurityGroup object
 // This constructor will assign default values to properties that have it defined,
@@ -232,7 +235,37 @@ func (o UpdateSecurityGroupsRequestSecurityGroup) ToMap() (map[string]interface{
 	if !IsNil(o.ResourcePermissions) {
 		toSerialize["resourcePermissions"] = o.ResourcePermissions
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateSecurityGroupsRequestSecurityGroup) UnmarshalJSON(data []byte) (err error) {
+	varUpdateSecurityGroupsRequestSecurityGroup := _UpdateSecurityGroupsRequestSecurityGroup{}
+
+	err = json.Unmarshal(data, &varUpdateSecurityGroupsRequestSecurityGroup)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateSecurityGroupsRequestSecurityGroup(varUpdateSecurityGroupsRequestSecurityGroup)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "tenantPermissions")
+		delete(additionalProperties, "resourcePermissions")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateSecurityGroupsRequestSecurityGroup struct {

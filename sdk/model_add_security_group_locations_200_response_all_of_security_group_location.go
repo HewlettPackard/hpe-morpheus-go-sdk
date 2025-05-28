@@ -30,7 +30,10 @@ type AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation struct {
 	Status *string `json:"status,omitempty"`
 	Priority *string `json:"priority,omitempty"`
 	GroupLayer *string `json:"groupLayer,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation
 
 // NewAddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation instantiates a new AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation object
 // This constructor will assign default values to properties that have it defined,
@@ -409,7 +412,42 @@ func (o AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation) ToMap() 
 	if !IsNil(o.GroupLayer) {
 		toSerialize["groupLayer"] = o.GroupLayer
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation) UnmarshalJSON(data []byte) (err error) {
+	varAddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation := _AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation{}
+
+	err = json.Unmarshal(data, &varAddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation(varAddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "iacId")
+		delete(additionalProperties, "zone")
+		delete(additionalProperties, "zonePool")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "priority")
+		delete(additionalProperties, "groupLayer")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation struct {

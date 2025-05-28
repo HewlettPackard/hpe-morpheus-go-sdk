@@ -51,7 +51,10 @@ type ListClouds200ResponseAllOfZonesInnerConfigAnyOf1 struct {
 	ConfigCmdbDiscovery *bool `json:"configCmdbDiscovery,omitempty"`
 	SecretKeyHash *string `json:"secretKeyHash,omitempty"`
 	CostingSecretKeyHash *string `json:"costingSecretKeyHash,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListClouds200ResponseAllOfZonesInnerConfigAnyOf1 ListClouds200ResponseAllOfZonesInnerConfigAnyOf1
 
 // NewListClouds200ResponseAllOfZonesInnerConfigAnyOf1 instantiates a new ListClouds200ResponseAllOfZonesInnerConfigAnyOf1 object
 // This constructor will assign default values to properties that have it defined,
@@ -1165,7 +1168,63 @@ func (o ListClouds200ResponseAllOfZonesInnerConfigAnyOf1) ToMap() (map[string]in
 	if !IsNil(o.CostingSecretKeyHash) {
 		toSerialize["costingSecretKeyHash"] = o.CostingSecretKeyHash
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf1) UnmarshalJSON(data []byte) (err error) {
+	varListClouds200ResponseAllOfZonesInnerConfigAnyOf1 := _ListClouds200ResponseAllOfZonesInnerConfigAnyOf1{}
+
+	err = json.Unmarshal(data, &varListClouds200ResponseAllOfZonesInnerConfigAnyOf1)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListClouds200ResponseAllOfZonesInnerConfigAnyOf1(varListClouds200ResponseAllOfZonesInnerConfigAnyOf1)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "endpoint")
+		delete(additionalProperties, "accessKey")
+		delete(additionalProperties, "secretKey")
+		delete(additionalProperties, "useHostCredentials")
+		delete(additionalProperties, "stsAssumeRole")
+		delete(additionalProperties, "isVpc")
+		delete(additionalProperties, "vpc")
+		delete(additionalProperties, "imageStoreId")
+		delete(additionalProperties, "ebsEncryption")
+		delete(additionalProperties, "costingReport")
+		delete(additionalProperties, "costingFolder")
+		delete(additionalProperties, "costingBucket")
+		delete(additionalProperties, "costingBucketName")
+		delete(additionalProperties, "costingRegion")
+		delete(additionalProperties, "costingAccessKey")
+		delete(additionalProperties, "costingSecretKey")
+		delete(additionalProperties, "costingReportName")
+		delete(additionalProperties, "applianceUrl")
+		delete(additionalProperties, "datacenterName")
+		delete(additionalProperties, "networkServer.id")
+		delete(additionalProperties, "networkServer")
+		delete(additionalProperties, "securityServer")
+		delete(additionalProperties, "certificateProvider")
+		delete(additionalProperties, "backupMode")
+		delete(additionalProperties, "replicationMode")
+		delete(additionalProperties, "dnsIntegrationId")
+		delete(additionalProperties, "serviceRegistryId")
+		delete(additionalProperties, "configManagementId")
+		delete(additionalProperties, "configCmdbDiscovery")
+		delete(additionalProperties, "secretKeyHash")
+		delete(additionalProperties, "costingSecretKeyHash")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListClouds200ResponseAllOfZonesInnerConfigAnyOf1 struct {

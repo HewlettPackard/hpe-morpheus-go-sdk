@@ -26,7 +26,10 @@ type CreateNetworkPoolRequestNetworkPoolIpRangesInner struct {
 	EndAddress *string `json:"endAddress,omitempty"`
 	// IPv6 Network CIDR
 	CidrIPv6 *string `json:"cidrIPv6,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _CreateNetworkPoolRequestNetworkPoolIpRangesInner CreateNetworkPoolRequestNetworkPoolIpRangesInner
 
 // NewCreateNetworkPoolRequestNetworkPoolIpRangesInner instantiates a new CreateNetworkPoolRequestNetworkPoolIpRangesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -160,7 +163,35 @@ func (o CreateNetworkPoolRequestNetworkPoolIpRangesInner) ToMap() (map[string]in
 	if !IsNil(o.CidrIPv6) {
 		toSerialize["cidrIPv6"] = o.CidrIPv6
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *CreateNetworkPoolRequestNetworkPoolIpRangesInner) UnmarshalJSON(data []byte) (err error) {
+	varCreateNetworkPoolRequestNetworkPoolIpRangesInner := _CreateNetworkPoolRequestNetworkPoolIpRangesInner{}
+
+	err = json.Unmarshal(data, &varCreateNetworkPoolRequestNetworkPoolIpRangesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CreateNetworkPoolRequestNetworkPoolIpRangesInner(varCreateNetworkPoolRequestNetworkPoolIpRangesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "startAddress")
+		delete(additionalProperties, "endAddress")
+		delete(additionalProperties, "cidrIPv6")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCreateNetworkPoolRequestNetworkPoolIpRangesInner struct {

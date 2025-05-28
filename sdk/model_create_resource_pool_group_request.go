@@ -21,7 +21,10 @@ var _ MappedNullable = &CreateResourcePoolGroupRequest{}
 // CreateResourcePoolGroupRequest struct for CreateResourcePoolGroupRequest
 type CreateResourcePoolGroupRequest struct {
 	ResourcePoolGroup *CreateResourcePoolGroupRequestResourcePoolGroup `json:"resourcePoolGroup,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _CreateResourcePoolGroupRequest CreateResourcePoolGroupRequest
 
 // NewCreateResourcePoolGroupRequest instantiates a new CreateResourcePoolGroupRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o CreateResourcePoolGroupRequest) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.ResourcePoolGroup) {
 		toSerialize["resourcePoolGroup"] = o.ResourcePoolGroup
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *CreateResourcePoolGroupRequest) UnmarshalJSON(data []byte) (err error) {
+	varCreateResourcePoolGroupRequest := _CreateResourcePoolGroupRequest{}
+
+	err = json.Unmarshal(data, &varCreateResourcePoolGroupRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CreateResourcePoolGroupRequest(varCreateResourcePoolGroupRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "resourcePoolGroup")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCreateResourcePoolGroupRequest struct {

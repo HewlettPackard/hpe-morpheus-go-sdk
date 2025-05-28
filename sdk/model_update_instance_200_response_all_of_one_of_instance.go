@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -28,6 +27,7 @@ type UpdateInstance200ResponseAllOfOneOfInstance struct {
 	InstanceType AddInstanceRequestInstanceInstanceType `json:"instanceType"`
 	Layout AddInstanceRequestInstanceLayout `json:"layout"`
 	Plan AddInstanceRequestInstancePlan `json:"plan"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateInstance200ResponseAllOfOneOfInstance UpdateInstance200ResponseAllOfOneOfInstance
@@ -189,6 +189,11 @@ func (o UpdateInstance200ResponseAllOfOneOfInstance) ToMap() (map[string]interfa
 	toSerialize["instanceType"] = o.InstanceType
 	toSerialize["layout"] = o.Layout
 	toSerialize["plan"] = o.Plan
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -220,15 +225,24 @@ func (o *UpdateInstance200ResponseAllOfOneOfInstance) UnmarshalJSON(data []byte)
 
 	varUpdateInstance200ResponseAllOfOneOfInstance := _UpdateInstance200ResponseAllOfOneOfInstance{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varUpdateInstance200ResponseAllOfOneOfInstance)
+	err = json.Unmarshal(data, &varUpdateInstance200ResponseAllOfOneOfInstance)
 
 	if err != nil {
 		return err
 	}
 
 	*o = UpdateInstance200ResponseAllOfOneOfInstance(varUpdateInstance200ResponseAllOfOneOfInstance)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "site")
+		delete(additionalProperties, "instanceType")
+		delete(additionalProperties, "layout")
+		delete(additionalProperties, "plan")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

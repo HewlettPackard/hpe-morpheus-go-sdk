@@ -50,7 +50,10 @@ type ListStorageServerTypes200ResponseAllOfStorageServerTypesInner struct {
 	ShareOptionTypes []map[string]interface{} `json:"shareOptionTypes,omitempty"`
 	ShareAccessOptionTypes []map[string]interface{} `json:"shareAccessOptionTypes,omitempty"`
 	StorageVolumeTypes []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner `json:"storageVolumeTypes,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListStorageServerTypes200ResponseAllOfStorageServerTypesInner ListStorageServerTypes200ResponseAllOfStorageServerTypesInner
 
 // NewListStorageServerTypes200ResponseAllOfStorageServerTypesInner instantiates a new ListStorageServerTypes200ResponseAllOfStorageServerTypesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -1129,7 +1132,62 @@ func (o ListStorageServerTypes200ResponseAllOfStorageServerTypesInner) ToMap() (
 	if !IsNil(o.StorageVolumeTypes) {
 		toSerialize["storageVolumeTypes"] = o.StorageVolumeTypes
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInner) UnmarshalJSON(data []byte) (err error) {
+	varListStorageServerTypes200ResponseAllOfStorageServerTypesInner := _ListStorageServerTypes200ResponseAllOfStorageServerTypesInner{}
+
+	err = json.Unmarshal(data, &varListStorageServerTypes200ResponseAllOfStorageServerTypesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListStorageServerTypes200ResponseAllOfStorageServerTypesInner(varListStorageServerTypes200ResponseAllOfStorageServerTypesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "creatable")
+		delete(additionalProperties, "hasNamespaces")
+		delete(additionalProperties, "hasGroups")
+		delete(additionalProperties, "hasBlock")
+		delete(additionalProperties, "hasObject")
+		delete(additionalProperties, "hasFile")
+		delete(additionalProperties, "hasDatastore")
+		delete(additionalProperties, "hasDisks")
+		delete(additionalProperties, "hasHosts")
+		delete(additionalProperties, "createNamespaces")
+		delete(additionalProperties, "createGroup")
+		delete(additionalProperties, "createBlock")
+		delete(additionalProperties, "createObject")
+		delete(additionalProperties, "createFile")
+		delete(additionalProperties, "createDatastore")
+		delete(additionalProperties, "createDisk")
+		delete(additionalProperties, "createHost")
+		delete(additionalProperties, "iconCode")
+		delete(additionalProperties, "hasFileBrowser")
+		delete(additionalProperties, "optionTypes")
+		delete(additionalProperties, "groupOptionTypes")
+		delete(additionalProperties, "bucketOptionTypes")
+		delete(additionalProperties, "shareOptionTypes")
+		delete(additionalProperties, "shareAccessOptionTypes")
+		delete(additionalProperties, "storageVolumeTypes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListStorageServerTypes200ResponseAllOfStorageServerTypesInner struct {

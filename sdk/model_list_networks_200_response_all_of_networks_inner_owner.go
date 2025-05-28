@@ -24,7 +24,10 @@ type ListNetworks200ResponseAllOfNetworksInnerOwner struct {
 	Id *int64 `json:"id,omitempty"`
 	// Owner Tenant Name
 	Name *string `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListNetworks200ResponseAllOfNetworksInnerOwner ListNetworks200ResponseAllOfNetworksInnerOwner
 
 // NewListNetworks200ResponseAllOfNetworksInnerOwner instantiates a new ListNetworks200ResponseAllOfNetworksInnerOwner object
 // This constructor will assign default values to properties that have it defined,
@@ -123,7 +126,34 @@ func (o ListNetworks200ResponseAllOfNetworksInnerOwner) ToMap() (map[string]inte
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListNetworks200ResponseAllOfNetworksInnerOwner) UnmarshalJSON(data []byte) (err error) {
+	varListNetworks200ResponseAllOfNetworksInnerOwner := _ListNetworks200ResponseAllOfNetworksInnerOwner{}
+
+	err = json.Unmarshal(data, &varListNetworks200ResponseAllOfNetworksInnerOwner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListNetworks200ResponseAllOfNetworksInnerOwner(varListNetworks200ResponseAllOfNetworksInnerOwner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListNetworks200ResponseAllOfNetworksInnerOwner struct {

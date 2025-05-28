@@ -30,7 +30,10 @@ type GetResourcePoolGroups200ResponseResourcePoolGroupsInner struct {
 	Pools []int64 `json:"pools,omitempty"`
 	Tenants []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"tenants,omitempty"`
 	ResourcePermission *GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission `json:"resourcePermission,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetResourcePoolGroups200ResponseResourcePoolGroupsInner GetResourcePoolGroups200ResponseResourcePoolGroupsInner
 
 // NewGetResourcePoolGroups200ResponseResourcePoolGroupsInner instantiates a new GetResourcePoolGroups200ResponseResourcePoolGroupsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -339,7 +342,40 @@ func (o GetResourcePoolGroups200ResponseResourcePoolGroupsInner) ToMap() (map[st
 	if !IsNil(o.ResourcePermission) {
 		toSerialize["resourcePermission"] = o.ResourcePermission
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetResourcePoolGroups200ResponseResourcePoolGroupsInner) UnmarshalJSON(data []byte) (err error) {
+	varGetResourcePoolGroups200ResponseResourcePoolGroupsInner := _GetResourcePoolGroups200ResponseResourcePoolGroupsInner{}
+
+	err = json.Unmarshal(data, &varGetResourcePoolGroups200ResponseResourcePoolGroupsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetResourcePoolGroups200ResponseResourcePoolGroupsInner(varGetResourcePoolGroups200ResponseResourcePoolGroupsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "mode")
+		delete(additionalProperties, "pools")
+		delete(additionalProperties, "tenants")
+		delete(additionalProperties, "resourcePermission")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetResourcePoolGroups200ResponseResourcePoolGroupsInner struct {

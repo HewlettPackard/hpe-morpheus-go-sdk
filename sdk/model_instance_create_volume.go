@@ -35,7 +35,10 @@ type InstanceCreateVolume struct {
 	DatastoreId *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInnerDatastoreId `json:"datastoreId,omitempty"`
 	// The controller mount point specification for this volume in the format: `\"id:busNumber:typeId:unitNumber\"` For new storage controllers the id is passed as -1, so an example value would be: `\"-1:1:6:0\"` which translates to id: -1 (new), busNumber: 1, storage controller type id: 6 (SCSI VMware Paravirtual), unit number: 0. The current list of storage controllers is returned for instances and servers for determining existing id values. Use `/api/provision-types?code=vmware` to see the available `controllerTypes` for vmware. 
 	ControllerMountPoint *string `json:"controllerMountPoint,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _InstanceCreateVolume InstanceCreateVolume
 
 // NewInstanceCreateVolume instantiates a new InstanceCreateVolume object
 // This constructor will assign default values to properties that have it defined,
@@ -356,7 +359,40 @@ func (o InstanceCreateVolume) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ControllerMountPoint) {
 		toSerialize["controllerMountPoint"] = o.ControllerMountPoint
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *InstanceCreateVolume) UnmarshalJSON(data []byte) (err error) {
+	varInstanceCreateVolume := _InstanceCreateVolume{}
+
+	err = json.Unmarshal(data, &varInstanceCreateVolume)
+
+	if err != nil {
+		return err
+	}
+
+	*o = InstanceCreateVolume(varInstanceCreateVolume)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "rootVolume")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "size")
+		delete(additionalProperties, "sizeId")
+		delete(additionalProperties, "storageType")
+		delete(additionalProperties, "datastoreId")
+		delete(additionalProperties, "controllerMountPoint")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableInstanceCreateVolume struct {

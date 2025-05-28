@@ -22,7 +22,10 @@ var _ MappedNullable = &AddPoliciesRequestPolicyPolicyType{}
 type AddPoliciesRequestPolicyPolicyType struct {
 	// The policy type code. See `Retrieves all Policy Types` endpoint for listing.
 	Code *string `json:"code,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddPoliciesRequestPolicyPolicyType AddPoliciesRequestPolicyPolicyType
 
 // NewAddPoliciesRequestPolicyPolicyType instantiates a new AddPoliciesRequestPolicyPolicyType object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o AddPoliciesRequestPolicyPolicyType) ToMap() (map[string]interface{}, err
 	if !IsNil(o.Code) {
 		toSerialize["code"] = o.Code
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddPoliciesRequestPolicyPolicyType) UnmarshalJSON(data []byte) (err error) {
+	varAddPoliciesRequestPolicyPolicyType := _AddPoliciesRequestPolicyPolicyType{}
+
+	err = json.Unmarshal(data, &varAddPoliciesRequestPolicyPolicyType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddPoliciesRequestPolicyPolicyType(varAddPoliciesRequestPolicyPolicyType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "code")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddPoliciesRequestPolicyPolicyType struct {

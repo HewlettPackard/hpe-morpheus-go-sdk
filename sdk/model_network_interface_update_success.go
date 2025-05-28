@@ -24,7 +24,10 @@ type NetworkInterfaceUpdateSuccess struct {
 	InterfaceType *string `json:"interfaceType,omitempty"`
 	NetId *int64 `json:"netId,omitempty"`
 	Server *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServer `json:"server,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _NetworkInterfaceUpdateSuccess NetworkInterfaceUpdateSuccess
 
 // NewNetworkInterfaceUpdateSuccess instantiates a new NetworkInterfaceUpdateSuccess object
 // This constructor will assign default values to properties that have it defined,
@@ -193,7 +196,36 @@ func (o NetworkInterfaceUpdateSuccess) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Server) {
 		toSerialize["server"] = o.Server
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *NetworkInterfaceUpdateSuccess) UnmarshalJSON(data []byte) (err error) {
+	varNetworkInterfaceUpdateSuccess := _NetworkInterfaceUpdateSuccess{}
+
+	err = json.Unmarshal(data, &varNetworkInterfaceUpdateSuccess)
+
+	if err != nil {
+		return err
+	}
+
+	*o = NetworkInterfaceUpdateSuccess(varNetworkInterfaceUpdateSuccess)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "networkInterface")
+		delete(additionalProperties, "interfaceType")
+		delete(additionalProperties, "netId")
+		delete(additionalProperties, "server")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableNetworkInterfaceUpdateSuccess struct {

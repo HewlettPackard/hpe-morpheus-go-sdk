@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -23,6 +22,7 @@ var _ MappedNullable = &UpdateTenantSubtenantGroupRequest{}
 // UpdateTenantSubtenantGroupRequest struct for UpdateTenantSubtenantGroupRequest
 type UpdateTenantSubtenantGroupRequest struct {
 	Group UpdateTenantSubtenantGroupRequestGroup `json:"group"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateTenantSubtenantGroupRequest UpdateTenantSubtenantGroupRequest
@@ -80,6 +80,11 @@ func (o UpdateTenantSubtenantGroupRequest) MarshalJSON() ([]byte, error) {
 func (o UpdateTenantSubtenantGroupRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["group"] = o.Group
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -107,15 +112,20 @@ func (o *UpdateTenantSubtenantGroupRequest) UnmarshalJSON(data []byte) (err erro
 
 	varUpdateTenantSubtenantGroupRequest := _UpdateTenantSubtenantGroupRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varUpdateTenantSubtenantGroupRequest)
+	err = json.Unmarshal(data, &varUpdateTenantSubtenantGroupRequest)
 
 	if err != nil {
 		return err
 	}
 
 	*o = UpdateTenantSubtenantGroupRequest(varUpdateTenantSubtenantGroupRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "group")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

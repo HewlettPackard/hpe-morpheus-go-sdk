@@ -35,7 +35,10 @@ type AddBlueprint200ResponseAllOfBlueprintConfigOneOf struct {
 	Owner map[string]interface{} `json:"owner,omitempty"`
 	// Tenant
 	Tenant map[string]interface{} `json:"tenant,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddBlueprint200ResponseAllOfBlueprintConfigOneOf AddBlueprint200ResponseAllOfBlueprintConfigOneOf
 
 // NewAddBlueprint200ResponseAllOfBlueprintConfigOneOf instantiates a new AddBlueprint200ResponseAllOfBlueprintConfigOneOf object
 // This constructor will assign default values to properties that have it defined,
@@ -348,7 +351,40 @@ func (o AddBlueprint200ResponseAllOfBlueprintConfigOneOf) ToMap() (map[string]in
 	if !IsNil(o.Tenant) {
 		toSerialize["tenant"] = o.Tenant
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf) UnmarshalJSON(data []byte) (err error) {
+	varAddBlueprint200ResponseAllOfBlueprintConfigOneOf := _AddBlueprint200ResponseAllOfBlueprintConfigOneOf{}
+
+	err = json.Unmarshal(data, &varAddBlueprint200ResponseAllOfBlueprintConfigOneOf)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddBlueprint200ResponseAllOfBlueprintConfigOneOf(varAddBlueprint200ResponseAllOfBlueprintConfigOneOf)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "image")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "arm")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "resourcePermission")
+		delete(additionalProperties, "owner")
+		delete(additionalProperties, "tenant")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddBlueprint200ResponseAllOfBlueprintConfigOneOf struct {

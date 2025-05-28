@@ -23,7 +23,10 @@ type UpdateHostExecuteWorkflowRequest struct {
 	TaskSet *UpdateHostExecuteWorkflowRequestTaskSet `json:"taskSet,omitempty"`
 	// Task Phase to run for Provisioning workflows. The default is `provision`.
 	TaskPhase *string `json:"taskPhase,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateHostExecuteWorkflowRequest UpdateHostExecuteWorkflowRequest
 
 // NewUpdateHostExecuteWorkflowRequest instantiates a new UpdateHostExecuteWorkflowRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -126,7 +129,34 @@ func (o UpdateHostExecuteWorkflowRequest) ToMap() (map[string]interface{}, error
 	if !IsNil(o.TaskPhase) {
 		toSerialize["taskPhase"] = o.TaskPhase
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateHostExecuteWorkflowRequest) UnmarshalJSON(data []byte) (err error) {
+	varUpdateHostExecuteWorkflowRequest := _UpdateHostExecuteWorkflowRequest{}
+
+	err = json.Unmarshal(data, &varUpdateHostExecuteWorkflowRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateHostExecuteWorkflowRequest(varUpdateHostExecuteWorkflowRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "taskSet")
+		delete(additionalProperties, "taskPhase")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateHostExecuteWorkflowRequest struct {

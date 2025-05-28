@@ -24,7 +24,10 @@ type ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInner struct {
 	TaskPhase *string `json:"taskPhase,omitempty"`
 	TaskOrder *int64 `json:"taskOrder,omitempty"`
 	Task *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask `json:"task,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInner ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInner
 
 // NewListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInner instantiates a new ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInner object
 // This constructor will assign default values to properties that have it defined,
@@ -193,7 +196,36 @@ func (o ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInner) ToMap() (ma
 	if !IsNil(o.Task) {
 		toSerialize["task"] = o.Task
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInner) UnmarshalJSON(data []byte) (err error) {
+	varListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInner := _ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInner{}
+
+	err = json.Unmarshal(data, &varListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInner(varListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "taskPhase")
+		delete(additionalProperties, "taskOrder")
+		delete(additionalProperties, "task")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInner struct {

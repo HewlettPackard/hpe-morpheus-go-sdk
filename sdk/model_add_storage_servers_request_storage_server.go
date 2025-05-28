@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -36,6 +35,7 @@ type AddStorageServersRequestStorageServer struct {
 	Visibility *string `json:"visibility,omitempty"`
 	// Array of tenant account ids that are allowed access
 	Tenants []GetAlerts200ResponseAllOfChecksInnerAccount `json:"tenants,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddStorageServersRequestStorageServer AddStorageServersRequestStorageServer
@@ -293,6 +293,11 @@ func (o AddStorageServersRequestStorageServer) ToMap() (map[string]interface{}, 
 	if !IsNil(o.Tenants) {
 		toSerialize["tenants"] = o.Tenants
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -322,15 +327,26 @@ func (o *AddStorageServersRequestStorageServer) UnmarshalJSON(data []byte) (err 
 
 	varAddStorageServersRequestStorageServer := _AddStorageServersRequestStorageServer{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddStorageServersRequestStorageServer)
+	err = json.Unmarshal(data, &varAddStorageServersRequestStorageServer)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddStorageServersRequestStorageServer(varAddStorageServersRequestStorageServer)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "tenants")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

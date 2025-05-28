@@ -21,7 +21,10 @@ var _ MappedNullable = &GetNetworkRouterBgpNeighbor200Response{}
 // GetNetworkRouterBgpNeighbor200Response struct for GetNetworkRouterBgpNeighbor200Response
 type GetNetworkRouterBgpNeighbor200Response struct {
 	NetworkRouterBgpNeighbor *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner `json:"networkRouterBgpNeighbor,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetNetworkRouterBgpNeighbor200Response GetNetworkRouterBgpNeighbor200Response
 
 // NewGetNetworkRouterBgpNeighbor200Response instantiates a new GetNetworkRouterBgpNeighbor200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o GetNetworkRouterBgpNeighbor200Response) ToMap() (map[string]interface{},
 	if !IsNil(o.NetworkRouterBgpNeighbor) {
 		toSerialize["networkRouterBgpNeighbor"] = o.NetworkRouterBgpNeighbor
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetNetworkRouterBgpNeighbor200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetNetworkRouterBgpNeighbor200Response := _GetNetworkRouterBgpNeighbor200Response{}
+
+	err = json.Unmarshal(data, &varGetNetworkRouterBgpNeighbor200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetNetworkRouterBgpNeighbor200Response(varGetNetworkRouterBgpNeighbor200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "networkRouterBgpNeighbor")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetNetworkRouterBgpNeighbor200Response struct {

@@ -41,7 +41,10 @@ type CreateNetworkDomain200ResponseNetworkDomain struct {
 	DomainSerial *string `json:"domainSerial,omitempty"`
 	Account *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
 	Owner *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"owner,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _CreateNetworkDomain200ResponseNetworkDomain CreateNetworkDomain200ResponseNetworkDomain
 
 // NewCreateNetworkDomain200ResponseNetworkDomain instantiates a new CreateNetworkDomain200ResponseNetworkDomain object
 // This constructor will assign default values to properties that have it defined,
@@ -805,7 +808,53 @@ func (o CreateNetworkDomain200ResponseNetworkDomain) ToMap() (map[string]interfa
 	if !IsNil(o.Owner) {
 		toSerialize["owner"] = o.Owner
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *CreateNetworkDomain200ResponseNetworkDomain) UnmarshalJSON(data []byte) (err error) {
+	varCreateNetworkDomain200ResponseNetworkDomain := _CreateNetworkDomain200ResponseNetworkDomain{}
+
+	err = json.Unmarshal(data, &varCreateNetworkDomain200ResponseNetworkDomain)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CreateNetworkDomain200ResponseNetworkDomain(varCreateNetworkDomain200ResponseNetworkDomain)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "fqdn")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "domainController")
+		delete(additionalProperties, "publicZone")
+		delete(additionalProperties, "domainUsername")
+		delete(additionalProperties, "domainPassword")
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "refId")
+		delete(additionalProperties, "refSource")
+		delete(additionalProperties, "internalId")
+		delete(additionalProperties, "ouPath")
+		delete(additionalProperties, "dcServer")
+		delete(additionalProperties, "zoneType")
+		delete(additionalProperties, "dnssec")
+		delete(additionalProperties, "domainSerial")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "owner")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCreateNetworkDomain200ResponseNetworkDomain struct {

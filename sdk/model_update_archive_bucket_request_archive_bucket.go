@@ -29,7 +29,10 @@ type UpdateArchiveBucketRequestArchiveBucket struct {
 	// Public URL - Set to true to allow anonymous access
 	IsPublic *bool `json:"isPublic,omitempty"`
 	Accounts *GetAlerts200ResponseAllOfChecksInnerAccount `json:"accounts,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateArchiveBucketRequestArchiveBucket UpdateArchiveBucketRequestArchiveBucket
 
 // NewUpdateArchiveBucketRequestArchiveBucket instantiates a new UpdateArchiveBucketRequestArchiveBucket object
 // This constructor will assign default values to properties that have it defined,
@@ -241,7 +244,37 @@ func (o UpdateArchiveBucketRequestArchiveBucket) ToMap() (map[string]interface{}
 	if !IsNil(o.Accounts) {
 		toSerialize["accounts"] = o.Accounts
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateArchiveBucketRequestArchiveBucket) UnmarshalJSON(data []byte) (err error) {
+	varUpdateArchiveBucketRequestArchiveBucket := _UpdateArchiveBucketRequestArchiveBucket{}
+
+	err = json.Unmarshal(data, &varUpdateArchiveBucketRequestArchiveBucket)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateArchiveBucketRequestArchiveBucket(varUpdateArchiveBucketRequestArchiveBucket)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "isPublic")
+		delete(additionalProperties, "accounts")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateArchiveBucketRequestArchiveBucket struct {

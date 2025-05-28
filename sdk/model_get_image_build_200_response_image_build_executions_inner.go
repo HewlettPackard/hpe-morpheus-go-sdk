@@ -34,7 +34,10 @@ type GetImageBuild200ResponseImageBuildExecutionsInner struct {
 	CreatedBy *GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy `json:"createdBy,omitempty"`
 	TempInstance *string `json:"tempInstance,omitempty"`
 	VirtualImages []map[string]interface{} `json:"virtualImages,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetImageBuild200ResponseImageBuildExecutionsInner GetImageBuild200ResponseImageBuildExecutionsInner
 
 // NewGetImageBuild200ResponseImageBuildExecutionsInner instantiates a new GetImageBuild200ResponseImageBuildExecutionsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -518,7 +521,45 @@ func (o GetImageBuild200ResponseImageBuildExecutionsInner) ToMap() (map[string]i
 	if !IsNil(o.VirtualImages) {
 		toSerialize["virtualImages"] = o.VirtualImages
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetImageBuild200ResponseImageBuildExecutionsInner) UnmarshalJSON(data []byte) (err error) {
+	varGetImageBuild200ResponseImageBuildExecutionsInner := _GetImageBuild200ResponseImageBuildExecutionsInner{}
+
+	err = json.Unmarshal(data, &varGetImageBuild200ResponseImageBuildExecutionsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetImageBuild200ResponseImageBuildExecutionsInner(varGetImageBuild200ResponseImageBuildExecutionsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "imageBuild")
+		delete(additionalProperties, "buildNumber")
+		delete(additionalProperties, "startDate")
+		delete(additionalProperties, "endDate")
+		delete(additionalProperties, "statusMessage")
+		delete(additionalProperties, "statusPercent")
+		delete(additionalProperties, "statusEta")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "errorMessage")
+		delete(additionalProperties, "createdBy")
+		delete(additionalProperties, "tempInstance")
+		delete(additionalProperties, "virtualImages")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetImageBuild200ResponseImageBuildExecutionsInner struct {

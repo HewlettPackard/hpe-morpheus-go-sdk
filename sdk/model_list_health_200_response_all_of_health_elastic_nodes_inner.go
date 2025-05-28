@@ -30,7 +30,10 @@ type ListHealth200ResponseAllOfHealthElasticNodesInner struct {
 	Role *string `json:"role,omitempty"`
 	Master *string `json:"master,omitempty"`
 	Name *string `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListHealth200ResponseAllOfHealthElasticNodesInner ListHealth200ResponseAllOfHealthElasticNodesInner
 
 // NewListHealth200ResponseAllOfHealthElasticNodesInner instantiates a new ListHealth200ResponseAllOfHealthElasticNodesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -409,7 +412,42 @@ func (o ListHealth200ResponseAllOfHealthElasticNodesInner) ToMap() (map[string]i
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListHealth200ResponseAllOfHealthElasticNodesInner) UnmarshalJSON(data []byte) (err error) {
+	varListHealth200ResponseAllOfHealthElasticNodesInner := _ListHealth200ResponseAllOfHealthElasticNodesInner{}
+
+	err = json.Unmarshal(data, &varListHealth200ResponseAllOfHealthElasticNodesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListHealth200ResponseAllOfHealthElasticNodesInner(varListHealth200ResponseAllOfHealthElasticNodesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "ip")
+		delete(additionalProperties, "heapPercent")
+		delete(additionalProperties, "ramPercent")
+		delete(additionalProperties, "cpuCount")
+		delete(additionalProperties, "loadOne")
+		delete(additionalProperties, "loadFive")
+		delete(additionalProperties, "loadFifteen")
+		delete(additionalProperties, "role")
+		delete(additionalProperties, "master")
+		delete(additionalProperties, "name")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListHealth200ResponseAllOfHealthElasticNodesInner struct {

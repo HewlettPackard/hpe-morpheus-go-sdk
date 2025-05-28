@@ -22,7 +22,10 @@ var _ MappedNullable = &SetInstanceSecurityGroupsRequest{}
 type SetInstanceSecurityGroupsRequest struct {
 	// List of all security groups ids which should be applied. If no security groups should apply, pass '[]'
 	SecurityGroupIds []int64 `json:"securityGroupIds,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _SetInstanceSecurityGroupsRequest SetInstanceSecurityGroupsRequest
 
 // NewSetInstanceSecurityGroupsRequest instantiates a new SetInstanceSecurityGroupsRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o SetInstanceSecurityGroupsRequest) ToMap() (map[string]interface{}, error
 	if !IsNil(o.SecurityGroupIds) {
 		toSerialize["securityGroupIds"] = o.SecurityGroupIds
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *SetInstanceSecurityGroupsRequest) UnmarshalJSON(data []byte) (err error) {
+	varSetInstanceSecurityGroupsRequest := _SetInstanceSecurityGroupsRequest{}
+
+	err = json.Unmarshal(data, &varSetInstanceSecurityGroupsRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = SetInstanceSecurityGroupsRequest(varSetInstanceSecurityGroupsRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "securityGroupIds")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableSetInstanceSecurityGroupsRequest struct {

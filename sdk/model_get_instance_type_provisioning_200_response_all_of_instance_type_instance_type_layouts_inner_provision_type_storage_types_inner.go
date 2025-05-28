@@ -28,7 +28,10 @@ type GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsI
 	CustomLabel *bool `json:"customLabel,omitempty"`
 	CustomSize *bool `json:"customSize,omitempty"`
 	CustomSizeOptions *string `json:"customSizeOptions,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner
 
 // NewGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner instantiates a new GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -337,7 +340,40 @@ func (o GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayou
 	if !IsNil(o.CustomSizeOptions) {
 		toSerialize["customSizeOptions"] = o.CustomSizeOptions
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner) UnmarshalJSON(data []byte) (err error) {
+	varGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner := _GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner{}
+
+	err = json.Unmarshal(data, &varGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner(varGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "displayOrder")
+		delete(additionalProperties, "defaultType")
+		delete(additionalProperties, "customLabel")
+		delete(additionalProperties, "customSize")
+		delete(additionalProperties, "customSizeOptions")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner struct {

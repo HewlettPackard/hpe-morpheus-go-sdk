@@ -21,7 +21,10 @@ var _ MappedNullable = &ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCre
 // ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy struct for ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy
 type ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy struct {
 	Username *string `json:"username,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy
 
 // NewListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy instantiates a new ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy) ToMap() 
 	if !IsNil(o.Username) {
 		toSerialize["username"] = o.Username
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy) UnmarshalJSON(data []byte) (err error) {
+	varListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy := _ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy{}
+
+	err = json.Unmarshal(data, &varListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy(varListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "username")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy struct {

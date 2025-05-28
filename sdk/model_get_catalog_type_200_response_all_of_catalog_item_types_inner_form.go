@@ -22,7 +22,10 @@ var _ MappedNullable = &GetCatalogType200ResponseAllOfCatalogItemTypesInnerForm{
 type GetCatalogType200ResponseAllOfCatalogItemTypesInnerForm struct {
 	// Form ID
 	Id *int64 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetCatalogType200ResponseAllOfCatalogItemTypesInnerForm GetCatalogType200ResponseAllOfCatalogItemTypesInnerForm
 
 // NewGetCatalogType200ResponseAllOfCatalogItemTypesInnerForm instantiates a new GetCatalogType200ResponseAllOfCatalogItemTypesInnerForm object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o GetCatalogType200ResponseAllOfCatalogItemTypesInnerForm) ToMap() (map[st
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetCatalogType200ResponseAllOfCatalogItemTypesInnerForm) UnmarshalJSON(data []byte) (err error) {
+	varGetCatalogType200ResponseAllOfCatalogItemTypesInnerForm := _GetCatalogType200ResponseAllOfCatalogItemTypesInnerForm{}
+
+	err = json.Unmarshal(data, &varGetCatalogType200ResponseAllOfCatalogItemTypesInnerForm)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetCatalogType200ResponseAllOfCatalogItemTypesInnerForm(varGetCatalogType200ResponseAllOfCatalogItemTypesInnerForm)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetCatalogType200ResponseAllOfCatalogItemTypesInnerForm struct {

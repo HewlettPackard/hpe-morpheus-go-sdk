@@ -24,7 +24,10 @@ type AddCloudResourcePoolRequestResourcePoolConfigAnyOf struct {
 	CidrBlock *string `json:"cidrBlock,omitempty"`
 	// default or dedicated
 	Tenancy *string `json:"tenancy,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddCloudResourcePoolRequestResourcePoolConfigAnyOf AddCloudResourcePoolRequestResourcePoolConfigAnyOf
 
 // NewAddCloudResourcePoolRequestResourcePoolConfigAnyOf instantiates a new AddCloudResourcePoolRequestResourcePoolConfigAnyOf object
 // This constructor will assign default values to properties that have it defined,
@@ -127,7 +130,34 @@ func (o AddCloudResourcePoolRequestResourcePoolConfigAnyOf) ToMap() (map[string]
 	if !IsNil(o.Tenancy) {
 		toSerialize["tenancy"] = o.Tenancy
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddCloudResourcePoolRequestResourcePoolConfigAnyOf) UnmarshalJSON(data []byte) (err error) {
+	varAddCloudResourcePoolRequestResourcePoolConfigAnyOf := _AddCloudResourcePoolRequestResourcePoolConfigAnyOf{}
+
+	err = json.Unmarshal(data, &varAddCloudResourcePoolRequestResourcePoolConfigAnyOf)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddCloudResourcePoolRequestResourcePoolConfigAnyOf(varAddCloudResourcePoolRequestResourcePoolConfigAnyOf)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "cidrBlock")
+		delete(additionalProperties, "tenancy")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddCloudResourcePoolRequestResourcePoolConfigAnyOf struct {

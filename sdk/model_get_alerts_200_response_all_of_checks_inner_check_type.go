@@ -24,7 +24,10 @@ type GetAlerts200ResponseAllOfChecksInnerCheckType struct {
 	Code *string `json:"code,omitempty"`
 	Name *string `json:"name,omitempty"`
 	MetricName *string `json:"metricName,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetAlerts200ResponseAllOfChecksInnerCheckType GetAlerts200ResponseAllOfChecksInnerCheckType
 
 // NewGetAlerts200ResponseAllOfChecksInnerCheckType instantiates a new GetAlerts200ResponseAllOfChecksInnerCheckType object
 // This constructor will assign default values to properties that have it defined,
@@ -193,7 +196,36 @@ func (o GetAlerts200ResponseAllOfChecksInnerCheckType) ToMap() (map[string]inter
 	if !IsNil(o.MetricName) {
 		toSerialize["metricName"] = o.MetricName
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetAlerts200ResponseAllOfChecksInnerCheckType) UnmarshalJSON(data []byte) (err error) {
+	varGetAlerts200ResponseAllOfChecksInnerCheckType := _GetAlerts200ResponseAllOfChecksInnerCheckType{}
+
+	err = json.Unmarshal(data, &varGetAlerts200ResponseAllOfChecksInnerCheckType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetAlerts200ResponseAllOfChecksInnerCheckType(varGetAlerts200ResponseAllOfChecksInnerCheckType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "metricName")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetAlerts200ResponseAllOfChecksInnerCheckType struct {
