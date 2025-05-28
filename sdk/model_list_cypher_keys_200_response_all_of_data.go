@@ -21,7 +21,10 @@ var _ MappedNullable = &ListCypherKeys200ResponseAllOfData{}
 // ListCypherKeys200ResponseAllOfData struct for ListCypherKeys200ResponseAllOfData
 type ListCypherKeys200ResponseAllOfData struct {
 	Keys []string `json:"keys,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListCypherKeys200ResponseAllOfData ListCypherKeys200ResponseAllOfData
 
 // NewListCypherKeys200ResponseAllOfData instantiates a new ListCypherKeys200ResponseAllOfData object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o ListCypherKeys200ResponseAllOfData) ToMap() (map[string]interface{}, err
 	if !IsNil(o.Keys) {
 		toSerialize["keys"] = o.Keys
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListCypherKeys200ResponseAllOfData) UnmarshalJSON(data []byte) (err error) {
+	varListCypherKeys200ResponseAllOfData := _ListCypherKeys200ResponseAllOfData{}
+
+	err = json.Unmarshal(data, &varListCypherKeys200ResponseAllOfData)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListCypherKeys200ResponseAllOfData(varListCypherKeys200ResponseAllOfData)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "keys")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListCypherKeys200ResponseAllOfData struct {

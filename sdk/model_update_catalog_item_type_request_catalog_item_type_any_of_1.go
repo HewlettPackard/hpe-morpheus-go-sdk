@@ -52,7 +52,10 @@ type UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1 struct {
 	Form *AddCatalogItemTypeRequestCatalogItemTypeOneOfForm `json:"form,omitempty"`
 	// Array of option type IDs, see Inputs. Only applies to formType 'optionTypes'.
 	OptionTypes []int64 `json:"optionTypes,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1 UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1
 
 // NewUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1 instantiates a new UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1 object
 // This constructor will assign default values to properties that have it defined,
@@ -696,7 +699,49 @@ func (o UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1) ToMap() (map[string]i
 	if !IsNil(o.OptionTypes) {
 		toSerialize["optionTypes"] = o.OptionTypes
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1) UnmarshalJSON(data []byte) (err error) {
+	varUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1 := _UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1{}
+
+	err = json.Unmarshal(data, &varUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1(varUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "layoutCode")
+		delete(additionalProperties, "iconPath")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "featured")
+		delete(additionalProperties, "allowQuantity")
+		delete(additionalProperties, "blueprint")
+		delete(additionalProperties, "appSpec")
+		delete(additionalProperties, "formType")
+		delete(additionalProperties, "form")
+		delete(additionalProperties, "optionTypes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1 struct {

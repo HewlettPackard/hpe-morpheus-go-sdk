@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -24,6 +23,7 @@ var _ MappedNullable = &AddClusterLayoutsRequestLayoutGroupType{}
 type AddClusterLayoutsRequestLayoutGroupType struct {
 	// Cluster type ID
 	Id int64 `json:"id"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddClusterLayoutsRequestLayoutGroupType AddClusterLayoutsRequestLayoutGroupType
@@ -81,6 +81,11 @@ func (o AddClusterLayoutsRequestLayoutGroupType) MarshalJSON() ([]byte, error) {
 func (o AddClusterLayoutsRequestLayoutGroupType) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -108,15 +113,20 @@ func (o *AddClusterLayoutsRequestLayoutGroupType) UnmarshalJSON(data []byte) (er
 
 	varAddClusterLayoutsRequestLayoutGroupType := _AddClusterLayoutsRequestLayoutGroupType{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddClusterLayoutsRequestLayoutGroupType)
+	err = json.Unmarshal(data, &varAddClusterLayoutsRequestLayoutGroupType)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddClusterLayoutsRequestLayoutGroupType(varAddClusterLayoutsRequestLayoutGroupType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

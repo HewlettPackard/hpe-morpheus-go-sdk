@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -37,6 +36,7 @@ type AddIntegrationsRequestOneOf2Integration struct {
 	// ServiceNow Password
 	ServicePassword string `json:"servicePassword"`
 	Config *AddIntegrationsRequestOneOf2IntegrationConfig `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddIntegrationsRequestOneOf2Integration AddIntegrationsRequestOneOf2Integration
@@ -307,6 +307,11 @@ func (o AddIntegrationsRequestOneOf2Integration) ToMap() (map[string]interface{}
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -338,15 +343,27 @@ func (o *AddIntegrationsRequestOneOf2Integration) UnmarshalJSON(data []byte) (er
 
 	varAddIntegrationsRequestOneOf2Integration := _AddIntegrationsRequestOneOf2Integration{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddIntegrationsRequestOneOf2Integration)
+	err = json.Unmarshal(data, &varAddIntegrationsRequestOneOf2Integration)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddIntegrationsRequestOneOf2Integration(varAddIntegrationsRequestOneOf2Integration)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "refresh")
+		delete(additionalProperties, "serviceUrl")
+		delete(additionalProperties, "serviceUsername")
+		delete(additionalProperties, "servicePassword")
+		delete(additionalProperties, "config")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

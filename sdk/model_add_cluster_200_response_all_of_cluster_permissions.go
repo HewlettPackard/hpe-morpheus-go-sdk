@@ -22,7 +22,10 @@ var _ MappedNullable = &AddCluster200ResponseAllOfClusterPermissions{}
 type AddCluster200ResponseAllOfClusterPermissions struct {
 	ResourcePool *AddCluster200ResponseAllOfClusterPermissionsResourcePool `json:"resourcePool,omitempty"`
 	ResourcePermissions *AddCluster200ResponseAllOfClusterPermissionsResourcePermissions `json:"resourcePermissions,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddCluster200ResponseAllOfClusterPermissions AddCluster200ResponseAllOfClusterPermissions
 
 // NewAddCluster200ResponseAllOfClusterPermissions instantiates a new AddCluster200ResponseAllOfClusterPermissions object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o AddCluster200ResponseAllOfClusterPermissions) ToMap() (map[string]interf
 	if !IsNil(o.ResourcePermissions) {
 		toSerialize["resourcePermissions"] = o.ResourcePermissions
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddCluster200ResponseAllOfClusterPermissions) UnmarshalJSON(data []byte) (err error) {
+	varAddCluster200ResponseAllOfClusterPermissions := _AddCluster200ResponseAllOfClusterPermissions{}
+
+	err = json.Unmarshal(data, &varAddCluster200ResponseAllOfClusterPermissions)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddCluster200ResponseAllOfClusterPermissions(varAddCluster200ResponseAllOfClusterPermissions)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "resourcePool")
+		delete(additionalProperties, "resourcePermissions")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddCluster200ResponseAllOfClusterPermissions struct {

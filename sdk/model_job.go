@@ -49,7 +49,10 @@ type Job struct {
 	SecurityProfile *string `json:"securityProfile,omitempty"`
 	CustomConfig *string `json:"customConfig,omitempty"`
 	CustomOptions *ListJobs200ResponseAllOfJobsInnerAnyOfCustomOptions `json:"customOptions,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _Job Job
 
 // NewJob instantiates a new Job object
 // This constructor will assign default values to properties that have it defined,
@@ -988,7 +991,58 @@ func (o Job) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomOptions) {
 		toSerialize["customOptions"] = o.CustomOptions
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *Job) UnmarshalJSON(data []byte) (err error) {
+	varJob := _Job{}
+
+	err = json.Unmarshal(data, &varJob)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Job(varJob)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "workflow")
+		delete(additionalProperties, "task")
+		delete(additionalProperties, "securityPackage")
+		delete(additionalProperties, "jobSummary")
+		delete(additionalProperties, "scheduleMode")
+		delete(additionalProperties, "dateTime")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "namespace")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "lastRun")
+		delete(additionalProperties, "lastResult")
+		delete(additionalProperties, "createdBy")
+		delete(additionalProperties, "targetType")
+		delete(additionalProperties, "targets")
+		delete(additionalProperties, "scanPath")
+		delete(additionalProperties, "securityProfile")
+		delete(additionalProperties, "customConfig")
+		delete(additionalProperties, "customOptions")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableJob struct {

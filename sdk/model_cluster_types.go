@@ -42,7 +42,10 @@ type ClusterTypes struct {
 	OptionTypes []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
 	ControllerTypes []ListClusterTypes200ResponseAllOfClusterTypesInnerControllerTypesInner `json:"controllerTypes,omitempty"`
 	WorkerTypes []ListClusterTypes200ResponseAllOfClusterTypesInnerControllerTypesInner `json:"workerTypes,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ClusterTypes ClusterTypes
 
 // NewClusterTypes instantiates a new ClusterTypes object
 // This constructor will assign default values to properties that have it defined,
@@ -841,7 +844,54 @@ func (o ClusterTypes) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.WorkerTypes) {
 		toSerialize["workerTypes"] = o.WorkerTypes
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ClusterTypes) UnmarshalJSON(data []byte) (err error) {
+	varClusterTypes := _ClusterTypes{}
+
+	err = json.Unmarshal(data, &varClusterTypes)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ClusterTypes(varClusterTypes)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "deployTargetService")
+		delete(additionalProperties, "shortName")
+		delete(additionalProperties, "providerType")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "hostService")
+		delete(additionalProperties, "managed")
+		delete(additionalProperties, "hasMasters")
+		delete(additionalProperties, "hasWorkers")
+		delete(additionalProperties, "viewSet")
+		delete(additionalProperties, "imageCode")
+		delete(additionalProperties, "kubeCtlLocal")
+		delete(additionalProperties, "hasDatastore")
+		delete(additionalProperties, "supportsCloudScaling")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "hasDefaultDataDisk")
+		delete(additionalProperties, "canManage")
+		delete(additionalProperties, "hasCluster")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "optionTypes")
+		delete(additionalProperties, "controllerTypes")
+		delete(additionalProperties, "workerTypes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableClusterTypes struct {

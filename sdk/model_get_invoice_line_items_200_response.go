@@ -22,7 +22,10 @@ var _ MappedNullable = &GetInvoiceLineItems200Response{}
 type GetInvoiceLineItems200Response struct {
 	LineItem *ListInvoiceLineItems200ResponseAllOfLineItemsInner `json:"lineItem,omitempty"`
 	MasterAccount *bool `json:"masterAccount,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetInvoiceLineItems200Response GetInvoiceLineItems200Response
 
 // NewGetInvoiceLineItems200Response instantiates a new GetInvoiceLineItems200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o GetInvoiceLineItems200Response) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.MasterAccount) {
 		toSerialize["masterAccount"] = o.MasterAccount
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetInvoiceLineItems200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetInvoiceLineItems200Response := _GetInvoiceLineItems200Response{}
+
+	err = json.Unmarshal(data, &varGetInvoiceLineItems200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetInvoiceLineItems200Response(varGetInvoiceLineItems200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "lineItem")
+		delete(additionalProperties, "masterAccount")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetInvoiceLineItems200Response struct {

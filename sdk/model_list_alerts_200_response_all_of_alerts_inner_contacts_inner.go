@@ -25,7 +25,10 @@ type ListAlerts200ResponseAllOfAlertsInnerContactsInner struct {
 	Method *string `json:"method,omitempty"`
 	Notify *bool `json:"notify,omitempty"`
 	Close *bool `json:"close,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListAlerts200ResponseAllOfAlertsInnerContactsInner ListAlerts200ResponseAllOfAlertsInnerContactsInner
 
 // NewListAlerts200ResponseAllOfAlertsInnerContactsInner instantiates a new ListAlerts200ResponseAllOfAlertsInnerContactsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -229,7 +232,37 @@ func (o ListAlerts200ResponseAllOfAlertsInnerContactsInner) ToMap() (map[string]
 	if !IsNil(o.Close) {
 		toSerialize["close"] = o.Close
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListAlerts200ResponseAllOfAlertsInnerContactsInner) UnmarshalJSON(data []byte) (err error) {
+	varListAlerts200ResponseAllOfAlertsInnerContactsInner := _ListAlerts200ResponseAllOfAlertsInnerContactsInner{}
+
+	err = json.Unmarshal(data, &varListAlerts200ResponseAllOfAlertsInnerContactsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListAlerts200ResponseAllOfAlertsInnerContactsInner(varListAlerts200ResponseAllOfAlertsInnerContactsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "method")
+		delete(additionalProperties, "notify")
+		delete(additionalProperties, "close")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListAlerts200ResponseAllOfAlertsInnerContactsInner struct {

@@ -29,7 +29,10 @@ type ListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner struct {
 	DefaultCollapsed *bool `json:"defaultCollapsed,omitempty"`
 	VisibleOnCode *string `json:"visibleOnCode,omitempty"`
 	Options []ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner `json:"options,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner ListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner
 
 // NewListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner instantiates a new ListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -373,7 +376,41 @@ func (o ListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner) ToMap()
 	if !IsNil(o.Options) {
 		toSerialize["options"] = o.Options
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner) UnmarshalJSON(data []byte) (err error) {
+	varListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner := _ListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner{}
+
+	err = json.Unmarshal(data, &varListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner(varListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "localizedName")
+		delete(additionalProperties, "collapsible")
+		delete(additionalProperties, "defaultCollapsed")
+		delete(additionalProperties, "visibleOnCode")
+		delete(additionalProperties, "options")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner struct {

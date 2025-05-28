@@ -23,7 +23,10 @@ type CreateLoadBalancerPool200Response struct {
 	LoadBalancerPool *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner `json:"loadBalancerPool,omitempty"`
 	Success *bool `json:"success,omitempty"`
 	Msg *string `json:"msg,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _CreateLoadBalancerPool200Response CreateLoadBalancerPool200Response
 
 // NewCreateLoadBalancerPool200Response instantiates a new CreateLoadBalancerPool200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o CreateLoadBalancerPool200Response) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.Msg) {
 		toSerialize["msg"] = o.Msg
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *CreateLoadBalancerPool200Response) UnmarshalJSON(data []byte) (err error) {
+	varCreateLoadBalancerPool200Response := _CreateLoadBalancerPool200Response{}
+
+	err = json.Unmarshal(data, &varCreateLoadBalancerPool200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CreateLoadBalancerPool200Response(varCreateLoadBalancerPool200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "loadBalancerPool")
+		delete(additionalProperties, "success")
+		delete(additionalProperties, "msg")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCreateLoadBalancerPool200Response struct {

@@ -80,7 +80,10 @@ type NetworkServer struct {
 	Visible *bool `json:"visible,omitempty"`
 	Credential *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential `json:"credential,omitempty"`
 	Tenants []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"tenants,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _NetworkServer NetworkServer
 
 // NewNetworkServer instantiates a new NetworkServer object
 // This constructor will assign default values to properties that have it defined,
@@ -1404,7 +1407,69 @@ func (o NetworkServer) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Tenants) {
 		toSerialize["tenants"] = o.Tenants
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *NetworkServer) UnmarshalJSON(data []byte) (err error) {
+	varNetworkServer := _NetworkServer{}
+
+	err = json.Unmarshal(data, &varNetworkServer)
+
+	if err != nil {
+		return err
+	}
+
+	*o = NetworkServer(varNetworkServer)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "integration")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "internalId")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "serviceUrl")
+		delete(additionalProperties, "serviceHost")
+		delete(additionalProperties, "servicePort")
+		delete(additionalProperties, "serviceMode")
+		delete(additionalProperties, "servicePath")
+		delete(additionalProperties, "serviceUsername")
+		delete(additionalProperties, "servicePassword")
+		delete(additionalProperties, "servicePasswordHash")
+		delete(additionalProperties, "serviceToken")
+		delete(additionalProperties, "serviceTokenHash")
+		delete(additionalProperties, "apiPort")
+		delete(additionalProperties, "adminPort")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "statusMessage")
+		delete(additionalProperties, "statusDate")
+		delete(additionalProperties, "lastSync")
+		delete(additionalProperties, "nextRunDate")
+		delete(additionalProperties, "lastSyncDuration")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "networkFilter")
+		delete(additionalProperties, "tenantMatch")
+		delete(additionalProperties, "zoneId")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "visible")
+		delete(additionalProperties, "credential")
+		delete(additionalProperties, "tenants")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableNetworkServer struct {

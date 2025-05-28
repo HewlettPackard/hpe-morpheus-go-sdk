@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -24,6 +23,7 @@ var _ MappedNullable = &CreateNetworksRequestNetworkConfigAnyOf2ZonePool{}
 type CreateNetworksRequestNetworkConfigAnyOf2ZonePool struct {
 	// Morpheus resource pool ID of the GCP Project for the network.
 	Id int32 `json:"id"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _CreateNetworksRequestNetworkConfigAnyOf2ZonePool CreateNetworksRequestNetworkConfigAnyOf2ZonePool
@@ -81,6 +81,11 @@ func (o CreateNetworksRequestNetworkConfigAnyOf2ZonePool) MarshalJSON() ([]byte,
 func (o CreateNetworksRequestNetworkConfigAnyOf2ZonePool) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -108,15 +113,20 @@ func (o *CreateNetworksRequestNetworkConfigAnyOf2ZonePool) UnmarshalJSON(data []
 
 	varCreateNetworksRequestNetworkConfigAnyOf2ZonePool := _CreateNetworksRequestNetworkConfigAnyOf2ZonePool{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varCreateNetworksRequestNetworkConfigAnyOf2ZonePool)
+	err = json.Unmarshal(data, &varCreateNetworksRequestNetworkConfigAnyOf2ZonePool)
 
 	if err != nil {
 		return err
 	}
 
 	*o = CreateNetworksRequestNetworkConfigAnyOf2ZonePool(varCreateNetworksRequestNetworkConfigAnyOf2ZonePool)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

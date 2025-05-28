@@ -23,7 +23,10 @@ type RunWorkflowInstance200Response struct {
 	Success *bool `json:"success,omitempty"`
 	// Process ID to track execution results with, use `/api/processes/$processId`
 	ProcessId *int64 `json:"processId,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _RunWorkflowInstance200Response RunWorkflowInstance200Response
 
 // NewRunWorkflowInstance200Response instantiates a new RunWorkflowInstance200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -122,7 +125,34 @@ func (o RunWorkflowInstance200Response) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.ProcessId) {
 		toSerialize["processId"] = o.ProcessId
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *RunWorkflowInstance200Response) UnmarshalJSON(data []byte) (err error) {
+	varRunWorkflowInstance200Response := _RunWorkflowInstance200Response{}
+
+	err = json.Unmarshal(data, &varRunWorkflowInstance200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = RunWorkflowInstance200Response(varRunWorkflowInstance200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "success")
+		delete(additionalProperties, "processId")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableRunWorkflowInstance200Response struct {

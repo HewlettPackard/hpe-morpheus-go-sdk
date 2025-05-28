@@ -24,7 +24,10 @@ type ListBillingAccount200ResponseAllOfBillingInfoZonesInnerComputeServers struc
 	Cost *float32 `json:"cost,omitempty"`
 	Servers []map[string]interface{} `json:"servers,omitempty"`
 	Count *int64 `json:"count,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListBillingAccount200ResponseAllOfBillingInfoZonesInnerComputeServers ListBillingAccount200ResponseAllOfBillingInfoZonesInnerComputeServers
 
 // NewListBillingAccount200ResponseAllOfBillingInfoZonesInnerComputeServers instantiates a new ListBillingAccount200ResponseAllOfBillingInfoZonesInnerComputeServers object
 // This constructor will assign default values to properties that have it defined,
@@ -193,7 +196,36 @@ func (o ListBillingAccount200ResponseAllOfBillingInfoZonesInnerComputeServers) T
 	if !IsNil(o.Count) {
 		toSerialize["count"] = o.Count
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListBillingAccount200ResponseAllOfBillingInfoZonesInnerComputeServers) UnmarshalJSON(data []byte) (err error) {
+	varListBillingAccount200ResponseAllOfBillingInfoZonesInnerComputeServers := _ListBillingAccount200ResponseAllOfBillingInfoZonesInnerComputeServers{}
+
+	err = json.Unmarshal(data, &varListBillingAccount200ResponseAllOfBillingInfoZonesInnerComputeServers)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListBillingAccount200ResponseAllOfBillingInfoZonesInnerComputeServers(varListBillingAccount200ResponseAllOfBillingInfoZonesInnerComputeServers)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "price")
+		delete(additionalProperties, "cost")
+		delete(additionalProperties, "servers")
+		delete(additionalProperties, "count")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListBillingAccount200ResponseAllOfBillingInfoZonesInnerComputeServers struct {

@@ -37,7 +37,10 @@ type CreateLoadBalancerVirtualServerRequestLoadBalancerInstance struct {
 	// SSL Server Certificate ID
 	SslServerCert *int64 `json:"sslServerCert,omitempty"`
 	Config *CreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _CreateLoadBalancerVirtualServerRequestLoadBalancerInstance CreateLoadBalancerVirtualServerRequestLoadBalancerInstance
 
 // NewCreateLoadBalancerVirtualServerRequestLoadBalancerInstance instantiates a new CreateLoadBalancerVirtualServerRequestLoadBalancerInstance object
 // This constructor will assign default values to properties that have it defined,
@@ -381,7 +384,41 @@ func (o CreateLoadBalancerVirtualServerRequestLoadBalancerInstance) ToMap() (map
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *CreateLoadBalancerVirtualServerRequestLoadBalancerInstance) UnmarshalJSON(data []byte) (err error) {
+	varCreateLoadBalancerVirtualServerRequestLoadBalancerInstance := _CreateLoadBalancerVirtualServerRequestLoadBalancerInstance{}
+
+	err = json.Unmarshal(data, &varCreateLoadBalancerVirtualServerRequestLoadBalancerInstance)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CreateLoadBalancerVirtualServerRequestLoadBalancerInstance(varCreateLoadBalancerVirtualServerRequestLoadBalancerInstance)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "vipName")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "vipAddress")
+		delete(additionalProperties, "vipPort")
+		delete(additionalProperties, "vipProtocol")
+		delete(additionalProperties, "vipHostname")
+		delete(additionalProperties, "sslCert")
+		delete(additionalProperties, "sslServerCert")
+		delete(additionalProperties, "config")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCreateLoadBalancerVirtualServerRequestLoadBalancerInstance struct {

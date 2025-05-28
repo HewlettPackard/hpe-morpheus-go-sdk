@@ -28,7 +28,10 @@ type GetStateInstance200ResponseAllOfInstance struct {
 	PlanData *string `json:"planData,omitempty"`
 	Input *GetStateInstance200ResponseAllOfInstanceInput `json:"input,omitempty"`
 	Output *GetAppState200ResponseAllOfOutput `json:"output,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetStateInstance200ResponseAllOfInstance GetStateInstance200ResponseAllOfInstance
 
 // NewGetStateInstance200ResponseAllOfInstance instantiates a new GetStateInstance200ResponseAllOfInstance object
 // This constructor will assign default values to properties that have it defined,
@@ -337,7 +340,40 @@ func (o GetStateInstance200ResponseAllOfInstance) ToMap() (map[string]interface{
 	if !IsNil(o.Output) {
 		toSerialize["output"] = o.Output
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetStateInstance200ResponseAllOfInstance) UnmarshalJSON(data []byte) (err error) {
+	varGetStateInstance200ResponseAllOfInstance := _GetStateInstance200ResponseAllOfInstance{}
+
+	err = json.Unmarshal(data, &varGetStateInstance200ResponseAllOfInstance)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetStateInstance200ResponseAllOfInstance(varGetStateInstance200ResponseAllOfInstance)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "workloads")
+		delete(additionalProperties, "iacDrift")
+		delete(additionalProperties, "planResources")
+		delete(additionalProperties, "specs")
+		delete(additionalProperties, "stateData")
+		delete(additionalProperties, "planData")
+		delete(additionalProperties, "input")
+		delete(additionalProperties, "output")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetStateInstance200ResponseAllOfInstance struct {

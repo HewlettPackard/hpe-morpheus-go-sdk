@@ -29,7 +29,10 @@ type ListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner struct {
 	CreateType *string `json:"createType,omitempty"`
 	OptionTypes []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
 	VipOptionTypes []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"vipOptionTypes,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner ListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner
 
 // NewListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner instantiates a new ListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -373,7 +376,41 @@ func (o ListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner) ToMap() (ma
 	if !IsNil(o.VipOptionTypes) {
 		toSerialize["vipOptionTypes"] = o.VipOptionTypes
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner) UnmarshalJSON(data []byte) (err error) {
+	varListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner := _ListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner{}
+
+	err = json.Unmarshal(data, &varListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner(varListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "internal")
+		delete(additionalProperties, "creatable")
+		delete(additionalProperties, "createType")
+		delete(additionalProperties, "optionTypes")
+		delete(additionalProperties, "vipOptionTypes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner struct {

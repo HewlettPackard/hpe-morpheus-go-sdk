@@ -22,7 +22,10 @@ var _ MappedNullable = &UpdateClusterDatastoreRequestDatastorePermissionsResourc
 type UpdateClusterDatastoreRequestDatastorePermissionsResourcePermissionsSitesInner struct {
 	Id *int64 `json:"id,omitempty"`
 	Default *bool `json:"default,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateClusterDatastoreRequestDatastorePermissionsResourcePermissionsSitesInner UpdateClusterDatastoreRequestDatastorePermissionsResourcePermissionsSitesInner
 
 // NewUpdateClusterDatastoreRequestDatastorePermissionsResourcePermissionsSitesInner instantiates a new UpdateClusterDatastoreRequestDatastorePermissionsResourcePermissionsSitesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o UpdateClusterDatastoreRequestDatastorePermissionsResourcePermissionsSite
 	if !IsNil(o.Default) {
 		toSerialize["default"] = o.Default
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateClusterDatastoreRequestDatastorePermissionsResourcePermissionsSitesInner) UnmarshalJSON(data []byte) (err error) {
+	varUpdateClusterDatastoreRequestDatastorePermissionsResourcePermissionsSitesInner := _UpdateClusterDatastoreRequestDatastorePermissionsResourcePermissionsSitesInner{}
+
+	err = json.Unmarshal(data, &varUpdateClusterDatastoreRequestDatastorePermissionsResourcePermissionsSitesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateClusterDatastoreRequestDatastorePermissionsResourcePermissionsSitesInner(varUpdateClusterDatastoreRequestDatastorePermissionsResourcePermissionsSitesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "default")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateClusterDatastoreRequestDatastorePermissionsResourcePermissionsSitesInner struct {

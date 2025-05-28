@@ -35,7 +35,10 @@ type ListNetworkRouterTypes200ResponseNetworkRouterTypesInner struct {
 	RuleOptionTypes []map[string]interface{} `json:"ruleOptionTypes,omitempty"`
 	NatOptionTypes []map[string]interface{} `json:"natOptionTypes,omitempty"`
 	RuleGroupOptionTypes []map[string]interface{} `json:"ruleGroupOptionTypes,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListNetworkRouterTypes200ResponseNetworkRouterTypesInner ListNetworkRouterTypes200ResponseNetworkRouterTypesInner
 
 // NewListNetworkRouterTypes200ResponseNetworkRouterTypesInner instantiates a new ListNetworkRouterTypes200ResponseNetworkRouterTypesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -589,7 +592,47 @@ func (o ListNetworkRouterTypes200ResponseNetworkRouterTypesInner) ToMap() (map[s
 	if !IsNil(o.RuleGroupOptionTypes) {
 		toSerialize["ruleGroupOptionTypes"] = o.RuleGroupOptionTypes
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInner) UnmarshalJSON(data []byte) (err error) {
+	varListNetworkRouterTypes200ResponseNetworkRouterTypesInner := _ListNetworkRouterTypes200ResponseNetworkRouterTypesInner{}
+
+	err = json.Unmarshal(data, &varListNetworkRouterTypes200ResponseNetworkRouterTypesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListNetworkRouterTypes200ResponseNetworkRouterTypesInner(varListNetworkRouterTypes200ResponseNetworkRouterTypesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "creatable")
+		delete(additionalProperties, "selectable")
+		delete(additionalProperties, "hasFirewall")
+		delete(additionalProperties, "hasDhcp")
+		delete(additionalProperties, "hasRouting")
+		delete(additionalProperties, "hasNetworkServer")
+		delete(additionalProperties, "optionTypes")
+		delete(additionalProperties, "ruleOptionTypes")
+		delete(additionalProperties, "natOptionTypes")
+		delete(additionalProperties, "ruleGroupOptionTypes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListNetworkRouterTypes200ResponseNetworkRouterTypesInner struct {

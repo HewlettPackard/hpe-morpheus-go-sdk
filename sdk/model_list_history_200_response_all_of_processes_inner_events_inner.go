@@ -52,7 +52,10 @@ type ListHistory200ResponseAllOfProcessesInnerEventsInner struct {
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
 	CreatedBy *GetClusterHistory200ResponseAllOfProcessesInnerCreatedBy `json:"createdBy,omitempty"`
 	UpdatedBy *GetClusterHistory200ResponseAllOfProcessesInnerCreatedBy `json:"updatedBy,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListHistory200ResponseAllOfProcessesInnerEventsInner ListHistory200ResponseAllOfProcessesInnerEventsInner
 
 // NewListHistory200ResponseAllOfProcessesInnerEventsInner instantiates a new ListHistory200ResponseAllOfProcessesInnerEventsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -1166,7 +1169,63 @@ func (o ListHistory200ResponseAllOfProcessesInnerEventsInner) ToMap() (map[strin
 	if !IsNil(o.UpdatedBy) {
 		toSerialize["updatedBy"] = o.UpdatedBy
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) UnmarshalJSON(data []byte) (err error) {
+	varListHistory200ResponseAllOfProcessesInnerEventsInner := _ListHistory200ResponseAllOfProcessesInnerEventsInner{}
+
+	err = json.Unmarshal(data, &varListHistory200ResponseAllOfProcessesInnerEventsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListHistory200ResponseAllOfProcessesInnerEventsInner(varListHistory200ResponseAllOfProcessesInnerEventsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "processId")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "uniqueId")
+		delete(additionalProperties, "processType")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "refId")
+		delete(additionalProperties, "subType")
+		delete(additionalProperties, "subId")
+		delete(additionalProperties, "zoneId")
+		delete(additionalProperties, "integrationId")
+		delete(additionalProperties, "instanceId")
+		delete(additionalProperties, "containerId")
+		delete(additionalProperties, "serverId")
+		delete(additionalProperties, "containerName")
+		delete(additionalProperties, "displayName")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "reason")
+		delete(additionalProperties, "percent")
+		delete(additionalProperties, "statusEta")
+		delete(additionalProperties, "message")
+		delete(additionalProperties, "output")
+		delete(additionalProperties, "error")
+		delete(additionalProperties, "startDate")
+		delete(additionalProperties, "endDate")
+		delete(additionalProperties, "duration")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "createdBy")
+		delete(additionalProperties, "updatedBy")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListHistory200ResponseAllOfProcessesInnerEventsInner struct {

@@ -26,7 +26,10 @@ type ListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInner struct {
 	Description *string `json:"description,omitempty"`
 	Enabled *bool `json:"enabled,omitempty"`
 	OptionTypes []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInner ListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInner
 
 // NewListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInner instantiates a new ListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -265,7 +268,38 @@ func (o ListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInner) ToMap
 	if !IsNil(o.OptionTypes) {
 		toSerialize["optionTypes"] = o.OptionTypes
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInner) UnmarshalJSON(data []byte) (err error) {
+	varListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInner := _ListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInner{}
+
+	err = json.Unmarshal(data, &varListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInner(varListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "optionTypes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInner struct {

@@ -28,7 +28,10 @@ type GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicable
 	Price *float32 `json:"price,omitempty"`
 	Currency *string `json:"currency,omitempty"`
 	Prices []GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInnerPricesInner `json:"prices,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInner GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInner
 
 // NewGetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInner instantiates a new GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -302,7 +305,39 @@ func (o GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplica
 	if !IsNil(o.Prices) {
 		toSerialize["prices"] = o.Prices
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInner) UnmarshalJSON(data []byte) (err error) {
+	varGetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInner := _GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInner{}
+
+	err = json.Unmarshal(data, &varGetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInner(varGetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "startDate")
+		delete(additionalProperties, "endDate")
+		delete(additionalProperties, "numUnits")
+		delete(additionalProperties, "cost")
+		delete(additionalProperties, "price")
+		delete(additionalProperties, "currency")
+		delete(additionalProperties, "prices")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInner struct {

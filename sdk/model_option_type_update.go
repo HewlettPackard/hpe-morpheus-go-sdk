@@ -45,7 +45,10 @@ type OptionTypeUpdate struct {
 	// Used primarily on tasks and workflows. Basically wether or not the field can be overridden optionally when the object is run
 	Editable *bool `json:"editable,omitempty"`
 	OptionList *AddOptionTypeRequestOptionTypeOptionList `json:"optionList,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _OptionTypeUpdate OptionTypeUpdate
 
 // NewOptionTypeUpdate instantiates a new OptionTypeUpdate object
 // This constructor will assign default values to properties that have it defined,
@@ -545,7 +548,45 @@ func (o OptionTypeUpdate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.OptionList) {
 		toSerialize["optionList"] = o.OptionList
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *OptionTypeUpdate) UnmarshalJSON(data []byte) (err error) {
+	varOptionTypeUpdate := _OptionTypeUpdate{}
+
+	err = json.Unmarshal(data, &varOptionTypeUpdate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = OptionTypeUpdate(varOptionTypeUpdate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "fieldName")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "fieldLabel")
+		delete(additionalProperties, "placeHolder")
+		delete(additionalProperties, "verifyPattern")
+		delete(additionalProperties, "defaultValue")
+		delete(additionalProperties, "required")
+		delete(additionalProperties, "exportMeta")
+		delete(additionalProperties, "editable")
+		delete(additionalProperties, "optionList")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableOptionTypeUpdate struct {

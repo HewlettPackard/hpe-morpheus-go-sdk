@@ -22,7 +22,10 @@ var _ MappedNullable = &UpdateClusterDatastoreRequestDatastorePermissionsResourc
 type UpdateClusterDatastoreRequestDatastorePermissionsResourcePool struct {
 	// Visibility
 	Visibility *string `json:"visibility,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateClusterDatastoreRequestDatastorePermissionsResourcePool UpdateClusterDatastoreRequestDatastorePermissionsResourcePool
 
 // NewUpdateClusterDatastoreRequestDatastorePermissionsResourcePool instantiates a new UpdateClusterDatastoreRequestDatastorePermissionsResourcePool object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o UpdateClusterDatastoreRequestDatastorePermissionsResourcePool) ToMap() (
 	if !IsNil(o.Visibility) {
 		toSerialize["visibility"] = o.Visibility
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateClusterDatastoreRequestDatastorePermissionsResourcePool) UnmarshalJSON(data []byte) (err error) {
+	varUpdateClusterDatastoreRequestDatastorePermissionsResourcePool := _UpdateClusterDatastoreRequestDatastorePermissionsResourcePool{}
+
+	err = json.Unmarshal(data, &varUpdateClusterDatastoreRequestDatastorePermissionsResourcePool)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateClusterDatastoreRequestDatastorePermissionsResourcePool(varUpdateClusterDatastoreRequestDatastorePermissionsResourcePool)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "visibility")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateClusterDatastoreRequestDatastorePermissionsResourcePool struct {

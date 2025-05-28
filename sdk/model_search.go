@@ -24,7 +24,10 @@ type Search struct {
 	Query *string `json:"query,omitempty"`
 	Took *int64 `json:"took,omitempty"`
 	Meta *Search200ResponseMeta `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _Search Search
 
 // NewSearch instantiates a new Search object
 // This constructor will assign default values to properties that have it defined,
@@ -193,7 +196,36 @@ func (o Search) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Meta) {
 		toSerialize["meta"] = o.Meta
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *Search) UnmarshalJSON(data []byte) (err error) {
+	varSearch := _Search{}
+
+	err = json.Unmarshal(data, &varSearch)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Search(varSearch)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "hits")
+		delete(additionalProperties, "query")
+		delete(additionalProperties, "took")
+		delete(additionalProperties, "meta")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableSearch struct {

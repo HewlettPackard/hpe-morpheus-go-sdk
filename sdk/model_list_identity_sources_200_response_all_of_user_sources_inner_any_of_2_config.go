@@ -29,7 +29,10 @@ type ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2Config struct {
 	RequiredGroupDN *string `json:"requiredGroupDN,omitempty"`
 	SearchMemberGroups *bool `json:"searchMemberGroups,omitempty"`
 	BindingPasswordHash *string `json:"bindingPasswordHash,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2Config ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2Config
 
 // NewListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2Config instantiates a new ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2Config object
 // This constructor will assign default values to properties that have it defined,
@@ -373,7 +376,41 @@ func (o ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2Config) ToMap()
 	if !IsNil(o.BindingPasswordHash) {
 		toSerialize["bindingPasswordHash"] = o.BindingPasswordHash
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2Config) UnmarshalJSON(data []byte) (err error) {
+	varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2Config := _ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2Config{}
+
+	err = json.Unmarshal(data, &varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2Config)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2Config(varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2Config)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "url")
+		delete(additionalProperties, "domain")
+		delete(additionalProperties, "useSSL")
+		delete(additionalProperties, "bindingUsername")
+		delete(additionalProperties, "bindingPassword")
+		delete(additionalProperties, "requiredGroup")
+		delete(additionalProperties, "requiredGroupDN")
+		delete(additionalProperties, "searchMemberGroups")
+		delete(additionalProperties, "bindingPasswordHash")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2Config struct {

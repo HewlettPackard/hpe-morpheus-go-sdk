@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -34,6 +33,7 @@ type AddExecuteSchedulesRequestSchedule struct {
 	Cron *string `json:"cron,omitempty"`
 	// Is enabled
 	Enabled *bool `json:"enabled,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddExecuteSchedulesRequestSchedule AddExecuteSchedulesRequestSchedule
@@ -278,6 +278,11 @@ func (o AddExecuteSchedulesRequestSchedule) ToMap() (map[string]interface{}, err
 	if !IsNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -305,15 +310,25 @@ func (o *AddExecuteSchedulesRequestSchedule) UnmarshalJSON(data []byte) (err err
 
 	varAddExecuteSchedulesRequestSchedule := _AddExecuteSchedulesRequestSchedule{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddExecuteSchedulesRequestSchedule)
+	err = json.Unmarshal(data, &varAddExecuteSchedulesRequestSchedule)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddExecuteSchedulesRequestSchedule(varAddExecuteSchedulesRequestSchedule)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "scheduleType")
+		delete(additionalProperties, "scheduleTimezone")
+		delete(additionalProperties, "cron")
+		delete(additionalProperties, "enabled")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

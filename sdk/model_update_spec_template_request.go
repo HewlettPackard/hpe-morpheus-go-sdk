@@ -21,7 +21,10 @@ var _ MappedNullable = &UpdateSpecTemplateRequest{}
 // UpdateSpecTemplateRequest struct for UpdateSpecTemplateRequest
 type UpdateSpecTemplateRequest struct {
 	SpecTemplate *UpdateSpecTemplateRequestSpecTemplate `json:"specTemplate,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateSpecTemplateRequest UpdateSpecTemplateRequest
 
 // NewUpdateSpecTemplateRequest instantiates a new UpdateSpecTemplateRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o UpdateSpecTemplateRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.SpecTemplate) {
 		toSerialize["specTemplate"] = o.SpecTemplate
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateSpecTemplateRequest) UnmarshalJSON(data []byte) (err error) {
+	varUpdateSpecTemplateRequest := _UpdateSpecTemplateRequest{}
+
+	err = json.Unmarshal(data, &varUpdateSpecTemplateRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateSpecTemplateRequest(varUpdateSpecTemplateRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "specTemplate")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateSpecTemplateRequest struct {

@@ -34,7 +34,10 @@ type ListHealth200ResponseAllOfHealthDatabase struct {
 	InnodbStats *ListHealth200ResponseAllOfHealthDatabaseInnodbStats `json:"innodbStats,omitempty"`
 	ScanPercent *float32 `json:"scanPercent,omitempty"`
 	Status *string `json:"status,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListHealth200ResponseAllOfHealthDatabase ListHealth200ResponseAllOfHealthDatabase
 
 // NewListHealth200ResponseAllOfHealthDatabase instantiates a new ListHealth200ResponseAllOfHealthDatabase object
 // This constructor will assign default values to properties that have it defined,
@@ -553,7 +556,46 @@ func (o ListHealth200ResponseAllOfHealthDatabase) ToMap() (map[string]interface{
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListHealth200ResponseAllOfHealthDatabase) UnmarshalJSON(data []byte) (err error) {
+	varListHealth200ResponseAllOfHealthDatabase := _ListHealth200ResponseAllOfHealthDatabase{}
+
+	err = json.Unmarshal(data, &varListHealth200ResponseAllOfHealthDatabase)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListHealth200ResponseAllOfHealthDatabase(varListHealth200ResponseAllOfHealthDatabase)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "success")
+		delete(additionalProperties, "connectionList")
+		delete(additionalProperties, "busyConnections")
+		delete(additionalProperties, "maxConnections")
+		delete(additionalProperties, "maxUsedConnections")
+		delete(additionalProperties, "usedConnections")
+		delete(additionalProperties, "abortedConnections")
+		delete(additionalProperties, "innodbStatus")
+		delete(additionalProperties, "stats")
+		delete(additionalProperties, "scans")
+		delete(additionalProperties, "slowQueries")
+		delete(additionalProperties, "innodbStats")
+		delete(additionalProperties, "scanPercent")
+		delete(additionalProperties, "status")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListHealth200ResponseAllOfHealthDatabase struct {

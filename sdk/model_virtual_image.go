@@ -67,7 +67,10 @@ type VirtualImage struct {
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
 	Status *string `json:"status,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _VirtualImage VirtualImage
 
 // NewVirtualImage instantiates a new VirtualImage object
 // This constructor will assign default values to properties that have it defined,
@@ -1706,7 +1709,78 @@ func (o VirtualImage) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *VirtualImage) UnmarshalJSON(data []byte) (err error) {
+	varVirtualImage := _VirtualImage{}
+
+	err = json.Unmarshal(data, &varVirtualImage)
+
+	if err != nil {
+		return err
+	}
+
+	*o = VirtualImage(varVirtualImage)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "ownerId")
+		delete(additionalProperties, "tenant")
+		delete(additionalProperties, "imageType")
+		delete(additionalProperties, "userUploaded")
+		delete(additionalProperties, "userDefined")
+		delete(additionalProperties, "systemImage")
+		delete(additionalProperties, "isCloudInit")
+		delete(additionalProperties, "sshUsername")
+		delete(additionalProperties, "sshPassword")
+		delete(additionalProperties, "sshPasswordHash")
+		delete(additionalProperties, "sshKey")
+		delete(additionalProperties, "osType")
+		delete(additionalProperties, "minRam")
+		delete(additionalProperties, "minRamGB")
+		delete(additionalProperties, "minDisk")
+		delete(additionalProperties, "minDiskGB")
+		delete(additionalProperties, "rawSize")
+		delete(additionalProperties, "rawSizeGB")
+		delete(additionalProperties, "trialVersion")
+		delete(additionalProperties, "virtioSupported")
+		delete(additionalProperties, "uefi")
+		delete(additionalProperties, "isAutoJoinDomain")
+		delete(additionalProperties, "vmToolsInstalled")
+		delete(additionalProperties, "installAgent")
+		delete(additionalProperties, "isForceCustomization")
+		delete(additionalProperties, "isSysprep")
+		delete(additionalProperties, "fipsEnabled")
+		delete(additionalProperties, "userData")
+		delete(additionalProperties, "consoleKeymap")
+		delete(additionalProperties, "storageProvider")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "accounts")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "volumes")
+		delete(additionalProperties, "storageControllers")
+		delete(additionalProperties, "networkInterfaces")
+		delete(additionalProperties, "tags")
+		delete(additionalProperties, "locations")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "status")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableVirtualImage struct {

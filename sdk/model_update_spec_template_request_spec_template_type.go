@@ -22,7 +22,10 @@ var _ MappedNullable = &UpdateSpecTemplateRequestSpecTemplateType{}
 type UpdateSpecTemplateRequestSpecTemplateType struct {
 	// Spec Template Type. i.e. arm, cloudFormation, helm, kubernetes, oneview, terraform, ucs.
 	Code *string `json:"code,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateSpecTemplateRequestSpecTemplateType UpdateSpecTemplateRequestSpecTemplateType
 
 // NewUpdateSpecTemplateRequestSpecTemplateType instantiates a new UpdateSpecTemplateRequestSpecTemplateType object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o UpdateSpecTemplateRequestSpecTemplateType) ToMap() (map[string]interface
 	if !IsNil(o.Code) {
 		toSerialize["code"] = o.Code
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateSpecTemplateRequestSpecTemplateType) UnmarshalJSON(data []byte) (err error) {
+	varUpdateSpecTemplateRequestSpecTemplateType := _UpdateSpecTemplateRequestSpecTemplateType{}
+
+	err = json.Unmarshal(data, &varUpdateSpecTemplateRequestSpecTemplateType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateSpecTemplateRequestSpecTemplateType(varUpdateSpecTemplateRequestSpecTemplateType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "code")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateSpecTemplateRequestSpecTemplateType struct {

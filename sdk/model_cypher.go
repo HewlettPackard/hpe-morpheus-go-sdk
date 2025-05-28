@@ -29,7 +29,10 @@ type Cypher struct {
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
 	LastAccessed *time.Time `json:"lastAccessed,omitempty"`
 	CreatedBy *string `json:"createdBy,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _Cypher Cypher
 
 // NewCypher instantiates a new Cypher object
 // This constructor will assign default values to properties that have it defined,
@@ -338,7 +341,40 @@ func (o Cypher) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CreatedBy) {
 		toSerialize["createdBy"] = o.CreatedBy
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *Cypher) UnmarshalJSON(data []byte) (err error) {
+	varCypher := _Cypher{}
+
+	err = json.Unmarshal(data, &varCypher)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Cypher(varCypher)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "itemKey")
+		delete(additionalProperties, "leaseTimeout")
+		delete(additionalProperties, "expireDate")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "lastAccessed")
+		delete(additionalProperties, "createdBy")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCypher struct {

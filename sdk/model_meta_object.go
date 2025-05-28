@@ -28,7 +28,10 @@ type MetaObject struct {
 	Size *int64 `json:"size,omitempty"`
 	// Total number of records found
 	Total *int64 `json:"total,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _MetaObject MetaObject
 
 // NewMetaObject instantiates a new MetaObject object
 // This constructor will assign default values to properties that have it defined,
@@ -213,7 +216,36 @@ func (o MetaObject) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Total) {
 		toSerialize["total"] = o.Total
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *MetaObject) UnmarshalJSON(data []byte) (err error) {
+	varMetaObject := _MetaObject{}
+
+	err = json.Unmarshal(data, &varMetaObject)
+
+	if err != nil {
+		return err
+	}
+
+	*o = MetaObject(varMetaObject)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "offset")
+		delete(additionalProperties, "max")
+		delete(additionalProperties, "size")
+		delete(additionalProperties, "total")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableMetaObject struct {

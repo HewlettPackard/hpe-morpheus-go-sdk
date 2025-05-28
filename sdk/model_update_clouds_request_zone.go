@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -68,6 +67,7 @@ type UpdateCloudsRequestZone struct {
 	DefaultCloudLogos *bool `json:"defaultCloudLogos,omitempty"`
 	// Map containing Credential ID. `local` means use the values set in the local cloud config instead of associating a credential.
 	Credential map[string]interface{} `json:"credential"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateCloudsRequestZone UpdateCloudsRequestZone
@@ -890,6 +890,11 @@ func (o UpdateCloudsRequestZone) ToMap() (map[string]interface{}, error) {
 		toSerialize["defaultCloudLogos"] = o.DefaultCloudLogos
 	}
 	toSerialize["credential"] = o.Credential
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -920,15 +925,42 @@ func (o *UpdateCloudsRequestZone) UnmarshalJSON(data []byte) (err error) {
 
 	varUpdateCloudsRequestZone := _UpdateCloudsRequestZone{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varUpdateCloudsRequestZone)
+	err = json.Unmarshal(data, &varUpdateCloudsRequestZone)
 
 	if err != nil {
 		return err
 	}
 
 	*o = UpdateCloudsRequestZone(varUpdateCloudsRequestZone)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "location")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "zoneType")
+		delete(additionalProperties, "groupId")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "autoRecoverPowerState")
+		delete(additionalProperties, "scalePriority")
+		delete(additionalProperties, "defaultDatastoreSyncActive")
+		delete(additionalProperties, "defaultNetworkSyncActive")
+		delete(additionalProperties, "defaultFolderSyncActive")
+		delete(additionalProperties, "defaultSecurityGroupSyncActive")
+		delete(additionalProperties, "defaultPoolSyncActive")
+		delete(additionalProperties, "defaultPlanSyncActive")
+		delete(additionalProperties, "linkedAccountId")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "securityMode")
+		delete(additionalProperties, "defaultCloudLogos")
+		delete(additionalProperties, "credential")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

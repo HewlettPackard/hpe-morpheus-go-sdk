@@ -22,7 +22,10 @@ var _ MappedNullable = &UpdateWikiApp200Response{}
 type UpdateWikiApp200Response struct {
 	Page *GetWikiApp200ResponsePage `json:"page,omitempty"`
 	Success *bool `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateWikiApp200Response UpdateWikiApp200Response
 
 // NewUpdateWikiApp200Response instantiates a new UpdateWikiApp200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o UpdateWikiApp200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Success) {
 		toSerialize["success"] = o.Success
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateWikiApp200Response) UnmarshalJSON(data []byte) (err error) {
+	varUpdateWikiApp200Response := _UpdateWikiApp200Response{}
+
+	err = json.Unmarshal(data, &varUpdateWikiApp200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateWikiApp200Response(varUpdateWikiApp200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "page")
+		delete(additionalProperties, "success")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateWikiApp200Response struct {

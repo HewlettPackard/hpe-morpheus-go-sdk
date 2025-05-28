@@ -39,7 +39,10 @@ type SecurityScan struct {
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
 	// Results Summary (only returned when using query parameter results=true)
 	Results map[string]interface{} `json:"results,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _SecurityScan SecurityScan
 
 // NewSecurityScan instantiates a new SecurityScan object
 // This constructor will assign default values to properties that have it defined,
@@ -663,7 +666,49 @@ func (o SecurityScan) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Results) {
 		toSerialize["results"] = o.Results
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *SecurityScan) UnmarshalJSON(data []byte) (err error) {
+	varSecurityScan := _SecurityScan{}
+
+	err = json.Unmarshal(data, &varSecurityScan)
+
+	if err != nil {
+		return err
+	}
+
+	*o = SecurityScan(varSecurityScan)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "securityPackage")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "scanDate")
+		delete(additionalProperties, "scanDuration")
+		delete(additionalProperties, "testCount")
+		delete(additionalProperties, "runCount")
+		delete(additionalProperties, "passCount")
+		delete(additionalProperties, "failCount")
+		delete(additionalProperties, "otherCount")
+		delete(additionalProperties, "scanScore")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "createdBy")
+		delete(additionalProperties, "updatedBy")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "results")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableSecurityScan struct {

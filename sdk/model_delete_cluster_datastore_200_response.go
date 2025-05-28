@@ -22,7 +22,10 @@ var _ MappedNullable = &DeleteClusterDatastore200Response{}
 type DeleteClusterDatastore200Response struct {
 	Success *bool `json:"success,omitempty"`
 	ExecutionId *string `json:"executionId,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _DeleteClusterDatastore200Response DeleteClusterDatastore200Response
 
 // NewDeleteClusterDatastore200Response instantiates a new DeleteClusterDatastore200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o DeleteClusterDatastore200Response) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.ExecutionId) {
 		toSerialize["executionId"] = o.ExecutionId
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *DeleteClusterDatastore200Response) UnmarshalJSON(data []byte) (err error) {
+	varDeleteClusterDatastore200Response := _DeleteClusterDatastore200Response{}
+
+	err = json.Unmarshal(data, &varDeleteClusterDatastore200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = DeleteClusterDatastore200Response(varDeleteClusterDatastore200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "success")
+		delete(additionalProperties, "executionId")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableDeleteClusterDatastore200Response struct {

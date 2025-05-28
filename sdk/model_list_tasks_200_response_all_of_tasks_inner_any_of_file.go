@@ -26,7 +26,10 @@ type ListTasks200ResponseAllOfTasksInnerAnyOfFile struct {
 	ContentPath *string `json:"contentPath,omitempty"`
 	Repository *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"repository,omitempty"`
 	Content *string `json:"content,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListTasks200ResponseAllOfTasksInnerAnyOfFile ListTasks200ResponseAllOfTasksInnerAnyOfFile
 
 // NewListTasks200ResponseAllOfTasksInnerAnyOfFile instantiates a new ListTasks200ResponseAllOfTasksInnerAnyOfFile object
 // This constructor will assign default values to properties that have it defined,
@@ -265,7 +268,38 @@ func (o ListTasks200ResponseAllOfTasksInnerAnyOfFile) ToMap() (map[string]interf
 	if !IsNil(o.Content) {
 		toSerialize["content"] = o.Content
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOfFile) UnmarshalJSON(data []byte) (err error) {
+	varListTasks200ResponseAllOfTasksInnerAnyOfFile := _ListTasks200ResponseAllOfTasksInnerAnyOfFile{}
+
+	err = json.Unmarshal(data, &varListTasks200ResponseAllOfTasksInnerAnyOfFile)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListTasks200ResponseAllOfTasksInnerAnyOfFile(varListTasks200ResponseAllOfTasksInnerAnyOfFile)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "sourceType")
+		delete(additionalProperties, "contentRef")
+		delete(additionalProperties, "contentPath")
+		delete(additionalProperties, "repository")
+		delete(additionalProperties, "content")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListTasks200ResponseAllOfTasksInnerAnyOfFile struct {

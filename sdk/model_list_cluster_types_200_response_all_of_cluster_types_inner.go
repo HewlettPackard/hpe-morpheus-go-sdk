@@ -42,7 +42,10 @@ type ListClusterTypes200ResponseAllOfClusterTypesInner struct {
 	OptionTypes []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
 	ControllerTypes []ListClusterTypes200ResponseAllOfClusterTypesInnerControllerTypesInner `json:"controllerTypes,omitempty"`
 	WorkerTypes []ListClusterTypes200ResponseAllOfClusterTypesInnerControllerTypesInner `json:"workerTypes,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListClusterTypes200ResponseAllOfClusterTypesInner ListClusterTypes200ResponseAllOfClusterTypesInner
 
 // NewListClusterTypes200ResponseAllOfClusterTypesInner instantiates a new ListClusterTypes200ResponseAllOfClusterTypesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -841,7 +844,54 @@ func (o ListClusterTypes200ResponseAllOfClusterTypesInner) ToMap() (map[string]i
 	if !IsNil(o.WorkerTypes) {
 		toSerialize["workerTypes"] = o.WorkerTypes
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListClusterTypes200ResponseAllOfClusterTypesInner) UnmarshalJSON(data []byte) (err error) {
+	varListClusterTypes200ResponseAllOfClusterTypesInner := _ListClusterTypes200ResponseAllOfClusterTypesInner{}
+
+	err = json.Unmarshal(data, &varListClusterTypes200ResponseAllOfClusterTypesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListClusterTypes200ResponseAllOfClusterTypesInner(varListClusterTypes200ResponseAllOfClusterTypesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "deployTargetService")
+		delete(additionalProperties, "shortName")
+		delete(additionalProperties, "providerType")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "hostService")
+		delete(additionalProperties, "managed")
+		delete(additionalProperties, "hasMasters")
+		delete(additionalProperties, "hasWorkers")
+		delete(additionalProperties, "viewSet")
+		delete(additionalProperties, "imageCode")
+		delete(additionalProperties, "kubeCtlLocal")
+		delete(additionalProperties, "hasDatastore")
+		delete(additionalProperties, "supportsCloudScaling")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "hasDefaultDataDisk")
+		delete(additionalProperties, "canManage")
+		delete(additionalProperties, "hasCluster")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "optionTypes")
+		delete(additionalProperties, "controllerTypes")
+		delete(additionalProperties, "workerTypes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListClusterTypes200ResponseAllOfClusterTypesInner struct {

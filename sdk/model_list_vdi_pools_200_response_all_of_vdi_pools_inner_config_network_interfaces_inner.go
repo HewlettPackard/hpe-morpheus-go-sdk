@@ -25,7 +25,10 @@ type ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner struc
 	IpMode *string `json:"ipMode,omitempty"`
 	ShowNetworkPoolLabel *bool `json:"showNetworkPoolLabel,omitempty"`
 	ShowNetworkDhcpLabel *bool `json:"showNetworkDhcpLabel,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner
 
 // NewListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner instantiates a new ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -229,7 +232,37 @@ func (o ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner) T
 	if !IsNil(o.ShowNetworkDhcpLabel) {
 		toSerialize["showNetworkDhcpLabel"] = o.ShowNetworkDhcpLabel
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner) UnmarshalJSON(data []byte) (err error) {
+	varListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner := _ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner{}
+
+	err = json.Unmarshal(data, &varListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner(varListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "primaryInterface")
+		delete(additionalProperties, "network")
+		delete(additionalProperties, "ipMode")
+		delete(additionalProperties, "showNetworkPoolLabel")
+		delete(additionalProperties, "showNetworkDhcpLabel")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner struct {

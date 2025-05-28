@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -32,6 +31,7 @@ type AddBlueprintRequestOneOf5 struct {
 	Labels []string `json:"labels,omitempty"`
 	Terraform AddBlueprintRequestOneOf5Terraform `json:"terraform"`
 	Config *AddBlueprintRequestOneOf5Config `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddBlueprintRequestOneOf5 AddBlueprintRequestOneOf5
@@ -246,6 +246,11 @@ func (o AddBlueprintRequestOneOf5) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -275,15 +280,25 @@ func (o *AddBlueprintRequestOneOf5) UnmarshalJSON(data []byte) (err error) {
 
 	varAddBlueprintRequestOneOf5 := _AddBlueprintRequestOneOf5{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddBlueprintRequestOneOf5)
+	err = json.Unmarshal(data, &varAddBlueprintRequestOneOf5)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddBlueprintRequestOneOf5(varAddBlueprintRequestOneOf5)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "image")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "terraform")
+		delete(additionalProperties, "config")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

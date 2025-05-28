@@ -22,7 +22,10 @@ var _ MappedNullable = &UpdateProvisioningSettingsRequestProvisioningSettingsDep
 type UpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvider struct {
 	// Deployment archive storage provider ID
 	Id *int64 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvider UpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvider
 
 // NewUpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvider instantiates a new UpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvider object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o UpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvid
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvider) UnmarshalJSON(data []byte) (err error) {
+	varUpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvider := _UpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvider{}
+
+	err = json.Unmarshal(data, &varUpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvider)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvider(varUpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvider)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvider struct {

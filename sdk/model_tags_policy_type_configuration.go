@@ -24,7 +24,10 @@ type TagsPolicyTypeConfiguration struct {
 	Key *string `json:"key,omitempty"`
 	ValueListId *string `json:"valueListId,omitempty"`
 	Value *string `json:"value,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _TagsPolicyTypeConfiguration TagsPolicyTypeConfiguration
 
 // NewTagsPolicyTypeConfiguration instantiates a new TagsPolicyTypeConfiguration object
 // This constructor will assign default values to properties that have it defined,
@@ -193,7 +196,36 @@ func (o TagsPolicyTypeConfiguration) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Value) {
 		toSerialize["value"] = o.Value
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *TagsPolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
+	varTagsPolicyTypeConfiguration := _TagsPolicyTypeConfiguration{}
+
+	err = json.Unmarshal(data, &varTagsPolicyTypeConfiguration)
+
+	if err != nil {
+		return err
+	}
+
+	*o = TagsPolicyTypeConfiguration(varTagsPolicyTypeConfiguration)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "strict")
+		delete(additionalProperties, "key")
+		delete(additionalProperties, "valueListId")
+		delete(additionalProperties, "value")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableTagsPolicyTypeConfiguration struct {

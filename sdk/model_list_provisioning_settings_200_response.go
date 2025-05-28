@@ -21,7 +21,10 @@ var _ MappedNullable = &ListProvisioningSettings200Response{}
 // ListProvisioningSettings200Response struct for ListProvisioningSettings200Response
 type ListProvisioningSettings200Response struct {
 	ProvisioningSettings *ListProvisioningSettings200ResponseProvisioningSettings `json:"provisioningSettings,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListProvisioningSettings200Response ListProvisioningSettings200Response
 
 // NewListProvisioningSettings200Response instantiates a new ListProvisioningSettings200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o ListProvisioningSettings200Response) ToMap() (map[string]interface{}, er
 	if !IsNil(o.ProvisioningSettings) {
 		toSerialize["provisioningSettings"] = o.ProvisioningSettings
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListProvisioningSettings200Response) UnmarshalJSON(data []byte) (err error) {
+	varListProvisioningSettings200Response := _ListProvisioningSettings200Response{}
+
+	err = json.Unmarshal(data, &varListProvisioningSettings200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListProvisioningSettings200Response(varListProvisioningSettings200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "provisioningSettings")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListProvisioningSettings200Response struct {

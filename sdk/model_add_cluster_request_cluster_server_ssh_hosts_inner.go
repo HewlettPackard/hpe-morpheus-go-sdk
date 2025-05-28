@@ -24,7 +24,10 @@ type AddClusterRequestClusterServerSshHostsInner struct {
 	Ip *string `json:"ip,omitempty"`
 	// Host Name
 	Name *string `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddClusterRequestClusterServerSshHostsInner AddClusterRequestClusterServerSshHostsInner
 
 // NewAddClusterRequestClusterServerSshHostsInner instantiates a new AddClusterRequestClusterServerSshHostsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -123,7 +126,34 @@ func (o AddClusterRequestClusterServerSshHostsInner) ToMap() (map[string]interfa
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddClusterRequestClusterServerSshHostsInner) UnmarshalJSON(data []byte) (err error) {
+	varAddClusterRequestClusterServerSshHostsInner := _AddClusterRequestClusterServerSshHostsInner{}
+
+	err = json.Unmarshal(data, &varAddClusterRequestClusterServerSshHostsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddClusterRequestClusterServerSshHostsInner(varAddClusterRequestClusterServerSshHostsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "ip")
+		delete(additionalProperties, "name")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddClusterRequestClusterServerSshHostsInner struct {

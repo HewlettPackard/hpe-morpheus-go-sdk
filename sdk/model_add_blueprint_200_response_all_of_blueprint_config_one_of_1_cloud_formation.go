@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -34,6 +33,7 @@ type AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation struct {
 	CAPABILITY_AUTO_EXPAND *AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationCAPABILITYAUTOEXPAND `json:"CAPABILITY_AUTO_EXPAND,omitempty"`
 	InstallAgent *AddBlueprintRequestOneOfArmInstallAgent `json:"installAgent,omitempty"`
 	CloudInitEnabled *AddBlueprintRequestOneOfArmCloudInitEnabled `json:"cloudInitEnabled,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation
@@ -371,6 +371,11 @@ func (o AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation) ToMap()
 	if !IsNil(o.CloudInitEnabled) {
 		toSerialize["cloudInitEnabled"] = o.CloudInitEnabled
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -398,15 +403,28 @@ func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation) Unmars
 
 	varAddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation := _AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation)
+	err = json.Unmarshal(data, &varAddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation(varAddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "configType")
+		delete(additionalProperties, "json")
+		delete(additionalProperties, "yaml")
+		delete(additionalProperties, "git")
+		delete(additionalProperties, "IAM")
+		delete(additionalProperties, "CAPABILITY_NAMED_IAM")
+		delete(additionalProperties, "CAPABILITY_AUTO_EXPAND")
+		delete(additionalProperties, "installAgent")
+		delete(additionalProperties, "cloudInitEnabled")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -23,6 +22,7 @@ var _ MappedNullable = &AcknowledgeHealthAlarmsRequest{}
 // AcknowledgeHealthAlarmsRequest struct for AcknowledgeHealthAlarmsRequest
 type AcknowledgeHealthAlarmsRequest struct {
 	Alarm AcknowledgeHealthAlarmsRequestAlarm `json:"alarm"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AcknowledgeHealthAlarmsRequest AcknowledgeHealthAlarmsRequest
@@ -80,6 +80,11 @@ func (o AcknowledgeHealthAlarmsRequest) MarshalJSON() ([]byte, error) {
 func (o AcknowledgeHealthAlarmsRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["alarm"] = o.Alarm
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -107,15 +112,20 @@ func (o *AcknowledgeHealthAlarmsRequest) UnmarshalJSON(data []byte) (err error) 
 
 	varAcknowledgeHealthAlarmsRequest := _AcknowledgeHealthAlarmsRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAcknowledgeHealthAlarmsRequest)
+	err = json.Unmarshal(data, &varAcknowledgeHealthAlarmsRequest)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AcknowledgeHealthAlarmsRequest(varAcknowledgeHealthAlarmsRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "alarm")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

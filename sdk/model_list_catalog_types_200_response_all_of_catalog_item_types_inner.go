@@ -30,7 +30,10 @@ type ListCatalogTypes200ResponseAllOfCatalogItemTypesInner struct {
 	ImagePath *string `json:"imagePath,omitempty"`
 	DarkImagePath *string `json:"darkImagePath,omitempty"`
 	FormType *string `json:"formType,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListCatalogTypes200ResponseAllOfCatalogItemTypesInner ListCatalogTypes200ResponseAllOfCatalogItemTypesInner
 
 // NewListCatalogTypes200ResponseAllOfCatalogItemTypesInner instantiates a new ListCatalogTypes200ResponseAllOfCatalogItemTypesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -409,7 +412,42 @@ func (o ListCatalogTypes200ResponseAllOfCatalogItemTypesInner) ToMap() (map[stri
 	if !IsNil(o.FormType) {
 		toSerialize["formType"] = o.FormType
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListCatalogTypes200ResponseAllOfCatalogItemTypesInner) UnmarshalJSON(data []byte) (err error) {
+	varListCatalogTypes200ResponseAllOfCatalogItemTypesInner := _ListCatalogTypes200ResponseAllOfCatalogItemTypesInner{}
+
+	err = json.Unmarshal(data, &varListCatalogTypes200ResponseAllOfCatalogItemTypesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListCatalogTypes200ResponseAllOfCatalogItemTypesInner(varListCatalogTypes200ResponseAllOfCatalogItemTypesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "context")
+		delete(additionalProperties, "featured")
+		delete(additionalProperties, "allowQuantity")
+		delete(additionalProperties, "imagePath")
+		delete(additionalProperties, "darkImagePath")
+		delete(additionalProperties, "formType")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListCatalogTypes200ResponseAllOfCatalogItemTypesInner struct {

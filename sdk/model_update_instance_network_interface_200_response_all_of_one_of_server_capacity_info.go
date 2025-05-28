@@ -30,7 +30,10 @@ type UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerCapacityInfo struc
 	UsedMemory *int64 `json:"usedMemory,omitempty"`
 	MaxCores *int64 `json:"maxCores,omitempty"`
 	MaxStorage *int64 `json:"maxStorage,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerCapacityInfo UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerCapacityInfo
 
 // NewUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerCapacityInfo instantiates a new UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerCapacityInfo object
 // This constructor will assign default values to properties that have it defined,
@@ -409,7 +412,42 @@ func (o UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerCapacityInfo) T
 	if !IsNil(o.MaxStorage) {
 		toSerialize["maxStorage"] = o.MaxStorage
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerCapacityInfo) UnmarshalJSON(data []byte) (err error) {
+	varUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerCapacityInfo := _UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerCapacityInfo{}
+
+	err = json.Unmarshal(data, &varUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerCapacityInfo)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerCapacityInfo(varUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerCapacityInfo)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "maxMemory")
+		delete(additionalProperties, "server")
+		delete(additionalProperties, "usedStorage")
+		delete(additionalProperties, "version")
+		delete(additionalProperties, "maxCpu")
+		delete(additionalProperties, "usedCores")
+		delete(additionalProperties, "usedMemory")
+		delete(additionalProperties, "maxCores")
+		delete(additionalProperties, "maxStorage")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerCapacityInfo struct {

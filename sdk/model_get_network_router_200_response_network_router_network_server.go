@@ -23,7 +23,10 @@ type GetNetworkRouter200ResponseNetworkRouterNetworkServer struct {
 	Id *int64 `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
 	Integration *GetNetworkRouter200ResponseNetworkRouterNetworkServerIntegration `json:"integration,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetNetworkRouter200ResponseNetworkRouterNetworkServer GetNetworkRouter200ResponseNetworkRouterNetworkServer
 
 // NewGetNetworkRouter200ResponseNetworkRouterNetworkServer instantiates a new GetNetworkRouter200ResponseNetworkRouterNetworkServer object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o GetNetworkRouter200ResponseNetworkRouterNetworkServer) ToMap() (map[stri
 	if !IsNil(o.Integration) {
 		toSerialize["integration"] = o.Integration
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetNetworkRouter200ResponseNetworkRouterNetworkServer) UnmarshalJSON(data []byte) (err error) {
+	varGetNetworkRouter200ResponseNetworkRouterNetworkServer := _GetNetworkRouter200ResponseNetworkRouterNetworkServer{}
+
+	err = json.Unmarshal(data, &varGetNetworkRouter200ResponseNetworkRouterNetworkServer)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetNetworkRouter200ResponseNetworkRouterNetworkServer(varGetNetworkRouter200ResponseNetworkRouterNetworkServer)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "integration")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetNetworkRouter200ResponseNetworkRouterNetworkServer struct {

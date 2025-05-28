@@ -23,7 +23,10 @@ type ListBackupSettings200ResponseBackupSettingsDefaultSchedule struct {
 	Id *int64 `json:"id,omitempty"`
 	Code *string `json:"code,omitempty"`
 	Name *string `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListBackupSettings200ResponseBackupSettingsDefaultSchedule ListBackupSettings200ResponseBackupSettingsDefaultSchedule
 
 // NewListBackupSettings200ResponseBackupSettingsDefaultSchedule instantiates a new ListBackupSettings200ResponseBackupSettingsDefaultSchedule object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o ListBackupSettings200ResponseBackupSettingsDefaultSchedule) ToMap() (map
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListBackupSettings200ResponseBackupSettingsDefaultSchedule) UnmarshalJSON(data []byte) (err error) {
+	varListBackupSettings200ResponseBackupSettingsDefaultSchedule := _ListBackupSettings200ResponseBackupSettingsDefaultSchedule{}
+
+	err = json.Unmarshal(data, &varListBackupSettings200ResponseBackupSettingsDefaultSchedule)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListBackupSettings200ResponseBackupSettingsDefaultSchedule(varListBackupSettings200ResponseBackupSettingsDefaultSchedule)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListBackupSettings200ResponseBackupSettingsDefaultSchedule struct {

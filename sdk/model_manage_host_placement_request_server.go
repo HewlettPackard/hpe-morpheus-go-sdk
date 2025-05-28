@@ -23,7 +23,10 @@ type ManageHostPlacementRequestServer struct {
 	// Placement Strategy
 	Name *string `json:"name,omitempty"`
 	PreferredServer *ManageHostPlacementRequestServerPreferredServer `json:"preferredServer,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ManageHostPlacementRequestServer ManageHostPlacementRequestServer
 
 // NewManageHostPlacementRequestServer instantiates a new ManageHostPlacementRequestServer object
 // This constructor will assign default values to properties that have it defined,
@@ -122,7 +125,34 @@ func (o ManageHostPlacementRequestServer) ToMap() (map[string]interface{}, error
 	if !IsNil(o.PreferredServer) {
 		toSerialize["preferredServer"] = o.PreferredServer
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ManageHostPlacementRequestServer) UnmarshalJSON(data []byte) (err error) {
+	varManageHostPlacementRequestServer := _ManageHostPlacementRequestServer{}
+
+	err = json.Unmarshal(data, &varManageHostPlacementRequestServer)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ManageHostPlacementRequestServer(varManageHostPlacementRequestServer)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "preferredServer")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableManageHostPlacementRequestServer struct {

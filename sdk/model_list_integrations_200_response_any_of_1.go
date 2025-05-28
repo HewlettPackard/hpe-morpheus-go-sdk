@@ -21,7 +21,10 @@ var _ MappedNullable = &ListIntegrations200ResponseAnyOf1{}
 // ListIntegrations200ResponseAnyOf1 struct for ListIntegrations200ResponseAnyOf1
 type ListIntegrations200ResponseAnyOf1 struct {
 	Meta *ListActivity200ResponseAllOfMeta `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListIntegrations200ResponseAnyOf1 ListIntegrations200ResponseAnyOf1
 
 // NewListIntegrations200ResponseAnyOf1 instantiates a new ListIntegrations200ResponseAnyOf1 object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o ListIntegrations200ResponseAnyOf1) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.Meta) {
 		toSerialize["meta"] = o.Meta
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListIntegrations200ResponseAnyOf1) UnmarshalJSON(data []byte) (err error) {
+	varListIntegrations200ResponseAnyOf1 := _ListIntegrations200ResponseAnyOf1{}
+
+	err = json.Unmarshal(data, &varListIntegrations200ResponseAnyOf1)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListIntegrations200ResponseAnyOf1(varListIntegrations200ResponseAnyOf1)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "meta")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListIntegrations200ResponseAnyOf1 struct {

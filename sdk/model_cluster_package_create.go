@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -40,6 +39,7 @@ type ClusterPackageCreate struct {
 	IconPath *string `json:"iconPath,omitempty"`
 	// Array of resource spec templates
 	SpecTemplates []int64 `json:"specTemplates"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ClusterPackageCreate ClusterPackageCreate
@@ -325,6 +325,11 @@ func (o ClusterPackageCreate) ToMap() (map[string]interface{}, error) {
 		toSerialize["iconPath"] = o.IconPath
 	}
 	toSerialize["specTemplates"] = o.SpecTemplates
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -358,15 +363,28 @@ func (o *ClusterPackageCreate) UnmarshalJSON(data []byte) (err error) {
 
 	varClusterPackageCreate := _ClusterPackageCreate{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varClusterPackageCreate)
+	err = json.Unmarshal(data, &varClusterPackageCreate)
 
 	if err != nil {
 		return err
 	}
 
 	*o = ClusterPackageCreate(varClusterPackageCreate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "packageVersion")
+		delete(additionalProperties, "packageType")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "iconPath")
+		delete(additionalProperties, "specTemplates")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

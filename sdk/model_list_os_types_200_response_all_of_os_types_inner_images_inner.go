@@ -27,7 +27,10 @@ type ListOsTypes200ResponseAllOfOsTypesInnerImagesInner struct {
 	ProvisionType *int64 `json:"provisionType,omitempty"`
 	ComputeZoneType *int64 `json:"computeZoneType,omitempty"`
 	Zone *int64 `json:"zone,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListOsTypes200ResponseAllOfOsTypesInnerImagesInner ListOsTypes200ResponseAllOfOsTypesInnerImagesInner
 
 // NewListOsTypes200ResponseAllOfOsTypesInnerImagesInner instantiates a new ListOsTypes200ResponseAllOfOsTypesInnerImagesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -301,7 +304,39 @@ func (o ListOsTypes200ResponseAllOfOsTypesInnerImagesInner) ToMap() (map[string]
 	if !IsNil(o.Zone) {
 		toSerialize["zone"] = o.Zone
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListOsTypes200ResponseAllOfOsTypesInnerImagesInner) UnmarshalJSON(data []byte) (err error) {
+	varListOsTypes200ResponseAllOfOsTypesInnerImagesInner := _ListOsTypes200ResponseAllOfOsTypesInnerImagesInner{}
+
+	err = json.Unmarshal(data, &varListOsTypes200ResponseAllOfOsTypesInnerImagesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListOsTypes200ResponseAllOfOsTypesInnerImagesInner(varListOsTypes200ResponseAllOfOsTypesInnerImagesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "virtualImageId")
+		delete(additionalProperties, "virtualImageName")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "provisionType")
+		delete(additionalProperties, "computeZoneType")
+		delete(additionalProperties, "zone")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListOsTypes200ResponseAllOfOsTypesInnerImagesInner struct {

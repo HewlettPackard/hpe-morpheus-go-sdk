@@ -24,7 +24,10 @@ type ListBillingAccount200ResponseAllOfBillingInfoZonesInnerLoadBalancers struct
 	Cost *float32 `json:"cost,omitempty"`
 	LoadBalancers []map[string]interface{} `json:"loadBalancers,omitempty"`
 	Count *int64 `json:"count,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListBillingAccount200ResponseAllOfBillingInfoZonesInnerLoadBalancers ListBillingAccount200ResponseAllOfBillingInfoZonesInnerLoadBalancers
 
 // NewListBillingAccount200ResponseAllOfBillingInfoZonesInnerLoadBalancers instantiates a new ListBillingAccount200ResponseAllOfBillingInfoZonesInnerLoadBalancers object
 // This constructor will assign default values to properties that have it defined,
@@ -193,7 +196,36 @@ func (o ListBillingAccount200ResponseAllOfBillingInfoZonesInnerLoadBalancers) To
 	if !IsNil(o.Count) {
 		toSerialize["count"] = o.Count
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListBillingAccount200ResponseAllOfBillingInfoZonesInnerLoadBalancers) UnmarshalJSON(data []byte) (err error) {
+	varListBillingAccount200ResponseAllOfBillingInfoZonesInnerLoadBalancers := _ListBillingAccount200ResponseAllOfBillingInfoZonesInnerLoadBalancers{}
+
+	err = json.Unmarshal(data, &varListBillingAccount200ResponseAllOfBillingInfoZonesInnerLoadBalancers)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListBillingAccount200ResponseAllOfBillingInfoZonesInnerLoadBalancers(varListBillingAccount200ResponseAllOfBillingInfoZonesInnerLoadBalancers)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "price")
+		delete(additionalProperties, "cost")
+		delete(additionalProperties, "loadBalancers")
+		delete(additionalProperties, "count")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListBillingAccount200ResponseAllOfBillingInfoZonesInnerLoadBalancers struct {

@@ -21,7 +21,10 @@ var _ MappedNullable = &GetInstance200ResponseInstanceConfigReplicationGroup{}
 // GetInstance200ResponseInstanceConfigReplicationGroup struct for GetInstance200ResponseInstanceConfigReplicationGroup
 type GetInstance200ResponseInstanceConfigReplicationGroup struct {
 	ProviderMethod *string `json:"providerMethod,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetInstance200ResponseInstanceConfigReplicationGroup GetInstance200ResponseInstanceConfigReplicationGroup
 
 // NewGetInstance200ResponseInstanceConfigReplicationGroup instantiates a new GetInstance200ResponseInstanceConfigReplicationGroup object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o GetInstance200ResponseInstanceConfigReplicationGroup) ToMap() (map[strin
 	if !IsNil(o.ProviderMethod) {
 		toSerialize["providerMethod"] = o.ProviderMethod
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetInstance200ResponseInstanceConfigReplicationGroup) UnmarshalJSON(data []byte) (err error) {
+	varGetInstance200ResponseInstanceConfigReplicationGroup := _GetInstance200ResponseInstanceConfigReplicationGroup{}
+
+	err = json.Unmarshal(data, &varGetInstance200ResponseInstanceConfigReplicationGroup)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetInstance200ResponseInstanceConfigReplicationGroup(varGetInstance200ResponseInstanceConfigReplicationGroup)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "providerMethod")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetInstance200ResponseInstanceConfigReplicationGroup struct {

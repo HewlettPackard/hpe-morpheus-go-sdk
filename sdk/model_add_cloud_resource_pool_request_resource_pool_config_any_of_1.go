@@ -26,7 +26,10 @@ type AddCloudResourcePoolRequestResourcePoolConfigAnyOf1 struct {
 	Developers []string `json:"developers,omitempty"`
 	// Array of auditor usernames
 	Auditors []string `json:"auditors,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddCloudResourcePoolRequestResourcePoolConfigAnyOf1 AddCloudResourcePoolRequestResourcePoolConfigAnyOf1
 
 // NewAddCloudResourcePoolRequestResourcePoolConfigAnyOf1 instantiates a new AddCloudResourcePoolRequestResourcePoolConfigAnyOf1 object
 // This constructor will assign default values to properties that have it defined,
@@ -160,7 +163,35 @@ func (o AddCloudResourcePoolRequestResourcePoolConfigAnyOf1) ToMap() (map[string
 	if !IsNil(o.Auditors) {
 		toSerialize["auditors"] = o.Auditors
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddCloudResourcePoolRequestResourcePoolConfigAnyOf1) UnmarshalJSON(data []byte) (err error) {
+	varAddCloudResourcePoolRequestResourcePoolConfigAnyOf1 := _AddCloudResourcePoolRequestResourcePoolConfigAnyOf1{}
+
+	err = json.Unmarshal(data, &varAddCloudResourcePoolRequestResourcePoolConfigAnyOf1)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddCloudResourcePoolRequestResourcePoolConfigAnyOf1(varAddCloudResourcePoolRequestResourcePoolConfigAnyOf1)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "managers")
+		delete(additionalProperties, "developers")
+		delete(additionalProperties, "auditors")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddCloudResourcePoolRequestResourcePoolConfigAnyOf1 struct {

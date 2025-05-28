@@ -23,7 +23,10 @@ type ListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner str
 	Name *string `json:"name,omitempty"`
 	Value *string `json:"value,omitempty"`
 	Masked *string `json:"masked,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner ListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner
 
 // NewListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner instantiates a new ListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o ListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner)
 	if !IsNil(o.Masked) {
 		toSerialize["masked"] = o.Masked
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner) UnmarshalJSON(data []byte) (err error) {
+	varListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner := _ListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner{}
+
+	err = json.Unmarshal(data, &varListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner(varListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "value")
+		delete(additionalProperties, "masked")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner struct {

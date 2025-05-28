@@ -28,7 +28,10 @@ type CredentialType struct {
 	Creatable *bool `json:"creatable,omitempty"`
 	Editable *bool `json:"editable,omitempty"`
 	OptionTypes []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _CredentialType CredentialType
 
 // NewCredentialType instantiates a new CredentialType object
 // This constructor will assign default values to properties that have it defined,
@@ -337,7 +340,40 @@ func (o CredentialType) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.OptionTypes) {
 		toSerialize["optionTypes"] = o.OptionTypes
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *CredentialType) UnmarshalJSON(data []byte) (err error) {
+	varCredentialType := _CredentialType{}
+
+	err = json.Unmarshal(data, &varCredentialType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CredentialType(varCredentialType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "creatable")
+		delete(additionalProperties, "editable")
+		delete(additionalProperties, "optionTypes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCredentialType struct {

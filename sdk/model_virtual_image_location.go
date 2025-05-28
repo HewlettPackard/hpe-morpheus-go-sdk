@@ -45,7 +45,10 @@ type VirtualImageLocation struct {
 	StorageControllers []map[string]interface{} `json:"storageControllers,omitempty"`
 	NetworkInterfaces []map[string]interface{} `json:"networkInterfaces,omitempty"`
 	VirtualImage *ListVirtualImageLocations200ResponseAllOfLocationsInnerVirtualImage `json:"virtualImage,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _VirtualImageLocation VirtualImageLocation
 
 // NewVirtualImageLocation instantiates a new VirtualImageLocation object
 // This constructor will assign default values to properties that have it defined,
@@ -949,7 +952,57 @@ func (o VirtualImageLocation) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.VirtualImage) {
 		toSerialize["virtualImage"] = o.VirtualImage
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *VirtualImageLocation) UnmarshalJSON(data []byte) (err error) {
+	varVirtualImageLocation := _VirtualImageLocation{}
+
+	err = json.Unmarshal(data, &varVirtualImageLocation)
+
+	if err != nil {
+		return err
+	}
+
+	*o = VirtualImageLocation(varVirtualImageLocation)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "cloud")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "internalId")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "externalDiskId")
+		delete(additionalProperties, "remotePath")
+		delete(additionalProperties, "imagePath")
+		delete(additionalProperties, "imageName")
+		delete(additionalProperties, "imageRegion")
+		delete(additionalProperties, "imageFolder")
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "refId")
+		delete(additionalProperties, "nodeRefType")
+		delete(additionalProperties, "nodeRefId")
+		delete(additionalProperties, "subRefType")
+		delete(additionalProperties, "subRefId")
+		delete(additionalProperties, "isPublic")
+		delete(additionalProperties, "systemImage")
+		delete(additionalProperties, "diskIndex")
+		delete(additionalProperties, "pricePlan")
+		delete(additionalProperties, "volumes")
+		delete(additionalProperties, "storageControllers")
+		delete(additionalProperties, "networkInterfaces")
+		delete(additionalProperties, "virtualImage")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableVirtualImageLocation struct {

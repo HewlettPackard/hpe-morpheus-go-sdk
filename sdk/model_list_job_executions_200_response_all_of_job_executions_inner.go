@@ -34,7 +34,10 @@ type ListJobExecutions200ResponseAllOfJobExecutionsInner struct {
 	Status *string `json:"status,omitempty"`
 	StatusMessage *string `json:"statusMessage,omitempty"`
 	CreatedBy *string `json:"createdBy,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListJobExecutions200ResponseAllOfJobExecutionsInner ListJobExecutions200ResponseAllOfJobExecutionsInner
 
 // NewListJobExecutions200ResponseAllOfJobExecutionsInner instantiates a new ListJobExecutions200ResponseAllOfJobExecutionsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -518,7 +521,45 @@ func (o ListJobExecutions200ResponseAllOfJobExecutionsInner) ToMap() (map[string
 	if !IsNil(o.CreatedBy) {
 		toSerialize["createdBy"] = o.CreatedBy
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListJobExecutions200ResponseAllOfJobExecutionsInner) UnmarshalJSON(data []byte) (err error) {
+	varListJobExecutions200ResponseAllOfJobExecutionsInner := _ListJobExecutions200ResponseAllOfJobExecutionsInner{}
+
+	err = json.Unmarshal(data, &varListJobExecutions200ResponseAllOfJobExecutionsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListJobExecutions200ResponseAllOfJobExecutionsInner(varListJobExecutions200ResponseAllOfJobExecutionsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "process")
+		delete(additionalProperties, "job")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "startDate")
+		delete(additionalProperties, "endDate")
+		delete(additionalProperties, "duration")
+		delete(additionalProperties, "resultData")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "statusMessage")
+		delete(additionalProperties, "createdBy")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListJobExecutions200ResponseAllOfJobExecutionsInner struct {

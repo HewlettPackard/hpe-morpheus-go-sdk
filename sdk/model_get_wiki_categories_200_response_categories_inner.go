@@ -22,7 +22,10 @@ var _ MappedNullable = &GetWikiCategories200ResponseCategoriesInner{}
 type GetWikiCategories200ResponseCategoriesInner struct {
 	Name *string `json:"name,omitempty"`
 	PageCount *int64 `json:"pageCount,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetWikiCategories200ResponseCategoriesInner GetWikiCategories200ResponseCategoriesInner
 
 // NewGetWikiCategories200ResponseCategoriesInner instantiates a new GetWikiCategories200ResponseCategoriesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o GetWikiCategories200ResponseCategoriesInner) ToMap() (map[string]interfa
 	if !IsNil(o.PageCount) {
 		toSerialize["pageCount"] = o.PageCount
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetWikiCategories200ResponseCategoriesInner) UnmarshalJSON(data []byte) (err error) {
+	varGetWikiCategories200ResponseCategoriesInner := _GetWikiCategories200ResponseCategoriesInner{}
+
+	err = json.Unmarshal(data, &varGetWikiCategories200ResponseCategoriesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetWikiCategories200ResponseCategoriesInner(varGetWikiCategories200ResponseCategoriesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "pageCount")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetWikiCategories200ResponseCategoriesInner struct {

@@ -41,7 +41,10 @@ type Price struct {
 	Datastore *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"datastore,omitempty"`
 	CrossCloudApply *bool `json:"crossCloudApply,omitempty"`
 	Account *string `json:"account,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _Price Price
 
 // NewPrice instantiates a new Price object
 // This constructor will assign default values to properties that have it defined,
@@ -805,7 +808,53 @@ func (o Price) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Account) {
 		toSerialize["account"] = o.Account
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *Price) UnmarshalJSON(data []byte) (err error) {
+	varPrice := _Price{}
+
+	err = json.Unmarshal(data, &varPrice)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Price(varPrice)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "priceType")
+		delete(additionalProperties, "priceUnit")
+		delete(additionalProperties, "additionalPriceUnit")
+		delete(additionalProperties, "price")
+		delete(additionalProperties, "customPrice")
+		delete(additionalProperties, "markupType")
+		delete(additionalProperties, "markup")
+		delete(additionalProperties, "markupPercent")
+		delete(additionalProperties, "cost")
+		delete(additionalProperties, "currency")
+		delete(additionalProperties, "incurCharges")
+		delete(additionalProperties, "platform")
+		delete(additionalProperties, "software")
+		delete(additionalProperties, "volumeType")
+		delete(additionalProperties, "datastore")
+		delete(additionalProperties, "crossCloudApply")
+		delete(additionalProperties, "account")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullablePrice struct {

@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -25,6 +24,7 @@ type AttachServerVolumeRequestMountPoint struct {
 	Controller AttachServerVolumeRequestMountPointController `json:"controller"`
 	// The unit number for the disk (e.g., \"3\")
 	UnitNumber string `json:"unitNumber"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AttachServerVolumeRequestMountPoint AttachServerVolumeRequestMountPoint
@@ -108,6 +108,11 @@ func (o AttachServerVolumeRequestMountPoint) ToMap() (map[string]interface{}, er
 	toSerialize := map[string]interface{}{}
 	toSerialize["controller"] = o.Controller
 	toSerialize["unitNumber"] = o.UnitNumber
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -136,15 +141,21 @@ func (o *AttachServerVolumeRequestMountPoint) UnmarshalJSON(data []byte) (err er
 
 	varAttachServerVolumeRequestMountPoint := _AttachServerVolumeRequestMountPoint{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAttachServerVolumeRequestMountPoint)
+	err = json.Unmarshal(data, &varAttachServerVolumeRequestMountPoint)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AttachServerVolumeRequestMountPoint(varAttachServerVolumeRequestMountPoint)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "controller")
+		delete(additionalProperties, "unitNumber")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

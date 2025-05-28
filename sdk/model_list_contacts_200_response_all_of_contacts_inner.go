@@ -25,7 +25,10 @@ type ListContacts200ResponseAllOfContactsInner struct {
 	Name *string `json:"name,omitempty"`
 	SmsAddress *string `json:"smsAddress,omitempty"`
 	SlackHook *string `json:"slackHook,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListContacts200ResponseAllOfContactsInner ListContacts200ResponseAllOfContactsInner
 
 // NewListContacts200ResponseAllOfContactsInner instantiates a new ListContacts200ResponseAllOfContactsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -229,7 +232,37 @@ func (o ListContacts200ResponseAllOfContactsInner) ToMap() (map[string]interface
 	if !IsNil(o.SlackHook) {
 		toSerialize["slackHook"] = o.SlackHook
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListContacts200ResponseAllOfContactsInner) UnmarshalJSON(data []byte) (err error) {
+	varListContacts200ResponseAllOfContactsInner := _ListContacts200ResponseAllOfContactsInner{}
+
+	err = json.Unmarshal(data, &varListContacts200ResponseAllOfContactsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListContacts200ResponseAllOfContactsInner(varListContacts200ResponseAllOfContactsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "emailAddress")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "smsAddress")
+		delete(additionalProperties, "slackHook")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListContacts200ResponseAllOfContactsInner struct {

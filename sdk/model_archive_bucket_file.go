@@ -33,7 +33,10 @@ type ArchiveBucketFile struct {
 	DownloadCount *int64 `json:"downloadCount,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ArchiveBucketFile ArchiveBucketFile
 
 // NewArchiveBucketFile instantiates a new ArchiveBucketFile object
 // This constructor will assign default values to properties that have it defined,
@@ -482,7 +485,44 @@ func (o ArchiveBucketFile) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ArchiveBucketFile) UnmarshalJSON(data []byte) (err error) {
+	varArchiveBucketFile := _ArchiveBucketFile{}
+
+	err = json.Unmarshal(data, &varArchiveBucketFile)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ArchiveBucketFile(varArchiveBucketFile)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "filePath")
+		delete(additionalProperties, "archiveBucket")
+		delete(additionalProperties, "createdBy")
+		delete(additionalProperties, "isDirectory")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "rawSize")
+		delete(additionalProperties, "contentType")
+		delete(additionalProperties, "downloadCount")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableArchiveBucketFile struct {

@@ -21,7 +21,10 @@ var _ MappedNullable = &CreateNetworkRouterRequest{}
 // CreateNetworkRouterRequest The parameters for creating a network router is type dependent. The following lists the common parameters. See get a specific type to list available options for that network router type. Note: when creating a router on NSX v3.0+ some BGP configuration settings require BGP to be disabled during initial creation. The BGP feature can be enabled in a subsequent router update API call. 
 type CreateNetworkRouterRequest struct {
 	NetworkRouter *CreateNetworkRouterRequestNetworkRouter `json:"networkRouter,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _CreateNetworkRouterRequest CreateNetworkRouterRequest
 
 // NewCreateNetworkRouterRequest instantiates a new CreateNetworkRouterRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o CreateNetworkRouterRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.NetworkRouter) {
 		toSerialize["networkRouter"] = o.NetworkRouter
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *CreateNetworkRouterRequest) UnmarshalJSON(data []byte) (err error) {
+	varCreateNetworkRouterRequest := _CreateNetworkRouterRequest{}
+
+	err = json.Unmarshal(data, &varCreateNetworkRouterRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CreateNetworkRouterRequest(varCreateNetworkRouterRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "networkRouter")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCreateNetworkRouterRequest struct {

@@ -31,7 +31,10 @@ type Environment struct {
 	SortOrder *int64 `json:"sortOrder,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _Environment Environment
 
 // NewEnvironment instantiates a new Environment object
 // This constructor will assign default values to properties that have it defined,
@@ -410,7 +413,42 @@ func (o Environment) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *Environment) UnmarshalJSON(data []byte) (err error) {
+	varEnvironment := _Environment{}
+
+	err = json.Unmarshal(data, &varEnvironment)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Environment(varEnvironment)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "sortOrder")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableEnvironment struct {

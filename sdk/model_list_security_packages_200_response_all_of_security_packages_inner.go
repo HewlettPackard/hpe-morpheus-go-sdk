@@ -32,7 +32,10 @@ type ListSecurityPackages200ResponseAllOfSecurityPackagesInner struct {
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
 	Config map[string]interface{} `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListSecurityPackages200ResponseAllOfSecurityPackagesInner ListSecurityPackages200ResponseAllOfSecurityPackagesInner
 
 // NewListSecurityPackages200ResponseAllOfSecurityPackagesInner instantiates a new ListSecurityPackages200ResponseAllOfSecurityPackagesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -446,7 +449,43 @@ func (o ListSecurityPackages200ResponseAllOfSecurityPackagesInner) ToMap() (map[
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListSecurityPackages200ResponseAllOfSecurityPackagesInner) UnmarshalJSON(data []byte) (err error) {
+	varListSecurityPackages200ResponseAllOfSecurityPackagesInner := _ListSecurityPackages200ResponseAllOfSecurityPackagesInner{}
+
+	err = json.Unmarshal(data, &varListSecurityPackages200ResponseAllOfSecurityPackagesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListSecurityPackages200ResponseAllOfSecurityPackagesInner(varListSecurityPackages200ResponseAllOfSecurityPackagesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "url")
+		delete(additionalProperties, "uuid")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "config")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListSecurityPackages200ResponseAllOfSecurityPackagesInner struct {

@@ -22,7 +22,10 @@ var _ MappedNullable = &Global{}
 type Global struct {
 	// Global (All Tenants), load users from all tenants. The default is to only see your own tenant. This is only available to master tenant users with permission to manage tenants and users.
 	Global *bool `json:"global,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _Global Global
 
 // NewGlobal instantiates a new Global object
 // This constructor will assign default values to properties that have it defined,
@@ -90,7 +93,33 @@ func (o Global) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Global) {
 		toSerialize["global"] = o.Global
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *Global) UnmarshalJSON(data []byte) (err error) {
+	varGlobal := _Global{}
+
+	err = json.Unmarshal(data, &varGlobal)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Global(varGlobal)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "global")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGlobal struct {

@@ -43,7 +43,10 @@ type UpdateStorageBucketsRequestStorageBucket struct {
 	// Create the bucket if it does not exist. Only applies to `Amazon`, `Azure`, `Openstack Swift`, and `Rackspace CDN`.
 	CreateBucket *bool `json:"createBucket,omitempty"`
 	Config *AddStorageBucketsRequestStorageBucketConfig `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateStorageBucketsRequestStorageBucket UpdateStorageBucketsRequestStorageBucket
 
 // NewUpdateStorageBucketsRequestStorageBucket instantiates a new UpdateStorageBucketsRequestStorageBucket object
 // This constructor will assign default values to properties that have it defined,
@@ -512,7 +515,44 @@ func (o UpdateStorageBucketsRequestStorageBucket) ToMap() (map[string]interface{
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateStorageBucketsRequestStorageBucket) UnmarshalJSON(data []byte) (err error) {
+	varUpdateStorageBucketsRequestStorageBucket := _UpdateStorageBucketsRequestStorageBucket{}
+
+	err = json.Unmarshal(data, &varUpdateStorageBucketsRequestStorageBucket)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateStorageBucketsRequestStorageBucket(varUpdateStorageBucketsRequestStorageBucket)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "providerType")
+		delete(additionalProperties, "defaultBackupTarget")
+		delete(additionalProperties, "copyToStore")
+		delete(additionalProperties, "defaultDeploymentTarget")
+		delete(additionalProperties, "defaultVirtualImageTarget")
+		delete(additionalProperties, "retentionPolicyType")
+		delete(additionalProperties, "retentionPolicyDays")
+		delete(additionalProperties, "retentionProvider")
+		delete(additionalProperties, "bucketName")
+		delete(additionalProperties, "createBucket")
+		delete(additionalProperties, "config")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateStorageBucketsRequestStorageBucket struct {

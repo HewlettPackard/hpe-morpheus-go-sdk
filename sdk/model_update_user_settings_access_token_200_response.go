@@ -22,7 +22,10 @@ var _ MappedNullable = &UpdateUserSettingsAccessToken200Response{}
 type UpdateUserSettingsAccessToken200Response struct {
 	Token *string `json:"token,omitempty"`
 	Success *bool `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateUserSettingsAccessToken200Response UpdateUserSettingsAccessToken200Response
 
 // NewUpdateUserSettingsAccessToken200Response instantiates a new UpdateUserSettingsAccessToken200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o UpdateUserSettingsAccessToken200Response) ToMap() (map[string]interface{
 	if !IsNil(o.Success) {
 		toSerialize["success"] = o.Success
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateUserSettingsAccessToken200Response) UnmarshalJSON(data []byte) (err error) {
+	varUpdateUserSettingsAccessToken200Response := _UpdateUserSettingsAccessToken200Response{}
+
+	err = json.Unmarshal(data, &varUpdateUserSettingsAccessToken200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateUserSettingsAccessToken200Response(varUpdateUserSettingsAccessToken200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "token")
+		delete(additionalProperties, "success")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateUserSettingsAccessToken200Response struct {

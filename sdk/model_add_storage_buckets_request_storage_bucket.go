@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -45,6 +44,7 @@ type AddStorageBucketsRequestStorageBucket struct {
 	// Create the bucket if it does not exist. Only applies to `Amazon`, `Azure`, `Openstack Swift`, and `Rackspace CDN`.
 	CreateBucket *bool `json:"createBucket,omitempty"`
 	Config AddStorageBucketsRequestStorageBucketConfig `json:"config"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddStorageBucketsRequestStorageBucket AddStorageBucketsRequestStorageBucket
@@ -480,6 +480,11 @@ func (o AddStorageBucketsRequestStorageBucket) ToMap() (map[string]interface{}, 
 		toSerialize["createBucket"] = o.CreateBucket
 	}
 	toSerialize["config"] = o.Config
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -510,15 +515,31 @@ func (o *AddStorageBucketsRequestStorageBucket) UnmarshalJSON(data []byte) (err 
 
 	varAddStorageBucketsRequestStorageBucket := _AddStorageBucketsRequestStorageBucket{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddStorageBucketsRequestStorageBucket)
+	err = json.Unmarshal(data, &varAddStorageBucketsRequestStorageBucket)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddStorageBucketsRequestStorageBucket(varAddStorageBucketsRequestStorageBucket)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "providerType")
+		delete(additionalProperties, "defaultBackupTarget")
+		delete(additionalProperties, "copyToStore")
+		delete(additionalProperties, "defaultDeploymentTarget")
+		delete(additionalProperties, "defaultVirtualImageTarget")
+		delete(additionalProperties, "retentionPolicyType")
+		delete(additionalProperties, "retentionPolicyDays")
+		delete(additionalProperties, "retentionProvider")
+		delete(additionalProperties, "bucketName")
+		delete(additionalProperties, "createBucket")
+		delete(additionalProperties, "config")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

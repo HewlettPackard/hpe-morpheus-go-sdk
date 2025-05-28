@@ -35,7 +35,10 @@ type ListStorageBuckets200ResponseAllOfStorageBucketsInner struct {
 	RetentionPolicyType *string `json:"retentionPolicyType,omitempty"`
 	RetentionPolicyDays *string `json:"retentionPolicyDays,omitempty"`
 	RetentionProvider *string `json:"retentionProvider,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListStorageBuckets200ResponseAllOfStorageBucketsInner ListStorageBuckets200ResponseAllOfStorageBucketsInner
 
 // NewListStorageBuckets200ResponseAllOfStorageBucketsInner instantiates a new ListStorageBuckets200ResponseAllOfStorageBucketsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -589,7 +592,47 @@ func (o ListStorageBuckets200ResponseAllOfStorageBucketsInner) ToMap() (map[stri
 	if !IsNil(o.RetentionProvider) {
 		toSerialize["retentionProvider"] = o.RetentionProvider
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListStorageBuckets200ResponseAllOfStorageBucketsInner) UnmarshalJSON(data []byte) (err error) {
+	varListStorageBuckets200ResponseAllOfStorageBucketsInner := _ListStorageBuckets200ResponseAllOfStorageBucketsInner{}
+
+	err = json.Unmarshal(data, &varListStorageBuckets200ResponseAllOfStorageBucketsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListStorageBuckets200ResponseAllOfStorageBucketsInner(varListStorageBuckets200ResponseAllOfStorageBucketsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "providerType")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "bucketName")
+		delete(additionalProperties, "readOnly")
+		delete(additionalProperties, "defaultBackupTarget")
+		delete(additionalProperties, "defaultDeploymentTarget")
+		delete(additionalProperties, "defaultVirtualImageTarget")
+		delete(additionalProperties, "copyToStore")
+		delete(additionalProperties, "retentionPolicyType")
+		delete(additionalProperties, "retentionPolicyDays")
+		delete(additionalProperties, "retentionProvider")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListStorageBuckets200ResponseAllOfStorageBucketsInner struct {

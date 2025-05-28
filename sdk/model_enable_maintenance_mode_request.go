@@ -21,7 +21,10 @@ var _ MappedNullable = &EnableMaintenanceModeRequest{}
 // EnableMaintenanceModeRequest struct for EnableMaintenanceModeRequest
 type EnableMaintenanceModeRequest struct {
 	Server *EnableMaintenanceModeRequestServer `json:"server,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _EnableMaintenanceModeRequest EnableMaintenanceModeRequest
 
 // NewEnableMaintenanceModeRequest instantiates a new EnableMaintenanceModeRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o EnableMaintenanceModeRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Server) {
 		toSerialize["server"] = o.Server
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *EnableMaintenanceModeRequest) UnmarshalJSON(data []byte) (err error) {
+	varEnableMaintenanceModeRequest := _EnableMaintenanceModeRequest{}
+
+	err = json.Unmarshal(data, &varEnableMaintenanceModeRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = EnableMaintenanceModeRequest(varEnableMaintenanceModeRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "server")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableEnableMaintenanceModeRequest struct {

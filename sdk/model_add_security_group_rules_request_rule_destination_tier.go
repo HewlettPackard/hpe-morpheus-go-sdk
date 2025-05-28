@@ -22,7 +22,10 @@ var _ MappedNullable = &AddSecurityGroupRulesRequestRuleDestinationTier{}
 type AddSecurityGroupRulesRequestRuleDestinationTier struct {
 	// The destination Tier ID. Required for `destinationType`=tier.
 	Id *int64 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddSecurityGroupRulesRequestRuleDestinationTier AddSecurityGroupRulesRequestRuleDestinationTier
 
 // NewAddSecurityGroupRulesRequestRuleDestinationTier instantiates a new AddSecurityGroupRulesRequestRuleDestinationTier object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o AddSecurityGroupRulesRequestRuleDestinationTier) ToMap() (map[string]int
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddSecurityGroupRulesRequestRuleDestinationTier) UnmarshalJSON(data []byte) (err error) {
+	varAddSecurityGroupRulesRequestRuleDestinationTier := _AddSecurityGroupRulesRequestRuleDestinationTier{}
+
+	err = json.Unmarshal(data, &varAddSecurityGroupRulesRequestRuleDestinationTier)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddSecurityGroupRulesRequestRuleDestinationTier(varAddSecurityGroupRulesRequestRuleDestinationTier)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddSecurityGroupRulesRequestRuleDestinationTier struct {

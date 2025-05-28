@@ -22,7 +22,10 @@ var _ MappedNullable = &ImportSnapshotInstanceRequest{}
 type ImportSnapshotInstanceRequest struct {
 	// Optional storage provider to use.
 	StorageProviderId *int64 `json:"storageProviderId,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ImportSnapshotInstanceRequest ImportSnapshotInstanceRequest
 
 // NewImportSnapshotInstanceRequest instantiates a new ImportSnapshotInstanceRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o ImportSnapshotInstanceRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.StorageProviderId) {
 		toSerialize["storageProviderId"] = o.StorageProviderId
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ImportSnapshotInstanceRequest) UnmarshalJSON(data []byte) (err error) {
+	varImportSnapshotInstanceRequest := _ImportSnapshotInstanceRequest{}
+
+	err = json.Unmarshal(data, &varImportSnapshotInstanceRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ImportSnapshotInstanceRequest(varImportSnapshotInstanceRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "storageProviderId")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableImportSnapshotInstanceRequest struct {

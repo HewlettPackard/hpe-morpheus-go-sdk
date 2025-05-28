@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -54,6 +53,7 @@ type AddOptionListRequestOptionTypeList struct {
 	// Request Script. Create a js script to prepare the request. Return a data object as the body for a post, and return an array containing properties 'name' and 'value' for a get. The input data is provided as data and the result should be put on the global variable results.
 	RequestScript *string `json:"requestScript,omitempty"`
 	Config *AddOptionListRequestOptionTypeListConfig `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddOptionListRequestOptionTypeList AddOptionListRequestOptionTypeList
@@ -691,6 +691,11 @@ func (o AddOptionListRequestOptionTypeList) ToMap() (map[string]interface{}, err
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -718,15 +723,36 @@ func (o *AddOptionListRequestOptionTypeList) UnmarshalJSON(data []byte) (err err
 
 	varAddOptionListRequestOptionTypeList := _AddOptionListRequestOptionTypeList{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddOptionListRequestOptionTypeList)
+	err = json.Unmarshal(data, &varAddOptionListRequestOptionTypeList)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddOptionListRequestOptionTypeList(varAddOptionListRequestOptionTypeList)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "sourceUrl")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "sourceMethod")
+		delete(additionalProperties, "apiType")
+		delete(additionalProperties, "ignoreSSLErrors")
+		delete(additionalProperties, "realTime")
+		delete(additionalProperties, "credential")
+		delete(additionalProperties, "serviceUsername")
+		delete(additionalProperties, "servicePassword")
+		delete(additionalProperties, "initialDataset")
+		delete(additionalProperties, "translationScript")
+		delete(additionalProperties, "requestScript")
+		delete(additionalProperties, "config")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

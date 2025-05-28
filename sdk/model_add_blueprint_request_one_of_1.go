@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -29,6 +28,7 @@ type AddBlueprintRequestOneOf1 struct {
 	// Array of label strings, can be used for filtering.
 	Labels []string `json:"labels,omitempty"`
 	CloudFormation AddBlueprintRequestOneOf1CloudFormation `json:"cloudFormation"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddBlueprintRequestOneOf1 AddBlueprintRequestOneOf1
@@ -173,6 +173,11 @@ func (o AddBlueprintRequestOneOf1) ToMap() (map[string]interface{}, error) {
 		toSerialize["labels"] = o.Labels
 	}
 	toSerialize["cloudFormation"] = o.CloudFormation
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -202,15 +207,23 @@ func (o *AddBlueprintRequestOneOf1) UnmarshalJSON(data []byte) (err error) {
 
 	varAddBlueprintRequestOneOf1 := _AddBlueprintRequestOneOf1{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddBlueprintRequestOneOf1)
+	err = json.Unmarshal(data, &varAddBlueprintRequestOneOf1)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddBlueprintRequestOneOf1(varAddBlueprintRequestOneOf1)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "cloudFormation")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

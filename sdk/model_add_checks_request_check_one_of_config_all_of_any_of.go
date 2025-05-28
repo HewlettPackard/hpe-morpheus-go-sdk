@@ -29,7 +29,10 @@ type AddChecksRequestCheckOneOfConfigAllOfAnyOf struct {
 	SshUser *string `json:"sshUser,omitempty"`
 	WebTextMatch *string `json:"webTextMatch,omitempty"`
 	CheckPasswordHash *string `json:"checkPasswordHash,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddChecksRequestCheckOneOfConfigAllOfAnyOf AddChecksRequestCheckOneOfConfigAllOfAnyOf
 
 // NewAddChecksRequestCheckOneOfConfigAllOfAnyOf instantiates a new AddChecksRequestCheckOneOfConfigAllOfAnyOf object
 // This constructor will assign default values to properties that have it defined,
@@ -373,7 +376,41 @@ func (o AddChecksRequestCheckOneOfConfigAllOfAnyOf) ToMap() (map[string]interfac
 	if !IsNil(o.CheckPasswordHash) {
 		toSerialize["checkPasswordHash"] = o.CheckPasswordHash
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddChecksRequestCheckOneOfConfigAllOfAnyOf) UnmarshalJSON(data []byte) (err error) {
+	varAddChecksRequestCheckOneOfConfigAllOfAnyOf := _AddChecksRequestCheckOneOfConfigAllOfAnyOf{}
+
+	err = json.Unmarshal(data, &varAddChecksRequestCheckOneOfConfigAllOfAnyOf)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddChecksRequestCheckOneOfConfigAllOfAnyOf(varAddChecksRequestCheckOneOfConfigAllOfAnyOf)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "sshPort")
+		delete(additionalProperties, "checkUser")
+		delete(additionalProperties, "tunnelOn")
+		delete(additionalProperties, "textCheckOn")
+		delete(additionalProperties, "checkPassword")
+		delete(additionalProperties, "sshHost")
+		delete(additionalProperties, "sshUser")
+		delete(additionalProperties, "webTextMatch")
+		delete(additionalProperties, "checkPasswordHash")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddChecksRequestCheckOneOfConfigAllOfAnyOf struct {

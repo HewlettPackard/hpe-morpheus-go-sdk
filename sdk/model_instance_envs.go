@@ -23,7 +23,10 @@ type InstanceEnvs struct {
 	Envs []GetEnvVariables200ResponseInstanceEnvsInner `json:"envs,omitempty"`
 	ReadOnlyEnvs []GetEnvVariables200ResponseInstanceEnvsInner `json:"readOnlyEnvs,omitempty"`
 	ImportedEnvs []GetEnvVariables200ResponseInstanceEnvsInner `json:"importedEnvs,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _InstanceEnvs InstanceEnvs
 
 // NewInstanceEnvs instantiates a new InstanceEnvs object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o InstanceEnvs) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ImportedEnvs) {
 		toSerialize["importedEnvs"] = o.ImportedEnvs
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *InstanceEnvs) UnmarshalJSON(data []byte) (err error) {
+	varInstanceEnvs := _InstanceEnvs{}
+
+	err = json.Unmarshal(data, &varInstanceEnvs)
+
+	if err != nil {
+		return err
+	}
+
+	*o = InstanceEnvs(varInstanceEnvs)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "envs")
+		delete(additionalProperties, "readOnlyEnvs")
+		delete(additionalProperties, "importedEnvs")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableInstanceEnvs struct {

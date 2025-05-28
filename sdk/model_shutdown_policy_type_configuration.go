@@ -30,7 +30,10 @@ type ShutdownPolicyTypeConfiguration struct {
 	ShutdownExtensionsBeforeApproval *string `json:"shutdownExtensionsBeforeApproval,omitempty"`
 	AccountIntegrationId *string `json:"accountIntegrationId,omitempty"`
 	ShutdownHideFixed *bool `json:"shutdownHideFixed,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ShutdownPolicyTypeConfiguration ShutdownPolicyTypeConfiguration
 
 // NewShutdownPolicyTypeConfiguration instantiates a new ShutdownPolicyTypeConfiguration object
 // This constructor will assign default values to properties that have it defined,
@@ -417,7 +420,42 @@ func (o ShutdownPolicyTypeConfiguration) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.ShutdownHideFixed) {
 		toSerialize["shutdownHideFixed"] = o.ShutdownHideFixed
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ShutdownPolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
+	varShutdownPolicyTypeConfiguration := _ShutdownPolicyTypeConfiguration{}
+
+	err = json.Unmarshal(data, &varShutdownPolicyTypeConfiguration)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ShutdownPolicyTypeConfiguration(varShutdownPolicyTypeConfiguration)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "shutdownType")
+		delete(additionalProperties, "shutdownAge")
+		delete(additionalProperties, "shutdownRenewal")
+		delete(additionalProperties, "shutdownNotify")
+		delete(additionalProperties, "shutdownMessage")
+		delete(additionalProperties, "shutdownAutoRenew")
+		delete(additionalProperties, "shutdownAllowExtend")
+		delete(additionalProperties, "shutdownExtensionsBeforeApproval")
+		delete(additionalProperties, "accountIntegrationId")
+		delete(additionalProperties, "shutdownHideFixed")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableShutdownPolicyTypeConfiguration struct {

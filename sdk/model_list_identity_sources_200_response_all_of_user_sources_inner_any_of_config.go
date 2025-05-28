@@ -33,7 +33,10 @@ type ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig struct {
 	UniqueMemberAttribute *string `json:"uniqueMemberAttribute,omitempty"`
 	MemberOfAttribute *string `json:"memberOfAttribute,omitempty"`
 	BindingPasswordHash *string `json:"bindingPasswordHash,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig
 
 // NewListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig instantiates a new ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig object
 // This constructor will assign default values to properties that have it defined,
@@ -517,7 +520,45 @@ func (o ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig) ToMap() 
 	if !IsNil(o.BindingPasswordHash) {
 		toSerialize["bindingPasswordHash"] = o.BindingPasswordHash
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig) UnmarshalJSON(data []byte) (err error) {
+	varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig := _ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig{}
+
+	err = json.Unmarshal(data, &varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig(varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "url")
+		delete(additionalProperties, "bindingUsername")
+		delete(additionalProperties, "bindingPassword")
+		delete(additionalProperties, "userFqnExpression")
+		delete(additionalProperties, "requiredRoleFqn")
+		delete(additionalProperties, "usernameAttribute")
+		delete(additionalProperties, "commonNameAttribute")
+		delete(additionalProperties, "firstNameAttribute")
+		delete(additionalProperties, "lastNameAttribute")
+		delete(additionalProperties, "emailAttribute")
+		delete(additionalProperties, "uniqueMemberAttribute")
+		delete(additionalProperties, "memberOfAttribute")
+		delete(additionalProperties, "bindingPasswordHash")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig struct {

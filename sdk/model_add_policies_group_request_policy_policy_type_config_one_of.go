@@ -21,7 +21,10 @@ var _ MappedNullable = &AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf{}
 // AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf - Approve Delete - Approve Provisiong - Approve Reconfigure 
 type AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf struct {
 	AccountIntegrationId *string `json:"accountIntegrationId,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf
 
 // NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf instantiates a new AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf) ToMap() (map[string]
 	if !IsNil(o.AccountIntegrationId) {
 		toSerialize["accountIntegrationId"] = o.AccountIntegrationId
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf) UnmarshalJSON(data []byte) (err error) {
+	varAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf := _AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf{}
+
+	err = json.Unmarshal(data, &varAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf(varAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "accountIntegrationId")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf struct {

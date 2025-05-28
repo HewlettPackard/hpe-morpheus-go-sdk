@@ -23,7 +23,10 @@ type ListServicePlans200ResponseAllOfServicePlansInnerConfig struct {
 	StorageSizeType *string `json:"storageSizeType,omitempty"`
 	MemorySizeType *string `json:"memorySizeType,omitempty"`
 	Ranges *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges `json:"ranges,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListServicePlans200ResponseAllOfServicePlansInnerConfig ListServicePlans200ResponseAllOfServicePlansInnerConfig
 
 // NewListServicePlans200ResponseAllOfServicePlansInnerConfig instantiates a new ListServicePlans200ResponseAllOfServicePlansInnerConfig object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o ListServicePlans200ResponseAllOfServicePlansInnerConfig) ToMap() (map[st
 	if !IsNil(o.Ranges) {
 		toSerialize["ranges"] = o.Ranges
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfig) UnmarshalJSON(data []byte) (err error) {
+	varListServicePlans200ResponseAllOfServicePlansInnerConfig := _ListServicePlans200ResponseAllOfServicePlansInnerConfig{}
+
+	err = json.Unmarshal(data, &varListServicePlans200ResponseAllOfServicePlansInnerConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListServicePlans200ResponseAllOfServicePlansInnerConfig(varListServicePlans200ResponseAllOfServicePlansInnerConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "storageSizeType")
+		delete(additionalProperties, "memorySizeType")
+		delete(additionalProperties, "ranges")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListServicePlans200ResponseAllOfServicePlansInnerConfig struct {

@@ -26,7 +26,10 @@ type PreseedScript struct {
 	Description *string `json:"description,omitempty"`
 	Content *string `json:"content,omitempty"`
 	CreatedBy *GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy `json:"createdBy,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _PreseedScript PreseedScript
 
 // NewPreseedScript instantiates a new PreseedScript object
 // This constructor will assign default values to properties that have it defined,
@@ -265,7 +268,38 @@ func (o PreseedScript) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CreatedBy) {
 		toSerialize["createdBy"] = o.CreatedBy
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *PreseedScript) UnmarshalJSON(data []byte) (err error) {
+	varPreseedScript := _PreseedScript{}
+
+	err = json.Unmarshal(data, &varPreseedScript)
+
+	if err != nil {
+		return err
+	}
+
+	*o = PreseedScript(varPreseedScript)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "fileName")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "content")
+		delete(additionalProperties, "createdBy")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullablePreseedScript struct {

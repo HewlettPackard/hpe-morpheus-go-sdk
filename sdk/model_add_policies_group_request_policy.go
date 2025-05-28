@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -27,6 +26,7 @@ type AddPoliciesGroupRequestPolicy struct {
 	// A description for the policy
 	Description *string `json:"description,omitempty"`
 	PolicyType AddPoliciesGroupRequestPolicyPolicyType `json:"policyType"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddPoliciesGroupRequestPolicy AddPoliciesGroupRequestPolicy
@@ -145,6 +145,11 @@ func (o AddPoliciesGroupRequestPolicy) ToMap() (map[string]interface{}, error) {
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["policyType"] = o.PolicyType
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -173,15 +178,22 @@ func (o *AddPoliciesGroupRequestPolicy) UnmarshalJSON(data []byte) (err error) {
 
 	varAddPoliciesGroupRequestPolicy := _AddPoliciesGroupRequestPolicy{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddPoliciesGroupRequestPolicy)
+	err = json.Unmarshal(data, &varAddPoliciesGroupRequestPolicy)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddPoliciesGroupRequestPolicy(varAddPoliciesGroupRequestPolicy)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "policyType")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

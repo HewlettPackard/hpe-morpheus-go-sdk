@@ -28,7 +28,10 @@ type GetNetworkGroups200ResponseNetworkGroupsInner struct {
 	Networks []int64 `json:"networks,omitempty"`
 	Subnets []map[string]interface{} `json:"subnets,omitempty"`
 	Tenants []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"tenants,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetNetworkGroups200ResponseNetworkGroupsInner GetNetworkGroups200ResponseNetworkGroupsInner
 
 // NewGetNetworkGroups200ResponseNetworkGroupsInner instantiates a new GetNetworkGroups200ResponseNetworkGroupsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -337,7 +340,40 @@ func (o GetNetworkGroups200ResponseNetworkGroupsInner) ToMap() (map[string]inter
 	if !IsNil(o.Tenants) {
 		toSerialize["tenants"] = o.Tenants
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetNetworkGroups200ResponseNetworkGroupsInner) UnmarshalJSON(data []byte) (err error) {
+	varGetNetworkGroups200ResponseNetworkGroupsInner := _GetNetworkGroups200ResponseNetworkGroupsInner{}
+
+	err = json.Unmarshal(data, &varGetNetworkGroups200ResponseNetworkGroupsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetNetworkGroups200ResponseNetworkGroupsInner(varGetNetworkGroups200ResponseNetworkGroupsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "networks")
+		delete(additionalProperties, "subnets")
+		delete(additionalProperties, "tenants")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetNetworkGroups200ResponseNetworkGroupsInner struct {

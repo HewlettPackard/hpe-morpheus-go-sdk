@@ -24,7 +24,10 @@ type AddWorkflowsRequestTaskSetTasks struct {
 	TaskId *int64 `json:"taskId,omitempty"`
 	// Task Phase. Pass operation for `operational` workflows.
 	TaskPhase *string `json:"taskPhase,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddWorkflowsRequestTaskSetTasks AddWorkflowsRequestTaskSetTasks
 
 // NewAddWorkflowsRequestTaskSetTasks instantiates a new AddWorkflowsRequestTaskSetTasks object
 // This constructor will assign default values to properties that have it defined,
@@ -127,7 +130,34 @@ func (o AddWorkflowsRequestTaskSetTasks) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.TaskPhase) {
 		toSerialize["taskPhase"] = o.TaskPhase
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddWorkflowsRequestTaskSetTasks) UnmarshalJSON(data []byte) (err error) {
+	varAddWorkflowsRequestTaskSetTasks := _AddWorkflowsRequestTaskSetTasks{}
+
+	err = json.Unmarshal(data, &varAddWorkflowsRequestTaskSetTasks)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddWorkflowsRequestTaskSetTasks(varAddWorkflowsRequestTaskSetTasks)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "taskId")
+		delete(additionalProperties, "taskPhase")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddWorkflowsRequestTaskSetTasks struct {

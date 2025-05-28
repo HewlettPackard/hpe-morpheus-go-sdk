@@ -32,7 +32,10 @@ type ListCatalogCart200ResponseCartItemsInner struct {
 	OrderDate *time.Time `json:"orderDate,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListCatalogCart200ResponseCartItemsInner ListCatalogCart200ResponseCartItemsInner
 
 // NewListCatalogCart200ResponseCartItemsInner instantiates a new ListCatalogCart200ResponseCartItemsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -446,7 +449,43 @@ func (o ListCatalogCart200ResponseCartItemsInner) ToMap() (map[string]interface{
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListCatalogCart200ResponseCartItemsInner) UnmarshalJSON(data []byte) (err error) {
+	varListCatalogCart200ResponseCartItemsInner := _ListCatalogCart200ResponseCartItemsInner{}
+
+	err = json.Unmarshal(data, &varListCatalogCart200ResponseCartItemsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListCatalogCart200ResponseCartItemsInner(varListCatalogCart200ResponseCartItemsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "quantity")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "statusMessage")
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "instance")
+		delete(additionalProperties, "orderDate")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListCatalogCart200ResponseCartItemsInner struct {

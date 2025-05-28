@@ -27,7 +27,10 @@ type GetCypherKey200Response struct {
 	// Lease duration in seconds, 0 means no expiry.
 	LeaseDuration *int32 `json:"lease_duration,omitempty"`
 	Cypher *ListCypherKeys200ResponseAllOfCyphersInner `json:"cypher,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetCypherKey200Response GetCypherKey200Response
 
 // NewGetCypherKey200Response instantiates a new GetCypherKey200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -231,7 +234,37 @@ func (o GetCypherKey200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Cypher) {
 		toSerialize["cypher"] = o.Cypher
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetCypherKey200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetCypherKey200Response := _GetCypherKey200Response{}
+
+	err = json.Unmarshal(data, &varGetCypherKey200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetCypherKey200Response(varGetCypherKey200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "success")
+		delete(additionalProperties, "data")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "lease_duration")
+		delete(additionalProperties, "cypher")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetCypherKey200Response struct {

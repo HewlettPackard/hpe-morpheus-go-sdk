@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -24,6 +23,7 @@ var _ MappedNullable = &CreateNetworksRequestNetworkZone{}
 type CreateNetworksRequestNetworkZone struct {
 	// Cloud ID
 	Id int64 `json:"id"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _CreateNetworksRequestNetworkZone CreateNetworksRequestNetworkZone
@@ -81,6 +81,11 @@ func (o CreateNetworksRequestNetworkZone) MarshalJSON() ([]byte, error) {
 func (o CreateNetworksRequestNetworkZone) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -108,15 +113,20 @@ func (o *CreateNetworksRequestNetworkZone) UnmarshalJSON(data []byte) (err error
 
 	varCreateNetworksRequestNetworkZone := _CreateNetworksRequestNetworkZone{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varCreateNetworksRequestNetworkZone)
+	err = json.Unmarshal(data, &varCreateNetworksRequestNetworkZone)
 
 	if err != nil {
 		return err
 	}
 
 	*o = CreateNetworksRequestNetworkZone(varCreateNetworksRequestNetworkZone)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

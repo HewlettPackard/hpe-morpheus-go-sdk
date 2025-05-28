@@ -34,7 +34,10 @@ type ListHealth200ResponseAllOfHealthMemory struct {
 	MemoryPercent *float32 `json:"memoryPercent,omitempty"`
 	SystemMemoryPercent *float32 `json:"systemMemoryPercent,omitempty"`
 	Status *string `json:"status,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListHealth200ResponseAllOfHealthMemory ListHealth200ResponseAllOfHealthMemory
 
 // NewListHealth200ResponseAllOfHealthMemory instantiates a new ListHealth200ResponseAllOfHealthMemory object
 // This constructor will assign default values to properties that have it defined,
@@ -553,7 +556,46 @@ func (o ListHealth200ResponseAllOfHealthMemory) ToMap() (map[string]interface{},
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListHealth200ResponseAllOfHealthMemory) UnmarshalJSON(data []byte) (err error) {
+	varListHealth200ResponseAllOfHealthMemory := _ListHealth200ResponseAllOfHealthMemory{}
+
+	err = json.Unmarshal(data, &varListHealth200ResponseAllOfHealthMemory)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListHealth200ResponseAllOfHealthMemory(varListHealth200ResponseAllOfHealthMemory)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "success")
+		delete(additionalProperties, "maxMemory")
+		delete(additionalProperties, "totalMemory")
+		delete(additionalProperties, "freeMemory")
+		delete(additionalProperties, "usedMemory")
+		delete(additionalProperties, "systemMemory")
+		delete(additionalProperties, "committedMemory")
+		delete(additionalProperties, "systemFreeMemory")
+		delete(additionalProperties, "systemSwap")
+		delete(additionalProperties, "systemFreeSwap")
+		delete(additionalProperties, "swapPercent")
+		delete(additionalProperties, "memoryPercent")
+		delete(additionalProperties, "systemMemoryPercent")
+		delete(additionalProperties, "status")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListHealth200ResponseAllOfHealthMemory struct {

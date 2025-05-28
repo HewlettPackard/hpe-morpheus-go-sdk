@@ -27,7 +27,10 @@ type ListHealth200ResponseAllOfHealthDatabaseScans struct {
 	HandlerReadPrev *string `json:"Handler_read_prev,omitempty"`
 	HandlerReadRnd *string `json:"Handler_read_rnd,omitempty"`
 	HandlerReadRndNext *string `json:"Handler_read_rnd_next,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListHealth200ResponseAllOfHealthDatabaseScans ListHealth200ResponseAllOfHealthDatabaseScans
 
 // NewListHealth200ResponseAllOfHealthDatabaseScans instantiates a new ListHealth200ResponseAllOfHealthDatabaseScans object
 // This constructor will assign default values to properties that have it defined,
@@ -301,7 +304,39 @@ func (o ListHealth200ResponseAllOfHealthDatabaseScans) ToMap() (map[string]inter
 	if !IsNil(o.HandlerReadRndNext) {
 		toSerialize["Handler_read_rnd_next"] = o.HandlerReadRndNext
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListHealth200ResponseAllOfHealthDatabaseScans) UnmarshalJSON(data []byte) (err error) {
+	varListHealth200ResponseAllOfHealthDatabaseScans := _ListHealth200ResponseAllOfHealthDatabaseScans{}
+
+	err = json.Unmarshal(data, &varListHealth200ResponseAllOfHealthDatabaseScans)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListHealth200ResponseAllOfHealthDatabaseScans(varListHealth200ResponseAllOfHealthDatabaseScans)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "Handler_read_first")
+		delete(additionalProperties, "Handler_read_key")
+		delete(additionalProperties, "Handler_read_last")
+		delete(additionalProperties, "Handler_read_next")
+		delete(additionalProperties, "Handler_read_prev")
+		delete(additionalProperties, "Handler_read_rnd")
+		delete(additionalProperties, "Handler_read_rnd_next")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListHealth200ResponseAllOfHealthDatabaseScans struct {

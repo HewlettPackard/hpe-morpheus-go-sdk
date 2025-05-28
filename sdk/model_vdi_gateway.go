@@ -28,7 +28,10 @@ type VdiGateway struct {
 	ApiKey *string `json:"apiKey,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _VdiGateway VdiGateway
 
 // NewVdiGateway instantiates a new VdiGateway object
 // This constructor will assign default values to properties that have it defined,
@@ -302,7 +305,39 @@ func (o VdiGateway) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *VdiGateway) UnmarshalJSON(data []byte) (err error) {
+	varVdiGateway := _VdiGateway{}
+
+	err = json.Unmarshal(data, &varVdiGateway)
+
+	if err != nil {
+		return err
+	}
+
+	*o = VdiGateway(varVdiGateway)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "gatewayUrl")
+		delete(additionalProperties, "apiKey")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableVdiGateway struct {

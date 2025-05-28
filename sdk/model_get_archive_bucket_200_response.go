@@ -25,7 +25,10 @@ type GetArchiveBucket200Response struct {
 	ParentDirectory *string `json:"parentDirectory,omitempty"`
 	ArchiveFiles []GetArchiveBucket200ResponseArchiveFilesInner `json:"archiveFiles,omitempty"`
 	ArchiveFileCount *int64 `json:"archiveFileCount,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetArchiveBucket200Response GetArchiveBucket200Response
 
 // NewGetArchiveBucket200Response instantiates a new GetArchiveBucket200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -229,7 +232,37 @@ func (o GetArchiveBucket200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ArchiveFileCount) {
 		toSerialize["archiveFileCount"] = o.ArchiveFileCount
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetArchiveBucket200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetArchiveBucket200Response := _GetArchiveBucket200Response{}
+
+	err = json.Unmarshal(data, &varGetArchiveBucket200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetArchiveBucket200Response(varGetArchiveBucket200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "archiveBucket")
+		delete(additionalProperties, "isOwner")
+		delete(additionalProperties, "parentDirectory")
+		delete(additionalProperties, "archiveFiles")
+		delete(additionalProperties, "archiveFileCount")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetArchiveBucket200Response struct {

@@ -21,7 +21,10 @@ var _ MappedNullable = &AddArchiveBucketRequest{}
 // AddArchiveBucketRequest struct for AddArchiveBucketRequest
 type AddArchiveBucketRequest struct {
 	ArchiveBucket *AddArchiveBucketRequestArchiveBucket `json:"archiveBucket,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddArchiveBucketRequest AddArchiveBucketRequest
 
 // NewAddArchiveBucketRequest instantiates a new AddArchiveBucketRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o AddArchiveBucketRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ArchiveBucket) {
 		toSerialize["archiveBucket"] = o.ArchiveBucket
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddArchiveBucketRequest) UnmarshalJSON(data []byte) (err error) {
+	varAddArchiveBucketRequest := _AddArchiveBucketRequest{}
+
+	err = json.Unmarshal(data, &varAddArchiveBucketRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddArchiveBucketRequest(varAddArchiveBucketRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "archiveBucket")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddArchiveBucketRequest struct {

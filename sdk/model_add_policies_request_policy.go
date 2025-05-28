@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -38,6 +37,7 @@ type AddPoliciesRequestPolicy struct {
 	Accounts []int64 `json:"accounts,omitempty"`
 	// Apply individually to each user in role.  Only when `refType` equals `Role`
 	EachUser *bool `json:"eachUser,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddPoliciesRequestPolicy AddPoliciesRequestPolicy
@@ -361,6 +361,11 @@ func (o AddPoliciesRequestPolicy) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.EachUser) {
 		toSerialize["eachUser"] = o.EachUser
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -390,15 +395,28 @@ func (o *AddPoliciesRequestPolicy) UnmarshalJSON(data []byte) (err error) {
 
 	varAddPoliciesRequestPolicy := _AddPoliciesRequestPolicy{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddPoliciesRequestPolicy)
+	err = json.Unmarshal(data, &varAddPoliciesRequestPolicy)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddPoliciesRequestPolicy(varAddPoliciesRequestPolicy)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "policyType")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "refId")
+		delete(additionalProperties, "accounts")
+		delete(additionalProperties, "eachUser")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

@@ -21,7 +21,10 @@ var _ MappedNullable = &GetJobExecutionEvents200Response{}
 // GetJobExecutionEvents200Response struct for GetJobExecutionEvents200Response
 type GetJobExecutionEvents200Response struct {
 	ProcessEvent *ListHistory200ResponseAllOfProcessesInnerEventsInner `json:"processEvent,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetJobExecutionEvents200Response GetJobExecutionEvents200Response
 
 // NewGetJobExecutionEvents200Response instantiates a new GetJobExecutionEvents200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o GetJobExecutionEvents200Response) ToMap() (map[string]interface{}, error
 	if !IsNil(o.ProcessEvent) {
 		toSerialize["processEvent"] = o.ProcessEvent
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetJobExecutionEvents200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetJobExecutionEvents200Response := _GetJobExecutionEvents200Response{}
+
+	err = json.Unmarshal(data, &varGetJobExecutionEvents200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetJobExecutionEvents200Response(varGetJobExecutionEvents200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "processEvent")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetJobExecutionEvents200Response struct {

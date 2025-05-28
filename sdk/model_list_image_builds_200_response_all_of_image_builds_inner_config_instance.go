@@ -24,7 +24,10 @@ type ListImageBuilds200ResponseAllOfImageBuildsInnerConfigInstance struct {
 	Site *GetAlerts200ResponseAllOfChecksInnerAccount `json:"site,omitempty"`
 	Name *string `json:"name,omitempty"`
 	Type *string `json:"type,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListImageBuilds200ResponseAllOfImageBuildsInnerConfigInstance ListImageBuilds200ResponseAllOfImageBuildsInnerConfigInstance
 
 // NewListImageBuilds200ResponseAllOfImageBuildsInnerConfigInstance instantiates a new ListImageBuilds200ResponseAllOfImageBuildsInnerConfigInstance object
 // This constructor will assign default values to properties that have it defined,
@@ -193,7 +196,36 @@ func (o ListImageBuilds200ResponseAllOfImageBuildsInnerConfigInstance) ToMap() (
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigInstance) UnmarshalJSON(data []byte) (err error) {
+	varListImageBuilds200ResponseAllOfImageBuildsInnerConfigInstance := _ListImageBuilds200ResponseAllOfImageBuildsInnerConfigInstance{}
+
+	err = json.Unmarshal(data, &varListImageBuilds200ResponseAllOfImageBuildsInnerConfigInstance)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListImageBuilds200ResponseAllOfImageBuildsInnerConfigInstance(varListImageBuilds200ResponseAllOfImageBuildsInnerConfigInstance)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "layout")
+		delete(additionalProperties, "site")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "type")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListImageBuilds200ResponseAllOfImageBuildsInnerConfigInstance struct {

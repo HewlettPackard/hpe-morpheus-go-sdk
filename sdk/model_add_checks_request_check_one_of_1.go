@@ -34,7 +34,10 @@ type AddChecksRequestCheckOneOf1 struct {
 	// Severity level threshold for sending notifications.
 	Severity *string `json:"severity,omitempty"`
 	Config *AddChecksRequestCheckOneOf1Config `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddChecksRequestCheckOneOf1 AddChecksRequestCheckOneOf1
 
 // NewAddChecksRequestCheckOneOf1 instantiates a new AddChecksRequestCheckOneOf1 object
 // This constructor will assign default values to properties that have it defined,
@@ -359,7 +362,40 @@ func (o AddChecksRequestCheckOneOf1) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddChecksRequestCheckOneOf1) UnmarshalJSON(data []byte) (err error) {
+	varAddChecksRequestCheckOneOf1 := _AddChecksRequestCheckOneOf1{}
+
+	err = json.Unmarshal(data, &varAddChecksRequestCheckOneOf1)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddChecksRequestCheckOneOf1(varAddChecksRequestCheckOneOf1)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "checkType")
+		delete(additionalProperties, "checkInterval")
+		delete(additionalProperties, "inUptime")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "severity")
+		delete(additionalProperties, "config")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddChecksRequestCheckOneOf1 struct {

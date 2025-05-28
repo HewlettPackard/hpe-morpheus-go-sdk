@@ -31,7 +31,10 @@ type ListUsages200ResponseMeta struct {
 	Total *int64 `json:"total,omitempty"`
 	StartDate *time.Time `json:"startDate,omitempty"`
 	EndDate *time.Time `json:"endDate,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListUsages200ResponseMeta ListUsages200ResponseMeta
 
 // NewListUsages200ResponseMeta instantiates a new ListUsages200ResponseMeta object
 // This constructor will assign default values to properties that have it defined,
@@ -286,7 +289,38 @@ func (o ListUsages200ResponseMeta) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.EndDate) {
 		toSerialize["endDate"] = o.EndDate
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListUsages200ResponseMeta) UnmarshalJSON(data []byte) (err error) {
+	varListUsages200ResponseMeta := _ListUsages200ResponseMeta{}
+
+	err = json.Unmarshal(data, &varListUsages200ResponseMeta)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListUsages200ResponseMeta(varListUsages200ResponseMeta)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "offset")
+		delete(additionalProperties, "max")
+		delete(additionalProperties, "size")
+		delete(additionalProperties, "total")
+		delete(additionalProperties, "startDate")
+		delete(additionalProperties, "endDate")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListUsages200ResponseMeta struct {

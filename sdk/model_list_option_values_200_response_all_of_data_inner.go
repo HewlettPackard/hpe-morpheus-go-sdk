@@ -24,7 +24,10 @@ type ListOptionValues200ResponseAllOfDataInner struct {
 	Name *string `json:"name,omitempty"`
 	// Value
 	Value *string `json:"value,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListOptionValues200ResponseAllOfDataInner ListOptionValues200ResponseAllOfDataInner
 
 // NewListOptionValues200ResponseAllOfDataInner instantiates a new ListOptionValues200ResponseAllOfDataInner object
 // This constructor will assign default values to properties that have it defined,
@@ -123,7 +126,34 @@ func (o ListOptionValues200ResponseAllOfDataInner) ToMap() (map[string]interface
 	if !IsNil(o.Value) {
 		toSerialize["value"] = o.Value
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListOptionValues200ResponseAllOfDataInner) UnmarshalJSON(data []byte) (err error) {
+	varListOptionValues200ResponseAllOfDataInner := _ListOptionValues200ResponseAllOfDataInner{}
+
+	err = json.Unmarshal(data, &varListOptionValues200ResponseAllOfDataInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListOptionValues200ResponseAllOfDataInner(varListOptionValues200ResponseAllOfDataInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "value")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListOptionValues200ResponseAllOfDataInner struct {

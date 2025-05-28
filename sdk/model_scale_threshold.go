@@ -40,7 +40,10 @@ type ScaleThreshold struct {
 	MaxDisk *int64 `json:"maxDisk,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ScaleThreshold ScaleThreshold
 
 // NewScaleThreshold instantiates a new ScaleThreshold object
 // This constructor will assign default values to properties that have it defined,
@@ -734,7 +737,51 @@ func (o ScaleThreshold) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ScaleThreshold) UnmarshalJSON(data []byte) (err error) {
+	varScaleThreshold := _ScaleThreshold{}
+
+	err = json.Unmarshal(data, &varScaleThreshold)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ScaleThreshold(varScaleThreshold)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "autoUp")
+		delete(additionalProperties, "autoDown")
+		delete(additionalProperties, "minCount")
+		delete(additionalProperties, "maxCount")
+		delete(additionalProperties, "scaleIncrement")
+		delete(additionalProperties, "cpuEnabled")
+		delete(additionalProperties, "minCpu")
+		delete(additionalProperties, "maxCpu")
+		delete(additionalProperties, "memoryEnabled")
+		delete(additionalProperties, "minMemory")
+		delete(additionalProperties, "maxMemory")
+		delete(additionalProperties, "diskEnabled")
+		delete(additionalProperties, "minDisk")
+		delete(additionalProperties, "maxDisk")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableScaleThreshold struct {

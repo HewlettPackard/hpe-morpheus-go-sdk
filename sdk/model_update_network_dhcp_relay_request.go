@@ -21,7 +21,10 @@ var _ MappedNullable = &UpdateNetworkDhcpRelayRequest{}
 // UpdateNetworkDhcpRelayRequest The parameters for update a Network DHCP Relay is type dependent. The following lists the common parameters. Get a specific network type to list available options for the network relay type. 
 type UpdateNetworkDhcpRelayRequest struct {
 	NetworkDhcpRelay map[string]interface{} `json:"networkDhcpRelay,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateNetworkDhcpRelayRequest UpdateNetworkDhcpRelayRequest
 
 // NewUpdateNetworkDhcpRelayRequest instantiates a new UpdateNetworkDhcpRelayRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o UpdateNetworkDhcpRelayRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.NetworkDhcpRelay) {
 		toSerialize["networkDhcpRelay"] = o.NetworkDhcpRelay
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateNetworkDhcpRelayRequest) UnmarshalJSON(data []byte) (err error) {
+	varUpdateNetworkDhcpRelayRequest := _UpdateNetworkDhcpRelayRequest{}
+
+	err = json.Unmarshal(data, &varUpdateNetworkDhcpRelayRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateNetworkDhcpRelayRequest(varUpdateNetworkDhcpRelayRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "networkDhcpRelay")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateNetworkDhcpRelayRequest struct {

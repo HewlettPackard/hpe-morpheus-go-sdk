@@ -21,7 +21,10 @@ var _ MappedNullable = &UpdateProvisioningLicenseRequest{}
 // UpdateProvisioningLicenseRequest struct for UpdateProvisioningLicenseRequest
 type UpdateProvisioningLicenseRequest struct {
 	License *UpdateProvisioningLicenseRequestLicense `json:"license,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateProvisioningLicenseRequest UpdateProvisioningLicenseRequest
 
 // NewUpdateProvisioningLicenseRequest instantiates a new UpdateProvisioningLicenseRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o UpdateProvisioningLicenseRequest) ToMap() (map[string]interface{}, error
 	if !IsNil(o.License) {
 		toSerialize["license"] = o.License
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateProvisioningLicenseRequest) UnmarshalJSON(data []byte) (err error) {
+	varUpdateProvisioningLicenseRequest := _UpdateProvisioningLicenseRequest{}
+
+	err = json.Unmarshal(data, &varUpdateProvisioningLicenseRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateProvisioningLicenseRequest(varUpdateProvisioningLicenseRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "license")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateProvisioningLicenseRequest struct {

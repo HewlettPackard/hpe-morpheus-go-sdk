@@ -26,7 +26,10 @@ type ListIntegrationObjects200ResponseObjectsInnerLayout struct {
 	ProvisionType *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"provisionType,omitempty"`
 	InstanceType *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"instanceType,omitempty"`
 	InstanceVersion *string `json:"instanceVersion,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListIntegrationObjects200ResponseObjectsInnerLayout ListIntegrationObjects200ResponseObjectsInnerLayout
 
 // NewListIntegrationObjects200ResponseObjectsInnerLayout instantiates a new ListIntegrationObjects200ResponseObjectsInnerLayout object
 // This constructor will assign default values to properties that have it defined,
@@ -265,7 +268,38 @@ func (o ListIntegrationObjects200ResponseObjectsInnerLayout) ToMap() (map[string
 	if !IsNil(o.InstanceVersion) {
 		toSerialize["instanceVersion"] = o.InstanceVersion
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListIntegrationObjects200ResponseObjectsInnerLayout) UnmarshalJSON(data []byte) (err error) {
+	varListIntegrationObjects200ResponseObjectsInnerLayout := _ListIntegrationObjects200ResponseObjectsInnerLayout{}
+
+	err = json.Unmarshal(data, &varListIntegrationObjects200ResponseObjectsInnerLayout)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListIntegrationObjects200ResponseObjectsInnerLayout(varListIntegrationObjects200ResponseObjectsInnerLayout)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "provisionType")
+		delete(additionalProperties, "instanceType")
+		delete(additionalProperties, "instanceVersion")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListIntegrationObjects200ResponseObjectsInnerLayout struct {

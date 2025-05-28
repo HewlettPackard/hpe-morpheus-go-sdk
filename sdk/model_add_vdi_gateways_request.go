@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -23,6 +22,7 @@ var _ MappedNullable = &AddVDIGatewaysRequest{}
 // AddVDIGatewaysRequest struct for AddVDIGatewaysRequest
 type AddVDIGatewaysRequest struct {
 	VdiGateway AddVDIGatewaysRequestVdiGateway `json:"vdiGateway"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddVDIGatewaysRequest AddVDIGatewaysRequest
@@ -80,6 +80,11 @@ func (o AddVDIGatewaysRequest) MarshalJSON() ([]byte, error) {
 func (o AddVDIGatewaysRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["vdiGateway"] = o.VdiGateway
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -107,15 +112,20 @@ func (o *AddVDIGatewaysRequest) UnmarshalJSON(data []byte) (err error) {
 
 	varAddVDIGatewaysRequest := _AddVDIGatewaysRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddVDIGatewaysRequest)
+	err = json.Unmarshal(data, &varAddVDIGatewaysRequest)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddVDIGatewaysRequest(varAddVDIGatewaysRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "vdiGateway")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

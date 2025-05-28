@@ -21,7 +21,10 @@ var _ MappedNullable = &UpdateSpecTemplateRequestSpecTemplateConfig{}
 // UpdateSpecTemplateRequestSpecTemplateConfig The Cloud Formation type supports some additional configuration parameters
 type UpdateSpecTemplateRequestSpecTemplateConfig struct {
 	Cloudformation *UpdateSpecTemplateRequestSpecTemplateConfigCloudformation `json:"cloudformation,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateSpecTemplateRequestSpecTemplateConfig UpdateSpecTemplateRequestSpecTemplateConfig
 
 // NewUpdateSpecTemplateRequestSpecTemplateConfig instantiates a new UpdateSpecTemplateRequestSpecTemplateConfig object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o UpdateSpecTemplateRequestSpecTemplateConfig) ToMap() (map[string]interfa
 	if !IsNil(o.Cloudformation) {
 		toSerialize["cloudformation"] = o.Cloudformation
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateSpecTemplateRequestSpecTemplateConfig) UnmarshalJSON(data []byte) (err error) {
+	varUpdateSpecTemplateRequestSpecTemplateConfig := _UpdateSpecTemplateRequestSpecTemplateConfig{}
+
+	err = json.Unmarshal(data, &varUpdateSpecTemplateRequestSpecTemplateConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateSpecTemplateRequestSpecTemplateConfig(varUpdateSpecTemplateRequestSpecTemplateConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "cloudformation")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateSpecTemplateRequestSpecTemplateConfig struct {

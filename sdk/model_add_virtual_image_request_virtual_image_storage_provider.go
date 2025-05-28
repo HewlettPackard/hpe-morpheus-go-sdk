@@ -21,7 +21,10 @@ var _ MappedNullable = &AddVirtualImageRequestVirtualImageStorageProvider{}
 // AddVirtualImageRequestVirtualImageStorageProvider A Map containing the id of the Storage Provider
 type AddVirtualImageRequestVirtualImageStorageProvider struct {
 	Id *int64 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddVirtualImageRequestVirtualImageStorageProvider AddVirtualImageRequestVirtualImageStorageProvider
 
 // NewAddVirtualImageRequestVirtualImageStorageProvider instantiates a new AddVirtualImageRequestVirtualImageStorageProvider object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o AddVirtualImageRequestVirtualImageStorageProvider) ToMap() (map[string]i
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddVirtualImageRequestVirtualImageStorageProvider) UnmarshalJSON(data []byte) (err error) {
+	varAddVirtualImageRequestVirtualImageStorageProvider := _AddVirtualImageRequestVirtualImageStorageProvider{}
+
+	err = json.Unmarshal(data, &varAddVirtualImageRequestVirtualImageStorageProvider)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddVirtualImageRequestVirtualImageStorageProvider(varAddVirtualImageRequestVirtualImageStorageProvider)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddVirtualImageRequestVirtualImageStorageProvider struct {

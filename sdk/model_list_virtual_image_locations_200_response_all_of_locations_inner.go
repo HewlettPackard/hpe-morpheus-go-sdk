@@ -45,7 +45,10 @@ type ListVirtualImageLocations200ResponseAllOfLocationsInner struct {
 	StorageControllers []map[string]interface{} `json:"storageControllers,omitempty"`
 	NetworkInterfaces []map[string]interface{} `json:"networkInterfaces,omitempty"`
 	VirtualImage *ListVirtualImageLocations200ResponseAllOfLocationsInnerVirtualImage `json:"virtualImage,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListVirtualImageLocations200ResponseAllOfLocationsInner ListVirtualImageLocations200ResponseAllOfLocationsInner
 
 // NewListVirtualImageLocations200ResponseAllOfLocationsInner instantiates a new ListVirtualImageLocations200ResponseAllOfLocationsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -949,7 +952,57 @@ func (o ListVirtualImageLocations200ResponseAllOfLocationsInner) ToMap() (map[st
 	if !IsNil(o.VirtualImage) {
 		toSerialize["virtualImage"] = o.VirtualImage
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) UnmarshalJSON(data []byte) (err error) {
+	varListVirtualImageLocations200ResponseAllOfLocationsInner := _ListVirtualImageLocations200ResponseAllOfLocationsInner{}
+
+	err = json.Unmarshal(data, &varListVirtualImageLocations200ResponseAllOfLocationsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListVirtualImageLocations200ResponseAllOfLocationsInner(varListVirtualImageLocations200ResponseAllOfLocationsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "cloud")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "internalId")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "externalDiskId")
+		delete(additionalProperties, "remotePath")
+		delete(additionalProperties, "imagePath")
+		delete(additionalProperties, "imageName")
+		delete(additionalProperties, "imageRegion")
+		delete(additionalProperties, "imageFolder")
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "refId")
+		delete(additionalProperties, "nodeRefType")
+		delete(additionalProperties, "nodeRefId")
+		delete(additionalProperties, "subRefType")
+		delete(additionalProperties, "subRefId")
+		delete(additionalProperties, "isPublic")
+		delete(additionalProperties, "systemImage")
+		delete(additionalProperties, "diskIndex")
+		delete(additionalProperties, "pricePlan")
+		delete(additionalProperties, "volumes")
+		delete(additionalProperties, "storageControllers")
+		delete(additionalProperties, "networkInterfaces")
+		delete(additionalProperties, "virtualImage")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListVirtualImageLocations200ResponseAllOfLocationsInner struct {

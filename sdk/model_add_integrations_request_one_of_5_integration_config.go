@@ -24,7 +24,10 @@ type AddIntegrationsRequestOneOf5IntegrationConfig struct {
 	DefaultBranch *string `json:"defaultBranch,omitempty"`
 	// Enable Git Repository Caching
 	CacheEnabled *bool `json:"cacheEnabled,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddIntegrationsRequestOneOf5IntegrationConfig AddIntegrationsRequestOneOf5IntegrationConfig
 
 // NewAddIntegrationsRequestOneOf5IntegrationConfig instantiates a new AddIntegrationsRequestOneOf5IntegrationConfig object
 // This constructor will assign default values to properties that have it defined,
@@ -123,7 +126,34 @@ func (o AddIntegrationsRequestOneOf5IntegrationConfig) ToMap() (map[string]inter
 	if !IsNil(o.CacheEnabled) {
 		toSerialize["cacheEnabled"] = o.CacheEnabled
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddIntegrationsRequestOneOf5IntegrationConfig) UnmarshalJSON(data []byte) (err error) {
+	varAddIntegrationsRequestOneOf5IntegrationConfig := _AddIntegrationsRequestOneOf5IntegrationConfig{}
+
+	err = json.Unmarshal(data, &varAddIntegrationsRequestOneOf5IntegrationConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddIntegrationsRequestOneOf5IntegrationConfig(varAddIntegrationsRequestOneOf5IntegrationConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "defaultBranch")
+		delete(additionalProperties, "cacheEnabled")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddIntegrationsRequestOneOf5IntegrationConfig struct {

@@ -25,7 +25,10 @@ type ClientUpdate struct {
 	RefreshTokenValiditySeconds *int64 `json:"refreshTokenValiditySeconds,omitempty"`
 	// List of Redirect URIs for use with the OpenID Authorization Code Flow
 	RedirectUris []string `json:"redirectUris,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ClientUpdate ClientUpdate
 
 // NewClientUpdate instantiates a new ClientUpdate object
 // This constructor will assign default values to properties that have it defined,
@@ -194,7 +197,36 @@ func (o ClientUpdate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.RedirectUris) {
 		toSerialize["redirectUris"] = o.RedirectUris
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ClientUpdate) UnmarshalJSON(data []byte) (err error) {
+	varClientUpdate := _ClientUpdate{}
+
+	err = json.Unmarshal(data, &varClientUpdate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ClientUpdate(varClientUpdate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "clientId")
+		delete(additionalProperties, "accessTokenValiditySeconds")
+		delete(additionalProperties, "refreshTokenValiditySeconds")
+		delete(additionalProperties, "redirectUris")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableClientUpdate struct {

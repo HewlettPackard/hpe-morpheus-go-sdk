@@ -21,7 +21,10 @@ var _ MappedNullable = &AddIntegrationsRequestOneOfIntegrationCredentialOneOf{}
 // AddIntegrationsRequestOneOfIntegrationCredentialOneOf struct for AddIntegrationsRequestOneOfIntegrationCredentialOneOf
 type AddIntegrationsRequestOneOfIntegrationCredentialOneOf struct {
 	Type *string `json:"type,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddIntegrationsRequestOneOfIntegrationCredentialOneOf AddIntegrationsRequestOneOfIntegrationCredentialOneOf
 
 // NewAddIntegrationsRequestOneOfIntegrationCredentialOneOf instantiates a new AddIntegrationsRequestOneOfIntegrationCredentialOneOf object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o AddIntegrationsRequestOneOfIntegrationCredentialOneOf) ToMap() (map[stri
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddIntegrationsRequestOneOfIntegrationCredentialOneOf) UnmarshalJSON(data []byte) (err error) {
+	varAddIntegrationsRequestOneOfIntegrationCredentialOneOf := _AddIntegrationsRequestOneOfIntegrationCredentialOneOf{}
+
+	err = json.Unmarshal(data, &varAddIntegrationsRequestOneOfIntegrationCredentialOneOf)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddIntegrationsRequestOneOfIntegrationCredentialOneOf(varAddIntegrationsRequestOneOfIntegrationCredentialOneOf)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "type")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddIntegrationsRequestOneOfIntegrationCredentialOneOf struct {

@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -28,6 +27,7 @@ type CreateNetworksRequestNetworkConfigAnyOf struct {
 	SubnetName string `json:"subnetName"`
 	// The subnet's address range in CIDR notation (e.g. 192.168.1.0/24). It must be contained by the address space of the virtual network.
 	SubnetCidr string `json:"subnetCidr"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _CreateNetworksRequestNetworkConfigAnyOf CreateNetworksRequestNetworkConfigAnyOf
@@ -137,6 +137,11 @@ func (o CreateNetworksRequestNetworkConfigAnyOf) ToMap() (map[string]interface{}
 	toSerialize["resourceGroupId"] = o.ResourceGroupId
 	toSerialize["subnetName"] = o.SubnetName
 	toSerialize["subnetCidr"] = o.SubnetCidr
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -166,15 +171,22 @@ func (o *CreateNetworksRequestNetworkConfigAnyOf) UnmarshalJSON(data []byte) (er
 
 	varCreateNetworksRequestNetworkConfigAnyOf := _CreateNetworksRequestNetworkConfigAnyOf{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varCreateNetworksRequestNetworkConfigAnyOf)
+	err = json.Unmarshal(data, &varCreateNetworksRequestNetworkConfigAnyOf)
 
 	if err != nil {
 		return err
 	}
 
 	*o = CreateNetworksRequestNetworkConfigAnyOf(varCreateNetworksRequestNetworkConfigAnyOf)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "resourceGroupId")
+		delete(additionalProperties, "subnetName")
+		delete(additionalProperties, "subnetCidr")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

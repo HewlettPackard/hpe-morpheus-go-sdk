@@ -22,7 +22,10 @@ var _ MappedNullable = &AddStorageBuckets200Response{}
 type AddStorageBuckets200Response struct {
 	StorageBucket *ListStorageBuckets200ResponseAllOfStorageBucketsInner `json:"storageBucket,omitempty"`
 	Success *bool `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddStorageBuckets200Response AddStorageBuckets200Response
 
 // NewAddStorageBuckets200Response instantiates a new AddStorageBuckets200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o AddStorageBuckets200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Success) {
 		toSerialize["success"] = o.Success
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddStorageBuckets200Response) UnmarshalJSON(data []byte) (err error) {
+	varAddStorageBuckets200Response := _AddStorageBuckets200Response{}
+
+	err = json.Unmarshal(data, &varAddStorageBuckets200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddStorageBuckets200Response(varAddStorageBuckets200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "storageBucket")
+		delete(additionalProperties, "success")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddStorageBuckets200Response struct {

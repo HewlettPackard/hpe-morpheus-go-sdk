@@ -28,7 +28,10 @@ type ListHostDevices200ResponseDevicesInnerType struct {
 	Hotpluggable *bool `json:"hotpluggable,omitempty"`
 	VendorId *int32 `json:"vendorId,omitempty"`
 	ProductId *int32 `json:"productId,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListHostDevices200ResponseDevicesInnerType ListHostDevices200ResponseDevicesInnerType
 
 // NewListHostDevices200ResponseDevicesInnerType instantiates a new ListHostDevices200ResponseDevicesInnerType object
 // This constructor will assign default values to properties that have it defined,
@@ -337,7 +340,40 @@ func (o ListHostDevices200ResponseDevicesInnerType) ToMap() (map[string]interfac
 	if !IsNil(o.ProductId) {
 		toSerialize["productId"] = o.ProductId
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListHostDevices200ResponseDevicesInnerType) UnmarshalJSON(data []byte) (err error) {
+	varListHostDevices200ResponseDevicesInnerType := _ListHostDevices200ResponseDevicesInnerType{}
+
+	err = json.Unmarshal(data, &varListHostDevices200ResponseDevicesInnerType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListHostDevices200ResponseDevicesInnerType(varListHostDevices200ResponseDevicesInnerType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "family")
+		delete(additionalProperties, "busType")
+		delete(additionalProperties, "assignable")
+		delete(additionalProperties, "hotpluggable")
+		delete(additionalProperties, "vendorId")
+		delete(additionalProperties, "productId")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListHostDevices200ResponseDevicesInnerType struct {

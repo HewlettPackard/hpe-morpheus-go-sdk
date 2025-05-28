@@ -30,7 +30,10 @@ type ExpirationPolicyTypeConfiguration struct {
 	LifecycleExtensionsBeforeApproval *string `json:"lifecycleExtensionsBeforeApproval,omitempty"`
 	AccountIntegrationId *string `json:"accountIntegrationId,omitempty"`
 	LifecycleHideFixed *bool `json:"lifecycleHideFixed,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ExpirationPolicyTypeConfiguration ExpirationPolicyTypeConfiguration
 
 // NewExpirationPolicyTypeConfiguration instantiates a new ExpirationPolicyTypeConfiguration object
 // This constructor will assign default values to properties that have it defined,
@@ -417,7 +420,42 @@ func (o ExpirationPolicyTypeConfiguration) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.LifecycleHideFixed) {
 		toSerialize["lifecycleHideFixed"] = o.LifecycleHideFixed
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ExpirationPolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
+	varExpirationPolicyTypeConfiguration := _ExpirationPolicyTypeConfiguration{}
+
+	err = json.Unmarshal(data, &varExpirationPolicyTypeConfiguration)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ExpirationPolicyTypeConfiguration(varExpirationPolicyTypeConfiguration)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "lifecycleType")
+		delete(additionalProperties, "lifecycleAge")
+		delete(additionalProperties, "lifecycleRenewal")
+		delete(additionalProperties, "lifecycleNotify")
+		delete(additionalProperties, "lifecycleMessage")
+		delete(additionalProperties, "lifecycleAutoRenew")
+		delete(additionalProperties, "lifecycleAllowExtend")
+		delete(additionalProperties, "lifecycleExtensionsBeforeApproval")
+		delete(additionalProperties, "accountIntegrationId")
+		delete(additionalProperties, "lifecycleHideFixed")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableExpirationPolicyTypeConfiguration struct {

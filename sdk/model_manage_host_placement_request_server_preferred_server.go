@@ -22,7 +22,10 @@ var _ MappedNullable = &ManageHostPlacementRequestServerPreferredServer{}
 type ManageHostPlacementRequestServerPreferredServer struct {
 	// Server ID
 	Id *int64 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ManageHostPlacementRequestServerPreferredServer ManageHostPlacementRequestServerPreferredServer
 
 // NewManageHostPlacementRequestServerPreferredServer instantiates a new ManageHostPlacementRequestServerPreferredServer object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o ManageHostPlacementRequestServerPreferredServer) ToMap() (map[string]int
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ManageHostPlacementRequestServerPreferredServer) UnmarshalJSON(data []byte) (err error) {
+	varManageHostPlacementRequestServerPreferredServer := _ManageHostPlacementRequestServerPreferredServer{}
+
+	err = json.Unmarshal(data, &varManageHostPlacementRequestServerPreferredServer)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ManageHostPlacementRequestServerPreferredServer(varManageHostPlacementRequestServerPreferredServer)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableManageHostPlacementRequestServerPreferredServer struct {

@@ -36,7 +36,10 @@ type BillingZone struct {
 	Snapshots *ListBillingAccount200ResponseAllOfBillingInfoZonesInnerSnapshots `json:"snapshots,omitempty"`
 	Price *float32 `json:"price,omitempty"`
 	Cost *float32 `json:"cost,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _BillingZone BillingZone
 
 // NewBillingZone instantiates a new BillingZone object
 // This constructor will assign default values to properties that have it defined,
@@ -590,7 +593,47 @@ func (o BillingZone) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Cost) {
 		toSerialize["cost"] = o.Cost
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *BillingZone) UnmarshalJSON(data []byte) (err error) {
+	varBillingZone := _BillingZone{}
+
+	err = json.Unmarshal(data, &varBillingZone)
+
+	if err != nil {
+		return err
+	}
+
+	*o = BillingZone(varBillingZone)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "zoneName")
+		delete(additionalProperties, "zoneId")
+		delete(additionalProperties, "zoneUUID")
+		delete(additionalProperties, "zoneCode")
+		delete(additionalProperties, "startDate")
+		delete(additionalProperties, "endDate")
+		delete(additionalProperties, "priceUnit")
+		delete(additionalProperties, "computeServers")
+		delete(additionalProperties, "instances")
+		delete(additionalProperties, "discoveredServers")
+		delete(additionalProperties, "loadBalancers")
+		delete(additionalProperties, "virtualImages")
+		delete(additionalProperties, "snapshots")
+		delete(additionalProperties, "price")
+		delete(additionalProperties, "cost")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableBillingZone struct {

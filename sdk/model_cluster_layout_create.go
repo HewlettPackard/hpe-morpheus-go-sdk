@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -49,6 +48,7 @@ type ClusterLayoutCreate struct {
 	Masters []AddClusterLayoutsRequestLayoutMastersInner `json:"masters,omitempty"`
 	// Array of cluster layout worker nodes
 	Workers []AddClusterLayoutsRequestLayoutMastersInner `json:"workers,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ClusterLayoutCreate ClusterLayoutCreate
@@ -581,6 +581,11 @@ func (o ClusterLayoutCreate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Workers) {
 		toSerialize["workers"] = o.Workers
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -611,15 +616,34 @@ func (o *ClusterLayoutCreate) UnmarshalJSON(data []byte) (err error) {
 
 	varClusterLayoutCreate := _ClusterLayoutCreate{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varClusterLayoutCreate)
+	err = json.Unmarshal(data, &varClusterLayoutCreate)
 
 	if err != nil {
 		return err
 	}
 
 	*o = ClusterLayoutCreate(varClusterLayoutCreate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "computeVersion")
+		delete(additionalProperties, "creatable")
+		delete(additionalProperties, "hasAutoScale")
+		delete(additionalProperties, "installContainerRuntime")
+		delete(additionalProperties, "memoryRequirement")
+		delete(additionalProperties, "groupType")
+		delete(additionalProperties, "provisionType")
+		delete(additionalProperties, "optionTypes")
+		delete(additionalProperties, "taskSets")
+		delete(additionalProperties, "environmentVariables")
+		delete(additionalProperties, "masters")
+		delete(additionalProperties, "workers")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

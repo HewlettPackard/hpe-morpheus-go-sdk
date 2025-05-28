@@ -24,7 +24,10 @@ type ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerPricesU
 	PricePerUnit *float32 `json:"pricePerUnit,omitempty"`
 	CostPerUnit *float32 `json:"costPerUnit,omitempty"`
 	Quantity *float32 `json:"quantity,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerPricesUsedInner ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerPricesUsedInner
 
 // NewListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerPricesUsedInner instantiates a new ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerPricesUsedInner object
 // This constructor will assign default values to properties that have it defined,
@@ -193,7 +196,36 @@ func (o ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerPric
 	if !IsNil(o.Quantity) {
 		toSerialize["quantity"] = o.Quantity
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerPricesUsedInner) UnmarshalJSON(data []byte) (err error) {
+	varListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerPricesUsedInner := _ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerPricesUsedInner{}
+
+	err = json.Unmarshal(data, &varListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerPricesUsedInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerPricesUsedInner(varListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerPricesUsedInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "pricePerUnit")
+		delete(additionalProperties, "costPerUnit")
+		delete(additionalProperties, "quantity")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerPricesUsedInner struct {

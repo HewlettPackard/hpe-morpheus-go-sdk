@@ -45,7 +45,10 @@ type UserSettingsUpdate struct {
 	DefaultGroup *UpdateUserSettingsRequestUserDefaultGroup `json:"defaultGroup,omitempty"`
 	DefaultCloud *UpdateUserSettingsRequestUserDefaultCloud `json:"defaultCloud,omitempty"`
 	DefaultPersona *UpdateUserSettingsRequestUserDefaultPersona `json:"defaultPersona,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UserSettingsUpdate UserSettingsUpdate
 
 // NewUserSettingsUpdate instantiates a new UserSettingsUpdate object
 // This constructor will assign default values to properties that have it defined,
@@ -564,7 +567,46 @@ func (o UserSettingsUpdate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.DefaultPersona) {
 		toSerialize["defaultPersona"] = o.DefaultPersona
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UserSettingsUpdate) UnmarshalJSON(data []byte) (err error) {
+	varUserSettingsUpdate := _UserSettingsUpdate{}
+
+	err = json.Unmarshal(data, &varUserSettingsUpdate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UserSettingsUpdate(varUserSettingsUpdate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "username")
+		delete(additionalProperties, "email")
+		delete(additionalProperties, "firstName")
+		delete(additionalProperties, "lastName")
+		delete(additionalProperties, "password")
+		delete(additionalProperties, "linuxUsername")
+		delete(additionalProperties, "linuxPassword")
+		delete(additionalProperties, "linuxKeyPairId")
+		delete(additionalProperties, "windowsUsername")
+		delete(additionalProperties, "windowsPassword")
+		delete(additionalProperties, "receiveNotifications")
+		delete(additionalProperties, "defaultGroup")
+		delete(additionalProperties, "defaultCloud")
+		delete(additionalProperties, "defaultPersona")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUserSettingsUpdate struct {

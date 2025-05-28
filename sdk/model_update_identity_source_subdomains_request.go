@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -24,6 +23,7 @@ var _ MappedNullable = &UpdateIdentitySourceSubdomainsRequest{}
 type UpdateIdentitySourceSubdomainsRequest struct {
 	// New Subdomain for account
 	Subdomain string `json:"subdomain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateIdentitySourceSubdomainsRequest UpdateIdentitySourceSubdomainsRequest
@@ -81,6 +81,11 @@ func (o UpdateIdentitySourceSubdomainsRequest) MarshalJSON() ([]byte, error) {
 func (o UpdateIdentitySourceSubdomainsRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["subdomain"] = o.Subdomain
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -108,15 +113,20 @@ func (o *UpdateIdentitySourceSubdomainsRequest) UnmarshalJSON(data []byte) (err 
 
 	varUpdateIdentitySourceSubdomainsRequest := _UpdateIdentitySourceSubdomainsRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varUpdateIdentitySourceSubdomainsRequest)
+	err = json.Unmarshal(data, &varUpdateIdentitySourceSubdomainsRequest)
 
 	if err != nil {
 		return err
 	}
 
 	*o = UpdateIdentitySourceSubdomainsRequest(varUpdateIdentitySourceSubdomainsRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "subdomain")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

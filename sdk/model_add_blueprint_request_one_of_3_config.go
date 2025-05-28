@@ -22,7 +22,10 @@ var _ MappedNullable = &AddBlueprintRequestOneOf3Config{}
 type AddBlueprintRequestOneOf3Config struct {
 	// Array of Kubernetes specs in Morpheus
 	Specs []AddBlueprintRequestOneOf3ConfigSpecsInner `json:"specs,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddBlueprintRequestOneOf3Config AddBlueprintRequestOneOf3Config
 
 // NewAddBlueprintRequestOneOf3Config instantiates a new AddBlueprintRequestOneOf3Config object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o AddBlueprintRequestOneOf3Config) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.Specs) {
 		toSerialize["specs"] = o.Specs
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddBlueprintRequestOneOf3Config) UnmarshalJSON(data []byte) (err error) {
+	varAddBlueprintRequestOneOf3Config := _AddBlueprintRequestOneOf3Config{}
+
+	err = json.Unmarshal(data, &varAddBlueprintRequestOneOf3Config)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddBlueprintRequestOneOf3Config(varAddBlueprintRequestOneOf3Config)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "specs")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddBlueprintRequestOneOf3Config struct {

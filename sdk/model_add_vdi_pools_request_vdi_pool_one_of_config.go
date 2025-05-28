@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -29,6 +28,7 @@ type AddVDIPoolsRequestVdiPoolOneOfConfig struct {
 	Type AddVDIPoolsRequestVdiPoolOneOfConfigType `json:"type"`
 	Layout AddVDIPoolsRequestVdiPoolOneOfConfigLayout `json:"layout"`
 	Plan AddVDIPoolsRequestVdiPoolOneOfConfigPlan `json:"plan"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddVDIPoolsRequestVdiPoolOneOfConfig AddVDIPoolsRequestVdiPoolOneOfConfig
@@ -216,6 +216,11 @@ func (o AddVDIPoolsRequestVdiPoolOneOfConfig) ToMap() (map[string]interface{}, e
 	toSerialize["type"] = o.Type
 	toSerialize["layout"] = o.Layout
 	toSerialize["plan"] = o.Plan
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -248,15 +253,25 @@ func (o *AddVDIPoolsRequestVdiPoolOneOfConfig) UnmarshalJSON(data []byte) (err e
 
 	varAddVDIPoolsRequestVdiPoolOneOfConfig := _AddVDIPoolsRequestVdiPoolOneOfConfig{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddVDIPoolsRequestVdiPoolOneOfConfig)
+	err = json.Unmarshal(data, &varAddVDIPoolsRequestVdiPoolOneOfConfig)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddVDIPoolsRequestVdiPoolOneOfConfig(varAddVDIPoolsRequestVdiPoolOneOfConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "group")
+		delete(additionalProperties, "cloud")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "layout")
+		delete(additionalProperties, "plan")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

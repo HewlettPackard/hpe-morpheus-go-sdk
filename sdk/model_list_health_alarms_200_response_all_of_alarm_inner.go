@@ -25,7 +25,10 @@ type ListHealthAlarms200ResponseAllOfAlarmInner struct {
 	Name *string `json:"name,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListHealthAlarms200ResponseAllOfAlarmInner ListHealthAlarms200ResponseAllOfAlarmInner
 
 // NewListHealthAlarms200ResponseAllOfAlarmInner instantiates a new ListHealthAlarms200ResponseAllOfAlarmInner object
 // This constructor will assign default values to properties that have it defined,
@@ -194,7 +197,36 @@ func (o ListHealthAlarms200ResponseAllOfAlarmInner) ToMap() (map[string]interfac
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListHealthAlarms200ResponseAllOfAlarmInner) UnmarshalJSON(data []byte) (err error) {
+	varListHealthAlarms200ResponseAllOfAlarmInner := _ListHealthAlarms200ResponseAllOfAlarmInner{}
+
+	err = json.Unmarshal(data, &varListHealthAlarms200ResponseAllOfAlarmInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListHealthAlarms200ResponseAllOfAlarmInner(varListHealthAlarms200ResponseAllOfAlarmInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListHealthAlarms200ResponseAllOfAlarmInner struct {

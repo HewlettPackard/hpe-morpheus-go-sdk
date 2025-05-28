@@ -30,7 +30,10 @@ type AppUpdate struct {
 	Environment *string `json:"environment,omitempty"`
 	// User ID, can be used to change app owner. This also changes the owner for each instance in the app.
 	OwnerId *int64 `json:"ownerId,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AppUpdate AppUpdate
 
 // NewAppUpdate instantiates a new AppUpdate object
 // This constructor will assign default values to properties that have it defined,
@@ -234,7 +237,37 @@ func (o AppUpdate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.OwnerId) {
 		toSerialize["ownerId"] = o.OwnerId
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AppUpdate) UnmarshalJSON(data []byte) (err error) {
+	varAppUpdate := _AppUpdate{}
+
+	err = json.Unmarshal(data, &varAppUpdate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AppUpdate(varAppUpdate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "environment")
+		delete(additionalProperties, "ownerId")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAppUpdate struct {

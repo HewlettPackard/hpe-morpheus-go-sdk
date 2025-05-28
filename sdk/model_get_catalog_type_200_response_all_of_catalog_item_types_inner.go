@@ -33,7 +33,10 @@ type GetCatalogType200ResponseAllOfCatalogItemTypesInner struct {
 	FormType *string `json:"formType,omitempty"`
 	Form *GetCatalogType200ResponseAllOfCatalogItemTypesInnerForm `json:"form,omitempty"`
 	OptionTypes []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetCatalogType200ResponseAllOfCatalogItemTypesInner GetCatalogType200ResponseAllOfCatalogItemTypesInner
 
 // NewGetCatalogType200ResponseAllOfCatalogItemTypesInner instantiates a new GetCatalogType200ResponseAllOfCatalogItemTypesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -482,7 +485,44 @@ func (o GetCatalogType200ResponseAllOfCatalogItemTypesInner) ToMap() (map[string
 	if !IsNil(o.OptionTypes) {
 		toSerialize["optionTypes"] = o.OptionTypes
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetCatalogType200ResponseAllOfCatalogItemTypesInner) UnmarshalJSON(data []byte) (err error) {
+	varGetCatalogType200ResponseAllOfCatalogItemTypesInner := _GetCatalogType200ResponseAllOfCatalogItemTypesInner{}
+
+	err = json.Unmarshal(data, &varGetCatalogType200ResponseAllOfCatalogItemTypesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetCatalogType200ResponseAllOfCatalogItemTypesInner(varGetCatalogType200ResponseAllOfCatalogItemTypesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "context")
+		delete(additionalProperties, "featured")
+		delete(additionalProperties, "allowQuantity")
+		delete(additionalProperties, "imagePath")
+		delete(additionalProperties, "darkImagePath")
+		delete(additionalProperties, "formType")
+		delete(additionalProperties, "form")
+		delete(additionalProperties, "optionTypes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetCatalogType200ResponseAllOfCatalogItemTypesInner struct {

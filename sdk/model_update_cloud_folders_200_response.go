@@ -21,7 +21,10 @@ var _ MappedNullable = &UpdateCloudFolders200Response{}
 // UpdateCloudFolders200Response struct for UpdateCloudFolders200Response
 type UpdateCloudFolders200Response struct {
 	Folder *UpdateCloudFolders200ResponseFolder `json:"folder,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateCloudFolders200Response UpdateCloudFolders200Response
 
 // NewUpdateCloudFolders200Response instantiates a new UpdateCloudFolders200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o UpdateCloudFolders200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Folder) {
 		toSerialize["folder"] = o.Folder
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateCloudFolders200Response) UnmarshalJSON(data []byte) (err error) {
+	varUpdateCloudFolders200Response := _UpdateCloudFolders200Response{}
+
+	err = json.Unmarshal(data, &varUpdateCloudFolders200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateCloudFolders200Response(varUpdateCloudFolders200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "folder")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateCloudFolders200Response struct {

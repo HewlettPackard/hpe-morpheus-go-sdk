@@ -35,7 +35,10 @@ type ListAlerts200ResponseAllOfAlertsInner struct {
 	CheckGroups []int32 `json:"checkGroups,omitempty"`
 	Apps []int32 `json:"apps,omitempty"`
 	Contacts []ListAlerts200ResponseAllOfAlertsInnerContactsInner `json:"contacts,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListAlerts200ResponseAllOfAlertsInner ListAlerts200ResponseAllOfAlertsInner
 
 // NewListAlerts200ResponseAllOfAlertsInner instantiates a new ListAlerts200ResponseAllOfAlertsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -554,7 +557,46 @@ func (o ListAlerts200ResponseAllOfAlertsInner) ToMap() (map[string]interface{}, 
 	if !IsNil(o.Contacts) {
 		toSerialize["contacts"] = o.Contacts
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListAlerts200ResponseAllOfAlertsInner) UnmarshalJSON(data []byte) (err error) {
+	varListAlerts200ResponseAllOfAlertsInner := _ListAlerts200ResponseAllOfAlertsInner{}
+
+	err = json.Unmarshal(data, &varListAlerts200ResponseAllOfAlertsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListAlerts200ResponseAllOfAlertsInner(varListAlerts200ResponseAllOfAlertsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "allApps")
+		delete(additionalProperties, "allChecks")
+		delete(additionalProperties, "allGroups")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "minSeverity")
+		delete(additionalProperties, "minDuration")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "checks")
+		delete(additionalProperties, "checkGroups")
+		delete(additionalProperties, "apps")
+		delete(additionalProperties, "contacts")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListAlerts200ResponseAllOfAlertsInner struct {

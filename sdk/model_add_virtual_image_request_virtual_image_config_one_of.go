@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -30,6 +29,7 @@ type AddVirtualImageRequestVirtualImageConfigOneOf struct {
 	Sku string `json:"sku"`
 	// The name of the version in the Azure Marketplace
 	Version string `json:"version"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddVirtualImageRequestVirtualImageConfigOneOf AddVirtualImageRequestVirtualImageConfigOneOf
@@ -165,6 +165,11 @@ func (o AddVirtualImageRequestVirtualImageConfigOneOf) ToMap() (map[string]inter
 	toSerialize["offer"] = o.Offer
 	toSerialize["sku"] = o.Sku
 	toSerialize["version"] = o.Version
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -195,15 +200,23 @@ func (o *AddVirtualImageRequestVirtualImageConfigOneOf) UnmarshalJSON(data []byt
 
 	varAddVirtualImageRequestVirtualImageConfigOneOf := _AddVirtualImageRequestVirtualImageConfigOneOf{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddVirtualImageRequestVirtualImageConfigOneOf)
+	err = json.Unmarshal(data, &varAddVirtualImageRequestVirtualImageConfigOneOf)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddVirtualImageRequestVirtualImageConfigOneOf(varAddVirtualImageRequestVirtualImageConfigOneOf)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "publisher")
+		delete(additionalProperties, "offer")
+		delete(additionalProperties, "sku")
+		delete(additionalProperties, "version")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

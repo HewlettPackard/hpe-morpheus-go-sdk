@@ -24,7 +24,10 @@ type ListInstances200ResponseAllOfInstancesInnerLayout struct {
 	Name *string `json:"name,omitempty"`
 	ProvisionTypeId *int64 `json:"provisionTypeId,omitempty"`
 	ProvisionTypeCode *string `json:"provisionTypeCode,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListInstances200ResponseAllOfInstancesInnerLayout ListInstances200ResponseAllOfInstancesInnerLayout
 
 // NewListInstances200ResponseAllOfInstancesInnerLayout instantiates a new ListInstances200ResponseAllOfInstancesInnerLayout object
 // This constructor will assign default values to properties that have it defined,
@@ -193,7 +196,36 @@ func (o ListInstances200ResponseAllOfInstancesInnerLayout) ToMap() (map[string]i
 	if !IsNil(o.ProvisionTypeCode) {
 		toSerialize["provisionTypeCode"] = o.ProvisionTypeCode
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListInstances200ResponseAllOfInstancesInnerLayout) UnmarshalJSON(data []byte) (err error) {
+	varListInstances200ResponseAllOfInstancesInnerLayout := _ListInstances200ResponseAllOfInstancesInnerLayout{}
+
+	err = json.Unmarshal(data, &varListInstances200ResponseAllOfInstancesInnerLayout)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListInstances200ResponseAllOfInstancesInnerLayout(varListInstances200ResponseAllOfInstancesInnerLayout)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "provisionTypeId")
+		delete(additionalProperties, "provisionTypeCode")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListInstances200ResponseAllOfInstancesInnerLayout struct {

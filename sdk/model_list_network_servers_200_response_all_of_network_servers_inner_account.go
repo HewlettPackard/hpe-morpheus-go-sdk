@@ -22,7 +22,10 @@ var _ MappedNullable = &ListNetworkServers200ResponseAllOfNetworkServersInnerAcc
 type ListNetworkServers200ResponseAllOfNetworkServersInnerAccount struct {
 	Id *int64 `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListNetworkServers200ResponseAllOfNetworkServersInnerAccount ListNetworkServers200ResponseAllOfNetworkServersInnerAccount
 
 // NewListNetworkServers200ResponseAllOfNetworkServersInnerAccount instantiates a new ListNetworkServers200ResponseAllOfNetworkServersInnerAccount object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o ListNetworkServers200ResponseAllOfNetworkServersInnerAccount) ToMap() (m
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListNetworkServers200ResponseAllOfNetworkServersInnerAccount) UnmarshalJSON(data []byte) (err error) {
+	varListNetworkServers200ResponseAllOfNetworkServersInnerAccount := _ListNetworkServers200ResponseAllOfNetworkServersInnerAccount{}
+
+	err = json.Unmarshal(data, &varListNetworkServers200ResponseAllOfNetworkServersInnerAccount)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListNetworkServers200ResponseAllOfNetworkServersInnerAccount(varListNetworkServers200ResponseAllOfNetworkServersInnerAccount)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListNetworkServers200ResponseAllOfNetworkServersInnerAccount struct {

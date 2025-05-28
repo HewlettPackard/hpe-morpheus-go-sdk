@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -29,6 +28,7 @@ type NetworkDhcpServerCreate struct {
 	// Name
 	Name string `json:"name"`
 	Config CreateNetworkDhcpServerRequestNetworkDhcpServerConfig `json:"config"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _NetworkDhcpServerCreate NetworkDhcpServerCreate
@@ -166,6 +166,11 @@ func (o NetworkDhcpServerCreate) ToMap() (map[string]interface{}, error) {
 	toSerialize["leaseTime"] = o.LeaseTime
 	toSerialize["name"] = o.Name
 	toSerialize["config"] = o.Config
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -196,15 +201,23 @@ func (o *NetworkDhcpServerCreate) UnmarshalJSON(data []byte) (err error) {
 
 	varNetworkDhcpServerCreate := _NetworkDhcpServerCreate{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varNetworkDhcpServerCreate)
+	err = json.Unmarshal(data, &varNetworkDhcpServerCreate)
 
 	if err != nil {
 		return err
 	}
 
 	*o = NetworkDhcpServerCreate(varNetworkDhcpServerCreate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "serverIpAddress")
+		delete(additionalProperties, "leaseTime")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "config")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

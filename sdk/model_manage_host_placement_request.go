@@ -21,7 +21,10 @@ var _ MappedNullable = &ManageHostPlacementRequest{}
 // ManageHostPlacementRequest struct for ManageHostPlacementRequest
 type ManageHostPlacementRequest struct {
 	Server *ManageHostPlacementRequestServer `json:"server,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ManageHostPlacementRequest ManageHostPlacementRequest
 
 // NewManageHostPlacementRequest instantiates a new ManageHostPlacementRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o ManageHostPlacementRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Server) {
 		toSerialize["server"] = o.Server
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ManageHostPlacementRequest) UnmarshalJSON(data []byte) (err error) {
+	varManageHostPlacementRequest := _ManageHostPlacementRequest{}
+
+	err = json.Unmarshal(data, &varManageHostPlacementRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ManageHostPlacementRequest(varManageHostPlacementRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "server")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableManageHostPlacementRequest struct {

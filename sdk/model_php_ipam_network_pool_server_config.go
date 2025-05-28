@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -26,6 +25,7 @@ type PhpIPAMNetworkPoolServerConfig struct {
 	AppId string `json:"appId"`
 	// Inventory Existing
 	InventoryExisting *string `json:"inventoryExisting,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _PhpIPAMNetworkPoolServerConfig PhpIPAMNetworkPoolServerConfig
@@ -122,6 +122,11 @@ func (o PhpIPAMNetworkPoolServerConfig) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.InventoryExisting) {
 		toSerialize["inventoryExisting"] = o.InventoryExisting
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -149,15 +154,21 @@ func (o *PhpIPAMNetworkPoolServerConfig) UnmarshalJSON(data []byte) (err error) 
 
 	varPhpIPAMNetworkPoolServerConfig := _PhpIPAMNetworkPoolServerConfig{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varPhpIPAMNetworkPoolServerConfig)
+	err = json.Unmarshal(data, &varPhpIPAMNetworkPoolServerConfig)
 
 	if err != nil {
 		return err
 	}
 
 	*o = PhpIPAMNetworkPoolServerConfig(varPhpIPAMNetworkPoolServerConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "appId")
+		delete(additionalProperties, "inventoryExisting")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

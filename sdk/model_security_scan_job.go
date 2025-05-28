@@ -14,7 +14,6 @@ package sdk
 import (
 	"encoding/json"
 	"time"
-	"bytes"
 	"fmt"
 )
 
@@ -46,6 +45,7 @@ type SecurityScanJob struct {
 	DateTime *time.Time `json:"dateTime,omitempty"`
 	// If true, executes job
 	Run *bool `json:"run,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _SecurityScanJob SecurityScanJob
@@ -491,6 +491,11 @@ func (o SecurityScanJob) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Run) {
 		toSerialize["run"] = o.Run
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -522,15 +527,32 @@ func (o *SecurityScanJob) UnmarshalJSON(data []byte) (err error) {
 
 	varSecurityScanJob := _SecurityScanJob{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varSecurityScanJob)
+	err = json.Unmarshal(data, &varSecurityScanJob)
 
 	if err != nil {
 		return err
 	}
 
 	*o = SecurityScanJob(varSecurityScanJob)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "securityPackage")
+		delete(additionalProperties, "scanPath")
+		delete(additionalProperties, "securityProfile")
+		delete(additionalProperties, "targetType")
+		delete(additionalProperties, "targets")
+		delete(additionalProperties, "scheduleMode")
+		delete(additionalProperties, "customOptions")
+		delete(additionalProperties, "customConfig")
+		delete(additionalProperties, "dateTime")
+		delete(additionalProperties, "run")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

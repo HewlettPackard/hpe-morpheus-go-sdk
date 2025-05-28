@@ -57,7 +57,10 @@ type ListInvoices200ResponseAllOfInvoicesInnerLineItemsInner struct {
 	ConversionRate *int64 `json:"conversionRate,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListInvoices200ResponseAllOfInvoicesInnerLineItemsInner ListInvoices200ResponseAllOfInvoicesInnerLineItemsInner
 
 // NewListInvoices200ResponseAllOfInvoicesInnerLineItemsInner instantiates a new ListInvoices200ResponseAllOfInvoicesInnerLineItemsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -1346,7 +1349,68 @@ func (o ListInvoices200ResponseAllOfInvoicesInnerLineItemsInner) ToMap() (map[st
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListInvoices200ResponseAllOfInvoicesInnerLineItemsInner) UnmarshalJSON(data []byte) (err error) {
+	varListInvoices200ResponseAllOfInvoicesInnerLineItemsInner := _ListInvoices200ResponseAllOfInvoicesInnerLineItemsInner{}
+
+	err = json.Unmarshal(data, &varListInvoices200ResponseAllOfInvoicesInnerLineItemsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListInvoices200ResponseAllOfInvoicesInnerLineItemsInner(varListInvoices200ResponseAllOfInvoicesInnerLineItemsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "invoiceId")
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "refId")
+		delete(additionalProperties, "refName")
+		delete(additionalProperties, "startDate")
+		delete(additionalProperties, "endDate")
+		delete(additionalProperties, "itemId")
+		delete(additionalProperties, "itemType")
+		delete(additionalProperties, "itemName")
+		delete(additionalProperties, "itemDescription")
+		delete(additionalProperties, "productId")
+		delete(additionalProperties, "productCode")
+		delete(additionalProperties, "productName")
+		delete(additionalProperties, "itemSeller")
+		delete(additionalProperties, "itemAction")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "rateId")
+		delete(additionalProperties, "rateClass")
+		delete(additionalProperties, "rateUnit")
+		delete(additionalProperties, "rateTerm")
+		delete(additionalProperties, "usageType")
+		delete(additionalProperties, "usageCategory")
+		delete(additionalProperties, "usageService")
+		delete(additionalProperties, "itemUsage")
+		delete(additionalProperties, "itemRate")
+		delete(additionalProperties, "itemCost")
+		delete(additionalProperties, "itemPrice")
+		delete(additionalProperties, "itemTax")
+		delete(additionalProperties, "itemTerm")
+		delete(additionalProperties, "taxType")
+		delete(additionalProperties, "regionCode")
+		delete(additionalProperties, "currency")
+		delete(additionalProperties, "conversionRate")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListInvoices200ResponseAllOfInvoicesInnerLineItemsInner struct {

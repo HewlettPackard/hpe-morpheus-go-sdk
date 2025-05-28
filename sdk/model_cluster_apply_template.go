@@ -22,7 +22,10 @@ var _ MappedNullable = &ClusterApplyTemplate{}
 type ClusterApplyTemplate struct {
 	Success *bool `json:"success,omitempty"`
 	ExecutionId *string `json:"executionId,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ClusterApplyTemplate ClusterApplyTemplate
 
 // NewClusterApplyTemplate instantiates a new ClusterApplyTemplate object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o ClusterApplyTemplate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ExecutionId) {
 		toSerialize["executionId"] = o.ExecutionId
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ClusterApplyTemplate) UnmarshalJSON(data []byte) (err error) {
+	varClusterApplyTemplate := _ClusterApplyTemplate{}
+
+	err = json.Unmarshal(data, &varClusterApplyTemplate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ClusterApplyTemplate(varClusterApplyTemplate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "success")
+		delete(additionalProperties, "executionId")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableClusterApplyTemplate struct {

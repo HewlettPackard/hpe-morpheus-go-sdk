@@ -21,7 +21,10 @@ var _ MappedNullable = &UpdateNetworkRouterFirewallRuleRequest{}
 // UpdateNetworkRouterFirewallRuleRequest The parameters for updating a network router is type dependent. The following lists the common parameters. See get a specific type to list available options for that network router type. 
 type UpdateNetworkRouterFirewallRuleRequest struct {
 	Rule *CreateNetworkRouterFirewallRuleRequestRule `json:"rule,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateNetworkRouterFirewallRuleRequest UpdateNetworkRouterFirewallRuleRequest
 
 // NewUpdateNetworkRouterFirewallRuleRequest instantiates a new UpdateNetworkRouterFirewallRuleRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o UpdateNetworkRouterFirewallRuleRequest) ToMap() (map[string]interface{},
 	if !IsNil(o.Rule) {
 		toSerialize["rule"] = o.Rule
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateNetworkRouterFirewallRuleRequest) UnmarshalJSON(data []byte) (err error) {
+	varUpdateNetworkRouterFirewallRuleRequest := _UpdateNetworkRouterFirewallRuleRequest{}
+
+	err = json.Unmarshal(data, &varUpdateNetworkRouterFirewallRuleRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateNetworkRouterFirewallRuleRequest(varUpdateNetworkRouterFirewallRuleRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "rule")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateNetworkRouterFirewallRuleRequest struct {

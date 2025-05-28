@@ -25,7 +25,10 @@ type UpdateServicePlansRequestServicePlanConfig struct {
 	// Specifies range min / max memory multiplier
 	MemorySizeType *string `json:"memorySizeType,omitempty"`
 	Ranges *UpdateServicePlansRequestServicePlanConfigRanges `json:"ranges,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateServicePlansRequestServicePlanConfig UpdateServicePlansRequestServicePlanConfig
 
 // NewUpdateServicePlansRequestServicePlanConfig instantiates a new UpdateServicePlansRequestServicePlanConfig object
 // This constructor will assign default values to properties that have it defined,
@@ -167,7 +170,35 @@ func (o UpdateServicePlansRequestServicePlanConfig) ToMap() (map[string]interfac
 	if !IsNil(o.Ranges) {
 		toSerialize["ranges"] = o.Ranges
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateServicePlansRequestServicePlanConfig) UnmarshalJSON(data []byte) (err error) {
+	varUpdateServicePlansRequestServicePlanConfig := _UpdateServicePlansRequestServicePlanConfig{}
+
+	err = json.Unmarshal(data, &varUpdateServicePlansRequestServicePlanConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateServicePlansRequestServicePlanConfig(varUpdateServicePlansRequestServicePlanConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "storageSizeType")
+		delete(additionalProperties, "memorySizeType")
+		delete(additionalProperties, "ranges")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateServicePlansRequestServicePlanConfig struct {

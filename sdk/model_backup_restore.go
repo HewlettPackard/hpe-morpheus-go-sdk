@@ -41,7 +41,10 @@ type BackupRestore struct {
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	// Last Updated
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _BackupRestore BackupRestore
 
 // NewBackupRestore instantiates a new BackupRestore object
 // This constructor will assign default values to properties that have it defined,
@@ -665,7 +668,49 @@ func (o BackupRestore) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *BackupRestore) UnmarshalJSON(data []byte) (err error) {
+	varBackupRestore := _BackupRestore{}
+
+	err = json.Unmarshal(data, &varBackupRestore)
+
+	if err != nil {
+		return err
+	}
+
+	*o = BackupRestore(varBackupRestore)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "backupResultId")
+		delete(additionalProperties, "backupId")
+		delete(additionalProperties, "backup")
+		delete(additionalProperties, "containerId")
+		delete(additionalProperties, "container")
+		delete(additionalProperties, "instance")
+		delete(additionalProperties, "restoreToNew")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "errorMessage")
+		delete(additionalProperties, "startDate")
+		delete(additionalProperties, "endDate")
+		delete(additionalProperties, "durationMillis")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "externalStatusRef")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableBackupRestore struct {

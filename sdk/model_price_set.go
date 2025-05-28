@@ -32,7 +32,10 @@ type PriceSet struct {
 	ZonePool *string `json:"zonePool,omitempty"`
 	Account *string `json:"account,omitempty"`
 	Prices []ListPriceSets200ResponseAllOfPriceSetsInnerPricesInner `json:"prices,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _PriceSet PriceSet
 
 // NewPriceSet instantiates a new PriceSet object
 // This constructor will assign default values to properties that have it defined,
@@ -481,7 +484,44 @@ func (o PriceSet) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Prices) {
 		toSerialize["prices"] = o.Prices
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *PriceSet) UnmarshalJSON(data []byte) (err error) {
+	varPriceSet := _PriceSet{}
+
+	err = json.Unmarshal(data, &varPriceSet)
+
+	if err != nil {
+		return err
+	}
+
+	*o = PriceSet(varPriceSet)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "priceUnit")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "regionCode")
+		delete(additionalProperties, "systemCreated")
+		delete(additionalProperties, "zone")
+		delete(additionalProperties, "zonePool")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "prices")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullablePriceSet struct {

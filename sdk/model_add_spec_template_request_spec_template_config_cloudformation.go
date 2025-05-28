@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -25,6 +24,7 @@ type AddSpecTemplateRequestSpecTemplateConfigCloudformation struct {
 	IAM AddSpecTemplateRequestSpecTemplateConfigCloudformationIAM `json:"IAM"`
 	CAPABILITY_NAMED_IAM AddSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYNAMEDIAM `json:"CAPABILITY_NAMED_IAM"`
 	CAPABILITY_AUTO_EXPAND AddSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYAUTOEXPAND `json:"CAPABILITY_AUTO_EXPAND"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddSpecTemplateRequestSpecTemplateConfigCloudformation AddSpecTemplateRequestSpecTemplateConfigCloudformation
@@ -134,6 +134,11 @@ func (o AddSpecTemplateRequestSpecTemplateConfigCloudformation) ToMap() (map[str
 	toSerialize["IAM"] = o.IAM
 	toSerialize["CAPABILITY_NAMED_IAM"] = o.CAPABILITY_NAMED_IAM
 	toSerialize["CAPABILITY_AUTO_EXPAND"] = o.CAPABILITY_AUTO_EXPAND
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -163,15 +168,22 @@ func (o *AddSpecTemplateRequestSpecTemplateConfigCloudformation) UnmarshalJSON(d
 
 	varAddSpecTemplateRequestSpecTemplateConfigCloudformation := _AddSpecTemplateRequestSpecTemplateConfigCloudformation{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddSpecTemplateRequestSpecTemplateConfigCloudformation)
+	err = json.Unmarshal(data, &varAddSpecTemplateRequestSpecTemplateConfigCloudformation)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddSpecTemplateRequestSpecTemplateConfigCloudformation(varAddSpecTemplateRequestSpecTemplateConfigCloudformation)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "IAM")
+		delete(additionalProperties, "CAPABILITY_NAMED_IAM")
+		delete(additionalProperties, "CAPABILITY_AUTO_EXPAND")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

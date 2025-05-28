@@ -22,7 +22,10 @@ var _ MappedNullable = &ListJobs200ResponseAllOfJobsInnerAnyOfWorkflow{}
 type ListJobs200ResponseAllOfJobsInnerAnyOfWorkflow struct {
 	Id *int64 `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListJobs200ResponseAllOfJobsInnerAnyOfWorkflow ListJobs200ResponseAllOfJobsInnerAnyOfWorkflow
 
 // NewListJobs200ResponseAllOfJobsInnerAnyOfWorkflow instantiates a new ListJobs200ResponseAllOfJobsInnerAnyOfWorkflow object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o ListJobs200ResponseAllOfJobsInnerAnyOfWorkflow) ToMap() (map[string]inte
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListJobs200ResponseAllOfJobsInnerAnyOfWorkflow) UnmarshalJSON(data []byte) (err error) {
+	varListJobs200ResponseAllOfJobsInnerAnyOfWorkflow := _ListJobs200ResponseAllOfJobsInnerAnyOfWorkflow{}
+
+	err = json.Unmarshal(data, &varListJobs200ResponseAllOfJobsInnerAnyOfWorkflow)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListJobs200ResponseAllOfJobsInnerAnyOfWorkflow(varListJobs200ResponseAllOfJobsInnerAnyOfWorkflow)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListJobs200ResponseAllOfJobsInnerAnyOfWorkflow struct {

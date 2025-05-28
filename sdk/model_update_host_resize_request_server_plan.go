@@ -22,7 +22,10 @@ var _ MappedNullable = &UpdateHostResizeRequestServerPlan{}
 type UpdateHostResizeRequestServerPlan struct {
 	// The ID of the new plan (optional). See Available Service Plans
 	Id *int64 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateHostResizeRequestServerPlan UpdateHostResizeRequestServerPlan
 
 // NewUpdateHostResizeRequestServerPlan instantiates a new UpdateHostResizeRequestServerPlan object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o UpdateHostResizeRequestServerPlan) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateHostResizeRequestServerPlan) UnmarshalJSON(data []byte) (err error) {
+	varUpdateHostResizeRequestServerPlan := _UpdateHostResizeRequestServerPlan{}
+
+	err = json.Unmarshal(data, &varUpdateHostResizeRequestServerPlan)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateHostResizeRequestServerPlan(varUpdateHostResizeRequestServerPlan)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateHostResizeRequestServerPlan struct {

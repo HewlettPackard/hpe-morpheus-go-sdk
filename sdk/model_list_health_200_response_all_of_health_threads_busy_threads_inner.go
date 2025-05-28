@@ -37,7 +37,10 @@ type ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner struct {
 	LockInfo *string `json:"lockInfo,omitempty"`
 	CurrentLines *string `json:"currentLines,omitempty"`
 	CpuPercent *float32 `json:"cpuPercent,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner
 
 // NewListHealth200ResponseAllOfHealthThreadsBusyThreadsInner instantiates a new ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -661,7 +664,49 @@ func (o ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) ToMap() (map[st
 	if !IsNil(o.CpuPercent) {
 		toSerialize["cpuPercent"] = o.CpuPercent
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) UnmarshalJSON(data []byte) (err error) {
+	varListHealth200ResponseAllOfHealthThreadsBusyThreadsInner := _ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner{}
+
+	err = json.Unmarshal(data, &varListHealth200ResponseAllOfHealthThreadsBusyThreadsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner(varListHealth200ResponseAllOfHealthThreadsBusyThreadsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "threadId")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "cpuTime")
+		delete(additionalProperties, "blockedTime")
+		delete(additionalProperties, "lockName")
+		delete(additionalProperties, "lockOwnerId")
+		delete(additionalProperties, "lockOwnerName")
+		delete(additionalProperties, "state")
+		delete(additionalProperties, "waitedCount")
+		delete(additionalProperties, "waitedTime")
+		delete(additionalProperties, "isInNative")
+		delete(additionalProperties, "isSuspended")
+		delete(additionalProperties, "lockedMonitors")
+		delete(additionalProperties, "lockedSynchronizers")
+		delete(additionalProperties, "lockInfo")
+		delete(additionalProperties, "currentLines")
+		delete(additionalProperties, "cpuPercent")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListHealth200ResponseAllOfHealthThreadsBusyThreadsInner struct {

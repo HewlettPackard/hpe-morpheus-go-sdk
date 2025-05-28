@@ -22,7 +22,10 @@ var _ MappedNullable = &ListVDIPools200Response{}
 type ListVDIPools200Response struct {
 	VdiPools []ListVDIPools200ResponseAllOfVdiPoolsInner `json:"vdiPools,omitempty"`
 	Meta *ListActivity200ResponseAllOfMeta `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListVDIPools200Response ListVDIPools200Response
 
 // NewListVDIPools200Response instantiates a new ListVDIPools200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o ListVDIPools200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Meta) {
 		toSerialize["meta"] = o.Meta
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListVDIPools200Response) UnmarshalJSON(data []byte) (err error) {
+	varListVDIPools200Response := _ListVDIPools200Response{}
+
+	err = json.Unmarshal(data, &varListVDIPools200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListVDIPools200Response(varListVDIPools200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "vdiPools")
+		delete(additionalProperties, "meta")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListVDIPools200Response struct {

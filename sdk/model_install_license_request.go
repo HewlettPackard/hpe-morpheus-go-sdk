@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -26,6 +25,7 @@ type InstallLicenseRequest struct {
 	License string `json:"license"`
 	// Install Action can be passed as 'add' to stack the license. By default all currently installed licenses are removed and replaced by the new one.
 	InstallAction *string `json:"installAction,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _InstallLicenseRequest InstallLicenseRequest
@@ -122,6 +122,11 @@ func (o InstallLicenseRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.InstallAction) {
 		toSerialize["installAction"] = o.InstallAction
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -149,15 +154,21 @@ func (o *InstallLicenseRequest) UnmarshalJSON(data []byte) (err error) {
 
 	varInstallLicenseRequest := _InstallLicenseRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varInstallLicenseRequest)
+	err = json.Unmarshal(data, &varInstallLicenseRequest)
 
 	if err != nil {
 		return err
 	}
 
 	*o = InstallLicenseRequest(varInstallLicenseRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "license")
+		delete(additionalProperties, "installAction")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

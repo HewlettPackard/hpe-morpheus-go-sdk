@@ -70,7 +70,10 @@ type UpdateRoleRequestRole struct {
 	GlobalTaskSetAccess *string `json:"globalTaskSetAccess,omitempty"`
 	// Set the access level for the specified workflows (taskSets)
 	TaskSets []AddRolesRequestRoleTaskSetsInner `json:"taskSets,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateRoleRequestRole UpdateRoleRequestRole
 
 // NewUpdateRoleRequestRole instantiates a new UpdateRoleRequestRole object
 // This constructor will assign default values to properties that have it defined,
@@ -974,7 +977,57 @@ func (o UpdateRoleRequestRole) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.TaskSets) {
 		toSerialize["taskSets"] = o.TaskSets
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateRoleRequestRole) UnmarshalJSON(data []byte) (err error) {
+	varUpdateRoleRequestRole := _UpdateRoleRequestRole{}
+
+	err = json.Unmarshal(data, &varUpdateRoleRequestRole)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateRoleRequestRole(varUpdateRoleRequestRole)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "authority")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "landingUrl")
+		delete(additionalProperties, "defaultPersona")
+		delete(additionalProperties, "permissions")
+		delete(additionalProperties, "globalSiteAccess")
+		delete(additionalProperties, "sites")
+		delete(additionalProperties, "globalZoneAccess")
+		delete(additionalProperties, "zones")
+		delete(additionalProperties, "globalInstanceTypeAccess")
+		delete(additionalProperties, "instanceTypes")
+		delete(additionalProperties, "globalAppTemplateAccess")
+		delete(additionalProperties, "appTemplates")
+		delete(additionalProperties, "globalCatalogItemTypeAccess")
+		delete(additionalProperties, "catalogItemTypes")
+		delete(additionalProperties, "globalPersonaAccess")
+		delete(additionalProperties, "personas")
+		delete(additionalProperties, "globalVdiPoolAccess")
+		delete(additionalProperties, "vdiPools")
+		delete(additionalProperties, "globalReportTypeAccess")
+		delete(additionalProperties, "reportTypes")
+		delete(additionalProperties, "globalTaskAccess")
+		delete(additionalProperties, "tasks")
+		delete(additionalProperties, "globalTaskSetAccess")
+		delete(additionalProperties, "taskSets")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateRoleRequestRole struct {

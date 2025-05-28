@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -35,6 +34,7 @@ type AddPriceSetsRequestPriceSet struct {
 	// Price set type
 	Type string `json:"type"`
 	Prices []int64 `json:"prices,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddPriceSetsRequestPriceSet AddPriceSetsRequestPriceSet
@@ -310,6 +310,11 @@ func (o AddPriceSetsRequestPriceSet) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Prices) {
 		toSerialize["prices"] = o.Prices
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -340,15 +345,27 @@ func (o *AddPriceSetsRequestPriceSet) UnmarshalJSON(data []byte) (err error) {
 
 	varAddPriceSetsRequestPriceSet := _AddPriceSetsRequestPriceSet{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddPriceSetsRequestPriceSet)
+	err = json.Unmarshal(data, &varAddPriceSetsRequestPriceSet)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddPriceSetsRequestPriceSet(varAddPriceSetsRequestPriceSet)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "regionCode")
+		delete(additionalProperties, "zone")
+		delete(additionalProperties, "zonePool")
+		delete(additionalProperties, "priceUnit")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "prices")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

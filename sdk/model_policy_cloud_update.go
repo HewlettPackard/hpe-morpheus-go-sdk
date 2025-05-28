@@ -25,7 +25,10 @@ type PolicyCloudUpdate struct {
 	// A description for the policy
 	Description *string `json:"description,omitempty"`
 	PolicyType *UpdatePoliciesCloudRequestPolicyPolicyType `json:"policyType,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _PolicyCloudUpdate PolicyCloudUpdate
 
 // NewPolicyCloudUpdate instantiates a new PolicyCloudUpdate object
 // This constructor will assign default values to properties that have it defined,
@@ -159,7 +162,35 @@ func (o PolicyCloudUpdate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.PolicyType) {
 		toSerialize["policyType"] = o.PolicyType
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *PolicyCloudUpdate) UnmarshalJSON(data []byte) (err error) {
+	varPolicyCloudUpdate := _PolicyCloudUpdate{}
+
+	err = json.Unmarshal(data, &varPolicyCloudUpdate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = PolicyCloudUpdate(varPolicyCloudUpdate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "policyType")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullablePolicyCloudUpdate struct {

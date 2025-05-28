@@ -21,7 +21,10 @@ var _ MappedNullable = &MaxLoadBalancerPoolsPolicyTypeConfiguration{}
 // MaxLoadBalancerPoolsPolicyTypeConfiguration Configuration settings for the following policy types: - Max Load Balancer Pools 
 type MaxLoadBalancerPoolsPolicyTypeConfiguration struct {
 	MaxPools *string `json:"maxPools,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _MaxLoadBalancerPoolsPolicyTypeConfiguration MaxLoadBalancerPoolsPolicyTypeConfiguration
 
 // NewMaxLoadBalancerPoolsPolicyTypeConfiguration instantiates a new MaxLoadBalancerPoolsPolicyTypeConfiguration object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o MaxLoadBalancerPoolsPolicyTypeConfiguration) ToMap() (map[string]interfa
 	if !IsNil(o.MaxPools) {
 		toSerialize["maxPools"] = o.MaxPools
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *MaxLoadBalancerPoolsPolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
+	varMaxLoadBalancerPoolsPolicyTypeConfiguration := _MaxLoadBalancerPoolsPolicyTypeConfiguration{}
+
+	err = json.Unmarshal(data, &varMaxLoadBalancerPoolsPolicyTypeConfiguration)
+
+	if err != nil {
+		return err
+	}
+
+	*o = MaxLoadBalancerPoolsPolicyTypeConfiguration(varMaxLoadBalancerPoolsPolicyTypeConfiguration)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "maxPools")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableMaxLoadBalancerPoolsPolicyTypeConfiguration struct {

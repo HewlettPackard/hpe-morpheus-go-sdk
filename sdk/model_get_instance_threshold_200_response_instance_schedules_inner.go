@@ -44,7 +44,10 @@ type GetInstanceThreshold200ResponseInstanceSchedulesInner struct {
 	Threshold *GetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold `json:"threshold,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetInstanceThreshold200ResponseInstanceSchedulesInner GetInstanceThreshold200ResponseInstanceSchedulesInner
 
 // NewGetInstanceThreshold200ResponseInstanceSchedulesInner instantiates a new GetInstanceThreshold200ResponseInstanceSchedulesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -571,7 +574,46 @@ func (o GetInstanceThreshold200ResponseInstanceSchedulesInner) ToMap() (map[stri
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetInstanceThreshold200ResponseInstanceSchedulesInner) UnmarshalJSON(data []byte) (err error) {
+	varGetInstanceThreshold200ResponseInstanceSchedulesInner := _GetInstanceThreshold200ResponseInstanceSchedulesInner{}
+
+	err = json.Unmarshal(data, &varGetInstanceThreshold200ResponseInstanceSchedulesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetInstanceThreshold200ResponseInstanceSchedulesInner(varGetInstanceThreshold200ResponseInstanceSchedulesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "scheduleType")
+		delete(additionalProperties, "scheduleTimezone")
+		delete(additionalProperties, "startDayOfWeek")
+		delete(additionalProperties, "startTime")
+		delete(additionalProperties, "endDayOfWeek")
+		delete(additionalProperties, "endTime")
+		delete(additionalProperties, "startDate")
+		delete(additionalProperties, "endDate")
+		delete(additionalProperties, "startDisplay")
+		delete(additionalProperties, "endDisplay")
+		delete(additionalProperties, "threshold")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetInstanceThreshold200ResponseInstanceSchedulesInner struct {

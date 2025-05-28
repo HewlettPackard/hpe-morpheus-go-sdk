@@ -44,7 +44,10 @@ type ListVDIPools200ResponseAllOfVdiPoolsInnerConfig struct {
 	ShowScale *bool `json:"showScale,omitempty"`
 	HasPreview *bool `json:"hasPreview,omitempty"`
 	VolumesDisplay []ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner `json:"volumesDisplay,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListVDIPools200ResponseAllOfVdiPoolsInnerConfig ListVDIPools200ResponseAllOfVdiPoolsInnerConfig
 
 // NewListVDIPools200ResponseAllOfVdiPoolsInnerConfig instantiates a new ListVDIPools200ResponseAllOfVdiPoolsInnerConfig object
 // This constructor will assign default values to properties that have it defined,
@@ -913,7 +916,56 @@ func (o ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) ToMap() (map[string]int
 	if !IsNil(o.VolumesDisplay) {
 		toSerialize["volumesDisplay"] = o.VolumesDisplay
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) UnmarshalJSON(data []byte) (err error) {
+	varListVDIPools200ResponseAllOfVdiPoolsInnerConfig := _ListVDIPools200ResponseAllOfVdiPoolsInnerConfig{}
+
+	err = json.Unmarshal(data, &varListVDIPools200ResponseAllOfVdiPoolsInnerConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListVDIPools200ResponseAllOfVdiPoolsInnerConfig(varListVDIPools200ResponseAllOfVdiPoolsInnerConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "group")
+		delete(additionalProperties, "cloud")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "instance")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "environment")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "volumes")
+		delete(additionalProperties, "hostName")
+		delete(additionalProperties, "layout")
+		delete(additionalProperties, "storageControllers")
+		delete(additionalProperties, "plan")
+		delete(additionalProperties, "version")
+		delete(additionalProperties, "networkInterfaces")
+		delete(additionalProperties, "executionId")
+		delete(additionalProperties, "backup")
+		delete(additionalProperties, "loadBalancer")
+		delete(additionalProperties, "hideLock")
+		delete(additionalProperties, "hasNetworks")
+		delete(additionalProperties, "displayNetworks")
+		delete(additionalProperties, "copies")
+		delete(additionalProperties, "showScale")
+		delete(additionalProperties, "hasPreview")
+		delete(additionalProperties, "volumesDisplay")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfig struct {

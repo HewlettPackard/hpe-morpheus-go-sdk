@@ -37,7 +37,10 @@ type ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner struct {
 	UpdatedBy *string `json:"updatedBy,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner
 
 // NewListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner instantiates a new ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -626,7 +629,48 @@ func (o ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) ToMap(
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) UnmarshalJSON(data []byte) (err error) {
+	varListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner := _ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner{}
+
+	err = json.Unmarshal(data, &varListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner(varListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "externalType")
+		delete(additionalProperties, "deploymentId")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "file")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "createdBy")
+		delete(additionalProperties, "updatedBy")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner struct {

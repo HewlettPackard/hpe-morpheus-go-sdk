@@ -34,7 +34,10 @@ type GetReportTypes200ResponseReportTypesInner struct {
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	OptionTypes []GetReportTypes200ResponseReportTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
 	SupportedZoneTypes []ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"supportedZoneTypes,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetReportTypes200ResponseReportTypesInner GetReportTypes200ResponseReportTypesInner
 
 // NewGetReportTypes200ResponseReportTypesInner instantiates a new GetReportTypes200ResponseReportTypesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -518,7 +521,45 @@ func (o GetReportTypes200ResponseReportTypesInner) ToMap() (map[string]interface
 	if !IsNil(o.SupportedZoneTypes) {
 		toSerialize["supportedZoneTypes"] = o.SupportedZoneTypes
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetReportTypes200ResponseReportTypesInner) UnmarshalJSON(data []byte) (err error) {
+	varGetReportTypes200ResponseReportTypesInner := _GetReportTypes200ResponseReportTypesInner{}
+
+	err = json.Unmarshal(data, &varGetReportTypes200ResponseReportTypesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetReportTypes200ResponseReportTypesInner(varGetReportTypes200ResponseReportTypesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "visible")
+		delete(additionalProperties, "masterOnly")
+		delete(additionalProperties, "ownerOnly")
+		delete(additionalProperties, "supportsAllZoneTypes")
+		delete(additionalProperties, "isPlugin")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "optionTypes")
+		delete(additionalProperties, "supportedZoneTypes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetReportTypes200ResponseReportTypesInner struct {

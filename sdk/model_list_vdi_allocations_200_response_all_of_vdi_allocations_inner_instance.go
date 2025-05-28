@@ -23,7 +23,10 @@ type ListVDIAllocations200ResponseAllOfVdiAllocationsInnerInstance struct {
 	Id *int64 `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
 	Status *string `json:"status,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListVDIAllocations200ResponseAllOfVdiAllocationsInnerInstance ListVDIAllocations200ResponseAllOfVdiAllocationsInnerInstance
 
 // NewListVDIAllocations200ResponseAllOfVdiAllocationsInnerInstance instantiates a new ListVDIAllocations200ResponseAllOfVdiAllocationsInnerInstance object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o ListVDIAllocations200ResponseAllOfVdiAllocationsInnerInstance) ToMap() (
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInnerInstance) UnmarshalJSON(data []byte) (err error) {
+	varListVDIAllocations200ResponseAllOfVdiAllocationsInnerInstance := _ListVDIAllocations200ResponseAllOfVdiAllocationsInnerInstance{}
+
+	err = json.Unmarshal(data, &varListVDIAllocations200ResponseAllOfVdiAllocationsInnerInstance)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListVDIAllocations200ResponseAllOfVdiAllocationsInnerInstance(varListVDIAllocations200ResponseAllOfVdiAllocationsInnerInstance)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "status")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListVDIAllocations200ResponseAllOfVdiAllocationsInnerInstance struct {

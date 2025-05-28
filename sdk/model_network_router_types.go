@@ -35,7 +35,10 @@ type NetworkRouterTypes struct {
 	RuleOptionTypes []map[string]interface{} `json:"ruleOptionTypes,omitempty"`
 	NatOptionTypes []map[string]interface{} `json:"natOptionTypes,omitempty"`
 	RuleGroupOptionTypes []map[string]interface{} `json:"ruleGroupOptionTypes,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _NetworkRouterTypes NetworkRouterTypes
 
 // NewNetworkRouterTypes instantiates a new NetworkRouterTypes object
 // This constructor will assign default values to properties that have it defined,
@@ -589,7 +592,47 @@ func (o NetworkRouterTypes) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.RuleGroupOptionTypes) {
 		toSerialize["ruleGroupOptionTypes"] = o.RuleGroupOptionTypes
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *NetworkRouterTypes) UnmarshalJSON(data []byte) (err error) {
+	varNetworkRouterTypes := _NetworkRouterTypes{}
+
+	err = json.Unmarshal(data, &varNetworkRouterTypes)
+
+	if err != nil {
+		return err
+	}
+
+	*o = NetworkRouterTypes(varNetworkRouterTypes)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "creatable")
+		delete(additionalProperties, "selectable")
+		delete(additionalProperties, "hasFirewall")
+		delete(additionalProperties, "hasDhcp")
+		delete(additionalProperties, "hasRouting")
+		delete(additionalProperties, "hasNetworkServer")
+		delete(additionalProperties, "optionTypes")
+		delete(additionalProperties, "ruleOptionTypes")
+		delete(additionalProperties, "natOptionTypes")
+		delete(additionalProperties, "ruleGroupOptionTypes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableNetworkRouterTypes struct {

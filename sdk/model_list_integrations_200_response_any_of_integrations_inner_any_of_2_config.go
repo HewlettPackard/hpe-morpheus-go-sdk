@@ -21,7 +21,10 @@ var _ MappedNullable = &ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2C
 // ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2Config struct for ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2Config
 type ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2Config struct {
 	Zones []ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2ConfigZonesInner `json:"zones,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2Config ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2Config
 
 // NewListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2Config instantiates a new ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2Config object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2Config) ToMap() (
 	if !IsNil(o.Zones) {
 		toSerialize["zones"] = o.Zones
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2Config) UnmarshalJSON(data []byte) (err error) {
+	varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2Config := _ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2Config{}
+
+	err = json.Unmarshal(data, &varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2Config)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2Config(varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2Config)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "zones")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2Config struct {

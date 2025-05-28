@@ -42,7 +42,10 @@ type ServerType struct {
 	ProvisionType *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionType `json:"provisionType,omitempty"`
 	OptionTypes []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
 	DisplayOrder *int64 `json:"displayOrder,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ServerType ServerType
 
 // NewServerType instantiates a new ServerType object
 // This constructor will assign default values to properties that have it defined,
@@ -841,7 +844,54 @@ func (o ServerType) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.DisplayOrder) {
 		toSerialize["displayOrder"] = o.DisplayOrder
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ServerType) UnmarshalJSON(data []byte) (err error) {
+	varServerType := _ServerType{}
+
+	err = json.Unmarshal(data, &varServerType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ServerType(varServerType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "nodeType")
+		delete(additionalProperties, "platform")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "selectable")
+		delete(additionalProperties, "externalDelete")
+		delete(additionalProperties, "managed")
+		delete(additionalProperties, "controlPower")
+		delete(additionalProperties, "controlSuspend")
+		delete(additionalProperties, "creatable")
+		delete(additionalProperties, "hasAgent")
+		delete(additionalProperties, "vmHypervisor")
+		delete(additionalProperties, "containerHypervisor")
+		delete(additionalProperties, "bareMetalHost")
+		delete(additionalProperties, "guestVm")
+		delete(additionalProperties, "hasAutomation")
+		delete(additionalProperties, "provisionType")
+		delete(additionalProperties, "optionTypes")
+		delete(additionalProperties, "displayOrder")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableServerType struct {

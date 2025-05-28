@@ -26,7 +26,10 @@ type CreateNetworkDhcpServerRequestNetworkDhcpServerConfig struct {
 	PreferredEdgeNode1 *string `json:"preferredEdgeNode1,omitempty"`
 	// Standby Edge Node Options obtained by calling option source with optionSource = nsxtEdgeNodes and networkServerId param
 	PreferredEdgeNode2 *string `json:"preferredEdgeNode2,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _CreateNetworkDhcpServerRequestNetworkDhcpServerConfig CreateNetworkDhcpServerRequestNetworkDhcpServerConfig
 
 // NewCreateNetworkDhcpServerRequestNetworkDhcpServerConfig instantiates a new CreateNetworkDhcpServerRequestNetworkDhcpServerConfig object
 // This constructor will assign default values to properties that have it defined,
@@ -160,7 +163,35 @@ func (o CreateNetworkDhcpServerRequestNetworkDhcpServerConfig) ToMap() (map[stri
 	if !IsNil(o.PreferredEdgeNode2) {
 		toSerialize["preferredEdgeNode2"] = o.PreferredEdgeNode2
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *CreateNetworkDhcpServerRequestNetworkDhcpServerConfig) UnmarshalJSON(data []byte) (err error) {
+	varCreateNetworkDhcpServerRequestNetworkDhcpServerConfig := _CreateNetworkDhcpServerRequestNetworkDhcpServerConfig{}
+
+	err = json.Unmarshal(data, &varCreateNetworkDhcpServerRequestNetworkDhcpServerConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CreateNetworkDhcpServerRequestNetworkDhcpServerConfig(varCreateNetworkDhcpServerRequestNetworkDhcpServerConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "edgeCluster")
+		delete(additionalProperties, "preferredEdgeNode1")
+		delete(additionalProperties, "preferredEdgeNode2")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCreateNetworkDhcpServerRequestNetworkDhcpServerConfig struct {

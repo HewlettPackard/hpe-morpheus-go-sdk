@@ -23,7 +23,10 @@ type NetworkRouterPermissionsUpdate struct {
 	// Sets visibility - public, private
 	Visibility *string `json:"visibility,omitempty"`
 	TenantPermissions *UpdateNetworkRouterPermissionsRequestPermissionsTenantPermissions `json:"tenantPermissions,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _NetworkRouterPermissionsUpdate NetworkRouterPermissionsUpdate
 
 // NewNetworkRouterPermissionsUpdate instantiates a new NetworkRouterPermissionsUpdate object
 // This constructor will assign default values to properties that have it defined,
@@ -122,7 +125,34 @@ func (o NetworkRouterPermissionsUpdate) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.TenantPermissions) {
 		toSerialize["tenantPermissions"] = o.TenantPermissions
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *NetworkRouterPermissionsUpdate) UnmarshalJSON(data []byte) (err error) {
+	varNetworkRouterPermissionsUpdate := _NetworkRouterPermissionsUpdate{}
+
+	err = json.Unmarshal(data, &varNetworkRouterPermissionsUpdate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = NetworkRouterPermissionsUpdate(varNetworkRouterPermissionsUpdate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "tenantPermissions")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableNetworkRouterPermissionsUpdate struct {

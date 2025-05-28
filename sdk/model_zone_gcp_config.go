@@ -37,7 +37,10 @@ type ZoneGcpConfig struct {
 	ServiceRegistryId *string `json:"serviceRegistryId,omitempty"`
 	ConfigManagementId *string `json:"configManagementId,omitempty"`
 	PrivateKeyHash *string `json:"privateKeyHash,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ZoneGcpConfig ZoneGcpConfig
 
 // NewZoneGcpConfig instantiates a new ZoneGcpConfig object
 // This constructor will assign default values to properties that have it defined,
@@ -661,7 +664,49 @@ func (o ZoneGcpConfig) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.PrivateKeyHash) {
 		toSerialize["privateKeyHash"] = o.PrivateKeyHash
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ZoneGcpConfig) UnmarshalJSON(data []byte) (err error) {
+	varZoneGcpConfig := _ZoneGcpConfig{}
+
+	err = json.Unmarshal(data, &varZoneGcpConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ZoneGcpConfig(varZoneGcpConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "privateKey")
+		delete(additionalProperties, "clientEmail")
+		delete(additionalProperties, "projectId")
+		delete(additionalProperties, "googleRegionId")
+		delete(additionalProperties, "importExisting")
+		delete(additionalProperties, "applianceUrl")
+		delete(additionalProperties, "datacenterName")
+		delete(additionalProperties, "networkServer.id")
+		delete(additionalProperties, "networkServer")
+		delete(additionalProperties, "securityServer")
+		delete(additionalProperties, "certificateProvider")
+		delete(additionalProperties, "backupMode")
+		delete(additionalProperties, "replicationMode")
+		delete(additionalProperties, "dnsIntegrationId")
+		delete(additionalProperties, "serviceRegistryId")
+		delete(additionalProperties, "configManagementId")
+		delete(additionalProperties, "privateKeyHash")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableZoneGcpConfig struct {

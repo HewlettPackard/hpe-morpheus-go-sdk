@@ -47,7 +47,10 @@ type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1 struct {
 	Type *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType `json:"type,omitempty"`
 	Savings *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfSavings `json:"savings,omitempty"`
 	Config *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Config `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1 ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1
 
 // NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1 instantiates a new ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1 object
 // This constructor will assign default values to properties that have it defined,
@@ -986,7 +989,58 @@ func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1) ToMap() (map[string
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1) UnmarshalJSON(data []byte) (err error) {
+	varListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1 := _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1{}
+
+	err = json.Unmarshal(data, &varListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1(varListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "actionCategory")
+		delete(additionalProperties, "actionMessage")
+		delete(additionalProperties, "actionTitle")
+		delete(additionalProperties, "actionType")
+		delete(additionalProperties, "actionValue")
+		delete(additionalProperties, "actionValueType")
+		delete(additionalProperties, "actionPlanId")
+		delete(additionalProperties, "statusMessage")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "userId")
+		delete(additionalProperties, "siteId")
+		delete(additionalProperties, "zone")
+		delete(additionalProperties, "state")
+		delete(additionalProperties, "stateMessage")
+		delete(additionalProperties, "severity")
+		delete(additionalProperties, "resolved")
+		delete(additionalProperties, "resolvedMessage")
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "refId")
+		delete(additionalProperties, "refName")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "savings")
+		delete(additionalProperties, "config")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1 struct {

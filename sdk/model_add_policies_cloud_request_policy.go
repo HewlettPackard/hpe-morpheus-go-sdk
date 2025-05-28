@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -27,6 +26,7 @@ type AddPoliciesCloudRequestPolicy struct {
 	// A description for the policy
 	Description *string `json:"description,omitempty"`
 	PolicyType AddPoliciesCloudRequestPolicyPolicyType `json:"policyType"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddPoliciesCloudRequestPolicy AddPoliciesCloudRequestPolicy
@@ -145,6 +145,11 @@ func (o AddPoliciesCloudRequestPolicy) ToMap() (map[string]interface{}, error) {
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["policyType"] = o.PolicyType
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -173,15 +178,22 @@ func (o *AddPoliciesCloudRequestPolicy) UnmarshalJSON(data []byte) (err error) {
 
 	varAddPoliciesCloudRequestPolicy := _AddPoliciesCloudRequestPolicy{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddPoliciesCloudRequestPolicy)
+	err = json.Unmarshal(data, &varAddPoliciesCloudRequestPolicy)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddPoliciesCloudRequestPolicy(varAddPoliciesCloudRequestPolicy)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "policyType")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

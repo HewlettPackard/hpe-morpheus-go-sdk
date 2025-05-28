@@ -22,7 +22,10 @@ var _ MappedNullable = &ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7C
 type ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7Config struct {
 	DefaultBranch *string `json:"defaultBranch,omitempty"`
 	CacheEnabled *bool `json:"cacheEnabled,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7Config ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7Config
 
 // NewListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7Config instantiates a new ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7Config object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7Config) ToMap() (
 	if !IsNil(o.CacheEnabled) {
 		toSerialize["cacheEnabled"] = o.CacheEnabled
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7Config) UnmarshalJSON(data []byte) (err error) {
+	varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7Config := _ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7Config{}
+
+	err = json.Unmarshal(data, &varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7Config)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7Config(varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7Config)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "defaultBranch")
+		delete(additionalProperties, "cacheEnabled")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7Config struct {

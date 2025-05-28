@@ -42,7 +42,10 @@ type ListFileTemplates200ResponseAllOfContainerTemplatesInner struct {
 	Permissions *string `json:"permissions,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListFileTemplates200ResponseAllOfContainerTemplatesInner ListFileTemplates200ResponseAllOfContainerTemplatesInner
 
 // NewListFileTemplates200ResponseAllOfContainerTemplatesInner instantiates a new ListFileTemplates200ResponseAllOfContainerTemplatesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -806,7 +809,53 @@ func (o ListFileTemplates200ResponseAllOfContainerTemplatesInner) ToMap() (map[s
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) UnmarshalJSON(data []byte) (err error) {
+	varListFileTemplates200ResponseAllOfContainerTemplatesInner := _ListFileTemplates200ResponseAllOfContainerTemplatesInner{}
+
+	err = json.Unmarshal(data, &varListFileTemplates200ResponseAllOfContainerTemplatesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListFileTemplates200ResponseAllOfContainerTemplatesInner(varListFileTemplates200ResponseAllOfContainerTemplatesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "fileName")
+		delete(additionalProperties, "filePath")
+		delete(additionalProperties, "templateType")
+		delete(additionalProperties, "templatePhase")
+		delete(additionalProperties, "template")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "settingCategory")
+		delete(additionalProperties, "settingName")
+		delete(additionalProperties, "autoRun")
+		delete(additionalProperties, "runOnScale")
+		delete(additionalProperties, "runOnDeploy")
+		delete(additionalProperties, "fileOwner")
+		delete(additionalProperties, "fileGroup")
+		delete(additionalProperties, "permissions")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListFileTemplates200ResponseAllOfContainerTemplatesInner struct {

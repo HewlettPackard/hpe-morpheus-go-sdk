@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -32,6 +31,7 @@ type AddBlueprintRequestOneOf3 struct {
 	Labels []string `json:"labels,omitempty"`
 	Kubernetes AddBlueprintRequestOneOf3Kubernetes `json:"kubernetes"`
 	Config *AddBlueprintRequestOneOf3Config `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddBlueprintRequestOneOf3 AddBlueprintRequestOneOf3
@@ -246,6 +246,11 @@ func (o AddBlueprintRequestOneOf3) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -275,15 +280,25 @@ func (o *AddBlueprintRequestOneOf3) UnmarshalJSON(data []byte) (err error) {
 
 	varAddBlueprintRequestOneOf3 := _AddBlueprintRequestOneOf3{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddBlueprintRequestOneOf3)
+	err = json.Unmarshal(data, &varAddBlueprintRequestOneOf3)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddBlueprintRequestOneOf3(varAddBlueprintRequestOneOf3)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "image")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "kubernetes")
+		delete(additionalProperties, "config")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

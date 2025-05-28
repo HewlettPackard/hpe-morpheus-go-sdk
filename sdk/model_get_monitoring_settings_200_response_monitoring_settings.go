@@ -29,7 +29,10 @@ type GetMonitoringSettings200ResponseMonitoringSettings struct {
 	// Default Check Interval. The number of minutes to use as the default interval to use when creating new checks.
 	DefaultCheckInterval *int32 `json:"defaultCheckInterval,omitempty"`
 	ServiceNow *GetMonitoringSettings200ResponseMonitoringSettingsServiceNow `json:"serviceNow,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetMonitoringSettings200ResponseMonitoringSettings GetMonitoringSettings200ResponseMonitoringSettings
 
 // NewGetMonitoringSettings200ResponseMonitoringSettings instantiates a new GetMonitoringSettings200ResponseMonitoringSettings object
 // This constructor will assign default values to properties that have it defined,
@@ -233,7 +236,37 @@ func (o GetMonitoringSettings200ResponseMonitoringSettings) ToMap() (map[string]
 	if !IsNil(o.ServiceNow) {
 		toSerialize["serviceNow"] = o.ServiceNow
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetMonitoringSettings200ResponseMonitoringSettings) UnmarshalJSON(data []byte) (err error) {
+	varGetMonitoringSettings200ResponseMonitoringSettings := _GetMonitoringSettings200ResponseMonitoringSettings{}
+
+	err = json.Unmarshal(data, &varGetMonitoringSettings200ResponseMonitoringSettings)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetMonitoringSettings200ResponseMonitoringSettings(varGetMonitoringSettings200ResponseMonitoringSettings)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "autoManageChecks")
+		delete(additionalProperties, "availabilityTimeFrame")
+		delete(additionalProperties, "availabilityPrecision")
+		delete(additionalProperties, "defaultCheckInterval")
+		delete(additionalProperties, "serviceNow")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetMonitoringSettings200ResponseMonitoringSettings struct {

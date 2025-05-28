@@ -22,7 +22,10 @@ var _ MappedNullable = &AddGroups200Response{}
 type AddGroups200Response struct {
 	Group *ListGroups200ResponseAllOfGroupsInner `json:"group,omitempty"`
 	Success *bool `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddGroups200Response AddGroups200Response
 
 // NewAddGroups200Response instantiates a new AddGroups200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o AddGroups200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Success) {
 		toSerialize["success"] = o.Success
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddGroups200Response) UnmarshalJSON(data []byte) (err error) {
+	varAddGroups200Response := _AddGroups200Response{}
+
+	err = json.Unmarshal(data, &varAddGroups200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddGroups200Response(varAddGroups200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "group")
+		delete(additionalProperties, "success")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddGroups200Response struct {

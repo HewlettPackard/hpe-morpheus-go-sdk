@@ -32,7 +32,10 @@ type ListPolicyTypes200ResponseAllOfPolicyTypesInner struct {
 	EnforceOnProvision *bool `json:"enforceOnProvision,omitempty"`
 	EnforceOnManaged *bool `json:"enforceOnManaged,omitempty"`
 	OptionTypes []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListPolicyTypes200ResponseAllOfPolicyTypesInner ListPolicyTypes200ResponseAllOfPolicyTypesInner
 
 // NewListPolicyTypes200ResponseAllOfPolicyTypesInner instantiates a new ListPolicyTypes200ResponseAllOfPolicyTypesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -481,7 +484,44 @@ func (o ListPolicyTypes200ResponseAllOfPolicyTypesInner) ToMap() (map[string]int
 	if !IsNil(o.OptionTypes) {
 		toSerialize["optionTypes"] = o.OptionTypes
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListPolicyTypes200ResponseAllOfPolicyTypesInner) UnmarshalJSON(data []byte) (err error) {
+	varListPolicyTypes200ResponseAllOfPolicyTypesInner := _ListPolicyTypes200ResponseAllOfPolicyTypesInner{}
+
+	err = json.Unmarshal(data, &varListPolicyTypes200ResponseAllOfPolicyTypesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListPolicyTypes200ResponseAllOfPolicyTypesInner(varListPolicyTypes200ResponseAllOfPolicyTypesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "loadMethod")
+		delete(additionalProperties, "enforceMethod")
+		delete(additionalProperties, "prepareMethod")
+		delete(additionalProperties, "validateMethod")
+		delete(additionalProperties, "enforceOnProvision")
+		delete(additionalProperties, "enforceOnManaged")
+		delete(additionalProperties, "optionTypes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListPolicyTypes200ResponseAllOfPolicyTypesInner struct {

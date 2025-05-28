@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -23,6 +22,7 @@ var _ MappedNullable = &AddCloudsRequest{}
 // AddCloudsRequest struct for AddCloudsRequest
 type AddCloudsRequest struct {
 	Zone AddCloudsRequestZone `json:"zone"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddCloudsRequest AddCloudsRequest
@@ -80,6 +80,11 @@ func (o AddCloudsRequest) MarshalJSON() ([]byte, error) {
 func (o AddCloudsRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["zone"] = o.Zone
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -107,15 +112,20 @@ func (o *AddCloudsRequest) UnmarshalJSON(data []byte) (err error) {
 
 	varAddCloudsRequest := _AddCloudsRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddCloudsRequest)
+	err = json.Unmarshal(data, &varAddCloudsRequest)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddCloudsRequest(varAddCloudsRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "zone")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

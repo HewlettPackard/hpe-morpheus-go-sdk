@@ -27,7 +27,10 @@ type ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner struct {
 	DisplayOrder *string `json:"displayOrder,omitempty"`
 	Size *int64 `json:"size,omitempty"`
 	MountPoint *string `json:"mountPoint,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner
 
 // NewListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner instantiates a new ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner object
 // This constructor will assign default values to properties that have it defined,
@@ -301,7 +304,39 @@ func (o ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) ToMa
 	if !IsNil(o.MountPoint) {
 		toSerialize["mountPoint"] = o.MountPoint
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) UnmarshalJSON(data []byte) (err error) {
+	varListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner := _ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner{}
+
+	err = json.Unmarshal(data, &varListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner(varListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "storage")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "controller")
+		delete(additionalProperties, "datastore")
+		delete(additionalProperties, "displayOrder")
+		delete(additionalProperties, "size")
+		delete(additionalProperties, "mountPoint")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner struct {

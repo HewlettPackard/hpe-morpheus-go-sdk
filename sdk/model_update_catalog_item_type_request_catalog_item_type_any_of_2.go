@@ -56,7 +56,10 @@ type UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2 struct {
 	OptionTypes []int64 `json:"optionTypes,omitempty"`
 	// Documentation content for this Catalog Item. Markdown-formatted text is accepted and displayed appropriately when the item is ordered from the Service Catalog. A new Catalog Item-type Wiki entry will also be added containing this information.
 	Content *string `json:"content,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2 UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2
 
 // NewUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2 instantiates a new UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2 object
 // This constructor will assign default values to properties that have it defined,
@@ -770,7 +773,51 @@ func (o UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2) ToMap() (map[string]i
 	if !IsNil(o.Content) {
 		toSerialize["content"] = o.Content
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2) UnmarshalJSON(data []byte) (err error) {
+	varUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2 := _UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2{}
+
+	err = json.Unmarshal(data, &varUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2(varUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "layoutCode")
+		delete(additionalProperties, "iconPath")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "featured")
+		delete(additionalProperties, "allowQuantity")
+		delete(additionalProperties, "workflow")
+		delete(additionalProperties, "context")
+		delete(additionalProperties, "workflowConfig")
+		delete(additionalProperties, "formType")
+		delete(additionalProperties, "form")
+		delete(additionalProperties, "optionTypes")
+		delete(additionalProperties, "content")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2 struct {

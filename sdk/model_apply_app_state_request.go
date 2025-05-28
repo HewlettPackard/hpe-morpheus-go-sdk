@@ -22,7 +22,10 @@ var _ MappedNullable = &ApplyAppStateRequest{}
 type ApplyAppStateRequest struct {
 	// Template Parameter object. A map of key-value pairs that correspond to the template variables i.e. tfvars
 	TemplateParameter map[string]interface{} `json:"templateParameter,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ApplyAppStateRequest ApplyAppStateRequest
 
 // NewApplyAppStateRequest instantiates a new ApplyAppStateRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o ApplyAppStateRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.TemplateParameter) {
 		toSerialize["templateParameter"] = o.TemplateParameter
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ApplyAppStateRequest) UnmarshalJSON(data []byte) (err error) {
+	varApplyAppStateRequest := _ApplyAppStateRequest{}
+
+	err = json.Unmarshal(data, &varApplyAppStateRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ApplyAppStateRequest(varApplyAppStateRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "templateParameter")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableApplyAppStateRequest struct {

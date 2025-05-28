@@ -62,7 +62,10 @@ type ClusterContainers struct {
 	MaxCpu *string `json:"maxCpu,omitempty"`
 	HourlyPrice *float32 `json:"hourlyPrice,omitempty"`
 	AvailableActions []ListClusterContainers200ResponseAllOfContainersInnerAvailableActionsInner `json:"availableActions,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ClusterContainers ClusterContainers
 
 // NewClusterContainers instantiates a new ClusterContainers object
 // This constructor will assign default values to properties that have it defined,
@@ -1526,7 +1529,73 @@ func (o ClusterContainers) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.AvailableActions) {
 		toSerialize["availableActions"] = o.AvailableActions
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ClusterContainers) UnmarshalJSON(data []byte) (err error) {
+	varClusterContainers := _ClusterContainers{}
+
+	err = json.Unmarshal(data, &varClusterContainers)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ClusterContainers(varClusterContainers)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "uuid")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "instance")
+		delete(additionalProperties, "containerType")
+		delete(additionalProperties, "containerTypeSet")
+		delete(additionalProperties, "server")
+		delete(additionalProperties, "cloud")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "ip")
+		delete(additionalProperties, "internalIp")
+		delete(additionalProperties, "internalHostname")
+		delete(additionalProperties, "externalHostname")
+		delete(additionalProperties, "externalDomain")
+		delete(additionalProperties, "externalFqdn")
+		delete(additionalProperties, "ports")
+		delete(additionalProperties, "plan")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "statsEnabled")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "userStatus")
+		delete(additionalProperties, "environmentPrefix")
+		delete(additionalProperties, "configGroup")
+		delete(additionalProperties, "configId")
+		delete(additionalProperties, "configRole")
+		delete(additionalProperties, "stats")
+		delete(additionalProperties, "runtimeInfo")
+		delete(additionalProperties, "containerVersion")
+		delete(additionalProperties, "repositoryImage")
+		delete(additionalProperties, "planCategory")
+		delete(additionalProperties, "hostname")
+		delete(additionalProperties, "domainName")
+		delete(additionalProperties, "volumeCreated")
+		delete(additionalProperties, "containerCreated")
+		delete(additionalProperties, "maxStorage")
+		delete(additionalProperties, "maxMemory")
+		delete(additionalProperties, "maxCores")
+		delete(additionalProperties, "maxCpu")
+		delete(additionalProperties, "hourlyPrice")
+		delete(additionalProperties, "availableActions")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableClusterContainers struct {

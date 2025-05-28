@@ -53,7 +53,10 @@ type ZoneAzureConfig struct {
 	AzureCostingMode *string `json:"azureCostingMode,omitempty"`
 	ClientSecretHash *string `json:"clientSecretHash,omitempty"`
 	CspClientSecretHash *string `json:"cspClientSecretHash,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ZoneAzureConfig ZoneAzureConfig
 
 // NewZoneAzureConfig instantiates a new ZoneAzureConfig object
 // This constructor will assign default values to properties that have it defined,
@@ -1237,7 +1240,65 @@ func (o ZoneAzureConfig) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CspClientSecretHash) {
 		toSerialize["cspClientSecretHash"] = o.CspClientSecretHash
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ZoneAzureConfig) UnmarshalJSON(data []byte) (err error) {
+	varZoneAzureConfig := _ZoneAzureConfig{}
+
+	err = json.Unmarshal(data, &varZoneAzureConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ZoneAzureConfig(varZoneAzureConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "subscriberId")
+		delete(additionalProperties, "tenantId")
+		delete(additionalProperties, "clientId")
+		delete(additionalProperties, "clientSecret")
+		delete(additionalProperties, "resourceGroup")
+		delete(additionalProperties, "importExisting")
+		delete(additionalProperties, "inventoryLevel")
+		delete(additionalProperties, "applianceUrl")
+		delete(additionalProperties, "datacenterName")
+		delete(additionalProperties, "networkServer.id")
+		delete(additionalProperties, "networkServer")
+		delete(additionalProperties, "securityMode")
+		delete(additionalProperties, "certificateProvider")
+		delete(additionalProperties, "backupMode")
+		delete(additionalProperties, "replicationMode")
+		delete(additionalProperties, "dnsIntegrationId")
+		delete(additionalProperties, "configManagementId")
+		delete(additionalProperties, "configCmdbId")
+		delete(additionalProperties, "securityServer")
+		delete(additionalProperties, "accountType")
+		delete(additionalProperties, "serviceRegistryId")
+		delete(additionalProperties, "cloudType")
+		delete(additionalProperties, "rpcMode")
+		delete(additionalProperties, "diskEncryption")
+		delete(additionalProperties, "encryptionSet")
+		delete(additionalProperties, "cspTenantId")
+		delete(additionalProperties, "cspClientId")
+		delete(additionalProperties, "cspClientSecret")
+		delete(additionalProperties, "cspCustomer")
+		delete(additionalProperties, "configCmdbDiscovery")
+		delete(additionalProperties, "azureCostingMode")
+		delete(additionalProperties, "clientSecretHash")
+		delete(additionalProperties, "cspClientSecretHash")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableZoneAzureConfig struct {

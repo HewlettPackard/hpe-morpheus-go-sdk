@@ -22,7 +22,10 @@ var _ MappedNullable = &HostnamePolicyTypeConfiguration{}
 type HostnamePolicyTypeConfiguration struct {
 	HostNamingType *string `json:"hostNamingType,omitempty"`
 	HostNamingPattern *string `json:"hostNamingPattern,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _HostnamePolicyTypeConfiguration HostnamePolicyTypeConfiguration
 
 // NewHostnamePolicyTypeConfiguration instantiates a new HostnamePolicyTypeConfiguration object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o HostnamePolicyTypeConfiguration) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.HostNamingPattern) {
 		toSerialize["hostNamingPattern"] = o.HostNamingPattern
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *HostnamePolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
+	varHostnamePolicyTypeConfiguration := _HostnamePolicyTypeConfiguration{}
+
+	err = json.Unmarshal(data, &varHostnamePolicyTypeConfiguration)
+
+	if err != nil {
+		return err
+	}
+
+	*o = HostnamePolicyTypeConfiguration(varHostnamePolicyTypeConfiguration)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "hostNamingType")
+		delete(additionalProperties, "hostNamingPattern")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableHostnamePolicyTypeConfiguration struct {

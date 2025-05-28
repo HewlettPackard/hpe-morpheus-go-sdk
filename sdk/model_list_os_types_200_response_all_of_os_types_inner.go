@@ -46,7 +46,10 @@ type ListOsTypes200ResponseAllOfOsTypesInner struct {
 	// Whether the morpheus agent is installed. 
 	InstallAgent *bool `json:"installAgent,omitempty"`
 	Images []ListOsTypes200ResponseAllOfOsTypesInnerImagesInner `json:"images,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListOsTypes200ResponseAllOfOsTypesInner ListOsTypes200ResponseAllOfOsTypesInner
 
 // NewListOsTypes200ResponseAllOfOsTypesInner instantiates a new ListOsTypes200ResponseAllOfOsTypesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -565,7 +568,46 @@ func (o ListOsTypes200ResponseAllOfOsTypesInner) ToMap() (map[string]interface{}
 	if !IsNil(o.Images) {
 		toSerialize["images"] = o.Images
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListOsTypes200ResponseAllOfOsTypesInner) UnmarshalJSON(data []byte) (err error) {
+	varListOsTypes200ResponseAllOfOsTypesInner := _ListOsTypes200ResponseAllOfOsTypesInner{}
+
+	err = json.Unmarshal(data, &varListOsTypes200ResponseAllOfOsTypesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListOsTypes200ResponseAllOfOsTypesInner(varListOsTypes200ResponseAllOfOsTypesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "platform")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "vendor")
+		delete(additionalProperties, "osName")
+		delete(additionalProperties, "osVersion")
+		delete(additionalProperties, "osCodename")
+		delete(additionalProperties, "osFamily")
+		delete(additionalProperties, "bitCount")
+		delete(additionalProperties, "cloudInitVersion")
+		delete(additionalProperties, "installAgent")
+		delete(additionalProperties, "images")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListOsTypes200ResponseAllOfOsTypesInner struct {

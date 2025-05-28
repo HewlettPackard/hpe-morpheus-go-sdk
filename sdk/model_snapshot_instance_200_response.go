@@ -23,7 +23,10 @@ type SnapshotInstance200Response struct {
 	Success *bool `json:"success,omitempty"`
 	// Process ID(s) to track execution results with, use `/api/processes/$processId`. Instances with more than one server will result in multiple processes, one for each snapshot.
 	ProcessIds []int64 `json:"processIds,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _SnapshotInstance200Response SnapshotInstance200Response
 
 // NewSnapshotInstance200Response instantiates a new SnapshotInstance200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -122,7 +125,34 @@ func (o SnapshotInstance200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ProcessIds) {
 		toSerialize["processIds"] = o.ProcessIds
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *SnapshotInstance200Response) UnmarshalJSON(data []byte) (err error) {
+	varSnapshotInstance200Response := _SnapshotInstance200Response{}
+
+	err = json.Unmarshal(data, &varSnapshotInstance200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = SnapshotInstance200Response(varSnapshotInstance200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "success")
+		delete(additionalProperties, "processIds")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableSnapshotInstance200Response struct {

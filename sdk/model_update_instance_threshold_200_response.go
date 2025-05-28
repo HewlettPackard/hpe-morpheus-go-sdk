@@ -23,7 +23,10 @@ type UpdateInstanceThreshold200Response struct {
 	InstanceThreshold *GetInstanceThreshold200ResponseInstanceThreshold `json:"instanceThreshold,omitempty"`
 	InstanceSchedules []GetInstanceThreshold200ResponseInstanceSchedulesInner `json:"instanceSchedules,omitempty"`
 	Success *bool `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateInstanceThreshold200Response UpdateInstanceThreshold200Response
 
 // NewUpdateInstanceThreshold200Response instantiates a new UpdateInstanceThreshold200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o UpdateInstanceThreshold200Response) ToMap() (map[string]interface{}, err
 	if !IsNil(o.Success) {
 		toSerialize["success"] = o.Success
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateInstanceThreshold200Response) UnmarshalJSON(data []byte) (err error) {
+	varUpdateInstanceThreshold200Response := _UpdateInstanceThreshold200Response{}
+
+	err = json.Unmarshal(data, &varUpdateInstanceThreshold200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateInstanceThreshold200Response(varUpdateInstanceThreshold200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "instanceThreshold")
+		delete(additionalProperties, "instanceSchedules")
+		delete(additionalProperties, "success")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateInstanceThreshold200Response struct {

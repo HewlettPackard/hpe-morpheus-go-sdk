@@ -21,7 +21,10 @@ var _ MappedNullable = &ListNetworkRouterTypes200Response{}
 // ListNetworkRouterTypes200Response struct for ListNetworkRouterTypes200Response
 type ListNetworkRouterTypes200Response struct {
 	NetworkRouterTypes []ListNetworkRouterTypes200ResponseNetworkRouterTypesInner `json:"networkRouterTypes,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListNetworkRouterTypes200Response ListNetworkRouterTypes200Response
 
 // NewListNetworkRouterTypes200Response instantiates a new ListNetworkRouterTypes200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o ListNetworkRouterTypes200Response) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.NetworkRouterTypes) {
 		toSerialize["networkRouterTypes"] = o.NetworkRouterTypes
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListNetworkRouterTypes200Response) UnmarshalJSON(data []byte) (err error) {
+	varListNetworkRouterTypes200Response := _ListNetworkRouterTypes200Response{}
+
+	err = json.Unmarshal(data, &varListNetworkRouterTypes200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListNetworkRouterTypes200Response(varListNetworkRouterTypes200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "networkRouterTypes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListNetworkRouterTypes200Response struct {

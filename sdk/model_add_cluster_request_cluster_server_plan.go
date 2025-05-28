@@ -24,7 +24,10 @@ type AddClusterRequestClusterServerPlan struct {
 	Id *int64 `json:"id,omitempty"`
 	// The code for the memory and storage option pre-configured within Morpheus.
 	Code *string `json:"code,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddClusterRequestClusterServerPlan AddClusterRequestClusterServerPlan
 
 // NewAddClusterRequestClusterServerPlan instantiates a new AddClusterRequestClusterServerPlan object
 // This constructor will assign default values to properties that have it defined,
@@ -123,7 +126,34 @@ func (o AddClusterRequestClusterServerPlan) ToMap() (map[string]interface{}, err
 	if !IsNil(o.Code) {
 		toSerialize["code"] = o.Code
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddClusterRequestClusterServerPlan) UnmarshalJSON(data []byte) (err error) {
+	varAddClusterRequestClusterServerPlan := _AddClusterRequestClusterServerPlan{}
+
+	err = json.Unmarshal(data, &varAddClusterRequestClusterServerPlan)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddClusterRequestClusterServerPlan(varAddClusterRequestClusterServerPlan)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddClusterRequestClusterServerPlan struct {

@@ -32,7 +32,10 @@ type AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2 struct {
 	ServiceAccount *string `json:"serviceAccount,omitempty"`
 	// Access Scope
 	AccessScope *string `json:"accessScope,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2 AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2
 
 // NewAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2 instantiates a new AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2 object
 // This constructor will assign default values to properties that have it defined,
@@ -275,7 +278,38 @@ func (o AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) ToMap()
 	if !IsNil(o.AccessScope) {
 		toSerialize["accessScope"] = o.AccessScope
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) UnmarshalJSON(data []byte) (err error) {
+	varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2 := _AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2{}
+
+	err = json.Unmarshal(data, &varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2(varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "noAgent")
+		delete(additionalProperties, "googleZoneId")
+		delete(additionalProperties, "externalIpType")
+		delete(additionalProperties, "networkTags")
+		delete(additionalProperties, "serviceAccount")
+		delete(additionalProperties, "accessScope")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2 struct {

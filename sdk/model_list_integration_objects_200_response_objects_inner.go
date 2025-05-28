@@ -26,7 +26,10 @@ type ListIntegrationObjects200ResponseObjectsInner struct {
 	RefType *string `json:"refType,omitempty"`
 	RefId *int64 `json:"refId,omitempty"`
 	Layout *ListIntegrationObjects200ResponseObjectsInnerLayout `json:"layout,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListIntegrationObjects200ResponseObjectsInner ListIntegrationObjects200ResponseObjectsInner
 
 // NewListIntegrationObjects200ResponseObjectsInner instantiates a new ListIntegrationObjects200ResponseObjectsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -265,7 +268,38 @@ func (o ListIntegrationObjects200ResponseObjectsInner) ToMap() (map[string]inter
 	if !IsNil(o.Layout) {
 		toSerialize["layout"] = o.Layout
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListIntegrationObjects200ResponseObjectsInner) UnmarshalJSON(data []byte) (err error) {
+	varListIntegrationObjects200ResponseObjectsInner := _ListIntegrationObjects200ResponseObjectsInner{}
+
+	err = json.Unmarshal(data, &varListIntegrationObjects200ResponseObjectsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListIntegrationObjects200ResponseObjectsInner(varListIntegrationObjects200ResponseObjectsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "refId")
+		delete(additionalProperties, "layout")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListIntegrationObjects200ResponseObjectsInner struct {

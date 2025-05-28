@@ -33,7 +33,10 @@ type ListReports200ResponseAllOfReportResultsInner struct {
 	Config *ListReports200ResponseAllOfReportResultsInnerConfig `json:"config,omitempty"`
 	CreatedBy *ListActivity200ResponseAllOfActivityInnerActivityInnerUser `json:"createdBy,omitempty"`
 	Rows []ListReports200ResponseAllOfReportResultsInnerRowsInner `json:"rows,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListReports200ResponseAllOfReportResultsInner ListReports200ResponseAllOfReportResultsInner
 
 // NewListReports200ResponseAllOfReportResultsInner instantiates a new ListReports200ResponseAllOfReportResultsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -482,7 +485,44 @@ func (o ListReports200ResponseAllOfReportResultsInner) ToMap() (map[string]inter
 	if !IsNil(o.Rows) {
 		toSerialize["rows"] = o.Rows
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListReports200ResponseAllOfReportResultsInner) UnmarshalJSON(data []byte) (err error) {
+	varListReports200ResponseAllOfReportResultsInner := _ListReports200ResponseAllOfReportResultsInner{}
+
+	err = json.Unmarshal(data, &varListReports200ResponseAllOfReportResultsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListReports200ResponseAllOfReportResultsInner(varListReports200ResponseAllOfReportResultsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "reportTitle")
+		delete(additionalProperties, "filterTitle")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "startDate")
+		delete(additionalProperties, "endDate")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "createdBy")
+		delete(additionalProperties, "rows")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListReports200ResponseAllOfReportResultsInner struct {

@@ -40,7 +40,10 @@ type GetNetworkRoutersRoutes200ResponseNetworkRoutesInner struct {
 	ExternalType *string `json:"externalType,omitempty"`
 	Enabled *bool `json:"enabled,omitempty"`
 	Visible *bool `json:"visible,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetNetworkRoutersRoutes200ResponseNetworkRoutesInner GetNetworkRoutersRoutes200ResponseNetworkRoutesInner
 
 // NewGetNetworkRoutersRoutes200ResponseNetworkRoutesInner instantiates a new GetNetworkRoutersRoutes200ResponseNetworkRoutesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -769,7 +772,52 @@ func (o GetNetworkRoutersRoutes200ResponseNetworkRoutesInner) ToMap() (map[strin
 	if !IsNil(o.Visible) {
 		toSerialize["visible"] = o.Visible
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetNetworkRoutersRoutes200ResponseNetworkRoutesInner) UnmarshalJSON(data []byte) (err error) {
+	varGetNetworkRoutersRoutes200ResponseNetworkRoutesInner := _GetNetworkRoutersRoutes200ResponseNetworkRoutesInner{}
+
+	err = json.Unmarshal(data, &varGetNetworkRoutersRoutes200ResponseNetworkRoutesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetNetworkRoutersRoutes200ResponseNetworkRoutesInner(varGetNetworkRoutersRoutes200ResponseNetworkRoutesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "priority")
+		delete(additionalProperties, "routeType")
+		delete(additionalProperties, "source")
+		delete(additionalProperties, "sourceType")
+		delete(additionalProperties, "destination")
+		delete(additionalProperties, "destinationType")
+		delete(additionalProperties, "defaultRoute")
+		delete(additionalProperties, "networkMtu")
+		delete(additionalProperties, "externalInterface")
+		delete(additionalProperties, "internalId")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "uniqueId")
+		delete(additionalProperties, "providerId")
+		delete(additionalProperties, "externalType")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "visible")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetNetworkRoutersRoutes200ResponseNetworkRoutesInner struct {

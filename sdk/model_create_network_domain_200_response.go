@@ -21,7 +21,10 @@ var _ MappedNullable = &CreateNetworkDomain200Response{}
 // CreateNetworkDomain200Response struct for CreateNetworkDomain200Response
 type CreateNetworkDomain200Response struct {
 	NetworkDomain *CreateNetworkDomain200ResponseNetworkDomain `json:"networkDomain,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _CreateNetworkDomain200Response CreateNetworkDomain200Response
 
 // NewCreateNetworkDomain200Response instantiates a new CreateNetworkDomain200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o CreateNetworkDomain200Response) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.NetworkDomain) {
 		toSerialize["networkDomain"] = o.NetworkDomain
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *CreateNetworkDomain200Response) UnmarshalJSON(data []byte) (err error) {
+	varCreateNetworkDomain200Response := _CreateNetworkDomain200Response{}
+
+	err = json.Unmarshal(data, &varCreateNetworkDomain200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CreateNetworkDomain200Response(varCreateNetworkDomain200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "networkDomain")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCreateNetworkDomain200Response struct {

@@ -32,7 +32,10 @@ type UpdateUsersRequestUser struct {
 	Password *string `json:"password,omitempty"`
 	// List of Roles
 	Roles []UpdateUsersRequestUserRolesInner `json:"roles,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateUsersRequestUser UpdateUsersRequestUser
 
 // NewUpdateUsersRequestUser instantiates a new UpdateUsersRequestUser object
 // This constructor will assign default values to properties that have it defined,
@@ -271,7 +274,38 @@ func (o UpdateUsersRequestUser) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Roles) {
 		toSerialize["roles"] = o.Roles
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateUsersRequestUser) UnmarshalJSON(data []byte) (err error) {
+	varUpdateUsersRequestUser := _UpdateUsersRequestUser{}
+
+	err = json.Unmarshal(data, &varUpdateUsersRequestUser)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateUsersRequestUser(varUpdateUsersRequestUser)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "firstName")
+		delete(additionalProperties, "lastName")
+		delete(additionalProperties, "username")
+		delete(additionalProperties, "email")
+		delete(additionalProperties, "password")
+		delete(additionalProperties, "roles")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateUsersRequestUser struct {

@@ -22,7 +22,10 @@ var _ MappedNullable = &SuccessId{}
 type SuccessId struct {
 	Success *bool `json:"success,omitempty"`
 	Id *int32 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _SuccessId SuccessId
 
 // NewSuccessId instantiates a new SuccessId object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o SuccessId) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *SuccessId) UnmarshalJSON(data []byte) (err error) {
+	varSuccessId := _SuccessId{}
+
+	err = json.Unmarshal(data, &varSuccessId)
+
+	if err != nil {
+		return err
+	}
+
+	*o = SuccessId(varSuccessId)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "success")
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableSuccessId struct {

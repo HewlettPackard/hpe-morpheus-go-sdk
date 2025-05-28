@@ -23,7 +23,10 @@ type ListSecurityGroups200ResponseAllOfSecurityGroupsInnerTenantsInner struct {
 	Id *int64 `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
 	CanManage *bool `json:"canManage,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListSecurityGroups200ResponseAllOfSecurityGroupsInnerTenantsInner ListSecurityGroups200ResponseAllOfSecurityGroupsInnerTenantsInner
 
 // NewListSecurityGroups200ResponseAllOfSecurityGroupsInnerTenantsInner instantiates a new ListSecurityGroups200ResponseAllOfSecurityGroupsInnerTenantsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o ListSecurityGroups200ResponseAllOfSecurityGroupsInnerTenantsInner) ToMap
 	if !IsNil(o.CanManage) {
 		toSerialize["canManage"] = o.CanManage
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerTenantsInner) UnmarshalJSON(data []byte) (err error) {
+	varListSecurityGroups200ResponseAllOfSecurityGroupsInnerTenantsInner := _ListSecurityGroups200ResponseAllOfSecurityGroupsInnerTenantsInner{}
+
+	err = json.Unmarshal(data, &varListSecurityGroups200ResponseAllOfSecurityGroupsInnerTenantsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListSecurityGroups200ResponseAllOfSecurityGroupsInnerTenantsInner(varListSecurityGroups200ResponseAllOfSecurityGroupsInnerTenantsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "canManage")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListSecurityGroups200ResponseAllOfSecurityGroupsInnerTenantsInner struct {

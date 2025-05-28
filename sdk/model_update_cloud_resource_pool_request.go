@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -23,6 +22,7 @@ var _ MappedNullable = &UpdateCloudResourcePoolRequest{}
 // UpdateCloudResourcePoolRequest struct for UpdateCloudResourcePoolRequest
 type UpdateCloudResourcePoolRequest struct {
 	ResourcePool UpdateCloudResourcePoolRequestResourcePool `json:"resourcePool"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateCloudResourcePoolRequest UpdateCloudResourcePoolRequest
@@ -80,6 +80,11 @@ func (o UpdateCloudResourcePoolRequest) MarshalJSON() ([]byte, error) {
 func (o UpdateCloudResourcePoolRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["resourcePool"] = o.ResourcePool
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -107,15 +112,20 @@ func (o *UpdateCloudResourcePoolRequest) UnmarshalJSON(data []byte) (err error) 
 
 	varUpdateCloudResourcePoolRequest := _UpdateCloudResourcePoolRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varUpdateCloudResourcePoolRequest)
+	err = json.Unmarshal(data, &varUpdateCloudResourcePoolRequest)
 
 	if err != nil {
 		return err
 	}
 
 	*o = UpdateCloudResourcePoolRequest(varUpdateCloudResourcePoolRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "resourcePool")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

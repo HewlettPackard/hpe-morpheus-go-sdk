@@ -28,7 +28,10 @@ type ListServicePlans200ResponseAllOfServicePlansInnerPermissionsResourcePermiss
 	Account *GetAlerts200ResponseAllOfChecksInnerAccount `json:"account,omitempty"`
 	Sites []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner `json:"sites,omitempty"`
 	Plans []map[string]interface{} `json:"plans,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListServicePlans200ResponseAllOfServicePlansInnerPermissionsResourcePermissions ListServicePlans200ResponseAllOfServicePlansInnerPermissionsResourcePermissions
 
 // NewListServicePlans200ResponseAllOfServicePlansInnerPermissionsResourcePermissions instantiates a new ListServicePlans200ResponseAllOfServicePlansInnerPermissionsResourcePermissions object
 // This constructor will assign default values to properties that have it defined,
@@ -337,7 +340,40 @@ func (o ListServicePlans200ResponseAllOfServicePlansInnerPermissionsResourcePerm
 	if !IsNil(o.Plans) {
 		toSerialize["plans"] = o.Plans
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListServicePlans200ResponseAllOfServicePlansInnerPermissionsResourcePermissions) UnmarshalJSON(data []byte) (err error) {
+	varListServicePlans200ResponseAllOfServicePlansInnerPermissionsResourcePermissions := _ListServicePlans200ResponseAllOfServicePlansInnerPermissionsResourcePermissions{}
+
+	err = json.Unmarshal(data, &varListServicePlans200ResponseAllOfServicePlansInnerPermissionsResourcePermissions)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListServicePlans200ResponseAllOfServicePlansInnerPermissionsResourcePermissions(varListServicePlans200ResponseAllOfServicePlansInnerPermissionsResourcePermissions)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "defaultStore")
+		delete(additionalProperties, "allPlans")
+		delete(additionalProperties, "defaultTarget")
+		delete(additionalProperties, "canManage")
+		delete(additionalProperties, "all")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "sites")
+		delete(additionalProperties, "plans")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListServicePlans200ResponseAllOfServicePlansInnerPermissionsResourcePermissions struct {

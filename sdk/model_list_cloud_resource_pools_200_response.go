@@ -22,7 +22,10 @@ var _ MappedNullable = &ListCloudResourcePools200Response{}
 type ListCloudResourcePools200Response struct {
 	ResourcePools []ListCloudResourcePools200ResponseAllOfResourcePoolsInner `json:"resourcePools,omitempty"`
 	Meta *ListActivity200ResponseAllOfMeta `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListCloudResourcePools200Response ListCloudResourcePools200Response
 
 // NewListCloudResourcePools200Response instantiates a new ListCloudResourcePools200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o ListCloudResourcePools200Response) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.Meta) {
 		toSerialize["meta"] = o.Meta
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListCloudResourcePools200Response) UnmarshalJSON(data []byte) (err error) {
+	varListCloudResourcePools200Response := _ListCloudResourcePools200Response{}
+
+	err = json.Unmarshal(data, &varListCloudResourcePools200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListCloudResourcePools200Response(varListCloudResourcePools200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "resourcePools")
+		delete(additionalProperties, "meta")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListCloudResourcePools200Response struct {

@@ -36,7 +36,10 @@ type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats struct {
 	NetTxUsage *int64 `json:"netTxUsage,omitempty"`
 	NetRxUsage *int64 `json:"netRxUsage,omitempty"`
 	NetworkBandwidth *int64 `json:"networkBandwidth,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats
 
 // NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats instantiates a new ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats object
 // This constructor will assign default values to properties that have it defined,
@@ -625,7 +628,48 @@ func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) ToMap()
 	if !IsNil(o.NetworkBandwidth) {
 		toSerialize["networkBandwidth"] = o.NetworkBandwidth
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats) UnmarshalJSON(data []byte) (err error) {
+	varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats := _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats{}
+
+	err = json.Unmarshal(data, &varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats(varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "ts")
+		delete(additionalProperties, "freeMemory")
+		delete(additionalProperties, "usedMemory")
+		delete(additionalProperties, "freeSwap")
+		delete(additionalProperties, "usedSwap")
+		delete(additionalProperties, "cpuIdleTime")
+		delete(additionalProperties, "cpuSystemTime")
+		delete(additionalProperties, "cpuUserTime")
+		delete(additionalProperties, "cpuTotalTime")
+		delete(additionalProperties, "cpuUsage")
+		delete(additionalProperties, "usedStorage")
+		delete(additionalProperties, "reservedStorage")
+		delete(additionalProperties, "maxStorage")
+		delete(additionalProperties, "netTxUsage")
+		delete(additionalProperties, "netRxUsage")
+		delete(additionalProperties, "networkBandwidth")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceStats struct {

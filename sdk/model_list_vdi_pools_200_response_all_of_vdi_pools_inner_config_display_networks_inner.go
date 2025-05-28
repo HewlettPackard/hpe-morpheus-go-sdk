@@ -24,7 +24,10 @@ type ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner struct 
 	IpMode *string `json:"ipMode,omitempty"`
 	Pool *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"pool,omitempty"`
 	UsePool *bool `json:"usePool,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner
 
 // NewListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner instantiates a new ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner object
 // This constructor will assign default values to properties that have it defined,
@@ -193,7 +196,36 @@ func (o ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner) ToM
 	if !IsNil(o.UsePool) {
 		toSerialize["usePool"] = o.UsePool
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner) UnmarshalJSON(data []byte) (err error) {
+	varListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner := _ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner{}
+
+	err = json.Unmarshal(data, &varListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner(varListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "ipMode")
+		delete(additionalProperties, "pool")
+		delete(additionalProperties, "usePool")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner struct {

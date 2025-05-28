@@ -22,7 +22,10 @@ var _ MappedNullable = &ListClusterPolicies200Response{}
 type ListClusterPolicies200Response struct {
 	Policies []ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner `json:"policies,omitempty"`
 	Meta *ListActivity200ResponseAllOfMeta `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListClusterPolicies200Response ListClusterPolicies200Response
 
 // NewListClusterPolicies200Response instantiates a new ListClusterPolicies200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o ListClusterPolicies200Response) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.Meta) {
 		toSerialize["meta"] = o.Meta
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListClusterPolicies200Response) UnmarshalJSON(data []byte) (err error) {
+	varListClusterPolicies200Response := _ListClusterPolicies200Response{}
+
+	err = json.Unmarshal(data, &varListClusterPolicies200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListClusterPolicies200Response(varListClusterPolicies200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "policies")
+		delete(additionalProperties, "meta")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListClusterPolicies200Response struct {

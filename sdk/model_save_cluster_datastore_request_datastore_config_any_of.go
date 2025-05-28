@@ -24,7 +24,10 @@ type SaveClusterDatastoreRequestDatastoreConfigAnyOf struct {
 	SourceHostname *string `json:"sourceHostname,omitempty"`
 	// Path to the target NFS export directory.
 	SourceDirPath *string `json:"sourceDirPath,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _SaveClusterDatastoreRequestDatastoreConfigAnyOf SaveClusterDatastoreRequestDatastoreConfigAnyOf
 
 // NewSaveClusterDatastoreRequestDatastoreConfigAnyOf instantiates a new SaveClusterDatastoreRequestDatastoreConfigAnyOf object
 // This constructor will assign default values to properties that have it defined,
@@ -123,7 +126,34 @@ func (o SaveClusterDatastoreRequestDatastoreConfigAnyOf) ToMap() (map[string]int
 	if !IsNil(o.SourceDirPath) {
 		toSerialize["sourceDirPath"] = o.SourceDirPath
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *SaveClusterDatastoreRequestDatastoreConfigAnyOf) UnmarshalJSON(data []byte) (err error) {
+	varSaveClusterDatastoreRequestDatastoreConfigAnyOf := _SaveClusterDatastoreRequestDatastoreConfigAnyOf{}
+
+	err = json.Unmarshal(data, &varSaveClusterDatastoreRequestDatastoreConfigAnyOf)
+
+	if err != nil {
+		return err
+	}
+
+	*o = SaveClusterDatastoreRequestDatastoreConfigAnyOf(varSaveClusterDatastoreRequestDatastoreConfigAnyOf)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "sourceHostname")
+		delete(additionalProperties, "sourceDirPath")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableSaveClusterDatastoreRequestDatastoreConfigAnyOf struct {

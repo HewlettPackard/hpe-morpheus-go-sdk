@@ -23,7 +23,10 @@ type PowerSchedulePolicyTypeConfiguration struct {
 	PowerScheduleType *string `json:"powerScheduleType,omitempty"`
 	PowerSchedule *string `json:"powerSchedule,omitempty"`
 	PowerScheduleHideFixed *bool `json:"powerScheduleHideFixed,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _PowerSchedulePolicyTypeConfiguration PowerSchedulePolicyTypeConfiguration
 
 // NewPowerSchedulePolicyTypeConfiguration instantiates a new PowerSchedulePolicyTypeConfiguration object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o PowerSchedulePolicyTypeConfiguration) ToMap() (map[string]interface{}, e
 	if !IsNil(o.PowerScheduleHideFixed) {
 		toSerialize["powerScheduleHideFixed"] = o.PowerScheduleHideFixed
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *PowerSchedulePolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
+	varPowerSchedulePolicyTypeConfiguration := _PowerSchedulePolicyTypeConfiguration{}
+
+	err = json.Unmarshal(data, &varPowerSchedulePolicyTypeConfiguration)
+
+	if err != nil {
+		return err
+	}
+
+	*o = PowerSchedulePolicyTypeConfiguration(varPowerSchedulePolicyTypeConfiguration)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "powerScheduleType")
+		delete(additionalProperties, "powerSchedule")
+		delete(additionalProperties, "powerScheduleHideFixed")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullablePowerSchedulePolicyTypeConfiguration struct {

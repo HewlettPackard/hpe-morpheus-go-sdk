@@ -33,7 +33,10 @@ type ListTenantSubtenantGroups200ResponseAllOfGroupsInner struct {
 	Zones []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"zones,omitempty"`
 	Stats *ListGroups200ResponseAllOfGroupsInnerStats `json:"stats,omitempty"`
 	ServerCount *int64 `json:"serverCount,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListTenantSubtenantGroups200ResponseAllOfGroupsInner ListTenantSubtenantGroups200ResponseAllOfGroupsInner
 
 // NewListTenantSubtenantGroups200ResponseAllOfGroupsInner instantiates a new ListTenantSubtenantGroups200ResponseAllOfGroupsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -482,7 +485,44 @@ func (o ListTenantSubtenantGroups200ResponseAllOfGroupsInner) ToMap() (map[strin
 	if !IsNil(o.ServerCount) {
 		toSerialize["serverCount"] = o.ServerCount
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListTenantSubtenantGroups200ResponseAllOfGroupsInner) UnmarshalJSON(data []byte) (err error) {
+	varListTenantSubtenantGroups200ResponseAllOfGroupsInner := _ListTenantSubtenantGroups200ResponseAllOfGroupsInner{}
+
+	err = json.Unmarshal(data, &varListTenantSubtenantGroups200ResponseAllOfGroupsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListTenantSubtenantGroups200ResponseAllOfGroupsInner(varListTenantSubtenantGroups200ResponseAllOfGroupsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "location")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "zones")
+		delete(additionalProperties, "stats")
+		delete(additionalProperties, "serverCount")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListTenantSubtenantGroups200ResponseAllOfGroupsInner struct {

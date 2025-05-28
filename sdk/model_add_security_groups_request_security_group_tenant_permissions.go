@@ -24,7 +24,10 @@ type AddSecurityGroupsRequestSecurityGroupTenantPermissions struct {
 	Accounts []int64 `json:"accounts,omitempty"`
 	// Array of tenant account ids that can manage
 	CanManageAccounts []int64 `json:"canManageAccounts,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddSecurityGroupsRequestSecurityGroupTenantPermissions AddSecurityGroupsRequestSecurityGroupTenantPermissions
 
 // NewAddSecurityGroupsRequestSecurityGroupTenantPermissions instantiates a new AddSecurityGroupsRequestSecurityGroupTenantPermissions object
 // This constructor will assign default values to properties that have it defined,
@@ -123,7 +126,34 @@ func (o AddSecurityGroupsRequestSecurityGroupTenantPermissions) ToMap() (map[str
 	if !IsNil(o.CanManageAccounts) {
 		toSerialize["canManageAccounts"] = o.CanManageAccounts
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddSecurityGroupsRequestSecurityGroupTenantPermissions) UnmarshalJSON(data []byte) (err error) {
+	varAddSecurityGroupsRequestSecurityGroupTenantPermissions := _AddSecurityGroupsRequestSecurityGroupTenantPermissions{}
+
+	err = json.Unmarshal(data, &varAddSecurityGroupsRequestSecurityGroupTenantPermissions)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddSecurityGroupsRequestSecurityGroupTenantPermissions(varAddSecurityGroupsRequestSecurityGroupTenantPermissions)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "accounts")
+		delete(additionalProperties, "canManageAccounts")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddSecurityGroupsRequestSecurityGroupTenantPermissions struct {

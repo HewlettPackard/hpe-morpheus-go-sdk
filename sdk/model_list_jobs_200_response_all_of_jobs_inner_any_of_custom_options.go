@@ -21,7 +21,10 @@ var _ MappedNullable = &ListJobs200ResponseAllOfJobsInnerAnyOfCustomOptions{}
 // ListJobs200ResponseAllOfJobsInnerAnyOfCustomOptions struct for ListJobs200ResponseAllOfJobsInnerAnyOfCustomOptions
 type ListJobs200ResponseAllOfJobsInnerAnyOfCustomOptions struct {
 	CheckTime *int64 `json:"checkTime,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListJobs200ResponseAllOfJobsInnerAnyOfCustomOptions ListJobs200ResponseAllOfJobsInnerAnyOfCustomOptions
 
 // NewListJobs200ResponseAllOfJobsInnerAnyOfCustomOptions instantiates a new ListJobs200ResponseAllOfJobsInnerAnyOfCustomOptions object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o ListJobs200ResponseAllOfJobsInnerAnyOfCustomOptions) ToMap() (map[string
 	if !IsNil(o.CheckTime) {
 		toSerialize["checkTime"] = o.CheckTime
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListJobs200ResponseAllOfJobsInnerAnyOfCustomOptions) UnmarshalJSON(data []byte) (err error) {
+	varListJobs200ResponseAllOfJobsInnerAnyOfCustomOptions := _ListJobs200ResponseAllOfJobsInnerAnyOfCustomOptions{}
+
+	err = json.Unmarshal(data, &varListJobs200ResponseAllOfJobsInnerAnyOfCustomOptions)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListJobs200ResponseAllOfJobsInnerAnyOfCustomOptions(varListJobs200ResponseAllOfJobsInnerAnyOfCustomOptions)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "checkTime")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListJobs200ResponseAllOfJobsInnerAnyOfCustomOptions struct {

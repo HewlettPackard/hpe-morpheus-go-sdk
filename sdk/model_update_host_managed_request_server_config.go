@@ -21,7 +21,10 @@ var _ MappedNullable = &UpdateHostManagedRequestServerConfig{}
 // UpdateHostManagedRequestServerConfig Custom Option Type settings object containing name value pairs to be set.
 type UpdateHostManagedRequestServerConfig struct {
 	CustomOptions *UpdateHostManagedRequestServerConfigCustomOptions `json:"customOptions,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateHostManagedRequestServerConfig UpdateHostManagedRequestServerConfig
 
 // NewUpdateHostManagedRequestServerConfig instantiates a new UpdateHostManagedRequestServerConfig object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o UpdateHostManagedRequestServerConfig) ToMap() (map[string]interface{}, e
 	if !IsNil(o.CustomOptions) {
 		toSerialize["customOptions"] = o.CustomOptions
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateHostManagedRequestServerConfig) UnmarshalJSON(data []byte) (err error) {
+	varUpdateHostManagedRequestServerConfig := _UpdateHostManagedRequestServerConfig{}
+
+	err = json.Unmarshal(data, &varUpdateHostManagedRequestServerConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateHostManagedRequestServerConfig(varUpdateHostManagedRequestServerConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "customOptions")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateHostManagedRequestServerConfig struct {

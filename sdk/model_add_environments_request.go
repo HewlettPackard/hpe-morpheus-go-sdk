@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -23,6 +22,7 @@ var _ MappedNullable = &AddEnvironmentsRequest{}
 // AddEnvironmentsRequest struct for AddEnvironmentsRequest
 type AddEnvironmentsRequest struct {
 	Environment AddEnvironmentsRequestEnvironment `json:"environment"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddEnvironmentsRequest AddEnvironmentsRequest
@@ -80,6 +80,11 @@ func (o AddEnvironmentsRequest) MarshalJSON() ([]byte, error) {
 func (o AddEnvironmentsRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["environment"] = o.Environment
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -107,15 +112,20 @@ func (o *AddEnvironmentsRequest) UnmarshalJSON(data []byte) (err error) {
 
 	varAddEnvironmentsRequest := _AddEnvironmentsRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddEnvironmentsRequest)
+	err = json.Unmarshal(data, &varAddEnvironmentsRequest)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddEnvironmentsRequest(varAddEnvironmentsRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "environment")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

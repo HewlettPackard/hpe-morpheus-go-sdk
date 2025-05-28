@@ -21,7 +21,10 @@ var _ MappedNullable = &GetReportTypes200Response{}
 // GetReportTypes200Response struct for GetReportTypes200Response
 type GetReportTypes200Response struct {
 	ReportTypes []GetReportTypes200ResponseReportTypesInner `json:"reportTypes,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetReportTypes200Response GetReportTypes200Response
 
 // NewGetReportTypes200Response instantiates a new GetReportTypes200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o GetReportTypes200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ReportTypes) {
 		toSerialize["reportTypes"] = o.ReportTypes
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetReportTypes200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetReportTypes200Response := _GetReportTypes200Response{}
+
+	err = json.Unmarshal(data, &varGetReportTypes200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetReportTypes200Response(varGetReportTypes200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "reportTypes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetReportTypes200Response struct {

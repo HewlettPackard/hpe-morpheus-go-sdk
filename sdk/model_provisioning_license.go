@@ -33,7 +33,10 @@ type ProvisioningLicense struct {
 	Tenants []map[string]interface{} `json:"tenants,omitempty"`
 	VirtualImages []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"virtualImages,omitempty"`
 	Account *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ProvisioningLicense ProvisioningLicense
 
 // NewProvisioningLicense instantiates a new ProvisioningLicense object
 // This constructor will assign default values to properties that have it defined,
@@ -517,7 +520,45 @@ func (o ProvisioningLicense) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Account) {
 		toSerialize["account"] = o.Account
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ProvisioningLicense) UnmarshalJSON(data []byte) (err error) {
+	varProvisioningLicense := _ProvisioningLicense{}
+
+	err = json.Unmarshal(data, &varProvisioningLicense)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ProvisioningLicense(varProvisioningLicense)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "licenseType")
+		delete(additionalProperties, "licenseKey")
+		delete(additionalProperties, "orgName")
+		delete(additionalProperties, "fullName")
+		delete(additionalProperties, "licenseVersion")
+		delete(additionalProperties, "copies")
+		delete(additionalProperties, "reservationCount")
+		delete(additionalProperties, "tenants")
+		delete(additionalProperties, "virtualImages")
+		delete(additionalProperties, "account")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableProvisioningLicense struct {

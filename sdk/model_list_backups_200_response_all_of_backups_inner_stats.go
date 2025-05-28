@@ -36,7 +36,10 @@ type ListBackups200ResponseAllOfBackupsInnerStats struct {
 	FailRate *float64 `json:"failRate,omitempty"`
 	// List of the last 5 backup result statuses
 	LastFiveResults []string `json:"lastFiveResults,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListBackups200ResponseAllOfBackupsInnerStats ListBackups200ResponseAllOfBackupsInnerStats
 
 // NewListBackups200ResponseAllOfBackupsInnerStats instantiates a new ListBackups200ResponseAllOfBackupsInnerStats object
 // This constructor will assign default values to properties that have it defined,
@@ -345,7 +348,40 @@ func (o ListBackups200ResponseAllOfBackupsInnerStats) ToMap() (map[string]interf
 	if !IsNil(o.LastFiveResults) {
 		toSerialize["lastFiveResults"] = o.LastFiveResults
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListBackups200ResponseAllOfBackupsInnerStats) UnmarshalJSON(data []byte) (err error) {
+	varListBackups200ResponseAllOfBackupsInnerStats := _ListBackups200ResponseAllOfBackupsInnerStats{}
+
+	err = json.Unmarshal(data, &varListBackups200ResponseAllOfBackupsInnerStats)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListBackups200ResponseAllOfBackupsInnerStats(varListBackups200ResponseAllOfBackupsInnerStats)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "totalSize")
+		delete(additionalProperties, "avgSize")
+		delete(additionalProperties, "totalCompleted")
+		delete(additionalProperties, "success")
+		delete(additionalProperties, "failed")
+		delete(additionalProperties, "successRate")
+		delete(additionalProperties, "failRate")
+		delete(additionalProperties, "lastFiveResults")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListBackups200ResponseAllOfBackupsInnerStats struct {

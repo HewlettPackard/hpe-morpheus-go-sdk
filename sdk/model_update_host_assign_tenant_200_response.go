@@ -22,7 +22,10 @@ var _ MappedNullable = &UpdateHostAssignTenant200Response{}
 type UpdateHostAssignTenant200Response struct {
 	Server *ListHosts200ResponseAllOfServersInner `json:"server,omitempty"`
 	Success *bool `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateHostAssignTenant200Response UpdateHostAssignTenant200Response
 
 // NewUpdateHostAssignTenant200Response instantiates a new UpdateHostAssignTenant200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o UpdateHostAssignTenant200Response) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.Success) {
 		toSerialize["success"] = o.Success
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateHostAssignTenant200Response) UnmarshalJSON(data []byte) (err error) {
+	varUpdateHostAssignTenant200Response := _UpdateHostAssignTenant200Response{}
+
+	err = json.Unmarshal(data, &varUpdateHostAssignTenant200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateHostAssignTenant200Response(varUpdateHostAssignTenant200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "server")
+		delete(additionalProperties, "success")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateHostAssignTenant200Response struct {

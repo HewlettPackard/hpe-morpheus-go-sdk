@@ -42,7 +42,10 @@ type ListImageBuilds200ResponseAllOfImageBuildsInner struct {
 	Config *ListImageBuilds200ResponseAllOfImageBuildsInnerConfig `json:"config,omitempty"`
 	LastResult *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult `json:"lastResult,omitempty"`
 	ExecutionCount *int64 `json:"executionCount,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListImageBuilds200ResponseAllOfImageBuildsInner ListImageBuilds200ResponseAllOfImageBuildsInner
 
 // NewListImageBuilds200ResponseAllOfImageBuildsInner instantiates a new ListImageBuilds200ResponseAllOfImageBuildsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -841,7 +844,54 @@ func (o ListImageBuilds200ResponseAllOfImageBuildsInner) ToMap() (map[string]int
 	if !IsNil(o.ExecutionCount) {
 		toSerialize["executionCount"] = o.ExecutionCount
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListImageBuilds200ResponseAllOfImageBuildsInner) UnmarshalJSON(data []byte) (err error) {
+	varListImageBuilds200ResponseAllOfImageBuildsInner := _ListImageBuilds200ResponseAllOfImageBuildsInner{}
+
+	err = json.Unmarshal(data, &varListImageBuilds200ResponseAllOfImageBuildsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListImageBuilds200ResponseAllOfImageBuildsInner(varListImageBuilds200ResponseAllOfImageBuildsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "site")
+		delete(additionalProperties, "zone")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "bootScript")
+		delete(additionalProperties, "bootCommand")
+		delete(additionalProperties, "preseedScript")
+		delete(additionalProperties, "scripts")
+		delete(additionalProperties, "sshUsername")
+		delete(additionalProperties, "sshPassword")
+		delete(additionalProperties, "storageProvider")
+		delete(additionalProperties, "buildOutputName")
+		delete(additionalProperties, "conversionFormats")
+		delete(additionalProperties, "isCloudInit")
+		delete(additionalProperties, "vmToolsInstalled")
+		delete(additionalProperties, "keepResults")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "lastResult")
+		delete(additionalProperties, "executionCount")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListImageBuilds200ResponseAllOfImageBuildsInner struct {

@@ -28,7 +28,10 @@ type GetClusterContainer200ResponseResource struct {
 	Spec map[string]interface{} `json:"spec,omitempty"`
 	Config map[string]interface{} `json:"config,omitempty"`
 	RawSec map[string]interface{} `json:"rawSec,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetClusterContainer200ResponseResource GetClusterContainer200ResponseResource
 
 // NewGetClusterContainer200ResponseResource instantiates a new GetClusterContainer200ResponseResource object
 // This constructor will assign default values to properties that have it defined,
@@ -337,7 +340,40 @@ func (o GetClusterContainer200ResponseResource) ToMap() (map[string]interface{},
 	if !IsNil(o.RawSec) {
 		toSerialize["rawSec"] = o.RawSec
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetClusterContainer200ResponseResource) UnmarshalJSON(data []byte) (err error) {
+	varGetClusterContainer200ResponseResource := _GetClusterContainer200ResponseResource{}
+
+	err = json.Unmarshal(data, &varGetClusterContainer200ResponseResource)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetClusterContainer200ResponseResource(varGetClusterContainer200ResponseResource)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "title")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "metadata")
+		delete(additionalProperties, "spec")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "rawSec")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetClusterContainer200ResponseResource struct {

@@ -24,7 +24,10 @@ type License struct {
 	// List of all the installed licenses
 	InstalledLicenses []GetLicense200ResponseInstalledLicensesInner `json:"installedLicenses,omitempty"`
 	CurrentUsage *GetLicense200ResponseCurrentUsage `json:"currentUsage,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _License License
 
 // NewLicense instantiates a new License object
 // This constructor will assign default values to properties that have it defined,
@@ -158,7 +161,35 @@ func (o License) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CurrentUsage) {
 		toSerialize["currentUsage"] = o.CurrentUsage
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *License) UnmarshalJSON(data []byte) (err error) {
+	varLicense := _License{}
+
+	err = json.Unmarshal(data, &varLicense)
+
+	if err != nil {
+		return err
+	}
+
+	*o = License(varLicense)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "license")
+		delete(additionalProperties, "installedLicenses")
+		delete(additionalProperties, "currentUsage")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableLicense struct {

@@ -21,7 +21,10 @@ var _ MappedNullable = &AddAppsRequestDefaultCloud{}
 // AddAppsRequestDefaultCloud A Map containing the id of the defaultCloud for the app.
 type AddAppsRequestDefaultCloud struct {
 	Id *int64 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddAppsRequestDefaultCloud AddAppsRequestDefaultCloud
 
 // NewAddAppsRequestDefaultCloud instantiates a new AddAppsRequestDefaultCloud object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o AddAppsRequestDefaultCloud) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddAppsRequestDefaultCloud) UnmarshalJSON(data []byte) (err error) {
+	varAddAppsRequestDefaultCloud := _AddAppsRequestDefaultCloud{}
+
+	err = json.Unmarshal(data, &varAddAppsRequestDefaultCloud)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddAppsRequestDefaultCloud(varAddAppsRequestDefaultCloud)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddAppsRequestDefaultCloud struct {

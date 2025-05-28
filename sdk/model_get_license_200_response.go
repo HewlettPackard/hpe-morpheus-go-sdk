@@ -24,7 +24,10 @@ type GetLicense200Response struct {
 	// List of all the installed licenses
 	InstalledLicenses []GetLicense200ResponseInstalledLicensesInner `json:"installedLicenses,omitempty"`
 	CurrentUsage *GetLicense200ResponseCurrentUsage `json:"currentUsage,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetLicense200Response GetLicense200Response
 
 // NewGetLicense200Response instantiates a new GetLicense200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -158,7 +161,35 @@ func (o GetLicense200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CurrentUsage) {
 		toSerialize["currentUsage"] = o.CurrentUsage
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetLicense200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetLicense200Response := _GetLicense200Response{}
+
+	err = json.Unmarshal(data, &varGetLicense200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetLicense200Response(varGetLicense200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "license")
+		delete(additionalProperties, "installedLicenses")
+		delete(additionalProperties, "currentUsage")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetLicense200Response struct {

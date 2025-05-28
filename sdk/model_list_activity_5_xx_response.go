@@ -21,7 +21,10 @@ var _ MappedNullable = &ListActivity5XXResponse{}
 // ListActivity5XXResponse struct for ListActivity5XXResponse
 type ListActivity5XXResponse struct {
 	Msg *string `json:"msg,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListActivity5XXResponse ListActivity5XXResponse
 
 // NewListActivity5XXResponse instantiates a new ListActivity5XXResponse object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o ListActivity5XXResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Msg) {
 		toSerialize["msg"] = o.Msg
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListActivity5XXResponse) UnmarshalJSON(data []byte) (err error) {
+	varListActivity5XXResponse := _ListActivity5XXResponse{}
+
+	err = json.Unmarshal(data, &varListActivity5XXResponse)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListActivity5XXResponse(varListActivity5XXResponse)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "msg")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListActivity5XXResponse struct {

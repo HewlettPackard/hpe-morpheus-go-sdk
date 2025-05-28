@@ -40,7 +40,10 @@ type UpdateFileTemplateRequestContainerTemplate struct {
 	SettingName *string `json:"settingName,omitempty"`
 	// Setting Category
 	SettingCategory *string `json:"settingCategory,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateFileTemplateRequestContainerTemplate UpdateFileTemplateRequestContainerTemplate
 
 // NewUpdateFileTemplateRequestContainerTemplate instantiates a new UpdateFileTemplateRequestContainerTemplate object
 // This constructor will assign default values to properties that have it defined,
@@ -419,7 +422,42 @@ func (o UpdateFileTemplateRequestContainerTemplate) ToMap() (map[string]interfac
 	if !IsNil(o.SettingCategory) {
 		toSerialize["settingCategory"] = o.SettingCategory
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateFileTemplateRequestContainerTemplate) UnmarshalJSON(data []byte) (err error) {
+	varUpdateFileTemplateRequestContainerTemplate := _UpdateFileTemplateRequestContainerTemplate{}
+
+	err = json.Unmarshal(data, &varUpdateFileTemplateRequestContainerTemplate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateFileTemplateRequestContainerTemplate(varUpdateFileTemplateRequestContainerTemplate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "fileName")
+		delete(additionalProperties, "filePath")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "templatePhase")
+		delete(additionalProperties, "template")
+		delete(additionalProperties, "fileOwner")
+		delete(additionalProperties, "settingName")
+		delete(additionalProperties, "settingCategory")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateFileTemplateRequestContainerTemplate struct {

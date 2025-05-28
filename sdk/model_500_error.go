@@ -21,7 +21,10 @@ var _ MappedNullable = &Model500Error{}
 // Model500Error struct for Model500Error
 type Model500Error struct {
 	Msg *string `json:"msg,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _Model500Error Model500Error
 
 // NewModel500Error instantiates a new Model500Error object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o Model500Error) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Msg) {
 		toSerialize["msg"] = o.Msg
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *Model500Error) UnmarshalJSON(data []byte) (err error) {
+	varModel500Error := _Model500Error{}
+
+	err = json.Unmarshal(data, &varModel500Error)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Model500Error(varModel500Error)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "msg")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableModel500Error struct {

@@ -38,7 +38,10 @@ type IntegrationCherwell struct {
 	LastSync *string `json:"lastSync,omitempty"`
 	LastSyncDuration *string `json:"lastSyncDuration,omitempty"`
 	Credential *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential `json:"credential,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _IntegrationCherwell IntegrationCherwell
 
 // NewIntegrationCherwell instantiates a new IntegrationCherwell object
 // This constructor will assign default values to properties that have it defined,
@@ -662,7 +665,49 @@ func (o IntegrationCherwell) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Credential) {
 		toSerialize["credential"] = o.Credential
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *IntegrationCherwell) UnmarshalJSON(data []byte) (err error) {
+	varIntegrationCherwell := _IntegrationCherwell{}
+
+	err = json.Unmarshal(data, &varIntegrationCherwell)
+
+	if err != nil {
+		return err
+	}
+
+	*o = IntegrationCherwell(varIntegrationCherwell)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "integrationType")
+		delete(additionalProperties, "url")
+		delete(additionalProperties, "username")
+		delete(additionalProperties, "password")
+		delete(additionalProperties, "passwordHash")
+		delete(additionalProperties, "isPlugin")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "statusDate")
+		delete(additionalProperties, "statusMessage")
+		delete(additionalProperties, "lastSync")
+		delete(additionalProperties, "lastSyncDuration")
+		delete(additionalProperties, "credential")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableIntegrationCherwell struct {

@@ -28,7 +28,10 @@ type ClusterNamespaces struct {
 	Status *string `json:"status,omitempty"`
 	Visibility *string `json:"visibility,omitempty"`
 	Active *bool `json:"active,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ClusterNamespaces ClusterNamespaces
 
 // NewClusterNamespaces instantiates a new ClusterNamespaces object
 // This constructor will assign default values to properties that have it defined,
@@ -337,7 +340,40 @@ func (o ClusterNamespaces) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Active) {
 		toSerialize["active"] = o.Active
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ClusterNamespaces) UnmarshalJSON(data []byte) (err error) {
+	varClusterNamespaces := _ClusterNamespaces{}
+
+	err = json.Unmarshal(data, &varClusterNamespaces)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ClusterNamespaces(varClusterNamespaces)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "regionCode")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "active")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableClusterNamespaces struct {

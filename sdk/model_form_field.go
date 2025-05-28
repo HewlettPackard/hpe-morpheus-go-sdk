@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -69,6 +68,7 @@ type FormField struct {
 	VerifyPattern *string `json:"verifyPattern,omitempty"`
 	// A fieldName that will trigger required attribute of this input
 	RequireOnCode *string `json:"requireOnCode,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _FormField FormField
@@ -954,6 +954,11 @@ func (o FormField) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.RequireOnCode) {
 		toSerialize["requireOnCode"] = o.RequireOnCode
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -982,15 +987,43 @@ func (o *FormField) UnmarshalJSON(data []byte) (err error) {
 
 	varFormField := _FormField{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varFormField)
+	err = json.Unmarshal(data, &varFormField)
 
 	if err != nil {
 		return err
 	}
 
 	*o = FormField(varFormField)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "fieldName")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "fieldLabel")
+		delete(additionalProperties, "fieldCode")
+		delete(additionalProperties, "placeHolder")
+		delete(additionalProperties, "helpBlock")
+		delete(additionalProperties, "helpBlockFieldCode")
+		delete(additionalProperties, "defaultValue")
+		delete(additionalProperties, "required")
+		delete(additionalProperties, "exportMeta")
+		delete(additionalProperties, "editable")
+		delete(additionalProperties, "optionList")
+		delete(additionalProperties, "displayValueOnDetails")
+		delete(additionalProperties, "isLocked")
+		delete(additionalProperties, "isHidden")
+		delete(additionalProperties, "excludeFromSearch")
+		delete(additionalProperties, "dependsOnCode")
+		delete(additionalProperties, "visibleOnCode")
+		delete(additionalProperties, "verifyPattern")
+		delete(additionalProperties, "requireOnCode")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

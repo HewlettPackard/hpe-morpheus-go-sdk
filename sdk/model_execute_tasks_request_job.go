@@ -36,7 +36,10 @@ type ExecuteTasksRequestJob struct {
 	CustomOptions map[string]interface{} `json:"customOptions,omitempty"`
 	// String of custom configuration values as JSON.
 	CustomConfig *string `json:"customConfig,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ExecuteTasksRequestJob ExecuteTasksRequestJob
 
 // NewExecuteTasksRequestJob instantiates a new ExecuteTasksRequestJob object
 // This constructor will assign default values to properties that have it defined,
@@ -345,7 +348,40 @@ func (o ExecuteTasksRequestJob) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomConfig) {
 		toSerialize["customConfig"] = o.CustomConfig
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ExecuteTasksRequestJob) UnmarshalJSON(data []byte) (err error) {
+	varExecuteTasksRequestJob := _ExecuteTasksRequestJob{}
+
+	err = json.Unmarshal(data, &varExecuteTasksRequestJob)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ExecuteTasksRequestJob(varExecuteTasksRequestJob)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "targetType")
+		delete(additionalProperties, "instances")
+		delete(additionalProperties, "servers")
+		delete(additionalProperties, "instanceLabel")
+		delete(additionalProperties, "serverLabel")
+		delete(additionalProperties, "customOptions")
+		delete(additionalProperties, "customConfig")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableExecuteTasksRequestJob struct {

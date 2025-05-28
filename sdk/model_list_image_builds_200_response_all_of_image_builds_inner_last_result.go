@@ -34,7 +34,10 @@ type ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult struct {
 	CreatedBy *GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy `json:"createdBy,omitempty"`
 	TempInstance *string `json:"tempInstance,omitempty"`
 	VirtualImages []map[string]interface{} `json:"virtualImages,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult
 
 // NewListImageBuilds200ResponseAllOfImageBuildsInnerLastResult instantiates a new ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult object
 // This constructor will assign default values to properties that have it defined,
@@ -518,7 +521,45 @@ func (o ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) ToMap() (map[
 	if !IsNil(o.VirtualImages) {
 		toSerialize["virtualImages"] = o.VirtualImages
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) UnmarshalJSON(data []byte) (err error) {
+	varListImageBuilds200ResponseAllOfImageBuildsInnerLastResult := _ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult{}
+
+	err = json.Unmarshal(data, &varListImageBuilds200ResponseAllOfImageBuildsInnerLastResult)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult(varListImageBuilds200ResponseAllOfImageBuildsInnerLastResult)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "imageBuild")
+		delete(additionalProperties, "buildNumber")
+		delete(additionalProperties, "startDate")
+		delete(additionalProperties, "endDate")
+		delete(additionalProperties, "statusMessage")
+		delete(additionalProperties, "statusPercent")
+		delete(additionalProperties, "statusEta")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "errorMessage")
+		delete(additionalProperties, "createdBy")
+		delete(additionalProperties, "tempInstance")
+		delete(additionalProperties, "virtualImages")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListImageBuilds200ResponseAllOfImageBuildsInnerLastResult struct {

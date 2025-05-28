@@ -21,7 +21,10 @@ var _ MappedNullable = &AddCatalogItemTypeRequest{}
 // AddCatalogItemTypeRequest struct for AddCatalogItemTypeRequest
 type AddCatalogItemTypeRequest struct {
 	CatalogItemType *AddCatalogItemTypeRequestCatalogItemType `json:"catalogItemType,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddCatalogItemTypeRequest AddCatalogItemTypeRequest
 
 // NewAddCatalogItemTypeRequest instantiates a new AddCatalogItemTypeRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o AddCatalogItemTypeRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CatalogItemType) {
 		toSerialize["catalogItemType"] = o.CatalogItemType
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddCatalogItemTypeRequest) UnmarshalJSON(data []byte) (err error) {
+	varAddCatalogItemTypeRequest := _AddCatalogItemTypeRequest{}
+
+	err = json.Unmarshal(data, &varAddCatalogItemTypeRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddCatalogItemTypeRequest(varAddCatalogItemTypeRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "catalogItemType")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddCatalogItemTypeRequest struct {

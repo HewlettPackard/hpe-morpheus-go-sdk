@@ -22,7 +22,10 @@ var _ MappedNullable = &CustomOptionsForOpenstackOpenTelekomHuawei{}
 type CustomOptionsForOpenstackOpenTelekomHuawei struct {
 	// Resource Pool ID (applicable to cloud types Openstack/OpenTelekom/Huawei)
 	ResourcePoolId *int64 `json:"resourcePoolId,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _CustomOptionsForOpenstackOpenTelekomHuawei CustomOptionsForOpenstackOpenTelekomHuawei
 
 // NewCustomOptionsForOpenstackOpenTelekomHuawei instantiates a new CustomOptionsForOpenstackOpenTelekomHuawei object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o CustomOptionsForOpenstackOpenTelekomHuawei) ToMap() (map[string]interfac
 	if !IsNil(o.ResourcePoolId) {
 		toSerialize["resourcePoolId"] = o.ResourcePoolId
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *CustomOptionsForOpenstackOpenTelekomHuawei) UnmarshalJSON(data []byte) (err error) {
+	varCustomOptionsForOpenstackOpenTelekomHuawei := _CustomOptionsForOpenstackOpenTelekomHuawei{}
+
+	err = json.Unmarshal(data, &varCustomOptionsForOpenstackOpenTelekomHuawei)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CustomOptionsForOpenstackOpenTelekomHuawei(varCustomOptionsForOpenstackOpenTelekomHuawei)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "resourcePoolId")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCustomOptionsForOpenstackOpenTelekomHuawei struct {

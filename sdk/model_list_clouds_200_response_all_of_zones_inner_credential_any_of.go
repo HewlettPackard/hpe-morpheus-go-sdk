@@ -21,7 +21,10 @@ var _ MappedNullable = &ListClouds200ResponseAllOfZonesInnerCredentialAnyOf{}
 // ListClouds200ResponseAllOfZonesInnerCredentialAnyOf struct for ListClouds200ResponseAllOfZonesInnerCredentialAnyOf
 type ListClouds200ResponseAllOfZonesInnerCredentialAnyOf struct {
 	Type *string `json:"type,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListClouds200ResponseAllOfZonesInnerCredentialAnyOf ListClouds200ResponseAllOfZonesInnerCredentialAnyOf
 
 // NewListClouds200ResponseAllOfZonesInnerCredentialAnyOf instantiates a new ListClouds200ResponseAllOfZonesInnerCredentialAnyOf object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o ListClouds200ResponseAllOfZonesInnerCredentialAnyOf) ToMap() (map[string
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListClouds200ResponseAllOfZonesInnerCredentialAnyOf) UnmarshalJSON(data []byte) (err error) {
+	varListClouds200ResponseAllOfZonesInnerCredentialAnyOf := _ListClouds200ResponseAllOfZonesInnerCredentialAnyOf{}
+
+	err = json.Unmarshal(data, &varListClouds200ResponseAllOfZonesInnerCredentialAnyOf)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListClouds200ResponseAllOfZonesInnerCredentialAnyOf(varListClouds200ResponseAllOfZonesInnerCredentialAnyOf)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "type")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListClouds200ResponseAllOfZonesInnerCredentialAnyOf struct {

@@ -22,7 +22,10 @@ var _ MappedNullable = &UpdateHostInstallAgentRequestServerServerOs{}
 type UpdateHostInstallAgentRequestServerServerOs struct {
 	// The ID of the OS Type for this server. See GET /api/options/osTypes
 	Id *int64 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateHostInstallAgentRequestServerServerOs UpdateHostInstallAgentRequestServerServerOs
 
 // NewUpdateHostInstallAgentRequestServerServerOs instantiates a new UpdateHostInstallAgentRequestServerServerOs object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o UpdateHostInstallAgentRequestServerServerOs) ToMap() (map[string]interfa
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateHostInstallAgentRequestServerServerOs) UnmarshalJSON(data []byte) (err error) {
+	varUpdateHostInstallAgentRequestServerServerOs := _UpdateHostInstallAgentRequestServerServerOs{}
+
+	err = json.Unmarshal(data, &varUpdateHostInstallAgentRequestServerServerOs)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateHostInstallAgentRequestServerServerOs(varUpdateHostInstallAgentRequestServerServerOs)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateHostInstallAgentRequestServerServerOs struct {

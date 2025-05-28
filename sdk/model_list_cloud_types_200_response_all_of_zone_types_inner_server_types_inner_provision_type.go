@@ -25,7 +25,10 @@ type ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionType s
 	Name *string `json:"name,omitempty"`
 	HasNetworks *bool `json:"hasNetworks,omitempty"`
 	HasZonePools *bool `json:"hasZonePools,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionType ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionType
 
 // NewListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionType instantiates a new ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionType object
 // This constructor will assign default values to properties that have it defined,
@@ -229,7 +232,37 @@ func (o ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionTyp
 	if !IsNil(o.HasZonePools) {
 		toSerialize["hasZonePools"] = o.HasZonePools
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionType) UnmarshalJSON(data []byte) (err error) {
+	varListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionType := _ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionType{}
+
+	err = json.Unmarshal(data, &varListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionType(varListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "hasNetworks")
+		delete(additionalProperties, "hasZonePools")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionType struct {

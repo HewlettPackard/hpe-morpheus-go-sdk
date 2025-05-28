@@ -52,7 +52,10 @@ type ListApplianceSettings200ResponseApplianceSettings struct {
 	CurrencyKey *string `json:"currencyKey,omitempty"`
 	EnabledZoneTypes []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"enabledZoneTypes,omitempty"`
 	StatsRetainmentPeriod *int64 `json:"statsRetainmentPeriod,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListApplianceSettings200ResponseApplianceSettings ListApplianceSettings200ResponseApplianceSettings
 
 // NewListApplianceSettings200ResponseApplianceSettings instantiates a new ListApplianceSettings200ResponseApplianceSettings object
 // This constructor will assign default values to properties that have it defined,
@@ -1201,7 +1204,64 @@ func (o ListApplianceSettings200ResponseApplianceSettings) ToMap() (map[string]i
 	if !IsNil(o.StatsRetainmentPeriod) {
 		toSerialize["statsRetainmentPeriod"] = o.StatsRetainmentPeriod
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListApplianceSettings200ResponseApplianceSettings) UnmarshalJSON(data []byte) (err error) {
+	varListApplianceSettings200ResponseApplianceSettings := _ListApplianceSettings200ResponseApplianceSettings{}
+
+	err = json.Unmarshal(data, &varListApplianceSettings200ResponseApplianceSettings)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListApplianceSettings200ResponseApplianceSettings(varListApplianceSettings200ResponseApplianceSettings)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "uuid")
+		delete(additionalProperties, "applianceId")
+		delete(additionalProperties, "applianceUrl")
+		delete(additionalProperties, "internalApplianceUrl")
+		delete(additionalProperties, "corsAllowed")
+		delete(additionalProperties, "registrationEnabled")
+		delete(additionalProperties, "defaultRoleId")
+		delete(additionalProperties, "defaultUserRoleId")
+		delete(additionalProperties, "dockerPrivilegedMode")
+		delete(additionalProperties, "expirePwdDays")
+		delete(additionalProperties, "disableAfterAttempts")
+		delete(additionalProperties, "disableAfterDaysInactive")
+		delete(additionalProperties, "warnUserDaysBefore")
+		delete(additionalProperties, "smtpMailFrom")
+		delete(additionalProperties, "smtpServer")
+		delete(additionalProperties, "smtpPort")
+		delete(additionalProperties, "smtpSSL")
+		delete(additionalProperties, "smtpTLS")
+		delete(additionalProperties, "smtpUser")
+		delete(additionalProperties, "smtpPassword")
+		delete(additionalProperties, "smtpPasswordHash")
+		delete(additionalProperties, "proxyHost")
+		delete(additionalProperties, "proxyPort")
+		delete(additionalProperties, "proxyUser")
+		delete(additionalProperties, "proxyPassword")
+		delete(additionalProperties, "proxyPasswordHash")
+		delete(additionalProperties, "proxyDomain")
+		delete(additionalProperties, "proxyWorkstation")
+		delete(additionalProperties, "currencyProvider")
+		delete(additionalProperties, "currencyKey")
+		delete(additionalProperties, "enabledZoneTypes")
+		delete(additionalProperties, "statsRetainmentPeriod")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListApplianceSettings200ResponseApplianceSettings struct {

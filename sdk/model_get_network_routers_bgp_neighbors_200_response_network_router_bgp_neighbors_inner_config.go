@@ -21,7 +21,10 @@ var _ MappedNullable = &GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgp
 // GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInnerConfig struct for GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInnerConfig
 type GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInnerConfig struct {
 	SourceAddresses []string `json:"sourceAddresses,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInnerConfig GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInnerConfig
 
 // NewGetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInnerConfig instantiates a new GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInnerConfig object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInnerCo
 	if !IsNil(o.SourceAddresses) {
 		toSerialize["sourceAddresses"] = o.SourceAddresses
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInnerConfig) UnmarshalJSON(data []byte) (err error) {
+	varGetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInnerConfig := _GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInnerConfig{}
+
+	err = json.Unmarshal(data, &varGetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInnerConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInnerConfig(varGetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInnerConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "sourceAddresses")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInnerConfig struct {

@@ -48,7 +48,10 @@ type GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner stru
 	Config *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInnerConfig `json:"config,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner
 
 // NewGetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner instantiates a new GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -1022,7 +1025,59 @@ func (o GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) 
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) UnmarshalJSON(data []byte) (err error) {
+	varGetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner := _GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner{}
+
+	err = json.Unmarshal(data, &varGetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner(varGetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "ipAddress")
+		delete(additionalProperties, "forwardingAddress")
+		delete(additionalProperties, "protocolAddress")
+		delete(additionalProperties, "remoteAs")
+		delete(additionalProperties, "weight")
+		delete(additionalProperties, "keepAlive")
+		delete(additionalProperties, "holdDown")
+		delete(additionalProperties, "password")
+		delete(additionalProperties, "routeFilteringType")
+		delete(additionalProperties, "routeFilteringIn")
+		delete(additionalProperties, "routeFilteringOut")
+		delete(additionalProperties, "bfdEnabled")
+		delete(additionalProperties, "bfdInterval")
+		delete(additionalProperties, "bfdMultiple")
+		delete(additionalProperties, "allowAsIn")
+		delete(additionalProperties, "hopLimit")
+		delete(additionalProperties, "restartMode")
+		delete(additionalProperties, "providerId")
+		delete(additionalProperties, "syncSource")
+		delete(additionalProperties, "internalId")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "refId")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner struct {

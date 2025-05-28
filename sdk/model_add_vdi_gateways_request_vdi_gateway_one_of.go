@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -28,6 +27,7 @@ type AddVDIGatewaysRequestVdiGatewayOneOf struct {
 	Description *string `json:"description,omitempty"`
 	// Gateway URL
 	GatewayUrl string `json:"gatewayUrl"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddVDIGatewaysRequestVdiGatewayOneOf AddVDIGatewaysRequestVdiGatewayOneOf
@@ -146,6 +146,11 @@ func (o AddVDIGatewaysRequestVdiGatewayOneOf) ToMap() (map[string]interface{}, e
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["gatewayUrl"] = o.GatewayUrl
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -174,15 +179,22 @@ func (o *AddVDIGatewaysRequestVdiGatewayOneOf) UnmarshalJSON(data []byte) (err e
 
 	varAddVDIGatewaysRequestVdiGatewayOneOf := _AddVDIGatewaysRequestVdiGatewayOneOf{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddVDIGatewaysRequestVdiGatewayOneOf)
+	err = json.Unmarshal(data, &varAddVDIGatewaysRequestVdiGatewayOneOf)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddVDIGatewaysRequestVdiGatewayOneOf(varAddVDIGatewaysRequestVdiGatewayOneOf)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "gatewayUrl")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

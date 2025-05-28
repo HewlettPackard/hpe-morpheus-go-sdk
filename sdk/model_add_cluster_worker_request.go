@@ -21,7 +21,10 @@ var _ MappedNullable = &AddClusterWorkerRequest{}
 // AddClusterWorkerRequest struct for AddClusterWorkerRequest
 type AddClusterWorkerRequest struct {
 	Server *AddClusterRequestClusterServer `json:"server,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddClusterWorkerRequest AddClusterWorkerRequest
 
 // NewAddClusterWorkerRequest instantiates a new AddClusterWorkerRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o AddClusterWorkerRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Server) {
 		toSerialize["server"] = o.Server
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddClusterWorkerRequest) UnmarshalJSON(data []byte) (err error) {
+	varAddClusterWorkerRequest := _AddClusterWorkerRequest{}
+
+	err = json.Unmarshal(data, &varAddClusterWorkerRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddClusterWorkerRequest(varAddClusterWorkerRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "server")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddClusterWorkerRequest struct {

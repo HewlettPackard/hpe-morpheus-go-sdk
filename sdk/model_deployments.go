@@ -29,7 +29,10 @@ type Deployments struct {
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
 	VersionCount *int64 `json:"versionCount,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _Deployments Deployments
 
 // NewDeployments instantiates a new Deployments object
 // This constructor will assign default values to properties that have it defined,
@@ -338,7 +341,40 @@ func (o Deployments) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.VersionCount) {
 		toSerialize["versionCount"] = o.VersionCount
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *Deployments) UnmarshalJSON(data []byte) (err error) {
+	varDeployments := _Deployments{}
+
+	err = json.Unmarshal(data, &varDeployments)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Deployments(varDeployments)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "versionCount")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableDeployments struct {

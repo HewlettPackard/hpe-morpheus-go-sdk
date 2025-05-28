@@ -22,7 +22,10 @@ var _ MappedNullable = &AddVdiAllocation200Response{}
 type AddVdiAllocation200Response struct {
 	Desktop *ListVdi200ResponseAllOfDesktopsInner `json:"desktop,omitempty"`
 	Success *bool `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddVdiAllocation200Response AddVdiAllocation200Response
 
 // NewAddVdiAllocation200Response instantiates a new AddVdiAllocation200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o AddVdiAllocation200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Success) {
 		toSerialize["success"] = o.Success
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddVdiAllocation200Response) UnmarshalJSON(data []byte) (err error) {
+	varAddVdiAllocation200Response := _AddVdiAllocation200Response{}
+
+	err = json.Unmarshal(data, &varAddVdiAllocation200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddVdiAllocation200Response(varAddVdiAllocation200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "desktop")
+		delete(additionalProperties, "success")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddVdiAllocation200Response struct {

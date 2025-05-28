@@ -21,7 +21,10 @@ var _ MappedNullable = &GetStaticRoutes200Response{}
 // GetStaticRoutes200Response struct for GetStaticRoutes200Response
 type GetStaticRoutes200Response struct {
 	NetworkRoutes []GetStaticRoutes200ResponseNetworkRoutesInner `json:"networkRoutes,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetStaticRoutes200Response GetStaticRoutes200Response
 
 // NewGetStaticRoutes200Response instantiates a new GetStaticRoutes200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o GetStaticRoutes200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.NetworkRoutes) {
 		toSerialize["networkRoutes"] = o.NetworkRoutes
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetStaticRoutes200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetStaticRoutes200Response := _GetStaticRoutes200Response{}
+
+	err = json.Unmarshal(data, &varGetStaticRoutes200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetStaticRoutes200Response(varGetStaticRoutes200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "networkRoutes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetStaticRoutes200Response struct {

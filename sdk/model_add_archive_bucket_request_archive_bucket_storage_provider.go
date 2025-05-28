@@ -21,7 +21,10 @@ var _ MappedNullable = &AddArchiveBucketRequestArchiveBucketStorageProvider{}
 // AddArchiveBucketRequestArchiveBucketStorageProvider Storage Provider
 type AddArchiveBucketRequestArchiveBucketStorageProvider struct {
 	Id *int64 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddArchiveBucketRequestArchiveBucketStorageProvider AddArchiveBucketRequestArchiveBucketStorageProvider
 
 // NewAddArchiveBucketRequestArchiveBucketStorageProvider instantiates a new AddArchiveBucketRequestArchiveBucketStorageProvider object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o AddArchiveBucketRequestArchiveBucketStorageProvider) ToMap() (map[string
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddArchiveBucketRequestArchiveBucketStorageProvider) UnmarshalJSON(data []byte) (err error) {
+	varAddArchiveBucketRequestArchiveBucketStorageProvider := _AddArchiveBucketRequestArchiveBucketStorageProvider{}
+
+	err = json.Unmarshal(data, &varAddArchiveBucketRequestArchiveBucketStorageProvider)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddArchiveBucketRequestArchiveBucketStorageProvider(varAddArchiveBucketRequestArchiveBucketStorageProvider)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddArchiveBucketRequestArchiveBucketStorageProvider struct {

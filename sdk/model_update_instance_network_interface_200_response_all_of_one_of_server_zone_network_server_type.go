@@ -46,7 +46,10 @@ type UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerT
 	TitleFirewall *string `json:"titleFirewall,omitempty"`
 	HasFirewallGroups *bool `json:"hasFirewallGroups,omitempty"`
 	TitleFirewallGroups *string `json:"titleFirewallGroups,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType
 
 // NewUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType instantiates a new UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType object
 // This constructor will assign default values to properties that have it defined,
@@ -985,7 +988,58 @@ func (o UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServ
 	if !IsNil(o.TitleFirewallGroups) {
 		toSerialize["titleFirewallGroups"] = o.TitleFirewallGroups
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType) UnmarshalJSON(data []byte) (err error) {
+	varUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType := _UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType{}
+
+	err = json.Unmarshal(data, &varUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType(varUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "creatable")
+		delete(additionalProperties, "userVisible")
+		delete(additionalProperties, "hasScopes")
+		delete(additionalProperties, "titleScopes")
+		delete(additionalProperties, "hasNetworks")
+		delete(additionalProperties, "titleNetworks")
+		delete(additionalProperties, "hasSwitches")
+		delete(additionalProperties, "titleSwitches")
+		delete(additionalProperties, "hasGateways")
+		delete(additionalProperties, "titleGateways")
+		delete(additionalProperties, "hasRouters")
+		delete(additionalProperties, "titleRouters")
+		delete(additionalProperties, "hasSecurityGroups")
+		delete(additionalProperties, "titleSecurityGroups")
+		delete(additionalProperties, "hasLoadBalancers")
+		delete(additionalProperties, "titleLoadBalancers")
+		delete(additionalProperties, "hasRouteTables")
+		delete(additionalProperties, "titleRouteTables")
+		delete(additionalProperties, "hasFirewall")
+		delete(additionalProperties, "titleFirewall")
+		delete(additionalProperties, "hasFirewallGroups")
+		delete(additionalProperties, "titleFirewallGroups")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType struct {

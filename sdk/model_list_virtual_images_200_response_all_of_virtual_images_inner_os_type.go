@@ -30,7 +30,10 @@ type ListVirtualImages200ResponseAllOfVirtualImagesInnerOsType struct {
 	OsVersion *string `json:"osVersion,omitempty"`
 	BitCount *int64 `json:"bitCount,omitempty"`
 	Platform *string `json:"platform,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListVirtualImages200ResponseAllOfVirtualImagesInnerOsType ListVirtualImages200ResponseAllOfVirtualImagesInnerOsType
 
 // NewListVirtualImages200ResponseAllOfVirtualImagesInnerOsType instantiates a new ListVirtualImages200ResponseAllOfVirtualImagesInnerOsType object
 // This constructor will assign default values to properties that have it defined,
@@ -409,7 +412,42 @@ func (o ListVirtualImages200ResponseAllOfVirtualImagesInnerOsType) ToMap() (map[
 	if !IsNil(o.Platform) {
 		toSerialize["platform"] = o.Platform
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerOsType) UnmarshalJSON(data []byte) (err error) {
+	varListVirtualImages200ResponseAllOfVirtualImagesInnerOsType := _ListVirtualImages200ResponseAllOfVirtualImagesInnerOsType{}
+
+	err = json.Unmarshal(data, &varListVirtualImages200ResponseAllOfVirtualImagesInnerOsType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListVirtualImages200ResponseAllOfVirtualImagesInnerOsType(varListVirtualImages200ResponseAllOfVirtualImagesInnerOsType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "vendor")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "osFamily")
+		delete(additionalProperties, "osVersion")
+		delete(additionalProperties, "bitCount")
+		delete(additionalProperties, "platform")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListVirtualImages200ResponseAllOfVirtualImagesInnerOsType struct {

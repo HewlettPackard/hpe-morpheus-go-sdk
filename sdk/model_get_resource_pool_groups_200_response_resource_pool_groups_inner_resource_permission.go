@@ -24,7 +24,10 @@ type GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission s
 	All *bool `json:"all,omitempty"`
 	// Array of groups that are allowed access
 	Sites []GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner `json:"sites,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission
 
 // NewGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission instantiates a new GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission object
 // This constructor will assign default values to properties that have it defined,
@@ -127,7 +130,34 @@ func (o GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissio
 	if !IsNil(o.Sites) {
 		toSerialize["sites"] = o.Sites
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission) UnmarshalJSON(data []byte) (err error) {
+	varGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission := _GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission{}
+
+	err = json.Unmarshal(data, &varGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission(varGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "all")
+		delete(additionalProperties, "sites")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission struct {

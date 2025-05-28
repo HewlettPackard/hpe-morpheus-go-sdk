@@ -31,7 +31,10 @@ type CreateNetworkProxy200ResponseNetworkProxy struct {
 	Visibility *string `json:"visibility,omitempty"`
 	Account *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
 	Owner *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"owner,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _CreateNetworkProxy200ResponseNetworkProxy CreateNetworkProxy200ResponseNetworkProxy
 
 // NewCreateNetworkProxy200ResponseNetworkProxy instantiates a new CreateNetworkProxy200ResponseNetworkProxy object
 // This constructor will assign default values to properties that have it defined,
@@ -445,7 +448,43 @@ func (o CreateNetworkProxy200ResponseNetworkProxy) ToMap() (map[string]interface
 	if !IsNil(o.Owner) {
 		toSerialize["owner"] = o.Owner
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *CreateNetworkProxy200ResponseNetworkProxy) UnmarshalJSON(data []byte) (err error) {
+	varCreateNetworkProxy200ResponseNetworkProxy := _CreateNetworkProxy200ResponseNetworkProxy{}
+
+	err = json.Unmarshal(data, &varCreateNetworkProxy200ResponseNetworkProxy)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CreateNetworkProxy200ResponseNetworkProxy(varCreateNetworkProxy200ResponseNetworkProxy)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "proxyHost")
+		delete(additionalProperties, "proxyPort")
+		delete(additionalProperties, "proxyUser")
+		delete(additionalProperties, "proxyPassword")
+		delete(additionalProperties, "proxyDomain")
+		delete(additionalProperties, "proxyWorkstation")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "owner")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCreateNetworkProxy200ResponseNetworkProxy struct {

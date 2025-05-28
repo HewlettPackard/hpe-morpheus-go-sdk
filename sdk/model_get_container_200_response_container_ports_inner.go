@@ -35,7 +35,10 @@ type GetContainer200ResponseContainerPortsInner struct {
 	Link *bool `json:"link,omitempty"`
 	ExternalIp *string `json:"externalIp,omitempty"`
 	InternalIp *string `json:"internalIp,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetContainer200ResponseContainerPortsInner GetContainer200ResponseContainerPortsInner
 
 // NewGetContainer200ResponseContainerPortsInner instantiates a new GetContainer200ResponseContainerPortsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -589,7 +592,47 @@ func (o GetContainer200ResponseContainerPortsInner) ToMap() (map[string]interfac
 	if !IsNil(o.InternalIp) {
 		toSerialize["internalIp"] = o.InternalIp
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetContainer200ResponseContainerPortsInner) UnmarshalJSON(data []byte) (err error) {
+	varGetContainer200ResponseContainerPortsInner := _GetContainer200ResponseContainerPortsInner{}
+
+	err = json.Unmarshal(data, &varGetContainer200ResponseContainerPortsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetContainer200ResponseContainerPortsInner(varGetContainer200ResponseContainerPortsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "index")
+		delete(additionalProperties, "external")
+		delete(additionalProperties, "internal")
+		delete(additionalProperties, "displayName")
+		delete(additionalProperties, "primaryPort")
+		delete(additionalProperties, "export")
+		delete(additionalProperties, "visible")
+		delete(additionalProperties, "exportName")
+		delete(additionalProperties, "loadBalanceProtocol")
+		delete(additionalProperties, "loadBalance")
+		delete(additionalProperties, "protocol")
+		delete(additionalProperties, "link")
+		delete(additionalProperties, "externalIp")
+		delete(additionalProperties, "internalIp")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetContainer200ResponseContainerPortsInner struct {

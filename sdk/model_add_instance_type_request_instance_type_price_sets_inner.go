@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -24,6 +23,7 @@ var _ MappedNullable = &AddInstanceTypeRequestInstanceTypePriceSetsInner{}
 type AddInstanceTypeRequestInstanceTypePriceSetsInner struct {
 	// Price Set ID
 	Id int64 `json:"id"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddInstanceTypeRequestInstanceTypePriceSetsInner AddInstanceTypeRequestInstanceTypePriceSetsInner
@@ -81,6 +81,11 @@ func (o AddInstanceTypeRequestInstanceTypePriceSetsInner) MarshalJSON() ([]byte,
 func (o AddInstanceTypeRequestInstanceTypePriceSetsInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -108,15 +113,20 @@ func (o *AddInstanceTypeRequestInstanceTypePriceSetsInner) UnmarshalJSON(data []
 
 	varAddInstanceTypeRequestInstanceTypePriceSetsInner := _AddInstanceTypeRequestInstanceTypePriceSetsInner{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddInstanceTypeRequestInstanceTypePriceSetsInner)
+	err = json.Unmarshal(data, &varAddInstanceTypeRequestInstanceTypePriceSetsInner)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddInstanceTypeRequestInstanceTypePriceSetsInner(varAddInstanceTypeRequestInstanceTypePriceSetsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

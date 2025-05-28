@@ -30,7 +30,10 @@ type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceServerOs struct {
 	OsVersion *string `json:"osVersion,omitempty"`
 	BitCount *int64 `json:"bitCount,omitempty"`
 	Platform *string `json:"platform,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceServerOs ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceServerOs
 
 // NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceServerOs instantiates a new ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceServerOs object
 // This constructor will assign default values to properties that have it defined,
@@ -409,7 +412,42 @@ func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceServerOs) ToMa
 	if !IsNil(o.Platform) {
 		toSerialize["platform"] = o.Platform
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceServerOs) UnmarshalJSON(data []byte) (err error) {
+	varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceServerOs := _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceServerOs{}
+
+	err = json.Unmarshal(data, &varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceServerOs)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceServerOs(varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceServerOs)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "vendor")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "osFamily")
+		delete(additionalProperties, "osVersion")
+		delete(additionalProperties, "bitCount")
+		delete(additionalProperties, "platform")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceServerOs struct {

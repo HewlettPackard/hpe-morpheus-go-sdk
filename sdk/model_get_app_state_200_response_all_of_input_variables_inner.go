@@ -24,7 +24,10 @@ type GetAppState200ResponseAllOfInputVariablesInner struct {
 	Value *string `json:"value,omitempty"`
 	Sensitive *bool `json:"sensitive,omitempty"`
 	Type *string `json:"type,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetAppState200ResponseAllOfInputVariablesInner GetAppState200ResponseAllOfInputVariablesInner
 
 // NewGetAppState200ResponseAllOfInputVariablesInner instantiates a new GetAppState200ResponseAllOfInputVariablesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -193,7 +196,36 @@ func (o GetAppState200ResponseAllOfInputVariablesInner) ToMap() (map[string]inte
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetAppState200ResponseAllOfInputVariablesInner) UnmarshalJSON(data []byte) (err error) {
+	varGetAppState200ResponseAllOfInputVariablesInner := _GetAppState200ResponseAllOfInputVariablesInner{}
+
+	err = json.Unmarshal(data, &varGetAppState200ResponseAllOfInputVariablesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetAppState200ResponseAllOfInputVariablesInner(varGetAppState200ResponseAllOfInputVariablesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "value")
+		delete(additionalProperties, "sensitive")
+		delete(additionalProperties, "type")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetAppState200ResponseAllOfInputVariablesInner struct {

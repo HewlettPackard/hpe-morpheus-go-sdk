@@ -21,7 +21,10 @@ var _ MappedNullable = &UpdateFileTemplateRequest{}
 // UpdateFileTemplateRequest struct for UpdateFileTemplateRequest
 type UpdateFileTemplateRequest struct {
 	ContainerTemplate *UpdateFileTemplateRequestContainerTemplate `json:"containerTemplate,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateFileTemplateRequest UpdateFileTemplateRequest
 
 // NewUpdateFileTemplateRequest instantiates a new UpdateFileTemplateRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o UpdateFileTemplateRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ContainerTemplate) {
 		toSerialize["containerTemplate"] = o.ContainerTemplate
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateFileTemplateRequest) UnmarshalJSON(data []byte) (err error) {
+	varUpdateFileTemplateRequest := _UpdateFileTemplateRequest{}
+
+	err = json.Unmarshal(data, &varUpdateFileTemplateRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateFileTemplateRequest(varUpdateFileTemplateRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "containerTemplate")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateFileTemplateRequest struct {

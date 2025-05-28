@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -25,6 +24,7 @@ type AddClusterLayoutsRequestLayoutMastersInner struct {
 	// Number of nodes
 	NodeCount *int64 `json:"nodeCount,omitempty"`
 	ContainerType AddClusterLayoutsRequestLayoutMastersInnerContainerType `json:"containerType"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddClusterLayoutsRequestLayoutMastersInner AddClusterLayoutsRequestLayoutMastersInner
@@ -121,6 +121,11 @@ func (o AddClusterLayoutsRequestLayoutMastersInner) ToMap() (map[string]interfac
 		toSerialize["nodeCount"] = o.NodeCount
 	}
 	toSerialize["containerType"] = o.ContainerType
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -148,15 +153,21 @@ func (o *AddClusterLayoutsRequestLayoutMastersInner) UnmarshalJSON(data []byte) 
 
 	varAddClusterLayoutsRequestLayoutMastersInner := _AddClusterLayoutsRequestLayoutMastersInner{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddClusterLayoutsRequestLayoutMastersInner)
+	err = json.Unmarshal(data, &varAddClusterLayoutsRequestLayoutMastersInner)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddClusterLayoutsRequestLayoutMastersInner(varAddClusterLayoutsRequestLayoutMastersInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "nodeCount")
+		delete(additionalProperties, "containerType")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -33,6 +32,7 @@ type AddSecurityGroupsRequestSecurityGroup struct {
 	CustomOptions *AddSecurityGroupsRequestSecurityGroupCustomOptions `json:"customOptions,omitempty"`
 	TenantPermissions *AddSecurityGroupsRequestSecurityGroupTenantPermissions `json:"tenantPermissions,omitempty"`
 	ResourcePermissions *UpdateCloudDatastoresRequestDatastoreResourcePermissions `json:"resourcePermissions,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddSecurityGroupsRequestSecurityGroup AddSecurityGroupsRequestSecurityGroup
@@ -291,6 +291,11 @@ func (o AddSecurityGroupsRequestSecurityGroup) ToMap() (map[string]interface{}, 
 	if !IsNil(o.ResourcePermissions) {
 		toSerialize["resourcePermissions"] = o.ResourcePermissions
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -319,15 +324,26 @@ func (o *AddSecurityGroupsRequestSecurityGroup) UnmarshalJSON(data []byte) (err 
 
 	varAddSecurityGroupsRequestSecurityGroup := _AddSecurityGroupsRequestSecurityGroup{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddSecurityGroupsRequestSecurityGroup)
+	err = json.Unmarshal(data, &varAddSecurityGroupsRequestSecurityGroup)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddSecurityGroupsRequestSecurityGroup(varAddSecurityGroupsRequestSecurityGroup)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "zoneId")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "customOptions")
+		delete(additionalProperties, "tenantPermissions")
+		delete(additionalProperties, "resourcePermissions")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

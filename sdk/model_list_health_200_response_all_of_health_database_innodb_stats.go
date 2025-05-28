@@ -32,7 +32,10 @@ type ListHealth200ResponseAllOfHealthDatabaseInnodbStats struct {
 	DeletesPerSecond *float32 `json:"deletesPerSecond,omitempty"`
 	ReadsPerSecond *float32 `json:"readsPerSecond,omitempty"`
 	BufferHitRate *int64 `json:"bufferHitRate,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListHealth200ResponseAllOfHealthDatabaseInnodbStats ListHealth200ResponseAllOfHealthDatabaseInnodbStats
 
 // NewListHealth200ResponseAllOfHealthDatabaseInnodbStats instantiates a new ListHealth200ResponseAllOfHealthDatabaseInnodbStats object
 // This constructor will assign default values to properties that have it defined,
@@ -481,7 +484,44 @@ func (o ListHealth200ResponseAllOfHealthDatabaseInnodbStats) ToMap() (map[string
 	if !IsNil(o.BufferHitRate) {
 		toSerialize["bufferHitRate"] = o.BufferHitRate
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListHealth200ResponseAllOfHealthDatabaseInnodbStats) UnmarshalJSON(data []byte) (err error) {
+	varListHealth200ResponseAllOfHealthDatabaseInnodbStats := _ListHealth200ResponseAllOfHealthDatabaseInnodbStats{}
+
+	err = json.Unmarshal(data, &varListHealth200ResponseAllOfHealthDatabaseInnodbStats)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListHealth200ResponseAllOfHealthDatabaseInnodbStats(varListHealth200ResponseAllOfHealthDatabaseInnodbStats)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "largeMemory")
+		delete(additionalProperties, "dictionaryMemory")
+		delete(additionalProperties, "bufferPoolSize")
+		delete(additionalProperties, "freeBuffers")
+		delete(additionalProperties, "databasePages")
+		delete(additionalProperties, "oldPages")
+		delete(additionalProperties, "pendingReads")
+		delete(additionalProperties, "insertsPerSecond")
+		delete(additionalProperties, "updatesPerSecond")
+		delete(additionalProperties, "deletesPerSecond")
+		delete(additionalProperties, "readsPerSecond")
+		delete(additionalProperties, "bufferHitRate")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListHealth200ResponseAllOfHealthDatabaseInnodbStats struct {

@@ -21,7 +21,10 @@ var _ MappedNullable = &UpdateNetworkTransportZoneRequest{}
 // UpdateNetworkTransportZoneRequest The parameters for update a Network Transport Zone is type dependent. The following lists the common parameters. Get a specific network type to list available options for the network relay type. 
 type UpdateNetworkTransportZoneRequest struct {
 	NetworkScope *CreateNetworkTransportZoneRequestNetworkScope `json:"networkScope,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateNetworkTransportZoneRequest UpdateNetworkTransportZoneRequest
 
 // NewUpdateNetworkTransportZoneRequest instantiates a new UpdateNetworkTransportZoneRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o UpdateNetworkTransportZoneRequest) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.NetworkScope) {
 		toSerialize["networkScope"] = o.NetworkScope
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateNetworkTransportZoneRequest) UnmarshalJSON(data []byte) (err error) {
+	varUpdateNetworkTransportZoneRequest := _UpdateNetworkTransportZoneRequest{}
+
+	err = json.Unmarshal(data, &varUpdateNetworkTransportZoneRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateNetworkTransportZoneRequest(varUpdateNetworkTransportZoneRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "networkScope")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateNetworkTransportZoneRequest struct {

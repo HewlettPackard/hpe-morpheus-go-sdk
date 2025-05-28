@@ -24,7 +24,10 @@ type GetAppSecurityGroups200ResponseAllOfSecurityGroupsInner struct {
 	AccountId *int64 `json:"accountId,omitempty"`
 	Name *string `json:"name,omitempty"`
 	Description *string `json:"description,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetAppSecurityGroups200ResponseAllOfSecurityGroupsInner GetAppSecurityGroups200ResponseAllOfSecurityGroupsInner
 
 // NewGetAppSecurityGroups200ResponseAllOfSecurityGroupsInner instantiates a new GetAppSecurityGroups200ResponseAllOfSecurityGroupsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -193,7 +196,36 @@ func (o GetAppSecurityGroups200ResponseAllOfSecurityGroupsInner) ToMap() (map[st
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetAppSecurityGroups200ResponseAllOfSecurityGroupsInner) UnmarshalJSON(data []byte) (err error) {
+	varGetAppSecurityGroups200ResponseAllOfSecurityGroupsInner := _GetAppSecurityGroups200ResponseAllOfSecurityGroupsInner{}
+
+	err = json.Unmarshal(data, &varGetAppSecurityGroups200ResponseAllOfSecurityGroupsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetAppSecurityGroups200ResponseAllOfSecurityGroupsInner(varGetAppSecurityGroups200ResponseAllOfSecurityGroupsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetAppSecurityGroups200ResponseAllOfSecurityGroupsInner struct {

@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -23,6 +22,7 @@ var _ MappedNullable = &AddSecurityPackagesRequest{}
 // AddSecurityPackagesRequest struct for AddSecurityPackagesRequest
 type AddSecurityPackagesRequest struct {
 	SecurityPackage AddSecurityPackagesRequestSecurityPackage `json:"securityPackage"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddSecurityPackagesRequest AddSecurityPackagesRequest
@@ -80,6 +80,11 @@ func (o AddSecurityPackagesRequest) MarshalJSON() ([]byte, error) {
 func (o AddSecurityPackagesRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["securityPackage"] = o.SecurityPackage
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -107,15 +112,20 @@ func (o *AddSecurityPackagesRequest) UnmarshalJSON(data []byte) (err error) {
 
 	varAddSecurityPackagesRequest := _AddSecurityPackagesRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddSecurityPackagesRequest)
+	err = json.Unmarshal(data, &varAddSecurityPackagesRequest)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddSecurityPackagesRequest(varAddSecurityPackagesRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "securityPackage")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

@@ -45,7 +45,10 @@ type InstanceThreshold struct {
 	ZoneId *int64 `json:"zoneId,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _InstanceThreshold InstanceThreshold
 
 // NewInstanceThreshold instantiates a new InstanceThreshold object
 // This constructor will assign default values to properties that have it defined,
@@ -914,7 +917,56 @@ func (o InstanceThreshold) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *InstanceThreshold) UnmarshalJSON(data []byte) (err error) {
+	varInstanceThreshold := _InstanceThreshold{}
+
+	err = json.Unmarshal(data, &varInstanceThreshold)
+
+	if err != nil {
+		return err
+	}
+
+	*o = InstanceThreshold(varInstanceThreshold)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "autoUp")
+		delete(additionalProperties, "autoDown")
+		delete(additionalProperties, "minCount")
+		delete(additionalProperties, "maxCount")
+		delete(additionalProperties, "scaleIncrement")
+		delete(additionalProperties, "cpuEnabled")
+		delete(additionalProperties, "minCpu")
+		delete(additionalProperties, "maxCpu")
+		delete(additionalProperties, "memoryEnabled")
+		delete(additionalProperties, "minMemory")
+		delete(additionalProperties, "maxMemory")
+		delete(additionalProperties, "diskEnabled")
+		delete(additionalProperties, "minDisk")
+		delete(additionalProperties, "maxDisk")
+		delete(additionalProperties, "minNetwork")
+		delete(additionalProperties, "networkEnabled")
+		delete(additionalProperties, "iopsEnabled")
+		delete(additionalProperties, "minIops")
+		delete(additionalProperties, "maxIops")
+		delete(additionalProperties, "comment")
+		delete(additionalProperties, "zoneId")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableInstanceThreshold struct {

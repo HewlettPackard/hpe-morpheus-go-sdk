@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -24,6 +23,7 @@ var _ MappedNullable = &AddInstanceRequestInstanceSite{}
 type AddInstanceRequestInstanceSite struct {
 	// The Group ID to provision the instance into.
 	Id int64 `json:"id"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddInstanceRequestInstanceSite AddInstanceRequestInstanceSite
@@ -81,6 +81,11 @@ func (o AddInstanceRequestInstanceSite) MarshalJSON() ([]byte, error) {
 func (o AddInstanceRequestInstanceSite) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -108,15 +113,20 @@ func (o *AddInstanceRequestInstanceSite) UnmarshalJSON(data []byte) (err error) 
 
 	varAddInstanceRequestInstanceSite := _AddInstanceRequestInstanceSite{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddInstanceRequestInstanceSite)
+	err = json.Unmarshal(data, &varAddInstanceRequestInstanceSite)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddInstanceRequestInstanceSite(varAddInstanceRequestInstanceSite)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

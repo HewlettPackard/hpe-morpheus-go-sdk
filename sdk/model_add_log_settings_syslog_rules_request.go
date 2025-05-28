@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -23,6 +22,7 @@ var _ MappedNullable = &AddLogSettingsSyslogRulesRequest{}
 // AddLogSettingsSyslogRulesRequest struct for AddLogSettingsSyslogRulesRequest
 type AddLogSettingsSyslogRulesRequest struct {
 	SyslogRule AddLogSettingsSyslogRulesRequestSyslogRule `json:"syslogRule"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddLogSettingsSyslogRulesRequest AddLogSettingsSyslogRulesRequest
@@ -80,6 +80,11 @@ func (o AddLogSettingsSyslogRulesRequest) MarshalJSON() ([]byte, error) {
 func (o AddLogSettingsSyslogRulesRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["syslogRule"] = o.SyslogRule
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -107,15 +112,20 @@ func (o *AddLogSettingsSyslogRulesRequest) UnmarshalJSON(data []byte) (err error
 
 	varAddLogSettingsSyslogRulesRequest := _AddLogSettingsSyslogRulesRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddLogSettingsSyslogRulesRequest)
+	err = json.Unmarshal(data, &varAddLogSettingsSyslogRulesRequest)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddLogSettingsSyslogRulesRequest(varAddLogSettingsSyslogRulesRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "syslogRule")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

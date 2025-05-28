@@ -22,7 +22,10 @@ var _ MappedNullable = &SnapshotsInstance200ResponseSnapshotsInnerZone{}
 type SnapshotsInstance200ResponseSnapshotsInnerZone struct {
 	Id *int32 `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _SnapshotsInstance200ResponseSnapshotsInnerZone SnapshotsInstance200ResponseSnapshotsInnerZone
 
 // NewSnapshotsInstance200ResponseSnapshotsInnerZone instantiates a new SnapshotsInstance200ResponseSnapshotsInnerZone object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o SnapshotsInstance200ResponseSnapshotsInnerZone) ToMap() (map[string]inte
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *SnapshotsInstance200ResponseSnapshotsInnerZone) UnmarshalJSON(data []byte) (err error) {
+	varSnapshotsInstance200ResponseSnapshotsInnerZone := _SnapshotsInstance200ResponseSnapshotsInnerZone{}
+
+	err = json.Unmarshal(data, &varSnapshotsInstance200ResponseSnapshotsInnerZone)
+
+	if err != nil {
+		return err
+	}
+
+	*o = SnapshotsInstance200ResponseSnapshotsInnerZone(varSnapshotsInstance200ResponseSnapshotsInnerZone)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableSnapshotsInstance200ResponseSnapshotsInnerZone struct {

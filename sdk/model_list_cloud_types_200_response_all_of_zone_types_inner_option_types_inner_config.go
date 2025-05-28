@@ -21,7 +21,10 @@ var _ MappedNullable = &ListCloudTypes200ResponseAllOfZoneTypesInnerOptionTypesI
 // ListCloudTypes200ResponseAllOfZoneTypesInnerOptionTypesInnerConfig struct for ListCloudTypes200ResponseAllOfZoneTypesInnerOptionTypesInnerConfig
 type ListCloudTypes200ResponseAllOfZoneTypesInnerOptionTypesInnerConfig struct {
 	CredentialTypes []string `json:"credentialTypes,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListCloudTypes200ResponseAllOfZoneTypesInnerOptionTypesInnerConfig ListCloudTypes200ResponseAllOfZoneTypesInnerOptionTypesInnerConfig
 
 // NewListCloudTypes200ResponseAllOfZoneTypesInnerOptionTypesInnerConfig instantiates a new ListCloudTypes200ResponseAllOfZoneTypesInnerOptionTypesInnerConfig object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o ListCloudTypes200ResponseAllOfZoneTypesInnerOptionTypesInnerConfig) ToMa
 	if !IsNil(o.CredentialTypes) {
 		toSerialize["credentialTypes"] = o.CredentialTypes
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerOptionTypesInnerConfig) UnmarshalJSON(data []byte) (err error) {
+	varListCloudTypes200ResponseAllOfZoneTypesInnerOptionTypesInnerConfig := _ListCloudTypes200ResponseAllOfZoneTypesInnerOptionTypesInnerConfig{}
+
+	err = json.Unmarshal(data, &varListCloudTypes200ResponseAllOfZoneTypesInnerOptionTypesInnerConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListCloudTypes200ResponseAllOfZoneTypesInnerOptionTypesInnerConfig(varListCloudTypes200ResponseAllOfZoneTypesInnerOptionTypesInnerConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "credentialTypes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListCloudTypes200ResponseAllOfZoneTypesInnerOptionTypesInnerConfig struct {

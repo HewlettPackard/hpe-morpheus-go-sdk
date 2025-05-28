@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -50,6 +49,7 @@ type InstanceTypeCreate struct {
 	PriceSets []AddInstanceTypeRequestInstanceTypePriceSetsInner `json:"priceSets,omitempty"`
 	// Array of instance type option type IDs
 	OptionTypes []int64 `json:"optionTypes,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _InstanceTypeCreate InstanceTypeCreate
@@ -566,6 +566,11 @@ func (o InstanceTypeCreate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.OptionTypes) {
 		toSerialize["optionTypes"] = o.OptionTypes
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -593,15 +598,33 @@ func (o *InstanceTypeCreate) UnmarshalJSON(data []byte) (err error) {
 
 	varInstanceTypeCreate := _InstanceTypeCreate{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varInstanceTypeCreate)
+	err = json.Unmarshal(data, &varInstanceTypeCreate)
 
 	if err != nil {
 		return err
 	}
 
 	*o = InstanceTypeCreate(varInstanceTypeCreate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "featured")
+		delete(additionalProperties, "hasSettings")
+		delete(additionalProperties, "hasAutoScale")
+		delete(additionalProperties, "hasDeployment")
+		delete(additionalProperties, "environmentPrefix")
+		delete(additionalProperties, "environmentVariables")
+		delete(additionalProperties, "priceSets")
+		delete(additionalProperties, "optionTypes")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

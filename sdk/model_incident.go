@@ -44,7 +44,10 @@ type Incident struct {
 	StartDate *time.Time `json:"startDate,omitempty"`
 	Status *string `json:"status,omitempty"`
 	Visibility *string `json:"visibility,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _Incident Incident
 
 // NewIncident instantiates a new Incident object
 // This constructor will assign default values to properties that have it defined,
@@ -878,7 +881,55 @@ func (o Incident) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Visibility) {
 		toSerialize["visibility"] = o.Visibility
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *Incident) UnmarshalJSON(data []byte) (err error) {
+	varIncident := _Incident{}
+
+	err = json.Unmarshal(data, &varIncident)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Incident(varIncident)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "app")
+		delete(additionalProperties, "autoClose")
+		delete(additionalProperties, "channelId")
+		delete(additionalProperties, "checkGroups")
+		delete(additionalProperties, "checks")
+		delete(additionalProperties, "comment")
+		delete(additionalProperties, "displayName")
+		delete(additionalProperties, "duration")
+		delete(additionalProperties, "endDate")
+		delete(additionalProperties, "inUptime")
+		delete(additionalProperties, "muted")
+		delete(additionalProperties, "lastCheckTime")
+		delete(additionalProperties, "lastError")
+		delete(additionalProperties, "lastMessage")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "resolution")
+		delete(additionalProperties, "severity")
+		delete(additionalProperties, "severityId")
+		delete(additionalProperties, "startDate")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "visibility")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableIncident struct {

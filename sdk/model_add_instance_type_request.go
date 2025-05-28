@@ -21,7 +21,10 @@ var _ MappedNullable = &AddInstanceTypeRequest{}
 // AddInstanceTypeRequest struct for AddInstanceTypeRequest
 type AddInstanceTypeRequest struct {
 	InstanceType *AddInstanceTypeRequestInstanceType `json:"instanceType,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddInstanceTypeRequest AddInstanceTypeRequest
 
 // NewAddInstanceTypeRequest instantiates a new AddInstanceTypeRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o AddInstanceTypeRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.InstanceType) {
 		toSerialize["instanceType"] = o.InstanceType
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddInstanceTypeRequest) UnmarshalJSON(data []byte) (err error) {
+	varAddInstanceTypeRequest := _AddInstanceTypeRequest{}
+
+	err = json.Unmarshal(data, &varAddInstanceTypeRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddInstanceTypeRequest(varAddInstanceTypeRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "instanceType")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddInstanceTypeRequest struct {

@@ -22,7 +22,10 @@ var _ MappedNullable = &ImportContainerActionRequest{}
 type ImportContainerActionRequest struct {
 	// Optional storage provider to use.
 	StorageProviderId *int64 `json:"storageProviderId,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ImportContainerActionRequest ImportContainerActionRequest
 
 // NewImportContainerActionRequest instantiates a new ImportContainerActionRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o ImportContainerActionRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.StorageProviderId) {
 		toSerialize["storageProviderId"] = o.StorageProviderId
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ImportContainerActionRequest) UnmarshalJSON(data []byte) (err error) {
+	varImportContainerActionRequest := _ImportContainerActionRequest{}
+
+	err = json.Unmarshal(data, &varImportContainerActionRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ImportContainerActionRequest(varImportContainerActionRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "storageProviderId")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableImportContainerActionRequest struct {

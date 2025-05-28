@@ -40,7 +40,10 @@ type Issue struct {
 	SeverityId *int64 `json:"severityId,omitempty"`
 	StartDate *time.Time `json:"startDate,omitempty"`
 	Status *string `json:"status,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _Issue Issue
 
 // NewIssue instantiates a new Issue object
 // This constructor will assign default values to properties that have it defined,
@@ -734,7 +737,51 @@ func (o Issue) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *Issue) UnmarshalJSON(data []byte) (err error) {
+	varIssue := _Issue{}
+
+	err = json.Unmarshal(data, &varIssue)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Issue(varIssue)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "attachmentType")
+		delete(additionalProperties, "app")
+		delete(additionalProperties, "available")
+		delete(additionalProperties, "check")
+		delete(additionalProperties, "checkGroup")
+		delete(additionalProperties, "checkStatus")
+		delete(additionalProperties, "endDate")
+		delete(additionalProperties, "health")
+		delete(additionalProperties, "inUptime")
+		delete(additionalProperties, "incident")
+		delete(additionalProperties, "lastCheckTime")
+		delete(additionalProperties, "lastError")
+		delete(additionalProperties, "lastMessage")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "severity")
+		delete(additionalProperties, "severityId")
+		delete(additionalProperties, "startDate")
+		delete(additionalProperties, "status")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableIssue struct {

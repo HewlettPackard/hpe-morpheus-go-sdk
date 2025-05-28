@@ -31,7 +31,10 @@ type SaveCloudDatastoreRequestDatastoreResourcePermissions struct {
 	Account *GetAlerts200ResponseAllOfChecksInnerAccount `json:"account,omitempty"`
 	Sites []map[string]interface{} `json:"sites,omitempty"`
 	Plans []map[string]interface{} `json:"plans,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _SaveCloudDatastoreRequestDatastoreResourcePermissions SaveCloudDatastoreRequestDatastoreResourcePermissions
 
 // NewSaveCloudDatastoreRequestDatastoreResourcePermissions instantiates a new SaveCloudDatastoreRequestDatastoreResourcePermissions object
 // This constructor will assign default values to properties that have it defined,
@@ -445,7 +448,43 @@ func (o SaveCloudDatastoreRequestDatastoreResourcePermissions) ToMap() (map[stri
 	if !IsNil(o.Plans) {
 		toSerialize["plans"] = o.Plans
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *SaveCloudDatastoreRequestDatastoreResourcePermissions) UnmarshalJSON(data []byte) (err error) {
+	varSaveCloudDatastoreRequestDatastoreResourcePermissions := _SaveCloudDatastoreRequestDatastoreResourcePermissions{}
+
+	err = json.Unmarshal(data, &varSaveCloudDatastoreRequestDatastoreResourcePermissions)
+
+	if err != nil {
+		return err
+	}
+
+	*o = SaveCloudDatastoreRequestDatastoreResourcePermissions(varSaveCloudDatastoreRequestDatastoreResourcePermissions)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "allGroups")
+		delete(additionalProperties, "defaultStore")
+		delete(additionalProperties, "allPlans")
+		delete(additionalProperties, "defaultTarget")
+		delete(additionalProperties, "morpheusResourceType")
+		delete(additionalProperties, "morpheusResourceId")
+		delete(additionalProperties, "canManage")
+		delete(additionalProperties, "all")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "sites")
+		delete(additionalProperties, "plans")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableSaveCloudDatastoreRequestDatastoreResourcePermissions struct {

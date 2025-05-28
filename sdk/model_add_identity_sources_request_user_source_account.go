@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -24,6 +23,7 @@ var _ MappedNullable = &AddIdentitySourcesRequestUserSourceAccount{}
 type AddIdentitySourcesRequestUserSourceAccount struct {
 	// Tenant ID
 	Id int64 `json:"id"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddIdentitySourcesRequestUserSourceAccount AddIdentitySourcesRequestUserSourceAccount
@@ -81,6 +81,11 @@ func (o AddIdentitySourcesRequestUserSourceAccount) MarshalJSON() ([]byte, error
 func (o AddIdentitySourcesRequestUserSourceAccount) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -108,15 +113,20 @@ func (o *AddIdentitySourcesRequestUserSourceAccount) UnmarshalJSON(data []byte) 
 
 	varAddIdentitySourcesRequestUserSourceAccount := _AddIdentitySourcesRequestUserSourceAccount{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddIdentitySourcesRequestUserSourceAccount)
+	err = json.Unmarshal(data, &varAddIdentitySourcesRequestUserSourceAccount)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddIdentitySourcesRequestUserSourceAccount(varAddIdentitySourcesRequestUserSourceAccount)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

@@ -130,7 +130,10 @@ type ApplianceSettingsUpdate struct {
 	MaxOptionListSize *int64 `json:"maxOptionListSize,omitempty"`
 	// The url used for checking if there is an update for plugins. Default https\\://share.morpheusdata.com
 	ExchangeUrl *string `json:"exchangeUrl,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ApplianceSettingsUpdate ApplianceSettingsUpdate
 
 // NewApplianceSettingsUpdate instantiates a new ApplianceSettingsUpdate object
 // This constructor will assign default values to properties that have it defined,
@@ -2084,7 +2087,87 @@ func (o ApplianceSettingsUpdate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ExchangeUrl) {
 		toSerialize["exchangeUrl"] = o.ExchangeUrl
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ApplianceSettingsUpdate) UnmarshalJSON(data []byte) (err error) {
+	varApplianceSettingsUpdate := _ApplianceSettingsUpdate{}
+
+	err = json.Unmarshal(data, &varApplianceSettingsUpdate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ApplianceSettingsUpdate(varApplianceSettingsUpdate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "applianceUrl")
+		delete(additionalProperties, "internalApplianceUrl")
+		delete(additionalProperties, "corsAllowed")
+		delete(additionalProperties, "registrationEnabled")
+		delete(additionalProperties, "defaultRoleId")
+		delete(additionalProperties, "defaultUserRoleId")
+		delete(additionalProperties, "dockerPrivilegedMode")
+		delete(additionalProperties, "passwordMinLength")
+		delete(additionalProperties, "passwordMinUpperCase")
+		delete(additionalProperties, "passwordMinNumbers")
+		delete(additionalProperties, "passwordMinSymbols")
+		delete(additionalProperties, "userBrowserSessionTimeout")
+		delete(additionalProperties, "userBrowserSessionWarning")
+		delete(additionalProperties, "expirePwdDays")
+		delete(additionalProperties, "disableAfterAttempts")
+		delete(additionalProperties, "disableAfterDaysInactive")
+		delete(additionalProperties, "warnUserDaysBefore")
+		delete(additionalProperties, "smtpMailFrom")
+		delete(additionalProperties, "smtpServer")
+		delete(additionalProperties, "smtpPort")
+		delete(additionalProperties, "smtpSSL")
+		delete(additionalProperties, "smtpTLS")
+		delete(additionalProperties, "smtpUser")
+		delete(additionalProperties, "smtpPassword")
+		delete(additionalProperties, "proxyHost")
+		delete(additionalProperties, "proxyPort")
+		delete(additionalProperties, "proxyUser")
+		delete(additionalProperties, "proxyPassword")
+		delete(additionalProperties, "proxyDomain")
+		delete(additionalProperties, "proxyWorkstation")
+		delete(additionalProperties, "currencyProvider")
+		delete(additionalProperties, "currencyKey")
+		delete(additionalProperties, "enableAllZoneTypes")
+		delete(additionalProperties, "enableZoneTypes")
+		delete(additionalProperties, "disableZoneTypes")
+		delete(additionalProperties, "disableAllZoneTypes")
+		delete(additionalProperties, "twilioAccountSid")
+		delete(additionalProperties, "twilioSmsFrom")
+		delete(additionalProperties, "twilioAuthToken")
+		delete(additionalProperties, "cloudSyncIntervalSeconds")
+		delete(additionalProperties, "clusterSyncIntervalSeconds")
+		delete(additionalProperties, "usageRetainmentPeriod")
+		delete(additionalProperties, "invoiceRetainmentPeriod")
+		delete(additionalProperties, "incidentRetainmentPeriod")
+		delete(additionalProperties, "statsRetainmentPeriod")
+		delete(additionalProperties, "reportsRetainmentPeriod")
+		delete(additionalProperties, "httpBlacklistHosts")
+		delete(additionalProperties, "httpApprovelistHosts")
+		delete(additionalProperties, "noAgent")
+		delete(additionalProperties, "agentSSLVerify")
+		delete(additionalProperties, "disableSSHPasswordAuth")
+		delete(additionalProperties, "defaultLocale")
+		delete(additionalProperties, "defaultVdiGateway")
+		delete(additionalProperties, "maxOptionListSize")
+		delete(additionalProperties, "exchangeUrl")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableApplianceSettingsUpdate struct {

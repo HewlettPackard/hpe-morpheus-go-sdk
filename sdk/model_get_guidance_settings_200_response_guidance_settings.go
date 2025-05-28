@@ -36,7 +36,10 @@ type GetGuidanceSettings200ResponseGuidanceSettings struct {
 	MemoryDownAvgStandardCutoffRightSize *int32 `json:"memoryDownAvgStandardCutoffRightSize,omitempty"`
 	// Memory Down-size Maximum Free Memory (%). Upper limit for peak memory usage
 	MemoryDownMaxStandardCutoffRightSize *int32 `json:"memoryDownMaxStandardCutoffRightSize,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetGuidanceSettings200ResponseGuidanceSettings GetGuidanceSettings200ResponseGuidanceSettings
 
 // NewGetGuidanceSettings200ResponseGuidanceSettings instantiates a new GetGuidanceSettings200ResponseGuidanceSettings object
 // This constructor will assign default values to properties that have it defined,
@@ -345,7 +348,40 @@ func (o GetGuidanceSettings200ResponseGuidanceSettings) ToMap() (map[string]inte
 	if !IsNil(o.MemoryDownMaxStandardCutoffRightSize) {
 		toSerialize["memoryDownMaxStandardCutoffRightSize"] = o.MemoryDownMaxStandardCutoffRightSize
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetGuidanceSettings200ResponseGuidanceSettings) UnmarshalJSON(data []byte) (err error) {
+	varGetGuidanceSettings200ResponseGuidanceSettings := _GetGuidanceSettings200ResponseGuidanceSettings{}
+
+	err = json.Unmarshal(data, &varGetGuidanceSettings200ResponseGuidanceSettings)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetGuidanceSettings200ResponseGuidanceSettings(varGetGuidanceSettings200ResponseGuidanceSettings)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "cpuAvgCutoffPower")
+		delete(additionalProperties, "cpuMaxCutoffPower")
+		delete(additionalProperties, "networkCutoffPower")
+		delete(additionalProperties, "cpuUpAvgStandardCutoffRightSize")
+		delete(additionalProperties, "cpuUpMaxStandardCutoffRightSize")
+		delete(additionalProperties, "memoryUpAvgStandardCutoffRightSize")
+		delete(additionalProperties, "memoryDownAvgStandardCutoffRightSize")
+		delete(additionalProperties, "memoryDownMaxStandardCutoffRightSize")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetGuidanceSettings200ResponseGuidanceSettings struct {

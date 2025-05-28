@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -42,6 +41,7 @@ type NSXNetworkServer struct {
 	Credential *NSXNetworkServerCredential `json:"credential,omitempty"`
 	// Array of tenant account ids that are allowed access
 	Tenants []GetAlerts200ResponseAllOfChecksInnerAccount `json:"tenants,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _NSXNetworkServer NSXNetworkServer
@@ -430,6 +430,11 @@ func (o NSXNetworkServer) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Tenants) {
 		toSerialize["tenants"] = o.Tenants
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -460,15 +465,30 @@ func (o *NSXNetworkServer) UnmarshalJSON(data []byte) (err error) {
 
 	varNSXNetworkServer := _NSXNetworkServer{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varNSXNetworkServer)
+	err = json.Unmarshal(data, &varNSXNetworkServer)
 
 	if err != nil {
 		return err
 	}
 
 	*o = NSXNetworkServer(varNSXNetworkServer)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "serviceUrl")
+		delete(additionalProperties, "serviceUsername")
+		delete(additionalProperties, "servicePassword")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "zoneId")
+		delete(additionalProperties, "credential")
+		delete(additionalProperties, "tenants")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

@@ -21,7 +21,10 @@ var _ MappedNullable = &UpdateProvisioningSettingsRequest{}
 // UpdateProvisioningSettingsRequest struct for UpdateProvisioningSettingsRequest
 type UpdateProvisioningSettingsRequest struct {
 	ProvisioningSettings *UpdateProvisioningSettingsRequestProvisioningSettings `json:"provisioningSettings,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateProvisioningSettingsRequest UpdateProvisioningSettingsRequest
 
 // NewUpdateProvisioningSettingsRequest instantiates a new UpdateProvisioningSettingsRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o UpdateProvisioningSettingsRequest) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.ProvisioningSettings) {
 		toSerialize["provisioningSettings"] = o.ProvisioningSettings
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateProvisioningSettingsRequest) UnmarshalJSON(data []byte) (err error) {
+	varUpdateProvisioningSettingsRequest := _UpdateProvisioningSettingsRequest{}
+
+	err = json.Unmarshal(data, &varUpdateProvisioningSettingsRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateProvisioningSettingsRequest(varUpdateProvisioningSettingsRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "provisioningSettings")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateProvisioningSettingsRequest struct {

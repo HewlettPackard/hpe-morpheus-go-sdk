@@ -24,7 +24,10 @@ type GetNetworkSubnets200ResponseAllOfSubnetsInnerResourcePermission struct {
 	Sites []map[string]interface{} `json:"sites,omitempty"`
 	AllPlans *bool `json:"allPlans,omitempty"`
 	Plans []map[string]interface{} `json:"plans,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetNetworkSubnets200ResponseAllOfSubnetsInnerResourcePermission GetNetworkSubnets200ResponseAllOfSubnetsInnerResourcePermission
 
 // NewGetNetworkSubnets200ResponseAllOfSubnetsInnerResourcePermission instantiates a new GetNetworkSubnets200ResponseAllOfSubnetsInnerResourcePermission object
 // This constructor will assign default values to properties that have it defined,
@@ -193,7 +196,36 @@ func (o GetNetworkSubnets200ResponseAllOfSubnetsInnerResourcePermission) ToMap()
 	if !IsNil(o.Plans) {
 		toSerialize["plans"] = o.Plans
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetNetworkSubnets200ResponseAllOfSubnetsInnerResourcePermission) UnmarshalJSON(data []byte) (err error) {
+	varGetNetworkSubnets200ResponseAllOfSubnetsInnerResourcePermission := _GetNetworkSubnets200ResponseAllOfSubnetsInnerResourcePermission{}
+
+	err = json.Unmarshal(data, &varGetNetworkSubnets200ResponseAllOfSubnetsInnerResourcePermission)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetNetworkSubnets200ResponseAllOfSubnetsInnerResourcePermission(varGetNetworkSubnets200ResponseAllOfSubnetsInnerResourcePermission)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "all")
+		delete(additionalProperties, "sites")
+		delete(additionalProperties, "allPlans")
+		delete(additionalProperties, "plans")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetNetworkSubnets200ResponseAllOfSubnetsInnerResourcePermission struct {

@@ -41,7 +41,10 @@ type UpdateInstanceRequestInstance struct {
 	OwnerId *int64 `json:"ownerId,omitempty"`
 	// Name used in the UI for display
 	DisplayName *string `json:"displayName,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateInstanceRequestInstance UpdateInstanceRequestInstance
 
 // NewUpdateInstanceRequestInstance instantiates a new UpdateInstanceRequestInstance object
 // This constructor will assign default values to properties that have it defined,
@@ -455,7 +458,43 @@ func (o UpdateInstanceRequestInstance) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.DisplayName) {
 		toSerialize["displayName"] = o.DisplayName
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateInstanceRequestInstance) UnmarshalJSON(data []byte) (err error) {
+	varUpdateInstanceRequestInstance := _UpdateInstanceRequestInstance{}
+
+	err = json.Unmarshal(data, &varUpdateInstanceRequestInstance)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateInstanceRequestInstance(varUpdateInstanceRequestInstance)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "instanceContext")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "tags")
+		delete(additionalProperties, "addTags")
+		delete(additionalProperties, "removeTags")
+		delete(additionalProperties, "powerScheduleType")
+		delete(additionalProperties, "site")
+		delete(additionalProperties, "ownerId")
+		delete(additionalProperties, "displayName")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateInstanceRequestInstance struct {

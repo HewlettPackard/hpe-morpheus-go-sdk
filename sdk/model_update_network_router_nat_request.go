@@ -21,7 +21,10 @@ var _ MappedNullable = &UpdateNetworkRouterNatRequest{}
 // UpdateNetworkRouterNatRequest struct for UpdateNetworkRouterNatRequest
 type UpdateNetworkRouterNatRequest struct {
 	NetworkRouterNAT *UpdateNetworkRouterNatRequestNetworkRouterNAT `json:"networkRouterNAT,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateNetworkRouterNatRequest UpdateNetworkRouterNatRequest
 
 // NewUpdateNetworkRouterNatRequest instantiates a new UpdateNetworkRouterNatRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o UpdateNetworkRouterNatRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.NetworkRouterNAT) {
 		toSerialize["networkRouterNAT"] = o.NetworkRouterNAT
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateNetworkRouterNatRequest) UnmarshalJSON(data []byte) (err error) {
+	varUpdateNetworkRouterNatRequest := _UpdateNetworkRouterNatRequest{}
+
+	err = json.Unmarshal(data, &varUpdateNetworkRouterNatRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateNetworkRouterNatRequest(varUpdateNetworkRouterNatRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "networkRouterNAT")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateNetworkRouterNatRequest struct {

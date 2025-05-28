@@ -45,7 +45,10 @@ type BackupJob struct {
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
 	// Backups associated with this job
 	Backups []ListBackupJobs200ResponseAllOfJobsInnerBackupsInner `json:"backups,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _BackupJob BackupJob
 
 // NewBackupJob instantiates a new BackupJob object
 // This constructor will assign default values to properties that have it defined,
@@ -634,7 +637,48 @@ func (o BackupJob) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Backups) {
 		toSerialize["backups"] = o.Backups
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *BackupJob) UnmarshalJSON(data []byte) (err error) {
+	varBackupJob := _BackupJob{}
+
+	err = json.Unmarshal(data, &varBackupJob)
+
+	if err != nil {
+		return err
+	}
+
+	*o = BackupJob(varBackupJob)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "schedule")
+		delete(additionalProperties, "retentionCount")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "backupProvider")
+		delete(additionalProperties, "backupRespository")
+		delete(additionalProperties, "cronExpression")
+		delete(additionalProperties, "nextFire")
+		delete(additionalProperties, "source")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "backups")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableBackupJob struct {

@@ -22,7 +22,10 @@ var _ MappedNullable = &SecurityGroupLocationAzureCustomOptions{}
 type SecurityGroupLocationAzureCustomOptions struct {
 	// External ID of Azure Resource Group
 	ResourceGroup *string `json:"resourceGroup,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _SecurityGroupLocationAzureCustomOptions SecurityGroupLocationAzureCustomOptions
 
 // NewSecurityGroupLocationAzureCustomOptions instantiates a new SecurityGroupLocationAzureCustomOptions object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o SecurityGroupLocationAzureCustomOptions) ToMap() (map[string]interface{}
 	if !IsNil(o.ResourceGroup) {
 		toSerialize["resourceGroup"] = o.ResourceGroup
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *SecurityGroupLocationAzureCustomOptions) UnmarshalJSON(data []byte) (err error) {
+	varSecurityGroupLocationAzureCustomOptions := _SecurityGroupLocationAzureCustomOptions{}
+
+	err = json.Unmarshal(data, &varSecurityGroupLocationAzureCustomOptions)
+
+	if err != nil {
+		return err
+	}
+
+	*o = SecurityGroupLocationAzureCustomOptions(varSecurityGroupLocationAzureCustomOptions)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "resourceGroup")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableSecurityGroupLocationAzureCustomOptions struct {

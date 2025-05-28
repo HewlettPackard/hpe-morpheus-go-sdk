@@ -23,7 +23,10 @@ type ListTasks200ResponseAllOfTasksInnerAnyOf15TaskType struct {
 	Id *int64 `json:"id,omitempty"`
 	Code *string `json:"code,omitempty"`
 	Name *string `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListTasks200ResponseAllOfTasksInnerAnyOf15TaskType ListTasks200ResponseAllOfTasksInnerAnyOf15TaskType
 
 // NewListTasks200ResponseAllOfTasksInnerAnyOf15TaskType instantiates a new ListTasks200ResponseAllOfTasksInnerAnyOf15TaskType object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o ListTasks200ResponseAllOfTasksInnerAnyOf15TaskType) ToMap() (map[string]
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListTasks200ResponseAllOfTasksInnerAnyOf15TaskType) UnmarshalJSON(data []byte) (err error) {
+	varListTasks200ResponseAllOfTasksInnerAnyOf15TaskType := _ListTasks200ResponseAllOfTasksInnerAnyOf15TaskType{}
+
+	err = json.Unmarshal(data, &varListTasks200ResponseAllOfTasksInnerAnyOf15TaskType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListTasks200ResponseAllOfTasksInnerAnyOf15TaskType(varListTasks200ResponseAllOfTasksInnerAnyOf15TaskType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListTasks200ResponseAllOfTasksInnerAnyOf15TaskType struct {

@@ -22,7 +22,10 @@ var _ MappedNullable = &AddPolicies200ResponseAllOfPolicyRole{}
 type AddPolicies200ResponseAllOfPolicyRole struct {
 	Id *int64 `json:"id,omitempty"`
 	Authority *string `json:"authority,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddPolicies200ResponseAllOfPolicyRole AddPolicies200ResponseAllOfPolicyRole
 
 // NewAddPolicies200ResponseAllOfPolicyRole instantiates a new AddPolicies200ResponseAllOfPolicyRole object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o AddPolicies200ResponseAllOfPolicyRole) ToMap() (map[string]interface{}, 
 	if !IsNil(o.Authority) {
 		toSerialize["authority"] = o.Authority
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddPolicies200ResponseAllOfPolicyRole) UnmarshalJSON(data []byte) (err error) {
+	varAddPolicies200ResponseAllOfPolicyRole := _AddPolicies200ResponseAllOfPolicyRole{}
+
+	err = json.Unmarshal(data, &varAddPolicies200ResponseAllOfPolicyRole)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddPolicies200ResponseAllOfPolicyRole(varAddPolicies200ResponseAllOfPolicyRole)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "authority")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddPolicies200ResponseAllOfPolicyRole struct {

@@ -38,7 +38,10 @@ type UpdateScriptRequestContainerScript struct {
 	RunAsUser *string `json:"runAsUser,omitempty"`
 	// Sudo, whether or not to run with sudo.
 	SudoUser *bool `json:"sudoUser,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateScriptRequestContainerScript UpdateScriptRequestContainerScript
 
 // NewUpdateScriptRequestContainerScript instantiates a new UpdateScriptRequestContainerScript object
 // This constructor will assign default values to properties that have it defined,
@@ -394,7 +397,41 @@ func (o UpdateScriptRequestContainerScript) ToMap() (map[string]interface{}, err
 	if !IsNil(o.SudoUser) {
 		toSerialize["sudoUser"] = o.SudoUser
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateScriptRequestContainerScript) UnmarshalJSON(data []byte) (err error) {
+	varUpdateScriptRequestContainerScript := _UpdateScriptRequestContainerScript{}
+
+	err = json.Unmarshal(data, &varUpdateScriptRequestContainerScript)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateScriptRequestContainerScript(varUpdateScriptRequestContainerScript)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "scriptVersion")
+		delete(additionalProperties, "scriptPhase")
+		delete(additionalProperties, "scriptType")
+		delete(additionalProperties, "script")
+		delete(additionalProperties, "runAsUser")
+		delete(additionalProperties, "sudoUser")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateScriptRequestContainerScript struct {

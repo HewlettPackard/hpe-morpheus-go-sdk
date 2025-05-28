@@ -58,7 +58,10 @@ type UpdatePowerSchedulesRequestSchedule struct {
 	SundayOnTime *string `json:"sundayOnTime,omitempty"`
 	// Sunday Off time of the day in 24-hour format
 	SundayOffTime *string `json:"sundayOffTime,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdatePowerSchedulesRequestSchedule UpdatePowerSchedulesRequestSchedule
 
 // NewUpdatePowerSchedulesRequestSchedule instantiates a new UpdatePowerSchedulesRequestSchedule object
 // This constructor will assign default values to properties that have it defined,
@@ -816,7 +819,51 @@ func (o UpdatePowerSchedulesRequestSchedule) ToMap() (map[string]interface{}, er
 	if !IsNil(o.SundayOffTime) {
 		toSerialize["sundayOffTime"] = o.SundayOffTime
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdatePowerSchedulesRequestSchedule) UnmarshalJSON(data []byte) (err error) {
+	varUpdatePowerSchedulesRequestSchedule := _UpdatePowerSchedulesRequestSchedule{}
+
+	err = json.Unmarshal(data, &varUpdatePowerSchedulesRequestSchedule)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdatePowerSchedulesRequestSchedule(varUpdatePowerSchedulesRequestSchedule)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "scheduleType")
+		delete(additionalProperties, "scheduleTimezone")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "mondayOnTime")
+		delete(additionalProperties, "mondayOffTime")
+		delete(additionalProperties, "tuesdayOnTime")
+		delete(additionalProperties, "tuesdayOffTime")
+		delete(additionalProperties, "wednesdayOnTime")
+		delete(additionalProperties, "wednesdayOffTime")
+		delete(additionalProperties, "thursdayOnTime")
+		delete(additionalProperties, "thursdayOffTime")
+		delete(additionalProperties, "fridayOnTime")
+		delete(additionalProperties, "fridayOffTime")
+		delete(additionalProperties, "saturdayOnTime")
+		delete(additionalProperties, "saturdayOffTime")
+		delete(additionalProperties, "sundayOnTime")
+		delete(additionalProperties, "sundayOffTime")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdatePowerSchedulesRequestSchedule struct {

@@ -26,7 +26,10 @@ type AddIdentitySourcesRequestUserSourceConfigOneOf3 struct {
 	AdministratorAPIToken *string `json:"administratorAPIToken,omitempty"`
 	// Required Group
 	RequiredGroup *string `json:"requiredGroup,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddIdentitySourcesRequestUserSourceConfigOneOf3 AddIdentitySourcesRequestUserSourceConfigOneOf3
 
 // NewAddIdentitySourcesRequestUserSourceConfigOneOf3 instantiates a new AddIdentitySourcesRequestUserSourceConfigOneOf3 object
 // This constructor will assign default values to properties that have it defined,
@@ -160,7 +163,35 @@ func (o AddIdentitySourcesRequestUserSourceConfigOneOf3) ToMap() (map[string]int
 	if !IsNil(o.RequiredGroup) {
 		toSerialize["requiredGroup"] = o.RequiredGroup
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddIdentitySourcesRequestUserSourceConfigOneOf3) UnmarshalJSON(data []byte) (err error) {
+	varAddIdentitySourcesRequestUserSourceConfigOneOf3 := _AddIdentitySourcesRequestUserSourceConfigOneOf3{}
+
+	err = json.Unmarshal(data, &varAddIdentitySourcesRequestUserSourceConfigOneOf3)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddIdentitySourcesRequestUserSourceConfigOneOf3(varAddIdentitySourcesRequestUserSourceConfigOneOf3)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "url")
+		delete(additionalProperties, "administratorAPIToken")
+		delete(additionalProperties, "requiredGroup")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddIdentitySourcesRequestUserSourceConfigOneOf3 struct {

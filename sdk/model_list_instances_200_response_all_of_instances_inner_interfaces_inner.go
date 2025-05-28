@@ -25,7 +25,10 @@ type ListInstances200ResponseAllOfInstancesInnerInterfacesInner struct {
 	IpAddress *string `json:"ipAddress,omitempty"`
 	NetworkInterfaceTypeId *int64 `json:"networkInterfaceTypeId,omitempty"`
 	IpMode *string `json:"ipMode,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListInstances200ResponseAllOfInstancesInnerInterfacesInner ListInstances200ResponseAllOfInstancesInnerInterfacesInner
 
 // NewListInstances200ResponseAllOfInstancesInnerInterfacesInner instantiates a new ListInstances200ResponseAllOfInstancesInnerInterfacesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -229,7 +232,37 @@ func (o ListInstances200ResponseAllOfInstancesInnerInterfacesInner) ToMap() (map
 	if !IsNil(o.IpMode) {
 		toSerialize["ipMode"] = o.IpMode
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) UnmarshalJSON(data []byte) (err error) {
+	varListInstances200ResponseAllOfInstancesInnerInterfacesInner := _ListInstances200ResponseAllOfInstancesInnerInterfacesInner{}
+
+	err = json.Unmarshal(data, &varListInstances200ResponseAllOfInstancesInnerInterfacesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListInstances200ResponseAllOfInstancesInnerInterfacesInner(varListInstances200ResponseAllOfInstancesInnerInterfacesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "network")
+		delete(additionalProperties, "ipAddress")
+		delete(additionalProperties, "networkInterfaceTypeId")
+		delete(additionalProperties, "ipMode")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListInstances200ResponseAllOfInstancesInnerInterfacesInner struct {

@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -42,6 +41,7 @@ type AddFileTemplateRequestContainerTemplate struct {
 	SettingName *string `json:"settingName,omitempty"`
 	// Setting Category
 	SettingCategory *string `json:"settingCategory,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddFileTemplateRequestContainerTemplate AddFileTemplateRequestContainerTemplate
@@ -405,6 +405,11 @@ func (o AddFileTemplateRequestContainerTemplate) ToMap() (map[string]interface{}
 	if !IsNil(o.SettingCategory) {
 		toSerialize["settingCategory"] = o.SettingCategory
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -433,15 +438,29 @@ func (o *AddFileTemplateRequestContainerTemplate) UnmarshalJSON(data []byte) (er
 
 	varAddFileTemplateRequestContainerTemplate := _AddFileTemplateRequestContainerTemplate{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddFileTemplateRequestContainerTemplate)
+	err = json.Unmarshal(data, &varAddFileTemplateRequestContainerTemplate)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddFileTemplateRequestContainerTemplate(varAddFileTemplateRequestContainerTemplate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "fileName")
+		delete(additionalProperties, "filePath")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "templatePhase")
+		delete(additionalProperties, "template")
+		delete(additionalProperties, "fileOwner")
+		delete(additionalProperties, "settingName")
+		delete(additionalProperties, "settingCategory")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

@@ -22,7 +22,10 @@ var _ MappedNullable = &ListSecurityPackages200Response{}
 type ListSecurityPackages200Response struct {
 	SecurityPackages []ListSecurityPackages200ResponseAllOfSecurityPackagesInner `json:"securityPackages,omitempty"`
 	Meta *ListActivity200ResponseAllOfMeta `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListSecurityPackages200Response ListSecurityPackages200Response
 
 // NewListSecurityPackages200Response instantiates a new ListSecurityPackages200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o ListSecurityPackages200Response) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.Meta) {
 		toSerialize["meta"] = o.Meta
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListSecurityPackages200Response) UnmarshalJSON(data []byte) (err error) {
+	varListSecurityPackages200Response := _ListSecurityPackages200Response{}
+
+	err = json.Unmarshal(data, &varListSecurityPackages200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListSecurityPackages200Response(varListSecurityPackages200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "securityPackages")
+		delete(additionalProperties, "meta")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListSecurityPackages200Response struct {

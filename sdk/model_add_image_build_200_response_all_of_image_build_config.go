@@ -27,7 +27,10 @@ type AddImageBuild200ResponseAllOfImageBuildConfig struct {
 	ZoneId *int64 `json:"zoneId,omitempty"`
 	Config *AddImageBuild200ResponseAllOfImageBuildConfigConfig `json:"config,omitempty"`
 	Plan *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigPlan `json:"plan,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddImageBuild200ResponseAllOfImageBuildConfig AddImageBuild200ResponseAllOfImageBuildConfig
 
 // NewAddImageBuild200ResponseAllOfImageBuildConfig instantiates a new AddImageBuild200ResponseAllOfImageBuildConfig object
 // This constructor will assign default values to properties that have it defined,
@@ -301,7 +304,39 @@ func (o AddImageBuild200ResponseAllOfImageBuildConfig) ToMap() (map[string]inter
 	if !IsNil(o.Plan) {
 		toSerialize["plan"] = o.Plan
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddImageBuild200ResponseAllOfImageBuildConfig) UnmarshalJSON(data []byte) (err error) {
+	varAddImageBuild200ResponseAllOfImageBuildConfig := _AddImageBuild200ResponseAllOfImageBuildConfig{}
+
+	err = json.Unmarshal(data, &varAddImageBuild200ResponseAllOfImageBuildConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddImageBuild200ResponseAllOfImageBuildConfig(varAddImageBuild200ResponseAllOfImageBuildConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "instance")
+		delete(additionalProperties, "networkInterfaces")
+		delete(additionalProperties, "volumes")
+		delete(additionalProperties, "storageControllers")
+		delete(additionalProperties, "zoneId")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "plan")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddImageBuild200ResponseAllOfImageBuildConfig struct {

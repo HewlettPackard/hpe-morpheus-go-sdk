@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -81,6 +80,7 @@ type AddRolesRequestRole struct {
 	TaskSets []AddRolesRequestRoleTaskSetsInner `json:"taskSets,omitempty"`
 	// Set the role owner (tenant) by ID. *Only available to master tenant*
 	Owner *int64 `json:"owner,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddRolesRequestRole AddRolesRequestRole
@@ -1165,6 +1165,11 @@ func (o AddRolesRequestRole) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Owner) {
 		toSerialize["owner"] = o.Owner
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -1192,15 +1197,49 @@ func (o *AddRolesRequestRole) UnmarshalJSON(data []byte) (err error) {
 
 	varAddRolesRequestRole := _AddRolesRequestRole{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddRolesRequestRole)
+	err = json.Unmarshal(data, &varAddRolesRequestRole)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddRolesRequestRole(varAddRolesRequestRole)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "authority")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "landingUrl")
+		delete(additionalProperties, "roleType")
+		delete(additionalProperties, "baseRoleId")
+		delete(additionalProperties, "multitenant")
+		delete(additionalProperties, "multitenantLocked")
+		delete(additionalProperties, "defaultPersona")
+		delete(additionalProperties, "permissions")
+		delete(additionalProperties, "globalSiteAccess")
+		delete(additionalProperties, "sites")
+		delete(additionalProperties, "globalZoneAccess")
+		delete(additionalProperties, "zones")
+		delete(additionalProperties, "globalInstanceTypeAccess")
+		delete(additionalProperties, "instanceTypes")
+		delete(additionalProperties, "globalAppTemplateAccess")
+		delete(additionalProperties, "appTemplates")
+		delete(additionalProperties, "globalCatalogItemTypeAccess")
+		delete(additionalProperties, "catalogItemTypes")
+		delete(additionalProperties, "globalPersonaAccess")
+		delete(additionalProperties, "personas")
+		delete(additionalProperties, "globalVdiPoolAccess")
+		delete(additionalProperties, "vdiPools")
+		delete(additionalProperties, "globalReportTypeAccess")
+		delete(additionalProperties, "reportTypes")
+		delete(additionalProperties, "globalTaskAccess")
+		delete(additionalProperties, "tasks")
+		delete(additionalProperties, "globalTaskSetAccess")
+		delete(additionalProperties, "taskSets")
+		delete(additionalProperties, "owner")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

@@ -35,7 +35,10 @@ type GetClusterMasters200ResponseMastersInnerVolumesInner struct {
 	DisplayOrder *int64 `json:"displayOrder,omitempty"`
 	MaxIOPS *string `json:"maxIOPS,omitempty"`
 	Uuid *string `json:"uuid,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetClusterMasters200ResponseMastersInnerVolumesInner GetClusterMasters200ResponseMastersInnerVolumesInner
 
 // NewGetClusterMasters200ResponseMastersInnerVolumesInner instantiates a new GetClusterMasters200ResponseMastersInnerVolumesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -589,7 +592,47 @@ func (o GetClusterMasters200ResponseMastersInnerVolumesInner) ToMap() (map[strin
 	if !IsNil(o.Uuid) {
 		toSerialize["uuid"] = o.Uuid
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetClusterMasters200ResponseMastersInnerVolumesInner) UnmarshalJSON(data []byte) (err error) {
+	varGetClusterMasters200ResponseMastersInnerVolumesInner := _GetClusterMasters200ResponseMastersInnerVolumesInner{}
+
+	err = json.Unmarshal(data, &varGetClusterMasters200ResponseMastersInnerVolumesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetClusterMasters200ResponseMastersInnerVolumesInner(varGetClusterMasters200ResponseMastersInnerVolumesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "controllerId")
+		delete(additionalProperties, "controllerMountPoint")
+		delete(additionalProperties, "resizeable")
+		delete(additionalProperties, "planResizable")
+		delete(additionalProperties, "rootVolume")
+		delete(additionalProperties, "unitNumber")
+		delete(additionalProperties, "typeId")
+		delete(additionalProperties, "configurableIOPS")
+		delete(additionalProperties, "datastoreId")
+		delete(additionalProperties, "maxStorage")
+		delete(additionalProperties, "displayOrder")
+		delete(additionalProperties, "maxIOPS")
+		delete(additionalProperties, "uuid")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetClusterMasters200ResponseMastersInnerVolumesInner struct {

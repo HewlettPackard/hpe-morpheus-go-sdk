@@ -32,7 +32,10 @@ type ListDeploymentVersions200ResponseAllOfVersionsInner struct {
 	Status *string `json:"status,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListDeploymentVersions200ResponseAllOfVersionsInner ListDeploymentVersions200ResponseAllOfVersionsInner
 
 // NewListDeploymentVersions200ResponseAllOfVersionsInner instantiates a new ListDeploymentVersions200ResponseAllOfVersionsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -446,7 +449,43 @@ func (o ListDeploymentVersions200ResponseAllOfVersionsInner) ToMap() (map[string
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListDeploymentVersions200ResponseAllOfVersionsInner) UnmarshalJSON(data []byte) (err error) {
+	varListDeploymentVersions200ResponseAllOfVersionsInner := _ListDeploymentVersions200ResponseAllOfVersionsInner{}
+
+	err = json.Unmarshal(data, &varListDeploymentVersions200ResponseAllOfVersionsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListDeploymentVersions200ResponseAllOfVersionsInner(varListDeploymentVersions200ResponseAllOfVersionsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "deployType")
+		delete(additionalProperties, "deploymentId")
+		delete(additionalProperties, "fetchUrl")
+		delete(additionalProperties, "gitUrl")
+		delete(additionalProperties, "gitRef")
+		delete(additionalProperties, "userVersion")
+		delete(additionalProperties, "version")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListDeploymentVersions200ResponseAllOfVersionsInner struct {

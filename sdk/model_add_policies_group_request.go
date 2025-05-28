@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -23,6 +22,7 @@ var _ MappedNullable = &AddPoliciesGroupRequest{}
 // AddPoliciesGroupRequest struct for AddPoliciesGroupRequest
 type AddPoliciesGroupRequest struct {
 	Policy AddPoliciesGroupRequestPolicy `json:"policy"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddPoliciesGroupRequest AddPoliciesGroupRequest
@@ -80,6 +80,11 @@ func (o AddPoliciesGroupRequest) MarshalJSON() ([]byte, error) {
 func (o AddPoliciesGroupRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["policy"] = o.Policy
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -107,15 +112,20 @@ func (o *AddPoliciesGroupRequest) UnmarshalJSON(data []byte) (err error) {
 
 	varAddPoliciesGroupRequest := _AddPoliciesGroupRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddPoliciesGroupRequest)
+	err = json.Unmarshal(data, &varAddPoliciesGroupRequest)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddPoliciesGroupRequest(varAddPoliciesGroupRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "policy")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

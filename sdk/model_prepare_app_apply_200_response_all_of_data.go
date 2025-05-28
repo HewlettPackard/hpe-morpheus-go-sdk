@@ -31,7 +31,10 @@ type PrepareAppApply200ResponseAllOfData struct {
 	TemplateId *int64 `json:"templateId,omitempty"`
 	BlueprintId *int64 `json:"blueprintId,omitempty"`
 	Group *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"group,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _PrepareAppApply200ResponseAllOfData PrepareAppApply200ResponseAllOfData
 
 // NewPrepareAppApply200ResponseAllOfData instantiates a new PrepareAppApply200ResponseAllOfData object
 // This constructor will assign default values to properties that have it defined,
@@ -445,7 +448,43 @@ func (o PrepareAppApply200ResponseAllOfData) ToMap() (map[string]interface{}, er
 	if !IsNil(o.Group) {
 		toSerialize["group"] = o.Group
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *PrepareAppApply200ResponseAllOfData) UnmarshalJSON(data []byte) (err error) {
+	varPrepareAppApply200ResponseAllOfData := _PrepareAppApply200ResponseAllOfData{}
+
+	err = json.Unmarshal(data, &varPrepareAppApply200ResponseAllOfData)
+
+	if err != nil {
+		return err
+	}
+
+	*o = PrepareAppApply200ResponseAllOfData(varPrepareAppApply200ResponseAllOfData)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "image")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "autoValidate")
+		delete(additionalProperties, "terraform")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "blueprintName")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "templateId")
+		delete(additionalProperties, "blueprintId")
+		delete(additionalProperties, "group")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullablePrepareAppApply200ResponseAllOfData struct {

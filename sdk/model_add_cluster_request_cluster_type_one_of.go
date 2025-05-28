@@ -22,7 +22,10 @@ var _ MappedNullable = &AddClusterRequestClusterTypeOneOf{}
 type AddClusterRequestClusterTypeOneOf struct {
 	// The type ID of cluster to be created
 	Id *int64 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddClusterRequestClusterTypeOneOf AddClusterRequestClusterTypeOneOf
 
 // NewAddClusterRequestClusterTypeOneOf instantiates a new AddClusterRequestClusterTypeOneOf object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o AddClusterRequestClusterTypeOneOf) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddClusterRequestClusterTypeOneOf) UnmarshalJSON(data []byte) (err error) {
+	varAddClusterRequestClusterTypeOneOf := _AddClusterRequestClusterTypeOneOf{}
+
+	err = json.Unmarshal(data, &varAddClusterRequestClusterTypeOneOf)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddClusterRequestClusterTypeOneOf(varAddClusterRequestClusterTypeOneOf)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddClusterRequestClusterTypeOneOf struct {

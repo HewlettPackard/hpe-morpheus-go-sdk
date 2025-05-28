@@ -21,7 +21,10 @@ var _ MappedNullable = &GetWorkflows200Response{}
 // GetWorkflows200Response struct for GetWorkflows200Response
 type GetWorkflows200Response struct {
 	TaskSet *ListWorkflows200ResponseAllOfTaskSetsInner `json:"taskSet,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetWorkflows200Response GetWorkflows200Response
 
 // NewGetWorkflows200Response instantiates a new GetWorkflows200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o GetWorkflows200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.TaskSet) {
 		toSerialize["taskSet"] = o.TaskSet
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetWorkflows200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetWorkflows200Response := _GetWorkflows200Response{}
+
+	err = json.Unmarshal(data, &varGetWorkflows200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetWorkflows200Response(varGetWorkflows200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "taskSet")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetWorkflows200Response struct {

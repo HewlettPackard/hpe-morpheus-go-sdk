@@ -24,7 +24,10 @@ type UpdateHostCloudRequest struct {
 	CloudId *int64 `json:"cloudId,omitempty"`
 	// A JSON array of source: and target: server ids to be moved. If the target is blank Morpheus will automatically try to match by the servers unique or externalId
 	Servers []UpdateHostCloudRequestServersInner `json:"servers,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateHostCloudRequest UpdateHostCloudRequest
 
 // NewUpdateHostCloudRequest instantiates a new UpdateHostCloudRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -123,7 +126,34 @@ func (o UpdateHostCloudRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Servers) {
 		toSerialize["servers"] = o.Servers
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateHostCloudRequest) UnmarshalJSON(data []byte) (err error) {
+	varUpdateHostCloudRequest := _UpdateHostCloudRequest{}
+
+	err = json.Unmarshal(data, &varUpdateHostCloudRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateHostCloudRequest(varUpdateHostCloudRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "cloudId")
+		delete(additionalProperties, "servers")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateHostCloudRequest struct {

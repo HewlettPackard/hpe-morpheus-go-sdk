@@ -51,7 +51,10 @@ type ClusterHistoryItem struct {
 	CreatedBy *GetClusterHistory200ResponseAllOfProcessesInnerCreatedBy `json:"createdBy,omitempty"`
 	UpdatedBy *GetClusterHistory200ResponseAllOfProcessesInnerCreatedBy `json:"updatedBy,omitempty"`
 	Events []GetClusterHistory200ResponseAllOfProcessesInnerEventsInner `json:"events,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ClusterHistoryItem ClusterHistoryItem
 
 // NewClusterHistoryItem instantiates a new ClusterHistoryItem object
 // This constructor will assign default values to properties that have it defined,
@@ -1130,7 +1133,62 @@ func (o ClusterHistoryItem) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Events) {
 		toSerialize["events"] = o.Events
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ClusterHistoryItem) UnmarshalJSON(data []byte) (err error) {
+	varClusterHistoryItem := _ClusterHistoryItem{}
+
+	err = json.Unmarshal(data, &varClusterHistoryItem)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ClusterHistoryItem(varClusterHistoryItem)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "uniqueId")
+		delete(additionalProperties, "processType")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "subType")
+		delete(additionalProperties, "subId")
+		delete(additionalProperties, "zoneId")
+		delete(additionalProperties, "integrationId")
+		delete(additionalProperties, "appId")
+		delete(additionalProperties, "instanceId")
+		delete(additionalProperties, "containerId")
+		delete(additionalProperties, "serverId")
+		delete(additionalProperties, "containerName")
+		delete(additionalProperties, "displayName")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "reason")
+		delete(additionalProperties, "percent")
+		delete(additionalProperties, "statusEta")
+		delete(additionalProperties, "message")
+		delete(additionalProperties, "output")
+		delete(additionalProperties, "error")
+		delete(additionalProperties, "startDate")
+		delete(additionalProperties, "endDate")
+		delete(additionalProperties, "duration")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "createdBy")
+		delete(additionalProperties, "updatedBy")
+		delete(additionalProperties, "events")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableClusterHistoryItem struct {

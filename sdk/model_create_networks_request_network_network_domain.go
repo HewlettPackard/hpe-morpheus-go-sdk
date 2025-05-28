@@ -22,7 +22,10 @@ var _ MappedNullable = &CreateNetworksRequestNetworkNetworkDomain{}
 type CreateNetworksRequestNetworkNetworkDomain struct {
 	// Network Domain ID
 	Id *int64 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _CreateNetworksRequestNetworkNetworkDomain CreateNetworksRequestNetworkNetworkDomain
 
 // NewCreateNetworksRequestNetworkNetworkDomain instantiates a new CreateNetworksRequestNetworkNetworkDomain object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o CreateNetworksRequestNetworkNetworkDomain) ToMap() (map[string]interface
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *CreateNetworksRequestNetworkNetworkDomain) UnmarshalJSON(data []byte) (err error) {
+	varCreateNetworksRequestNetworkNetworkDomain := _CreateNetworksRequestNetworkNetworkDomain{}
+
+	err = json.Unmarshal(data, &varCreateNetworksRequestNetworkNetworkDomain)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CreateNetworksRequestNetworkNetworkDomain(varCreateNetworksRequestNetworkNetworkDomain)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCreateNetworksRequestNetworkNetworkDomain struct {

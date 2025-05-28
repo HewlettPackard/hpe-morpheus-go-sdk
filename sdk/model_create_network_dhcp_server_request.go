@@ -21,7 +21,10 @@ var _ MappedNullable = &CreateNetworkDhcpServerRequest{}
 // CreateNetworkDhcpServerRequest struct for CreateNetworkDhcpServerRequest
 type CreateNetworkDhcpServerRequest struct {
 	NetworkDhcpServer *CreateNetworkDhcpServerRequestNetworkDhcpServer `json:"networkDhcpServer,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _CreateNetworkDhcpServerRequest CreateNetworkDhcpServerRequest
 
 // NewCreateNetworkDhcpServerRequest instantiates a new CreateNetworkDhcpServerRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o CreateNetworkDhcpServerRequest) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.NetworkDhcpServer) {
 		toSerialize["networkDhcpServer"] = o.NetworkDhcpServer
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *CreateNetworkDhcpServerRequest) UnmarshalJSON(data []byte) (err error) {
+	varCreateNetworkDhcpServerRequest := _CreateNetworkDhcpServerRequest{}
+
+	err = json.Unmarshal(data, &varCreateNetworkDhcpServerRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CreateNetworkDhcpServerRequest(varCreateNetworkDhcpServerRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "networkDhcpServer")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCreateNetworkDhcpServerRequest struct {

@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -50,6 +49,7 @@ type AddLayoutRequestInstanceTypeLayout struct {
 	// Array of price set objects
 	PriceSets []AddInstanceTypeRequestInstanceTypePriceSetsInner `json:"priceSets,omitempty"`
 	Permissions *AddLayoutRequestInstanceTypeLayoutPermissions `json:"permissions,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddLayoutRequestInstanceTypeLayout AddLayoutRequestInstanceTypeLayout
@@ -591,6 +591,11 @@ func (o AddLayoutRequestInstanceTypeLayout) ToMap() (map[string]interface{}, err
 	if !IsNil(o.Permissions) {
 		toSerialize["permissions"] = o.Permissions
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -620,15 +625,34 @@ func (o *AddLayoutRequestInstanceTypeLayout) UnmarshalJSON(data []byte) (err err
 
 	varAddLayoutRequestInstanceTypeLayout := _AddLayoutRequestInstanceTypeLayout{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddLayoutRequestInstanceTypeLayout)
+	err = json.Unmarshal(data, &varAddLayoutRequestInstanceTypeLayout)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddLayoutRequestInstanceTypeLayout(varAddLayoutRequestInstanceTypeLayout)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "instanceVersion")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "creatable")
+		delete(additionalProperties, "provisionTypeCode")
+		delete(additionalProperties, "memoryRequirement")
+		delete(additionalProperties, "hasAutoScale")
+		delete(additionalProperties, "supportsConvertToManaged")
+		delete(additionalProperties, "containerTypes")
+		delete(additionalProperties, "optionTypes")
+		delete(additionalProperties, "specTemplates")
+		delete(additionalProperties, "environmentVariables")
+		delete(additionalProperties, "priceSets")
+		delete(additionalProperties, "permissions")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

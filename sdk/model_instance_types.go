@@ -38,7 +38,10 @@ type InstanceTypes struct {
 	ImagePath *string `json:"imagePath,omitempty"`
 	// Dark logo image URL
 	DarkImagePath *string `json:"darkImagePath,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _InstanceTypes InstanceTypes
 
 // NewInstanceTypes instantiates a new InstanceTypes object
 // This constructor will assign default values to properties that have it defined,
@@ -627,7 +630,48 @@ func (o InstanceTypes) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.DarkImagePath) {
 		toSerialize["darkImagePath"] = o.DarkImagePath
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *InstanceTypes) UnmarshalJSON(data []byte) (err error) {
+	varInstanceTypes := _InstanceTypes{}
+
+	err = json.Unmarshal(data, &varInstanceTypes)
+
+	if err != nil {
+		return err
+	}
+
+	*o = InstanceTypes(varInstanceTypes)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "provisionTypeCode")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "environmentPrefix")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "featured")
+		delete(additionalProperties, "versions")
+		delete(additionalProperties, "instanceTypeLayouts")
+		delete(additionalProperties, "imagePath")
+		delete(additionalProperties, "darkImagePath")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableInstanceTypes struct {

@@ -40,7 +40,10 @@ type ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config struct {
 	RoleLinkAttributeName *string `json:"roleLinkAttributeName,omitempty"`
 	PublicKey *string `json:"publicKey,omitempty"`
 	AzureAppSecretHash *string `json:"azureAppSecretHash,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config
 
 // NewListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config instantiates a new ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config object
 // This constructor will assign default values to properties that have it defined,
@@ -769,7 +772,52 @@ func (o ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config) ToMap()
 	if !IsNil(o.AzureAppSecretHash) {
 		toSerialize["azureAppSecretHash"] = o.AzureAppSecretHash
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config) UnmarshalJSON(data []byte) (err error) {
+	varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config := _ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config{}
+
+	err = json.Unmarshal(data, &varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config(varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "url")
+		delete(additionalProperties, "logoutUrl")
+		delete(additionalProperties, "doNotIncludeSAMLRequest")
+		delete(additionalProperties, "SAMLSignatureMode")
+		delete(additionalProperties, "doNotValidateSignature")
+		delete(additionalProperties, "doNotValidateStatusCode")
+		delete(additionalProperties, "doNotValidateDestination")
+		delete(additionalProperties, "doNotValidateIssueInstants")
+		delete(additionalProperties, "doNotValidateAssertions")
+		delete(additionalProperties, "givenNameAttribute")
+		delete(additionalProperties, "surnameAttribute")
+		delete(additionalProperties, "emailAttribute")
+		delete(additionalProperties, "requiredAttributeValue")
+		delete(additionalProperties, "roleAttributeName")
+		delete(additionalProperties, "azureTenantId")
+		delete(additionalProperties, "azureAppId")
+		delete(additionalProperties, "azureAppSecret")
+		delete(additionalProperties, "roleLinkAttributeName")
+		delete(additionalProperties, "publicKey")
+		delete(additionalProperties, "azureAppSecretHash")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config struct {

@@ -22,7 +22,10 @@ var _ MappedNullable = &AnsibleTowerJobTemplateOptions{}
 type AnsibleTowerJobTemplateOptions struct {
 	Name *string `json:"name,omitempty"`
 	Value *int64 `json:"value,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AnsibleTowerJobTemplateOptions AnsibleTowerJobTemplateOptions
 
 // NewAnsibleTowerJobTemplateOptions instantiates a new AnsibleTowerJobTemplateOptions object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o AnsibleTowerJobTemplateOptions) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.Value) {
 		toSerialize["value"] = o.Value
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AnsibleTowerJobTemplateOptions) UnmarshalJSON(data []byte) (err error) {
+	varAnsibleTowerJobTemplateOptions := _AnsibleTowerJobTemplateOptions{}
+
+	err = json.Unmarshal(data, &varAnsibleTowerJobTemplateOptions)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AnsibleTowerJobTemplateOptions(varAnsibleTowerJobTemplateOptions)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "value")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAnsibleTowerJobTemplateOptions struct {

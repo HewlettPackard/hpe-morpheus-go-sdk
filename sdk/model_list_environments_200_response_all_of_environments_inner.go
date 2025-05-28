@@ -31,7 +31,10 @@ type ListEnvironments200ResponseAllOfEnvironmentsInner struct {
 	SortOrder *int64 `json:"sortOrder,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListEnvironments200ResponseAllOfEnvironmentsInner ListEnvironments200ResponseAllOfEnvironmentsInner
 
 // NewListEnvironments200ResponseAllOfEnvironmentsInner instantiates a new ListEnvironments200ResponseAllOfEnvironmentsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -410,7 +413,42 @@ func (o ListEnvironments200ResponseAllOfEnvironmentsInner) ToMap() (map[string]i
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) UnmarshalJSON(data []byte) (err error) {
+	varListEnvironments200ResponseAllOfEnvironmentsInner := _ListEnvironments200ResponseAllOfEnvironmentsInner{}
+
+	err = json.Unmarshal(data, &varListEnvironments200ResponseAllOfEnvironmentsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListEnvironments200ResponseAllOfEnvironmentsInner(varListEnvironments200ResponseAllOfEnvironmentsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "sortOrder")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListEnvironments200ResponseAllOfEnvironmentsInner struct {

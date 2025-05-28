@@ -22,7 +22,10 @@ var _ MappedNullable = &RunReports200Response{}
 type RunReports200Response struct {
 	ReportResult *ListReports200ResponseAllOfReportResultsInner `json:"reportResult,omitempty"`
 	Success *bool `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _RunReports200Response RunReports200Response
 
 // NewRunReports200Response instantiates a new RunReports200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o RunReports200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Success) {
 		toSerialize["success"] = o.Success
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *RunReports200Response) UnmarshalJSON(data []byte) (err error) {
+	varRunReports200Response := _RunReports200Response{}
+
+	err = json.Unmarshal(data, &varRunReports200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = RunReports200Response(varRunReports200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "reportResult")
+		delete(additionalProperties, "success")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableRunReports200Response struct {

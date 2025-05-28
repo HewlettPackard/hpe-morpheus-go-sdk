@@ -25,7 +25,10 @@ type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner 
 	Type *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"type,omitempty"`
 	MaxDevices *int64 `json:"maxDevices,omitempty"`
 	ReservedUnitNumber *int64 `json:"reservedUnitNumber,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner
 
 // NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner instantiates a new ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner object
 // This constructor will assign default values to properties that have it defined,
@@ -229,7 +232,37 @@ func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInn
 	if !IsNil(o.ReservedUnitNumber) {
 		toSerialize["reservedUnitNumber"] = o.ReservedUnitNumber
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner) UnmarshalJSON(data []byte) (err error) {
+	varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner := _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner{}
+
+	err = json.Unmarshal(data, &varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner(varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "maxDevices")
+		delete(additionalProperties, "reservedUnitNumber")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner struct {

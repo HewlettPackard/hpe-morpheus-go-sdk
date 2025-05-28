@@ -22,7 +22,10 @@ var _ MappedNullable = &AddTasksRequestTaskFileRepository{}
 type AddTasksRequestTaskFileRepository struct {
 	// Code Repository ID, required for type `repository`. Use `/api/options/codeRepositories` to see available repositories.
 	Id *int64 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddTasksRequestTaskFileRepository AddTasksRequestTaskFileRepository
 
 // NewAddTasksRequestTaskFileRepository instantiates a new AddTasksRequestTaskFileRepository object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o AddTasksRequestTaskFileRepository) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddTasksRequestTaskFileRepository) UnmarshalJSON(data []byte) (err error) {
+	varAddTasksRequestTaskFileRepository := _AddTasksRequestTaskFileRepository{}
+
+	err = json.Unmarshal(data, &varAddTasksRequestTaskFileRepository)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddTasksRequestTaskFileRepository(varAddTasksRequestTaskFileRepository)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddTasksRequestTaskFileRepository struct {

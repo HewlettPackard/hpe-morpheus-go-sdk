@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -23,6 +22,7 @@ var _ MappedNullable = &UpdateVirtualImageRequest{}
 // UpdateVirtualImageRequest struct for UpdateVirtualImageRequest
 type UpdateVirtualImageRequest struct {
 	VirtualImage UpdateVirtualImageRequestVirtualImage `json:"virtualImage"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateVirtualImageRequest UpdateVirtualImageRequest
@@ -80,6 +80,11 @@ func (o UpdateVirtualImageRequest) MarshalJSON() ([]byte, error) {
 func (o UpdateVirtualImageRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["virtualImage"] = o.VirtualImage
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -107,15 +112,20 @@ func (o *UpdateVirtualImageRequest) UnmarshalJSON(data []byte) (err error) {
 
 	varUpdateVirtualImageRequest := _UpdateVirtualImageRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varUpdateVirtualImageRequest)
+	err = json.Unmarshal(data, &varUpdateVirtualImageRequest)
 
 	if err != nil {
 		return err
 	}
 
 	*o = UpdateVirtualImageRequest(varUpdateVirtualImageRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "virtualImage")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -31,6 +30,7 @@ type GroupUpdate struct {
 	// Optional location argument for your group
 	Location *string `json:"location,omitempty"`
 	Config *AddGroupsRequestGroupConfig `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _GroupUpdate GroupUpdate
@@ -228,6 +228,11 @@ func (o GroupUpdate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -255,15 +260,24 @@ func (o *GroupUpdate) UnmarshalJSON(data []byte) (err error) {
 
 	varGroupUpdate := _GroupUpdate{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varGroupUpdate)
+	err = json.Unmarshal(data, &varGroupUpdate)
 
 	if err != nil {
 		return err
 	}
 
 	*o = GroupUpdate(varGroupUpdate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "location")
+		delete(additionalProperties, "config")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

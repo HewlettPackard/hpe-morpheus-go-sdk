@@ -23,7 +23,10 @@ type AddBlueprintRequestOneOf3ConfigSpecsInner struct {
 	Id *int64 `json:"id,omitempty"`
 	Value *int64 `json:"value,omitempty"`
 	Name *string `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddBlueprintRequestOneOf3ConfigSpecsInner AddBlueprintRequestOneOf3ConfigSpecsInner
 
 // NewAddBlueprintRequestOneOf3ConfigSpecsInner instantiates a new AddBlueprintRequestOneOf3ConfigSpecsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o AddBlueprintRequestOneOf3ConfigSpecsInner) ToMap() (map[string]interface
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddBlueprintRequestOneOf3ConfigSpecsInner) UnmarshalJSON(data []byte) (err error) {
+	varAddBlueprintRequestOneOf3ConfigSpecsInner := _AddBlueprintRequestOneOf3ConfigSpecsInner{}
+
+	err = json.Unmarshal(data, &varAddBlueprintRequestOneOf3ConfigSpecsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddBlueprintRequestOneOf3ConfigSpecsInner(varAddBlueprintRequestOneOf3ConfigSpecsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "value")
+		delete(additionalProperties, "name")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddBlueprintRequestOneOf3ConfigSpecsInner struct {

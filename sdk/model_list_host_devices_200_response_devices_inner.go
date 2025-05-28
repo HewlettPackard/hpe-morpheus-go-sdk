@@ -38,7 +38,10 @@ type ListHostDevices200ResponseDevicesInner struct {
 	IommuGroup *int32 `json:"iommuGroup,omitempty"`
 	IommuDeviceCount *int32 `json:"iommuDeviceCount,omitempty"`
 	Type *ListHostDevices200ResponseDevicesInnerType `json:"type,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListHostDevices200ResponseDevicesInner ListHostDevices200ResponseDevicesInner
 
 // NewListHostDevices200ResponseDevicesInner instantiates a new ListHostDevices200ResponseDevicesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -662,7 +665,49 @@ func (o ListHostDevices200ResponseDevicesInner) ToMap() (map[string]interface{},
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListHostDevices200ResponseDevicesInner) UnmarshalJSON(data []byte) (err error) {
+	varListHostDevices200ResponseDevicesInner := _ListHostDevices200ResponseDevicesInner{}
+
+	err = json.Unmarshal(data, &varListHostDevices200ResponseDevicesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListHostDevices200ResponseDevicesInner(varListHostDevices200ResponseDevicesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "refId")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "domainId")
+		delete(additionalProperties, "bus")
+		delete(additionalProperties, "slot")
+		delete(additionalProperties, "device")
+		delete(additionalProperties, "vendorId")
+		delete(additionalProperties, "productId")
+		delete(additionalProperties, "functionId")
+		delete(additionalProperties, "uniqueId")
+		delete(additionalProperties, "iommuGroup")
+		delete(additionalProperties, "iommuDeviceCount")
+		delete(additionalProperties, "type")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListHostDevices200ResponseDevicesInner struct {

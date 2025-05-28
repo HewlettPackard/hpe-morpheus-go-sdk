@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -46,6 +45,7 @@ type GetAlerts200ResponseAllOfChecksInnerConfigAnyOf struct {
 	SshUser *string `json:"sshUser,omitempty"`
 	// Password for user, if not using key based authentication
 	SshPassword *string `json:"sshPassword,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _GetAlerts200ResponseAllOfChecksInnerConfigAnyOf GetAlerts200ResponseAllOfChecksInnerConfigAnyOf
@@ -483,6 +483,11 @@ func (o GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) ToMap() (map[string]int
 	if !IsNil(o.SshPassword) {
 		toSerialize["sshPassword"] = o.SshPassword
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -511,15 +516,31 @@ func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) UnmarshalJSON(data []b
 
 	varGetAlerts200ResponseAllOfChecksInnerConfigAnyOf := _GetAlerts200ResponseAllOfChecksInnerConfigAnyOf{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varGetAlerts200ResponseAllOfChecksInnerConfigAnyOf)
+	err = json.Unmarshal(data, &varGetAlerts200ResponseAllOfChecksInnerConfigAnyOf)
 
 	if err != nil {
 		return err
 	}
 
 	*o = GetAlerts200ResponseAllOfChecksInnerConfigAnyOf(varGetAlerts200ResponseAllOfChecksInnerConfigAnyOf)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "webMethod")
+		delete(additionalProperties, "webUrl")
+		delete(additionalProperties, "ignoreSSL")
+		delete(additionalProperties, "checkUser")
+		delete(additionalProperties, "checkPassword")
+		delete(additionalProperties, "textCheckOn")
+		delete(additionalProperties, "webTextMatch")
+		delete(additionalProperties, "tunnelOn")
+		delete(additionalProperties, "sshHost")
+		delete(additionalProperties, "sshPort")
+		delete(additionalProperties, "sshUser")
+		delete(additionalProperties, "sshPassword")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

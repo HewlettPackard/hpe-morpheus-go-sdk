@@ -22,7 +22,10 @@ var _ MappedNullable = &GetBillingServersIdentifier200Response{}
 type GetBillingServersIdentifier200Response struct {
 	BillingInfo *GetBillingServersIdentifier200ResponseAllOfBillingInfo `json:"billingInfo,omitempty"`
 	Success *bool `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetBillingServersIdentifier200Response GetBillingServersIdentifier200Response
 
 // NewGetBillingServersIdentifier200Response instantiates a new GetBillingServersIdentifier200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o GetBillingServersIdentifier200Response) ToMap() (map[string]interface{},
 	if !IsNil(o.Success) {
 		toSerialize["success"] = o.Success
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetBillingServersIdentifier200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetBillingServersIdentifier200Response := _GetBillingServersIdentifier200Response{}
+
+	err = json.Unmarshal(data, &varGetBillingServersIdentifier200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetBillingServersIdentifier200Response(varGetBillingServersIdentifier200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "billingInfo")
+		delete(additionalProperties, "success")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetBillingServersIdentifier200Response struct {

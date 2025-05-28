@@ -22,7 +22,10 @@ var _ MappedNullable = &ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance{
 type ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance struct {
 	UserGroup *ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer `json:"userGroup,omitempty"`
 	NetworkDomain *GetAlerts200ResponseAllOfChecksInnerAccount `json:"networkDomain,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance
 
 // NewListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance instantiates a new ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance) ToMap() (map[st
 	if !IsNil(o.NetworkDomain) {
 		toSerialize["networkDomain"] = o.NetworkDomain
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance) UnmarshalJSON(data []byte) (err error) {
+	varListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance := _ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance{}
+
+	err = json.Unmarshal(data, &varListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance(varListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "userGroup")
+		delete(additionalProperties, "networkDomain")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance struct {

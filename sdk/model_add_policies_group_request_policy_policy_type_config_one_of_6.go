@@ -21,7 +21,10 @@ var _ MappedNullable = &AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf6{}
 // AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf6 - Delayed Delete 
 type AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf6 struct {
 	RemovalAge *string `json:"removalAge,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf6 AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf6
 
 // NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf6 instantiates a new AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf6 object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf6) ToMap() (map[string
 	if !IsNil(o.RemovalAge) {
 		toSerialize["removalAge"] = o.RemovalAge
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf6) UnmarshalJSON(data []byte) (err error) {
+	varAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf6 := _AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf6{}
+
+	err = json.Unmarshal(data, &varAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf6)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf6(varAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf6)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "removalAge")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf6 struct {

@@ -42,7 +42,10 @@ type UpdateClusterRequestCluster struct {
 	AutoRecoverPowerState *bool `json:"autoRecoverPowerState,omitempty"`
 	// Cluster integrations
 	Integrations []UpdateClusterRequestClusterIntegrationsInner `json:"integrations,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateClusterRequestCluster UpdateClusterRequestCluster
 
 // NewUpdateClusterRequestCluster instantiates a new UpdateClusterRequestCluster object
 // This constructor will assign default values to properties that have it defined,
@@ -456,7 +459,43 @@ func (o UpdateClusterRequestCluster) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Integrations) {
 		toSerialize["integrations"] = o.Integrations
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateClusterRequestCluster) UnmarshalJSON(data []byte) (err error) {
+	varUpdateClusterRequestCluster := _UpdateClusterRequestCluster{}
+
+	err = json.Unmarshal(data, &varUpdateClusterRequestCluster)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateClusterRequestCluster(varUpdateClusterRequestCluster)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "useAgent")
+		delete(additionalProperties, "serviceUrl")
+		delete(additionalProperties, "serviceToken")
+		delete(additionalProperties, "refresh")
+		delete(additionalProperties, "managed")
+		delete(additionalProperties, "autoRecoverPowerState")
+		delete(additionalProperties, "integrations")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateClusterRequestCluster struct {

@@ -37,7 +37,10 @@ type ListClouds200ResponseAllOfZonesInnerConfigAnyOf3 struct {
 	ServiceRegistryId *string `json:"serviceRegistryId,omitempty"`
 	ConfigManagementId *string `json:"configManagementId,omitempty"`
 	PrivateKeyHash *string `json:"privateKeyHash,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListClouds200ResponseAllOfZonesInnerConfigAnyOf3 ListClouds200ResponseAllOfZonesInnerConfigAnyOf3
 
 // NewListClouds200ResponseAllOfZonesInnerConfigAnyOf3 instantiates a new ListClouds200ResponseAllOfZonesInnerConfigAnyOf3 object
 // This constructor will assign default values to properties that have it defined,
@@ -661,7 +664,49 @@ func (o ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) ToMap() (map[string]in
 	if !IsNil(o.PrivateKeyHash) {
 		toSerialize["privateKeyHash"] = o.PrivateKeyHash
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) UnmarshalJSON(data []byte) (err error) {
+	varListClouds200ResponseAllOfZonesInnerConfigAnyOf3 := _ListClouds200ResponseAllOfZonesInnerConfigAnyOf3{}
+
+	err = json.Unmarshal(data, &varListClouds200ResponseAllOfZonesInnerConfigAnyOf3)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListClouds200ResponseAllOfZonesInnerConfigAnyOf3(varListClouds200ResponseAllOfZonesInnerConfigAnyOf3)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "privateKey")
+		delete(additionalProperties, "clientEmail")
+		delete(additionalProperties, "projectId")
+		delete(additionalProperties, "googleRegionId")
+		delete(additionalProperties, "importExisting")
+		delete(additionalProperties, "applianceUrl")
+		delete(additionalProperties, "datacenterName")
+		delete(additionalProperties, "networkServer.id")
+		delete(additionalProperties, "networkServer")
+		delete(additionalProperties, "securityServer")
+		delete(additionalProperties, "certificateProvider")
+		delete(additionalProperties, "backupMode")
+		delete(additionalProperties, "replicationMode")
+		delete(additionalProperties, "dnsIntegrationId")
+		delete(additionalProperties, "serviceRegistryId")
+		delete(additionalProperties, "configManagementId")
+		delete(additionalProperties, "privateKeyHash")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListClouds200ResponseAllOfZonesInnerConfigAnyOf3 struct {

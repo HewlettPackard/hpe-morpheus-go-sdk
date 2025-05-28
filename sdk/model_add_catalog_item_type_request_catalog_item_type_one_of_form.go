@@ -22,7 +22,10 @@ var _ MappedNullable = &AddCatalogItemTypeRequestCatalogItemTypeOneOfForm{}
 type AddCatalogItemTypeRequestCatalogItemTypeOneOfForm struct {
 	// Form ID
 	Id *int64 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddCatalogItemTypeRequestCatalogItemTypeOneOfForm AddCatalogItemTypeRequestCatalogItemTypeOneOfForm
 
 // NewAddCatalogItemTypeRequestCatalogItemTypeOneOfForm instantiates a new AddCatalogItemTypeRequestCatalogItemTypeOneOfForm object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o AddCatalogItemTypeRequestCatalogItemTypeOneOfForm) ToMap() (map[string]i
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfForm) UnmarshalJSON(data []byte) (err error) {
+	varAddCatalogItemTypeRequestCatalogItemTypeOneOfForm := _AddCatalogItemTypeRequestCatalogItemTypeOneOfForm{}
+
+	err = json.Unmarshal(data, &varAddCatalogItemTypeRequestCatalogItemTypeOneOfForm)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddCatalogItemTypeRequestCatalogItemTypeOneOfForm(varAddCatalogItemTypeRequestCatalogItemTypeOneOfForm)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfForm struct {

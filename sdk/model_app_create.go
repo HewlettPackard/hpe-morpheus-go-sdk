@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -36,6 +35,7 @@ type AppCreate struct {
 	Environment *string `json:"environment,omitempty"`
 	// Configuration of app elements
 	Tiers map[string]interface{} `json:"tiers,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AppCreate AppCreate
@@ -364,6 +364,11 @@ func (o AppCreate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Tiers) {
 		toSerialize["tiers"] = o.Tiers
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -392,15 +397,28 @@ func (o *AppCreate) UnmarshalJSON(data []byte) (err error) {
 
 	varAppCreate := _AppCreate{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAppCreate)
+	err = json.Unmarshal(data, &varAppCreate)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AppCreate(varAppCreate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "templateId")
+		delete(additionalProperties, "blueprintId")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "group")
+		delete(additionalProperties, "defaultCloud")
+		delete(additionalProperties, "environment")
+		delete(additionalProperties, "tiers")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

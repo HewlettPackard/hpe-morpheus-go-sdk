@@ -23,7 +23,10 @@ type ListUserSettings200Response struct {
 	User *ListUserSettings200ResponseAllOfUser `json:"user,omitempty"`
 	AccessTokens []ListUserSettings200ResponseAllOfAccessTokensInner `json:"accessTokens,omitempty"`
 	Success *bool `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListUserSettings200Response ListUserSettings200Response
 
 // NewListUserSettings200Response instantiates a new ListUserSettings200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o ListUserSettings200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Success) {
 		toSerialize["success"] = o.Success
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListUserSettings200Response) UnmarshalJSON(data []byte) (err error) {
+	varListUserSettings200Response := _ListUserSettings200Response{}
+
+	err = json.Unmarshal(data, &varListUserSettings200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListUserSettings200Response(varListUserSettings200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "user")
+		delete(additionalProperties, "accessTokens")
+		delete(additionalProperties, "success")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListUserSettings200Response struct {

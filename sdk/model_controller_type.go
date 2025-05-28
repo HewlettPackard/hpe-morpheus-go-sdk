@@ -27,7 +27,10 @@ type ControllerType struct {
 	Enabled *bool `json:"enabled,omitempty"`
 	Creatable *bool `json:"creatable,omitempty"`
 	MaxDevices *int64 `json:"maxDevices,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ControllerType ControllerType
 
 // NewControllerType instantiates a new ControllerType object
 // This constructor will assign default values to properties that have it defined,
@@ -301,7 +304,39 @@ func (o ControllerType) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.MaxDevices) {
 		toSerialize["maxDevices"] = o.MaxDevices
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ControllerType) UnmarshalJSON(data []byte) (err error) {
+	varControllerType := _ControllerType{}
+
+	err = json.Unmarshal(data, &varControllerType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ControllerType(varControllerType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "displayOrder")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "creatable")
+		delete(additionalProperties, "maxDevices")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableControllerType struct {

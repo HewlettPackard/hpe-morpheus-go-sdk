@@ -47,7 +47,10 @@ type GetClusterMasters200ResponseMastersInnerInterfacesInner struct {
 	Type *string `json:"type,omitempty"`
 	IpMode *string `json:"ipMode,omitempty"`
 	MacAddress *string `json:"macAddress,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetClusterMasters200ResponseMastersInnerInterfacesInner GetClusterMasters200ResponseMastersInnerInterfacesInner
 
 // NewGetClusterMasters200ResponseMastersInnerInterfacesInner instantiates a new GetClusterMasters200ResponseMastersInnerInterfacesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -1021,7 +1024,59 @@ func (o GetClusterMasters200ResponseMastersInnerInterfacesInner) ToMap() (map[st
 	if !IsNil(o.MacAddress) {
 		toSerialize["macAddress"] = o.MacAddress
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) UnmarshalJSON(data []byte) (err error) {
+	varGetClusterMasters200ResponseMastersInnerInterfacesInner := _GetClusterMasters200ResponseMastersInnerInterfacesInner{}
+
+	err = json.Unmarshal(data, &varGetClusterMasters200ResponseMastersInnerInterfacesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetClusterMasters200ResponseMastersInnerInterfacesInner(varGetClusterMasters200ResponseMastersInnerInterfacesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "refId")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "internalId")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "uniqueId")
+		delete(additionalProperties, "publicIpAddress")
+		delete(additionalProperties, "publicIpv6Address")
+		delete(additionalProperties, "ipAddress")
+		delete(additionalProperties, "ipv6Address")
+		delete(additionalProperties, "ipSubnet")
+		delete(additionalProperties, "ipv6Subnet")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "dhcp")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "poolAssigned")
+		delete(additionalProperties, "primaryInterface")
+		delete(additionalProperties, "network")
+		delete(additionalProperties, "subnet")
+		delete(additionalProperties, "networkGroup")
+		delete(additionalProperties, "networkPosition")
+		delete(additionalProperties, "networkPool")
+		delete(additionalProperties, "networkDomain")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "ipMode")
+		delete(additionalProperties, "macAddress")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetClusterMasters200ResponseMastersInnerInterfacesInner struct {

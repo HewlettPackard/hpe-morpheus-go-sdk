@@ -21,7 +21,10 @@ var _ MappedNullable = &AddCatalogOrderRequest{}
 // AddCatalogOrderRequest struct for AddCatalogOrderRequest
 type AddCatalogOrderRequest struct {
 	Order *AddCatalogOrderRequestOrder `json:"order,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddCatalogOrderRequest AddCatalogOrderRequest
 
 // NewAddCatalogOrderRequest instantiates a new AddCatalogOrderRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o AddCatalogOrderRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Order) {
 		toSerialize["order"] = o.Order
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddCatalogOrderRequest) UnmarshalJSON(data []byte) (err error) {
+	varAddCatalogOrderRequest := _AddCatalogOrderRequest{}
+
+	err = json.Unmarshal(data, &varAddCatalogOrderRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddCatalogOrderRequest(varAddCatalogOrderRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "order")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddCatalogOrderRequest struct {

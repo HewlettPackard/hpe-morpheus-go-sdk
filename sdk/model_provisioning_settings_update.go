@@ -45,7 +45,10 @@ type ProvisioningSettingsUpdate struct {
 	// PXE Boot default root password
 	PxeRootPassword *string `json:"pxeRootPassword,omitempty"`
 	DefaultTemplateType *UpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType `json:"defaultTemplateType,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ProvisioningSettingsUpdate ProvisioningSettingsUpdate
 
 // NewProvisioningSettingsUpdate instantiates a new ProvisioningSettingsUpdate object
 // This constructor will assign default values to properties that have it defined,
@@ -564,7 +567,46 @@ func (o ProvisioningSettingsUpdate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.DefaultTemplateType) {
 		toSerialize["defaultTemplateType"] = o.DefaultTemplateType
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ProvisioningSettingsUpdate) UnmarshalJSON(data []byte) (err error) {
+	varProvisioningSettingsUpdate := _ProvisioningSettingsUpdate{}
+
+	err = json.Unmarshal(data, &varProvisioningSettingsUpdate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ProvisioningSettingsUpdate(varProvisioningSettingsUpdate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "allowZoneSelection")
+		delete(additionalProperties, "allowServerSelection")
+		delete(additionalProperties, "requireEnvironments")
+		delete(additionalProperties, "showPricing")
+		delete(additionalProperties, "hideDatastoreStats")
+		delete(additionalProperties, "crossTenantNamingPolicies")
+		delete(additionalProperties, "reuseSequence")
+		delete(additionalProperties, "cloudInitUsername")
+		delete(additionalProperties, "cloudInitPassword")
+		delete(additionalProperties, "cloudInitKeyPair")
+		delete(additionalProperties, "deployStorageProvider")
+		delete(additionalProperties, "windowsPassword")
+		delete(additionalProperties, "pxeRootPassword")
+		delete(additionalProperties, "defaultTemplateType")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableProvisioningSettingsUpdate struct {

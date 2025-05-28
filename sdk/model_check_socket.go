@@ -34,7 +34,10 @@ type CheckSocket struct {
 	// Severity level threshold for sending notifications.
 	Severity *string `json:"severity,omitempty"`
 	Config *AddChecksRequestCheckOneOf2Config `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _CheckSocket CheckSocket
 
 // NewCheckSocket instantiates a new CheckSocket object
 // This constructor will assign default values to properties that have it defined,
@@ -359,7 +362,40 @@ func (o CheckSocket) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *CheckSocket) UnmarshalJSON(data []byte) (err error) {
+	varCheckSocket := _CheckSocket{}
+
+	err = json.Unmarshal(data, &varCheckSocket)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CheckSocket(varCheckSocket)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "checkType")
+		delete(additionalProperties, "checkInterval")
+		delete(additionalProperties, "inUptime")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "severity")
+		delete(additionalProperties, "config")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCheckSocket struct {

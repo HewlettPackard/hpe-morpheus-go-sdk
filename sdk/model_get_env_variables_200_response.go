@@ -21,7 +21,10 @@ var _ MappedNullable = &GetEnvVariables200Response{}
 // GetEnvVariables200Response struct for GetEnvVariables200Response
 type GetEnvVariables200Response struct {
 	Instance *GetEnvVariables200ResponseInstance `json:"instance,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetEnvVariables200Response GetEnvVariables200Response
 
 // NewGetEnvVariables200Response instantiates a new GetEnvVariables200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o GetEnvVariables200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Instance) {
 		toSerialize["instance"] = o.Instance
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetEnvVariables200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetEnvVariables200Response := _GetEnvVariables200Response{}
+
+	err = json.Unmarshal(data, &varGetEnvVariables200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetEnvVariables200Response(varGetEnvVariables200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "instance")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetEnvVariables200Response struct {

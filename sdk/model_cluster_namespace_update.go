@@ -27,7 +27,10 @@ type ClusterNamespaceUpdate struct {
 	// Namespace active
 	Active *bool `json:"active,omitempty"`
 	Permissions *UpdateClusterNamespaceRequestNamespacePermissions `json:"permissions,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ClusterNamespaceUpdate ClusterNamespaceUpdate
 
 // NewClusterNamespaceUpdate instantiates a new ClusterNamespaceUpdate object
 // This constructor will assign default values to properties that have it defined,
@@ -200,7 +203,36 @@ func (o ClusterNamespaceUpdate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Permissions) {
 		toSerialize["permissions"] = o.Permissions
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ClusterNamespaceUpdate) UnmarshalJSON(data []byte) (err error) {
+	varClusterNamespaceUpdate := _ClusterNamespaceUpdate{}
+
+	err = json.Unmarshal(data, &varClusterNamespaceUpdate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ClusterNamespaceUpdate(varClusterNamespaceUpdate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "permissions")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableClusterNamespaceUpdate struct {

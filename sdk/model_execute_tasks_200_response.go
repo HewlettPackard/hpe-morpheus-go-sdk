@@ -23,7 +23,10 @@ type ExecuteTasks200Response struct {
 	Job *GetAlerts200ResponseAllOfChecksInnerAccount `json:"job,omitempty"`
 	JobExecution *ExecuteTasks200ResponseAllOfJobExecution `json:"jobExecution,omitempty"`
 	Success *bool `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ExecuteTasks200Response ExecuteTasks200Response
 
 // NewExecuteTasks200Response instantiates a new ExecuteTasks200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o ExecuteTasks200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Success) {
 		toSerialize["success"] = o.Success
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ExecuteTasks200Response) UnmarshalJSON(data []byte) (err error) {
+	varExecuteTasks200Response := _ExecuteTasks200Response{}
+
+	err = json.Unmarshal(data, &varExecuteTasks200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ExecuteTasks200Response(varExecuteTasks200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "job")
+		delete(additionalProperties, "jobExecution")
+		delete(additionalProperties, "success")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableExecuteTasks200Response struct {

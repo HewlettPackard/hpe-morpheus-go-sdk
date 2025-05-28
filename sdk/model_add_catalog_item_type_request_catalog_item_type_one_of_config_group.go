@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -25,6 +24,7 @@ type AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroup struct {
 	Id AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroupId `json:"id"`
 	// The group name
 	Name *string `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroup AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroup
@@ -117,6 +117,11 @@ func (o AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroup) ToMap() (map[s
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -144,15 +149,21 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroup) UnmarshalJSON
 
 	varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroup := _AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroup{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroup)
+	err = json.Unmarshal(data, &varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroup)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroup(varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroup)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

@@ -22,7 +22,10 @@ var _ MappedNullable = &AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf12{}
 type AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf12 struct {
 	MaxCores *string `json:"maxCores,omitempty"`
 	ExcludeContainers *string `json:"excludeContainers,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf12 AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf12
 
 // NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf12 instantiates a new AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf12 object
 // This constructor will assign default values to properties that have it defined,
@@ -125,7 +128,34 @@ func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf12) ToMap() (map[strin
 	if !IsNil(o.ExcludeContainers) {
 		toSerialize["excludeContainers"] = o.ExcludeContainers
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf12) UnmarshalJSON(data []byte) (err error) {
+	varAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf12 := _AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf12{}
+
+	err = json.Unmarshal(data, &varAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf12)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf12(varAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf12)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "maxCores")
+		delete(additionalProperties, "excludeContainers")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf12 struct {

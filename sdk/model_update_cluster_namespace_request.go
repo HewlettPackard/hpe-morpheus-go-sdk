@@ -21,7 +21,10 @@ var _ MappedNullable = &UpdateClusterNamespaceRequest{}
 // UpdateClusterNamespaceRequest struct for UpdateClusterNamespaceRequest
 type UpdateClusterNamespaceRequest struct {
 	Namespace *UpdateClusterNamespaceRequestNamespace `json:"namespace,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateClusterNamespaceRequest UpdateClusterNamespaceRequest
 
 // NewUpdateClusterNamespaceRequest instantiates a new UpdateClusterNamespaceRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o UpdateClusterNamespaceRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Namespace) {
 		toSerialize["namespace"] = o.Namespace
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateClusterNamespaceRequest) UnmarshalJSON(data []byte) (err error) {
+	varUpdateClusterNamespaceRequest := _UpdateClusterNamespaceRequest{}
+
+	err = json.Unmarshal(data, &varUpdateClusterNamespaceRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateClusterNamespaceRequest(varUpdateClusterNamespaceRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "namespace")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateClusterNamespaceRequest struct {

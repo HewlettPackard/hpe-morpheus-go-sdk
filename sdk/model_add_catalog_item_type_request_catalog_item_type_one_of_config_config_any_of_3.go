@@ -34,7 +34,10 @@ type AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3 struct {
 	InstanceProfile *string `json:"instanceProfile,omitempty"`
 	// KMS Key ID
 	KmsKeyId *string `json:"kmsKeyId,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3 AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3
 
 // NewAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3 instantiates a new AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3 object
 // This constructor will assign default values to properties that have it defined,
@@ -316,7 +319,39 @@ func (o AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) ToMap()
 	if !IsNil(o.KmsKeyId) {
 		toSerialize["kmsKeyId"] = o.KmsKeyId
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) UnmarshalJSON(data []byte) (err error) {
+	varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3 := _AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3{}
+
+	err = json.Unmarshal(data, &varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3(varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "noAgent")
+		delete(additionalProperties, "isEC2")
+		delete(additionalProperties, "availabilityId")
+		delete(additionalProperties, "securityId")
+		delete(additionalProperties, "publicIpType")
+		delete(additionalProperties, "instanceProfile")
+		delete(additionalProperties, "kmsKeyId")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3 struct {

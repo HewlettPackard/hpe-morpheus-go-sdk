@@ -23,7 +23,10 @@ type ListBootScripts200Response struct {
 	BootScripts []ListBootScripts200ResponseAllOfBootScriptsInner `json:"bootScripts,omitempty"`
 	BootScriptCount *int64 `json:"bootScriptCount,omitempty"`
 	Meta *ListActivity200ResponseAllOfMeta `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListBootScripts200Response ListBootScripts200Response
 
 // NewListBootScripts200Response instantiates a new ListBootScripts200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o ListBootScripts200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Meta) {
 		toSerialize["meta"] = o.Meta
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListBootScripts200Response) UnmarshalJSON(data []byte) (err error) {
+	varListBootScripts200Response := _ListBootScripts200Response{}
+
+	err = json.Unmarshal(data, &varListBootScripts200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListBootScripts200Response(varListBootScripts200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "bootScripts")
+		delete(additionalProperties, "bootScriptCount")
+		delete(additionalProperties, "meta")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListBootScripts200Response struct {

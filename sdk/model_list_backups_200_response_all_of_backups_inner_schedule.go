@@ -26,7 +26,10 @@ type ListBackups200ResponseAllOfBackupsInnerSchedule struct {
 	Name *string `json:"name,omitempty"`
 	// Schedule Cron Expression
 	Cron *string `json:"cron,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListBackups200ResponseAllOfBackupsInnerSchedule ListBackups200ResponseAllOfBackupsInnerSchedule
 
 // NewListBackups200ResponseAllOfBackupsInnerSchedule instantiates a new ListBackups200ResponseAllOfBackupsInnerSchedule object
 // This constructor will assign default values to properties that have it defined,
@@ -160,7 +163,35 @@ func (o ListBackups200ResponseAllOfBackupsInnerSchedule) ToMap() (map[string]int
 	if !IsNil(o.Cron) {
 		toSerialize["cron"] = o.Cron
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListBackups200ResponseAllOfBackupsInnerSchedule) UnmarshalJSON(data []byte) (err error) {
+	varListBackups200ResponseAllOfBackupsInnerSchedule := _ListBackups200ResponseAllOfBackupsInnerSchedule{}
+
+	err = json.Unmarshal(data, &varListBackups200ResponseAllOfBackupsInnerSchedule)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListBackups200ResponseAllOfBackupsInnerSchedule(varListBackups200ResponseAllOfBackupsInnerSchedule)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "cron")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListBackups200ResponseAllOfBackupsInnerSchedule struct {

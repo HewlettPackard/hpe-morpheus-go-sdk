@@ -52,7 +52,10 @@ type GetClusterHistory200ResponseAllOfProcessesInnerEventsInner struct {
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
 	CreatedBy *GetClusterHistory200ResponseAllOfProcessesInnerCreatedBy `json:"createdBy,omitempty"`
 	UpdatedBy *GetClusterHistory200ResponseAllOfProcessesInnerCreatedBy `json:"updatedBy,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetClusterHistory200ResponseAllOfProcessesInnerEventsInner GetClusterHistory200ResponseAllOfProcessesInnerEventsInner
 
 // NewGetClusterHistory200ResponseAllOfProcessesInnerEventsInner instantiates a new GetClusterHistory200ResponseAllOfProcessesInnerEventsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -1166,7 +1169,63 @@ func (o GetClusterHistory200ResponseAllOfProcessesInnerEventsInner) ToMap() (map
 	if !IsNil(o.UpdatedBy) {
 		toSerialize["updatedBy"] = o.UpdatedBy
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetClusterHistory200ResponseAllOfProcessesInnerEventsInner) UnmarshalJSON(data []byte) (err error) {
+	varGetClusterHistory200ResponseAllOfProcessesInnerEventsInner := _GetClusterHistory200ResponseAllOfProcessesInnerEventsInner{}
+
+	err = json.Unmarshal(data, &varGetClusterHistory200ResponseAllOfProcessesInnerEventsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetClusterHistory200ResponseAllOfProcessesInnerEventsInner(varGetClusterHistory200ResponseAllOfProcessesInnerEventsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "processId")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "uniqueId")
+		delete(additionalProperties, "processType")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "refId")
+		delete(additionalProperties, "subType")
+		delete(additionalProperties, "subId")
+		delete(additionalProperties, "zoneId")
+		delete(additionalProperties, "integrationId")
+		delete(additionalProperties, "instanceId")
+		delete(additionalProperties, "containerId")
+		delete(additionalProperties, "serverId")
+		delete(additionalProperties, "containerName")
+		delete(additionalProperties, "displayName")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "reason")
+		delete(additionalProperties, "percent")
+		delete(additionalProperties, "statusEta")
+		delete(additionalProperties, "message")
+		delete(additionalProperties, "output")
+		delete(additionalProperties, "error")
+		delete(additionalProperties, "startDate")
+		delete(additionalProperties, "endDate")
+		delete(additionalProperties, "duration")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "createdBy")
+		delete(additionalProperties, "updatedBy")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetClusterHistory200ResponseAllOfProcessesInnerEventsInner struct {

@@ -36,7 +36,10 @@ type ListBillingAccount200ResponseAllOfBillingInfoZonesInner struct {
 	Snapshots *ListBillingAccount200ResponseAllOfBillingInfoZonesInnerSnapshots `json:"snapshots,omitempty"`
 	Price *float32 `json:"price,omitempty"`
 	Cost *float32 `json:"cost,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListBillingAccount200ResponseAllOfBillingInfoZonesInner ListBillingAccount200ResponseAllOfBillingInfoZonesInner
 
 // NewListBillingAccount200ResponseAllOfBillingInfoZonesInner instantiates a new ListBillingAccount200ResponseAllOfBillingInfoZonesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -590,7 +593,47 @@ func (o ListBillingAccount200ResponseAllOfBillingInfoZonesInner) ToMap() (map[st
 	if !IsNil(o.Cost) {
 		toSerialize["cost"] = o.Cost
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListBillingAccount200ResponseAllOfBillingInfoZonesInner) UnmarshalJSON(data []byte) (err error) {
+	varListBillingAccount200ResponseAllOfBillingInfoZonesInner := _ListBillingAccount200ResponseAllOfBillingInfoZonesInner{}
+
+	err = json.Unmarshal(data, &varListBillingAccount200ResponseAllOfBillingInfoZonesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListBillingAccount200ResponseAllOfBillingInfoZonesInner(varListBillingAccount200ResponseAllOfBillingInfoZonesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "zoneName")
+		delete(additionalProperties, "zoneId")
+		delete(additionalProperties, "zoneUUID")
+		delete(additionalProperties, "zoneCode")
+		delete(additionalProperties, "startDate")
+		delete(additionalProperties, "endDate")
+		delete(additionalProperties, "priceUnit")
+		delete(additionalProperties, "computeServers")
+		delete(additionalProperties, "instances")
+		delete(additionalProperties, "discoveredServers")
+		delete(additionalProperties, "loadBalancers")
+		delete(additionalProperties, "virtualImages")
+		delete(additionalProperties, "snapshots")
+		delete(additionalProperties, "price")
+		delete(additionalProperties, "cost")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListBillingAccount200ResponseAllOfBillingInfoZonesInner struct {

@@ -28,7 +28,10 @@ type GetClusterNamespaces200ResponseAllOfNamespacesInner struct {
 	Status *string `json:"status,omitempty"`
 	Visibility *string `json:"visibility,omitempty"`
 	Active *bool `json:"active,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetClusterNamespaces200ResponseAllOfNamespacesInner GetClusterNamespaces200ResponseAllOfNamespacesInner
 
 // NewGetClusterNamespaces200ResponseAllOfNamespacesInner instantiates a new GetClusterNamespaces200ResponseAllOfNamespacesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -337,7 +340,40 @@ func (o GetClusterNamespaces200ResponseAllOfNamespacesInner) ToMap() (map[string
 	if !IsNil(o.Active) {
 		toSerialize["active"] = o.Active
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetClusterNamespaces200ResponseAllOfNamespacesInner) UnmarshalJSON(data []byte) (err error) {
+	varGetClusterNamespaces200ResponseAllOfNamespacesInner := _GetClusterNamespaces200ResponseAllOfNamespacesInner{}
+
+	err = json.Unmarshal(data, &varGetClusterNamespaces200ResponseAllOfNamespacesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetClusterNamespaces200ResponseAllOfNamespacesInner(varGetClusterNamespaces200ResponseAllOfNamespacesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "regionCode")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "active")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetClusterNamespaces200ResponseAllOfNamespacesInner struct {

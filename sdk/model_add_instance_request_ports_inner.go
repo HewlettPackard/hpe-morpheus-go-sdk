@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -28,6 +27,7 @@ type AddInstanceRequestPortsInner struct {
 	Name *string `json:"name,omitempty"`
 	// The load balancer protocol. HTTP, HTTPS, or TCP.
 	Lb *string `json:"lb,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddInstanceRequestPortsInner AddInstanceRequestPortsInner
@@ -155,6 +155,11 @@ func (o AddInstanceRequestPortsInner) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Lb) {
 		toSerialize["lb"] = o.Lb
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -182,15 +187,22 @@ func (o *AddInstanceRequestPortsInner) UnmarshalJSON(data []byte) (err error) {
 
 	varAddInstanceRequestPortsInner := _AddInstanceRequestPortsInner{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddInstanceRequestPortsInner)
+	err = json.Unmarshal(data, &varAddInstanceRequestPortsInner)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddInstanceRequestPortsInner(varAddInstanceRequestPortsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "port")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "lb")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

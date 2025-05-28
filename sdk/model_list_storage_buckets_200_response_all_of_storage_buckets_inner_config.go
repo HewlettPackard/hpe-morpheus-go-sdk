@@ -26,7 +26,10 @@ type ListStorageBuckets200ResponseAllOfStorageBucketsInnerConfig struct {
 	UseHostCredentials *bool `json:"useHostCredentials,omitempty"`
 	Endpoint *string `json:"endpoint,omitempty"`
 	SecretKeyHash *string `json:"secretKeyHash,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListStorageBuckets200ResponseAllOfStorageBucketsInnerConfig ListStorageBuckets200ResponseAllOfStorageBucketsInnerConfig
 
 // NewListStorageBuckets200ResponseAllOfStorageBucketsInnerConfig instantiates a new ListStorageBuckets200ResponseAllOfStorageBucketsInnerConfig object
 // This constructor will assign default values to properties that have it defined,
@@ -265,7 +268,38 @@ func (o ListStorageBuckets200ResponseAllOfStorageBucketsInnerConfig) ToMap() (ma
 	if !IsNil(o.SecretKeyHash) {
 		toSerialize["secretKeyHash"] = o.SecretKeyHash
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListStorageBuckets200ResponseAllOfStorageBucketsInnerConfig) UnmarshalJSON(data []byte) (err error) {
+	varListStorageBuckets200ResponseAllOfStorageBucketsInnerConfig := _ListStorageBuckets200ResponseAllOfStorageBucketsInnerConfig{}
+
+	err = json.Unmarshal(data, &varListStorageBuckets200ResponseAllOfStorageBucketsInnerConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListStorageBuckets200ResponseAllOfStorageBucketsInnerConfig(varListStorageBuckets200ResponseAllOfStorageBucketsInnerConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "accessKey")
+		delete(additionalProperties, "secretKey")
+		delete(additionalProperties, "stsAssumeRole")
+		delete(additionalProperties, "useHostCredentials")
+		delete(additionalProperties, "endpoint")
+		delete(additionalProperties, "secretKeyHash")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListStorageBuckets200ResponseAllOfStorageBucketsInnerConfig struct {

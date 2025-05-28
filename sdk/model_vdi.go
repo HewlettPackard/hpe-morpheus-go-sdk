@@ -27,7 +27,10 @@ type Vdi struct {
 	Status *string `json:"status,omitempty"`
 	AllocationStatus *string `json:"allocationStatus,omitempty"`
 	Allocation *ListVdi200ResponseAllOfDesktopsInnerAllocation `json:"allocation,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _Vdi Vdi
 
 // NewVdi instantiates a new Vdi object
 // This constructor will assign default values to properties that have it defined,
@@ -301,7 +304,39 @@ func (o Vdi) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Allocation) {
 		toSerialize["allocation"] = o.Allocation
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *Vdi) UnmarshalJSON(data []byte) (err error) {
+	varVdi := _Vdi{}
+
+	err = json.Unmarshal(data, &varVdi)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Vdi(varVdi)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "logo")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "allocationStatus")
+		delete(additionalProperties, "allocation")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableVdi struct {

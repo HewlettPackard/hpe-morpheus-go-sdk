@@ -21,7 +21,10 @@ var _ MappedNullable = &AddAppsRequestGroup{}
 // AddAppsRequestGroup A Map containing the id of the Group
 type AddAppsRequestGroup struct {
 	Id *int64 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddAppsRequestGroup AddAppsRequestGroup
 
 // NewAddAppsRequestGroup instantiates a new AddAppsRequestGroup object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o AddAppsRequestGroup) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddAppsRequestGroup) UnmarshalJSON(data []byte) (err error) {
+	varAddAppsRequestGroup := _AddAppsRequestGroup{}
+
+	err = json.Unmarshal(data, &varAddAppsRequestGroup)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddAppsRequestGroup(varAddAppsRequestGroup)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddAppsRequestGroup struct {

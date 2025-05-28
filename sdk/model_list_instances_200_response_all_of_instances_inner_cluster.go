@@ -23,7 +23,10 @@ type ListInstances200ResponseAllOfInstancesInnerCluster struct {
 	Id *int64 `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
 	Type *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"type,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListInstances200ResponseAllOfInstancesInnerCluster ListInstances200ResponseAllOfInstancesInnerCluster
 
 // NewListInstances200ResponseAllOfInstancesInnerCluster instantiates a new ListInstances200ResponseAllOfInstancesInnerCluster object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o ListInstances200ResponseAllOfInstancesInnerCluster) ToMap() (map[string]
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListInstances200ResponseAllOfInstancesInnerCluster) UnmarshalJSON(data []byte) (err error) {
+	varListInstances200ResponseAllOfInstancesInnerCluster := _ListInstances200ResponseAllOfInstancesInnerCluster{}
+
+	err = json.Unmarshal(data, &varListInstances200ResponseAllOfInstancesInnerCluster)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListInstances200ResponseAllOfInstancesInnerCluster(varListInstances200ResponseAllOfInstancesInnerCluster)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "type")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListInstances200ResponseAllOfInstancesInnerCluster struct {

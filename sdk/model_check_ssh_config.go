@@ -29,7 +29,10 @@ type CheckSshConfig struct {
 	SshUser *string `json:"sshUser,omitempty"`
 	WebTextMatch *string `json:"webTextMatch,omitempty"`
 	CheckPasswordHash *string `json:"checkPasswordHash,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _CheckSshConfig CheckSshConfig
 
 // NewCheckSshConfig instantiates a new CheckSshConfig object
 // This constructor will assign default values to properties that have it defined,
@@ -373,7 +376,41 @@ func (o CheckSshConfig) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CheckPasswordHash) {
 		toSerialize["checkPasswordHash"] = o.CheckPasswordHash
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *CheckSshConfig) UnmarshalJSON(data []byte) (err error) {
+	varCheckSshConfig := _CheckSshConfig{}
+
+	err = json.Unmarshal(data, &varCheckSshConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CheckSshConfig(varCheckSshConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "sshPort")
+		delete(additionalProperties, "checkUser")
+		delete(additionalProperties, "tunnelOn")
+		delete(additionalProperties, "textCheckOn")
+		delete(additionalProperties, "checkPassword")
+		delete(additionalProperties, "sshHost")
+		delete(additionalProperties, "sshUser")
+		delete(additionalProperties, "webTextMatch")
+		delete(additionalProperties, "checkPasswordHash")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCheckSshConfig struct {

@@ -22,7 +22,10 @@ var _ MappedNullable = &UpdateCatalogItemType200Response{}
 type UpdateCatalogItemType200Response struct {
 	CatalogItemType *ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInner `json:"catalogItemType,omitempty"`
 	Success *bool `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateCatalogItemType200Response UpdateCatalogItemType200Response
 
 // NewUpdateCatalogItemType200Response instantiates a new UpdateCatalogItemType200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o UpdateCatalogItemType200Response) ToMap() (map[string]interface{}, error
 	if !IsNil(o.Success) {
 		toSerialize["success"] = o.Success
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateCatalogItemType200Response) UnmarshalJSON(data []byte) (err error) {
+	varUpdateCatalogItemType200Response := _UpdateCatalogItemType200Response{}
+
+	err = json.Unmarshal(data, &varUpdateCatalogItemType200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateCatalogItemType200Response(varUpdateCatalogItemType200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "catalogItemType")
+		delete(additionalProperties, "success")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateCatalogItemType200Response struct {

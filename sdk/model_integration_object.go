@@ -26,7 +26,10 @@ type IntegrationObject struct {
 	RefType *string `json:"refType,omitempty"`
 	RefId *int64 `json:"refId,omitempty"`
 	Layout *ListIntegrationObjects200ResponseObjectsInnerLayout `json:"layout,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _IntegrationObject IntegrationObject
 
 // NewIntegrationObject instantiates a new IntegrationObject object
 // This constructor will assign default values to properties that have it defined,
@@ -265,7 +268,38 @@ func (o IntegrationObject) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Layout) {
 		toSerialize["layout"] = o.Layout
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *IntegrationObject) UnmarshalJSON(data []byte) (err error) {
+	varIntegrationObject := _IntegrationObject{}
+
+	err = json.Unmarshal(data, &varIntegrationObject)
+
+	if err != nil {
+		return err
+	}
+
+	*o = IntegrationObject(varIntegrationObject)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "refId")
+		delete(additionalProperties, "layout")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableIntegrationObject struct {

@@ -25,7 +25,10 @@ type Alarm struct {
 	Name *string `json:"name,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _Alarm Alarm
 
 // NewAlarm instantiates a new Alarm object
 // This constructor will assign default values to properties that have it defined,
@@ -194,7 +197,36 @@ func (o Alarm) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *Alarm) UnmarshalJSON(data []byte) (err error) {
+	varAlarm := _Alarm{}
+
+	err = json.Unmarshal(data, &varAlarm)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Alarm(varAlarm)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAlarm struct {

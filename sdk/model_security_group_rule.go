@@ -41,7 +41,10 @@ type SecurityGroupRule struct {
 	DestinationTier *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"destinationTier,omitempty"`
 	ExternalId *string `json:"externalId,omitempty"`
 	Enabled *string `json:"enabled,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _SecurityGroupRule SecurityGroupRule
 
 // NewSecurityGroupRule instantiates a new SecurityGroupRule object
 // This constructor will assign default values to properties that have it defined,
@@ -805,7 +808,53 @@ func (o SecurityGroupRule) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *SecurityGroupRule) UnmarshalJSON(data []byte) (err error) {
+	varSecurityGroupRule := _SecurityGroupRule{}
+
+	err = json.Unmarshal(data, &varSecurityGroupRule)
+
+	if err != nil {
+		return err
+	}
+
+	*o = SecurityGroupRule(varSecurityGroupRule)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "ruleType")
+		delete(additionalProperties, "customRule")
+		delete(additionalProperties, "instanceTypeId")
+		delete(additionalProperties, "direction")
+		delete(additionalProperties, "policy")
+		delete(additionalProperties, "sourceType")
+		delete(additionalProperties, "source")
+		delete(additionalProperties, "sourceGroup")
+		delete(additionalProperties, "sourceTier")
+		delete(additionalProperties, "portRange")
+		delete(additionalProperties, "sourcePortRange")
+		delete(additionalProperties, "destinationPortRange")
+		delete(additionalProperties, "protocol")
+		delete(additionalProperties, "destinationType")
+		delete(additionalProperties, "destination")
+		delete(additionalProperties, "destinationGroup")
+		delete(additionalProperties, "destinationTier")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "enabled")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableSecurityGroupRule struct {

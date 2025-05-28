@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -23,6 +22,7 @@ var _ MappedNullable = &ExecuteBackupRestoreRequest{}
 // ExecuteBackupRestoreRequest struct for ExecuteBackupRestoreRequest
 type ExecuteBackupRestoreRequest struct {
 	Restore ExecuteBackupRestoreRequestRestore `json:"restore"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ExecuteBackupRestoreRequest ExecuteBackupRestoreRequest
@@ -80,6 +80,11 @@ func (o ExecuteBackupRestoreRequest) MarshalJSON() ([]byte, error) {
 func (o ExecuteBackupRestoreRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["restore"] = o.Restore
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -107,15 +112,20 @@ func (o *ExecuteBackupRestoreRequest) UnmarshalJSON(data []byte) (err error) {
 
 	varExecuteBackupRestoreRequest := _ExecuteBackupRestoreRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varExecuteBackupRestoreRequest)
+	err = json.Unmarshal(data, &varExecuteBackupRestoreRequest)
 
 	if err != nil {
 		return err
 	}
 
 	*o = ExecuteBackupRestoreRequest(varExecuteBackupRestoreRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "restore")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

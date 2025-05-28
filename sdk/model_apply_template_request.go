@@ -26,7 +26,10 @@ type ApplyTemplateRequest struct {
 	SpecTemplate *string `json:"specTemplate,omitempty"`
 	// Yaml of template to apply to cluster
 	SpecYaml *string `json:"specYaml,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ApplyTemplateRequest ApplyTemplateRequest
 
 // NewApplyTemplateRequest instantiates a new ApplyTemplateRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -160,7 +163,35 @@ func (o ApplyTemplateRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.SpecYaml) {
 		toSerialize["specYaml"] = o.SpecYaml
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ApplyTemplateRequest) UnmarshalJSON(data []byte) (err error) {
+	varApplyTemplateRequest := _ApplyTemplateRequest{}
+
+	err = json.Unmarshal(data, &varApplyTemplateRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ApplyTemplateRequest(varApplyTemplateRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "serviceUrl")
+		delete(additionalProperties, "specTemplate")
+		delete(additionalProperties, "specYaml")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableApplyTemplateRequest struct {

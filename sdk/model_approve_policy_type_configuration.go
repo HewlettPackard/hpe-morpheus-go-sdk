@@ -21,7 +21,10 @@ var _ MappedNullable = &ApprovePolicyTypeConfiguration{}
 // ApprovePolicyTypeConfiguration Configuration settings for the following policy types: - Approve Delete - Approve Provisiong - Approve Reconfigure 
 type ApprovePolicyTypeConfiguration struct {
 	AccountIntegrationId *string `json:"accountIntegrationId,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ApprovePolicyTypeConfiguration ApprovePolicyTypeConfiguration
 
 // NewApprovePolicyTypeConfiguration instantiates a new ApprovePolicyTypeConfiguration object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o ApprovePolicyTypeConfiguration) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.AccountIntegrationId) {
 		toSerialize["accountIntegrationId"] = o.AccountIntegrationId
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ApprovePolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
+	varApprovePolicyTypeConfiguration := _ApprovePolicyTypeConfiguration{}
+
+	err = json.Unmarshal(data, &varApprovePolicyTypeConfiguration)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ApprovePolicyTypeConfiguration(varApprovePolicyTypeConfiguration)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "accountIntegrationId")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableApprovePolicyTypeConfiguration struct {

@@ -21,7 +21,10 @@ var _ MappedNullable = &GetNetworkPoolIps410Response{}
 // GetNetworkPoolIps410Response struct for GetNetworkPoolIps410Response
 type GetNetworkPoolIps410Response struct {
 	Msg *string `json:"msg,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetNetworkPoolIps410Response GetNetworkPoolIps410Response
 
 // NewGetNetworkPoolIps410Response instantiates a new GetNetworkPoolIps410Response object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o GetNetworkPoolIps410Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Msg) {
 		toSerialize["msg"] = o.Msg
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetNetworkPoolIps410Response) UnmarshalJSON(data []byte) (err error) {
+	varGetNetworkPoolIps410Response := _GetNetworkPoolIps410Response{}
+
+	err = json.Unmarshal(data, &varGetNetworkPoolIps410Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetNetworkPoolIps410Response(varGetNetworkPoolIps410Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "msg")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetNetworkPoolIps410Response struct {

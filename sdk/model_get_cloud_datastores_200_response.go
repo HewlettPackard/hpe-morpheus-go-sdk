@@ -21,7 +21,10 @@ var _ MappedNullable = &GetCloudDatastores200Response{}
 // GetCloudDatastores200Response struct for GetCloudDatastores200Response
 type GetCloudDatastores200Response struct {
 	Datastore *ListCloudDatastores200ResponseAllOfDatastoresInner `json:"datastore,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetCloudDatastores200Response GetCloudDatastores200Response
 
 // NewGetCloudDatastores200Response instantiates a new GetCloudDatastores200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o GetCloudDatastores200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Datastore) {
 		toSerialize["datastore"] = o.Datastore
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetCloudDatastores200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetCloudDatastores200Response := _GetCloudDatastores200Response{}
+
+	err = json.Unmarshal(data, &varGetCloudDatastores200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetCloudDatastores200Response(varGetCloudDatastores200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "datastore")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetCloudDatastores200Response struct {

@@ -21,7 +21,10 @@ var _ MappedNullable = &CatalogCartItemCreate{}
 // CatalogCartItemCreate struct for CatalogCartItemCreate
 type CatalogCartItemCreate struct {
 	Item *AddCatalogCartItemRequestItem `json:"item,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _CatalogCartItemCreate CatalogCartItemCreate
 
 // NewCatalogCartItemCreate instantiates a new CatalogCartItemCreate object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o CatalogCartItemCreate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Item) {
 		toSerialize["item"] = o.Item
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *CatalogCartItemCreate) UnmarshalJSON(data []byte) (err error) {
+	varCatalogCartItemCreate := _CatalogCartItemCreate{}
+
+	err = json.Unmarshal(data, &varCatalogCartItemCreate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CatalogCartItemCreate(varCatalogCartItemCreate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "item")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCatalogCartItemCreate struct {

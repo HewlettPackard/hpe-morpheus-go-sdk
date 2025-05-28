@@ -32,7 +32,10 @@ type DeploymentVersion struct {
 	Status *string `json:"status,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _DeploymentVersion DeploymentVersion
 
 // NewDeploymentVersion instantiates a new DeploymentVersion object
 // This constructor will assign default values to properties that have it defined,
@@ -446,7 +449,43 @@ func (o DeploymentVersion) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *DeploymentVersion) UnmarshalJSON(data []byte) (err error) {
+	varDeploymentVersion := _DeploymentVersion{}
+
+	err = json.Unmarshal(data, &varDeploymentVersion)
+
+	if err != nil {
+		return err
+	}
+
+	*o = DeploymentVersion(varDeploymentVersion)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "deployType")
+		delete(additionalProperties, "deploymentId")
+		delete(additionalProperties, "fetchUrl")
+		delete(additionalProperties, "gitUrl")
+		delete(additionalProperties, "gitRef")
+		delete(additionalProperties, "userVersion")
+		delete(additionalProperties, "version")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableDeploymentVersion struct {

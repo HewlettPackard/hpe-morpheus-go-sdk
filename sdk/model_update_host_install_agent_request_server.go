@@ -25,7 +25,10 @@ type UpdateHostInstallAgentRequestServer struct {
 	// SSH password to use, if not specified the account public key can be used
 	SshPassword *string `json:"sshPassword,omitempty"`
 	ServerOs *UpdateHostInstallAgentRequestServerServerOs `json:"serverOs,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateHostInstallAgentRequestServer UpdateHostInstallAgentRequestServer
 
 // NewUpdateHostInstallAgentRequestServer instantiates a new UpdateHostInstallAgentRequestServer object
 // This constructor will assign default values to properties that have it defined,
@@ -159,7 +162,35 @@ func (o UpdateHostInstallAgentRequestServer) ToMap() (map[string]interface{}, er
 	if !IsNil(o.ServerOs) {
 		toSerialize["serverOs"] = o.ServerOs
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateHostInstallAgentRequestServer) UnmarshalJSON(data []byte) (err error) {
+	varUpdateHostInstallAgentRequestServer := _UpdateHostInstallAgentRequestServer{}
+
+	err = json.Unmarshal(data, &varUpdateHostInstallAgentRequestServer)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateHostInstallAgentRequestServer(varUpdateHostInstallAgentRequestServer)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "sshUsername")
+		delete(additionalProperties, "sshPassword")
+		delete(additionalProperties, "serverOs")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateHostInstallAgentRequestServer struct {

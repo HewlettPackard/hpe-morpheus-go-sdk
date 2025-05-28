@@ -21,7 +21,10 @@ var _ MappedNullable = &GetLayout200Response{}
 // GetLayout200Response struct for GetLayout200Response
 type GetLayout200Response struct {
 	InstanceTypeLayout *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner `json:"instanceTypeLayout,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetLayout200Response GetLayout200Response
 
 // NewGetLayout200Response instantiates a new GetLayout200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o GetLayout200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.InstanceTypeLayout) {
 		toSerialize["instanceTypeLayout"] = o.InstanceTypeLayout
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetLayout200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetLayout200Response := _GetLayout200Response{}
+
+	err = json.Unmarshal(data, &varGetLayout200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetLayout200Response(varGetLayout200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "instanceTypeLayout")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetLayout200Response struct {

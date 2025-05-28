@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -39,6 +38,7 @@ type AddBlueprintRequestOneOf1CloudFormation struct {
 	InstallAgent *bool `json:"installAgent,omitempty"`
 	// Cloud Init Enabled
 	CloudInitEnabled *bool `json:"cloudInitEnabled,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddBlueprintRequestOneOf1CloudFormation AddBlueprintRequestOneOf1CloudFormation
@@ -396,6 +396,11 @@ func (o AddBlueprintRequestOneOf1CloudFormation) ToMap() (map[string]interface{}
 	if !IsNil(o.CloudInitEnabled) {
 		toSerialize["cloudInitEnabled"] = o.CloudInitEnabled
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -423,15 +428,28 @@ func (o *AddBlueprintRequestOneOf1CloudFormation) UnmarshalJSON(data []byte) (er
 
 	varAddBlueprintRequestOneOf1CloudFormation := _AddBlueprintRequestOneOf1CloudFormation{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddBlueprintRequestOneOf1CloudFormation)
+	err = json.Unmarshal(data, &varAddBlueprintRequestOneOf1CloudFormation)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddBlueprintRequestOneOf1CloudFormation(varAddBlueprintRequestOneOf1CloudFormation)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "configType")
+		delete(additionalProperties, "json")
+		delete(additionalProperties, "yaml")
+		delete(additionalProperties, "git")
+		delete(additionalProperties, "IAM")
+		delete(additionalProperties, "CAPABILITY_NAMED_IAM")
+		delete(additionalProperties, "CAPABILITY_AUTO_EXPAND")
+		delete(additionalProperties, "installAgent")
+		delete(additionalProperties, "cloudInitEnabled")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }
