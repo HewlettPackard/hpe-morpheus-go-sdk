@@ -71,7 +71,7 @@ func (a *SecurityScansAPIService) GetSecurityScansExecute(r ApiGetSecurityScansR
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityScansAPIService.GetSecurityScans")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/security-scans/{id}"
@@ -124,16 +124,14 @@ func (a *SecurityScansAPIService) GetSecurityScansExecute(r ApiGetSecurityScansR
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -141,10 +139,9 @@ func (a *SecurityScansAPIService) GetSecurityScansExecute(r ApiGetSecurityScansR
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -154,7 +151,7 @@ func (a *SecurityScansAPIService) GetSecurityScansExecute(r ApiGetSecurityScansR
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -255,7 +252,7 @@ func (a *SecurityScansAPIService) ListSecurityScansExecute(r ApiListSecurityScan
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityScansAPIService.ListSecurityScans")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/security-scans"
@@ -340,16 +337,14 @@ func (a *SecurityScansAPIService) ListSecurityScansExecute(r ApiListSecurityScan
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -357,10 +352,9 @@ func (a *SecurityScansAPIService) ListSecurityScansExecute(r ApiListSecurityScan
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -370,7 +364,7 @@ func (a *SecurityScansAPIService) ListSecurityScansExecute(r ApiListSecurityScan
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

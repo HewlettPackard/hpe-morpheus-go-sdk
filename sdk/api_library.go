@@ -68,7 +68,7 @@ func (a *LibraryAPIService) AddFileTemplateExecute(r ApiAddFileTemplateRequest) 
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.AddFileTemplate")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/library/container-templates"
@@ -116,16 +116,14 @@ func (a *LibraryAPIService) AddFileTemplateExecute(r ApiAddFileTemplateRequest) 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -133,10 +131,9 @@ func (a *LibraryAPIService) AddFileTemplateExecute(r ApiAddFileTemplateRequest) 
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -146,7 +143,7 @@ func (a *LibraryAPIService) AddFileTemplateExecute(r ApiAddFileTemplateRequest) 
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -196,7 +193,7 @@ func (a *LibraryAPIService) AddInstanceTypeExecute(r ApiAddInstanceTypeRequest) 
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.AddInstanceType")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/library/instance-types"
@@ -244,16 +241,14 @@ func (a *LibraryAPIService) AddInstanceTypeExecute(r ApiAddInstanceTypeRequest) 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -261,10 +256,9 @@ func (a *LibraryAPIService) AddInstanceTypeExecute(r ApiAddInstanceTypeRequest) 
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -274,7 +268,7 @@ func (a *LibraryAPIService) AddInstanceTypeExecute(r ApiAddInstanceTypeRequest) 
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -327,7 +321,7 @@ func (a *LibraryAPIService) AddLayoutExecute(r ApiAddLayoutRequest) (*AddCluster
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.AddLayout")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/library/instance-types/{instanceTypeId}/layouts"
@@ -376,16 +370,14 @@ func (a *LibraryAPIService) AddLayoutExecute(r ApiAddLayoutRequest) (*AddCluster
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -393,10 +385,9 @@ func (a *LibraryAPIService) AddLayoutExecute(r ApiAddLayoutRequest) (*AddCluster
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -406,7 +397,7 @@ func (a *LibraryAPIService) AddLayoutExecute(r ApiAddLayoutRequest) (*AddCluster
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -456,7 +447,7 @@ func (a *LibraryAPIService) AddNodeTypeExecute(r ApiAddNodeTypeRequest) (*AddNod
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.AddNodeType")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/library/container-types"
@@ -504,16 +495,14 @@ func (a *LibraryAPIService) AddNodeTypeExecute(r ApiAddNodeTypeRequest) (*AddNod
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -521,10 +510,9 @@ func (a *LibraryAPIService) AddNodeTypeExecute(r ApiAddNodeTypeRequest) (*AddNod
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -534,7 +522,7 @@ func (a *LibraryAPIService) AddNodeTypeExecute(r ApiAddNodeTypeRequest) (*AddNod
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -584,7 +572,7 @@ func (a *LibraryAPIService) AddOptionFormExecute(r ApiAddOptionFormRequest) (*De
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.AddOptionForm")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/library/option-type-forms"
@@ -632,16 +620,14 @@ func (a *LibraryAPIService) AddOptionFormExecute(r ApiAddOptionFormRequest) (*De
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -649,10 +635,9 @@ func (a *LibraryAPIService) AddOptionFormExecute(r ApiAddOptionFormRequest) (*De
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -662,7 +647,7 @@ func (a *LibraryAPIService) AddOptionFormExecute(r ApiAddOptionFormRequest) (*De
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -712,7 +697,7 @@ func (a *LibraryAPIService) AddOptionListExecute(r ApiAddOptionListRequest) (*De
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.AddOptionList")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/library/option-type-lists"
@@ -760,16 +745,14 @@ func (a *LibraryAPIService) AddOptionListExecute(r ApiAddOptionListRequest) (*De
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -777,10 +760,9 @@ func (a *LibraryAPIService) AddOptionListExecute(r ApiAddOptionListRequest) (*De
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -790,7 +772,7 @@ func (a *LibraryAPIService) AddOptionListExecute(r ApiAddOptionListRequest) (*De
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -840,7 +822,7 @@ func (a *LibraryAPIService) AddOptionTypeExecute(r ApiAddOptionTypeRequest) (*Ad
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.AddOptionType")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/library/option-types"
@@ -888,16 +870,14 @@ func (a *LibraryAPIService) AddOptionTypeExecute(r ApiAddOptionTypeRequest) (*Ad
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -905,10 +885,9 @@ func (a *LibraryAPIService) AddOptionTypeExecute(r ApiAddOptionTypeRequest) (*Ad
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -918,7 +897,7 @@ func (a *LibraryAPIService) AddOptionTypeExecute(r ApiAddOptionTypeRequest) (*Ad
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -966,7 +945,7 @@ func (a *LibraryAPIService) AddOsTypeImageExecute(r ApiAddOsTypeImageRequest) (*
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.AddOsTypeImage")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/library/operating-systems/os-types/create-image"
@@ -1014,16 +993,14 @@ func (a *LibraryAPIService) AddOsTypeImageExecute(r ApiAddOsTypeImageRequest) (*
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
@@ -1031,10 +1008,9 @@ func (a *LibraryAPIService) AddOsTypeImageExecute(r ApiAddOsTypeImageRequest) (*
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarHTTPResponse, newErr
@@ -1085,7 +1061,7 @@ func (a *LibraryAPIService) AddOsTypesExecute(r ApiAddOsTypesRequest) (*AddClust
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.AddOsTypes")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/library/operating-systems/os-types"
@@ -1133,16 +1109,14 @@ func (a *LibraryAPIService) AddOsTypesExecute(r ApiAddOsTypesRequest) (*AddClust
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1150,10 +1124,9 @@ func (a *LibraryAPIService) AddOsTypesExecute(r ApiAddOsTypesRequest) (*AddClust
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1163,7 +1136,7 @@ func (a *LibraryAPIService) AddOsTypesExecute(r ApiAddOsTypesRequest) (*AddClust
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1213,7 +1186,7 @@ func (a *LibraryAPIService) AddScriptExecute(r ApiAddScriptRequest) (*AddScript2
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.AddScript")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/library/container-scripts"
@@ -1261,16 +1234,14 @@ func (a *LibraryAPIService) AddScriptExecute(r ApiAddScriptRequest) (*AddScript2
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1278,10 +1249,9 @@ func (a *LibraryAPIService) AddScriptExecute(r ApiAddScriptRequest) (*AddScript2
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1291,7 +1261,7 @@ func (a *LibraryAPIService) AddScriptExecute(r ApiAddScriptRequest) (*AddScript2
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1341,7 +1311,7 @@ func (a *LibraryAPIService) AddSpecTemplateExecute(r ApiAddSpecTemplateRequest) 
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.AddSpecTemplate")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/library/spec-templates"
@@ -1389,16 +1359,14 @@ func (a *LibraryAPIService) AddSpecTemplateExecute(r ApiAddSpecTemplateRequest) 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1406,10 +1374,9 @@ func (a *LibraryAPIService) AddSpecTemplateExecute(r ApiAddSpecTemplateRequest) 
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1419,7 +1386,7 @@ func (a *LibraryAPIService) AddSpecTemplateExecute(r ApiAddSpecTemplateRequest) 
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1469,7 +1436,7 @@ func (a *LibraryAPIService) AddVirtualImageExecute(r ApiAddVirtualImageRequest) 
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.AddVirtualImage")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/virtual-images"
@@ -1517,16 +1484,14 @@ func (a *LibraryAPIService) AddVirtualImageExecute(r ApiAddVirtualImageRequest) 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1534,10 +1499,9 @@ func (a *LibraryAPIService) AddVirtualImageExecute(r ApiAddVirtualImageRequest) 
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1547,7 +1511,7 @@ func (a *LibraryAPIService) AddVirtualImageExecute(r ApiAddVirtualImageRequest) 
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1614,7 +1578,7 @@ func (a *LibraryAPIService) AddVirtualImageFileExecute(r ApiAddVirtualImageFileR
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.AddVirtualImageFile")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/virtual-images/{virtualImageId}/upload"
@@ -1669,16 +1633,14 @@ func (a *LibraryAPIService) AddVirtualImageFileExecute(r ApiAddVirtualImageFileR
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1686,10 +1648,9 @@ func (a *LibraryAPIService) AddVirtualImageFileExecute(r ApiAddVirtualImageFileR
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1699,7 +1660,7 @@ func (a *LibraryAPIService) AddVirtualImageFileExecute(r ApiAddVirtualImageFileR
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1752,7 +1713,7 @@ func (a *LibraryAPIService) ConvertImageExecute(r ApiConvertImageRequest) (*Dele
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.ConvertImage")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/virtual-images/{virtualImageId}/convert"
@@ -1801,16 +1762,14 @@ func (a *LibraryAPIService) ConvertImageExecute(r ApiConvertImageRequest) (*Dele
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1818,10 +1777,9 @@ func (a *LibraryAPIService) ConvertImageExecute(r ApiConvertImageRequest) (*Dele
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1831,7 +1789,7 @@ func (a *LibraryAPIService) ConvertImageExecute(r ApiConvertImageRequest) (*Dele
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1878,7 +1836,7 @@ func (a *LibraryAPIService) DeleteFileTemplateExecute(r ApiDeleteFileTemplateReq
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.DeleteFileTemplate")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/library/container-templates/{id}"
@@ -1925,16 +1883,14 @@ func (a *LibraryAPIService) DeleteFileTemplateExecute(r ApiDeleteFileTemplateReq
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1942,10 +1898,9 @@ func (a *LibraryAPIService) DeleteFileTemplateExecute(r ApiDeleteFileTemplateReq
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1955,7 +1910,7 @@ func (a *LibraryAPIService) DeleteFileTemplateExecute(r ApiDeleteFileTemplateReq
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2002,7 +1957,7 @@ func (a *LibraryAPIService) DeleteInstanceTypeExecute(r ApiDeleteInstanceTypeReq
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.DeleteInstanceType")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/library/instance-types/{instanceTypeId}"
@@ -2049,16 +2004,14 @@ func (a *LibraryAPIService) DeleteInstanceTypeExecute(r ApiDeleteInstanceTypeReq
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -2066,10 +2019,9 @@ func (a *LibraryAPIService) DeleteInstanceTypeExecute(r ApiDeleteInstanceTypeReq
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -2079,7 +2031,7 @@ func (a *LibraryAPIService) DeleteInstanceTypeExecute(r ApiDeleteInstanceTypeReq
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2126,7 +2078,7 @@ func (a *LibraryAPIService) DeleteLayoutExecute(r ApiDeleteLayoutRequest) (*Dele
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.DeleteLayout")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/library/layouts/{id}"
@@ -2173,16 +2125,14 @@ func (a *LibraryAPIService) DeleteLayoutExecute(r ApiDeleteLayoutRequest) (*Dele
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -2190,10 +2140,9 @@ func (a *LibraryAPIService) DeleteLayoutExecute(r ApiDeleteLayoutRequest) (*Dele
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -2203,7 +2152,7 @@ func (a *LibraryAPIService) DeleteLayoutExecute(r ApiDeleteLayoutRequest) (*Dele
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2250,7 +2199,7 @@ func (a *LibraryAPIService) DeleteNodeTypeExecute(r ApiDeleteNodeTypeRequest) (*
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.DeleteNodeType")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/library/container-types/{id}"
@@ -2297,16 +2246,14 @@ func (a *LibraryAPIService) DeleteNodeTypeExecute(r ApiDeleteNodeTypeRequest) (*
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -2314,10 +2261,9 @@ func (a *LibraryAPIService) DeleteNodeTypeExecute(r ApiDeleteNodeTypeRequest) (*
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -2327,7 +2273,7 @@ func (a *LibraryAPIService) DeleteNodeTypeExecute(r ApiDeleteNodeTypeRequest) (*
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2374,7 +2320,7 @@ func (a *LibraryAPIService) DeleteOptionFormExecute(r ApiDeleteOptionFormRequest
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.DeleteOptionForm")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/library/option-type-forms/{id}"
@@ -2421,16 +2367,14 @@ func (a *LibraryAPIService) DeleteOptionFormExecute(r ApiDeleteOptionFormRequest
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -2438,10 +2382,9 @@ func (a *LibraryAPIService) DeleteOptionFormExecute(r ApiDeleteOptionFormRequest
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -2451,7 +2394,7 @@ func (a *LibraryAPIService) DeleteOptionFormExecute(r ApiDeleteOptionFormRequest
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2498,7 +2441,7 @@ func (a *LibraryAPIService) DeleteOptionListExecute(r ApiDeleteOptionListRequest
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.DeleteOptionList")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/library/option-type-lists/{id}"
@@ -2545,16 +2488,14 @@ func (a *LibraryAPIService) DeleteOptionListExecute(r ApiDeleteOptionListRequest
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -2562,10 +2503,9 @@ func (a *LibraryAPIService) DeleteOptionListExecute(r ApiDeleteOptionListRequest
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -2575,7 +2515,7 @@ func (a *LibraryAPIService) DeleteOptionListExecute(r ApiDeleteOptionListRequest
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2622,7 +2562,7 @@ func (a *LibraryAPIService) DeleteOptionTypeExecute(r ApiDeleteOptionTypeRequest
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.DeleteOptionType")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/library/option-types/{id}"
@@ -2669,16 +2609,14 @@ func (a *LibraryAPIService) DeleteOptionTypeExecute(r ApiDeleteOptionTypeRequest
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -2686,10 +2624,9 @@ func (a *LibraryAPIService) DeleteOptionTypeExecute(r ApiDeleteOptionTypeRequest
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -2699,7 +2636,7 @@ func (a *LibraryAPIService) DeleteOptionTypeExecute(r ApiDeleteOptionTypeRequest
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2746,7 +2683,7 @@ func (a *LibraryAPIService) DeleteOsTypeExecute(r ApiDeleteOsTypeRequest) (*Dele
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.DeleteOsType")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/library/operating-systems/os-types/{id}"
@@ -2793,16 +2730,14 @@ func (a *LibraryAPIService) DeleteOsTypeExecute(r ApiDeleteOsTypeRequest) (*Dele
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -2810,10 +2745,9 @@ func (a *LibraryAPIService) DeleteOsTypeExecute(r ApiDeleteOsTypeRequest) (*Dele
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -2823,7 +2757,7 @@ func (a *LibraryAPIService) DeleteOsTypeExecute(r ApiDeleteOsTypeRequest) (*Dele
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2870,7 +2804,7 @@ func (a *LibraryAPIService) DeleteOsTypeImageExecute(r ApiDeleteOsTypeImageReque
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.DeleteOsTypeImage")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/library/operating-systems/os-types/images/{id}"
@@ -2917,16 +2851,14 @@ func (a *LibraryAPIService) DeleteOsTypeImageExecute(r ApiDeleteOsTypeImageReque
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -2934,10 +2866,9 @@ func (a *LibraryAPIService) DeleteOsTypeImageExecute(r ApiDeleteOsTypeImageReque
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -2947,7 +2878,7 @@ func (a *LibraryAPIService) DeleteOsTypeImageExecute(r ApiDeleteOsTypeImageReque
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2994,7 +2925,7 @@ func (a *LibraryAPIService) DeleteScriptExecute(r ApiDeleteScriptRequest) (*Dele
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.DeleteScript")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/library/container-scripts/{id}"
@@ -3041,16 +2972,14 @@ func (a *LibraryAPIService) DeleteScriptExecute(r ApiDeleteScriptRequest) (*Dele
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -3058,10 +2987,9 @@ func (a *LibraryAPIService) DeleteScriptExecute(r ApiDeleteScriptRequest) (*Dele
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -3071,7 +2999,7 @@ func (a *LibraryAPIService) DeleteScriptExecute(r ApiDeleteScriptRequest) (*Dele
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3118,7 +3046,7 @@ func (a *LibraryAPIService) DeleteSpecTemplateExecute(r ApiDeleteSpecTemplateReq
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.DeleteSpecTemplate")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/library/spec-templates/{id}"
@@ -3165,16 +3093,14 @@ func (a *LibraryAPIService) DeleteSpecTemplateExecute(r ApiDeleteSpecTemplateReq
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -3182,10 +3108,9 @@ func (a *LibraryAPIService) DeleteSpecTemplateExecute(r ApiDeleteSpecTemplateReq
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -3195,7 +3120,7 @@ func (a *LibraryAPIService) DeleteSpecTemplateExecute(r ApiDeleteSpecTemplateReq
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3245,7 +3170,7 @@ func (a *LibraryAPIService) GetFileTemplateExecute(r ApiGetFileTemplateRequest) 
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetFileTemplate")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/library/container-templates/{id}"
@@ -3292,16 +3217,14 @@ func (a *LibraryAPIService) GetFileTemplateExecute(r ApiGetFileTemplateRequest) 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -3309,10 +3232,9 @@ func (a *LibraryAPIService) GetFileTemplateExecute(r ApiGetFileTemplateRequest) 
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -3322,7 +3244,7 @@ func (a *LibraryAPIService) GetFileTemplateExecute(r ApiGetFileTemplateRequest) 
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3370,7 +3292,7 @@ func (a *LibraryAPIService) GetInputExecute(r ApiGetInputRequest) (*GetInput200R
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetInput")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/library/option-types/{id}"
@@ -3417,16 +3339,14 @@ func (a *LibraryAPIService) GetInputExecute(r ApiGetInputRequest) (*GetInput200R
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -3434,10 +3354,9 @@ func (a *LibraryAPIService) GetInputExecute(r ApiGetInputRequest) (*GetInput200R
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -3447,7 +3366,7 @@ func (a *LibraryAPIService) GetInputExecute(r ApiGetInputRequest) (*GetInput200R
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3494,7 +3413,7 @@ func (a *LibraryAPIService) GetInstanceTypeExecute(r ApiGetInstanceTypeRequest) 
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetInstanceType")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/library/instance-types/{instanceTypeId}"
@@ -3541,16 +3460,14 @@ func (a *LibraryAPIService) GetInstanceTypeExecute(r ApiGetInstanceTypeRequest) 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -3558,10 +3475,9 @@ func (a *LibraryAPIService) GetInstanceTypeExecute(r ApiGetInstanceTypeRequest) 
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -3571,7 +3487,7 @@ func (a *LibraryAPIService) GetInstanceTypeExecute(r ApiGetInstanceTypeRequest) 
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3618,7 +3534,7 @@ func (a *LibraryAPIService) GetLayoutExecute(r ApiGetLayoutRequest) (*GetLayout2
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetLayout")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/library/layouts/{id}"
@@ -3665,16 +3581,14 @@ func (a *LibraryAPIService) GetLayoutExecute(r ApiGetLayoutRequest) (*GetLayout2
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -3682,10 +3596,9 @@ func (a *LibraryAPIService) GetLayoutExecute(r ApiGetLayoutRequest) (*GetLayout2
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -3695,7 +3608,7 @@ func (a *LibraryAPIService) GetLayoutExecute(r ApiGetLayoutRequest) (*GetLayout2
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3742,7 +3655,7 @@ func (a *LibraryAPIService) GetNodeTypeExecute(r ApiGetNodeTypeRequest) (*GetNod
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetNodeType")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/library/container-types/{id}"
@@ -3789,16 +3702,14 @@ func (a *LibraryAPIService) GetNodeTypeExecute(r ApiGetNodeTypeRequest) (*GetNod
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -3806,10 +3717,9 @@ func (a *LibraryAPIService) GetNodeTypeExecute(r ApiGetNodeTypeRequest) (*GetNod
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -3819,7 +3729,7 @@ func (a *LibraryAPIService) GetNodeTypeExecute(r ApiGetNodeTypeRequest) (*GetNod
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3866,7 +3776,7 @@ func (a *LibraryAPIService) GetOptionFormExecute(r ApiGetOptionFormRequest) (*Ge
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetOptionForm")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/library/option-type-forms/{id}"
@@ -3913,16 +3823,14 @@ func (a *LibraryAPIService) GetOptionFormExecute(r ApiGetOptionFormRequest) (*Ge
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -3930,10 +3838,9 @@ func (a *LibraryAPIService) GetOptionFormExecute(r ApiGetOptionFormRequest) (*Ge
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -3943,7 +3850,7 @@ func (a *LibraryAPIService) GetOptionFormExecute(r ApiGetOptionFormRequest) (*Ge
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3990,7 +3897,7 @@ func (a *LibraryAPIService) GetOptionListExecute(r ApiGetOptionListRequest) (*Ge
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetOptionList")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/library/option-type-lists/{id}"
@@ -4037,16 +3944,14 @@ func (a *LibraryAPIService) GetOptionListExecute(r ApiGetOptionListRequest) (*Ge
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -4054,10 +3959,9 @@ func (a *LibraryAPIService) GetOptionListExecute(r ApiGetOptionListRequest) (*Ge
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -4067,7 +3971,7 @@ func (a *LibraryAPIService) GetOptionListExecute(r ApiGetOptionListRequest) (*Ge
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4114,7 +4018,7 @@ func (a *LibraryAPIService) GetOptionListItemsExecute(r ApiGetOptionListItemsReq
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetOptionListItems")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/library/option-type-lists/{id}/items"
@@ -4161,16 +4065,14 @@ func (a *LibraryAPIService) GetOptionListItemsExecute(r ApiGetOptionListItemsReq
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -4178,10 +4080,9 @@ func (a *LibraryAPIService) GetOptionListItemsExecute(r ApiGetOptionListItemsReq
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -4191,7 +4092,7 @@ func (a *LibraryAPIService) GetOptionListItemsExecute(r ApiGetOptionListItemsReq
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4238,7 +4139,7 @@ func (a *LibraryAPIService) GetOsTypeExecute(r ApiGetOsTypeRequest) (*GetOsType2
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetOsType")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/library/operating-systems/os-types/{id}"
@@ -4285,16 +4186,14 @@ func (a *LibraryAPIService) GetOsTypeExecute(r ApiGetOsTypeRequest) (*GetOsType2
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -4302,10 +4201,9 @@ func (a *LibraryAPIService) GetOsTypeExecute(r ApiGetOsTypeRequest) (*GetOsType2
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -4315,7 +4213,7 @@ func (a *LibraryAPIService) GetOsTypeExecute(r ApiGetOsTypeRequest) (*GetOsType2
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4362,7 +4260,7 @@ func (a *LibraryAPIService) GetOsTypeImageExecute(r ApiGetOsTypeImageRequest) (*
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetOsTypeImage")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/library/operating-systems/os-types/images/{id}"
@@ -4409,16 +4307,14 @@ func (a *LibraryAPIService) GetOsTypeImageExecute(r ApiGetOsTypeImageRequest) (*
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -4426,10 +4322,9 @@ func (a *LibraryAPIService) GetOsTypeImageExecute(r ApiGetOsTypeImageRequest) (*
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -4439,7 +4334,7 @@ func (a *LibraryAPIService) GetOsTypeImageExecute(r ApiGetOsTypeImageRequest) (*
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4489,7 +4384,7 @@ func (a *LibraryAPIService) GetScriptExecute(r ApiGetScriptRequest) (*GetScript2
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetScript")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/library/container-scripts/{id}"
@@ -4536,16 +4431,14 @@ func (a *LibraryAPIService) GetScriptExecute(r ApiGetScriptRequest) (*GetScript2
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -4553,10 +4446,9 @@ func (a *LibraryAPIService) GetScriptExecute(r ApiGetScriptRequest) (*GetScript2
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -4566,7 +4458,7 @@ func (a *LibraryAPIService) GetScriptExecute(r ApiGetScriptRequest) (*GetScript2
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4614,7 +4506,7 @@ func (a *LibraryAPIService) GetSecurityPackageTypeExecute(r ApiGetSecurityPackag
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetSecurityPackageType")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/security-package-types/{id}"
@@ -4661,16 +4553,14 @@ func (a *LibraryAPIService) GetSecurityPackageTypeExecute(r ApiGetSecurityPackag
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -4678,10 +4568,9 @@ func (a *LibraryAPIService) GetSecurityPackageTypeExecute(r ApiGetSecurityPackag
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -4691,7 +4580,7 @@ func (a *LibraryAPIService) GetSecurityPackageTypeExecute(r ApiGetSecurityPackag
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4738,7 +4627,7 @@ func (a *LibraryAPIService) GetSpecTemplateExecute(r ApiGetSpecTemplateRequest) 
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetSpecTemplate")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/library/spec-templates/{id}"
@@ -4785,16 +4674,14 @@ func (a *LibraryAPIService) GetSpecTemplateExecute(r ApiGetSpecTemplateRequest) 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -4802,10 +4689,9 @@ func (a *LibraryAPIService) GetSpecTemplateExecute(r ApiGetSpecTemplateRequest) 
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -4815,7 +4701,7 @@ func (a *LibraryAPIService) GetSpecTemplateExecute(r ApiGetSpecTemplateRequest) 
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4862,7 +4748,7 @@ func (a *LibraryAPIService) GetVirtualImageExecute(r ApiGetVirtualImageRequest) 
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetVirtualImage")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/virtual-images/{virtualImageId}"
@@ -4909,16 +4795,14 @@ func (a *LibraryAPIService) GetVirtualImageExecute(r ApiGetVirtualImageRequest) 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -4926,10 +4810,9 @@ func (a *LibraryAPIService) GetVirtualImageExecute(r ApiGetVirtualImageRequest) 
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -4939,7 +4822,7 @@ func (a *LibraryAPIService) GetVirtualImageExecute(r ApiGetVirtualImageRequest) 
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -5049,7 +4932,7 @@ func (a *LibraryAPIService) ListFileTemplatesExecute(r ApiListFileTemplatesReque
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.ListFileTemplates")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/library/container-templates"
@@ -5134,16 +5017,14 @@ func (a *LibraryAPIService) ListFileTemplatesExecute(r ApiListFileTemplatesReque
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -5151,10 +5032,9 @@ func (a *LibraryAPIService) ListFileTemplatesExecute(r ApiListFileTemplatesReque
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -5164,7 +5044,7 @@ func (a *LibraryAPIService) ListFileTemplatesExecute(r ApiListFileTemplatesReque
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -5293,7 +5173,7 @@ func (a *LibraryAPIService) ListInputsExecute(r ApiListInputsRequest) (*ListInpu
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.ListInputs")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/library/option-types"
@@ -5387,16 +5267,14 @@ func (a *LibraryAPIService) ListInputsExecute(r ApiListInputsRequest) (*ListInpu
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -5404,10 +5282,9 @@ func (a *LibraryAPIService) ListInputsExecute(r ApiListInputsRequest) (*ListInpu
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -5417,7 +5294,7 @@ func (a *LibraryAPIService) ListInputsExecute(r ApiListInputsRequest) (*ListInpu
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -5539,7 +5416,7 @@ func (a *LibraryAPIService) ListInstanceTypesExecute(r ApiListInstanceTypesReque
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.ListInstanceTypes")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/library/instance-types"
@@ -5630,16 +5507,14 @@ func (a *LibraryAPIService) ListInstanceTypesExecute(r ApiListInstanceTypesReque
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -5647,10 +5522,9 @@ func (a *LibraryAPIService) ListInstanceTypesExecute(r ApiListInstanceTypesReque
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -5660,7 +5534,7 @@ func (a *LibraryAPIService) ListInstanceTypesExecute(r ApiListInstanceTypesReque
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -5775,7 +5649,7 @@ func (a *LibraryAPIService) ListLayoutsExecute(r ApiListLayoutsRequest) (*ListLa
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.ListLayouts")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/library/layouts"
@@ -5863,16 +5737,14 @@ func (a *LibraryAPIService) ListLayoutsExecute(r ApiListLayoutsRequest) (*ListLa
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -5880,10 +5752,9 @@ func (a *LibraryAPIService) ListLayoutsExecute(r ApiListLayoutsRequest) (*ListLa
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -5893,7 +5764,7 @@ func (a *LibraryAPIService) ListLayoutsExecute(r ApiListLayoutsRequest) (*ListLa
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -6010,7 +5881,7 @@ func (a *LibraryAPIService) ListLayoutsForInstanceTypeExecute(r ApiListLayoutsFo
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.ListLayoutsForInstanceType")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/library/instance-types/{instanceTypeId}/layouts"
@@ -6099,16 +5970,14 @@ func (a *LibraryAPIService) ListLayoutsForInstanceTypeExecute(r ApiListLayoutsFo
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -6116,10 +5985,9 @@ func (a *LibraryAPIService) ListLayoutsForInstanceTypeExecute(r ApiListLayoutsFo
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -6129,7 +5997,7 @@ func (a *LibraryAPIService) ListLayoutsForInstanceTypeExecute(r ApiListLayoutsFo
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -6243,7 +6111,7 @@ func (a *LibraryAPIService) ListNodeTypesExecute(r ApiListNodeTypesRequest) (*Li
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.ListNodeTypes")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/library/container-types"
@@ -6331,16 +6199,14 @@ func (a *LibraryAPIService) ListNodeTypesExecute(r ApiListNodeTypesRequest) (*Li
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -6348,10 +6214,9 @@ func (a *LibraryAPIService) ListNodeTypesExecute(r ApiListNodeTypesRequest) (*Li
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -6361,7 +6226,7 @@ func (a *LibraryAPIService) ListNodeTypesExecute(r ApiListNodeTypesRequest) (*Li
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -6468,7 +6333,7 @@ func (a *LibraryAPIService) ListOptionFormsExecute(r ApiListOptionFormsRequest) 
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.ListOptionForms")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/library/option-type-forms"
@@ -6553,16 +6418,14 @@ func (a *LibraryAPIService) ListOptionFormsExecute(r ApiListOptionFormsRequest) 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -6570,10 +6433,9 @@ func (a *LibraryAPIService) ListOptionFormsExecute(r ApiListOptionFormsRequest) 
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -6583,7 +6445,7 @@ func (a *LibraryAPIService) ListOptionFormsExecute(r ApiListOptionFormsRequest) 
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -6683,7 +6545,7 @@ func (a *LibraryAPIService) ListOptionListsExecute(r ApiListOptionListsRequest) 
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.ListOptionLists")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/library/option-type-lists"
@@ -6765,16 +6627,14 @@ func (a *LibraryAPIService) ListOptionListsExecute(r ApiListOptionListsRequest) 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -6782,10 +6642,9 @@ func (a *LibraryAPIService) ListOptionListsExecute(r ApiListOptionListsRequest) 
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -6795,7 +6654,7 @@ func (a *LibraryAPIService) ListOptionListsExecute(r ApiListOptionListsRequest) 
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -6882,7 +6741,7 @@ func (a *LibraryAPIService) ListOsTypesExecute(r ApiListOsTypesRequest) (*ListOs
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.ListOsTypes")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/library/operating-systems/os-types"
@@ -6958,16 +6817,14 @@ func (a *LibraryAPIService) ListOsTypesExecute(r ApiListOsTypesRequest) (*ListOs
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -6975,10 +6832,9 @@ func (a *LibraryAPIService) ListOsTypesExecute(r ApiListOsTypesRequest) (*ListOs
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -6988,7 +6844,7 @@ func (a *LibraryAPIService) ListOsTypesExecute(r ApiListOsTypesRequest) (*ListOs
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -7098,7 +6954,7 @@ func (a *LibraryAPIService) ListScriptsExecute(r ApiListScriptsRequest) (*ListSc
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.ListScripts")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/library/container-scripts"
@@ -7183,16 +7039,14 @@ func (a *LibraryAPIService) ListScriptsExecute(r ApiListScriptsRequest) (*ListSc
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -7200,10 +7054,9 @@ func (a *LibraryAPIService) ListScriptsExecute(r ApiListScriptsRequest) (*ListSc
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -7213,7 +7066,7 @@ func (a *LibraryAPIService) ListScriptsExecute(r ApiListScriptsRequest) (*ListSc
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -7258,7 +7111,7 @@ func (a *LibraryAPIService) ListSecurityPackageTypesExecute(r ApiListSecurityPac
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.ListSecurityPackageTypes")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/security-package-types"
@@ -7304,16 +7157,14 @@ func (a *LibraryAPIService) ListSecurityPackageTypesExecute(r ApiListSecurityPac
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -7321,10 +7172,9 @@ func (a *LibraryAPIService) ListSecurityPackageTypesExecute(r ApiListSecurityPac
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -7334,7 +7184,7 @@ func (a *LibraryAPIService) ListSecurityPackageTypesExecute(r ApiListSecurityPac
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -7434,7 +7284,7 @@ func (a *LibraryAPIService) ListSpecTemplatesExecute(r ApiListSpecTemplatesReque
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.ListSpecTemplates")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/library/spec-templates"
@@ -7516,16 +7366,14 @@ func (a *LibraryAPIService) ListSpecTemplatesExecute(r ApiListSpecTemplatesReque
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -7533,10 +7381,9 @@ func (a *LibraryAPIService) ListSpecTemplatesExecute(r ApiListSpecTemplatesReque
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -7546,7 +7393,7 @@ func (a *LibraryAPIService) ListSpecTemplatesExecute(r ApiListSpecTemplatesReque
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -7593,7 +7440,7 @@ func (a *LibraryAPIService) ListVirtualImageLocationsExecute(r ApiListVirtualIma
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.ListVirtualImageLocations")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/virtual-images/{virtualImageId}/locations"
@@ -7640,16 +7487,14 @@ func (a *LibraryAPIService) ListVirtualImageLocationsExecute(r ApiListVirtualIma
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -7657,10 +7502,9 @@ func (a *LibraryAPIService) ListVirtualImageLocationsExecute(r ApiListVirtualIma
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -7670,7 +7514,7 @@ func (a *LibraryAPIService) ListVirtualImageLocationsExecute(r ApiListVirtualIma
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -7784,7 +7628,7 @@ func (a *LibraryAPIService) ListVirtualImagesExecute(r ApiListVirtualImagesReque
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.ListVirtualImages")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/virtual-images"
@@ -7869,16 +7713,14 @@ func (a *LibraryAPIService) ListVirtualImagesExecute(r ApiListVirtualImagesReque
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -7886,10 +7728,9 @@ func (a *LibraryAPIService) ListVirtualImagesExecute(r ApiListVirtualImagesReque
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -7899,7 +7740,7 @@ func (a *LibraryAPIService) ListVirtualImagesExecute(r ApiListVirtualImagesReque
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -7947,7 +7788,7 @@ func (a *LibraryAPIService) RemoveSecurityScansExecute(r ApiRemoveSecurityScansR
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.RemoveSecurityScans")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/security-scans/{id}"
@@ -7994,16 +7835,14 @@ func (a *LibraryAPIService) RemoveSecurityScansExecute(r ApiRemoveSecurityScansR
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -8011,10 +7850,9 @@ func (a *LibraryAPIService) RemoveSecurityScansExecute(r ApiRemoveSecurityScansR
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -8024,7 +7862,7 @@ func (a *LibraryAPIService) RemoveSecurityScansExecute(r ApiRemoveSecurityScansR
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -8071,7 +7909,7 @@ func (a *LibraryAPIService) RemoveVirtualImageExecute(r ApiRemoveVirtualImageReq
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.RemoveVirtualImage")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/virtual-images/{virtualImageId}"
@@ -8118,16 +7956,14 @@ func (a *LibraryAPIService) RemoveVirtualImageExecute(r ApiRemoveVirtualImageReq
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -8135,10 +7971,9 @@ func (a *LibraryAPIService) RemoveVirtualImageExecute(r ApiRemoveVirtualImageReq
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -8148,7 +7983,7 @@ func (a *LibraryAPIService) RemoveVirtualImageExecute(r ApiRemoveVirtualImageReq
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -8202,7 +8037,7 @@ func (a *LibraryAPIService) RemoveVirtualImageFileExecute(r ApiRemoveVirtualImag
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.RemoveVirtualImageFile")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/virtual-images/{virtualImageId}/files"
@@ -8252,16 +8087,14 @@ func (a *LibraryAPIService) RemoveVirtualImageFileExecute(r ApiRemoveVirtualImag
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -8269,10 +8102,9 @@ func (a *LibraryAPIService) RemoveVirtualImageFileExecute(r ApiRemoveVirtualImag
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -8282,7 +8114,7 @@ func (a *LibraryAPIService) RemoveVirtualImageFileExecute(r ApiRemoveVirtualImag
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -8332,7 +8164,7 @@ func (a *LibraryAPIService) RemoveVirtualImageLocationExecute(r ApiRemoveVirtual
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.RemoveVirtualImageLocation")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/virtual-images/{virtualImageId}/locations/{id}"
@@ -8380,16 +8212,14 @@ func (a *LibraryAPIService) RemoveVirtualImageLocationExecute(r ApiRemoveVirtual
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -8397,10 +8227,9 @@ func (a *LibraryAPIService) RemoveVirtualImageLocationExecute(r ApiRemoveVirtual
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -8410,7 +8239,7 @@ func (a *LibraryAPIService) RemoveVirtualImageLocationExecute(r ApiRemoveVirtual
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -8458,7 +8287,7 @@ func (a *LibraryAPIService) SetInstanceTypeFeaturedExecute(r ApiSetInstanceTypeF
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.SetInstanceTypeFeatured")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/library/instance-types/{instanceTypeId}/toggle-featured"
@@ -8505,16 +8334,14 @@ func (a *LibraryAPIService) SetInstanceTypeFeaturedExecute(r ApiSetInstanceTypeF
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -8522,10 +8349,9 @@ func (a *LibraryAPIService) SetInstanceTypeFeaturedExecute(r ApiSetInstanceTypeF
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -8535,7 +8361,7 @@ func (a *LibraryAPIService) SetInstanceTypeFeaturedExecute(r ApiSetInstanceTypeF
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -8588,7 +8414,7 @@ func (a *LibraryAPIService) UpdateFileTemplateExecute(r ApiUpdateFileTemplateReq
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.UpdateFileTemplate")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/library/container-templates/{id}"
@@ -8637,16 +8463,14 @@ func (a *LibraryAPIService) UpdateFileTemplateExecute(r ApiUpdateFileTemplateReq
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -8654,10 +8478,9 @@ func (a *LibraryAPIService) UpdateFileTemplateExecute(r ApiUpdateFileTemplateReq
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -8667,7 +8490,7 @@ func (a *LibraryAPIService) UpdateFileTemplateExecute(r ApiUpdateFileTemplateReq
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -8720,7 +8543,7 @@ func (a *LibraryAPIService) UpdateInstanceTypeExecute(r ApiUpdateInstanceTypeReq
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.UpdateInstanceType")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/library/instance-types/{instanceTypeId}"
@@ -8769,16 +8592,14 @@ func (a *LibraryAPIService) UpdateInstanceTypeExecute(r ApiUpdateInstanceTypeReq
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -8786,10 +8607,9 @@ func (a *LibraryAPIService) UpdateInstanceTypeExecute(r ApiUpdateInstanceTypeReq
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -8799,7 +8619,7 @@ func (a *LibraryAPIService) UpdateInstanceTypeExecute(r ApiUpdateInstanceTypeReq
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -8861,7 +8681,7 @@ func (a *LibraryAPIService) UpdateInstanceTypeLogoExecute(r ApiUpdateInstanceTyp
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.UpdateInstanceTypeLogo")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/library/instance-types/{instanceTypeId}/update-logo"
@@ -8938,16 +8758,14 @@ func (a *LibraryAPIService) UpdateInstanceTypeLogoExecute(r ApiUpdateInstanceTyp
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -8955,10 +8773,9 @@ func (a *LibraryAPIService) UpdateInstanceTypeLogoExecute(r ApiUpdateInstanceTyp
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -8968,7 +8785,7 @@ func (a *LibraryAPIService) UpdateInstanceTypeLogoExecute(r ApiUpdateInstanceTyp
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -9021,7 +8838,7 @@ func (a *LibraryAPIService) UpdateLayoutExecute(r ApiUpdateLayoutRequest) (*Dele
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.UpdateLayout")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/library/layouts/{id}"
@@ -9070,16 +8887,14 @@ func (a *LibraryAPIService) UpdateLayoutExecute(r ApiUpdateLayoutRequest) (*Dele
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -9087,10 +8902,9 @@ func (a *LibraryAPIService) UpdateLayoutExecute(r ApiUpdateLayoutRequest) (*Dele
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -9100,7 +8914,7 @@ func (a *LibraryAPIService) UpdateLayoutExecute(r ApiUpdateLayoutRequest) (*Dele
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -9153,7 +8967,7 @@ func (a *LibraryAPIService) UpdateLayoutPermissionsExecute(r ApiUpdateLayoutPerm
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.UpdateLayoutPermissions")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/library/layouts/{id}/permissions"
@@ -9202,16 +9016,14 @@ func (a *LibraryAPIService) UpdateLayoutPermissionsExecute(r ApiUpdateLayoutPerm
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -9219,10 +9031,9 @@ func (a *LibraryAPIService) UpdateLayoutPermissionsExecute(r ApiUpdateLayoutPerm
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -9232,7 +9043,7 @@ func (a *LibraryAPIService) UpdateLayoutPermissionsExecute(r ApiUpdateLayoutPerm
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -9285,7 +9096,7 @@ func (a *LibraryAPIService) UpdateNodeTypeExecute(r ApiUpdateNodeTypeRequest) (*
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.UpdateNodeType")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/library/container-types/{id}"
@@ -9334,16 +9145,14 @@ func (a *LibraryAPIService) UpdateNodeTypeExecute(r ApiUpdateNodeTypeRequest) (*
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -9351,10 +9160,9 @@ func (a *LibraryAPIService) UpdateNodeTypeExecute(r ApiUpdateNodeTypeRequest) (*
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -9364,7 +9172,7 @@ func (a *LibraryAPIService) UpdateNodeTypeExecute(r ApiUpdateNodeTypeRequest) (*
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -9417,7 +9225,7 @@ func (a *LibraryAPIService) UpdateOptionFormExecute(r ApiUpdateOptionFormRequest
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.UpdateOptionForm")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/library/option-type-forms/{id}"
@@ -9466,16 +9274,14 @@ func (a *LibraryAPIService) UpdateOptionFormExecute(r ApiUpdateOptionFormRequest
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -9483,10 +9289,9 @@ func (a *LibraryAPIService) UpdateOptionFormExecute(r ApiUpdateOptionFormRequest
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -9496,7 +9301,7 @@ func (a *LibraryAPIService) UpdateOptionFormExecute(r ApiUpdateOptionFormRequest
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -9549,7 +9354,7 @@ func (a *LibraryAPIService) UpdateOptionListExecute(r ApiUpdateOptionListRequest
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.UpdateOptionList")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/library/option-type-lists/{id}"
@@ -9598,16 +9403,14 @@ func (a *LibraryAPIService) UpdateOptionListExecute(r ApiUpdateOptionListRequest
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -9615,10 +9418,9 @@ func (a *LibraryAPIService) UpdateOptionListExecute(r ApiUpdateOptionListRequest
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -9628,7 +9430,7 @@ func (a *LibraryAPIService) UpdateOptionListExecute(r ApiUpdateOptionListRequest
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -9681,7 +9483,7 @@ func (a *LibraryAPIService) UpdateOptionTypeExecute(r ApiUpdateOptionTypeRequest
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.UpdateOptionType")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/library/option-types/{id}"
@@ -9730,16 +9532,14 @@ func (a *LibraryAPIService) UpdateOptionTypeExecute(r ApiUpdateOptionTypeRequest
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -9747,10 +9547,9 @@ func (a *LibraryAPIService) UpdateOptionTypeExecute(r ApiUpdateOptionTypeRequest
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -9760,7 +9559,7 @@ func (a *LibraryAPIService) UpdateOptionTypeExecute(r ApiUpdateOptionTypeRequest
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -9813,7 +9612,7 @@ func (a *LibraryAPIService) UpdateOsTypeExecute(r ApiUpdateOsTypeRequest) (*Dele
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.UpdateOsType")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/library/operating-systems/os-types/{id}"
@@ -9862,16 +9661,14 @@ func (a *LibraryAPIService) UpdateOsTypeExecute(r ApiUpdateOsTypeRequest) (*Dele
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -9879,10 +9676,9 @@ func (a *LibraryAPIService) UpdateOsTypeExecute(r ApiUpdateOsTypeRequest) (*Dele
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -9892,7 +9688,7 @@ func (a *LibraryAPIService) UpdateOsTypeExecute(r ApiUpdateOsTypeRequest) (*Dele
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -9945,7 +9741,7 @@ func (a *LibraryAPIService) UpdateScriptExecute(r ApiUpdateScriptRequest) (*AddS
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.UpdateScript")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/library/container-scripts/{id}"
@@ -9994,16 +9790,14 @@ func (a *LibraryAPIService) UpdateScriptExecute(r ApiUpdateScriptRequest) (*AddS
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -10011,10 +9805,9 @@ func (a *LibraryAPIService) UpdateScriptExecute(r ApiUpdateScriptRequest) (*AddS
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -10024,7 +9817,7 @@ func (a *LibraryAPIService) UpdateScriptExecute(r ApiUpdateScriptRequest) (*AddS
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -10077,7 +9870,7 @@ func (a *LibraryAPIService) UpdateSpecTemplateExecute(r ApiUpdateSpecTemplateReq
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.UpdateSpecTemplate")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/library/spec-templates/{id}"
@@ -10126,16 +9919,14 @@ func (a *LibraryAPIService) UpdateSpecTemplateExecute(r ApiUpdateSpecTemplateReq
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -10143,10 +9934,9 @@ func (a *LibraryAPIService) UpdateSpecTemplateExecute(r ApiUpdateSpecTemplateReq
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -10156,7 +9946,7 @@ func (a *LibraryAPIService) UpdateSpecTemplateExecute(r ApiUpdateSpecTemplateReq
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -10209,7 +9999,7 @@ func (a *LibraryAPIService) UpdateVirtualImageExecute(r ApiUpdateVirtualImageReq
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.UpdateVirtualImage")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/virtual-images/{virtualImageId}"
@@ -10258,16 +10048,14 @@ func (a *LibraryAPIService) UpdateVirtualImageExecute(r ApiUpdateVirtualImageReq
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -10275,10 +10063,9 @@ func (a *LibraryAPIService) UpdateVirtualImageExecute(r ApiUpdateVirtualImageReq
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -10288,7 +10075,7 @@ func (a *LibraryAPIService) UpdateVirtualImageExecute(r ApiUpdateVirtualImageReq
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

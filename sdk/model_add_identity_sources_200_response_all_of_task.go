@@ -17,6 +17,9 @@ import (
 	"gopkg.in/validator.v2"
 )
 
+// very silly way of avoiding `"fmt" imported and not used` errors
+var _ fmt.Stringer
+
 // AddIdentitySources200ResponseAllOfTask - struct for AddIdentitySources200ResponseAllOfTask
 type AddIdentitySources200ResponseAllOfTask struct {
 	ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf
@@ -237,11 +240,11 @@ func (dst *AddIdentitySources200ResponseAllOfTask) UnmarshalJSON(data []byte) er
 		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6 = nil
 		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7 = nil
 
-		return fmt.Errorf("data matches more than one schema in oneOf(AddIdentitySources200ResponseAllOfTask)")
+		return NewResponseValidationError("data matches more than one schema in oneOf(AddIdentitySources200ResponseAllOfTask)")
 	} else if match == 1 {
 		return nil // exactly one match
 	} else { // no match
-		return fmt.Errorf("data failed to match schemas in oneOf(AddIdentitySources200ResponseAllOfTask)")
+		return NewResponseValidationError("data failed to match schemas in oneOf(AddIdentitySources200ResponseAllOfTask)")
 	}
 }
 

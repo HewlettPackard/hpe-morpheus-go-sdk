@@ -17,6 +17,9 @@ import (
 	"gopkg.in/validator.v2"
 )
 
+// very silly way of avoiding `"fmt" imported and not used` errors
+var _ fmt.Stringer
+
 // AddPoliciesGroupRequestPolicyPolicyTypeConfig - A map of config values. The expected values vary by policyType.
 type AddPoliciesGroupRequestPolicyPolicyTypeConfig struct {
 	AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf
@@ -809,11 +812,11 @@ func (dst *AddPoliciesGroupRequestPolicyPolicyTypeConfig) UnmarshalJSON(data []b
 		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf8 = nil
 		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf9 = nil
 
-		return fmt.Errorf("data matches more than one schema in oneOf(AddPoliciesGroupRequestPolicyPolicyTypeConfig)")
+		return NewResponseValidationError("data matches more than one schema in oneOf(AddPoliciesGroupRequestPolicyPolicyTypeConfig)")
 	} else if match == 1 {
 		return nil // exactly one match
 	} else { // no match
-		return fmt.Errorf("data failed to match schemas in oneOf(AddPoliciesGroupRequestPolicyPolicyTypeConfig)")
+		return NewResponseValidationError("data failed to match schemas in oneOf(AddPoliciesGroupRequestPolicyPolicyTypeConfig)")
 	}
 }
 

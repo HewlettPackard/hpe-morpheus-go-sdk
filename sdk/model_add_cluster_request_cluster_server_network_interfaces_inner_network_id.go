@@ -17,6 +17,9 @@ import (
 	"gopkg.in/validator.v2"
 )
 
+// very silly way of avoiding `"fmt" imported and not used` errors
+var _ fmt.Stringer
+
 // AddClusterRequestClusterServerNetworkInterfacesInnerNetworkId - struct for AddClusterRequestClusterServerNetworkInterfacesInnerNetworkId
 type AddClusterRequestClusterServerNetworkInterfacesInnerNetworkId struct {
 	Int32 *int32
@@ -81,11 +84,11 @@ func (dst *AddClusterRequestClusterServerNetworkInterfacesInnerNetworkId) Unmars
 		dst.Int32 = nil
 		dst.String = nil
 
-		return fmt.Errorf("data matches more than one schema in oneOf(AddClusterRequestClusterServerNetworkInterfacesInnerNetworkId)")
+		return NewResponseValidationError("data matches more than one schema in oneOf(AddClusterRequestClusterServerNetworkInterfacesInnerNetworkId)")
 	} else if match == 1 {
 		return nil // exactly one match
 	} else { // no match
-		return fmt.Errorf("data failed to match schemas in oneOf(AddClusterRequestClusterServerNetworkInterfacesInnerNetworkId)")
+		return NewResponseValidationError("data failed to match schemas in oneOf(AddClusterRequestClusterServerNetworkInterfacesInnerNetworkId)")
 	}
 }
 

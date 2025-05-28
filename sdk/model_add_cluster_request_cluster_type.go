@@ -17,6 +17,9 @@ import (
 	"gopkg.in/validator.v2"
 )
 
+// very silly way of avoiding `"fmt" imported and not used` errors
+var _ fmt.Stringer
+
 // AddClusterRequestClusterType - struct for AddClusterRequestClusterType
 type AddClusterRequestClusterType struct {
 	AddClusterRequestClusterTypeOneOf *AddClusterRequestClusterTypeOneOf
@@ -81,11 +84,11 @@ func (dst *AddClusterRequestClusterType) UnmarshalJSON(data []byte) error {
 		dst.AddClusterRequestClusterTypeOneOf = nil
 		dst.String = nil
 
-		return fmt.Errorf("data matches more than one schema in oneOf(AddClusterRequestClusterType)")
+		return NewResponseValidationError("data matches more than one schema in oneOf(AddClusterRequestClusterType)")
 	} else if match == 1 {
 		return nil // exactly one match
 	} else { // no match
-		return fmt.Errorf("data failed to match schemas in oneOf(AddClusterRequestClusterType)")
+		return NewResponseValidationError("data failed to match schemas in oneOf(AddClusterRequestClusterType)")
 	}
 }
 

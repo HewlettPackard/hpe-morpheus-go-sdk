@@ -70,7 +70,7 @@ func (a *HealthAPIService) AcknowledgeHealthAlarmExecute(r ApiAcknowledgeHealthA
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HealthAPIService.AcknowledgeHealthAlarm")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/health/alarms/{id}/acknowledge"
@@ -119,16 +119,14 @@ func (a *HealthAPIService) AcknowledgeHealthAlarmExecute(r ApiAcknowledgeHealthA
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -136,10 +134,9 @@ func (a *HealthAPIService) AcknowledgeHealthAlarmExecute(r ApiAcknowledgeHealthA
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -149,7 +146,7 @@ func (a *HealthAPIService) AcknowledgeHealthAlarmExecute(r ApiAcknowledgeHealthA
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -199,7 +196,7 @@ func (a *HealthAPIService) AcknowledgeHealthAlarmsExecute(r ApiAcknowledgeHealth
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HealthAPIService.AcknowledgeHealthAlarms")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/health/alarms/acknowledge"
@@ -247,16 +244,14 @@ func (a *HealthAPIService) AcknowledgeHealthAlarmsExecute(r ApiAcknowledgeHealth
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -264,10 +259,9 @@ func (a *HealthAPIService) AcknowledgeHealthAlarmsExecute(r ApiAcknowledgeHealth
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -277,7 +271,7 @@ func (a *HealthAPIService) AcknowledgeHealthAlarmsExecute(r ApiAcknowledgeHealth
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -391,7 +385,7 @@ func (a *HealthAPIService) ExportHealthLogsExecute(r ApiExportHealthLogsRequest)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HealthAPIService.ExportHealthLogs")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/health/logs/export"
@@ -479,16 +473,14 @@ func (a *HealthAPIService) ExportHealthLogsExecute(r ApiExportHealthLogsRequest)
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -496,10 +488,9 @@ func (a *HealthAPIService) ExportHealthLogsExecute(r ApiExportHealthLogsRequest)
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -509,7 +500,7 @@ func (a *HealthAPIService) ExportHealthLogsExecute(r ApiExportHealthLogsRequest)
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -556,7 +547,7 @@ func (a *HealthAPIService) GetHealthAlarmsExecute(r ApiGetHealthAlarmsRequest) (
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HealthAPIService.GetHealthAlarms")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/health/alarms/{id}"
@@ -603,16 +594,14 @@ func (a *HealthAPIService) GetHealthAlarmsExecute(r ApiGetHealthAlarmsRequest) (
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -620,10 +609,9 @@ func (a *HealthAPIService) GetHealthAlarmsExecute(r ApiGetHealthAlarmsRequest) (
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -633,7 +621,7 @@ func (a *HealthAPIService) GetHealthAlarmsExecute(r ApiGetHealthAlarmsRequest) (
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -677,7 +665,7 @@ func (a *HealthAPIService) ListHealthExecute(r ApiListHealthRequest) (*ListHealt
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HealthAPIService.ListHealth")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/health"
@@ -723,16 +711,14 @@ func (a *HealthAPIService) ListHealthExecute(r ApiListHealthRequest) (*ListHealt
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -740,10 +726,9 @@ func (a *HealthAPIService) ListHealthExecute(r ApiListHealthRequest) (*ListHealt
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -753,7 +738,7 @@ func (a *HealthAPIService) ListHealthExecute(r ApiListHealthRequest) (*ListHealt
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -846,7 +831,7 @@ func (a *HealthAPIService) ListHealthAlarmsExecute(r ApiListHealthAlarmsRequest)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HealthAPIService.ListHealthAlarms")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/health/alarms"
@@ -925,16 +910,14 @@ func (a *HealthAPIService) ListHealthAlarmsExecute(r ApiListHealthAlarmsRequest)
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -942,10 +925,9 @@ func (a *HealthAPIService) ListHealthAlarmsExecute(r ApiListHealthAlarmsRequest)
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -955,7 +937,7 @@ func (a *HealthAPIService) ListHealthAlarmsExecute(r ApiListHealthAlarmsRequest)
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1062,7 +1044,7 @@ func (a *HealthAPIService) ListHealthLogsExecute(r ApiListHealthLogsRequest) (*L
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HealthAPIService.ListHealthLogs")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/health/logs"
@@ -1147,16 +1129,14 @@ func (a *HealthAPIService) ListHealthLogsExecute(r ApiListHealthLogsRequest) (*L
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1164,10 +1144,9 @@ func (a *HealthAPIService) ListHealthLogsExecute(r ApiListHealthLogsRequest) (*L
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1177,7 +1156,7 @@ func (a *HealthAPIService) ListHealthLogsExecute(r ApiListHealthLogsRequest) (*L
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

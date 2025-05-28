@@ -64,7 +64,7 @@ func (a *WhitelabelSettingsAPIService) GetWhitelabelImageExecute(r ApiGetWhitela
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WhitelabelSettingsAPIService.GetWhitelabelImage")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/whitelabel-settings/images/{imageType}"
@@ -111,16 +111,14 @@ func (a *WhitelabelSettingsAPIService) GetWhitelabelImageExecute(r ApiGetWhitela
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -128,10 +126,9 @@ func (a *WhitelabelSettingsAPIService) GetWhitelabelImageExecute(r ApiGetWhitela
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -141,7 +138,7 @@ func (a *WhitelabelSettingsAPIService) GetWhitelabelImageExecute(r ApiGetWhitela
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -185,7 +182,7 @@ func (a *WhitelabelSettingsAPIService) ListWhitelabelSettingsExecute(r ApiListWh
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WhitelabelSettingsAPIService.ListWhitelabelSettings")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/whitelabel-settings"
@@ -231,16 +228,14 @@ func (a *WhitelabelSettingsAPIService) ListWhitelabelSettingsExecute(r ApiListWh
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -248,10 +243,9 @@ func (a *WhitelabelSettingsAPIService) ListWhitelabelSettingsExecute(r ApiListWh
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -261,7 +255,7 @@ func (a *WhitelabelSettingsAPIService) ListWhitelabelSettingsExecute(r ApiListWh
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -308,7 +302,7 @@ func (a *WhitelabelSettingsAPIService) RemoveWhitelabelImageExecute(r ApiRemoveW
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WhitelabelSettingsAPIService.RemoveWhitelabelImage")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/whitelabel-settings/images/{imageType}"
@@ -355,16 +349,14 @@ func (a *WhitelabelSettingsAPIService) RemoveWhitelabelImageExecute(r ApiRemoveW
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -372,10 +364,9 @@ func (a *WhitelabelSettingsAPIService) RemoveWhitelabelImageExecute(r ApiRemoveW
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -385,7 +376,7 @@ func (a *WhitelabelSettingsAPIService) RemoveWhitelabelImageExecute(r ApiRemoveW
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -485,7 +476,7 @@ func (a *WhitelabelSettingsAPIService) UpdateWhitelabelImagesExecute(r ApiUpdate
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WhitelabelSettingsAPIService.UpdateWhitelabelImages")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/whitelabel-settings/images"
@@ -603,16 +594,14 @@ func (a *WhitelabelSettingsAPIService) UpdateWhitelabelImagesExecute(r ApiUpdate
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -620,10 +609,9 @@ func (a *WhitelabelSettingsAPIService) UpdateWhitelabelImagesExecute(r ApiUpdate
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -633,7 +621,7 @@ func (a *WhitelabelSettingsAPIService) UpdateWhitelabelImagesExecute(r ApiUpdate
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -683,7 +671,7 @@ func (a *WhitelabelSettingsAPIService) UpdateWhitelabelSettingsExecute(r ApiUpda
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WhitelabelSettingsAPIService.UpdateWhitelabelSettings")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
 	}
 
 	localVarPath := localBasePath + "/api/whitelabel-settings"
@@ -731,16 +719,14 @@ func (a *WhitelabelSettingsAPIService) UpdateWhitelabelSettingsExecute(r ApiUpda
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -748,10 +734,9 @@ func (a *WhitelabelSettingsAPIService) UpdateWhitelabelSettingsExecute(r ApiUpda
 			var v ListActivity5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
-				newErr.error = err.Error()
+				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -761,7 +746,7 @@ func (a *WhitelabelSettingsAPIService) UpdateWhitelabelSettingsExecute(r ApiUpda
 	if err != nil {
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
-			error: err.Error(),
+			err: err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

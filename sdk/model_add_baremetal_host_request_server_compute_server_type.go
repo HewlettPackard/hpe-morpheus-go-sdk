@@ -16,6 +16,9 @@ import (
 	"fmt"
 )
 
+// very silly way of avoiding `"fmt" imported and not used` errors
+var _ fmt.Stringer
+
 
 // AddBaremetalHostRequestServerComputeServerType struct for AddBaremetalHostRequestServerComputeServerType
 type AddBaremetalHostRequestServerComputeServerType struct {
@@ -52,7 +55,7 @@ func (dst *AddBaremetalHostRequestServerComputeServerType) UnmarshalJSON(data []
 		dst.AddBaremetalHostRequestServerComputeServerTypeAnyOf1 = nil
 	}
 
-	return fmt.Errorf("data failed to match schemas in anyOf(AddBaremetalHostRequestServerComputeServerType)")
+	return NewResponseValidationError("data failed to match schemas in anyOf(AddBaremetalHostRequestServerComputeServerType)")
 }
 
 // Marshal data from the first non-nil pointers in the struct to JSON

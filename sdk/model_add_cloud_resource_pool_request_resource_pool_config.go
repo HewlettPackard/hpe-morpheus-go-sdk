@@ -16,6 +16,9 @@ import (
 	"fmt"
 )
 
+// very silly way of avoiding `"fmt" imported and not used` errors
+var _ fmt.Stringer
+
 
 // AddCloudResourcePoolRequestResourcePoolConfig struct for AddCloudResourcePoolRequestResourcePoolConfig
 type AddCloudResourcePoolRequestResourcePoolConfig struct {
@@ -52,7 +55,7 @@ func (dst *AddCloudResourcePoolRequestResourcePoolConfig) UnmarshalJSON(data []b
 		dst.AddCloudResourcePoolRequestResourcePoolConfigAnyOf1 = nil
 	}
 
-	return fmt.Errorf("data failed to match schemas in anyOf(AddCloudResourcePoolRequestResourcePoolConfig)")
+	return NewResponseValidationError("data failed to match schemas in anyOf(AddCloudResourcePoolRequestResourcePoolConfig)")
 }
 
 // Marshal data from the first non-nil pointers in the struct to JSON

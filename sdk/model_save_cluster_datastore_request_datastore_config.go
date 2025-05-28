@@ -16,6 +16,9 @@ import (
 	"fmt"
 )
 
+// very silly way of avoiding `"fmt" imported and not used` errors
+var _ fmt.Stringer
+
 
 // SaveClusterDatastoreRequestDatastoreConfig struct for SaveClusterDatastoreRequestDatastoreConfig
 type SaveClusterDatastoreRequestDatastoreConfig struct {
@@ -52,7 +55,7 @@ func (dst *SaveClusterDatastoreRequestDatastoreConfig) UnmarshalJSON(data []byte
 		dst.SaveClusterDatastoreRequestDatastoreConfigAnyOf1 = nil
 	}
 
-	return fmt.Errorf("data failed to match schemas in anyOf(SaveClusterDatastoreRequestDatastoreConfig)")
+	return NewResponseValidationError("data failed to match schemas in anyOf(SaveClusterDatastoreRequestDatastoreConfig)")
 }
 
 // Marshal data from the first non-nil pointers in the struct to JSON

@@ -17,6 +17,9 @@ import (
 	"gopkg.in/validator.v2"
 )
 
+// very silly way of avoiding `"fmt" imported and not used` errors
+var _ fmt.Stringer
+
 // UpdateRoleReportTypeAccessRequest - struct for UpdateRoleReportTypeAccessRequest
 type UpdateRoleReportTypeAccessRequest struct {
 	UpdateRoleReportTypeAccessRequestOneOf *UpdateRoleReportTypeAccessRequestOneOf
@@ -81,11 +84,11 @@ func (dst *UpdateRoleReportTypeAccessRequest) UnmarshalJSON(data []byte) error {
 		dst.UpdateRoleReportTypeAccessRequestOneOf = nil
 		dst.UpdateRoleReportTypeAccessRequestOneOf1 = nil
 
-		return fmt.Errorf("data matches more than one schema in oneOf(UpdateRoleReportTypeAccessRequest)")
+		return NewResponseValidationError("data matches more than one schema in oneOf(UpdateRoleReportTypeAccessRequest)")
 	} else if match == 1 {
 		return nil // exactly one match
 	} else { // no match
-		return fmt.Errorf("data failed to match schemas in oneOf(UpdateRoleReportTypeAccessRequest)")
+		return NewResponseValidationError("data failed to match schemas in oneOf(UpdateRoleReportTypeAccessRequest)")
 	}
 }
 

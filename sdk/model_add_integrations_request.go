@@ -17,6 +17,9 @@ import (
 	"gopkg.in/validator.v2"
 )
 
+// very silly way of avoiding `"fmt" imported and not used` errors
+var _ fmt.Stringer
+
 // AddIntegrationsRequest - struct for AddIntegrationsRequest
 type AddIntegrationsRequest struct {
 	AddIntegrationsRequestOneOf *AddIntegrationsRequestOneOf
@@ -211,11 +214,11 @@ func (dst *AddIntegrationsRequest) UnmarshalJSON(data []byte) error {
 		dst.AddIntegrationsRequestOneOf5 = nil
 		dst.AddIntegrationsRequestOneOf6 = nil
 
-		return fmt.Errorf("data matches more than one schema in oneOf(AddIntegrationsRequest)")
+		return NewResponseValidationError("data matches more than one schema in oneOf(AddIntegrationsRequest)")
 	} else if match == 1 {
 		return nil // exactly one match
 	} else { // no match
-		return fmt.Errorf("data failed to match schemas in oneOf(AddIntegrationsRequest)")
+		return NewResponseValidationError("data failed to match schemas in oneOf(AddIntegrationsRequest)")
 	}
 }
 

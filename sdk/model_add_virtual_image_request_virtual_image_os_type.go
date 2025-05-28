@@ -17,6 +17,9 @@ import (
 	"gopkg.in/validator.v2"
 )
 
+// very silly way of avoiding `"fmt" imported and not used` errors
+var _ fmt.Stringer
+
 // AddVirtualImageRequestVirtualImageOsType - A Map containing the id of the OS Type. This can also be passed as a string (code or name) instead.
 type AddVirtualImageRequestVirtualImageOsType struct {
 	GetAlerts200ResponseAllOfChecksInnerContainer *GetAlerts200ResponseAllOfChecksInnerContainer
@@ -81,11 +84,11 @@ func (dst *AddVirtualImageRequestVirtualImageOsType) UnmarshalJSON(data []byte) 
 		dst.GetAlerts200ResponseAllOfChecksInnerContainer = nil
 		dst.String = nil
 
-		return fmt.Errorf("data matches more than one schema in oneOf(AddVirtualImageRequestVirtualImageOsType)")
+		return NewResponseValidationError("data matches more than one schema in oneOf(AddVirtualImageRequestVirtualImageOsType)")
 	} else if match == 1 {
 		return nil // exactly one match
 	} else { // no match
-		return fmt.Errorf("data failed to match schemas in oneOf(AddVirtualImageRequestVirtualImageOsType)")
+		return NewResponseValidationError("data failed to match schemas in oneOf(AddVirtualImageRequestVirtualImageOsType)")
 	}
 }
 

@@ -16,6 +16,9 @@ import (
 	"fmt"
 )
 
+// very silly way of avoiding `"fmt" imported and not used` errors
+var _ fmt.Stringer
+
 
 // CreateNetworksRequestNetworkConfig Configuration object. Settings vary by type.
 type CreateNetworksRequestNetworkConfig struct {
@@ -80,7 +83,7 @@ func (dst *CreateNetworksRequestNetworkConfig) UnmarshalJSON(data []byte) error 
 		dst.MapmapOfStringAny = nil
 	}
 
-	return fmt.Errorf("data failed to match schemas in anyOf(CreateNetworksRequestNetworkConfig)")
+	return NewResponseValidationError("data failed to match schemas in anyOf(CreateNetworksRequestNetworkConfig)")
 }
 
 // Marshal data from the first non-nil pointers in the struct to JSON

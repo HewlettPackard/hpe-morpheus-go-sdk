@@ -17,6 +17,9 @@ import (
 	"gopkg.in/validator.v2"
 )
 
+// very silly way of avoiding `"fmt" imported and not used` errors
+var _ fmt.Stringer
+
 // GetCypherKey200ResponseAllOfData - Data that was written to the key
 type GetCypherKey200ResponseAllOfData struct {
 	MapmapOfStringAny *map[string]interface{}
@@ -81,11 +84,11 @@ func (dst *GetCypherKey200ResponseAllOfData) UnmarshalJSON(data []byte) error {
 		dst.MapmapOfStringAny = nil
 		dst.String = nil
 
-		return fmt.Errorf("data matches more than one schema in oneOf(GetCypherKey200ResponseAllOfData)")
+		return NewResponseValidationError("data matches more than one schema in oneOf(GetCypherKey200ResponseAllOfData)")
 	} else if match == 1 {
 		return nil // exactly one match
 	} else { // no match
-		return fmt.Errorf("data failed to match schemas in oneOf(GetCypherKey200ResponseAllOfData)")
+		return NewResponseValidationError("data failed to match schemas in oneOf(GetCypherKey200ResponseAllOfData)")
 	}
 }
 

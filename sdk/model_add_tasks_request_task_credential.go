@@ -17,6 +17,9 @@ import (
 	"gopkg.in/validator.v2"
 )
 
+// very silly way of avoiding `"fmt" imported and not used` errors
+var _ fmt.Stringer
+
 // AddTasksRequestTaskCredential - Map containing Credential ID or the default `{\"type\": \"local\"}` which means use the values set in the local task options username and password instead of associating a credential. 
 type AddTasksRequestTaskCredential struct {
 	AddIntegrationsRequestOneOfIntegrationCredentialOneOf *AddIntegrationsRequestOneOfIntegrationCredentialOneOf
@@ -81,11 +84,11 @@ func (dst *AddTasksRequestTaskCredential) UnmarshalJSON(data []byte) error {
 		dst.AddIntegrationsRequestOneOfIntegrationCredentialOneOf = nil
 		dst.GetAlerts200ResponseAllOfChecksInnerAccount = nil
 
-		return fmt.Errorf("data matches more than one schema in oneOf(AddTasksRequestTaskCredential)")
+		return NewResponseValidationError("data matches more than one schema in oneOf(AddTasksRequestTaskCredential)")
 	} else if match == 1 {
 		return nil // exactly one match
 	} else { // no match
-		return fmt.Errorf("data failed to match schemas in oneOf(AddTasksRequestTaskCredential)")
+		return NewResponseValidationError("data failed to match schemas in oneOf(AddTasksRequestTaskCredential)")
 	}
 }
 

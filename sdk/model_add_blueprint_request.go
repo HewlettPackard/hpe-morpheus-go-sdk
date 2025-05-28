@@ -17,6 +17,9 @@ import (
 	"gopkg.in/validator.v2"
 )
 
+// very silly way of avoiding `"fmt" imported and not used` errors
+var _ fmt.Stringer
+
 // AddBlueprintRequest - struct for AddBlueprintRequest
 type AddBlueprintRequest struct {
 	AddBlueprintRequestOneOf *AddBlueprintRequestOneOf
@@ -185,11 +188,11 @@ func (dst *AddBlueprintRequest) UnmarshalJSON(data []byte) error {
 		dst.AddBlueprintRequestOneOf4 = nil
 		dst.AddBlueprintRequestOneOf5 = nil
 
-		return fmt.Errorf("data matches more than one schema in oneOf(AddBlueprintRequest)")
+		return NewResponseValidationError("data matches more than one schema in oneOf(AddBlueprintRequest)")
 	} else if match == 1 {
 		return nil // exactly one match
 	} else { // no match
-		return fmt.Errorf("data failed to match schemas in oneOf(AddBlueprintRequest)")
+		return NewResponseValidationError("data failed to match schemas in oneOf(AddBlueprintRequest)")
 	}
 }
 

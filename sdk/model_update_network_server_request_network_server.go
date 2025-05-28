@@ -17,6 +17,9 @@ import (
 	"gopkg.in/validator.v2"
 )
 
+// very silly way of avoiding `"fmt" imported and not used` errors
+var _ fmt.Stringer
+
 // UpdateNetworkServerRequestNetworkServer - Payload for updating a Network Server
 type UpdateNetworkServerRequestNetworkServer struct {
 	NSXNetworkServerUpdate *NSXNetworkServerUpdate
@@ -55,11 +58,11 @@ func (dst *UpdateNetworkServerRequestNetworkServer) UnmarshalJSON(data []byte) e
 		// reset to nil
 		dst.NSXNetworkServerUpdate = nil
 
-		return fmt.Errorf("data matches more than one schema in oneOf(UpdateNetworkServerRequestNetworkServer)")
+		return NewResponseValidationError("data matches more than one schema in oneOf(UpdateNetworkServerRequestNetworkServer)")
 	} else if match == 1 {
 		return nil // exactly one match
 	} else { // no match
-		return fmt.Errorf("data failed to match schemas in oneOf(UpdateNetworkServerRequestNetworkServer)")
+		return NewResponseValidationError("data failed to match schemas in oneOf(UpdateNetworkServerRequestNetworkServer)")
 	}
 }
 

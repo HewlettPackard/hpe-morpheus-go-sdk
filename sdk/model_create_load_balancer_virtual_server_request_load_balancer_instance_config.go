@@ -17,6 +17,9 @@ import (
 	"gopkg.in/validator.v2"
 )
 
+// very silly way of avoiding `"fmt" imported and not used` errors
+var _ fmt.Stringer
+
 // CreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig - struct for CreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig
 type CreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig struct {
 	NSXVirtualServerConfigObject *NSXVirtualServerConfigObject
@@ -81,11 +84,11 @@ func (dst *CreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig) Unm
 		dst.NSXVirtualServerConfigObject = nil
 		dst.MapmapOfStringAny = nil
 
-		return fmt.Errorf("data matches more than one schema in oneOf(CreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig)")
+		return NewResponseValidationError("data matches more than one schema in oneOf(CreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig)")
 	} else if match == 1 {
 		return nil // exactly one match
 	} else { // no match
-		return fmt.Errorf("data failed to match schemas in oneOf(CreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig)")
+		return NewResponseValidationError("data failed to match schemas in oneOf(CreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig)")
 	}
 }
 

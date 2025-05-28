@@ -17,6 +17,9 @@ import (
 	"gopkg.in/validator.v2"
 )
 
+// very silly way of avoiding `"fmt" imported and not used` errors
+var _ fmt.Stringer
+
 // ListHosts200ResponseAllOfServersInnerConfigCreateUser - struct for ListHosts200ResponseAllOfServersInnerConfigCreateUser
 type ListHosts200ResponseAllOfServersInnerConfigCreateUser struct {
 	Bool *bool
@@ -81,11 +84,11 @@ func (dst *ListHosts200ResponseAllOfServersInnerConfigCreateUser) UnmarshalJSON(
 		dst.Bool = nil
 		dst.String = nil
 
-		return fmt.Errorf("data matches more than one schema in oneOf(ListHosts200ResponseAllOfServersInnerConfigCreateUser)")
+		return NewResponseValidationError("data matches more than one schema in oneOf(ListHosts200ResponseAllOfServersInnerConfigCreateUser)")
 	} else if match == 1 {
 		return nil // exactly one match
 	} else { // no match
-		return fmt.Errorf("data failed to match schemas in oneOf(ListHosts200ResponseAllOfServersInnerConfigCreateUser)")
+		return NewResponseValidationError("data failed to match schemas in oneOf(ListHosts200ResponseAllOfServersInnerConfigCreateUser)")
 	}
 }
 

@@ -16,6 +16,9 @@ import (
 	"fmt"
 )
 
+// very silly way of avoiding `"fmt" imported and not used` errors
+var _ fmt.Stringer
+
 
 // AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig struct for AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig
 type AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig struct {
@@ -94,7 +97,7 @@ func (dst *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig) UnmarshalJ
 		dst.MapmapOfStringAny = nil
 	}
 
-	return fmt.Errorf("data failed to match schemas in anyOf(AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig)")
+	return NewResponseValidationError("data failed to match schemas in anyOf(AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig)")
 }
 
 // Marshal data from the first non-nil pointers in the struct to JSON

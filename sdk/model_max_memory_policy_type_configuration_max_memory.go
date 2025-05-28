@@ -16,6 +16,9 @@ import (
 	"fmt"
 )
 
+// very silly way of avoiding `"fmt" imported and not used` errors
+var _ fmt.Stringer
+
 
 // MaxMemoryPolicyTypeConfigurationMaxMemory Max Memory (GB)
 type MaxMemoryPolicyTypeConfigurationMaxMemory struct {
@@ -52,7 +55,7 @@ func (dst *MaxMemoryPolicyTypeConfigurationMaxMemory) UnmarshalJSON(data []byte)
 		dst.String = nil
 	}
 
-	return fmt.Errorf("data failed to match schemas in anyOf(MaxMemoryPolicyTypeConfigurationMaxMemory)")
+	return NewResponseValidationError("data failed to match schemas in anyOf(MaxMemoryPolicyTypeConfigurationMaxMemory)")
 }
 
 // Marshal data from the first non-nil pointers in the struct to JSON

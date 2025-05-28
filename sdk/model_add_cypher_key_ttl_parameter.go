@@ -17,6 +17,9 @@ import (
 	"gopkg.in/validator.v2"
 )
 
+// very silly way of avoiding `"fmt" imported and not used` errors
+var _ fmt.Stringer
+
 // AddCypherKeyTtlParameter - struct for AddCypherKeyTtlParameter
 type AddCypherKeyTtlParameter struct {
 	Int64 *int64
@@ -81,11 +84,11 @@ func (dst *AddCypherKeyTtlParameter) UnmarshalJSON(data []byte) error {
 		dst.Int64 = nil
 		dst.String = nil
 
-		return fmt.Errorf("data matches more than one schema in oneOf(AddCypherKeyTtlParameter)")
+		return NewResponseValidationError("data matches more than one schema in oneOf(AddCypherKeyTtlParameter)")
 	} else if match == 1 {
 		return nil // exactly one match
 	} else { // no match
-		return fmt.Errorf("data failed to match schemas in oneOf(AddCypherKeyTtlParameter)")
+		return NewResponseValidationError("data failed to match schemas in oneOf(AddCypherKeyTtlParameter)")
 	}
 }
 

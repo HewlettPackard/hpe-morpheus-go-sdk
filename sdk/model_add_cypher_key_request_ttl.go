@@ -17,6 +17,9 @@ import (
 	"gopkg.in/validator.v2"
 )
 
+// very silly way of avoiding `"fmt" imported and not used` errors
+var _ fmt.Stringer
+
 // AddCypherKeyRequestTtl - Time to Live. The lease duration in seconds, or a human readable format eg. 15m, 8h, 7d. The default is 0 meaning Never expires. This only is applied if the cypher does not yet exist and is created. 
 type AddCypherKeyRequestTtl struct {
 	Int64 *int64
@@ -81,11 +84,11 @@ func (dst *AddCypherKeyRequestTtl) UnmarshalJSON(data []byte) error {
 		dst.Int64 = nil
 		dst.String = nil
 
-		return fmt.Errorf("data matches more than one schema in oneOf(AddCypherKeyRequestTtl)")
+		return NewResponseValidationError("data matches more than one schema in oneOf(AddCypherKeyRequestTtl)")
 	} else if match == 1 {
 		return nil // exactly one match
 	} else { // no match
-		return fmt.Errorf("data failed to match schemas in oneOf(AddCypherKeyRequestTtl)")
+		return NewResponseValidationError("data failed to match schemas in oneOf(AddCypherKeyRequestTtl)")
 	}
 }
 
