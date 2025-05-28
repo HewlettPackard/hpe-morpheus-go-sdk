@@ -6,3 +6,8 @@ additionalProperties:
   goVersion: 1.24
   isGoSubmodule: true
   withGoMod: false
+
+files:
+  errors.mustache:
+    templateType: SupportingFiles
+    destinationFilename: errors.go

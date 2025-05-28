@@ -35,7 +35,7 @@ func (v *{{{classname}}}) UnmarshalJSON(src []byte) error {
 		}
 	}
 
-	return fmt.Errorf("%+v is not a valid {{classname}}", value)
+	return NewResponseValidationError(fmt.Sprintf("%+v is not a valid {{classname}}", value))
 }
 
 // New{{{classname}}}FromValue returns a pointer to a valid {{{classname}}}

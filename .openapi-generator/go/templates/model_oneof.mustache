@@ -1,3 +1,6 @@
+// very silly way of avoiding `"fmt" imported and not used` errors
+var _ fmt.Stringer
+
 // {{classname}} - {{{description}}}{{^description}}struct for {{{classname}}}{{/description}}
 type {{classname}} struct {
 	{{#oneOf}}
@@ -75,11 +78,11 @@ func (dst *{{classname}}) UnmarshalJSON(data []byte) error {
 		dst.{{#lambda.type-to-name}}{{{.}}}{{/lambda.type-to-name}} = nil
 		{{/oneOf}}
 
-		return fmt.Errorf("data matches more than one schema in oneOf({{classname}})")
+		return NewResponseValidationError("data matches more than one schema in oneOf({{classname}})")
 	} else if match == 1 {
 		return nil // exactly one match
 	} else { // no match
-		return fmt.Errorf("data failed to match schemas in oneOf({{classname}})")
+		return NewResponseValidationError("data failed to match schemas in oneOf({{classname}})")
 	}
 	{{/discriminator}}
 	{{/useOneOfDiscriminatorLookup}}
@@ -110,11 +113,11 @@ func (dst *{{classname}}) UnmarshalJSON(data []byte) error {
 		dst.{{#lambda.type-to-name}}{{{.}}}{{/lambda.type-to-name}} = nil
 		{{/oneOf}}
 
-		return fmt.Errorf("data matches more than one schema in oneOf({{classname}})")
+		return NewResponseValidationError("data matches more than one schema in oneOf({{classname}})")
 	} else if match == 1 {
 		return nil // exactly one match
 	} else { // no match
-		return fmt.Errorf("data failed to match schemas in oneOf({{classname}})")
+		return NewResponseValidationError("data failed to match schemas in oneOf({{classname}})")
 	}
 	{{/useOneOfDiscriminatorLookup}}
 }
