@@ -5,6 +5,7 @@ package {{packageName}}
 import (
 	"bytes"
 	"context"
+	"errors"
 	"io"
 	"net/http"
 	"net/url"
@@ -411,6 +412,7 @@ func (a *{{{classname}}}Service) {{nickname}}Execute(r {{#structPrefix}}{{&class
 				newErr.err = err
 				return {{#returnType}}localVarReturnValue, {{/returnType}}localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			{{^-last}}
 			return {{#returnType}}localVarReturnValue, {{/returnType}}localVarHTTPResponse, newErr
