@@ -14,6 +14,7 @@ package sdk
 import (
 	"bytes"
 	"context"
+	"errors"
 	"io"
 	"net/http"
 	"net/url"
@@ -123,6 +124,7 @@ func (a *SecurityPackagesAPIService) AddSecurityPackagesExecute(r ApiAddSecurity
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -133,6 +135,7 @@ func (a *SecurityPackagesAPIService) AddSecurityPackagesExecute(r ApiAddSecurity
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -245,6 +248,7 @@ func (a *SecurityPackagesAPIService) GetSecurityPackagesExecute(r ApiGetSecurity
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -255,6 +259,7 @@ func (a *SecurityPackagesAPIService) GetSecurityPackagesExecute(r ApiGetSecurity
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -455,6 +460,7 @@ func (a *SecurityPackagesAPIService) ListSecurityPackagesExecute(r ApiListSecuri
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -465,6 +471,7 @@ func (a *SecurityPackagesAPIService) ListSecurityPackagesExecute(r ApiListSecuri
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -577,6 +584,7 @@ func (a *SecurityPackagesAPIService) RemoveSecurityPackagesExecute(r ApiRemoveSe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -587,6 +595,7 @@ func (a *SecurityPackagesAPIService) RemoveSecurityPackagesExecute(r ApiRemoveSe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -707,6 +716,7 @@ func (a *SecurityPackagesAPIService) UpdateSecurityPackagesExecute(r ApiUpdateSe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -717,6 +727,7 @@ func (a *SecurityPackagesAPIService) UpdateSecurityPackagesExecute(r ApiUpdateSe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

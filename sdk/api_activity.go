@@ -14,6 +14,7 @@ package sdk
 import (
 	"bytes"
 	"context"
+	"errors"
 	"io"
 	"net/http"
 	"net/url"
@@ -240,6 +241,7 @@ func (a *ActivityAPIService) ListActivityExecute(r ApiListActivityRequest) (*Lis
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -250,6 +252,7 @@ func (a *ActivityAPIService) ListActivityExecute(r ApiListActivityRequest) (*Lis
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

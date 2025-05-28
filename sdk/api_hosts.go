@@ -14,6 +14,7 @@ package sdk
 import (
 	"bytes"
 	"context"
+	"errors"
 	"io"
 	"net/http"
 	"net/url"
@@ -123,6 +124,7 @@ func (a *HostsAPIService) AddBaremetalHostExecute(r ApiAddBaremetalHostRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -133,6 +135,7 @@ func (a *HostsAPIService) AddBaremetalHostExecute(r ApiAddBaremetalHostRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -256,6 +259,7 @@ func (a *HostsAPIService) AssignDeviceExecute(r ApiAssignDeviceRequest) (*Restar
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -266,6 +270,7 @@ func (a *HostsAPIService) AssignDeviceExecute(r ApiAssignDeviceRequest) (*Restar
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -381,6 +386,7 @@ func (a *HostsAPIService) AttachDeviceExecute(r ApiAttachDeviceRequest) (*Restar
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -391,6 +397,7 @@ func (a *HostsAPIService) AttachDeviceExecute(r ApiAttachDeviceRequest) (*Restar
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -506,6 +513,7 @@ func (a *HostsAPIService) DetachDeviceExecute(r ApiDetachDeviceRequest) (*Restar
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -516,6 +524,7 @@ func (a *HostsAPIService) DetachDeviceExecute(r ApiDetachDeviceRequest) (*Restar
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -635,6 +644,7 @@ func (a *HostsAPIService) EnableMaintenanceModeExecute(r ApiEnableMaintenanceMod
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -645,6 +655,7 @@ func (a *HostsAPIService) EnableMaintenanceModeExecute(r ApiEnableMaintenanceMod
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -756,6 +767,7 @@ func (a *HostsAPIService) GetHostExecute(r ApiGetHostRequest) (*GetHost200Respon
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -766,6 +778,7 @@ func (a *HostsAPIService) GetHostExecute(r ApiGetHostRequest) (*GetHost200Respon
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -877,6 +890,7 @@ func (a *HostsAPIService) GetHostSnpshotsExecute(r ApiGetHostSnpshotsRequest) (*
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -887,6 +901,7 @@ func (a *HostsAPIService) GetHostSnpshotsExecute(r ApiGetHostSnpshotsRequest) (*
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -998,6 +1013,7 @@ func (a *HostsAPIService) GetHostTypeExecute(r ApiGetHostTypeRequest) (*GetHostT
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1008,6 +1024,7 @@ func (a *HostsAPIService) GetHostTypeExecute(r ApiGetHostTypeRequest) (*GetHostT
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1119,6 +1136,7 @@ func (a *HostsAPIService) LeaveMaintenanceModeExecute(r ApiLeaveMaintenanceModeR
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1129,6 +1147,7 @@ func (a *HostsAPIService) LeaveMaintenanceModeExecute(r ApiLeaveMaintenanceModeR
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1240,6 +1259,7 @@ func (a *HostsAPIService) ListHostDevicesExecute(r ApiListHostDevicesRequest) (*
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1250,6 +1270,7 @@ func (a *HostsAPIService) ListHostDevicesExecute(r ApiListHostDevicesRequest) (*
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1469,6 +1490,7 @@ func (a *HostsAPIService) ListHostTypesExecute(r ApiListHostTypesRequest) (*List
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1479,6 +1501,7 @@ func (a *HostsAPIService) ListHostTypesExecute(r ApiListHostTypesRequest) (*List
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1832,6 +1855,7 @@ func (a *HostsAPIService) ListHostsExecute(r ApiListHostsRequest) (*ListHosts200
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1842,6 +1866,7 @@ func (a *HostsAPIService) ListHostsExecute(r ApiListHostsRequest) (*ListHosts200
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1980,6 +2005,7 @@ func (a *HostsAPIService) ListServerServicePlansExecute(r ApiListServerServicePl
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1990,6 +2016,7 @@ func (a *HostsAPIService) ListServerServicePlansExecute(r ApiListServerServicePl
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -2109,6 +2136,7 @@ func (a *HostsAPIService) ManageHostPlacementExecute(r ApiManageHostPlacementReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -2119,6 +2147,7 @@ func (a *HostsAPIService) ManageHostPlacementExecute(r ApiManageHostPlacementReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -2308,6 +2337,7 @@ func (a *HostsAPIService) RemoveHostExecute(r ApiRemoveHostRequest) (*DeleteAler
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -2318,6 +2348,7 @@ func (a *HostsAPIService) RemoveHostExecute(r ApiRemoveHostRequest) (*DeleteAler
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -2429,6 +2460,7 @@ func (a *HostsAPIService) RestartHostExecute(r ApiRestartHostRequest) (*UpdateHo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -2439,6 +2471,7 @@ func (a *HostsAPIService) RestartHostExecute(r ApiRestartHostRequest) (*UpdateHo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -2550,6 +2583,7 @@ func (a *HostsAPIService) StartHostExecute(r ApiStartHostRequest) (*DeleteAlerts
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -2560,6 +2594,7 @@ func (a *HostsAPIService) StartHostExecute(r ApiStartHostRequest) (*DeleteAlerts
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -2671,6 +2706,7 @@ func (a *HostsAPIService) StopHostExecute(r ApiStopHostRequest) (*DeleteAlerts20
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -2681,6 +2717,7 @@ func (a *HostsAPIService) StopHostExecute(r ApiStopHostRequest) (*DeleteAlerts20
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -2800,6 +2837,7 @@ func (a *HostsAPIService) UpdateHostExecute(r ApiUpdateHostRequest) (*GetHost200
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -2810,6 +2848,7 @@ func (a *HostsAPIService) UpdateHostExecute(r ApiUpdateHostRequest) (*GetHost200
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -2939,6 +2978,7 @@ func (a *HostsAPIService) UpdateHostAssignTenantExecute(r ApiUpdateHostAssignTen
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -2949,6 +2989,7 @@ func (a *HostsAPIService) UpdateHostAssignTenantExecute(r ApiUpdateHostAssignTen
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -3064,6 +3105,7 @@ func (a *HostsAPIService) UpdateHostCloudExecute(r ApiUpdateHostCloudRequest) (*
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -3074,6 +3116,7 @@ func (a *HostsAPIService) UpdateHostCloudExecute(r ApiUpdateHostCloudRequest) (*
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -3216,6 +3259,7 @@ func (a *HostsAPIService) UpdateHostExecuteWorkflowExecute(r ApiUpdateHostExecut
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -3226,6 +3270,7 @@ func (a *HostsAPIService) UpdateHostExecuteWorkflowExecute(r ApiUpdateHostExecut
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -3345,6 +3390,7 @@ func (a *HostsAPIService) UpdateHostInstallAgentExecute(r ApiUpdateHostInstallAg
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -3355,6 +3401,7 @@ func (a *HostsAPIService) UpdateHostInstallAgentExecute(r ApiUpdateHostInstallAg
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -3474,6 +3521,7 @@ func (a *HostsAPIService) UpdateHostManagedExecute(r ApiUpdateHostManagedRequest
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -3484,6 +3532,7 @@ func (a *HostsAPIService) UpdateHostManagedExecute(r ApiUpdateHostManagedRequest
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -3603,6 +3652,7 @@ func (a *HostsAPIService) UpdateHostResizeExecute(r ApiUpdateHostResizeRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -3613,6 +3663,7 @@ func (a *HostsAPIService) UpdateHostResizeExecute(r ApiUpdateHostResizeRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -3724,6 +3775,7 @@ func (a *HostsAPIService) UpdateHostUpgradeAgentExecute(r ApiUpdateHostUpgradeAg
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -3734,6 +3786,7 @@ func (a *HostsAPIService) UpdateHostUpgradeAgentExecute(r ApiUpdateHostUpgradeAg
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -3857,6 +3910,7 @@ func (a *HostsAPIService) UpdateServerNetworkInterfaceExecute(r ApiUpdateServerN
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -3867,6 +3921,7 @@ func (a *HostsAPIService) UpdateServerNetworkInterfaceExecute(r ApiUpdateServerN
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

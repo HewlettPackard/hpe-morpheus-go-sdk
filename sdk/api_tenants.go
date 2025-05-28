@@ -14,6 +14,7 @@ package sdk
 import (
 	"bytes"
 	"context"
+	"errors"
 	"io"
 	"net/http"
 	"net/url"
@@ -128,6 +129,7 @@ func (a *TenantsAPIService) AddSubtenantIdentitySourcesExecute(r ApiAddSubtenant
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -138,6 +140,7 @@ func (a *TenantsAPIService) AddSubtenantIdentitySourcesExecute(r ApiAddSubtenant
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -253,6 +256,7 @@ func (a *TenantsAPIService) AddTenantExecute(r ApiAddTenantRequest) (*AddTenant2
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -263,6 +267,7 @@ func (a *TenantsAPIService) AddTenantExecute(r ApiAddTenantRequest) (*AddTenant2
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -382,6 +387,7 @@ func (a *TenantsAPIService) AddUserTenantExecute(r ApiAddUserTenantRequest) (*Ad
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -392,6 +398,7 @@ func (a *TenantsAPIService) AddUserTenantExecute(r ApiAddUserTenantRequest) (*Ad
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -511,6 +518,7 @@ func (a *TenantsAPIService) CreateTenantSubtenantGroupExecute(r ApiCreateTenantS
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -521,6 +529,7 @@ func (a *TenantsAPIService) CreateTenantSubtenantGroupExecute(r ApiCreateTenantS
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -632,6 +641,7 @@ func (a *TenantsAPIService) GetTenantExecute(r ApiGetTenantRequest) (*GetTenant2
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -642,6 +652,7 @@ func (a *TenantsAPIService) GetTenantExecute(r ApiGetTenantRequest) (*GetTenant2
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -757,6 +768,7 @@ func (a *TenantsAPIService) GetTenantSubtenantGroupExecute(r ApiGetTenantSubtena
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -767,6 +779,7 @@ func (a *TenantsAPIService) GetTenantSubtenantGroupExecute(r ApiGetTenantSubtena
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -911,6 +924,7 @@ func (a *TenantsAPIService) ListTenantSubtenantGroupsExecute(r ApiListTenantSubt
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -921,6 +935,7 @@ func (a *TenantsAPIService) ListTenantSubtenantGroupsExecute(r ApiListTenantSubt
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1092,6 +1107,7 @@ func (a *TenantsAPIService) ListTenantSubtenantIdentitySourcesExecute(r ApiListT
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1102,6 +1118,7 @@ func (a *TenantsAPIService) ListTenantSubtenantIdentitySourcesExecute(r ApiListT
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1291,6 +1308,7 @@ func (a *TenantsAPIService) ListTenantsExecute(r ApiListTenantsRequest) (*ListTe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1301,6 +1319,7 @@ func (a *TenantsAPIService) ListTenantsExecute(r ApiListTenantsRequest) (*ListTe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1408,6 +1427,7 @@ func (a *TenantsAPIService) ListTenantsAvailableRolesExecute(r ApiListTenantsAva
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1418,6 +1438,7 @@ func (a *TenantsAPIService) ListTenantsAvailableRolesExecute(r ApiListTenantsAva
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1542,6 +1563,7 @@ func (a *TenantsAPIService) RemoveTenantExecute(r ApiRemoveTenantRequest) (*Dele
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1552,6 +1574,7 @@ func (a *TenantsAPIService) RemoveTenantExecute(r ApiRemoveTenantRequest) (*Dele
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1562,6 +1585,7 @@ func (a *TenantsAPIService) RemoveTenantExecute(r ApiRemoveTenantRequest) (*Dele
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1677,6 +1701,7 @@ func (a *TenantsAPIService) RemoveTenantSubtenantGroupExecute(r ApiRemoveTenantS
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1687,6 +1712,7 @@ func (a *TenantsAPIService) RemoveTenantSubtenantGroupExecute(r ApiRemoveTenantS
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1806,6 +1832,7 @@ func (a *TenantsAPIService) UpdateTenantExecute(r ApiUpdateTenantRequest) (*Upda
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1816,6 +1843,7 @@ func (a *TenantsAPIService) UpdateTenantExecute(r ApiUpdateTenantRequest) (*Upda
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1939,6 +1967,7 @@ func (a *TenantsAPIService) UpdateTenantSubtenantGroupExecute(r ApiUpdateTenantS
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1949,6 +1978,7 @@ func (a *TenantsAPIService) UpdateTenantSubtenantGroupExecute(r ApiUpdateTenantS
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -2072,6 +2102,7 @@ func (a *TenantsAPIService) UpdateTenantSubtenantGroupZonesExecute(r ApiUpdateTe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -2082,6 +2113,7 @@ func (a *TenantsAPIService) UpdateTenantSubtenantGroupZonesExecute(r ApiUpdateTe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

@@ -14,6 +14,7 @@ package sdk
 import (
 	"bytes"
 	"context"
+	"errors"
 	"io"
 	"net/http"
 	"net/url"
@@ -122,6 +123,7 @@ func (a *ImageBuildsAPIService) AddBootScriptExecute(r ApiAddBootScriptRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -132,6 +134,7 @@ func (a *ImageBuildsAPIService) AddBootScriptExecute(r ApiAddBootScriptRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -247,6 +250,7 @@ func (a *ImageBuildsAPIService) AddImageBuildExecute(r ApiAddImageBuildRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -257,6 +261,7 @@ func (a *ImageBuildsAPIService) AddImageBuildExecute(r ApiAddImageBuildRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -372,6 +377,7 @@ func (a *ImageBuildsAPIService) AddPreseedScriptExecute(r ApiAddPreseedScriptReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -382,6 +388,7 @@ func (a *ImageBuildsAPIService) AddPreseedScriptExecute(r ApiAddPreseedScriptReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -493,6 +500,7 @@ func (a *ImageBuildsAPIService) DeleteBootScriptExecute(r ApiDeleteBootScriptReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -503,6 +511,7 @@ func (a *ImageBuildsAPIService) DeleteBootScriptExecute(r ApiDeleteBootScriptReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -614,6 +623,7 @@ func (a *ImageBuildsAPIService) DeleteImageBuildExecute(r ApiDeleteImageBuildReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -624,6 +634,7 @@ func (a *ImageBuildsAPIService) DeleteImageBuildExecute(r ApiDeleteImageBuildReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -735,6 +746,7 @@ func (a *ImageBuildsAPIService) DeletePreseedScriptExecute(r ApiDeletePreseedScr
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -745,6 +757,7 @@ func (a *ImageBuildsAPIService) DeletePreseedScriptExecute(r ApiDeletePreseedScr
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -856,6 +869,7 @@ func (a *ImageBuildsAPIService) ExecuteImageBuildExecute(r ApiExecuteImageBuildR
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -866,6 +880,7 @@ func (a *ImageBuildsAPIService) ExecuteImageBuildExecute(r ApiExecuteImageBuildR
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -977,6 +992,7 @@ func (a *ImageBuildsAPIService) GetBootScriptExecute(r ApiGetBootScriptRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -987,6 +1003,7 @@ func (a *ImageBuildsAPIService) GetBootScriptExecute(r ApiGetBootScriptRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1098,6 +1115,7 @@ func (a *ImageBuildsAPIService) GetImageBuildExecute(r ApiGetImageBuildRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1108,6 +1126,7 @@ func (a *ImageBuildsAPIService) GetImageBuildExecute(r ApiGetImageBuildRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1239,6 +1258,7 @@ func (a *ImageBuildsAPIService) GetImageBuildExecutionsExecute(r ApiGetImageBuil
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1249,6 +1269,7 @@ func (a *ImageBuildsAPIService) GetImageBuildExecutionsExecute(r ApiGetImageBuil
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1360,6 +1381,7 @@ func (a *ImageBuildsAPIService) GetPreseedScriptExecute(r ApiGetPreseedScriptReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1370,6 +1392,7 @@ func (a *ImageBuildsAPIService) GetPreseedScriptExecute(r ApiGetPreseedScriptReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1500,6 +1523,7 @@ func (a *ImageBuildsAPIService) ListBootScriptsExecute(r ApiListBootScriptsReque
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1510,6 +1534,7 @@ func (a *ImageBuildsAPIService) ListBootScriptsExecute(r ApiListBootScriptsReque
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1637,6 +1662,7 @@ func (a *ImageBuildsAPIService) ListImageBuildsExecute(r ApiListImageBuildsReque
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1647,6 +1673,7 @@ func (a *ImageBuildsAPIService) ListImageBuildsExecute(r ApiListImageBuildsReque
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1777,6 +1804,7 @@ func (a *ImageBuildsAPIService) ListPreseedScriptsExecute(r ApiListPreseedScript
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1787,6 +1815,7 @@ func (a *ImageBuildsAPIService) ListPreseedScriptsExecute(r ApiListPreseedScript
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1906,6 +1935,7 @@ func (a *ImageBuildsAPIService) UpdateBootScriptExecute(r ApiUpdateBootScriptReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1916,6 +1946,7 @@ func (a *ImageBuildsAPIService) UpdateBootScriptExecute(r ApiUpdateBootScriptReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -2035,6 +2066,7 @@ func (a *ImageBuildsAPIService) UpdateImageBuildExecute(r ApiUpdateImageBuildReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -2045,6 +2077,7 @@ func (a *ImageBuildsAPIService) UpdateImageBuildExecute(r ApiUpdateImageBuildReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -2164,6 +2197,7 @@ func (a *ImageBuildsAPIService) UpdatePreseedScriptExecute(r ApiUpdatePreseedScr
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -2174,6 +2208,7 @@ func (a *ImageBuildsAPIService) UpdatePreseedScriptExecute(r ApiUpdatePreseedScr
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

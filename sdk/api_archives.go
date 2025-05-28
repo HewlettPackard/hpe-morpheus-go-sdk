@@ -14,6 +14,7 @@ package sdk
 import (
 	"bytes"
 	"context"
+	"errors"
 	"io"
 	"net/http"
 	"net/url"
@@ -123,6 +124,7 @@ func (a *ArchivesAPIService) AddArchiveBucketExecute(r ApiAddArchiveBucketReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -133,6 +135,7 @@ func (a *ArchivesAPIService) AddArchiveBucketExecute(r ApiAddArchiveBucketReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -282,6 +285,7 @@ func (a *ArchivesAPIService) AddArchiveFileExecute(r ApiAddArchiveFileRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -292,6 +296,7 @@ func (a *ArchivesAPIService) AddArchiveFileExecute(r ApiAddArchiveFileRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -416,6 +421,7 @@ func (a *ArchivesAPIService) AddArchiveFileLinkExecute(r ApiAddArchiveFileLinkRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -426,6 +432,7 @@ func (a *ArchivesAPIService) AddArchiveFileLinkExecute(r ApiAddArchiveFileLinkRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -537,6 +544,7 @@ func (a *ArchivesAPIService) DeleteArchiveBucketExecute(r ApiDeleteArchiveBucket
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -547,6 +555,7 @@ func (a *ArchivesAPIService) DeleteArchiveBucketExecute(r ApiDeleteArchiveBucket
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -661,6 +670,7 @@ func (a *ArchivesAPIService) DeleteArchiveFileExecute(r ApiDeleteArchiveFileRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -671,6 +681,7 @@ func (a *ArchivesAPIService) DeleteArchiveFileExecute(r ApiDeleteArchiveFileRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -786,6 +797,7 @@ func (a *ArchivesAPIService) DeleteArchiveFileLinkExecute(r ApiDeleteArchiveFile
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -796,6 +808,7 @@ func (a *ArchivesAPIService) DeleteArchiveFileLinkExecute(r ApiDeleteArchiveFile
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -907,6 +920,7 @@ func (a *ArchivesAPIService) GetArchiveBucketExecute(r ApiGetArchiveBucketReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -917,6 +931,7 @@ func (a *ArchivesAPIService) GetArchiveBucketExecute(r ApiGetArchiveBucketReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1033,6 +1048,7 @@ func (a *ArchivesAPIService) GetArchiveFileExecute(r ApiGetArchiveFileRequest) (
 				newErr.err = err
 				return localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
@@ -1043,6 +1059,7 @@ func (a *ArchivesAPIService) GetArchiveFileExecute(r ApiGetArchiveFileRequest) (
 				newErr.err = err
 				return localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarHTTPResponse, newErr
@@ -1145,6 +1162,7 @@ func (a *ArchivesAPIService) GetArchiveFileDetailExecute(r ApiGetArchiveFileDeta
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1155,6 +1173,7 @@ func (a *ArchivesAPIService) GetArchiveFileDetailExecute(r ApiGetArchiveFileDeta
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1266,6 +1285,7 @@ func (a *ArchivesAPIService) GetArchiveFileLinksExecute(r ApiGetArchiveFileLinks
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1276,6 +1296,7 @@ func (a *ArchivesAPIService) GetArchiveFileLinksExecute(r ApiGetArchiveFileLinks
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1389,6 +1410,7 @@ func (a *ArchivesAPIService) GetArchivePublicFileExecute(r ApiGetArchivePublicFi
 				newErr.err = err
 				return localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
@@ -1399,6 +1421,7 @@ func (a *ArchivesAPIService) GetArchivePublicFileExecute(r ApiGetArchivePublicFi
 				newErr.err = err
 				return localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarHTTPResponse, newErr
@@ -1506,6 +1529,7 @@ func (a *ArchivesAPIService) GetArchivePublicFileLinkExecute(r ApiGetArchivePubl
 				newErr.err = err
 				return localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
@@ -1516,6 +1540,7 @@ func (a *ArchivesAPIService) GetArchivePublicFileLinkExecute(r ApiGetArchivePubl
 				newErr.err = err
 				return localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarHTTPResponse, newErr
@@ -1634,6 +1659,7 @@ func (a *ArchivesAPIService) ListArchiveBucketsExecute(r ApiListArchiveBucketsRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1644,6 +1670,7 @@ func (a *ArchivesAPIService) ListArchiveBucketsExecute(r ApiListArchiveBucketsRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1792,6 +1819,7 @@ func (a *ArchivesAPIService) ListArchiveFilesExecute(r ApiListArchiveFilesReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1802,6 +1830,7 @@ func (a *ArchivesAPIService) ListArchiveFilesExecute(r ApiListArchiveFilesReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1921,6 +1950,7 @@ func (a *ArchivesAPIService) UpdateArchiveBucketExecute(r ApiUpdateArchiveBucket
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1931,6 +1961,7 @@ func (a *ArchivesAPIService) UpdateArchiveBucketExecute(r ApiUpdateArchiveBucket
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr

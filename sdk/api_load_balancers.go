@@ -14,6 +14,7 @@ package sdk
 import (
 	"bytes"
 	"context"
+	"errors"
 	"io"
 	"net/http"
 	"net/url"
@@ -125,6 +126,7 @@ func (a *LoadBalancersAPIService) CreateLoadBalancerExecute(r ApiCreateLoadBalan
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -135,6 +137,7 @@ func (a *LoadBalancersAPIService) CreateLoadBalancerExecute(r ApiCreateLoadBalan
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -257,6 +260,7 @@ func (a *LoadBalancersAPIService) CreateLoadBalancerMonitorExecute(r ApiCreateLo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -267,6 +271,7 @@ func (a *LoadBalancersAPIService) CreateLoadBalancerMonitorExecute(r ApiCreateLo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -389,6 +394,7 @@ func (a *LoadBalancersAPIService) CreateLoadBalancerPoolExecute(r ApiCreateLoadB
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -399,6 +405,7 @@ func (a *LoadBalancersAPIService) CreateLoadBalancerPoolExecute(r ApiCreateLoadB
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -521,6 +528,7 @@ func (a *LoadBalancersAPIService) CreateLoadBalancerPoolNodeExecute(r ApiCreateL
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -531,6 +539,7 @@ func (a *LoadBalancersAPIService) CreateLoadBalancerPoolNodeExecute(r ApiCreateL
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -653,6 +662,7 @@ func (a *LoadBalancersAPIService) CreateLoadBalancerProfileExecute(r ApiCreateLo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -663,6 +673,7 @@ func (a *LoadBalancersAPIService) CreateLoadBalancerProfileExecute(r ApiCreateLo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -785,6 +796,7 @@ func (a *LoadBalancersAPIService) CreateLoadBalancerVirtualServerExecute(r ApiCr
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -795,6 +807,7 @@ func (a *LoadBalancersAPIService) CreateLoadBalancerVirtualServerExecute(r ApiCr
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -906,6 +919,7 @@ func (a *LoadBalancersAPIService) DeleteLoadBalancerExecute(r ApiDeleteLoadBalan
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -916,6 +930,7 @@ func (a *LoadBalancersAPIService) DeleteLoadBalancerExecute(r ApiDeleteLoadBalan
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1031,6 +1046,7 @@ func (a *LoadBalancersAPIService) DeleteLoadBalancerMonitorExecute(r ApiDeleteLo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1041,6 +1057,7 @@ func (a *LoadBalancersAPIService) DeleteLoadBalancerMonitorExecute(r ApiDeleteLo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1156,6 +1173,7 @@ func (a *LoadBalancersAPIService) DeleteLoadBalancerPoolExecute(r ApiDeleteLoadB
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1166,6 +1184,7 @@ func (a *LoadBalancersAPIService) DeleteLoadBalancerPoolExecute(r ApiDeleteLoadB
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1281,6 +1300,7 @@ func (a *LoadBalancersAPIService) DeleteLoadBalancerPoolNodeExecute(r ApiDeleteL
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1291,6 +1311,7 @@ func (a *LoadBalancersAPIService) DeleteLoadBalancerPoolNodeExecute(r ApiDeleteL
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1406,6 +1427,7 @@ func (a *LoadBalancersAPIService) DeleteLoadBalancerProfileExecute(r ApiDeleteLo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1416,6 +1438,7 @@ func (a *LoadBalancersAPIService) DeleteLoadBalancerProfileExecute(r ApiDeleteLo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1531,6 +1554,7 @@ func (a *LoadBalancersAPIService) DeleteLoadBalancerVirtualServerExecute(r ApiDe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1541,6 +1565,7 @@ func (a *LoadBalancersAPIService) DeleteLoadBalancerVirtualServerExecute(r ApiDe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1652,6 +1677,7 @@ func (a *LoadBalancersAPIService) GetLoadBalancerExecute(r ApiGetLoadBalancerReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1662,6 +1688,7 @@ func (a *LoadBalancersAPIService) GetLoadBalancerExecute(r ApiGetLoadBalancerReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1777,6 +1804,7 @@ func (a *LoadBalancersAPIService) GetLoadBalancerMonitorExecute(r ApiGetLoadBala
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1787,6 +1815,7 @@ func (a *LoadBalancersAPIService) GetLoadBalancerMonitorExecute(r ApiGetLoadBala
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -1902,6 +1931,7 @@ func (a *LoadBalancersAPIService) GetLoadBalancerPoolExecute(r ApiGetLoadBalance
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -1912,6 +1942,7 @@ func (a *LoadBalancersAPIService) GetLoadBalancerPoolExecute(r ApiGetLoadBalance
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -2027,6 +2058,7 @@ func (a *LoadBalancersAPIService) GetLoadBalancerPoolNodeExecute(r ApiGetLoadBal
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -2037,6 +2069,7 @@ func (a *LoadBalancersAPIService) GetLoadBalancerPoolNodeExecute(r ApiGetLoadBal
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -2152,6 +2185,7 @@ func (a *LoadBalancersAPIService) GetLoadBalancerProfileExecute(r ApiGetLoadBala
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -2162,6 +2196,7 @@ func (a *LoadBalancersAPIService) GetLoadBalancerProfileExecute(r ApiGetLoadBala
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -2273,6 +2308,7 @@ func (a *LoadBalancersAPIService) GetLoadBalancerTypeExecute(r ApiGetLoadBalance
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -2283,6 +2319,7 @@ func (a *LoadBalancersAPIService) GetLoadBalancerTypeExecute(r ApiGetLoadBalance
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -2398,6 +2435,7 @@ func (a *LoadBalancersAPIService) GetLoadBalancerVirtualServerExecute(r ApiGetLo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -2408,6 +2446,7 @@ func (a *LoadBalancersAPIService) GetLoadBalancerVirtualServerExecute(r ApiGetLo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -2591,6 +2630,7 @@ func (a *LoadBalancersAPIService) ListLoadBalancerMonitorsExecute(r ApiListLoadB
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -2601,6 +2641,7 @@ func (a *LoadBalancersAPIService) ListLoadBalancerMonitorsExecute(r ApiListLoadB
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -2774,6 +2815,7 @@ func (a *LoadBalancersAPIService) ListLoadBalancerPoolNodesExecute(r ApiListLoad
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -2784,6 +2826,7 @@ func (a *LoadBalancersAPIService) ListLoadBalancerPoolNodesExecute(r ApiListLoad
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -2967,6 +3010,7 @@ func (a *LoadBalancersAPIService) ListLoadBalancerPoolsExecute(r ApiListLoadBala
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -2977,6 +3021,7 @@ func (a *LoadBalancersAPIService) ListLoadBalancerPoolsExecute(r ApiListLoadBala
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -3160,6 +3205,7 @@ func (a *LoadBalancersAPIService) ListLoadBalancerProfilesExecute(r ApiListLoadB
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -3170,6 +3216,7 @@ func (a *LoadBalancersAPIService) ListLoadBalancerProfilesExecute(r ApiListLoadB
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -3372,6 +3419,7 @@ func (a *LoadBalancersAPIService) ListLoadBalancerTypesExecute(r ApiListLoadBala
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -3382,6 +3430,7 @@ func (a *LoadBalancersAPIService) ListLoadBalancerTypesExecute(r ApiListLoadBala
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -3585,6 +3634,7 @@ func (a *LoadBalancersAPIService) ListLoadBalancerVirtualServersExecute(r ApiLis
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -3595,6 +3645,7 @@ func (a *LoadBalancersAPIService) ListLoadBalancerVirtualServersExecute(r ApiLis
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -3774,6 +3825,7 @@ func (a *LoadBalancersAPIService) ListLoadBalancersExecute(r ApiListLoadBalancer
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -3784,6 +3836,7 @@ func (a *LoadBalancersAPIService) ListLoadBalancersExecute(r ApiListLoadBalancer
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -3895,6 +3948,7 @@ func (a *LoadBalancersAPIService) RefreshLoadBalancerExecute(r ApiRefreshLoadBal
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -3905,6 +3959,7 @@ func (a *LoadBalancersAPIService) RefreshLoadBalancerExecute(r ApiRefreshLoadBal
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -4027,6 +4082,7 @@ func (a *LoadBalancersAPIService) UpdateLoadBalancerExecute(r ApiUpdateLoadBalan
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -4037,6 +4093,7 @@ func (a *LoadBalancersAPIService) UpdateLoadBalancerExecute(r ApiUpdateLoadBalan
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -4163,6 +4220,7 @@ func (a *LoadBalancersAPIService) UpdateLoadBalancerMonitorExecute(r ApiUpdateLo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -4173,6 +4231,7 @@ func (a *LoadBalancersAPIService) UpdateLoadBalancerMonitorExecute(r ApiUpdateLo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -4296,6 +4355,7 @@ func (a *LoadBalancersAPIService) UpdateLoadBalancerPoolExecute(r ApiUpdateLoadB
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -4306,6 +4366,7 @@ func (a *LoadBalancersAPIService) UpdateLoadBalancerPoolExecute(r ApiUpdateLoadB
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -4429,6 +4490,7 @@ func (a *LoadBalancersAPIService) UpdateLoadBalancerPoolNodeExecute(r ApiUpdateL
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -4439,6 +4501,7 @@ func (a *LoadBalancersAPIService) UpdateLoadBalancerPoolNodeExecute(r ApiUpdateL
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -4562,6 +4625,7 @@ func (a *LoadBalancersAPIService) UpdateLoadBalancerProfileExecute(r ApiUpdateLo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -4572,6 +4636,7 @@ func (a *LoadBalancersAPIService) UpdateLoadBalancerProfileExecute(r ApiUpdateLo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -4695,6 +4760,7 @@ func (a *LoadBalancersAPIService) UpdateLoadBalancerVirtualServerExecute(r ApiUp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -4705,6 +4771,7 @@ func (a *LoadBalancersAPIService) UpdateLoadBalancerVirtualServerExecute(r ApiUp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
+					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
 					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
