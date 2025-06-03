@@ -37,7 +37,7 @@ type AddRolesRequestRole struct {
 	MultitenantLocked *bool `json:"multitenantLocked,omitempty"`
 	DefaultPersona *string `json:"defaultPersona,omitempty"`
 	// Set the access level for the specified permissions.
-	Permissions []AddRolesRequestRolePermissionsInner `json:"permissions,omitempty"`
+	FeaturePermissions []AddRolesRequestRoleFeaturePermissionsInner `json:"featurePermissions,omitempty"`
 	// Set the default access level for for groups (sites). Only applies to user roles.
 	GlobalSiteAccess *string `json:"globalSiteAccess,omitempty"`
 	// Set the access level for the specified groups (sites). Only applies to user roles.
@@ -363,36 +363,36 @@ func (o *AddRolesRequestRole) SetDefaultPersona(v string) {
 	o.DefaultPersona = &v
 }
 
-// GetPermissions returns the Permissions field value if set, zero value otherwise.
-func (o *AddRolesRequestRole) GetPermissions() []AddRolesRequestRolePermissionsInner {
-	if o == nil || IsNil(o.Permissions) {
-		var ret []AddRolesRequestRolePermissionsInner
+// GetFeaturePermissions returns the FeaturePermissions field value if set, zero value otherwise.
+func (o *AddRolesRequestRole) GetFeaturePermissions() []AddRolesRequestRoleFeaturePermissionsInner {
+	if o == nil || IsNil(o.FeaturePermissions) {
+		var ret []AddRolesRequestRoleFeaturePermissionsInner
 		return ret
 	}
-	return o.Permissions
+	return o.FeaturePermissions
 }
 
-// GetPermissionsOk returns a tuple with the Permissions field value if set, nil otherwise
+// GetFeaturePermissionsOk returns a tuple with the FeaturePermissions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddRolesRequestRole) GetPermissionsOk() ([]AddRolesRequestRolePermissionsInner, bool) {
-	if o == nil || IsNil(o.Permissions) {
+func (o *AddRolesRequestRole) GetFeaturePermissionsOk() ([]AddRolesRequestRoleFeaturePermissionsInner, bool) {
+	if o == nil || IsNil(o.FeaturePermissions) {
 		return nil, false
 	}
-	return o.Permissions, true
+	return o.FeaturePermissions, true
 }
 
-// IsSetPermissions returns a boolean if a field has been set.
-func (o *AddRolesRequestRole) IsSetPermissions() bool {
-	if o != nil && !IsNil(o.Permissions) {
+// IsSetFeaturePermissions returns a boolean if a field has been set.
+func (o *AddRolesRequestRole) IsSetFeaturePermissions() bool {
+	if o != nil && !IsNil(o.FeaturePermissions) {
 		return true
 	}
 
 	return false
 }
 
-// SetPermissions gets a reference to the given []AddRolesRequestRolePermissionsInner and assigns it to the Permissions field.
-func (o *AddRolesRequestRole) SetPermissions(v []AddRolesRequestRolePermissionsInner) {
-	o.Permissions = v
+// SetFeaturePermissions gets a reference to the given []AddRolesRequestRoleFeaturePermissionsInner and assigns it to the FeaturePermissions field.
+func (o *AddRolesRequestRole) SetFeaturePermissions(v []AddRolesRequestRoleFeaturePermissionsInner) {
+	o.FeaturePermissions = v
 }
 
 // GetGlobalSiteAccess returns the GlobalSiteAccess field value if set, zero value otherwise.
@@ -1099,8 +1099,8 @@ func (o AddRolesRequestRole) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.DefaultPersona) {
 		toSerialize["defaultPersona"] = o.DefaultPersona
 	}
-	if !IsNil(o.Permissions) {
-		toSerialize["permissions"] = o.Permissions
+	if !IsNil(o.FeaturePermissions) {
+		toSerialize["featurePermissions"] = o.FeaturePermissions
 	}
 	if !IsNil(o.GlobalSiteAccess) {
 		toSerialize["globalSiteAccess"] = o.GlobalSiteAccess
@@ -1216,7 +1216,7 @@ func (o *AddRolesRequestRole) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "multitenant")
 		delete(additionalProperties, "multitenantLocked")
 		delete(additionalProperties, "defaultPersona")
-		delete(additionalProperties, "permissions")
+		delete(additionalProperties, "featurePermissions")
 		delete(additionalProperties, "globalSiteAccess")
 		delete(additionalProperties, "sites")
 		delete(additionalProperties, "globalZoneAccess")

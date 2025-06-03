@@ -51,7 +51,7 @@ type ServicePlan struct {
 	PriceSets []ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionPriceSetsInner `json:"priceSets,omitempty"`
 	Config *ListServicePlans200ResponseAllOfServicePlansInnerConfig `json:"config,omitempty"`
 	Zones []ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"zones,omitempty"`
-	Permissions *ListServicePlans200ResponseAllOfServicePlansInnerPermissions `json:"permissions,omitempty"`
+	Permissions *AddServicePlans200ResponseAllOfServicePlanPermissions `json:"permissions,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -1035,9 +1035,9 @@ func (o *ServicePlan) SetZones(v []ListBackupSettings200ResponseBackupSettingsDe
 }
 
 // GetPermissions returns the Permissions field value if set, zero value otherwise.
-func (o *ServicePlan) GetPermissions() ListServicePlans200ResponseAllOfServicePlansInnerPermissions {
+func (o *ServicePlan) GetPermissions() AddServicePlans200ResponseAllOfServicePlanPermissions {
 	if o == nil || IsNil(o.Permissions) {
-		var ret ListServicePlans200ResponseAllOfServicePlansInnerPermissions
+		var ret AddServicePlans200ResponseAllOfServicePlanPermissions
 		return ret
 	}
 	return *o.Permissions
@@ -1045,7 +1045,7 @@ func (o *ServicePlan) GetPermissions() ListServicePlans200ResponseAllOfServicePl
 
 // GetPermissionsOk returns a tuple with the Permissions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ServicePlan) GetPermissionsOk() (*ListServicePlans200ResponseAllOfServicePlansInnerPermissions, bool) {
+func (o *ServicePlan) GetPermissionsOk() (*AddServicePlans200ResponseAllOfServicePlanPermissions, bool) {
 	if o == nil || IsNil(o.Permissions) {
 		return nil, false
 	}
@@ -1061,8 +1061,8 @@ func (o *ServicePlan) IsSetPermissions() bool {
 	return false
 }
 
-// SetPermissions gets a reference to the given ListServicePlans200ResponseAllOfServicePlansInnerPermissions and assigns it to the Permissions field.
-func (o *ServicePlan) SetPermissions(v ListServicePlans200ResponseAllOfServicePlansInnerPermissions) {
+// SetPermissions gets a reference to the given AddServicePlans200ResponseAllOfServicePlanPermissions and assigns it to the Permissions field.
+func (o *ServicePlan) SetPermissions(v AddServicePlans200ResponseAllOfServicePlanPermissions) {
 	o.Permissions = &v
 }
 

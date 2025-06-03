@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Uuid** | Pointer to **string** |  | [optional] 
 **AccountId** | Pointer to **int64** |  | [optional] 
 **Tenant** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
-**InstanceType** | Pointer to [**ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner**](ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner.md) |  | [optional] 
+**InstanceType** | Pointer to [**ListInstances200ResponseAllOfInstancesInnerInstanceType**](ListInstances200ResponseAllOfInstancesInnerInstanceType.md) |  | [optional] 
 **Group** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
 **Cloud** | Pointer to [**ListApps200ResponseAllOfAppsInnerBlueprint**](ListApps200ResponseAllOfAppsInnerBlueprint.md) |  | [optional] 
 **Cluster** | Pointer to [**ListInstances200ResponseAllOfInstancesInnerCluster**](ListInstances200ResponseAllOfInstancesInnerCluster.md) |  | [optional] 
@@ -203,20 +203,20 @@ HasTenant returns a boolean if a field has been set.
 
 ### GetInstanceType
 
-`func (o *ListInstances200ResponseAllOfInstancesInner) GetInstanceType() ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner`
+`func (o *ListInstances200ResponseAllOfInstancesInner) GetInstanceType() ListInstances200ResponseAllOfInstancesInnerInstanceType`
 
 GetInstanceType returns the InstanceType field if non-nil, zero value otherwise.
 
 ### GetInstanceTypeOk
 
-`func (o *ListInstances200ResponseAllOfInstancesInner) GetInstanceTypeOk() (*ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner, bool)`
+`func (o *ListInstances200ResponseAllOfInstancesInner) GetInstanceTypeOk() (*ListInstances200ResponseAllOfInstancesInnerInstanceType, bool)`
 
 GetInstanceTypeOk returns a tuple with the InstanceType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInstanceType
 
-`func (o *ListInstances200ResponseAllOfInstancesInner) SetInstanceType(v ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner)`
+`func (o *ListInstances200ResponseAllOfInstancesInner) SetInstanceType(v ListInstances200ResponseAllOfInstancesInnerInstanceType)`
 
 SetInstanceType sets InstanceType field to given value.
 

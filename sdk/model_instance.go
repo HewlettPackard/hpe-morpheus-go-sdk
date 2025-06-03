@@ -25,31 +25,31 @@ type Instance struct {
 	Uuid *string `json:"uuid,omitempty"`
 	AccountId *int64 `json:"accountId,omitempty"`
 	Tenant *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"tenant,omitempty"`
-	InstanceType *ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner `json:"instanceType,omitempty"`
+	InstanceType *AddInstance200ResponseAllOfOneOfInstanceInstanceType `json:"instanceType,omitempty"`
 	Group *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"group,omitempty"`
 	Cloud *ListApps200ResponseAllOfAppsInnerBlueprint `json:"cloud,omitempty"`
 	Cluster *ListInstances200ResponseAllOfInstancesInnerCluster `json:"cluster,omitempty"`
 	Containers []int64 `json:"containers,omitempty"`
 	Servers []int64 `json:"servers,omitempty"`
-	ConnectionInfo []ListInstances200ResponseAllOfInstancesInnerConnectionInfoInner `json:"connectionInfo,omitempty"`
-	Layout *ListInstances200ResponseAllOfInstancesInnerLayout `json:"layout,omitempty"`
+	ConnectionInfo []AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner `json:"connectionInfo,omitempty"`
+	Layout *AddInstance200ResponseAllOfOneOfInstanceLayout `json:"layout,omitempty"`
 	Plan *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"plan,omitempty"`
 	Name *string `json:"name,omitempty"`
 	DisplayName *string `json:"displayName,omitempty"`
 	Description *string `json:"description,omitempty"`
 	Environment *string `json:"environment,omitempty"`
-	Config *GetInstance200ResponseInstanceConfig `json:"config,omitempty"`
+	Config *AddInstance200ResponseAllOfOneOfInstanceConfig `json:"config,omitempty"`
 	ConfigGroup *string `json:"configGroup,omitempty"`
 	ConfigId *string `json:"configId,omitempty"`
 	ConfigRole *string `json:"configRole,omitempty"`
-	Volumes []ListInstances200ResponseAllOfInstancesInnerVolumesInner `json:"volumes,omitempty"`
+	Volumes []AddInstance200ResponseAllOfOneOfInstanceVolumesInner `json:"volumes,omitempty"`
 	Controllers []ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner `json:"controllers,omitempty"`
-	Interfaces []ListInstances200ResponseAllOfInstancesInnerInterfacesInner `json:"interfaces,omitempty"`
+	Interfaces []AddInstance200ResponseAllOfOneOfInstanceInterfacesInner `json:"interfaces,omitempty"`
 	CustomOptions map[string]interface{} `json:"customOptions,omitempty"`
 	InstanceVersion *string `json:"instanceVersion,omitempty"`
 	Labels []string `json:"labels,omitempty"`
-	Tags []ListInstances200ResponseAllOfInstancesInnerTagsInner `json:"tags,omitempty"`
-	Evars []ListInstances200ResponseAllOfInstancesInnerEvarsInner `json:"evars,omitempty"`
+	Tags []AddInstance200ResponseAllOfOneOfInstanceTagsInner `json:"tags,omitempty"`
+	Evars []AddInstance200ResponseAllOfOneOfInstanceEvarsInner `json:"evars,omitempty"`
 	MaxMemory *int64 `json:"maxMemory,omitempty"`
 	MaxStorage *int64 `json:"maxStorage,omitempty"`
 	MaxCores *int64 `json:"maxCores,omitempty"`
@@ -57,7 +57,7 @@ type Instance struct {
 	MaxCpu *string `json:"maxCpu,omitempty"`
 	HourlyCost *float32 `json:"hourlyCost,omitempty"`
 	HourlyPrice *float32 `json:"hourlyPrice,omitempty"`
-	InstancePrice *ListInstances200ResponseAllOfInstancesInnerInstancePrice `json:"instancePrice,omitempty"`
+	InstancePrice *AddInstance200ResponseAllOfOneOfInstanceInstancePrice `json:"instancePrice,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
 	HostName *string `json:"hostName,omitempty"`
@@ -92,7 +92,7 @@ type Instance struct {
 	CreatedBy *ListActivity200ResponseAllOfActivityInnerActivityInnerUser `json:"createdBy,omitempty"`
 	Owner *GetAlerts200ResponseAllOfChecksInnerCreatedBy `json:"owner,omitempty"`
 	Notes *string `json:"notes,omitempty"`
-	Stats *ListInstances200ResponseAllOfInstancesInnerStats `json:"stats,omitempty"`
+	Stats *AddInstance200ResponseAllOfOneOfInstanceStats `json:"stats,omitempty"`
 	PowerSchedule *string `json:"powerSchedule,omitempty"`
 	IsScalable *bool `json:"isScalable,omitempty"`
 	InstanceThreshold map[string]interface{} `json:"instanceThreshold,omitempty"`
@@ -249,9 +249,9 @@ func (o *Instance) SetTenant(v ListApplianceSettings200ResponseApplianceSettings
 }
 
 // GetInstanceType returns the InstanceType field value if set, zero value otherwise.
-func (o *Instance) GetInstanceType() ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner {
+func (o *Instance) GetInstanceType() AddInstance200ResponseAllOfOneOfInstanceInstanceType {
 	if o == nil || IsNil(o.InstanceType) {
-		var ret ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner
+		var ret AddInstance200ResponseAllOfOneOfInstanceInstanceType
 		return ret
 	}
 	return *o.InstanceType
@@ -259,7 +259,7 @@ func (o *Instance) GetInstanceType() ListClusterNetworkEndpoints200ResponseAllOf
 
 // GetInstanceTypeOk returns a tuple with the InstanceType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Instance) GetInstanceTypeOk() (*ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner, bool) {
+func (o *Instance) GetInstanceTypeOk() (*AddInstance200ResponseAllOfOneOfInstanceInstanceType, bool) {
 	if o == nil || IsNil(o.InstanceType) {
 		return nil, false
 	}
@@ -275,8 +275,8 @@ func (o *Instance) IsSetInstanceType() bool {
 	return false
 }
 
-// SetInstanceType gets a reference to the given ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner and assigns it to the InstanceType field.
-func (o *Instance) SetInstanceType(v ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner) {
+// SetInstanceType gets a reference to the given AddInstance200ResponseAllOfOneOfInstanceInstanceType and assigns it to the InstanceType field.
+func (o *Instance) SetInstanceType(v AddInstance200ResponseAllOfOneOfInstanceInstanceType) {
 	o.InstanceType = &v
 }
 
@@ -441,9 +441,9 @@ func (o *Instance) SetServers(v []int64) {
 }
 
 // GetConnectionInfo returns the ConnectionInfo field value if set, zero value otherwise.
-func (o *Instance) GetConnectionInfo() []ListInstances200ResponseAllOfInstancesInnerConnectionInfoInner {
+func (o *Instance) GetConnectionInfo() []AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner {
 	if o == nil || IsNil(o.ConnectionInfo) {
-		var ret []ListInstances200ResponseAllOfInstancesInnerConnectionInfoInner
+		var ret []AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner
 		return ret
 	}
 	return o.ConnectionInfo
@@ -451,7 +451,7 @@ func (o *Instance) GetConnectionInfo() []ListInstances200ResponseAllOfInstancesI
 
 // GetConnectionInfoOk returns a tuple with the ConnectionInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Instance) GetConnectionInfoOk() ([]ListInstances200ResponseAllOfInstancesInnerConnectionInfoInner, bool) {
+func (o *Instance) GetConnectionInfoOk() ([]AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner, bool) {
 	if o == nil || IsNil(o.ConnectionInfo) {
 		return nil, false
 	}
@@ -467,15 +467,15 @@ func (o *Instance) IsSetConnectionInfo() bool {
 	return false
 }
 
-// SetConnectionInfo gets a reference to the given []ListInstances200ResponseAllOfInstancesInnerConnectionInfoInner and assigns it to the ConnectionInfo field.
-func (o *Instance) SetConnectionInfo(v []ListInstances200ResponseAllOfInstancesInnerConnectionInfoInner) {
+// SetConnectionInfo gets a reference to the given []AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner and assigns it to the ConnectionInfo field.
+func (o *Instance) SetConnectionInfo(v []AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner) {
 	o.ConnectionInfo = v
 }
 
 // GetLayout returns the Layout field value if set, zero value otherwise.
-func (o *Instance) GetLayout() ListInstances200ResponseAllOfInstancesInnerLayout {
+func (o *Instance) GetLayout() AddInstance200ResponseAllOfOneOfInstanceLayout {
 	if o == nil || IsNil(o.Layout) {
-		var ret ListInstances200ResponseAllOfInstancesInnerLayout
+		var ret AddInstance200ResponseAllOfOneOfInstanceLayout
 		return ret
 	}
 	return *o.Layout
@@ -483,7 +483,7 @@ func (o *Instance) GetLayout() ListInstances200ResponseAllOfInstancesInnerLayout
 
 // GetLayoutOk returns a tuple with the Layout field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Instance) GetLayoutOk() (*ListInstances200ResponseAllOfInstancesInnerLayout, bool) {
+func (o *Instance) GetLayoutOk() (*AddInstance200ResponseAllOfOneOfInstanceLayout, bool) {
 	if o == nil || IsNil(o.Layout) {
 		return nil, false
 	}
@@ -499,8 +499,8 @@ func (o *Instance) IsSetLayout() bool {
 	return false
 }
 
-// SetLayout gets a reference to the given ListInstances200ResponseAllOfInstancesInnerLayout and assigns it to the Layout field.
-func (o *Instance) SetLayout(v ListInstances200ResponseAllOfInstancesInnerLayout) {
+// SetLayout gets a reference to the given AddInstance200ResponseAllOfOneOfInstanceLayout and assigns it to the Layout field.
+func (o *Instance) SetLayout(v AddInstance200ResponseAllOfOneOfInstanceLayout) {
 	o.Layout = &v
 }
 
@@ -665,9 +665,9 @@ func (o *Instance) SetEnvironment(v string) {
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
-func (o *Instance) GetConfig() GetInstance200ResponseInstanceConfig {
+func (o *Instance) GetConfig() AddInstance200ResponseAllOfOneOfInstanceConfig {
 	if o == nil || IsNil(o.Config) {
-		var ret GetInstance200ResponseInstanceConfig
+		var ret AddInstance200ResponseAllOfOneOfInstanceConfig
 		return ret
 	}
 	return *o.Config
@@ -675,7 +675,7 @@ func (o *Instance) GetConfig() GetInstance200ResponseInstanceConfig {
 
 // GetConfigOk returns a tuple with the Config field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Instance) GetConfigOk() (*GetInstance200ResponseInstanceConfig, bool) {
+func (o *Instance) GetConfigOk() (*AddInstance200ResponseAllOfOneOfInstanceConfig, bool) {
 	if o == nil || IsNil(o.Config) {
 		return nil, false
 	}
@@ -691,8 +691,8 @@ func (o *Instance) IsSetConfig() bool {
 	return false
 }
 
-// SetConfig gets a reference to the given GetInstance200ResponseInstanceConfig and assigns it to the Config field.
-func (o *Instance) SetConfig(v GetInstance200ResponseInstanceConfig) {
+// SetConfig gets a reference to the given AddInstance200ResponseAllOfOneOfInstanceConfig and assigns it to the Config field.
+func (o *Instance) SetConfig(v AddInstance200ResponseAllOfOneOfInstanceConfig) {
 	o.Config = &v
 }
 
@@ -793,9 +793,9 @@ func (o *Instance) SetConfigRole(v string) {
 }
 
 // GetVolumes returns the Volumes field value if set, zero value otherwise.
-func (o *Instance) GetVolumes() []ListInstances200ResponseAllOfInstancesInnerVolumesInner {
+func (o *Instance) GetVolumes() []AddInstance200ResponseAllOfOneOfInstanceVolumesInner {
 	if o == nil || IsNil(o.Volumes) {
-		var ret []ListInstances200ResponseAllOfInstancesInnerVolumesInner
+		var ret []AddInstance200ResponseAllOfOneOfInstanceVolumesInner
 		return ret
 	}
 	return o.Volumes
@@ -803,7 +803,7 @@ func (o *Instance) GetVolumes() []ListInstances200ResponseAllOfInstancesInnerVol
 
 // GetVolumesOk returns a tuple with the Volumes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Instance) GetVolumesOk() ([]ListInstances200ResponseAllOfInstancesInnerVolumesInner, bool) {
+func (o *Instance) GetVolumesOk() ([]AddInstance200ResponseAllOfOneOfInstanceVolumesInner, bool) {
 	if o == nil || IsNil(o.Volumes) {
 		return nil, false
 	}
@@ -819,8 +819,8 @@ func (o *Instance) IsSetVolumes() bool {
 	return false
 }
 
-// SetVolumes gets a reference to the given []ListInstances200ResponseAllOfInstancesInnerVolumesInner and assigns it to the Volumes field.
-func (o *Instance) SetVolumes(v []ListInstances200ResponseAllOfInstancesInnerVolumesInner) {
+// SetVolumes gets a reference to the given []AddInstance200ResponseAllOfOneOfInstanceVolumesInner and assigns it to the Volumes field.
+func (o *Instance) SetVolumes(v []AddInstance200ResponseAllOfOneOfInstanceVolumesInner) {
 	o.Volumes = v
 }
 
@@ -857,9 +857,9 @@ func (o *Instance) SetControllers(v []ListGuidances200ResponseAllOfDiscoveriesIn
 }
 
 // GetInterfaces returns the Interfaces field value if set, zero value otherwise.
-func (o *Instance) GetInterfaces() []ListInstances200ResponseAllOfInstancesInnerInterfacesInner {
+func (o *Instance) GetInterfaces() []AddInstance200ResponseAllOfOneOfInstanceInterfacesInner {
 	if o == nil || IsNil(o.Interfaces) {
-		var ret []ListInstances200ResponseAllOfInstancesInnerInterfacesInner
+		var ret []AddInstance200ResponseAllOfOneOfInstanceInterfacesInner
 		return ret
 	}
 	return o.Interfaces
@@ -867,7 +867,7 @@ func (o *Instance) GetInterfaces() []ListInstances200ResponseAllOfInstancesInner
 
 // GetInterfacesOk returns a tuple with the Interfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Instance) GetInterfacesOk() ([]ListInstances200ResponseAllOfInstancesInnerInterfacesInner, bool) {
+func (o *Instance) GetInterfacesOk() ([]AddInstance200ResponseAllOfOneOfInstanceInterfacesInner, bool) {
 	if o == nil || IsNil(o.Interfaces) {
 		return nil, false
 	}
@@ -883,8 +883,8 @@ func (o *Instance) IsSetInterfaces() bool {
 	return false
 }
 
-// SetInterfaces gets a reference to the given []ListInstances200ResponseAllOfInstancesInnerInterfacesInner and assigns it to the Interfaces field.
-func (o *Instance) SetInterfaces(v []ListInstances200ResponseAllOfInstancesInnerInterfacesInner) {
+// SetInterfaces gets a reference to the given []AddInstance200ResponseAllOfOneOfInstanceInterfacesInner and assigns it to the Interfaces field.
+func (o *Instance) SetInterfaces(v []AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) {
 	o.Interfaces = v
 }
 
@@ -985,9 +985,9 @@ func (o *Instance) SetLabels(v []string) {
 }
 
 // GetTags returns the Tags field value if set, zero value otherwise.
-func (o *Instance) GetTags() []ListInstances200ResponseAllOfInstancesInnerTagsInner {
+func (o *Instance) GetTags() []AddInstance200ResponseAllOfOneOfInstanceTagsInner {
 	if o == nil || IsNil(o.Tags) {
-		var ret []ListInstances200ResponseAllOfInstancesInnerTagsInner
+		var ret []AddInstance200ResponseAllOfOneOfInstanceTagsInner
 		return ret
 	}
 	return o.Tags
@@ -995,7 +995,7 @@ func (o *Instance) GetTags() []ListInstances200ResponseAllOfInstancesInnerTagsIn
 
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Instance) GetTagsOk() ([]ListInstances200ResponseAllOfInstancesInnerTagsInner, bool) {
+func (o *Instance) GetTagsOk() ([]AddInstance200ResponseAllOfOneOfInstanceTagsInner, bool) {
 	if o == nil || IsNil(o.Tags) {
 		return nil, false
 	}
@@ -1011,15 +1011,15 @@ func (o *Instance) IsSetTags() bool {
 	return false
 }
 
-// SetTags gets a reference to the given []ListInstances200ResponseAllOfInstancesInnerTagsInner and assigns it to the Tags field.
-func (o *Instance) SetTags(v []ListInstances200ResponseAllOfInstancesInnerTagsInner) {
+// SetTags gets a reference to the given []AddInstance200ResponseAllOfOneOfInstanceTagsInner and assigns it to the Tags field.
+func (o *Instance) SetTags(v []AddInstance200ResponseAllOfOneOfInstanceTagsInner) {
 	o.Tags = v
 }
 
 // GetEvars returns the Evars field value if set, zero value otherwise.
-func (o *Instance) GetEvars() []ListInstances200ResponseAllOfInstancesInnerEvarsInner {
+func (o *Instance) GetEvars() []AddInstance200ResponseAllOfOneOfInstanceEvarsInner {
 	if o == nil || IsNil(o.Evars) {
-		var ret []ListInstances200ResponseAllOfInstancesInnerEvarsInner
+		var ret []AddInstance200ResponseAllOfOneOfInstanceEvarsInner
 		return ret
 	}
 	return o.Evars
@@ -1027,7 +1027,7 @@ func (o *Instance) GetEvars() []ListInstances200ResponseAllOfInstancesInnerEvars
 
 // GetEvarsOk returns a tuple with the Evars field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Instance) GetEvarsOk() ([]ListInstances200ResponseAllOfInstancesInnerEvarsInner, bool) {
+func (o *Instance) GetEvarsOk() ([]AddInstance200ResponseAllOfOneOfInstanceEvarsInner, bool) {
 	if o == nil || IsNil(o.Evars) {
 		return nil, false
 	}
@@ -1043,8 +1043,8 @@ func (o *Instance) IsSetEvars() bool {
 	return false
 }
 
-// SetEvars gets a reference to the given []ListInstances200ResponseAllOfInstancesInnerEvarsInner and assigns it to the Evars field.
-func (o *Instance) SetEvars(v []ListInstances200ResponseAllOfInstancesInnerEvarsInner) {
+// SetEvars gets a reference to the given []AddInstance200ResponseAllOfOneOfInstanceEvarsInner and assigns it to the Evars field.
+func (o *Instance) SetEvars(v []AddInstance200ResponseAllOfOneOfInstanceEvarsInner) {
 	o.Evars = v
 }
 
@@ -1273,9 +1273,9 @@ func (o *Instance) SetHourlyPrice(v float32) {
 }
 
 // GetInstancePrice returns the InstancePrice field value if set, zero value otherwise.
-func (o *Instance) GetInstancePrice() ListInstances200ResponseAllOfInstancesInnerInstancePrice {
+func (o *Instance) GetInstancePrice() AddInstance200ResponseAllOfOneOfInstanceInstancePrice {
 	if o == nil || IsNil(o.InstancePrice) {
-		var ret ListInstances200ResponseAllOfInstancesInnerInstancePrice
+		var ret AddInstance200ResponseAllOfOneOfInstanceInstancePrice
 		return ret
 	}
 	return *o.InstancePrice
@@ -1283,7 +1283,7 @@ func (o *Instance) GetInstancePrice() ListInstances200ResponseAllOfInstancesInne
 
 // GetInstancePriceOk returns a tuple with the InstancePrice field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Instance) GetInstancePriceOk() (*ListInstances200ResponseAllOfInstancesInnerInstancePrice, bool) {
+func (o *Instance) GetInstancePriceOk() (*AddInstance200ResponseAllOfOneOfInstanceInstancePrice, bool) {
 	if o == nil || IsNil(o.InstancePrice) {
 		return nil, false
 	}
@@ -1299,8 +1299,8 @@ func (o *Instance) IsSetInstancePrice() bool {
 	return false
 }
 
-// SetInstancePrice gets a reference to the given ListInstances200ResponseAllOfInstancesInnerInstancePrice and assigns it to the InstancePrice field.
-func (o *Instance) SetInstancePrice(v ListInstances200ResponseAllOfInstancesInnerInstancePrice) {
+// SetInstancePrice gets a reference to the given AddInstance200ResponseAllOfOneOfInstanceInstancePrice and assigns it to the InstancePrice field.
+func (o *Instance) SetInstancePrice(v AddInstance200ResponseAllOfOneOfInstanceInstancePrice) {
 	o.InstancePrice = &v
 }
 
@@ -2393,9 +2393,9 @@ func (o *Instance) SetNotes(v string) {
 }
 
 // GetStats returns the Stats field value if set, zero value otherwise.
-func (o *Instance) GetStats() ListInstances200ResponseAllOfInstancesInnerStats {
+func (o *Instance) GetStats() AddInstance200ResponseAllOfOneOfInstanceStats {
 	if o == nil || IsNil(o.Stats) {
-		var ret ListInstances200ResponseAllOfInstancesInnerStats
+		var ret AddInstance200ResponseAllOfOneOfInstanceStats
 		return ret
 	}
 	return *o.Stats
@@ -2403,7 +2403,7 @@ func (o *Instance) GetStats() ListInstances200ResponseAllOfInstancesInnerStats {
 
 // GetStatsOk returns a tuple with the Stats field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Instance) GetStatsOk() (*ListInstances200ResponseAllOfInstancesInnerStats, bool) {
+func (o *Instance) GetStatsOk() (*AddInstance200ResponseAllOfOneOfInstanceStats, bool) {
 	if o == nil || IsNil(o.Stats) {
 		return nil, false
 	}
@@ -2419,8 +2419,8 @@ func (o *Instance) IsSetStats() bool {
 	return false
 }
 
-// SetStats gets a reference to the given ListInstances200ResponseAllOfInstancesInnerStats and assigns it to the Stats field.
-func (o *Instance) SetStats(v ListInstances200ResponseAllOfInstancesInnerStats) {
+// SetStats gets a reference to the given AddInstance200ResponseAllOfOneOfInstanceStats and assigns it to the Stats field.
+func (o *Instance) SetStats(v AddInstance200ResponseAllOfOneOfInstanceStats) {
 	o.Stats = &v
 }
 

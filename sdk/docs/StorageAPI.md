@@ -181,7 +181,7 @@ import (
 )
 
 func main() {
-	addStorageVolumesRequest := *openapiclient.NewAddStorageVolumesRequest(*openapiclient.NewAddStorageVolumesRequestStorageVolume("Name_example", "Type_example", *openapiclient.NewAddClusterLayoutsRequestLayoutMastersInnerContainerType(int64(123)), *openapiclient.NewAddClusterLayoutsRequestLayoutMastersInnerContainerType(int64(123)))) // AddStorageVolumesRequest |  (optional)
+	addStorageVolumesRequest := *openapiclient.NewAddStorageVolumesRequest(*openapiclient.NewAddStorageVolumesRequestStorageVolume("Name_example", "Type_example", *openapiclient.NewAddClusterLayoutsRequestLayoutMastersInnerContainerType(int64(123)))) // AddStorageVolumesRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

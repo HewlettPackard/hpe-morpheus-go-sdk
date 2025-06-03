@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **Multitenant** | Pointer to **bool** | Multitenant roles are copied to all tenant accounts and kept in sync until a sub-tenant user modifies their copy of the role. *Only available to master tenant* | [optional] [default to false]
 **MultitenantLocked** | Pointer to **bool** | Multitenant Locked, prevents sub-tenant users from modifying their copy of multienant roles. *Only available to master tenant* | [optional] [default to false]
 **DefaultPersona** | Pointer to **string** |  | [optional] 
-**Permissions** | Pointer to [**[]AddRolesRequestRolePermissionsInner**](AddRolesRequestRolePermissionsInner.md) | Set the access level for the specified permissions. | [optional] 
+**FeaturePermissions** | Pointer to [**[]AddRolesRequestRoleFeaturePermissionsInner**](AddRolesRequestRoleFeaturePermissionsInner.md) | Set the access level for the specified permissions. | [optional] 
 **GlobalSiteAccess** | Pointer to **string** | Set the default access level for for groups (sites). Only applies to user roles. | [optional] 
 **Sites** | Pointer to [**[]AddRolesRequestRoleSitesInner**](AddRolesRequestRoleSitesInner.md) | Set the access level for the specified groups (sites). Only applies to user roles. | [optional] 
 **GlobalZoneAccess** | Pointer to **string** | Set the default access level for for clouds (zones). Only applies to base account (tenant) roles. | [optional] 
@@ -249,30 +249,30 @@ SetDefaultPersona sets DefaultPersona field to given value.
 
 HasDefaultPersona returns a boolean if a field has been set.
 
-### GetPermissions
+### GetFeaturePermissions
 
-`func (o *AddRolesRequestRole) GetPermissions() []AddRolesRequestRolePermissionsInner`
+`func (o *AddRolesRequestRole) GetFeaturePermissions() []AddRolesRequestRoleFeaturePermissionsInner`
 
-GetPermissions returns the Permissions field if non-nil, zero value otherwise.
+GetFeaturePermissions returns the FeaturePermissions field if non-nil, zero value otherwise.
 
-### GetPermissionsOk
+### GetFeaturePermissionsOk
 
-`func (o *AddRolesRequestRole) GetPermissionsOk() (*[]AddRolesRequestRolePermissionsInner, bool)`
+`func (o *AddRolesRequestRole) GetFeaturePermissionsOk() (*[]AddRolesRequestRoleFeaturePermissionsInner, bool)`
 
-GetPermissionsOk returns a tuple with the Permissions field if it's non-nil, zero value otherwise
+GetFeaturePermissionsOk returns a tuple with the FeaturePermissions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetPermissions
+### SetFeaturePermissions
 
-`func (o *AddRolesRequestRole) SetPermissions(v []AddRolesRequestRolePermissionsInner)`
+`func (o *AddRolesRequestRole) SetFeaturePermissions(v []AddRolesRequestRoleFeaturePermissionsInner)`
 
-SetPermissions sets Permissions field to given value.
+SetFeaturePermissions sets FeaturePermissions field to given value.
 
-### HasPermissions
+### HasFeaturePermissions
 
-`func (o *AddRolesRequestRole) HasPermissions() bool`
+`func (o *AddRolesRequestRole) HasFeaturePermissions() bool`
 
-HasPermissions returns a boolean if a field has been set.
+HasFeaturePermissions returns a boolean if a field has been set.
 
 ### GetGlobalSiteAccess
 

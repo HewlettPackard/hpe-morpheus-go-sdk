@@ -20,7 +20,7 @@ var _ MappedNullable = &GetInstance200Response{}
 
 // GetInstance200Response struct for GetInstance200Response
 type GetInstance200Response struct {
-	Instance *GetInstance200ResponseInstance `json:"instance,omitempty"`
+	Instance *AddInstance200ResponseAllOfOneOfInstance `json:"instance,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -44,9 +44,9 @@ func NewGetInstance200ResponseWithDefaults() *GetInstance200Response {
 }
 
 // GetInstance returns the Instance field value if set, zero value otherwise.
-func (o *GetInstance200Response) GetInstance() GetInstance200ResponseInstance {
+func (o *GetInstance200Response) GetInstance() AddInstance200ResponseAllOfOneOfInstance {
 	if o == nil || IsNil(o.Instance) {
-		var ret GetInstance200ResponseInstance
+		var ret AddInstance200ResponseAllOfOneOfInstance
 		return ret
 	}
 	return *o.Instance
@@ -54,7 +54,7 @@ func (o *GetInstance200Response) GetInstance() GetInstance200ResponseInstance {
 
 // GetInstanceOk returns a tuple with the Instance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetInstance200Response) GetInstanceOk() (*GetInstance200ResponseInstance, bool) {
+func (o *GetInstance200Response) GetInstanceOk() (*AddInstance200ResponseAllOfOneOfInstance, bool) {
 	if o == nil || IsNil(o.Instance) {
 		return nil, false
 	}
@@ -70,8 +70,8 @@ func (o *GetInstance200Response) IsSetInstance() bool {
 	return false
 }
 
-// SetInstance gets a reference to the given GetInstance200ResponseInstance and assigns it to the Instance field.
-func (o *GetInstance200Response) SetInstance(v GetInstance200ResponseInstance) {
+// SetInstance gets a reference to the given AddInstance200ResponseAllOfOneOfInstance and assigns it to the Instance field.
+func (o *GetInstance200Response) SetInstance(v AddInstance200ResponseAllOfOneOfInstance) {
 	o.Instance = &v
 }
 

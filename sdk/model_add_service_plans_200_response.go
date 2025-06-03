@@ -20,7 +20,7 @@ var _ MappedNullable = &AddServicePlans200Response{}
 
 // AddServicePlans200Response struct for AddServicePlans200Response
 type AddServicePlans200Response struct {
-	ServicePlan *ListServicePlans200ResponseAllOfServicePlansInner `json:"servicePlan,omitempty"`
+	ServicePlan *AddServicePlans200ResponseAllOfServicePlan `json:"servicePlan,omitempty"`
 	Success *bool `json:"success,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -45,9 +45,9 @@ func NewAddServicePlans200ResponseWithDefaults() *AddServicePlans200Response {
 }
 
 // GetServicePlan returns the ServicePlan field value if set, zero value otherwise.
-func (o *AddServicePlans200Response) GetServicePlan() ListServicePlans200ResponseAllOfServicePlansInner {
+func (o *AddServicePlans200Response) GetServicePlan() AddServicePlans200ResponseAllOfServicePlan {
 	if o == nil || IsNil(o.ServicePlan) {
-		var ret ListServicePlans200ResponseAllOfServicePlansInner
+		var ret AddServicePlans200ResponseAllOfServicePlan
 		return ret
 	}
 	return *o.ServicePlan
@@ -55,7 +55,7 @@ func (o *AddServicePlans200Response) GetServicePlan() ListServicePlans200Respons
 
 // GetServicePlanOk returns a tuple with the ServicePlan field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddServicePlans200Response) GetServicePlanOk() (*ListServicePlans200ResponseAllOfServicePlansInner, bool) {
+func (o *AddServicePlans200Response) GetServicePlanOk() (*AddServicePlans200ResponseAllOfServicePlan, bool) {
 	if o == nil || IsNil(o.ServicePlan) {
 		return nil, false
 	}
@@ -71,8 +71,8 @@ func (o *AddServicePlans200Response) IsSetServicePlan() bool {
 	return false
 }
 
-// SetServicePlan gets a reference to the given ListServicePlans200ResponseAllOfServicePlansInner and assigns it to the ServicePlan field.
-func (o *AddServicePlans200Response) SetServicePlan(v ListServicePlans200ResponseAllOfServicePlansInner) {
+// SetServicePlan gets a reference to the given AddServicePlans200ResponseAllOfServicePlan and assigns it to the ServicePlan field.
+func (o *AddServicePlans200Response) SetServicePlan(v AddServicePlans200ResponseAllOfServicePlan) {
 	o.ServicePlan = &v
 }
 

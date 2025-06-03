@@ -8,31 +8,31 @@ Name | Type | Description | Notes
 **Uuid** | Pointer to **string** |  | [optional] 
 **AccountId** | Pointer to **int64** |  | [optional] 
 **Tenant** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
-**InstanceType** | Pointer to [**ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner**](ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner.md) |  | [optional] 
+**InstanceType** | Pointer to [**AddInstance200ResponseAllOfOneOfInstanceInstanceType**](AddInstance200ResponseAllOfOneOfInstanceInstanceType.md) |  | [optional] 
 **Group** | Pointer to [**ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner**](ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner.md) |  | [optional] 
 **Cloud** | Pointer to [**ListApps200ResponseAllOfAppsInnerBlueprint**](ListApps200ResponseAllOfAppsInnerBlueprint.md) |  | [optional] 
 **Cluster** | Pointer to [**ListInstances200ResponseAllOfInstancesInnerCluster**](ListInstances200ResponseAllOfInstancesInnerCluster.md) |  | [optional] 
 **Containers** | Pointer to **[]int64** |  | [optional] 
 **Servers** | Pointer to **[]int64** |  | [optional] 
-**ConnectionInfo** | Pointer to [**[]ListInstances200ResponseAllOfInstancesInnerConnectionInfoInner**](ListInstances200ResponseAllOfInstancesInnerConnectionInfoInner.md) |  | [optional] 
-**Layout** | Pointer to [**ListInstances200ResponseAllOfInstancesInnerLayout**](ListInstances200ResponseAllOfInstancesInnerLayout.md) |  | [optional] 
+**ConnectionInfo** | Pointer to [**[]AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner**](AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner.md) |  | [optional] 
+**Layout** | Pointer to [**AddInstance200ResponseAllOfOneOfInstanceLayout**](AddInstance200ResponseAllOfOneOfInstanceLayout.md) |  | [optional] 
 **Plan** | Pointer to [**ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **DisplayName** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Environment** | Pointer to **string** |  | [optional] 
-**Config** | Pointer to [**GetInstance200ResponseInstanceConfig**](GetInstance200ResponseInstanceConfig.md) |  | [optional] 
+**Config** | Pointer to [**AddInstance200ResponseAllOfOneOfInstanceConfig**](AddInstance200ResponseAllOfOneOfInstanceConfig.md) |  | [optional] 
 **ConfigGroup** | Pointer to **string** |  | [optional] 
 **ConfigId** | Pointer to **string** |  | [optional] 
 **ConfigRole** | Pointer to **string** |  | [optional] 
-**Volumes** | Pointer to [**[]ListInstances200ResponseAllOfInstancesInnerVolumesInner**](ListInstances200ResponseAllOfInstancesInnerVolumesInner.md) |  | [optional] 
+**Volumes** | Pointer to [**[]AddInstance200ResponseAllOfOneOfInstanceVolumesInner**](AddInstance200ResponseAllOfOneOfInstanceVolumesInner.md) |  | [optional] 
 **Controllers** | Pointer to [**[]ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner**](ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner.md) |  | [optional] 
-**Interfaces** | Pointer to [**[]ListInstances200ResponseAllOfInstancesInnerInterfacesInner**](ListInstances200ResponseAllOfInstancesInnerInterfacesInner.md) |  | [optional] 
+**Interfaces** | Pointer to [**[]AddInstance200ResponseAllOfOneOfInstanceInterfacesInner**](AddInstance200ResponseAllOfOneOfInstanceInterfacesInner.md) |  | [optional] 
 **CustomOptions** | Pointer to **map[string]interface{}** |  | [optional] 
 **InstanceVersion** | Pointer to **string** |  | [optional] 
 **Labels** | Pointer to **[]string** |  | [optional] 
-**Tags** | Pointer to [**[]ListInstances200ResponseAllOfInstancesInnerTagsInner**](ListInstances200ResponseAllOfInstancesInnerTagsInner.md) |  | [optional] 
-**Evars** | Pointer to [**[]ListInstances200ResponseAllOfInstancesInnerEvarsInner**](ListInstances200ResponseAllOfInstancesInnerEvarsInner.md) |  | [optional] 
+**Tags** | Pointer to [**[]AddInstance200ResponseAllOfOneOfInstanceTagsInner**](AddInstance200ResponseAllOfOneOfInstanceTagsInner.md) |  | [optional] 
+**Evars** | Pointer to [**[]AddInstance200ResponseAllOfOneOfInstanceEvarsInner**](AddInstance200ResponseAllOfOneOfInstanceEvarsInner.md) |  | [optional] 
 **MaxMemory** | Pointer to **int64** |  | [optional] 
 **MaxStorage** | Pointer to **int64** |  | [optional] 
 **MaxCores** | Pointer to **int64** |  | [optional] 
@@ -40,7 +40,7 @@ Name | Type | Description | Notes
 **MaxCpu** | Pointer to **string** |  | [optional] 
 **HourlyCost** | Pointer to **float32** |  | [optional] 
 **HourlyPrice** | Pointer to **float32** |  | [optional] 
-**InstancePrice** | Pointer to [**ListInstances200ResponseAllOfInstancesInnerInstancePrice**](ListInstances200ResponseAllOfInstancesInnerInstancePrice.md) |  | [optional] 
+**InstancePrice** | Pointer to [**AddInstance200ResponseAllOfOneOfInstanceInstancePrice**](AddInstance200ResponseAllOfOneOfInstanceInstancePrice.md) |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
 **HostName** | Pointer to **string** |  | [optional] 
@@ -75,7 +75,7 @@ Name | Type | Description | Notes
 **CreatedBy** | Pointer to [**ListActivity200ResponseAllOfActivityInnerActivityInnerUser**](ListActivity200ResponseAllOfActivityInnerActivityInnerUser.md) |  | [optional] 
 **Owner** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerCreatedBy**](GetAlerts200ResponseAllOfChecksInnerCreatedBy.md) |  | [optional] 
 **Notes** | Pointer to **string** |  | [optional] 
-**Stats** | Pointer to [**ListInstances200ResponseAllOfInstancesInnerStats**](ListInstances200ResponseAllOfInstancesInnerStats.md) |  | [optional] 
+**Stats** | Pointer to [**AddInstance200ResponseAllOfOneOfInstanceStats**](AddInstance200ResponseAllOfOneOfInstanceStats.md) |  | [optional] 
 **PowerSchedule** | Pointer to **string** |  | [optional] 
 **IsScalable** | Pointer to **bool** |  | [optional] 
 **InstanceThreshold** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -203,20 +203,20 @@ HasTenant returns a boolean if a field has been set.
 
 ### GetInstanceType
 
-`func (o *Instance) GetInstanceType() ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner`
+`func (o *Instance) GetInstanceType() AddInstance200ResponseAllOfOneOfInstanceInstanceType`
 
 GetInstanceType returns the InstanceType field if non-nil, zero value otherwise.
 
 ### GetInstanceTypeOk
 
-`func (o *Instance) GetInstanceTypeOk() (*ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner, bool)`
+`func (o *Instance) GetInstanceTypeOk() (*AddInstance200ResponseAllOfOneOfInstanceInstanceType, bool)`
 
 GetInstanceTypeOk returns a tuple with the InstanceType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInstanceType
 
-`func (o *Instance) SetInstanceType(v ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner)`
+`func (o *Instance) SetInstanceType(v AddInstance200ResponseAllOfOneOfInstanceInstanceType)`
 
 SetInstanceType sets InstanceType field to given value.
 
@@ -353,20 +353,20 @@ HasServers returns a boolean if a field has been set.
 
 ### GetConnectionInfo
 
-`func (o *Instance) GetConnectionInfo() []ListInstances200ResponseAllOfInstancesInnerConnectionInfoInner`
+`func (o *Instance) GetConnectionInfo() []AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner`
 
 GetConnectionInfo returns the ConnectionInfo field if non-nil, zero value otherwise.
 
 ### GetConnectionInfoOk
 
-`func (o *Instance) GetConnectionInfoOk() (*[]ListInstances200ResponseAllOfInstancesInnerConnectionInfoInner, bool)`
+`func (o *Instance) GetConnectionInfoOk() (*[]AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner, bool)`
 
 GetConnectionInfoOk returns a tuple with the ConnectionInfo field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConnectionInfo
 
-`func (o *Instance) SetConnectionInfo(v []ListInstances200ResponseAllOfInstancesInnerConnectionInfoInner)`
+`func (o *Instance) SetConnectionInfo(v []AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner)`
 
 SetConnectionInfo sets ConnectionInfo field to given value.
 
@@ -378,20 +378,20 @@ HasConnectionInfo returns a boolean if a field has been set.
 
 ### GetLayout
 
-`func (o *Instance) GetLayout() ListInstances200ResponseAllOfInstancesInnerLayout`
+`func (o *Instance) GetLayout() AddInstance200ResponseAllOfOneOfInstanceLayout`
 
 GetLayout returns the Layout field if non-nil, zero value otherwise.
 
 ### GetLayoutOk
 
-`func (o *Instance) GetLayoutOk() (*ListInstances200ResponseAllOfInstancesInnerLayout, bool)`
+`func (o *Instance) GetLayoutOk() (*AddInstance200ResponseAllOfOneOfInstanceLayout, bool)`
 
 GetLayoutOk returns a tuple with the Layout field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLayout
 
-`func (o *Instance) SetLayout(v ListInstances200ResponseAllOfInstancesInnerLayout)`
+`func (o *Instance) SetLayout(v AddInstance200ResponseAllOfOneOfInstanceLayout)`
 
 SetLayout sets Layout field to given value.
 
@@ -528,20 +528,20 @@ HasEnvironment returns a boolean if a field has been set.
 
 ### GetConfig
 
-`func (o *Instance) GetConfig() GetInstance200ResponseInstanceConfig`
+`func (o *Instance) GetConfig() AddInstance200ResponseAllOfOneOfInstanceConfig`
 
 GetConfig returns the Config field if non-nil, zero value otherwise.
 
 ### GetConfigOk
 
-`func (o *Instance) GetConfigOk() (*GetInstance200ResponseInstanceConfig, bool)`
+`func (o *Instance) GetConfigOk() (*AddInstance200ResponseAllOfOneOfInstanceConfig, bool)`
 
 GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfig
 
-`func (o *Instance) SetConfig(v GetInstance200ResponseInstanceConfig)`
+`func (o *Instance) SetConfig(v AddInstance200ResponseAllOfOneOfInstanceConfig)`
 
 SetConfig sets Config field to given value.
 
@@ -628,20 +628,20 @@ HasConfigRole returns a boolean if a field has been set.
 
 ### GetVolumes
 
-`func (o *Instance) GetVolumes() []ListInstances200ResponseAllOfInstancesInnerVolumesInner`
+`func (o *Instance) GetVolumes() []AddInstance200ResponseAllOfOneOfInstanceVolumesInner`
 
 GetVolumes returns the Volumes field if non-nil, zero value otherwise.
 
 ### GetVolumesOk
 
-`func (o *Instance) GetVolumesOk() (*[]ListInstances200ResponseAllOfInstancesInnerVolumesInner, bool)`
+`func (o *Instance) GetVolumesOk() (*[]AddInstance200ResponseAllOfOneOfInstanceVolumesInner, bool)`
 
 GetVolumesOk returns a tuple with the Volumes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVolumes
 
-`func (o *Instance) SetVolumes(v []ListInstances200ResponseAllOfInstancesInnerVolumesInner)`
+`func (o *Instance) SetVolumes(v []AddInstance200ResponseAllOfOneOfInstanceVolumesInner)`
 
 SetVolumes sets Volumes field to given value.
 
@@ -678,20 +678,20 @@ HasControllers returns a boolean if a field has been set.
 
 ### GetInterfaces
 
-`func (o *Instance) GetInterfaces() []ListInstances200ResponseAllOfInstancesInnerInterfacesInner`
+`func (o *Instance) GetInterfaces() []AddInstance200ResponseAllOfOneOfInstanceInterfacesInner`
 
 GetInterfaces returns the Interfaces field if non-nil, zero value otherwise.
 
 ### GetInterfacesOk
 
-`func (o *Instance) GetInterfacesOk() (*[]ListInstances200ResponseAllOfInstancesInnerInterfacesInner, bool)`
+`func (o *Instance) GetInterfacesOk() (*[]AddInstance200ResponseAllOfOneOfInstanceInterfacesInner, bool)`
 
 GetInterfacesOk returns a tuple with the Interfaces field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInterfaces
 
-`func (o *Instance) SetInterfaces(v []ListInstances200ResponseAllOfInstancesInnerInterfacesInner)`
+`func (o *Instance) SetInterfaces(v []AddInstance200ResponseAllOfOneOfInstanceInterfacesInner)`
 
 SetInterfaces sets Interfaces field to given value.
 
@@ -778,20 +778,20 @@ HasLabels returns a boolean if a field has been set.
 
 ### GetTags
 
-`func (o *Instance) GetTags() []ListInstances200ResponseAllOfInstancesInnerTagsInner`
+`func (o *Instance) GetTags() []AddInstance200ResponseAllOfOneOfInstanceTagsInner`
 
 GetTags returns the Tags field if non-nil, zero value otherwise.
 
 ### GetTagsOk
 
-`func (o *Instance) GetTagsOk() (*[]ListInstances200ResponseAllOfInstancesInnerTagsInner, bool)`
+`func (o *Instance) GetTagsOk() (*[]AddInstance200ResponseAllOfOneOfInstanceTagsInner, bool)`
 
 GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTags
 
-`func (o *Instance) SetTags(v []ListInstances200ResponseAllOfInstancesInnerTagsInner)`
+`func (o *Instance) SetTags(v []AddInstance200ResponseAllOfOneOfInstanceTagsInner)`
 
 SetTags sets Tags field to given value.
 
@@ -803,20 +803,20 @@ HasTags returns a boolean if a field has been set.
 
 ### GetEvars
 
-`func (o *Instance) GetEvars() []ListInstances200ResponseAllOfInstancesInnerEvarsInner`
+`func (o *Instance) GetEvars() []AddInstance200ResponseAllOfOneOfInstanceEvarsInner`
 
 GetEvars returns the Evars field if non-nil, zero value otherwise.
 
 ### GetEvarsOk
 
-`func (o *Instance) GetEvarsOk() (*[]ListInstances200ResponseAllOfInstancesInnerEvarsInner, bool)`
+`func (o *Instance) GetEvarsOk() (*[]AddInstance200ResponseAllOfOneOfInstanceEvarsInner, bool)`
 
 GetEvarsOk returns a tuple with the Evars field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEvars
 
-`func (o *Instance) SetEvars(v []ListInstances200ResponseAllOfInstancesInnerEvarsInner)`
+`func (o *Instance) SetEvars(v []AddInstance200ResponseAllOfOneOfInstanceEvarsInner)`
 
 SetEvars sets Evars field to given value.
 
@@ -1003,20 +1003,20 @@ HasHourlyPrice returns a boolean if a field has been set.
 
 ### GetInstancePrice
 
-`func (o *Instance) GetInstancePrice() ListInstances200ResponseAllOfInstancesInnerInstancePrice`
+`func (o *Instance) GetInstancePrice() AddInstance200ResponseAllOfOneOfInstanceInstancePrice`
 
 GetInstancePrice returns the InstancePrice field if non-nil, zero value otherwise.
 
 ### GetInstancePriceOk
 
-`func (o *Instance) GetInstancePriceOk() (*ListInstances200ResponseAllOfInstancesInnerInstancePrice, bool)`
+`func (o *Instance) GetInstancePriceOk() (*AddInstance200ResponseAllOfOneOfInstanceInstancePrice, bool)`
 
 GetInstancePriceOk returns a tuple with the InstancePrice field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInstancePrice
 
-`func (o *Instance) SetInstancePrice(v ListInstances200ResponseAllOfInstancesInnerInstancePrice)`
+`func (o *Instance) SetInstancePrice(v AddInstance200ResponseAllOfOneOfInstanceInstancePrice)`
 
 SetInstancePrice sets InstancePrice field to given value.
 
@@ -1878,20 +1878,20 @@ HasNotes returns a boolean if a field has been set.
 
 ### GetStats
 
-`func (o *Instance) GetStats() ListInstances200ResponseAllOfInstancesInnerStats`
+`func (o *Instance) GetStats() AddInstance200ResponseAllOfOneOfInstanceStats`
 
 GetStats returns the Stats field if non-nil, zero value otherwise.
 
 ### GetStatsOk
 
-`func (o *Instance) GetStatsOk() (*ListInstances200ResponseAllOfInstancesInnerStats, bool)`
+`func (o *Instance) GetStatsOk() (*AddInstance200ResponseAllOfOneOfInstanceStats, bool)`
 
 GetStatsOk returns a tuple with the Stats field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStats
 
-`func (o *Instance) SetStats(v ListInstances200ResponseAllOfInstancesInnerStats)`
+`func (o *Instance) SetStats(v AddInstance200ResponseAllOfOneOfInstanceStats)`
 
 SetStats sets Stats field to given value.
 

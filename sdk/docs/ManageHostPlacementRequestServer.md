@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | Pointer to **string** | Placement Strategy | [optional] 
-**PreferredServer** | Pointer to [**ManageHostPlacementRequestServerPreferredServer**](ManageHostPlacementRequestServerPreferredServer.md) |  | [optional] 
+**PlacementStrategy** | Pointer to **string** | Placement Strategy | [optional] 
+**PreferredParentServer** | Pointer to [**ManageHostPlacementRequestServerPreferredParentServer**](ManageHostPlacementRequestServerPreferredParentServer.md) |  | [optional] 
 
 ## Methods
 
@@ -26,55 +26,55 @@ NewManageHostPlacementRequestServerWithDefaults instantiates a new ManageHostPla
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetName
+### GetPlacementStrategy
 
-`func (o *ManageHostPlacementRequestServer) GetName() string`
+`func (o *ManageHostPlacementRequestServer) GetPlacementStrategy() string`
 
-GetName returns the Name field if non-nil, zero value otherwise.
+GetPlacementStrategy returns the PlacementStrategy field if non-nil, zero value otherwise.
 
-### GetNameOk
+### GetPlacementStrategyOk
 
-`func (o *ManageHostPlacementRequestServer) GetNameOk() (*string, bool)`
+`func (o *ManageHostPlacementRequestServer) GetPlacementStrategyOk() (*string, bool)`
 
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+GetPlacementStrategyOk returns a tuple with the PlacementStrategy field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetName
+### SetPlacementStrategy
 
-`func (o *ManageHostPlacementRequestServer) SetName(v string)`
+`func (o *ManageHostPlacementRequestServer) SetPlacementStrategy(v string)`
 
-SetName sets Name field to given value.
+SetPlacementStrategy sets PlacementStrategy field to given value.
 
-### HasName
+### HasPlacementStrategy
 
-`func (o *ManageHostPlacementRequestServer) HasName() bool`
+`func (o *ManageHostPlacementRequestServer) HasPlacementStrategy() bool`
 
-HasName returns a boolean if a field has been set.
+HasPlacementStrategy returns a boolean if a field has been set.
 
-### GetPreferredServer
+### GetPreferredParentServer
 
-`func (o *ManageHostPlacementRequestServer) GetPreferredServer() ManageHostPlacementRequestServerPreferredServer`
+`func (o *ManageHostPlacementRequestServer) GetPreferredParentServer() ManageHostPlacementRequestServerPreferredParentServer`
 
-GetPreferredServer returns the PreferredServer field if non-nil, zero value otherwise.
+GetPreferredParentServer returns the PreferredParentServer field if non-nil, zero value otherwise.
 
-### GetPreferredServerOk
+### GetPreferredParentServerOk
 
-`func (o *ManageHostPlacementRequestServer) GetPreferredServerOk() (*ManageHostPlacementRequestServerPreferredServer, bool)`
+`func (o *ManageHostPlacementRequestServer) GetPreferredParentServerOk() (*ManageHostPlacementRequestServerPreferredParentServer, bool)`
 
-GetPreferredServerOk returns a tuple with the PreferredServer field if it's non-nil, zero value otherwise
+GetPreferredParentServerOk returns a tuple with the PreferredParentServer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetPreferredServer
+### SetPreferredParentServer
 
-`func (o *ManageHostPlacementRequestServer) SetPreferredServer(v ManageHostPlacementRequestServerPreferredServer)`
+`func (o *ManageHostPlacementRequestServer) SetPreferredParentServer(v ManageHostPlacementRequestServerPreferredParentServer)`
 
-SetPreferredServer sets PreferredServer field to given value.
+SetPreferredParentServer sets PreferredParentServer field to given value.
 
-### HasPreferredServer
+### HasPreferredParentServer
 
-`func (o *ManageHostPlacementRequestServer) HasPreferredServer() bool`
+`func (o *ManageHostPlacementRequestServer) HasPreferredParentServer() bool`
 
-HasPreferredServer returns a boolean if a field has been set.
+HasPreferredParentServer returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

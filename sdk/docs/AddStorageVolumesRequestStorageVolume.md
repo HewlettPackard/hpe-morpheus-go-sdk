@@ -8,13 +8,13 @@ Name | Type | Description | Notes
 **Type** | **string** | Storage Type Code or ID | 
 **Config** | Pointer to **map[string]interface{}** | Configuration object with parameters that vary by &#x60;type&#x60;. | [optional] 
 **StorageServer** | [**AddClusterLayoutsRequestLayoutMastersInnerContainerType**](AddClusterLayoutsRequestLayoutMastersInnerContainerType.md) |  | 
-**StorageGroup** | [**AddClusterLayoutsRequestLayoutMastersInnerContainerType**](AddClusterLayoutsRequestLayoutMastersInnerContainerType.md) |  | 
+**StorageGroup** | Pointer to [**AddClusterLayoutsRequestLayoutMastersInnerContainerType**](AddClusterLayoutsRequestLayoutMastersInnerContainerType.md) |  | [optional] 
 
 ## Methods
 
 ### NewAddStorageVolumesRequestStorageVolume
 
-`func NewAddStorageVolumesRequestStorageVolume(name string, type_ string, storageServer AddClusterLayoutsRequestLayoutMastersInnerContainerType, storageGroup AddClusterLayoutsRequestLayoutMastersInnerContainerType, ) *AddStorageVolumesRequestStorageVolume`
+`func NewAddStorageVolumesRequestStorageVolume(name string, type_ string, storageServer AddClusterLayoutsRequestLayoutMastersInnerContainerType, ) *AddStorageVolumesRequestStorageVolume`
 
 NewAddStorageVolumesRequestStorageVolume instantiates a new AddStorageVolumesRequestStorageVolume object
 This constructor will assign default values to properties that have it defined,
@@ -133,6 +133,11 @@ and a boolean to check if the value has been set.
 
 SetStorageGroup sets StorageGroup field to given value.
 
+### HasStorageGroup
+
+`func (o *AddStorageVolumesRequestStorageVolume) HasStorageGroup() bool`
+
+HasStorageGroup returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

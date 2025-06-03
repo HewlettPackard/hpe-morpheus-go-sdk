@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.6
+API version: 8.0.7
 Contact: dev@morpheusdata.com
 */
 
@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -23,8 +22,7 @@ var _ MappedNullable = &InstanceCreateSuccess{}
 // InstanceCreateSuccess struct for InstanceCreateSuccess
 type InstanceCreateSuccess struct {
 	Instance AddInstance200ResponseAllOfOneOfInstance `json:"instance"`
-	// The Cloud ID to provision the instance onto.
-	ZoneId int64 `json:"zoneId"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _InstanceCreateSuccess InstanceCreateSuccess
@@ -33,10 +31,9 @@ type _InstanceCreateSuccess InstanceCreateSuccess
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInstanceCreateSuccess(instance AddInstance200ResponseAllOfOneOfInstance, zoneId int64) *InstanceCreateSuccess {
+func NewInstanceCreateSuccess(instance AddInstance200ResponseAllOfOneOfInstance) *InstanceCreateSuccess {
 	this := InstanceCreateSuccess{}
 	this.Instance = instance
-	this.ZoneId = zoneId
 	return &this
 }
 
@@ -72,30 +69,6 @@ func (o *InstanceCreateSuccess) SetInstance(v AddInstance200ResponseAllOfOneOfIn
 	o.Instance = v
 }
 
-// GetZoneId returns the ZoneId field value
-func (o *InstanceCreateSuccess) GetZoneId() int64 {
-	if o == nil {
-		var ret int64
-		return ret
-	}
-
-	return o.ZoneId
-}
-
-// GetZoneIdOk returns a tuple with the ZoneId field value
-// and a boolean to check if the value has been set.
-func (o *InstanceCreateSuccess) GetZoneIdOk() (*int64, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ZoneId, true
-}
-
-// SetZoneId sets field value
-func (o *InstanceCreateSuccess) SetZoneId(v int64) {
-	o.ZoneId = v
-}
-
 func (o InstanceCreateSuccess) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -107,7 +80,11 @@ func (o InstanceCreateSuccess) MarshalJSON() ([]byte, error) {
 func (o InstanceCreateSuccess) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["instance"] = o.Instance
-	toSerialize["zoneId"] = o.ZoneId
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -117,7 +94,6 @@ func (o *InstanceCreateSuccess) UnmarshalJSON(data []byte) (err error) {
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
 		"instance",
-		"zoneId",
 	}
 
 	allProperties := make(map[string]interface{})
@@ -136,15 +112,20 @@ func (o *InstanceCreateSuccess) UnmarshalJSON(data []byte) (err error) {
 
 	varInstanceCreateSuccess := _InstanceCreateSuccess{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varInstanceCreateSuccess)
+	err = json.Unmarshal(data, &varInstanceCreateSuccess)
 
 	if err != nil {
 		return err
 	}
 
 	*o = InstanceCreateSuccess(varInstanceCreateSuccess)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "instance")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }
