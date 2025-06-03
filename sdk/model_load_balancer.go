@@ -46,7 +46,10 @@ type LoadBalancer struct {
 	Credential *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential `json:"credential,omitempty"`
 	Tenants []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"tenants,omitempty"`
 	ResourcePermission *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission `json:"resourcePermission,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _LoadBalancer LoadBalancer
 
 // NewLoadBalancer instantiates a new LoadBalancer object
 // This constructor will assign default values to properties that have it defined,
@@ -950,7 +953,57 @@ func (o LoadBalancer) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ResourcePermission) {
 		toSerialize["resourcePermission"] = o.ResourcePermission
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *LoadBalancer) UnmarshalJSON(data []byte) (err error) {
+	varLoadBalancer := _LoadBalancer{}
+
+	err = json.Unmarshal(data, &varLoadBalancer)
+
+	if err != nil {
+		return err
+	}
+
+	*o = LoadBalancer(varLoadBalancer)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "uuid")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "cloud")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "owner")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "host")
+		delete(additionalProperties, "port")
+		delete(additionalProperties, "username")
+		delete(additionalProperties, "ip")
+		delete(additionalProperties, "internalIp")
+		delete(additionalProperties, "externalIp")
+		delete(additionalProperties, "apiPort")
+		delete(additionalProperties, "adminPort")
+		delete(additionalProperties, "sslEnabled")
+		delete(additionalProperties, "sslCert")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "credential")
+		delete(additionalProperties, "tenants")
+		delete(additionalProperties, "resourcePermission")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableLoadBalancer struct {

@@ -37,7 +37,10 @@ type ListSpecTemplates200ResponseAllOfSpecTemplatesInner struct {
 	UpdatedBy *string `json:"updatedBy,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListSpecTemplates200ResponseAllOfSpecTemplatesInner ListSpecTemplates200ResponseAllOfSpecTemplatesInner
 
 // NewListSpecTemplates200ResponseAllOfSpecTemplatesInner instantiates a new ListSpecTemplates200ResponseAllOfSpecTemplatesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -626,7 +629,48 @@ func (o ListSpecTemplates200ResponseAllOfSpecTemplatesInner) ToMap() (map[string
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListSpecTemplates200ResponseAllOfSpecTemplatesInner) UnmarshalJSON(data []byte) (err error) {
+	varListSpecTemplates200ResponseAllOfSpecTemplatesInner := _ListSpecTemplates200ResponseAllOfSpecTemplatesInner{}
+
+	err = json.Unmarshal(data, &varListSpecTemplates200ResponseAllOfSpecTemplatesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListSpecTemplates200ResponseAllOfSpecTemplatesInner(varListSpecTemplates200ResponseAllOfSpecTemplatesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "externalType")
+		delete(additionalProperties, "deploymentId")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "file")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "createdBy")
+		delete(additionalProperties, "updatedBy")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListSpecTemplates200ResponseAllOfSpecTemplatesInner struct {

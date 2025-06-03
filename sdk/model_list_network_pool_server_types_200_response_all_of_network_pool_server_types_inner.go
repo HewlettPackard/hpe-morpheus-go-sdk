@@ -29,7 +29,10 @@ type ListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner struc
 	Enabled *bool `json:"enabled,omitempty"`
 	Description *string `json:"description,omitempty"`
 	OptionTypes []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner ListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner
 
 // NewListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner instantiates a new ListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -373,7 +376,41 @@ func (o ListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner) T
 	if !IsNil(o.OptionTypes) {
 		toSerialize["optionTypes"] = o.OptionTypes
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner) UnmarshalJSON(data []byte) (err error) {
+	varListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner := _ListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner{}
+
+	err = json.Unmarshal(data, &varListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner(varListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "poolService")
+		delete(additionalProperties, "selectable")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "integrationCode")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "optionTypes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner struct {

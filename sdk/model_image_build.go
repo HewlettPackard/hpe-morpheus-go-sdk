@@ -42,7 +42,10 @@ type ImageBuild struct {
 	Config *AddImageBuild200ResponseAllOfImageBuildConfig `json:"config,omitempty"`
 	LastResult *AddImageBuild200ResponseAllOfImageBuildLastResult `json:"lastResult,omitempty"`
 	ExecutionCount *int64 `json:"executionCount,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ImageBuild ImageBuild
 
 // NewImageBuild instantiates a new ImageBuild object
 // This constructor will assign default values to properties that have it defined,
@@ -841,7 +844,54 @@ func (o ImageBuild) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ExecutionCount) {
 		toSerialize["executionCount"] = o.ExecutionCount
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ImageBuild) UnmarshalJSON(data []byte) (err error) {
+	varImageBuild := _ImageBuild{}
+
+	err = json.Unmarshal(data, &varImageBuild)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ImageBuild(varImageBuild)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "site")
+		delete(additionalProperties, "zone")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "bootScript")
+		delete(additionalProperties, "bootCommand")
+		delete(additionalProperties, "preseedScript")
+		delete(additionalProperties, "scripts")
+		delete(additionalProperties, "sshUsername")
+		delete(additionalProperties, "sshPassword")
+		delete(additionalProperties, "storageProvider")
+		delete(additionalProperties, "buildOutputName")
+		delete(additionalProperties, "conversionFormats")
+		delete(additionalProperties, "isCloudInit")
+		delete(additionalProperties, "vmToolsInstalled")
+		delete(additionalProperties, "keepResults")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "lastResult")
+		delete(additionalProperties, "executionCount")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableImageBuild struct {

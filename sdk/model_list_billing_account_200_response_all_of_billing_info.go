@@ -30,7 +30,10 @@ type ListBillingAccount200ResponseAllOfBillingInfo struct {
 	Price *float32 `json:"price,omitempty"`
 	Cost *float32 `json:"cost,omitempty"`
 	Zones []ListBillingAccount200ResponseAllOfBillingInfoZonesInner `json:"zones,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListBillingAccount200ResponseAllOfBillingInfo ListBillingAccount200ResponseAllOfBillingInfo
 
 // NewListBillingAccount200ResponseAllOfBillingInfo instantiates a new ListBillingAccount200ResponseAllOfBillingInfo object
 // This constructor will assign default values to properties that have it defined,
@@ -374,7 +377,41 @@ func (o ListBillingAccount200ResponseAllOfBillingInfo) ToMap() (map[string]inter
 	if !IsNil(o.Zones) {
 		toSerialize["zones"] = o.Zones
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListBillingAccount200ResponseAllOfBillingInfo) UnmarshalJSON(data []byte) (err error) {
+	varListBillingAccount200ResponseAllOfBillingInfo := _ListBillingAccount200ResponseAllOfBillingInfo{}
+
+	err = json.Unmarshal(data, &varListBillingAccount200ResponseAllOfBillingInfo)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListBillingAccount200ResponseAllOfBillingInfo(varListBillingAccount200ResponseAllOfBillingInfo)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "accountUUID")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "startDate")
+		delete(additionalProperties, "endDate")
+		delete(additionalProperties, "priceUnit")
+		delete(additionalProperties, "price")
+		delete(additionalProperties, "cost")
+		delete(additionalProperties, "zones")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListBillingAccount200ResponseAllOfBillingInfo struct {

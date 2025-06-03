@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -37,6 +36,7 @@ type CreateNetworkFirewallRuleRequestRule struct {
 	Config *CreateNetworkFirewallRuleRequestRuleConfig `json:"config,omitempty"`
 	Scopes *CreateNetworkFirewallRuleRequestRuleSources `json:"scopes,omitempty"`
 	Policy *string `json:"policy,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _CreateNetworkFirewallRuleRequestRule CreateNetworkFirewallRuleRequestRule
@@ -444,6 +444,11 @@ func (o CreateNetworkFirewallRuleRequestRule) ToMap() (map[string]interface{}, e
 	if !IsNil(o.Policy) {
 		toSerialize["policy"] = o.Policy
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -471,15 +476,30 @@ func (o *CreateNetworkFirewallRuleRequestRule) UnmarshalJSON(data []byte) (err e
 
 	varCreateNetworkFirewallRuleRequestRule := _CreateNetworkFirewallRuleRequestRule{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varCreateNetworkFirewallRuleRequestRule)
+	err = json.Unmarshal(data, &varCreateNetworkFirewallRuleRequestRule)
 
 	if err != nil {
 		return err
 	}
 
 	*o = CreateNetworkFirewallRuleRequestRule(varCreateNetworkFirewallRuleRequestRule)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "ruleGroup")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "priority")
+		delete(additionalProperties, "direction")
+		delete(additionalProperties, "sources")
+		delete(additionalProperties, "destinations")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "scopes")
+		delete(additionalProperties, "policy")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

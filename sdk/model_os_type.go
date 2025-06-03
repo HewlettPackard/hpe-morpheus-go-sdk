@@ -46,7 +46,10 @@ type OsType struct {
 	// Whether the morpheus agent is installed. 
 	InstallAgent *bool `json:"installAgent,omitempty"`
 	Images []ListOsTypes200ResponseAllOfOsTypesInnerImagesInner `json:"images,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _OsType OsType
 
 // NewOsType instantiates a new OsType object
 // This constructor will assign default values to properties that have it defined,
@@ -565,7 +568,46 @@ func (o OsType) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Images) {
 		toSerialize["images"] = o.Images
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *OsType) UnmarshalJSON(data []byte) (err error) {
+	varOsType := _OsType{}
+
+	err = json.Unmarshal(data, &varOsType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = OsType(varOsType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "platform")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "vendor")
+		delete(additionalProperties, "osName")
+		delete(additionalProperties, "osVersion")
+		delete(additionalProperties, "osCodename")
+		delete(additionalProperties, "osFamily")
+		delete(additionalProperties, "bitCount")
+		delete(additionalProperties, "cloudInitVersion")
+		delete(additionalProperties, "installAgent")
+		delete(additionalProperties, "images")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableOsType struct {

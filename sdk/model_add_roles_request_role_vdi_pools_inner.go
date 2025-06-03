@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -26,6 +25,7 @@ type AddRolesRequestRoleVdiPoolsInner struct {
 	Id int32 `json:"id"`
 	// The new access level.
 	Access string `json:"access"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddRolesRequestRoleVdiPoolsInner AddRolesRequestRoleVdiPoolsInner
@@ -109,6 +109,11 @@ func (o AddRolesRequestRoleVdiPoolsInner) ToMap() (map[string]interface{}, error
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
 	toSerialize["access"] = o.Access
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -137,15 +142,21 @@ func (o *AddRolesRequestRoleVdiPoolsInner) UnmarshalJSON(data []byte) (err error
 
 	varAddRolesRequestRoleVdiPoolsInner := _AddRolesRequestRoleVdiPoolsInner{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddRolesRequestRoleVdiPoolsInner)
+	err = json.Unmarshal(data, &varAddRolesRequestRoleVdiPoolsInner)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddRolesRequestRoleVdiPoolsInner(varAddRolesRequestRoleVdiPoolsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "access")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

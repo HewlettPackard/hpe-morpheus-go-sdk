@@ -33,7 +33,10 @@ type GetNetworkRouters200ResponseNetworkRoutersInnerType struct {
 	HasNetworkServer *bool `json:"hasNetworkServer,omitempty"`
 	OptionTypes []map[string]interface{} `json:"optionTypes,omitempty"`
 	RuleOptionTypes []map[string]interface{} `json:"ruleOptionTypes,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetNetworkRouters200ResponseNetworkRoutersInnerType GetNetworkRouters200ResponseNetworkRoutersInnerType
 
 // NewGetNetworkRouters200ResponseNetworkRoutersInnerType instantiates a new GetNetworkRouters200ResponseNetworkRoutersInnerType object
 // This constructor will assign default values to properties that have it defined,
@@ -517,7 +520,45 @@ func (o GetNetworkRouters200ResponseNetworkRoutersInnerType) ToMap() (map[string
 	if !IsNil(o.RuleOptionTypes) {
 		toSerialize["ruleOptionTypes"] = o.RuleOptionTypes
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetNetworkRouters200ResponseNetworkRoutersInnerType) UnmarshalJSON(data []byte) (err error) {
+	varGetNetworkRouters200ResponseNetworkRoutersInnerType := _GetNetworkRouters200ResponseNetworkRoutersInnerType{}
+
+	err = json.Unmarshal(data, &varGetNetworkRouters200ResponseNetworkRoutersInnerType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetNetworkRouters200ResponseNetworkRoutersInnerType(varGetNetworkRouters200ResponseNetworkRoutersInnerType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "creatable")
+		delete(additionalProperties, "selectable")
+		delete(additionalProperties, "hasFirewall")
+		delete(additionalProperties, "hasDhcp")
+		delete(additionalProperties, "hasRouting")
+		delete(additionalProperties, "hasNetworkServer")
+		delete(additionalProperties, "optionTypes")
+		delete(additionalProperties, "ruleOptionTypes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetNetworkRouters200ResponseNetworkRoutersInnerType struct {

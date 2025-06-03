@@ -22,7 +22,10 @@ var _ MappedNullable = &RemoveInstancesFromControlRequest{}
 type RemoveInstancesFromControlRequest struct {
 	// Array of Ids of brownfield Instances to be deleted
 	Ids []int64 `json:"ids,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _RemoveInstancesFromControlRequest RemoveInstancesFromControlRequest
 
 // NewRemoveInstancesFromControlRequest instantiates a new RemoveInstancesFromControlRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o RemoveInstancesFromControlRequest) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.Ids) {
 		toSerialize["ids"] = o.Ids
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *RemoveInstancesFromControlRequest) UnmarshalJSON(data []byte) (err error) {
+	varRemoveInstancesFromControlRequest := _RemoveInstancesFromControlRequest{}
+
+	err = json.Unmarshal(data, &varRemoveInstancesFromControlRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = RemoveInstancesFromControlRequest(varRemoveInstancesFromControlRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "ids")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableRemoveInstancesFromControlRequest struct {

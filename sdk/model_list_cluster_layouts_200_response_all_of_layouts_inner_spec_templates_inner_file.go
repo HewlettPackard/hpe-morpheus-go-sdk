@@ -26,7 +26,10 @@ type ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile struct
 	ContentPath *string `json:"contentPath,omitempty"`
 	Repository *string `json:"repository,omitempty"`
 	Content *string `json:"content,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile
 
 // NewListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile instantiates a new ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile object
 // This constructor will assign default values to properties that have it defined,
@@ -265,7 +268,38 @@ func (o ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) To
 	if !IsNil(o.Content) {
 		toSerialize["content"] = o.Content
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) UnmarshalJSON(data []byte) (err error) {
+	varListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile := _ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile{}
+
+	err = json.Unmarshal(data, &varListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile(varListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "sourceType")
+		delete(additionalProperties, "contentRef")
+		delete(additionalProperties, "contentPath")
+		delete(additionalProperties, "repository")
+		delete(additionalProperties, "content")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile struct {

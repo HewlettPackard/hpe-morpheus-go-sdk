@@ -22,7 +22,10 @@ var _ MappedNullable = &GetClusterHistory200ResponseAllOfProcessesInnerCreatedBy
 type GetClusterHistory200ResponseAllOfProcessesInnerCreatedBy struct {
 	Username *string `json:"username,omitempty"`
 	DisplayName *string `json:"displayName,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetClusterHistory200ResponseAllOfProcessesInnerCreatedBy GetClusterHistory200ResponseAllOfProcessesInnerCreatedBy
 
 // NewGetClusterHistory200ResponseAllOfProcessesInnerCreatedBy instantiates a new GetClusterHistory200ResponseAllOfProcessesInnerCreatedBy object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o GetClusterHistory200ResponseAllOfProcessesInnerCreatedBy) ToMap() (map[s
 	if !IsNil(o.DisplayName) {
 		toSerialize["displayName"] = o.DisplayName
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetClusterHistory200ResponseAllOfProcessesInnerCreatedBy) UnmarshalJSON(data []byte) (err error) {
+	varGetClusterHistory200ResponseAllOfProcessesInnerCreatedBy := _GetClusterHistory200ResponseAllOfProcessesInnerCreatedBy{}
+
+	err = json.Unmarshal(data, &varGetClusterHistory200ResponseAllOfProcessesInnerCreatedBy)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetClusterHistory200ResponseAllOfProcessesInnerCreatedBy(varGetClusterHistory200ResponseAllOfProcessesInnerCreatedBy)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "username")
+		delete(additionalProperties, "displayName")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetClusterHistory200ResponseAllOfProcessesInnerCreatedBy struct {

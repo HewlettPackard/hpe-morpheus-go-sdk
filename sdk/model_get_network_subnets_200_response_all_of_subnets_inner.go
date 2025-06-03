@@ -57,7 +57,10 @@ type GetNetworkSubnets200ResponseAllOfSubnetsInner struct {
 	SecurityGroups []map[string]interface{} `json:"securityGroups,omitempty"`
 	Tenants []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"tenants,omitempty"`
 	ResourcePermission *GetNetworkSubnets200ResponseAllOfSubnetsInnerResourcePermission `json:"resourcePermission,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetNetworkSubnets200ResponseAllOfSubnetsInner GetNetworkSubnets200ResponseAllOfSubnetsInner
 
 // NewGetNetworkSubnets200ResponseAllOfSubnetsInner instantiates a new GetNetworkSubnets200ResponseAllOfSubnetsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -1381,7 +1384,69 @@ func (o GetNetworkSubnets200ResponseAllOfSubnetsInner) ToMap() (map[string]inter
 	if !IsNil(o.ResourcePermission) {
 		toSerialize["resourcePermission"] = o.ResourcePermission
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) UnmarshalJSON(data []byte) (err error) {
+	varGetNetworkSubnets200ResponseAllOfSubnetsInner := _GetNetworkSubnets200ResponseAllOfSubnetsInner{}
+
+	err = json.Unmarshal(data, &varGetNetworkSubnets200ResponseAllOfSubnetsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetNetworkSubnets200ResponseAllOfSubnetsInner(varGetNetworkSubnets200ResponseAllOfSubnetsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "uniqueId")
+		delete(additionalProperties, "addressPrefix")
+		delete(additionalProperties, "cidr")
+		delete(additionalProperties, "gateway")
+		delete(additionalProperties, "netmask")
+		delete(additionalProperties, "subnetAddress")
+		delete(additionalProperties, "tftpServer")
+		delete(additionalProperties, "bootFile")
+		delete(additionalProperties, "pool")
+		delete(additionalProperties, "dhcpServer")
+		delete(additionalProperties, "hasFloatingIps")
+		delete(additionalProperties, "dhcpIp")
+		delete(additionalProperties, "dnsPrimary")
+		delete(additionalProperties, "dnsSecondary")
+		delete(additionalProperties, "dhcpStart")
+		delete(additionalProperties, "dhcpEnd")
+		delete(additionalProperties, "dhcpRange")
+		delete(additionalProperties, "networkProxy")
+		delete(additionalProperties, "networkDomain")
+		delete(additionalProperties, "searchDomains")
+		delete(additionalProperties, "defaultNetwork")
+		delete(additionalProperties, "assignPublicIp")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "network")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "securityGroups")
+		delete(additionalProperties, "tenants")
+		delete(additionalProperties, "resourcePermission")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetNetworkSubnets200ResponseAllOfSubnetsInner struct {

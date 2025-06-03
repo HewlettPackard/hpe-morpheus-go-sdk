@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -24,6 +23,7 @@ var _ MappedNullable = &AddSpecTemplateRequestSpecTemplateFileRepository{}
 type AddSpecTemplateRequestSpecTemplateFileRepository struct {
 	// Code Repository ID, required for type repository. Use `/api/options/codeRepositories` to see available repositories.
 	Id int64 `json:"id"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddSpecTemplateRequestSpecTemplateFileRepository AddSpecTemplateRequestSpecTemplateFileRepository
@@ -81,6 +81,11 @@ func (o AddSpecTemplateRequestSpecTemplateFileRepository) MarshalJSON() ([]byte,
 func (o AddSpecTemplateRequestSpecTemplateFileRepository) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -108,15 +113,20 @@ func (o *AddSpecTemplateRequestSpecTemplateFileRepository) UnmarshalJSON(data []
 
 	varAddSpecTemplateRequestSpecTemplateFileRepository := _AddSpecTemplateRequestSpecTemplateFileRepository{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddSpecTemplateRequestSpecTemplateFileRepository)
+	err = json.Unmarshal(data, &varAddSpecTemplateRequestSpecTemplateFileRepository)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddSpecTemplateRequestSpecTemplateFileRepository(varAddSpecTemplateRequestSpecTemplateFileRepository)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

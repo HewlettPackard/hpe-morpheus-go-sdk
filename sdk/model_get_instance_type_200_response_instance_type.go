@@ -51,7 +51,10 @@ type GetInstanceType200ResponseInstanceType struct {
 	ImagePath *string `json:"imagePath,omitempty"`
 	// Dark logo image URL
 	DarkImagePath *string `json:"darkImagePath,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetInstanceType200ResponseInstanceType GetInstanceType200ResponseInstanceType
 
 // NewGetInstanceType200ResponseInstanceType instantiates a new GetInstanceType200ResponseInstanceType object
 // This constructor will assign default values to properties that have it defined,
@@ -1095,7 +1098,61 @@ func (o GetInstanceType200ResponseInstanceType) ToMap() (map[string]interface{},
 	if !IsNil(o.DarkImagePath) {
 		toSerialize["darkImagePath"] = o.DarkImagePath
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetInstanceType200ResponseInstanceType) UnmarshalJSON(data []byte) (err error) {
+	varGetInstanceType200ResponseInstanceType := _GetInstanceType200ResponseInstanceType{}
+
+	err = json.Unmarshal(data, &varGetInstanceType200ResponseInstanceType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetInstanceType200ResponseInstanceType(varGetInstanceType200ResponseInstanceType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "provisionTypeCode")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "hasProvisioningStep")
+		delete(additionalProperties, "hasDeployment")
+		delete(additionalProperties, "hasConfig")
+		delete(additionalProperties, "hasSettings")
+		delete(additionalProperties, "hasAutoScale")
+		delete(additionalProperties, "proxyType")
+		delete(additionalProperties, "proxyPort")
+		delete(additionalProperties, "proxyProtocol")
+		delete(additionalProperties, "environmentPrefix")
+		delete(additionalProperties, "backupType")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "featured")
+		delete(additionalProperties, "versions")
+		delete(additionalProperties, "instanceTypeLayouts")
+		delete(additionalProperties, "optionTypes")
+		delete(additionalProperties, "environmentVariables")
+		delete(additionalProperties, "priceSets")
+		delete(additionalProperties, "imagePath")
+		delete(additionalProperties, "darkImagePath")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetInstanceType200ResponseInstanceType struct {

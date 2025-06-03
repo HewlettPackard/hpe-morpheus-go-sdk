@@ -22,7 +22,10 @@ var _ MappedNullable = &AnsibleTowerInventoryOptions{}
 type AnsibleTowerInventoryOptions struct {
 	Name *string `json:"name,omitempty"`
 	Value *int64 `json:"value,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AnsibleTowerInventoryOptions AnsibleTowerInventoryOptions
 
 // NewAnsibleTowerInventoryOptions instantiates a new AnsibleTowerInventoryOptions object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o AnsibleTowerInventoryOptions) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Value) {
 		toSerialize["value"] = o.Value
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AnsibleTowerInventoryOptions) UnmarshalJSON(data []byte) (err error) {
+	varAnsibleTowerInventoryOptions := _AnsibleTowerInventoryOptions{}
+
+	err = json.Unmarshal(data, &varAnsibleTowerInventoryOptions)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AnsibleTowerInventoryOptions(varAnsibleTowerInventoryOptions)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "value")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAnsibleTowerInventoryOptions struct {

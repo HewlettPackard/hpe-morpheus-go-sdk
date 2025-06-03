@@ -38,7 +38,10 @@ type ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner struct {
 	ImagePath *string `json:"imagePath,omitempty"`
 	// Dark logo image URL
 	DarkImagePath *string `json:"darkImagePath,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner
 
 // NewListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner instantiates a new ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -627,7 +630,48 @@ func (o ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner) ToMap()
 	if !IsNil(o.DarkImagePath) {
 		toSerialize["darkImagePath"] = o.DarkImagePath
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner) UnmarshalJSON(data []byte) (err error) {
+	varListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner := _ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner{}
+
+	err = json.Unmarshal(data, &varListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner(varListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "provisionTypeCode")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "environmentPrefix")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "featured")
+		delete(additionalProperties, "versions")
+		delete(additionalProperties, "instanceTypeLayouts")
+		delete(additionalProperties, "imagePath")
+		delete(additionalProperties, "darkImagePath")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner struct {

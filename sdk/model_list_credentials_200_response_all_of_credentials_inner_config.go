@@ -27,7 +27,10 @@ type ListCredentials200ResponseAllOfCredentialsInnerConfig struct {
 	GrantType *string `json:"grantType,omitempty"`
 	AccessTokenUrl *string `json:"accessTokenUrl,omitempty"`
 	ClientSecretHash *string `json:"clientSecretHash,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListCredentials200ResponseAllOfCredentialsInnerConfig ListCredentials200ResponseAllOfCredentialsInnerConfig
 
 // NewListCredentials200ResponseAllOfCredentialsInnerConfig instantiates a new ListCredentials200ResponseAllOfCredentialsInnerConfig object
 // This constructor will assign default values to properties that have it defined,
@@ -301,7 +304,39 @@ func (o ListCredentials200ResponseAllOfCredentialsInnerConfig) ToMap() (map[stri
 	if !IsNil(o.ClientSecretHash) {
 		toSerialize["clientSecretHash"] = o.ClientSecretHash
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListCredentials200ResponseAllOfCredentialsInnerConfig) UnmarshalJSON(data []byte) (err error) {
+	varListCredentials200ResponseAllOfCredentialsInnerConfig := _ListCredentials200ResponseAllOfCredentialsInnerConfig{}
+
+	err = json.Unmarshal(data, &varListCredentials200ResponseAllOfCredentialsInnerConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListCredentials200ResponseAllOfCredentialsInnerConfig(varListCredentials200ResponseAllOfCredentialsInnerConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "clientSecret")
+		delete(additionalProperties, "clientId")
+		delete(additionalProperties, "clientAuth")
+		delete(additionalProperties, "scope")
+		delete(additionalProperties, "grantType")
+		delete(additionalProperties, "accessTokenUrl")
+		delete(additionalProperties, "clientSecretHash")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListCredentials200ResponseAllOfCredentialsInnerConfig struct {

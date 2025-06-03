@@ -37,7 +37,10 @@ type UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType 
 	HasAgent *bool `json:"hasAgent,omitempty"`
 	Creatable *bool `json:"creatable,omitempty"`
 	OptionTypes []map[string]interface{} `json:"optionTypes,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType
 
 // NewUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType instantiates a new UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType object
 // This constructor will assign default values to properties that have it defined,
@@ -661,7 +664,49 @@ func (o UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerTy
 	if !IsNil(o.OptionTypes) {
 		toSerialize["optionTypes"] = o.OptionTypes
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType) UnmarshalJSON(data []byte) (err error) {
+	varUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType := _UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType{}
+
+	err = json.Unmarshal(data, &varUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType(varUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "platform")
+		delete(additionalProperties, "nodeType")
+		delete(additionalProperties, "managed")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "vmHypervisor")
+		delete(additionalProperties, "containerHypervisor")
+		delete(additionalProperties, "displayOrder")
+		delete(additionalProperties, "selectable")
+		delete(additionalProperties, "controlPower")
+		delete(additionalProperties, "controlSuspend")
+		delete(additionalProperties, "hasAgent")
+		delete(additionalProperties, "creatable")
+		delete(additionalProperties, "optionTypes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType struct {

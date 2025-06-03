@@ -22,7 +22,10 @@ var _ MappedNullable = &AddProvisioningLicense200Response{}
 type AddProvisioningLicense200Response struct {
 	Success *bool `json:"success,omitempty"`
 	License *GetAlerts200ResponseAllOfChecksInnerAccount `json:"license,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddProvisioningLicense200Response AddProvisioningLicense200Response
 
 // NewAddProvisioningLicense200Response instantiates a new AddProvisioningLicense200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o AddProvisioningLicense200Response) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.License) {
 		toSerialize["license"] = o.License
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddProvisioningLicense200Response) UnmarshalJSON(data []byte) (err error) {
+	varAddProvisioningLicense200Response := _AddProvisioningLicense200Response{}
+
+	err = json.Unmarshal(data, &varAddProvisioningLicense200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddProvisioningLicense200Response(varAddProvisioningLicense200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "success")
+		delete(additionalProperties, "license")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddProvisioningLicense200Response struct {

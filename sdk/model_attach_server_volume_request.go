@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -23,6 +22,7 @@ var _ MappedNullable = &AttachServerVolumeRequest{}
 // AttachServerVolumeRequest struct for AttachServerVolumeRequest
 type AttachServerVolumeRequest struct {
 	MountPoint AttachServerVolumeRequestMountPoint `json:"mountPoint"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AttachServerVolumeRequest AttachServerVolumeRequest
@@ -80,6 +80,11 @@ func (o AttachServerVolumeRequest) MarshalJSON() ([]byte, error) {
 func (o AttachServerVolumeRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["mountPoint"] = o.MountPoint
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -107,15 +112,20 @@ func (o *AttachServerVolumeRequest) UnmarshalJSON(data []byte) (err error) {
 
 	varAttachServerVolumeRequest := _AttachServerVolumeRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAttachServerVolumeRequest)
+	err = json.Unmarshal(data, &varAttachServerVolumeRequest)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AttachServerVolumeRequest(varAttachServerVolumeRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "mountPoint")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

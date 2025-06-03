@@ -23,7 +23,10 @@ type ListHosts200ResponseAllOfServersInnerPlan struct {
 	Id *int64 `json:"id,omitempty"`
 	Code *string `json:"code,omitempty"`
 	Name *string `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListHosts200ResponseAllOfServersInnerPlan ListHosts200ResponseAllOfServersInnerPlan
 
 // NewListHosts200ResponseAllOfServersInnerPlan instantiates a new ListHosts200ResponseAllOfServersInnerPlan object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o ListHosts200ResponseAllOfServersInnerPlan) ToMap() (map[string]interface
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListHosts200ResponseAllOfServersInnerPlan) UnmarshalJSON(data []byte) (err error) {
+	varListHosts200ResponseAllOfServersInnerPlan := _ListHosts200ResponseAllOfServersInnerPlan{}
+
+	err = json.Unmarshal(data, &varListHosts200ResponseAllOfServersInnerPlan)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListHosts200ResponseAllOfServersInnerPlan(varListHosts200ResponseAllOfServersInnerPlan)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListHosts200ResponseAllOfServersInnerPlan struct {

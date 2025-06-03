@@ -28,7 +28,10 @@ type UpdateClusterDatastoreRequestDatastorePermissionsResourcePermissions struct
 	AllPlans *bool `json:"allPlans,omitempty"`
 	// Array of plans that are allowed access
 	Plans []UpdateClusterDatastoreRequestDatastorePermissionsResourcePermissionsSitesInner `json:"plans,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateClusterDatastoreRequestDatastorePermissionsResourcePermissions UpdateClusterDatastoreRequestDatastorePermissionsResourcePermissions
 
 // NewUpdateClusterDatastoreRequestDatastorePermissionsResourcePermissions instantiates a new UpdateClusterDatastoreRequestDatastorePermissionsResourcePermissions object
 // This constructor will assign default values to properties that have it defined,
@@ -197,7 +200,36 @@ func (o UpdateClusterDatastoreRequestDatastorePermissionsResourcePermissions) To
 	if !IsNil(o.Plans) {
 		toSerialize["plans"] = o.Plans
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateClusterDatastoreRequestDatastorePermissionsResourcePermissions) UnmarshalJSON(data []byte) (err error) {
+	varUpdateClusterDatastoreRequestDatastorePermissionsResourcePermissions := _UpdateClusterDatastoreRequestDatastorePermissionsResourcePermissions{}
+
+	err = json.Unmarshal(data, &varUpdateClusterDatastoreRequestDatastorePermissionsResourcePermissions)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateClusterDatastoreRequestDatastorePermissionsResourcePermissions(varUpdateClusterDatastoreRequestDatastorePermissionsResourcePermissions)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "all")
+		delete(additionalProperties, "sites")
+		delete(additionalProperties, "allPlans")
+		delete(additionalProperties, "plans")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateClusterDatastoreRequestDatastorePermissionsResourcePermissions struct {

@@ -28,7 +28,10 @@ type StorageType struct {
 	CustomLabel *bool `json:"customLabel,omitempty"`
 	CustomSize *bool `json:"customSize,omitempty"`
 	CustomSizeOptions *string `json:"customSizeOptions,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _StorageType StorageType
 
 // NewStorageType instantiates a new StorageType object
 // This constructor will assign default values to properties that have it defined,
@@ -337,7 +340,40 @@ func (o StorageType) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomSizeOptions) {
 		toSerialize["customSizeOptions"] = o.CustomSizeOptions
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *StorageType) UnmarshalJSON(data []byte) (err error) {
+	varStorageType := _StorageType{}
+
+	err = json.Unmarshal(data, &varStorageType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = StorageType(varStorageType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "displayOrder")
+		delete(additionalProperties, "defaultType")
+		delete(additionalProperties, "customLabel")
+		delete(additionalProperties, "customSize")
+		delete(additionalProperties, "customSizeOptions")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableStorageType struct {

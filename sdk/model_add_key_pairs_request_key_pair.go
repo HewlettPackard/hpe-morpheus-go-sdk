@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -26,6 +25,7 @@ type AddKeyPairsRequestKeyPair struct {
 	PublicKey string `json:"publicKey"`
 	PrivateKey *string `json:"privateKey,omitempty"`
 	Passphrase *string `json:"passphrase,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddKeyPairsRequestKeyPair AddKeyPairsRequestKeyPair
@@ -179,6 +179,11 @@ func (o AddKeyPairsRequestKeyPair) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Passphrase) {
 		toSerialize["passphrase"] = o.Passphrase
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -207,15 +212,23 @@ func (o *AddKeyPairsRequestKeyPair) UnmarshalJSON(data []byte) (err error) {
 
 	varAddKeyPairsRequestKeyPair := _AddKeyPairsRequestKeyPair{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddKeyPairsRequestKeyPair)
+	err = json.Unmarshal(data, &varAddKeyPairsRequestKeyPair)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddKeyPairsRequestKeyPair(varAddKeyPairsRequestKeyPair)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "publicKey")
+		delete(additionalProperties, "privateKey")
+		delete(additionalProperties, "passphrase")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

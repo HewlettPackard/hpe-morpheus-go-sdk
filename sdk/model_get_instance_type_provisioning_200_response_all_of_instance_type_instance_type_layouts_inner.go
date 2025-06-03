@@ -44,7 +44,10 @@ type GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsI
 	SpecTemplates []map[string]interface{} `json:"specTemplates,omitempty"`
 	TfvarSecret *string `json:"tfvarSecret,omitempty"`
 	Permissions *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerPermissions `json:"permissions,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner
 
 // NewGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner instantiates a new GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -878,7 +881,55 @@ func (o GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayou
 	if !IsNil(o.Permissions) {
 		toSerialize["permissions"] = o.Permissions
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) UnmarshalJSON(data []byte) (err error) {
+	varGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner := _GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner{}
+
+	err = json.Unmarshal(data, &varGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner(varGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "instanceType")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "instanceVersion")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "creatable")
+		delete(additionalProperties, "memoryRequirement")
+		delete(additionalProperties, "sortOrder")
+		delete(additionalProperties, "supportsConvertToManaged")
+		delete(additionalProperties, "provisionType")
+		delete(additionalProperties, "taskSets")
+		delete(additionalProperties, "containerTypes")
+		delete(additionalProperties, "mounts")
+		delete(additionalProperties, "ports")
+		delete(additionalProperties, "optionTypes")
+		delete(additionalProperties, "environmentVariables")
+		delete(additionalProperties, "priceSets")
+		delete(additionalProperties, "specTemplates")
+		delete(additionalProperties, "tfvarSecret")
+		delete(additionalProperties, "permissions")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner struct {

@@ -37,7 +37,10 @@ type ListScripts200ResponseAllOfContainerScriptsInner struct {
 	RunAsPassword *string `json:"runAsPassword,omitempty"`
 	SudoUser *bool `json:"sudoUser,omitempty"`
 	FailOnError *bool `json:"failOnError,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListScripts200ResponseAllOfContainerScriptsInner ListScripts200ResponseAllOfContainerScriptsInner
 
 // NewListScripts200ResponseAllOfContainerScriptsInner instantiates a new ListScripts200ResponseAllOfContainerScriptsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -661,7 +664,49 @@ func (o ListScripts200ResponseAllOfContainerScriptsInner) ToMap() (map[string]in
 	if !IsNil(o.FailOnError) {
 		toSerialize["failOnError"] = o.FailOnError
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListScripts200ResponseAllOfContainerScriptsInner) UnmarshalJSON(data []byte) (err error) {
+	varListScripts200ResponseAllOfContainerScriptsInner := _ListScripts200ResponseAllOfContainerScriptsInner{}
+
+	err = json.Unmarshal(data, &varListScripts200ResponseAllOfContainerScriptsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListScripts200ResponseAllOfContainerScriptsInner(varListScripts200ResponseAllOfContainerScriptsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "sortOrder")
+		delete(additionalProperties, "scriptVersion")
+		delete(additionalProperties, "scriptPhase")
+		delete(additionalProperties, "scriptType")
+		delete(additionalProperties, "script")
+		delete(additionalProperties, "scriptService")
+		delete(additionalProperties, "scriptMethod")
+		delete(additionalProperties, "runAsUser")
+		delete(additionalProperties, "runAsPassword")
+		delete(additionalProperties, "sudoUser")
+		delete(additionalProperties, "failOnError")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListScripts200ResponseAllOfContainerScriptsInner struct {

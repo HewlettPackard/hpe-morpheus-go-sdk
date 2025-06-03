@@ -49,7 +49,10 @@ type ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner st
 	NoBlank *bool `json:"noBlank,omitempty"`
 	DependsOnCode *string `json:"dependsOnCode,omitempty"`
 	ContextualDefault *bool `json:"contextualDefault,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner
 
 // NewListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner instantiates a new ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -1093,7 +1096,61 @@ func (o ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner
 	if !IsNil(o.ContextualDefault) {
 		toSerialize["contextualDefault"] = o.ContextualDefault
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) UnmarshalJSON(data []byte) (err error) {
+	varListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner := _ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner{}
+
+	err = json.Unmarshal(data, &varListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner(varListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "fieldName")
+		delete(additionalProperties, "fieldLabel")
+		delete(additionalProperties, "fieldContext")
+		delete(additionalProperties, "fieldGroup")
+		delete(additionalProperties, "fieldClass")
+		delete(additionalProperties, "fieldAddOn")
+		delete(additionalProperties, "fieldComponent")
+		delete(additionalProperties, "fieldInput")
+		delete(additionalProperties, "placeHolder")
+		delete(additionalProperties, "helpBlock")
+		delete(additionalProperties, "defaultValue")
+		delete(additionalProperties, "optionSource")
+		delete(additionalProperties, "optionList")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "advanced")
+		delete(additionalProperties, "required")
+		delete(additionalProperties, "editable")
+		delete(additionalProperties, "creatable")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "displayOrder")
+		delete(additionalProperties, "wrapperClass")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "noBlank")
+		delete(additionalProperties, "dependsOnCode")
+		delete(additionalProperties, "contextualDefault")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner struct {

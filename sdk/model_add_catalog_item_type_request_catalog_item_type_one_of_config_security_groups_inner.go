@@ -22,7 +22,10 @@ var _ MappedNullable = &AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigSecur
 type AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigSecurityGroupsInner struct {
 	// Security Group ID
 	Id *string `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigSecurityGroupsInner AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigSecurityGroupsInner
 
 // NewAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigSecurityGroupsInner instantiates a new AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigSecurityGroupsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigSecurityGroupsInner) 
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigSecurityGroupsInner) UnmarshalJSON(data []byte) (err error) {
+	varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigSecurityGroupsInner := _AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigSecurityGroupsInner{}
+
+	err = json.Unmarshal(data, &varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigSecurityGroupsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigSecurityGroupsInner(varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigSecurityGroupsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigSecurityGroupsInner struct {

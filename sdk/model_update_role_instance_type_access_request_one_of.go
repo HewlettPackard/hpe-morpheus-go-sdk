@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -26,6 +25,7 @@ type UpdateRoleInstanceTypeAccessRequestOneOf struct {
 	InstanceTypeId int32 `json:"instanceTypeId"`
 	// The new access level.
 	Access string `json:"access"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateRoleInstanceTypeAccessRequestOneOf UpdateRoleInstanceTypeAccessRequestOneOf
@@ -109,6 +109,11 @@ func (o UpdateRoleInstanceTypeAccessRequestOneOf) ToMap() (map[string]interface{
 	toSerialize := map[string]interface{}{}
 	toSerialize["instanceTypeId"] = o.InstanceTypeId
 	toSerialize["access"] = o.Access
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -137,15 +142,21 @@ func (o *UpdateRoleInstanceTypeAccessRequestOneOf) UnmarshalJSON(data []byte) (e
 
 	varUpdateRoleInstanceTypeAccessRequestOneOf := _UpdateRoleInstanceTypeAccessRequestOneOf{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varUpdateRoleInstanceTypeAccessRequestOneOf)
+	err = json.Unmarshal(data, &varUpdateRoleInstanceTypeAccessRequestOneOf)
 
 	if err != nil {
 		return err
 	}
 
 	*o = UpdateRoleInstanceTypeAccessRequestOneOf(varUpdateRoleInstanceTypeAccessRequestOneOf)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "instanceTypeId")
+		delete(additionalProperties, "access")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

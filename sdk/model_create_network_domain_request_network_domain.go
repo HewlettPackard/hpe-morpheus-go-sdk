@@ -46,7 +46,10 @@ type CreateNetworkDomainRequestNetworkDomain struct {
 	GuestUsername *string `json:"guestUsername,omitempty"`
 	// Guest Password
 	GuestPassword *string `json:"guestPassword,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _CreateNetworkDomainRequestNetworkDomain CreateNetworkDomainRequestNetworkDomain
 
 // NewCreateNetworkDomainRequestNetworkDomain instantiates a new CreateNetworkDomainRequestNetworkDomain object
 // This constructor will assign default values to properties that have it defined,
@@ -538,7 +541,45 @@ func (o CreateNetworkDomainRequestNetworkDomain) ToMap() (map[string]interface{}
 	if !IsNil(o.GuestPassword) {
 		toSerialize["guestPassword"] = o.GuestPassword
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *CreateNetworkDomainRequestNetworkDomain) UnmarshalJSON(data []byte) (err error) {
+	varCreateNetworkDomainRequestNetworkDomain := _CreateNetworkDomainRequestNetworkDomain{}
+
+	err = json.Unmarshal(data, &varCreateNetworkDomainRequestNetworkDomain)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CreateNetworkDomainRequestNetworkDomain(varCreateNetworkDomainRequestNetworkDomain)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "displayName")
+		delete(additionalProperties, "publicZone")
+		delete(additionalProperties, "taskSetId")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "domainController")
+		delete(additionalProperties, "domainUsername")
+		delete(additionalProperties, "domainPassword")
+		delete(additionalProperties, "dcServer")
+		delete(additionalProperties, "ouPath")
+		delete(additionalProperties, "guestUsername")
+		delete(additionalProperties, "guestPassword")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCreateNetworkDomainRequestNetworkDomain struct {

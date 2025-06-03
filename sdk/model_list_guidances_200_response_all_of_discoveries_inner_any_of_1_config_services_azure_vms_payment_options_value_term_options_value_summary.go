@@ -32,7 +32,10 @@ type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPa
 	ReservedCost *int64 `json:"reservedCost,omitempty"`
 	RecommendedCount *int64 `json:"recommendedCount,omitempty"`
 	RecommendedCost *float32 `json:"recommendedCost,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueSummary ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueSummary
 
 // NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueSummary instantiates a new ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueSummary object
 // This constructor will assign default values to properties that have it defined,
@@ -481,7 +484,44 @@ func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVm
 	if !IsNil(o.RecommendedCost) {
 		toSerialize["recommendedCost"] = o.RecommendedCost
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueSummary) UnmarshalJSON(data []byte) (err error) {
+	varListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueSummary := _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueSummary{}
+
+	err = json.Unmarshal(data, &varListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueSummary)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueSummary(varListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueSummary)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "totalSavings")
+		delete(additionalProperties, "currencyCode")
+		delete(additionalProperties, "totalSavingsPercent")
+		delete(additionalProperties, "term")
+		delete(additionalProperties, "paymentOption")
+		delete(additionalProperties, "service")
+		delete(additionalProperties, "onDemandCount")
+		delete(additionalProperties, "onDemandCost")
+		delete(additionalProperties, "reservedCount")
+		delete(additionalProperties, "reservedCost")
+		delete(additionalProperties, "recommendedCount")
+		delete(additionalProperties, "recommendedCost")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueSummary struct {

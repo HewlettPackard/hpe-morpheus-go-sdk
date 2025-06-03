@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -28,6 +27,7 @@ type AddOptionListRequestOptionTypeListConfigSourceHeadersInner struct {
 	Value *string `json:"value,omitempty"`
 	// Can be used to enable / disable masking of value
 	Masked *bool `json:"masked,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddOptionListRequestOptionTypeListConfigSourceHeadersInner AddOptionListRequestOptionTypeListConfigSourceHeadersInner
@@ -159,6 +159,11 @@ func (o AddOptionListRequestOptionTypeListConfigSourceHeadersInner) ToMap() (map
 	if !IsNil(o.Masked) {
 		toSerialize["masked"] = o.Masked
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -186,15 +191,22 @@ func (o *AddOptionListRequestOptionTypeListConfigSourceHeadersInner) UnmarshalJS
 
 	varAddOptionListRequestOptionTypeListConfigSourceHeadersInner := _AddOptionListRequestOptionTypeListConfigSourceHeadersInner{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddOptionListRequestOptionTypeListConfigSourceHeadersInner)
+	err = json.Unmarshal(data, &varAddOptionListRequestOptionTypeListConfigSourceHeadersInner)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddOptionListRequestOptionTypeListConfigSourceHeadersInner(varAddOptionListRequestOptionTypeListConfigSourceHeadersInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "value")
+		delete(additionalProperties, "masked")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

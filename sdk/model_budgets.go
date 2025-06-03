@@ -53,7 +53,10 @@ type Budgets struct {
 	UpdatedByName *string `json:"updatedByName,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _Budgets Budgets
 
 // NewBudgets instantiates a new Budgets object
 // This constructor will assign default values to properties that have it defined,
@@ -1202,7 +1205,64 @@ func (o Budgets) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *Budgets) UnmarshalJSON(data []byte) (err error) {
+	varBudgets := _Budgets{}
+
+	err = json.Unmarshal(data, &varBudgets)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Budgets(varBudgets)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "refScope")
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "refId")
+		delete(additionalProperties, "refName")
+		delete(additionalProperties, "period")
+		delete(additionalProperties, "year")
+		delete(additionalProperties, "resourceType")
+		delete(additionalProperties, "timezone")
+		delete(additionalProperties, "startDate")
+		delete(additionalProperties, "endDate")
+		delete(additionalProperties, "interval")
+		delete(additionalProperties, "costs")
+		delete(additionalProperties, "isFiscal")
+		delete(additionalProperties, "averageCost")
+		delete(additionalProperties, "totalCost")
+		delete(additionalProperties, "currency")
+		delete(additionalProperties, "rollover")
+		delete(additionalProperties, "warningLimit")
+		delete(additionalProperties, "overLimit")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "internalId")
+		delete(additionalProperties, "createdById")
+		delete(additionalProperties, "createdByName")
+		delete(additionalProperties, "updatedById")
+		delete(additionalProperties, "updatedByName")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableBudgets struct {

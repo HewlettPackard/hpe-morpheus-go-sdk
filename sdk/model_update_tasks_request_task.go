@@ -42,7 +42,10 @@ type UpdateTasksRequestTask struct {
 	RetryDelaySeconds *float32 `json:"retryDelaySeconds,omitempty"`
 	File *AddTasksRequestTaskFile `json:"file,omitempty"`
 	Credential *AddIntegrationsRequestOneOfIntegrationCredential `json:"credential,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateTasksRequestTask UpdateTasksRequestTask
 
 // NewUpdateTasksRequestTask instantiates a new UpdateTasksRequestTask object
 // This constructor will assign default values to properties that have it defined,
@@ -534,7 +537,45 @@ func (o UpdateTasksRequestTask) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Credential) {
 		toSerialize["credential"] = o.Credential
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateTasksRequestTask) UnmarshalJSON(data []byte) (err error) {
+	varUpdateTasksRequestTask := _UpdateTasksRequestTask{}
+
+	err = json.Unmarshal(data, &varUpdateTasksRequestTask)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateTasksRequestTask(varUpdateTasksRequestTask)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "taskType")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "taskOptions")
+		delete(additionalProperties, "resultType")
+		delete(additionalProperties, "executeTarget")
+		delete(additionalProperties, "retryable")
+		delete(additionalProperties, "retryCount")
+		delete(additionalProperties, "retryDelaySeconds")
+		delete(additionalProperties, "file")
+		delete(additionalProperties, "credential")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateTasksRequestTask struct {

@@ -62,7 +62,10 @@ type ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner st
 	ExternalPortId *string `json:"externalPortId,omitempty"`
 	Status *string `json:"status,omitempty"`
 	VipStatus *string `json:"vipStatus,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner
 
 // NewListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner instantiates a new ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -1526,7 +1529,73 @@ func (o ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner
 	if !IsNil(o.VipStatus) {
 		toSerialize["vipStatus"] = o.VipStatus
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) UnmarshalJSON(data []byte) (err error) {
+	varListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner := _ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner{}
+
+	err = json.Unmarshal(data, &varListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner(varListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "loadBalancer")
+		delete(additionalProperties, "instance")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "internalId")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "sticky")
+		delete(additionalProperties, "sslEnabled")
+		delete(additionalProperties, "externalAddress")
+		delete(additionalProperties, "backendPort")
+		delete(additionalProperties, "vipType")
+		delete(additionalProperties, "vipAddress")
+		delete(additionalProperties, "vipHostname")
+		delete(additionalProperties, "vipProtocol")
+		delete(additionalProperties, "vipScheme")
+		delete(additionalProperties, "vipMode")
+		delete(additionalProperties, "vipName")
+		delete(additionalProperties, "vipPort")
+		delete(additionalProperties, "vipSticky")
+		delete(additionalProperties, "vipBalance")
+		delete(additionalProperties, "servicePort")
+		delete(additionalProperties, "sourceAddress")
+		delete(additionalProperties, "sslCert")
+		delete(additionalProperties, "sslMode")
+		delete(additionalProperties, "sslRedirectMode")
+		delete(additionalProperties, "vipShared")
+		delete(additionalProperties, "vipDirectAddress")
+		delete(additionalProperties, "serverName")
+		delete(additionalProperties, "poolName")
+		delete(additionalProperties, "removing")
+		delete(additionalProperties, "vipSource")
+		delete(additionalProperties, "extraConfig")
+		delete(additionalProperties, "serviceAccess")
+		delete(additionalProperties, "networkId")
+		delete(additionalProperties, "subnetId")
+		delete(additionalProperties, "externalPortId")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "vipStatus")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner struct {

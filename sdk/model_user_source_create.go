@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -23,6 +22,7 @@ var _ MappedNullable = &UserSourceCreate{}
 // UserSourceCreate struct for UserSourceCreate
 type UserSourceCreate struct {
 	UserSource AddIdentitySourcesRequestUserSource `json:"userSource"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UserSourceCreate UserSourceCreate
@@ -80,6 +80,11 @@ func (o UserSourceCreate) MarshalJSON() ([]byte, error) {
 func (o UserSourceCreate) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["userSource"] = o.UserSource
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -107,15 +112,20 @@ func (o *UserSourceCreate) UnmarshalJSON(data []byte) (err error) {
 
 	varUserSourceCreate := _UserSourceCreate{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varUserSourceCreate)
+	err = json.Unmarshal(data, &varUserSourceCreate)
 
 	if err != nil {
 		return err
 	}
 
 	*o = UserSourceCreate(varUserSourceCreate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "userSource")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

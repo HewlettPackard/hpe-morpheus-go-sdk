@@ -22,7 +22,10 @@ var _ MappedNullable = &UpdateSpecTemplateRequestSpecTemplateFileRepository{}
 type UpdateSpecTemplateRequestSpecTemplateFileRepository struct {
 	// Code Repository ID, required for type repository. Use `/api/options/codeRepositories` to see available repositories.
 	Id *int64 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateSpecTemplateRequestSpecTemplateFileRepository UpdateSpecTemplateRequestSpecTemplateFileRepository
 
 // NewUpdateSpecTemplateRequestSpecTemplateFileRepository instantiates a new UpdateSpecTemplateRequestSpecTemplateFileRepository object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o UpdateSpecTemplateRequestSpecTemplateFileRepository) ToMap() (map[string
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateSpecTemplateRequestSpecTemplateFileRepository) UnmarshalJSON(data []byte) (err error) {
+	varUpdateSpecTemplateRequestSpecTemplateFileRepository := _UpdateSpecTemplateRequestSpecTemplateFileRepository{}
+
+	err = json.Unmarshal(data, &varUpdateSpecTemplateRequestSpecTemplateFileRepository)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateSpecTemplateRequestSpecTemplateFileRepository(varUpdateSpecTemplateRequestSpecTemplateFileRepository)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateSpecTemplateRequestSpecTemplateFileRepository struct {

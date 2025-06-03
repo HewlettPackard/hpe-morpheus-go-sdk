@@ -29,7 +29,10 @@ type ListOptionForms200ResponseAllOfOptionTypesInner struct {
 	Labels []string `json:"labels,omitempty"`
 	Options []ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner `json:"options,omitempty"`
 	FieldGroups []ListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner `json:"fieldGroups,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListOptionForms200ResponseAllOfOptionTypesInner ListOptionForms200ResponseAllOfOptionTypesInner
 
 // NewListOptionForms200ResponseAllOfOptionTypesInner instantiates a new ListOptionForms200ResponseAllOfOptionTypesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -373,7 +376,41 @@ func (o ListOptionForms200ResponseAllOfOptionTypesInner) ToMap() (map[string]int
 	if !IsNil(o.FieldGroups) {
 		toSerialize["fieldGroups"] = o.FieldGroups
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListOptionForms200ResponseAllOfOptionTypesInner) UnmarshalJSON(data []byte) (err error) {
+	varListOptionForms200ResponseAllOfOptionTypesInner := _ListOptionForms200ResponseAllOfOptionTypesInner{}
+
+	err = json.Unmarshal(data, &varListOptionForms200ResponseAllOfOptionTypesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListOptionForms200ResponseAllOfOptionTypesInner(varListOptionForms200ResponseAllOfOptionTypesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "context")
+		delete(additionalProperties, "locked")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "options")
+		delete(additionalProperties, "fieldGroups")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListOptionForms200ResponseAllOfOptionTypesInner struct {

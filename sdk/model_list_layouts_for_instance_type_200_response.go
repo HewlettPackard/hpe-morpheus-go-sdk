@@ -22,7 +22,10 @@ var _ MappedNullable = &ListLayoutsForInstanceType200Response{}
 type ListLayoutsForInstanceType200Response struct {
 	InstanceTypeLayouts []GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner `json:"instanceTypeLayouts,omitempty"`
 	Meta *ListActivity200ResponseAllOfMeta `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListLayoutsForInstanceType200Response ListLayoutsForInstanceType200Response
 
 // NewListLayoutsForInstanceType200Response instantiates a new ListLayoutsForInstanceType200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o ListLayoutsForInstanceType200Response) ToMap() (map[string]interface{}, 
 	if !IsNil(o.Meta) {
 		toSerialize["meta"] = o.Meta
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListLayoutsForInstanceType200Response) UnmarshalJSON(data []byte) (err error) {
+	varListLayoutsForInstanceType200Response := _ListLayoutsForInstanceType200Response{}
+
+	err = json.Unmarshal(data, &varListLayoutsForInstanceType200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListLayoutsForInstanceType200Response(varListLayoutsForInstanceType200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "instanceTypeLayouts")
+		delete(additionalProperties, "meta")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListLayoutsForInstanceType200Response struct {

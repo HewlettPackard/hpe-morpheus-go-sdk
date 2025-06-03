@@ -24,7 +24,10 @@ type ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalanc
 	Type *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"type,omitempty"`
 	Name *string `json:"name,omitempty"`
 	Ip *string `json:"ip,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer
 
 // NewListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer instantiates a new ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer object
 // This constructor will assign default values to properties that have it defined,
@@ -193,7 +196,36 @@ func (o ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBal
 	if !IsNil(o.Ip) {
 		toSerialize["ip"] = o.Ip
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer) UnmarshalJSON(data []byte) (err error) {
+	varListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer := _ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer{}
+
+	err = json.Unmarshal(data, &varListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer(varListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "ip")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer struct {

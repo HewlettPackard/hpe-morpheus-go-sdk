@@ -29,7 +29,10 @@ type MonitoringSettings struct {
 	// Default Check Interval. The number of minutes to use as the default interval to use when creating new checks.
 	DefaultCheckInterval *int32 `json:"defaultCheckInterval,omitempty"`
 	ServiceNow *GetMonitoringSettings200ResponseMonitoringSettingsServiceNow `json:"serviceNow,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _MonitoringSettings MonitoringSettings
 
 // NewMonitoringSettings instantiates a new MonitoringSettings object
 // This constructor will assign default values to properties that have it defined,
@@ -233,7 +236,37 @@ func (o MonitoringSettings) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ServiceNow) {
 		toSerialize["serviceNow"] = o.ServiceNow
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *MonitoringSettings) UnmarshalJSON(data []byte) (err error) {
+	varMonitoringSettings := _MonitoringSettings{}
+
+	err = json.Unmarshal(data, &varMonitoringSettings)
+
+	if err != nil {
+		return err
+	}
+
+	*o = MonitoringSettings(varMonitoringSettings)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "autoManageChecks")
+		delete(additionalProperties, "availabilityTimeFrame")
+		delete(additionalProperties, "availabilityPrecision")
+		delete(additionalProperties, "defaultCheckInterval")
+		delete(additionalProperties, "serviceNow")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableMonitoringSettings struct {

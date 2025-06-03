@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -23,6 +22,7 @@ var _ MappedNullable = &UpdateVDIAppsRequest{}
 // UpdateVDIAppsRequest Updates VDI App
 type UpdateVDIAppsRequest struct {
 	VdiApp UpdateVDIAppsRequestVdiApp `json:"vdiApp"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateVDIAppsRequest UpdateVDIAppsRequest
@@ -80,6 +80,11 @@ func (o UpdateVDIAppsRequest) MarshalJSON() ([]byte, error) {
 func (o UpdateVDIAppsRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["vdiApp"] = o.VdiApp
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -107,15 +112,20 @@ func (o *UpdateVDIAppsRequest) UnmarshalJSON(data []byte) (err error) {
 
 	varUpdateVDIAppsRequest := _UpdateVDIAppsRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varUpdateVDIAppsRequest)
+	err = json.Unmarshal(data, &varUpdateVDIAppsRequest)
 
 	if err != nil {
 		return err
 	}
 
 	*o = UpdateVDIAppsRequest(varUpdateVDIAppsRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "vdiApp")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

@@ -23,7 +23,10 @@ type ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInnerInstanceType
 	Id *int64 `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
 	ProvisionTypeCode *string `json:"provisionTypeCode,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInnerInstanceTypeLayoutsInner ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInnerInstanceTypeLayoutsInner
 
 // NewListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInnerInstanceTypeLayoutsInner instantiates a new ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInnerInstanceTypeLayoutsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInnerInstanceT
 	if !IsNil(o.ProvisionTypeCode) {
 		toSerialize["provisionTypeCode"] = o.ProvisionTypeCode
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInnerInstanceTypeLayoutsInner) UnmarshalJSON(data []byte) (err error) {
+	varListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInnerInstanceTypeLayoutsInner := _ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInnerInstanceTypeLayoutsInner{}
+
+	err = json.Unmarshal(data, &varListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInnerInstanceTypeLayoutsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInnerInstanceTypeLayoutsInner(varListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInnerInstanceTypeLayoutsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "provisionTypeCode")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInnerInstanceTypeLayoutsInner struct {

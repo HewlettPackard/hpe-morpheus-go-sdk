@@ -35,7 +35,10 @@ type IntegrationType struct {
 	HasDeleteApprovals *bool `json:"hasDeleteApprovals,omitempty"`
 	HasReconfigureApprovals *bool `json:"hasReconfigureApprovals,omitempty"`
 	IsPlugin *bool `json:"isPlugin,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _IntegrationType IntegrationType
 
 // NewIntegrationType instantiates a new IntegrationType object
 // This constructor will assign default values to properties that have it defined,
@@ -589,7 +592,47 @@ func (o IntegrationType) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.IsPlugin) {
 		toSerialize["isPlugin"] = o.IsPlugin
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *IntegrationType) UnmarshalJSON(data []byte) (err error) {
+	varIntegrationType := _IntegrationType{}
+
+	err = json.Unmarshal(data, &varIntegrationType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = IntegrationType(varIntegrationType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "creatable")
+		delete(additionalProperties, "hasCMDB")
+		delete(additionalProperties, "hasCMDBDiscovery")
+		delete(additionalProperties, "hasCM")
+		delete(additionalProperties, "hasDNS")
+		delete(additionalProperties, "hasApprovals")
+		delete(additionalProperties, "hasDeleteApprovals")
+		delete(additionalProperties, "hasReconfigureApprovals")
+		delete(additionalProperties, "isPlugin")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableIntegrationType struct {

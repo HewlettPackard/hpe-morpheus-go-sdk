@@ -22,7 +22,10 @@ var _ MappedNullable = &GetClusterNamespaces200Response{}
 type GetClusterNamespaces200Response struct {
 	Namespaces []GetClusterNamespaces200ResponseAllOfNamespacesInner `json:"namespaces,omitempty"`
 	Meta *ListActivity200ResponseAllOfMeta `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetClusterNamespaces200Response GetClusterNamespaces200Response
 
 // NewGetClusterNamespaces200Response instantiates a new GetClusterNamespaces200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o GetClusterNamespaces200Response) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.Meta) {
 		toSerialize["meta"] = o.Meta
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetClusterNamespaces200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetClusterNamespaces200Response := _GetClusterNamespaces200Response{}
+
+	err = json.Unmarshal(data, &varGetClusterNamespaces200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetClusterNamespaces200Response(varGetClusterNamespaces200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "namespaces")
+		delete(additionalProperties, "meta")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetClusterNamespaces200Response struct {

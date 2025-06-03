@@ -40,7 +40,10 @@ type ListRoles200ResponseAllOfRolesInner struct {
 	DefaultPersona *string `json:"defaultPersona,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListRoles200ResponseAllOfRolesInner ListRoles200ResponseAllOfRolesInner
 
 // NewListRoles200ResponseAllOfRolesInner instantiates a new ListRoles200ResponseAllOfRolesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -629,7 +632,48 @@ func (o ListRoles200ResponseAllOfRolesInner) ToMap() (map[string]interface{}, er
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListRoles200ResponseAllOfRolesInner) UnmarshalJSON(data []byte) (err error) {
+	varListRoles200ResponseAllOfRolesInner := _ListRoles200ResponseAllOfRolesInner{}
+
+	err = json.Unmarshal(data, &varListRoles200ResponseAllOfRolesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListRoles200ResponseAllOfRolesInner(varListRoles200ResponseAllOfRolesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "authority")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "landingUrl")
+		delete(additionalProperties, "scope")
+		delete(additionalProperties, "roleType")
+		delete(additionalProperties, "multitenant")
+		delete(additionalProperties, "multitenantLocked")
+		delete(additionalProperties, "parentRoleId")
+		delete(additionalProperties, "diverged")
+		delete(additionalProperties, "ownerId")
+		delete(additionalProperties, "owner")
+		delete(additionalProperties, "defaultPersona")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListRoles200ResponseAllOfRolesInner struct {

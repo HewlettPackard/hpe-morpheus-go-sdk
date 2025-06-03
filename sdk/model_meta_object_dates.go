@@ -23,7 +23,10 @@ var _ MappedNullable = &MetaObjectDates{}
 type MetaObjectDates struct {
 	StartDate *time.Time `json:"startDate,omitempty"`
 	EndDate *time.Time `json:"endDate,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _MetaObjectDates MetaObjectDates
 
 // NewMetaObjectDates instantiates a new MetaObjectDates object
 // This constructor will assign default values to properties that have it defined,
@@ -122,7 +125,34 @@ func (o MetaObjectDates) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.EndDate) {
 		toSerialize["endDate"] = o.EndDate
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *MetaObjectDates) UnmarshalJSON(data []byte) (err error) {
+	varMetaObjectDates := _MetaObjectDates{}
+
+	err = json.Unmarshal(data, &varMetaObjectDates)
+
+	if err != nil {
+		return err
+	}
+
+	*o = MetaObjectDates(varMetaObjectDates)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "startDate")
+		delete(additionalProperties, "endDate")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableMetaObjectDates struct {

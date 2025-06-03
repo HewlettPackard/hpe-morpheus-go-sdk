@@ -36,7 +36,10 @@ type IntegrationGitRepo struct {
 	LastSync *string `json:"lastSync,omitempty"`
 	LastSyncDuration *string `json:"lastSyncDuration,omitempty"`
 	Credential *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential `json:"credential,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _IntegrationGitRepo IntegrationGitRepo
 
 // NewIntegrationGitRepo instantiates a new IntegrationGitRepo object
 // This constructor will assign default values to properties that have it defined,
@@ -590,7 +593,47 @@ func (o IntegrationGitRepo) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Credential) {
 		toSerialize["credential"] = o.Credential
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *IntegrationGitRepo) UnmarshalJSON(data []byte) (err error) {
+	varIntegrationGitRepo := _IntegrationGitRepo{}
+
+	err = json.Unmarshal(data, &varIntegrationGitRepo)
+
+	if err != nil {
+		return err
+	}
+
+	*o = IntegrationGitRepo(varIntegrationGitRepo)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "integrationType")
+		delete(additionalProperties, "url")
+		delete(additionalProperties, "serviceKey")
+		delete(additionalProperties, "isPlugin")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "statusDate")
+		delete(additionalProperties, "statusMessage")
+		delete(additionalProperties, "lastSync")
+		delete(additionalProperties, "lastSyncDuration")
+		delete(additionalProperties, "credential")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableIntegrationGitRepo struct {

@@ -40,7 +40,10 @@ type Plugin struct {
 	OptionTypes []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _Plugin Plugin
 
 // NewPlugin instantiates a new Plugin object
 // This constructor will assign default values to properties that have it defined,
@@ -734,7 +737,51 @@ func (o Plugin) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *Plugin) UnmarshalJSON(data []byte) (err error) {
+	varPlugin := _Plugin{}
+
+	err = json.Unmarshal(data, &varPlugin)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Plugin(varPlugin)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "version")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "author")
+		delete(additionalProperties, "websiteUrl")
+		delete(additionalProperties, "sourceCodeLocationUrl")
+		delete(additionalProperties, "issueTrackerUrl")
+		delete(additionalProperties, "valid")
+		delete(additionalProperties, "hasValidUpdate")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "statusMessage")
+		delete(additionalProperties, "providers")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "optionTypes")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullablePlugin struct {

@@ -47,7 +47,10 @@ type ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner struct {
 	CreatedBy *string `json:"createdBy,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner
 
 // NewListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner instantiates a new ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -986,7 +989,58 @@ func (o ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) ToMap
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) UnmarshalJSON(data []byte) (err error) {
+	varListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner := _ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner{}
+
+	err = json.Unmarshal(data, &varListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner(varListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "loadBalancer")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "serviceType")
+		delete(additionalProperties, "serviceTypeDisplay")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "internalId")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "proxyType")
+		delete(additionalProperties, "redirectRewrite")
+		delete(additionalProperties, "persistenceType")
+		delete(additionalProperties, "sslEnabled")
+		delete(additionalProperties, "sslCert")
+		delete(additionalProperties, "accountCertificate")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "redirectUrl")
+		delete(additionalProperties, "insertXforwardedFor")
+		delete(additionalProperties, "persistenceCookieName")
+		delete(additionalProperties, "persistenceExpiresIn")
+		delete(additionalProperties, "editable")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "createdBy")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner struct {

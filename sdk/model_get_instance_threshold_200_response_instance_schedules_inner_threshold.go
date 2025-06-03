@@ -48,7 +48,10 @@ type GetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold struct {
 	MinDisk *float64 `json:"minDisk,omitempty"`
 	// Max Disk (%)
 	MaxDisk *float64 `json:"maxDisk,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold GetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold
 
 // NewGetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold instantiates a new GetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold object
 // This constructor will assign default values to properties that have it defined,
@@ -615,7 +618,46 @@ func (o GetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold) ToMap() 
 	if !IsNil(o.MaxDisk) {
 		toSerialize["maxDisk"] = o.MaxDisk
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold) UnmarshalJSON(data []byte) (err error) {
+	varGetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold := _GetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold{}
+
+	err = json.Unmarshal(data, &varGetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold(varGetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "autoUp")
+		delete(additionalProperties, "autoDown")
+		delete(additionalProperties, "minCount")
+		delete(additionalProperties, "maxCount")
+		delete(additionalProperties, "scaleIncrement")
+		delete(additionalProperties, "cpuEnabled")
+		delete(additionalProperties, "minCpu")
+		delete(additionalProperties, "maxCpu")
+		delete(additionalProperties, "memoryEnabled")
+		delete(additionalProperties, "minMemory")
+		delete(additionalProperties, "maxMemory")
+		delete(additionalProperties, "diskEnabled")
+		delete(additionalProperties, "minDisk")
+		delete(additionalProperties, "maxDisk")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold struct {

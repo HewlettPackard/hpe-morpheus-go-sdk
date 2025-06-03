@@ -21,7 +21,10 @@ var _ MappedNullable = &AddApps200Response{}
 // AddApps200Response struct for AddApps200Response
 type AddApps200Response struct {
 	App *AddApps200ResponseApp `json:"app,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddApps200Response AddApps200Response
 
 // NewAddApps200Response instantiates a new AddApps200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o AddApps200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.App) {
 		toSerialize["app"] = o.App
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddApps200Response) UnmarshalJSON(data []byte) (err error) {
+	varAddApps200Response := _AddApps200Response{}
+
+	err = json.Unmarshal(data, &varAddApps200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddApps200Response(varAddApps200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "app")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddApps200Response struct {

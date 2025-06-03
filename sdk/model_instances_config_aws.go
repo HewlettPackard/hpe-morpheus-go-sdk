@@ -34,7 +34,10 @@ type InstancesConfigAWS struct {
 	InstanceProfile *string `json:"instanceProfile,omitempty"`
 	// KMS Key ID
 	KmsKeyId *string `json:"kmsKeyId,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _InstancesConfigAWS InstancesConfigAWS
 
 // NewInstancesConfigAWS instantiates a new InstancesConfigAWS object
 // This constructor will assign default values to properties that have it defined,
@@ -316,7 +319,39 @@ func (o InstancesConfigAWS) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.KmsKeyId) {
 		toSerialize["kmsKeyId"] = o.KmsKeyId
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *InstancesConfigAWS) UnmarshalJSON(data []byte) (err error) {
+	varInstancesConfigAWS := _InstancesConfigAWS{}
+
+	err = json.Unmarshal(data, &varInstancesConfigAWS)
+
+	if err != nil {
+		return err
+	}
+
+	*o = InstancesConfigAWS(varInstancesConfigAWS)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "noAgent")
+		delete(additionalProperties, "isEC2")
+		delete(additionalProperties, "availabilityId")
+		delete(additionalProperties, "securityId")
+		delete(additionalProperties, "publicIpType")
+		delete(additionalProperties, "instanceProfile")
+		delete(additionalProperties, "kmsKeyId")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableInstancesConfigAWS struct {

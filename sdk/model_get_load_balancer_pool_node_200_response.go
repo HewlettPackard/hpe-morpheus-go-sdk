@@ -21,7 +21,10 @@ var _ MappedNullable = &GetLoadBalancerPoolNode200Response{}
 // GetLoadBalancerPoolNode200Response struct for GetLoadBalancerPoolNode200Response
 type GetLoadBalancerPoolNode200Response struct {
 	LoadBalancerNode *ListLoadBalancerPoolNodes200ResponseAllOfLoadBalancerNodesInner `json:"loadBalancerNode,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetLoadBalancerPoolNode200Response GetLoadBalancerPoolNode200Response
 
 // NewGetLoadBalancerPoolNode200Response instantiates a new GetLoadBalancerPoolNode200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o GetLoadBalancerPoolNode200Response) ToMap() (map[string]interface{}, err
 	if !IsNil(o.LoadBalancerNode) {
 		toSerialize["loadBalancerNode"] = o.LoadBalancerNode
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetLoadBalancerPoolNode200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetLoadBalancerPoolNode200Response := _GetLoadBalancerPoolNode200Response{}
+
+	err = json.Unmarshal(data, &varGetLoadBalancerPoolNode200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetLoadBalancerPoolNode200Response(varGetLoadBalancerPoolNode200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "loadBalancerNode")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetLoadBalancerPoolNode200Response struct {

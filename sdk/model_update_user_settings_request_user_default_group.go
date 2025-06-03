@@ -22,7 +22,10 @@ var _ MappedNullable = &UpdateUserSettingsRequestUserDefaultGroup{}
 type UpdateUserSettingsRequestUserDefaultGroup struct {
 	// Default Group ID
 	Id *int64 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateUserSettingsRequestUserDefaultGroup UpdateUserSettingsRequestUserDefaultGroup
 
 // NewUpdateUserSettingsRequestUserDefaultGroup instantiates a new UpdateUserSettingsRequestUserDefaultGroup object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o UpdateUserSettingsRequestUserDefaultGroup) ToMap() (map[string]interface
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateUserSettingsRequestUserDefaultGroup) UnmarshalJSON(data []byte) (err error) {
+	varUpdateUserSettingsRequestUserDefaultGroup := _UpdateUserSettingsRequestUserDefaultGroup{}
+
+	err = json.Unmarshal(data, &varUpdateUserSettingsRequestUserDefaultGroup)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateUserSettingsRequestUserDefaultGroup(varUpdateUserSettingsRequestUserDefaultGroup)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateUserSettingsRequestUserDefaultGroup struct {

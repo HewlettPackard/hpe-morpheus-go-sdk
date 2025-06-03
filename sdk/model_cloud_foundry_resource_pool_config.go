@@ -26,7 +26,10 @@ type CloudFoundryResourcePoolConfig struct {
 	Developers []string `json:"developers,omitempty"`
 	// Array of auditor usernames
 	Auditors []string `json:"auditors,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _CloudFoundryResourcePoolConfig CloudFoundryResourcePoolConfig
 
 // NewCloudFoundryResourcePoolConfig instantiates a new CloudFoundryResourcePoolConfig object
 // This constructor will assign default values to properties that have it defined,
@@ -160,7 +163,35 @@ func (o CloudFoundryResourcePoolConfig) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.Auditors) {
 		toSerialize["auditors"] = o.Auditors
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *CloudFoundryResourcePoolConfig) UnmarshalJSON(data []byte) (err error) {
+	varCloudFoundryResourcePoolConfig := _CloudFoundryResourcePoolConfig{}
+
+	err = json.Unmarshal(data, &varCloudFoundryResourcePoolConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CloudFoundryResourcePoolConfig(varCloudFoundryResourcePoolConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "managers")
+		delete(additionalProperties, "developers")
+		delete(additionalProperties, "auditors")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCloudFoundryResourcePoolConfig struct {

@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -23,6 +22,7 @@ var _ MappedNullable = &UpdateServicePlansRequest{}
 // UpdateServicePlansRequest struct for UpdateServicePlansRequest
 type UpdateServicePlansRequest struct {
 	ServicePlan UpdateServicePlansRequestServicePlan `json:"servicePlan"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateServicePlansRequest UpdateServicePlansRequest
@@ -80,6 +80,11 @@ func (o UpdateServicePlansRequest) MarshalJSON() ([]byte, error) {
 func (o UpdateServicePlansRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["servicePlan"] = o.ServicePlan
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -107,15 +112,20 @@ func (o *UpdateServicePlansRequest) UnmarshalJSON(data []byte) (err error) {
 
 	varUpdateServicePlansRequest := _UpdateServicePlansRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varUpdateServicePlansRequest)
+	err = json.Unmarshal(data, &varUpdateServicePlansRequest)
 
 	if err != nil {
 		return err
 	}
 
 	*o = UpdateServicePlansRequest(varUpdateServicePlansRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "servicePlan")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

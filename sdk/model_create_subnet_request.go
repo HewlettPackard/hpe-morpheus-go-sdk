@@ -22,7 +22,10 @@ var _ MappedNullable = &CreateSubnetRequest{}
 type CreateSubnetRequest struct {
 	Subnet *CreateSubnetRequestSubnet `json:"subnet,omitempty"`
 	ResourcePermission *CreateSubnetRequestResourcePermission `json:"resourcePermission,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _CreateSubnetRequest CreateSubnetRequest
 
 // NewCreateSubnetRequest instantiates a new CreateSubnetRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o CreateSubnetRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ResourcePermission) {
 		toSerialize["resourcePermission"] = o.ResourcePermission
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *CreateSubnetRequest) UnmarshalJSON(data []byte) (err error) {
+	varCreateSubnetRequest := _CreateSubnetRequest{}
+
+	err = json.Unmarshal(data, &varCreateSubnetRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CreateSubnetRequest(varCreateSubnetRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "subnet")
+		delete(additionalProperties, "resourcePermission")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCreateSubnetRequest struct {

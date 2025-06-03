@@ -56,7 +56,10 @@ type UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface struct 
 	Description *string `json:"description,omitempty"`
 	ExternalType *string `json:"externalType,omitempty"`
 	ExternalId *string `json:"externalId,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface
 
 // NewUpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface instantiates a new UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface object
 // This constructor will assign default values to properties that have it defined,
@@ -1345,7 +1348,68 @@ func (o UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) ToM
 	if !IsNil(o.ExternalId) {
 		toSerialize["externalId"] = o.ExternalId
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) UnmarshalJSON(data []byte) (err error) {
+	varUpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface := _UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface{}
+
+	err = json.Unmarshal(data, &varUpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface(varUpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "addresses")
+		delete(additionalProperties, "internalId")
+		delete(additionalProperties, "interfaceId")
+		delete(additionalProperties, "displayOrder")
+		delete(additionalProperties, "networkPool")
+		delete(additionalProperties, "dhcp")
+		delete(additionalProperties, "uuid")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "uniqueId")
+		delete(additionalProperties, "subnet")
+		delete(additionalProperties, "replaceHostRecord")
+		delete(additionalProperties, "ipMode")
+		delete(additionalProperties, "version")
+		delete(additionalProperties, "ipSubnet")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "publicIpAddress")
+		delete(additionalProperties, "fabricId")
+		delete(additionalProperties, "ipv6Subnet")
+		delete(additionalProperties, "macAddress")
+		delete(additionalProperties, "publicIpv6Address")
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "networkGroup")
+		delete(additionalProperties, "refId")
+		delete(additionalProperties, "networkDomain")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "primaryInterface")
+		delete(additionalProperties, "networkPoolIPv6")
+		delete(additionalProperties, "network")
+		delete(additionalProperties, "vlanId")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "networkPosition")
+		delete(additionalProperties, "poolAssigned")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "externalType")
+		delete(additionalProperties, "externalId")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface struct {

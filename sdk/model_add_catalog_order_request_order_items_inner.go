@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -29,6 +28,7 @@ type AddCatalogOrderRequestOrderItemsInner struct {
 	Context *string `json:"context,omitempty"`
 	// Resource (Instance or Server) ID for context when running the `workflow`. Only applies to type `workflow` and only required when context is `instance` or `server`. 
 	Target *int64 `json:"target,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddCatalogOrderRequestOrderItemsInner AddCatalogOrderRequestOrderItemsInner
@@ -191,6 +191,11 @@ func (o AddCatalogOrderRequestOrderItemsInner) ToMap() (map[string]interface{}, 
 	if !IsNil(o.Target) {
 		toSerialize["target"] = o.Target
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -218,15 +223,23 @@ func (o *AddCatalogOrderRequestOrderItemsInner) UnmarshalJSON(data []byte) (err 
 
 	varAddCatalogOrderRequestOrderItemsInner := _AddCatalogOrderRequestOrderItemsInner{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddCatalogOrderRequestOrderItemsInner)
+	err = json.Unmarshal(data, &varAddCatalogOrderRequestOrderItemsInner)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddCatalogOrderRequestOrderItemsInner(varAddCatalogOrderRequestOrderItemsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "context")
+		delete(additionalProperties, "target")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

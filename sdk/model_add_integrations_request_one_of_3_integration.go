@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -55,6 +54,7 @@ type AddIntegrationsRequestOneOf3Integration struct {
 	// Post Provision Commands
 	ServiceCommand *string `json:"serviceCommand,omitempty"`
 	Config *AddIntegrationsRequestOneOf3IntegrationConfig `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddIntegrationsRequestOneOf3Integration AddIntegrationsRequestOneOf3Integration
@@ -653,6 +653,11 @@ func (o AddIntegrationsRequestOneOf3Integration) ToMap() (map[string]interface{}
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -683,15 +688,36 @@ func (o *AddIntegrationsRequestOneOf3Integration) UnmarshalJSON(data []byte) (er
 
 	varAddIntegrationsRequestOneOf3Integration := _AddIntegrationsRequestOneOf3Integration{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddIntegrationsRequestOneOf3Integration)
+	err = json.Unmarshal(data, &varAddIntegrationsRequestOneOf3Integration)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddIntegrationsRequestOneOf3Integration(varAddIntegrationsRequestOneOf3Integration)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "serviceMode")
+		delete(additionalProperties, "serviceUrl")
+		delete(additionalProperties, "secondary")
+		delete(additionalProperties, "servicePort")
+		delete(additionalProperties, "serviceUsername")
+		delete(additionalProperties, "servicePassword")
+		delete(additionalProperties, "serviceKey")
+		delete(additionalProperties, "authKey")
+		delete(additionalProperties, "servicePath")
+		delete(additionalProperties, "serviceVersion")
+		delete(additionalProperties, "serviceWindowsVersion")
+		delete(additionalProperties, "repoUrl")
+		delete(additionalProperties, "serviceConfig")
+		delete(additionalProperties, "serviceCommand")
+		delete(additionalProperties, "config")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

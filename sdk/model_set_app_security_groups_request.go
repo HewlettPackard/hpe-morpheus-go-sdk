@@ -21,7 +21,10 @@ var _ MappedNullable = &SetAppSecurityGroupsRequest{}
 // SetAppSecurityGroupsRequest struct for SetAppSecurityGroupsRequest
 type SetAppSecurityGroupsRequest struct {
 	SecurityGroupIds []int32 `json:"securityGroupIds,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _SetAppSecurityGroupsRequest SetAppSecurityGroupsRequest
 
 // NewSetAppSecurityGroupsRequest instantiates a new SetAppSecurityGroupsRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o SetAppSecurityGroupsRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.SecurityGroupIds) {
 		toSerialize["securityGroupIds"] = o.SecurityGroupIds
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *SetAppSecurityGroupsRequest) UnmarshalJSON(data []byte) (err error) {
+	varSetAppSecurityGroupsRequest := _SetAppSecurityGroupsRequest{}
+
+	err = json.Unmarshal(data, &varSetAppSecurityGroupsRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = SetAppSecurityGroupsRequest(varSetAppSecurityGroupsRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "securityGroupIds")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableSetAppSecurityGroupsRequest struct {

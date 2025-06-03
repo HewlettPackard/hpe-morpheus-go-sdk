@@ -23,7 +23,10 @@ type GetContainer200ResponseContainerPlan struct {
 	Id *int32 `json:"id,omitempty"`
 	Code *string `json:"code,omitempty"`
 	Name *string `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetContainer200ResponseContainerPlan GetContainer200ResponseContainerPlan
 
 // NewGetContainer200ResponseContainerPlan instantiates a new GetContainer200ResponseContainerPlan object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o GetContainer200ResponseContainerPlan) ToMap() (map[string]interface{}, e
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetContainer200ResponseContainerPlan) UnmarshalJSON(data []byte) (err error) {
+	varGetContainer200ResponseContainerPlan := _GetContainer200ResponseContainerPlan{}
+
+	err = json.Unmarshal(data, &varGetContainer200ResponseContainerPlan)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetContainer200ResponseContainerPlan(varGetContainer200ResponseContainerPlan)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetContainer200ResponseContainerPlan struct {

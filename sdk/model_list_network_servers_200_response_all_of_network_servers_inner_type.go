@@ -23,7 +23,10 @@ type ListNetworkServers200ResponseAllOfNetworkServersInnerType struct {
 	Id *int64 `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
 	Code *string `json:"code,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListNetworkServers200ResponseAllOfNetworkServersInnerType ListNetworkServers200ResponseAllOfNetworkServersInnerType
 
 // NewListNetworkServers200ResponseAllOfNetworkServersInnerType instantiates a new ListNetworkServers200ResponseAllOfNetworkServersInnerType object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o ListNetworkServers200ResponseAllOfNetworkServersInnerType) ToMap() (map[
 	if !IsNil(o.Code) {
 		toSerialize["code"] = o.Code
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListNetworkServers200ResponseAllOfNetworkServersInnerType) UnmarshalJSON(data []byte) (err error) {
+	varListNetworkServers200ResponseAllOfNetworkServersInnerType := _ListNetworkServers200ResponseAllOfNetworkServersInnerType{}
+
+	err = json.Unmarshal(data, &varListNetworkServers200ResponseAllOfNetworkServersInnerType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListNetworkServers200ResponseAllOfNetworkServersInnerType(varListNetworkServers200ResponseAllOfNetworkServersInnerType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListNetworkServers200ResponseAllOfNetworkServersInnerType struct {

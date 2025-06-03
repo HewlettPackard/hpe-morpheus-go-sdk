@@ -22,7 +22,10 @@ var _ MappedNullable = &ExecuteTasks200ResponseAllOfJobExecution{}
 type ExecuteTasks200ResponseAllOfJobExecution struct {
 	Id *int64 `json:"id,omitempty"`
 	ProcessId *string `json:"processId,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ExecuteTasks200ResponseAllOfJobExecution ExecuteTasks200ResponseAllOfJobExecution
 
 // NewExecuteTasks200ResponseAllOfJobExecution instantiates a new ExecuteTasks200ResponseAllOfJobExecution object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o ExecuteTasks200ResponseAllOfJobExecution) ToMap() (map[string]interface{
 	if !IsNil(o.ProcessId) {
 		toSerialize["processId"] = o.ProcessId
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ExecuteTasks200ResponseAllOfJobExecution) UnmarshalJSON(data []byte) (err error) {
+	varExecuteTasks200ResponseAllOfJobExecution := _ExecuteTasks200ResponseAllOfJobExecution{}
+
+	err = json.Unmarshal(data, &varExecuteTasks200ResponseAllOfJobExecution)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ExecuteTasks200ResponseAllOfJobExecution(varExecuteTasks200ResponseAllOfJobExecution)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "processId")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableExecuteTasks200ResponseAllOfJobExecution struct {

@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -26,6 +25,7 @@ type RolePermissionReportTypeAll struct {
 	AllReportTypes bool `json:"allReportTypes"`
 	// The new access level.
 	Access string `json:"access"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _RolePermissionReportTypeAll RolePermissionReportTypeAll
@@ -109,6 +109,11 @@ func (o RolePermissionReportTypeAll) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["allReportTypes"] = o.AllReportTypes
 	toSerialize["access"] = o.Access
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -137,15 +142,21 @@ func (o *RolePermissionReportTypeAll) UnmarshalJSON(data []byte) (err error) {
 
 	varRolePermissionReportTypeAll := _RolePermissionReportTypeAll{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varRolePermissionReportTypeAll)
+	err = json.Unmarshal(data, &varRolePermissionReportTypeAll)
 
 	if err != nil {
 		return err
 	}
 
 	*o = RolePermissionReportTypeAll(varRolePermissionReportTypeAll)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "allReportTypes")
+		delete(additionalProperties, "access")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

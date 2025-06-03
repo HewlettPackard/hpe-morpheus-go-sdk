@@ -34,7 +34,10 @@ type AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp struct {
 	CreatedBy *ListBackupResults200ResponseAllOfResultsInnerCreatedBy `json:"createdBy,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp
 
 // NewAllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp instantiates a new AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp object
 // This constructor will assign default values to properties that have it defined,
@@ -483,7 +486,44 @@ func (o AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) ToMap() (map
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) UnmarshalJSON(data []byte) (err error) {
+	varAllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp := _AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp{}
+
+	err = json.Unmarshal(data, &varAllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp(varAllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "cloud")
+		delete(additionalProperties, "server")
+		delete(additionalProperties, "ipStatus")
+		delete(additionalProperties, "ipAddress")
+		delete(additionalProperties, "ipRange")
+		delete(additionalProperties, "ptrId")
+		delete(additionalProperties, "networkDomain")
+		delete(additionalProperties, "createdBy")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp struct {

@@ -24,7 +24,10 @@ type InstancesCloneImage struct {
 	TemplateName *string `json:"templateName,omitempty"`
 	// Zone Folder externalId. This is required for VMware
 	ZoneFolder *string `json:"zoneFolder,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _InstancesCloneImage InstancesCloneImage
 
 // NewInstancesCloneImage instantiates a new InstancesCloneImage object
 // This constructor will assign default values to properties that have it defined,
@@ -127,7 +130,34 @@ func (o InstancesCloneImage) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ZoneFolder) {
 		toSerialize["zoneFolder"] = o.ZoneFolder
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *InstancesCloneImage) UnmarshalJSON(data []byte) (err error) {
+	varInstancesCloneImage := _InstancesCloneImage{}
+
+	err = json.Unmarshal(data, &varInstancesCloneImage)
+
+	if err != nil {
+		return err
+	}
+
+	*o = InstancesCloneImage(varInstancesCloneImage)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "templateName")
+		delete(additionalProperties, "zoneFolder")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableInstancesCloneImage struct {

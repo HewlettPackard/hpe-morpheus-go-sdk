@@ -49,7 +49,10 @@ type ListLoadBalancerPoolNodes200ResponseAllOfLoadBalancerNodesInner struct {
 	CreatedBy *GetAlerts200ResponseAllOfChecksInnerCreatedBy `json:"createdBy,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListLoadBalancerPoolNodes200ResponseAllOfLoadBalancerNodesInner ListLoadBalancerPoolNodes200ResponseAllOfLoadBalancerNodesInner
 
 // NewListLoadBalancerPoolNodes200ResponseAllOfLoadBalancerNodesInner instantiates a new ListLoadBalancerPoolNodes200ResponseAllOfLoadBalancerNodesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -1058,7 +1061,60 @@ func (o ListLoadBalancerPoolNodes200ResponseAllOfLoadBalancerNodesInner) ToMap()
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListLoadBalancerPoolNodes200ResponseAllOfLoadBalancerNodesInner) UnmarshalJSON(data []byte) (err error) {
+	varListLoadBalancerPoolNodes200ResponseAllOfLoadBalancerNodesInner := _ListLoadBalancerPoolNodes200ResponseAllOfLoadBalancerNodesInner{}
+
+	err = json.Unmarshal(data, &varListLoadBalancerPoolNodes200ResponseAllOfLoadBalancerNodesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListLoadBalancerPoolNodes200ResponseAllOfLoadBalancerNodesInner(varListLoadBalancerPoolNodes200ResponseAllOfLoadBalancerNodesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "ipAddress")
+		delete(additionalProperties, "port")
+		delete(additionalProperties, "portType")
+		delete(additionalProperties, "monitorPort")
+		delete(additionalProperties, "weight")
+		delete(additionalProperties, "nodeState")
+		delete(additionalProperties, "internalId")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "statusMessage")
+		delete(additionalProperties, "statusDate")
+		delete(additionalProperties, "server")
+		delete(additionalProperties, "instanceId")
+		delete(additionalProperties, "containerId")
+		delete(additionalProperties, "nodeSource")
+		delete(additionalProperties, "monitor")
+		delete(additionalProperties, "maxConnections")
+		delete(additionalProperties, "externalRefType")
+		delete(additionalProperties, "externalRefId")
+		delete(additionalProperties, "externalRefName")
+		delete(additionalProperties, "createdBy")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListLoadBalancerPoolNodes200ResponseAllOfLoadBalancerNodesInner struct {

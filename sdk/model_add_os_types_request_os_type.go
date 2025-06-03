@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -48,6 +47,7 @@ type AddOsTypesRequestOsType struct {
 	CloudInitVersion *string `json:"cloudInitVersion,omitempty"`
 	// Whether the morpheus agent is installed. 
 	InstallAgent *bool `json:"installAgent,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddOsTypesRequestOsType AddOsTypesRequestOsType
@@ -498,6 +498,11 @@ func (o AddOsTypesRequestOsType) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.InstallAgent) {
 		toSerialize["installAgent"] = o.InstallAgent
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -528,15 +533,32 @@ func (o *AddOsTypesRequestOsType) UnmarshalJSON(data []byte) (err error) {
 
 	varAddOsTypesRequestOsType := _AddOsTypesRequestOsType{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddOsTypesRequestOsType)
+	err = json.Unmarshal(data, &varAddOsTypesRequestOsType)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddOsTypesRequestOsType(varAddOsTypesRequestOsType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "platform")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "vendor")
+		delete(additionalProperties, "osName")
+		delete(additionalProperties, "osVersion")
+		delete(additionalProperties, "osCodename")
+		delete(additionalProperties, "osFamily")
+		delete(additionalProperties, "bitCount")
+		delete(additionalProperties, "cloudInitVersion")
+		delete(additionalProperties, "installAgent")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

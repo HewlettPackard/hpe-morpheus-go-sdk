@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -24,6 +23,7 @@ var _ MappedNullable = &UpdateMuteAllCheckAppsRequest{}
 type UpdateMuteAllCheckAppsRequest struct {
 	// Set to false to unmute
 	Muted bool `json:"muted"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateMuteAllCheckAppsRequest UpdateMuteAllCheckAppsRequest
@@ -83,6 +83,11 @@ func (o UpdateMuteAllCheckAppsRequest) MarshalJSON() ([]byte, error) {
 func (o UpdateMuteAllCheckAppsRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["muted"] = o.Muted
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -110,15 +115,20 @@ func (o *UpdateMuteAllCheckAppsRequest) UnmarshalJSON(data []byte) (err error) {
 
 	varUpdateMuteAllCheckAppsRequest := _UpdateMuteAllCheckAppsRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varUpdateMuteAllCheckAppsRequest)
+	err = json.Unmarshal(data, &varUpdateMuteAllCheckAppsRequest)
 
 	if err != nil {
 		return err
 	}
 
 	*o = UpdateMuteAllCheckAppsRequest(varUpdateMuteAllCheckAppsRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "muted")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

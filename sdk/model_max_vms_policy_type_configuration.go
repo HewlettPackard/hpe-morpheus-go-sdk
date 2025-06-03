@@ -21,7 +21,10 @@ var _ MappedNullable = &MaxVMsPolicyTypeConfiguration{}
 // MaxVMsPolicyTypeConfiguration Configuration settings for the following policy types: - Max VMs 
 type MaxVMsPolicyTypeConfiguration struct {
 	MaxVms *string `json:"maxVms,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _MaxVMsPolicyTypeConfiguration MaxVMsPolicyTypeConfiguration
 
 // NewMaxVMsPolicyTypeConfiguration instantiates a new MaxVMsPolicyTypeConfiguration object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o MaxVMsPolicyTypeConfiguration) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.MaxVms) {
 		toSerialize["maxVms"] = o.MaxVms
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *MaxVMsPolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
+	varMaxVMsPolicyTypeConfiguration := _MaxVMsPolicyTypeConfiguration{}
+
+	err = json.Unmarshal(data, &varMaxVMsPolicyTypeConfiguration)
+
+	if err != nil {
+		return err
+	}
+
+	*o = MaxVMsPolicyTypeConfiguration(varMaxVMsPolicyTypeConfiguration)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "maxVms")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableMaxVMsPolicyTypeConfiguration struct {

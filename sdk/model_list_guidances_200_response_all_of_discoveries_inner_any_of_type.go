@@ -24,7 +24,10 @@ type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType struct {
 	Name *string `json:"name,omitempty"`
 	Code *string `json:"code,omitempty"`
 	Title *string `json:"title,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType
 
 // NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType instantiates a new ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType object
 // This constructor will assign default values to properties that have it defined,
@@ -193,7 +196,36 @@ func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType) ToMap() (map[str
 	if !IsNil(o.Title) {
 		toSerialize["title"] = o.Title
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType) UnmarshalJSON(data []byte) (err error) {
+	varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType := _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType{}
+
+	err = json.Unmarshal(data, &varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType(varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "title")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType struct {

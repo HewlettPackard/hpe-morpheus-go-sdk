@@ -21,7 +21,10 @@ var _ MappedNullable = &AddVDIApps200ResponseAnyOf{}
 // AddVDIApps200ResponseAnyOf struct for AddVDIApps200ResponseAnyOf
 type AddVDIApps200ResponseAnyOf struct {
 	VdiApp *ListVDIApps200ResponseAllOfVdiAppsInner `json:"vdiApp,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddVDIApps200ResponseAnyOf AddVDIApps200ResponseAnyOf
 
 // NewAddVDIApps200ResponseAnyOf instantiates a new AddVDIApps200ResponseAnyOf object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o AddVDIApps200ResponseAnyOf) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.VdiApp) {
 		toSerialize["vdiApp"] = o.VdiApp
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddVDIApps200ResponseAnyOf) UnmarshalJSON(data []byte) (err error) {
+	varAddVDIApps200ResponseAnyOf := _AddVDIApps200ResponseAnyOf{}
+
+	err = json.Unmarshal(data, &varAddVDIApps200ResponseAnyOf)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddVDIApps200ResponseAnyOf(varAddVDIApps200ResponseAnyOf)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "vdiApp")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddVDIApps200ResponseAnyOf struct {

@@ -23,7 +23,10 @@ type ListInvoices200Response struct {
 	Invoices []ListInvoices200ResponseAllOfInvoicesInner `json:"invoices,omitempty"`
 	MasterAccount *bool `json:"masterAccount,omitempty"`
 	Meta *ListActivity200ResponseAllOfMeta `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListInvoices200Response ListInvoices200Response
 
 // NewListInvoices200Response instantiates a new ListInvoices200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o ListInvoices200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Meta) {
 		toSerialize["meta"] = o.Meta
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListInvoices200Response) UnmarshalJSON(data []byte) (err error) {
+	varListInvoices200Response := _ListInvoices200Response{}
+
+	err = json.Unmarshal(data, &varListInvoices200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListInvoices200Response(varListInvoices200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "invoices")
+		delete(additionalProperties, "masterAccount")
+		delete(additionalProperties, "meta")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListInvoices200Response struct {

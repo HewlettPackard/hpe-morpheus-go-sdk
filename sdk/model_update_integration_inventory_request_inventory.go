@@ -22,7 +22,10 @@ var _ MappedNullable = &UpdateIntegrationInventoryRequestInventory{}
 type UpdateIntegrationInventoryRequestInventory struct {
 	// Array of tenant accounts that will use this inventory as Default. Used by jobs set to 'Use Tenant Default'
 	Tenants []GetAlerts200ResponseAllOfChecksInnerAccount `json:"tenants,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateIntegrationInventoryRequestInventory UpdateIntegrationInventoryRequestInventory
 
 // NewUpdateIntegrationInventoryRequestInventory instantiates a new UpdateIntegrationInventoryRequestInventory object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o UpdateIntegrationInventoryRequestInventory) ToMap() (map[string]interfac
 	if !IsNil(o.Tenants) {
 		toSerialize["tenants"] = o.Tenants
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateIntegrationInventoryRequestInventory) UnmarshalJSON(data []byte) (err error) {
+	varUpdateIntegrationInventoryRequestInventory := _UpdateIntegrationInventoryRequestInventory{}
+
+	err = json.Unmarshal(data, &varUpdateIntegrationInventoryRequestInventory)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateIntegrationInventoryRequestInventory(varUpdateIntegrationInventoryRequestInventory)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "tenants")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateIntegrationInventoryRequestInventory struct {

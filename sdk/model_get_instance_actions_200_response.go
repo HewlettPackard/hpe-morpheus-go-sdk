@@ -22,7 +22,10 @@ var _ MappedNullable = &GetInstanceActions200Response{}
 type GetInstanceActions200Response struct {
 	InstanceIds []int64 `json:"instanceIds,omitempty"`
 	Actions []ListClusterContainers200ResponseAllOfContainersInnerAvailableActionsInner `json:"actions,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetInstanceActions200Response GetInstanceActions200Response
 
 // NewGetInstanceActions200Response instantiates a new GetInstanceActions200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o GetInstanceActions200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Actions) {
 		toSerialize["actions"] = o.Actions
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetInstanceActions200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetInstanceActions200Response := _GetInstanceActions200Response{}
+
+	err = json.Unmarshal(data, &varGetInstanceActions200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetInstanceActions200Response(varGetInstanceActions200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "instanceIds")
+		delete(additionalProperties, "actions")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetInstanceActions200Response struct {

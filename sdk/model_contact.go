@@ -25,7 +25,10 @@ type Contact struct {
 	Name *string `json:"name,omitempty"`
 	SmsAddress *string `json:"smsAddress,omitempty"`
 	SlackHook *string `json:"slackHook,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _Contact Contact
 
 // NewContact instantiates a new Contact object
 // This constructor will assign default values to properties that have it defined,
@@ -229,7 +232,37 @@ func (o Contact) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.SlackHook) {
 		toSerialize["slackHook"] = o.SlackHook
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *Contact) UnmarshalJSON(data []byte) (err error) {
+	varContact := _Contact{}
+
+	err = json.Unmarshal(data, &varContact)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Contact(varContact)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "emailAddress")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "smsAddress")
+		delete(additionalProperties, "slackHook")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableContact struct {

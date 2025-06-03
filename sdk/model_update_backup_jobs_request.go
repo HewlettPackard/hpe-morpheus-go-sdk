@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -23,6 +22,7 @@ var _ MappedNullable = &UpdateBackupJobsRequest{}
 // UpdateBackupJobsRequest struct for UpdateBackupJobsRequest
 type UpdateBackupJobsRequest struct {
 	Job UpdateBackupJobsRequestJob `json:"job"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateBackupJobsRequest UpdateBackupJobsRequest
@@ -80,6 +80,11 @@ func (o UpdateBackupJobsRequest) MarshalJSON() ([]byte, error) {
 func (o UpdateBackupJobsRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["job"] = o.Job
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -107,15 +112,20 @@ func (o *UpdateBackupJobsRequest) UnmarshalJSON(data []byte) (err error) {
 
 	varUpdateBackupJobsRequest := _UpdateBackupJobsRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varUpdateBackupJobsRequest)
+	err = json.Unmarshal(data, &varUpdateBackupJobsRequest)
 
 	if err != nil {
 		return err
 	}
 
 	*o = UpdateBackupJobsRequest(varUpdateBackupJobsRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "job")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

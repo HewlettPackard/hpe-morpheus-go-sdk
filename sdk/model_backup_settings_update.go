@@ -36,7 +36,10 @@ type BackupSettingsUpdate struct {
 	DefaultStorageBucket *UpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket `json:"defaultStorageBucket,omitempty"`
 	// Use this to clear default store bucket
 	ClearDefaultStorageBucket *bool `json:"clearDefaultStorageBucket,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _BackupSettingsUpdate BackupSettingsUpdate
 
 // NewBackupSettingsUpdate instantiates a new BackupSettingsUpdate object
 // This constructor will assign default values to properties that have it defined,
@@ -380,7 +383,41 @@ func (o BackupSettingsUpdate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ClearDefaultStorageBucket) {
 		toSerialize["clearDefaultStorageBucket"] = o.ClearDefaultStorageBucket
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *BackupSettingsUpdate) UnmarshalJSON(data []byte) (err error) {
+	varBackupSettingsUpdate := _BackupSettingsUpdate{}
+
+	err = json.Unmarshal(data, &varBackupSettingsUpdate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = BackupSettingsUpdate(varBackupSettingsUpdate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "backupsEnabled")
+		delete(additionalProperties, "retentionCount")
+		delete(additionalProperties, "createBackups")
+		delete(additionalProperties, "backupAppliance")
+		delete(additionalProperties, "updateExisting")
+		delete(additionalProperties, "defaultSchedule")
+		delete(additionalProperties, "clearDefaultSchedule")
+		delete(additionalProperties, "defaultStorageBucket")
+		delete(additionalProperties, "clearDefaultStorageBucket")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableBackupSettingsUpdate struct {

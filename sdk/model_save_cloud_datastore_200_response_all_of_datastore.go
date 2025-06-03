@@ -45,7 +45,10 @@ type SaveCloudDatastore200ResponseAllOfDatastore struct {
 	Tenants []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner `json:"tenants,omitempty"`
 	ResourcePermissions *SaveCloudDatastoreRequestDatastoreResourcePermissions `json:"resourcePermissions,omitempty"`
 	Datastores []map[string]interface{} `json:"datastores,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _SaveCloudDatastore200ResponseAllOfDatastore SaveCloudDatastore200ResponseAllOfDatastore
 
 // NewSaveCloudDatastore200ResponseAllOfDatastore instantiates a new SaveCloudDatastore200ResponseAllOfDatastore object
 // This constructor will assign default values to properties that have it defined,
@@ -949,7 +952,57 @@ func (o SaveCloudDatastore200ResponseAllOfDatastore) ToMap() (map[string]interfa
 	if !IsNil(o.Datastores) {
 		toSerialize["datastores"] = o.Datastores
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *SaveCloudDatastore200ResponseAllOfDatastore) UnmarshalJSON(data []byte) (err error) {
+	varSaveCloudDatastore200ResponseAllOfDatastore := _SaveCloudDatastore200ResponseAllOfDatastore{}
+
+	err = json.Unmarshal(data, &varSaveCloudDatastore200ResponseAllOfDatastore)
+
+	if err != nil {
+		return err
+	}
+
+	*o = SaveCloudDatastore200ResponseAllOfDatastore(varSaveCloudDatastore200ResponseAllOfDatastore)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "datastoreType")
+		delete(additionalProperties, "storageServer")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "storageSize")
+		delete(additionalProperties, "freeSpace")
+		delete(additionalProperties, "drsEnabled")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "allowWrite")
+		delete(additionalProperties, "defaultStore")
+		delete(additionalProperties, "online")
+		delete(additionalProperties, "allowRead")
+		delete(additionalProperties, "allowProvision")
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "refId")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "zone")
+		delete(additionalProperties, "zonePool")
+		delete(additionalProperties, "owner")
+		delete(additionalProperties, "tenants")
+		delete(additionalProperties, "resourcePermissions")
+		delete(additionalProperties, "datastores")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableSaveCloudDatastore200ResponseAllOfDatastore struct {

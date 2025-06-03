@@ -26,7 +26,10 @@ type ServicePlanOptions struct {
 	CoresPerSocket *int64 `json:"coresPerSocket,omitempty"`
 	// Memory in bytes For backwards compatability, values less than 1048576 are treated as being in MB and will be converted to bytes
 	MaxMemory *int64 `json:"maxMemory,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ServicePlanOptions ServicePlanOptions
 
 // NewServicePlanOptions instantiates a new ServicePlanOptions object
 // This constructor will assign default values to properties that have it defined,
@@ -160,7 +163,35 @@ func (o ServicePlanOptions) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.MaxMemory) {
 		toSerialize["maxMemory"] = o.MaxMemory
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ServicePlanOptions) UnmarshalJSON(data []byte) (err error) {
+	varServicePlanOptions := _ServicePlanOptions{}
+
+	err = json.Unmarshal(data, &varServicePlanOptions)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ServicePlanOptions(varServicePlanOptions)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "maxCores")
+		delete(additionalProperties, "coresPerSocket")
+		delete(additionalProperties, "maxMemory")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableServicePlanOptions struct {

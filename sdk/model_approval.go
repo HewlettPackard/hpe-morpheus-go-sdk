@@ -36,7 +36,10 @@ type Approval struct {
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
 	RequestBy *string `json:"requestBy,omitempty"`
 	ApprovalItems []GetApprovalsItem200ResponseApprovalItem `json:"approvalItems,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _Approval Approval
 
 // NewApproval instantiates a new Approval object
 // This constructor will assign default values to properties that have it defined,
@@ -590,7 +593,47 @@ func (o Approval) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ApprovalItems) {
 		toSerialize["approvalItems"] = o.ApprovalItems
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *Approval) UnmarshalJSON(data []byte) (err error) {
+	varApproval := _Approval{}
+
+	err = json.Unmarshal(data, &varApproval)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Approval(varApproval)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "internalId")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "externalName")
+		delete(additionalProperties, "requestType")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "approver")
+		delete(additionalProperties, "accountIntegration")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "errorMessage")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "requestBy")
+		delete(additionalProperties, "approvalItems")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableApproval struct {

@@ -26,7 +26,10 @@ type ListBackupSettings200ResponseBackupSettings struct {
 	DefaultStorageBucket *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"defaultStorageBucket,omitempty"`
 	DefaultSchedule *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"defaultSchedule,omitempty"`
 	RetentionCount *int64 `json:"retentionCount,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListBackupSettings200ResponseBackupSettings ListBackupSettings200ResponseBackupSettings
 
 // NewListBackupSettings200ResponseBackupSettings instantiates a new ListBackupSettings200ResponseBackupSettings object
 // This constructor will assign default values to properties that have it defined,
@@ -265,7 +268,38 @@ func (o ListBackupSettings200ResponseBackupSettings) ToMap() (map[string]interfa
 	if !IsNil(o.RetentionCount) {
 		toSerialize["retentionCount"] = o.RetentionCount
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListBackupSettings200ResponseBackupSettings) UnmarshalJSON(data []byte) (err error) {
+	varListBackupSettings200ResponseBackupSettings := _ListBackupSettings200ResponseBackupSettings{}
+
+	err = json.Unmarshal(data, &varListBackupSettings200ResponseBackupSettings)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListBackupSettings200ResponseBackupSettings(varListBackupSettings200ResponseBackupSettings)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "backupsEnabled")
+		delete(additionalProperties, "createBackups")
+		delete(additionalProperties, "backupAppliance")
+		delete(additionalProperties, "defaultStorageBucket")
+		delete(additionalProperties, "defaultSchedule")
+		delete(additionalProperties, "retentionCount")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListBackupSettings200ResponseBackupSettings struct {

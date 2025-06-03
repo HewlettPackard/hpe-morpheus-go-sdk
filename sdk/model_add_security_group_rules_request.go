@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -23,6 +22,7 @@ var _ MappedNullable = &AddSecurityGroupRulesRequest{}
 // AddSecurityGroupRulesRequest struct for AddSecurityGroupRulesRequest
 type AddSecurityGroupRulesRequest struct {
 	Rule AddSecurityGroupRulesRequestRule `json:"rule"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddSecurityGroupRulesRequest AddSecurityGroupRulesRequest
@@ -80,6 +80,11 @@ func (o AddSecurityGroupRulesRequest) MarshalJSON() ([]byte, error) {
 func (o AddSecurityGroupRulesRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["rule"] = o.Rule
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -107,15 +112,20 @@ func (o *AddSecurityGroupRulesRequest) UnmarshalJSON(data []byte) (err error) {
 
 	varAddSecurityGroupRulesRequest := _AddSecurityGroupRulesRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddSecurityGroupRulesRequest)
+	err = json.Unmarshal(data, &varAddSecurityGroupRulesRequest)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddSecurityGroupRulesRequest(varAddSecurityGroupRulesRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "rule")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

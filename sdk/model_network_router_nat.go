@@ -43,7 +43,10 @@ type NetworkRouterNat struct {
 	ProviderId *string `json:"providerId,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _NetworkRouterNat NetworkRouterNat
 
 // NewNetworkRouterNat instantiates a new NetworkRouterNat object
 // This constructor will assign default values to properties that have it defined,
@@ -842,7 +845,54 @@ func (o NetworkRouterNat) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *NetworkRouterNat) UnmarshalJSON(data []byte) (err error) {
+	varNetworkRouterNat := _NetworkRouterNat{}
+
+	err = json.Unmarshal(data, &varNetworkRouterNat)
+
+	if err != nil {
+		return err
+	}
+
+	*o = NetworkRouterNat(varNetworkRouterNat)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "sourceNetwork")
+		delete(additionalProperties, "destinationNetwork")
+		delete(additionalProperties, "translatedNetwork")
+		delete(additionalProperties, "sourcePorts")
+		delete(additionalProperties, "destinationPorts")
+		delete(additionalProperties, "translatedPorts")
+		delete(additionalProperties, "priority")
+		delete(additionalProperties, "protocol")
+		delete(additionalProperties, "matchIpv6DestinationPrefix")
+		delete(additionalProperties, "translatedIpv4SourcePrefix")
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "refId")
+		delete(additionalProperties, "syncSource")
+		delete(additionalProperties, "internalId")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "providerId")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableNetworkRouterNat struct {

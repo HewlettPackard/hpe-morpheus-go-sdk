@@ -24,7 +24,10 @@ type ListInstances200ResponseAllOfInstancesInnerInstancePrice struct {
 	Cost *float32 `json:"cost,omitempty"`
 	Currency *string `json:"currency,omitempty"`
 	Unit *string `json:"unit,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListInstances200ResponseAllOfInstancesInnerInstancePrice ListInstances200ResponseAllOfInstancesInnerInstancePrice
 
 // NewListInstances200ResponseAllOfInstancesInnerInstancePrice instantiates a new ListInstances200ResponseAllOfInstancesInnerInstancePrice object
 // This constructor will assign default values to properties that have it defined,
@@ -193,7 +196,36 @@ func (o ListInstances200ResponseAllOfInstancesInnerInstancePrice) ToMap() (map[s
 	if !IsNil(o.Unit) {
 		toSerialize["unit"] = o.Unit
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListInstances200ResponseAllOfInstancesInnerInstancePrice) UnmarshalJSON(data []byte) (err error) {
+	varListInstances200ResponseAllOfInstancesInnerInstancePrice := _ListInstances200ResponseAllOfInstancesInnerInstancePrice{}
+
+	err = json.Unmarshal(data, &varListInstances200ResponseAllOfInstancesInnerInstancePrice)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListInstances200ResponseAllOfInstancesInnerInstancePrice(varListInstances200ResponseAllOfInstancesInnerInstancePrice)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "price")
+		delete(additionalProperties, "cost")
+		delete(additionalProperties, "currency")
+		delete(additionalProperties, "unit")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListInstances200ResponseAllOfInstancesInnerInstancePrice struct {

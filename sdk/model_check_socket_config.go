@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -45,6 +44,7 @@ type CheckSocketConfig struct {
 	SshUser *string `json:"sshUser,omitempty"`
 	// Password for user, if not using key based authentication
 	SshPassword *string `json:"sshPassword,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _CheckSocketConfig CheckSocketConfig
@@ -534,6 +534,11 @@ func (o CheckSocketConfig) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.SshPassword) {
 		toSerialize["sshPassword"] = o.SshPassword
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -564,15 +569,33 @@ func (o *CheckSocketConfig) UnmarshalJSON(data []byte) (err error) {
 
 	varCheckSocketConfig := _CheckSocketConfig{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varCheckSocketConfig)
+	err = json.Unmarshal(data, &varCheckSocketConfig)
 
 	if err != nil {
 		return err
 	}
 
 	*o = CheckSocketConfig(varCheckSocketConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "host")
+		delete(additionalProperties, "port")
+		delete(additionalProperties, "send")
+		delete(additionalProperties, "responseMatch")
+		delete(additionalProperties, "checkUser")
+		delete(additionalProperties, "textCheckOn")
+		delete(additionalProperties, "checkPassword")
+		delete(additionalProperties, "webTextMatch")
+		delete(additionalProperties, "checkPasswordHash")
+		delete(additionalProperties, "tunnelOn")
+		delete(additionalProperties, "sshHost")
+		delete(additionalProperties, "sshPort")
+		delete(additionalProperties, "sshUser")
+		delete(additionalProperties, "sshPassword")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

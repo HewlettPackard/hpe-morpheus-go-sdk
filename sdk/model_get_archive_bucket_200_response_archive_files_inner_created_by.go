@@ -21,7 +21,10 @@ var _ MappedNullable = &GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy{}
 // GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy struct for GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy
 type GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy struct {
 	Username *string `json:"username,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy
 
 // NewGetArchiveBucket200ResponseArchiveFilesInnerCreatedBy instantiates a new GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy) ToMap() (map[stri
 	if !IsNil(o.Username) {
 		toSerialize["username"] = o.Username
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy) UnmarshalJSON(data []byte) (err error) {
+	varGetArchiveBucket200ResponseArchiveFilesInnerCreatedBy := _GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy{}
+
+	err = json.Unmarshal(data, &varGetArchiveBucket200ResponseArchiveFilesInnerCreatedBy)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy(varGetArchiveBucket200ResponseArchiveFilesInnerCreatedBy)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "username")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetArchiveBucket200ResponseArchiveFilesInnerCreatedBy struct {

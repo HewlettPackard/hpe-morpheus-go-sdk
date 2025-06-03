@@ -21,7 +21,10 @@ var _ MappedNullable = &AddClusterRequestClusterServerServerType{}
 // AddClusterRequestClusterServerServerType Server type to create.  See `/api/server-types` for available server types for the cloud.
 type AddClusterRequestClusterServerServerType struct {
 	Id *int32 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddClusterRequestClusterServerServerType AddClusterRequestClusterServerServerType
 
 // NewAddClusterRequestClusterServerServerType instantiates a new AddClusterRequestClusterServerServerType object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o AddClusterRequestClusterServerServerType) ToMap() (map[string]interface{
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddClusterRequestClusterServerServerType) UnmarshalJSON(data []byte) (err error) {
+	varAddClusterRequestClusterServerServerType := _AddClusterRequestClusterServerServerType{}
+
+	err = json.Unmarshal(data, &varAddClusterRequestClusterServerServerType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddClusterRequestClusterServerServerType(varAddClusterRequestClusterServerServerType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddClusterRequestClusterServerServerType struct {

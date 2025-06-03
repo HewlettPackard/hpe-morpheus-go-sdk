@@ -21,7 +21,10 @@ var _ MappedNullable = &UpdateLayoutRequest{}
 // UpdateLayoutRequest struct for UpdateLayoutRequest
 type UpdateLayoutRequest struct {
 	InstanceTypeLayout *UpdateLayoutRequestInstanceTypeLayout `json:"instanceTypeLayout,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateLayoutRequest UpdateLayoutRequest
 
 // NewUpdateLayoutRequest instantiates a new UpdateLayoutRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o UpdateLayoutRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.InstanceTypeLayout) {
 		toSerialize["instanceTypeLayout"] = o.InstanceTypeLayout
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateLayoutRequest) UnmarshalJSON(data []byte) (err error) {
+	varUpdateLayoutRequest := _UpdateLayoutRequest{}
+
+	err = json.Unmarshal(data, &varUpdateLayoutRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateLayoutRequest(varUpdateLayoutRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "instanceTypeLayout")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateLayoutRequest struct {

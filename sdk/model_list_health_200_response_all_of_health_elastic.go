@@ -27,7 +27,10 @@ type ListHealth200ResponseAllOfHealthElastic struct {
 	Stats *ListHealth200ResponseAllOfHealthElasticStats `json:"stats,omitempty"`
 	Indices []map[string]interface{} `json:"indices,omitempty"`
 	BadIndices []map[string]interface{} `json:"badIndices,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListHealth200ResponseAllOfHealthElastic ListHealth200ResponseAllOfHealthElastic
 
 // NewListHealth200ResponseAllOfHealthElastic instantiates a new ListHealth200ResponseAllOfHealthElastic object
 // This constructor will assign default values to properties that have it defined,
@@ -301,7 +304,39 @@ func (o ListHealth200ResponseAllOfHealthElastic) ToMap() (map[string]interface{}
 	if !IsNil(o.BadIndices) {
 		toSerialize["badIndices"] = o.BadIndices
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListHealth200ResponseAllOfHealthElastic) UnmarshalJSON(data []byte) (err error) {
+	varListHealth200ResponseAllOfHealthElastic := _ListHealth200ResponseAllOfHealthElastic{}
+
+	err = json.Unmarshal(data, &varListHealth200ResponseAllOfHealthElastic)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListHealth200ResponseAllOfHealthElastic(varListHealth200ResponseAllOfHealthElastic)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "success")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "master")
+		delete(additionalProperties, "nodes")
+		delete(additionalProperties, "stats")
+		delete(additionalProperties, "indices")
+		delete(additionalProperties, "badIndices")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListHealth200ResponseAllOfHealthElastic struct {

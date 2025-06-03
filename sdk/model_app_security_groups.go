@@ -24,7 +24,10 @@ type AppSecurityGroups struct {
 	AccountId *int64 `json:"accountId,omitempty"`
 	Name *string `json:"name,omitempty"`
 	Description *string `json:"description,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AppSecurityGroups AppSecurityGroups
 
 // NewAppSecurityGroups instantiates a new AppSecurityGroups object
 // This constructor will assign default values to properties that have it defined,
@@ -193,7 +196,36 @@ func (o AppSecurityGroups) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AppSecurityGroups) UnmarshalJSON(data []byte) (err error) {
+	varAppSecurityGroups := _AppSecurityGroups{}
+
+	err = json.Unmarshal(data, &varAppSecurityGroups)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AppSecurityGroups(varAppSecurityGroups)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAppSecurityGroups struct {

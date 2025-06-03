@@ -84,7 +84,10 @@ type ListClouds200ResponseAllOfZonesInner struct {
 	NetworkServer *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"networkServer,omitempty"`
 	Stats *ListClouds200ResponseAllOfZonesInnerStats `json:"stats,omitempty"`
 	ServerCount *int64 `json:"serverCount,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListClouds200ResponseAllOfZonesInner ListClouds200ResponseAllOfZonesInner
 
 // NewListClouds200ResponseAllOfZonesInner instantiates a new ListClouds200ResponseAllOfZonesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -2248,7 +2251,93 @@ func (o ListClouds200ResponseAllOfZonesInner) ToMap() (map[string]interface{}, e
 	if !IsNil(o.ServerCount) {
 		toSerialize["serverCount"] = o.ServerCount
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListClouds200ResponseAllOfZonesInner) UnmarshalJSON(data []byte) (err error) {
+	varListClouds200ResponseAllOfZonesInner := _ListClouds200ResponseAllOfZonesInner{}
+
+	err = json.Unmarshal(data, &varListClouds200ResponseAllOfZonesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListClouds200ResponseAllOfZonesInner(varListClouds200ResponseAllOfZonesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "uuid")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "location")
+		delete(additionalProperties, "owner")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "statusMessage")
+		delete(additionalProperties, "statusDate")
+		delete(additionalProperties, "costStatus")
+		delete(additionalProperties, "costStatusMessage")
+		delete(additionalProperties, "costStatusDate")
+		delete(additionalProperties, "costLastSyncDuration")
+		delete(additionalProperties, "costLastSync")
+		delete(additionalProperties, "zoneType")
+		delete(additionalProperties, "zoneTypeId")
+		delete(additionalProperties, "guidanceMode")
+		delete(additionalProperties, "storageMode")
+		delete(additionalProperties, "agentMode")
+		delete(additionalProperties, "userDataLinux")
+		delete(additionalProperties, "userDataWindows")
+		delete(additionalProperties, "consoleKeymap")
+		delete(additionalProperties, "containerMode")
+		delete(additionalProperties, "costingMode")
+		delete(additionalProperties, "serviceVersion")
+		delete(additionalProperties, "securityMode")
+		delete(additionalProperties, "inventoryLevel")
+		delete(additionalProperties, "timezone")
+		delete(additionalProperties, "apiProxy")
+		delete(additionalProperties, "provisioningProxy")
+		delete(additionalProperties, "networkDomain")
+		delete(additionalProperties, "domainName")
+		delete(additionalProperties, "regionCode")
+		delete(additionalProperties, "autoRecoverPowerState")
+		delete(additionalProperties, "scalePriority")
+		delete(additionalProperties, "defaultDatastoreSyncActive")
+		delete(additionalProperties, "defaultNetworkSyncActive")
+		delete(additionalProperties, "defaultFolderSyncActive")
+		delete(additionalProperties, "defaultSecurityGroupSyncActive")
+		delete(additionalProperties, "defaultPoolSyncActive")
+		delete(additionalProperties, "defaultPlanSyncActive")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "credential")
+		delete(additionalProperties, "imagePath")
+		delete(additionalProperties, "darkImagePath")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "lastSync")
+		delete(additionalProperties, "lastSyncDuration")
+		delete(additionalProperties, "nextRunDate")
+		delete(additionalProperties, "groups")
+		delete(additionalProperties, "securityServer")
+		delete(additionalProperties, "networkServer")
+		delete(additionalProperties, "stats")
+		delete(additionalProperties, "serverCount")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListClouds200ResponseAllOfZonesInner struct {

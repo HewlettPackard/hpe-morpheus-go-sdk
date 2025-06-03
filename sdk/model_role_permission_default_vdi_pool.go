@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -26,6 +25,7 @@ type RolePermissionDefaultVDIPool struct {
 	PermissionCode string `json:"permissionCode"`
 	// The new access level.
 	Access string `json:"access"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _RolePermissionDefaultVDIPool RolePermissionDefaultVDIPool
@@ -109,6 +109,11 @@ func (o RolePermissionDefaultVDIPool) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["permissionCode"] = o.PermissionCode
 	toSerialize["access"] = o.Access
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -137,15 +142,21 @@ func (o *RolePermissionDefaultVDIPool) UnmarshalJSON(data []byte) (err error) {
 
 	varRolePermissionDefaultVDIPool := _RolePermissionDefaultVDIPool{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varRolePermissionDefaultVDIPool)
+	err = json.Unmarshal(data, &varRolePermissionDefaultVDIPool)
 
 	if err != nil {
 		return err
 	}
 
 	*o = RolePermissionDefaultVDIPool(varRolePermissionDefaultVDIPool)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "permissionCode")
+		delete(additionalProperties, "access")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

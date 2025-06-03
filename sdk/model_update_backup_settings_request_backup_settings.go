@@ -36,7 +36,10 @@ type UpdateBackupSettingsRequestBackupSettings struct {
 	DefaultStorageBucket *UpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket `json:"defaultStorageBucket,omitempty"`
 	// Use this to clear default store bucket
 	ClearDefaultStorageBucket *bool `json:"clearDefaultStorageBucket,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateBackupSettingsRequestBackupSettings UpdateBackupSettingsRequestBackupSettings
 
 // NewUpdateBackupSettingsRequestBackupSettings instantiates a new UpdateBackupSettingsRequestBackupSettings object
 // This constructor will assign default values to properties that have it defined,
@@ -380,7 +383,41 @@ func (o UpdateBackupSettingsRequestBackupSettings) ToMap() (map[string]interface
 	if !IsNil(o.ClearDefaultStorageBucket) {
 		toSerialize["clearDefaultStorageBucket"] = o.ClearDefaultStorageBucket
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateBackupSettingsRequestBackupSettings) UnmarshalJSON(data []byte) (err error) {
+	varUpdateBackupSettingsRequestBackupSettings := _UpdateBackupSettingsRequestBackupSettings{}
+
+	err = json.Unmarshal(data, &varUpdateBackupSettingsRequestBackupSettings)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateBackupSettingsRequestBackupSettings(varUpdateBackupSettingsRequestBackupSettings)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "backupsEnabled")
+		delete(additionalProperties, "retentionCount")
+		delete(additionalProperties, "createBackups")
+		delete(additionalProperties, "backupAppliance")
+		delete(additionalProperties, "updateExisting")
+		delete(additionalProperties, "defaultSchedule")
+		delete(additionalProperties, "clearDefaultSchedule")
+		delete(additionalProperties, "defaultStorageBucket")
+		delete(additionalProperties, "clearDefaultStorageBucket")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateBackupSettingsRequestBackupSettings struct {

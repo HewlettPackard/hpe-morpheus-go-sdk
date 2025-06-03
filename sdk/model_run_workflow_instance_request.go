@@ -23,7 +23,10 @@ type RunWorkflowInstanceRequest struct {
 	TaskSet *RunWorkflowInstanceRequestTaskSet `json:"taskSet,omitempty"`
 	// Task Phase to run for Provisioning workflows. The default is `provision`.
 	TaskPhase *string `json:"taskPhase,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _RunWorkflowInstanceRequest RunWorkflowInstanceRequest
 
 // NewRunWorkflowInstanceRequest instantiates a new RunWorkflowInstanceRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -126,7 +129,34 @@ func (o RunWorkflowInstanceRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.TaskPhase) {
 		toSerialize["taskPhase"] = o.TaskPhase
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *RunWorkflowInstanceRequest) UnmarshalJSON(data []byte) (err error) {
+	varRunWorkflowInstanceRequest := _RunWorkflowInstanceRequest{}
+
+	err = json.Unmarshal(data, &varRunWorkflowInstanceRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = RunWorkflowInstanceRequest(varRunWorkflowInstanceRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "taskSet")
+		delete(additionalProperties, "taskPhase")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableRunWorkflowInstanceRequest struct {

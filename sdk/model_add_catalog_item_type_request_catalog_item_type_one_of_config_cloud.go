@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -25,6 +24,7 @@ type AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigCloud struct {
 	Id AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigCloudId `json:"id"`
 	// The cloud name
 	Name *string `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigCloud AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigCloud
@@ -117,6 +117,11 @@ func (o AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigCloud) ToMap() (map[s
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -144,15 +149,21 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigCloud) UnmarshalJSON
 
 	varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigCloud := _AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigCloud{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigCloud)
+	err = json.Unmarshal(data, &varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigCloud)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigCloud(varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigCloud)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

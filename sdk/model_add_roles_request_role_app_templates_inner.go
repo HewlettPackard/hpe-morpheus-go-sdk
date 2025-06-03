@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -26,6 +25,7 @@ type AddRolesRequestRoleAppTemplatesInner struct {
 	Id int32 `json:"id"`
 	// The new access level.
 	Access string `json:"access"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddRolesRequestRoleAppTemplatesInner AddRolesRequestRoleAppTemplatesInner
@@ -109,6 +109,11 @@ func (o AddRolesRequestRoleAppTemplatesInner) ToMap() (map[string]interface{}, e
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
 	toSerialize["access"] = o.Access
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -137,15 +142,21 @@ func (o *AddRolesRequestRoleAppTemplatesInner) UnmarshalJSON(data []byte) (err e
 
 	varAddRolesRequestRoleAppTemplatesInner := _AddRolesRequestRoleAppTemplatesInner{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddRolesRequestRoleAppTemplatesInner)
+	err = json.Unmarshal(data, &varAddRolesRequestRoleAppTemplatesInner)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddRolesRequestRoleAppTemplatesInner(varAddRolesRequestRoleAppTemplatesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "access")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

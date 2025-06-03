@@ -22,7 +22,10 @@ var _ MappedNullable = &ListCloudFolders200Response{}
 type ListCloudFolders200Response struct {
 	Folders []ListCloudFolders200ResponseAllOfFoldersInner `json:"folders,omitempty"`
 	Meta *ListActivity200ResponseAllOfMeta `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListCloudFolders200Response ListCloudFolders200Response
 
 // NewListCloudFolders200Response instantiates a new ListCloudFolders200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o ListCloudFolders200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Meta) {
 		toSerialize["meta"] = o.Meta
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListCloudFolders200Response) UnmarshalJSON(data []byte) (err error) {
+	varListCloudFolders200Response := _ListCloudFolders200Response{}
+
+	err = json.Unmarshal(data, &varListCloudFolders200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListCloudFolders200Response(varListCloudFolders200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "folders")
+		delete(additionalProperties, "meta")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListCloudFolders200Response struct {

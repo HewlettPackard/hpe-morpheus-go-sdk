@@ -23,7 +23,10 @@ type AddImageBuild200ResponseAllOfImageBuildConfigInstance struct {
 	Layout *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigPlan `json:"layout,omitempty"`
 	Type *string `json:"type,omitempty"`
 	UserGroup *ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer `json:"userGroup,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddImageBuild200ResponseAllOfImageBuildConfigInstance AddImageBuild200ResponseAllOfImageBuildConfigInstance
 
 // NewAddImageBuild200ResponseAllOfImageBuildConfigInstance instantiates a new AddImageBuild200ResponseAllOfImageBuildConfigInstance object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o AddImageBuild200ResponseAllOfImageBuildConfigInstance) ToMap() (map[stri
 	if !IsNil(o.UserGroup) {
 		toSerialize["userGroup"] = o.UserGroup
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddImageBuild200ResponseAllOfImageBuildConfigInstance) UnmarshalJSON(data []byte) (err error) {
+	varAddImageBuild200ResponseAllOfImageBuildConfigInstance := _AddImageBuild200ResponseAllOfImageBuildConfigInstance{}
+
+	err = json.Unmarshal(data, &varAddImageBuild200ResponseAllOfImageBuildConfigInstance)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddImageBuild200ResponseAllOfImageBuildConfigInstance(varAddImageBuild200ResponseAllOfImageBuildConfigInstance)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "layout")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "userGroup")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddImageBuild200ResponseAllOfImageBuildConfigInstance struct {

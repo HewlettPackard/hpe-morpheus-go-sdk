@@ -21,7 +21,10 @@ var _ MappedNullable = &UpdateNetworkFirewallRuleGroupRequest{}
 // UpdateNetworkFirewallRuleGroupRequest The parameters for update a network firewall rule group is type dependent. The following lists the common parameters. See get a specific type to list available options for the network server type. 
 type UpdateNetworkFirewallRuleGroupRequest struct {
 	RuleGroup map[string]interface{} `json:"ruleGroup,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateNetworkFirewallRuleGroupRequest UpdateNetworkFirewallRuleGroupRequest
 
 // NewUpdateNetworkFirewallRuleGroupRequest instantiates a new UpdateNetworkFirewallRuleGroupRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o UpdateNetworkFirewallRuleGroupRequest) ToMap() (map[string]interface{}, 
 	if !IsNil(o.RuleGroup) {
 		toSerialize["ruleGroup"] = o.RuleGroup
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateNetworkFirewallRuleGroupRequest) UnmarshalJSON(data []byte) (err error) {
+	varUpdateNetworkFirewallRuleGroupRequest := _UpdateNetworkFirewallRuleGroupRequest{}
+
+	err = json.Unmarshal(data, &varUpdateNetworkFirewallRuleGroupRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateNetworkFirewallRuleGroupRequest(varUpdateNetworkFirewallRuleGroupRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "ruleGroup")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateNetworkFirewallRuleGroupRequest struct {

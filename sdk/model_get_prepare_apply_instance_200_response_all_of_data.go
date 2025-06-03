@@ -21,7 +21,10 @@ var _ MappedNullable = &GetPrepareApplyInstance200ResponseAllOfData{}
 // GetPrepareApplyInstance200ResponseAllOfData struct for GetPrepareApplyInstance200ResponseAllOfData
 type GetPrepareApplyInstance200ResponseAllOfData struct {
 	TemplateParameter map[string]interface{} `json:"templateParameter,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetPrepareApplyInstance200ResponseAllOfData GetPrepareApplyInstance200ResponseAllOfData
 
 // NewGetPrepareApplyInstance200ResponseAllOfData instantiates a new GetPrepareApplyInstance200ResponseAllOfData object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o GetPrepareApplyInstance200ResponseAllOfData) ToMap() (map[string]interfa
 	if !IsNil(o.TemplateParameter) {
 		toSerialize["templateParameter"] = o.TemplateParameter
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetPrepareApplyInstance200ResponseAllOfData) UnmarshalJSON(data []byte) (err error) {
+	varGetPrepareApplyInstance200ResponseAllOfData := _GetPrepareApplyInstance200ResponseAllOfData{}
+
+	err = json.Unmarshal(data, &varGetPrepareApplyInstance200ResponseAllOfData)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetPrepareApplyInstance200ResponseAllOfData(varGetPrepareApplyInstance200ResponseAllOfData)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "templateParameter")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetPrepareApplyInstance200ResponseAllOfData struct {

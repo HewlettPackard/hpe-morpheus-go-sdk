@@ -21,7 +21,10 @@ var _ MappedNullable = &AddOsTypeImageRequest{}
 // AddOsTypeImageRequest struct for AddOsTypeImageRequest
 type AddOsTypeImageRequest struct {
 	OsTypeImage *AddOsTypeImageRequestOsTypeImage `json:"osTypeImage,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddOsTypeImageRequest AddOsTypeImageRequest
 
 // NewAddOsTypeImageRequest instantiates a new AddOsTypeImageRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o AddOsTypeImageRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.OsTypeImage) {
 		toSerialize["osTypeImage"] = o.OsTypeImage
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddOsTypeImageRequest) UnmarshalJSON(data []byte) (err error) {
+	varAddOsTypeImageRequest := _AddOsTypeImageRequest{}
+
+	err = json.Unmarshal(data, &varAddOsTypeImageRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddOsTypeImageRequest(varAddOsTypeImageRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "osTypeImage")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddOsTypeImageRequest struct {

@@ -36,7 +36,10 @@ type ContainerType struct {
 	ContainerScripts []map[string]interface{} `json:"containerScripts,omitempty"`
 	ContainerTemplates []map[string]interface{} `json:"containerTemplates,omitempty"`
 	EnvironmentVariables []map[string]interface{} `json:"environmentVariables,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ContainerType ContainerType
 
 // NewContainerType instantiates a new ContainerType object
 // This constructor will assign default values to properties that have it defined,
@@ -625,7 +628,48 @@ func (o ContainerType) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.EnvironmentVariables) {
 		toSerialize["environmentVariables"] = o.EnvironmentVariables
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ContainerType) UnmarshalJSON(data []byte) (err error) {
+	varContainerType := _ContainerType{}
+
+	err = json.Unmarshal(data, &varContainerType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ContainerType(varContainerType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "shortName")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "containerVersion")
+		delete(additionalProperties, "provisionType")
+		delete(additionalProperties, "virtualImage")
+		delete(additionalProperties, "osType")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "containerPorts")
+		delete(additionalProperties, "containerScripts")
+		delete(additionalProperties, "containerTemplates")
+		delete(additionalProperties, "environmentVariables")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableContainerType struct {

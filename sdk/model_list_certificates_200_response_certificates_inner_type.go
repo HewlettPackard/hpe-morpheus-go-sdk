@@ -22,7 +22,10 @@ var _ MappedNullable = &ListCertificates200ResponseCertificatesInnerType{}
 type ListCertificates200ResponseCertificatesInnerType struct {
 	Id *int64 `json:"id,omitempty"`
 	Code *string `json:"code,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListCertificates200ResponseCertificatesInnerType ListCertificates200ResponseCertificatesInnerType
 
 // NewListCertificates200ResponseCertificatesInnerType instantiates a new ListCertificates200ResponseCertificatesInnerType object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o ListCertificates200ResponseCertificatesInnerType) ToMap() (map[string]in
 	if !IsNil(o.Code) {
 		toSerialize["code"] = o.Code
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListCertificates200ResponseCertificatesInnerType) UnmarshalJSON(data []byte) (err error) {
+	varListCertificates200ResponseCertificatesInnerType := _ListCertificates200ResponseCertificatesInnerType{}
+
+	err = json.Unmarshal(data, &varListCertificates200ResponseCertificatesInnerType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListCertificates200ResponseCertificatesInnerType(varListCertificates200ResponseCertificatesInnerType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListCertificates200ResponseCertificatesInnerType struct {

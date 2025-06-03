@@ -21,7 +21,10 @@ var _ MappedNullable = &ListLogSettings200Response{}
 // ListLogSettings200Response struct for ListLogSettings200Response
 type ListLogSettings200Response struct {
 	LogSettings *ListLogSettings200ResponseLogSettings `json:"logSettings,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListLogSettings200Response ListLogSettings200Response
 
 // NewListLogSettings200Response instantiates a new ListLogSettings200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o ListLogSettings200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.LogSettings) {
 		toSerialize["logSettings"] = o.LogSettings
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListLogSettings200Response) UnmarshalJSON(data []byte) (err error) {
+	varListLogSettings200Response := _ListLogSettings200Response{}
+
+	err = json.Unmarshal(data, &varListLogSettings200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListLogSettings200Response(varListLogSettings200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "logSettings")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListLogSettings200Response struct {

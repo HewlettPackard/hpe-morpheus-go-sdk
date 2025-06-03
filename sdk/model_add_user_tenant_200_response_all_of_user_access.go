@@ -31,7 +31,10 @@ type AddUserTenant200ResponseAllOfUserAccess struct {
 	ReportTypes []map[string]interface{} `json:"reportTypes,omitempty"`
 	Tasks []map[string]interface{} `json:"tasks,omitempty"`
 	TaskSets []map[string]interface{} `json:"taskSets,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddUserTenant200ResponseAllOfUserAccess AddUserTenant200ResponseAllOfUserAccess
 
 // NewAddUserTenant200ResponseAllOfUserAccess instantiates a new AddUserTenant200ResponseAllOfUserAccess object
 // This constructor will assign default values to properties that have it defined,
@@ -445,7 +448,43 @@ func (o AddUserTenant200ResponseAllOfUserAccess) ToMap() (map[string]interface{}
 	if !IsNil(o.TaskSets) {
 		toSerialize["taskSets"] = o.TaskSets
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddUserTenant200ResponseAllOfUserAccess) UnmarshalJSON(data []byte) (err error) {
+	varAddUserTenant200ResponseAllOfUserAccess := _AddUserTenant200ResponseAllOfUserAccess{}
+
+	err = json.Unmarshal(data, &varAddUserTenant200ResponseAllOfUserAccess)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddUserTenant200ResponseAllOfUserAccess(varAddUserTenant200ResponseAllOfUserAccess)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "features")
+		delete(additionalProperties, "zones")
+		delete(additionalProperties, "sites")
+		delete(additionalProperties, "instanceTypes")
+		delete(additionalProperties, "appTemplates")
+		delete(additionalProperties, "catalogItemTypes")
+		delete(additionalProperties, "personas")
+		delete(additionalProperties, "vdiPools")
+		delete(additionalProperties, "reportTypes")
+		delete(additionalProperties, "tasks")
+		delete(additionalProperties, "taskSets")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddUserTenant200ResponseAllOfUserAccess struct {

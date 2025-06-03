@@ -65,7 +65,10 @@ type StorageServer struct {
 	Tenants []map[string]interface{} `json:"tenants,omitempty"`
 	Owner *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"owner,omitempty"`
 	Credential map[string]interface{} `json:"credential,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _StorageServer StorageServer
 
 // NewStorageServer instantiates a new StorageServer object
 // This constructor will assign default values to properties that have it defined,
@@ -1634,7 +1637,76 @@ func (o StorageServer) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Credential) {
 		toSerialize["credential"] = o.Credential
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *StorageServer) UnmarshalJSON(data []byte) (err error) {
+	varStorageServer := _StorageServer{}
+
+	err = json.Unmarshal(data, &varStorageServer)
+
+	if err != nil {
+		return err
+	}
+
+	*o = StorageServer(varStorageServer)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "chassis")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "internalId")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "serviceUrl")
+		delete(additionalProperties, "serviceHost")
+		delete(additionalProperties, "servicePath")
+		delete(additionalProperties, "serviceToken")
+		delete(additionalProperties, "serviceTokenHash")
+		delete(additionalProperties, "serviceVersion")
+		delete(additionalProperties, "serviceUsername")
+		delete(additionalProperties, "servicePassword")
+		delete(additionalProperties, "servicePasswordHash")
+		delete(additionalProperties, "internalIp")
+		delete(additionalProperties, "externalIp")
+		delete(additionalProperties, "apiPort")
+		delete(additionalProperties, "adminPort")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "refId")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "serverVendor")
+		delete(additionalProperties, "serverModel")
+		delete(additionalProperties, "serialNumber")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "statusMessage")
+		delete(additionalProperties, "statusDate")
+		delete(additionalProperties, "errorMessage")
+		delete(additionalProperties, "maxStorage")
+		delete(additionalProperties, "usedStorage")
+		delete(additionalProperties, "diskCount")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "groups")
+		delete(additionalProperties, "hostGroups")
+		delete(additionalProperties, "hosts")
+		delete(additionalProperties, "tenants")
+		delete(additionalProperties, "owner")
+		delete(additionalProperties, "credential")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableStorageServer struct {

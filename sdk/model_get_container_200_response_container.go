@@ -63,7 +63,10 @@ type GetContainer200ResponseContainer struct {
 	ConfigRole *string `json:"configRole,omitempty"`
 	HourlyCost *float64 `json:"hourlyCost,omitempty"`
 	HourlyPrice *float64 `json:"hourlyPrice,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetContainer200ResponseContainer GetContainer200ResponseContainer
 
 // NewGetContainer200ResponseContainer instantiates a new GetContainer200ResponseContainer object
 // This constructor will assign default values to properties that have it defined,
@@ -1562,7 +1565,74 @@ func (o GetContainer200ResponseContainer) ToMap() (map[string]interface{}, error
 	if !IsNil(o.HourlyPrice) {
 		toSerialize["hourlyPrice"] = o.HourlyPrice
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetContainer200ResponseContainer) UnmarshalJSON(data []byte) (err error) {
+	varGetContainer200ResponseContainer := _GetContainer200ResponseContainer{}
+
+	err = json.Unmarshal(data, &varGetContainer200ResponseContainer)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetContainer200ResponseContainer(varGetContainer200ResponseContainer)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "uuid")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "instance")
+		delete(additionalProperties, "containerType")
+		delete(additionalProperties, "containerTypeSet")
+		delete(additionalProperties, "server")
+		delete(additionalProperties, "cloud")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "ip")
+		delete(additionalProperties, "internalIp")
+		delete(additionalProperties, "internalHostname")
+		delete(additionalProperties, "externalHostname")
+		delete(additionalProperties, "externalDomain")
+		delete(additionalProperties, "externalFqdn")
+		delete(additionalProperties, "ports")
+		delete(additionalProperties, "plan")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "statsEnabled")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "userStatus")
+		delete(additionalProperties, "environmentPrefix")
+		delete(additionalProperties, "stats")
+		delete(additionalProperties, "runtimeInfo")
+		delete(additionalProperties, "containerVersion")
+		delete(additionalProperties, "repositoryImage")
+		delete(additionalProperties, "planCategory")
+		delete(additionalProperties, "hostname")
+		delete(additionalProperties, "domainName")
+		delete(additionalProperties, "volumeCreated")
+		delete(additionalProperties, "containerCreated")
+		delete(additionalProperties, "maxStorage")
+		delete(additionalProperties, "maxMemory")
+		delete(additionalProperties, "maxCores")
+		delete(additionalProperties, "maxCpu")
+		delete(additionalProperties, "availableActions")
+		delete(additionalProperties, "configGroup")
+		delete(additionalProperties, "configId")
+		delete(additionalProperties, "configRole")
+		delete(additionalProperties, "hourlyCost")
+		delete(additionalProperties, "hourlyPrice")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetContainer200ResponseContainer struct {

@@ -14,7 +14,6 @@ package sdk
 import (
 	"encoding/json"
 	"time"
-	"bytes"
 	"fmt"
 )
 
@@ -39,6 +38,7 @@ type AddIncidentRequestIncident struct {
 	EndDate *time.Time `json:"endDate,omitempty"`
 	// Set 'In Availability'
 	InUptime *bool `json:"inUptime,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddIncidentRequestIncident AddIncidentRequestIncident
@@ -341,6 +341,11 @@ func (o AddIncidentRequestIncident) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.InUptime) {
 		toSerialize["inUptime"] = o.InUptime
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -368,15 +373,27 @@ func (o *AddIncidentRequestIncident) UnmarshalJSON(data []byte) (err error) {
 
 	varAddIncidentRequestIncident := _AddIncidentRequestIncident{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddIncidentRequestIncident)
+	err = json.Unmarshal(data, &varAddIncidentRequestIncident)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddIncidentRequestIncident(varAddIncidentRequestIncident)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "resolution")
+		delete(additionalProperties, "comment")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "severity")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "startDate")
+		delete(additionalProperties, "endDate")
+		delete(additionalProperties, "inUptime")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

@@ -28,7 +28,10 @@ type Search200ResponseMeta struct {
 	Size *int64 `json:"size,omitempty"`
 	// Total number of records found
 	Total *int64 `json:"total,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _Search200ResponseMeta Search200ResponseMeta
 
 // NewSearch200ResponseMeta instantiates a new Search200ResponseMeta object
 // This constructor will assign default values to properties that have it defined,
@@ -213,7 +216,36 @@ func (o Search200ResponseMeta) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Total) {
 		toSerialize["total"] = o.Total
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *Search200ResponseMeta) UnmarshalJSON(data []byte) (err error) {
+	varSearch200ResponseMeta := _Search200ResponseMeta{}
+
+	err = json.Unmarshal(data, &varSearch200ResponseMeta)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Search200ResponseMeta(varSearch200ResponseMeta)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "offset")
+		delete(additionalProperties, "max")
+		delete(additionalProperties, "size")
+		delete(additionalProperties, "total")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableSearch200ResponseMeta struct {

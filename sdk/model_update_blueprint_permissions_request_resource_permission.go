@@ -26,7 +26,10 @@ type UpdateBlueprintPermissionsRequestResourcePermission struct {
 	Sites []GetAlerts200ResponseAllOfChecksInnerAccount `json:"sites,omitempty"`
 	// User ID, can be used to change blueprint owner.
 	OwnerId *int64 `json:"ownerId,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateBlueprintPermissionsRequestResourcePermission UpdateBlueprintPermissionsRequestResourcePermission
 
 // NewUpdateBlueprintPermissionsRequestResourcePermission instantiates a new UpdateBlueprintPermissionsRequestResourcePermission object
 // This constructor will assign default values to properties that have it defined,
@@ -160,7 +163,35 @@ func (o UpdateBlueprintPermissionsRequestResourcePermission) ToMap() (map[string
 	if !IsNil(o.OwnerId) {
 		toSerialize["ownerId"] = o.OwnerId
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateBlueprintPermissionsRequestResourcePermission) UnmarshalJSON(data []byte) (err error) {
+	varUpdateBlueprintPermissionsRequestResourcePermission := _UpdateBlueprintPermissionsRequestResourcePermission{}
+
+	err = json.Unmarshal(data, &varUpdateBlueprintPermissionsRequestResourcePermission)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateBlueprintPermissionsRequestResourcePermission(varUpdateBlueprintPermissionsRequestResourcePermission)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "all")
+		delete(additionalProperties, "sites")
+		delete(additionalProperties, "ownerId")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateBlueprintPermissionsRequestResourcePermission struct {

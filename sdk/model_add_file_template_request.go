@@ -21,7 +21,10 @@ var _ MappedNullable = &AddFileTemplateRequest{}
 // AddFileTemplateRequest struct for AddFileTemplateRequest
 type AddFileTemplateRequest struct {
 	ContainerTemplate *AddFileTemplateRequestContainerTemplate `json:"containerTemplate,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddFileTemplateRequest AddFileTemplateRequest
 
 // NewAddFileTemplateRequest instantiates a new AddFileTemplateRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o AddFileTemplateRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ContainerTemplate) {
 		toSerialize["containerTemplate"] = o.ContainerTemplate
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddFileTemplateRequest) UnmarshalJSON(data []byte) (err error) {
+	varAddFileTemplateRequest := _AddFileTemplateRequest{}
+
+	err = json.Unmarshal(data, &varAddFileTemplateRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddFileTemplateRequest(varAddFileTemplateRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "containerTemplate")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddFileTemplateRequest struct {

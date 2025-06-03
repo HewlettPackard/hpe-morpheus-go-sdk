@@ -28,7 +28,10 @@ type AddBlueprint200ResponseAllOfBlueprintConfigOneOf4Config struct {
 	Type *string `json:"type,omitempty"`
 	// Tier definitions - Create in UI to view a baseline for object
 	Tiers map[string]interface{} `json:"tiers,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddBlueprint200ResponseAllOfBlueprintConfigOneOf4Config AddBlueprint200ResponseAllOfBlueprintConfigOneOf4Config
 
 // NewAddBlueprint200ResponseAllOfBlueprintConfigOneOf4Config instantiates a new AddBlueprint200ResponseAllOfBlueprintConfigOneOf4Config object
 // This constructor will assign default values to properties that have it defined,
@@ -197,7 +200,36 @@ func (o AddBlueprint200ResponseAllOfBlueprintConfigOneOf4Config) ToMap() (map[st
 	if !IsNil(o.Tiers) {
 		toSerialize["tiers"] = o.Tiers
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf4Config) UnmarshalJSON(data []byte) (err error) {
+	varAddBlueprint200ResponseAllOfBlueprintConfigOneOf4Config := _AddBlueprint200ResponseAllOfBlueprintConfigOneOf4Config{}
+
+	err = json.Unmarshal(data, &varAddBlueprint200ResponseAllOfBlueprintConfigOneOf4Config)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddBlueprint200ResponseAllOfBlueprintConfigOneOf4Config(varAddBlueprint200ResponseAllOfBlueprintConfigOneOf4Config)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "image")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "tiers")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddBlueprint200ResponseAllOfBlueprintConfigOneOf4Config struct {

@@ -35,7 +35,10 @@ type ListWorkflows200ResponseAllOfTaskSetsInner struct {
 	Tasks []int64 `json:"tasks,omitempty"`
 	OptionTypes []ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner `json:"optionTypes,omitempty"`
 	TaskSetTasks []ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInner `json:"taskSetTasks,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListWorkflows200ResponseAllOfTaskSetsInner ListWorkflows200ResponseAllOfTaskSetsInner
 
 // NewListWorkflows200ResponseAllOfTaskSetsInner instantiates a new ListWorkflows200ResponseAllOfTaskSetsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -554,7 +557,46 @@ func (o ListWorkflows200ResponseAllOfTaskSetsInner) ToMap() (map[string]interfac
 	if !IsNil(o.TaskSetTasks) {
 		toSerialize["taskSetTasks"] = o.TaskSetTasks
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListWorkflows200ResponseAllOfTaskSetsInner) UnmarshalJSON(data []byte) (err error) {
+	varListWorkflows200ResponseAllOfTaskSetsInner := _ListWorkflows200ResponseAllOfTaskSetsInner{}
+
+	err = json.Unmarshal(data, &varListWorkflows200ResponseAllOfTaskSetsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListWorkflows200ResponseAllOfTaskSetsInner(varListWorkflows200ResponseAllOfTaskSetsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "platform")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "allowCustomConfig")
+		delete(additionalProperties, "tasks")
+		delete(additionalProperties, "optionTypes")
+		delete(additionalProperties, "taskSetTasks")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListWorkflows200ResponseAllOfTaskSetsInner struct {

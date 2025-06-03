@@ -22,7 +22,10 @@ var _ MappedNullable = &Ping{}
 type Ping struct {
 	Success *bool `json:"success,omitempty"`
 	BuildVersion *string `json:"buildVersion,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _Ping Ping
 
 // NewPing instantiates a new Ping object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o Ping) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.BuildVersion) {
 		toSerialize["buildVersion"] = o.BuildVersion
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *Ping) UnmarshalJSON(data []byte) (err error) {
+	varPing := _Ping{}
+
+	err = json.Unmarshal(data, &varPing)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Ping(varPing)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "success")
+		delete(additionalProperties, "buildVersion")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullablePing struct {

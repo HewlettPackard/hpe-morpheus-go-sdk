@@ -22,7 +22,10 @@ var _ MappedNullable = &AddImageBuild200ResponseAllOfImageBuildConfigNetworkInte
 type AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInner struct {
 	PrimaryInterface *bool `json:"primaryInterface,omitempty"`
 	Network *ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer `json:"network,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInner AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInner
 
 // NewAddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInner instantiates a new AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInner) ToM
 	if !IsNil(o.Network) {
 		toSerialize["network"] = o.Network
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInner) UnmarshalJSON(data []byte) (err error) {
+	varAddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInner := _AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInner{}
+
+	err = json.Unmarshal(data, &varAddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInner(varAddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "primaryInterface")
+		delete(additionalProperties, "network")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInner struct {

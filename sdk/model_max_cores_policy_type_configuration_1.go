@@ -22,7 +22,10 @@ var _ MappedNullable = &MaxCoresPolicyTypeConfiguration1{}
 type MaxCoresPolicyTypeConfiguration1 struct {
 	MaxCores *string `json:"maxCores,omitempty"`
 	ExcludeContainers *bool `json:"excludeContainers,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _MaxCoresPolicyTypeConfiguration1 MaxCoresPolicyTypeConfiguration1
 
 // NewMaxCoresPolicyTypeConfiguration1 instantiates a new MaxCoresPolicyTypeConfiguration1 object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o MaxCoresPolicyTypeConfiguration1) ToMap() (map[string]interface{}, error
 	if !IsNil(o.ExcludeContainers) {
 		toSerialize["excludeContainers"] = o.ExcludeContainers
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *MaxCoresPolicyTypeConfiguration1) UnmarshalJSON(data []byte) (err error) {
+	varMaxCoresPolicyTypeConfiguration1 := _MaxCoresPolicyTypeConfiguration1{}
+
+	err = json.Unmarshal(data, &varMaxCoresPolicyTypeConfiguration1)
+
+	if err != nil {
+		return err
+	}
+
+	*o = MaxCoresPolicyTypeConfiguration1(varMaxCoresPolicyTypeConfiguration1)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "maxCores")
+		delete(additionalProperties, "excludeContainers")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableMaxCoresPolicyTypeConfiguration1 struct {

@@ -22,7 +22,10 @@ var _ MappedNullable = &ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwn
 type ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner struct {
 	Id *int64 `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner
 
 // NewListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner instantiates a new ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner) ToMap() (map
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner) UnmarshalJSON(data []byte) (err error) {
+	varListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner := _ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner{}
+
+	err = json.Unmarshal(data, &varListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner(varListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner struct {

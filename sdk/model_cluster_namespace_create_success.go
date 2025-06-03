@@ -26,7 +26,10 @@ type ClusterNamespaceCreateSuccess struct {
 	RegionCode *string `json:"regionCode,omitempty"`
 	ExternalId *string `json:"externalId,omitempty"`
 	Status *string `json:"status,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ClusterNamespaceCreateSuccess ClusterNamespaceCreateSuccess
 
 // NewClusterNamespaceCreateSuccess instantiates a new ClusterNamespaceCreateSuccess object
 // This constructor will assign default values to properties that have it defined,
@@ -265,7 +268,38 @@ func (o ClusterNamespaceCreateSuccess) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ClusterNamespaceCreateSuccess) UnmarshalJSON(data []byte) (err error) {
+	varClusterNamespaceCreateSuccess := _ClusterNamespaceCreateSuccess{}
+
+	err = json.Unmarshal(data, &varClusterNamespaceCreateSuccess)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ClusterNamespaceCreateSuccess(varClusterNamespaceCreateSuccess)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "regionCode")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "status")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableClusterNamespaceCreateSuccess struct {

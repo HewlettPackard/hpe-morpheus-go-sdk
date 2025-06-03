@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -32,6 +31,7 @@ type ExecuteBackupRestoreRequestRestore struct {
 	Config map[string]interface{} `json:"config,omitempty"`
 	// Instance config for restore to new.
 	InstanceConfig map[string]interface{} `json:"instanceConfig,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ExecuteBackupRestoreRequestRestore ExecuteBackupRestoreRequestRestore
@@ -220,6 +220,11 @@ func (o ExecuteBackupRestoreRequestRestore) ToMap() (map[string]interface{}, err
 	if !IsNil(o.InstanceConfig) {
 		toSerialize["instanceConfig"] = o.InstanceConfig
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -248,15 +253,24 @@ func (o *ExecuteBackupRestoreRequestRestore) UnmarshalJSON(data []byte) (err err
 
 	varExecuteBackupRestoreRequestRestore := _ExecuteBackupRestoreRequestRestore{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varExecuteBackupRestoreRequestRestore)
+	err = json.Unmarshal(data, &varExecuteBackupRestoreRequestRestore)
 
 	if err != nil {
 		return err
 	}
 
 	*o = ExecuteBackupRestoreRequestRestore(varExecuteBackupRestoreRequestRestore)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "backupResultId")
+		delete(additionalProperties, "restoreInstance")
+		delete(additionalProperties, "instanceId")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "instanceConfig")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

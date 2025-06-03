@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -28,6 +27,7 @@ type UpdateUsersRequestUserRolesInner struct {
 	Name *string `json:"name,omitempty"`
 	// Resource code
 	Code *string `json:"code,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateUsersRequestUserRolesInner UpdateUsersRequestUserRolesInner
@@ -155,6 +155,11 @@ func (o UpdateUsersRequestUserRolesInner) ToMap() (map[string]interface{}, error
 	if !IsNil(o.Code) {
 		toSerialize["code"] = o.Code
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -182,15 +187,22 @@ func (o *UpdateUsersRequestUserRolesInner) UnmarshalJSON(data []byte) (err error
 
 	varUpdateUsersRequestUserRolesInner := _UpdateUsersRequestUserRolesInner{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varUpdateUsersRequestUserRolesInner)
+	err = json.Unmarshal(data, &varUpdateUsersRequestUserRolesInner)
 
 	if err != nil {
 		return err
 	}
 
 	*o = UpdateUsersRequestUserRolesInner(varUpdateUsersRequestUserRolesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

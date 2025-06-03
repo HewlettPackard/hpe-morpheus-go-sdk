@@ -21,7 +21,10 @@ var _ MappedNullable = &AddInstanceDeployRequest{}
 // AddInstanceDeployRequest struct for AddInstanceDeployRequest
 type AddInstanceDeployRequest struct {
 	AppDeploy *AddInstanceDeployRequestAppDeploy `json:"appDeploy,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddInstanceDeployRequest AddInstanceDeployRequest
 
 // NewAddInstanceDeployRequest instantiates a new AddInstanceDeployRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o AddInstanceDeployRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.AppDeploy) {
 		toSerialize["appDeploy"] = o.AppDeploy
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddInstanceDeployRequest) UnmarshalJSON(data []byte) (err error) {
+	varAddInstanceDeployRequest := _AddInstanceDeployRequest{}
+
+	err = json.Unmarshal(data, &varAddInstanceDeployRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddInstanceDeployRequest(varAddInstanceDeployRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "appDeploy")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddInstanceDeployRequest struct {

@@ -21,7 +21,10 @@ var _ MappedNullable = &ListLogs200ResponseAllOfSort{}
 // ListLogs200ResponseAllOfSort struct for ListLogs200ResponseAllOfSort
 type ListLogs200ResponseAllOfSort struct {
 	Ts *string `json:"ts,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListLogs200ResponseAllOfSort ListLogs200ResponseAllOfSort
 
 // NewListLogs200ResponseAllOfSort instantiates a new ListLogs200ResponseAllOfSort object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o ListLogs200ResponseAllOfSort) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Ts) {
 		toSerialize["ts"] = o.Ts
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListLogs200ResponseAllOfSort) UnmarshalJSON(data []byte) (err error) {
+	varListLogs200ResponseAllOfSort := _ListLogs200ResponseAllOfSort{}
+
+	err = json.Unmarshal(data, &varListLogs200ResponseAllOfSort)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListLogs200ResponseAllOfSort(varListLogs200ResponseAllOfSort)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "ts")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListLogs200ResponseAllOfSort struct {

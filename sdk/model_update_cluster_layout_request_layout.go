@@ -48,7 +48,10 @@ type UpdateClusterLayoutRequestLayout struct {
 	Masters []AddClusterLayoutsRequestLayoutMastersInner `json:"masters,omitempty"`
 	// Array of cluster layout worker nodes
 	Workers []AddClusterLayoutsRequestLayoutMastersInner `json:"workers,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateClusterLayoutRequestLayout UpdateClusterLayoutRequestLayout
 
 // NewUpdateClusterLayoutRequestLayout instantiates a new UpdateClusterLayoutRequestLayout object
 // This constructor will assign default values to properties that have it defined,
@@ -614,7 +617,47 @@ func (o UpdateClusterLayoutRequestLayout) ToMap() (map[string]interface{}, error
 	if !IsNil(o.Workers) {
 		toSerialize["workers"] = o.Workers
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateClusterLayoutRequestLayout) UnmarshalJSON(data []byte) (err error) {
+	varUpdateClusterLayoutRequestLayout := _UpdateClusterLayoutRequestLayout{}
+
+	err = json.Unmarshal(data, &varUpdateClusterLayoutRequestLayout)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateClusterLayoutRequestLayout(varUpdateClusterLayoutRequestLayout)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "computeVersion")
+		delete(additionalProperties, "creatable")
+		delete(additionalProperties, "hasAutoScale")
+		delete(additionalProperties, "installContainerRuntime")
+		delete(additionalProperties, "memoryRequirement")
+		delete(additionalProperties, "groupType")
+		delete(additionalProperties, "provisionType")
+		delete(additionalProperties, "optionTypes")
+		delete(additionalProperties, "taskSets")
+		delete(additionalProperties, "environmentVariables")
+		delete(additionalProperties, "masters")
+		delete(additionalProperties, "workers")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateClusterLayoutRequestLayout struct {

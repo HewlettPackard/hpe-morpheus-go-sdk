@@ -22,7 +22,10 @@ var _ MappedNullable = &UserSettings{}
 type UserSettings struct {
 	User *ListUserSettings200ResponseAllOfUser `json:"user,omitempty"`
 	AccessTokens []ListUserSettings200ResponseAllOfAccessTokensInner `json:"accessTokens,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UserSettings UserSettings
 
 // NewUserSettings instantiates a new UserSettings object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o UserSettings) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.AccessTokens) {
 		toSerialize["accessTokens"] = o.AccessTokens
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UserSettings) UnmarshalJSON(data []byte) (err error) {
+	varUserSettings := _UserSettings{}
+
+	err = json.Unmarshal(data, &varUserSettings)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UserSettings(varUserSettings)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "user")
+		delete(additionalProperties, "accessTokens")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUserSettings struct {

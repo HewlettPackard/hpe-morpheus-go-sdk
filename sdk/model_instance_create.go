@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -52,6 +51,7 @@ type InstanceCreate struct {
 	TaskSetId *int64 `json:"taskSetId,omitempty"`
 	// The Workflow Name to execute.
 	TaskSetName *string `json:"taskSetName,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _InstanceCreate InstanceCreate
@@ -633,6 +633,11 @@ func (o InstanceCreate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.TaskSetName) {
 		toSerialize["taskSetName"] = o.TaskSetName
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -661,15 +666,35 @@ func (o *InstanceCreate) UnmarshalJSON(data []byte) (err error) {
 
 	varInstanceCreate := _InstanceCreate{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varInstanceCreate)
+	err = json.Unmarshal(data, &varInstanceCreate)
 
 	if err != nil {
 		return err
 	}
 
 	*o = InstanceCreate(varInstanceCreate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "instance")
+		delete(additionalProperties, "zoneId")
+		delete(additionalProperties, "evars")
+		delete(additionalProperties, "copies")
+		delete(additionalProperties, "layoutSize")
+		delete(additionalProperties, "servicePlanOptions")
+		delete(additionalProperties, "securityGroups")
+		delete(additionalProperties, "volumes")
+		delete(additionalProperties, "networkInterfaces")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "tags")
+		delete(additionalProperties, "metadata")
+		delete(additionalProperties, "ports")
+		delete(additionalProperties, "taskSetId")
+		delete(additionalProperties, "taskSetName")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -34,6 +33,7 @@ type AddInstanceRequestInstance struct {
 	InstanceContext *string `json:"instanceContext,omitempty"`
 	// Hostname of the instance to be created.  Can be the same as the instance name.
 	HostName *string `json:"hostName,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddInstanceRequestInstance AddInstanceRequestInstance
@@ -300,6 +300,11 @@ func (o AddInstanceRequestInstance) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.HostName) {
 		toSerialize["hostName"] = o.HostName
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -331,15 +336,27 @@ func (o *AddInstanceRequestInstance) UnmarshalJSON(data []byte) (err error) {
 
 	varAddInstanceRequestInstance := _AddInstanceRequestInstance{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddInstanceRequestInstance)
+	err = json.Unmarshal(data, &varAddInstanceRequestInstance)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddInstanceRequestInstance(varAddInstanceRequestInstance)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "site")
+		delete(additionalProperties, "instanceType")
+		delete(additionalProperties, "layout")
+		delete(additionalProperties, "plan")
+		delete(additionalProperties, "instanceContext")
+		delete(additionalProperties, "hostName")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

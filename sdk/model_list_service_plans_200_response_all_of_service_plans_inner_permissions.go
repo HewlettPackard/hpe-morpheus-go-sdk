@@ -22,7 +22,10 @@ var _ MappedNullable = &ListServicePlans200ResponseAllOfServicePlansInnerPermiss
 type ListServicePlans200ResponseAllOfServicePlansInnerPermissions struct {
 	ResourcePermissions *ListServicePlans200ResponseAllOfServicePlansInnerPermissionsResourcePermissions `json:"resourcePermissions,omitempty"`
 	TenantPermissions *GetNetworkRouter200ResponseNetworkRouterPermissionsTenantPermissions `json:"tenantPermissions,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListServicePlans200ResponseAllOfServicePlansInnerPermissions ListServicePlans200ResponseAllOfServicePlansInnerPermissions
 
 // NewListServicePlans200ResponseAllOfServicePlansInnerPermissions instantiates a new ListServicePlans200ResponseAllOfServicePlansInnerPermissions object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o ListServicePlans200ResponseAllOfServicePlansInnerPermissions) ToMap() (m
 	if !IsNil(o.TenantPermissions) {
 		toSerialize["tenantPermissions"] = o.TenantPermissions
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListServicePlans200ResponseAllOfServicePlansInnerPermissions) UnmarshalJSON(data []byte) (err error) {
+	varListServicePlans200ResponseAllOfServicePlansInnerPermissions := _ListServicePlans200ResponseAllOfServicePlansInnerPermissions{}
+
+	err = json.Unmarshal(data, &varListServicePlans200ResponseAllOfServicePlansInnerPermissions)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListServicePlans200ResponseAllOfServicePlansInnerPermissions(varListServicePlans200ResponseAllOfServicePlansInnerPermissions)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "resourcePermissions")
+		delete(additionalProperties, "tenantPermissions")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListServicePlans200ResponseAllOfServicePlansInnerPermissions struct {

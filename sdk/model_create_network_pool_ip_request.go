@@ -21,7 +21,10 @@ var _ MappedNullable = &CreateNetworkPoolIpRequest{}
 // CreateNetworkPoolIpRequest struct for CreateNetworkPoolIpRequest
 type CreateNetworkPoolIpRequest struct {
 	NetworkPoolIp *CreateNetworkPoolIpRequestNetworkPoolIp `json:"networkPoolIp,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _CreateNetworkPoolIpRequest CreateNetworkPoolIpRequest
 
 // NewCreateNetworkPoolIpRequest instantiates a new CreateNetworkPoolIpRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o CreateNetworkPoolIpRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.NetworkPoolIp) {
 		toSerialize["networkPoolIp"] = o.NetworkPoolIp
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *CreateNetworkPoolIpRequest) UnmarshalJSON(data []byte) (err error) {
+	varCreateNetworkPoolIpRequest := _CreateNetworkPoolIpRequest{}
+
+	err = json.Unmarshal(data, &varCreateNetworkPoolIpRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CreateNetworkPoolIpRequest(varCreateNetworkPoolIpRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "networkPoolIp")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCreateNetworkPoolIpRequest struct {

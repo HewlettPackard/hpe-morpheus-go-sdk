@@ -71,7 +71,10 @@ type UpdateVDIPoolsRequestVdiPool struct {
 	GuestConsoleJumpPassword *string `json:"guestConsoleJumpPassword,omitempty"`
 	// Guest Console Jump Key Pair. see `Key Pair`
 	GuestConsoleJumpKeypair *int64 `json:"guestConsoleJumpKeypair,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateVDIPoolsRequestVdiPool UpdateVDIPoolsRequestVdiPool
 
 // NewUpdateVDIPoolsRequestVdiPool instantiates a new UpdateVDIPoolsRequestVdiPool object
 // This constructor will assign default values to properties that have it defined,
@@ -1042,7 +1045,58 @@ func (o UpdateVDIPoolsRequestVdiPool) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.GuestConsoleJumpKeypair) {
 		toSerialize["guestConsoleJumpKeypair"] = o.GuestConsoleJumpKeypair
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateVDIPoolsRequestVdiPool) UnmarshalJSON(data []byte) (err error) {
+	varUpdateVDIPoolsRequestVdiPool := _UpdateVDIPoolsRequestVdiPool{}
+
+	err = json.Unmarshal(data, &varUpdateVDIPoolsRequestVdiPool)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateVDIPoolsRequestVdiPool(varUpdateVDIPoolsRequestVdiPool)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "owner")
+		delete(additionalProperties, "minIdle")
+		delete(additionalProperties, "initialPoolSize")
+		delete(additionalProperties, "maxIdle")
+		delete(additionalProperties, "maxPoolSize")
+		delete(additionalProperties, "allocationTimeoutMinutes")
+		delete(additionalProperties, "persistentUser")
+		delete(additionalProperties, "recyclable")
+		delete(additionalProperties, "allowCopy")
+		delete(additionalProperties, "allowPrinter")
+		delete(additionalProperties, "allowFileshare")
+		delete(additionalProperties, "allowHypervisorConsole")
+		delete(additionalProperties, "autoCreateLocalUserOnReservation")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "iconPath")
+		delete(additionalProperties, "apps")
+		delete(additionalProperties, "gateway")
+		delete(additionalProperties, "instanceConfig")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "guestConsoleJumpHost")
+		delete(additionalProperties, "guestConsoleJumpPort")
+		delete(additionalProperties, "guestConsoleJumpUsername")
+		delete(additionalProperties, "guestConsoleJumpPassword")
+		delete(additionalProperties, "guestConsoleJumpKeypair")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateVDIPoolsRequestVdiPool struct {

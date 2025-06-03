@@ -21,7 +21,10 @@ var _ MappedNullable = &GetTenantSubtenantGroup200Response{}
 // GetTenantSubtenantGroup200Response struct for GetTenantSubtenantGroup200Response
 type GetTenantSubtenantGroup200Response struct {
 	Group *ListTenantSubtenantGroups200ResponseAllOfGroupsInner `json:"group,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetTenantSubtenantGroup200Response GetTenantSubtenantGroup200Response
 
 // NewGetTenantSubtenantGroup200Response instantiates a new GetTenantSubtenantGroup200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o GetTenantSubtenantGroup200Response) ToMap() (map[string]interface{}, err
 	if !IsNil(o.Group) {
 		toSerialize["group"] = o.Group
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetTenantSubtenantGroup200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetTenantSubtenantGroup200Response := _GetTenantSubtenantGroup200Response{}
+
+	err = json.Unmarshal(data, &varGetTenantSubtenantGroup200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetTenantSubtenantGroup200Response(varGetTenantSubtenantGroup200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "group")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetTenantSubtenantGroup200Response struct {

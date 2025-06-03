@@ -32,7 +32,10 @@ type SecurityPackage struct {
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
 	Config map[string]interface{} `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _SecurityPackage SecurityPackage
 
 // NewSecurityPackage instantiates a new SecurityPackage object
 // This constructor will assign default values to properties that have it defined,
@@ -446,7 +449,43 @@ func (o SecurityPackage) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *SecurityPackage) UnmarshalJSON(data []byte) (err error) {
+	varSecurityPackage := _SecurityPackage{}
+
+	err = json.Unmarshal(data, &varSecurityPackage)
+
+	if err != nil {
+		return err
+	}
+
+	*o = SecurityPackage(varSecurityPackage)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "url")
+		delete(additionalProperties, "uuid")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "config")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableSecurityPackage struct {

@@ -21,7 +21,10 @@ var _ MappedNullable = &GetNodeType200Response{}
 // GetNodeType200Response struct for GetNodeType200Response
 type GetNodeType200Response struct {
 	ContainerType *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner `json:"containerType,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetNodeType200Response GetNodeType200Response
 
 // NewGetNodeType200Response instantiates a new GetNodeType200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o GetNodeType200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ContainerType) {
 		toSerialize["containerType"] = o.ContainerType
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetNodeType200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetNodeType200Response := _GetNodeType200Response{}
+
+	err = json.Unmarshal(data, &varGetNodeType200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetNodeType200Response(varGetNodeType200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "containerType")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetNodeType200Response struct {

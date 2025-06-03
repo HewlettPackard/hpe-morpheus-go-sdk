@@ -24,7 +24,10 @@ type ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner struct {
 	Name *string `json:"name,omitempty"`
 	DefaultStore *bool `json:"defaultStore,omitempty"`
 	DefaultTarget *bool `json:"defaultTarget,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner
 
 // NewListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner instantiates a new ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -193,7 +196,36 @@ func (o ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner) ToMap() 
 	if !IsNil(o.DefaultTarget) {
 		toSerialize["defaultTarget"] = o.DefaultTarget
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner) UnmarshalJSON(data []byte) (err error) {
+	varListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner := _ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner{}
+
+	err = json.Unmarshal(data, &varListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner(varListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "defaultStore")
+		delete(additionalProperties, "defaultTarget")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner struct {

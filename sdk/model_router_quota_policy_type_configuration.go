@@ -21,7 +21,10 @@ var _ MappedNullable = &RouterQuotaPolicyTypeConfiguration{}
 // RouterQuotaPolicyTypeConfiguration Configuration settings for the following policy types: - Router Quota 
 type RouterQuotaPolicyTypeConfiguration struct {
 	MaxRouters *string `json:"maxRouters,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _RouterQuotaPolicyTypeConfiguration RouterQuotaPolicyTypeConfiguration
 
 // NewRouterQuotaPolicyTypeConfiguration instantiates a new RouterQuotaPolicyTypeConfiguration object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o RouterQuotaPolicyTypeConfiguration) ToMap() (map[string]interface{}, err
 	if !IsNil(o.MaxRouters) {
 		toSerialize["maxRouters"] = o.MaxRouters
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *RouterQuotaPolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
+	varRouterQuotaPolicyTypeConfiguration := _RouterQuotaPolicyTypeConfiguration{}
+
+	err = json.Unmarshal(data, &varRouterQuotaPolicyTypeConfiguration)
+
+	if err != nil {
+		return err
+	}
+
+	*o = RouterQuotaPolicyTypeConfiguration(varRouterQuotaPolicyTypeConfiguration)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "maxRouters")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableRouterQuotaPolicyTypeConfiguration struct {

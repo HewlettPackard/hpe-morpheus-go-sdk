@@ -22,7 +22,10 @@ var _ MappedNullable = &GetNetworkTransportZone200ResponseNetworkScopeConfig{}
 type GetNetworkTransportZone200ResponseNetworkScopeConfig struct {
 	NvdsName *string `json:"nvdsName,omitempty"`
 	HostMembershipCriteria *string `json:"hostMembershipCriteria,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetNetworkTransportZone200ResponseNetworkScopeConfig GetNetworkTransportZone200ResponseNetworkScopeConfig
 
 // NewGetNetworkTransportZone200ResponseNetworkScopeConfig instantiates a new GetNetworkTransportZone200ResponseNetworkScopeConfig object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o GetNetworkTransportZone200ResponseNetworkScopeConfig) ToMap() (map[strin
 	if !IsNil(o.HostMembershipCriteria) {
 		toSerialize["hostMembershipCriteria"] = o.HostMembershipCriteria
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetNetworkTransportZone200ResponseNetworkScopeConfig) UnmarshalJSON(data []byte) (err error) {
+	varGetNetworkTransportZone200ResponseNetworkScopeConfig := _GetNetworkTransportZone200ResponseNetworkScopeConfig{}
+
+	err = json.Unmarshal(data, &varGetNetworkTransportZone200ResponseNetworkScopeConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetNetworkTransportZone200ResponseNetworkScopeConfig(varGetNetworkTransportZone200ResponseNetworkScopeConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "nvdsName")
+		delete(additionalProperties, "hostMembershipCriteria")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetNetworkTransportZone200ResponseNetworkScopeConfig struct {

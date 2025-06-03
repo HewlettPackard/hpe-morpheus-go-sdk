@@ -22,7 +22,10 @@ var _ MappedNullable = &UpdateNetworkRouterPermissionsRequestPermissionsTenantPe
 type UpdateNetworkRouterPermissionsRequestPermissionsTenantPermissions struct {
 	// Array of tenant account IDs
 	Accounts []int64 `json:"accounts,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateNetworkRouterPermissionsRequestPermissionsTenantPermissions UpdateNetworkRouterPermissionsRequestPermissionsTenantPermissions
 
 // NewUpdateNetworkRouterPermissionsRequestPermissionsTenantPermissions instantiates a new UpdateNetworkRouterPermissionsRequestPermissionsTenantPermissions object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o UpdateNetworkRouterPermissionsRequestPermissionsTenantPermissions) ToMap
 	if !IsNil(o.Accounts) {
 		toSerialize["accounts"] = o.Accounts
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateNetworkRouterPermissionsRequestPermissionsTenantPermissions) UnmarshalJSON(data []byte) (err error) {
+	varUpdateNetworkRouterPermissionsRequestPermissionsTenantPermissions := _UpdateNetworkRouterPermissionsRequestPermissionsTenantPermissions{}
+
+	err = json.Unmarshal(data, &varUpdateNetworkRouterPermissionsRequestPermissionsTenantPermissions)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateNetworkRouterPermissionsRequestPermissionsTenantPermissions(varUpdateNetworkRouterPermissionsRequestPermissionsTenantPermissions)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "accounts")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateNetworkRouterPermissionsRequestPermissionsTenantPermissions struct {

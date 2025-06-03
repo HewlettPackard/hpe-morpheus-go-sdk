@@ -27,7 +27,10 @@ type ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4Config struct {
 	CherwellEndDate *string `json:"cherwellEndDate,omitempty"`
 	CherwellIgnoreSSLErrors *string `json:"cherwellIgnoreSSLErrors,omitempty"`
 	CherwellBusinessObject *string `json:"cherwellBusinessObject,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4Config ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4Config
 
 // NewListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4Config instantiates a new ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4Config object
 // This constructor will assign default values to properties that have it defined,
@@ -301,7 +304,39 @@ func (o ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4Config) ToMap() (
 	if !IsNil(o.CherwellBusinessObject) {
 		toSerialize["cherwellBusinessObject"] = o.CherwellBusinessObject
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4Config) UnmarshalJSON(data []byte) (err error) {
+	varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4Config := _ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4Config{}
+
+	err = json.Unmarshal(data, &varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4Config)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4Config(varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4Config)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "cherwellCustomCmdbMapping")
+		delete(additionalProperties, "cherwellClientKey")
+		delete(additionalProperties, "cherwellCreatedBy")
+		delete(additionalProperties, "cherwellStartDate")
+		delete(additionalProperties, "cherwellEndDate")
+		delete(additionalProperties, "cherwellIgnoreSSLErrors")
+		delete(additionalProperties, "cherwellBusinessObject")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4Config struct {

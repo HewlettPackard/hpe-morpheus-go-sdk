@@ -21,7 +21,10 @@ var _ MappedNullable = &UpdateScriptRequest{}
 // UpdateScriptRequest struct for UpdateScriptRequest
 type UpdateScriptRequest struct {
 	ContainerScript *UpdateScriptRequestContainerScript `json:"containerScript,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateScriptRequest UpdateScriptRequest
 
 // NewUpdateScriptRequest instantiates a new UpdateScriptRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o UpdateScriptRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ContainerScript) {
 		toSerialize["containerScript"] = o.ContainerScript
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateScriptRequest) UnmarshalJSON(data []byte) (err error) {
+	varUpdateScriptRequest := _UpdateScriptRequest{}
+
+	err = json.Unmarshal(data, &varUpdateScriptRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateScriptRequest(varUpdateScriptRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "containerScript")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateScriptRequest struct {

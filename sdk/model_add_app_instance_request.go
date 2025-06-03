@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -26,6 +25,7 @@ type AddAppInstanceRequest struct {
 	InstanceId int64 `json:"instanceId"`
 	// The Name of the Tier
 	TierName string `json:"tierName"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddAppInstanceRequest AddAppInstanceRequest
@@ -109,6 +109,11 @@ func (o AddAppInstanceRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["instanceId"] = o.InstanceId
 	toSerialize["tierName"] = o.TierName
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -137,15 +142,21 @@ func (o *AddAppInstanceRequest) UnmarshalJSON(data []byte) (err error) {
 
 	varAddAppInstanceRequest := _AddAppInstanceRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddAppInstanceRequest)
+	err = json.Unmarshal(data, &varAddAppInstanceRequest)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddAppInstanceRequest(varAddAppInstanceRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "instanceId")
+		delete(additionalProperties, "tierName")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

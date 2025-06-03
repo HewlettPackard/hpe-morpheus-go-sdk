@@ -54,7 +54,10 @@ type HostUpdate struct {
 	GuestConsolePort *string `json:"guestConsolePort,omitempty"`
 	// Can turn off guest console preferences on server in favor of hypervisor console
 	GuestConsolePreferred *bool `json:"guestConsolePreferred,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _HostUpdate HostUpdate
 
 // NewHostUpdate instantiates a new HostUpdate object
 // This constructor will assign default values to properties that have it defined,
@@ -729,7 +732,50 @@ func (o HostUpdate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.GuestConsolePreferred) {
 		toSerialize["guestConsolePreferred"] = o.GuestConsolePreferred
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *HostUpdate) UnmarshalJSON(data []byte) (err error) {
+	varHostUpdate := _HostUpdate{}
+
+	err = json.Unmarshal(data, &varHostUpdate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = HostUpdate(varHostUpdate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "manageInternalFirewall")
+		delete(additionalProperties, "enableLogs")
+		delete(additionalProperties, "sshUsername")
+		delete(additionalProperties, "sshPassword")
+		delete(additionalProperties, "sshKeyPair")
+		delete(additionalProperties, "powerScheduleType")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "tags")
+		delete(additionalProperties, "addTags")
+		delete(additionalProperties, "removeTags")
+		delete(additionalProperties, "guestConsoleType")
+		delete(additionalProperties, "guestConsoleUsername")
+		delete(additionalProperties, "guestConsolePassword")
+		delete(additionalProperties, "guestConsolePort")
+		delete(additionalProperties, "guestConsolePreferred")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableHostUpdate struct {

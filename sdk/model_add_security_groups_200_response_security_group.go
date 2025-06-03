@@ -36,7 +36,10 @@ type AddSecurityGroups200ResponseSecurityGroup struct {
 	Tenants []ListSecurityGroups200ResponseAllOfSecurityGroupsInnerTenantsInner `json:"tenants,omitempty"`
 	ResourcePermission *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions `json:"resourcePermission,omitempty"`
 	Success *bool `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddSecurityGroups200ResponseSecurityGroup AddSecurityGroups200ResponseSecurityGroup
 
 // NewAddSecurityGroups200ResponseSecurityGroup instantiates a new AddSecurityGroups200ResponseSecurityGroup object
 // This constructor will assign default values to properties that have it defined,
@@ -625,7 +628,48 @@ func (o AddSecurityGroups200ResponseSecurityGroup) ToMap() (map[string]interface
 	if !IsNil(o.Success) {
 		toSerialize["success"] = o.Success
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddSecurityGroups200ResponseSecurityGroup) UnmarshalJSON(data []byte) (err error) {
+	varAddSecurityGroups200ResponseSecurityGroup := _AddSecurityGroups200ResponseSecurityGroup{}
+
+	err = json.Unmarshal(data, &varAddSecurityGroups200ResponseSecurityGroup)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddSecurityGroups200ResponseSecurityGroup(varAddSecurityGroups200ResponseSecurityGroup)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "groupSource")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "syncSource")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "zone")
+		delete(additionalProperties, "locations")
+		delete(additionalProperties, "rules")
+		delete(additionalProperties, "tenants")
+		delete(additionalProperties, "resourcePermission")
+		delete(additionalProperties, "success")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddSecurityGroups200ResponseSecurityGroup struct {

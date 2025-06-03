@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -46,6 +45,7 @@ type AddUserTenantRequestUser struct {
 	WindowsUsername *string `json:"windowsUsername,omitempty"`
 	// Windows Password, user settings for provisioning
 	WindowsPassword *string `json:"windowsPassword,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddUserTenantRequestUser AddUserTenantRequestUser
@@ -465,6 +465,11 @@ func (o AddUserTenantRequestUser) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.WindowsPassword) {
 		toSerialize["windowsPassword"] = o.WindowsPassword
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -495,15 +500,31 @@ func (o *AddUserTenantRequestUser) UnmarshalJSON(data []byte) (err error) {
 
 	varAddUserTenantRequestUser := _AddUserTenantRequestUser{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddUserTenantRequestUser)
+	err = json.Unmarshal(data, &varAddUserTenantRequestUser)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddUserTenantRequestUser(varAddUserTenantRequestUser)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "firstName")
+		delete(additionalProperties, "lastName")
+		delete(additionalProperties, "username")
+		delete(additionalProperties, "email")
+		delete(additionalProperties, "password")
+		delete(additionalProperties, "roles")
+		delete(additionalProperties, "receiveNotifications")
+		delete(additionalProperties, "linuxUsername")
+		delete(additionalProperties, "linuxPassword")
+		delete(additionalProperties, "linuxKeyPairId")
+		delete(additionalProperties, "windowsUsername")
+		delete(additionalProperties, "windowsPassword")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

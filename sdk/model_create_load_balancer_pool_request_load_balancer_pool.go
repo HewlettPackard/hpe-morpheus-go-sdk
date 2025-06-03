@@ -30,7 +30,10 @@ type CreateLoadBalancerPoolRequestLoadBalancerPool struct {
 	MinActive *int64 `json:"minActive,omitempty"`
 	// Configuration object with parameters that vary by type.
 	Config map[string]interface{} `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _CreateLoadBalancerPoolRequestLoadBalancerPool CreateLoadBalancerPoolRequestLoadBalancerPool
 
 // NewCreateLoadBalancerPoolRequestLoadBalancerPool instantiates a new CreateLoadBalancerPoolRequestLoadBalancerPool object
 // This constructor will assign default values to properties that have it defined,
@@ -234,7 +237,37 @@ func (o CreateLoadBalancerPoolRequestLoadBalancerPool) ToMap() (map[string]inter
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *CreateLoadBalancerPoolRequestLoadBalancerPool) UnmarshalJSON(data []byte) (err error) {
+	varCreateLoadBalancerPoolRequestLoadBalancerPool := _CreateLoadBalancerPoolRequestLoadBalancerPool{}
+
+	err = json.Unmarshal(data, &varCreateLoadBalancerPoolRequestLoadBalancerPool)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CreateLoadBalancerPoolRequestLoadBalancerPool(varCreateLoadBalancerPoolRequestLoadBalancerPool)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "vipBalance")
+		delete(additionalProperties, "minActive")
+		delete(additionalProperties, "config")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCreateLoadBalancerPoolRequestLoadBalancerPool struct {

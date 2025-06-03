@@ -32,7 +32,10 @@ type ListDeploys200ResponseAllOfAppDeploysInner struct {
 	DeployDate *time.Time `json:"deployDate,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListDeploys200ResponseAllOfAppDeploysInner ListDeploys200ResponseAllOfAppDeploysInner
 
 // NewListDeploys200ResponseAllOfAppDeploysInner instantiates a new ListDeploys200ResponseAllOfAppDeploysInner object
 // This constructor will assign default values to properties that have it defined,
@@ -446,7 +449,43 @@ func (o ListDeploys200ResponseAllOfAppDeploysInner) ToMap() (map[string]interfac
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListDeploys200ResponseAllOfAppDeploysInner) UnmarshalJSON(data []byte) (err error) {
+	varListDeploys200ResponseAllOfAppDeploysInner := _ListDeploys200ResponseAllOfAppDeploysInner{}
+
+	err = json.Unmarshal(data, &varListDeploys200ResponseAllOfAppDeploysInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListDeploys200ResponseAllOfAppDeploysInner(varListDeploys200ResponseAllOfAppDeploysInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "instanceId")
+		delete(additionalProperties, "instance")
+		delete(additionalProperties, "deployment")
+		delete(additionalProperties, "deploymentVersionId")
+		delete(additionalProperties, "deploymentVersion")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "deployDate")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListDeploys200ResponseAllOfAppDeploysInner struct {

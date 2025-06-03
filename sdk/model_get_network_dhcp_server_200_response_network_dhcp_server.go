@@ -32,7 +32,10 @@ type GetNetworkDhcpServer200ResponseNetworkDhcpServer struct {
 	Config *GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig `json:"config,omitempty"`
 	Owner *CreateLoadBalancerRequestLoadBalancerTenantsInner `json:"owner,omitempty"`
 	NetworkServer *CreateLoadBalancerRequestLoadBalancerTenantsInner `json:"networkServer,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetNetworkDhcpServer200ResponseNetworkDhcpServer GetNetworkDhcpServer200ResponseNetworkDhcpServer
 
 // NewGetNetworkDhcpServer200ResponseNetworkDhcpServer instantiates a new GetNetworkDhcpServer200ResponseNetworkDhcpServer object
 // This constructor will assign default values to properties that have it defined,
@@ -446,7 +449,43 @@ func (o GetNetworkDhcpServer200ResponseNetworkDhcpServer) ToMap() (map[string]in
 	if !IsNil(o.NetworkServer) {
 		toSerialize["networkServer"] = o.NetworkServer
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) UnmarshalJSON(data []byte) (err error) {
+	varGetNetworkDhcpServer200ResponseNetworkDhcpServer := _GetNetworkDhcpServer200ResponseNetworkDhcpServer{}
+
+	err = json.Unmarshal(data, &varGetNetworkDhcpServer200ResponseNetworkDhcpServer)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetNetworkDhcpServer200ResponseNetworkDhcpServer(varGetNetworkDhcpServer200ResponseNetworkDhcpServer)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "providerId")
+		delete(additionalProperties, "serverIpAddress")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "leaseTime")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "owner")
+		delete(additionalProperties, "networkServer")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetNetworkDhcpServer200ResponseNetworkDhcpServer struct {

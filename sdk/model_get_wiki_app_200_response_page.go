@@ -33,7 +33,10 @@ type GetWikiApp200ResponsePage struct {
 	UpdatedBy *ListActivity200ResponseAllOfActivityInnerActivityInnerUser `json:"updatedBy,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetWikiApp200ResponsePage GetWikiApp200ResponsePage
 
 // NewGetWikiApp200ResponsePage instantiates a new GetWikiApp200ResponsePage object
 // This constructor will assign default values to properties that have it defined,
@@ -482,7 +485,44 @@ func (o GetWikiApp200ResponsePage) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetWikiApp200ResponsePage) UnmarshalJSON(data []byte) (err error) {
+	varGetWikiApp200ResponsePage := _GetWikiApp200ResponsePage{}
+
+	err = json.Unmarshal(data, &varGetWikiApp200ResponsePage)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetWikiApp200ResponsePage(varGetWikiApp200ResponsePage)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "urlName")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "refId")
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "format")
+		delete(additionalProperties, "content")
+		delete(additionalProperties, "createdBy")
+		delete(additionalProperties, "updatedBy")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetWikiApp200ResponsePage struct {

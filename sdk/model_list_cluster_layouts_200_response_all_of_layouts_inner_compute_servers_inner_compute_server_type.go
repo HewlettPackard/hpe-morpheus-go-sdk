@@ -25,7 +25,10 @@ type ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeSer
 	Name *string `json:"name,omitempty"`
 	Managed *bool `json:"managed,omitempty"`
 	ExternalDelete *bool `json:"externalDelete,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType
 
 // NewListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType instantiates a new ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType object
 // This constructor will assign default values to properties that have it defined,
@@ -229,7 +232,37 @@ func (o ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerCompute
 	if !IsNil(o.ExternalDelete) {
 		toSerialize["externalDelete"] = o.ExternalDelete
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType) UnmarshalJSON(data []byte) (err error) {
+	varListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType := _ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType{}
+
+	err = json.Unmarshal(data, &varListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType(varListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "managed")
+		delete(additionalProperties, "externalDelete")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType struct {

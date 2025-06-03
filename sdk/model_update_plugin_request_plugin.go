@@ -24,7 +24,10 @@ type UpdatePluginRequestPlugin struct {
 	Enabled *bool `json:"enabled,omitempty"`
 	// Configuration object that contains settings for the applicable option types.
 	Config map[string]interface{} `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdatePluginRequestPlugin UpdatePluginRequestPlugin
 
 // NewUpdatePluginRequestPlugin instantiates a new UpdatePluginRequestPlugin object
 // This constructor will assign default values to properties that have it defined,
@@ -123,7 +126,34 @@ func (o UpdatePluginRequestPlugin) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdatePluginRequestPlugin) UnmarshalJSON(data []byte) (err error) {
+	varUpdatePluginRequestPlugin := _UpdatePluginRequestPlugin{}
+
+	err = json.Unmarshal(data, &varUpdatePluginRequestPlugin)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdatePluginRequestPlugin(varUpdatePluginRequestPlugin)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "config")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdatePluginRequestPlugin struct {

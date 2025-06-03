@@ -21,7 +21,10 @@ var _ MappedNullable = &UpdateBackupSettingsRequest{}
 // UpdateBackupSettingsRequest struct for UpdateBackupSettingsRequest
 type UpdateBackupSettingsRequest struct {
 	BackupSettings *UpdateBackupSettingsRequestBackupSettings `json:"backupSettings,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateBackupSettingsRequest UpdateBackupSettingsRequest
 
 // NewUpdateBackupSettingsRequest instantiates a new UpdateBackupSettingsRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o UpdateBackupSettingsRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.BackupSettings) {
 		toSerialize["backupSettings"] = o.BackupSettings
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateBackupSettingsRequest) UnmarshalJSON(data []byte) (err error) {
+	varUpdateBackupSettingsRequest := _UpdateBackupSettingsRequest{}
+
+	err = json.Unmarshal(data, &varUpdateBackupSettingsRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateBackupSettingsRequest(varUpdateBackupSettingsRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "backupSettings")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateBackupSettingsRequest struct {

@@ -38,7 +38,10 @@ type ClusterPackageUpdate struct {
 	IconPath *string `json:"iconPath,omitempty"`
 	// Array of resource spec templates
 	SpecTemplates []GetAlerts200ResponseAllOfChecksInnerAccount `json:"specTemplates,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ClusterPackageUpdate ClusterPackageUpdate
 
 // NewClusterPackageUpdate instantiates a new ClusterPackageUpdate object
 // This constructor will assign default values to properties that have it defined,
@@ -386,7 +389,41 @@ func (o ClusterPackageUpdate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.SpecTemplates) {
 		toSerialize["specTemplates"] = o.SpecTemplates
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ClusterPackageUpdate) UnmarshalJSON(data []byte) (err error) {
+	varClusterPackageUpdate := _ClusterPackageUpdate{}
+
+	err = json.Unmarshal(data, &varClusterPackageUpdate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ClusterPackageUpdate(varClusterPackageUpdate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "packageVersion")
+		delete(additionalProperties, "packageType")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "iconPath")
+		delete(additionalProperties, "specTemplates")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableClusterPackageUpdate struct {

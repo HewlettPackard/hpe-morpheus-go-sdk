@@ -30,7 +30,10 @@ type ArchiveBucketCreate struct {
 	// Public URL - Set to true to allow anonymous access
 	IsPublic *bool `json:"isPublic,omitempty"`
 	Accounts *GetAlerts200ResponseAllOfChecksInnerAccount `json:"accounts,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ArchiveBucketCreate ArchiveBucketCreate
 
 // NewArchiveBucketCreate instantiates a new ArchiveBucketCreate object
 // This constructor will assign default values to properties that have it defined,
@@ -277,7 +280,38 @@ func (o ArchiveBucketCreate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Accounts) {
 		toSerialize["accounts"] = o.Accounts
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ArchiveBucketCreate) UnmarshalJSON(data []byte) (err error) {
+	varArchiveBucketCreate := _ArchiveBucketCreate{}
+
+	err = json.Unmarshal(data, &varArchiveBucketCreate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ArchiveBucketCreate(varArchiveBucketCreate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "storageProvider")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "isPublic")
+		delete(additionalProperties, "accounts")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableArchiveBucketCreate struct {

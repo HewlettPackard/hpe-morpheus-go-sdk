@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -27,6 +26,7 @@ type PolicyCloudCreate struct {
 	// A description for the policy
 	Description *string `json:"description,omitempty"`
 	PolicyType AddPoliciesCloudRequestPolicyPolicyType `json:"policyType"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _PolicyCloudCreate PolicyCloudCreate
@@ -145,6 +145,11 @@ func (o PolicyCloudCreate) ToMap() (map[string]interface{}, error) {
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["policyType"] = o.PolicyType
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -173,15 +178,22 @@ func (o *PolicyCloudCreate) UnmarshalJSON(data []byte) (err error) {
 
 	varPolicyCloudCreate := _PolicyCloudCreate{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varPolicyCloudCreate)
+	err = json.Unmarshal(data, &varPolicyCloudCreate)
 
 	if err != nil {
 		return err
 	}
 
 	*o = PolicyCloudCreate(varPolicyCloudCreate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "policyType")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

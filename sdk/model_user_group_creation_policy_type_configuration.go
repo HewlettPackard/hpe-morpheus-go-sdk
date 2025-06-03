@@ -21,7 +21,10 @@ var _ MappedNullable = &UserGroupCreationPolicyTypeConfiguration{}
 // UserGroupCreationPolicyTypeConfiguration Configuration settings for the following policy types: - User Group Creation 
 type UserGroupCreationPolicyTypeConfiguration struct {
 	UserGroup *string `json:"userGroup,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UserGroupCreationPolicyTypeConfiguration UserGroupCreationPolicyTypeConfiguration
 
 // NewUserGroupCreationPolicyTypeConfiguration instantiates a new UserGroupCreationPolicyTypeConfiguration object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o UserGroupCreationPolicyTypeConfiguration) ToMap() (map[string]interface{
 	if !IsNil(o.UserGroup) {
 		toSerialize["userGroup"] = o.UserGroup
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UserGroupCreationPolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
+	varUserGroupCreationPolicyTypeConfiguration := _UserGroupCreationPolicyTypeConfiguration{}
+
+	err = json.Unmarshal(data, &varUserGroupCreationPolicyTypeConfiguration)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UserGroupCreationPolicyTypeConfiguration(varUserGroupCreationPolicyTypeConfiguration)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "userGroup")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUserGroupCreationPolicyTypeConfiguration struct {

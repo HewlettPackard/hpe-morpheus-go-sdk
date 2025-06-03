@@ -21,7 +21,10 @@ var _ MappedNullable = &GetAlerts200ResponseAllOfChecksInnerAccount{}
 // GetAlerts200ResponseAllOfChecksInnerAccount struct for GetAlerts200ResponseAllOfChecksInnerAccount
 type GetAlerts200ResponseAllOfChecksInnerAccount struct {
 	Id *int64 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetAlerts200ResponseAllOfChecksInnerAccount GetAlerts200ResponseAllOfChecksInnerAccount
 
 // NewGetAlerts200ResponseAllOfChecksInnerAccount instantiates a new GetAlerts200ResponseAllOfChecksInnerAccount object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o GetAlerts200ResponseAllOfChecksInnerAccount) ToMap() (map[string]interfa
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetAlerts200ResponseAllOfChecksInnerAccount) UnmarshalJSON(data []byte) (err error) {
+	varGetAlerts200ResponseAllOfChecksInnerAccount := _GetAlerts200ResponseAllOfChecksInnerAccount{}
+
+	err = json.Unmarshal(data, &varGetAlerts200ResponseAllOfChecksInnerAccount)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetAlerts200ResponseAllOfChecksInnerAccount(varGetAlerts200ResponseAllOfChecksInnerAccount)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetAlerts200ResponseAllOfChecksInnerAccount struct {

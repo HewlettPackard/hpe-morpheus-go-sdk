@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -30,6 +29,7 @@ type BlueprintMorpheusCreate struct {
 	Labels []string `json:"labels,omitempty"`
 	// Tier definitions - Create in UI to view a baseline for object
 	Tiers map[string]interface{} `json:"tiers"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _BlueprintMorpheusCreate BlueprintMorpheusCreate
@@ -174,6 +174,11 @@ func (o BlueprintMorpheusCreate) ToMap() (map[string]interface{}, error) {
 		toSerialize["labels"] = o.Labels
 	}
 	toSerialize["tiers"] = o.Tiers
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -203,15 +208,23 @@ func (o *BlueprintMorpheusCreate) UnmarshalJSON(data []byte) (err error) {
 
 	varBlueprintMorpheusCreate := _BlueprintMorpheusCreate{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varBlueprintMorpheusCreate)
+	err = json.Unmarshal(data, &varBlueprintMorpheusCreate)
 
 	if err != nil {
 		return err
 	}
 
 	*o = BlueprintMorpheusCreate(varBlueprintMorpheusCreate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "tiers")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

@@ -30,7 +30,10 @@ type ListApps200ResponseAllOfAppsInnerStats struct {
 	InstanceCount *int64 `json:"instanceCount,omitempty"`
 	InstanceDayCount []int64 `json:"instanceDayCount,omitempty"`
 	InstanceDayCountTotal *int64 `json:"instanceDayCountTotal,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListApps200ResponseAllOfAppsInnerStats ListApps200ResponseAllOfAppsInnerStats
 
 // NewListApps200ResponseAllOfAppsInnerStats instantiates a new ListApps200ResponseAllOfAppsInnerStats object
 // This constructor will assign default values to properties that have it defined,
@@ -409,7 +412,42 @@ func (o ListApps200ResponseAllOfAppsInnerStats) ToMap() (map[string]interface{},
 	if !IsNil(o.InstanceDayCountTotal) {
 		toSerialize["instanceDayCountTotal"] = o.InstanceDayCountTotal
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListApps200ResponseAllOfAppsInnerStats) UnmarshalJSON(data []byte) (err error) {
+	varListApps200ResponseAllOfAppsInnerStats := _ListApps200ResponseAllOfAppsInnerStats{}
+
+	err = json.Unmarshal(data, &varListApps200ResponseAllOfAppsInnerStats)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListApps200ResponseAllOfAppsInnerStats(varListApps200ResponseAllOfAppsInnerStats)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "usedMemory")
+		delete(additionalProperties, "maxMemory")
+		delete(additionalProperties, "usedStorage")
+		delete(additionalProperties, "maxStorage")
+		delete(additionalProperties, "running")
+		delete(additionalProperties, "total")
+		delete(additionalProperties, "cpuUsage")
+		delete(additionalProperties, "instanceCount")
+		delete(additionalProperties, "instanceDayCount")
+		delete(additionalProperties, "instanceDayCountTotal")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListApps200ResponseAllOfAppsInnerStats struct {

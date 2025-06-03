@@ -21,7 +21,10 @@ var _ MappedNullable = &ServerBaremetalCreate{}
 // ServerBaremetalCreate struct for ServerBaremetalCreate
 type ServerBaremetalCreate struct {
 	Server *AddBaremetalHostRequestServer `json:"server,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ServerBaremetalCreate ServerBaremetalCreate
 
 // NewServerBaremetalCreate instantiates a new ServerBaremetalCreate object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o ServerBaremetalCreate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Server) {
 		toSerialize["server"] = o.Server
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ServerBaremetalCreate) UnmarshalJSON(data []byte) (err error) {
+	varServerBaremetalCreate := _ServerBaremetalCreate{}
+
+	err = json.Unmarshal(data, &varServerBaremetalCreate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ServerBaremetalCreate(varServerBaremetalCreate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "server")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableServerBaremetalCreate struct {

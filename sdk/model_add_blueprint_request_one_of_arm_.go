@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -33,6 +32,7 @@ type AddBlueprintRequestOneOfArm struct {
 	OsType *string `json:"osType,omitempty"`
 	InstallAgent *AddBlueprintRequestOneOfArmInstallAgent `json:"installAgent,omitempty"`
 	CloudInitEnabled *AddBlueprintRequestOneOfArmCloudInitEnabled `json:"cloudInitEnabled,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddBlueprintRequestOneOfArm AddBlueprintRequestOneOfArm
@@ -300,6 +300,11 @@ func (o AddBlueprintRequestOneOfArm) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CloudInitEnabled) {
 		toSerialize["cloudInitEnabled"] = o.CloudInitEnabled
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -327,15 +332,26 @@ func (o *AddBlueprintRequestOneOfArm) UnmarshalJSON(data []byte) (err error) {
 
 	varAddBlueprintRequestOneOfArm := _AddBlueprintRequestOneOfArm{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddBlueprintRequestOneOfArm)
+	err = json.Unmarshal(data, &varAddBlueprintRequestOneOfArm)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddBlueprintRequestOneOfArm(varAddBlueprintRequestOneOfArm)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "configType")
+		delete(additionalProperties, "json")
+		delete(additionalProperties, "yaml")
+		delete(additionalProperties, "git")
+		delete(additionalProperties, "osType")
+		delete(additionalProperties, "installAgent")
+		delete(additionalProperties, "cloudInitEnabled")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

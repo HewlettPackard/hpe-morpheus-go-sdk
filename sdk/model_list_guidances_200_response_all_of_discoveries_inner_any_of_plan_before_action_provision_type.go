@@ -27,7 +27,10 @@ type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvision
 	AddVolumes *bool `json:"addVolumes,omitempty"`
 	CustomizeVolume *bool `json:"customizeVolume,omitempty"`
 	HasConfigurableCpuSockets *bool `json:"hasConfigurableCpuSockets,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType
 
 // NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType instantiates a new ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType object
 // This constructor will assign default values to properties that have it defined,
@@ -301,7 +304,39 @@ func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvis
 	if !IsNil(o.HasConfigurableCpuSockets) {
 		toSerialize["hasConfigurableCpuSockets"] = o.HasConfigurableCpuSockets
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType) UnmarshalJSON(data []byte) (err error) {
+	varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType := _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType{}
+
+	err = json.Unmarshal(data, &varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType(varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "rootDiskCustomizable")
+		delete(additionalProperties, "addVolumes")
+		delete(additionalProperties, "customizeVolume")
+		delete(additionalProperties, "hasConfigurableCpuSockets")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType struct {

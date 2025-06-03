@@ -27,7 +27,10 @@ type ListHealth200ResponseAllOfHealthCpu struct {
 	ProcessTime *int64 `json:"processTime,omitempty"`
 	SystemLoad *float32 `json:"systemLoad,omitempty"`
 	Status *string `json:"status,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListHealth200ResponseAllOfHealthCpu ListHealth200ResponseAllOfHealthCpu
 
 // NewListHealth200ResponseAllOfHealthCpu instantiates a new ListHealth200ResponseAllOfHealthCpu object
 // This constructor will assign default values to properties that have it defined,
@@ -301,7 +304,39 @@ func (o ListHealth200ResponseAllOfHealthCpu) ToMap() (map[string]interface{}, er
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListHealth200ResponseAllOfHealthCpu) UnmarshalJSON(data []byte) (err error) {
+	varListHealth200ResponseAllOfHealthCpu := _ListHealth200ResponseAllOfHealthCpu{}
+
+	err = json.Unmarshal(data, &varListHealth200ResponseAllOfHealthCpu)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListHealth200ResponseAllOfHealthCpu(varListHealth200ResponseAllOfHealthCpu)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "success")
+		delete(additionalProperties, "cpuLoad")
+		delete(additionalProperties, "cpuTotalLoad")
+		delete(additionalProperties, "processorCount")
+		delete(additionalProperties, "processTime")
+		delete(additionalProperties, "systemLoad")
+		delete(additionalProperties, "status")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListHealth200ResponseAllOfHealthCpu struct {

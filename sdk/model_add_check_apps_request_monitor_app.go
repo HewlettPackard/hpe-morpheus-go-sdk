@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -34,6 +33,7 @@ type AddCheckAppsRequestMonitorApp struct {
 	Active *bool `json:"active,omitempty"`
 	Checks []int32 `json:"checks,omitempty"`
 	CheckGroups []int32 `json:"checkGroups,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddCheckAppsRequestMonitorApp AddCheckAppsRequestMonitorApp
@@ -313,6 +313,11 @@ func (o AddCheckAppsRequestMonitorApp) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CheckGroups) {
 		toSerialize["checkGroups"] = o.CheckGroups
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -340,15 +345,26 @@ func (o *AddCheckAppsRequestMonitorApp) UnmarshalJSON(data []byte) (err error) {
 
 	varAddCheckAppsRequestMonitorApp := _AddCheckAppsRequestMonitorApp{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddCheckAppsRequestMonitorApp)
+	err = json.Unmarshal(data, &varAddCheckAppsRequestMonitorApp)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddCheckAppsRequestMonitorApp(varAddCheckAppsRequestMonitorApp)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "inUptime")
+		delete(additionalProperties, "severity")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "checks")
+		delete(additionalProperties, "checkGroups")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

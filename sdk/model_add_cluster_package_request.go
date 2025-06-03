@@ -21,7 +21,10 @@ var _ MappedNullable = &AddClusterPackageRequest{}
 // AddClusterPackageRequest struct for AddClusterPackageRequest
 type AddClusterPackageRequest struct {
 	ClusterPackage *AddClusterPackageRequestClusterPackage `json:"clusterPackage,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddClusterPackageRequest AddClusterPackageRequest
 
 // NewAddClusterPackageRequest instantiates a new AddClusterPackageRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o AddClusterPackageRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ClusterPackage) {
 		toSerialize["clusterPackage"] = o.ClusterPackage
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddClusterPackageRequest) UnmarshalJSON(data []byte) (err error) {
+	varAddClusterPackageRequest := _AddClusterPackageRequest{}
+
+	err = json.Unmarshal(data, &varAddClusterPackageRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddClusterPackageRequest(varAddClusterPackageRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "clusterPackage")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddClusterPackageRequest struct {

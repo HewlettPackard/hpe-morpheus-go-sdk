@@ -21,7 +21,10 @@ var _ MappedNullable = &AppStats{}
 // AppStats struct for AppStats
 type AppStats struct {
 	Stats *ListApps200ResponseAllOfAppsInnerStats `json:"stats,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AppStats AppStats
 
 // NewAppStats instantiates a new AppStats object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o AppStats) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Stats) {
 		toSerialize["stats"] = o.Stats
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AppStats) UnmarshalJSON(data []byte) (err error) {
+	varAppStats := _AppStats{}
+
+	err = json.Unmarshal(data, &varAppStats)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AppStats(varAppStats)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "stats")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAppStats struct {

@@ -22,7 +22,10 @@ var _ MappedNullable = &RunWorkflowInstanceRequestTaskSet{}
 type RunWorkflowInstanceRequestTaskSet struct {
 	// Object containing any custom option type configuration parameters
 	CustomOptions map[string]interface{} `json:"customOptions,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _RunWorkflowInstanceRequestTaskSet RunWorkflowInstanceRequestTaskSet
 
 // NewRunWorkflowInstanceRequestTaskSet instantiates a new RunWorkflowInstanceRequestTaskSet object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o RunWorkflowInstanceRequestTaskSet) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.CustomOptions) {
 		toSerialize["customOptions"] = o.CustomOptions
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *RunWorkflowInstanceRequestTaskSet) UnmarshalJSON(data []byte) (err error) {
+	varRunWorkflowInstanceRequestTaskSet := _RunWorkflowInstanceRequestTaskSet{}
+
+	err = json.Unmarshal(data, &varRunWorkflowInstanceRequestTaskSet)
+
+	if err != nil {
+		return err
+	}
+
+	*o = RunWorkflowInstanceRequestTaskSet(varRunWorkflowInstanceRequestTaskSet)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "customOptions")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableRunWorkflowInstanceRequestTaskSet struct {

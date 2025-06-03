@@ -30,7 +30,10 @@ type GetAccessToken200Response struct {
 	TokenType *string `json:"token_type,omitempty"`
 	// Scope granted
 	Scope *string `json:"scope,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetAccessToken200Response GetAccessToken200Response
 
 // NewGetAccessToken200Response instantiates a new GetAccessToken200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -234,7 +237,37 @@ func (o GetAccessToken200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Scope) {
 		toSerialize["scope"] = o.Scope
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetAccessToken200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetAccessToken200Response := _GetAccessToken200Response{}
+
+	err = json.Unmarshal(data, &varGetAccessToken200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetAccessToken200Response(varGetAccessToken200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "access_token")
+		delete(additionalProperties, "refresh_token")
+		delete(additionalProperties, "expires_in")
+		delete(additionalProperties, "token_type")
+		delete(additionalProperties, "scope")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetAccessToken200Response struct {

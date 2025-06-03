@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -26,6 +25,7 @@ type UpdateRoleCloudAccessRequestOneOf1 struct {
 	AllClouds bool `json:"allClouds"`
 	// The new access level.
 	Access string `json:"access"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateRoleCloudAccessRequestOneOf1 UpdateRoleCloudAccessRequestOneOf1
@@ -109,6 +109,11 @@ func (o UpdateRoleCloudAccessRequestOneOf1) ToMap() (map[string]interface{}, err
 	toSerialize := map[string]interface{}{}
 	toSerialize["allClouds"] = o.AllClouds
 	toSerialize["access"] = o.Access
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -137,15 +142,21 @@ func (o *UpdateRoleCloudAccessRequestOneOf1) UnmarshalJSON(data []byte) (err err
 
 	varUpdateRoleCloudAccessRequestOneOf1 := _UpdateRoleCloudAccessRequestOneOf1{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varUpdateRoleCloudAccessRequestOneOf1)
+	err = json.Unmarshal(data, &varUpdateRoleCloudAccessRequestOneOf1)
 
 	if err != nil {
 		return err
 	}
 
 	*o = UpdateRoleCloudAccessRequestOneOf1(varUpdateRoleCloudAccessRequestOneOf1)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "allClouds")
+		delete(additionalProperties, "access")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

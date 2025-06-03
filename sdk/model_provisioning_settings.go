@@ -34,7 +34,10 @@ type ProvisioningSettings struct {
 	PxeRootPassword *string `json:"pxeRootPassword,omitempty"`
 	DefaultTemplateType *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"defaultTemplateType,omitempty"`
 	DeployStorageProvider *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"deployStorageProvider,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ProvisioningSettings ProvisioningSettings
 
 // NewProvisioningSettings instantiates a new ProvisioningSettings object
 // This constructor will assign default values to properties that have it defined,
@@ -553,7 +556,46 @@ func (o ProvisioningSettings) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.DeployStorageProvider) {
 		toSerialize["deployStorageProvider"] = o.DeployStorageProvider
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ProvisioningSettings) UnmarshalJSON(data []byte) (err error) {
+	varProvisioningSettings := _ProvisioningSettings{}
+
+	err = json.Unmarshal(data, &varProvisioningSettings)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ProvisioningSettings(varProvisioningSettings)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "allowZoneSelection")
+		delete(additionalProperties, "allowServerSelection")
+		delete(additionalProperties, "requireEnvironments")
+		delete(additionalProperties, "showPricing")
+		delete(additionalProperties, "hideDatastoreStats")
+		delete(additionalProperties, "crossTenantNamingPolicies")
+		delete(additionalProperties, "reuseSequence")
+		delete(additionalProperties, "cloudInitUsername")
+		delete(additionalProperties, "cloudInitPassword")
+		delete(additionalProperties, "cloudInitKeyPair")
+		delete(additionalProperties, "windowsPassword")
+		delete(additionalProperties, "pxeRootPassword")
+		delete(additionalProperties, "defaultTemplateType")
+		delete(additionalProperties, "deployStorageProvider")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableProvisioningSettings struct {

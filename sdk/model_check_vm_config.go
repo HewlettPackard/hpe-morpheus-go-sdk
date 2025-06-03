@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -39,6 +38,7 @@ type CheckVmConfig struct {
 	SshUser *string `json:"sshUser,omitempty"`
 	// Password for user, if not using key based authentication
 	SshPassword *string `json:"sshPassword,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _CheckVmConfig CheckVmConfig
@@ -485,6 +485,11 @@ func (o CheckVmConfig) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.SshPassword) {
 		toSerialize["sshPassword"] = o.SshPassword
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -512,15 +517,31 @@ func (o *CheckVmConfig) UnmarshalJSON(data []byte) (err error) {
 
 	varCheckVmConfig := _CheckVmConfig{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varCheckVmConfig)
+	err = json.Unmarshal(data, &varCheckVmConfig)
 
 	if err != nil {
 		return err
 	}
 
 	*o = CheckVmConfig(varCheckVmConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "containerName")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "checkUser")
+		delete(additionalProperties, "textCheckOn")
+		delete(additionalProperties, "checkPassword")
+		delete(additionalProperties, "webTextMatch")
+		delete(additionalProperties, "checkPasswordHash")
+		delete(additionalProperties, "tunnelOn")
+		delete(additionalProperties, "sshHost")
+		delete(additionalProperties, "sshPort")
+		delete(additionalProperties, "sshUser")
+		delete(additionalProperties, "sshPassword")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

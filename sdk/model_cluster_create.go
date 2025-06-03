@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -37,6 +36,7 @@ type ClusterCreate struct {
 	AutoRecoverPowerState *bool `json:"autoRecoverPowerState,omitempty"`
 	// Optional Workflow Id desired to be run
 	TaskSetId *int64 `json:"taskSetId,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ClusterCreate ClusterCreate
@@ -368,6 +368,11 @@ func (o ClusterCreate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.TaskSetId) {
 		toSerialize["taskSetId"] = o.TaskSetId
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -400,15 +405,29 @@ func (o *ClusterCreate) UnmarshalJSON(data []byte) (err error) {
 
 	varClusterCreate := _ClusterCreate{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varClusterCreate)
+	err = json.Unmarshal(data, &varClusterCreate)
 
 	if err != nil {
 		return err
 	}
 
 	*o = ClusterCreate(varClusterCreate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "group")
+		delete(additionalProperties, "cloud")
+		delete(additionalProperties, "layout")
+		delete(additionalProperties, "server")
+		delete(additionalProperties, "autoRecoverPowerState")
+		delete(additionalProperties, "taskSetId")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

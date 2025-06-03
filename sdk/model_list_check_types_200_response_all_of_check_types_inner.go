@@ -29,7 +29,10 @@ type ListCheckTypes200ResponseAllOfCheckTypesInner struct {
 	CreateIncident *bool `json:"createIncident,omitempty"`
 	PushOnly *bool `json:"pushOnly,omitempty"`
 	TunnelSupported *bool `json:"tunnelSupported,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListCheckTypes200ResponseAllOfCheckTypesInner ListCheckTypes200ResponseAllOfCheckTypesInner
 
 // NewListCheckTypes200ResponseAllOfCheckTypesInner instantiates a new ListCheckTypes200ResponseAllOfCheckTypesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -373,7 +376,41 @@ func (o ListCheckTypes200ResponseAllOfCheckTypesInner) ToMap() (map[string]inter
 	if !IsNil(o.TunnelSupported) {
 		toSerialize["tunnelSupported"] = o.TunnelSupported
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListCheckTypes200ResponseAllOfCheckTypesInner) UnmarshalJSON(data []byte) (err error) {
+	varListCheckTypes200ResponseAllOfCheckTypesInner := _ListCheckTypes200ResponseAllOfCheckTypesInner{}
+
+	err = json.Unmarshal(data, &varListCheckTypes200ResponseAllOfCheckTypesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListCheckTypes200ResponseAllOfCheckTypesInner(varListCheckTypes200ResponseAllOfCheckTypesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "defaultInterval")
+		delete(additionalProperties, "metricName")
+		delete(additionalProperties, "inUptime")
+		delete(additionalProperties, "createIncident")
+		delete(additionalProperties, "pushOnly")
+		delete(additionalProperties, "tunnelSupported")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListCheckTypes200ResponseAllOfCheckTypesInner struct {

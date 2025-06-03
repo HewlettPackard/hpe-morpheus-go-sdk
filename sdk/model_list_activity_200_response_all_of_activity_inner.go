@@ -21,7 +21,10 @@ var _ MappedNullable = &ListActivity200ResponseAllOfActivityInner{}
 // ListActivity200ResponseAllOfActivityInner struct for ListActivity200ResponseAllOfActivityInner
 type ListActivity200ResponseAllOfActivityInner struct {
 	Activity []ListActivity200ResponseAllOfActivityInnerActivityInner `json:"activity,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListActivity200ResponseAllOfActivityInner ListActivity200ResponseAllOfActivityInner
 
 // NewListActivity200ResponseAllOfActivityInner instantiates a new ListActivity200ResponseAllOfActivityInner object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o ListActivity200ResponseAllOfActivityInner) ToMap() (map[string]interface
 	if !IsNil(o.Activity) {
 		toSerialize["activity"] = o.Activity
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListActivity200ResponseAllOfActivityInner) UnmarshalJSON(data []byte) (err error) {
+	varListActivity200ResponseAllOfActivityInner := _ListActivity200ResponseAllOfActivityInner{}
+
+	err = json.Unmarshal(data, &varListActivity200ResponseAllOfActivityInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListActivity200ResponseAllOfActivityInner(varListActivity200ResponseAllOfActivityInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "activity")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListActivity200ResponseAllOfActivityInner struct {

@@ -30,7 +30,10 @@ type SecurityGroupLocation struct {
 	Status *string `json:"status,omitempty"`
 	Priority *string `json:"priority,omitempty"`
 	GroupLayer *string `json:"groupLayer,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _SecurityGroupLocation SecurityGroupLocation
 
 // NewSecurityGroupLocation instantiates a new SecurityGroupLocation object
 // This constructor will assign default values to properties that have it defined,
@@ -409,7 +412,42 @@ func (o SecurityGroupLocation) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.GroupLayer) {
 		toSerialize["groupLayer"] = o.GroupLayer
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *SecurityGroupLocation) UnmarshalJSON(data []byte) (err error) {
+	varSecurityGroupLocation := _SecurityGroupLocation{}
+
+	err = json.Unmarshal(data, &varSecurityGroupLocation)
+
+	if err != nil {
+		return err
+	}
+
+	*o = SecurityGroupLocation(varSecurityGroupLocation)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "iacId")
+		delete(additionalProperties, "zone")
+		delete(additionalProperties, "zonePool")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "priority")
+		delete(additionalProperties, "groupLayer")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableSecurityGroupLocation struct {

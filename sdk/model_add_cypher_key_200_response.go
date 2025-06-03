@@ -25,7 +25,10 @@ type AddCypherKey200Response struct {
 	LeaseDuration *int64 `json:"lease_duration,omitempty"`
 	Cypher *ListCypherKeys200ResponseAllOfCyphersInner `json:"cypher,omitempty"`
 	Success *bool `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddCypherKey200Response AddCypherKey200Response
 
 // NewAddCypherKey200Response instantiates a new AddCypherKey200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -229,7 +232,37 @@ func (o AddCypherKey200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Success) {
 		toSerialize["success"] = o.Success
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddCypherKey200Response) UnmarshalJSON(data []byte) (err error) {
+	varAddCypherKey200Response := _AddCypherKey200Response{}
+
+	err = json.Unmarshal(data, &varAddCypherKey200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddCypherKey200Response(varAddCypherKey200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "data")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "lease_duration")
+		delete(additionalProperties, "cypher")
+		delete(additionalProperties, "success")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddCypherKey200Response struct {

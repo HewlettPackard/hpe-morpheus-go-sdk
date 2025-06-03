@@ -21,7 +21,10 @@ var _ MappedNullable = &FileShareStorageQuotaPolicyTypeConfiguration{}
 // FileShareStorageQuotaPolicyTypeConfiguration Configuration settings for the following policy types: - File Share Storage Quota 
 type FileShareStorageQuotaPolicyTypeConfiguration struct {
 	MaxStorage *string `json:"maxStorage,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _FileShareStorageQuotaPolicyTypeConfiguration FileShareStorageQuotaPolicyTypeConfiguration
 
 // NewFileShareStorageQuotaPolicyTypeConfiguration instantiates a new FileShareStorageQuotaPolicyTypeConfiguration object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o FileShareStorageQuotaPolicyTypeConfiguration) ToMap() (map[string]interf
 	if !IsNil(o.MaxStorage) {
 		toSerialize["maxStorage"] = o.MaxStorage
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *FileShareStorageQuotaPolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
+	varFileShareStorageQuotaPolicyTypeConfiguration := _FileShareStorageQuotaPolicyTypeConfiguration{}
+
+	err = json.Unmarshal(data, &varFileShareStorageQuotaPolicyTypeConfiguration)
+
+	if err != nil {
+		return err
+	}
+
+	*o = FileShareStorageQuotaPolicyTypeConfiguration(varFileShareStorageQuotaPolicyTypeConfiguration)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "maxStorage")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableFileShareStorageQuotaPolicyTypeConfiguration struct {

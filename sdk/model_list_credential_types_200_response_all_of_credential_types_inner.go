@@ -28,7 +28,10 @@ type ListCredentialTypes200ResponseAllOfCredentialTypesInner struct {
 	Creatable *bool `json:"creatable,omitempty"`
 	Editable *bool `json:"editable,omitempty"`
 	OptionTypes []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListCredentialTypes200ResponseAllOfCredentialTypesInner ListCredentialTypes200ResponseAllOfCredentialTypesInner
 
 // NewListCredentialTypes200ResponseAllOfCredentialTypesInner instantiates a new ListCredentialTypes200ResponseAllOfCredentialTypesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -337,7 +340,40 @@ func (o ListCredentialTypes200ResponseAllOfCredentialTypesInner) ToMap() (map[st
 	if !IsNil(o.OptionTypes) {
 		toSerialize["optionTypes"] = o.OptionTypes
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListCredentialTypes200ResponseAllOfCredentialTypesInner) UnmarshalJSON(data []byte) (err error) {
+	varListCredentialTypes200ResponseAllOfCredentialTypesInner := _ListCredentialTypes200ResponseAllOfCredentialTypesInner{}
+
+	err = json.Unmarshal(data, &varListCredentialTypes200ResponseAllOfCredentialTypesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListCredentialTypes200ResponseAllOfCredentialTypesInner(varListCredentialTypes200ResponseAllOfCredentialTypesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "creatable")
+		delete(additionalProperties, "editable")
+		delete(additionalProperties, "optionTypes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListCredentialTypes200ResponseAllOfCredentialTypesInner struct {

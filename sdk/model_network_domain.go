@@ -41,7 +41,10 @@ type NetworkDomain struct {
 	DomainSerial *string `json:"domainSerial,omitempty"`
 	Account *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
 	Owner *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"owner,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _NetworkDomain NetworkDomain
 
 // NewNetworkDomain instantiates a new NetworkDomain object
 // This constructor will assign default values to properties that have it defined,
@@ -805,7 +808,53 @@ func (o NetworkDomain) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Owner) {
 		toSerialize["owner"] = o.Owner
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *NetworkDomain) UnmarshalJSON(data []byte) (err error) {
+	varNetworkDomain := _NetworkDomain{}
+
+	err = json.Unmarshal(data, &varNetworkDomain)
+
+	if err != nil {
+		return err
+	}
+
+	*o = NetworkDomain(varNetworkDomain)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "fqdn")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "domainController")
+		delete(additionalProperties, "publicZone")
+		delete(additionalProperties, "domainUsername")
+		delete(additionalProperties, "domainPassword")
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "refId")
+		delete(additionalProperties, "refSource")
+		delete(additionalProperties, "internalId")
+		delete(additionalProperties, "ouPath")
+		delete(additionalProperties, "dcServer")
+		delete(additionalProperties, "zoneType")
+		delete(additionalProperties, "dnssec")
+		delete(additionalProperties, "domainSerial")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "owner")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableNetworkDomain struct {

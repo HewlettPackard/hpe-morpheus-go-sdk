@@ -32,7 +32,10 @@ type ListClusterServices200ResponseAllOfServicesInner struct {
 	Status *string `json:"status,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListClusterServices200ResponseAllOfServicesInner ListClusterServices200ResponseAllOfServicesInner
 
 // NewListClusterServices200ResponseAllOfServicesInner instantiates a new ListClusterServices200ResponseAllOfServicesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -446,7 +449,43 @@ func (o ListClusterServices200ResponseAllOfServicesInner) ToMap() (map[string]in
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListClusterServices200ResponseAllOfServicesInner) UnmarshalJSON(data []byte) (err error) {
+	varListClusterServices200ResponseAllOfServicesInner := _ListClusterServices200ResponseAllOfServicesInner{}
+
+	err = json.Unmarshal(data, &varListClusterServices200ResponseAllOfServicesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListClusterServices200ResponseAllOfServicesInner(varListClusterServices200ResponseAllOfServicesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "externalIp")
+		delete(additionalProperties, "internalIp")
+		delete(additionalProperties, "externalPort")
+		delete(additionalProperties, "internalPort")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListClusterServices200ResponseAllOfServicesInner struct {

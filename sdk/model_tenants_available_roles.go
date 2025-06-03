@@ -21,7 +21,10 @@ var _ MappedNullable = &TenantsAvailableRoles{}
 // TenantsAvailableRoles struct for TenantsAvailableRoles
 type TenantsAvailableRoles struct {
 	Roles []ListTenantsAvailableRoles200ResponseRolesInner `json:"roles,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _TenantsAvailableRoles TenantsAvailableRoles
 
 // NewTenantsAvailableRoles instantiates a new TenantsAvailableRoles object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o TenantsAvailableRoles) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Roles) {
 		toSerialize["roles"] = o.Roles
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *TenantsAvailableRoles) UnmarshalJSON(data []byte) (err error) {
+	varTenantsAvailableRoles := _TenantsAvailableRoles{}
+
+	err = json.Unmarshal(data, &varTenantsAvailableRoles)
+
+	if err != nil {
+		return err
+	}
+
+	*o = TenantsAvailableRoles(varTenantsAvailableRoles)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "roles")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableTenantsAvailableRoles struct {

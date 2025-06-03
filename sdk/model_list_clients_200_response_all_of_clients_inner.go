@@ -28,7 +28,10 @@ type ListClients200ResponseAllOfClientsInner struct {
 	AuthorizedGrantTypes []string `json:"authorizedGrantTypes,omitempty"`
 	Scopes []string `json:"scopes,omitempty"`
 	RedirectUris []string `json:"redirectUris,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListClients200ResponseAllOfClientsInner ListClients200ResponseAllOfClientsInner
 
 // NewListClients200ResponseAllOfClientsInner instantiates a new ListClients200ResponseAllOfClientsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -337,7 +340,40 @@ func (o ListClients200ResponseAllOfClientsInner) ToMap() (map[string]interface{}
 	if !IsNil(o.RedirectUris) {
 		toSerialize["redirectUris"] = o.RedirectUris
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListClients200ResponseAllOfClientsInner) UnmarshalJSON(data []byte) (err error) {
+	varListClients200ResponseAllOfClientsInner := _ListClients200ResponseAllOfClientsInner{}
+
+	err = json.Unmarshal(data, &varListClients200ResponseAllOfClientsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListClients200ResponseAllOfClientsInner(varListClients200ResponseAllOfClientsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "clientId")
+		delete(additionalProperties, "accessTokenValiditySeconds")
+		delete(additionalProperties, "refreshTokenValiditySeconds")
+		delete(additionalProperties, "authorities")
+		delete(additionalProperties, "authorizedGrantTypes")
+		delete(additionalProperties, "scopes")
+		delete(additionalProperties, "redirectUris")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListClients200ResponseAllOfClientsInner struct {

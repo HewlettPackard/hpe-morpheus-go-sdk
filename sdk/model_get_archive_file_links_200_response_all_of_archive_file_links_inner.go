@@ -30,7 +30,10 @@ type GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner struct {
 	LastAccessDate *time.Time `json:"lastAccessDate,omitempty"`
 	ExpirationDate *time.Time `json:"expirationDate,omitempty"`
 	DownloadCount *int64 `json:"downloadCount,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner
 
 // NewGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner instantiates a new GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner object
 // This constructor will assign default values to properties that have it defined,
@@ -374,7 +377,41 @@ func (o GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner) ToMap() (map[s
 	if !IsNil(o.DownloadCount) {
 		toSerialize["downloadCount"] = o.DownloadCount
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner) UnmarshalJSON(data []byte) (err error) {
+	varGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner := _GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner{}
+
+	err = json.Unmarshal(data, &varGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner(varGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "secretAccessKey")
+		delete(additionalProperties, "archiveFile")
+		delete(additionalProperties, "createdBy")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "lastAccessDate")
+		delete(additionalProperties, "expirationDate")
+		delete(additionalProperties, "downloadCount")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner struct {

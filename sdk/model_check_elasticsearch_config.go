@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -41,6 +40,7 @@ type CheckElasticsearchConfig struct {
 	SshUser *string `json:"sshUser,omitempty"`
 	// Password for user, if not using key based authentication
 	SshPassword *string `json:"sshPassword,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _CheckElasticsearchConfig CheckElasticsearchConfig
@@ -478,6 +478,11 @@ func (o CheckElasticsearchConfig) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.SshPassword) {
 		toSerialize["sshPassword"] = o.SshPassword
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -506,15 +511,31 @@ func (o *CheckElasticsearchConfig) UnmarshalJSON(data []byte) (err error) {
 
 	varCheckElasticsearchConfig := _CheckElasticsearchConfig{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varCheckElasticsearchConfig)
+	err = json.Unmarshal(data, &varCheckElasticsearchConfig)
 
 	if err != nil {
 		return err
 	}
 
 	*o = CheckElasticsearchConfig(varCheckElasticsearchConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "esHost")
+		delete(additionalProperties, "esPort")
+		delete(additionalProperties, "checkUser")
+		delete(additionalProperties, "textCheckOn")
+		delete(additionalProperties, "checkPassword")
+		delete(additionalProperties, "webTextMatch")
+		delete(additionalProperties, "checkPasswordHash")
+		delete(additionalProperties, "tunnelOn")
+		delete(additionalProperties, "sshHost")
+		delete(additionalProperties, "sshPort")
+		delete(additionalProperties, "sshUser")
+		delete(additionalProperties, "sshPassword")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

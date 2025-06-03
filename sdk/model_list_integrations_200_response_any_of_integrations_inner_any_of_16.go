@@ -39,7 +39,10 @@ type ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf16 struct {
 	LastSync *string `json:"lastSync,omitempty"`
 	LastSyncDuration *string `json:"lastSyncDuration,omitempty"`
 	Credential *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential `json:"credential,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf16 ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf16
 
 // NewListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf16 instantiates a new ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf16 object
 // This constructor will assign default values to properties that have it defined,
@@ -698,7 +701,50 @@ func (o ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf16) ToMap() (map[s
 	if !IsNil(o.Credential) {
 		toSerialize["credential"] = o.Credential
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf16) UnmarshalJSON(data []byte) (err error) {
+	varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf16 := _ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf16{}
+
+	err = json.Unmarshal(data, &varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf16)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf16(varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf16)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "integrationType")
+		delete(additionalProperties, "url")
+		delete(additionalProperties, "token")
+		delete(additionalProperties, "tokenHash")
+		delete(additionalProperties, "authType")
+		delete(additionalProperties, "authId")
+		delete(additionalProperties, "isPlugin")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "statusDate")
+		delete(additionalProperties, "statusMessage")
+		delete(additionalProperties, "lastSync")
+		delete(additionalProperties, "lastSyncDuration")
+		delete(additionalProperties, "credential")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf16 struct {

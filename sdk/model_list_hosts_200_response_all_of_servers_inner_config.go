@@ -31,7 +31,10 @@ type ListHosts200ResponseAllOfServersInnerConfig struct {
 	VmwareFolderId *string `json:"vmwareFolderId,omitempty"`
 	NoAgent *bool `json:"noAgent,omitempty"`
 	PowerScheduleType *int64 `json:"powerScheduleType,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListHosts200ResponseAllOfServersInnerConfig ListHosts200ResponseAllOfServersInnerConfig
 
 // NewListHosts200ResponseAllOfServersInnerConfig instantiates a new ListHosts200ResponseAllOfServersInnerConfig object
 // This constructor will assign default values to properties that have it defined,
@@ -445,7 +448,43 @@ func (o ListHosts200ResponseAllOfServersInnerConfig) ToMap() (map[string]interfa
 	if !IsNil(o.PowerScheduleType) {
 		toSerialize["powerScheduleType"] = o.PowerScheduleType
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListHosts200ResponseAllOfServersInnerConfig) UnmarshalJSON(data []byte) (err error) {
+	varListHosts200ResponseAllOfServersInnerConfig := _ListHosts200ResponseAllOfServersInnerConfig{}
+
+	err = json.Unmarshal(data, &varListHosts200ResponseAllOfServersInnerConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListHosts200ResponseAllOfServersInnerConfig(varListHosts200ResponseAllOfServersInnerConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "poolProviderType")
+		delete(additionalProperties, "isVpcSelectable")
+		delete(additionalProperties, "smbiosAssetTag")
+		delete(additionalProperties, "isEC2")
+		delete(additionalProperties, "resourcePoolId")
+		delete(additionalProperties, "hostId")
+		delete(additionalProperties, "createUser")
+		delete(additionalProperties, "nestedVirtualization")
+		delete(additionalProperties, "vmwareFolderId")
+		delete(additionalProperties, "noAgent")
+		delete(additionalProperties, "powerScheduleType")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListHosts200ResponseAllOfServersInnerConfig struct {

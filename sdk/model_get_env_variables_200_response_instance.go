@@ -23,7 +23,10 @@ type GetEnvVariables200ResponseInstance struct {
 	Envs []GetEnvVariables200ResponseInstanceEnvsInner `json:"envs,omitempty"`
 	ReadOnlyEnvs []GetEnvVariables200ResponseInstanceEnvsInner `json:"readOnlyEnvs,omitempty"`
 	ImportedEnvs []GetEnvVariables200ResponseInstanceEnvsInner `json:"importedEnvs,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetEnvVariables200ResponseInstance GetEnvVariables200ResponseInstance
 
 // NewGetEnvVariables200ResponseInstance instantiates a new GetEnvVariables200ResponseInstance object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o GetEnvVariables200ResponseInstance) ToMap() (map[string]interface{}, err
 	if !IsNil(o.ImportedEnvs) {
 		toSerialize["importedEnvs"] = o.ImportedEnvs
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetEnvVariables200ResponseInstance) UnmarshalJSON(data []byte) (err error) {
+	varGetEnvVariables200ResponseInstance := _GetEnvVariables200ResponseInstance{}
+
+	err = json.Unmarshal(data, &varGetEnvVariables200ResponseInstance)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetEnvVariables200ResponseInstance(varGetEnvVariables200ResponseInstance)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "envs")
+		delete(additionalProperties, "readOnlyEnvs")
+		delete(additionalProperties, "importedEnvs")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetEnvVariables200ResponseInstance struct {

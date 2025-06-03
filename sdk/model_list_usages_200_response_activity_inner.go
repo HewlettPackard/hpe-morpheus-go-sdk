@@ -30,7 +30,10 @@ type ListUsages200ResponseActivityInner struct {
 	ObjectId *int64 `json:"objectId,omitempty"`
 	User *GetAlerts200ResponseAllOfChecksInnerCreatedBy `json:"user,omitempty"`
 	Ts *time.Time `json:"ts,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListUsages200ResponseActivityInner ListUsages200ResponseActivityInner
 
 // NewListUsages200ResponseActivityInner instantiates a new ListUsages200ResponseActivityInner object
 // This constructor will assign default values to properties that have it defined,
@@ -374,7 +377,41 @@ func (o ListUsages200ResponseActivityInner) ToMap() (map[string]interface{}, err
 	if !IsNil(o.Ts) {
 		toSerialize["ts"] = o.Ts
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListUsages200ResponseActivityInner) UnmarshalJSON(data []byte) (err error) {
+	varListUsages200ResponseActivityInner := _ListUsages200ResponseActivityInner{}
+
+	err = json.Unmarshal(data, &varListUsages200ResponseActivityInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListUsages200ResponseActivityInner(varListUsages200ResponseActivityInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "_id")
+		delete(additionalProperties, "success")
+		delete(additionalProperties, "activityType")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "message")
+		delete(additionalProperties, "objectType")
+		delete(additionalProperties, "objectId")
+		delete(additionalProperties, "user")
+		delete(additionalProperties, "ts")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListUsages200ResponseActivityInner struct {

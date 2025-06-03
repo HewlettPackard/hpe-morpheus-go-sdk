@@ -22,7 +22,10 @@ var _ MappedNullable = &AddClusterRequestClusterServerConfig{}
 type AddClusterRequestClusterServerConfig struct {
 	// Default Git Account to be used when pulling images.  Default behavior is to be anonymous, which does have limits on allowed image pulls from public Docker Repos.
 	DefaultRepoAccount *int32 `json:"defaultRepoAccount,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddClusterRequestClusterServerConfig AddClusterRequestClusterServerConfig
 
 // NewAddClusterRequestClusterServerConfig instantiates a new AddClusterRequestClusterServerConfig object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o AddClusterRequestClusterServerConfig) ToMap() (map[string]interface{}, e
 	if !IsNil(o.DefaultRepoAccount) {
 		toSerialize["defaultRepoAccount"] = o.DefaultRepoAccount
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddClusterRequestClusterServerConfig) UnmarshalJSON(data []byte) (err error) {
+	varAddClusterRequestClusterServerConfig := _AddClusterRequestClusterServerConfig{}
+
+	err = json.Unmarshal(data, &varAddClusterRequestClusterServerConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddClusterRequestClusterServerConfig(varAddClusterRequestClusterServerConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "defaultRepoAccount")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddClusterRequestClusterServerConfig struct {

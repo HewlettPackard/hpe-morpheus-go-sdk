@@ -30,7 +30,10 @@ type AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24 struct {
 	ShutdownExtensionsBeforeApproval *string `json:"shutdownExtensionsBeforeApproval,omitempty"`
 	AccountIntegrationId *string `json:"accountIntegrationId,omitempty"`
 	ShutdownHideFixed *bool `json:"shutdownHideFixed,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24 AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24
 
 // NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24 instantiates a new AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24 object
 // This constructor will assign default values to properties that have it defined,
@@ -417,7 +420,42 @@ func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24) ToMap() (map[strin
 	if !IsNil(o.ShutdownHideFixed) {
 		toSerialize["shutdownHideFixed"] = o.ShutdownHideFixed
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24) UnmarshalJSON(data []byte) (err error) {
+	varAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24 := _AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24{}
+
+	err = json.Unmarshal(data, &varAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24(varAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "shutdownType")
+		delete(additionalProperties, "shutdownAge")
+		delete(additionalProperties, "shutdownRenewal")
+		delete(additionalProperties, "shutdownNotify")
+		delete(additionalProperties, "shutdownMessage")
+		delete(additionalProperties, "shutdownAutoRenew")
+		delete(additionalProperties, "shutdownAllowExtend")
+		delete(additionalProperties, "shutdownExtensionsBeforeApproval")
+		delete(additionalProperties, "accountIntegrationId")
+		delete(additionalProperties, "shutdownHideFixed")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24 struct {

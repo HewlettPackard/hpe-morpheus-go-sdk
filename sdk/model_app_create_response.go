@@ -43,7 +43,10 @@ type AppCreateResponse struct {
 	ContainerCount *int64 `json:"containerCount,omitempty"`
 	AppTiers []map[string]interface{} `json:"appTiers,omitempty"`
 	Instances []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"instances,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AppCreateResponse AppCreateResponse
 
 // NewAppCreateResponse instantiates a new AppCreateResponse object
 // This constructor will assign default values to properties that have it defined,
@@ -842,7 +845,54 @@ func (o AppCreateResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Instances) {
 		toSerialize["instances"] = o.Instances
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AppCreateResponse) UnmarshalJSON(data []byte) (err error) {
+	varAppCreateResponse := _AppCreateResponse{}
+
+	err = json.Unmarshal(data, &varAppCreateResponse)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AppCreateResponse(varAppCreateResponse)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "environment")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "owner")
+		delete(additionalProperties, "siteId")
+		delete(additionalProperties, "group")
+		delete(additionalProperties, "blueprint")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "removalDate")
+		delete(additionalProperties, "appContext")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "appStatus")
+		delete(additionalProperties, "instanceCount")
+		delete(additionalProperties, "containerCount")
+		delete(additionalProperties, "appTiers")
+		delete(additionalProperties, "instances")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAppCreateResponse struct {

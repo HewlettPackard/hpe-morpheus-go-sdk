@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -48,6 +47,7 @@ type NetworkPoolServerCreateInfoblox struct {
 	ServiceMode *string `json:"serviceMode,omitempty"`
 	Config *InfobloxNetworkPoolServerConfig `json:"config,omitempty"`
 	Credential *NSXNetworkServerCredential `json:"credential,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _NetworkPoolServerCreateInfoblox NetworkPoolServerCreateInfoblox
@@ -558,6 +558,11 @@ func (o NetworkPoolServerCreateInfoblox) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.Credential) {
 		toSerialize["credential"] = o.Credential
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -587,15 +592,33 @@ func (o *NetworkPoolServerCreateInfoblox) UnmarshalJSON(data []byte) (err error)
 
 	varNetworkPoolServerCreateInfoblox := _NetworkPoolServerCreateInfoblox{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varNetworkPoolServerCreateInfoblox)
+	err = json.Unmarshal(data, &varNetworkPoolServerCreateInfoblox)
 
 	if err != nil {
 		return err
 	}
 
 	*o = NetworkPoolServerCreateInfoblox(varNetworkPoolServerCreateInfoblox)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "serviceUrl")
+		delete(additionalProperties, "serviceUsername")
+		delete(additionalProperties, "servicePassword")
+		delete(additionalProperties, "serviceThrottleRate")
+		delete(additionalProperties, "ignoreSsl")
+		delete(additionalProperties, "networkFilter")
+		delete(additionalProperties, "zoneFilter")
+		delete(additionalProperties, "tenantMatch")
+		delete(additionalProperties, "serviceMode")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "credential")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

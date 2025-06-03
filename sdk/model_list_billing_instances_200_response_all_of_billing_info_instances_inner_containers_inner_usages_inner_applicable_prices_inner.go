@@ -28,7 +28,10 @@ type ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInne
 	Price *float32 `json:"price,omitempty"`
 	Currency *string `json:"currency,omitempty"`
 	Prices []ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerApplicablePricesInnerPricesInner `json:"prices,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerApplicablePricesInner ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerApplicablePricesInner
 
 // NewListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerApplicablePricesInner instantiates a new ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerApplicablePricesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -302,7 +305,39 @@ func (o ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersI
 	if !IsNil(o.Prices) {
 		toSerialize["prices"] = o.Prices
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerApplicablePricesInner) UnmarshalJSON(data []byte) (err error) {
+	varListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerApplicablePricesInner := _ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerApplicablePricesInner{}
+
+	err = json.Unmarshal(data, &varListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerApplicablePricesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerApplicablePricesInner(varListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerApplicablePricesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "startDate")
+		delete(additionalProperties, "endDate")
+		delete(additionalProperties, "numUnits")
+		delete(additionalProperties, "cost")
+		delete(additionalProperties, "price")
+		delete(additionalProperties, "currency")
+		delete(additionalProperties, "prices")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerApplicablePricesInner struct {

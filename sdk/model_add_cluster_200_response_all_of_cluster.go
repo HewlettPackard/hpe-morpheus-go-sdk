@@ -89,7 +89,10 @@ type AddCluster200ResponseAllOfCluster struct {
 	ServicesCount *int64 `json:"servicesCount,omitempty"`
 	Permissions *AddCluster200ResponseAllOfClusterPermissions `json:"permissions,omitempty"`
 	Config map[string]interface{} `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddCluster200ResponseAllOfCluster AddCluster200ResponseAllOfCluster
 
 // NewAddCluster200ResponseAllOfCluster instantiates a new AddCluster200ResponseAllOfCluster object
 // This constructor will assign default values to properties that have it defined,
@@ -2397,7 +2400,97 @@ func (o AddCluster200ResponseAllOfCluster) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddCluster200ResponseAllOfCluster) UnmarshalJSON(data []byte) (err error) {
+	varAddCluster200ResponseAllOfCluster := _AddCluster200ResponseAllOfCluster{}
+
+	err = json.Unmarshal(data, &varAddCluster200ResponseAllOfCluster)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddCluster200ResponseAllOfCluster(varAddCluster200ResponseAllOfCluster)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "uuid")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "location")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "serviceUrl")
+		delete(additionalProperties, "serviceHost")
+		delete(additionalProperties, "servicePath")
+		delete(additionalProperties, "serviceHostname")
+		delete(additionalProperties, "servicePort")
+		delete(additionalProperties, "serviceUsername")
+		delete(additionalProperties, "servicePassword")
+		delete(additionalProperties, "servicePasswordHash")
+		delete(additionalProperties, "serviceToken")
+		delete(additionalProperties, "serviceTokenHash")
+		delete(additionalProperties, "serviceAccess")
+		delete(additionalProperties, "serviceAccessHash")
+		delete(additionalProperties, "serviceCert")
+		delete(additionalProperties, "serviceCertHash")
+		delete(additionalProperties, "serviceVersion")
+		delete(additionalProperties, "searchDomains")
+		delete(additionalProperties, "enableInternalDns")
+		delete(additionalProperties, "internalId")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "datacenterId")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "statusDate")
+		delete(additionalProperties, "statusMessage")
+		delete(additionalProperties, "inventoryLevel")
+		delete(additionalProperties, "lastSync")
+		delete(additionalProperties, "nextRunDate")
+		delete(additionalProperties, "lastSyncDuration")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "managed")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "autoRecoverPowerState")
+		delete(additionalProperties, "useAgent")
+		delete(additionalProperties, "provisionComplete")
+		delete(additionalProperties, "serviceEntry")
+		delete(additionalProperties, "createdBy")
+		delete(additionalProperties, "userGroup")
+		delete(additionalProperties, "layout")
+		delete(additionalProperties, "owner")
+		delete(additionalProperties, "servers")
+		delete(additionalProperties, "accounts")
+		delete(additionalProperties, "integrations")
+		delete(additionalProperties, "site")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "zone")
+		delete(additionalProperties, "workerStats")
+		delete(additionalProperties, "containersCount")
+		delete(additionalProperties, "deploymentsCount")
+		delete(additionalProperties, "podsCount")
+		delete(additionalProperties, "jobsCount")
+		delete(additionalProperties, "volumesCount")
+		delete(additionalProperties, "namespacesCount")
+		delete(additionalProperties, "workersCount")
+		delete(additionalProperties, "servicesCount")
+		delete(additionalProperties, "permissions")
+		delete(additionalProperties, "config")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddCluster200ResponseAllOfCluster struct {

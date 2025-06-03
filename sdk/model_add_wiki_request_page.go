@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -25,6 +24,7 @@ type AddWikiRequestPage struct {
 	Name string `json:"name"`
 	Category string `json:"category"`
 	Content string `json:"content"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddWikiRequestPage AddWikiRequestPage
@@ -134,6 +134,11 @@ func (o AddWikiRequestPage) ToMap() (map[string]interface{}, error) {
 	toSerialize["name"] = o.Name
 	toSerialize["category"] = o.Category
 	toSerialize["content"] = o.Content
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -163,15 +168,22 @@ func (o *AddWikiRequestPage) UnmarshalJSON(data []byte) (err error) {
 
 	varAddWikiRequestPage := _AddWikiRequestPage{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddWikiRequestPage)
+	err = json.Unmarshal(data, &varAddWikiRequestPage)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddWikiRequestPage(varAddWikiRequestPage)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "content")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

@@ -34,7 +34,10 @@ type CheckWeb struct {
 	// Severity level threshold for sending notifications.
 	Severity *string `json:"severity,omitempty"`
 	Config *AddChecksRequestCheckOneOfConfig `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _CheckWeb CheckWeb
 
 // NewCheckWeb instantiates a new CheckWeb object
 // This constructor will assign default values to properties that have it defined,
@@ -359,7 +362,40 @@ func (o CheckWeb) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *CheckWeb) UnmarshalJSON(data []byte) (err error) {
+	varCheckWeb := _CheckWeb{}
+
+	err = json.Unmarshal(data, &varCheckWeb)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CheckWeb(varCheckWeb)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "checkType")
+		delete(additionalProperties, "checkInterval")
+		delete(additionalProperties, "inUptime")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "severity")
+		delete(additionalProperties, "config")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCheckWeb struct {

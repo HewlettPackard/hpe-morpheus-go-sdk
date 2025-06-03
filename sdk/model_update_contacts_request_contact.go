@@ -28,7 +28,10 @@ type UpdateContactsRequestContact struct {
 	SmsAddress *string `json:"smsAddress,omitempty"`
 	// Slack Hook
 	SlackHook *string `json:"slackHook,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateContactsRequestContact UpdateContactsRequestContact
 
 // NewUpdateContactsRequestContact instantiates a new UpdateContactsRequestContact object
 // This constructor will assign default values to properties that have it defined,
@@ -197,7 +200,36 @@ func (o UpdateContactsRequestContact) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.SlackHook) {
 		toSerialize["slackHook"] = o.SlackHook
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateContactsRequestContact) UnmarshalJSON(data []byte) (err error) {
+	varUpdateContactsRequestContact := _UpdateContactsRequestContact{}
+
+	err = json.Unmarshal(data, &varUpdateContactsRequestContact)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateContactsRequestContact(varUpdateContactsRequestContact)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "emailAddress")
+		delete(additionalProperties, "smsAddress")
+		delete(additionalProperties, "slackHook")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateContactsRequestContact struct {

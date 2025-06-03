@@ -21,7 +21,10 @@ var _ MappedNullable = &ListTenantsAvailableRoles200Response{}
 // ListTenantsAvailableRoles200Response struct for ListTenantsAvailableRoles200Response
 type ListTenantsAvailableRoles200Response struct {
 	Roles []ListTenantsAvailableRoles200ResponseRolesInner `json:"roles,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListTenantsAvailableRoles200Response ListTenantsAvailableRoles200Response
 
 // NewListTenantsAvailableRoles200Response instantiates a new ListTenantsAvailableRoles200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o ListTenantsAvailableRoles200Response) ToMap() (map[string]interface{}, e
 	if !IsNil(o.Roles) {
 		toSerialize["roles"] = o.Roles
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListTenantsAvailableRoles200Response) UnmarshalJSON(data []byte) (err error) {
+	varListTenantsAvailableRoles200Response := _ListTenantsAvailableRoles200Response{}
+
+	err = json.Unmarshal(data, &varListTenantsAvailableRoles200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListTenantsAvailableRoles200Response(varListTenantsAvailableRoles200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "roles")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListTenantsAvailableRoles200Response struct {

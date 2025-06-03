@@ -21,7 +21,10 @@ var _ MappedNullable = &GetPolicies200Response{}
 // GetPolicies200Response struct for GetPolicies200Response
 type GetPolicies200Response struct {
 	Policy *AddPolicies200ResponseAllOfPolicy `json:"policy,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetPolicies200Response GetPolicies200Response
 
 // NewGetPolicies200Response instantiates a new GetPolicies200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o GetPolicies200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Policy) {
 		toSerialize["policy"] = o.Policy
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetPolicies200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetPolicies200Response := _GetPolicies200Response{}
+
+	err = json.Unmarshal(data, &varGetPolicies200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetPolicies200Response(varGetPolicies200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "policy")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetPolicies200Response struct {

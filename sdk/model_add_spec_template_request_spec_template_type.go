@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -24,6 +23,7 @@ var _ MappedNullable = &AddSpecTemplateRequestSpecTemplateType{}
 type AddSpecTemplateRequestSpecTemplateType struct {
 	// Spec Template Type. i.e. arm, cloudFormation, helm, kubernetes, oneview, terraform, ucs.
 	Code string `json:"code"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddSpecTemplateRequestSpecTemplateType AddSpecTemplateRequestSpecTemplateType
@@ -81,6 +81,11 @@ func (o AddSpecTemplateRequestSpecTemplateType) MarshalJSON() ([]byte, error) {
 func (o AddSpecTemplateRequestSpecTemplateType) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["code"] = o.Code
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -108,15 +113,20 @@ func (o *AddSpecTemplateRequestSpecTemplateType) UnmarshalJSON(data []byte) (err
 
 	varAddSpecTemplateRequestSpecTemplateType := _AddSpecTemplateRequestSpecTemplateType{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddSpecTemplateRequestSpecTemplateType)
+	err = json.Unmarshal(data, &varAddSpecTemplateRequestSpecTemplateType)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddSpecTemplateRequestSpecTemplateType(varAddSpecTemplateRequestSpecTemplateType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "code")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

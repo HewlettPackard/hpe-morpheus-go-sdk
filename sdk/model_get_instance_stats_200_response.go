@@ -23,7 +23,10 @@ type GetInstanceStats200Response struct {
 	InstanceStats *GetInstanceStats200ResponseInstanceStats `json:"instanceStats,omitempty"`
 	// Array of Cloud IDs that are included in the stats. By default all the clouds the user has access to are returned.
 	ZoneIds []int64 `json:"zoneIds,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetInstanceStats200Response GetInstanceStats200Response
 
 // NewGetInstanceStats200Response instantiates a new GetInstanceStats200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -122,7 +125,34 @@ func (o GetInstanceStats200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ZoneIds) {
 		toSerialize["zoneIds"] = o.ZoneIds
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetInstanceStats200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetInstanceStats200Response := _GetInstanceStats200Response{}
+
+	err = json.Unmarshal(data, &varGetInstanceStats200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetInstanceStats200Response(varGetInstanceStats200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "instanceStats")
+		delete(additionalProperties, "zoneIds")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetInstanceStats200Response struct {

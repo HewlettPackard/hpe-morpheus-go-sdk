@@ -22,7 +22,10 @@ var _ MappedNullable = &ListInstanceServicePlans200ResponsePlansInnerAutoOptions
 type ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner struct {
 	Id *string `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner
 
 // NewListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner instantiates a new ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner) ToMap() (
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner) UnmarshalJSON(data []byte) (err error) {
+	varListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner := _ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner{}
+
+	err = json.Unmarshal(data, &varListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner(varListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner struct {

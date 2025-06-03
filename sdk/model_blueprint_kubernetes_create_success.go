@@ -36,7 +36,10 @@ type BlueprintKubernetesCreateSuccess struct {
 	Owner map[string]interface{} `json:"owner,omitempty"`
 	// Tenant
 	Tenant map[string]interface{} `json:"tenant,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _BlueprintKubernetesCreateSuccess BlueprintKubernetesCreateSuccess
 
 // NewBlueprintKubernetesCreateSuccess instantiates a new BlueprintKubernetesCreateSuccess object
 // This constructor will assign default values to properties that have it defined,
@@ -384,7 +387,41 @@ func (o BlueprintKubernetesCreateSuccess) ToMap() (map[string]interface{}, error
 	if !IsNil(o.Tenant) {
 		toSerialize["tenant"] = o.Tenant
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *BlueprintKubernetesCreateSuccess) UnmarshalJSON(data []byte) (err error) {
+	varBlueprintKubernetesCreateSuccess := _BlueprintKubernetesCreateSuccess{}
+
+	err = json.Unmarshal(data, &varBlueprintKubernetesCreateSuccess)
+
+	if err != nil {
+		return err
+	}
+
+	*o = BlueprintKubernetesCreateSuccess(varBlueprintKubernetesCreateSuccess)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "image")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "kubernetes")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "resourcePermission")
+		delete(additionalProperties, "owner")
+		delete(additionalProperties, "tenant")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableBlueprintKubernetesCreateSuccess struct {

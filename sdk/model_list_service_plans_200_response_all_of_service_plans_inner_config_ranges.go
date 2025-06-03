@@ -32,7 +32,10 @@ type ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges struct {
 	MaxSockets *string `json:"maxSockets,omitempty"`
 	MinCoresPerSocket *string `json:"minCoresPerSocket,omitempty"`
 	MaxCoresPerSocket *string `json:"maxCoresPerSocket,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges
 
 // NewListServicePlans200ResponseAllOfServicePlansInnerConfigRanges instantiates a new ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges object
 // This constructor will assign default values to properties that have it defined,
@@ -481,7 +484,44 @@ func (o ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) ToMap() (
 	if !IsNil(o.MaxCoresPerSocket) {
 		toSerialize["maxCoresPerSocket"] = o.MaxCoresPerSocket
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) UnmarshalJSON(data []byte) (err error) {
+	varListServicePlans200ResponseAllOfServicePlansInnerConfigRanges := _ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges{}
+
+	err = json.Unmarshal(data, &varListServicePlans200ResponseAllOfServicePlansInnerConfigRanges)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges(varListServicePlans200ResponseAllOfServicePlansInnerConfigRanges)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "minStorage")
+		delete(additionalProperties, "maxStorage")
+		delete(additionalProperties, "minPerDiskSize")
+		delete(additionalProperties, "maxPerDiskSize")
+		delete(additionalProperties, "minMemory")
+		delete(additionalProperties, "maxMemory")
+		delete(additionalProperties, "minCores")
+		delete(additionalProperties, "maxCores")
+		delete(additionalProperties, "minSockets")
+		delete(additionalProperties, "maxSockets")
+		delete(additionalProperties, "minCoresPerSocket")
+		delete(additionalProperties, "maxCoresPerSocket")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListServicePlans200ResponseAllOfServicePlansInnerConfigRanges struct {

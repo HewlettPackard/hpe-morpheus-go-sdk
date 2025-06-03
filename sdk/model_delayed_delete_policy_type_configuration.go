@@ -21,7 +21,10 @@ var _ MappedNullable = &DelayedDeletePolicyTypeConfiguration{}
 // DelayedDeletePolicyTypeConfiguration Configuration settings for the following policy types: - Delayed Delete 
 type DelayedDeletePolicyTypeConfiguration struct {
 	RemovalAge *string `json:"removalAge,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _DelayedDeletePolicyTypeConfiguration DelayedDeletePolicyTypeConfiguration
 
 // NewDelayedDeletePolicyTypeConfiguration instantiates a new DelayedDeletePolicyTypeConfiguration object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o DelayedDeletePolicyTypeConfiguration) ToMap() (map[string]interface{}, e
 	if !IsNil(o.RemovalAge) {
 		toSerialize["removalAge"] = o.RemovalAge
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *DelayedDeletePolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
+	varDelayedDeletePolicyTypeConfiguration := _DelayedDeletePolicyTypeConfiguration{}
+
+	err = json.Unmarshal(data, &varDelayedDeletePolicyTypeConfiguration)
+
+	if err != nil {
+		return err
+	}
+
+	*o = DelayedDeletePolicyTypeConfiguration(varDelayedDeletePolicyTypeConfiguration)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "removalAge")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableDelayedDeletePolicyTypeConfiguration struct {

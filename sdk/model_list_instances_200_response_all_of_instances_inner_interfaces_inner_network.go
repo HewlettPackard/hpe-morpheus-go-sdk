@@ -26,7 +26,10 @@ type ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork struct {
 	DhcpServer *bool `json:"dhcpServer,omitempty"`
 	Name *string `json:"name,omitempty"`
 	Pool *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"pool,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork
 
 // NewListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork instantiates a new ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork object
 // This constructor will assign default values to properties that have it defined,
@@ -265,7 +268,38 @@ func (o ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) ToMap
 	if !IsNil(o.Pool) {
 		toSerialize["pool"] = o.Pool
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) UnmarshalJSON(data []byte) (err error) {
+	varListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork := _ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork{}
+
+	err = json.Unmarshal(data, &varListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork(varListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "group")
+		delete(additionalProperties, "subnet")
+		delete(additionalProperties, "dhcpServer")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "pool")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork struct {

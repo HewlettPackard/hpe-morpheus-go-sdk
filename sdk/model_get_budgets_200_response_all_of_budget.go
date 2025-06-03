@@ -55,7 +55,10 @@ type GetBudgets200ResponseAllOfBudget struct {
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
 	Stats *GetBudgets200ResponseAllOfBudgetStats `json:"stats,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetBudgets200ResponseAllOfBudget GetBudgets200ResponseAllOfBudget
 
 // NewGetBudgets200ResponseAllOfBudget instantiates a new GetBudgets200ResponseAllOfBudget object
 // This constructor will assign default values to properties that have it defined,
@@ -1274,7 +1277,66 @@ func (o GetBudgets200ResponseAllOfBudget) ToMap() (map[string]interface{}, error
 	if !IsNil(o.Stats) {
 		toSerialize["stats"] = o.Stats
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetBudgets200ResponseAllOfBudget) UnmarshalJSON(data []byte) (err error) {
+	varGetBudgets200ResponseAllOfBudget := _GetBudgets200ResponseAllOfBudget{}
+
+	err = json.Unmarshal(data, &varGetBudgets200ResponseAllOfBudget)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetBudgets200ResponseAllOfBudget(varGetBudgets200ResponseAllOfBudget)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "forecastType")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "refScope")
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "refId")
+		delete(additionalProperties, "refName")
+		delete(additionalProperties, "period")
+		delete(additionalProperties, "year")
+		delete(additionalProperties, "resourceType")
+		delete(additionalProperties, "timezone")
+		delete(additionalProperties, "startDate")
+		delete(additionalProperties, "endDate")
+		delete(additionalProperties, "interval")
+		delete(additionalProperties, "costs")
+		delete(additionalProperties, "isFiscal")
+		delete(additionalProperties, "averageCost")
+		delete(additionalProperties, "totalCost")
+		delete(additionalProperties, "currency")
+		delete(additionalProperties, "rollover")
+		delete(additionalProperties, "warningLimit")
+		delete(additionalProperties, "overLimit")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "internalId")
+		delete(additionalProperties, "createdById")
+		delete(additionalProperties, "createdByName")
+		delete(additionalProperties, "updatedById")
+		delete(additionalProperties, "updatedByName")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "stats")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetBudgets200ResponseAllOfBudget struct {

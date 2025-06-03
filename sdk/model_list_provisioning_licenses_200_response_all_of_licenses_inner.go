@@ -33,7 +33,10 @@ type ListProvisioningLicenses200ResponseAllOfLicensesInner struct {
 	Tenants []map[string]interface{} `json:"tenants,omitempty"`
 	VirtualImages []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"virtualImages,omitempty"`
 	Account *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListProvisioningLicenses200ResponseAllOfLicensesInner ListProvisioningLicenses200ResponseAllOfLicensesInner
 
 // NewListProvisioningLicenses200ResponseAllOfLicensesInner instantiates a new ListProvisioningLicenses200ResponseAllOfLicensesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -517,7 +520,45 @@ func (o ListProvisioningLicenses200ResponseAllOfLicensesInner) ToMap() (map[stri
 	if !IsNil(o.Account) {
 		toSerialize["account"] = o.Account
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListProvisioningLicenses200ResponseAllOfLicensesInner) UnmarshalJSON(data []byte) (err error) {
+	varListProvisioningLicenses200ResponseAllOfLicensesInner := _ListProvisioningLicenses200ResponseAllOfLicensesInner{}
+
+	err = json.Unmarshal(data, &varListProvisioningLicenses200ResponseAllOfLicensesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListProvisioningLicenses200ResponseAllOfLicensesInner(varListProvisioningLicenses200ResponseAllOfLicensesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "licenseType")
+		delete(additionalProperties, "licenseKey")
+		delete(additionalProperties, "orgName")
+		delete(additionalProperties, "fullName")
+		delete(additionalProperties, "licenseVersion")
+		delete(additionalProperties, "copies")
+		delete(additionalProperties, "reservationCount")
+		delete(additionalProperties, "tenants")
+		delete(additionalProperties, "virtualImages")
+		delete(additionalProperties, "account")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListProvisioningLicenses200ResponseAllOfLicensesInner struct {

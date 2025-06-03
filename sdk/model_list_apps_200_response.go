@@ -23,7 +23,10 @@ type ListApps200Response struct {
 	Apps []ListApps200ResponseAllOfAppsInner `json:"apps,omitempty"`
 	Stats *ListApps200ResponseAllOfAppsInnerStats `json:"stats,omitempty"`
 	Meta *ListActivity200ResponseAllOfMeta `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListApps200Response ListApps200Response
 
 // NewListApps200Response instantiates a new ListApps200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o ListApps200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Meta) {
 		toSerialize["meta"] = o.Meta
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListApps200Response) UnmarshalJSON(data []byte) (err error) {
+	varListApps200Response := _ListApps200Response{}
+
+	err = json.Unmarshal(data, &varListApps200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListApps200Response(varListApps200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "apps")
+		delete(additionalProperties, "stats")
+		delete(additionalProperties, "meta")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListApps200Response struct {

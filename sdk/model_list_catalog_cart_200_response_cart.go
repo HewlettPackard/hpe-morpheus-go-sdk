@@ -24,7 +24,10 @@ type ListCatalogCart200ResponseCart struct {
 	Name *string `json:"name,omitempty"`
 	Items []ListCatalogCart200ResponseCartItemsInner `json:"items,omitempty"`
 	Stats *ListCatalogCart200ResponseCartStats `json:"stats,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListCatalogCart200ResponseCart ListCatalogCart200ResponseCart
 
 // NewListCatalogCart200ResponseCart instantiates a new ListCatalogCart200ResponseCart object
 // This constructor will assign default values to properties that have it defined,
@@ -193,7 +196,36 @@ func (o ListCatalogCart200ResponseCart) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.Stats) {
 		toSerialize["stats"] = o.Stats
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListCatalogCart200ResponseCart) UnmarshalJSON(data []byte) (err error) {
+	varListCatalogCart200ResponseCart := _ListCatalogCart200ResponseCart{}
+
+	err = json.Unmarshal(data, &varListCatalogCart200ResponseCart)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListCatalogCart200ResponseCart(varListCatalogCart200ResponseCart)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "items")
+		delete(additionalProperties, "stats")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListCatalogCart200ResponseCart struct {

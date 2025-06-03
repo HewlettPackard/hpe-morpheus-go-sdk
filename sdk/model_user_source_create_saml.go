@@ -46,7 +46,10 @@ type UserSourceCreateSaml struct {
 	RoleAttributeName *string `json:"roleAttributeName,omitempty"`
 	// Role Attibute Required Value
 	RequiredAttributeValue *string `json:"requiredAttributeValue,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UserSourceCreateSaml UserSourceCreateSaml
 
 // NewUserSourceCreateSaml instantiates a new UserSourceCreateSaml object
 // This constructor will assign default values to properties that have it defined,
@@ -542,7 +545,45 @@ func (o UserSourceCreateSaml) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.RequiredAttributeValue) {
 		toSerialize["requiredAttributeValue"] = o.RequiredAttributeValue
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UserSourceCreateSaml) UnmarshalJSON(data []byte) (err error) {
+	varUserSourceCreateSaml := _UserSourceCreateSaml{}
+
+	err = json.Unmarshal(data, &varUserSourceCreateSaml)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UserSourceCreateSaml(varUserSourceCreateSaml)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "url")
+		delete(additionalProperties, "doNotIncludeSAMLRequest")
+		delete(additionalProperties, "logoutUrl")
+		delete(additionalProperties, "SAMLSignatureMode")
+		delete(additionalProperties, "request509Certificate")
+		delete(additionalProperties, "requestPrivateKey")
+		delete(additionalProperties, "doNotValidateSignature")
+		delete(additionalProperties, "publicKey")
+		delete(additionalProperties, "privateKey")
+		delete(additionalProperties, "givenNameAttribute")
+		delete(additionalProperties, "surnameAttribute")
+		delete(additionalProperties, "roleAttributeName")
+		delete(additionalProperties, "requiredAttributeValue")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUserSourceCreateSaml struct {

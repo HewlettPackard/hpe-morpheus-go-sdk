@@ -41,7 +41,10 @@ type ListPrices200ResponseAllOfPricesInner struct {
 	Datastore *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"datastore,omitempty"`
 	CrossCloudApply *bool `json:"crossCloudApply,omitempty"`
 	Account *string `json:"account,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListPrices200ResponseAllOfPricesInner ListPrices200ResponseAllOfPricesInner
 
 // NewListPrices200ResponseAllOfPricesInner instantiates a new ListPrices200ResponseAllOfPricesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -805,7 +808,53 @@ func (o ListPrices200ResponseAllOfPricesInner) ToMap() (map[string]interface{}, 
 	if !IsNil(o.Account) {
 		toSerialize["account"] = o.Account
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListPrices200ResponseAllOfPricesInner) UnmarshalJSON(data []byte) (err error) {
+	varListPrices200ResponseAllOfPricesInner := _ListPrices200ResponseAllOfPricesInner{}
+
+	err = json.Unmarshal(data, &varListPrices200ResponseAllOfPricesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListPrices200ResponseAllOfPricesInner(varListPrices200ResponseAllOfPricesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "priceType")
+		delete(additionalProperties, "priceUnit")
+		delete(additionalProperties, "additionalPriceUnit")
+		delete(additionalProperties, "price")
+		delete(additionalProperties, "customPrice")
+		delete(additionalProperties, "markupType")
+		delete(additionalProperties, "markup")
+		delete(additionalProperties, "markupPercent")
+		delete(additionalProperties, "cost")
+		delete(additionalProperties, "currency")
+		delete(additionalProperties, "incurCharges")
+		delete(additionalProperties, "platform")
+		delete(additionalProperties, "software")
+		delete(additionalProperties, "volumeType")
+		delete(additionalProperties, "datastore")
+		delete(additionalProperties, "crossCloudApply")
+		delete(additionalProperties, "account")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListPrices200ResponseAllOfPricesInner struct {

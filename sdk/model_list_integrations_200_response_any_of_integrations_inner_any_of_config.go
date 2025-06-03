@@ -31,7 +31,10 @@ type ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig struct {
 	AnsibleVerbose *bool `json:"ansibleVerbose,omitempty"`
 	AnsibleGalaxyEnabled *bool `json:"ansibleGalaxyEnabled,omitempty"`
 	AnsibleDefaultBranch *string `json:"ansibleDefaultBranch,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig
 
 // NewListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig instantiates a new ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig object
 // This constructor will assign default values to properties that have it defined,
@@ -445,7 +448,43 @@ func (o ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) ToMap() (m
 	if !IsNil(o.AnsibleDefaultBranch) {
 		toSerialize["ansibleDefaultBranch"] = o.AnsibleDefaultBranch
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) UnmarshalJSON(data []byte) (err error) {
+	varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig := _ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig{}
+
+	err = json.Unmarshal(data, &varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig(varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "inventory")
+		delete(additionalProperties, "defaultBranch")
+		delete(additionalProperties, "cacheEnabled")
+		delete(additionalProperties, "ansiblePlaybooks")
+		delete(additionalProperties, "ansibleRoles")
+		delete(additionalProperties, "ansibleGroupVars")
+		delete(additionalProperties, "ansibleHostVars")
+		delete(additionalProperties, "ansibleCommandBus")
+		delete(additionalProperties, "ansibleVerbose")
+		delete(additionalProperties, "ansibleGalaxyEnabled")
+		delete(additionalProperties, "ansibleDefaultBranch")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig struct {

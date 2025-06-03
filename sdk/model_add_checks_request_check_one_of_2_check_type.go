@@ -21,7 +21,10 @@ var _ MappedNullable = &AddChecksRequestCheckOneOf2CheckType{}
 // AddChecksRequestCheckOneOf2CheckType Check type you want to create
 type AddChecksRequestCheckOneOf2CheckType struct {
 	Code *string `json:"code,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddChecksRequestCheckOneOf2CheckType AddChecksRequestCheckOneOf2CheckType
 
 // NewAddChecksRequestCheckOneOf2CheckType instantiates a new AddChecksRequestCheckOneOf2CheckType object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o AddChecksRequestCheckOneOf2CheckType) ToMap() (map[string]interface{}, e
 	if !IsNil(o.Code) {
 		toSerialize["code"] = o.Code
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddChecksRequestCheckOneOf2CheckType) UnmarshalJSON(data []byte) (err error) {
+	varAddChecksRequestCheckOneOf2CheckType := _AddChecksRequestCheckOneOf2CheckType{}
+
+	err = json.Unmarshal(data, &varAddChecksRequestCheckOneOf2CheckType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddChecksRequestCheckOneOf2CheckType(varAddChecksRequestCheckOneOf2CheckType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "code")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddChecksRequestCheckOneOf2CheckType struct {

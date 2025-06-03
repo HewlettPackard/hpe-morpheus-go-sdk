@@ -24,7 +24,10 @@ type ResourceData struct {
 	Name *string `json:"name,omitempty"`
 	Code *string `json:"code,omitempty"`
 	Category *string `json:"category,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ResourceData ResourceData
 
 // NewResourceData instantiates a new ResourceData object
 // This constructor will assign default values to properties that have it defined,
@@ -193,7 +196,36 @@ func (o ResourceData) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Category) {
 		toSerialize["category"] = o.Category
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ResourceData) UnmarshalJSON(data []byte) (err error) {
+	varResourceData := _ResourceData{}
+
+	err = json.Unmarshal(data, &varResourceData)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ResourceData(varResourceData)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "category")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableResourceData struct {

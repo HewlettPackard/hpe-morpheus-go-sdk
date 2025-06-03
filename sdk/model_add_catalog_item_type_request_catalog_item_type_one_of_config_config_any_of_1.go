@@ -32,7 +32,10 @@ type AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1 struct {
 	NestedVirtualization *string `json:"nestedVirtualization,omitempty"`
 	// VMWare Folder External ID (as a String) or ID (as an Integer or String)
 	VmwareFolderId *string `json:"vmwareFolderId,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1 AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1
 
 // NewAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1 instantiates a new AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1 object
 // This constructor will assign default values to properties that have it defined,
@@ -279,7 +282,38 @@ func (o AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) ToMap()
 	if !IsNil(o.VmwareFolderId) {
 		toSerialize["vmwareFolderId"] = o.VmwareFolderId
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) UnmarshalJSON(data []byte) (err error) {
+	varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1 := _AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1{}
+
+	err = json.Unmarshal(data, &varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1(varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "noAgent")
+		delete(additionalProperties, "resourcePoolId")
+		delete(additionalProperties, "hostId")
+		delete(additionalProperties, "smbiosAssetTag")
+		delete(additionalProperties, "nestedVirtualization")
+		delete(additionalProperties, "vmwareFolderId")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1 struct {

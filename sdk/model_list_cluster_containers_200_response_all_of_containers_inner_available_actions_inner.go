@@ -22,7 +22,10 @@ var _ MappedNullable = &ListClusterContainers200ResponseAllOfContainersInnerAvai
 type ListClusterContainers200ResponseAllOfContainersInnerAvailableActionsInner struct {
 	Code *string `json:"code,omitempty"`
 	Name *string `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListClusterContainers200ResponseAllOfContainersInnerAvailableActionsInner ListClusterContainers200ResponseAllOfContainersInnerAvailableActionsInner
 
 // NewListClusterContainers200ResponseAllOfContainersInnerAvailableActionsInner instantiates a new ListClusterContainers200ResponseAllOfContainersInnerAvailableActionsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o ListClusterContainers200ResponseAllOfContainersInnerAvailableActionsInne
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListClusterContainers200ResponseAllOfContainersInnerAvailableActionsInner) UnmarshalJSON(data []byte) (err error) {
+	varListClusterContainers200ResponseAllOfContainersInnerAvailableActionsInner := _ListClusterContainers200ResponseAllOfContainersInnerAvailableActionsInner{}
+
+	err = json.Unmarshal(data, &varListClusterContainers200ResponseAllOfContainersInnerAvailableActionsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListClusterContainers200ResponseAllOfContainersInnerAvailableActionsInner(varListClusterContainers200ResponseAllOfContainersInnerAvailableActionsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListClusterContainers200ResponseAllOfContainersInnerAvailableActionsInner struct {

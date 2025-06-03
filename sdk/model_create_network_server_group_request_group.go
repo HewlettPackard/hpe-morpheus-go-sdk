@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -34,6 +33,7 @@ type CreateNetworkServerGroupRequestGroup struct {
 	Permissions *ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions `json:"permissions,omitempty"`
 	Tags []ListNetworkServerGroups200ResponseAllOfGroupsInnerTagsInner `json:"tags,omitempty"`
 	Members []ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner `json:"members,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _CreateNetworkServerGroupRequestGroup CreateNetworkServerGroupRequestGroup
@@ -476,6 +476,11 @@ func (o CreateNetworkServerGroupRequestGroup) ToMap() (map[string]interface{}, e
 	if !IsNil(o.Members) {
 		toSerialize["members"] = o.Members
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -503,15 +508,31 @@ func (o *CreateNetworkServerGroupRequestGroup) UnmarshalJSON(data []byte) (err e
 
 	varCreateNetworkServerGroupRequestGroup := _CreateNetworkServerGroupRequestGroup{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varCreateNetworkServerGroupRequestGroup)
+	err = json.Unmarshal(data, &varCreateNetworkServerGroupRequestGroup)
 
 	if err != nil {
 		return err
 	}
 
 	*o = CreateNetworkServerGroupRequestGroup(varCreateNetworkServerGroupRequestGroup)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "internalId")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "owner")
+		delete(additionalProperties, "networkServer")
+		delete(additionalProperties, "permissions")
+		delete(additionalProperties, "tags")
+		delete(additionalProperties, "members")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

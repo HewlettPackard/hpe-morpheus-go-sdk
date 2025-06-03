@@ -27,7 +27,10 @@ type NetworkService struct {
 	Name *string `json:"name,omitempty"`
 	Id *int64 `json:"id,omitempty"`
 	IntegrationId *int64 `json:"integrationId,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _NetworkService NetworkService
 
 // NewNetworkService instantiates a new NetworkService object
 // This constructor will assign default values to properties that have it defined,
@@ -301,7 +304,39 @@ func (o NetworkService) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.IntegrationId) {
 		toSerialize["integrationId"] = o.IntegrationId
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *NetworkService) UnmarshalJSON(data []byte) (err error) {
+	varNetworkService := _NetworkService{}
+
+	err = json.Unmarshal(data, &varNetworkService)
+
+	if err != nil {
+		return err
+	}
+
+	*o = NetworkService(varNetworkService)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "serviceType")
+		delete(additionalProperties, "serviceTypeName")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "typeName")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "integrationId")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableNetworkService struct {

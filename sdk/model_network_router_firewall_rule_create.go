@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -28,6 +27,7 @@ type NetworkRouterFirewallRuleCreate struct {
 	Enabled *bool `json:"enabled,omitempty"`
 	// Priority for rule
 	Priority *int64 `json:"priority,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _NetworkRouterFirewallRuleCreate NetworkRouterFirewallRuleCreate
@@ -159,6 +159,11 @@ func (o NetworkRouterFirewallRuleCreate) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.Priority) {
 		toSerialize["priority"] = o.Priority
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -186,15 +191,22 @@ func (o *NetworkRouterFirewallRuleCreate) UnmarshalJSON(data []byte) (err error)
 
 	varNetworkRouterFirewallRuleCreate := _NetworkRouterFirewallRuleCreate{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varNetworkRouterFirewallRuleCreate)
+	err = json.Unmarshal(data, &varNetworkRouterFirewallRuleCreate)
 
 	if err != nil {
 		return err
 	}
 
 	*o = NetworkRouterFirewallRuleCreate(varNetworkRouterFirewallRuleCreate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "priority")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

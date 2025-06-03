@@ -22,7 +22,10 @@ var _ MappedNullable = &UpdateInstanceRequestInstanceSite{}
 type UpdateInstanceRequestInstanceSite struct {
 	// The group ID.
 	Id *int64 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateInstanceRequestInstanceSite UpdateInstanceRequestInstanceSite
 
 // NewUpdateInstanceRequestInstanceSite instantiates a new UpdateInstanceRequestInstanceSite object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o UpdateInstanceRequestInstanceSite) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateInstanceRequestInstanceSite) UnmarshalJSON(data []byte) (err error) {
+	varUpdateInstanceRequestInstanceSite := _UpdateInstanceRequestInstanceSite{}
+
+	err = json.Unmarshal(data, &varUpdateInstanceRequestInstanceSite)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateInstanceRequestInstanceSite(varUpdateInstanceRequestInstanceSite)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateInstanceRequestInstanceSite struct {

@@ -31,7 +31,10 @@ type Blueprint struct {
 	ResourcePermission map[string]interface{} `json:"resourcePermission,omitempty"`
 	Owner *ListActivity200ResponseAllOfActivityInnerActivityInnerUser `json:"owner,omitempty"`
 	Tenant *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"tenant,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _Blueprint Blueprint
 
 // NewBlueprint instantiates a new Blueprint object
 // This constructor will assign default values to properties that have it defined,
@@ -445,7 +448,43 @@ func (o Blueprint) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Tenant) {
 		toSerialize["tenant"] = o.Tenant
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *Blueprint) UnmarshalJSON(data []byte) (err error) {
+	varBlueprint := _Blueprint{}
+
+	err = json.Unmarshal(data, &varBlueprint)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Blueprint(varBlueprint)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "resourcePermission")
+		delete(additionalProperties, "owner")
+		delete(additionalProperties, "tenant")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableBlueprint struct {

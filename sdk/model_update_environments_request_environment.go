@@ -30,7 +30,10 @@ type UpdateEnvironmentsRequestEnvironment struct {
 	SortOrder *int64 `json:"sortOrder,omitempty"`
 	// Set to false to deactivate the environment
 	Active *bool `json:"active,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateEnvironmentsRequestEnvironment UpdateEnvironmentsRequestEnvironment
 
 // NewUpdateEnvironmentsRequestEnvironment instantiates a new UpdateEnvironmentsRequestEnvironment object
 // This constructor will assign default values to properties that have it defined,
@@ -242,7 +245,37 @@ func (o UpdateEnvironmentsRequestEnvironment) ToMap() (map[string]interface{}, e
 	if !IsNil(o.Active) {
 		toSerialize["active"] = o.Active
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateEnvironmentsRequestEnvironment) UnmarshalJSON(data []byte) (err error) {
+	varUpdateEnvironmentsRequestEnvironment := _UpdateEnvironmentsRequestEnvironment{}
+
+	err = json.Unmarshal(data, &varUpdateEnvironmentsRequestEnvironment)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateEnvironmentsRequestEnvironment(varUpdateEnvironmentsRequestEnvironment)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "sortOrder")
+		delete(additionalProperties, "active")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateEnvironmentsRequestEnvironment struct {

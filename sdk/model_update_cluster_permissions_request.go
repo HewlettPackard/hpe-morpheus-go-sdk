@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -23,6 +22,7 @@ var _ MappedNullable = &UpdateClusterPermissionsRequest{}
 // UpdateClusterPermissionsRequest Key for server configuration
 type UpdateClusterPermissionsRequest struct {
 	Permissions UpdateClusterDatastoreRequestDatastorePermissions `json:"permissions"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateClusterPermissionsRequest UpdateClusterPermissionsRequest
@@ -80,6 +80,11 @@ func (o UpdateClusterPermissionsRequest) MarshalJSON() ([]byte, error) {
 func (o UpdateClusterPermissionsRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["permissions"] = o.Permissions
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -107,15 +112,20 @@ func (o *UpdateClusterPermissionsRequest) UnmarshalJSON(data []byte) (err error)
 
 	varUpdateClusterPermissionsRequest := _UpdateClusterPermissionsRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varUpdateClusterPermissionsRequest)
+	err = json.Unmarshal(data, &varUpdateClusterPermissionsRequest)
 
 	if err != nil {
 		return err
 	}
 
 	*o = UpdateClusterPermissionsRequest(varUpdateClusterPermissionsRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "permissions")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

@@ -32,7 +32,10 @@ type AddGroupsRequestGroupConfig struct {
 	ConfigManagementId *string `json:"configManagementId,omitempty"`
 	// Enable or disable CMDB Discovery
 	ConfigCmdbDiscovery *bool `json:"configCmdbDiscovery,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddGroupsRequestGroupConfig AddGroupsRequestGroupConfig
 
 // NewAddGroupsRequestGroupConfig instantiates a new AddGroupsRequestGroupConfig object
 // This constructor will assign default values to properties that have it defined,
@@ -271,7 +274,38 @@ func (o AddGroupsRequestGroupConfig) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ConfigCmdbDiscovery) {
 		toSerialize["configCmdbDiscovery"] = o.ConfigCmdbDiscovery
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddGroupsRequestGroupConfig) UnmarshalJSON(data []byte) (err error) {
+	varAddGroupsRequestGroupConfig := _AddGroupsRequestGroupConfig{}
+
+	err = json.Unmarshal(data, &varAddGroupsRequestGroupConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddGroupsRequestGroupConfig(varAddGroupsRequestGroupConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "dnsIntegrationId")
+		delete(additionalProperties, "configCmdbId")
+		delete(additionalProperties, "configCmId")
+		delete(additionalProperties, "serviceRegistryId")
+		delete(additionalProperties, "configManagementId")
+		delete(additionalProperties, "configCmdbDiscovery")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddGroupsRequestGroupConfig struct {

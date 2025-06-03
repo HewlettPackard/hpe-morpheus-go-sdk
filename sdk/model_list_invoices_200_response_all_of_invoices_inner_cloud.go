@@ -23,7 +23,10 @@ type ListInvoices200ResponseAllOfInvoicesInnerCloud struct {
 	Id *int64 `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
 	Uuid *string `json:"uuid,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListInvoices200ResponseAllOfInvoicesInnerCloud ListInvoices200ResponseAllOfInvoicesInnerCloud
 
 // NewListInvoices200ResponseAllOfInvoicesInnerCloud instantiates a new ListInvoices200ResponseAllOfInvoicesInnerCloud object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o ListInvoices200ResponseAllOfInvoicesInnerCloud) ToMap() (map[string]inte
 	if !IsNil(o.Uuid) {
 		toSerialize["uuid"] = o.Uuid
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListInvoices200ResponseAllOfInvoicesInnerCloud) UnmarshalJSON(data []byte) (err error) {
+	varListInvoices200ResponseAllOfInvoicesInnerCloud := _ListInvoices200ResponseAllOfInvoicesInnerCloud{}
+
+	err = json.Unmarshal(data, &varListInvoices200ResponseAllOfInvoicesInnerCloud)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListInvoices200ResponseAllOfInvoicesInnerCloud(varListInvoices200ResponseAllOfInvoicesInnerCloud)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "uuid")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListInvoices200ResponseAllOfInvoicesInnerCloud struct {

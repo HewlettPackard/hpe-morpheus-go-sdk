@@ -23,7 +23,10 @@ type UpdateSpecTemplateRequestSpecTemplateConfigCloudformation struct {
 	IAM *AddSpecTemplateRequestSpecTemplateConfigCloudformationIAM `json:"IAM,omitempty"`
 	CAPABILITY_NAMED_IAM *AddSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYNAMEDIAM `json:"CAPABILITY_NAMED_IAM,omitempty"`
 	CAPABILITY_AUTO_EXPAND *AddSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYAUTOEXPAND `json:"CAPABILITY_AUTO_EXPAND,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateSpecTemplateRequestSpecTemplateConfigCloudformation UpdateSpecTemplateRequestSpecTemplateConfigCloudformation
 
 // NewUpdateSpecTemplateRequestSpecTemplateConfigCloudformation instantiates a new UpdateSpecTemplateRequestSpecTemplateConfigCloudformation object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o UpdateSpecTemplateRequestSpecTemplateConfigCloudformation) ToMap() (map[
 	if !IsNil(o.CAPABILITY_AUTO_EXPAND) {
 		toSerialize["CAPABILITY_AUTO_EXPAND"] = o.CAPABILITY_AUTO_EXPAND
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateSpecTemplateRequestSpecTemplateConfigCloudformation) UnmarshalJSON(data []byte) (err error) {
+	varUpdateSpecTemplateRequestSpecTemplateConfigCloudformation := _UpdateSpecTemplateRequestSpecTemplateConfigCloudformation{}
+
+	err = json.Unmarshal(data, &varUpdateSpecTemplateRequestSpecTemplateConfigCloudformation)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateSpecTemplateRequestSpecTemplateConfigCloudformation(varUpdateSpecTemplateRequestSpecTemplateConfigCloudformation)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "IAM")
+		delete(additionalProperties, "CAPABILITY_NAMED_IAM")
+		delete(additionalProperties, "CAPABILITY_AUTO_EXPAND")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateSpecTemplateRequestSpecTemplateConfigCloudformation struct {

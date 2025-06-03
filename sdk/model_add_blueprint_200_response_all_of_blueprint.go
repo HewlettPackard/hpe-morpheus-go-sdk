@@ -30,7 +30,10 @@ type AddBlueprint200ResponseAllOfBlueprint struct {
 	// Category
 	Category *string `json:"category,omitempty"`
 	Config *AddBlueprint200ResponseAllOfBlueprintConfig `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddBlueprint200ResponseAllOfBlueprint AddBlueprint200ResponseAllOfBlueprint
 
 // NewAddBlueprint200ResponseAllOfBlueprint instantiates a new AddBlueprint200ResponseAllOfBlueprint object
 // This constructor will assign default values to properties that have it defined,
@@ -269,7 +272,38 @@ func (o AddBlueprint200ResponseAllOfBlueprint) ToMap() (map[string]interface{}, 
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddBlueprint200ResponseAllOfBlueprint) UnmarshalJSON(data []byte) (err error) {
+	varAddBlueprint200ResponseAllOfBlueprint := _AddBlueprint200ResponseAllOfBlueprint{}
+
+	err = json.Unmarshal(data, &varAddBlueprint200ResponseAllOfBlueprint)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddBlueprint200ResponseAllOfBlueprint(varAddBlueprint200ResponseAllOfBlueprint)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "config")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddBlueprint200ResponseAllOfBlueprint struct {

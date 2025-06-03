@@ -24,7 +24,10 @@ type AllocateNetworkFloatingIpRequest struct {
 	NetworkServerId *int64 `json:"networkServerId,omitempty"`
 	// Id of the network floating ip pool
 	FloatingIpPoolId *int64 `json:"floatingIpPoolId,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AllocateNetworkFloatingIpRequest AllocateNetworkFloatingIpRequest
 
 // NewAllocateNetworkFloatingIpRequest instantiates a new AllocateNetworkFloatingIpRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -123,7 +126,34 @@ func (o AllocateNetworkFloatingIpRequest) ToMap() (map[string]interface{}, error
 	if !IsNil(o.FloatingIpPoolId) {
 		toSerialize["floatingIpPoolId"] = o.FloatingIpPoolId
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AllocateNetworkFloatingIpRequest) UnmarshalJSON(data []byte) (err error) {
+	varAllocateNetworkFloatingIpRequest := _AllocateNetworkFloatingIpRequest{}
+
+	err = json.Unmarshal(data, &varAllocateNetworkFloatingIpRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AllocateNetworkFloatingIpRequest(varAllocateNetworkFloatingIpRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "networkServerId")
+		delete(additionalProperties, "floatingIpPoolId")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAllocateNetworkFloatingIpRequest struct {

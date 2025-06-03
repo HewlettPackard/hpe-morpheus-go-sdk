@@ -30,7 +30,10 @@ type BlueprintCreateSuccess struct {
 	// Category
 	Category *string `json:"category,omitempty"`
 	Config *AddBlueprint200ResponseAllOfBlueprintConfig `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _BlueprintCreateSuccess BlueprintCreateSuccess
 
 // NewBlueprintCreateSuccess instantiates a new BlueprintCreateSuccess object
 // This constructor will assign default values to properties that have it defined,
@@ -269,7 +272,38 @@ func (o BlueprintCreateSuccess) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *BlueprintCreateSuccess) UnmarshalJSON(data []byte) (err error) {
+	varBlueprintCreateSuccess := _BlueprintCreateSuccess{}
+
+	err = json.Unmarshal(data, &varBlueprintCreateSuccess)
+
+	if err != nil {
+		return err
+	}
+
+	*o = BlueprintCreateSuccess(varBlueprintCreateSuccess)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "config")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableBlueprintCreateSuccess struct {

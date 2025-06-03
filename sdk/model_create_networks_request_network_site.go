@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -24,6 +23,7 @@ var _ MappedNullable = &CreateNetworksRequestNetworkSite{}
 type CreateNetworksRequestNetworkSite struct {
 	// Group ID
 	Id int64 `json:"id"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _CreateNetworksRequestNetworkSite CreateNetworksRequestNetworkSite
@@ -81,6 +81,11 @@ func (o CreateNetworksRequestNetworkSite) MarshalJSON() ([]byte, error) {
 func (o CreateNetworksRequestNetworkSite) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -108,15 +113,20 @@ func (o *CreateNetworksRequestNetworkSite) UnmarshalJSON(data []byte) (err error
 
 	varCreateNetworksRequestNetworkSite := _CreateNetworksRequestNetworkSite{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varCreateNetworksRequestNetworkSite)
+	err = json.Unmarshal(data, &varCreateNetworksRequestNetworkSite)
 
 	if err != nil {
 		return err
 	}
 
 	*o = CreateNetworksRequestNetworkSite(varCreateNetworksRequestNetworkSite)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

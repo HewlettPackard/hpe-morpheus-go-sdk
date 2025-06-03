@@ -23,7 +23,10 @@ type MaxMemoryPolicyTypeConfiguration1 struct {
 	MaxMemory *MaxMemoryPolicyTypeConfigurationMaxMemory `json:"maxMemory,omitempty"`
 	// Set to on to exclude containers
 	ExcludeContainers *string `json:"excludeContainers,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _MaxMemoryPolicyTypeConfiguration1 MaxMemoryPolicyTypeConfiguration1
 
 // NewMaxMemoryPolicyTypeConfiguration1 instantiates a new MaxMemoryPolicyTypeConfiguration1 object
 // This constructor will assign default values to properties that have it defined,
@@ -126,7 +129,34 @@ func (o MaxMemoryPolicyTypeConfiguration1) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.ExcludeContainers) {
 		toSerialize["excludeContainers"] = o.ExcludeContainers
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *MaxMemoryPolicyTypeConfiguration1) UnmarshalJSON(data []byte) (err error) {
+	varMaxMemoryPolicyTypeConfiguration1 := _MaxMemoryPolicyTypeConfiguration1{}
+
+	err = json.Unmarshal(data, &varMaxMemoryPolicyTypeConfiguration1)
+
+	if err != nil {
+		return err
+	}
+
+	*o = MaxMemoryPolicyTypeConfiguration1(varMaxMemoryPolicyTypeConfiguration1)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "maxMemory")
+		delete(additionalProperties, "excludeContainers")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableMaxMemoryPolicyTypeConfiguration1 struct {

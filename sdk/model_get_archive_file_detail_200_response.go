@@ -22,7 +22,10 @@ var _ MappedNullable = &GetArchiveFileDetail200Response{}
 type GetArchiveFileDetail200Response struct {
 	ArchiveFile *GetArchiveBucket200ResponseArchiveFilesInner `json:"archiveFile,omitempty"`
 	IsOwner *bool `json:"isOwner,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetArchiveFileDetail200Response GetArchiveFileDetail200Response
 
 // NewGetArchiveFileDetail200Response instantiates a new GetArchiveFileDetail200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o GetArchiveFileDetail200Response) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.IsOwner) {
 		toSerialize["isOwner"] = o.IsOwner
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetArchiveFileDetail200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetArchiveFileDetail200Response := _GetArchiveFileDetail200Response{}
+
+	err = json.Unmarshal(data, &varGetArchiveFileDetail200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetArchiveFileDetail200Response(varGetArchiveFileDetail200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "archiveFile")
+		delete(additionalProperties, "isOwner")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetArchiveFileDetail200Response struct {

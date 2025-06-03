@@ -37,7 +37,10 @@ type Script struct {
 	RunAsPassword *string `json:"runAsPassword,omitempty"`
 	SudoUser *bool `json:"sudoUser,omitempty"`
 	FailOnError *bool `json:"failOnError,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _Script Script
 
 // NewScript instantiates a new Script object
 // This constructor will assign default values to properties that have it defined,
@@ -661,7 +664,49 @@ func (o Script) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.FailOnError) {
 		toSerialize["failOnError"] = o.FailOnError
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *Script) UnmarshalJSON(data []byte) (err error) {
+	varScript := _Script{}
+
+	err = json.Unmarshal(data, &varScript)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Script(varScript)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "sortOrder")
+		delete(additionalProperties, "scriptVersion")
+		delete(additionalProperties, "scriptPhase")
+		delete(additionalProperties, "scriptType")
+		delete(additionalProperties, "script")
+		delete(additionalProperties, "scriptService")
+		delete(additionalProperties, "scriptMethod")
+		delete(additionalProperties, "runAsUser")
+		delete(additionalProperties, "runAsPassword")
+		delete(additionalProperties, "sudoUser")
+		delete(additionalProperties, "failOnError")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableScript struct {

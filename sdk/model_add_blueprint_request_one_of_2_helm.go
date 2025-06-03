@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -25,6 +24,7 @@ type AddBlueprintRequestOneOf2Helm struct {
 	// Configuration Type
 	ConfigType string `json:"configType"`
 	Git *AddBlueprintRequestOneOf2HelmGit `json:"git,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddBlueprintRequestOneOf2Helm AddBlueprintRequestOneOf2Helm
@@ -117,6 +117,11 @@ func (o AddBlueprintRequestOneOf2Helm) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Git) {
 		toSerialize["git"] = o.Git
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -144,15 +149,21 @@ func (o *AddBlueprintRequestOneOf2Helm) UnmarshalJSON(data []byte) (err error) {
 
 	varAddBlueprintRequestOneOf2Helm := _AddBlueprintRequestOneOf2Helm{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddBlueprintRequestOneOf2Helm)
+	err = json.Unmarshal(data, &varAddBlueprintRequestOneOf2Helm)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddBlueprintRequestOneOf2Helm(varAddBlueprintRequestOneOf2Helm)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "configType")
+		delete(additionalProperties, "git")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

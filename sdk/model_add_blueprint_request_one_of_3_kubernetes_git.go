@@ -28,7 +28,10 @@ type AddBlueprintRequestOneOf3KubernetesGit struct {
 	IntegrationId *int64 `json:"integrationId,omitempty"`
 	// Branch Name
 	Branch *string `json:"branch,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddBlueprintRequestOneOf3KubernetesGit AddBlueprintRequestOneOf3KubernetesGit
 
 // NewAddBlueprintRequestOneOf3KubernetesGit instantiates a new AddBlueprintRequestOneOf3KubernetesGit object
 // This constructor will assign default values to properties that have it defined,
@@ -197,7 +200,36 @@ func (o AddBlueprintRequestOneOf3KubernetesGit) ToMap() (map[string]interface{},
 	if !IsNil(o.Branch) {
 		toSerialize["branch"] = o.Branch
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddBlueprintRequestOneOf3KubernetesGit) UnmarshalJSON(data []byte) (err error) {
+	varAddBlueprintRequestOneOf3KubernetesGit := _AddBlueprintRequestOneOf3KubernetesGit{}
+
+	err = json.Unmarshal(data, &varAddBlueprintRequestOneOf3KubernetesGit)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddBlueprintRequestOneOf3KubernetesGit(varAddBlueprintRequestOneOf3KubernetesGit)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "repoId")
+		delete(additionalProperties, "path")
+		delete(additionalProperties, "integrationId")
+		delete(additionalProperties, "branch")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddBlueprintRequestOneOf3KubernetesGit struct {

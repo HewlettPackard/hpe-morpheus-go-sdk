@@ -26,7 +26,10 @@ type AddUserGroupRequestUserGroup struct {
 	ServerGroup *string `json:"serverGroup,omitempty"`
 	// A list of IDs of users that are in the user group
 	Users []int64 `json:"users,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddUserGroupRequestUserGroup AddUserGroupRequestUserGroup
 
 // NewAddUserGroupRequestUserGroup instantiates a new AddUserGroupRequestUserGroup object
 // This constructor will assign default values to properties that have it defined,
@@ -230,7 +233,37 @@ func (o AddUserGroupRequestUserGroup) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Users) {
 		toSerialize["users"] = o.Users
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddUserGroupRequestUserGroup) UnmarshalJSON(data []byte) (err error) {
+	varAddUserGroupRequestUserGroup := _AddUserGroupRequestUserGroup{}
+
+	err = json.Unmarshal(data, &varAddUserGroupRequestUserGroup)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddUserGroupRequestUserGroup(varAddUserGroupRequestUserGroup)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "sudoUser")
+		delete(additionalProperties, "serverGroup")
+		delete(additionalProperties, "users")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddUserGroupRequestUserGroup struct {

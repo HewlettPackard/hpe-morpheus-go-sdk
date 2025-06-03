@@ -48,7 +48,10 @@ type UpdateInstanceTypeRequestInstanceType struct {
 	PriceSets []AddInstanceTypeRequestInstanceTypePriceSetsInner `json:"priceSets,omitempty"`
 	// Array of instance type option type IDs
 	OptionTypes []int64 `json:"optionTypes,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateInstanceTypeRequestInstanceType UpdateInstanceTypeRequestInstanceType
 
 // NewUpdateInstanceTypeRequestInstanceType instantiates a new UpdateInstanceTypeRequestInstanceType object
 // This constructor will assign default values to properties that have it defined,
@@ -571,7 +574,46 @@ func (o UpdateInstanceTypeRequestInstanceType) ToMap() (map[string]interface{}, 
 	if !IsNil(o.OptionTypes) {
 		toSerialize["optionTypes"] = o.OptionTypes
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateInstanceTypeRequestInstanceType) UnmarshalJSON(data []byte) (err error) {
+	varUpdateInstanceTypeRequestInstanceType := _UpdateInstanceTypeRequestInstanceType{}
+
+	err = json.Unmarshal(data, &varUpdateInstanceTypeRequestInstanceType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateInstanceTypeRequestInstanceType(varUpdateInstanceTypeRequestInstanceType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "featured")
+		delete(additionalProperties, "hasSettings")
+		delete(additionalProperties, "hasAutoScale")
+		delete(additionalProperties, "hasDeployment")
+		delete(additionalProperties, "environmentPrefix")
+		delete(additionalProperties, "environmentVariables")
+		delete(additionalProperties, "priceSets")
+		delete(additionalProperties, "optionTypes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateInstanceTypeRequestInstanceType struct {

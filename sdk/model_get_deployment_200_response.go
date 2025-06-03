@@ -21,7 +21,10 @@ var _ MappedNullable = &GetDeployment200Response{}
 // GetDeployment200Response struct for GetDeployment200Response
 type GetDeployment200Response struct {
 	Deployment *GetDeployment200ResponseDeployment `json:"deployment,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetDeployment200Response GetDeployment200Response
 
 // NewGetDeployment200Response instantiates a new GetDeployment200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o GetDeployment200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Deployment) {
 		toSerialize["deployment"] = o.Deployment
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetDeployment200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetDeployment200Response := _GetDeployment200Response{}
+
+	err = json.Unmarshal(data, &varGetDeployment200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetDeployment200Response(varGetDeployment200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "deployment")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetDeployment200Response struct {

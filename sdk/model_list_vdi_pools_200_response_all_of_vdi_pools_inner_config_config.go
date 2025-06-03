@@ -29,7 +29,10 @@ type ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig struct {
 	VmwareFolderId *string `json:"vmwareFolderId,omitempty"`
 	ResourcePoolId *int64 `json:"resourcePoolId,omitempty"`
 	PoolProviderType *string `json:"poolProviderType,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig
 
 // NewListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig instantiates a new ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig object
 // This constructor will assign default values to properties that have it defined,
@@ -373,7 +376,41 @@ func (o ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig) ToMap() (map[stri
 	if !IsNil(o.PoolProviderType) {
 		toSerialize["poolProviderType"] = o.PoolProviderType
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig) UnmarshalJSON(data []byte) (err error) {
+	varListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig := _ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig{}
+
+	err = json.Unmarshal(data, &varListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig(varListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "createUser")
+		delete(additionalProperties, "isEC2")
+		delete(additionalProperties, "isVpcSelectable")
+		delete(additionalProperties, "noAgent")
+		delete(additionalProperties, "smbiosAssetTag")
+		delete(additionalProperties, "nestedVirtualization")
+		delete(additionalProperties, "vmwareFolderId")
+		delete(additionalProperties, "resourcePoolId")
+		delete(additionalProperties, "poolProviderType")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig struct {

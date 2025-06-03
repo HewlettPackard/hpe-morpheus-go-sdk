@@ -23,7 +23,10 @@ type GetContainer200ResponseContainerContainerTypeSet struct {
 	Id *int32 `json:"id,omitempty"`
 	Code *string `json:"code,omitempty"`
 	Category *string `json:"category,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetContainer200ResponseContainerContainerTypeSet GetContainer200ResponseContainerContainerTypeSet
 
 // NewGetContainer200ResponseContainerContainerTypeSet instantiates a new GetContainer200ResponseContainerContainerTypeSet object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o GetContainer200ResponseContainerContainerTypeSet) ToMap() (map[string]in
 	if !IsNil(o.Category) {
 		toSerialize["category"] = o.Category
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetContainer200ResponseContainerContainerTypeSet) UnmarshalJSON(data []byte) (err error) {
+	varGetContainer200ResponseContainerContainerTypeSet := _GetContainer200ResponseContainerContainerTypeSet{}
+
+	err = json.Unmarshal(data, &varGetContainer200ResponseContainerContainerTypeSet)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetContainer200ResponseContainerContainerTypeSet(varGetContainer200ResponseContainerContainerTypeSet)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "category")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetContainer200ResponseContainerContainerTypeSet struct {

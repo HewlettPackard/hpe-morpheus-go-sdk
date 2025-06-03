@@ -21,7 +21,10 @@ var _ MappedNullable = &GetFileTemplate200Response{}
 // GetFileTemplate200Response struct for GetFileTemplate200Response
 type GetFileTemplate200Response struct {
 	ContainerTemplate *ListFileTemplates200ResponseAllOfContainerTemplatesInner `json:"containerTemplate,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetFileTemplate200Response GetFileTemplate200Response
 
 // NewGetFileTemplate200Response instantiates a new GetFileTemplate200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o GetFileTemplate200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ContainerTemplate) {
 		toSerialize["containerTemplate"] = o.ContainerTemplate
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetFileTemplate200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetFileTemplate200Response := _GetFileTemplate200Response{}
+
+	err = json.Unmarshal(data, &varGetFileTemplate200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetFileTemplate200Response(varGetFileTemplate200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "containerTemplate")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetFileTemplate200Response struct {

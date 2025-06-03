@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -24,6 +23,7 @@ var _ MappedNullable = &RemoveAppInstanceRequest{}
 type RemoveAppInstanceRequest struct {
 	// The ID of the instance being removed
 	InstanceId int64 `json:"instanceId"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _RemoveAppInstanceRequest RemoveAppInstanceRequest
@@ -81,6 +81,11 @@ func (o RemoveAppInstanceRequest) MarshalJSON() ([]byte, error) {
 func (o RemoveAppInstanceRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["instanceId"] = o.InstanceId
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -108,15 +113,20 @@ func (o *RemoveAppInstanceRequest) UnmarshalJSON(data []byte) (err error) {
 
 	varRemoveAppInstanceRequest := _RemoveAppInstanceRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varRemoveAppInstanceRequest)
+	err = json.Unmarshal(data, &varRemoveAppInstanceRequest)
 
 	if err != nil {
 		return err
 	}
 
 	*o = RemoveAppInstanceRequest(varRemoveAppInstanceRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "instanceId")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

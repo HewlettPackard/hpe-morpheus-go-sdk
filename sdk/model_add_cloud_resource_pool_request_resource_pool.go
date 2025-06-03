@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -39,6 +38,7 @@ type AddCloudResourcePoolRequestResourcePool struct {
 	Config AddCloudResourcePoolRequestResourcePoolConfig `json:"config"`
 	TenantPermissions *AddCloudResourcePoolRequestResourcePoolTenantPermissions `json:"tenantPermissions,omitempty"`
 	ResourcePermissions *UpdateCloudDatastoresRequestDatastoreResourcePermissions `json:"resourcePermissions,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddCloudResourcePoolRequestResourcePool AddCloudResourcePoolRequestResourcePool
@@ -422,6 +422,11 @@ func (o AddCloudResourcePoolRequestResourcePool) ToMap() (map[string]interface{}
 	if !IsNil(o.ResourcePermissions) {
 		toSerialize["resourcePermissions"] = o.ResourcePermissions
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -450,15 +455,29 @@ func (o *AddCloudResourcePoolRequestResourcePool) UnmarshalJSON(data []byte) (er
 
 	varAddCloudResourcePoolRequestResourcePool := _AddCloudResourcePoolRequestResourcePool{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddCloudResourcePoolRequestResourcePool)
+	err = json.Unmarshal(data, &varAddCloudResourcePoolRequestResourcePool)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddCloudResourcePoolRequestResourcePool(varAddCloudResourcePoolRequestResourcePool)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "defaultPool")
+		delete(additionalProperties, "defaultImage")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "displayName")
+		delete(additionalProperties, "inventory")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "tenantPermissions")
+		delete(additionalProperties, "resourcePermissions")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

@@ -40,7 +40,10 @@ type ListIncidents200ResponseAllOfIssuesInner struct {
 	SeverityId *int64 `json:"severityId,omitempty"`
 	StartDate *time.Time `json:"startDate,omitempty"`
 	Status *string `json:"status,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListIncidents200ResponseAllOfIssuesInner ListIncidents200ResponseAllOfIssuesInner
 
 // NewListIncidents200ResponseAllOfIssuesInner instantiates a new ListIncidents200ResponseAllOfIssuesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -734,7 +737,51 @@ func (o ListIncidents200ResponseAllOfIssuesInner) ToMap() (map[string]interface{
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListIncidents200ResponseAllOfIssuesInner) UnmarshalJSON(data []byte) (err error) {
+	varListIncidents200ResponseAllOfIssuesInner := _ListIncidents200ResponseAllOfIssuesInner{}
+
+	err = json.Unmarshal(data, &varListIncidents200ResponseAllOfIssuesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListIncidents200ResponseAllOfIssuesInner(varListIncidents200ResponseAllOfIssuesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "attachmentType")
+		delete(additionalProperties, "app")
+		delete(additionalProperties, "available")
+		delete(additionalProperties, "check")
+		delete(additionalProperties, "checkGroup")
+		delete(additionalProperties, "checkStatus")
+		delete(additionalProperties, "endDate")
+		delete(additionalProperties, "health")
+		delete(additionalProperties, "inUptime")
+		delete(additionalProperties, "incident")
+		delete(additionalProperties, "lastCheckTime")
+		delete(additionalProperties, "lastError")
+		delete(additionalProperties, "lastMessage")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "severity")
+		delete(additionalProperties, "severityId")
+		delete(additionalProperties, "startDate")
+		delete(additionalProperties, "status")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListIncidents200ResponseAllOfIssuesInner struct {

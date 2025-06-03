@@ -32,7 +32,10 @@ type ListPriceSets200ResponseAllOfPriceSetsInner struct {
 	ZonePool *string `json:"zonePool,omitempty"`
 	Account *string `json:"account,omitempty"`
 	Prices []ListPriceSets200ResponseAllOfPriceSetsInnerPricesInner `json:"prices,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListPriceSets200ResponseAllOfPriceSetsInner ListPriceSets200ResponseAllOfPriceSetsInner
 
 // NewListPriceSets200ResponseAllOfPriceSetsInner instantiates a new ListPriceSets200ResponseAllOfPriceSetsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -481,7 +484,44 @@ func (o ListPriceSets200ResponseAllOfPriceSetsInner) ToMap() (map[string]interfa
 	if !IsNil(o.Prices) {
 		toSerialize["prices"] = o.Prices
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListPriceSets200ResponseAllOfPriceSetsInner) UnmarshalJSON(data []byte) (err error) {
+	varListPriceSets200ResponseAllOfPriceSetsInner := _ListPriceSets200ResponseAllOfPriceSetsInner{}
+
+	err = json.Unmarshal(data, &varListPriceSets200ResponseAllOfPriceSetsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListPriceSets200ResponseAllOfPriceSetsInner(varListPriceSets200ResponseAllOfPriceSetsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "priceUnit")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "regionCode")
+		delete(additionalProperties, "systemCreated")
+		delete(additionalProperties, "zone")
+		delete(additionalProperties, "zonePool")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "prices")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListPriceSets200ResponseAllOfPriceSetsInner struct {

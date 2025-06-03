@@ -22,7 +22,10 @@ var _ MappedNullable = &InstanceSnapshots{}
 type InstanceSnapshots struct {
 	// List of snapshot objects
 	Snapshots []SnapshotsInstance200ResponseSnapshotsInner `json:"snapshots,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _InstanceSnapshots InstanceSnapshots
 
 // NewInstanceSnapshots instantiates a new InstanceSnapshots object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o InstanceSnapshots) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Snapshots) {
 		toSerialize["snapshots"] = o.Snapshots
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *InstanceSnapshots) UnmarshalJSON(data []byte) (err error) {
+	varInstanceSnapshots := _InstanceSnapshots{}
+
+	err = json.Unmarshal(data, &varInstanceSnapshots)
+
+	if err != nil {
+		return err
+	}
+
+	*o = InstanceSnapshots(varInstanceSnapshots)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "snapshots")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableInstanceSnapshots struct {

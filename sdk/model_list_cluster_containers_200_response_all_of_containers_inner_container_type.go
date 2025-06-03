@@ -24,7 +24,10 @@ type ListClusterContainers200ResponseAllOfContainersInnerContainerType struct {
 	Code *string `json:"code,omitempty"`
 	Category *string `json:"category,omitempty"`
 	Name *string `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListClusterContainers200ResponseAllOfContainersInnerContainerType ListClusterContainers200ResponseAllOfContainersInnerContainerType
 
 // NewListClusterContainers200ResponseAllOfContainersInnerContainerType instantiates a new ListClusterContainers200ResponseAllOfContainersInnerContainerType object
 // This constructor will assign default values to properties that have it defined,
@@ -193,7 +196,36 @@ func (o ListClusterContainers200ResponseAllOfContainersInnerContainerType) ToMap
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerType) UnmarshalJSON(data []byte) (err error) {
+	varListClusterContainers200ResponseAllOfContainersInnerContainerType := _ListClusterContainers200ResponseAllOfContainersInnerContainerType{}
+
+	err = json.Unmarshal(data, &varListClusterContainers200ResponseAllOfContainersInnerContainerType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListClusterContainers200ResponseAllOfContainersInnerContainerType(varListClusterContainers200ResponseAllOfContainersInnerContainerType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "name")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListClusterContainers200ResponseAllOfContainersInnerContainerType struct {

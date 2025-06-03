@@ -24,7 +24,10 @@ type Creds struct {
 	Name *string `json:"name,omitempty"`
 	Type *string `json:"type,omitempty"`
 	Types []string `json:"types,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _Creds Creds
 
 // NewCreds instantiates a new Creds object
 // This constructor will assign default values to properties that have it defined,
@@ -193,7 +196,36 @@ func (o Creds) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Types) {
 		toSerialize["types"] = o.Types
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *Creds) UnmarshalJSON(data []byte) (err error) {
+	varCreds := _Creds{}
+
+	err = json.Unmarshal(data, &varCreds)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Creds(varCreds)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "types")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCreds struct {

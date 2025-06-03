@@ -24,7 +24,10 @@ type Search200Response struct {
 	Query *string `json:"query,omitempty"`
 	Took *int64 `json:"took,omitempty"`
 	Meta *Search200ResponseMeta `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _Search200Response Search200Response
 
 // NewSearch200Response instantiates a new Search200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -193,7 +196,36 @@ func (o Search200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Meta) {
 		toSerialize["meta"] = o.Meta
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *Search200Response) UnmarshalJSON(data []byte) (err error) {
+	varSearch200Response := _Search200Response{}
+
+	err = json.Unmarshal(data, &varSearch200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Search200Response(varSearch200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "hits")
+		delete(additionalProperties, "query")
+		delete(additionalProperties, "took")
+		delete(additionalProperties, "meta")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableSearch200Response struct {

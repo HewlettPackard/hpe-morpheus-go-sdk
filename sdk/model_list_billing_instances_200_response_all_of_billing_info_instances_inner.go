@@ -30,7 +30,10 @@ type ListBillingInstances200ResponseAllOfBillingInfoInstancesInner struct {
 	Cost *float32 `json:"cost,omitempty"`
 	Currency *string `json:"currency,omitempty"`
 	Containers []ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInner `json:"containers,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListBillingInstances200ResponseAllOfBillingInfoInstancesInner ListBillingInstances200ResponseAllOfBillingInfoInstancesInner
 
 // NewListBillingInstances200ResponseAllOfBillingInfoInstancesInner instantiates a new ListBillingInstances200ResponseAllOfBillingInfoInstancesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -374,7 +377,41 @@ func (o ListBillingInstances200ResponseAllOfBillingInfoInstancesInner) ToMap() (
 	if !IsNil(o.Containers) {
 		toSerialize["containers"] = o.Containers
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListBillingInstances200ResponseAllOfBillingInfoInstancesInner) UnmarshalJSON(data []byte) (err error) {
+	varListBillingInstances200ResponseAllOfBillingInfoInstancesInner := _ListBillingInstances200ResponseAllOfBillingInfoInstancesInner{}
+
+	err = json.Unmarshal(data, &varListBillingInstances200ResponseAllOfBillingInfoInstancesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListBillingInstances200ResponseAllOfBillingInfoInstancesInner(varListBillingInstances200ResponseAllOfBillingInfoInstancesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "instanceId")
+		delete(additionalProperties, "instanceUUID")
+		delete(additionalProperties, "startDate")
+		delete(additionalProperties, "endDate")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "price")
+		delete(additionalProperties, "cost")
+		delete(additionalProperties, "currency")
+		delete(additionalProperties, "containers")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListBillingInstances200ResponseAllOfBillingInfoInstancesInner struct {

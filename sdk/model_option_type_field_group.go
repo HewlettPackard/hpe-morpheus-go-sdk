@@ -29,7 +29,10 @@ type OptionTypeFieldGroup struct {
 	DefaultCollapsed *bool `json:"defaultCollapsed,omitempty"`
 	VisibleOnCode *string `json:"visibleOnCode,omitempty"`
 	Options []ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner `json:"options,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _OptionTypeFieldGroup OptionTypeFieldGroup
 
 // NewOptionTypeFieldGroup instantiates a new OptionTypeFieldGroup object
 // This constructor will assign default values to properties that have it defined,
@@ -373,7 +376,41 @@ func (o OptionTypeFieldGroup) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Options) {
 		toSerialize["options"] = o.Options
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *OptionTypeFieldGroup) UnmarshalJSON(data []byte) (err error) {
+	varOptionTypeFieldGroup := _OptionTypeFieldGroup{}
+
+	err = json.Unmarshal(data, &varOptionTypeFieldGroup)
+
+	if err != nil {
+		return err
+	}
+
+	*o = OptionTypeFieldGroup(varOptionTypeFieldGroup)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "localizedName")
+		delete(additionalProperties, "collapsible")
+		delete(additionalProperties, "defaultCollapsed")
+		delete(additionalProperties, "visibleOnCode")
+		delete(additionalProperties, "options")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableOptionTypeFieldGroup struct {

@@ -35,7 +35,10 @@ type ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerT
 	ContainerScripts []map[string]interface{} `json:"containerScripts,omitempty"`
 	ContainerTemplates []map[string]interface{} `json:"containerTemplates,omitempty"`
 	EnvironmentVariables []map[string]interface{} `json:"environmentVariables,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType
 
 // NewListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType instantiates a new ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType object
 // This constructor will assign default values to properties that have it defined,
@@ -589,7 +592,47 @@ func (o ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContain
 	if !IsNil(o.EnvironmentVariables) {
 		toSerialize["environmentVariables"] = o.EnvironmentVariables
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) UnmarshalJSON(data []byte) (err error) {
+	varListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType := _ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType{}
+
+	err = json.Unmarshal(data, &varListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType(varListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "shortName")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "containerVersion")
+		delete(additionalProperties, "provisionType")
+		delete(additionalProperties, "virtualImage")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "containerPorts")
+		delete(additionalProperties, "containerScripts")
+		delete(additionalProperties, "containerTemplates")
+		delete(additionalProperties, "environmentVariables")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType struct {

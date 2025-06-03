@@ -42,7 +42,10 @@ type GetInstanceStats200ResponseInstanceStats struct {
 	Total *float32 `json:"total,omitempty"`
 	// Total number of containers across all instances
 	TotalContainers *float32 `json:"totalContainers,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetInstanceStats200ResponseInstanceStats GetInstanceStats200ResponseInstanceStats
 
 // NewGetInstanceStats200ResponseInstanceStats instantiates a new GetInstanceStats200ResponseInstanceStats object
 // This constructor will assign default values to properties that have it defined,
@@ -456,7 +459,43 @@ func (o GetInstanceStats200ResponseInstanceStats) ToMap() (map[string]interface{
 	if !IsNil(o.TotalContainers) {
 		toSerialize["totalContainers"] = o.TotalContainers
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetInstanceStats200ResponseInstanceStats) UnmarshalJSON(data []byte) (err error) {
+	varGetInstanceStats200ResponseInstanceStats := _GetInstanceStats200ResponseInstanceStats{}
+
+	err = json.Unmarshal(data, &varGetInstanceStats200ResponseInstanceStats)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetInstanceStats200ResponseInstanceStats(varGetInstanceStats200ResponseInstanceStats)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "maxCpu")
+		delete(additionalProperties, "maxCores")
+		delete(additionalProperties, "cpuUsageAverage")
+		delete(additionalProperties, "cpuUsagePeak")
+		delete(additionalProperties, "usedMemory")
+		delete(additionalProperties, "maxMemory")
+		delete(additionalProperties, "usedStorage")
+		delete(additionalProperties, "maxStorage")
+		delete(additionalProperties, "running")
+		delete(additionalProperties, "total")
+		delete(additionalProperties, "totalContainers")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetInstanceStats200ResponseInstanceStats struct {

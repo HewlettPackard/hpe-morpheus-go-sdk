@@ -34,7 +34,10 @@ type StorageVolumeType struct {
 	Category *string `json:"category,omitempty"`
 	Enabled *bool `json:"enabled,omitempty"`
 	OptionTypes []ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _StorageVolumeType StorageVolumeType
 
 // NewStorageVolumeType instantiates a new StorageVolumeType object
 // This constructor will assign default values to properties that have it defined,
@@ -553,7 +556,46 @@ func (o StorageVolumeType) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.OptionTypes) {
 		toSerialize["optionTypes"] = o.OptionTypes
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *StorageVolumeType) UnmarshalJSON(data []byte) (err error) {
+	varStorageVolumeType := _StorageVolumeType{}
+
+	err = json.Unmarshal(data, &varStorageVolumeType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = StorageVolumeType(varStorageVolumeType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "displayOrder")
+		delete(additionalProperties, "defaultType")
+		delete(additionalProperties, "customLabel")
+		delete(additionalProperties, "customSize")
+		delete(additionalProperties, "customSizeOptions")
+		delete(additionalProperties, "configurableIOPS")
+		delete(additionalProperties, "hasDatastore")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "optionTypes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableStorageVolumeType struct {

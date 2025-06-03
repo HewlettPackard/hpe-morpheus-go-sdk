@@ -22,7 +22,10 @@ var _ MappedNullable = &Usages{}
 type Usages struct {
 	Activity []ListUsages200ResponseActivityInner `json:"activity,omitempty"`
 	Meta *ListUsages200ResponseMeta `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _Usages Usages
 
 // NewUsages instantiates a new Usages object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o Usages) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Meta) {
 		toSerialize["meta"] = o.Meta
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *Usages) UnmarshalJSON(data []byte) (err error) {
+	varUsages := _Usages{}
+
+	err = json.Unmarshal(data, &varUsages)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Usages(varUsages)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "activity")
+		delete(additionalProperties, "meta")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUsages struct {

@@ -21,7 +21,10 @@ var _ MappedNullable = &ExecutionId{}
 // ExecutionId struct for ExecutionId
 type ExecutionId struct {
 	ExecutionId *string `json:"executionId,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ExecutionId ExecutionId
 
 // NewExecutionId instantiates a new ExecutionId object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o ExecutionId) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ExecutionId) {
 		toSerialize["executionId"] = o.ExecutionId
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ExecutionId) UnmarshalJSON(data []byte) (err error) {
+	varExecutionId := _ExecutionId{}
+
+	err = json.Unmarshal(data, &varExecutionId)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ExecutionId(varExecutionId)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "executionId")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableExecutionId struct {

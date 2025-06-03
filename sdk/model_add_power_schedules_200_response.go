@@ -22,7 +22,10 @@ var _ MappedNullable = &AddPowerSchedules200Response{}
 type AddPowerSchedules200Response struct {
 	Schedule *AddPowerSchedules200ResponseAllOfSchedule `json:"schedule,omitempty"`
 	Success *bool `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddPowerSchedules200Response AddPowerSchedules200Response
 
 // NewAddPowerSchedules200Response instantiates a new AddPowerSchedules200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o AddPowerSchedules200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Success) {
 		toSerialize["success"] = o.Success
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddPowerSchedules200Response) UnmarshalJSON(data []byte) (err error) {
+	varAddPowerSchedules200Response := _AddPowerSchedules200Response{}
+
+	err = json.Unmarshal(data, &varAddPowerSchedules200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddPowerSchedules200Response(varAddPowerSchedules200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "schedule")
+		delete(additionalProperties, "success")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddPowerSchedules200Response struct {

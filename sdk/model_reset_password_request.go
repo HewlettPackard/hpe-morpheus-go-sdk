@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -26,6 +25,7 @@ type ResetPasswordRequest struct {
 	Token string `json:"token"`
 	// User new password. This is the new password for your user.
 	Password string `json:"password"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ResetPasswordRequest ResetPasswordRequest
@@ -109,6 +109,11 @@ func (o ResetPasswordRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["token"] = o.Token
 	toSerialize["password"] = o.Password
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -137,15 +142,21 @@ func (o *ResetPasswordRequest) UnmarshalJSON(data []byte) (err error) {
 
 	varResetPasswordRequest := _ResetPasswordRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varResetPasswordRequest)
+	err = json.Unmarshal(data, &varResetPasswordRequest)
 
 	if err != nil {
 		return err
 	}
 
 	*o = ResetPasswordRequest(varResetPasswordRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "token")
+		delete(additionalProperties, "password")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -29,6 +28,7 @@ type ClusterNamespaceCreate struct {
 	// Namespace active
 	Active *bool `json:"active,omitempty"`
 	ResourcePermissions *AddClusterNamespaceRequestNamespaceResourcePermissions `json:"resourcePermissions,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ClusterNamespaceCreate ClusterNamespaceCreate
@@ -195,6 +195,11 @@ func (o ClusterNamespaceCreate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ResourcePermissions) {
 		toSerialize["resourcePermissions"] = o.ResourcePermissions
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -222,15 +227,23 @@ func (o *ClusterNamespaceCreate) UnmarshalJSON(data []byte) (err error) {
 
 	varClusterNamespaceCreate := _ClusterNamespaceCreate{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varClusterNamespaceCreate)
+	err = json.Unmarshal(data, &varClusterNamespaceCreate)
 
 	if err != nil {
 		return err
 	}
 
 	*o = ClusterNamespaceCreate(varClusterNamespaceCreate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "resourcePermissions")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

@@ -40,7 +40,10 @@ type UpdateServicePlansRequestServicePlanConfigRanges struct {
 	MinCoresPerSocket *string `json:"minCoresPerSocket,omitempty"`
 	// Custom max cores allowed per socket
 	MaxCoresPerSocket *string `json:"maxCoresPerSocket,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateServicePlansRequestServicePlanConfigRanges UpdateServicePlansRequestServicePlanConfigRanges
 
 // NewUpdateServicePlansRequestServicePlanConfigRanges instantiates a new UpdateServicePlansRequestServicePlanConfigRanges object
 // This constructor will assign default values to properties that have it defined,
@@ -419,7 +422,42 @@ func (o UpdateServicePlansRequestServicePlanConfigRanges) ToMap() (map[string]in
 	if !IsNil(o.MaxCoresPerSocket) {
 		toSerialize["maxCoresPerSocket"] = o.MaxCoresPerSocket
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateServicePlansRequestServicePlanConfigRanges) UnmarshalJSON(data []byte) (err error) {
+	varUpdateServicePlansRequestServicePlanConfigRanges := _UpdateServicePlansRequestServicePlanConfigRanges{}
+
+	err = json.Unmarshal(data, &varUpdateServicePlansRequestServicePlanConfigRanges)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateServicePlansRequestServicePlanConfigRanges(varUpdateServicePlansRequestServicePlanConfigRanges)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "minStorage")
+		delete(additionalProperties, "maxStorage")
+		delete(additionalProperties, "minMemory")
+		delete(additionalProperties, "maxMemory")
+		delete(additionalProperties, "minCores")
+		delete(additionalProperties, "maxCores")
+		delete(additionalProperties, "minSockets")
+		delete(additionalProperties, "maxSockets")
+		delete(additionalProperties, "minCoresPerSocket")
+		delete(additionalProperties, "maxCoresPerSocket")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateServicePlansRequestServicePlanConfigRanges struct {

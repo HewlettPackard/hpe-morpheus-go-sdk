@@ -23,7 +23,10 @@ type ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5ProviderSettings s
 	EntityId *string `json:"entityId,omitempty"`
 	AcsUrl *string `json:"acsUrl,omitempty"`
 	SpMetadata *string `json:"spMetadata,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5ProviderSettings ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5ProviderSettings
 
 // NewListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5ProviderSettings instantiates a new ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5ProviderSettings object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5ProviderSetting
 	if !IsNil(o.SpMetadata) {
 		toSerialize["spMetadata"] = o.SpMetadata
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5ProviderSettings) UnmarshalJSON(data []byte) (err error) {
+	varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5ProviderSettings := _ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5ProviderSettings{}
+
+	err = json.Unmarshal(data, &varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5ProviderSettings)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5ProviderSettings(varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5ProviderSettings)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "entityId")
+		delete(additionalProperties, "acsUrl")
+		delete(additionalProperties, "spMetadata")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5ProviderSettings struct {

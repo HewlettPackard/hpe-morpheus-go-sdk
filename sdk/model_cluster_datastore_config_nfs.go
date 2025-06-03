@@ -24,7 +24,10 @@ type ClusterDatastoreConfigNFS struct {
 	SourceHostname *string `json:"sourceHostname,omitempty"`
 	// Path to the target NFS export directory.
 	SourceDirPath *string `json:"sourceDirPath,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ClusterDatastoreConfigNFS ClusterDatastoreConfigNFS
 
 // NewClusterDatastoreConfigNFS instantiates a new ClusterDatastoreConfigNFS object
 // This constructor will assign default values to properties that have it defined,
@@ -123,7 +126,34 @@ func (o ClusterDatastoreConfigNFS) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.SourceDirPath) {
 		toSerialize["sourceDirPath"] = o.SourceDirPath
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ClusterDatastoreConfigNFS) UnmarshalJSON(data []byte) (err error) {
+	varClusterDatastoreConfigNFS := _ClusterDatastoreConfigNFS{}
+
+	err = json.Unmarshal(data, &varClusterDatastoreConfigNFS)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ClusterDatastoreConfigNFS(varClusterDatastoreConfigNFS)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "sourceHostname")
+		delete(additionalProperties, "sourceDirPath")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableClusterDatastoreConfigNFS struct {

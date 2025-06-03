@@ -21,7 +21,10 @@ var _ MappedNullable = &UpdateBlueprintPermissionsRequest{}
 // UpdateBlueprintPermissionsRequest struct for UpdateBlueprintPermissionsRequest
 type UpdateBlueprintPermissionsRequest struct {
 	ResourcePermission *UpdateBlueprintPermissionsRequestResourcePermission `json:"resourcePermission,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateBlueprintPermissionsRequest UpdateBlueprintPermissionsRequest
 
 // NewUpdateBlueprintPermissionsRequest instantiates a new UpdateBlueprintPermissionsRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o UpdateBlueprintPermissionsRequest) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.ResourcePermission) {
 		toSerialize["resourcePermission"] = o.ResourcePermission
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateBlueprintPermissionsRequest) UnmarshalJSON(data []byte) (err error) {
+	varUpdateBlueprintPermissionsRequest := _UpdateBlueprintPermissionsRequest{}
+
+	err = json.Unmarshal(data, &varUpdateBlueprintPermissionsRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateBlueprintPermissionsRequest(varUpdateBlueprintPermissionsRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "resourcePermission")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateBlueprintPermissionsRequest struct {

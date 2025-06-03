@@ -29,7 +29,10 @@ type CheckType struct {
 	CreateIncident *bool `json:"createIncident,omitempty"`
 	PushOnly *bool `json:"pushOnly,omitempty"`
 	TunnelSupported *bool `json:"tunnelSupported,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _CheckType CheckType
 
 // NewCheckType instantiates a new CheckType object
 // This constructor will assign default values to properties that have it defined,
@@ -373,7 +376,41 @@ func (o CheckType) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.TunnelSupported) {
 		toSerialize["tunnelSupported"] = o.TunnelSupported
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *CheckType) UnmarshalJSON(data []byte) (err error) {
+	varCheckType := _CheckType{}
+
+	err = json.Unmarshal(data, &varCheckType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CheckType(varCheckType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "defaultInterval")
+		delete(additionalProperties, "metricName")
+		delete(additionalProperties, "inUptime")
+		delete(additionalProperties, "createIncident")
+		delete(additionalProperties, "pushOnly")
+		delete(additionalProperties, "tunnelSupported")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCheckType struct {

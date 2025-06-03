@@ -44,7 +44,10 @@ type NetworkPoolServerUpdateInfoblox struct {
 	ServiceMode *string `json:"serviceMode,omitempty"`
 	Config *InfobloxNetworkPoolServerConfig `json:"config,omitempty"`
 	Credential *NSXNetworkServerCredential `json:"credential,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _NetworkPoolServerUpdateInfoblox NetworkPoolServerUpdateInfoblox
 
 // NewNetworkPoolServerUpdateInfoblox instantiates a new NetworkPoolServerUpdateInfoblox object
 // This constructor will assign default values to properties that have it defined,
@@ -540,7 +543,45 @@ func (o NetworkPoolServerUpdateInfoblox) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.Credential) {
 		toSerialize["credential"] = o.Credential
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *NetworkPoolServerUpdateInfoblox) UnmarshalJSON(data []byte) (err error) {
+	varNetworkPoolServerUpdateInfoblox := _NetworkPoolServerUpdateInfoblox{}
+
+	err = json.Unmarshal(data, &varNetworkPoolServerUpdateInfoblox)
+
+	if err != nil {
+		return err
+	}
+
+	*o = NetworkPoolServerUpdateInfoblox(varNetworkPoolServerUpdateInfoblox)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "serviceUrl")
+		delete(additionalProperties, "serviceUsername")
+		delete(additionalProperties, "servicePassword")
+		delete(additionalProperties, "serviceThrottleRate")
+		delete(additionalProperties, "ignoreSsl")
+		delete(additionalProperties, "networkFilter")
+		delete(additionalProperties, "zoneFilter")
+		delete(additionalProperties, "tenantMatch")
+		delete(additionalProperties, "serviceMode")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "credential")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableNetworkPoolServerUpdateInfoblox struct {

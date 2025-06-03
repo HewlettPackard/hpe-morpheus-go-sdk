@@ -38,7 +38,10 @@ type ExecutionRequest struct {
 	ErrorMessage *string `json:"errorMessage,omitempty"`
 	Config map[string]interface{} `json:"config,omitempty"`
 	RawData *string `json:"rawData,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ExecutionRequest ExecutionRequest
 
 // NewExecutionRequest instantiates a new ExecutionRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -662,7 +665,49 @@ func (o ExecutionRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.RawData) {
 		toSerialize["rawData"] = o.RawData
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ExecutionRequest) UnmarshalJSON(data []byte) (err error) {
+	varExecutionRequest := _ExecutionRequest{}
+
+	err = json.Unmarshal(data, &varExecutionRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ExecutionRequest(varExecutionRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "uniqueId")
+		delete(additionalProperties, "containerId")
+		delete(additionalProperties, "serverId")
+		delete(additionalProperties, "instanceId")
+		delete(additionalProperties, "resourceId")
+		delete(additionalProperties, "appId")
+		delete(additionalProperties, "stdOut")
+		delete(additionalProperties, "stdErr")
+		delete(additionalProperties, "exitCode")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "expiresAt")
+		delete(additionalProperties, "createdById")
+		delete(additionalProperties, "statusMessage")
+		delete(additionalProperties, "errorMessage")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "rawData")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableExecutionRequest struct {

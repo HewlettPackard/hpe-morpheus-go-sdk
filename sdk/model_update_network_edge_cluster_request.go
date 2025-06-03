@@ -21,7 +21,10 @@ var _ MappedNullable = &UpdateNetworkEdgeClusterRequest{}
 // UpdateNetworkEdgeClusterRequest The parameters for update a network Edge Cluster is type dependent. The following lists the common parameters. See get a specific type to list available options for the network server type. 
 type UpdateNetworkEdgeClusterRequest struct {
 	NetworkEdgeCluster map[string]interface{} `json:"networkEdgeCluster,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateNetworkEdgeClusterRequest UpdateNetworkEdgeClusterRequest
 
 // NewUpdateNetworkEdgeClusterRequest instantiates a new UpdateNetworkEdgeClusterRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o UpdateNetworkEdgeClusterRequest) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.NetworkEdgeCluster) {
 		toSerialize["networkEdgeCluster"] = o.NetworkEdgeCluster
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateNetworkEdgeClusterRequest) UnmarshalJSON(data []byte) (err error) {
+	varUpdateNetworkEdgeClusterRequest := _UpdateNetworkEdgeClusterRequest{}
+
+	err = json.Unmarshal(data, &varUpdateNetworkEdgeClusterRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateNetworkEdgeClusterRequest(varUpdateNetworkEdgeClusterRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "networkEdgeCluster")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateNetworkEdgeClusterRequest struct {

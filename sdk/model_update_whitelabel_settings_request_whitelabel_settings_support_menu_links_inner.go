@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -25,6 +24,7 @@ type UpdateWhitelabelSettingsRequestWhitelabelSettingsSupportMenuLinksInner stru
 	Url string `json:"url"`
 	Label string `json:"label"`
 	LabelCode string `json:"labelCode"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateWhitelabelSettingsRequestWhitelabelSettingsSupportMenuLinksInner UpdateWhitelabelSettingsRequestWhitelabelSettingsSupportMenuLinksInner
@@ -134,6 +134,11 @@ func (o UpdateWhitelabelSettingsRequestWhitelabelSettingsSupportMenuLinksInner) 
 	toSerialize["url"] = o.Url
 	toSerialize["label"] = o.Label
 	toSerialize["labelCode"] = o.LabelCode
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -163,15 +168,22 @@ func (o *UpdateWhitelabelSettingsRequestWhitelabelSettingsSupportMenuLinksInner)
 
 	varUpdateWhitelabelSettingsRequestWhitelabelSettingsSupportMenuLinksInner := _UpdateWhitelabelSettingsRequestWhitelabelSettingsSupportMenuLinksInner{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varUpdateWhitelabelSettingsRequestWhitelabelSettingsSupportMenuLinksInner)
+	err = json.Unmarshal(data, &varUpdateWhitelabelSettingsRequestWhitelabelSettingsSupportMenuLinksInner)
 
 	if err != nil {
 		return err
 	}
 
 	*o = UpdateWhitelabelSettingsRequestWhitelabelSettingsSupportMenuLinksInner(varUpdateWhitelabelSettingsRequestWhitelabelSettingsSupportMenuLinksInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "url")
+		delete(additionalProperties, "label")
+		delete(additionalProperties, "labelCode")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

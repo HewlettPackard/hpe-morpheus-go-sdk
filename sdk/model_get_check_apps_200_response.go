@@ -24,7 +24,10 @@ type GetCheckApps200Response struct {
 	CheckGroups []GetAlerts200ResponseAllOfCheckGroupsInner `json:"checkGroups,omitempty"`
 	Checks []GetAlerts200ResponseAllOfChecksInner `json:"checks,omitempty"`
 	OpenIncidents []GetCheckApps200ResponseOpenIncidentsInner `json:"openIncidents,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetCheckApps200Response GetCheckApps200Response
 
 // NewGetCheckApps200Response instantiates a new GetCheckApps200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -193,7 +196,36 @@ func (o GetCheckApps200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.OpenIncidents) {
 		toSerialize["openIncidents"] = o.OpenIncidents
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetCheckApps200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetCheckApps200Response := _GetCheckApps200Response{}
+
+	err = json.Unmarshal(data, &varGetCheckApps200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetCheckApps200Response(varGetCheckApps200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "monitorApp")
+		delete(additionalProperties, "checkGroups")
+		delete(additionalProperties, "checks")
+		delete(additionalProperties, "openIncidents")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetCheckApps200Response struct {

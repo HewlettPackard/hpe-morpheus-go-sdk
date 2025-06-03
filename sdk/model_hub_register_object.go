@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -23,6 +22,7 @@ var _ MappedNullable = &HubRegisterObject{}
 // HubRegisterObject Object for registering with the [Morpheus Hub](https://morpheushub.com). This is only required for `hubmode=register`.
 type HubRegisterObject struct {
 	Hub SetupRequestAnyOf1OneOf1Hub `json:"hub"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _HubRegisterObject HubRegisterObject
@@ -80,6 +80,11 @@ func (o HubRegisterObject) MarshalJSON() ([]byte, error) {
 func (o HubRegisterObject) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["hub"] = o.Hub
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -107,15 +112,20 @@ func (o *HubRegisterObject) UnmarshalJSON(data []byte) (err error) {
 
 	varHubRegisterObject := _HubRegisterObject{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varHubRegisterObject)
+	err = json.Unmarshal(data, &varHubRegisterObject)
 
 	if err != nil {
 		return err
 	}
 
 	*o = HubRegisterObject(varHubRegisterObject)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "hub")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

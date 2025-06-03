@@ -23,7 +23,10 @@ type CloneInstanceRequest struct {
 	// A name for the new cloned instance. If none is specified the existing name will be duplicated with the 'clone' suffix added.
 	Name *string `json:"name,omitempty"`
 	Group *CloneInstanceRequestGroup `json:"group,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _CloneInstanceRequest CloneInstanceRequest
 
 // NewCloneInstanceRequest instantiates a new CloneInstanceRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -122,7 +125,34 @@ func (o CloneInstanceRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Group) {
 		toSerialize["group"] = o.Group
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *CloneInstanceRequest) UnmarshalJSON(data []byte) (err error) {
+	varCloneInstanceRequest := _CloneInstanceRequest{}
+
+	err = json.Unmarshal(data, &varCloneInstanceRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CloneInstanceRequest(varCloneInstanceRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "group")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCloneInstanceRequest struct {

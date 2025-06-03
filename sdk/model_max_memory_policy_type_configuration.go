@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -24,6 +23,7 @@ var _ MappedNullable = &MaxMemoryPolicyTypeConfiguration{}
 type MaxMemoryPolicyTypeConfiguration struct {
 	MaxMemory MaxMemoryPolicyTypeConfigurationMaxMemory `json:"maxMemory"`
 	ExcludeContainers *string `json:"excludeContainers,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _MaxMemoryPolicyTypeConfiguration MaxMemoryPolicyTypeConfiguration
@@ -120,6 +120,11 @@ func (o MaxMemoryPolicyTypeConfiguration) ToMap() (map[string]interface{}, error
 	if !IsNil(o.ExcludeContainers) {
 		toSerialize["excludeContainers"] = o.ExcludeContainers
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -147,15 +152,21 @@ func (o *MaxMemoryPolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error
 
 	varMaxMemoryPolicyTypeConfiguration := _MaxMemoryPolicyTypeConfiguration{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varMaxMemoryPolicyTypeConfiguration)
+	err = json.Unmarshal(data, &varMaxMemoryPolicyTypeConfiguration)
 
 	if err != nil {
 		return err
 	}
 
 	*o = MaxMemoryPolicyTypeConfiguration(varMaxMemoryPolicyTypeConfiguration)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "maxMemory")
+		delete(additionalProperties, "excludeContainers")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

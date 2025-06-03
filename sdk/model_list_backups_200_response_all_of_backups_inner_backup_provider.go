@@ -24,7 +24,10 @@ type ListBackups200ResponseAllOfBackupsInnerBackupProvider struct {
 	Id *int64 `json:"id,omitempty"`
 	// Backup Provider Name
 	Name *string `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListBackups200ResponseAllOfBackupsInnerBackupProvider ListBackups200ResponseAllOfBackupsInnerBackupProvider
 
 // NewListBackups200ResponseAllOfBackupsInnerBackupProvider instantiates a new ListBackups200ResponseAllOfBackupsInnerBackupProvider object
 // This constructor will assign default values to properties that have it defined,
@@ -123,7 +126,34 @@ func (o ListBackups200ResponseAllOfBackupsInnerBackupProvider) ToMap() (map[stri
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListBackups200ResponseAllOfBackupsInnerBackupProvider) UnmarshalJSON(data []byte) (err error) {
+	varListBackups200ResponseAllOfBackupsInnerBackupProvider := _ListBackups200ResponseAllOfBackupsInnerBackupProvider{}
+
+	err = json.Unmarshal(data, &varListBackups200ResponseAllOfBackupsInnerBackupProvider)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListBackups200ResponseAllOfBackupsInnerBackupProvider(varListBackups200ResponseAllOfBackupsInnerBackupProvider)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListBackups200ResponseAllOfBackupsInnerBackupProvider struct {

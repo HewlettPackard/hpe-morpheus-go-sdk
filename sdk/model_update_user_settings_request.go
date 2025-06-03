@@ -21,7 +21,10 @@ var _ MappedNullable = &UpdateUserSettingsRequest{}
 // UpdateUserSettingsRequest struct for UpdateUserSettingsRequest
 type UpdateUserSettingsRequest struct {
 	User *UpdateUserSettingsRequestUser `json:"user,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateUserSettingsRequest UpdateUserSettingsRequest
 
 // NewUpdateUserSettingsRequest instantiates a new UpdateUserSettingsRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o UpdateUserSettingsRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.User) {
 		toSerialize["user"] = o.User
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateUserSettingsRequest) UnmarshalJSON(data []byte) (err error) {
+	varUpdateUserSettingsRequest := _UpdateUserSettingsRequest{}
+
+	err = json.Unmarshal(data, &varUpdateUserSettingsRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateUserSettingsRequest(varUpdateUserSettingsRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "user")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateUserSettingsRequest struct {

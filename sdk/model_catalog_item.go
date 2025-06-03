@@ -32,7 +32,10 @@ type CatalogItem struct {
 	OrderDate *time.Time `json:"orderDate,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _CatalogItem CatalogItem
 
 // NewCatalogItem instantiates a new CatalogItem object
 // This constructor will assign default values to properties that have it defined,
@@ -446,7 +449,43 @@ func (o CatalogItem) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *CatalogItem) UnmarshalJSON(data []byte) (err error) {
+	varCatalogItem := _CatalogItem{}
+
+	err = json.Unmarshal(data, &varCatalogItem)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CatalogItem(varCatalogItem)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "quantity")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "statusMessage")
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "instance")
+		delete(additionalProperties, "orderDate")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCatalogItem struct {

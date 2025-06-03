@@ -28,7 +28,10 @@ type InstanceState struct {
 	PlanData *string `json:"planData,omitempty"`
 	Input *GetStateInstance200ResponseAllOfInstanceInput `json:"input,omitempty"`
 	Output *GetAppState200ResponseAllOfOutput `json:"output,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _InstanceState InstanceState
 
 // NewInstanceState instantiates a new InstanceState object
 // This constructor will assign default values to properties that have it defined,
@@ -337,7 +340,40 @@ func (o InstanceState) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Output) {
 		toSerialize["output"] = o.Output
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *InstanceState) UnmarshalJSON(data []byte) (err error) {
+	varInstanceState := _InstanceState{}
+
+	err = json.Unmarshal(data, &varInstanceState)
+
+	if err != nil {
+		return err
+	}
+
+	*o = InstanceState(varInstanceState)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "workloads")
+		delete(additionalProperties, "iacDrift")
+		delete(additionalProperties, "planResources")
+		delete(additionalProperties, "specs")
+		delete(additionalProperties, "stateData")
+		delete(additionalProperties, "planData")
+		delete(additionalProperties, "input")
+		delete(additionalProperties, "output")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableInstanceState struct {

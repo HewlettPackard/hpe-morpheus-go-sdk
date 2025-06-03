@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -24,6 +23,7 @@ var _ MappedNullable = &AttachServerVolumeRequestMountPointController{}
 type AttachServerVolumeRequestMountPointController struct {
 	// The ID of the storage controller
 	Id int64 `json:"id"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AttachServerVolumeRequestMountPointController AttachServerVolumeRequestMountPointController
@@ -81,6 +81,11 @@ func (o AttachServerVolumeRequestMountPointController) MarshalJSON() ([]byte, er
 func (o AttachServerVolumeRequestMountPointController) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -108,15 +113,20 @@ func (o *AttachServerVolumeRequestMountPointController) UnmarshalJSON(data []byt
 
 	varAttachServerVolumeRequestMountPointController := _AttachServerVolumeRequestMountPointController{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAttachServerVolumeRequestMountPointController)
+	err = json.Unmarshal(data, &varAttachServerVolumeRequestMountPointController)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AttachServerVolumeRequestMountPointController(varAttachServerVolumeRequestMountPointController)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

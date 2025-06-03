@@ -83,7 +83,10 @@ type GetLicense200ResponseInstalledLicensesInner struct {
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	RecalculationDate *time.Time `json:"recalculationDate,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetLicense200ResponseInstalledLicensesInner GetLicense200ResponseInstalledLicensesInner
 
 // NewGetLicense200ResponseInstalledLicensesInner instantiates a new GetLicense200ResponseInstalledLicensesInner object
 // This constructor will assign default values to properties that have it defined,
@@ -1302,7 +1305,66 @@ func (o GetLicense200ResponseInstalledLicensesInner) ToMap() (map[string]interfa
 	if !IsNil(o.RecalculationDate) {
 		toSerialize["recalculationDate"] = o.RecalculationDate
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetLicense200ResponseInstalledLicensesInner) UnmarshalJSON(data []byte) (err error) {
+	varGetLicense200ResponseInstalledLicensesInner := _GetLicense200ResponseInstalledLicensesInner{}
+
+	err = json.Unmarshal(data, &varGetLicense200ResponseInstalledLicensesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetLicense200ResponseInstalledLicensesInner(varGetLicense200ResponseInstalledLicensesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "keyId")
+		delete(additionalProperties, "hash")
+		delete(additionalProperties, "productTier")
+		delete(additionalProperties, "startDate")
+		delete(additionalProperties, "endDate")
+		delete(additionalProperties, "maxInstances")
+		delete(additionalProperties, "maxMemory")
+		delete(additionalProperties, "maxStorage")
+		delete(additionalProperties, "limitType")
+		delete(additionalProperties, "maxManagedServers")
+		delete(additionalProperties, "maxDiscoveredServers")
+		delete(additionalProperties, "maxHosts")
+		delete(additionalProperties, "maxMvm")
+		delete(additionalProperties, "maxMvmSockets")
+		delete(additionalProperties, "maxIac")
+		delete(additionalProperties, "maxXaas")
+		delete(additionalProperties, "maxExecutions")
+		delete(additionalProperties, "maxDistributedWorkers")
+		delete(additionalProperties, "maxDiscoveredObjects")
+		delete(additionalProperties, "hardLimit")
+		delete(additionalProperties, "freeTrial")
+		delete(additionalProperties, "multiTenant")
+		delete(additionalProperties, "whitelabel")
+		delete(additionalProperties, "reportStatus")
+		delete(additionalProperties, "supportLevel")
+		delete(additionalProperties, "accountName")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "amazonProductCodes")
+		delete(additionalProperties, "features")
+		delete(additionalProperties, "zoneTypes")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "recalculationDate")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetLicense200ResponseInstalledLicensesInner struct {

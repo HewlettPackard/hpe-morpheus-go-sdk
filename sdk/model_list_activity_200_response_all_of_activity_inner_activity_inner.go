@@ -30,7 +30,10 @@ type ListActivity200ResponseAllOfActivityInnerActivityInner struct {
 	ObjectId *int64 `json:"objectId,omitempty"`
 	User *ListActivity200ResponseAllOfActivityInnerActivityInnerUser `json:"user,omitempty"`
 	Ts *time.Time `json:"ts,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListActivity200ResponseAllOfActivityInnerActivityInner ListActivity200ResponseAllOfActivityInnerActivityInner
 
 // NewListActivity200ResponseAllOfActivityInnerActivityInner instantiates a new ListActivity200ResponseAllOfActivityInnerActivityInner object
 // This constructor will assign default values to properties that have it defined,
@@ -374,7 +377,41 @@ func (o ListActivity200ResponseAllOfActivityInnerActivityInner) ToMap() (map[str
 	if !IsNil(o.Ts) {
 		toSerialize["ts"] = o.Ts
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListActivity200ResponseAllOfActivityInnerActivityInner) UnmarshalJSON(data []byte) (err error) {
+	varListActivity200ResponseAllOfActivityInnerActivityInner := _ListActivity200ResponseAllOfActivityInnerActivityInner{}
+
+	err = json.Unmarshal(data, &varListActivity200ResponseAllOfActivityInnerActivityInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListActivity200ResponseAllOfActivityInnerActivityInner(varListActivity200ResponseAllOfActivityInnerActivityInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "_id")
+		delete(additionalProperties, "success")
+		delete(additionalProperties, "activityType")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "message")
+		delete(additionalProperties, "objectType")
+		delete(additionalProperties, "objectId")
+		delete(additionalProperties, "user")
+		delete(additionalProperties, "ts")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListActivity200ResponseAllOfActivityInnerActivityInner struct {

@@ -38,7 +38,10 @@ type UpdateAlertsRequestAlert struct {
 	Groups []int32 `json:"groups,omitempty"`
 	Apps []int32 `json:"apps,omitempty"`
 	Contacts []ListAlerts200ResponseAllOfAlertsInnerContactsInner `json:"contacts,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateAlertsRequestAlert UpdateAlertsRequestAlert
 
 // NewUpdateAlertsRequestAlert instantiates a new UpdateAlertsRequestAlert object
 // This constructor will assign default values to properties that have it defined,
@@ -476,7 +479,43 @@ func (o UpdateAlertsRequestAlert) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Contacts) {
 		toSerialize["contacts"] = o.Contacts
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateAlertsRequestAlert) UnmarshalJSON(data []byte) (err error) {
+	varUpdateAlertsRequestAlert := _UpdateAlertsRequestAlert{}
+
+	err = json.Unmarshal(data, &varUpdateAlertsRequestAlert)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateAlertsRequestAlert(varUpdateAlertsRequestAlert)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "minDuration")
+		delete(additionalProperties, "minSeverity")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "allChecks")
+		delete(additionalProperties, "allGroups")
+		delete(additionalProperties, "allApps")
+		delete(additionalProperties, "checks")
+		delete(additionalProperties, "groups")
+		delete(additionalProperties, "apps")
+		delete(additionalProperties, "contacts")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateAlertsRequestAlert struct {

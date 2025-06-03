@@ -26,7 +26,10 @@ type ListActivity4XXResponse struct {
 	Msg *string `json:"msg,omitempty"`
 	// Validation errors, with a key for Object containing error messages for each invalid parameter (key)
 	Errors map[string]interface{} `json:"errors,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListActivity4XXResponse ListActivity4XXResponse
 
 // NewListActivity4XXResponse instantiates a new ListActivity4XXResponse object
 // This constructor will assign default values to properties that have it defined,
@@ -164,7 +167,35 @@ func (o ListActivity4XXResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Errors) {
 		toSerialize["errors"] = o.Errors
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListActivity4XXResponse) UnmarshalJSON(data []byte) (err error) {
+	varListActivity4XXResponse := _ListActivity4XXResponse{}
+
+	err = json.Unmarshal(data, &varListActivity4XXResponse)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListActivity4XXResponse(varListActivity4XXResponse)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "success")
+		delete(additionalProperties, "msg")
+		delete(additionalProperties, "errors")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListActivity4XXResponse struct {

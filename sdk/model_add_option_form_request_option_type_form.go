@@ -31,7 +31,10 @@ type AddOptionFormRequestOptionTypeForm struct {
 	Options []ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner `json:"options,omitempty"`
 	// Field Groups
 	FieldGroups []ListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner `json:"fieldGroups,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddOptionFormRequestOptionTypeForm AddOptionFormRequestOptionTypeForm
 
 // NewAddOptionFormRequestOptionTypeForm instantiates a new AddOptionFormRequestOptionTypeForm object
 // This constructor will assign default values to properties that have it defined,
@@ -270,7 +273,38 @@ func (o AddOptionFormRequestOptionTypeForm) ToMap() (map[string]interface{}, err
 	if !IsNil(o.FieldGroups) {
 		toSerialize["fieldGroups"] = o.FieldGroups
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddOptionFormRequestOptionTypeForm) UnmarshalJSON(data []byte) (err error) {
+	varAddOptionFormRequestOptionTypeForm := _AddOptionFormRequestOptionTypeForm{}
+
+	err = json.Unmarshal(data, &varAddOptionFormRequestOptionTypeForm)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddOptionFormRequestOptionTypeForm(varAddOptionFormRequestOptionTypeForm)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "options")
+		delete(additionalProperties, "fieldGroups")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddOptionFormRequestOptionTypeForm struct {

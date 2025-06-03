@@ -23,7 +23,10 @@ type ListClusters200ResponseAllOfClustersInnerServersInnerComputeServerType stru
 	Id *int64 `json:"id,omitempty"`
 	Code *string `json:"code,omitempty"`
 	NodeType *string `json:"nodeType,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListClusters200ResponseAllOfClustersInnerServersInnerComputeServerType ListClusters200ResponseAllOfClustersInnerServersInnerComputeServerType
 
 // NewListClusters200ResponseAllOfClustersInnerServersInnerComputeServerType instantiates a new ListClusters200ResponseAllOfClustersInnerServersInnerComputeServerType object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o ListClusters200ResponseAllOfClustersInnerServersInnerComputeServerType) 
 	if !IsNil(o.NodeType) {
 		toSerialize["nodeType"] = o.NodeType
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListClusters200ResponseAllOfClustersInnerServersInnerComputeServerType) UnmarshalJSON(data []byte) (err error) {
+	varListClusters200ResponseAllOfClustersInnerServersInnerComputeServerType := _ListClusters200ResponseAllOfClustersInnerServersInnerComputeServerType{}
+
+	err = json.Unmarshal(data, &varListClusters200ResponseAllOfClustersInnerServersInnerComputeServerType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListClusters200ResponseAllOfClustersInnerServersInnerComputeServerType(varListClusters200ResponseAllOfClustersInnerServersInnerComputeServerType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "nodeType")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListClusters200ResponseAllOfClustersInnerServersInnerComputeServerType struct {

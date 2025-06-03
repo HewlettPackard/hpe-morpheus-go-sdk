@@ -26,7 +26,10 @@ type UpdateInvoicesRequestInvoice struct {
 	AddTags []map[string]interface{} `json:"addTags,omitempty"`
 	// This removes the specified Metadata tags matching name and optionally value (if provided). Array of objects having a name and value. 
 	RemoveTags []map[string]interface{} `json:"removeTags,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateInvoicesRequestInvoice UpdateInvoicesRequestInvoice
 
 // NewUpdateInvoicesRequestInvoice instantiates a new UpdateInvoicesRequestInvoice object
 // This constructor will assign default values to properties that have it defined,
@@ -160,7 +163,35 @@ func (o UpdateInvoicesRequestInvoice) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.RemoveTags) {
 		toSerialize["removeTags"] = o.RemoveTags
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateInvoicesRequestInvoice) UnmarshalJSON(data []byte) (err error) {
+	varUpdateInvoicesRequestInvoice := _UpdateInvoicesRequestInvoice{}
+
+	err = json.Unmarshal(data, &varUpdateInvoicesRequestInvoice)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateInvoicesRequestInvoice(varUpdateInvoicesRequestInvoice)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "tags")
+		delete(additionalProperties, "addTags")
+		delete(additionalProperties, "removeTags")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateInvoicesRequestInvoice struct {

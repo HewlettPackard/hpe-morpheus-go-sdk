@@ -21,7 +21,10 @@ var _ MappedNullable = &GetNetworkDhcpRelay200Response{}
 // GetNetworkDhcpRelay200Response struct for GetNetworkDhcpRelay200Response
 type GetNetworkDhcpRelay200Response struct {
 	NetworkDhcpRelay *GetNetworkDhcpRelay200ResponseNetworkDhcpRelay `json:"networkDhcpRelay,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetNetworkDhcpRelay200Response GetNetworkDhcpRelay200Response
 
 // NewGetNetworkDhcpRelay200Response instantiates a new GetNetworkDhcpRelay200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o GetNetworkDhcpRelay200Response) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.NetworkDhcpRelay) {
 		toSerialize["networkDhcpRelay"] = o.NetworkDhcpRelay
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetNetworkDhcpRelay200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetNetworkDhcpRelay200Response := _GetNetworkDhcpRelay200Response{}
+
+	err = json.Unmarshal(data, &varGetNetworkDhcpRelay200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetNetworkDhcpRelay200Response(varGetNetworkDhcpRelay200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "networkDhcpRelay")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetNetworkDhcpRelay200Response struct {

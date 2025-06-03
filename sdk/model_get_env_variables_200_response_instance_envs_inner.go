@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -26,6 +25,7 @@ type GetEnvVariables200ResponseInstanceEnvsInner struct {
 	Masked bool `json:"masked"`
 	Name string `json:"name"`
 	Value string `json:"value"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _GetEnvVariables200ResponseInstanceEnvsInner GetEnvVariables200ResponseInstanceEnvsInner
@@ -161,6 +161,11 @@ func (o GetEnvVariables200ResponseInstanceEnvsInner) ToMap() (map[string]interfa
 	toSerialize["masked"] = o.Masked
 	toSerialize["name"] = o.Name
 	toSerialize["value"] = o.Value
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -191,15 +196,23 @@ func (o *GetEnvVariables200ResponseInstanceEnvsInner) UnmarshalJSON(data []byte)
 
 	varGetEnvVariables200ResponseInstanceEnvsInner := _GetEnvVariables200ResponseInstanceEnvsInner{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varGetEnvVariables200ResponseInstanceEnvsInner)
+	err = json.Unmarshal(data, &varGetEnvVariables200ResponseInstanceEnvsInner)
 
 	if err != nil {
 		return err
 	}
 
 	*o = GetEnvVariables200ResponseInstanceEnvsInner(varGetEnvVariables200ResponseInstanceEnvsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "export")
+		delete(additionalProperties, "masked")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "value")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

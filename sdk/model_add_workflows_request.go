@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -23,6 +22,7 @@ var _ MappedNullable = &AddWorkflowsRequest{}
 // AddWorkflowsRequest struct for AddWorkflowsRequest
 type AddWorkflowsRequest struct {
 	TaskSet AddWorkflowsRequestTaskSet `json:"taskSet"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddWorkflowsRequest AddWorkflowsRequest
@@ -80,6 +80,11 @@ func (o AddWorkflowsRequest) MarshalJSON() ([]byte, error) {
 func (o AddWorkflowsRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["taskSet"] = o.TaskSet
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -107,15 +112,20 @@ func (o *AddWorkflowsRequest) UnmarshalJSON(data []byte) (err error) {
 
 	varAddWorkflowsRequest := _AddWorkflowsRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddWorkflowsRequest)
+	err = json.Unmarshal(data, &varAddWorkflowsRequest)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddWorkflowsRequest(varAddWorkflowsRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "taskSet")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

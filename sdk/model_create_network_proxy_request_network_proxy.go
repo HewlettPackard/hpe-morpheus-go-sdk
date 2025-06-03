@@ -37,7 +37,10 @@ type CreateNetworkProxyRequestNetworkProxy struct {
 	// Visibility
 	Visibility *string `json:"visibility,omitempty"`
 	Account *CreateNetworkProxyRequestNetworkProxyAccount `json:"account,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _CreateNetworkProxyRequestNetworkProxy CreateNetworkProxyRequestNetworkProxy
 
 // NewCreateNetworkProxyRequestNetworkProxy instantiates a new CreateNetworkProxyRequestNetworkProxy object
 // This constructor will assign default values to properties that have it defined,
@@ -385,7 +388,41 @@ func (o CreateNetworkProxyRequestNetworkProxy) ToMap() (map[string]interface{}, 
 	if !IsNil(o.Account) {
 		toSerialize["account"] = o.Account
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *CreateNetworkProxyRequestNetworkProxy) UnmarshalJSON(data []byte) (err error) {
+	varCreateNetworkProxyRequestNetworkProxy := _CreateNetworkProxyRequestNetworkProxy{}
+
+	err = json.Unmarshal(data, &varCreateNetworkProxyRequestNetworkProxy)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CreateNetworkProxyRequestNetworkProxy(varCreateNetworkProxyRequestNetworkProxy)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "proxyHost")
+		delete(additionalProperties, "proxyPort")
+		delete(additionalProperties, "proxyUser")
+		delete(additionalProperties, "proxyPassword")
+		delete(additionalProperties, "proxyDomain")
+		delete(additionalProperties, "proxyWorkstation")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "account")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCreateNetworkProxyRequestNetworkProxy struct {

@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -29,6 +28,7 @@ type BlueprintCFTCreate struct {
 	// Array of label strings, can be used for filtering.
 	Labels []string `json:"labels,omitempty"`
 	CloudFormation AddBlueprintRequestOneOf1CloudFormation `json:"cloudFormation"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _BlueprintCFTCreate BlueprintCFTCreate
@@ -173,6 +173,11 @@ func (o BlueprintCFTCreate) ToMap() (map[string]interface{}, error) {
 		toSerialize["labels"] = o.Labels
 	}
 	toSerialize["cloudFormation"] = o.CloudFormation
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -202,15 +207,23 @@ func (o *BlueprintCFTCreate) UnmarshalJSON(data []byte) (err error) {
 
 	varBlueprintCFTCreate := _BlueprintCFTCreate{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varBlueprintCFTCreate)
+	err = json.Unmarshal(data, &varBlueprintCFTCreate)
 
 	if err != nil {
 		return err
 	}
 
 	*o = BlueprintCFTCreate(varBlueprintCFTCreate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "cloudFormation")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

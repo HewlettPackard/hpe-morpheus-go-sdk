@@ -62,7 +62,10 @@ type ListClusterContainers200ResponseAllOfContainersInner struct {
 	MaxCpu *string `json:"maxCpu,omitempty"`
 	HourlyPrice *float32 `json:"hourlyPrice,omitempty"`
 	AvailableActions []ListClusterContainers200ResponseAllOfContainersInnerAvailableActionsInner `json:"availableActions,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListClusterContainers200ResponseAllOfContainersInner ListClusterContainers200ResponseAllOfContainersInner
 
 // NewListClusterContainers200ResponseAllOfContainersInner instantiates a new ListClusterContainers200ResponseAllOfContainersInner object
 // This constructor will assign default values to properties that have it defined,
@@ -1526,7 +1529,73 @@ func (o ListClusterContainers200ResponseAllOfContainersInner) ToMap() (map[strin
 	if !IsNil(o.AvailableActions) {
 		toSerialize["availableActions"] = o.AvailableActions
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListClusterContainers200ResponseAllOfContainersInner) UnmarshalJSON(data []byte) (err error) {
+	varListClusterContainers200ResponseAllOfContainersInner := _ListClusterContainers200ResponseAllOfContainersInner{}
+
+	err = json.Unmarshal(data, &varListClusterContainers200ResponseAllOfContainersInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListClusterContainers200ResponseAllOfContainersInner(varListClusterContainers200ResponseAllOfContainersInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "uuid")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "instance")
+		delete(additionalProperties, "containerType")
+		delete(additionalProperties, "containerTypeSet")
+		delete(additionalProperties, "server")
+		delete(additionalProperties, "cloud")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "ip")
+		delete(additionalProperties, "internalIp")
+		delete(additionalProperties, "internalHostname")
+		delete(additionalProperties, "externalHostname")
+		delete(additionalProperties, "externalDomain")
+		delete(additionalProperties, "externalFqdn")
+		delete(additionalProperties, "ports")
+		delete(additionalProperties, "plan")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "statsEnabled")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "userStatus")
+		delete(additionalProperties, "environmentPrefix")
+		delete(additionalProperties, "configGroup")
+		delete(additionalProperties, "configId")
+		delete(additionalProperties, "configRole")
+		delete(additionalProperties, "stats")
+		delete(additionalProperties, "runtimeInfo")
+		delete(additionalProperties, "containerVersion")
+		delete(additionalProperties, "repositoryImage")
+		delete(additionalProperties, "planCategory")
+		delete(additionalProperties, "hostname")
+		delete(additionalProperties, "domainName")
+		delete(additionalProperties, "volumeCreated")
+		delete(additionalProperties, "containerCreated")
+		delete(additionalProperties, "maxStorage")
+		delete(additionalProperties, "maxMemory")
+		delete(additionalProperties, "maxCores")
+		delete(additionalProperties, "maxCpu")
+		delete(additionalProperties, "hourlyPrice")
+		delete(additionalProperties, "availableActions")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListClusterContainers200ResponseAllOfContainersInner struct {

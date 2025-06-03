@@ -40,7 +40,10 @@ type Roles struct {
 	DefaultPersona *string `json:"defaultPersona,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _Roles Roles
 
 // NewRoles instantiates a new Roles object
 // This constructor will assign default values to properties that have it defined,
@@ -629,7 +632,48 @@ func (o Roles) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *Roles) UnmarshalJSON(data []byte) (err error) {
+	varRoles := _Roles{}
+
+	err = json.Unmarshal(data, &varRoles)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Roles(varRoles)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "authority")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "landingUrl")
+		delete(additionalProperties, "scope")
+		delete(additionalProperties, "roleType")
+		delete(additionalProperties, "multitenant")
+		delete(additionalProperties, "multitenantLocked")
+		delete(additionalProperties, "parentRoleId")
+		delete(additionalProperties, "diverged")
+		delete(additionalProperties, "ownerId")
+		delete(additionalProperties, "owner")
+		delete(additionalProperties, "defaultPersona")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableRoles struct {

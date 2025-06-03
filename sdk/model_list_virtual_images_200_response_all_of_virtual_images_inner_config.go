@@ -21,7 +21,10 @@ var _ MappedNullable = &ListVirtualImages200ResponseAllOfVirtualImagesInnerConfi
 // ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig struct for ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig
 type ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig struct {
 	MemorySizeType *string `json:"memorySizeType,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig
 
 // NewListVirtualImages200ResponseAllOfVirtualImagesInnerConfig instantiates a new ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig) ToMap() (map[
 	if !IsNil(o.MemorySizeType) {
 		toSerialize["memorySizeType"] = o.MemorySizeType
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig) UnmarshalJSON(data []byte) (err error) {
+	varListVirtualImages200ResponseAllOfVirtualImagesInnerConfig := _ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig{}
+
+	err = json.Unmarshal(data, &varListVirtualImages200ResponseAllOfVirtualImagesInnerConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig(varListVirtualImages200ResponseAllOfVirtualImagesInnerConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "memorySizeType")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListVirtualImages200ResponseAllOfVirtualImagesInnerConfig struct {

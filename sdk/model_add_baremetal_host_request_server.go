@@ -28,7 +28,10 @@ type AddBaremetalHostRequestServer struct {
 	Name *string `json:"name,omitempty"`
 	Visibility *string `json:"visibility,omitempty"`
 	Config *AddBaremetalHostRequestServerConfig `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddBaremetalHostRequestServer AddBaremetalHostRequestServer
 
 // NewAddBaremetalHostRequestServer instantiates a new AddBaremetalHostRequestServer object
 // This constructor will assign default values to properties that have it defined,
@@ -337,7 +340,40 @@ func (o AddBaremetalHostRequestServer) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddBaremetalHostRequestServer) UnmarshalJSON(data []byte) (err error) {
+	varAddBaremetalHostRequestServer := _AddBaremetalHostRequestServer{}
+
+	err = json.Unmarshal(data, &varAddBaremetalHostRequestServer)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddBaremetalHostRequestServer(varAddBaremetalHostRequestServer)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "cloud")
+		delete(additionalProperties, "computeServerType")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "group")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "config")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddBaremetalHostRequestServer struct {

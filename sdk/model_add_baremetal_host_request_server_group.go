@@ -21,7 +21,10 @@ var _ MappedNullable = &AddBaremetalHostRequestServerGroup{}
 // AddBaremetalHostRequestServerGroup struct for AddBaremetalHostRequestServerGroup
 type AddBaremetalHostRequestServerGroup struct {
 	Id *int32 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddBaremetalHostRequestServerGroup AddBaremetalHostRequestServerGroup
 
 // NewAddBaremetalHostRequestServerGroup instantiates a new AddBaremetalHostRequestServerGroup object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o AddBaremetalHostRequestServerGroup) ToMap() (map[string]interface{}, err
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddBaremetalHostRequestServerGroup) UnmarshalJSON(data []byte) (err error) {
+	varAddBaremetalHostRequestServerGroup := _AddBaremetalHostRequestServerGroup{}
+
+	err = json.Unmarshal(data, &varAddBaremetalHostRequestServerGroup)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddBaremetalHostRequestServerGroup(varAddBaremetalHostRequestServerGroup)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddBaremetalHostRequestServerGroup struct {

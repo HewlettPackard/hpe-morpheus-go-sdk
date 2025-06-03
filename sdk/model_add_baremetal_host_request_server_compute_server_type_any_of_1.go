@@ -22,7 +22,10 @@ var _ MappedNullable = &AddBaremetalHostRequestServerComputeServerTypeAnyOf1{}
 type AddBaremetalHostRequestServerComputeServerTypeAnyOf1 struct {
 	// The ComputeServerType's id
 	Id *int32 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddBaremetalHostRequestServerComputeServerTypeAnyOf1 AddBaremetalHostRequestServerComputeServerTypeAnyOf1
 
 // NewAddBaremetalHostRequestServerComputeServerTypeAnyOf1 instantiates a new AddBaremetalHostRequestServerComputeServerTypeAnyOf1 object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o AddBaremetalHostRequestServerComputeServerTypeAnyOf1) ToMap() (map[strin
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddBaremetalHostRequestServerComputeServerTypeAnyOf1) UnmarshalJSON(data []byte) (err error) {
+	varAddBaremetalHostRequestServerComputeServerTypeAnyOf1 := _AddBaremetalHostRequestServerComputeServerTypeAnyOf1{}
+
+	err = json.Unmarshal(data, &varAddBaremetalHostRequestServerComputeServerTypeAnyOf1)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddBaremetalHostRequestServerComputeServerTypeAnyOf1(varAddBaremetalHostRequestServerComputeServerTypeAnyOf1)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddBaremetalHostRequestServerComputeServerTypeAnyOf1 struct {

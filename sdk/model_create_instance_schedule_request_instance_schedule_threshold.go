@@ -48,7 +48,10 @@ type CreateInstanceScheduleRequestInstanceScheduleThreshold struct {
 	MinDisk *float64 `json:"minDisk,omitempty"`
 	// Max Disk (%)
 	MaxDisk *float64 `json:"maxDisk,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _CreateInstanceScheduleRequestInstanceScheduleThreshold CreateInstanceScheduleRequestInstanceScheduleThreshold
 
 // NewCreateInstanceScheduleRequestInstanceScheduleThreshold instantiates a new CreateInstanceScheduleRequestInstanceScheduleThreshold object
 // This constructor will assign default values to properties that have it defined,
@@ -611,7 +614,46 @@ func (o CreateInstanceScheduleRequestInstanceScheduleThreshold) ToMap() (map[str
 	if !IsNil(o.MaxDisk) {
 		toSerialize["maxDisk"] = o.MaxDisk
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *CreateInstanceScheduleRequestInstanceScheduleThreshold) UnmarshalJSON(data []byte) (err error) {
+	varCreateInstanceScheduleRequestInstanceScheduleThreshold := _CreateInstanceScheduleRequestInstanceScheduleThreshold{}
+
+	err = json.Unmarshal(data, &varCreateInstanceScheduleRequestInstanceScheduleThreshold)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CreateInstanceScheduleRequestInstanceScheduleThreshold(varCreateInstanceScheduleRequestInstanceScheduleThreshold)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "sourceThresholdId")
+		delete(additionalProperties, "autoUp")
+		delete(additionalProperties, "autoDown")
+		delete(additionalProperties, "minCount")
+		delete(additionalProperties, "maxCount")
+		delete(additionalProperties, "cpuEnabled")
+		delete(additionalProperties, "minCpu")
+		delete(additionalProperties, "maxCpu")
+		delete(additionalProperties, "memoryEnabled")
+		delete(additionalProperties, "minMemory")
+		delete(additionalProperties, "maxMemory")
+		delete(additionalProperties, "diskEnabled")
+		delete(additionalProperties, "minDisk")
+		delete(additionalProperties, "maxDisk")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCreateInstanceScheduleRequestInstanceScheduleThreshold struct {

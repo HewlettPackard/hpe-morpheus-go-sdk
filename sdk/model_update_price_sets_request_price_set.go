@@ -33,7 +33,10 @@ type UpdatePriceSetsRequestPriceSet struct {
 	// Price set type
 	Type *string `json:"type,omitempty"`
 	Prices []int64 `json:"prices,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdatePriceSetsRequestPriceSet UpdatePriceSetsRequestPriceSet
 
 // NewUpdatePriceSetsRequestPriceSet instantiates a new UpdatePriceSetsRequestPriceSet object
 // This constructor will assign default values to properties that have it defined,
@@ -342,7 +345,40 @@ func (o UpdatePriceSetsRequestPriceSet) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.Prices) {
 		toSerialize["prices"] = o.Prices
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdatePriceSetsRequestPriceSet) UnmarshalJSON(data []byte) (err error) {
+	varUpdatePriceSetsRequestPriceSet := _UpdatePriceSetsRequestPriceSet{}
+
+	err = json.Unmarshal(data, &varUpdatePriceSetsRequestPriceSet)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdatePriceSetsRequestPriceSet(varUpdatePriceSetsRequestPriceSet)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "regionCode")
+		delete(additionalProperties, "zone")
+		delete(additionalProperties, "zonePool")
+		delete(additionalProperties, "priceUnit")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "prices")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdatePriceSetsRequestPriceSet struct {

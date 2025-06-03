@@ -53,7 +53,10 @@ type ListClouds200ResponseAllOfZonesInnerConfigAnyOf2 struct {
 	AzureCostingMode *string `json:"azureCostingMode,omitempty"`
 	ClientSecretHash *string `json:"clientSecretHash,omitempty"`
 	CspClientSecretHash *string `json:"cspClientSecretHash,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListClouds200ResponseAllOfZonesInnerConfigAnyOf2 ListClouds200ResponseAllOfZonesInnerConfigAnyOf2
 
 // NewListClouds200ResponseAllOfZonesInnerConfigAnyOf2 instantiates a new ListClouds200ResponseAllOfZonesInnerConfigAnyOf2 object
 // This constructor will assign default values to properties that have it defined,
@@ -1237,7 +1240,65 @@ func (o ListClouds200ResponseAllOfZonesInnerConfigAnyOf2) ToMap() (map[string]in
 	if !IsNil(o.CspClientSecretHash) {
 		toSerialize["cspClientSecretHash"] = o.CspClientSecretHash
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2) UnmarshalJSON(data []byte) (err error) {
+	varListClouds200ResponseAllOfZonesInnerConfigAnyOf2 := _ListClouds200ResponseAllOfZonesInnerConfigAnyOf2{}
+
+	err = json.Unmarshal(data, &varListClouds200ResponseAllOfZonesInnerConfigAnyOf2)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListClouds200ResponseAllOfZonesInnerConfigAnyOf2(varListClouds200ResponseAllOfZonesInnerConfigAnyOf2)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "subscriberId")
+		delete(additionalProperties, "tenantId")
+		delete(additionalProperties, "clientId")
+		delete(additionalProperties, "clientSecret")
+		delete(additionalProperties, "resourceGroup")
+		delete(additionalProperties, "importExisting")
+		delete(additionalProperties, "inventoryLevel")
+		delete(additionalProperties, "applianceUrl")
+		delete(additionalProperties, "datacenterName")
+		delete(additionalProperties, "networkServer.id")
+		delete(additionalProperties, "networkServer")
+		delete(additionalProperties, "securityMode")
+		delete(additionalProperties, "certificateProvider")
+		delete(additionalProperties, "backupMode")
+		delete(additionalProperties, "replicationMode")
+		delete(additionalProperties, "dnsIntegrationId")
+		delete(additionalProperties, "configManagementId")
+		delete(additionalProperties, "configCmdbId")
+		delete(additionalProperties, "securityServer")
+		delete(additionalProperties, "accountType")
+		delete(additionalProperties, "serviceRegistryId")
+		delete(additionalProperties, "cloudType")
+		delete(additionalProperties, "rpcMode")
+		delete(additionalProperties, "diskEncryption")
+		delete(additionalProperties, "encryptionSet")
+		delete(additionalProperties, "cspTenantId")
+		delete(additionalProperties, "cspClientId")
+		delete(additionalProperties, "cspClientSecret")
+		delete(additionalProperties, "cspCustomer")
+		delete(additionalProperties, "configCmdbDiscovery")
+		delete(additionalProperties, "azureCostingMode")
+		delete(additionalProperties, "clientSecretHash")
+		delete(additionalProperties, "cspClientSecretHash")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListClouds200ResponseAllOfZonesInnerConfigAnyOf2 struct {

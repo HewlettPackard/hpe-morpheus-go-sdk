@@ -28,7 +28,10 @@ type ResourcePoolGroupsCreateInput struct {
 	Pools []int64 `json:"pools,omitempty"`
 	Tenants []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"tenants,omitempty"`
 	ResourcePermission *GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission `json:"resourcePermission,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ResourcePoolGroupsCreateInput ResourcePoolGroupsCreateInput
 
 // NewResourcePoolGroupsCreateInput instantiates a new ResourcePoolGroupsCreateInput object
 // This constructor will assign default values to properties that have it defined,
@@ -302,7 +305,39 @@ func (o ResourcePoolGroupsCreateInput) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ResourcePermission) {
 		toSerialize["resourcePermission"] = o.ResourcePermission
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ResourcePoolGroupsCreateInput) UnmarshalJSON(data []byte) (err error) {
+	varResourcePoolGroupsCreateInput := _ResourcePoolGroupsCreateInput{}
+
+	err = json.Unmarshal(data, &varResourcePoolGroupsCreateInput)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ResourcePoolGroupsCreateInput(varResourcePoolGroupsCreateInput)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "mode")
+		delete(additionalProperties, "pools")
+		delete(additionalProperties, "tenants")
+		delete(additionalProperties, "resourcePermission")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableResourcePoolGroupsCreateInput struct {

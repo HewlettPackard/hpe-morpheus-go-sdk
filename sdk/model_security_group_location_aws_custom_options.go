@@ -22,7 +22,10 @@ var _ MappedNullable = &SecurityGroupLocationAwsCustomOptions{}
 type SecurityGroupLocationAwsCustomOptions struct {
 	// External ID of Amazon VPC
 	Vpc *string `json:"vpc,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _SecurityGroupLocationAwsCustomOptions SecurityGroupLocationAwsCustomOptions
 
 // NewSecurityGroupLocationAwsCustomOptions instantiates a new SecurityGroupLocationAwsCustomOptions object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o SecurityGroupLocationAwsCustomOptions) ToMap() (map[string]interface{}, 
 	if !IsNil(o.Vpc) {
 		toSerialize["vpc"] = o.Vpc
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *SecurityGroupLocationAwsCustomOptions) UnmarshalJSON(data []byte) (err error) {
+	varSecurityGroupLocationAwsCustomOptions := _SecurityGroupLocationAwsCustomOptions{}
+
+	err = json.Unmarshal(data, &varSecurityGroupLocationAwsCustomOptions)
+
+	if err != nil {
+		return err
+	}
+
+	*o = SecurityGroupLocationAwsCustomOptions(varSecurityGroupLocationAwsCustomOptions)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "vpc")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableSecurityGroupLocationAwsCustomOptions struct {

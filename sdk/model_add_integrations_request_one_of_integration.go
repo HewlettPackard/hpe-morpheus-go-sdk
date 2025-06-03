@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -31,6 +30,7 @@ type AddIntegrationsRequestOneOfIntegration struct {
 	// Pass `false` to skip refresh.  By default, refresh is done on update, when it is supported by the integration type. 
 	Refresh *bool `json:"refresh,omitempty"`
 	Credential *AddIntegrationsRequestOneOfIntegrationCredential `json:"credential,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddIntegrationsRequestOneOfIntegration AddIntegrationsRequestOneOfIntegration
@@ -223,6 +223,11 @@ func (o AddIntegrationsRequestOneOfIntegration) ToMap() (map[string]interface{},
 	if !IsNil(o.Credential) {
 		toSerialize["credential"] = o.Credential
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -251,15 +256,24 @@ func (o *AddIntegrationsRequestOneOfIntegration) UnmarshalJSON(data []byte) (err
 
 	varAddIntegrationsRequestOneOfIntegration := _AddIntegrationsRequestOneOfIntegration{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddIntegrationsRequestOneOfIntegration)
+	err = json.Unmarshal(data, &varAddIntegrationsRequestOneOfIntegration)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddIntegrationsRequestOneOfIntegration(varAddIntegrationsRequestOneOfIntegration)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "refresh")
+		delete(additionalProperties, "credential")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

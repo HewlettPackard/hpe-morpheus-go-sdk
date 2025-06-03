@@ -43,7 +43,10 @@ type GetNetworkRoutersNats200ResponseNetworkRouterNATsInner struct {
 	ProviderId *string `json:"providerId,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetNetworkRoutersNats200ResponseNetworkRouterNATsInner GetNetworkRoutersNats200ResponseNetworkRouterNATsInner
 
 // NewGetNetworkRoutersNats200ResponseNetworkRouterNATsInner instantiates a new GetNetworkRoutersNats200ResponseNetworkRouterNATsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -842,7 +845,54 @@ func (o GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) ToMap() (map[str
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) UnmarshalJSON(data []byte) (err error) {
+	varGetNetworkRoutersNats200ResponseNetworkRouterNATsInner := _GetNetworkRoutersNats200ResponseNetworkRouterNATsInner{}
+
+	err = json.Unmarshal(data, &varGetNetworkRoutersNats200ResponseNetworkRouterNATsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetNetworkRoutersNats200ResponseNetworkRouterNATsInner(varGetNetworkRoutersNats200ResponseNetworkRouterNATsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "sourceNetwork")
+		delete(additionalProperties, "destinationNetwork")
+		delete(additionalProperties, "translatedNetwork")
+		delete(additionalProperties, "sourcePorts")
+		delete(additionalProperties, "destinationPorts")
+		delete(additionalProperties, "translatedPorts")
+		delete(additionalProperties, "priority")
+		delete(additionalProperties, "protocol")
+		delete(additionalProperties, "matchIpv6DestinationPrefix")
+		delete(additionalProperties, "translatedIpv4SourcePrefix")
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "refId")
+		delete(additionalProperties, "syncSource")
+		delete(additionalProperties, "internalId")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "providerId")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetNetworkRoutersNats200ResponseNetworkRouterNATsInner struct {

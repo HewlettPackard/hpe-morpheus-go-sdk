@@ -28,7 +28,10 @@ type ClusterResource struct {
 	Spec map[string]interface{} `json:"spec,omitempty"`
 	Config map[string]interface{} `json:"config,omitempty"`
 	RawSec map[string]interface{} `json:"rawSec,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ClusterResource ClusterResource
 
 // NewClusterResource instantiates a new ClusterResource object
 // This constructor will assign default values to properties that have it defined,
@@ -337,7 +340,40 @@ func (o ClusterResource) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.RawSec) {
 		toSerialize["rawSec"] = o.RawSec
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ClusterResource) UnmarshalJSON(data []byte) (err error) {
+	varClusterResource := _ClusterResource{}
+
+	err = json.Unmarshal(data, &varClusterResource)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ClusterResource(varClusterResource)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "title")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "metadata")
+		delete(additionalProperties, "spec")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "rawSec")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableClusterResource struct {

@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -24,6 +23,7 @@ var _ MappedNullable = &AddBudgetsRequestBudgetForecastType{}
 type AddBudgetsRequestBudgetForecastType struct {
 	// The ID of the Forecast Model type. See GET /api/options/forecastTypes
 	Id int64 `json:"id"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddBudgetsRequestBudgetForecastType AddBudgetsRequestBudgetForecastType
@@ -81,6 +81,11 @@ func (o AddBudgetsRequestBudgetForecastType) MarshalJSON() ([]byte, error) {
 func (o AddBudgetsRequestBudgetForecastType) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -108,15 +113,20 @@ func (o *AddBudgetsRequestBudgetForecastType) UnmarshalJSON(data []byte) (err er
 
 	varAddBudgetsRequestBudgetForecastType := _AddBudgetsRequestBudgetForecastType{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddBudgetsRequestBudgetForecastType)
+	err = json.Unmarshal(data, &varAddBudgetsRequestBudgetForecastType)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddBudgetsRequestBudgetForecastType(varAddBudgetsRequestBudgetForecastType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

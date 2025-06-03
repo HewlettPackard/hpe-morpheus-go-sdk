@@ -22,7 +22,10 @@ var _ MappedNullable = &UpdateIdentitySourceSubdomains200Response{}
 type UpdateIdentitySourceSubdomains200Response struct {
 	UserSource *ListIdentitySources200ResponseAllOfUserSourcesInner `json:"userSource,omitempty"`
 	Success *bool `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateIdentitySourceSubdomains200Response UpdateIdentitySourceSubdomains200Response
 
 // NewUpdateIdentitySourceSubdomains200Response instantiates a new UpdateIdentitySourceSubdomains200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o UpdateIdentitySourceSubdomains200Response) ToMap() (map[string]interface
 	if !IsNil(o.Success) {
 		toSerialize["success"] = o.Success
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateIdentitySourceSubdomains200Response) UnmarshalJSON(data []byte) (err error) {
+	varUpdateIdentitySourceSubdomains200Response := _UpdateIdentitySourceSubdomains200Response{}
+
+	err = json.Unmarshal(data, &varUpdateIdentitySourceSubdomains200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateIdentitySourceSubdomains200Response(varUpdateIdentitySourceSubdomains200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "userSource")
+		delete(additionalProperties, "success")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateIdentitySourceSubdomains200Response struct {

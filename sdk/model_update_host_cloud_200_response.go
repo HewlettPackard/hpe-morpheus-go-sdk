@@ -26,7 +26,10 @@ type UpdateHostCloud200Response struct {
 	Data *string `json:"data,omitempty"`
 	InProgress *bool `json:"inProgress,omitempty"`
 	Success *bool `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateHostCloud200Response UpdateHostCloud200Response
 
 // NewUpdateHostCloud200Response instantiates a new UpdateHostCloud200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -265,7 +268,38 @@ func (o UpdateHostCloud200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Success) {
 		toSerialize["success"] = o.Success
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateHostCloud200Response) UnmarshalJSON(data []byte) (err error) {
+	varUpdateHostCloud200Response := _UpdateHostCloud200Response{}
+
+	err = json.Unmarshal(data, &varUpdateHostCloud200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateHostCloud200Response(varUpdateHostCloud200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "msg")
+		delete(additionalProperties, "errors")
+		delete(additionalProperties, "errorCode")
+		delete(additionalProperties, "data")
+		delete(additionalProperties, "inProgress")
+		delete(additionalProperties, "success")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateHostCloud200Response struct {

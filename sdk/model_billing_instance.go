@@ -30,7 +30,10 @@ type BillingInstance struct {
 	Cost *float32 `json:"cost,omitempty"`
 	Currency *string `json:"currency,omitempty"`
 	Containers []GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner `json:"containers,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _BillingInstance BillingInstance
 
 // NewBillingInstance instantiates a new BillingInstance object
 // This constructor will assign default values to properties that have it defined,
@@ -374,7 +377,41 @@ func (o BillingInstance) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Containers) {
 		toSerialize["containers"] = o.Containers
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *BillingInstance) UnmarshalJSON(data []byte) (err error) {
+	varBillingInstance := _BillingInstance{}
+
+	err = json.Unmarshal(data, &varBillingInstance)
+
+	if err != nil {
+		return err
+	}
+
+	*o = BillingInstance(varBillingInstance)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "instanceId")
+		delete(additionalProperties, "instanceUUID")
+		delete(additionalProperties, "startDate")
+		delete(additionalProperties, "endDate")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "price")
+		delete(additionalProperties, "cost")
+		delete(additionalProperties, "currency")
+		delete(additionalProperties, "containers")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableBillingInstance struct {

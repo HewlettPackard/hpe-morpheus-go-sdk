@@ -61,7 +61,10 @@ type ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner struct {
 	CreatedBy *string `json:"createdBy,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner
 
 // NewListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner instantiates a new ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -1490,7 +1493,72 @@ func (o ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) ToMap() (ma
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) UnmarshalJSON(data []byte) (err error) {
+	varListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner := _ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner{}
+
+	err = json.Unmarshal(data, &varListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner(varListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "loadBalancer")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "internalId")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "vipSticky")
+		delete(additionalProperties, "vipBalance")
+		delete(additionalProperties, "allowNat")
+		delete(additionalProperties, "allowSnat")
+		delete(additionalProperties, "vipClientIpMode")
+		delete(additionalProperties, "vipServerIpMode")
+		delete(additionalProperties, "minActive")
+		delete(additionalProperties, "minInService")
+		delete(additionalProperties, "minUpMonitor")
+		delete(additionalProperties, "minUpAction")
+		delete(additionalProperties, "maxQueueDepth")
+		delete(additionalProperties, "maxQueueTime")
+		delete(additionalProperties, "numberActive")
+		delete(additionalProperties, "numberInService")
+		delete(additionalProperties, "healthScore")
+		delete(additionalProperties, "performanceScore")
+		delete(additionalProperties, "healthPenalty")
+		delete(additionalProperties, "securityPenalty")
+		delete(additionalProperties, "errorPenalty")
+		delete(additionalProperties, "downAction")
+		delete(additionalProperties, "rampTime")
+		delete(additionalProperties, "port")
+		delete(additionalProperties, "portType")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "nodes")
+		delete(additionalProperties, "monitors")
+		delete(additionalProperties, "members")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "createdBy")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner struct {

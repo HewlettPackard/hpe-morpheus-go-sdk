@@ -74,7 +74,10 @@ type ListClusters200ResponseAllOfClustersInner struct {
 	Zone *ListClusters200ResponseAllOfClustersInnerZone `json:"zone,omitempty"`
 	WorkerStats *ListClusters200ResponseAllOfClustersInnerWorkerStats `json:"workerStats,omitempty"`
 	Config map[string]interface{} `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListClusters200ResponseAllOfClustersInner ListClusters200ResponseAllOfClustersInner
 
 // NewListClusters200ResponseAllOfClustersInner instantiates a new ListClusters200ResponseAllOfClustersInner object
 // This constructor will assign default values to properties that have it defined,
@@ -1958,7 +1961,85 @@ func (o ListClusters200ResponseAllOfClustersInner) ToMap() (map[string]interface
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListClusters200ResponseAllOfClustersInner) UnmarshalJSON(data []byte) (err error) {
+	varListClusters200ResponseAllOfClustersInner := _ListClusters200ResponseAllOfClustersInner{}
+
+	err = json.Unmarshal(data, &varListClusters200ResponseAllOfClustersInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListClusters200ResponseAllOfClustersInner(varListClusters200ResponseAllOfClustersInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "location")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "serviceUrl")
+		delete(additionalProperties, "serviceHost")
+		delete(additionalProperties, "servicePath")
+		delete(additionalProperties, "serviceHostname")
+		delete(additionalProperties, "servicePort")
+		delete(additionalProperties, "serviceUsername")
+		delete(additionalProperties, "servicePassword")
+		delete(additionalProperties, "servicePasswordHash")
+		delete(additionalProperties, "serviceToken")
+		delete(additionalProperties, "serviceTokenHash")
+		delete(additionalProperties, "serviceAccess")
+		delete(additionalProperties, "serviceAccessHash")
+		delete(additionalProperties, "serviceCert")
+		delete(additionalProperties, "serviceCertHash")
+		delete(additionalProperties, "serviceVersion")
+		delete(additionalProperties, "searchDomains")
+		delete(additionalProperties, "enableInternalDns")
+		delete(additionalProperties, "internalId")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "datacenterId")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "statusDate")
+		delete(additionalProperties, "statusMessage")
+		delete(additionalProperties, "inventoryLevel")
+		delete(additionalProperties, "lastSync")
+		delete(additionalProperties, "nextRunDate")
+		delete(additionalProperties, "lastSyncDuration")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "managed")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "autoRecoverPowerState")
+		delete(additionalProperties, "serviceEntry")
+		delete(additionalProperties, "createdBy")
+		delete(additionalProperties, "userGroup")
+		delete(additionalProperties, "layout")
+		delete(additionalProperties, "owner")
+		delete(additionalProperties, "servers")
+		delete(additionalProperties, "accounts")
+		delete(additionalProperties, "integrations")
+		delete(additionalProperties, "site")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "zone")
+		delete(additionalProperties, "workerStats")
+		delete(additionalProperties, "config")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListClusters200ResponseAllOfClustersInner struct {

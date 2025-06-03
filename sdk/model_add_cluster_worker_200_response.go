@@ -22,7 +22,10 @@ var _ MappedNullable = &AddClusterWorker200Response{}
 type AddClusterWorker200Response struct {
 	Servers []map[string]interface{} `json:"servers,omitempty"`
 	Success *bool `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddClusterWorker200Response AddClusterWorker200Response
 
 // NewAddClusterWorker200Response instantiates a new AddClusterWorker200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o AddClusterWorker200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Success) {
 		toSerialize["success"] = o.Success
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddClusterWorker200Response) UnmarshalJSON(data []byte) (err error) {
+	varAddClusterWorker200Response := _AddClusterWorker200Response{}
+
+	err = json.Unmarshal(data, &varAddClusterWorker200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddClusterWorker200Response(varAddClusterWorker200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "servers")
+		delete(additionalProperties, "success")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddClusterWorker200Response struct {

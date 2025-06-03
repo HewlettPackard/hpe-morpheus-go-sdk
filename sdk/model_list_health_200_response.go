@@ -22,7 +22,10 @@ var _ MappedNullable = &ListHealth200Response{}
 type ListHealth200Response struct {
 	Health *ListHealth200ResponseAllOfHealth `json:"health,omitempty"`
 	Meta *ListActivity200ResponseAllOfMeta `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListHealth200Response ListHealth200Response
 
 // NewListHealth200Response instantiates a new ListHealth200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o ListHealth200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Meta) {
 		toSerialize["meta"] = o.Meta
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListHealth200Response) UnmarshalJSON(data []byte) (err error) {
+	varListHealth200Response := _ListHealth200Response{}
+
+	err = json.Unmarshal(data, &varListHealth200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListHealth200Response(varListHealth200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "health")
+		delete(additionalProperties, "meta")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListHealth200Response struct {

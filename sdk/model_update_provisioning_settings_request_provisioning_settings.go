@@ -45,7 +45,10 @@ type UpdateProvisioningSettingsRequestProvisioningSettings struct {
 	// PXE Boot default root password
 	PxeRootPassword *string `json:"pxeRootPassword,omitempty"`
 	DefaultTemplateType *UpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType `json:"defaultTemplateType,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateProvisioningSettingsRequestProvisioningSettings UpdateProvisioningSettingsRequestProvisioningSettings
 
 // NewUpdateProvisioningSettingsRequestProvisioningSettings instantiates a new UpdateProvisioningSettingsRequestProvisioningSettings object
 // This constructor will assign default values to properties that have it defined,
@@ -564,7 +567,46 @@ func (o UpdateProvisioningSettingsRequestProvisioningSettings) ToMap() (map[stri
 	if !IsNil(o.DefaultTemplateType) {
 		toSerialize["defaultTemplateType"] = o.DefaultTemplateType
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateProvisioningSettingsRequestProvisioningSettings) UnmarshalJSON(data []byte) (err error) {
+	varUpdateProvisioningSettingsRequestProvisioningSettings := _UpdateProvisioningSettingsRequestProvisioningSettings{}
+
+	err = json.Unmarshal(data, &varUpdateProvisioningSettingsRequestProvisioningSettings)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateProvisioningSettingsRequestProvisioningSettings(varUpdateProvisioningSettingsRequestProvisioningSettings)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "allowZoneSelection")
+		delete(additionalProperties, "allowServerSelection")
+		delete(additionalProperties, "requireEnvironments")
+		delete(additionalProperties, "showPricing")
+		delete(additionalProperties, "hideDatastoreStats")
+		delete(additionalProperties, "crossTenantNamingPolicies")
+		delete(additionalProperties, "reuseSequence")
+		delete(additionalProperties, "cloudInitUsername")
+		delete(additionalProperties, "cloudInitPassword")
+		delete(additionalProperties, "cloudInitKeyPair")
+		delete(additionalProperties, "deployStorageProvider")
+		delete(additionalProperties, "windowsPassword")
+		delete(additionalProperties, "pxeRootPassword")
+		delete(additionalProperties, "defaultTemplateType")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateProvisioningSettingsRequestProvisioningSettings struct {

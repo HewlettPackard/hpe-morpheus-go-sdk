@@ -26,7 +26,10 @@ type ListPreseedScripts200ResponseAllOfPreseedScriptsInner struct {
 	Description *string `json:"description,omitempty"`
 	Content *string `json:"content,omitempty"`
 	CreatedBy *GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy `json:"createdBy,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListPreseedScripts200ResponseAllOfPreseedScriptsInner ListPreseedScripts200ResponseAllOfPreseedScriptsInner
 
 // NewListPreseedScripts200ResponseAllOfPreseedScriptsInner instantiates a new ListPreseedScripts200ResponseAllOfPreseedScriptsInner object
 // This constructor will assign default values to properties that have it defined,
@@ -265,7 +268,38 @@ func (o ListPreseedScripts200ResponseAllOfPreseedScriptsInner) ToMap() (map[stri
 	if !IsNil(o.CreatedBy) {
 		toSerialize["createdBy"] = o.CreatedBy
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListPreseedScripts200ResponseAllOfPreseedScriptsInner) UnmarshalJSON(data []byte) (err error) {
+	varListPreseedScripts200ResponseAllOfPreseedScriptsInner := _ListPreseedScripts200ResponseAllOfPreseedScriptsInner{}
+
+	err = json.Unmarshal(data, &varListPreseedScripts200ResponseAllOfPreseedScriptsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListPreseedScripts200ResponseAllOfPreseedScriptsInner(varListPreseedScripts200ResponseAllOfPreseedScriptsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "fileName")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "content")
+		delete(additionalProperties, "createdBy")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListPreseedScripts200ResponseAllOfPreseedScriptsInner struct {

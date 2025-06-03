@@ -40,7 +40,10 @@ type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigDetailListInner st
 	RecommendedCost *float32 `json:"recommendedCost,omitempty"`
 	TotalSavings *float32 `json:"totalSavings,omitempty"`
 	TotalSavingsPercent *float32 `json:"totalSavingsPercent,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigDetailListInner ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigDetailListInner
 
 // NewListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigDetailListInner instantiates a new ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigDetailListInner object
 // This constructor will assign default values to properties that have it defined,
@@ -769,7 +772,52 @@ func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigDetailListInner
 	if !IsNil(o.TotalSavingsPercent) {
 		toSerialize["totalSavingsPercent"] = o.TotalSavingsPercent
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigDetailListInner) UnmarshalJSON(data []byte) (err error) {
+	varListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigDetailListInner := _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigDetailListInner{}
+
+	err = json.Unmarshal(data, &varListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigDetailListInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigDetailListInner(varListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigDetailListInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "apiName")
+		delete(additionalProperties, "apiType")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "period")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "size")
+		delete(additionalProperties, "region")
+		delete(additionalProperties, "term")
+		delete(additionalProperties, "meterId")
+		delete(additionalProperties, "onDemandCount")
+		delete(additionalProperties, "onDemandCost")
+		delete(additionalProperties, "reservedCount")
+		delete(additionalProperties, "reservedCost")
+		delete(additionalProperties, "recommendedCount")
+		delete(additionalProperties, "recommendedCost")
+		delete(additionalProperties, "totalSavings")
+		delete(additionalProperties, "totalSavingsPercent")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigDetailListInner struct {

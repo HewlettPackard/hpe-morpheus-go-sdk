@@ -24,7 +24,10 @@ type UpdateInstanceNetworkInterface200ResponseAllOfOneOf struct {
 	InterfaceType *string `json:"interfaceType,omitempty"`
 	NetId *int64 `json:"netId,omitempty"`
 	Server *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServer `json:"server,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateInstanceNetworkInterface200ResponseAllOfOneOf UpdateInstanceNetworkInterface200ResponseAllOfOneOf
 
 // NewUpdateInstanceNetworkInterface200ResponseAllOfOneOf instantiates a new UpdateInstanceNetworkInterface200ResponseAllOfOneOf object
 // This constructor will assign default values to properties that have it defined,
@@ -193,7 +196,36 @@ func (o UpdateInstanceNetworkInterface200ResponseAllOfOneOf) ToMap() (map[string
 	if !IsNil(o.Server) {
 		toSerialize["server"] = o.Server
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOf) UnmarshalJSON(data []byte) (err error) {
+	varUpdateInstanceNetworkInterface200ResponseAllOfOneOf := _UpdateInstanceNetworkInterface200ResponseAllOfOneOf{}
+
+	err = json.Unmarshal(data, &varUpdateInstanceNetworkInterface200ResponseAllOfOneOf)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateInstanceNetworkInterface200ResponseAllOfOneOf(varUpdateInstanceNetworkInterface200ResponseAllOfOneOf)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "networkInterface")
+		delete(additionalProperties, "interfaceType")
+		delete(additionalProperties, "netId")
+		delete(additionalProperties, "server")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOf struct {

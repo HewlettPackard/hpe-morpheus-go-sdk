@@ -28,7 +28,10 @@ type GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsI
 	Account *GetAlerts200ResponseAllOfChecksInnerContainer `json:"account,omitempty"`
 	Sites []map[string]interface{} `json:"sites,omitempty"`
 	Plans []map[string]interface{} `json:"plans,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissions GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissions
 
 // NewGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissions instantiates a new GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissions object
 // This constructor will assign default values to properties that have it defined,
@@ -337,7 +340,40 @@ func (o GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayou
 	if !IsNil(o.Plans) {
 		toSerialize["plans"] = o.Plans
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissions) UnmarshalJSON(data []byte) (err error) {
+	varGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissions := _GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissions{}
+
+	err = json.Unmarshal(data, &varGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissions)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissions(varGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissions)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "defaultStore")
+		delete(additionalProperties, "allPlans")
+		delete(additionalProperties, "defaultTarget")
+		delete(additionalProperties, "canManage")
+		delete(additionalProperties, "all")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "sites")
+		delete(additionalProperties, "plans")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissions struct {

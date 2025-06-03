@@ -21,7 +21,10 @@ var _ MappedNullable = &CreateNetworkGroupRequest{}
 // CreateNetworkGroupRequest struct for CreateNetworkGroupRequest
 type CreateNetworkGroupRequest struct {
 	NetworkGroup *CreateNetworkGroupRequestNetworkGroup `json:"networkGroup,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _CreateNetworkGroupRequest CreateNetworkGroupRequest
 
 // NewCreateNetworkGroupRequest instantiates a new CreateNetworkGroupRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o CreateNetworkGroupRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.NetworkGroup) {
 		toSerialize["networkGroup"] = o.NetworkGroup
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *CreateNetworkGroupRequest) UnmarshalJSON(data []byte) (err error) {
+	varCreateNetworkGroupRequest := _CreateNetworkGroupRequest{}
+
+	err = json.Unmarshal(data, &varCreateNetworkGroupRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CreateNetworkGroupRequest(varCreateNetworkGroupRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "networkGroup")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableCreateNetworkGroupRequest struct {

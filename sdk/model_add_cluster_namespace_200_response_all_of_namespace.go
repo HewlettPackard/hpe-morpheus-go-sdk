@@ -26,7 +26,10 @@ type AddClusterNamespace200ResponseAllOfNamespace struct {
 	RegionCode *string `json:"regionCode,omitempty"`
 	ExternalId *string `json:"externalId,omitempty"`
 	Status *string `json:"status,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddClusterNamespace200ResponseAllOfNamespace AddClusterNamespace200ResponseAllOfNamespace
 
 // NewAddClusterNamespace200ResponseAllOfNamespace instantiates a new AddClusterNamespace200ResponseAllOfNamespace object
 // This constructor will assign default values to properties that have it defined,
@@ -265,7 +268,38 @@ func (o AddClusterNamespace200ResponseAllOfNamespace) ToMap() (map[string]interf
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddClusterNamespace200ResponseAllOfNamespace) UnmarshalJSON(data []byte) (err error) {
+	varAddClusterNamespace200ResponseAllOfNamespace := _AddClusterNamespace200ResponseAllOfNamespace{}
+
+	err = json.Unmarshal(data, &varAddClusterNamespace200ResponseAllOfNamespace)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddClusterNamespace200ResponseAllOfNamespace(varAddClusterNamespace200ResponseAllOfNamespace)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "regionCode")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "status")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddClusterNamespace200ResponseAllOfNamespace struct {

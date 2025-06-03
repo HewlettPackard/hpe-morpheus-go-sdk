@@ -23,7 +23,10 @@ type GetArchiveBucket200ResponseArchiveFilesInnerArchiveBucket struct {
 	Id *int64 `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
 	IsPublic *bool `json:"isPublic,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetArchiveBucket200ResponseArchiveFilesInnerArchiveBucket GetArchiveBucket200ResponseArchiveFilesInnerArchiveBucket
 
 // NewGetArchiveBucket200ResponseArchiveFilesInnerArchiveBucket instantiates a new GetArchiveBucket200ResponseArchiveFilesInnerArchiveBucket object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o GetArchiveBucket200ResponseArchiveFilesInnerArchiveBucket) ToMap() (map[
 	if !IsNil(o.IsPublic) {
 		toSerialize["isPublic"] = o.IsPublic
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetArchiveBucket200ResponseArchiveFilesInnerArchiveBucket) UnmarshalJSON(data []byte) (err error) {
+	varGetArchiveBucket200ResponseArchiveFilesInnerArchiveBucket := _GetArchiveBucket200ResponseArchiveFilesInnerArchiveBucket{}
+
+	err = json.Unmarshal(data, &varGetArchiveBucket200ResponseArchiveFilesInnerArchiveBucket)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetArchiveBucket200ResponseArchiveFilesInnerArchiveBucket(varGetArchiveBucket200ResponseArchiveFilesInnerArchiveBucket)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "isPublic")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetArchiveBucket200ResponseArchiveFilesInnerArchiveBucket struct {

@@ -38,7 +38,10 @@ type NetworkPoolServerUpdatePhpIpam struct {
 	NetworkFilter *string `json:"networkFilter,omitempty"`
 	Config *PhpIPAMNetworkPoolServerUpdateConfig `json:"config,omitempty"`
 	Credential *NSXNetworkServerCredential `json:"credential,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _NetworkPoolServerUpdatePhpIpam NetworkPoolServerUpdatePhpIpam
 
 // NewNetworkPoolServerUpdatePhpIpam instantiates a new NetworkPoolServerUpdatePhpIpam object
 // This constructor will assign default values to properties that have it defined,
@@ -425,7 +428,42 @@ func (o NetworkPoolServerUpdatePhpIpam) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.Credential) {
 		toSerialize["credential"] = o.Credential
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *NetworkPoolServerUpdatePhpIpam) UnmarshalJSON(data []byte) (err error) {
+	varNetworkPoolServerUpdatePhpIpam := _NetworkPoolServerUpdatePhpIpam{}
+
+	err = json.Unmarshal(data, &varNetworkPoolServerUpdatePhpIpam)
+
+	if err != nil {
+		return err
+	}
+
+	*o = NetworkPoolServerUpdatePhpIpam(varNetworkPoolServerUpdatePhpIpam)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "serviceUrl")
+		delete(additionalProperties, "serviceUsername")
+		delete(additionalProperties, "servicePassword")
+		delete(additionalProperties, "serviceThrottleRate")
+		delete(additionalProperties, "ignoreSsl")
+		delete(additionalProperties, "networkFilter")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "credential")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableNetworkPoolServerUpdatePhpIpam struct {

@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -32,6 +31,7 @@ type AddClientRequestClient struct {
 	RefreshTokenValiditySeconds int32 `json:"refreshTokenValiditySeconds"`
 	// List of Redirect URIs for use with the OpenID Authorization Code Flow
 	RedirectUris []string `json:"redirectUris,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddClientRequestClient AddClientRequestClient
@@ -211,6 +211,11 @@ func (o AddClientRequestClient) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.RedirectUris) {
 		toSerialize["redirectUris"] = o.RedirectUris
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -240,15 +245,24 @@ func (o *AddClientRequestClient) UnmarshalJSON(data []byte) (err error) {
 
 	varAddClientRequestClient := _AddClientRequestClient{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddClientRequestClient)
+	err = json.Unmarshal(data, &varAddClientRequestClient)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddClientRequestClient(varAddClientRequestClient)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "clientId")
+		delete(additionalProperties, "clientSecret")
+		delete(additionalProperties, "accessTokenValiditySeconds")
+		delete(additionalProperties, "refreshTokenValiditySeconds")
+		delete(additionalProperties, "redirectUris")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

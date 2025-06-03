@@ -34,7 +34,10 @@ type ZoneFolder struct {
 	Tenants []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner `json:"tenants,omitempty"`
 	ResourcePermissions *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission `json:"resourcePermissions,omitempty"`
 	Depth *int64 `json:"depth,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ZoneFolder ZoneFolder
 
 // NewZoneFolder instantiates a new ZoneFolder object
 // This constructor will assign default values to properties that have it defined,
@@ -553,7 +556,46 @@ func (o ZoneFolder) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Depth) {
 		toSerialize["depth"] = o.Depth
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ZoneFolder) UnmarshalJSON(data []byte) (err error) {
+	varZoneFolder := _ZoneFolder{}
+
+	err = json.Unmarshal(data, &varZoneFolder)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ZoneFolder(varZoneFolder)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "zone")
+		delete(additionalProperties, "parent")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "readOnly")
+		delete(additionalProperties, "defaultFolder")
+		delete(additionalProperties, "defaultStore")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "tenants")
+		delete(additionalProperties, "resourcePermissions")
+		delete(additionalProperties, "depth")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableZoneFolder struct {

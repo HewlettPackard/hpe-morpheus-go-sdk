@@ -23,7 +23,10 @@ type ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet struct
 	Id *string `json:"id,omitempty"`
 	Code *string `json:"code,omitempty"`
 	Category *string `json:"category,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet
 
 // NewListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet instantiates a new ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet) To
 	if !IsNil(o.Category) {
 		toSerialize["category"] = o.Category
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet) UnmarshalJSON(data []byte) (err error) {
+	varListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet := _ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet{}
+
+	err = json.Unmarshal(data, &varListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet(varListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "category")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet struct {

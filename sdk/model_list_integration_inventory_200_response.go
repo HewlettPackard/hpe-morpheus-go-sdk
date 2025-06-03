@@ -22,7 +22,10 @@ var _ MappedNullable = &ListIntegrationInventory200Response{}
 type ListIntegrationInventory200Response struct {
 	Inventory []ListIntegrationInventory200ResponseAllOfInventoryInner `json:"inventory,omitempty"`
 	Meta *ListActivity200ResponseAllOfMeta `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListIntegrationInventory200Response ListIntegrationInventory200Response
 
 // NewListIntegrationInventory200Response instantiates a new ListIntegrationInventory200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o ListIntegrationInventory200Response) ToMap() (map[string]interface{}, er
 	if !IsNil(o.Meta) {
 		toSerialize["meta"] = o.Meta
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListIntegrationInventory200Response) UnmarshalJSON(data []byte) (err error) {
+	varListIntegrationInventory200Response := _ListIntegrationInventory200Response{}
+
+	err = json.Unmarshal(data, &varListIntegrationInventory200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListIntegrationInventory200Response(varListIntegrationInventory200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "inventory")
+		delete(additionalProperties, "meta")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListIntegrationInventory200Response struct {

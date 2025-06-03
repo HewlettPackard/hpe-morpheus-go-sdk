@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -23,6 +22,7 @@ var _ MappedNullable = &AddCredentialsRequest{}
 // AddCredentialsRequest struct for AddCredentialsRequest
 type AddCredentialsRequest struct {
 	Credential AddCredentialsRequestCredential `json:"credential"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddCredentialsRequest AddCredentialsRequest
@@ -80,6 +80,11 @@ func (o AddCredentialsRequest) MarshalJSON() ([]byte, error) {
 func (o AddCredentialsRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["credential"] = o.Credential
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -107,15 +112,20 @@ func (o *AddCredentialsRequest) UnmarshalJSON(data []byte) (err error) {
 
 	varAddCredentialsRequest := _AddCredentialsRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddCredentialsRequest)
+	err = json.Unmarshal(data, &varAddCredentialsRequest)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddCredentialsRequest(varAddCredentialsRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "credential")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

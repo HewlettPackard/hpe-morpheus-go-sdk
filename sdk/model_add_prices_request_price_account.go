@@ -22,7 +22,10 @@ var _ MappedNullable = &AddPricesRequestPriceAccount{}
 type AddPricesRequestPriceAccount struct {
 	// Assign to specified tenant account
 	Id *int64 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddPricesRequestPriceAccount AddPricesRequestPriceAccount
 
 // NewAddPricesRequestPriceAccount instantiates a new AddPricesRequestPriceAccount object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o AddPricesRequestPriceAccount) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddPricesRequestPriceAccount) UnmarshalJSON(data []byte) (err error) {
+	varAddPricesRequestPriceAccount := _AddPricesRequestPriceAccount{}
+
+	err = json.Unmarshal(data, &varAddPricesRequestPriceAccount)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddPricesRequestPriceAccount(varAddPricesRequestPriceAccount)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddPricesRequestPriceAccount struct {

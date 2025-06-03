@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -54,6 +53,7 @@ type GetAlerts200ResponseAllOfChecksInnerConfigAnyOf1 struct {
 	SshUser *string `json:"sshUser,omitempty"`
 	// Password for user, if not using key based authentication
 	SshPassword *string `json:"sshPassword,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _GetAlerts200ResponseAllOfChecksInnerConfigAnyOf1 GetAlerts200ResponseAllOfChecksInnerConfigAnyOf1
@@ -700,6 +700,11 @@ func (o GetAlerts200ResponseAllOfChecksInnerConfigAnyOf1) ToMap() (map[string]in
 	if !IsNil(o.SshPassword) {
 		toSerialize["sshPassword"] = o.SshPassword
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -732,15 +737,38 @@ func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf1) UnmarshalJSON(data []
 
 	varGetAlerts200ResponseAllOfChecksInnerConfigAnyOf1 := _GetAlerts200ResponseAllOfChecksInnerConfigAnyOf1{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varGetAlerts200ResponseAllOfChecksInnerConfigAnyOf1)
+	err = json.Unmarshal(data, &varGetAlerts200ResponseAllOfChecksInnerConfigAnyOf1)
 
 	if err != nil {
 		return err
 	}
 
 	*o = GetAlerts200ResponseAllOfChecksInnerConfigAnyOf1(varGetAlerts200ResponseAllOfChecksInnerConfigAnyOf1)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "dbHost")
+		delete(additionalProperties, "dbPort")
+		delete(additionalProperties, "dbUser")
+		delete(additionalProperties, "dbPassword")
+		delete(additionalProperties, "dbPasswordHash")
+		delete(additionalProperties, "dbName")
+		delete(additionalProperties, "dbQuery")
+		delete(additionalProperties, "checkOperator")
+		delete(additionalProperties, "checkResult")
+		delete(additionalProperties, "checkUser")
+		delete(additionalProperties, "textCheckOn")
+		delete(additionalProperties, "checkPassword")
+		delete(additionalProperties, "webTextMatch")
+		delete(additionalProperties, "checkPasswordHash")
+		delete(additionalProperties, "tunnelOn")
+		delete(additionalProperties, "sshHost")
+		delete(additionalProperties, "sshPort")
+		delete(additionalProperties, "sshUser")
+		delete(additionalProperties, "sshPassword")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

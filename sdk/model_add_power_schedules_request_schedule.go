@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -60,6 +59,7 @@ type AddPowerSchedulesRequestSchedule struct {
 	SundayOnTime *string `json:"sundayOnTime,omitempty"`
 	// Sunday Off time of the day in 24-hour format
 	SundayOffTime *string `json:"sundayOffTime,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddPowerSchedulesRequestSchedule AddPowerSchedulesRequestSchedule
@@ -811,6 +811,11 @@ func (o AddPowerSchedulesRequestSchedule) ToMap() (map[string]interface{}, error
 	if !IsNil(o.SundayOffTime) {
 		toSerialize["sundayOffTime"] = o.SundayOffTime
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -838,15 +843,38 @@ func (o *AddPowerSchedulesRequestSchedule) UnmarshalJSON(data []byte) (err error
 
 	varAddPowerSchedulesRequestSchedule := _AddPowerSchedulesRequestSchedule{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddPowerSchedulesRequestSchedule)
+	err = json.Unmarshal(data, &varAddPowerSchedulesRequestSchedule)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddPowerSchedulesRequestSchedule(varAddPowerSchedulesRequestSchedule)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "scheduleType")
+		delete(additionalProperties, "scheduleTimezone")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "mondayOnTime")
+		delete(additionalProperties, "mondayOffTime")
+		delete(additionalProperties, "tuesdayOnTime")
+		delete(additionalProperties, "tuesdayOffTime")
+		delete(additionalProperties, "wednesdayOnTime")
+		delete(additionalProperties, "wednesdayOffTime")
+		delete(additionalProperties, "thursdayOnTime")
+		delete(additionalProperties, "thursdayOffTime")
+		delete(additionalProperties, "fridayOnTime")
+		delete(additionalProperties, "fridayOffTime")
+		delete(additionalProperties, "saturdayOnTime")
+		delete(additionalProperties, "saturdayOffTime")
+		delete(additionalProperties, "sundayOnTime")
+		delete(additionalProperties, "sundayOffTime")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

@@ -35,7 +35,10 @@ type BlueprintCFTCreateSuccess struct {
 	Owner map[string]interface{} `json:"owner,omitempty"`
 	// Tenant
 	Tenant map[string]interface{} `json:"tenant,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _BlueprintCFTCreateSuccess BlueprintCFTCreateSuccess
 
 // NewBlueprintCFTCreateSuccess instantiates a new BlueprintCFTCreateSuccess object
 // This constructor will assign default values to properties that have it defined,
@@ -348,7 +351,40 @@ func (o BlueprintCFTCreateSuccess) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Tenant) {
 		toSerialize["tenant"] = o.Tenant
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *BlueprintCFTCreateSuccess) UnmarshalJSON(data []byte) (err error) {
+	varBlueprintCFTCreateSuccess := _BlueprintCFTCreateSuccess{}
+
+	err = json.Unmarshal(data, &varBlueprintCFTCreateSuccess)
+
+	if err != nil {
+		return err
+	}
+
+	*o = BlueprintCFTCreateSuccess(varBlueprintCFTCreateSuccess)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "image")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "cloudFormation")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "resourcePermission")
+		delete(additionalProperties, "owner")
+		delete(additionalProperties, "tenant")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableBlueprintCFTCreateSuccess struct {

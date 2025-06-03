@@ -32,7 +32,10 @@ type InstancesConfigGCP struct {
 	ServiceAccount *string `json:"serviceAccount,omitempty"`
 	// Access Scope
 	AccessScope *string `json:"accessScope,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _InstancesConfigGCP InstancesConfigGCP
 
 // NewInstancesConfigGCP instantiates a new InstancesConfigGCP object
 // This constructor will assign default values to properties that have it defined,
@@ -275,7 +278,38 @@ func (o InstancesConfigGCP) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.AccessScope) {
 		toSerialize["accessScope"] = o.AccessScope
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *InstancesConfigGCP) UnmarshalJSON(data []byte) (err error) {
+	varInstancesConfigGCP := _InstancesConfigGCP{}
+
+	err = json.Unmarshal(data, &varInstancesConfigGCP)
+
+	if err != nil {
+		return err
+	}
+
+	*o = InstancesConfigGCP(varInstancesConfigGCP)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "noAgent")
+		delete(additionalProperties, "googleZoneId")
+		delete(additionalProperties, "externalIpType")
+		delete(additionalProperties, "networkTags")
+		delete(additionalProperties, "serviceAccount")
+		delete(additionalProperties, "accessScope")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableInstancesConfigGCP struct {

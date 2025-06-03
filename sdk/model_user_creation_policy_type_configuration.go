@@ -22,7 +22,10 @@ var _ MappedNullable = &UserCreationPolicyTypeConfiguration{}
 type UserCreationPolicyTypeConfiguration struct {
 	CreateUserType *string `json:"createUserType,omitempty"`
 	CreateUser *bool `json:"createUser,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UserCreationPolicyTypeConfiguration UserCreationPolicyTypeConfiguration
 
 // NewUserCreationPolicyTypeConfiguration instantiates a new UserCreationPolicyTypeConfiguration object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o UserCreationPolicyTypeConfiguration) ToMap() (map[string]interface{}, er
 	if !IsNil(o.CreateUser) {
 		toSerialize["createUser"] = o.CreateUser
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UserCreationPolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
+	varUserCreationPolicyTypeConfiguration := _UserCreationPolicyTypeConfiguration{}
+
+	err = json.Unmarshal(data, &varUserCreationPolicyTypeConfiguration)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UserCreationPolicyTypeConfiguration(varUserCreationPolicyTypeConfiguration)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "createUserType")
+		delete(additionalProperties, "createUser")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUserCreationPolicyTypeConfiguration struct {

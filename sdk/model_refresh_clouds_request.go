@@ -26,7 +26,10 @@ type RefreshCloudsRequest struct {
 	Rebuild *string `json:"rebuild,omitempty"`
 	// Period. Invoice billing period to refresh in the format `YYYYMM`. The default period is the current month. Only applies to mode `costing`.
 	Period *string `json:"period,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _RefreshCloudsRequest RefreshCloudsRequest
 
 // NewRefreshCloudsRequest instantiates a new RefreshCloudsRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -160,7 +163,35 @@ func (o RefreshCloudsRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Period) {
 		toSerialize["period"] = o.Period
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *RefreshCloudsRequest) UnmarshalJSON(data []byte) (err error) {
+	varRefreshCloudsRequest := _RefreshCloudsRequest{}
+
+	err = json.Unmarshal(data, &varRefreshCloudsRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = RefreshCloudsRequest(varRefreshCloudsRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "mode")
+		delete(additionalProperties, "rebuild")
+		delete(additionalProperties, "period")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableRefreshCloudsRequest struct {

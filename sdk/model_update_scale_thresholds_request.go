@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -23,6 +22,7 @@ var _ MappedNullable = &UpdateScaleThresholdsRequest{}
 // UpdateScaleThresholdsRequest struct for UpdateScaleThresholdsRequest
 type UpdateScaleThresholdsRequest struct {
 	ScaleThreshold UpdateScaleThresholdsRequestScaleThreshold `json:"scaleThreshold"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateScaleThresholdsRequest UpdateScaleThresholdsRequest
@@ -80,6 +80,11 @@ func (o UpdateScaleThresholdsRequest) MarshalJSON() ([]byte, error) {
 func (o UpdateScaleThresholdsRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["scaleThreshold"] = o.ScaleThreshold
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -107,15 +112,20 @@ func (o *UpdateScaleThresholdsRequest) UnmarshalJSON(data []byte) (err error) {
 
 	varUpdateScaleThresholdsRequest := _UpdateScaleThresholdsRequest{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varUpdateScaleThresholdsRequest)
+	err = json.Unmarshal(data, &varUpdateScaleThresholdsRequest)
 
 	if err != nil {
 		return err
 	}
 
 	*o = UpdateScaleThresholdsRequest(varUpdateScaleThresholdsRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "scaleThreshold")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

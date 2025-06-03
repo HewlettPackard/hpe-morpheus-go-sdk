@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -27,6 +26,7 @@ type CreateNetworksRequestNetworkConfigAnyOf2 struct {
 	ZonePool CreateNetworksRequestNetworkConfigAnyOf2ZonePool `json:"zonePool"`
 	// Auto create subnets
 	AutoCreate bool `json:"autoCreate"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _CreateNetworksRequestNetworkConfigAnyOf2 CreateNetworksRequestNetworkConfigAnyOf2
@@ -140,6 +140,11 @@ func (o CreateNetworksRequestNetworkConfigAnyOf2) ToMap() (map[string]interface{
 	toSerialize["mtu"] = o.Mtu
 	toSerialize["zonePool"] = o.ZonePool
 	toSerialize["autoCreate"] = o.AutoCreate
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -169,15 +174,22 @@ func (o *CreateNetworksRequestNetworkConfigAnyOf2) UnmarshalJSON(data []byte) (e
 
 	varCreateNetworksRequestNetworkConfigAnyOf2 := _CreateNetworksRequestNetworkConfigAnyOf2{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varCreateNetworksRequestNetworkConfigAnyOf2)
+	err = json.Unmarshal(data, &varCreateNetworksRequestNetworkConfigAnyOf2)
 
 	if err != nil {
 		return err
 	}
 
 	*o = CreateNetworksRequestNetworkConfigAnyOf2(varCreateNetworksRequestNetworkConfigAnyOf2)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "mtu")
+		delete(additionalProperties, "zonePool")
+		delete(additionalProperties, "autoCreate")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

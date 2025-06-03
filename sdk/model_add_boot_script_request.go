@@ -21,7 +21,10 @@ var _ MappedNullable = &AddBootScriptRequest{}
 // AddBootScriptRequest struct for AddBootScriptRequest
 type AddBootScriptRequest struct {
 	BootScript *AddBootScriptRequestBootScript `json:"bootScript,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddBootScriptRequest AddBootScriptRequest
 
 // NewAddBootScriptRequest instantiates a new AddBootScriptRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o AddBootScriptRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.BootScript) {
 		toSerialize["bootScript"] = o.BootScript
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddBootScriptRequest) UnmarshalJSON(data []byte) (err error) {
+	varAddBootScriptRequest := _AddBootScriptRequest{}
+
+	err = json.Unmarshal(data, &varAddBootScriptRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddBootScriptRequest(varAddBootScriptRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "bootScript")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddBootScriptRequest struct {

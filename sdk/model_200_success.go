@@ -21,7 +21,10 @@ var _ MappedNullable = &Model200Success{}
 // Model200Success struct for Model200Success
 type Model200Success struct {
 	Success *bool `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _Model200Success Model200Success
 
 // NewModel200Success instantiates a new Model200Success object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o Model200Success) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Success) {
 		toSerialize["success"] = o.Success
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *Model200Success) UnmarshalJSON(data []byte) (err error) {
+	varModel200Success := _Model200Success{}
+
+	err = json.Unmarshal(data, &varModel200Success)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Model200Success(varModel200Success)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "success")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableModel200Success struct {

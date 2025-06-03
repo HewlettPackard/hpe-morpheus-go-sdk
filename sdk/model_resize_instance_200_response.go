@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
 	"fmt"
 )
 
@@ -27,6 +26,7 @@ type ResizeInstance200Response struct {
 	ZoneId int64 `json:"zoneId"`
 	Success *bool `json:"success,omitempty"`
 	Errors map[string]interface{} `json:"errors,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ResizeInstance200Response ResizeInstance200Response
@@ -180,6 +180,11 @@ func (o ResizeInstance200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Errors) {
 		toSerialize["errors"] = o.Errors
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -208,15 +213,23 @@ func (o *ResizeInstance200Response) UnmarshalJSON(data []byte) (err error) {
 
 	varResizeInstance200Response := _ResizeInstance200Response{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varResizeInstance200Response)
+	err = json.Unmarshal(data, &varResizeInstance200Response)
 
 	if err != nil {
 		return err
 	}
 
 	*o = ResizeInstance200Response(varResizeInstance200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "instance")
+		delete(additionalProperties, "zoneId")
+		delete(additionalProperties, "success")
+		delete(additionalProperties, "errors")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

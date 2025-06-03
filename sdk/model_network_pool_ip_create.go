@@ -28,7 +28,10 @@ type NetworkPoolIpCreate struct {
 	RefType *string `json:"refType,omitempty"`
 	// ID of associated resource such as a host/server
 	RefId *int64 `json:"refId,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _NetworkPoolIpCreate NetworkPoolIpCreate
 
 // NewNetworkPoolIpCreate instantiates a new NetworkPoolIpCreate object
 // This constructor will assign default values to properties that have it defined,
@@ -197,7 +200,36 @@ func (o NetworkPoolIpCreate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.RefId) {
 		toSerialize["refId"] = o.RefId
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *NetworkPoolIpCreate) UnmarshalJSON(data []byte) (err error) {
+	varNetworkPoolIpCreate := _NetworkPoolIpCreate{}
+
+	err = json.Unmarshal(data, &varNetworkPoolIpCreate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = NetworkPoolIpCreate(varNetworkPoolIpCreate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "ipAddress")
+		delete(additionalProperties, "hostname")
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "refId")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableNetworkPoolIpCreate struct {

@@ -23,7 +23,10 @@ type Tag struct {
 	Id *int64 `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
 	Value *string `json:"value,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _Tag Tag
 
 // NewTag instantiates a new Tag object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o Tag) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Value) {
 		toSerialize["value"] = o.Value
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *Tag) UnmarshalJSON(data []byte) (err error) {
+	varTag := _Tag{}
+
+	err = json.Unmarshal(data, &varTag)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Tag(varTag)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "value")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableTag struct {

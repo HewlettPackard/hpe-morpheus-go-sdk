@@ -22,7 +22,10 @@ var _ MappedNullable = &NSXNetworkServerCredential{}
 type NSXNetworkServerCredential struct {
 	Type *string `json:"type,omitempty"`
 	Id *int64 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _NSXNetworkServerCredential NSXNetworkServerCredential
 
 // NewNSXNetworkServerCredential instantiates a new NSXNetworkServerCredential object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o NSXNetworkServerCredential) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *NSXNetworkServerCredential) UnmarshalJSON(data []byte) (err error) {
+	varNSXNetworkServerCredential := _NSXNetworkServerCredential{}
+
+	err = json.Unmarshal(data, &varNSXNetworkServerCredential)
+
+	if err != nil {
+		return err
+	}
+
+	*o = NSXNetworkServerCredential(varNSXNetworkServerCredential)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableNSXNetworkServerCredential struct {

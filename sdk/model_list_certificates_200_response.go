@@ -22,7 +22,10 @@ var _ MappedNullable = &ListCertificates200Response{}
 type ListCertificates200Response struct {
 	Certificates []ListCertificates200ResponseCertificatesInner `json:"certificates,omitempty"`
 	CertificateCount *int64 `json:"certificateCount,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListCertificates200Response ListCertificates200Response
 
 // NewListCertificates200Response instantiates a new ListCertificates200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -121,7 +124,34 @@ func (o ListCertificates200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CertificateCount) {
 		toSerialize["certificateCount"] = o.CertificateCount
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListCertificates200Response) UnmarshalJSON(data []byte) (err error) {
+	varListCertificates200Response := _ListCertificates200Response{}
+
+	err = json.Unmarshal(data, &varListCertificates200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListCertificates200Response(varListCertificates200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "certificates")
+		delete(additionalProperties, "certificateCount")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListCertificates200Response struct {

@@ -51,7 +51,10 @@ type ContainerTypeUpdate struct {
 	EnvironmentVariables []AddClusterLayoutsRequestLayoutEnvironmentVariablesInner `json:"environmentVariables,omitempty"`
 	// Config object varies with node type.  If using docker, scvmm, ARM, hyperv, or cloudformation, look up provision type details (customOptionTypes) for information.
 	Config map[string]interface{} `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ContainerTypeUpdate ContainerTypeUpdate
 
 // NewContainerTypeUpdate instantiates a new ContainerTypeUpdate object
 // This constructor will assign default values to properties that have it defined,
@@ -640,7 +643,48 @@ func (o ContainerTypeUpdate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ContainerTypeUpdate) UnmarshalJSON(data []byte) (err error) {
+	varContainerTypeUpdate := _ContainerTypeUpdate{}
+
+	err = json.Unmarshal(data, &varContainerTypeUpdate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ContainerTypeUpdate(varContainerTypeUpdate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "shortName")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "containerVersion")
+		delete(additionalProperties, "provisionTypeCode")
+		delete(additionalProperties, "scripts")
+		delete(additionalProperties, "templates")
+		delete(additionalProperties, "virtualImageId")
+		delete(additionalProperties, "osTypeId")
+		delete(additionalProperties, "statTypeCode")
+		delete(additionalProperties, "logTypeCode")
+		delete(additionalProperties, "serverType")
+		delete(additionalProperties, "containerPorts")
+		delete(additionalProperties, "environmentVariables")
+		delete(additionalProperties, "config")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableContainerTypeUpdate struct {

@@ -23,7 +23,10 @@ type GetPowerSchedules200Response struct {
 	Instances []GetPowerSchedules200ResponseAllOfInstancesInner `json:"instances,omitempty"`
 	Servers []GetPowerSchedules200ResponseAllOfInstancesInner `json:"servers,omitempty"`
 	Schedule *ListPowerSchedules200ResponseAllOfSchedulesInner `json:"schedule,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _GetPowerSchedules200Response GetPowerSchedules200Response
 
 // NewGetPowerSchedules200Response instantiates a new GetPowerSchedules200Response object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o GetPowerSchedules200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Schedule) {
 		toSerialize["schedule"] = o.Schedule
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *GetPowerSchedules200Response) UnmarshalJSON(data []byte) (err error) {
+	varGetPowerSchedules200Response := _GetPowerSchedules200Response{}
+
+	err = json.Unmarshal(data, &varGetPowerSchedules200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetPowerSchedules200Response(varGetPowerSchedules200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "instances")
+		delete(additionalProperties, "servers")
+		delete(additionalProperties, "schedule")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableGetPowerSchedules200Response struct {

@@ -23,7 +23,10 @@ type ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType struct {
 	Id *int64 `json:"id,omitempty"`
 	Code *string `json:"code,omitempty"`
 	Name *string `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType
 
 // NewListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType instantiates a new ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType object
 // This constructor will assign default values to properties that have it defined,
@@ -157,7 +160,35 @@ func (o ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType) ToMap(
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType) UnmarshalJSON(data []byte) (err error) {
+	varListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType := _ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType{}
+
+	err = json.Unmarshal(data, &varListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType(varListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType struct {

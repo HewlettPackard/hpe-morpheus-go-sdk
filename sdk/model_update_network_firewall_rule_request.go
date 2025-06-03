@@ -21,7 +21,10 @@ var _ MappedNullable = &UpdateNetworkFirewallRuleRequest{}
 // UpdateNetworkFirewallRuleRequest The parameters for update a Network Firewall Rule is type dependent. The following lists the common parameters. Get a specific network type to list available options for the network relay type. 
 type UpdateNetworkFirewallRuleRequest struct {
 	Rule map[string]interface{} `json:"rule,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UpdateNetworkFirewallRuleRequest UpdateNetworkFirewallRuleRequest
 
 // NewUpdateNetworkFirewallRuleRequest instantiates a new UpdateNetworkFirewallRuleRequest object
 // This constructor will assign default values to properties that have it defined,
@@ -85,7 +88,33 @@ func (o UpdateNetworkFirewallRuleRequest) ToMap() (map[string]interface{}, error
 	if !IsNil(o.Rule) {
 		toSerialize["rule"] = o.Rule
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UpdateNetworkFirewallRuleRequest) UnmarshalJSON(data []byte) (err error) {
+	varUpdateNetworkFirewallRuleRequest := _UpdateNetworkFirewallRuleRequest{}
+
+	err = json.Unmarshal(data, &varUpdateNetworkFirewallRuleRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateNetworkFirewallRuleRequest(varUpdateNetworkFirewallRuleRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "rule")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUpdateNetworkFirewallRuleRequest struct {

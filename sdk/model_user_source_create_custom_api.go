@@ -28,7 +28,10 @@ type UserSourceCreateCustomApi struct {
 	EncryptionAlgo *string `json:"encryptionAlgo,omitempty"`
 	// Encryption Key
 	EncryptionKey *string `json:"encryptionKey,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _UserSourceCreateCustomApi UserSourceCreateCustomApi
 
 // NewUserSourceCreateCustomApi instantiates a new UserSourceCreateCustomApi object
 // This constructor will assign default values to properties that have it defined,
@@ -197,7 +200,36 @@ func (o UserSourceCreateCustomApi) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.EncryptionKey) {
 		toSerialize["encryptionKey"] = o.EncryptionKey
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *UserSourceCreateCustomApi) UnmarshalJSON(data []byte) (err error) {
+	varUserSourceCreateCustomApi := _UserSourceCreateCustomApi{}
+
+	err = json.Unmarshal(data, &varUserSourceCreateCustomApi)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UserSourceCreateCustomApi(varUserSourceCreateCustomApi)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "endpoint")
+		delete(additionalProperties, "apiStyle")
+		delete(additionalProperties, "encryptionAlgo")
+		delete(additionalProperties, "encryptionKey")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUserSourceCreateCustomApi struct {

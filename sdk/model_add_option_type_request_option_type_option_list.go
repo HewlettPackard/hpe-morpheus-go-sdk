@@ -22,7 +22,10 @@ var _ MappedNullable = &AddOptionTypeRequestOptionTypeOptionList{}
 type AddOptionTypeRequestOptionTypeOptionList struct {
 	// ID of Option List. For use with type select, this will set optionSource to the list.
 	Id *int64 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _AddOptionTypeRequestOptionTypeOptionList AddOptionTypeRequestOptionTypeOptionList
 
 // NewAddOptionTypeRequestOptionTypeOptionList instantiates a new AddOptionTypeRequestOptionTypeOptionList object
 // This constructor will assign default values to properties that have it defined,
@@ -86,7 +89,33 @@ func (o AddOptionTypeRequestOptionTypeOptionList) ToMap() (map[string]interface{
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *AddOptionTypeRequestOptionTypeOptionList) UnmarshalJSON(data []byte) (err error) {
+	varAddOptionTypeRequestOptionTypeOptionList := _AddOptionTypeRequestOptionTypeOptionList{}
+
+	err = json.Unmarshal(data, &varAddOptionTypeRequestOptionTypeOptionList)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddOptionTypeRequestOptionTypeOptionList(varAddOptionTypeRequestOptionTypeOptionList)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableAddOptionTypeRequestOptionTypeOptionList struct {

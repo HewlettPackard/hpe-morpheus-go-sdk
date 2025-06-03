@@ -28,7 +28,10 @@ type ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions str
 	Account *GetAlerts200ResponseAllOfChecksInnerAccount `json:"account,omitempty"`
 	Sites []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner `json:"sites,omitempty"`
 	Plans []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner `json:"plans,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions
 
 // NewListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions instantiates a new ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions object
 // This constructor will assign default values to properties that have it defined,
@@ -337,7 +340,40 @@ func (o ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions)
 	if !IsNil(o.Plans) {
 		toSerialize["plans"] = o.Plans
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions) UnmarshalJSON(data []byte) (err error) {
+	varListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions := _ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions{}
+
+	err = json.Unmarshal(data, &varListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions(varListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "defaultStore")
+		delete(additionalProperties, "allPlans")
+		delete(additionalProperties, "defaultTarget")
+		delete(additionalProperties, "canManage")
+		delete(additionalProperties, "all")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "sites")
+		delete(additionalProperties, "plans")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions struct {

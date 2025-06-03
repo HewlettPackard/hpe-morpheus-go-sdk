@@ -28,7 +28,10 @@ type ListVDIGateways200ResponseAllOfVdiGatewaysInner struct {
 	ApiKey *string `json:"apiKey,omitempty"`
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _ListVDIGateways200ResponseAllOfVdiGatewaysInner ListVDIGateways200ResponseAllOfVdiGatewaysInner
 
 // NewListVDIGateways200ResponseAllOfVdiGatewaysInner instantiates a new ListVDIGateways200ResponseAllOfVdiGatewaysInner object
 // This constructor will assign default values to properties that have it defined,
@@ -302,7 +305,39 @@ func (o ListVDIGateways200ResponseAllOfVdiGatewaysInner) ToMap() (map[string]int
 	if !IsNil(o.LastUpdated) {
 		toSerialize["lastUpdated"] = o.LastUpdated
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *ListVDIGateways200ResponseAllOfVdiGatewaysInner) UnmarshalJSON(data []byte) (err error) {
+	varListVDIGateways200ResponseAllOfVdiGatewaysInner := _ListVDIGateways200ResponseAllOfVdiGatewaysInner{}
+
+	err = json.Unmarshal(data, &varListVDIGateways200ResponseAllOfVdiGatewaysInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListVDIGateways200ResponseAllOfVdiGatewaysInner(varListVDIGateways200ResponseAllOfVdiGatewaysInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "gatewayUrl")
+		delete(additionalProperties, "apiKey")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableListVDIGateways200ResponseAllOfVdiGatewaysInner struct {
