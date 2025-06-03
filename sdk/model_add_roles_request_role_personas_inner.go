@@ -22,7 +22,7 @@ var _ MappedNullable = &AddRolesRequestRolePersonasInner{}
 // AddRolesRequestRolePersonasInner struct for AddRolesRequestRolePersonasInner
 type AddRolesRequestRolePersonasInner struct {
 	// `code` of the persona
-	Code *string `json:"code,omitempty"`
+	Code string `json:"code"`
 	// The new access level.
 	Access string `json:"access"`
 	AdditionalProperties map[string]interface{}
@@ -34,8 +34,9 @@ type _AddRolesRequestRolePersonasInner AddRolesRequestRolePersonasInner
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddRolesRequestRolePersonasInner(access string) *AddRolesRequestRolePersonasInner {
+func NewAddRolesRequestRolePersonasInner(code string, access string) *AddRolesRequestRolePersonasInner {
 	this := AddRolesRequestRolePersonasInner{}
+	this.Code = code
 	this.Access = access
 	return &this
 }
@@ -48,36 +49,28 @@ func NewAddRolesRequestRolePersonasInnerWithDefaults() *AddRolesRequestRolePerso
 	return &this
 }
 
-// GetCode returns the Code field value if set, zero value otherwise.
+// GetCode returns the Code field value
 func (o *AddRolesRequestRolePersonasInner) GetCode() string {
-	if o == nil || IsNil(o.Code) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Code
+
+	return o.Code
 }
 
-// GetCodeOk returns a tuple with the Code field value if set, nil otherwise
+// GetCodeOk returns a tuple with the Code field value
 // and a boolean to check if the value has been set.
 func (o *AddRolesRequestRolePersonasInner) GetCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.Code) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Code, true
+	return &o.Code, true
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *AddRolesRequestRolePersonasInner) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
-// SetCode gets a reference to the given string and assigns it to the Code field.
+// SetCode sets field value
 func (o *AddRolesRequestRolePersonasInner) SetCode(v string) {
-	o.Code = &v
+	o.Code = v
 }
 
 // GetAccess returns the Access field value
@@ -114,9 +107,7 @@ func (o AddRolesRequestRolePersonasInner) MarshalJSON() ([]byte, error) {
 
 func (o AddRolesRequestRolePersonasInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Code) {
-		toSerialize["code"] = o.Code
-	}
+	toSerialize["code"] = o.Code
 	toSerialize["access"] = o.Access
 
 	for key, value := range o.AdditionalProperties {
@@ -131,6 +122,7 @@ func (o *AddRolesRequestRolePersonasInner) UnmarshalJSON(data []byte) (err error
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
+		"code",
 		"access",
 	}
 

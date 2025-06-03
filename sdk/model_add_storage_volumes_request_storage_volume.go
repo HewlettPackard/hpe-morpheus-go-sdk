@@ -28,7 +28,7 @@ type AddStorageVolumesRequestStorageVolume struct {
 	// Configuration object with parameters that vary by `type`.
 	Config map[string]interface{} `json:"config,omitempty"`
 	StorageServer AddClusterLayoutsRequestLayoutMastersInnerContainerType `json:"storageServer"`
-	StorageGroup AddClusterLayoutsRequestLayoutMastersInnerContainerType `json:"storageGroup"`
+	StorageGroup *AddClusterLayoutsRequestLayoutMastersInnerContainerType `json:"storageGroup,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -38,12 +38,11 @@ type _AddStorageVolumesRequestStorageVolume AddStorageVolumesRequestStorageVolum
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddStorageVolumesRequestStorageVolume(name string, type_ string, storageServer AddClusterLayoutsRequestLayoutMastersInnerContainerType, storageGroup AddClusterLayoutsRequestLayoutMastersInnerContainerType) *AddStorageVolumesRequestStorageVolume {
+func NewAddStorageVolumesRequestStorageVolume(name string, type_ string, storageServer AddClusterLayoutsRequestLayoutMastersInnerContainerType) *AddStorageVolumesRequestStorageVolume {
 	this := AddStorageVolumesRequestStorageVolume{}
 	this.Name = name
 	this.Type = type_
 	this.StorageServer = storageServer
-	this.StorageGroup = storageGroup
 	return &this
 }
 
@@ -159,28 +158,36 @@ func (o *AddStorageVolumesRequestStorageVolume) SetStorageServer(v AddClusterLay
 	o.StorageServer = v
 }
 
-// GetStorageGroup returns the StorageGroup field value
+// GetStorageGroup returns the StorageGroup field value if set, zero value otherwise.
 func (o *AddStorageVolumesRequestStorageVolume) GetStorageGroup() AddClusterLayoutsRequestLayoutMastersInnerContainerType {
-	if o == nil {
+	if o == nil || IsNil(o.StorageGroup) {
 		var ret AddClusterLayoutsRequestLayoutMastersInnerContainerType
 		return ret
 	}
-
-	return o.StorageGroup
+	return *o.StorageGroup
 }
 
-// GetStorageGroupOk returns a tuple with the StorageGroup field value
+// GetStorageGroupOk returns a tuple with the StorageGroup field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddStorageVolumesRequestStorageVolume) GetStorageGroupOk() (*AddClusterLayoutsRequestLayoutMastersInnerContainerType, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.StorageGroup) {
 		return nil, false
 	}
-	return &o.StorageGroup, true
+	return o.StorageGroup, true
 }
 
-// SetStorageGroup sets field value
+// IsSetStorageGroup returns a boolean if a field has been set.
+func (o *AddStorageVolumesRequestStorageVolume) IsSetStorageGroup() bool {
+	if o != nil && !IsNil(o.StorageGroup) {
+		return true
+	}
+
+	return false
+}
+
+// SetStorageGroup gets a reference to the given AddClusterLayoutsRequestLayoutMastersInnerContainerType and assigns it to the StorageGroup field.
 func (o *AddStorageVolumesRequestStorageVolume) SetStorageGroup(v AddClusterLayoutsRequestLayoutMastersInnerContainerType) {
-	o.StorageGroup = v
+	o.StorageGroup = &v
 }
 
 func (o AddStorageVolumesRequestStorageVolume) MarshalJSON() ([]byte, error) {
@@ -199,7 +206,9 @@ func (o AddStorageVolumesRequestStorageVolume) ToMap() (map[string]interface{}, 
 		toSerialize["config"] = o.Config
 	}
 	toSerialize["storageServer"] = o.StorageServer
-	toSerialize["storageGroup"] = o.StorageGroup
+	if !IsNil(o.StorageGroup) {
+		toSerialize["storageGroup"] = o.StorageGroup
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -216,7 +225,6 @@ func (o *AddStorageVolumesRequestStorageVolume) UnmarshalJSON(data []byte) (err 
 		"name",
 		"type",
 		"storageServer",
-		"storageGroup",
 	}
 
 	allProperties := make(map[string]interface{})

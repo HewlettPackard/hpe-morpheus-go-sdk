@@ -5,13 +5,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Instance** | [**AddInstance200ResponseAllOfOneOfInstance**](AddInstance200ResponseAllOfOneOfInstance.md) |  | 
-**ZoneId** | **int64** | The Cloud ID to provision the instance onto. | 
 
 ## Methods
 
 ### NewInstanceCreateSuccess
 
-`func NewInstanceCreateSuccess(instance AddInstance200ResponseAllOfOneOfInstance, zoneId int64, ) *InstanceCreateSuccess`
+`func NewInstanceCreateSuccess(instance AddInstance200ResponseAllOfOneOfInstance, ) *InstanceCreateSuccess`
 
 NewInstanceCreateSuccess instantiates a new InstanceCreateSuccess object
 This constructor will assign default values to properties that have it defined,
@@ -44,26 +43,6 @@ and a boolean to check if the value has been set.
 `func (o *InstanceCreateSuccess) SetInstance(v AddInstance200ResponseAllOfOneOfInstance)`
 
 SetInstance sets Instance field to given value.
-
-
-### GetZoneId
-
-`func (o *InstanceCreateSuccess) GetZoneId() int64`
-
-GetZoneId returns the ZoneId field if non-nil, zero value otherwise.
-
-### GetZoneIdOk
-
-`func (o *InstanceCreateSuccess) GetZoneIdOk() (*int64, bool)`
-
-GetZoneIdOk returns a tuple with the ZoneId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetZoneId
-
-`func (o *InstanceCreateSuccess) SetZoneId(v int64)`
-
-SetZoneId sets ZoneId field to given value.
 
 
 

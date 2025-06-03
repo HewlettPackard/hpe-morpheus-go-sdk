@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.6
+API version: 8.0.7
 Contact: dev@morpheusdata.com
 */
 
@@ -13,21 +13,92 @@ package sdk
 
 import (
 	"encoding/json"
-	"bytes"
-	"fmt"
+	"time"
 )
 
 // checks if the AddInstance200ResponseAllOfOneOfInstance type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &AddInstance200ResponseAllOfOneOfInstance{}
 
-// AddInstance200ResponseAllOfOneOfInstance Key for name, site, instanceType layout, and plan.
+// AddInstance200ResponseAllOfOneOfInstance struct for AddInstance200ResponseAllOfOneOfInstance
 type AddInstance200ResponseAllOfOneOfInstance struct {
-	// Name of the instance to be created.
-	Name string `json:"name"`
-	Site AddInstanceRequestInstanceSite `json:"site"`
-	InstanceType AddInstanceRequestInstanceInstanceType `json:"instanceType"`
-	Layout AddInstanceRequestInstanceLayout `json:"layout"`
-	Plan AddInstanceRequestInstancePlan `json:"plan"`
+	Id *int64 `json:"id,omitempty"`
+	Uuid *string `json:"uuid,omitempty"`
+	AccountId *int64 `json:"accountId,omitempty"`
+	Tenant *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"tenant,omitempty"`
+	InstanceType *AddInstance200ResponseAllOfOneOfInstanceInstanceType `json:"instanceType,omitempty"`
+	Group *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"group,omitempty"`
+	Cloud *ListApps200ResponseAllOfAppsInnerBlueprint `json:"cloud,omitempty"`
+	Cluster *ListInstances200ResponseAllOfInstancesInnerCluster `json:"cluster,omitempty"`
+	Containers []int64 `json:"containers,omitempty"`
+	Servers []int64 `json:"servers,omitempty"`
+	ConnectionInfo []AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner `json:"connectionInfo,omitempty"`
+	Layout *AddInstance200ResponseAllOfOneOfInstanceLayout `json:"layout,omitempty"`
+	Plan *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"plan,omitempty"`
+	Name *string `json:"name,omitempty"`
+	DisplayName *string `json:"displayName,omitempty"`
+	Description *string `json:"description,omitempty"`
+	Environment *string `json:"environment,omitempty"`
+	Config *AddInstance200ResponseAllOfOneOfInstanceConfig `json:"config,omitempty"`
+	ConfigGroup *string `json:"configGroup,omitempty"`
+	ConfigId *string `json:"configId,omitempty"`
+	ConfigRole *string `json:"configRole,omitempty"`
+	Volumes []AddInstance200ResponseAllOfOneOfInstanceVolumesInner `json:"volumes,omitempty"`
+	Controllers []ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner `json:"controllers,omitempty"`
+	Interfaces []AddInstance200ResponseAllOfOneOfInstanceInterfacesInner `json:"interfaces,omitempty"`
+	CustomOptions map[string]interface{} `json:"customOptions,omitempty"`
+	InstanceVersion *string `json:"instanceVersion,omitempty"`
+	Labels []string `json:"labels,omitempty"`
+	Tags []AddInstance200ResponseAllOfOneOfInstanceTagsInner `json:"tags,omitempty"`
+	Evars []AddInstance200ResponseAllOfOneOfInstanceEvarsInner `json:"evars,omitempty"`
+	MaxMemory *int64 `json:"maxMemory,omitempty"`
+	MaxStorage *int64 `json:"maxStorage,omitempty"`
+	MaxCores *int64 `json:"maxCores,omitempty"`
+	CoresPerSocket *int64 `json:"coresPerSocket,omitempty"`
+	MaxCpu *string `json:"maxCpu,omitempty"`
+	HourlyCost *float32 `json:"hourlyCost,omitempty"`
+	HourlyPrice *float32 `json:"hourlyPrice,omitempty"`
+	InstancePrice *AddInstance200ResponseAllOfOneOfInstanceInstancePrice `json:"instancePrice,omitempty"`
+	DateCreated *time.Time `json:"dateCreated,omitempty"`
+	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
+	HostName *string `json:"hostName,omitempty"`
+	DomainName *string `json:"domainName,omitempty"`
+	EnvironmentPrefix *string `json:"environmentPrefix,omitempty"`
+	FirewallEnabled *bool `json:"firewallEnabled,omitempty"`
+	NetworkLevel *string `json:"networkLevel,omitempty"`
+	AutoScale *bool `json:"autoScale,omitempty"`
+	InstanceContext *string `json:"instanceContext,omitempty"`
+	CurrentDeployId *string `json:"currentDeployId,omitempty"`
+	Locked *bool `json:"locked,omitempty"`
+	Status *string `json:"status,omitempty"`
+	StatusMessage *string `json:"statusMessage,omitempty"`
+	ErrorMessage *string `json:"errorMessage,omitempty"`
+	StatusDate *time.Time `json:"statusDate,omitempty"`
+	StatusPercent *string `json:"statusPercent,omitempty"`
+	StatusEta *string `json:"statusEta,omitempty"`
+	UserStatus *string `json:"userStatus,omitempty"`
+	ExpireDays *int64 `json:"expireDays,omitempty"`
+	RenewDays *int64 `json:"renewDays,omitempty"`
+	ExpireCount *int64 `json:"expireCount,omitempty"`
+	ExpireDate *time.Time `json:"expireDate,omitempty"`
+	ExpireWarningDate *time.Time `json:"expireWarningDate,omitempty"`
+	ExpireWarningSent *bool `json:"expireWarningSent,omitempty"`
+	ShutdownDays *int64 `json:"shutdownDays,omitempty"`
+	ShutdownRenewDays *int64 `json:"shutdownRenewDays,omitempty"`
+	ShutdownCount *int64 `json:"shutdownCount,omitempty"`
+	ShutdownDate *time.Time `json:"shutdownDate,omitempty"`
+	ShutdownWarningDate *time.Time `json:"shutdownWarningDate,omitempty"`
+	ShutdownWarningSent *bool `json:"shutdownWarningSent,omitempty"`
+	RemovalDate *time.Time `json:"removalDate,omitempty"`
+	CreatedBy *ListActivity200ResponseAllOfActivityInnerActivityInnerUser `json:"createdBy,omitempty"`
+	Owner *GetAlerts200ResponseAllOfChecksInnerCreatedBy `json:"owner,omitempty"`
+	Notes *string `json:"notes,omitempty"`
+	Stats *AddInstance200ResponseAllOfOneOfInstanceStats `json:"stats,omitempty"`
+	PowerSchedule *string `json:"powerSchedule,omitempty"`
+	IsScalable *bool `json:"isScalable,omitempty"`
+	InstanceThreshold map[string]interface{} `json:"instanceThreshold,omitempty"`
+	IsBusy *bool `json:"isBusy,omitempty"`
+	Apps []map[string]interface{} `json:"apps,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddInstance200ResponseAllOfOneOfInstance AddInstance200ResponseAllOfOneOfInstance
@@ -36,13 +107,8 @@ type _AddInstance200ResponseAllOfOneOfInstance AddInstance200ResponseAllOfOneOfI
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddInstance200ResponseAllOfOneOfInstance(name string, site AddInstanceRequestInstanceSite, instanceType AddInstanceRequestInstanceInstanceType, layout AddInstanceRequestInstanceLayout, plan AddInstanceRequestInstancePlan) *AddInstance200ResponseAllOfOneOfInstance {
+func NewAddInstance200ResponseAllOfOneOfInstance() *AddInstance200ResponseAllOfOneOfInstance {
 	this := AddInstance200ResponseAllOfOneOfInstance{}
-	this.Name = name
-	this.Site = site
-	this.InstanceType = instanceType
-	this.Layout = layout
-	this.Plan = plan
 	return &this
 }
 
@@ -54,124 +120,2468 @@ func NewAddInstance200ResponseAllOfOneOfInstanceWithDefaults() *AddInstance200Re
 	return &this
 }
 
-// GetName returns the Name field value
-func (o *AddInstance200ResponseAllOfOneOfInstance) GetName() string {
-	if o == nil {
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetId() int64 {
+	if o == nil || IsNil(o.Id) {
+		var ret int64
+		return ret
+	}
+	return *o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetIdOk() (*int64, bool) {
+	if o == nil || IsNil(o.Id) {
+		return nil, false
+	}
+	return o.Id, true
+}
+
+// IsSetId returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetId() bool {
+	if o != nil && !IsNil(o.Id) {
+		return true
+	}
+
+	return false
+}
+
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetId(v int64) {
+	o.Id = &v
+}
+
+// GetUuid returns the Uuid field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetUuid() string {
+	if o == nil || IsNil(o.Uuid) {
 		var ret string
 		return ret
 	}
-
-	return o.Name
+	return *o.Uuid
 }
 
-// GetNameOk returns a tuple with the Name field value
+// GetUuidOk returns a tuple with the Uuid field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetUuidOk() (*string, bool) {
+	if o == nil || IsNil(o.Uuid) {
+		return nil, false
+	}
+	return o.Uuid, true
+}
+
+// IsSetUuid returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetUuid() bool {
+	if o != nil && !IsNil(o.Uuid) {
+		return true
+	}
+
+	return false
+}
+
+// SetUuid gets a reference to the given string and assigns it to the Uuid field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetUuid(v string) {
+	o.Uuid = &v
+}
+
+// GetAccountId returns the AccountId field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetAccountId() int64 {
+	if o == nil || IsNil(o.AccountId) {
+		var ret int64
+		return ret
+	}
+	return *o.AccountId
+}
+
+// GetAccountIdOk returns a tuple with the AccountId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetAccountIdOk() (*int64, bool) {
+	if o == nil || IsNil(o.AccountId) {
+		return nil, false
+	}
+	return o.AccountId, true
+}
+
+// IsSetAccountId returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetAccountId() bool {
+	if o != nil && !IsNil(o.AccountId) {
+		return true
+	}
+
+	return false
+}
+
+// SetAccountId gets a reference to the given int64 and assigns it to the AccountId field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetAccountId(v int64) {
+	o.AccountId = &v
+}
+
+// GetTenant returns the Tenant field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetTenant() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+	if o == nil || IsNil(o.Tenant) {
+		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		return ret
+	}
+	return *o.Tenant
+}
+
+// GetTenantOk returns a tuple with the Tenant field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetTenantOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+	if o == nil || IsNil(o.Tenant) {
+		return nil, false
+	}
+	return o.Tenant, true
+}
+
+// IsSetTenant returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetTenant() bool {
+	if o != nil && !IsNil(o.Tenant) {
+		return true
+	}
+
+	return false
+}
+
+// SetTenant gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Tenant field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetTenant(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+	o.Tenant = &v
+}
+
+// GetInstanceType returns the InstanceType field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetInstanceType() AddInstance200ResponseAllOfOneOfInstanceInstanceType {
+	if o == nil || IsNil(o.InstanceType) {
+		var ret AddInstance200ResponseAllOfOneOfInstanceInstanceType
+		return ret
+	}
+	return *o.InstanceType
+}
+
+// GetInstanceTypeOk returns a tuple with the InstanceType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetInstanceTypeOk() (*AddInstance200ResponseAllOfOneOfInstanceInstanceType, bool) {
+	if o == nil || IsNil(o.InstanceType) {
+		return nil, false
+	}
+	return o.InstanceType, true
+}
+
+// IsSetInstanceType returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetInstanceType() bool {
+	if o != nil && !IsNil(o.InstanceType) {
+		return true
+	}
+
+	return false
+}
+
+// SetInstanceType gets a reference to the given AddInstance200ResponseAllOfOneOfInstanceInstanceType and assigns it to the InstanceType field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetInstanceType(v AddInstance200ResponseAllOfOneOfInstanceInstanceType) {
+	o.InstanceType = &v
+}
+
+// GetGroup returns the Group field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetGroup() ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner {
+	if o == nil || IsNil(o.Group) {
+		var ret ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner
+		return ret
+	}
+	return *o.Group
+}
+
+// GetGroupOk returns a tuple with the Group field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetGroupOk() (*ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner, bool) {
+	if o == nil || IsNil(o.Group) {
+		return nil, false
+	}
+	return o.Group, true
+}
+
+// IsSetGroup returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetGroup() bool {
+	if o != nil && !IsNil(o.Group) {
+		return true
+	}
+
+	return false
+}
+
+// SetGroup gets a reference to the given ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner and assigns it to the Group field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetGroup(v ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner) {
+	o.Group = &v
+}
+
+// GetCloud returns the Cloud field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetCloud() ListApps200ResponseAllOfAppsInnerBlueprint {
+	if o == nil || IsNil(o.Cloud) {
+		var ret ListApps200ResponseAllOfAppsInnerBlueprint
+		return ret
+	}
+	return *o.Cloud
+}
+
+// GetCloudOk returns a tuple with the Cloud field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetCloudOk() (*ListApps200ResponseAllOfAppsInnerBlueprint, bool) {
+	if o == nil || IsNil(o.Cloud) {
+		return nil, false
+	}
+	return o.Cloud, true
+}
+
+// IsSetCloud returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetCloud() bool {
+	if o != nil && !IsNil(o.Cloud) {
+		return true
+	}
+
+	return false
+}
+
+// SetCloud gets a reference to the given ListApps200ResponseAllOfAppsInnerBlueprint and assigns it to the Cloud field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetCloud(v ListApps200ResponseAllOfAppsInnerBlueprint) {
+	o.Cloud = &v
+}
+
+// GetCluster returns the Cluster field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetCluster() ListInstances200ResponseAllOfInstancesInnerCluster {
+	if o == nil || IsNil(o.Cluster) {
+		var ret ListInstances200ResponseAllOfInstancesInnerCluster
+		return ret
+	}
+	return *o.Cluster
+}
+
+// GetClusterOk returns a tuple with the Cluster field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetClusterOk() (*ListInstances200ResponseAllOfInstancesInnerCluster, bool) {
+	if o == nil || IsNil(o.Cluster) {
+		return nil, false
+	}
+	return o.Cluster, true
+}
+
+// IsSetCluster returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetCluster() bool {
+	if o != nil && !IsNil(o.Cluster) {
+		return true
+	}
+
+	return false
+}
+
+// SetCluster gets a reference to the given ListInstances200ResponseAllOfInstancesInnerCluster and assigns it to the Cluster field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetCluster(v ListInstances200ResponseAllOfInstancesInnerCluster) {
+	o.Cluster = &v
+}
+
+// GetContainers returns the Containers field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetContainers() []int64 {
+	if o == nil || IsNil(o.Containers) {
+		var ret []int64
+		return ret
+	}
+	return o.Containers
+}
+
+// GetContainersOk returns a tuple with the Containers field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetContainersOk() ([]int64, bool) {
+	if o == nil || IsNil(o.Containers) {
+		return nil, false
+	}
+	return o.Containers, true
+}
+
+// IsSetContainers returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetContainers() bool {
+	if o != nil && !IsNil(o.Containers) {
+		return true
+	}
+
+	return false
+}
+
+// SetContainers gets a reference to the given []int64 and assigns it to the Containers field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetContainers(v []int64) {
+	o.Containers = v
+}
+
+// GetServers returns the Servers field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetServers() []int64 {
+	if o == nil || IsNil(o.Servers) {
+		var ret []int64
+		return ret
+	}
+	return o.Servers
+}
+
+// GetServersOk returns a tuple with the Servers field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetServersOk() ([]int64, bool) {
+	if o == nil || IsNil(o.Servers) {
+		return nil, false
+	}
+	return o.Servers, true
+}
+
+// IsSetServers returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetServers() bool {
+	if o != nil && !IsNil(o.Servers) {
+		return true
+	}
+
+	return false
+}
+
+// SetServers gets a reference to the given []int64 and assigns it to the Servers field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetServers(v []int64) {
+	o.Servers = v
+}
+
+// GetConnectionInfo returns the ConnectionInfo field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetConnectionInfo() []AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner {
+	if o == nil || IsNil(o.ConnectionInfo) {
+		var ret []AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner
+		return ret
+	}
+	return o.ConnectionInfo
+}
+
+// GetConnectionInfoOk returns a tuple with the ConnectionInfo field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetConnectionInfoOk() ([]AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner, bool) {
+	if o == nil || IsNil(o.ConnectionInfo) {
+		return nil, false
+	}
+	return o.ConnectionInfo, true
+}
+
+// IsSetConnectionInfo returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetConnectionInfo() bool {
+	if o != nil && !IsNil(o.ConnectionInfo) {
+		return true
+	}
+
+	return false
+}
+
+// SetConnectionInfo gets a reference to the given []AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner and assigns it to the ConnectionInfo field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetConnectionInfo(v []AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner) {
+	o.ConnectionInfo = v
+}
+
+// GetLayout returns the Layout field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetLayout() AddInstance200ResponseAllOfOneOfInstanceLayout {
+	if o == nil || IsNil(o.Layout) {
+		var ret AddInstance200ResponseAllOfOneOfInstanceLayout
+		return ret
+	}
+	return *o.Layout
+}
+
+// GetLayoutOk returns a tuple with the Layout field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetLayoutOk() (*AddInstance200ResponseAllOfOneOfInstanceLayout, bool) {
+	if o == nil || IsNil(o.Layout) {
+		return nil, false
+	}
+	return o.Layout, true
+}
+
+// IsSetLayout returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetLayout() bool {
+	if o != nil && !IsNil(o.Layout) {
+		return true
+	}
+
+	return false
+}
+
+// SetLayout gets a reference to the given AddInstance200ResponseAllOfOneOfInstanceLayout and assigns it to the Layout field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetLayout(v AddInstance200ResponseAllOfOneOfInstanceLayout) {
+	o.Layout = &v
+}
+
+// GetPlan returns the Plan field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetPlan() ListBackupSettings200ResponseBackupSettingsDefaultSchedule {
+	if o == nil || IsNil(o.Plan) {
+		var ret ListBackupSettings200ResponseBackupSettingsDefaultSchedule
+		return ret
+	}
+	return *o.Plan
+}
+
+// GetPlanOk returns a tuple with the Plan field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetPlanOk() (*ListBackupSettings200ResponseBackupSettingsDefaultSchedule, bool) {
+	if o == nil || IsNil(o.Plan) {
+		return nil, false
+	}
+	return o.Plan, true
+}
+
+// IsSetPlan returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetPlan() bool {
+	if o != nil && !IsNil(o.Plan) {
+		return true
+	}
+
+	return false
+}
+
+// SetPlan gets a reference to the given ListBackupSettings200ResponseBackupSettingsDefaultSchedule and assigns it to the Plan field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetPlan(v ListBackupSettings200ResponseBackupSettingsDefaultSchedule) {
+	o.Plan = &v
+}
+
+// GetName returns the Name field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetName() string {
+	if o == nil || IsNil(o.Name) {
+		var ret string
+		return ret
+	}
+	return *o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddInstance200ResponseAllOfOneOfInstance) GetNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return &o.Name, true
+	return o.Name, true
 }
 
-// SetName sets field value
+// IsSetName returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
 func (o *AddInstance200ResponseAllOfOneOfInstance) SetName(v string) {
-	o.Name = v
+	o.Name = &v
 }
 
-// GetSite returns the Site field value
-func (o *AddInstance200ResponseAllOfOneOfInstance) GetSite() AddInstanceRequestInstanceSite {
-	if o == nil {
-		var ret AddInstanceRequestInstanceSite
+// GetDisplayName returns the DisplayName field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetDisplayName() string {
+	if o == nil || IsNil(o.DisplayName) {
+		var ret string
 		return ret
 	}
-
-	return o.Site
+	return *o.DisplayName
 }
 
-// GetSiteOk returns a tuple with the Site field value
+// GetDisplayNameOk returns a tuple with the DisplayName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddInstance200ResponseAllOfOneOfInstance) GetSiteOk() (*AddInstanceRequestInstanceSite, bool) {
-	if o == nil {
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetDisplayNameOk() (*string, bool) {
+	if o == nil || IsNil(o.DisplayName) {
 		return nil, false
 	}
-	return &o.Site, true
+	return o.DisplayName, true
 }
 
-// SetSite sets field value
-func (o *AddInstance200ResponseAllOfOneOfInstance) SetSite(v AddInstanceRequestInstanceSite) {
-	o.Site = v
+// IsSetDisplayName returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetDisplayName() bool {
+	if o != nil && !IsNil(o.DisplayName) {
+		return true
+	}
+
+	return false
 }
 
-// GetInstanceType returns the InstanceType field value
-func (o *AddInstance200ResponseAllOfOneOfInstance) GetInstanceType() AddInstanceRequestInstanceInstanceType {
-	if o == nil {
-		var ret AddInstanceRequestInstanceInstanceType
+// SetDisplayName gets a reference to the given string and assigns it to the DisplayName field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetDisplayName(v string) {
+	o.DisplayName = &v
+}
+
+// GetDescription returns the Description field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetDescription() string {
+	if o == nil || IsNil(o.Description) {
+		var ret string
 		return ret
 	}
-
-	return o.InstanceType
+	return *o.Description
 }
 
-// GetInstanceTypeOk returns a tuple with the InstanceType field value
+// GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddInstance200ResponseAllOfOneOfInstance) GetInstanceTypeOk() (*AddInstanceRequestInstanceInstanceType, bool) {
-	if o == nil {
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetDescriptionOk() (*string, bool) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
-	return &o.InstanceType, true
+	return o.Description, true
 }
 
-// SetInstanceType sets field value
-func (o *AddInstance200ResponseAllOfOneOfInstance) SetInstanceType(v AddInstanceRequestInstanceInstanceType) {
-	o.InstanceType = v
+// IsSetDescription returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetDescription() bool {
+	if o != nil && !IsNil(o.Description) {
+		return true
+	}
+
+	return false
 }
 
-// GetLayout returns the Layout field value
-func (o *AddInstance200ResponseAllOfOneOfInstance) GetLayout() AddInstanceRequestInstanceLayout {
-	if o == nil {
-		var ret AddInstanceRequestInstanceLayout
+// SetDescription gets a reference to the given string and assigns it to the Description field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetDescription(v string) {
+	o.Description = &v
+}
+
+// GetEnvironment returns the Environment field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetEnvironment() string {
+	if o == nil || IsNil(o.Environment) {
+		var ret string
 		return ret
 	}
-
-	return o.Layout
+	return *o.Environment
 }
 
-// GetLayoutOk returns a tuple with the Layout field value
+// GetEnvironmentOk returns a tuple with the Environment field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddInstance200ResponseAllOfOneOfInstance) GetLayoutOk() (*AddInstanceRequestInstanceLayout, bool) {
-	if o == nil {
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetEnvironmentOk() (*string, bool) {
+	if o == nil || IsNil(o.Environment) {
 		return nil, false
 	}
-	return &o.Layout, true
+	return o.Environment, true
 }
 
-// SetLayout sets field value
-func (o *AddInstance200ResponseAllOfOneOfInstance) SetLayout(v AddInstanceRequestInstanceLayout) {
-	o.Layout = v
+// IsSetEnvironment returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetEnvironment() bool {
+	if o != nil && !IsNil(o.Environment) {
+		return true
+	}
+
+	return false
 }
 
-// GetPlan returns the Plan field value
-func (o *AddInstance200ResponseAllOfOneOfInstance) GetPlan() AddInstanceRequestInstancePlan {
-	if o == nil {
-		var ret AddInstanceRequestInstancePlan
+// SetEnvironment gets a reference to the given string and assigns it to the Environment field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetEnvironment(v string) {
+	o.Environment = &v
+}
+
+// GetConfig returns the Config field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetConfig() AddInstance200ResponseAllOfOneOfInstanceConfig {
+	if o == nil || IsNil(o.Config) {
+		var ret AddInstance200ResponseAllOfOneOfInstanceConfig
 		return ret
 	}
-
-	return o.Plan
+	return *o.Config
 }
 
-// GetPlanOk returns a tuple with the Plan field value
+// GetConfigOk returns a tuple with the Config field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddInstance200ResponseAllOfOneOfInstance) GetPlanOk() (*AddInstanceRequestInstancePlan, bool) {
-	if o == nil {
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetConfigOk() (*AddInstance200ResponseAllOfOneOfInstanceConfig, bool) {
+	if o == nil || IsNil(o.Config) {
 		return nil, false
 	}
-	return &o.Plan, true
+	return o.Config, true
 }
 
-// SetPlan sets field value
-func (o *AddInstance200ResponseAllOfOneOfInstance) SetPlan(v AddInstanceRequestInstancePlan) {
-	o.Plan = v
+// IsSetConfig returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetConfig() bool {
+	if o != nil && !IsNil(o.Config) {
+		return true
+	}
+
+	return false
+}
+
+// SetConfig gets a reference to the given AddInstance200ResponseAllOfOneOfInstanceConfig and assigns it to the Config field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetConfig(v AddInstance200ResponseAllOfOneOfInstanceConfig) {
+	o.Config = &v
+}
+
+// GetConfigGroup returns the ConfigGroup field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetConfigGroup() string {
+	if o == nil || IsNil(o.ConfigGroup) {
+		var ret string
+		return ret
+	}
+	return *o.ConfigGroup
+}
+
+// GetConfigGroupOk returns a tuple with the ConfigGroup field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetConfigGroupOk() (*string, bool) {
+	if o == nil || IsNil(o.ConfigGroup) {
+		return nil, false
+	}
+	return o.ConfigGroup, true
+}
+
+// IsSetConfigGroup returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetConfigGroup() bool {
+	if o != nil && !IsNil(o.ConfigGroup) {
+		return true
+	}
+
+	return false
+}
+
+// SetConfigGroup gets a reference to the given string and assigns it to the ConfigGroup field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetConfigGroup(v string) {
+	o.ConfigGroup = &v
+}
+
+// GetConfigId returns the ConfigId field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetConfigId() string {
+	if o == nil || IsNil(o.ConfigId) {
+		var ret string
+		return ret
+	}
+	return *o.ConfigId
+}
+
+// GetConfigIdOk returns a tuple with the ConfigId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetConfigIdOk() (*string, bool) {
+	if o == nil || IsNil(o.ConfigId) {
+		return nil, false
+	}
+	return o.ConfigId, true
+}
+
+// IsSetConfigId returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetConfigId() bool {
+	if o != nil && !IsNil(o.ConfigId) {
+		return true
+	}
+
+	return false
+}
+
+// SetConfigId gets a reference to the given string and assigns it to the ConfigId field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetConfigId(v string) {
+	o.ConfigId = &v
+}
+
+// GetConfigRole returns the ConfigRole field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetConfigRole() string {
+	if o == nil || IsNil(o.ConfigRole) {
+		var ret string
+		return ret
+	}
+	return *o.ConfigRole
+}
+
+// GetConfigRoleOk returns a tuple with the ConfigRole field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetConfigRoleOk() (*string, bool) {
+	if o == nil || IsNil(o.ConfigRole) {
+		return nil, false
+	}
+	return o.ConfigRole, true
+}
+
+// IsSetConfigRole returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetConfigRole() bool {
+	if o != nil && !IsNil(o.ConfigRole) {
+		return true
+	}
+
+	return false
+}
+
+// SetConfigRole gets a reference to the given string and assigns it to the ConfigRole field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetConfigRole(v string) {
+	o.ConfigRole = &v
+}
+
+// GetVolumes returns the Volumes field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetVolumes() []AddInstance200ResponseAllOfOneOfInstanceVolumesInner {
+	if o == nil || IsNil(o.Volumes) {
+		var ret []AddInstance200ResponseAllOfOneOfInstanceVolumesInner
+		return ret
+	}
+	return o.Volumes
+}
+
+// GetVolumesOk returns a tuple with the Volumes field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetVolumesOk() ([]AddInstance200ResponseAllOfOneOfInstanceVolumesInner, bool) {
+	if o == nil || IsNil(o.Volumes) {
+		return nil, false
+	}
+	return o.Volumes, true
+}
+
+// IsSetVolumes returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetVolumes() bool {
+	if o != nil && !IsNil(o.Volumes) {
+		return true
+	}
+
+	return false
+}
+
+// SetVolumes gets a reference to the given []AddInstance200ResponseAllOfOneOfInstanceVolumesInner and assigns it to the Volumes field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetVolumes(v []AddInstance200ResponseAllOfOneOfInstanceVolumesInner) {
+	o.Volumes = v
+}
+
+// GetControllers returns the Controllers field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetControllers() []ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner {
+	if o == nil || IsNil(o.Controllers) {
+		var ret []ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner
+		return ret
+	}
+	return o.Controllers
+}
+
+// GetControllersOk returns a tuple with the Controllers field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetControllersOk() ([]ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner, bool) {
+	if o == nil || IsNil(o.Controllers) {
+		return nil, false
+	}
+	return o.Controllers, true
+}
+
+// IsSetControllers returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetControllers() bool {
+	if o != nil && !IsNil(o.Controllers) {
+		return true
+	}
+
+	return false
+}
+
+// SetControllers gets a reference to the given []ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner and assigns it to the Controllers field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetControllers(v []ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner) {
+	o.Controllers = v
+}
+
+// GetInterfaces returns the Interfaces field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetInterfaces() []AddInstance200ResponseAllOfOneOfInstanceInterfacesInner {
+	if o == nil || IsNil(o.Interfaces) {
+		var ret []AddInstance200ResponseAllOfOneOfInstanceInterfacesInner
+		return ret
+	}
+	return o.Interfaces
+}
+
+// GetInterfacesOk returns a tuple with the Interfaces field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetInterfacesOk() ([]AddInstance200ResponseAllOfOneOfInstanceInterfacesInner, bool) {
+	if o == nil || IsNil(o.Interfaces) {
+		return nil, false
+	}
+	return o.Interfaces, true
+}
+
+// IsSetInterfaces returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetInterfaces() bool {
+	if o != nil && !IsNil(o.Interfaces) {
+		return true
+	}
+
+	return false
+}
+
+// SetInterfaces gets a reference to the given []AddInstance200ResponseAllOfOneOfInstanceInterfacesInner and assigns it to the Interfaces field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetInterfaces(v []AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) {
+	o.Interfaces = v
+}
+
+// GetCustomOptions returns the CustomOptions field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetCustomOptions() map[string]interface{} {
+	if o == nil || IsNil(o.CustomOptions) {
+		var ret map[string]interface{}
+		return ret
+	}
+	return o.CustomOptions
+}
+
+// GetCustomOptionsOk returns a tuple with the CustomOptions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetCustomOptionsOk() (map[string]interface{}, bool) {
+	if o == nil || IsNil(o.CustomOptions) {
+		return map[string]interface{}{}, false
+	}
+	return o.CustomOptions, true
+}
+
+// IsSetCustomOptions returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetCustomOptions() bool {
+	if o != nil && !IsNil(o.CustomOptions) {
+		return true
+	}
+
+	return false
+}
+
+// SetCustomOptions gets a reference to the given map[string]interface{} and assigns it to the CustomOptions field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetCustomOptions(v map[string]interface{}) {
+	o.CustomOptions = v
+}
+
+// GetInstanceVersion returns the InstanceVersion field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetInstanceVersion() string {
+	if o == nil || IsNil(o.InstanceVersion) {
+		var ret string
+		return ret
+	}
+	return *o.InstanceVersion
+}
+
+// GetInstanceVersionOk returns a tuple with the InstanceVersion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetInstanceVersionOk() (*string, bool) {
+	if o == nil || IsNil(o.InstanceVersion) {
+		return nil, false
+	}
+	return o.InstanceVersion, true
+}
+
+// IsSetInstanceVersion returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetInstanceVersion() bool {
+	if o != nil && !IsNil(o.InstanceVersion) {
+		return true
+	}
+
+	return false
+}
+
+// SetInstanceVersion gets a reference to the given string and assigns it to the InstanceVersion field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetInstanceVersion(v string) {
+	o.InstanceVersion = &v
+}
+
+// GetLabels returns the Labels field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetLabels() []string {
+	if o == nil || IsNil(o.Labels) {
+		var ret []string
+		return ret
+	}
+	return o.Labels
+}
+
+// GetLabelsOk returns a tuple with the Labels field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetLabelsOk() ([]string, bool) {
+	if o == nil || IsNil(o.Labels) {
+		return nil, false
+	}
+	return o.Labels, true
+}
+
+// IsSetLabels returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetLabels() bool {
+	if o != nil && !IsNil(o.Labels) {
+		return true
+	}
+
+	return false
+}
+
+// SetLabels gets a reference to the given []string and assigns it to the Labels field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetLabels(v []string) {
+	o.Labels = v
+}
+
+// GetTags returns the Tags field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetTags() []AddInstance200ResponseAllOfOneOfInstanceTagsInner {
+	if o == nil || IsNil(o.Tags) {
+		var ret []AddInstance200ResponseAllOfOneOfInstanceTagsInner
+		return ret
+	}
+	return o.Tags
+}
+
+// GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetTagsOk() ([]AddInstance200ResponseAllOfOneOfInstanceTagsInner, bool) {
+	if o == nil || IsNil(o.Tags) {
+		return nil, false
+	}
+	return o.Tags, true
+}
+
+// IsSetTags returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetTags() bool {
+	if o != nil && !IsNil(o.Tags) {
+		return true
+	}
+
+	return false
+}
+
+// SetTags gets a reference to the given []AddInstance200ResponseAllOfOneOfInstanceTagsInner and assigns it to the Tags field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetTags(v []AddInstance200ResponseAllOfOneOfInstanceTagsInner) {
+	o.Tags = v
+}
+
+// GetEvars returns the Evars field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetEvars() []AddInstance200ResponseAllOfOneOfInstanceEvarsInner {
+	if o == nil || IsNil(o.Evars) {
+		var ret []AddInstance200ResponseAllOfOneOfInstanceEvarsInner
+		return ret
+	}
+	return o.Evars
+}
+
+// GetEvarsOk returns a tuple with the Evars field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetEvarsOk() ([]AddInstance200ResponseAllOfOneOfInstanceEvarsInner, bool) {
+	if o == nil || IsNil(o.Evars) {
+		return nil, false
+	}
+	return o.Evars, true
+}
+
+// IsSetEvars returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetEvars() bool {
+	if o != nil && !IsNil(o.Evars) {
+		return true
+	}
+
+	return false
+}
+
+// SetEvars gets a reference to the given []AddInstance200ResponseAllOfOneOfInstanceEvarsInner and assigns it to the Evars field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetEvars(v []AddInstance200ResponseAllOfOneOfInstanceEvarsInner) {
+	o.Evars = v
+}
+
+// GetMaxMemory returns the MaxMemory field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetMaxMemory() int64 {
+	if o == nil || IsNil(o.MaxMemory) {
+		var ret int64
+		return ret
+	}
+	return *o.MaxMemory
+}
+
+// GetMaxMemoryOk returns a tuple with the MaxMemory field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetMaxMemoryOk() (*int64, bool) {
+	if o == nil || IsNil(o.MaxMemory) {
+		return nil, false
+	}
+	return o.MaxMemory, true
+}
+
+// IsSetMaxMemory returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetMaxMemory() bool {
+	if o != nil && !IsNil(o.MaxMemory) {
+		return true
+	}
+
+	return false
+}
+
+// SetMaxMemory gets a reference to the given int64 and assigns it to the MaxMemory field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetMaxMemory(v int64) {
+	o.MaxMemory = &v
+}
+
+// GetMaxStorage returns the MaxStorage field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetMaxStorage() int64 {
+	if o == nil || IsNil(o.MaxStorage) {
+		var ret int64
+		return ret
+	}
+	return *o.MaxStorage
+}
+
+// GetMaxStorageOk returns a tuple with the MaxStorage field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetMaxStorageOk() (*int64, bool) {
+	if o == nil || IsNil(o.MaxStorage) {
+		return nil, false
+	}
+	return o.MaxStorage, true
+}
+
+// IsSetMaxStorage returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetMaxStorage() bool {
+	if o != nil && !IsNil(o.MaxStorage) {
+		return true
+	}
+
+	return false
+}
+
+// SetMaxStorage gets a reference to the given int64 and assigns it to the MaxStorage field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetMaxStorage(v int64) {
+	o.MaxStorage = &v
+}
+
+// GetMaxCores returns the MaxCores field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetMaxCores() int64 {
+	if o == nil || IsNil(o.MaxCores) {
+		var ret int64
+		return ret
+	}
+	return *o.MaxCores
+}
+
+// GetMaxCoresOk returns a tuple with the MaxCores field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetMaxCoresOk() (*int64, bool) {
+	if o == nil || IsNil(o.MaxCores) {
+		return nil, false
+	}
+	return o.MaxCores, true
+}
+
+// IsSetMaxCores returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetMaxCores() bool {
+	if o != nil && !IsNil(o.MaxCores) {
+		return true
+	}
+
+	return false
+}
+
+// SetMaxCores gets a reference to the given int64 and assigns it to the MaxCores field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetMaxCores(v int64) {
+	o.MaxCores = &v
+}
+
+// GetCoresPerSocket returns the CoresPerSocket field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetCoresPerSocket() int64 {
+	if o == nil || IsNil(o.CoresPerSocket) {
+		var ret int64
+		return ret
+	}
+	return *o.CoresPerSocket
+}
+
+// GetCoresPerSocketOk returns a tuple with the CoresPerSocket field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetCoresPerSocketOk() (*int64, bool) {
+	if o == nil || IsNil(o.CoresPerSocket) {
+		return nil, false
+	}
+	return o.CoresPerSocket, true
+}
+
+// IsSetCoresPerSocket returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetCoresPerSocket() bool {
+	if o != nil && !IsNil(o.CoresPerSocket) {
+		return true
+	}
+
+	return false
+}
+
+// SetCoresPerSocket gets a reference to the given int64 and assigns it to the CoresPerSocket field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetCoresPerSocket(v int64) {
+	o.CoresPerSocket = &v
+}
+
+// GetMaxCpu returns the MaxCpu field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetMaxCpu() string {
+	if o == nil || IsNil(o.MaxCpu) {
+		var ret string
+		return ret
+	}
+	return *o.MaxCpu
+}
+
+// GetMaxCpuOk returns a tuple with the MaxCpu field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetMaxCpuOk() (*string, bool) {
+	if o == nil || IsNil(o.MaxCpu) {
+		return nil, false
+	}
+	return o.MaxCpu, true
+}
+
+// IsSetMaxCpu returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetMaxCpu() bool {
+	if o != nil && !IsNil(o.MaxCpu) {
+		return true
+	}
+
+	return false
+}
+
+// SetMaxCpu gets a reference to the given string and assigns it to the MaxCpu field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetMaxCpu(v string) {
+	o.MaxCpu = &v
+}
+
+// GetHourlyCost returns the HourlyCost field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetHourlyCost() float32 {
+	if o == nil || IsNil(o.HourlyCost) {
+		var ret float32
+		return ret
+	}
+	return *o.HourlyCost
+}
+
+// GetHourlyCostOk returns a tuple with the HourlyCost field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetHourlyCostOk() (*float32, bool) {
+	if o == nil || IsNil(o.HourlyCost) {
+		return nil, false
+	}
+	return o.HourlyCost, true
+}
+
+// IsSetHourlyCost returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetHourlyCost() bool {
+	if o != nil && !IsNil(o.HourlyCost) {
+		return true
+	}
+
+	return false
+}
+
+// SetHourlyCost gets a reference to the given float32 and assigns it to the HourlyCost field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetHourlyCost(v float32) {
+	o.HourlyCost = &v
+}
+
+// GetHourlyPrice returns the HourlyPrice field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetHourlyPrice() float32 {
+	if o == nil || IsNil(o.HourlyPrice) {
+		var ret float32
+		return ret
+	}
+	return *o.HourlyPrice
+}
+
+// GetHourlyPriceOk returns a tuple with the HourlyPrice field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetHourlyPriceOk() (*float32, bool) {
+	if o == nil || IsNil(o.HourlyPrice) {
+		return nil, false
+	}
+	return o.HourlyPrice, true
+}
+
+// IsSetHourlyPrice returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetHourlyPrice() bool {
+	if o != nil && !IsNil(o.HourlyPrice) {
+		return true
+	}
+
+	return false
+}
+
+// SetHourlyPrice gets a reference to the given float32 and assigns it to the HourlyPrice field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetHourlyPrice(v float32) {
+	o.HourlyPrice = &v
+}
+
+// GetInstancePrice returns the InstancePrice field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetInstancePrice() AddInstance200ResponseAllOfOneOfInstanceInstancePrice {
+	if o == nil || IsNil(o.InstancePrice) {
+		var ret AddInstance200ResponseAllOfOneOfInstanceInstancePrice
+		return ret
+	}
+	return *o.InstancePrice
+}
+
+// GetInstancePriceOk returns a tuple with the InstancePrice field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetInstancePriceOk() (*AddInstance200ResponseAllOfOneOfInstanceInstancePrice, bool) {
+	if o == nil || IsNil(o.InstancePrice) {
+		return nil, false
+	}
+	return o.InstancePrice, true
+}
+
+// IsSetInstancePrice returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetInstancePrice() bool {
+	if o != nil && !IsNil(o.InstancePrice) {
+		return true
+	}
+
+	return false
+}
+
+// SetInstancePrice gets a reference to the given AddInstance200ResponseAllOfOneOfInstanceInstancePrice and assigns it to the InstancePrice field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetInstancePrice(v AddInstance200ResponseAllOfOneOfInstanceInstancePrice) {
+	o.InstancePrice = &v
+}
+
+// GetDateCreated returns the DateCreated field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetDateCreated() time.Time {
+	if o == nil || IsNil(o.DateCreated) {
+		var ret time.Time
+		return ret
+	}
+	return *o.DateCreated
+}
+
+// GetDateCreatedOk returns a tuple with the DateCreated field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetDateCreatedOk() (*time.Time, bool) {
+	if o == nil || IsNil(o.DateCreated) {
+		return nil, false
+	}
+	return o.DateCreated, true
+}
+
+// IsSetDateCreated returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetDateCreated() bool {
+	if o != nil && !IsNil(o.DateCreated) {
+		return true
+	}
+
+	return false
+}
+
+// SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetDateCreated(v time.Time) {
+	o.DateCreated = &v
+}
+
+// GetLastUpdated returns the LastUpdated field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetLastUpdated() time.Time {
+	if o == nil || IsNil(o.LastUpdated) {
+		var ret time.Time
+		return ret
+	}
+	return *o.LastUpdated
+}
+
+// GetLastUpdatedOk returns a tuple with the LastUpdated field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetLastUpdatedOk() (*time.Time, bool) {
+	if o == nil || IsNil(o.LastUpdated) {
+		return nil, false
+	}
+	return o.LastUpdated, true
+}
+
+// IsSetLastUpdated returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetLastUpdated() bool {
+	if o != nil && !IsNil(o.LastUpdated) {
+		return true
+	}
+
+	return false
+}
+
+// SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetLastUpdated(v time.Time) {
+	o.LastUpdated = &v
+}
+
+// GetHostName returns the HostName field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetHostName() string {
+	if o == nil || IsNil(o.HostName) {
+		var ret string
+		return ret
+	}
+	return *o.HostName
+}
+
+// GetHostNameOk returns a tuple with the HostName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetHostNameOk() (*string, bool) {
+	if o == nil || IsNil(o.HostName) {
+		return nil, false
+	}
+	return o.HostName, true
+}
+
+// IsSetHostName returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetHostName() bool {
+	if o != nil && !IsNil(o.HostName) {
+		return true
+	}
+
+	return false
+}
+
+// SetHostName gets a reference to the given string and assigns it to the HostName field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetHostName(v string) {
+	o.HostName = &v
+}
+
+// GetDomainName returns the DomainName field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetDomainName() string {
+	if o == nil || IsNil(o.DomainName) {
+		var ret string
+		return ret
+	}
+	return *o.DomainName
+}
+
+// GetDomainNameOk returns a tuple with the DomainName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetDomainNameOk() (*string, bool) {
+	if o == nil || IsNil(o.DomainName) {
+		return nil, false
+	}
+	return o.DomainName, true
+}
+
+// IsSetDomainName returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetDomainName() bool {
+	if o != nil && !IsNil(o.DomainName) {
+		return true
+	}
+
+	return false
+}
+
+// SetDomainName gets a reference to the given string and assigns it to the DomainName field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetDomainName(v string) {
+	o.DomainName = &v
+}
+
+// GetEnvironmentPrefix returns the EnvironmentPrefix field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetEnvironmentPrefix() string {
+	if o == nil || IsNil(o.EnvironmentPrefix) {
+		var ret string
+		return ret
+	}
+	return *o.EnvironmentPrefix
+}
+
+// GetEnvironmentPrefixOk returns a tuple with the EnvironmentPrefix field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetEnvironmentPrefixOk() (*string, bool) {
+	if o == nil || IsNil(o.EnvironmentPrefix) {
+		return nil, false
+	}
+	return o.EnvironmentPrefix, true
+}
+
+// IsSetEnvironmentPrefix returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetEnvironmentPrefix() bool {
+	if o != nil && !IsNil(o.EnvironmentPrefix) {
+		return true
+	}
+
+	return false
+}
+
+// SetEnvironmentPrefix gets a reference to the given string and assigns it to the EnvironmentPrefix field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetEnvironmentPrefix(v string) {
+	o.EnvironmentPrefix = &v
+}
+
+// GetFirewallEnabled returns the FirewallEnabled field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetFirewallEnabled() bool {
+	if o == nil || IsNil(o.FirewallEnabled) {
+		var ret bool
+		return ret
+	}
+	return *o.FirewallEnabled
+}
+
+// GetFirewallEnabledOk returns a tuple with the FirewallEnabled field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetFirewallEnabledOk() (*bool, bool) {
+	if o == nil || IsNil(o.FirewallEnabled) {
+		return nil, false
+	}
+	return o.FirewallEnabled, true
+}
+
+// IsSetFirewallEnabled returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetFirewallEnabled() bool {
+	if o != nil && !IsNil(o.FirewallEnabled) {
+		return true
+	}
+
+	return false
+}
+
+// SetFirewallEnabled gets a reference to the given bool and assigns it to the FirewallEnabled field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetFirewallEnabled(v bool) {
+	o.FirewallEnabled = &v
+}
+
+// GetNetworkLevel returns the NetworkLevel field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetNetworkLevel() string {
+	if o == nil || IsNil(o.NetworkLevel) {
+		var ret string
+		return ret
+	}
+	return *o.NetworkLevel
+}
+
+// GetNetworkLevelOk returns a tuple with the NetworkLevel field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetNetworkLevelOk() (*string, bool) {
+	if o == nil || IsNil(o.NetworkLevel) {
+		return nil, false
+	}
+	return o.NetworkLevel, true
+}
+
+// IsSetNetworkLevel returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetNetworkLevel() bool {
+	if o != nil && !IsNil(o.NetworkLevel) {
+		return true
+	}
+
+	return false
+}
+
+// SetNetworkLevel gets a reference to the given string and assigns it to the NetworkLevel field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetNetworkLevel(v string) {
+	o.NetworkLevel = &v
+}
+
+// GetAutoScale returns the AutoScale field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetAutoScale() bool {
+	if o == nil || IsNil(o.AutoScale) {
+		var ret bool
+		return ret
+	}
+	return *o.AutoScale
+}
+
+// GetAutoScaleOk returns a tuple with the AutoScale field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetAutoScaleOk() (*bool, bool) {
+	if o == nil || IsNil(o.AutoScale) {
+		return nil, false
+	}
+	return o.AutoScale, true
+}
+
+// IsSetAutoScale returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetAutoScale() bool {
+	if o != nil && !IsNil(o.AutoScale) {
+		return true
+	}
+
+	return false
+}
+
+// SetAutoScale gets a reference to the given bool and assigns it to the AutoScale field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetAutoScale(v bool) {
+	o.AutoScale = &v
+}
+
+// GetInstanceContext returns the InstanceContext field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetInstanceContext() string {
+	if o == nil || IsNil(o.InstanceContext) {
+		var ret string
+		return ret
+	}
+	return *o.InstanceContext
+}
+
+// GetInstanceContextOk returns a tuple with the InstanceContext field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetInstanceContextOk() (*string, bool) {
+	if o == nil || IsNil(o.InstanceContext) {
+		return nil, false
+	}
+	return o.InstanceContext, true
+}
+
+// IsSetInstanceContext returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetInstanceContext() bool {
+	if o != nil && !IsNil(o.InstanceContext) {
+		return true
+	}
+
+	return false
+}
+
+// SetInstanceContext gets a reference to the given string and assigns it to the InstanceContext field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetInstanceContext(v string) {
+	o.InstanceContext = &v
+}
+
+// GetCurrentDeployId returns the CurrentDeployId field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetCurrentDeployId() string {
+	if o == nil || IsNil(o.CurrentDeployId) {
+		var ret string
+		return ret
+	}
+	return *o.CurrentDeployId
+}
+
+// GetCurrentDeployIdOk returns a tuple with the CurrentDeployId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetCurrentDeployIdOk() (*string, bool) {
+	if o == nil || IsNil(o.CurrentDeployId) {
+		return nil, false
+	}
+	return o.CurrentDeployId, true
+}
+
+// IsSetCurrentDeployId returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetCurrentDeployId() bool {
+	if o != nil && !IsNil(o.CurrentDeployId) {
+		return true
+	}
+
+	return false
+}
+
+// SetCurrentDeployId gets a reference to the given string and assigns it to the CurrentDeployId field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetCurrentDeployId(v string) {
+	o.CurrentDeployId = &v
+}
+
+// GetLocked returns the Locked field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetLocked() bool {
+	if o == nil || IsNil(o.Locked) {
+		var ret bool
+		return ret
+	}
+	return *o.Locked
+}
+
+// GetLockedOk returns a tuple with the Locked field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetLockedOk() (*bool, bool) {
+	if o == nil || IsNil(o.Locked) {
+		return nil, false
+	}
+	return o.Locked, true
+}
+
+// IsSetLocked returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetLocked() bool {
+	if o != nil && !IsNil(o.Locked) {
+		return true
+	}
+
+	return false
+}
+
+// SetLocked gets a reference to the given bool and assigns it to the Locked field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetLocked(v bool) {
+	o.Locked = &v
+}
+
+// GetStatus returns the Status field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetStatus() string {
+	if o == nil || IsNil(o.Status) {
+		var ret string
+		return ret
+	}
+	return *o.Status
+}
+
+// GetStatusOk returns a tuple with the Status field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetStatusOk() (*string, bool) {
+	if o == nil || IsNil(o.Status) {
+		return nil, false
+	}
+	return o.Status, true
+}
+
+// IsSetStatus returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetStatus() bool {
+	if o != nil && !IsNil(o.Status) {
+		return true
+	}
+
+	return false
+}
+
+// SetStatus gets a reference to the given string and assigns it to the Status field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetStatus(v string) {
+	o.Status = &v
+}
+
+// GetStatusMessage returns the StatusMessage field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetStatusMessage() string {
+	if o == nil || IsNil(o.StatusMessage) {
+		var ret string
+		return ret
+	}
+	return *o.StatusMessage
+}
+
+// GetStatusMessageOk returns a tuple with the StatusMessage field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetStatusMessageOk() (*string, bool) {
+	if o == nil || IsNil(o.StatusMessage) {
+		return nil, false
+	}
+	return o.StatusMessage, true
+}
+
+// IsSetStatusMessage returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetStatusMessage() bool {
+	if o != nil && !IsNil(o.StatusMessage) {
+		return true
+	}
+
+	return false
+}
+
+// SetStatusMessage gets a reference to the given string and assigns it to the StatusMessage field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetStatusMessage(v string) {
+	o.StatusMessage = &v
+}
+
+// GetErrorMessage returns the ErrorMessage field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetErrorMessage() string {
+	if o == nil || IsNil(o.ErrorMessage) {
+		var ret string
+		return ret
+	}
+	return *o.ErrorMessage
+}
+
+// GetErrorMessageOk returns a tuple with the ErrorMessage field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetErrorMessageOk() (*string, bool) {
+	if o == nil || IsNil(o.ErrorMessage) {
+		return nil, false
+	}
+	return o.ErrorMessage, true
+}
+
+// IsSetErrorMessage returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetErrorMessage() bool {
+	if o != nil && !IsNil(o.ErrorMessage) {
+		return true
+	}
+
+	return false
+}
+
+// SetErrorMessage gets a reference to the given string and assigns it to the ErrorMessage field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetErrorMessage(v string) {
+	o.ErrorMessage = &v
+}
+
+// GetStatusDate returns the StatusDate field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetStatusDate() time.Time {
+	if o == nil || IsNil(o.StatusDate) {
+		var ret time.Time
+		return ret
+	}
+	return *o.StatusDate
+}
+
+// GetStatusDateOk returns a tuple with the StatusDate field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetStatusDateOk() (*time.Time, bool) {
+	if o == nil || IsNil(o.StatusDate) {
+		return nil, false
+	}
+	return o.StatusDate, true
+}
+
+// IsSetStatusDate returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetStatusDate() bool {
+	if o != nil && !IsNil(o.StatusDate) {
+		return true
+	}
+
+	return false
+}
+
+// SetStatusDate gets a reference to the given time.Time and assigns it to the StatusDate field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetStatusDate(v time.Time) {
+	o.StatusDate = &v
+}
+
+// GetStatusPercent returns the StatusPercent field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetStatusPercent() string {
+	if o == nil || IsNil(o.StatusPercent) {
+		var ret string
+		return ret
+	}
+	return *o.StatusPercent
+}
+
+// GetStatusPercentOk returns a tuple with the StatusPercent field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetStatusPercentOk() (*string, bool) {
+	if o == nil || IsNil(o.StatusPercent) {
+		return nil, false
+	}
+	return o.StatusPercent, true
+}
+
+// IsSetStatusPercent returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetStatusPercent() bool {
+	if o != nil && !IsNil(o.StatusPercent) {
+		return true
+	}
+
+	return false
+}
+
+// SetStatusPercent gets a reference to the given string and assigns it to the StatusPercent field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetStatusPercent(v string) {
+	o.StatusPercent = &v
+}
+
+// GetStatusEta returns the StatusEta field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetStatusEta() string {
+	if o == nil || IsNil(o.StatusEta) {
+		var ret string
+		return ret
+	}
+	return *o.StatusEta
+}
+
+// GetStatusEtaOk returns a tuple with the StatusEta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetStatusEtaOk() (*string, bool) {
+	if o == nil || IsNil(o.StatusEta) {
+		return nil, false
+	}
+	return o.StatusEta, true
+}
+
+// IsSetStatusEta returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetStatusEta() bool {
+	if o != nil && !IsNil(o.StatusEta) {
+		return true
+	}
+
+	return false
+}
+
+// SetStatusEta gets a reference to the given string and assigns it to the StatusEta field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetStatusEta(v string) {
+	o.StatusEta = &v
+}
+
+// GetUserStatus returns the UserStatus field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetUserStatus() string {
+	if o == nil || IsNil(o.UserStatus) {
+		var ret string
+		return ret
+	}
+	return *o.UserStatus
+}
+
+// GetUserStatusOk returns a tuple with the UserStatus field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetUserStatusOk() (*string, bool) {
+	if o == nil || IsNil(o.UserStatus) {
+		return nil, false
+	}
+	return o.UserStatus, true
+}
+
+// IsSetUserStatus returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetUserStatus() bool {
+	if o != nil && !IsNil(o.UserStatus) {
+		return true
+	}
+
+	return false
+}
+
+// SetUserStatus gets a reference to the given string and assigns it to the UserStatus field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetUserStatus(v string) {
+	o.UserStatus = &v
+}
+
+// GetExpireDays returns the ExpireDays field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetExpireDays() int64 {
+	if o == nil || IsNil(o.ExpireDays) {
+		var ret int64
+		return ret
+	}
+	return *o.ExpireDays
+}
+
+// GetExpireDaysOk returns a tuple with the ExpireDays field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetExpireDaysOk() (*int64, bool) {
+	if o == nil || IsNil(o.ExpireDays) {
+		return nil, false
+	}
+	return o.ExpireDays, true
+}
+
+// IsSetExpireDays returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetExpireDays() bool {
+	if o != nil && !IsNil(o.ExpireDays) {
+		return true
+	}
+
+	return false
+}
+
+// SetExpireDays gets a reference to the given int64 and assigns it to the ExpireDays field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetExpireDays(v int64) {
+	o.ExpireDays = &v
+}
+
+// GetRenewDays returns the RenewDays field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetRenewDays() int64 {
+	if o == nil || IsNil(o.RenewDays) {
+		var ret int64
+		return ret
+	}
+	return *o.RenewDays
+}
+
+// GetRenewDaysOk returns a tuple with the RenewDays field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetRenewDaysOk() (*int64, bool) {
+	if o == nil || IsNil(o.RenewDays) {
+		return nil, false
+	}
+	return o.RenewDays, true
+}
+
+// IsSetRenewDays returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetRenewDays() bool {
+	if o != nil && !IsNil(o.RenewDays) {
+		return true
+	}
+
+	return false
+}
+
+// SetRenewDays gets a reference to the given int64 and assigns it to the RenewDays field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetRenewDays(v int64) {
+	o.RenewDays = &v
+}
+
+// GetExpireCount returns the ExpireCount field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetExpireCount() int64 {
+	if o == nil || IsNil(o.ExpireCount) {
+		var ret int64
+		return ret
+	}
+	return *o.ExpireCount
+}
+
+// GetExpireCountOk returns a tuple with the ExpireCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetExpireCountOk() (*int64, bool) {
+	if o == nil || IsNil(o.ExpireCount) {
+		return nil, false
+	}
+	return o.ExpireCount, true
+}
+
+// IsSetExpireCount returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetExpireCount() bool {
+	if o != nil && !IsNil(o.ExpireCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetExpireCount gets a reference to the given int64 and assigns it to the ExpireCount field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetExpireCount(v int64) {
+	o.ExpireCount = &v
+}
+
+// GetExpireDate returns the ExpireDate field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetExpireDate() time.Time {
+	if o == nil || IsNil(o.ExpireDate) {
+		var ret time.Time
+		return ret
+	}
+	return *o.ExpireDate
+}
+
+// GetExpireDateOk returns a tuple with the ExpireDate field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetExpireDateOk() (*time.Time, bool) {
+	if o == nil || IsNil(o.ExpireDate) {
+		return nil, false
+	}
+	return o.ExpireDate, true
+}
+
+// IsSetExpireDate returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetExpireDate() bool {
+	if o != nil && !IsNil(o.ExpireDate) {
+		return true
+	}
+
+	return false
+}
+
+// SetExpireDate gets a reference to the given time.Time and assigns it to the ExpireDate field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetExpireDate(v time.Time) {
+	o.ExpireDate = &v
+}
+
+// GetExpireWarningDate returns the ExpireWarningDate field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetExpireWarningDate() time.Time {
+	if o == nil || IsNil(o.ExpireWarningDate) {
+		var ret time.Time
+		return ret
+	}
+	return *o.ExpireWarningDate
+}
+
+// GetExpireWarningDateOk returns a tuple with the ExpireWarningDate field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetExpireWarningDateOk() (*time.Time, bool) {
+	if o == nil || IsNil(o.ExpireWarningDate) {
+		return nil, false
+	}
+	return o.ExpireWarningDate, true
+}
+
+// IsSetExpireWarningDate returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetExpireWarningDate() bool {
+	if o != nil && !IsNil(o.ExpireWarningDate) {
+		return true
+	}
+
+	return false
+}
+
+// SetExpireWarningDate gets a reference to the given time.Time and assigns it to the ExpireWarningDate field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetExpireWarningDate(v time.Time) {
+	o.ExpireWarningDate = &v
+}
+
+// GetExpireWarningSent returns the ExpireWarningSent field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetExpireWarningSent() bool {
+	if o == nil || IsNil(o.ExpireWarningSent) {
+		var ret bool
+		return ret
+	}
+	return *o.ExpireWarningSent
+}
+
+// GetExpireWarningSentOk returns a tuple with the ExpireWarningSent field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetExpireWarningSentOk() (*bool, bool) {
+	if o == nil || IsNil(o.ExpireWarningSent) {
+		return nil, false
+	}
+	return o.ExpireWarningSent, true
+}
+
+// IsSetExpireWarningSent returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetExpireWarningSent() bool {
+	if o != nil && !IsNil(o.ExpireWarningSent) {
+		return true
+	}
+
+	return false
+}
+
+// SetExpireWarningSent gets a reference to the given bool and assigns it to the ExpireWarningSent field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetExpireWarningSent(v bool) {
+	o.ExpireWarningSent = &v
+}
+
+// GetShutdownDays returns the ShutdownDays field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetShutdownDays() int64 {
+	if o == nil || IsNil(o.ShutdownDays) {
+		var ret int64
+		return ret
+	}
+	return *o.ShutdownDays
+}
+
+// GetShutdownDaysOk returns a tuple with the ShutdownDays field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetShutdownDaysOk() (*int64, bool) {
+	if o == nil || IsNil(o.ShutdownDays) {
+		return nil, false
+	}
+	return o.ShutdownDays, true
+}
+
+// IsSetShutdownDays returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetShutdownDays() bool {
+	if o != nil && !IsNil(o.ShutdownDays) {
+		return true
+	}
+
+	return false
+}
+
+// SetShutdownDays gets a reference to the given int64 and assigns it to the ShutdownDays field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetShutdownDays(v int64) {
+	o.ShutdownDays = &v
+}
+
+// GetShutdownRenewDays returns the ShutdownRenewDays field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetShutdownRenewDays() int64 {
+	if o == nil || IsNil(o.ShutdownRenewDays) {
+		var ret int64
+		return ret
+	}
+	return *o.ShutdownRenewDays
+}
+
+// GetShutdownRenewDaysOk returns a tuple with the ShutdownRenewDays field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetShutdownRenewDaysOk() (*int64, bool) {
+	if o == nil || IsNil(o.ShutdownRenewDays) {
+		return nil, false
+	}
+	return o.ShutdownRenewDays, true
+}
+
+// IsSetShutdownRenewDays returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetShutdownRenewDays() bool {
+	if o != nil && !IsNil(o.ShutdownRenewDays) {
+		return true
+	}
+
+	return false
+}
+
+// SetShutdownRenewDays gets a reference to the given int64 and assigns it to the ShutdownRenewDays field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetShutdownRenewDays(v int64) {
+	o.ShutdownRenewDays = &v
+}
+
+// GetShutdownCount returns the ShutdownCount field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetShutdownCount() int64 {
+	if o == nil || IsNil(o.ShutdownCount) {
+		var ret int64
+		return ret
+	}
+	return *o.ShutdownCount
+}
+
+// GetShutdownCountOk returns a tuple with the ShutdownCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetShutdownCountOk() (*int64, bool) {
+	if o == nil || IsNil(o.ShutdownCount) {
+		return nil, false
+	}
+	return o.ShutdownCount, true
+}
+
+// IsSetShutdownCount returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetShutdownCount() bool {
+	if o != nil && !IsNil(o.ShutdownCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetShutdownCount gets a reference to the given int64 and assigns it to the ShutdownCount field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetShutdownCount(v int64) {
+	o.ShutdownCount = &v
+}
+
+// GetShutdownDate returns the ShutdownDate field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetShutdownDate() time.Time {
+	if o == nil || IsNil(o.ShutdownDate) {
+		var ret time.Time
+		return ret
+	}
+	return *o.ShutdownDate
+}
+
+// GetShutdownDateOk returns a tuple with the ShutdownDate field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetShutdownDateOk() (*time.Time, bool) {
+	if o == nil || IsNil(o.ShutdownDate) {
+		return nil, false
+	}
+	return o.ShutdownDate, true
+}
+
+// IsSetShutdownDate returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetShutdownDate() bool {
+	if o != nil && !IsNil(o.ShutdownDate) {
+		return true
+	}
+
+	return false
+}
+
+// SetShutdownDate gets a reference to the given time.Time and assigns it to the ShutdownDate field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetShutdownDate(v time.Time) {
+	o.ShutdownDate = &v
+}
+
+// GetShutdownWarningDate returns the ShutdownWarningDate field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetShutdownWarningDate() time.Time {
+	if o == nil || IsNil(o.ShutdownWarningDate) {
+		var ret time.Time
+		return ret
+	}
+	return *o.ShutdownWarningDate
+}
+
+// GetShutdownWarningDateOk returns a tuple with the ShutdownWarningDate field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetShutdownWarningDateOk() (*time.Time, bool) {
+	if o == nil || IsNil(o.ShutdownWarningDate) {
+		return nil, false
+	}
+	return o.ShutdownWarningDate, true
+}
+
+// IsSetShutdownWarningDate returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetShutdownWarningDate() bool {
+	if o != nil && !IsNil(o.ShutdownWarningDate) {
+		return true
+	}
+
+	return false
+}
+
+// SetShutdownWarningDate gets a reference to the given time.Time and assigns it to the ShutdownWarningDate field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetShutdownWarningDate(v time.Time) {
+	o.ShutdownWarningDate = &v
+}
+
+// GetShutdownWarningSent returns the ShutdownWarningSent field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetShutdownWarningSent() bool {
+	if o == nil || IsNil(o.ShutdownWarningSent) {
+		var ret bool
+		return ret
+	}
+	return *o.ShutdownWarningSent
+}
+
+// GetShutdownWarningSentOk returns a tuple with the ShutdownWarningSent field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetShutdownWarningSentOk() (*bool, bool) {
+	if o == nil || IsNil(o.ShutdownWarningSent) {
+		return nil, false
+	}
+	return o.ShutdownWarningSent, true
+}
+
+// IsSetShutdownWarningSent returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetShutdownWarningSent() bool {
+	if o != nil && !IsNil(o.ShutdownWarningSent) {
+		return true
+	}
+
+	return false
+}
+
+// SetShutdownWarningSent gets a reference to the given bool and assigns it to the ShutdownWarningSent field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetShutdownWarningSent(v bool) {
+	o.ShutdownWarningSent = &v
+}
+
+// GetRemovalDate returns the RemovalDate field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetRemovalDate() time.Time {
+	if o == nil || IsNil(o.RemovalDate) {
+		var ret time.Time
+		return ret
+	}
+	return *o.RemovalDate
+}
+
+// GetRemovalDateOk returns a tuple with the RemovalDate field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetRemovalDateOk() (*time.Time, bool) {
+	if o == nil || IsNil(o.RemovalDate) {
+		return nil, false
+	}
+	return o.RemovalDate, true
+}
+
+// IsSetRemovalDate returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetRemovalDate() bool {
+	if o != nil && !IsNil(o.RemovalDate) {
+		return true
+	}
+
+	return false
+}
+
+// SetRemovalDate gets a reference to the given time.Time and assigns it to the RemovalDate field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetRemovalDate(v time.Time) {
+	o.RemovalDate = &v
+}
+
+// GetCreatedBy returns the CreatedBy field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetCreatedBy() ListActivity200ResponseAllOfActivityInnerActivityInnerUser {
+	if o == nil || IsNil(o.CreatedBy) {
+		var ret ListActivity200ResponseAllOfActivityInnerActivityInnerUser
+		return ret
+	}
+	return *o.CreatedBy
+}
+
+// GetCreatedByOk returns a tuple with the CreatedBy field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetCreatedByOk() (*ListActivity200ResponseAllOfActivityInnerActivityInnerUser, bool) {
+	if o == nil || IsNil(o.CreatedBy) {
+		return nil, false
+	}
+	return o.CreatedBy, true
+}
+
+// IsSetCreatedBy returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetCreatedBy() bool {
+	if o != nil && !IsNil(o.CreatedBy) {
+		return true
+	}
+
+	return false
+}
+
+// SetCreatedBy gets a reference to the given ListActivity200ResponseAllOfActivityInnerActivityInnerUser and assigns it to the CreatedBy field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetCreatedBy(v ListActivity200ResponseAllOfActivityInnerActivityInnerUser) {
+	o.CreatedBy = &v
+}
+
+// GetOwner returns the Owner field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetOwner() GetAlerts200ResponseAllOfChecksInnerCreatedBy {
+	if o == nil || IsNil(o.Owner) {
+		var ret GetAlerts200ResponseAllOfChecksInnerCreatedBy
+		return ret
+	}
+	return *o.Owner
+}
+
+// GetOwnerOk returns a tuple with the Owner field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetOwnerOk() (*GetAlerts200ResponseAllOfChecksInnerCreatedBy, bool) {
+	if o == nil || IsNil(o.Owner) {
+		return nil, false
+	}
+	return o.Owner, true
+}
+
+// IsSetOwner returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetOwner() bool {
+	if o != nil && !IsNil(o.Owner) {
+		return true
+	}
+
+	return false
+}
+
+// SetOwner gets a reference to the given GetAlerts200ResponseAllOfChecksInnerCreatedBy and assigns it to the Owner field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetOwner(v GetAlerts200ResponseAllOfChecksInnerCreatedBy) {
+	o.Owner = &v
+}
+
+// GetNotes returns the Notes field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetNotes() string {
+	if o == nil || IsNil(o.Notes) {
+		var ret string
+		return ret
+	}
+	return *o.Notes
+}
+
+// GetNotesOk returns a tuple with the Notes field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetNotesOk() (*string, bool) {
+	if o == nil || IsNil(o.Notes) {
+		return nil, false
+	}
+	return o.Notes, true
+}
+
+// IsSetNotes returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetNotes() bool {
+	if o != nil && !IsNil(o.Notes) {
+		return true
+	}
+
+	return false
+}
+
+// SetNotes gets a reference to the given string and assigns it to the Notes field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetNotes(v string) {
+	o.Notes = &v
+}
+
+// GetStats returns the Stats field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetStats() AddInstance200ResponseAllOfOneOfInstanceStats {
+	if o == nil || IsNil(o.Stats) {
+		var ret AddInstance200ResponseAllOfOneOfInstanceStats
+		return ret
+	}
+	return *o.Stats
+}
+
+// GetStatsOk returns a tuple with the Stats field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetStatsOk() (*AddInstance200ResponseAllOfOneOfInstanceStats, bool) {
+	if o == nil || IsNil(o.Stats) {
+		return nil, false
+	}
+	return o.Stats, true
+}
+
+// IsSetStats returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetStats() bool {
+	if o != nil && !IsNil(o.Stats) {
+		return true
+	}
+
+	return false
+}
+
+// SetStats gets a reference to the given AddInstance200ResponseAllOfOneOfInstanceStats and assigns it to the Stats field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetStats(v AddInstance200ResponseAllOfOneOfInstanceStats) {
+	o.Stats = &v
+}
+
+// GetPowerSchedule returns the PowerSchedule field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetPowerSchedule() string {
+	if o == nil || IsNil(o.PowerSchedule) {
+		var ret string
+		return ret
+	}
+	return *o.PowerSchedule
+}
+
+// GetPowerScheduleOk returns a tuple with the PowerSchedule field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetPowerScheduleOk() (*string, bool) {
+	if o == nil || IsNil(o.PowerSchedule) {
+		return nil, false
+	}
+	return o.PowerSchedule, true
+}
+
+// IsSetPowerSchedule returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetPowerSchedule() bool {
+	if o != nil && !IsNil(o.PowerSchedule) {
+		return true
+	}
+
+	return false
+}
+
+// SetPowerSchedule gets a reference to the given string and assigns it to the PowerSchedule field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetPowerSchedule(v string) {
+	o.PowerSchedule = &v
+}
+
+// GetIsScalable returns the IsScalable field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetIsScalable() bool {
+	if o == nil || IsNil(o.IsScalable) {
+		var ret bool
+		return ret
+	}
+	return *o.IsScalable
+}
+
+// GetIsScalableOk returns a tuple with the IsScalable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetIsScalableOk() (*bool, bool) {
+	if o == nil || IsNil(o.IsScalable) {
+		return nil, false
+	}
+	return o.IsScalable, true
+}
+
+// IsSetIsScalable returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetIsScalable() bool {
+	if o != nil && !IsNil(o.IsScalable) {
+		return true
+	}
+
+	return false
+}
+
+// SetIsScalable gets a reference to the given bool and assigns it to the IsScalable field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetIsScalable(v bool) {
+	o.IsScalable = &v
+}
+
+// GetInstanceThreshold returns the InstanceThreshold field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetInstanceThreshold() map[string]interface{} {
+	if o == nil || IsNil(o.InstanceThreshold) {
+		var ret map[string]interface{}
+		return ret
+	}
+	return o.InstanceThreshold
+}
+
+// GetInstanceThresholdOk returns a tuple with the InstanceThreshold field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetInstanceThresholdOk() (map[string]interface{}, bool) {
+	if o == nil || IsNil(o.InstanceThreshold) {
+		return map[string]interface{}{}, false
+	}
+	return o.InstanceThreshold, true
+}
+
+// IsSetInstanceThreshold returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetInstanceThreshold() bool {
+	if o != nil && !IsNil(o.InstanceThreshold) {
+		return true
+	}
+
+	return false
+}
+
+// SetInstanceThreshold gets a reference to the given map[string]interface{} and assigns it to the InstanceThreshold field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetInstanceThreshold(v map[string]interface{}) {
+	o.InstanceThreshold = v
+}
+
+// GetIsBusy returns the IsBusy field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetIsBusy() bool {
+	if o == nil || IsNil(o.IsBusy) {
+		var ret bool
+		return ret
+	}
+	return *o.IsBusy
+}
+
+// GetIsBusyOk returns a tuple with the IsBusy field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetIsBusyOk() (*bool, bool) {
+	if o == nil || IsNil(o.IsBusy) {
+		return nil, false
+	}
+	return o.IsBusy, true
+}
+
+// IsSetIsBusy returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetIsBusy() bool {
+	if o != nil && !IsNil(o.IsBusy) {
+		return true
+	}
+
+	return false
+}
+
+// SetIsBusy gets a reference to the given bool and assigns it to the IsBusy field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetIsBusy(v bool) {
+	o.IsBusy = &v
+}
+
+// GetApps returns the Apps field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetApps() []map[string]interface{} {
+	if o == nil || IsNil(o.Apps) {
+		var ret []map[string]interface{}
+		return ret
+	}
+	return o.Apps
+}
+
+// GetAppsOk returns a tuple with the Apps field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetAppsOk() ([]map[string]interface{}, bool) {
+	if o == nil || IsNil(o.Apps) {
+		return nil, false
+	}
+	return o.Apps, true
+}
+
+// IsSetApps returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetApps() bool {
+	if o != nil && !IsNil(o.Apps) {
+		return true
+	}
+
+	return false
+}
+
+// SetApps gets a reference to the given []map[string]interface{} and assigns it to the Apps field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetApps(v []map[string]interface{}) {
+	o.Apps = v
 }
 
 func (o AddInstance200ResponseAllOfOneOfInstance) MarshalJSON() ([]byte, error) {
@@ -184,51 +2594,338 @@ func (o AddInstance200ResponseAllOfOneOfInstance) MarshalJSON() ([]byte, error) 
 
 func (o AddInstance200ResponseAllOfOneOfInstance) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["name"] = o.Name
-	toSerialize["site"] = o.Site
-	toSerialize["instanceType"] = o.InstanceType
-	toSerialize["layout"] = o.Layout
-	toSerialize["plan"] = o.Plan
+	if !IsNil(o.Id) {
+		toSerialize["id"] = o.Id
+	}
+	if !IsNil(o.Uuid) {
+		toSerialize["uuid"] = o.Uuid
+	}
+	if !IsNil(o.AccountId) {
+		toSerialize["accountId"] = o.AccountId
+	}
+	if !IsNil(o.Tenant) {
+		toSerialize["tenant"] = o.Tenant
+	}
+	if !IsNil(o.InstanceType) {
+		toSerialize["instanceType"] = o.InstanceType
+	}
+	if !IsNil(o.Group) {
+		toSerialize["group"] = o.Group
+	}
+	if !IsNil(o.Cloud) {
+		toSerialize["cloud"] = o.Cloud
+	}
+	if !IsNil(o.Cluster) {
+		toSerialize["cluster"] = o.Cluster
+	}
+	if !IsNil(o.Containers) {
+		toSerialize["containers"] = o.Containers
+	}
+	if !IsNil(o.Servers) {
+		toSerialize["servers"] = o.Servers
+	}
+	if !IsNil(o.ConnectionInfo) {
+		toSerialize["connectionInfo"] = o.ConnectionInfo
+	}
+	if !IsNil(o.Layout) {
+		toSerialize["layout"] = o.Layout
+	}
+	if !IsNil(o.Plan) {
+		toSerialize["plan"] = o.Plan
+	}
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
+	if !IsNil(o.DisplayName) {
+		toSerialize["displayName"] = o.DisplayName
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	if !IsNil(o.Environment) {
+		toSerialize["environment"] = o.Environment
+	}
+	if !IsNil(o.Config) {
+		toSerialize["config"] = o.Config
+	}
+	if !IsNil(o.ConfigGroup) {
+		toSerialize["configGroup"] = o.ConfigGroup
+	}
+	if !IsNil(o.ConfigId) {
+		toSerialize["configId"] = o.ConfigId
+	}
+	if !IsNil(o.ConfigRole) {
+		toSerialize["configRole"] = o.ConfigRole
+	}
+	if !IsNil(o.Volumes) {
+		toSerialize["volumes"] = o.Volumes
+	}
+	if !IsNil(o.Controllers) {
+		toSerialize["controllers"] = o.Controllers
+	}
+	if !IsNil(o.Interfaces) {
+		toSerialize["interfaces"] = o.Interfaces
+	}
+	if !IsNil(o.CustomOptions) {
+		toSerialize["customOptions"] = o.CustomOptions
+	}
+	if !IsNil(o.InstanceVersion) {
+		toSerialize["instanceVersion"] = o.InstanceVersion
+	}
+	if !IsNil(o.Labels) {
+		toSerialize["labels"] = o.Labels
+	}
+	if !IsNil(o.Tags) {
+		toSerialize["tags"] = o.Tags
+	}
+	if !IsNil(o.Evars) {
+		toSerialize["evars"] = o.Evars
+	}
+	if !IsNil(o.MaxMemory) {
+		toSerialize["maxMemory"] = o.MaxMemory
+	}
+	if !IsNil(o.MaxStorage) {
+		toSerialize["maxStorage"] = o.MaxStorage
+	}
+	if !IsNil(o.MaxCores) {
+		toSerialize["maxCores"] = o.MaxCores
+	}
+	if !IsNil(o.CoresPerSocket) {
+		toSerialize["coresPerSocket"] = o.CoresPerSocket
+	}
+	if !IsNil(o.MaxCpu) {
+		toSerialize["maxCpu"] = o.MaxCpu
+	}
+	if !IsNil(o.HourlyCost) {
+		toSerialize["hourlyCost"] = o.HourlyCost
+	}
+	if !IsNil(o.HourlyPrice) {
+		toSerialize["hourlyPrice"] = o.HourlyPrice
+	}
+	if !IsNil(o.InstancePrice) {
+		toSerialize["instancePrice"] = o.InstancePrice
+	}
+	if !IsNil(o.DateCreated) {
+		toSerialize["dateCreated"] = o.DateCreated
+	}
+	if !IsNil(o.LastUpdated) {
+		toSerialize["lastUpdated"] = o.LastUpdated
+	}
+	if !IsNil(o.HostName) {
+		toSerialize["hostName"] = o.HostName
+	}
+	if !IsNil(o.DomainName) {
+		toSerialize["domainName"] = o.DomainName
+	}
+	if !IsNil(o.EnvironmentPrefix) {
+		toSerialize["environmentPrefix"] = o.EnvironmentPrefix
+	}
+	if !IsNil(o.FirewallEnabled) {
+		toSerialize["firewallEnabled"] = o.FirewallEnabled
+	}
+	if !IsNil(o.NetworkLevel) {
+		toSerialize["networkLevel"] = o.NetworkLevel
+	}
+	if !IsNil(o.AutoScale) {
+		toSerialize["autoScale"] = o.AutoScale
+	}
+	if !IsNil(o.InstanceContext) {
+		toSerialize["instanceContext"] = o.InstanceContext
+	}
+	if !IsNil(o.CurrentDeployId) {
+		toSerialize["currentDeployId"] = o.CurrentDeployId
+	}
+	if !IsNil(o.Locked) {
+		toSerialize["locked"] = o.Locked
+	}
+	if !IsNil(o.Status) {
+		toSerialize["status"] = o.Status
+	}
+	if !IsNil(o.StatusMessage) {
+		toSerialize["statusMessage"] = o.StatusMessage
+	}
+	if !IsNil(o.ErrorMessage) {
+		toSerialize["errorMessage"] = o.ErrorMessage
+	}
+	if !IsNil(o.StatusDate) {
+		toSerialize["statusDate"] = o.StatusDate
+	}
+	if !IsNil(o.StatusPercent) {
+		toSerialize["statusPercent"] = o.StatusPercent
+	}
+	if !IsNil(o.StatusEta) {
+		toSerialize["statusEta"] = o.StatusEta
+	}
+	if !IsNil(o.UserStatus) {
+		toSerialize["userStatus"] = o.UserStatus
+	}
+	if !IsNil(o.ExpireDays) {
+		toSerialize["expireDays"] = o.ExpireDays
+	}
+	if !IsNil(o.RenewDays) {
+		toSerialize["renewDays"] = o.RenewDays
+	}
+	if !IsNil(o.ExpireCount) {
+		toSerialize["expireCount"] = o.ExpireCount
+	}
+	if !IsNil(o.ExpireDate) {
+		toSerialize["expireDate"] = o.ExpireDate
+	}
+	if !IsNil(o.ExpireWarningDate) {
+		toSerialize["expireWarningDate"] = o.ExpireWarningDate
+	}
+	if !IsNil(o.ExpireWarningSent) {
+		toSerialize["expireWarningSent"] = o.ExpireWarningSent
+	}
+	if !IsNil(o.ShutdownDays) {
+		toSerialize["shutdownDays"] = o.ShutdownDays
+	}
+	if !IsNil(o.ShutdownRenewDays) {
+		toSerialize["shutdownRenewDays"] = o.ShutdownRenewDays
+	}
+	if !IsNil(o.ShutdownCount) {
+		toSerialize["shutdownCount"] = o.ShutdownCount
+	}
+	if !IsNil(o.ShutdownDate) {
+		toSerialize["shutdownDate"] = o.ShutdownDate
+	}
+	if !IsNil(o.ShutdownWarningDate) {
+		toSerialize["shutdownWarningDate"] = o.ShutdownWarningDate
+	}
+	if !IsNil(o.ShutdownWarningSent) {
+		toSerialize["shutdownWarningSent"] = o.ShutdownWarningSent
+	}
+	if !IsNil(o.RemovalDate) {
+		toSerialize["removalDate"] = o.RemovalDate
+	}
+	if !IsNil(o.CreatedBy) {
+		toSerialize["createdBy"] = o.CreatedBy
+	}
+	if !IsNil(o.Owner) {
+		toSerialize["owner"] = o.Owner
+	}
+	if !IsNil(o.Notes) {
+		toSerialize["notes"] = o.Notes
+	}
+	if !IsNil(o.Stats) {
+		toSerialize["stats"] = o.Stats
+	}
+	if !IsNil(o.PowerSchedule) {
+		toSerialize["powerSchedule"] = o.PowerSchedule
+	}
+	if !IsNil(o.IsScalable) {
+		toSerialize["isScalable"] = o.IsScalable
+	}
+	if !IsNil(o.InstanceThreshold) {
+		toSerialize["instanceThreshold"] = o.InstanceThreshold
+	}
+	if !IsNil(o.IsBusy) {
+		toSerialize["isBusy"] = o.IsBusy
+	}
+	if !IsNil(o.Apps) {
+		toSerialize["apps"] = o.Apps
+	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
 func (o *AddInstance200ResponseAllOfOneOfInstance) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-		"site",
-		"instanceType",
-		"layout",
-		"plan",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
 	varAddInstance200ResponseAllOfOneOfInstance := _AddInstance200ResponseAllOfOneOfInstance{}
 
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varAddInstance200ResponseAllOfOneOfInstance)
+	err = json.Unmarshal(data, &varAddInstance200ResponseAllOfOneOfInstance)
 
 	if err != nil {
 		return err
 	}
 
 	*o = AddInstance200ResponseAllOfOneOfInstance(varAddInstance200ResponseAllOfOneOfInstance)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "uuid")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "tenant")
+		delete(additionalProperties, "instanceType")
+		delete(additionalProperties, "group")
+		delete(additionalProperties, "cloud")
+		delete(additionalProperties, "cluster")
+		delete(additionalProperties, "containers")
+		delete(additionalProperties, "servers")
+		delete(additionalProperties, "connectionInfo")
+		delete(additionalProperties, "layout")
+		delete(additionalProperties, "plan")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "displayName")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "environment")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "configGroup")
+		delete(additionalProperties, "configId")
+		delete(additionalProperties, "configRole")
+		delete(additionalProperties, "volumes")
+		delete(additionalProperties, "controllers")
+		delete(additionalProperties, "interfaces")
+		delete(additionalProperties, "customOptions")
+		delete(additionalProperties, "instanceVersion")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "tags")
+		delete(additionalProperties, "evars")
+		delete(additionalProperties, "maxMemory")
+		delete(additionalProperties, "maxStorage")
+		delete(additionalProperties, "maxCores")
+		delete(additionalProperties, "coresPerSocket")
+		delete(additionalProperties, "maxCpu")
+		delete(additionalProperties, "hourlyCost")
+		delete(additionalProperties, "hourlyPrice")
+		delete(additionalProperties, "instancePrice")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "hostName")
+		delete(additionalProperties, "domainName")
+		delete(additionalProperties, "environmentPrefix")
+		delete(additionalProperties, "firewallEnabled")
+		delete(additionalProperties, "networkLevel")
+		delete(additionalProperties, "autoScale")
+		delete(additionalProperties, "instanceContext")
+		delete(additionalProperties, "currentDeployId")
+		delete(additionalProperties, "locked")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "statusMessage")
+		delete(additionalProperties, "errorMessage")
+		delete(additionalProperties, "statusDate")
+		delete(additionalProperties, "statusPercent")
+		delete(additionalProperties, "statusEta")
+		delete(additionalProperties, "userStatus")
+		delete(additionalProperties, "expireDays")
+		delete(additionalProperties, "renewDays")
+		delete(additionalProperties, "expireCount")
+		delete(additionalProperties, "expireDate")
+		delete(additionalProperties, "expireWarningDate")
+		delete(additionalProperties, "expireWarningSent")
+		delete(additionalProperties, "shutdownDays")
+		delete(additionalProperties, "shutdownRenewDays")
+		delete(additionalProperties, "shutdownCount")
+		delete(additionalProperties, "shutdownDate")
+		delete(additionalProperties, "shutdownWarningDate")
+		delete(additionalProperties, "shutdownWarningSent")
+		delete(additionalProperties, "removalDate")
+		delete(additionalProperties, "createdBy")
+		delete(additionalProperties, "owner")
+		delete(additionalProperties, "notes")
+		delete(additionalProperties, "stats")
+		delete(additionalProperties, "powerSchedule")
+		delete(additionalProperties, "isScalable")
+		delete(additionalProperties, "instanceThreshold")
+		delete(additionalProperties, "isBusy")
+		delete(additionalProperties, "apps")
+		o.AdditionalProperties = additionalProperties
+	}
 
 	return err
 }

@@ -29,7 +29,7 @@ type UpdateRoleRequestRole struct {
 	// Set the default persona by code.
 	DefaultPersona *string `json:"defaultPersona,omitempty"`
 	// Set the access level for the specified permissions.
-	Permissions []AddRolesRequestRolePermissionsInner `json:"permissions,omitempty"`
+	Permissions []AddRolesRequestRoleFeaturePermissionsInner `json:"permissions,omitempty"`
 	// Set the default access level for for groups (sites). Only applies to user roles.
 	GlobalSiteAccess *string `json:"globalSiteAccess,omitempty"`
 	// Set the access level for the specified groups (sites). Only applies to user roles.
@@ -61,7 +61,7 @@ type UpdateRoleRequestRole struct {
 	// Set the default access level for report types
 	GlobalReportTypeAccess *string `json:"globalReportTypeAccess,omitempty"`
 	// Set the access level for the specified report types
-	ReportTypes []AddRolesRequestRoleReportTypesInner `json:"reportTypes,omitempty"`
+	ReportTypes []UpdateRoleRequestRoleReportTypesInner `json:"reportTypes,omitempty"`
 	// Set the default access level for tasks
 	GlobalTaskAccess *string `json:"globalTaskAccess,omitempty"`
 	// Set the access level for the specified tasks
@@ -221,9 +221,9 @@ func (o *UpdateRoleRequestRole) SetDefaultPersona(v string) {
 }
 
 // GetPermissions returns the Permissions field value if set, zero value otherwise.
-func (o *UpdateRoleRequestRole) GetPermissions() []AddRolesRequestRolePermissionsInner {
+func (o *UpdateRoleRequestRole) GetPermissions() []AddRolesRequestRoleFeaturePermissionsInner {
 	if o == nil || IsNil(o.Permissions) {
-		var ret []AddRolesRequestRolePermissionsInner
+		var ret []AddRolesRequestRoleFeaturePermissionsInner
 		return ret
 	}
 	return o.Permissions
@@ -231,7 +231,7 @@ func (o *UpdateRoleRequestRole) GetPermissions() []AddRolesRequestRolePermission
 
 // GetPermissionsOk returns a tuple with the Permissions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateRoleRequestRole) GetPermissionsOk() ([]AddRolesRequestRolePermissionsInner, bool) {
+func (o *UpdateRoleRequestRole) GetPermissionsOk() ([]AddRolesRequestRoleFeaturePermissionsInner, bool) {
 	if o == nil || IsNil(o.Permissions) {
 		return nil, false
 	}
@@ -247,8 +247,8 @@ func (o *UpdateRoleRequestRole) IsSetPermissions() bool {
 	return false
 }
 
-// SetPermissions gets a reference to the given []AddRolesRequestRolePermissionsInner and assigns it to the Permissions field.
-func (o *UpdateRoleRequestRole) SetPermissions(v []AddRolesRequestRolePermissionsInner) {
+// SetPermissions gets a reference to the given []AddRolesRequestRoleFeaturePermissionsInner and assigns it to the Permissions field.
+func (o *UpdateRoleRequestRole) SetPermissions(v []AddRolesRequestRoleFeaturePermissionsInner) {
 	o.Permissions = v
 }
 
@@ -733,9 +733,9 @@ func (o *UpdateRoleRequestRole) SetGlobalReportTypeAccess(v string) {
 }
 
 // GetReportTypes returns the ReportTypes field value if set, zero value otherwise.
-func (o *UpdateRoleRequestRole) GetReportTypes() []AddRolesRequestRoleReportTypesInner {
+func (o *UpdateRoleRequestRole) GetReportTypes() []UpdateRoleRequestRoleReportTypesInner {
 	if o == nil || IsNil(o.ReportTypes) {
-		var ret []AddRolesRequestRoleReportTypesInner
+		var ret []UpdateRoleRequestRoleReportTypesInner
 		return ret
 	}
 	return o.ReportTypes
@@ -743,7 +743,7 @@ func (o *UpdateRoleRequestRole) GetReportTypes() []AddRolesRequestRoleReportType
 
 // GetReportTypesOk returns a tuple with the ReportTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateRoleRequestRole) GetReportTypesOk() ([]AddRolesRequestRoleReportTypesInner, bool) {
+func (o *UpdateRoleRequestRole) GetReportTypesOk() ([]UpdateRoleRequestRoleReportTypesInner, bool) {
 	if o == nil || IsNil(o.ReportTypes) {
 		return nil, false
 	}
@@ -759,8 +759,8 @@ func (o *UpdateRoleRequestRole) IsSetReportTypes() bool {
 	return false
 }
 
-// SetReportTypes gets a reference to the given []AddRolesRequestRoleReportTypesInner and assigns it to the ReportTypes field.
-func (o *UpdateRoleRequestRole) SetReportTypes(v []AddRolesRequestRoleReportTypesInner) {
+// SetReportTypes gets a reference to the given []UpdateRoleRequestRoleReportTypesInner and assigns it to the ReportTypes field.
+func (o *UpdateRoleRequestRole) SetReportTypes(v []UpdateRoleRequestRoleReportTypesInner) {
 	o.ReportTypes = v
 }
 

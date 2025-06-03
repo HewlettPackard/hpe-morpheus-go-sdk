@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Code** | Pointer to **string** | &#x60;code&#x60; of the persona | [optional] 
+**Code** | **string** | &#x60;code&#x60; of the persona | 
 **Access** | **string** | The new access level. | 
 
 ## Methods
 
 ### NewAddRolesRequestRolePersonasInner
 
-`func NewAddRolesRequestRolePersonasInner(access string, ) *AddRolesRequestRolePersonasInner`
+`func NewAddRolesRequestRolePersonasInner(code string, access string, ) *AddRolesRequestRolePersonasInner`
 
 NewAddRolesRequestRolePersonasInner instantiates a new AddRolesRequestRolePersonasInner object
 This constructor will assign default values to properties that have it defined,
@@ -45,11 +45,6 @@ and a boolean to check if the value has been set.
 
 SetCode sets Code field to given value.
 
-### HasCode
-
-`func (o *AddRolesRequestRolePersonasInner) HasCode() bool`
-
-HasCode returns a boolean if a field has been set.
 
 ### GetAccess
 

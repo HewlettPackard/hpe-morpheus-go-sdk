@@ -14,82 +14,48 @@ package sdk
 import (
 	"encoding/json"
 	"fmt"
-	"gopkg.in/validator.v2"
 )
 
 // very silly way of avoiding `"fmt" imported and not used` errors
 var _ fmt.Stringer
 
-// ListInstances200ResponseAllOfInstancesInnerConfigNoAgent - struct for ListInstances200ResponseAllOfInstancesInnerConfigNoAgent
+
+// ListInstances200ResponseAllOfInstancesInnerConfigNoAgent struct for ListInstances200ResponseAllOfInstancesInnerConfigNoAgent
 type ListInstances200ResponseAllOfInstancesInnerConfigNoAgent struct {
 	Bool *bool
 	String *string
 }
 
-// boolAsListInstances200ResponseAllOfInstancesInnerConfigNoAgent is a convenience function that returns bool wrapped in ListInstances200ResponseAllOfInstancesInnerConfigNoAgent
-func BoolAsListInstances200ResponseAllOfInstancesInnerConfigNoAgent(v *bool) ListInstances200ResponseAllOfInstancesInnerConfigNoAgent {
-	return ListInstances200ResponseAllOfInstancesInnerConfigNoAgent{
-		Bool: v,
-	}
-}
-
-// stringAsListInstances200ResponseAllOfInstancesInnerConfigNoAgent is a convenience function that returns string wrapped in ListInstances200ResponseAllOfInstancesInnerConfigNoAgent
-func StringAsListInstances200ResponseAllOfInstancesInnerConfigNoAgent(v *string) ListInstances200ResponseAllOfInstancesInnerConfigNoAgent {
-	return ListInstances200ResponseAllOfInstancesInnerConfigNoAgent{
-		String: v,
-	}
-}
-
-
-// Unmarshal JSON data into one of the pointers in the struct
+// Unmarshal JSON data into any of the pointers in the struct
 func (dst *ListInstances200ResponseAllOfInstancesInnerConfigNoAgent) UnmarshalJSON(data []byte) error {
 	var err error
-	match := 0
-	// try to unmarshal data into Bool
-	err = newStrictDecoder(data).Decode(&dst.Bool)
+	// try to unmarshal JSON data into Bool
+	err = json.Unmarshal(data, &dst.Bool);
 	if err == nil {
 		jsonBool, _ := json.Marshal(dst.Bool)
 		if string(jsonBool) == "{}" { // empty struct
 			dst.Bool = nil
 		} else {
-			if err = validator.Validate(dst.Bool); err != nil {
-				dst.Bool = nil
-			} else {
-				match++
-			}
+			return nil // data stored in dst.Bool, return on the first match
 		}
 	} else {
 		dst.Bool = nil
 	}
 
-	// try to unmarshal data into String
-	err = newStrictDecoder(data).Decode(&dst.String)
+	// try to unmarshal JSON data into String
+	err = json.Unmarshal(data, &dst.String);
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
 			dst.String = nil
 		} else {
-			if err = validator.Validate(dst.String); err != nil {
-				dst.String = nil
-			} else {
-				match++
-			}
+			return nil // data stored in dst.String, return on the first match
 		}
 	} else {
 		dst.String = nil
 	}
 
-	if match > 1 { // more than 1 match
-		// reset to nil
-		dst.Bool = nil
-		dst.String = nil
-
-		return NewResponseValidationError("data matches more than one schema in oneOf(ListInstances200ResponseAllOfInstancesInnerConfigNoAgent)")
-	} else if match == 1 {
-		return nil // exactly one match
-	} else { // no match
-		return NewResponseValidationError("data failed to match schemas in oneOf(ListInstances200ResponseAllOfInstancesInnerConfigNoAgent)")
-	}
+	return NewResponseValidationError("data failed to match schemas in anyOf(ListInstances200ResponseAllOfInstancesInnerConfigNoAgent)")
 }
 
 // Marshal data from the first non-nil pointers in the struct to JSON
@@ -102,39 +68,9 @@ func (src ListInstances200ResponseAllOfInstancesInnerConfigNoAgent) MarshalJSON(
 		return json.Marshal(&src.String)
 	}
 
-	return nil, nil // no data in oneOf schemas
+	return nil, nil // no data in anyOf schemas
 }
 
-// Get the actual instance
-func (obj *ListInstances200ResponseAllOfInstancesInnerConfigNoAgent) GetActualInstance() (interface{}) {
-	if obj == nil {
-		return nil
-	}
-	if obj.Bool != nil {
-		return obj.Bool
-	}
-
-	if obj.String != nil {
-		return obj.String
-	}
-
-	// all schemas are nil
-	return nil
-}
-
-// Get the actual instance value
-func (obj ListInstances200ResponseAllOfInstancesInnerConfigNoAgent) GetActualInstanceValue() (interface{}) {
-	if obj.Bool != nil {
-		return *obj.Bool
-	}
-
-	if obj.String != nil {
-		return *obj.String
-	}
-
-	// all schemas are nil
-	return nil
-}
 
 type NullableListInstances200ResponseAllOfInstancesInnerConfigNoAgent struct {
 	value *ListInstances200ResponseAllOfInstancesInnerConfigNoAgent

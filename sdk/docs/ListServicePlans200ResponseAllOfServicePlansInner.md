@@ -34,7 +34,6 @@ Name | Type | Description | Notes
 **PriceSets** | Pointer to [**[]ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionPriceSetsInner**](ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionPriceSetsInner.md) |  | [optional] 
 **Config** | Pointer to [**ListServicePlans200ResponseAllOfServicePlansInnerConfig**](ListServicePlans200ResponseAllOfServicePlansInnerConfig.md) |  | [optional] 
 **Zones** | Pointer to [**[]ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
-**Permissions** | Pointer to [**ListServicePlans200ResponseAllOfServicePlansInnerPermissions**](ListServicePlans200ResponseAllOfServicePlansInnerPermissions.md) |  | [optional] 
 
 ## Methods
 
@@ -804,31 +803,6 @@ SetZones sets Zones field to given value.
 `func (o *ListServicePlans200ResponseAllOfServicePlansInner) HasZones() bool`
 
 HasZones returns a boolean if a field has been set.
-
-### GetPermissions
-
-`func (o *ListServicePlans200ResponseAllOfServicePlansInner) GetPermissions() ListServicePlans200ResponseAllOfServicePlansInnerPermissions`
-
-GetPermissions returns the Permissions field if non-nil, zero value otherwise.
-
-### GetPermissionsOk
-
-`func (o *ListServicePlans200ResponseAllOfServicePlansInner) GetPermissionsOk() (*ListServicePlans200ResponseAllOfServicePlansInnerPermissions, bool)`
-
-GetPermissionsOk returns a tuple with the Permissions field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPermissions
-
-`func (o *ListServicePlans200ResponseAllOfServicePlansInner) SetPermissions(v ListServicePlans200ResponseAllOfServicePlansInnerPermissions)`
-
-SetPermissions sets Permissions field to given value.
-
-### HasPermissions
-
-`func (o *ListServicePlans200ResponseAllOfServicePlansInner) HasPermissions() bool`
-
-HasPermissions returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

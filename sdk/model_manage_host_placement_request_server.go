@@ -21,8 +21,8 @@ var _ MappedNullable = &ManageHostPlacementRequestServer{}
 // ManageHostPlacementRequestServer struct for ManageHostPlacementRequestServer
 type ManageHostPlacementRequestServer struct {
 	// Placement Strategy
-	Name *string `json:"name,omitempty"`
-	PreferredServer *ManageHostPlacementRequestServerPreferredServer `json:"preferredServer,omitempty"`
+	PlacementStrategy *string `json:"placementStrategy,omitempty"`
+	PreferredParentServer *ManageHostPlacementRequestServerPreferredParentServer `json:"preferredParentServer,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,68 +45,68 @@ func NewManageHostPlacementRequestServerWithDefaults() *ManageHostPlacementReque
 	return &this
 }
 
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *ManageHostPlacementRequestServer) GetName() string {
-	if o == nil || IsNil(o.Name) {
+// GetPlacementStrategy returns the PlacementStrategy field value if set, zero value otherwise.
+func (o *ManageHostPlacementRequestServer) GetPlacementStrategy() string {
+	if o == nil || IsNil(o.PlacementStrategy) {
 		var ret string
 		return ret
 	}
-	return *o.Name
+	return *o.PlacementStrategy
 }
 
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// GetPlacementStrategyOk returns a tuple with the PlacementStrategy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ManageHostPlacementRequestServer) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
+func (o *ManageHostPlacementRequestServer) GetPlacementStrategyOk() (*string, bool) {
+	if o == nil || IsNil(o.PlacementStrategy) {
 		return nil, false
 	}
-	return o.Name, true
+	return o.PlacementStrategy, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *ManageHostPlacementRequestServer) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
+// IsSetPlacementStrategy returns a boolean if a field has been set.
+func (o *ManageHostPlacementRequestServer) IsSetPlacementStrategy() bool {
+	if o != nil && !IsNil(o.PlacementStrategy) {
 		return true
 	}
 
 	return false
 }
 
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *ManageHostPlacementRequestServer) SetName(v string) {
-	o.Name = &v
+// SetPlacementStrategy gets a reference to the given string and assigns it to the PlacementStrategy field.
+func (o *ManageHostPlacementRequestServer) SetPlacementStrategy(v string) {
+	o.PlacementStrategy = &v
 }
 
-// GetPreferredServer returns the PreferredServer field value if set, zero value otherwise.
-func (o *ManageHostPlacementRequestServer) GetPreferredServer() ManageHostPlacementRequestServerPreferredServer {
-	if o == nil || IsNil(o.PreferredServer) {
-		var ret ManageHostPlacementRequestServerPreferredServer
+// GetPreferredParentServer returns the PreferredParentServer field value if set, zero value otherwise.
+func (o *ManageHostPlacementRequestServer) GetPreferredParentServer() ManageHostPlacementRequestServerPreferredParentServer {
+	if o == nil || IsNil(o.PreferredParentServer) {
+		var ret ManageHostPlacementRequestServerPreferredParentServer
 		return ret
 	}
-	return *o.PreferredServer
+	return *o.PreferredParentServer
 }
 
-// GetPreferredServerOk returns a tuple with the PreferredServer field value if set, nil otherwise
+// GetPreferredParentServerOk returns a tuple with the PreferredParentServer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ManageHostPlacementRequestServer) GetPreferredServerOk() (*ManageHostPlacementRequestServerPreferredServer, bool) {
-	if o == nil || IsNil(o.PreferredServer) {
+func (o *ManageHostPlacementRequestServer) GetPreferredParentServerOk() (*ManageHostPlacementRequestServerPreferredParentServer, bool) {
+	if o == nil || IsNil(o.PreferredParentServer) {
 		return nil, false
 	}
-	return o.PreferredServer, true
+	return o.PreferredParentServer, true
 }
 
-// IsSetPreferredServer returns a boolean if a field has been set.
-func (o *ManageHostPlacementRequestServer) IsSetPreferredServer() bool {
-	if o != nil && !IsNil(o.PreferredServer) {
+// IsSetPreferredParentServer returns a boolean if a field has been set.
+func (o *ManageHostPlacementRequestServer) IsSetPreferredParentServer() bool {
+	if o != nil && !IsNil(o.PreferredParentServer) {
 		return true
 	}
 
 	return false
 }
 
-// SetPreferredServer gets a reference to the given ManageHostPlacementRequestServerPreferredServer and assigns it to the PreferredServer field.
-func (o *ManageHostPlacementRequestServer) SetPreferredServer(v ManageHostPlacementRequestServerPreferredServer) {
-	o.PreferredServer = &v
+// SetPreferredParentServer gets a reference to the given ManageHostPlacementRequestServerPreferredParentServer and assigns it to the PreferredParentServer field.
+func (o *ManageHostPlacementRequestServer) SetPreferredParentServer(v ManageHostPlacementRequestServerPreferredParentServer) {
+	o.PreferredParentServer = &v
 }
 
 func (o ManageHostPlacementRequestServer) MarshalJSON() ([]byte, error) {
@@ -119,11 +119,11 @@ func (o ManageHostPlacementRequestServer) MarshalJSON() ([]byte, error) {
 
 func (o ManageHostPlacementRequestServer) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Name) {
-		toSerialize["name"] = o.Name
+	if !IsNil(o.PlacementStrategy) {
+		toSerialize["placementStrategy"] = o.PlacementStrategy
 	}
-	if !IsNil(o.PreferredServer) {
-		toSerialize["preferredServer"] = o.PreferredServer
+	if !IsNil(o.PreferredParentServer) {
+		toSerialize["preferredParentServer"] = o.PreferredParentServer
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -147,8 +147,8 @@ func (o *ManageHostPlacementRequestServer) UnmarshalJSON(data []byte) (err error
 	additionalProperties := make(map[string]interface{})
 
 	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "preferredServer")
+		delete(additionalProperties, "placementStrategy")
+		delete(additionalProperties, "preferredParentServer")
 		o.AdditionalProperties = additionalProperties
 	}
 

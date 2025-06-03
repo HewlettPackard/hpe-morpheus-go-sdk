@@ -25,7 +25,7 @@ type ListInstances200ResponseAllOfInstancesInner struct {
 	Uuid *string `json:"uuid,omitempty"`
 	AccountId *int64 `json:"accountId,omitempty"`
 	Tenant *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"tenant,omitempty"`
-	InstanceType *ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner `json:"instanceType,omitempty"`
+	InstanceType *ListInstances200ResponseAllOfInstancesInnerInstanceType `json:"instanceType,omitempty"`
 	Group *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"group,omitempty"`
 	Cloud *ListApps200ResponseAllOfAppsInnerBlueprint `json:"cloud,omitempty"`
 	Cluster *ListInstances200ResponseAllOfInstancesInnerCluster `json:"cluster,omitempty"`
@@ -249,9 +249,9 @@ func (o *ListInstances200ResponseAllOfInstancesInner) SetTenant(v ListApplianceS
 }
 
 // GetInstanceType returns the InstanceType field value if set, zero value otherwise.
-func (o *ListInstances200ResponseAllOfInstancesInner) GetInstanceType() ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner {
+func (o *ListInstances200ResponseAllOfInstancesInner) GetInstanceType() ListInstances200ResponseAllOfInstancesInnerInstanceType {
 	if o == nil || IsNil(o.InstanceType) {
-		var ret ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner
+		var ret ListInstances200ResponseAllOfInstancesInnerInstanceType
 		return ret
 	}
 	return *o.InstanceType
@@ -259,7 +259,7 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetInstanceType() ListClus
 
 // GetInstanceTypeOk returns a tuple with the InstanceType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) GetInstanceTypeOk() (*ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner, bool) {
+func (o *ListInstances200ResponseAllOfInstancesInner) GetInstanceTypeOk() (*ListInstances200ResponseAllOfInstancesInnerInstanceType, bool) {
 	if o == nil || IsNil(o.InstanceType) {
 		return nil, false
 	}
@@ -275,8 +275,8 @@ func (o *ListInstances200ResponseAllOfInstancesInner) IsSetInstanceType() bool {
 	return false
 }
 
-// SetInstanceType gets a reference to the given ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner and assigns it to the InstanceType field.
-func (o *ListInstances200ResponseAllOfInstancesInner) SetInstanceType(v ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner) {
+// SetInstanceType gets a reference to the given ListInstances200ResponseAllOfInstancesInnerInstanceType and assigns it to the InstanceType field.
+func (o *ListInstances200ResponseAllOfInstancesInner) SetInstanceType(v ListInstances200ResponseAllOfInstancesInnerInstanceType) {
 	o.InstanceType = &v
 }
 

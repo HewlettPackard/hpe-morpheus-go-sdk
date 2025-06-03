@@ -20,7 +20,7 @@ var _ MappedNullable = &GetServicePlans200Response{}
 
 // GetServicePlans200Response struct for GetServicePlans200Response
 type GetServicePlans200Response struct {
-	ServicePlan *ListServicePlans200ResponseAllOfServicePlansInner `json:"servicePlan,omitempty"`
+	ServicePlan *AddServicePlans200ResponseAllOfServicePlan `json:"servicePlan,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -44,9 +44,9 @@ func NewGetServicePlans200ResponseWithDefaults() *GetServicePlans200Response {
 }
 
 // GetServicePlan returns the ServicePlan field value if set, zero value otherwise.
-func (o *GetServicePlans200Response) GetServicePlan() ListServicePlans200ResponseAllOfServicePlansInner {
+func (o *GetServicePlans200Response) GetServicePlan() AddServicePlans200ResponseAllOfServicePlan {
 	if o == nil || IsNil(o.ServicePlan) {
-		var ret ListServicePlans200ResponseAllOfServicePlansInner
+		var ret AddServicePlans200ResponseAllOfServicePlan
 		return ret
 	}
 	return *o.ServicePlan
@@ -54,7 +54,7 @@ func (o *GetServicePlans200Response) GetServicePlan() ListServicePlans200Respons
 
 // GetServicePlanOk returns a tuple with the ServicePlan field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetServicePlans200Response) GetServicePlanOk() (*ListServicePlans200ResponseAllOfServicePlansInner, bool) {
+func (o *GetServicePlans200Response) GetServicePlanOk() (*AddServicePlans200ResponseAllOfServicePlan, bool) {
 	if o == nil || IsNil(o.ServicePlan) {
 		return nil, false
 	}
@@ -70,8 +70,8 @@ func (o *GetServicePlans200Response) IsSetServicePlan() bool {
 	return false
 }
 
-// SetServicePlan gets a reference to the given ListServicePlans200ResponseAllOfServicePlansInner and assigns it to the ServicePlan field.
-func (o *GetServicePlans200Response) SetServicePlan(v ListServicePlans200ResponseAllOfServicePlansInner) {
+// SetServicePlan gets a reference to the given AddServicePlans200ResponseAllOfServicePlan and assigns it to the ServicePlan field.
+func (o *GetServicePlans200Response) SetServicePlan(v AddServicePlans200ResponseAllOfServicePlan) {
 	o.ServicePlan = &v
 }
 

@@ -301,7 +301,7 @@ AddStorageVolumes Creates a Storage Volume
 
 This endpoint allows creating a Storage Volume.
 Only certain types of storage servers support creating and deleting storage volumes, such as 3Par and Isilon.
-Configuration options vary by `Storage Volume Type`.
+Configuration options vary by `Storage Volume Type`. Plugin-based Storage Volume Types do not require a `storageGroup`, while built-in Storage Volume Types do.
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().

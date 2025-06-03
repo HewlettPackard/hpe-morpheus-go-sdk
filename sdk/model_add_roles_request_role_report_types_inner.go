@@ -21,8 +21,8 @@ var _ MappedNullable = &AddRolesRequestRoleReportTypesInner{}
 
 // AddRolesRequestRoleReportTypesInner struct for AddRolesRequestRoleReportTypesInner
 type AddRolesRequestRoleReportTypesInner struct {
-	// `code` of the report type
-	Code string `json:"code"`
+	// `id` of the report type
+	Id int32 `json:"id"`
 	// The new access level.
 	Access string `json:"access"`
 	AdditionalProperties map[string]interface{}
@@ -34,9 +34,9 @@ type _AddRolesRequestRoleReportTypesInner AddRolesRequestRoleReportTypesInner
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddRolesRequestRoleReportTypesInner(code string, access string) *AddRolesRequestRoleReportTypesInner {
+func NewAddRolesRequestRoleReportTypesInner(id int32, access string) *AddRolesRequestRoleReportTypesInner {
 	this := AddRolesRequestRoleReportTypesInner{}
-	this.Code = code
+	this.Id = id
 	this.Access = access
 	return &this
 }
@@ -49,28 +49,28 @@ func NewAddRolesRequestRoleReportTypesInnerWithDefaults() *AddRolesRequestRoleRe
 	return &this
 }
 
-// GetCode returns the Code field value
-func (o *AddRolesRequestRoleReportTypesInner) GetCode() string {
+// GetId returns the Id field value
+func (o *AddRolesRequestRoleReportTypesInner) GetId() int32 {
 	if o == nil {
-		var ret string
+		var ret int32
 		return ret
 	}
 
-	return o.Code
+	return o.Id
 }
 
-// GetCodeOk returns a tuple with the Code field value
+// GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
-func (o *AddRolesRequestRoleReportTypesInner) GetCodeOk() (*string, bool) {
+func (o *AddRolesRequestRoleReportTypesInner) GetIdOk() (*int32, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.Code, true
+	return &o.Id, true
 }
 
-// SetCode sets field value
-func (o *AddRolesRequestRoleReportTypesInner) SetCode(v string) {
-	o.Code = v
+// SetId sets field value
+func (o *AddRolesRequestRoleReportTypesInner) SetId(v int32) {
+	o.Id = v
 }
 
 // GetAccess returns the Access field value
@@ -107,7 +107,7 @@ func (o AddRolesRequestRoleReportTypesInner) MarshalJSON() ([]byte, error) {
 
 func (o AddRolesRequestRoleReportTypesInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["code"] = o.Code
+	toSerialize["id"] = o.Id
 	toSerialize["access"] = o.Access
 
 	for key, value := range o.AdditionalProperties {
@@ -122,7 +122,7 @@ func (o *AddRolesRequestRoleReportTypesInner) UnmarshalJSON(data []byte) (err er
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
-		"code",
+		"id",
 		"access",
 	}
 
@@ -153,7 +153,7 @@ func (o *AddRolesRequestRoleReportTypesInner) UnmarshalJSON(data []byte) (err er
 	additionalProperties := make(map[string]interface{})
 
 	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "code")
+		delete(additionalProperties, "id")
 		delete(additionalProperties, "access")
 		o.AdditionalProperties = additionalProperties
 	}
