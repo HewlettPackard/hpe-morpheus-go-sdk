@@ -3720,7 +3720,6 @@ Class | Method | HTTP request | Description
  - [UpdateRoleRequest](docs/UpdateRoleRequest.md)
  - [UpdateRoleRequestRole](docs/UpdateRoleRequestRole.md)
  - [UpdateRoleRequestRolePersonasInner](docs/UpdateRoleRequestRolePersonasInner.md)
- - [UpdateRoleRequestRoleReportTypesInner](docs/UpdateRoleRequestRoleReportTypesInner.md)
  - [UpdateRoleTaskAccessRequest](docs/UpdateRoleTaskAccessRequest.md)
  - [UpdateRoleTaskAccessRequestOneOf](docs/UpdateRoleTaskAccessRequestOneOf.md)
  - [UpdateRoleTaskAccessRequestOneOf1](docs/UpdateRoleTaskAccessRequestOneOf1.md)

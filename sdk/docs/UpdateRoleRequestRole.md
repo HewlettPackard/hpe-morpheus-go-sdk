@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **GlobalVdiPoolAccess** | Pointer to **string** | Set the default access level for VDI pools | [optional] 
 **VdiPools** | Pointer to [**[]AddRolesRequestRoleVdiPoolsInner**](AddRolesRequestRoleVdiPoolsInner.md) | Set the access level for the specified VDI pools | [optional] 
 **GlobalReportTypeAccess** | Pointer to **string** | Set the default access level for report types | [optional] 
-**ReportTypes** | Pointer to [**[]UpdateRoleRequestRoleReportTypesInner**](UpdateRoleRequestRoleReportTypesInner.md) | Set the access level for the specified report types | [optional] 
+**ReportTypes** | Pointer to [**[]AddRolesRequestRoleReportTypesInner**](AddRolesRequestRoleReportTypesInner.md) | Set the access level for the specified report types | [optional] 
 **GlobalTaskAccess** | Pointer to **string** | Set the default access level for tasks | [optional] 
 **Tasks** | Pointer to [**[]AddRolesRequestRoleTasksInner**](AddRolesRequestRoleTasksInner.md) | Set the access level for the specified tasks | [optional] 
 **GlobalTaskSetAccess** | Pointer to **string** | Set the default access level for workflows (taskSets) | [optional] 
@@ -551,20 +551,20 @@ HasGlobalReportTypeAccess returns a boolean if a field has been set.
 
 ### GetReportTypes
 
-`func (o *UpdateRoleRequestRole) GetReportTypes() []UpdateRoleRequestRoleReportTypesInner`
+`func (o *UpdateRoleRequestRole) GetReportTypes() []AddRolesRequestRoleReportTypesInner`
 
 GetReportTypes returns the ReportTypes field if non-nil, zero value otherwise.
 
 ### GetReportTypesOk
 
-`func (o *UpdateRoleRequestRole) GetReportTypesOk() (*[]UpdateRoleRequestRoleReportTypesInner, bool)`
+`func (o *UpdateRoleRequestRole) GetReportTypesOk() (*[]AddRolesRequestRoleReportTypesInner, bool)`
 
 GetReportTypesOk returns a tuple with the ReportTypes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetReportTypes
 
-`func (o *UpdateRoleRequestRole) SetReportTypes(v []UpdateRoleRequestRoleReportTypesInner)`
+`func (o *UpdateRoleRequestRole) SetReportTypes(v []AddRolesRequestRoleReportTypesInner)`
 
 SetReportTypes sets ReportTypes field to given value.
 

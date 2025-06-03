@@ -61,7 +61,7 @@ type UpdateRoleRequestRole struct {
 	// Set the default access level for report types
 	GlobalReportTypeAccess *string `json:"globalReportTypeAccess,omitempty"`
 	// Set the access level for the specified report types
-	ReportTypes []UpdateRoleRequestRoleReportTypesInner `json:"reportTypes,omitempty"`
+	ReportTypes []AddRolesRequestRoleReportTypesInner `json:"reportTypes,omitempty"`
 	// Set the default access level for tasks
 	GlobalTaskAccess *string `json:"globalTaskAccess,omitempty"`
 	// Set the access level for the specified tasks
@@ -733,9 +733,9 @@ func (o *UpdateRoleRequestRole) SetGlobalReportTypeAccess(v string) {
 }
 
 // GetReportTypes returns the ReportTypes field value if set, zero value otherwise.
-func (o *UpdateRoleRequestRole) GetReportTypes() []UpdateRoleRequestRoleReportTypesInner {
+func (o *UpdateRoleRequestRole) GetReportTypes() []AddRolesRequestRoleReportTypesInner {
 	if o == nil || IsNil(o.ReportTypes) {
-		var ret []UpdateRoleRequestRoleReportTypesInner
+		var ret []AddRolesRequestRoleReportTypesInner
 		return ret
 	}
 	return o.ReportTypes
@@ -743,7 +743,7 @@ func (o *UpdateRoleRequestRole) GetReportTypes() []UpdateRoleRequestRoleReportTy
 
 // GetReportTypesOk returns a tuple with the ReportTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateRoleRequestRole) GetReportTypesOk() ([]UpdateRoleRequestRoleReportTypesInner, bool) {
+func (o *UpdateRoleRequestRole) GetReportTypesOk() ([]AddRolesRequestRoleReportTypesInner, bool) {
 	if o == nil || IsNil(o.ReportTypes) {
 		return nil, false
 	}
@@ -759,8 +759,8 @@ func (o *UpdateRoleRequestRole) IsSetReportTypes() bool {
 	return false
 }
 
-// SetReportTypes gets a reference to the given []UpdateRoleRequestRoleReportTypesInner and assigns it to the ReportTypes field.
-func (o *UpdateRoleRequestRole) SetReportTypes(v []UpdateRoleRequestRoleReportTypesInner) {
+// SetReportTypes gets a reference to the given []AddRolesRequestRoleReportTypesInner and assigns it to the ReportTypes field.
+func (o *UpdateRoleRequestRole) SetReportTypes(v []AddRolesRequestRoleReportTypesInner) {
 	o.ReportTypes = v
 }
 
