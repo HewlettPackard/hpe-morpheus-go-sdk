@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **int32** | &#x60;id&#x60; of the report type | 
+**Code** | **string** | &#x60;code&#x60; of the report type | 
 **Access** | **string** | The new access level. | 
 
 ## Methods
 
 ### NewAddRolesRequestRoleReportTypesInner
 
-`func NewAddRolesRequestRoleReportTypesInner(id int32, access string, ) *AddRolesRequestRoleReportTypesInner`
+`func NewAddRolesRequestRoleReportTypesInner(code string, access string, ) *AddRolesRequestRoleReportTypesInner`
 
 NewAddRolesRequestRoleReportTypesInner instantiates a new AddRolesRequestRoleReportTypesInner object
 This constructor will assign default values to properties that have it defined,
@@ -26,24 +26,24 @@ NewAddRolesRequestRoleReportTypesInnerWithDefaults instantiates a new AddRolesRe
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetId
+### GetCode
 
-`func (o *AddRolesRequestRoleReportTypesInner) GetId() int32`
+`func (o *AddRolesRequestRoleReportTypesInner) GetCode() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetCode returns the Code field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetCodeOk
 
-`func (o *AddRolesRequestRoleReportTypesInner) GetIdOk() (*int32, bool)`
+`func (o *AddRolesRequestRoleReportTypesInner) GetCodeOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetCodeOk returns a tuple with the Code field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetCode
 
-`func (o *AddRolesRequestRoleReportTypesInner) SetId(v int32)`
+`func (o *AddRolesRequestRoleReportTypesInner) SetCode(v string)`
 
-SetId sets Id field to given value.
+SetCode sets Code field to given value.
 
 
 ### GetAccess

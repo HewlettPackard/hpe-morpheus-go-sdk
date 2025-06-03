@@ -2826,7 +2826,6 @@ docs/UpdateRoleReportTypeAccessRequestOneOf1.md
 docs/UpdateRoleRequest.md
 docs/UpdateRoleRequestRole.md
 docs/UpdateRoleRequestRolePersonasInner.md
-docs/UpdateRoleRequestRoleReportTypesInner.md
 docs/UpdateRoleTaskAccessRequest.md
 docs/UpdateRoleTaskAccessRequestOneOf.md
 docs/UpdateRoleTaskAccessRequestOneOf1.md
@@ -5645,7 +5644,6 @@ model_update_role_report_type_access_request_one_of_1.go
 model_update_role_request.go
 model_update_role_request_role.go
 model_update_role_request_role_personas_inner.go
-model_update_role_request_role_report_types_inner.go
 model_update_role_task_access_request.go
 model_update_role_task_access_request_one_of.go
 model_update_role_task_access_request_one_of_1.go
