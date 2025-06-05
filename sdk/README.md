@@ -993,12 +993,12 @@ Class | Method | HTTP request | Description
 *UsersAPI* | [**ListUserSettings**](docs/UsersAPI.md#listusersettings) | **Get** /api/user-settings | User Settings
 *UsersAPI* | [**ListUsers**](docs/UsersAPI.md#listusers) | **Get** /api/users | List All Users
 *UsersAPI* | [**ListUsersAvailableRoles**](docs/UsersAPI.md#listusersavailableroles) | **Get** /api/users/available-roles | List available roles for a user
+*UsersAPI* | [**UpdateUser**](docs/UsersAPI.md#updateuser) | **Put** /api/users/{id} | Update user
 *UsersAPI* | [**UpdateUserGroup**](docs/UsersAPI.md#updateusergroup) | **Put** /api/user-groups/{id} | Update User Group
 *UsersAPI* | [**UpdateUserSettings**](docs/UsersAPI.md#updateusersettings) | **Put** /api/user-settings | Update User Settings
 *UsersAPI* | [**UpdateUserSettingsAccessToken**](docs/UsersAPI.md#updateusersettingsaccesstoken) | **Put** /api/user-settings/regenerate-access-token | Regenerate API Access Token
 *UsersAPI* | [**UpdateUserSettingsAvatar**](docs/UsersAPI.md#updateusersettingsavatar) | **Post** /api/user-settings/avatar | Update Avatar
 *UsersAPI* | [**UpdateUserSettingsDesktopBackground**](docs/UsersAPI.md#updateusersettingsdesktopbackground) | **Post** /api/user-settings/desktop-background | Update Desktop Background
-*UsersAPI* | [**UpdateUsers**](docs/UsersAPI.md#updateusers) | **Put** /api/users/{id} | Update user
 *VDIAPI* | [**AddVDIApps**](docs/VDIAPI.md#addvdiapps) | **Post** /api/vdi-apps | Creates a VDI App
 *VDIAPI* | [**AddVDIGateways**](docs/VDIAPI.md#addvdigateways) | **Post** /api/vdi-gateways | Creates a VDI Gateway
 *VDIAPI* | [**AddVDIPools**](docs/VDIAPI.md#addvdipools) | **Post** /api/vdi-pools | Creates a VDI Pool
@@ -3767,15 +3767,15 @@ Class | Method | HTTP request | Description
  - [UpdateTenantSubtenantGroupRequestGroup](docs/UpdateTenantSubtenantGroupRequestGroup.md)
  - [UpdateTenantSubtenantGroupZonesRequest](docs/UpdateTenantSubtenantGroupZonesRequest.md)
  - [UpdateTenantSubtenantGroupZonesRequestGroup](docs/UpdateTenantSubtenantGroupZonesRequestGroup.md)
+ - [UpdateUserRequest](docs/UpdateUserRequest.md)
+ - [UpdateUserRequestUser](docs/UpdateUserRequestUser.md)
+ - [UpdateUserRequestUserRolesInner](docs/UpdateUserRequestUserRolesInner.md)
  - [UpdateUserSettingsAccessToken200Response](docs/UpdateUserSettingsAccessToken200Response.md)
  - [UpdateUserSettingsRequest](docs/UpdateUserSettingsRequest.md)
  - [UpdateUserSettingsRequestUser](docs/UpdateUserSettingsRequestUser.md)
  - [UpdateUserSettingsRequestUserDefaultCloud](docs/UpdateUserSettingsRequestUserDefaultCloud.md)
  - [UpdateUserSettingsRequestUserDefaultGroup](docs/UpdateUserSettingsRequestUserDefaultGroup.md)
  - [UpdateUserSettingsRequestUserDefaultPersona](docs/UpdateUserSettingsRequestUserDefaultPersona.md)
- - [UpdateUsersRequest](docs/UpdateUsersRequest.md)
- - [UpdateUsersRequestUser](docs/UpdateUsersRequestUser.md)
- - [UpdateUsersRequestUserRolesInner](docs/UpdateUsersRequestUserRolesInner.md)
  - [UpdateVDIAppsRequest](docs/UpdateVDIAppsRequest.md)
  - [UpdateVDIAppsRequestVdiApp](docs/UpdateVDIAppsRequestVdiApp.md)
  - [UpdateVDIAppsRequestVdiAppOneOf](docs/UpdateVDIAppsRequestVdiAppOneOf.md)

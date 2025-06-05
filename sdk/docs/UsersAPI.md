@@ -19,12 +19,12 @@ Method | HTTP request | Description
 [**ListUserSettings**](UsersAPI.md#ListUserSettings) | **Get** /api/user-settings | User Settings
 [**ListUsers**](UsersAPI.md#ListUsers) | **Get** /api/users | List All Users
 [**ListUsersAvailableRoles**](UsersAPI.md#ListUsersAvailableRoles) | **Get** /api/users/available-roles | List available roles for a user
+[**UpdateUser**](UsersAPI.md#UpdateUser) | **Put** /api/users/{id} | Update user
 [**UpdateUserGroup**](UsersAPI.md#UpdateUserGroup) | **Put** /api/user-groups/{id} | Update User Group
 [**UpdateUserSettings**](UsersAPI.md#UpdateUserSettings) | **Put** /api/user-settings | Update User Settings
 [**UpdateUserSettingsAccessToken**](UsersAPI.md#UpdateUserSettingsAccessToken) | **Put** /api/user-settings/regenerate-access-token | Regenerate API Access Token
 [**UpdateUserSettingsAvatar**](UsersAPI.md#UpdateUserSettingsAvatar) | **Post** /api/user-settings/avatar | Update Avatar
 [**UpdateUserSettingsDesktopBackground**](UsersAPI.md#UpdateUserSettingsDesktopBackground) | **Post** /api/user-settings/desktop-background | Update Desktop Background
-[**UpdateUsers**](UsersAPI.md#UpdateUsers) | **Put** /api/users/{id} | Update user
 
 
 
@@ -1075,6 +1075,78 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## UpdateUser
+
+> AddUserTenant200Response UpdateUser(ctx, id).UpdateUserRequest(updateUserRequest).Execute()
+
+Update user
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-go-sdk/sdk"
+)
+
+func main() {
+	id := int64(1) // int64 | Morpheus ID of the Object being referenced
+	updateUserRequest := *openapiclient.NewUpdateUserRequest(*openapiclient.NewUpdateUserRequestUser()) // UpdateUserRequest |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.UsersAPI.UpdateUser(context.Background(), id).UpdateUserRequest(updateUserRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UpdateUser``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateUser`: AddUserTenant200Response
+	fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UpdateUser`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int64** | Morpheus ID of the Object being referenced | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateUserRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **updateUserRequest** | [**UpdateUserRequest**](UpdateUserRequest.md) |  | 
+
+### Return type
+
+[**AddUserTenant200Response**](AddUserTenant200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## UpdateUserGroup
 
 > AddUserGroup200Response UpdateUserGroup(ctx, id).AddUserGroupRequest(addUserGroupRequest).Execute()
@@ -1412,78 +1484,6 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: multipart/form-data
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## UpdateUsers
-
-> AddUserTenant200Response UpdateUsers(ctx, id).UpdateUsersRequest(updateUsersRequest).Execute()
-
-Update user
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/HewlettPackard/hpe-morpheus-go-sdk/sdk"
-)
-
-func main() {
-	id := int64(1) // int64 | Morpheus ID of the Object being referenced
-	updateUsersRequest := *openapiclient.NewUpdateUsersRequest(*openapiclient.NewUpdateUsersRequestUser()) // UpdateUsersRequest |  (optional)
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.UsersAPI.UpdateUsers(context.Background(), id).UpdateUsersRequest(updateUsersRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UpdateUsers``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `UpdateUsers`: AddUserTenant200Response
-	fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UpdateUsers`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int64** | Morpheus ID of the Object being referenced | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiUpdateUsersRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **updateUsersRequest** | [**UpdateUsersRequest**](UpdateUsersRequest.md) |  | 
-
-### Return type
-
-[**AddUserTenant200Response**](AddUserTenant200Response.md)
-
-### Authorization
-
-[bearerAuth](../README.md#bearerAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
