@@ -38,7 +38,7 @@ tasks:
     env:
       _JAVA_OPTIONS: -DmaxYamlCodePoints=99999999
     cmds:
-      - test -d {{.OUTPUTDIR}} && rm -rf {{.OUTPUTDIR}}
+      - rm -rf {{.OUTPUTDIR}}
       - mkdir -p {{.OUTPUTDIR}}
       - cp {{.GENERATORIGNOREFILE}} {{.OUTPUTDIR}}
       - cmd: >-
