@@ -212,7 +212,7 @@ Name | Type | Description  | Notes
 
 ## AddLayout
 
-> AddClusterLayouts200Response AddLayout(ctx, instanceTypeId).AddLayoutRequest(addLayoutRequest).Execute()
+> AddLayout200Response AddLayout(ctx, instanceTypeId).AddLayoutRequest(addLayoutRequest).Execute()
 
 Create a Layout
 
@@ -231,7 +231,7 @@ import (
 )
 
 func main() {
-	instanceTypeId := float32(2) // float32 | The ID of the instance type
+	instanceTypeId := int64(2) // int64 | The ID of the instance type
 	addLayoutRequest := *openapiclient.NewAddLayoutRequest() // AddLayoutRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -241,7 +241,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LibraryAPI.AddLayout``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `AddLayout`: AddClusterLayouts200Response
+	// response from `AddLayout`: AddLayout200Response
 	fmt.Fprintf(os.Stdout, "Response from `LibraryAPI.AddLayout`: %v\n", resp)
 }
 ```
@@ -252,7 +252,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**instanceTypeId** | **float32** | The ID of the instance type | 
+**instanceTypeId** | **int64** | The ID of the instance type | 
 
 ### Other Parameters
 
@@ -266,7 +266,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AddClusterLayouts200Response**](AddClusterLayouts200Response.md)
+[**AddLayout200Response**](AddLayout200Response.md)
 
 ### Authorization
 
@@ -1113,7 +1113,7 @@ import (
 )
 
 func main() {
-	instanceTypeId := float32(2) // float32 | The ID of the instance type
+	instanceTypeId := int64(2) // int64 | The ID of the instance type
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1133,7 +1133,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**instanceTypeId** | **float32** | The ID of the instance type | 
+**instanceTypeId** | **int64** | The ID of the instance type | 
 
 ### Other Parameters
 
@@ -1953,7 +1953,7 @@ import (
 )
 
 func main() {
-	instanceTypeId := float32(2) // float32 | The ID of the instance type
+	instanceTypeId := int64(2) // int64 | The ID of the instance type
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1973,7 +1973,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**instanceTypeId** | **float32** | The ID of the instance type | 
+**instanceTypeId** | **int64** | The ID of the instance type | 
 
 ### Other Parameters
 
@@ -2004,7 +2004,7 @@ Name | Type | Description  | Notes
 
 ## GetLayout
 
-> GetLayout200Response GetLayout(ctx, id).Execute()
+> AddLayout200Response GetLayout(ctx, id).Execute()
 
 Get a Specific Layout
 
@@ -2032,7 +2032,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LibraryAPI.GetLayout``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetLayout`: GetLayout200Response
+	// response from `GetLayout`: AddLayout200Response
 	fmt.Fprintf(os.Stdout, "Response from `LibraryAPI.GetLayout`: %v\n", resp)
 }
 ```
@@ -2056,7 +2056,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetLayout200Response**](GetLayout200Response.md)
+[**AddLayout200Response**](AddLayout200Response.md)
 
 ### Authorization
 
@@ -3133,7 +3133,7 @@ import (
 )
 
 func main() {
-	instanceTypeId := float32(2) // float32 | The ID of the instance type
+	instanceTypeId := int64(2) // int64 | The ID of the instance type
 	max := int64(789) // int64 | Maximum number of records to return (optional) (default to 25)
 	offset := int64(789) // int64 | Offset records, the number of records to skip, for paginating requests (optional) (default to 0)
 	sort := "sort_example" // string | Sort order, the name of the property to sort by (optional) (default to "name")
@@ -3163,7 +3163,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**instanceTypeId** | **float32** | The ID of the instance type | 
+**instanceTypeId** | **int64** | The ID of the instance type | 
 
 ### Other Parameters
 
@@ -4208,7 +4208,7 @@ import (
 )
 
 func main() {
-	instanceTypeId := float32(2) // float32 | The ID of the instance type
+	instanceTypeId := int64(2) // int64 | The ID of the instance type
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4228,7 +4228,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**instanceTypeId** | **float32** | The ID of the instance type | 
+**instanceTypeId** | **int64** | The ID of the instance type | 
 
 ### Other Parameters
 
@@ -4350,7 +4350,7 @@ import (
 )
 
 func main() {
-	instanceTypeId := float32(2) // float32 | The ID of the instance type
+	instanceTypeId := int64(2) // int64 | The ID of the instance type
 	updateInstanceTypeRequest := *openapiclient.NewUpdateInstanceTypeRequest() // UpdateInstanceTypeRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -4371,7 +4371,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**instanceTypeId** | **float32** | The ID of the instance type | 
+**instanceTypeId** | **int64** | The ID of the instance type | 
 
 ### Other Parameters
 
@@ -4422,7 +4422,7 @@ import (
 )
 
 func main() {
-	instanceTypeId := float32(2) // float32 | The ID of the instance type
+	instanceTypeId := int64(2) // int64 | The ID of the instance type
 	logo := os.NewFile(1234, "some_file") // *os.File | Logo File png,jpg,svg (optional)
 	darkLogo := os.NewFile(1234, "some_file") // *os.File | Dark Logo File png,jpg,svg (optional)
 
@@ -4444,7 +4444,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**instanceTypeId** | **float32** | The ID of the instance type | 
+**instanceTypeId** | **int64** | The ID of the instance type | 
 
 ### Other Parameters
 

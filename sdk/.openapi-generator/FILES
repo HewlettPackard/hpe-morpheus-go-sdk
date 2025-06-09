@@ -435,6 +435,7 @@ docs/AddKeyPairs200Response.md
 docs/AddKeyPairs200ResponseAllOfAccount.md
 docs/AddKeyPairsRequest.md
 docs/AddKeyPairsRequestKeyPair.md
+docs/AddLayout200Response.md
 docs/AddLayoutRequest.md
 docs/AddLayoutRequestInstanceTypeLayout.md
 docs/AddLayoutRequestInstanceTypeLayoutPermissions.md
@@ -1246,7 +1247,6 @@ docs/GetJobExecutionEvents200Response.md
 docs/GetJobExecutions200Response.md
 docs/GetJobs200Response.md
 docs/GetKeyPairs200Response.md
-docs/GetLayout200Response.md
 docs/GetLicense200Response.md
 docs/GetLicense200ResponseCurrentUsage.md
 docs/GetLicense200ResponseInstalledLicensesInner.md
@@ -3336,6 +3336,7 @@ model_add_key_pairs_200_response.go
 model_add_key_pairs_200_response_all_of_account.go
 model_add_key_pairs_request.go
 model_add_key_pairs_request_key_pair.go
+model_add_layout_200_response.go
 model_add_layout_request.go
 model_add_layout_request_instance_type_layout.go
 model_add_layout_request_instance_type_layout_permissions.go
@@ -4119,7 +4120,6 @@ model_get_job_execution_events_200_response.go
 model_get_job_executions_200_response.go
 model_get_jobs_200_response.go
 model_get_key_pairs_200_response.go
-model_get_layout_200_response.go
 model_get_license_200_response.go
 model_get_license_200_response_current_usage.go
 model_get_license_200_response_installed_licenses_inner.go

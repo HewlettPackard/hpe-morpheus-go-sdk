@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**FirstName** | Pointer to **string** | First Name | [optional] 
-**LastName** | Pointer to **string** | Last Name | [optional] 
+**FirstName** | Pointer to **NullableString** | First Name | [optional] 
+**LastName** | Pointer to **NullableString** | Last Name | [optional] 
 **Username** | Pointer to **string** | Username (unique per tenant). | [optional] 
 **Email** | Pointer to **string** | Email address | [optional] 
 **Password** | Pointer to **string** | Password | [optional] 
@@ -55,6 +55,16 @@ SetFirstName sets FirstName field to given value.
 
 HasFirstName returns a boolean if a field has been set.
 
+### SetFirstNameNil
+
+`func (o *UpdateUserRequestUser) SetFirstNameNil(b bool)`
+
+ SetFirstNameNil sets the value for FirstName to be an explicit nil
+
+### UnsetFirstName
+`func (o *UpdateUserRequestUser) UnsetFirstName()`
+
+UnsetFirstName ensures that no value is present for FirstName, not even an explicit nil
 ### GetLastName
 
 `func (o *UpdateUserRequestUser) GetLastName() string`
@@ -80,6 +90,16 @@ SetLastName sets LastName field to given value.
 
 HasLastName returns a boolean if a field has been set.
 
+### SetLastNameNil
+
+`func (o *UpdateUserRequestUser) SetLastNameNil(b bool)`
+
+ SetLastNameNil sets the value for LastName to be an explicit nil
+
+### UnsetLastName
+`func (o *UpdateUserRequestUser) UnsetLastName()`
+
+UnsetLastName ensures that no value is present for LastName, not even an explicit nil
 ### GetUsername
 
 `func (o *UpdateUserRequestUser) GetUsername() string`
