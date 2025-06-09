@@ -15,36 +15,36 @@ import (
 	"encoding/json"
 )
 
-// checks if the GetLayout200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GetLayout200Response{}
+// checks if the AddLayout200Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddLayout200Response{}
 
-// GetLayout200Response struct for GetLayout200Response
-type GetLayout200Response struct {
+// AddLayout200Response struct for AddLayout200Response
+type AddLayout200Response struct {
 	InstanceTypeLayout *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner `json:"instanceTypeLayout,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
-type _GetLayout200Response GetLayout200Response
+type _AddLayout200Response AddLayout200Response
 
-// NewGetLayout200Response instantiates a new GetLayout200Response object
+// NewAddLayout200Response instantiates a new AddLayout200Response object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGetLayout200Response() *GetLayout200Response {
-	this := GetLayout200Response{}
+func NewAddLayout200Response() *AddLayout200Response {
+	this := AddLayout200Response{}
 	return &this
 }
 
-// NewGetLayout200ResponseWithDefaults instantiates a new GetLayout200Response object
+// NewAddLayout200ResponseWithDefaults instantiates a new AddLayout200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewGetLayout200ResponseWithDefaults() *GetLayout200Response {
-	this := GetLayout200Response{}
+func NewAddLayout200ResponseWithDefaults() *AddLayout200Response {
+	this := AddLayout200Response{}
 	return &this
 }
 
 // GetInstanceTypeLayout returns the InstanceTypeLayout field value if set, zero value otherwise.
-func (o *GetLayout200Response) GetInstanceTypeLayout() GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner {
+func (o *AddLayout200Response) GetInstanceTypeLayout() GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner {
 	if o == nil || IsNil(o.InstanceTypeLayout) {
 		var ret GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner
 		return ret
@@ -54,7 +54,7 @@ func (o *GetLayout200Response) GetInstanceTypeLayout() GetInstanceType200Respons
 
 // GetInstanceTypeLayoutOk returns a tuple with the InstanceTypeLayout field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetLayout200Response) GetInstanceTypeLayoutOk() (*GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner, bool) {
+func (o *AddLayout200Response) GetInstanceTypeLayoutOk() (*GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner, bool) {
 	if o == nil || IsNil(o.InstanceTypeLayout) {
 		return nil, false
 	}
@@ -62,7 +62,7 @@ func (o *GetLayout200Response) GetInstanceTypeLayoutOk() (*GetInstanceType200Res
 }
 
 // IsSetInstanceTypeLayout returns a boolean if a field has been set.
-func (o *GetLayout200Response) IsSetInstanceTypeLayout() bool {
+func (o *AddLayout200Response) IsSetInstanceTypeLayout() bool {
 	if o != nil && !IsNil(o.InstanceTypeLayout) {
 		return true
 	}
@@ -71,11 +71,11 @@ func (o *GetLayout200Response) IsSetInstanceTypeLayout() bool {
 }
 
 // SetInstanceTypeLayout gets a reference to the given GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner and assigns it to the InstanceTypeLayout field.
-func (o *GetLayout200Response) SetInstanceTypeLayout(v GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) {
+func (o *AddLayout200Response) SetInstanceTypeLayout(v GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) {
 	o.InstanceTypeLayout = &v
 }
 
-func (o GetLayout200Response) MarshalJSON() ([]byte, error) {
+func (o AddLayout200Response) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -83,7 +83,7 @@ func (o GetLayout200Response) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o GetLayout200Response) ToMap() (map[string]interface{}, error) {
+func (o AddLayout200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.InstanceTypeLayout) {
 		toSerialize["instanceTypeLayout"] = o.InstanceTypeLayout
@@ -96,16 +96,16 @@ func (o GetLayout200Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 
-func (o *GetLayout200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetLayout200Response := _GetLayout200Response{}
+func (o *AddLayout200Response) UnmarshalJSON(data []byte) (err error) {
+	varAddLayout200Response := _AddLayout200Response{}
 
-	err = json.Unmarshal(data, &varGetLayout200Response)
+	err = json.Unmarshal(data, &varAddLayout200Response)
 
 	if err != nil {
 		return err
 	}
 
-	*o = GetLayout200Response(varGetLayout200Response)
+	*o = AddLayout200Response(varAddLayout200Response)
 
 	additionalProperties := make(map[string]interface{})
 
@@ -117,38 +117,38 @@ func (o *GetLayout200Response) UnmarshalJSON(data []byte) (err error) {
 	return err
 }
 
-type NullableGetLayout200Response struct {
-	value *GetLayout200Response
+type NullableAddLayout200Response struct {
+	value *AddLayout200Response
 	isSet bool
 }
 
-func (v NullableGetLayout200Response) Get() *GetLayout200Response {
+func (v NullableAddLayout200Response) Get() *AddLayout200Response {
 	return v.value
 }
 
-func (v *NullableGetLayout200Response) Set(val *GetLayout200Response) {
+func (v *NullableAddLayout200Response) Set(val *AddLayout200Response) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableGetLayout200Response) IsSet() bool {
+func (v NullableAddLayout200Response) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableGetLayout200Response) Unset() {
+func (v *NullableAddLayout200Response) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableGetLayout200Response(val *GetLayout200Response) *NullableGetLayout200Response {
-	return &NullableGetLayout200Response{value: val, isSet: true}
+func NewNullableAddLayout200Response(val *AddLayout200Response) *NullableAddLayout200Response {
+	return &NullableAddLayout200Response{value: val, isSet: true}
 }
 
-func (v NullableGetLayout200Response) MarshalJSON() ([]byte, error) {
+func (v NullableAddLayout200Response) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableGetLayout200Response) UnmarshalJSON(src []byte) error {
+func (v *NullableAddLayout200Response) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
