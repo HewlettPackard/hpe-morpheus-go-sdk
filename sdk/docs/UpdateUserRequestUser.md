@@ -4,9 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**FirstName** | Pointer to **NullableString** | First Name | [optional] 
-**LastName** | Pointer to **NullableString** | Last Name | [optional] 
+**FirstName** | Pointer to **string** | First Name | [optional] 
+**LastName** | Pointer to **string** | Last Name | [optional] 
 **Username** | Pointer to **string** | Username (unique per tenant). | [optional] 
+**LinuxUsername** | Pointer to **string** |  | [optional] 
+**LinuxPassword** | Pointer to **string** |  | [optional] 
+**LinuxKeyPairId** | Pointer to **string** |  | [optional] 
+**WindowsUsername** | Pointer to **string** |  | [optional] 
+**WindowsPassword** | Pointer to **string** |  | [optional] 
 **Email** | Pointer to **string** | Email address | [optional] 
 **Password** | Pointer to **string** | Password | [optional] 
 **Roles** | Pointer to [**[]UpdateUserRequestUserRolesInner**](UpdateUserRequestUserRolesInner.md) | List of Roles | [optional] 
@@ -55,16 +60,6 @@ SetFirstName sets FirstName field to given value.
 
 HasFirstName returns a boolean if a field has been set.
 
-### SetFirstNameNil
-
-`func (o *UpdateUserRequestUser) SetFirstNameNil(b bool)`
-
- SetFirstNameNil sets the value for FirstName to be an explicit nil
-
-### UnsetFirstName
-`func (o *UpdateUserRequestUser) UnsetFirstName()`
-
-UnsetFirstName ensures that no value is present for FirstName, not even an explicit nil
 ### GetLastName
 
 `func (o *UpdateUserRequestUser) GetLastName() string`
@@ -90,16 +85,6 @@ SetLastName sets LastName field to given value.
 
 HasLastName returns a boolean if a field has been set.
 
-### SetLastNameNil
-
-`func (o *UpdateUserRequestUser) SetLastNameNil(b bool)`
-
- SetLastNameNil sets the value for LastName to be an explicit nil
-
-### UnsetLastName
-`func (o *UpdateUserRequestUser) UnsetLastName()`
-
-UnsetLastName ensures that no value is present for LastName, not even an explicit nil
 ### GetUsername
 
 `func (o *UpdateUserRequestUser) GetUsername() string`
@@ -124,6 +109,131 @@ SetUsername sets Username field to given value.
 `func (o *UpdateUserRequestUser) HasUsername() bool`
 
 HasUsername returns a boolean if a field has been set.
+
+### GetLinuxUsername
+
+`func (o *UpdateUserRequestUser) GetLinuxUsername() string`
+
+GetLinuxUsername returns the LinuxUsername field if non-nil, zero value otherwise.
+
+### GetLinuxUsernameOk
+
+`func (o *UpdateUserRequestUser) GetLinuxUsernameOk() (*string, bool)`
+
+GetLinuxUsernameOk returns a tuple with the LinuxUsername field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLinuxUsername
+
+`func (o *UpdateUserRequestUser) SetLinuxUsername(v string)`
+
+SetLinuxUsername sets LinuxUsername field to given value.
+
+### HasLinuxUsername
+
+`func (o *UpdateUserRequestUser) HasLinuxUsername() bool`
+
+HasLinuxUsername returns a boolean if a field has been set.
+
+### GetLinuxPassword
+
+`func (o *UpdateUserRequestUser) GetLinuxPassword() string`
+
+GetLinuxPassword returns the LinuxPassword field if non-nil, zero value otherwise.
+
+### GetLinuxPasswordOk
+
+`func (o *UpdateUserRequestUser) GetLinuxPasswordOk() (*string, bool)`
+
+GetLinuxPasswordOk returns a tuple with the LinuxPassword field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLinuxPassword
+
+`func (o *UpdateUserRequestUser) SetLinuxPassword(v string)`
+
+SetLinuxPassword sets LinuxPassword field to given value.
+
+### HasLinuxPassword
+
+`func (o *UpdateUserRequestUser) HasLinuxPassword() bool`
+
+HasLinuxPassword returns a boolean if a field has been set.
+
+### GetLinuxKeyPairId
+
+`func (o *UpdateUserRequestUser) GetLinuxKeyPairId() string`
+
+GetLinuxKeyPairId returns the LinuxKeyPairId field if non-nil, zero value otherwise.
+
+### GetLinuxKeyPairIdOk
+
+`func (o *UpdateUserRequestUser) GetLinuxKeyPairIdOk() (*string, bool)`
+
+GetLinuxKeyPairIdOk returns a tuple with the LinuxKeyPairId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLinuxKeyPairId
+
+`func (o *UpdateUserRequestUser) SetLinuxKeyPairId(v string)`
+
+SetLinuxKeyPairId sets LinuxKeyPairId field to given value.
+
+### HasLinuxKeyPairId
+
+`func (o *UpdateUserRequestUser) HasLinuxKeyPairId() bool`
+
+HasLinuxKeyPairId returns a boolean if a field has been set.
+
+### GetWindowsUsername
+
+`func (o *UpdateUserRequestUser) GetWindowsUsername() string`
+
+GetWindowsUsername returns the WindowsUsername field if non-nil, zero value otherwise.
+
+### GetWindowsUsernameOk
+
+`func (o *UpdateUserRequestUser) GetWindowsUsernameOk() (*string, bool)`
+
+GetWindowsUsernameOk returns a tuple with the WindowsUsername field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWindowsUsername
+
+`func (o *UpdateUserRequestUser) SetWindowsUsername(v string)`
+
+SetWindowsUsername sets WindowsUsername field to given value.
+
+### HasWindowsUsername
+
+`func (o *UpdateUserRequestUser) HasWindowsUsername() bool`
+
+HasWindowsUsername returns a boolean if a field has been set.
+
+### GetWindowsPassword
+
+`func (o *UpdateUserRequestUser) GetWindowsPassword() string`
+
+GetWindowsPassword returns the WindowsPassword field if non-nil, zero value otherwise.
+
+### GetWindowsPasswordOk
+
+`func (o *UpdateUserRequestUser) GetWindowsPasswordOk() (*string, bool)`
+
+GetWindowsPasswordOk returns a tuple with the WindowsPassword field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWindowsPassword
+
+`func (o *UpdateUserRequestUser) SetWindowsPassword(v string)`
+
+SetWindowsPassword sets WindowsPassword field to given value.
+
+### HasWindowsPassword
+
+`func (o *UpdateUserRequestUser) HasWindowsPassword() bool`
+
+HasWindowsPassword returns a boolean if a field has been set.
 
 ### GetEmail
 
