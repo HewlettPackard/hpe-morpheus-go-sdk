@@ -48,6 +48,7 @@ tasks:
           -c {{.GENERATORCONFIG}}
           {{if .TEMPLATEDIR -}}-t {{.TEMPLATEDIR}} {{end}}
           -o {{.OUTPUTDIR}}
+      - goimports -w .
   
   clone-spec:
     silent: true

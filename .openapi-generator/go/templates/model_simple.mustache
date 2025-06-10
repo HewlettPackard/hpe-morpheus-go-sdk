@@ -23,7 +23,7 @@ type {{classname}} struct {
 	{{name}} {{^required}}{{^isNullable}}{{^isArray}}{{^isFreeFormObject}}*{{/isFreeFormObject}}{{/isArray}}{{/isNullable}}{{/required}}{{{dataType}}}{{{vendorExtensions.x-go-datatag}}}
 {{/vars}}
 {{#isAdditionalPropertiesTrue}}
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{} {{#useMapStructs}}`json:",remain"`{{/useMapStructs}}
 {{/isAdditionalPropertiesTrue}}
 }
 
@@ -356,7 +356,7 @@ func (o {{classname}}) ToMap() (map[string]interface{}, error) {
 	{{/isAdditionalPropertiesTrue}}
 	return toSerialize, nil
 }
-
+{{^useMapStructs}}
 {{#vendorExtensions.x-go-generate-unmarshal-json}}
 {{#isAdditionalPropertiesTrue}}
 func (o *{{{classname}}}) UnmarshalJSON(data []byte) (err error) {
@@ -570,3 +570,19 @@ func (o *{{{classname}}}) UnmarshalJSON(data []byte) (err error) {
 {{/isArray}}
 {{/vendorExtensions.x-go-generate-unmarshal-json}}
 {{>nullable_model}}
+{{/useMapStructs}}
+{{#useMapStructs}}
+{{^isArray}}
+func (o *{{{classname}}}) UnmarshalJSON(data []byte) (err error) {
+	return decode(data, &o)
+}
+{{/isArray}}
+{{#isArray}}
+
+func (o *{{{classname}}}) UnmarshalJSON(data []byte) (err error) {
+	return decode(data, &o.Items)
+}
+
+{{/isArray}}
+{{/useMapStructs}}
+// - model_simple.mustache
