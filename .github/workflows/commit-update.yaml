@@ -20,6 +20,9 @@ jobs:
       pull-requests: write
     steps:
     - uses: actions/checkout@v4
+    - uses: actions/setup-go@v2
+      with:
+        go-version: 1.24.1
     - name: Install Task
       uses: arduino/setup-task@v2
       with:
