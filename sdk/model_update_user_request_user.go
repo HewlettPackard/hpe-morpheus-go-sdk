@@ -26,6 +26,11 @@ type UpdateUserRequestUser struct {
 	LastName *string `json:"lastName,omitempty"`
 	// Username (unique per tenant).
 	Username *string `json:"username,omitempty"`
+	LinuxUsername *string `json:"linuxUsername,omitempty"`
+	LinuxPassword *string `json:"linuxPassword,omitempty"`
+	LinuxKeyPairId *string `json:"linuxKeyPairId,omitempty"`
+	WindowsUsername *string `json:"windowsUsername,omitempty"`
+	WindowsPassword *string `json:"windowsPassword,omitempty"`
 	// Email address
 	Email *string `json:"email,omitempty"`
 	// Password
@@ -150,6 +155,166 @@ func (o *UpdateUserRequestUser) SetUsername(v string) {
 	o.Username = &v
 }
 
+// GetLinuxUsername returns the LinuxUsername field value if set, zero value otherwise.
+func (o *UpdateUserRequestUser) GetLinuxUsername() string {
+	if o == nil || IsNil(o.LinuxUsername) {
+		var ret string
+		return ret
+	}
+	return *o.LinuxUsername
+}
+
+// GetLinuxUsernameOk returns a tuple with the LinuxUsername field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UpdateUserRequestUser) GetLinuxUsernameOk() (*string, bool) {
+	if o == nil || IsNil(o.LinuxUsername) {
+		return nil, false
+	}
+	return o.LinuxUsername, true
+}
+
+// IsSetLinuxUsername returns a boolean if a field has been set.
+func (o *UpdateUserRequestUser) IsSetLinuxUsername() bool {
+	if o != nil && !IsNil(o.LinuxUsername) {
+		return true
+	}
+
+	return false
+}
+
+// SetLinuxUsername gets a reference to the given string and assigns it to the LinuxUsername field.
+func (o *UpdateUserRequestUser) SetLinuxUsername(v string) {
+	o.LinuxUsername = &v
+}
+
+// GetLinuxPassword returns the LinuxPassword field value if set, zero value otherwise.
+func (o *UpdateUserRequestUser) GetLinuxPassword() string {
+	if o == nil || IsNil(o.LinuxPassword) {
+		var ret string
+		return ret
+	}
+	return *o.LinuxPassword
+}
+
+// GetLinuxPasswordOk returns a tuple with the LinuxPassword field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UpdateUserRequestUser) GetLinuxPasswordOk() (*string, bool) {
+	if o == nil || IsNil(o.LinuxPassword) {
+		return nil, false
+	}
+	return o.LinuxPassword, true
+}
+
+// IsSetLinuxPassword returns a boolean if a field has been set.
+func (o *UpdateUserRequestUser) IsSetLinuxPassword() bool {
+	if o != nil && !IsNil(o.LinuxPassword) {
+		return true
+	}
+
+	return false
+}
+
+// SetLinuxPassword gets a reference to the given string and assigns it to the LinuxPassword field.
+func (o *UpdateUserRequestUser) SetLinuxPassword(v string) {
+	o.LinuxPassword = &v
+}
+
+// GetLinuxKeyPairId returns the LinuxKeyPairId field value if set, zero value otherwise.
+func (o *UpdateUserRequestUser) GetLinuxKeyPairId() string {
+	if o == nil || IsNil(o.LinuxKeyPairId) {
+		var ret string
+		return ret
+	}
+	return *o.LinuxKeyPairId
+}
+
+// GetLinuxKeyPairIdOk returns a tuple with the LinuxKeyPairId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UpdateUserRequestUser) GetLinuxKeyPairIdOk() (*string, bool) {
+	if o == nil || IsNil(o.LinuxKeyPairId) {
+		return nil, false
+	}
+	return o.LinuxKeyPairId, true
+}
+
+// IsSetLinuxKeyPairId returns a boolean if a field has been set.
+func (o *UpdateUserRequestUser) IsSetLinuxKeyPairId() bool {
+	if o != nil && !IsNil(o.LinuxKeyPairId) {
+		return true
+	}
+
+	return false
+}
+
+// SetLinuxKeyPairId gets a reference to the given string and assigns it to the LinuxKeyPairId field.
+func (o *UpdateUserRequestUser) SetLinuxKeyPairId(v string) {
+	o.LinuxKeyPairId = &v
+}
+
+// GetWindowsUsername returns the WindowsUsername field value if set, zero value otherwise.
+func (o *UpdateUserRequestUser) GetWindowsUsername() string {
+	if o == nil || IsNil(o.WindowsUsername) {
+		var ret string
+		return ret
+	}
+	return *o.WindowsUsername
+}
+
+// GetWindowsUsernameOk returns a tuple with the WindowsUsername field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UpdateUserRequestUser) GetWindowsUsernameOk() (*string, bool) {
+	if o == nil || IsNil(o.WindowsUsername) {
+		return nil, false
+	}
+	return o.WindowsUsername, true
+}
+
+// IsSetWindowsUsername returns a boolean if a field has been set.
+func (o *UpdateUserRequestUser) IsSetWindowsUsername() bool {
+	if o != nil && !IsNil(o.WindowsUsername) {
+		return true
+	}
+
+	return false
+}
+
+// SetWindowsUsername gets a reference to the given string and assigns it to the WindowsUsername field.
+func (o *UpdateUserRequestUser) SetWindowsUsername(v string) {
+	o.WindowsUsername = &v
+}
+
+// GetWindowsPassword returns the WindowsPassword field value if set, zero value otherwise.
+func (o *UpdateUserRequestUser) GetWindowsPassword() string {
+	if o == nil || IsNil(o.WindowsPassword) {
+		var ret string
+		return ret
+	}
+	return *o.WindowsPassword
+}
+
+// GetWindowsPasswordOk returns a tuple with the WindowsPassword field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UpdateUserRequestUser) GetWindowsPasswordOk() (*string, bool) {
+	if o == nil || IsNil(o.WindowsPassword) {
+		return nil, false
+	}
+	return o.WindowsPassword, true
+}
+
+// IsSetWindowsPassword returns a boolean if a field has been set.
+func (o *UpdateUserRequestUser) IsSetWindowsPassword() bool {
+	if o != nil && !IsNil(o.WindowsPassword) {
+		return true
+	}
+
+	return false
+}
+
+// SetWindowsPassword gets a reference to the given string and assigns it to the WindowsPassword field.
+func (o *UpdateUserRequestUser) SetWindowsPassword(v string) {
+	o.WindowsPassword = &v
+}
+
 // GetEmail returns the Email field value if set, zero value otherwise.
 func (o *UpdateUserRequestUser) GetEmail() string {
 	if o == nil || IsNil(o.Email) {
@@ -265,6 +430,21 @@ func (o UpdateUserRequestUser) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Username) {
 		toSerialize["username"] = o.Username
 	}
+	if !IsNil(o.LinuxUsername) {
+		toSerialize["linuxUsername"] = o.LinuxUsername
+	}
+	if !IsNil(o.LinuxPassword) {
+		toSerialize["linuxPassword"] = o.LinuxPassword
+	}
+	if !IsNil(o.LinuxKeyPairId) {
+		toSerialize["linuxKeyPairId"] = o.LinuxKeyPairId
+	}
+	if !IsNil(o.WindowsUsername) {
+		toSerialize["windowsUsername"] = o.WindowsUsername
+	}
+	if !IsNil(o.WindowsPassword) {
+		toSerialize["windowsPassword"] = o.WindowsPassword
+	}
 	if !IsNil(o.Email) {
 		toSerialize["email"] = o.Email
 	}
@@ -299,6 +479,11 @@ func (o *UpdateUserRequestUser) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "firstName")
 		delete(additionalProperties, "lastName")
 		delete(additionalProperties, "username")
+		delete(additionalProperties, "linuxUsername")
+		delete(additionalProperties, "linuxPassword")
+		delete(additionalProperties, "linuxKeyPairId")
+		delete(additionalProperties, "windowsUsername")
+		delete(additionalProperties, "windowsPassword")
 		delete(additionalProperties, "email")
 		delete(additionalProperties, "password")
 		delete(additionalProperties, "roles")

@@ -284,7 +284,7 @@ func (a *LibraryAPIService) AddInstanceTypeExecute(r ApiAddInstanceTypeRequest) 
 type ApiAddLayoutRequest struct {
 	ctx context.Context
 	ApiService *LibraryAPIService
-	instanceTypeId float32
+	instanceTypeId int64
 	addLayoutRequest *AddLayoutRequest
 }
 
@@ -293,7 +293,7 @@ func (r ApiAddLayoutRequest) AddLayoutRequest(addLayoutRequest AddLayoutRequest)
 	return r
 }
 
-func (r ApiAddLayoutRequest) Execute() (*AddClusterLayouts200Response, *http.Response, error) {
+func (r ApiAddLayoutRequest) Execute() (*AddLayout200Response, *http.Response, error) {
 	return r.ApiService.AddLayoutExecute(r)
 }
 
@@ -306,7 +306,7 @@ Use this command to create a layout.
  @param instanceTypeId The ID of the instance type
  @return ApiAddLayoutRequest
 */
-func (a *LibraryAPIService) AddLayout(ctx context.Context, instanceTypeId float32) ApiAddLayoutRequest {
+func (a *LibraryAPIService) AddLayout(ctx context.Context, instanceTypeId int64) ApiAddLayoutRequest {
 	return ApiAddLayoutRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -315,13 +315,13 @@ func (a *LibraryAPIService) AddLayout(ctx context.Context, instanceTypeId float3
 }
 
 // Execute executes the request
-//  @return AddClusterLayouts200Response
-func (a *LibraryAPIService) AddLayoutExecute(r ApiAddLayoutRequest) (*AddClusterLayouts200Response, *http.Response, error) {
+//  @return AddLayout200Response
+func (a *LibraryAPIService) AddLayoutExecute(r ApiAddLayoutRequest) (*AddLayout200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *AddClusterLayouts200Response
+		localVarReturnValue  *AddLayout200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.AddLayout")
@@ -1952,7 +1952,7 @@ func (a *LibraryAPIService) DeleteFileTemplateExecute(r ApiDeleteFileTemplateReq
 type ApiDeleteInstanceTypeRequest struct {
 	ctx context.Context
 	ApiService *LibraryAPIService
-	instanceTypeId float32
+	instanceTypeId int64
 }
 
 func (r ApiDeleteInstanceTypeRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -1968,7 +1968,7 @@ Will delete an instance type
  @param instanceTypeId The ID of the instance type
  @return ApiDeleteInstanceTypeRequest
 */
-func (a *LibraryAPIService) DeleteInstanceType(ctx context.Context, instanceTypeId float32) ApiDeleteInstanceTypeRequest {
+func (a *LibraryAPIService) DeleteInstanceType(ctx context.Context, instanceTypeId int64) ApiDeleteInstanceTypeRequest {
 	return ApiDeleteInstanceTypeRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -3432,7 +3432,7 @@ func (a *LibraryAPIService) GetInputExecute(r ApiGetInputRequest) (*GetInput200R
 type ApiGetInstanceTypeRequest struct {
 	ctx context.Context
 	ApiService *LibraryAPIService
-	instanceTypeId float32
+	instanceTypeId int64
 }
 
 func (r ApiGetInstanceTypeRequest) Execute() (*GetInstanceType200Response, *http.Response, error) {
@@ -3448,7 +3448,7 @@ This endpoint retrieves a specific instance type.
  @param instanceTypeId The ID of the instance type
  @return ApiGetInstanceTypeRequest
 */
-func (a *LibraryAPIService) GetInstanceType(ctx context.Context, instanceTypeId float32) ApiGetInstanceTypeRequest {
+func (a *LibraryAPIService) GetInstanceType(ctx context.Context, instanceTypeId int64) ApiGetInstanceTypeRequest {
 	return ApiGetInstanceTypeRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -3558,7 +3558,7 @@ type ApiGetLayoutRequest struct {
 	id int64
 }
 
-func (r ApiGetLayoutRequest) Execute() (*GetLayout200Response, *http.Response, error) {
+func (r ApiGetLayoutRequest) Execute() (*AddLayout200Response, *http.Response, error) {
 	return r.ApiService.GetLayoutExecute(r)
 }
 
@@ -3580,13 +3580,13 @@ func (a *LibraryAPIService) GetLayout(ctx context.Context, id int64) ApiGetLayou
 }
 
 // Execute executes the request
-//  @return GetLayout200Response
-func (a *LibraryAPIService) GetLayoutExecute(r ApiGetLayoutRequest) (*GetLayout200Response, *http.Response, error) {
+//  @return AddLayout200Response
+func (a *LibraryAPIService) GetLayoutExecute(r ApiGetLayoutRequest) (*AddLayout200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GetLayout200Response
+		localVarReturnValue  *AddLayout200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetLayout")
@@ -5862,7 +5862,7 @@ func (a *LibraryAPIService) ListLayoutsExecute(r ApiListLayoutsRequest) (*ListLa
 type ApiListLayoutsForInstanceTypeRequest struct {
 	ctx context.Context
 	ApiService *LibraryAPIService
-	instanceTypeId float32
+	instanceTypeId int64
 	max *int64
 	offset *int64
 	sort *string
@@ -5948,7 +5948,7 @@ This endpoint retrieves all layouts for a specific instance type.
  @param instanceTypeId The ID of the instance type
  @return ApiListLayoutsForInstanceTypeRequest
 */
-func (a *LibraryAPIService) ListLayoutsForInstanceType(ctx context.Context, instanceTypeId float32) ApiListLayoutsForInstanceTypeRequest {
+func (a *LibraryAPIService) ListLayoutsForInstanceType(ctx context.Context, instanceTypeId int64) ApiListLayoutsForInstanceTypeRequest {
 	return ApiListLayoutsForInstanceTypeRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -8365,7 +8365,7 @@ func (a *LibraryAPIService) RemoveVirtualImageLocationExecute(r ApiRemoveVirtual
 type ApiSetInstanceTypeFeaturedRequest struct {
 	ctx context.Context
 	ApiService *LibraryAPIService
-	instanceTypeId float32
+	instanceTypeId int64
 }
 
 func (r ApiSetInstanceTypeFeaturedRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -8382,7 +8382,7 @@ Use this command to toggle the featured flag for an existing instance type. This
  @param instanceTypeId The ID of the instance type
  @return ApiSetInstanceTypeFeaturedRequest
 */
-func (a *LibraryAPIService) SetInstanceTypeFeatured(ctx context.Context, instanceTypeId float32) ApiSetInstanceTypeFeaturedRequest {
+func (a *LibraryAPIService) SetInstanceTypeFeatured(ctx context.Context, instanceTypeId int64) ApiSetInstanceTypeFeaturedRequest {
 	return ApiSetInstanceTypeFeaturedRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -8620,7 +8620,7 @@ func (a *LibraryAPIService) UpdateFileTemplateExecute(r ApiUpdateFileTemplateReq
 type ApiUpdateInstanceTypeRequest struct {
 	ctx context.Context
 	ApiService *LibraryAPIService
-	instanceTypeId float32
+	instanceTypeId int64
 	updateInstanceTypeRequest *UpdateInstanceTypeRequest
 }
 
@@ -8642,7 +8642,7 @@ Use this command to update an existing instance type.
  @param instanceTypeId The ID of the instance type
  @return ApiUpdateInstanceTypeRequest
 */
-func (a *LibraryAPIService) UpdateInstanceType(ctx context.Context, instanceTypeId float32) ApiUpdateInstanceTypeRequest {
+func (a *LibraryAPIService) UpdateInstanceType(ctx context.Context, instanceTypeId int64) ApiUpdateInstanceTypeRequest {
 	return ApiUpdateInstanceTypeRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -8751,7 +8751,7 @@ func (a *LibraryAPIService) UpdateInstanceTypeExecute(r ApiUpdateInstanceTypeReq
 type ApiUpdateInstanceTypeLogoRequest struct {
 	ctx context.Context
 	ApiService *LibraryAPIService
-	instanceTypeId float32
+	instanceTypeId int64
 	logo *os.File
 	darkLogo *os.File
 }
@@ -8782,7 +8782,7 @@ Use this command to update the logo and dark logo images for an existing instanc
  @param instanceTypeId The ID of the instance type
  @return ApiUpdateInstanceTypeLogoRequest
 */
-func (a *LibraryAPIService) UpdateInstanceTypeLogo(ctx context.Context, instanceTypeId float32) ApiUpdateInstanceTypeLogoRequest {
+func (a *LibraryAPIService) UpdateInstanceTypeLogo(ctx context.Context, instanceTypeId int64) ApiUpdateInstanceTypeLogoRequest {
 	return ApiUpdateInstanceTypeLogoRequest{
 		ApiService: a,
 		ctx: ctx,
