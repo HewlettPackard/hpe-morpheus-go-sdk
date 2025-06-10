@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddBlueprintRequestOneOf5Terraform type satisfies the MappedNullable interface at compile time
@@ -26,11 +25,11 @@ type AddBlueprintRequestOneOf5Terraform struct {
 	// Terraform definition in JSON for `configType` `json`
 	Json *string `json:"json,omitempty"`
 	// Terraform definition for `configType` `tf`
-	Tf *string `json:"tf,omitempty"`
+	Tf  *string                                `json:"tf,omitempty"`
 	Git *AddBlueprintRequestOneOf5TerraformGit `json:"git,omitempty"`
 	// tfvar secret from Morpheus Cypher
-	TfvarSecret *string `json:"tfvarSecret,omitempty"`
-	AdditionalProperties map[string]interface{}
+	TfvarSecret          *string                `json:"tfvarSecret,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddBlueprintRequestOneOf5Terraform AddBlueprintRequestOneOf5Terraform
@@ -206,7 +205,7 @@ func (o *AddBlueprintRequestOneOf5Terraform) SetTfvarSecret(v string) {
 }
 
 func (o AddBlueprintRequestOneOf5Terraform) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -235,87 +234,8 @@ func (o AddBlueprintRequestOneOf5Terraform) ToMap() (map[string]interface{}, err
 
 	return toSerialize, nil
 }
-
 func (o *AddBlueprintRequestOneOf5Terraform) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"configType",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddBlueprintRequestOneOf5Terraform := _AddBlueprintRequestOneOf5Terraform{}
-
-	err = json.Unmarshal(data, &varAddBlueprintRequestOneOf5Terraform)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddBlueprintRequestOneOf5Terraform(varAddBlueprintRequestOneOf5Terraform)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "configType")
-		delete(additionalProperties, "json")
-		delete(additionalProperties, "tf")
-		delete(additionalProperties, "git")
-		delete(additionalProperties, "tfvarSecret")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddBlueprintRequestOneOf5Terraform struct {
-	value *AddBlueprintRequestOneOf5Terraform
-	isSet bool
-}
-
-func (v NullableAddBlueprintRequestOneOf5Terraform) Get() *AddBlueprintRequestOneOf5Terraform {
-	return v.value
-}
-
-func (v *NullableAddBlueprintRequestOneOf5Terraform) Set(val *AddBlueprintRequestOneOf5Terraform) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddBlueprintRequestOneOf5Terraform) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddBlueprintRequestOneOf5Terraform) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddBlueprintRequestOneOf5Terraform(val *AddBlueprintRequestOneOf5Terraform) *NullableAddBlueprintRequestOneOf5Terraform {
-	return &NullableAddBlueprintRequestOneOf5Terraform{value: val, isSet: true}
-}
-
-func (v NullableAddBlueprintRequestOneOf5Terraform) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddBlueprintRequestOneOf5Terraform) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

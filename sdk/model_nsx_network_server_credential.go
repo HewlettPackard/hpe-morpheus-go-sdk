@@ -20,9 +20,9 @@ var _ MappedNullable = &NSXNetworkServerCredential{}
 
 // NSXNetworkServerCredential Map containing Credential ID or the default `{\"type\": \"local\"}` which means use the values set in the local serviceUsername and servicePassword instead of associating a credential.
 type NSXNetworkServerCredential struct {
-	Type *string `json:"type,omitempty"`
-	Id *int64 `json:"id,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Type                 *string                `json:"type,omitempty"`
+	Id                   *int64                 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _NSXNetworkServerCredential NSXNetworkServerCredential
@@ -109,7 +109,7 @@ func (o *NSXNetworkServerCredential) SetId(v int64) {
 }
 
 func (o NSXNetworkServerCredential) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o NSXNetworkServerCredential) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *NSXNetworkServerCredential) UnmarshalJSON(data []byte) (err error) {
-	varNSXNetworkServerCredential := _NSXNetworkServerCredential{}
-
-	err = json.Unmarshal(data, &varNSXNetworkServerCredential)
-
-	if err != nil {
-		return err
-	}
-
-	*o = NSXNetworkServerCredential(varNSXNetworkServerCredential)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "id")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableNSXNetworkServerCredential struct {
-	value *NSXNetworkServerCredential
-	isSet bool
-}
-
-func (v NullableNSXNetworkServerCredential) Get() *NSXNetworkServerCredential {
-	return v.value
-}
-
-func (v *NullableNSXNetworkServerCredential) Set(val *NSXNetworkServerCredential) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableNSXNetworkServerCredential) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableNSXNetworkServerCredential) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableNSXNetworkServerCredential(val *NSXNetworkServerCredential) *NullableNSXNetworkServerCredential {
-	return &NullableNSXNetworkServerCredential{value: val, isSet: true}
-}
-
-func (v NullableNSXNetworkServerCredential) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableNSXNetworkServerCredential) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

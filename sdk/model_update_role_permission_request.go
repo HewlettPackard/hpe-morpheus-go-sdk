@@ -14,6 +14,7 @@ package sdk
 import (
 	"encoding/json"
 	"fmt"
+
 	"gopkg.in/validator.v2"
 )
 
@@ -22,17 +23,17 @@ var _ fmt.Stringer
 
 // UpdateRolePermissionRequest - struct for UpdateRolePermissionRequest
 type UpdateRolePermissionRequest struct {
-	DefaultBlueprintPermission *DefaultBlueprintPermission
+	DefaultBlueprintPermission       *DefaultBlueprintPermission
 	DefaultCatalogItemTypePermission *DefaultCatalogItemTypePermission
-	DefaultCloudPermission *DefaultCloudPermission
-	DefaultGroupPermission *DefaultGroupPermission
-	DefaultInstanceTypePermission *DefaultInstanceTypePermission
-	DefaultPersonaPermission *DefaultPersonaPermission
-	DefaultReportTypePermission *DefaultReportTypePermission
-	DefaultTaskPermission *DefaultTaskPermission
-	DefaultVDIPoolPermission *DefaultVDIPoolPermission
-	DefaultWorkflowPermission *DefaultWorkflowPermission
-	FeaturePermission *FeaturePermission
+	DefaultCloudPermission           *DefaultCloudPermission
+	DefaultGroupPermission           *DefaultGroupPermission
+	DefaultInstanceTypePermission    *DefaultInstanceTypePermission
+	DefaultPersonaPermission         *DefaultPersonaPermission
+	DefaultReportTypePermission      *DefaultReportTypePermission
+	DefaultTaskPermission            *DefaultTaskPermission
+	DefaultVDIPoolPermission         *DefaultVDIPoolPermission
+	DefaultWorkflowPermission        *DefaultWorkflowPermission
+	FeaturePermission                *FeaturePermission
 }
 
 // DefaultBlueprintPermissionAsUpdateRolePermissionRequest is a convenience function that returns DefaultBlueprintPermission wrapped in UpdateRolePermissionRequest
@@ -112,6 +113,57 @@ func FeaturePermissionAsUpdateRolePermissionRequest(v *FeaturePermission) Update
 	}
 }
 
+func (dst *UpdateRolePermissionRequest) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &UpdateRolePermissionRequest{}
+	}
+
+	if out, ok := data.(DefaultBlueprintPermission); ok {
+		dst.DefaultBlueprintPermission = &out
+	}
+
+	if out, ok := data.(DefaultCatalogItemTypePermission); ok {
+		dst.DefaultCatalogItemTypePermission = &out
+	}
+
+	if out, ok := data.(DefaultCloudPermission); ok {
+		dst.DefaultCloudPermission = &out
+	}
+
+	if out, ok := data.(DefaultGroupPermission); ok {
+		dst.DefaultGroupPermission = &out
+	}
+
+	if out, ok := data.(DefaultInstanceTypePermission); ok {
+		dst.DefaultInstanceTypePermission = &out
+	}
+
+	if out, ok := data.(DefaultPersonaPermission); ok {
+		dst.DefaultPersonaPermission = &out
+	}
+
+	if out, ok := data.(DefaultReportTypePermission); ok {
+		dst.DefaultReportTypePermission = &out
+	}
+
+	if out, ok := data.(DefaultTaskPermission); ok {
+		dst.DefaultTaskPermission = &out
+	}
+
+	if out, ok := data.(DefaultVDIPoolPermission); ok {
+		dst.DefaultVDIPoolPermission = &out
+	}
+
+	if out, ok := data.(DefaultWorkflowPermission); ok {
+		dst.DefaultWorkflowPermission = &out
+	}
+
+	if out, ok := data.(FeaturePermission); ok {
+		dst.FeaturePermission = &out
+	}
+
+	return dst, nil
+}
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *UpdateRolePermissionRequest) UnmarshalJSON(data []byte) error {
@@ -376,7 +428,7 @@ func (src UpdateRolePermissionRequest) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *UpdateRolePermissionRequest) GetActualInstance() (interface{}) {
+func (obj *UpdateRolePermissionRequest) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -429,7 +481,7 @@ func (obj *UpdateRolePermissionRequest) GetActualInstance() (interface{}) {
 }
 
 // Get the actual instance value
-func (obj UpdateRolePermissionRequest) GetActualInstanceValue() (interface{}) {
+func (obj UpdateRolePermissionRequest) GetActualInstanceValue() interface{} {
 	if obj.DefaultBlueprintPermission != nil {
 		return *obj.DefaultBlueprintPermission
 	}
@@ -513,5 +565,3 @@ func (v *NullableUpdateRolePermissionRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

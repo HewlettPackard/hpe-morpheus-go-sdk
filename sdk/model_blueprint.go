@@ -20,18 +20,18 @@ var _ MappedNullable = &Blueprint{}
 
 // Blueprint struct for Blueprint
 type Blueprint struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Labels []string `json:"labels,omitempty"`
-	Type *string `json:"type,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Category *string `json:"category,omitempty"`
-	Config map[string]interface{} `json:"config,omitempty"`
-	Visibility *string `json:"visibility,omitempty"`
-	ResourcePermission map[string]interface{} `json:"resourcePermission,omitempty"`
-	Owner *ListActivity200ResponseAllOfActivityInnerActivityInnerUser `json:"owner,omitempty"`
-	Tenant *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"tenant,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                  `json:"id,omitempty"`
+	Name                 *string                                                                 `json:"name,omitempty"`
+	Labels               []string                                                                `json:"labels,omitempty"`
+	Type                 *string                                                                 `json:"type,omitempty"`
+	Description          *string                                                                 `json:"description,omitempty"`
+	Category             *string                                                                 `json:"category,omitempty"`
+	Config               map[string]interface{}                                                  `json:"config,omitempty"`
+	Visibility           *string                                                                 `json:"visibility,omitempty"`
+	ResourcePermission   map[string]interface{}                                                  `json:"resourcePermission,omitempty"`
+	Owner                *ListActivity200ResponseAllOfActivityInnerActivityInnerUser             `json:"owner,omitempty"`
+	Tenant               *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"tenant,omitempty"`
+	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
 }
 
 type _Blueprint Blueprint
@@ -406,7 +406,7 @@ func (o *Blueprint) SetTenant(v ListApplianceSettings200ResponseApplianceSetting
 }
 
 func (o Blueprint) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -455,72 +455,8 @@ func (o Blueprint) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *Blueprint) UnmarshalJSON(data []byte) (err error) {
-	varBlueprint := _Blueprint{}
-
-	err = json.Unmarshal(data, &varBlueprint)
-
-	if err != nil {
-		return err
-	}
-
-	*o = Blueprint(varBlueprint)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "resourcePermission")
-		delete(additionalProperties, "owner")
-		delete(additionalProperties, "tenant")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableBlueprint struct {
-	value *Blueprint
-	isSet bool
-}
-
-func (v NullableBlueprint) Get() *Blueprint {
-	return v.value
-}
-
-func (v *NullableBlueprint) Set(val *Blueprint) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableBlueprint) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableBlueprint) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableBlueprint(val *Blueprint) *NullableBlueprint {
-	return &NullableBlueprint{value: val, isSet: true}
-}
-
-func (v NullableBlueprint) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableBlueprint) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

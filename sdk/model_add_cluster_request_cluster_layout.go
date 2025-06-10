@@ -21,8 +21,8 @@ var _ MappedNullable = &AddClusterRequestClusterLayout{}
 // AddClusterRequestClusterLayout struct for AddClusterRequestClusterLayout
 type AddClusterRequestClusterLayout struct {
 	// The Layout ID for the host type(s) that will be provisioned for the cluster
-	Id *int64 `json:"id,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddClusterRequestClusterLayout AddClusterRequestClusterLayout
@@ -77,7 +77,7 @@ func (o *AddClusterRequestClusterLayout) SetId(v int64) {
 }
 
 func (o AddClusterRequestClusterLayout) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -96,62 +96,8 @@ func (o AddClusterRequestClusterLayout) ToMap() (map[string]interface{}, error) 
 
 	return toSerialize, nil
 }
-
 func (o *AddClusterRequestClusterLayout) UnmarshalJSON(data []byte) (err error) {
-	varAddClusterRequestClusterLayout := _AddClusterRequestClusterLayout{}
-
-	err = json.Unmarshal(data, &varAddClusterRequestClusterLayout)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddClusterRequestClusterLayout(varAddClusterRequestClusterLayout)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddClusterRequestClusterLayout struct {
-	value *AddClusterRequestClusterLayout
-	isSet bool
-}
-
-func (v NullableAddClusterRequestClusterLayout) Get() *AddClusterRequestClusterLayout {
-	return v.value
-}
-
-func (v *NullableAddClusterRequestClusterLayout) Set(val *AddClusterRequestClusterLayout) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddClusterRequestClusterLayout) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddClusterRequestClusterLayout) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddClusterRequestClusterLayout(val *AddClusterRequestClusterLayout) *NullableAddClusterRequestClusterLayout {
-	return &NullableAddClusterRequestClusterLayout{value: val, isSet: true}
-}
-
-func (v NullableAddClusterRequestClusterLayout) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddClusterRequestClusterLayout) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

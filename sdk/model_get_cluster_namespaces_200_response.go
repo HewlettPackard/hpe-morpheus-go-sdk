@@ -20,9 +20,9 @@ var _ MappedNullable = &GetClusterNamespaces200Response{}
 
 // GetClusterNamespaces200Response struct for GetClusterNamespaces200Response
 type GetClusterNamespaces200Response struct {
-	Namespaces []GetClusterNamespaces200ResponseAllOfNamespacesInner `json:"namespaces,omitempty"`
-	Meta *ListActivity200ResponseAllOfMeta `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Namespaces           []GetClusterNamespaces200ResponseAllOfNamespacesInner `json:"namespaces,omitempty"`
+	Meta                 *ListActivity200ResponseAllOfMeta                     `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}                                `json:",remain"`
 }
 
 type _GetClusterNamespaces200Response GetClusterNamespaces200Response
@@ -109,7 +109,7 @@ func (o *GetClusterNamespaces200Response) SetMeta(v ListActivity200ResponseAllOf
 }
 
 func (o GetClusterNamespaces200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o GetClusterNamespaces200Response) ToMap() (map[string]interface{}, error)
 
 	return toSerialize, nil
 }
-
 func (o *GetClusterNamespaces200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetClusterNamespaces200Response := _GetClusterNamespaces200Response{}
-
-	err = json.Unmarshal(data, &varGetClusterNamespaces200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetClusterNamespaces200Response(varGetClusterNamespaces200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "namespaces")
-		delete(additionalProperties, "meta")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetClusterNamespaces200Response struct {
-	value *GetClusterNamespaces200Response
-	isSet bool
-}
-
-func (v NullableGetClusterNamespaces200Response) Get() *GetClusterNamespaces200Response {
-	return v.value
-}
-
-func (v *NullableGetClusterNamespaces200Response) Set(val *GetClusterNamespaces200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetClusterNamespaces200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetClusterNamespaces200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetClusterNamespaces200Response(val *GetClusterNamespaces200Response) *NullableGetClusterNamespaces200Response {
-	return &NullableGetClusterNamespaces200Response{value: val, isSet: true}
-}
-
-func (v NullableGetClusterNamespaces200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetClusterNamespaces200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

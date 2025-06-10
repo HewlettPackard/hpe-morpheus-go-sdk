@@ -14,6 +14,7 @@ package sdk
 import (
 	"encoding/json"
 	"fmt"
+
 	"gopkg.in/validator.v2"
 )
 
@@ -22,7 +23,7 @@ var _ fmt.Stringer
 
 // UpdateRoleGroupAccessRequest - struct for UpdateRoleGroupAccessRequest
 type UpdateRoleGroupAccessRequest struct {
-	UpdateRoleGroupAccessRequestOneOf *UpdateRoleGroupAccessRequestOneOf
+	UpdateRoleGroupAccessRequestOneOf  *UpdateRoleGroupAccessRequestOneOf
 	UpdateRoleGroupAccessRequestOneOf1 *UpdateRoleGroupAccessRequestOneOf1
 }
 
@@ -40,6 +41,21 @@ func UpdateRoleGroupAccessRequestOneOf1AsUpdateRoleGroupAccessRequest(v *UpdateR
 	}
 }
 
+func (dst *UpdateRoleGroupAccessRequest) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &UpdateRoleGroupAccessRequest{}
+	}
+
+	if out, ok := data.(UpdateRoleGroupAccessRequestOneOf); ok {
+		dst.UpdateRoleGroupAccessRequestOneOf = &out
+	}
+
+	if out, ok := data.(UpdateRoleGroupAccessRequestOneOf1); ok {
+		dst.UpdateRoleGroupAccessRequestOneOf1 = &out
+	}
+
+	return dst, nil
+}
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *UpdateRoleGroupAccessRequest) UnmarshalJSON(data []byte) error {
@@ -106,7 +122,7 @@ func (src UpdateRoleGroupAccessRequest) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *UpdateRoleGroupAccessRequest) GetActualInstance() (interface{}) {
+func (obj *UpdateRoleGroupAccessRequest) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -123,7 +139,7 @@ func (obj *UpdateRoleGroupAccessRequest) GetActualInstance() (interface{}) {
 }
 
 // Get the actual instance value
-func (obj UpdateRoleGroupAccessRequest) GetActualInstanceValue() (interface{}) {
+func (obj UpdateRoleGroupAccessRequest) GetActualInstanceValue() interface{} {
 	if obj.UpdateRoleGroupAccessRequestOneOf != nil {
 		return *obj.UpdateRoleGroupAccessRequestOneOf
 	}
@@ -171,5 +187,3 @@ func (v *NullableUpdateRoleGroupAccessRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

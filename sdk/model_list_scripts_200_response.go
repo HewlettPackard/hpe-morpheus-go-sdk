@@ -20,9 +20,9 @@ var _ MappedNullable = &ListScripts200Response{}
 
 // ListScripts200Response struct for ListScripts200Response
 type ListScripts200Response struct {
-	ContainerScripts []ListScripts200ResponseAllOfContainerScriptsInner `json:"containerScripts,omitempty"`
-	Meta *ListActivity200ResponseAllOfMeta `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ContainerScripts     []ListScripts200ResponseAllOfContainerScriptsInner `json:"containerScripts,omitempty"`
+	Meta                 *ListActivity200ResponseAllOfMeta                  `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}                             `json:",remain"`
 }
 
 type _ListScripts200Response ListScripts200Response
@@ -109,7 +109,7 @@ func (o *ListScripts200Response) SetMeta(v ListActivity200ResponseAllOfMeta) {
 }
 
 func (o ListScripts200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o ListScripts200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ListScripts200Response) UnmarshalJSON(data []byte) (err error) {
-	varListScripts200Response := _ListScripts200Response{}
-
-	err = json.Unmarshal(data, &varListScripts200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListScripts200Response(varListScripts200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "containerScripts")
-		delete(additionalProperties, "meta")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListScripts200Response struct {
-	value *ListScripts200Response
-	isSet bool
-}
-
-func (v NullableListScripts200Response) Get() *ListScripts200Response {
-	return v.value
-}
-
-func (v *NullableListScripts200Response) Set(val *ListScripts200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListScripts200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListScripts200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListScripts200Response(val *ListScripts200Response) *NullableListScripts200Response {
-	return &NullableListScripts200Response{value: val, isSet: true}
-}
-
-func (v NullableListScripts200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListScripts200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

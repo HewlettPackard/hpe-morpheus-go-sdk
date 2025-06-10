@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the NetworkServerGroupCreate type satisfies the MappedNullable interface at compile time
@@ -21,19 +20,19 @@ var _ MappedNullable = &NetworkServerGroupCreate{}
 
 // NetworkServerGroupCreate struct for NetworkServerGroupCreate
 type NetworkServerGroupCreate struct {
-	Id *int64 `json:"id,omitempty"`
-	Name string `json:"name"`
-	Description *string `json:"description,omitempty"`
-	InternalId *string `json:"internalId,omitempty"`
-	ExternalId *string `json:"externalId,omitempty"`
-	Visibility *string `json:"visibility,omitempty"`
-	Account *GetAlerts200ResponseAllOfChecksInnerAccount `json:"account,omitempty"`
-	Owner *GetAlerts200ResponseAllOfChecksInnerAccount `json:"owner,omitempty"`
-	NetworkServer *GetAlerts200ResponseAllOfChecksInnerAccount `json:"networkServer,omitempty"`
-	Permissions *ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions `json:"permissions,omitempty"`
-	Tags []ListNetworkServerGroups200ResponseAllOfGroupsInnerTagsInner `json:"tags,omitempty"`
-	Members []ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner `json:"members,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                           `json:"id,omitempty"`
+	Name                 string                                                           `json:"name"`
+	Description          *string                                                          `json:"description,omitempty"`
+	InternalId           *string                                                          `json:"internalId,omitempty"`
+	ExternalId           *string                                                          `json:"externalId,omitempty"`
+	Visibility           *string                                                          `json:"visibility,omitempty"`
+	Account              *GetAlerts200ResponseAllOfChecksInnerAccount                     `json:"account,omitempty"`
+	Owner                *GetAlerts200ResponseAllOfChecksInnerAccount                     `json:"owner,omitempty"`
+	NetworkServer        *GetAlerts200ResponseAllOfChecksInnerAccount                     `json:"networkServer,omitempty"`
+	Permissions          *ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions   `json:"permissions,omitempty"`
+	Tags                 []ListNetworkServerGroups200ResponseAllOfGroupsInnerTagsInner    `json:"tags,omitempty"`
+	Members              []ListNetworkServerGroups200ResponseAllOfGroupsInnerMembersInner `json:"members,omitempty"`
+	AdditionalProperties map[string]interface{}                                           `json:",remain"`
 }
 
 type _NetworkServerGroupCreate NetworkServerGroupCreate
@@ -433,7 +432,7 @@ func (o *NetworkServerGroupCreate) SetMembers(v []ListNetworkServerGroups200Resp
 }
 
 func (o NetworkServerGroupCreate) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -483,94 +482,8 @@ func (o NetworkServerGroupCreate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *NetworkServerGroupCreate) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varNetworkServerGroupCreate := _NetworkServerGroupCreate{}
-
-	err = json.Unmarshal(data, &varNetworkServerGroupCreate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = NetworkServerGroupCreate(varNetworkServerGroupCreate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "internalId")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "owner")
-		delete(additionalProperties, "networkServer")
-		delete(additionalProperties, "permissions")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "members")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableNetworkServerGroupCreate struct {
-	value *NetworkServerGroupCreate
-	isSet bool
-}
-
-func (v NullableNetworkServerGroupCreate) Get() *NetworkServerGroupCreate {
-	return v.value
-}
-
-func (v *NullableNetworkServerGroupCreate) Set(val *NetworkServerGroupCreate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableNetworkServerGroupCreate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableNetworkServerGroupCreate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableNetworkServerGroupCreate(val *NetworkServerGroupCreate) *NullableNetworkServerGroupCreate {
-	return &NullableNetworkServerGroupCreate{value: val, isSet: true}
-}
-
-func (v NullableNetworkServerGroupCreate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableNetworkServerGroupCreate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

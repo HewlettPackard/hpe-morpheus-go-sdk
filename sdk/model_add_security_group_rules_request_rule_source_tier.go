@@ -21,8 +21,8 @@ var _ MappedNullable = &AddSecurityGroupRulesRequestRuleSourceTier{}
 // AddSecurityGroupRulesRequestRuleSourceTier struct for AddSecurityGroupRulesRequestRuleSourceTier
 type AddSecurityGroupRulesRequestRuleSourceTier struct {
 	// The source Tier ID. Required for `soureType`=tier
-	Id *int64 `json:"id,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddSecurityGroupRulesRequestRuleSourceTier AddSecurityGroupRulesRequestRuleSourceTier
@@ -77,7 +77,7 @@ func (o *AddSecurityGroupRulesRequestRuleSourceTier) SetId(v int64) {
 }
 
 func (o AddSecurityGroupRulesRequestRuleSourceTier) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -96,62 +96,8 @@ func (o AddSecurityGroupRulesRequestRuleSourceTier) ToMap() (map[string]interfac
 
 	return toSerialize, nil
 }
-
 func (o *AddSecurityGroupRulesRequestRuleSourceTier) UnmarshalJSON(data []byte) (err error) {
-	varAddSecurityGroupRulesRequestRuleSourceTier := _AddSecurityGroupRulesRequestRuleSourceTier{}
-
-	err = json.Unmarshal(data, &varAddSecurityGroupRulesRequestRuleSourceTier)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddSecurityGroupRulesRequestRuleSourceTier(varAddSecurityGroupRulesRequestRuleSourceTier)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddSecurityGroupRulesRequestRuleSourceTier struct {
-	value *AddSecurityGroupRulesRequestRuleSourceTier
-	isSet bool
-}
-
-func (v NullableAddSecurityGroupRulesRequestRuleSourceTier) Get() *AddSecurityGroupRulesRequestRuleSourceTier {
-	return v.value
-}
-
-func (v *NullableAddSecurityGroupRulesRequestRuleSourceTier) Set(val *AddSecurityGroupRulesRequestRuleSourceTier) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddSecurityGroupRulesRequestRuleSourceTier) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddSecurityGroupRulesRequestRuleSourceTier) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddSecurityGroupRulesRequestRuleSourceTier(val *AddSecurityGroupRulesRequestRuleSourceTier) *NullableAddSecurityGroupRulesRequestRuleSourceTier {
-	return &NullableAddSecurityGroupRulesRequestRuleSourceTier{value: val, isSet: true}
-}
-
-func (v NullableAddSecurityGroupRulesRequestRuleSourceTier) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddSecurityGroupRulesRequestRuleSourceTier) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

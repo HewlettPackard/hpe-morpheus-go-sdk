@@ -20,9 +20,9 @@ var _ MappedNullable = &ListTenantSubtenantGroups200Response{}
 
 // ListTenantSubtenantGroups200Response struct for ListTenantSubtenantGroups200Response
 type ListTenantSubtenantGroups200Response struct {
-	Groups []ListTenantSubtenantGroups200ResponseAllOfGroupsInner `json:"groups,omitempty"`
-	Meta *ListActivity200ResponseAllOfMeta `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Groups               []ListTenantSubtenantGroups200ResponseAllOfGroupsInner `json:"groups,omitempty"`
+	Meta                 *ListActivity200ResponseAllOfMeta                      `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}                                 `json:",remain"`
 }
 
 type _ListTenantSubtenantGroups200Response ListTenantSubtenantGroups200Response
@@ -109,7 +109,7 @@ func (o *ListTenantSubtenantGroups200Response) SetMeta(v ListActivity200Response
 }
 
 func (o ListTenantSubtenantGroups200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o ListTenantSubtenantGroups200Response) ToMap() (map[string]interface{}, e
 
 	return toSerialize, nil
 }
-
 func (o *ListTenantSubtenantGroups200Response) UnmarshalJSON(data []byte) (err error) {
-	varListTenantSubtenantGroups200Response := _ListTenantSubtenantGroups200Response{}
-
-	err = json.Unmarshal(data, &varListTenantSubtenantGroups200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListTenantSubtenantGroups200Response(varListTenantSubtenantGroups200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "groups")
-		delete(additionalProperties, "meta")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListTenantSubtenantGroups200Response struct {
-	value *ListTenantSubtenantGroups200Response
-	isSet bool
-}
-
-func (v NullableListTenantSubtenantGroups200Response) Get() *ListTenantSubtenantGroups200Response {
-	return v.value
-}
-
-func (v *NullableListTenantSubtenantGroups200Response) Set(val *ListTenantSubtenantGroups200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListTenantSubtenantGroups200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListTenantSubtenantGroups200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListTenantSubtenantGroups200Response(val *ListTenantSubtenantGroups200Response) *NullableListTenantSubtenantGroups200Response {
-	return &NullableListTenantSubtenantGroups200Response{value: val, isSet: true}
-}
-
-func (v NullableListTenantSubtenantGroups200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListTenantSubtenantGroups200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

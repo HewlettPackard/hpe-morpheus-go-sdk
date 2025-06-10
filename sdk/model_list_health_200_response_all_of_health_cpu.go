@@ -20,14 +20,14 @@ var _ MappedNullable = &ListHealth200ResponseAllOfHealthCpu{}
 
 // ListHealth200ResponseAllOfHealthCpu struct for ListHealth200ResponseAllOfHealthCpu
 type ListHealth200ResponseAllOfHealthCpu struct {
-	Success *bool `json:"success,omitempty"`
-	CpuLoad *int64 `json:"cpuLoad,omitempty"`
-	CpuTotalLoad *int64 `json:"cpuTotalLoad,omitempty"`
-	ProcessorCount *int64 `json:"processorCount,omitempty"`
-	ProcessTime *int64 `json:"processTime,omitempty"`
-	SystemLoad *float32 `json:"systemLoad,omitempty"`
-	Status *string `json:"status,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Success              *bool                  `json:"success,omitempty"`
+	CpuLoad              *int64                 `json:"cpuLoad,omitempty"`
+	CpuTotalLoad         *int64                 `json:"cpuTotalLoad,omitempty"`
+	ProcessorCount       *int64                 `json:"processorCount,omitempty"`
+	ProcessTime          *int64                 `json:"processTime,omitempty"`
+	SystemLoad           *float32               `json:"systemLoad,omitempty"`
+	Status               *string                `json:"status,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListHealth200ResponseAllOfHealthCpu ListHealth200ResponseAllOfHealthCpu
@@ -274,7 +274,7 @@ func (o *ListHealth200ResponseAllOfHealthCpu) SetStatus(v string) {
 }
 
 func (o ListHealth200ResponseAllOfHealthCpu) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -311,68 +311,8 @@ func (o ListHealth200ResponseAllOfHealthCpu) ToMap() (map[string]interface{}, er
 
 	return toSerialize, nil
 }
-
 func (o *ListHealth200ResponseAllOfHealthCpu) UnmarshalJSON(data []byte) (err error) {
-	varListHealth200ResponseAllOfHealthCpu := _ListHealth200ResponseAllOfHealthCpu{}
-
-	err = json.Unmarshal(data, &varListHealth200ResponseAllOfHealthCpu)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListHealth200ResponseAllOfHealthCpu(varListHealth200ResponseAllOfHealthCpu)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "success")
-		delete(additionalProperties, "cpuLoad")
-		delete(additionalProperties, "cpuTotalLoad")
-		delete(additionalProperties, "processorCount")
-		delete(additionalProperties, "processTime")
-		delete(additionalProperties, "systemLoad")
-		delete(additionalProperties, "status")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListHealth200ResponseAllOfHealthCpu struct {
-	value *ListHealth200ResponseAllOfHealthCpu
-	isSet bool
-}
-
-func (v NullableListHealth200ResponseAllOfHealthCpu) Get() *ListHealth200ResponseAllOfHealthCpu {
-	return v.value
-}
-
-func (v *NullableListHealth200ResponseAllOfHealthCpu) Set(val *ListHealth200ResponseAllOfHealthCpu) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListHealth200ResponseAllOfHealthCpu) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListHealth200ResponseAllOfHealthCpu) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListHealth200ResponseAllOfHealthCpu(val *ListHealth200ResponseAllOfHealthCpu) *NullableListHealth200ResponseAllOfHealthCpu {
-	return &NullableListHealth200ResponseAllOfHealthCpu{value: val, isSet: true}
-}
-
-func (v NullableListHealth200ResponseAllOfHealthCpu) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListHealth200ResponseAllOfHealthCpu) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

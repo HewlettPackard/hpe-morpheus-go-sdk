@@ -14,6 +14,7 @@ package sdk
 import (
 	"encoding/json"
 	"fmt"
+
 	"gopkg.in/validator.v2"
 )
 
@@ -22,7 +23,7 @@ var _ fmt.Stringer
 
 // UpdateRoleWorkflowAccessRequest - struct for UpdateRoleWorkflowAccessRequest
 type UpdateRoleWorkflowAccessRequest struct {
-	UpdateRoleWorkflowAccessRequestOneOf *UpdateRoleWorkflowAccessRequestOneOf
+	UpdateRoleWorkflowAccessRequestOneOf  *UpdateRoleWorkflowAccessRequestOneOf
 	UpdateRoleWorkflowAccessRequestOneOf1 *UpdateRoleWorkflowAccessRequestOneOf1
 }
 
@@ -40,6 +41,21 @@ func UpdateRoleWorkflowAccessRequestOneOf1AsUpdateRoleWorkflowAccessRequest(v *U
 	}
 }
 
+func (dst *UpdateRoleWorkflowAccessRequest) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &UpdateRoleWorkflowAccessRequest{}
+	}
+
+	if out, ok := data.(UpdateRoleWorkflowAccessRequestOneOf); ok {
+		dst.UpdateRoleWorkflowAccessRequestOneOf = &out
+	}
+
+	if out, ok := data.(UpdateRoleWorkflowAccessRequestOneOf1); ok {
+		dst.UpdateRoleWorkflowAccessRequestOneOf1 = &out
+	}
+
+	return dst, nil
+}
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *UpdateRoleWorkflowAccessRequest) UnmarshalJSON(data []byte) error {
@@ -106,7 +122,7 @@ func (src UpdateRoleWorkflowAccessRequest) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *UpdateRoleWorkflowAccessRequest) GetActualInstance() (interface{}) {
+func (obj *UpdateRoleWorkflowAccessRequest) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -123,7 +139,7 @@ func (obj *UpdateRoleWorkflowAccessRequest) GetActualInstance() (interface{}) {
 }
 
 // Get the actual instance value
-func (obj UpdateRoleWorkflowAccessRequest) GetActualInstanceValue() (interface{}) {
+func (obj UpdateRoleWorkflowAccessRequest) GetActualInstanceValue() interface{} {
 	if obj.UpdateRoleWorkflowAccessRequestOneOf != nil {
 		return *obj.UpdateRoleWorkflowAccessRequestOneOf
 	}
@@ -171,5 +187,3 @@ func (v *NullableUpdateRoleWorkflowAccessRequest) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

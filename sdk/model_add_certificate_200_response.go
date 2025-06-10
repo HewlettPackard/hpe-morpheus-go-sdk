@@ -20,9 +20,9 @@ var _ MappedNullable = &AddCertificate200Response{}
 
 // AddCertificate200Response struct for AddCertificate200Response
 type AddCertificate200Response struct {
-	Certificate *ListCertificates200ResponseCertificatesInner `json:"certificate,omitempty"`
-	Success *bool `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Certificate          *ListCertificates200ResponseCertificatesInner `json:"certificate,omitempty"`
+	Success              *bool                                         `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}                        `json:",remain"`
 }
 
 type _AddCertificate200Response AddCertificate200Response
@@ -109,7 +109,7 @@ func (o *AddCertificate200Response) SetSuccess(v bool) {
 }
 
 func (o AddCertificate200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o AddCertificate200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *AddCertificate200Response) UnmarshalJSON(data []byte) (err error) {
-	varAddCertificate200Response := _AddCertificate200Response{}
-
-	err = json.Unmarshal(data, &varAddCertificate200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddCertificate200Response(varAddCertificate200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "certificate")
-		delete(additionalProperties, "success")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddCertificate200Response struct {
-	value *AddCertificate200Response
-	isSet bool
-}
-
-func (v NullableAddCertificate200Response) Get() *AddCertificate200Response {
-	return v.value
-}
-
-func (v *NullableAddCertificate200Response) Set(val *AddCertificate200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddCertificate200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddCertificate200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddCertificate200Response(val *AddCertificate200Response) *NullableAddCertificate200Response {
-	return &NullableAddCertificate200Response{value: val, isSet: true}
-}
-
-func (v NullableAddCertificate200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddCertificate200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

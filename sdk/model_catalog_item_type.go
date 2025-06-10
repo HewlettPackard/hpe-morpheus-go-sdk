@@ -21,41 +21,41 @@ var _ MappedNullable = &CatalogItemType{}
 
 // CatalogItemType struct for CatalogItemType
 type CatalogItemType struct {
-	Id *int64 `json:"id,omitempty"`
+	Id   *int64  `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
 	// Useful shortcode for provisioning naming schemes and export reference.
 	Code *string `json:"code,omitempty"`
 	// Catalog Item Type category
-	Category *string `json:"category,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Labels []string `json:"labels,omitempty"`
-	Type *string `json:"type,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	Featured *bool `json:"featured,omitempty"`
+	Category    *string  `json:"category,omitempty"`
+	Description *string  `json:"description,omitempty"`
+	Labels      []string `json:"labels,omitempty"`
+	Type        *string  `json:"type,omitempty"`
+	Enabled     *bool    `json:"enabled,omitempty"`
+	Featured    *bool    `json:"featured,omitempty"`
 	// Can users order more than one of this item at a time.
-	AllowQuantity *bool `json:"allowQuantity,omitempty"`
-	IconPath *string `json:"iconPath,omitempty"`
-	ImagePath *string `json:"imagePath,omitempty"`
-	DarkImagePath *string `json:"darkImagePath,omitempty"`
-	Visibility *string `json:"visibility,omitempty"`
-	LayoutCode *string `json:"layoutCode,omitempty"`
-	Blueprint map[string]interface{} `json:"blueprint,omitempty"`
-	AppSpec *string `json:"appSpec,omitempty"`
-	Config map[string]interface{} `json:"config,omitempty"`
-	InstanceSpec *string `json:"instanceSpec,omitempty"`
-	Workflow *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"workflow,omitempty"`
-	Content *string `json:"content,omitempty"`
-	FormType *string `json:"formType,omitempty"`
+	AllowQuantity *bool                                              `json:"allowQuantity,omitempty"`
+	IconPath      *string                                            `json:"iconPath,omitempty"`
+	ImagePath     *string                                            `json:"imagePath,omitempty"`
+	DarkImagePath *string                                            `json:"darkImagePath,omitempty"`
+	Visibility    *string                                            `json:"visibility,omitempty"`
+	LayoutCode    *string                                            `json:"layoutCode,omitempty"`
+	Blueprint     map[string]interface{}                             `json:"blueprint,omitempty"`
+	AppSpec       *string                                            `json:"appSpec,omitempty"`
+	Config        map[string]interface{}                             `json:"config,omitempty"`
+	InstanceSpec  *string                                            `json:"instanceSpec,omitempty"`
+	Workflow      *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"workflow,omitempty"`
+	Content       *string                                            `json:"content,omitempty"`
+	FormType      *string                                            `json:"formType,omitempty"`
 	// Form object that contains input options and/or field groups
 	Form map[string]interface{} `json:"form,omitempty"`
 	// Form config object
-	FormConfig map[string]interface{} `json:"formConfig,omitempty"`
-	OptionTypes []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
-	CreatedBy *string `json:"createdBy,omitempty"`
-	Owner *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"owner,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}
+	FormConfig           map[string]interface{}                                                      `json:"formConfig,omitempty"`
+	OptionTypes          []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
+	CreatedBy            *string                                                                     `json:"createdBy,omitempty"`
+	Owner                *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner     `json:"owner,omitempty"`
+	DateCreated          *time.Time                                                                  `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                                  `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}                                                      `json:",remain"`
 }
 
 type _CatalogItemType CatalogItemType
@@ -1006,7 +1006,7 @@ func (o *CatalogItemType) SetLastUpdated(v time.Time) {
 }
 
 func (o CatalogItemType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1109,90 +1109,8 @@ func (o CatalogItemType) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *CatalogItemType) UnmarshalJSON(data []byte) (err error) {
-	varCatalogItemType := _CatalogItemType{}
-
-	err = json.Unmarshal(data, &varCatalogItemType)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CatalogItemType(varCatalogItemType)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "featured")
-		delete(additionalProperties, "allowQuantity")
-		delete(additionalProperties, "iconPath")
-		delete(additionalProperties, "imagePath")
-		delete(additionalProperties, "darkImagePath")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "layoutCode")
-		delete(additionalProperties, "blueprint")
-		delete(additionalProperties, "appSpec")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "instanceSpec")
-		delete(additionalProperties, "workflow")
-		delete(additionalProperties, "content")
-		delete(additionalProperties, "formType")
-		delete(additionalProperties, "form")
-		delete(additionalProperties, "formConfig")
-		delete(additionalProperties, "optionTypes")
-		delete(additionalProperties, "createdBy")
-		delete(additionalProperties, "owner")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCatalogItemType struct {
-	value *CatalogItemType
-	isSet bool
-}
-
-func (v NullableCatalogItemType) Get() *CatalogItemType {
-	return v.value
-}
-
-func (v *NullableCatalogItemType) Set(val *CatalogItemType) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCatalogItemType) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCatalogItemType) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCatalogItemType(val *CatalogItemType) *NullableCatalogItemType {
-	return &NullableCatalogItemType{value: val, isSet: true}
-}
-
-func (v NullableCatalogItemType) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCatalogItemType) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

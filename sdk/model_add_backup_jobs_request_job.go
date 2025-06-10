@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddBackupJobsRequestJob type satisfies the MappedNullable interface at compile time
@@ -28,8 +27,8 @@ type AddBackupJobsRequestJob struct {
 	// Execute Schedule ID to use for the backup job
 	ScheduleId *int64 `json:"scheduleId,omitempty"`
 	// Retention Count. By default the backup settings value will be used.
-	RetentionCount *int64 `json:"retentionCount,omitempty"`
-	AdditionalProperties map[string]interface{}
+	RetentionCount       *int64                 `json:"retentionCount,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddBackupJobsRequestJob AddBackupJobsRequestJob
@@ -173,7 +172,7 @@ func (o *AddBackupJobsRequestJob) SetRetentionCount(v int64) {
 }
 
 func (o AddBackupJobsRequestJob) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -199,86 +198,8 @@ func (o AddBackupJobsRequestJob) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *AddBackupJobsRequestJob) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddBackupJobsRequestJob := _AddBackupJobsRequestJob{}
-
-	err = json.Unmarshal(data, &varAddBackupJobsRequestJob)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddBackupJobsRequestJob(varAddBackupJobsRequestJob)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "scheduleId")
-		delete(additionalProperties, "retentionCount")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddBackupJobsRequestJob struct {
-	value *AddBackupJobsRequestJob
-	isSet bool
-}
-
-func (v NullableAddBackupJobsRequestJob) Get() *AddBackupJobsRequestJob {
-	return v.value
-}
-
-func (v *NullableAddBackupJobsRequestJob) Set(val *AddBackupJobsRequestJob) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddBackupJobsRequestJob) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddBackupJobsRequestJob) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddBackupJobsRequestJob(val *AddBackupJobsRequestJob) *NullableAddBackupJobsRequestJob {
-	return &NullableAddBackupJobsRequestJob{value: val, isSet: true}
-}
-
-func (v NullableAddBackupJobsRequestJob) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddBackupJobsRequestJob) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

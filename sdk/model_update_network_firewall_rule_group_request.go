@@ -18,10 +18,10 @@ import (
 // checks if the UpdateNetworkFirewallRuleGroupRequest type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &UpdateNetworkFirewallRuleGroupRequest{}
 
-// UpdateNetworkFirewallRuleGroupRequest The parameters for update a network firewall rule group is type dependent. The following lists the common parameters. See get a specific type to list available options for the network server type. 
+// UpdateNetworkFirewallRuleGroupRequest The parameters for update a network firewall rule group is type dependent. The following lists the common parameters. See get a specific type to list available options for the network server type.
 type UpdateNetworkFirewallRuleGroupRequest struct {
-	RuleGroup map[string]interface{} `json:"ruleGroup,omitempty"`
-	AdditionalProperties map[string]interface{}
+	RuleGroup            map[string]interface{} `json:"ruleGroup,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UpdateNetworkFirewallRuleGroupRequest UpdateNetworkFirewallRuleGroupRequest
@@ -76,7 +76,7 @@ func (o *UpdateNetworkFirewallRuleGroupRequest) SetRuleGroup(v map[string]interf
 }
 
 func (o UpdateNetworkFirewallRuleGroupRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o UpdateNetworkFirewallRuleGroupRequest) ToMap() (map[string]interface{}, 
 
 	return toSerialize, nil
 }
-
 func (o *UpdateNetworkFirewallRuleGroupRequest) UnmarshalJSON(data []byte) (err error) {
-	varUpdateNetworkFirewallRuleGroupRequest := _UpdateNetworkFirewallRuleGroupRequest{}
-
-	err = json.Unmarshal(data, &varUpdateNetworkFirewallRuleGroupRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateNetworkFirewallRuleGroupRequest(varUpdateNetworkFirewallRuleGroupRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "ruleGroup")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateNetworkFirewallRuleGroupRequest struct {
-	value *UpdateNetworkFirewallRuleGroupRequest
-	isSet bool
-}
-
-func (v NullableUpdateNetworkFirewallRuleGroupRequest) Get() *UpdateNetworkFirewallRuleGroupRequest {
-	return v.value
-}
-
-func (v *NullableUpdateNetworkFirewallRuleGroupRequest) Set(val *UpdateNetworkFirewallRuleGroupRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateNetworkFirewallRuleGroupRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateNetworkFirewallRuleGroupRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateNetworkFirewallRuleGroupRequest(val *UpdateNetworkFirewallRuleGroupRequest) *NullableUpdateNetworkFirewallRuleGroupRequest {
-	return &NullableUpdateNetworkFirewallRuleGroupRequest{value: val, isSet: true}
-}
-
-func (v NullableUpdateNetworkFirewallRuleGroupRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateNetworkFirewallRuleGroupRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

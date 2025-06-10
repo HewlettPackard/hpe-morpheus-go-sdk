@@ -20,29 +20,29 @@ var _ MappedNullable = &GetRole200Response{}
 
 // GetRole200Response struct for GetRole200Response
 type GetRole200Response struct {
-	Role *ListRoles200ResponseAllOfRolesInner `json:"role,omitempty"`
-	FeaturePermissions []AddRoles200ResponseAllOfFeaturePermissionsInner `json:"featurePermissions,omitempty"`
-	GlobalSiteAccess *string `json:"globalSiteAccess,omitempty"`
-	Sites []AddRoles200ResponseAllOfSitesInner `json:"sites,omitempty"`
-	GlobalZoneAccess *string `json:"globalZoneAccess,omitempty"`
-	Zones []AddRoles200ResponseAllOfSitesInner `json:"zones,omitempty"`
-	GlobalInstanceTypeAccess *string `json:"globalInstanceTypeAccess,omitempty"`
-	InstanceTypePermissions []AddRoles200ResponseAllOfInstanceTypePermissionsInner `json:"instanceTypePermissions,omitempty"`
-	GlobalAppTemplateAccess *string `json:"globalAppTemplateAccess,omitempty"`
-	AppTemplatePermissions []AddRoles200ResponseAllOfAppTemplatePermissionsInner `json:"appTemplatePermissions,omitempty"`
-	GlobalCatalogItemTypeAccess *string `json:"globalCatalogItemTypeAccess,omitempty"`
-	CatalogItemTypePermissions []AddRoles200ResponseAllOfSitesInner `json:"catalogItemTypePermissions,omitempty"`
-	GlobalPersonaAccess *string `json:"globalPersonaAccess,omitempty"`
-	PersonaPermissions []AddRoles200ResponseAllOfInstanceTypePermissionsInner `json:"personaPermissions,omitempty"`
-	GlobalVdiPoolAccess *string `json:"globalVdiPoolAccess,omitempty"`
-	VdiPoolPermissions []AddRoles200ResponseAllOfSitesInner `json:"vdiPoolPermissions,omitempty"`
-	GlobalReportTypeAccess *string `json:"globalReportTypeAccess,omitempty"`
-	ReportTypePermissions []AddRoles200ResponseAllOfInstanceTypePermissionsInner `json:"reportTypePermissions,omitempty"`
-	GlobalTaskAccess *string `json:"globalTaskAccess,omitempty"`
-	TaskPermissions []AddRoles200ResponseAllOfAppTemplatePermissionsInner `json:"taskPermissions,omitempty"`
-	GlobalTaskSetAccess *string `json:"globalTaskSetAccess,omitempty"`
-	TaskSetPermissions []AddRoles200ResponseAllOfAppTemplatePermissionsInner `json:"taskSetPermissions,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Role                        *ListRoles200ResponseAllOfRolesInner                   `json:"role,omitempty"`
+	FeaturePermissions          []AddRoles200ResponseAllOfFeaturePermissionsInner      `json:"featurePermissions,omitempty"`
+	GlobalSiteAccess            *string                                                `json:"globalSiteAccess,omitempty"`
+	Sites                       []AddRoles200ResponseAllOfSitesInner                   `json:"sites,omitempty"`
+	GlobalZoneAccess            *string                                                `json:"globalZoneAccess,omitempty"`
+	Zones                       []AddRoles200ResponseAllOfSitesInner                   `json:"zones,omitempty"`
+	GlobalInstanceTypeAccess    *string                                                `json:"globalInstanceTypeAccess,omitempty"`
+	InstanceTypePermissions     []AddRoles200ResponseAllOfInstanceTypePermissionsInner `json:"instanceTypePermissions,omitempty"`
+	GlobalAppTemplateAccess     *string                                                `json:"globalAppTemplateAccess,omitempty"`
+	AppTemplatePermissions      []AddRoles200ResponseAllOfAppTemplatePermissionsInner  `json:"appTemplatePermissions,omitempty"`
+	GlobalCatalogItemTypeAccess *string                                                `json:"globalCatalogItemTypeAccess,omitempty"`
+	CatalogItemTypePermissions  []AddRoles200ResponseAllOfSitesInner                   `json:"catalogItemTypePermissions,omitempty"`
+	GlobalPersonaAccess         *string                                                `json:"globalPersonaAccess,omitempty"`
+	PersonaPermissions          []AddRoles200ResponseAllOfInstanceTypePermissionsInner `json:"personaPermissions,omitempty"`
+	GlobalVdiPoolAccess         *string                                                `json:"globalVdiPoolAccess,omitempty"`
+	VdiPoolPermissions          []AddRoles200ResponseAllOfSitesInner                   `json:"vdiPoolPermissions,omitempty"`
+	GlobalReportTypeAccess      *string                                                `json:"globalReportTypeAccess,omitempty"`
+	ReportTypePermissions       []AddRoles200ResponseAllOfInstanceTypePermissionsInner `json:"reportTypePermissions,omitempty"`
+	GlobalTaskAccess            *string                                                `json:"globalTaskAccess,omitempty"`
+	TaskPermissions             []AddRoles200ResponseAllOfAppTemplatePermissionsInner  `json:"taskPermissions,omitempty"`
+	GlobalTaskSetAccess         *string                                                `json:"globalTaskSetAccess,omitempty"`
+	TaskSetPermissions          []AddRoles200ResponseAllOfAppTemplatePermissionsInner  `json:"taskSetPermissions,omitempty"`
+	AdditionalProperties        map[string]interface{}                                 `json:",remain"`
 }
 
 type _GetRole200Response GetRole200Response
@@ -769,7 +769,7 @@ func (o *GetRole200Response) SetTaskSetPermissions(v []AddRoles200ResponseAllOfA
 }
 
 func (o GetRole200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -851,83 +851,8 @@ func (o GetRole200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *GetRole200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetRole200Response := _GetRole200Response{}
-
-	err = json.Unmarshal(data, &varGetRole200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetRole200Response(varGetRole200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "role")
-		delete(additionalProperties, "featurePermissions")
-		delete(additionalProperties, "globalSiteAccess")
-		delete(additionalProperties, "sites")
-		delete(additionalProperties, "globalZoneAccess")
-		delete(additionalProperties, "zones")
-		delete(additionalProperties, "globalInstanceTypeAccess")
-		delete(additionalProperties, "instanceTypePermissions")
-		delete(additionalProperties, "globalAppTemplateAccess")
-		delete(additionalProperties, "appTemplatePermissions")
-		delete(additionalProperties, "globalCatalogItemTypeAccess")
-		delete(additionalProperties, "catalogItemTypePermissions")
-		delete(additionalProperties, "globalPersonaAccess")
-		delete(additionalProperties, "personaPermissions")
-		delete(additionalProperties, "globalVdiPoolAccess")
-		delete(additionalProperties, "vdiPoolPermissions")
-		delete(additionalProperties, "globalReportTypeAccess")
-		delete(additionalProperties, "reportTypePermissions")
-		delete(additionalProperties, "globalTaskAccess")
-		delete(additionalProperties, "taskPermissions")
-		delete(additionalProperties, "globalTaskSetAccess")
-		delete(additionalProperties, "taskSetPermissions")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetRole200Response struct {
-	value *GetRole200Response
-	isSet bool
-}
-
-func (v NullableGetRole200Response) Get() *GetRole200Response {
-	return v.value
-}
-
-func (v *NullableGetRole200Response) Set(val *GetRole200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetRole200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetRole200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetRole200Response(val *GetRole200Response) *NullableGetRole200Response {
-	return &NullableGetRole200Response{value: val, isSet: true}
-}
-
-func (v NullableGetRole200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetRole200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

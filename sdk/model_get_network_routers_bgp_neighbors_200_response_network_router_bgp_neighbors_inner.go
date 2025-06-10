@@ -21,34 +21,34 @@ var _ MappedNullable = &GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgp
 
 // GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner struct for GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner
 type GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner struct {
-	Id *int64 `json:"id,omitempty"`
-	IpAddress *string `json:"ipAddress,omitempty"`
-	ForwardingAddress *string `json:"forwardingAddress,omitempty"`
-	ProtocolAddress *string `json:"protocolAddress,omitempty"`
-	RemoteAs *string `json:"remoteAs,omitempty"`
-	Weight *int64 `json:"weight,omitempty"`
-	KeepAlive *int64 `json:"keepAlive,omitempty"`
-	HoldDown *int64 `json:"holdDown,omitempty"`
-	Password *string `json:"password,omitempty"`
-	RouteFilteringType *string `json:"routeFilteringType,omitempty"`
-	RouteFilteringIn *string `json:"routeFilteringIn,omitempty"`
-	RouteFilteringOut *string `json:"routeFilteringOut,omitempty"`
-	BfdEnabled *bool `json:"bfdEnabled,omitempty"`
-	BfdInterval *int64 `json:"bfdInterval,omitempty"`
-	BfdMultiple *int64 `json:"bfdMultiple,omitempty"`
-	AllowAsIn *bool `json:"allowAsIn,omitempty"`
-	HopLimit *int64 `json:"hopLimit,omitempty"`
-	RestartMode *string `json:"restartMode,omitempty"`
-	ProviderId *string `json:"providerId,omitempty"`
-	SyncSource *string `json:"syncSource,omitempty"`
-	InternalId *string `json:"internalId,omitempty"`
-	ExternalId *string `json:"externalId,omitempty"`
-	RefType *string `json:"refType,omitempty"`
-	RefId *string `json:"refId,omitempty"`
-	Config *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInnerConfig `json:"config,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                        `json:"id,omitempty"`
+	IpAddress            *string                                                                       `json:"ipAddress,omitempty"`
+	ForwardingAddress    *string                                                                       `json:"forwardingAddress,omitempty"`
+	ProtocolAddress      *string                                                                       `json:"protocolAddress,omitempty"`
+	RemoteAs             *string                                                                       `json:"remoteAs,omitempty"`
+	Weight               *int64                                                                        `json:"weight,omitempty"`
+	KeepAlive            *int64                                                                        `json:"keepAlive,omitempty"`
+	HoldDown             *int64                                                                        `json:"holdDown,omitempty"`
+	Password             *string                                                                       `json:"password,omitempty"`
+	RouteFilteringType   *string                                                                       `json:"routeFilteringType,omitempty"`
+	RouteFilteringIn     *string                                                                       `json:"routeFilteringIn,omitempty"`
+	RouteFilteringOut    *string                                                                       `json:"routeFilteringOut,omitempty"`
+	BfdEnabled           *bool                                                                         `json:"bfdEnabled,omitempty"`
+	BfdInterval          *int64                                                                        `json:"bfdInterval,omitempty"`
+	BfdMultiple          *int64                                                                        `json:"bfdMultiple,omitempty"`
+	AllowAsIn            *bool                                                                         `json:"allowAsIn,omitempty"`
+	HopLimit             *int64                                                                        `json:"hopLimit,omitempty"`
+	RestartMode          *string                                                                       `json:"restartMode,omitempty"`
+	ProviderId           *string                                                                       `json:"providerId,omitempty"`
+	SyncSource           *string                                                                       `json:"syncSource,omitempty"`
+	InternalId           *string                                                                       `json:"internalId,omitempty"`
+	ExternalId           *string                                                                       `json:"externalId,omitempty"`
+	RefType              *string                                                                       `json:"refType,omitempty"`
+	RefId                *string                                                                       `json:"refId,omitempty"`
+	Config               *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInnerConfig `json:"config,omitempty"`
+	DateCreated          *time.Time                                                                    `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                                    `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}                                                        `json:",remain"`
 }
 
 type _GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner
@@ -935,7 +935,7 @@ func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner)
 }
 
 func (o GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1032,88 +1032,8 @@ func (o GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) 
 
 	return toSerialize, nil
 }
-
 func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) UnmarshalJSON(data []byte) (err error) {
-	varGetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner := _GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner{}
-
-	err = json.Unmarshal(data, &varGetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner(varGetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "ipAddress")
-		delete(additionalProperties, "forwardingAddress")
-		delete(additionalProperties, "protocolAddress")
-		delete(additionalProperties, "remoteAs")
-		delete(additionalProperties, "weight")
-		delete(additionalProperties, "keepAlive")
-		delete(additionalProperties, "holdDown")
-		delete(additionalProperties, "password")
-		delete(additionalProperties, "routeFilteringType")
-		delete(additionalProperties, "routeFilteringIn")
-		delete(additionalProperties, "routeFilteringOut")
-		delete(additionalProperties, "bfdEnabled")
-		delete(additionalProperties, "bfdInterval")
-		delete(additionalProperties, "bfdMultiple")
-		delete(additionalProperties, "allowAsIn")
-		delete(additionalProperties, "hopLimit")
-		delete(additionalProperties, "restartMode")
-		delete(additionalProperties, "providerId")
-		delete(additionalProperties, "syncSource")
-		delete(additionalProperties, "internalId")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "refType")
-		delete(additionalProperties, "refId")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner struct {
-	value *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner
-	isSet bool
-}
-
-func (v NullableGetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) Get() *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner {
-	return v.value
-}
-
-func (v *NullableGetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) Set(val *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner(val *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) *NullableGetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner {
-	return &NullableGetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner{value: val, isSet: true}
-}
-
-func (v NullableGetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

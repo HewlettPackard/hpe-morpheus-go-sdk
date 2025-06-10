@@ -21,7 +21,7 @@ var _ MappedNullable = &InstanceSchedule{}
 
 // InstanceSchedule struct for InstanceSchedule
 type InstanceSchedule struct {
-	Id *int64 `json:"id,omitempty"`
+	Id           *int64  `json:"id,omitempty"`
 	ScheduleType *string `json:"scheduleType,omitempty"`
 	// Time Zone eg. America/New_York, Europe/Amsterdam, etc. Only used and required for scheduleType `dayOfWeek`
 	ScheduleTimezone *string `json:"scheduleTimezone,omitempty"`
@@ -40,11 +40,11 @@ type InstanceSchedule struct {
 	// Start day and time or start date formatted for display
 	StartDisplay *string `json:"startDisplay,omitempty"`
 	// End day and time or end date formatted for display
-	EndDisplay *string `json:"endDisplay,omitempty"`
-	Threshold *GetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold `json:"threshold,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}
+	EndDisplay           *string                                                         `json:"endDisplay,omitempty"`
+	Threshold            *GetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold `json:"threshold,omitempty"`
+	DateCreated          *time.Time                                                      `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                      `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}                                          `json:",remain"`
 }
 
 type _InstanceSchedule InstanceSchedule
@@ -523,7 +523,7 @@ func (o *InstanceSchedule) SetLastUpdated(v time.Time) {
 }
 
 func (o InstanceSchedule) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -581,75 +581,8 @@ func (o InstanceSchedule) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *InstanceSchedule) UnmarshalJSON(data []byte) (err error) {
-	varInstanceSchedule := _InstanceSchedule{}
-
-	err = json.Unmarshal(data, &varInstanceSchedule)
-
-	if err != nil {
-		return err
-	}
-
-	*o = InstanceSchedule(varInstanceSchedule)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "scheduleType")
-		delete(additionalProperties, "scheduleTimezone")
-		delete(additionalProperties, "startDayOfWeek")
-		delete(additionalProperties, "startTime")
-		delete(additionalProperties, "endDayOfWeek")
-		delete(additionalProperties, "endTime")
-		delete(additionalProperties, "startDate")
-		delete(additionalProperties, "endDate")
-		delete(additionalProperties, "startDisplay")
-		delete(additionalProperties, "endDisplay")
-		delete(additionalProperties, "threshold")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableInstanceSchedule struct {
-	value *InstanceSchedule
-	isSet bool
-}
-
-func (v NullableInstanceSchedule) Get() *InstanceSchedule {
-	return v.value
-}
-
-func (v *NullableInstanceSchedule) Set(val *InstanceSchedule) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableInstanceSchedule) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableInstanceSchedule) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableInstanceSchedule(val *InstanceSchedule) *NullableInstanceSchedule {
-	return &NullableInstanceSchedule{value: val, isSet: true}
-}
-
-func (v NullableInstanceSchedule) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableInstanceSchedule) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

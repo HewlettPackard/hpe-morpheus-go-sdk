@@ -23,13 +23,13 @@ type UpdateTenantRequestAccount struct {
 	// Name
 	Name *string `json:"name,omitempty"`
 	// Description
-	Description *string `json:"description,omitempty"`
-	Role *UpdateTenantRequestAccountRole `json:"role,omitempty"`
+	Description *string                         `json:"description,omitempty"`
+	Role        *UpdateTenantRequestAccountRole `json:"role,omitempty"`
 	// The subdomain. This will be part of the login URL and username for sub tenant users.
 	Subdomain *string `json:"subdomain,omitempty"`
 	// Currency Code (ISO 4217)
-	Currency *string `json:"currency,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Currency             *string                `json:"currency,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UpdateTenantRequestAccount UpdateTenantRequestAccount
@@ -216,7 +216,7 @@ func (o *UpdateTenantRequestAccount) SetCurrency(v string) {
 }
 
 func (o UpdateTenantRequestAccount) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -247,66 +247,8 @@ func (o UpdateTenantRequestAccount) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *UpdateTenantRequestAccount) UnmarshalJSON(data []byte) (err error) {
-	varUpdateTenantRequestAccount := _UpdateTenantRequestAccount{}
-
-	err = json.Unmarshal(data, &varUpdateTenantRequestAccount)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateTenantRequestAccount(varUpdateTenantRequestAccount)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "role")
-		delete(additionalProperties, "subdomain")
-		delete(additionalProperties, "currency")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateTenantRequestAccount struct {
-	value *UpdateTenantRequestAccount
-	isSet bool
-}
-
-func (v NullableUpdateTenantRequestAccount) Get() *UpdateTenantRequestAccount {
-	return v.value
-}
-
-func (v *NullableUpdateTenantRequestAccount) Set(val *UpdateTenantRequestAccount) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateTenantRequestAccount) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateTenantRequestAccount) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateTenantRequestAccount(val *UpdateTenantRequestAccount) *NullableUpdateTenantRequestAccount {
-	return &NullableUpdateTenantRequestAccount{value: val, isSet: true}
-}
-
-func (v NullableUpdateTenantRequestAccount) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateTenantRequestAccount) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

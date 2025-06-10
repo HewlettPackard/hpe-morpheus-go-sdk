@@ -20,11 +20,11 @@ var _ MappedNullable = &CatalogCart{}
 
 // CatalogCart struct for CatalogCart
 type CatalogCart struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Items []ListCatalogCart200ResponseCartItemsInner `json:"items,omitempty"`
-	Stats *ListCatalogCart200ResponseCartStats `json:"stats,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                     `json:"id,omitempty"`
+	Name                 *string                                    `json:"name,omitempty"`
+	Items                []ListCatalogCart200ResponseCartItemsInner `json:"items,omitempty"`
+	Stats                *ListCatalogCart200ResponseCartStats       `json:"stats,omitempty"`
+	AdditionalProperties map[string]interface{}                     `json:",remain"`
 }
 
 type _CatalogCart CatalogCart
@@ -175,7 +175,7 @@ func (o *CatalogCart) SetStats(v ListCatalogCart200ResponseCartStats) {
 }
 
 func (o CatalogCart) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -203,65 +203,8 @@ func (o CatalogCart) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *CatalogCart) UnmarshalJSON(data []byte) (err error) {
-	varCatalogCart := _CatalogCart{}
-
-	err = json.Unmarshal(data, &varCatalogCart)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CatalogCart(varCatalogCart)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "items")
-		delete(additionalProperties, "stats")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCatalogCart struct {
-	value *CatalogCart
-	isSet bool
-}
-
-func (v NullableCatalogCart) Get() *CatalogCart {
-	return v.value
-}
-
-func (v *NullableCatalogCart) Set(val *CatalogCart) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCatalogCart) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCatalogCart) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCatalogCart(val *CatalogCart) *NullableCatalogCart {
-	return &NullableCatalogCart{value: val, isSet: true}
-}
-
-func (v NullableCatalogCart) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCatalogCart) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

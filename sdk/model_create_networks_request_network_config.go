@@ -19,20 +19,43 @@ import (
 // very silly way of avoiding `"fmt" imported and not used` errors
 var _ fmt.Stringer
 
-
 // CreateNetworksRequestNetworkConfig Configuration object. Settings vary by type.
 type CreateNetworksRequestNetworkConfig struct {
-	CreateNetworksRequestNetworkConfigAnyOf *CreateNetworksRequestNetworkConfigAnyOf
+	CreateNetworksRequestNetworkConfigAnyOf  *CreateNetworksRequestNetworkConfigAnyOf
 	CreateNetworksRequestNetworkConfigAnyOf1 *CreateNetworksRequestNetworkConfigAnyOf1
 	CreateNetworksRequestNetworkConfigAnyOf2 *CreateNetworksRequestNetworkConfigAnyOf2
-	MapmapOfStringAny *map[string]interface{}
+	MapmapOfStringAny                        *map[string]interface{}
+}
+
+func (dst *CreateNetworksRequestNetworkConfig) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &CreateNetworksRequestNetworkConfig{}
+	}
+
+	if out, ok := data.(CreateNetworksRequestNetworkConfigAnyOf); ok {
+		dst.CreateNetworksRequestNetworkConfigAnyOf = &out
+	}
+
+	if out, ok := data.(CreateNetworksRequestNetworkConfigAnyOf1); ok {
+		dst.CreateNetworksRequestNetworkConfigAnyOf1 = &out
+	}
+
+	if out, ok := data.(CreateNetworksRequestNetworkConfigAnyOf2); ok {
+		dst.CreateNetworksRequestNetworkConfigAnyOf2 = &out
+	}
+
+	if out, ok := data.(map[string]interface{}); ok {
+		dst.MapmapOfStringAny = &out
+	}
+
+	return dst, nil
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *CreateNetworksRequestNetworkConfig) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into CreateNetworksRequestNetworkConfigAnyOf
-	err = json.Unmarshal(data, &dst.CreateNetworksRequestNetworkConfigAnyOf);
+	err = json.Unmarshal(data, &dst.CreateNetworksRequestNetworkConfigAnyOf)
 	if err == nil {
 		jsonCreateNetworksRequestNetworkConfigAnyOf, _ := json.Marshal(dst.CreateNetworksRequestNetworkConfigAnyOf)
 		if string(jsonCreateNetworksRequestNetworkConfigAnyOf) == "{}" { // empty struct
@@ -45,7 +68,7 @@ func (dst *CreateNetworksRequestNetworkConfig) UnmarshalJSON(data []byte) error 
 	}
 
 	// try to unmarshal JSON data into CreateNetworksRequestNetworkConfigAnyOf1
-	err = json.Unmarshal(data, &dst.CreateNetworksRequestNetworkConfigAnyOf1);
+	err = json.Unmarshal(data, &dst.CreateNetworksRequestNetworkConfigAnyOf1)
 	if err == nil {
 		jsonCreateNetworksRequestNetworkConfigAnyOf1, _ := json.Marshal(dst.CreateNetworksRequestNetworkConfigAnyOf1)
 		if string(jsonCreateNetworksRequestNetworkConfigAnyOf1) == "{}" { // empty struct
@@ -58,7 +81,7 @@ func (dst *CreateNetworksRequestNetworkConfig) UnmarshalJSON(data []byte) error 
 	}
 
 	// try to unmarshal JSON data into CreateNetworksRequestNetworkConfigAnyOf2
-	err = json.Unmarshal(data, &dst.CreateNetworksRequestNetworkConfigAnyOf2);
+	err = json.Unmarshal(data, &dst.CreateNetworksRequestNetworkConfigAnyOf2)
 	if err == nil {
 		jsonCreateNetworksRequestNetworkConfigAnyOf2, _ := json.Marshal(dst.CreateNetworksRequestNetworkConfigAnyOf2)
 		if string(jsonCreateNetworksRequestNetworkConfigAnyOf2) == "{}" { // empty struct
@@ -71,7 +94,7 @@ func (dst *CreateNetworksRequestNetworkConfig) UnmarshalJSON(data []byte) error 
 	}
 
 	// try to unmarshal JSON data into MapmapOfStringAny
-	err = json.Unmarshal(data, &dst.MapmapOfStringAny);
+	err = json.Unmarshal(data, &dst.MapmapOfStringAny)
 	if err == nil {
 		jsonMapmapOfStringAny, _ := json.Marshal(dst.MapmapOfStringAny)
 		if string(jsonMapmapOfStringAny) == "{}" { // empty struct
@@ -106,7 +129,6 @@ func (src CreateNetworksRequestNetworkConfig) MarshalJSON() ([]byte, error) {
 
 	return nil, nil // no data in anyOf schemas
 }
-
 
 type NullableCreateNetworksRequestNetworkConfig struct {
 	value *CreateNetworksRequestNetworkConfig
@@ -143,5 +165,3 @@ func (v *NullableCreateNetworksRequestNetworkConfig) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,15 +20,15 @@ var _ MappedNullable = &AddBaremetalHostRequestServer{}
 
 // AddBaremetalHostRequestServer struct for AddBaremetalHostRequestServer
 type AddBaremetalHostRequestServer struct {
-	Cloud *AddBaremetalHostRequestServerCloud `json:"cloud,omitempty"`
-	ComputeServerType *AddBaremetalHostRequestServerComputeServerType `json:"computeServerType,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Group *AddBaremetalHostRequestServerGroup `json:"group,omitempty"`
-	Labels []string `json:"labels,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Visibility *string `json:"visibility,omitempty"`
-	Config *AddBaremetalHostRequestServerConfig `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Cloud                *AddBaremetalHostRequestServerCloud             `json:"cloud,omitempty"`
+	ComputeServerType    *AddBaremetalHostRequestServerComputeServerType `json:"computeServerType,omitempty"`
+	Description          *string                                         `json:"description,omitempty"`
+	Group                *AddBaremetalHostRequestServerGroup             `json:"group,omitempty"`
+	Labels               []string                                        `json:"labels,omitempty"`
+	Name                 *string                                         `json:"name,omitempty"`
+	Visibility           *string                                         `json:"visibility,omitempty"`
+	Config               *AddBaremetalHostRequestServerConfig            `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}                          `json:",remain"`
 }
 
 type _AddBaremetalHostRequestServer AddBaremetalHostRequestServer
@@ -307,7 +307,7 @@ func (o *AddBaremetalHostRequestServer) SetConfig(v AddBaremetalHostRequestServe
 }
 
 func (o AddBaremetalHostRequestServer) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -347,69 +347,8 @@ func (o AddBaremetalHostRequestServer) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *AddBaremetalHostRequestServer) UnmarshalJSON(data []byte) (err error) {
-	varAddBaremetalHostRequestServer := _AddBaremetalHostRequestServer{}
-
-	err = json.Unmarshal(data, &varAddBaremetalHostRequestServer)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddBaremetalHostRequestServer(varAddBaremetalHostRequestServer)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "cloud")
-		delete(additionalProperties, "computeServerType")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "group")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "config")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddBaremetalHostRequestServer struct {
-	value *AddBaremetalHostRequestServer
-	isSet bool
-}
-
-func (v NullableAddBaremetalHostRequestServer) Get() *AddBaremetalHostRequestServer {
-	return v.value
-}
-
-func (v *NullableAddBaremetalHostRequestServer) Set(val *AddBaremetalHostRequestServer) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddBaremetalHostRequestServer) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddBaremetalHostRequestServer) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddBaremetalHostRequestServer(val *AddBaremetalHostRequestServer) *NullableAddBaremetalHostRequestServer {
-	return &NullableAddBaremetalHostRequestServer{value: val, isSet: true}
-}
-
-func (v NullableAddBaremetalHostRequestServer) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddBaremetalHostRequestServer) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

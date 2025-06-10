@@ -13,13 +13,12 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the NetworkFirewallRuleGroupCreate type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &NetworkFirewallRuleGroupCreate{}
 
-// NetworkFirewallRuleGroupCreate The parameters for creating a network firewall rule group is type dependent. The following lists the common parameters. See get a specific type to list available options for the network server type. 
+// NetworkFirewallRuleGroupCreate The parameters for creating a network firewall rule group is type dependent. The following lists the common parameters. See get a specific type to list available options for the network server type.
 type NetworkFirewallRuleGroupCreate struct {
 	// Network firewall rule group name
 	Name string `json:"name"`
@@ -28,9 +27,9 @@ type NetworkFirewallRuleGroupCreate struct {
 	// Network firewall rule group priority
 	Priority *int64 `json:"priority,omitempty"`
 	// Use SecurityPolicy
-	ExternalType string `json:"externalType"`
-	GroupLayer *string `json:"groupLayer,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ExternalType         string                 `json:"externalType"`
+	GroupLayer           *string                `json:"groupLayer,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _NetworkFirewallRuleGroupCreate NetworkFirewallRuleGroupCreate
@@ -199,7 +198,7 @@ func (o *NetworkFirewallRuleGroupCreate) SetGroupLayer(v string) {
 }
 
 func (o NetworkFirewallRuleGroupCreate) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -226,88 +225,8 @@ func (o NetworkFirewallRuleGroupCreate) ToMap() (map[string]interface{}, error) 
 
 	return toSerialize, nil
 }
-
 func (o *NetworkFirewallRuleGroupCreate) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-		"externalType",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varNetworkFirewallRuleGroupCreate := _NetworkFirewallRuleGroupCreate{}
-
-	err = json.Unmarshal(data, &varNetworkFirewallRuleGroupCreate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = NetworkFirewallRuleGroupCreate(varNetworkFirewallRuleGroupCreate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "priority")
-		delete(additionalProperties, "externalType")
-		delete(additionalProperties, "groupLayer")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableNetworkFirewallRuleGroupCreate struct {
-	value *NetworkFirewallRuleGroupCreate
-	isSet bool
-}
-
-func (v NullableNetworkFirewallRuleGroupCreate) Get() *NetworkFirewallRuleGroupCreate {
-	return v.value
-}
-
-func (v *NullableNetworkFirewallRuleGroupCreate) Set(val *NetworkFirewallRuleGroupCreate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableNetworkFirewallRuleGroupCreate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableNetworkFirewallRuleGroupCreate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableNetworkFirewallRuleGroupCreate(val *NetworkFirewallRuleGroupCreate) *NullableNetworkFirewallRuleGroupCreate {
-	return &NullableNetworkFirewallRuleGroupCreate{value: val, isSet: true}
-}
-
-func (v NullableNetworkFirewallRuleGroupCreate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableNetworkFirewallRuleGroupCreate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

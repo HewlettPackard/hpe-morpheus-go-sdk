@@ -21,8 +21,8 @@ var _ MappedNullable = &UpdateNetworkRouterPermissionsRequestPermissionsTenantPe
 // UpdateNetworkRouterPermissionsRequestPermissionsTenantPermissions struct for UpdateNetworkRouterPermissionsRequestPermissionsTenantPermissions
 type UpdateNetworkRouterPermissionsRequestPermissionsTenantPermissions struct {
 	// Array of tenant account IDs
-	Accounts []int64 `json:"accounts,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Accounts             []int64                `json:"accounts,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UpdateNetworkRouterPermissionsRequestPermissionsTenantPermissions UpdateNetworkRouterPermissionsRequestPermissionsTenantPermissions
@@ -77,7 +77,7 @@ func (o *UpdateNetworkRouterPermissionsRequestPermissionsTenantPermissions) SetA
 }
 
 func (o UpdateNetworkRouterPermissionsRequestPermissionsTenantPermissions) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -96,62 +96,8 @@ func (o UpdateNetworkRouterPermissionsRequestPermissionsTenantPermissions) ToMap
 
 	return toSerialize, nil
 }
-
 func (o *UpdateNetworkRouterPermissionsRequestPermissionsTenantPermissions) UnmarshalJSON(data []byte) (err error) {
-	varUpdateNetworkRouterPermissionsRequestPermissionsTenantPermissions := _UpdateNetworkRouterPermissionsRequestPermissionsTenantPermissions{}
-
-	err = json.Unmarshal(data, &varUpdateNetworkRouterPermissionsRequestPermissionsTenantPermissions)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateNetworkRouterPermissionsRequestPermissionsTenantPermissions(varUpdateNetworkRouterPermissionsRequestPermissionsTenantPermissions)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "accounts")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateNetworkRouterPermissionsRequestPermissionsTenantPermissions struct {
-	value *UpdateNetworkRouterPermissionsRequestPermissionsTenantPermissions
-	isSet bool
-}
-
-func (v NullableUpdateNetworkRouterPermissionsRequestPermissionsTenantPermissions) Get() *UpdateNetworkRouterPermissionsRequestPermissionsTenantPermissions {
-	return v.value
-}
-
-func (v *NullableUpdateNetworkRouterPermissionsRequestPermissionsTenantPermissions) Set(val *UpdateNetworkRouterPermissionsRequestPermissionsTenantPermissions) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateNetworkRouterPermissionsRequestPermissionsTenantPermissions) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateNetworkRouterPermissionsRequestPermissionsTenantPermissions) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateNetworkRouterPermissionsRequestPermissionsTenantPermissions(val *UpdateNetworkRouterPermissionsRequestPermissionsTenantPermissions) *NullableUpdateNetworkRouterPermissionsRequestPermissionsTenantPermissions {
-	return &NullableUpdateNetworkRouterPermissionsRequestPermissionsTenantPermissions{value: val, isSet: true}
-}
-
-func (v NullableUpdateNetworkRouterPermissionsRequestPermissionsTenantPermissions) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateNetworkRouterPermissionsRequestPermissionsTenantPermissions) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

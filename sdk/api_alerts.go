@@ -22,13 +22,12 @@ import (
 	"time"
 )
 
-
 // AlertsAPIService AlertsAPI service
 type AlertsAPIService service
 
 type ApiAddAlertsRequest struct {
-	ctx context.Context
-	ApiService *AlertsAPIService
+	ctx              context.Context
+	ApiService       *AlertsAPIService
 	addAlertsRequest *AddAlertsRequest
 }
 
@@ -46,24 +45,25 @@ AddAlerts Create a New Alert
 
 Create a new monitoring alert.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddAlertsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddAlertsRequest
 */
 func (a *AlertsAPIService) AddAlerts(ctx context.Context) ApiAddAlertsRequest {
 	return ApiAddAlertsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddAlerts200Response
+//
+//	@return AddAlerts200Response
 func (a *AlertsAPIService) AddAlertsExecute(r ApiAddAlertsRequest) (*AddAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddAlerts200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlertsAPIService.AddAlerts")
@@ -115,7 +115,7 @@ func (a *AlertsAPIService) AddAlertsExecute(r ApiAddAlertsRequest) (*AddAlerts20
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -124,8 +124,8 @@ func (a *AlertsAPIService) AddAlertsExecute(r ApiAddAlertsRequest) (*AddAlerts20
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -135,8 +135,8 @@ func (a *AlertsAPIService) AddAlertsExecute(r ApiAddAlertsRequest) (*AddAlerts20
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -144,8 +144,8 @@ func (a *AlertsAPIService) AddAlertsExecute(r ApiAddAlertsRequest) (*AddAlerts20
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -154,9 +154,9 @@ func (a *AlertsAPIService) AddAlertsExecute(r ApiAddAlertsRequest) (*AddAlerts20
 }
 
 type ApiDeleteAlertsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AlertsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiDeleteAlertsRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -168,26 +168,27 @@ DeleteAlerts Delete a Specific Alert
 
 Delete an existing monitoring alert.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiDeleteAlertsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeleteAlertsRequest
 */
 func (a *AlertsAPIService) DeleteAlerts(ctx context.Context, id int64) ApiDeleteAlertsRequest {
 	return ApiDeleteAlertsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *AlertsAPIService) DeleteAlertsExecute(r ApiDeleteAlertsRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlertsAPIService.DeleteAlerts")
@@ -238,7 +239,7 @@ func (a *AlertsAPIService) DeleteAlertsExecute(r ApiDeleteAlertsRequest) (*Delet
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -247,8 +248,8 @@ func (a *AlertsAPIService) DeleteAlertsExecute(r ApiDeleteAlertsRequest) (*Delet
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -258,8 +259,8 @@ func (a *AlertsAPIService) DeleteAlertsExecute(r ApiDeleteAlertsRequest) (*Delet
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -267,8 +268,8 @@ func (a *AlertsAPIService) DeleteAlertsExecute(r ApiDeleteAlertsRequest) (*Delet
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -277,9 +278,9 @@ func (a *AlertsAPIService) DeleteAlertsExecute(r ApiDeleteAlertsRequest) (*Delet
 }
 
 type ApiGetAlertsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AlertsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetAlertsRequest) Execute() (*GetAlerts200Response, *http.Response, error) {
@@ -291,26 +292,27 @@ GetAlerts Get a Specific Alert
 
 Get details about a specific monitoring alert.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetAlertsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetAlertsRequest
 */
 func (a *AlertsAPIService) GetAlerts(ctx context.Context, id int64) ApiGetAlertsRequest {
 	return ApiGetAlertsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetAlerts200Response
+//
+//	@return GetAlerts200Response
 func (a *AlertsAPIService) GetAlertsExecute(r ApiGetAlertsRequest) (*GetAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetAlerts200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlertsAPIService.GetAlerts")
@@ -361,7 +363,7 @@ func (a *AlertsAPIService) GetAlertsExecute(r ApiGetAlertsRequest) (*GetAlerts20
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -370,8 +372,8 @@ func (a *AlertsAPIService) GetAlertsExecute(r ApiGetAlertsRequest) (*GetAlerts20
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -381,8 +383,8 @@ func (a *AlertsAPIService) GetAlertsExecute(r ApiGetAlertsRequest) (*GetAlerts20
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -390,8 +392,8 @@ func (a *AlertsAPIService) GetAlertsExecute(r ApiGetAlertsRequest) (*GetAlerts20
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -400,10 +402,10 @@ func (a *AlertsAPIService) GetAlertsExecute(r ApiGetAlertsRequest) (*GetAlerts20
 }
 
 type ApiListAlertsRequest struct {
-	ctx context.Context
-	ApiService *AlertsAPIService
-	max *int64
-	offset *int64
+	ctx         context.Context
+	ApiService  *AlertsAPIService
+	max         *int64
+	offset      *int64
 	lastUpdated *time.Time
 }
 
@@ -434,24 +436,25 @@ ListAlerts List All Alerts
 
 Get a list of monitoring alerts.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListAlertsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListAlertsRequest
 */
 func (a *AlertsAPIService) ListAlerts(ctx context.Context) ApiListAlertsRequest {
 	return ApiListAlertsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListAlerts200Response
+//
+//	@return ListAlerts200Response
 func (a *AlertsAPIService) ListAlertsExecute(r ApiListAlertsRequest) (*ListAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListAlerts200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlertsAPIService.ListAlerts")
@@ -516,7 +519,7 @@ func (a *AlertsAPIService) ListAlertsExecute(r ApiListAlertsRequest) (*ListAlert
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -525,8 +528,8 @@ func (a *AlertsAPIService) ListAlertsExecute(r ApiListAlertsRequest) (*ListAlert
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -536,8 +539,8 @@ func (a *AlertsAPIService) ListAlertsExecute(r ApiListAlertsRequest) (*ListAlert
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -545,8 +548,8 @@ func (a *AlertsAPIService) ListAlertsExecute(r ApiListAlertsRequest) (*ListAlert
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -555,9 +558,9 @@ func (a *AlertsAPIService) ListAlertsExecute(r ApiListAlertsRequest) (*ListAlert
 }
 
 type ApiUpdateAlertsRequest struct {
-	ctx context.Context
-	ApiService *AlertsAPIService
-	id int64
+	ctx                 context.Context
+	ApiService          *AlertsAPIService
+	id                  int64
 	updateAlertsRequest *UpdateAlertsRequest
 }
 
@@ -575,26 +578,27 @@ UpdateAlerts Update Alert
 
 Update an existing monitoring alert.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateAlertsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateAlertsRequest
 */
 func (a *AlertsAPIService) UpdateAlerts(ctx context.Context, id int64) ApiUpdateAlertsRequest {
 	return ApiUpdateAlertsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return UpdateAlerts200Response
+//
+//	@return UpdateAlerts200Response
 func (a *AlertsAPIService) UpdateAlertsExecute(r ApiUpdateAlertsRequest) (*UpdateAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UpdateAlerts200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UpdateAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlertsAPIService.UpdateAlerts")
@@ -647,7 +651,7 @@ func (a *AlertsAPIService) UpdateAlertsExecute(r ApiUpdateAlertsRequest) (*Updat
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -656,8 +660,8 @@ func (a *AlertsAPIService) UpdateAlertsExecute(r ApiUpdateAlertsRequest) (*Updat
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -667,8 +671,8 @@ func (a *AlertsAPIService) UpdateAlertsExecute(r ApiUpdateAlertsRequest) (*Updat
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -676,8 +680,8 @@ func (a *AlertsAPIService) UpdateAlertsExecute(r ApiUpdateAlertsRequest) (*Updat
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the CheckWebConfig type satisfies the MappedNullable interface at compile time
@@ -44,8 +43,8 @@ type CheckWebConfig struct {
 	// SSH user on the proxy host to login as
 	SshUser *string `json:"sshUser,omitempty"`
 	// Password for user, if not using key based authentication
-	SshPassword *string `json:"sshPassword,omitempty"`
-	AdditionalProperties map[string]interface{}
+	SshPassword          *string                `json:"sshPassword,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _CheckWebConfig CheckWebConfig
@@ -442,7 +441,7 @@ func (o *CheckWebConfig) SetSshPassword(v string) {
 }
 
 func (o CheckWebConfig) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -490,95 +489,8 @@ func (o CheckWebConfig) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *CheckWebConfig) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"webMethod",
-		"webUrl",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varCheckWebConfig := _CheckWebConfig{}
-
-	err = json.Unmarshal(data, &varCheckWebConfig)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CheckWebConfig(varCheckWebConfig)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "webMethod")
-		delete(additionalProperties, "webUrl")
-		delete(additionalProperties, "ignoreSSL")
-		delete(additionalProperties, "checkUser")
-		delete(additionalProperties, "checkPassword")
-		delete(additionalProperties, "textCheckOn")
-		delete(additionalProperties, "webTextMatch")
-		delete(additionalProperties, "tunnelOn")
-		delete(additionalProperties, "sshHost")
-		delete(additionalProperties, "sshPort")
-		delete(additionalProperties, "sshUser")
-		delete(additionalProperties, "sshPassword")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCheckWebConfig struct {
-	value *CheckWebConfig
-	isSet bool
-}
-
-func (v NullableCheckWebConfig) Get() *CheckWebConfig {
-	return v.value
-}
-
-func (v *NullableCheckWebConfig) Set(val *CheckWebConfig) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCheckWebConfig) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCheckWebConfig) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCheckWebConfig(val *CheckWebConfig) *NullableCheckWebConfig {
-	return &NullableCheckWebConfig{value: val, isSet: true}
-}
-
-func (v NullableCheckWebConfig) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCheckWebConfig) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -39,8 +39,8 @@ type FileTemplateUpdate struct {
 	// Setting Name
 	SettingName *string `json:"settingName,omitempty"`
 	// Setting Category
-	SettingCategory *string `json:"settingCategory,omitempty"`
-	AdditionalProperties map[string]interface{}
+	SettingCategory      *string                `json:"settingCategory,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _FileTemplateUpdate FileTemplateUpdate
@@ -383,7 +383,7 @@ func (o *FileTemplateUpdate) SetSettingCategory(v string) {
 }
 
 func (o FileTemplateUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -429,71 +429,8 @@ func (o FileTemplateUpdate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *FileTemplateUpdate) UnmarshalJSON(data []byte) (err error) {
-	varFileTemplateUpdate := _FileTemplateUpdate{}
-
-	err = json.Unmarshal(data, &varFileTemplateUpdate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = FileTemplateUpdate(varFileTemplateUpdate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "fileName")
-		delete(additionalProperties, "filePath")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "templatePhase")
-		delete(additionalProperties, "template")
-		delete(additionalProperties, "fileOwner")
-		delete(additionalProperties, "settingName")
-		delete(additionalProperties, "settingCategory")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableFileTemplateUpdate struct {
-	value *FileTemplateUpdate
-	isSet bool
-}
-
-func (v NullableFileTemplateUpdate) Get() *FileTemplateUpdate {
-	return v.value
-}
-
-func (v *NullableFileTemplateUpdate) Set(val *FileTemplateUpdate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableFileTemplateUpdate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableFileTemplateUpdate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableFileTemplateUpdate(val *FileTemplateUpdate) *NullableFileTemplateUpdate {
-	return &NullableFileTemplateUpdate{value: val, isSet: true}
-}
-
-func (v NullableFileTemplateUpdate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableFileTemplateUpdate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

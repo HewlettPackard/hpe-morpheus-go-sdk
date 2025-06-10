@@ -20,10 +20,10 @@ var _ MappedNullable = &ListInvoices200ResponseAllOfInvoicesInnerCloud{}
 
 // ListInvoices200ResponseAllOfInvoicesInnerCloud struct for ListInvoices200ResponseAllOfInvoicesInnerCloud
 type ListInvoices200ResponseAllOfInvoicesInnerCloud struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Uuid *string `json:"uuid,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	Uuid                 *string                `json:"uuid,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListInvoices200ResponseAllOfInvoicesInnerCloud ListInvoices200ResponseAllOfInvoicesInnerCloud
@@ -142,7 +142,7 @@ func (o *ListInvoices200ResponseAllOfInvoicesInnerCloud) SetUuid(v string) {
 }
 
 func (o ListInvoices200ResponseAllOfInvoicesInnerCloud) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -167,64 +167,8 @@ func (o ListInvoices200ResponseAllOfInvoicesInnerCloud) ToMap() (map[string]inte
 
 	return toSerialize, nil
 }
-
 func (o *ListInvoices200ResponseAllOfInvoicesInnerCloud) UnmarshalJSON(data []byte) (err error) {
-	varListInvoices200ResponseAllOfInvoicesInnerCloud := _ListInvoices200ResponseAllOfInvoicesInnerCloud{}
-
-	err = json.Unmarshal(data, &varListInvoices200ResponseAllOfInvoicesInnerCloud)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListInvoices200ResponseAllOfInvoicesInnerCloud(varListInvoices200ResponseAllOfInvoicesInnerCloud)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "uuid")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListInvoices200ResponseAllOfInvoicesInnerCloud struct {
-	value *ListInvoices200ResponseAllOfInvoicesInnerCloud
-	isSet bool
-}
-
-func (v NullableListInvoices200ResponseAllOfInvoicesInnerCloud) Get() *ListInvoices200ResponseAllOfInvoicesInnerCloud {
-	return v.value
-}
-
-func (v *NullableListInvoices200ResponseAllOfInvoicesInnerCloud) Set(val *ListInvoices200ResponseAllOfInvoicesInnerCloud) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListInvoices200ResponseAllOfInvoicesInnerCloud) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListInvoices200ResponseAllOfInvoicesInnerCloud) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListInvoices200ResponseAllOfInvoicesInnerCloud(val *ListInvoices200ResponseAllOfInvoicesInnerCloud) *NullableListInvoices200ResponseAllOfInvoicesInnerCloud {
-	return &NullableListInvoices200ResponseAllOfInvoicesInnerCloud{value: val, isSet: true}
-}
-
-func (v NullableListInvoices200ResponseAllOfInvoicesInnerCloud) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListInvoices200ResponseAllOfInvoicesInnerCloud) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

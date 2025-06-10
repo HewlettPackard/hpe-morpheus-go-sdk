@@ -20,8 +20,8 @@ var _ MappedNullable = &AddChecksRequestCheckOneOf2CheckType{}
 
 // AddChecksRequestCheckOneOf2CheckType Check type you want to create
 type AddChecksRequestCheckOneOf2CheckType struct {
-	Code *string `json:"code,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Code                 *string                `json:"code,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddChecksRequestCheckOneOf2CheckType AddChecksRequestCheckOneOf2CheckType
@@ -76,7 +76,7 @@ func (o *AddChecksRequestCheckOneOf2CheckType) SetCode(v string) {
 }
 
 func (o AddChecksRequestCheckOneOf2CheckType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o AddChecksRequestCheckOneOf2CheckType) ToMap() (map[string]interface{}, e
 
 	return toSerialize, nil
 }
-
 func (o *AddChecksRequestCheckOneOf2CheckType) UnmarshalJSON(data []byte) (err error) {
-	varAddChecksRequestCheckOneOf2CheckType := _AddChecksRequestCheckOneOf2CheckType{}
-
-	err = json.Unmarshal(data, &varAddChecksRequestCheckOneOf2CheckType)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddChecksRequestCheckOneOf2CheckType(varAddChecksRequestCheckOneOf2CheckType)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "code")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddChecksRequestCheckOneOf2CheckType struct {
-	value *AddChecksRequestCheckOneOf2CheckType
-	isSet bool
-}
-
-func (v NullableAddChecksRequestCheckOneOf2CheckType) Get() *AddChecksRequestCheckOneOf2CheckType {
-	return v.value
-}
-
-func (v *NullableAddChecksRequestCheckOneOf2CheckType) Set(val *AddChecksRequestCheckOneOf2CheckType) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddChecksRequestCheckOneOf2CheckType) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddChecksRequestCheckOneOf2CheckType) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddChecksRequestCheckOneOf2CheckType(val *AddChecksRequestCheckOneOf2CheckType) *NullableAddChecksRequestCheckOneOf2CheckType {
-	return &NullableAddChecksRequestCheckOneOf2CheckType{value: val, isSet: true}
-}
-
-func (v NullableAddChecksRequestCheckOneOf2CheckType) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddChecksRequestCheckOneOf2CheckType) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

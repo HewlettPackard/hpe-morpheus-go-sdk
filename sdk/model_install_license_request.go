@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the InstallLicenseRequest type satisfies the MappedNullable interface at compile time
@@ -24,8 +23,8 @@ type InstallLicenseRequest struct {
 	// License Key. This is a long and unique string of your Morpheus license. License keys can be requested from the [Morpheus Hub](https://morpheushub.com).
 	License string `json:"license"`
 	// Install Action can be passed as 'add' to stack the license. By default all currently installed licenses are removed and replaced by the new one.
-	InstallAction *string `json:"installAction,omitempty"`
-	AdditionalProperties map[string]interface{}
+	InstallAction        *string                `json:"installAction,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _InstallLicenseRequest InstallLicenseRequest
@@ -109,7 +108,7 @@ func (o *InstallLicenseRequest) SetInstallAction(v string) {
 }
 
 func (o InstallLicenseRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -129,84 +128,8 @@ func (o InstallLicenseRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *InstallLicenseRequest) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"license",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varInstallLicenseRequest := _InstallLicenseRequest{}
-
-	err = json.Unmarshal(data, &varInstallLicenseRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = InstallLicenseRequest(varInstallLicenseRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "license")
-		delete(additionalProperties, "installAction")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableInstallLicenseRequest struct {
-	value *InstallLicenseRequest
-	isSet bool
-}
-
-func (v NullableInstallLicenseRequest) Get() *InstallLicenseRequest {
-	return v.value
-}
-
-func (v *NullableInstallLicenseRequest) Set(val *InstallLicenseRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableInstallLicenseRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableInstallLicenseRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableInstallLicenseRequest(val *InstallLicenseRequest) *NullableInstallLicenseRequest {
-	return &NullableInstallLicenseRequest{value: val, isSet: true}
-}
-
-func (v NullableInstallLicenseRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableInstallLicenseRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -21,33 +21,33 @@ var _ MappedNullable = &GuidanceAzureReservations{}
 
 // GuidanceAzureReservations struct for GuidanceAzureReservations
 type GuidanceAzureReservations struct {
-	Id *int64 `json:"id,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	ActionCategory *string `json:"actionCategory,omitempty"`
-	ActionMessage *string `json:"actionMessage,omitempty"`
-	ActionTitle *string `json:"actionTitle,omitempty"`
-	ActionType *string `json:"actionType,omitempty"`
-	ActionValue *string `json:"actionValue,omitempty"`
-	ActionValueType *string `json:"actionValueType,omitempty"`
-	ActionPlanId *string `json:"actionPlanId,omitempty"`
-	StatusMessage *string `json:"statusMessage,omitempty"`
-	AccountId *int64 `json:"accountId,omitempty"`
-	UserId *string `json:"userId,omitempty"`
-	SiteId *int64 `json:"siteId,omitempty"`
-	Zone *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone `json:"zone,omitempty"`
-	State *string `json:"state,omitempty"`
-	StateMessage *string `json:"stateMessage,omitempty"`
-	Severity *string `json:"severity,omitempty"`
-	Resolved *bool `json:"resolved,omitempty"`
-	ResolvedMessage *string `json:"resolvedMessage,omitempty"`
-	RefType *string `json:"refType,omitempty"`
-	RefId *int64 `json:"refId,omitempty"`
-	RefName *string `json:"refName,omitempty"`
-	Type *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType `json:"type,omitempty"`
-	Savings *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfSavings `json:"savings,omitempty"`
-	Config *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Config `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                     `json:"id,omitempty"`
+	DateCreated          *time.Time                                                 `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                 `json:"lastUpdated,omitempty"`
+	ActionCategory       *string                                                    `json:"actionCategory,omitempty"`
+	ActionMessage        *string                                                    `json:"actionMessage,omitempty"`
+	ActionTitle          *string                                                    `json:"actionTitle,omitempty"`
+	ActionType           *string                                                    `json:"actionType,omitempty"`
+	ActionValue          *string                                                    `json:"actionValue,omitempty"`
+	ActionValueType      *string                                                    `json:"actionValueType,omitempty"`
+	ActionPlanId         *string                                                    `json:"actionPlanId,omitempty"`
+	StatusMessage        *string                                                    `json:"statusMessage,omitempty"`
+	AccountId            *int64                                                     `json:"accountId,omitempty"`
+	UserId               *string                                                    `json:"userId,omitempty"`
+	SiteId               *int64                                                     `json:"siteId,omitempty"`
+	Zone                 *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone    `json:"zone,omitempty"`
+	State                *string                                                    `json:"state,omitempty"`
+	StateMessage         *string                                                    `json:"stateMessage,omitempty"`
+	Severity             *string                                                    `json:"severity,omitempty"`
+	Resolved             *bool                                                      `json:"resolved,omitempty"`
+	ResolvedMessage      *string                                                    `json:"resolvedMessage,omitempty"`
+	RefType              *string                                                    `json:"refType,omitempty"`
+	RefId                *int64                                                     `json:"refId,omitempty"`
+	RefName              *string                                                    `json:"refName,omitempty"`
+	Type                 *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType    `json:"type,omitempty"`
+	Savings              *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfSavings `json:"savings,omitempty"`
+	Config               *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Config `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}                                     `json:",remain"`
 }
 
 type _GuidanceAzureReservations GuidanceAzureReservations
@@ -902,7 +902,7 @@ func (o *GuidanceAzureReservations) SetConfig(v ListGuidances200ResponseAllOfDis
 }
 
 func (o GuidanceAzureReservations) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -996,87 +996,8 @@ func (o GuidanceAzureReservations) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *GuidanceAzureReservations) UnmarshalJSON(data []byte) (err error) {
-	varGuidanceAzureReservations := _GuidanceAzureReservations{}
-
-	err = json.Unmarshal(data, &varGuidanceAzureReservations)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GuidanceAzureReservations(varGuidanceAzureReservations)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "actionCategory")
-		delete(additionalProperties, "actionMessage")
-		delete(additionalProperties, "actionTitle")
-		delete(additionalProperties, "actionType")
-		delete(additionalProperties, "actionValue")
-		delete(additionalProperties, "actionValueType")
-		delete(additionalProperties, "actionPlanId")
-		delete(additionalProperties, "statusMessage")
-		delete(additionalProperties, "accountId")
-		delete(additionalProperties, "userId")
-		delete(additionalProperties, "siteId")
-		delete(additionalProperties, "zone")
-		delete(additionalProperties, "state")
-		delete(additionalProperties, "stateMessage")
-		delete(additionalProperties, "severity")
-		delete(additionalProperties, "resolved")
-		delete(additionalProperties, "resolvedMessage")
-		delete(additionalProperties, "refType")
-		delete(additionalProperties, "refId")
-		delete(additionalProperties, "refName")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "savings")
-		delete(additionalProperties, "config")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGuidanceAzureReservations struct {
-	value *GuidanceAzureReservations
-	isSet bool
-}
-
-func (v NullableGuidanceAzureReservations) Get() *GuidanceAzureReservations {
-	return v.value
-}
-
-func (v *NullableGuidanceAzureReservations) Set(val *GuidanceAzureReservations) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGuidanceAzureReservations) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGuidanceAzureReservations) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGuidanceAzureReservations(val *GuidanceAzureReservations) *NullableGuidanceAzureReservations {
-	return &NullableGuidanceAzureReservations{value: val, isSet: true}
-}
-
-func (v NullableGuidanceAzureReservations) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGuidanceAzureReservations) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

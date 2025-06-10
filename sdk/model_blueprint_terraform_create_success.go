@@ -25,9 +25,9 @@ type BlueprintTerraformCreateSuccess struct {
 	// Path to display image. Defaults to an internal Morpheus image.
 	Image *string `json:"image,omitempty"`
 	// Blueprint Type
-	Type *string `json:"type,omitempty"`
+	Type      *string                             `json:"type,omitempty"`
 	Terraform *AddBlueprintRequestOneOf5Terraform `json:"terraform,omitempty"`
-	Config *AddBlueprintRequestOneOf5Config `json:"config,omitempty"`
+	Config    *AddBlueprintRequestOneOf5Config    `json:"config,omitempty"`
 	// Private or Public Access
 	Visibility *string `json:"visibility,omitempty"`
 	// Resource Permission Block
@@ -35,8 +35,8 @@ type BlueprintTerraformCreateSuccess struct {
 	// Owner
 	Owner map[string]interface{} `json:"owner,omitempty"`
 	// Tenant
-	Tenant map[string]interface{} `json:"tenant,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Tenant               map[string]interface{} `json:"tenant,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _BlueprintTerraformCreateSuccess BlueprintTerraformCreateSuccess
@@ -351,7 +351,7 @@ func (o *BlueprintTerraformCreateSuccess) SetTenant(v map[string]interface{}) {
 }
 
 func (o BlueprintTerraformCreateSuccess) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -394,70 +394,8 @@ func (o BlueprintTerraformCreateSuccess) ToMap() (map[string]interface{}, error)
 
 	return toSerialize, nil
 }
-
 func (o *BlueprintTerraformCreateSuccess) UnmarshalJSON(data []byte) (err error) {
-	varBlueprintTerraformCreateSuccess := _BlueprintTerraformCreateSuccess{}
-
-	err = json.Unmarshal(data, &varBlueprintTerraformCreateSuccess)
-
-	if err != nil {
-		return err
-	}
-
-	*o = BlueprintTerraformCreateSuccess(varBlueprintTerraformCreateSuccess)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "image")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "terraform")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "resourcePermission")
-		delete(additionalProperties, "owner")
-		delete(additionalProperties, "tenant")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableBlueprintTerraformCreateSuccess struct {
-	value *BlueprintTerraformCreateSuccess
-	isSet bool
-}
-
-func (v NullableBlueprintTerraformCreateSuccess) Get() *BlueprintTerraformCreateSuccess {
-	return v.value
-}
-
-func (v *NullableBlueprintTerraformCreateSuccess) Set(val *BlueprintTerraformCreateSuccess) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableBlueprintTerraformCreateSuccess) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableBlueprintTerraformCreateSuccess) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableBlueprintTerraformCreateSuccess(val *BlueprintTerraformCreateSuccess) *NullableBlueprintTerraformCreateSuccess {
-	return &NullableBlueprintTerraformCreateSuccess{value: val, isSet: true}
-}
-
-func (v NullableBlueprintTerraformCreateSuccess) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableBlueprintTerraformCreateSuccess) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

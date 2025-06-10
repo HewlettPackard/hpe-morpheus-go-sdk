@@ -20,14 +20,14 @@ var _ MappedNullable = &BootScript{}
 
 // BootScript struct for BootScript
 type BootScript struct {
-	Id *int64 `json:"id,omitempty"`
-	Account *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
-	FileName *string `json:"fileName,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Content *string `json:"content,omitempty"`
-	CreatedBy *ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy `json:"createdBy,omitempty"`
-	Visibility *string `json:"visibility,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                  `json:"id,omitempty"`
+	Account              *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
+	FileName             *string                                                                 `json:"fileName,omitempty"`
+	Description          *string                                                                 `json:"description,omitempty"`
+	Content              *string                                                                 `json:"content,omitempty"`
+	CreatedBy            *ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy         `json:"createdBy,omitempty"`
+	Visibility           *string                                                                 `json:"visibility,omitempty"`
+	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
 }
 
 type _BootScript BootScript
@@ -274,7 +274,7 @@ func (o *BootScript) SetVisibility(v string) {
 }
 
 func (o BootScript) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -311,68 +311,8 @@ func (o BootScript) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *BootScript) UnmarshalJSON(data []byte) (err error) {
-	varBootScript := _BootScript{}
-
-	err = json.Unmarshal(data, &varBootScript)
-
-	if err != nil {
-		return err
-	}
-
-	*o = BootScript(varBootScript)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "fileName")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "content")
-		delete(additionalProperties, "createdBy")
-		delete(additionalProperties, "visibility")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableBootScript struct {
-	value *BootScript
-	isSet bool
-}
-
-func (v NullableBootScript) Get() *BootScript {
-	return v.value
-}
-
-func (v *NullableBootScript) Set(val *BootScript) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableBootScript) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableBootScript) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableBootScript(val *BootScript) *NullableBootScript {
-	return &NullableBootScript{value: val, isSet: true}
-}
-
-func (v NullableBootScript) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableBootScript) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

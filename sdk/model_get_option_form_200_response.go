@@ -20,8 +20,8 @@ var _ MappedNullable = &GetOptionForm200Response{}
 
 // GetOptionForm200Response struct for GetOptionForm200Response
 type GetOptionForm200Response struct {
-	OptionTypes []ListOptionForms200ResponseAllOfOptionTypesInner `json:"optionTypes,omitempty"`
-	AdditionalProperties map[string]interface{}
+	OptionTypes          []ListOptionForms200ResponseAllOfOptionTypesInner `json:"optionTypes,omitempty"`
+	AdditionalProperties map[string]interface{}                            `json:",remain"`
 }
 
 type _GetOptionForm200Response GetOptionForm200Response
@@ -76,7 +76,7 @@ func (o *GetOptionForm200Response) SetOptionTypes(v []ListOptionForms200Response
 }
 
 func (o GetOptionForm200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o GetOptionForm200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *GetOptionForm200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetOptionForm200Response := _GetOptionForm200Response{}
-
-	err = json.Unmarshal(data, &varGetOptionForm200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetOptionForm200Response(varGetOptionForm200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "optionTypes")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetOptionForm200Response struct {
-	value *GetOptionForm200Response
-	isSet bool
-}
-
-func (v NullableGetOptionForm200Response) Get() *GetOptionForm200Response {
-	return v.value
-}
-
-func (v *NullableGetOptionForm200Response) Set(val *GetOptionForm200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetOptionForm200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetOptionForm200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetOptionForm200Response(val *GetOptionForm200Response) *NullableGetOptionForm200Response {
-	return &NullableGetOptionForm200Response{value: val, isSet: true}
-}
-
-func (v NullableGetOptionForm200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetOptionForm200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

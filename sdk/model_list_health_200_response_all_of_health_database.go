@@ -20,21 +20,21 @@ var _ MappedNullable = &ListHealth200ResponseAllOfHealthDatabase{}
 
 // ListHealth200ResponseAllOfHealthDatabase struct for ListHealth200ResponseAllOfHealthDatabase
 type ListHealth200ResponseAllOfHealthDatabase struct {
-	Success *bool `json:"success,omitempty"`
-	ConnectionList []map[string]interface{} `json:"connectionList,omitempty"`
-	BusyConnections []string `json:"busyConnections,omitempty"`
-	MaxConnections *int64 `json:"maxConnections,omitempty"`
-	MaxUsedConnections *int64 `json:"maxUsedConnections,omitempty"`
-	UsedConnections *int64 `json:"usedConnections,omitempty"`
-	AbortedConnections *int64 `json:"abortedConnections,omitempty"`
-	InnodbStatus *string `json:"innodbStatus,omitempty"`
-	Stats *ListHealth200ResponseAllOfHealthDatabaseStats `json:"stats,omitempty"`
-	Scans *ListHealth200ResponseAllOfHealthDatabaseScans `json:"scans,omitempty"`
-	SlowQueries []ListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner `json:"slowQueries,omitempty"`
-	InnodbStats *ListHealth200ResponseAllOfHealthDatabaseInnodbStats `json:"innodbStats,omitempty"`
-	ScanPercent *float32 `json:"scanPercent,omitempty"`
-	Status *string `json:"status,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Success              *bool                                                      `json:"success,omitempty"`
+	ConnectionList       []map[string]interface{}                                   `json:"connectionList,omitempty"`
+	BusyConnections      []string                                                   `json:"busyConnections,omitempty"`
+	MaxConnections       *int64                                                     `json:"maxConnections,omitempty"`
+	MaxUsedConnections   *int64                                                     `json:"maxUsedConnections,omitempty"`
+	UsedConnections      *int64                                                     `json:"usedConnections,omitempty"`
+	AbortedConnections   *int64                                                     `json:"abortedConnections,omitempty"`
+	InnodbStatus         *string                                                    `json:"innodbStatus,omitempty"`
+	Stats                *ListHealth200ResponseAllOfHealthDatabaseStats             `json:"stats,omitempty"`
+	Scans                *ListHealth200ResponseAllOfHealthDatabaseScans             `json:"scans,omitempty"`
+	SlowQueries          []ListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner `json:"slowQueries,omitempty"`
+	InnodbStats          *ListHealth200ResponseAllOfHealthDatabaseInnodbStats       `json:"innodbStats,omitempty"`
+	ScanPercent          *float32                                                   `json:"scanPercent,omitempty"`
+	Status               *string                                                    `json:"status,omitempty"`
+	AdditionalProperties map[string]interface{}                                     `json:",remain"`
 }
 
 type _ListHealth200ResponseAllOfHealthDatabase ListHealth200ResponseAllOfHealthDatabase
@@ -505,7 +505,7 @@ func (o *ListHealth200ResponseAllOfHealthDatabase) SetStatus(v string) {
 }
 
 func (o ListHealth200ResponseAllOfHealthDatabase) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -563,75 +563,8 @@ func (o ListHealth200ResponseAllOfHealthDatabase) ToMap() (map[string]interface{
 
 	return toSerialize, nil
 }
-
 func (o *ListHealth200ResponseAllOfHealthDatabase) UnmarshalJSON(data []byte) (err error) {
-	varListHealth200ResponseAllOfHealthDatabase := _ListHealth200ResponseAllOfHealthDatabase{}
-
-	err = json.Unmarshal(data, &varListHealth200ResponseAllOfHealthDatabase)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListHealth200ResponseAllOfHealthDatabase(varListHealth200ResponseAllOfHealthDatabase)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "success")
-		delete(additionalProperties, "connectionList")
-		delete(additionalProperties, "busyConnections")
-		delete(additionalProperties, "maxConnections")
-		delete(additionalProperties, "maxUsedConnections")
-		delete(additionalProperties, "usedConnections")
-		delete(additionalProperties, "abortedConnections")
-		delete(additionalProperties, "innodbStatus")
-		delete(additionalProperties, "stats")
-		delete(additionalProperties, "scans")
-		delete(additionalProperties, "slowQueries")
-		delete(additionalProperties, "innodbStats")
-		delete(additionalProperties, "scanPercent")
-		delete(additionalProperties, "status")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListHealth200ResponseAllOfHealthDatabase struct {
-	value *ListHealth200ResponseAllOfHealthDatabase
-	isSet bool
-}
-
-func (v NullableListHealth200ResponseAllOfHealthDatabase) Get() *ListHealth200ResponseAllOfHealthDatabase {
-	return v.value
-}
-
-func (v *NullableListHealth200ResponseAllOfHealthDatabase) Set(val *ListHealth200ResponseAllOfHealthDatabase) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListHealth200ResponseAllOfHealthDatabase) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListHealth200ResponseAllOfHealthDatabase) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListHealth200ResponseAllOfHealthDatabase(val *ListHealth200ResponseAllOfHealthDatabase) *NullableListHealth200ResponseAllOfHealthDatabase {
-	return &NullableListHealth200ResponseAllOfHealthDatabase{value: val, isSet: true}
-}
-
-func (v NullableListHealth200ResponseAllOfHealthDatabase) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListHealth200ResponseAllOfHealthDatabase) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

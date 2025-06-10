@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetwork type satisfies the MappedNullable interface at compile time
@@ -22,8 +21,8 @@ var _ MappedNullable = &AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetwo
 // AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetwork struct for AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetwork
 type AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetwork struct {
 	// id of the network to be used. A network group can be specified instead by prefixing its ID with `networkGroup-`.
-	Id string `json:"id"`
-	AdditionalProperties map[string]interface{}
+	Id                   string                 `json:"id"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetwork AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetwork
@@ -71,7 +70,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInn
 }
 
 func (o AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetwork) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -88,83 +87,8 @@ func (o AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInne
 
 	return toSerialize, nil
 }
-
 func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetwork) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"id",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetwork := _AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetwork{}
-
-	err = json.Unmarshal(data, &varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetwork)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetwork(varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetwork)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetwork struct {
-	value *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetwork
-	isSet bool
-}
-
-func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetwork) Get() *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetwork {
-	return v.value
-}
-
-func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetwork) Set(val *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetwork) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetwork) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetwork) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetwork(val *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetwork) *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetwork {
-	return &NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetwork{value: val, isSet: true}
-}
-
-func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetwork) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetwork) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

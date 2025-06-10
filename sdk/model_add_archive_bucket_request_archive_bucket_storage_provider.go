@@ -20,8 +20,8 @@ var _ MappedNullable = &AddArchiveBucketRequestArchiveBucketStorageProvider{}
 
 // AddArchiveBucketRequestArchiveBucketStorageProvider Storage Provider
 type AddArchiveBucketRequestArchiveBucketStorageProvider struct {
-	Id *int64 `json:"id,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddArchiveBucketRequestArchiveBucketStorageProvider AddArchiveBucketRequestArchiveBucketStorageProvider
@@ -76,7 +76,7 @@ func (o *AddArchiveBucketRequestArchiveBucketStorageProvider) SetId(v int64) {
 }
 
 func (o AddArchiveBucketRequestArchiveBucketStorageProvider) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o AddArchiveBucketRequestArchiveBucketStorageProvider) ToMap() (map[string
 
 	return toSerialize, nil
 }
-
 func (o *AddArchiveBucketRequestArchiveBucketStorageProvider) UnmarshalJSON(data []byte) (err error) {
-	varAddArchiveBucketRequestArchiveBucketStorageProvider := _AddArchiveBucketRequestArchiveBucketStorageProvider{}
-
-	err = json.Unmarshal(data, &varAddArchiveBucketRequestArchiveBucketStorageProvider)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddArchiveBucketRequestArchiveBucketStorageProvider(varAddArchiveBucketRequestArchiveBucketStorageProvider)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddArchiveBucketRequestArchiveBucketStorageProvider struct {
-	value *AddArchiveBucketRequestArchiveBucketStorageProvider
-	isSet bool
-}
-
-func (v NullableAddArchiveBucketRequestArchiveBucketStorageProvider) Get() *AddArchiveBucketRequestArchiveBucketStorageProvider {
-	return v.value
-}
-
-func (v *NullableAddArchiveBucketRequestArchiveBucketStorageProvider) Set(val *AddArchiveBucketRequestArchiveBucketStorageProvider) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddArchiveBucketRequestArchiveBucketStorageProvider) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddArchiveBucketRequestArchiveBucketStorageProvider) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddArchiveBucketRequestArchiveBucketStorageProvider(val *AddArchiveBucketRequestArchiveBucketStorageProvider) *NullableAddArchiveBucketRequestArchiveBucketStorageProvider {
-	return &NullableAddArchiveBucketRequestArchiveBucketStorageProvider{value: val, isSet: true}
-}
-
-func (v NullableAddArchiveBucketRequestArchiveBucketStorageProvider) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddArchiveBucketRequestArchiveBucketStorageProvider) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -25,8 +25,8 @@ type ListActivity4XXResponse struct {
 	// Message containing a description of the result, usually a message about the error that occurred
 	Msg *string `json:"msg,omitempty"`
 	// Validation errors, with a key for Object containing error messages for each invalid parameter (key)
-	Errors map[string]interface{} `json:"errors,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Errors               map[string]interface{} `json:"errors,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListActivity4XXResponse ListActivity4XXResponse
@@ -149,7 +149,7 @@ func (o *ListActivity4XXResponse) SetErrors(v map[string]interface{}) {
 }
 
 func (o ListActivity4XXResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -174,64 +174,8 @@ func (o ListActivity4XXResponse) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ListActivity4XXResponse) UnmarshalJSON(data []byte) (err error) {
-	varListActivity4XXResponse := _ListActivity4XXResponse{}
-
-	err = json.Unmarshal(data, &varListActivity4XXResponse)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListActivity4XXResponse(varListActivity4XXResponse)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "success")
-		delete(additionalProperties, "msg")
-		delete(additionalProperties, "errors")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListActivity4XXResponse struct {
-	value *ListActivity4XXResponse
-	isSet bool
-}
-
-func (v NullableListActivity4XXResponse) Get() *ListActivity4XXResponse {
-	return v.value
-}
-
-func (v *NullableListActivity4XXResponse) Set(val *ListActivity4XXResponse) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListActivity4XXResponse) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListActivity4XXResponse) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListActivity4XXResponse(val *ListActivity4XXResponse) *NullableListActivity4XXResponse {
-	return &NullableListActivity4XXResponse{value: val, isSet: true}
-}
-
-func (v NullableListActivity4XXResponse) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListActivity4XXResponse) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

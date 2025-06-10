@@ -27,9 +27,9 @@ type GetMonitoringSettings200ResponseMonitoringSettings struct {
 	// Availability Precision. The number of decimal places availability should be displayed in. Can be anywhere between 0 and 5.
 	AvailabilityPrecision *int32 `json:"availabilityPrecision,omitempty"`
 	// Default Check Interval. The number of minutes to use as the default interval to use when creating new checks.
-	DefaultCheckInterval *int32 `json:"defaultCheckInterval,omitempty"`
-	ServiceNow *GetMonitoringSettings200ResponseMonitoringSettingsServiceNow `json:"serviceNow,omitempty"`
-	AdditionalProperties map[string]interface{}
+	DefaultCheckInterval *int32                                                        `json:"defaultCheckInterval,omitempty"`
+	ServiceNow           *GetMonitoringSettings200ResponseMonitoringSettingsServiceNow `json:"serviceNow,omitempty"`
+	AdditionalProperties map[string]interface{}                                        `json:",remain"`
 }
 
 type _GetMonitoringSettings200ResponseMonitoringSettings GetMonitoringSettings200ResponseMonitoringSettings
@@ -212,7 +212,7 @@ func (o *GetMonitoringSettings200ResponseMonitoringSettings) SetServiceNow(v Get
 }
 
 func (o GetMonitoringSettings200ResponseMonitoringSettings) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -243,66 +243,8 @@ func (o GetMonitoringSettings200ResponseMonitoringSettings) ToMap() (map[string]
 
 	return toSerialize, nil
 }
-
 func (o *GetMonitoringSettings200ResponseMonitoringSettings) UnmarshalJSON(data []byte) (err error) {
-	varGetMonitoringSettings200ResponseMonitoringSettings := _GetMonitoringSettings200ResponseMonitoringSettings{}
-
-	err = json.Unmarshal(data, &varGetMonitoringSettings200ResponseMonitoringSettings)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetMonitoringSettings200ResponseMonitoringSettings(varGetMonitoringSettings200ResponseMonitoringSettings)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "autoManageChecks")
-		delete(additionalProperties, "availabilityTimeFrame")
-		delete(additionalProperties, "availabilityPrecision")
-		delete(additionalProperties, "defaultCheckInterval")
-		delete(additionalProperties, "serviceNow")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetMonitoringSettings200ResponseMonitoringSettings struct {
-	value *GetMonitoringSettings200ResponseMonitoringSettings
-	isSet bool
-}
-
-func (v NullableGetMonitoringSettings200ResponseMonitoringSettings) Get() *GetMonitoringSettings200ResponseMonitoringSettings {
-	return v.value
-}
-
-func (v *NullableGetMonitoringSettings200ResponseMonitoringSettings) Set(val *GetMonitoringSettings200ResponseMonitoringSettings) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetMonitoringSettings200ResponseMonitoringSettings) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetMonitoringSettings200ResponseMonitoringSettings) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetMonitoringSettings200ResponseMonitoringSettings(val *GetMonitoringSettings200ResponseMonitoringSettings) *NullableGetMonitoringSettings200ResponseMonitoringSettings {
-	return &NullableGetMonitoringSettings200ResponseMonitoringSettings{value: val, isSet: true}
-}
-
-func (v NullableGetMonitoringSettings200ResponseMonitoringSettings) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetMonitoringSettings200ResponseMonitoringSettings) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -18,19 +18,18 @@ import (
 	"io"
 	"net/http"
 	"net/url"
+	"os"
 	"strings"
 	"time"
-	"os"
 )
-
 
 // CloudsAPIService CloudsAPI service
 type CloudsAPIService service
 
 type ApiAddCloudResourcePoolRequest struct {
-	ctx context.Context
-	ApiService *CloudsAPIService
-	zoneId float32
+	ctx                         context.Context
+	ApiService                  *CloudsAPIService
+	zoneId                      float32
 	addCloudResourcePoolRequest *AddCloudResourcePoolRequest
 }
 
@@ -48,27 +47,27 @@ AddCloudResourcePool Creates a Specified Resource Pool for Specified Cloud
 
 Creates a resource pool for specified cloud. Only certain types of clouds support creating and deleting resource pools. Configuration options vary by type.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param zoneId The ID of the cloud
- @return ApiAddCloudResourcePoolRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param zoneId The ID of the cloud
+	@return ApiAddCloudResourcePoolRequest
 */
 func (a *CloudsAPIService) AddCloudResourcePool(ctx context.Context, zoneId float32) ApiAddCloudResourcePoolRequest {
 	return ApiAddCloudResourcePoolRequest{
 		ApiService: a,
-		ctx: ctx,
-		zoneId: zoneId,
+		ctx:        ctx,
+		zoneId:     zoneId,
 	}
 }
 
 // Execute executes the request
-//  @return AddCloudResourcePool200Response
+//
+//	@return AddCloudResourcePool200Response
 func (a *CloudsAPIService) AddCloudResourcePoolExecute(r ApiAddCloudResourcePoolRequest) (*AddCloudResourcePool200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddCloudResourcePool200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddCloudResourcePool200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CloudsAPIService.AddCloudResourcePool")
@@ -121,7 +120,7 @@ func (a *CloudsAPIService) AddCloudResourcePoolExecute(r ApiAddCloudResourcePool
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -130,8 +129,8 @@ func (a *CloudsAPIService) AddCloudResourcePoolExecute(r ApiAddCloudResourcePool
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -141,8 +140,8 @@ func (a *CloudsAPIService) AddCloudResourcePoolExecute(r ApiAddCloudResourcePool
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -150,8 +149,8 @@ func (a *CloudsAPIService) AddCloudResourcePoolExecute(r ApiAddCloudResourcePool
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -160,8 +159,8 @@ func (a *CloudsAPIService) AddCloudResourcePoolExecute(r ApiAddCloudResourcePool
 }
 
 type ApiAddCloudsRequest struct {
-	ctx context.Context
-	ApiService *CloudsAPIService
+	ctx              context.Context
+	ApiService       *CloudsAPIService
 	addCloudsRequest *AddCloudsRequest
 }
 
@@ -179,25 +178,25 @@ AddClouds Creates a Cloud
 
 Creates a cloud.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddCloudsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddCloudsRequest
 */
 func (a *CloudsAPIService) AddClouds(ctx context.Context) ApiAddCloudsRequest {
 	return ApiAddCloudsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddClouds200Response
+//
+//	@return AddClouds200Response
 func (a *CloudsAPIService) AddCloudsExecute(r ApiAddCloudsRequest) (*AddClouds200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddClouds200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddClouds200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CloudsAPIService.AddClouds")
@@ -249,7 +248,7 @@ func (a *CloudsAPIService) AddCloudsExecute(r ApiAddCloudsRequest) (*AddClouds20
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -258,8 +257,8 @@ func (a *CloudsAPIService) AddCloudsExecute(r ApiAddCloudsRequest) (*AddClouds20
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -269,8 +268,8 @@ func (a *CloudsAPIService) AddCloudsExecute(r ApiAddCloudsRequest) (*AddClouds20
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -278,8 +277,8 @@ func (a *CloudsAPIService) AddCloudsExecute(r ApiAddCloudsRequest) (*AddClouds20
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -288,10 +287,10 @@ func (a *CloudsAPIService) AddCloudsExecute(r ApiAddCloudsRequest) (*AddClouds20
 }
 
 type ApiGetCloudDatastoresRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *CloudsAPIService
-	zoneId float32
-	id int64
+	zoneId     float32
+	id         int64
 }
 
 func (r ApiGetCloudDatastoresRequest) Execute() (*GetCloudDatastores200Response, *http.Response, error) {
@@ -304,29 +303,29 @@ GetCloudDatastores Retrieves a Datastore for Specified Cloud
 Data Stores can be managed for each Compute Zone (Cloud) in your infrastructure.
 This endpoint retrieves a specific datastore under a cloud.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param zoneId The ID of the cloud
- @param id Morpheus ID of the Object being referenced
- @return ApiGetCloudDatastoresRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param zoneId The ID of the cloud
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetCloudDatastoresRequest
 */
 func (a *CloudsAPIService) GetCloudDatastores(ctx context.Context, zoneId float32, id int64) ApiGetCloudDatastoresRequest {
 	return ApiGetCloudDatastoresRequest{
 		ApiService: a,
-		ctx: ctx,
-		zoneId: zoneId,
-		id: id,
+		ctx:        ctx,
+		zoneId:     zoneId,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetCloudDatastores200Response
+//
+//	@return GetCloudDatastores200Response
 func (a *CloudsAPIService) GetCloudDatastoresExecute(r ApiGetCloudDatastoresRequest) (*GetCloudDatastores200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetCloudDatastores200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetCloudDatastores200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CloudsAPIService.GetCloudDatastores")
@@ -378,7 +377,7 @@ func (a *CloudsAPIService) GetCloudDatastoresExecute(r ApiGetCloudDatastoresRequ
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -387,8 +386,8 @@ func (a *CloudsAPIService) GetCloudDatastoresExecute(r ApiGetCloudDatastoresRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -398,8 +397,8 @@ func (a *CloudsAPIService) GetCloudDatastoresExecute(r ApiGetCloudDatastoresRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -407,8 +406,8 @@ func (a *CloudsAPIService) GetCloudDatastoresExecute(r ApiGetCloudDatastoresRequ
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -417,10 +416,10 @@ func (a *CloudsAPIService) GetCloudDatastoresExecute(r ApiGetCloudDatastoresRequ
 }
 
 type ApiGetCloudFoldersRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *CloudsAPIService
-	zoneId float32
-	id int64
+	zoneId     float32
+	id         int64
 }
 
 func (r ApiGetCloudFoldersRequest) Execute() (*GetCloudFolders200Response, *http.Response, error) {
@@ -433,29 +432,29 @@ GetCloudFolders Retrieves a Resource Folder for Specified Cloud
 Resource Folders can be managed for each Compute Zone (Cloud) in your infrastructure.
 This endpoint retrieves a specific folder under a cloud.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param zoneId The ID of the cloud
- @param id Morpheus ID of the Object being referenced
- @return ApiGetCloudFoldersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param zoneId The ID of the cloud
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetCloudFoldersRequest
 */
 func (a *CloudsAPIService) GetCloudFolders(ctx context.Context, zoneId float32, id int64) ApiGetCloudFoldersRequest {
 	return ApiGetCloudFoldersRequest{
 		ApiService: a,
-		ctx: ctx,
-		zoneId: zoneId,
-		id: id,
+		ctx:        ctx,
+		zoneId:     zoneId,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetCloudFolders200Response
+//
+//	@return GetCloudFolders200Response
 func (a *CloudsAPIService) GetCloudFoldersExecute(r ApiGetCloudFoldersRequest) (*GetCloudFolders200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetCloudFolders200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetCloudFolders200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CloudsAPIService.GetCloudFolders")
@@ -507,7 +506,7 @@ func (a *CloudsAPIService) GetCloudFoldersExecute(r ApiGetCloudFoldersRequest) (
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -516,8 +515,8 @@ func (a *CloudsAPIService) GetCloudFoldersExecute(r ApiGetCloudFoldersRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -527,8 +526,8 @@ func (a *CloudsAPIService) GetCloudFoldersExecute(r ApiGetCloudFoldersRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -536,8 +535,8 @@ func (a *CloudsAPIService) GetCloudFoldersExecute(r ApiGetCloudFoldersRequest) (
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -546,10 +545,10 @@ func (a *CloudsAPIService) GetCloudFoldersExecute(r ApiGetCloudFoldersRequest) (
 }
 
 type ApiGetCloudResourcePoolsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *CloudsAPIService
-	zoneId float32
-	id int64
+	zoneId     float32
+	id         int64
 }
 
 func (r ApiGetCloudResourcePoolsRequest) Execute() (*GetCloudResourcePools200Response, *http.Response, error) {
@@ -561,29 +560,29 @@ GetCloudResourcePools Retrieves a Resource Pool for Specified Cloud
 
 This endpoint retrieves a specific resource pool.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param zoneId The ID of the cloud
- @param id Morpheus ID of the Object being referenced
- @return ApiGetCloudResourcePoolsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param zoneId The ID of the cloud
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetCloudResourcePoolsRequest
 */
 func (a *CloudsAPIService) GetCloudResourcePools(ctx context.Context, zoneId float32, id int64) ApiGetCloudResourcePoolsRequest {
 	return ApiGetCloudResourcePoolsRequest{
 		ApiService: a,
-		ctx: ctx,
-		zoneId: zoneId,
-		id: id,
+		ctx:        ctx,
+		zoneId:     zoneId,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetCloudResourcePools200Response
+//
+//	@return GetCloudResourcePools200Response
 func (a *CloudsAPIService) GetCloudResourcePoolsExecute(r ApiGetCloudResourcePoolsRequest) (*GetCloudResourcePools200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetCloudResourcePools200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetCloudResourcePools200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CloudsAPIService.GetCloudResourcePools")
@@ -635,7 +634,7 @@ func (a *CloudsAPIService) GetCloudResourcePoolsExecute(r ApiGetCloudResourcePoo
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -644,8 +643,8 @@ func (a *CloudsAPIService) GetCloudResourcePoolsExecute(r ApiGetCloudResourcePoo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -655,8 +654,8 @@ func (a *CloudsAPIService) GetCloudResourcePoolsExecute(r ApiGetCloudResourcePoo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -664,8 +663,8 @@ func (a *CloudsAPIService) GetCloudResourcePoolsExecute(r ApiGetCloudResourcePoo
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -674,9 +673,9 @@ func (a *CloudsAPIService) GetCloudResourcePoolsExecute(r ApiGetCloudResourcePoo
 }
 
 type ApiGetCloudTypesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *CloudsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetCloudTypesRequest) Execute() (*GetCloudTypes200Response, *http.Response, error) {
@@ -688,27 +687,27 @@ GetCloudTypes Retrieves a Specific Cloud Type
 
 Retrieves a specific cloud type.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetCloudTypesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetCloudTypesRequest
 */
 func (a *CloudsAPIService) GetCloudTypes(ctx context.Context, id int64) ApiGetCloudTypesRequest {
 	return ApiGetCloudTypesRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetCloudTypes200Response
+//
+//	@return GetCloudTypes200Response
 func (a *CloudsAPIService) GetCloudTypesExecute(r ApiGetCloudTypesRequest) (*GetCloudTypes200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetCloudTypes200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetCloudTypes200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CloudsAPIService.GetCloudTypes")
@@ -759,7 +758,7 @@ func (a *CloudsAPIService) GetCloudTypesExecute(r ApiGetCloudTypesRequest) (*Get
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -768,8 +767,8 @@ func (a *CloudsAPIService) GetCloudTypesExecute(r ApiGetCloudTypesRequest) (*Get
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -779,8 +778,8 @@ func (a *CloudsAPIService) GetCloudTypesExecute(r ApiGetCloudTypesRequest) (*Get
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -788,8 +787,8 @@ func (a *CloudsAPIService) GetCloudTypesExecute(r ApiGetCloudTypesRequest) (*Get
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -798,9 +797,9 @@ func (a *CloudsAPIService) GetCloudTypesExecute(r ApiGetCloudTypesRequest) (*Get
 }
 
 type ApiGetCloudsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *CloudsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetCloudsRequest) Execute() (*GetClouds200Response, *http.Response, error) {
@@ -812,27 +811,27 @@ GetClouds Retrieves a Specific Cloud
 
 Retrieves a specific cloud.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetCloudsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetCloudsRequest
 */
 func (a *CloudsAPIService) GetClouds(ctx context.Context, id int64) ApiGetCloudsRequest {
 	return ApiGetCloudsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetClouds200Response
+//
+//	@return GetClouds200Response
 func (a *CloudsAPIService) GetCloudsExecute(r ApiGetCloudsRequest) (*GetClouds200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetClouds200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetClouds200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CloudsAPIService.GetClouds")
@@ -883,7 +882,7 @@ func (a *CloudsAPIService) GetCloudsExecute(r ApiGetCloudsRequest) (*GetClouds20
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -892,8 +891,8 @@ func (a *CloudsAPIService) GetCloudsExecute(r ApiGetCloudsRequest) (*GetClouds20
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -903,8 +902,8 @@ func (a *CloudsAPIService) GetCloudsExecute(r ApiGetCloudsRequest) (*GetClouds20
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -912,8 +911,8 @@ func (a *CloudsAPIService) GetCloudsExecute(r ApiGetCloudsRequest) (*GetClouds20
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -922,14 +921,14 @@ func (a *CloudsAPIService) GetCloudsExecute(r ApiGetCloudsRequest) (*GetClouds20
 }
 
 type ApiListCloudDatastoresRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *CloudsAPIService
-	zoneId float32
-	name *string
-	phrase *string
-	max *int64
-	sort *string
-	direction *string
+	zoneId     float32
+	name       *string
+	phrase     *string
+	max        *int64
+	sort       *string
+	direction  *string
 }
 
 // Filter by name
@@ -972,27 +971,27 @@ ListCloudDatastores Retrieves all Datastores for Specified Cloud
 Data Stores can be managed for each Compute Zone (Cloud) in your infrastructure.
 This endpoint retrieves all data stores under a cloud.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param zoneId The ID of the cloud
- @return ApiListCloudDatastoresRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param zoneId The ID of the cloud
+	@return ApiListCloudDatastoresRequest
 */
 func (a *CloudsAPIService) ListCloudDatastores(ctx context.Context, zoneId float32) ApiListCloudDatastoresRequest {
 	return ApiListCloudDatastoresRequest{
 		ApiService: a,
-		ctx: ctx,
-		zoneId: zoneId,
+		ctx:        ctx,
+		zoneId:     zoneId,
 	}
 }
 
 // Execute executes the request
-//  @return ListCloudDatastores200Response
+//
+//	@return ListCloudDatastores200Response
 func (a *CloudsAPIService) ListCloudDatastoresExecute(r ApiListCloudDatastoresRequest) (*ListCloudDatastores200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListCloudDatastores200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListCloudDatastores200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CloudsAPIService.ListCloudDatastores")
@@ -1067,7 +1066,7 @@ func (a *CloudsAPIService) ListCloudDatastoresExecute(r ApiListCloudDatastoresRe
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1076,8 +1075,8 @@ func (a *CloudsAPIService) ListCloudDatastoresExecute(r ApiListCloudDatastoresRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1087,8 +1086,8 @@ func (a *CloudsAPIService) ListCloudDatastoresExecute(r ApiListCloudDatastoresRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1096,8 +1095,8 @@ func (a *CloudsAPIService) ListCloudDatastoresExecute(r ApiListCloudDatastoresRe
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1106,12 +1105,12 @@ func (a *CloudsAPIService) ListCloudDatastoresExecute(r ApiListCloudDatastoresRe
 }
 
 type ApiListCloudFoldersRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *CloudsAPIService
-	zoneId float32
-	name *string
-	phrase *string
-	max *int64
+	zoneId     float32
+	name       *string
+	phrase     *string
+	max        *int64
 }
 
 // Filter by name
@@ -1142,27 +1141,27 @@ ListCloudFolders Retrieves all resource folders for Specified Cloud
 Resource Folders can be managed for each Compute Zone (Cloud) in your infrastructure.
 This endpoint retrieves all resource folders under a cloud.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param zoneId The ID of the cloud
- @return ApiListCloudFoldersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param zoneId The ID of the cloud
+	@return ApiListCloudFoldersRequest
 */
 func (a *CloudsAPIService) ListCloudFolders(ctx context.Context, zoneId float32) ApiListCloudFoldersRequest {
 	return ApiListCloudFoldersRequest{
 		ApiService: a,
-		ctx: ctx,
-		zoneId: zoneId,
+		ctx:        ctx,
+		zoneId:     zoneId,
 	}
 }
 
 // Execute executes the request
-//  @return ListCloudFolders200Response
+//
+//	@return ListCloudFolders200Response
 func (a *CloudsAPIService) ListCloudFoldersExecute(r ApiListCloudFoldersRequest) (*ListCloudFolders200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListCloudFolders200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListCloudFolders200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CloudsAPIService.ListCloudFolders")
@@ -1225,7 +1224,7 @@ func (a *CloudsAPIService) ListCloudFoldersExecute(r ApiListCloudFoldersRequest)
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1234,8 +1233,8 @@ func (a *CloudsAPIService) ListCloudFoldersExecute(r ApiListCloudFoldersRequest)
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1245,8 +1244,8 @@ func (a *CloudsAPIService) ListCloudFoldersExecute(r ApiListCloudFoldersRequest)
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1254,8 +1253,8 @@ func (a *CloudsAPIService) ListCloudFoldersExecute(r ApiListCloudFoldersRequest)
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1264,12 +1263,12 @@ func (a *CloudsAPIService) ListCloudFoldersExecute(r ApiListCloudFoldersRequest)
 }
 
 type ApiListCloudResourcePoolsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *CloudsAPIService
-	zoneId float32
-	name *string
-	phrase *string
-	max *int64
+	zoneId     float32
+	name       *string
+	phrase     *string
+	max        *int64
 }
 
 // Filter by name
@@ -1300,27 +1299,27 @@ ListCloudResourcePools Retrieves all Resource Pools for Specified Cloud
 Resource Pools can be managed for each Compute Zone (Cloud) in your infrastructure.
 This endpoint retrieves all resource pools under a cloud.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param zoneId The ID of the cloud
- @return ApiListCloudResourcePoolsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param zoneId The ID of the cloud
+	@return ApiListCloudResourcePoolsRequest
 */
 func (a *CloudsAPIService) ListCloudResourcePools(ctx context.Context, zoneId float32) ApiListCloudResourcePoolsRequest {
 	return ApiListCloudResourcePoolsRequest{
 		ApiService: a,
-		ctx: ctx,
-		zoneId: zoneId,
+		ctx:        ctx,
+		zoneId:     zoneId,
 	}
 }
 
 // Execute executes the request
-//  @return ListCloudResourcePools200Response
+//
+//	@return ListCloudResourcePools200Response
 func (a *CloudsAPIService) ListCloudResourcePoolsExecute(r ApiListCloudResourcePoolsRequest) (*ListCloudResourcePools200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListCloudResourcePools200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListCloudResourcePools200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CloudsAPIService.ListCloudResourcePools")
@@ -1383,7 +1382,7 @@ func (a *CloudsAPIService) ListCloudResourcePoolsExecute(r ApiListCloudResourceP
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1392,8 +1391,8 @@ func (a *CloudsAPIService) ListCloudResourcePoolsExecute(r ApiListCloudResourceP
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1403,8 +1402,8 @@ func (a *CloudsAPIService) ListCloudResourcePoolsExecute(r ApiListCloudResourceP
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1412,8 +1411,8 @@ func (a *CloudsAPIService) ListCloudResourcePoolsExecute(r ApiListCloudResourceP
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1422,9 +1421,9 @@ func (a *CloudsAPIService) ListCloudResourcePoolsExecute(r ApiListCloudResourceP
 }
 
 type ApiListCloudSecurityGroupsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *CloudsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiListCloudSecurityGroupsRequest) Execute() (*ListCloudSecurityGroups200Response, *http.Response, error) {
@@ -1436,27 +1435,27 @@ ListCloudSecurityGroups Retrieves all Security Groups for a Cloud
 
 Retrieves all security groups for a cloud.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiListCloudSecurityGroupsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiListCloudSecurityGroupsRequest
 */
 func (a *CloudsAPIService) ListCloudSecurityGroups(ctx context.Context, id int64) ApiListCloudSecurityGroupsRequest {
 	return ApiListCloudSecurityGroupsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ListCloudSecurityGroups200Response
+//
+//	@return ListCloudSecurityGroups200Response
 func (a *CloudsAPIService) ListCloudSecurityGroupsExecute(r ApiListCloudSecurityGroupsRequest) (*ListCloudSecurityGroups200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListCloudSecurityGroups200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListCloudSecurityGroups200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CloudsAPIService.ListCloudSecurityGroups")
@@ -1507,7 +1506,7 @@ func (a *CloudsAPIService) ListCloudSecurityGroupsExecute(r ApiListCloudSecurity
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1516,8 +1515,8 @@ func (a *CloudsAPIService) ListCloudSecurityGroupsExecute(r ApiListCloudSecurity
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1527,8 +1526,8 @@ func (a *CloudsAPIService) ListCloudSecurityGroupsExecute(r ApiListCloudSecurity
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1536,8 +1535,8 @@ func (a *CloudsAPIService) ListCloudSecurityGroupsExecute(r ApiListCloudSecurity
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1546,15 +1545,15 @@ func (a *CloudsAPIService) ListCloudSecurityGroupsExecute(r ApiListCloudSecurity
 }
 
 type ApiListCloudTypesRequest struct {
-	ctx context.Context
-	ApiService *CloudsAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	name *string
-	code *string
-	phrase *string
+	ctx           context.Context
+	ApiService    *CloudsAPIService
+	max           *int64
+	offset        *int64
+	sort          *string
+	direction     *string
+	name          *string
+	code          *string
+	phrase        *string
 	provisionType *string
 }
 
@@ -1600,7 +1599,7 @@ func (r ApiListCloudTypesRequest) Phrase(phrase string) ApiListCloudTypesRequest
 	return r
 }
 
-// Filter by &#x60;Provision Type&#x60; code. Refer to &#x60;Provision Types&#x60; API for up to date listings. 
+// Filter by &#x60;Provision Type&#x60; code. Refer to &#x60;Provision Types&#x60; API for up to date listings.
 func (r ApiListCloudTypesRequest) ProvisionType(provisionType string) ApiListCloudTypesRequest {
 	r.provisionType = &provisionType
 	return r
@@ -1616,25 +1615,25 @@ ListCloudTypes Retrieves all Cloud Types
 Fetch a paginated list of available cloud types.
 This returns the configuration options for each type.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListCloudTypesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListCloudTypesRequest
 */
 func (a *CloudsAPIService) ListCloudTypes(ctx context.Context) ApiListCloudTypesRequest {
 	return ApiListCloudTypesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListCloudTypes200Response
+//
+//	@return ListCloudTypes200Response
 func (a *CloudsAPIService) ListCloudTypesExecute(r ApiListCloudTypesRequest) (*ListCloudTypes200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListCloudTypes200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListCloudTypes200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CloudsAPIService.ListCloudTypes")
@@ -1720,7 +1719,7 @@ func (a *CloudsAPIService) ListCloudTypesExecute(r ApiListCloudTypesRequest) (*L
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1729,8 +1728,8 @@ func (a *CloudsAPIService) ListCloudTypesExecute(r ApiListCloudTypesRequest) (*L
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1740,8 +1739,8 @@ func (a *CloudsAPIService) ListCloudTypesExecute(r ApiListCloudTypesRequest) (*L
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1749,8 +1748,8 @@ func (a *CloudsAPIService) ListCloudTypesExecute(r ApiListCloudTypesRequest) (*L
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1759,18 +1758,18 @@ func (a *CloudsAPIService) ListCloudTypesExecute(r ApiListCloudTypesRequest) (*L
 }
 
 type ApiListCloudsRequest struct {
-	ctx context.Context
-	ApiService *CloudsAPIService
+	ctx         context.Context
+	ApiService  *CloudsAPIService
 	lastUpdated *time.Time
-	type_ *string
-	groupId *int64
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	name *string
-	labels *string
+	type_       *string
+	groupId     *int64
+	max         *int64
+	offset      *int64
+	sort        *string
+	direction   *string
+	phrase      *string
+	name        *string
+	labels      *string
 }
 
 // Date filter, restricts query to only load resources updated more recently than the date specified (ISO 8601)
@@ -1779,7 +1778,7 @@ func (r ApiListCloudsRequest) LastUpdated(lastUpdated time.Time) ApiListCloudsRe
 	return r
 }
 
-// If specified will return all zones by cloud type code. Refer to &#x60;Zone Types&#x60; API for up to date listings. 
+// If specified will return all zones by cloud type code. Refer to &#x60;Zone Types&#x60; API for up to date listings.
 func (r ApiListCloudsRequest) Type_(type_ string) ApiListCloudsRequest {
 	r.type_ = &type_
 	return r
@@ -1842,25 +1841,25 @@ ListClouds Retrieves all Clouds
 
 Retrieves all clouds.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListCloudsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListCloudsRequest
 */
 func (a *CloudsAPIService) ListClouds(ctx context.Context) ApiListCloudsRequest {
 	return ApiListCloudsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListClouds200Response
+//
+//	@return ListClouds200Response
 func (a *CloudsAPIService) ListCloudsExecute(r ApiListCloudsRequest) (*ListClouds200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListClouds200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListClouds200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CloudsAPIService.ListClouds")
@@ -1952,7 +1951,7 @@ func (a *CloudsAPIService) ListCloudsExecute(r ApiListCloudsRequest) (*ListCloud
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1961,8 +1960,8 @@ func (a *CloudsAPIService) ListCloudsExecute(r ApiListCloudsRequest) (*ListCloud
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1972,8 +1971,8 @@ func (a *CloudsAPIService) ListCloudsExecute(r ApiListCloudsRequest) (*ListCloud
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1981,8 +1980,8 @@ func (a *CloudsAPIService) ListCloudsExecute(r ApiListCloudsRequest) (*ListCloud
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1991,9 +1990,9 @@ func (a *CloudsAPIService) ListCloudsExecute(r ApiListCloudsRequest) (*ListCloud
 }
 
 type ApiRefreshCloudsRequest struct {
-	ctx context.Context
-	ApiService *CloudsAPIService
-	id int64
+	ctx                  context.Context
+	ApiService           *CloudsAPIService
+	id                   int64
 	refreshCloudsRequest *RefreshCloudsRequest
 }
 
@@ -2011,27 +2010,27 @@ RefreshClouds Refreshes a Cloud
 
 Refreshes a cloud.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiRefreshCloudsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiRefreshCloudsRequest
 */
 func (a *CloudsAPIService) RefreshClouds(ctx context.Context, id int64) ApiRefreshCloudsRequest {
 	return ApiRefreshCloudsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *CloudsAPIService) RefreshCloudsExecute(r ApiRefreshCloudsRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CloudsAPIService.RefreshClouds")
@@ -2084,7 +2083,7 @@ func (a *CloudsAPIService) RefreshCloudsExecute(r ApiRefreshCloudsRequest) (*Del
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2093,8 +2092,8 @@ func (a *CloudsAPIService) RefreshCloudsExecute(r ApiRefreshCloudsRequest) (*Del
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2104,8 +2103,8 @@ func (a *CloudsAPIService) RefreshCloudsExecute(r ApiRefreshCloudsRequest) (*Del
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2113,8 +2112,8 @@ func (a *CloudsAPIService) RefreshCloudsExecute(r ApiRefreshCloudsRequest) (*Del
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2123,10 +2122,10 @@ func (a *CloudsAPIService) RefreshCloudsExecute(r ApiRefreshCloudsRequest) (*Del
 }
 
 type ApiRemoveCloudResourcePoolsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *CloudsAPIService
-	zoneId float32
-	id int64
+	zoneId     float32
+	id         int64
 }
 
 func (r ApiRemoveCloudResourcePoolsRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -2138,29 +2137,29 @@ RemoveCloudResourcePools Deletes a Resource Pool for Specified Cloud
 
 Deletes a resource pool for specified Cloud.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param zoneId The ID of the cloud
- @param id Morpheus ID of the Object being referenced
- @return ApiRemoveCloudResourcePoolsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param zoneId The ID of the cloud
+	@param id Morpheus ID of the Object being referenced
+	@return ApiRemoveCloudResourcePoolsRequest
 */
 func (a *CloudsAPIService) RemoveCloudResourcePools(ctx context.Context, zoneId float32, id int64) ApiRemoveCloudResourcePoolsRequest {
 	return ApiRemoveCloudResourcePoolsRequest{
 		ApiService: a,
-		ctx: ctx,
-		zoneId: zoneId,
-		id: id,
+		ctx:        ctx,
+		zoneId:     zoneId,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *CloudsAPIService) RemoveCloudResourcePoolsExecute(r ApiRemoveCloudResourcePoolsRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CloudsAPIService.RemoveCloudResourcePools")
@@ -2212,7 +2211,7 @@ func (a *CloudsAPIService) RemoveCloudResourcePoolsExecute(r ApiRemoveCloudResou
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2221,8 +2220,8 @@ func (a *CloudsAPIService) RemoveCloudResourcePoolsExecute(r ApiRemoveCloudResou
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2232,8 +2231,8 @@ func (a *CloudsAPIService) RemoveCloudResourcePoolsExecute(r ApiRemoveCloudResou
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2241,8 +2240,8 @@ func (a *CloudsAPIService) RemoveCloudResourcePoolsExecute(r ApiRemoveCloudResou
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2251,10 +2250,10 @@ func (a *CloudsAPIService) RemoveCloudResourcePoolsExecute(r ApiRemoveCloudResou
 }
 
 type ApiRemoveCloudsRequest struct {
-	ctx context.Context
-	ApiService *CloudsAPIService
-	id int64
-	force *bool
+	ctx             context.Context
+	ApiService      *CloudsAPIService
+	id              int64
+	force           *bool
 	removeResources *bool
 }
 
@@ -2279,27 +2278,27 @@ RemoveClouds Deletes a Cloud
 
 Deletes a specified Cloud.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiRemoveCloudsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiRemoveCloudsRequest
 */
 func (a *CloudsAPIService) RemoveClouds(ctx context.Context, id int64) ApiRemoveCloudsRequest {
 	return ApiRemoveCloudsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *CloudsAPIService) RemoveCloudsExecute(r ApiRemoveCloudsRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CloudsAPIService.RemoveClouds")
@@ -2362,7 +2361,7 @@ func (a *CloudsAPIService) RemoveCloudsExecute(r ApiRemoveCloudsRequest) (*Delet
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2371,8 +2370,8 @@ func (a *CloudsAPIService) RemoveCloudsExecute(r ApiRemoveCloudsRequest) (*Delet
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2382,8 +2381,8 @@ func (a *CloudsAPIService) RemoveCloudsExecute(r ApiRemoveCloudsRequest) (*Delet
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2391,8 +2390,8 @@ func (a *CloudsAPIService) RemoveCloudsExecute(r ApiRemoveCloudsRequest) (*Delet
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2401,9 +2400,9 @@ func (a *CloudsAPIService) RemoveCloudsExecute(r ApiRemoveCloudsRequest) (*Delet
 }
 
 type ApiSaveCloudDatastoreRequest struct {
-	ctx context.Context
-	ApiService *CloudsAPIService
-	zoneId float32
+	ctx                       context.Context
+	ApiService                *CloudsAPIService
+	zoneId                    float32
 	saveCloudDatastoreRequest *SaveCloudDatastoreRequest
 }
 
@@ -2421,26 +2420,27 @@ SaveCloudDatastore Create a Datastore for Specified Cloud
 
 This endpoint will create a datastore for a specific cloud.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param zoneId The ID of the cloud
- @return ApiSaveCloudDatastoreRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param zoneId The ID of the cloud
+	@return ApiSaveCloudDatastoreRequest
 */
 func (a *CloudsAPIService) SaveCloudDatastore(ctx context.Context, zoneId float32) ApiSaveCloudDatastoreRequest {
 	return ApiSaveCloudDatastoreRequest{
 		ApiService: a,
-		ctx: ctx,
-		zoneId: zoneId,
+		ctx:        ctx,
+		zoneId:     zoneId,
 	}
 }
 
 // Execute executes the request
-//  @return SaveCloudDatastore200Response
+//
+//	@return SaveCloudDatastore200Response
 func (a *CloudsAPIService) SaveCloudDatastoreExecute(r ApiSaveCloudDatastoreRequest) (*SaveCloudDatastore200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *SaveCloudDatastore200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *SaveCloudDatastore200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CloudsAPIService.SaveCloudDatastore")
@@ -2493,7 +2493,7 @@ func (a *CloudsAPIService) SaveCloudDatastoreExecute(r ApiSaveCloudDatastoreRequ
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2502,8 +2502,8 @@ func (a *CloudsAPIService) SaveCloudDatastoreExecute(r ApiSaveCloudDatastoreRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2513,8 +2513,8 @@ func (a *CloudsAPIService) SaveCloudDatastoreExecute(r ApiSaveCloudDatastoreRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2522,8 +2522,8 @@ func (a *CloudsAPIService) SaveCloudDatastoreExecute(r ApiSaveCloudDatastoreRequ
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2532,10 +2532,10 @@ func (a *CloudsAPIService) SaveCloudDatastoreExecute(r ApiSaveCloudDatastoreRequ
 }
 
 type ApiUpdateCloudDatastoresRequest struct {
-	ctx context.Context
-	ApiService *CloudsAPIService
-	zoneId float32
-	id int64
+	ctx                          context.Context
+	ApiService                   *CloudsAPIService
+	zoneId                       float32
+	id                           int64
 	updateCloudDatastoresRequest *UpdateCloudDatastoresRequest
 }
 
@@ -2553,29 +2553,29 @@ UpdateCloudDatastores Updates a Specified Datastore for Specified Cloud
 
 Updates a datastore for specified cloud.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param zoneId The ID of the cloud
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateCloudDatastoresRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param zoneId The ID of the cloud
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateCloudDatastoresRequest
 */
 func (a *CloudsAPIService) UpdateCloudDatastores(ctx context.Context, zoneId float32, id int64) ApiUpdateCloudDatastoresRequest {
 	return ApiUpdateCloudDatastoresRequest{
 		ApiService: a,
-		ctx: ctx,
-		zoneId: zoneId,
-		id: id,
+		ctx:        ctx,
+		zoneId:     zoneId,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return UpdateCloudDatastores200Response
+//
+//	@return UpdateCloudDatastores200Response
 func (a *CloudsAPIService) UpdateCloudDatastoresExecute(r ApiUpdateCloudDatastoresRequest) (*UpdateCloudDatastores200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UpdateCloudDatastores200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UpdateCloudDatastores200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CloudsAPIService.UpdateCloudDatastores")
@@ -2629,7 +2629,7 @@ func (a *CloudsAPIService) UpdateCloudDatastoresExecute(r ApiUpdateCloudDatastor
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2638,8 +2638,8 @@ func (a *CloudsAPIService) UpdateCloudDatastoresExecute(r ApiUpdateCloudDatastor
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2649,8 +2649,8 @@ func (a *CloudsAPIService) UpdateCloudDatastoresExecute(r ApiUpdateCloudDatastor
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2658,8 +2658,8 @@ func (a *CloudsAPIService) UpdateCloudDatastoresExecute(r ApiUpdateCloudDatastor
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2668,10 +2668,10 @@ func (a *CloudsAPIService) UpdateCloudDatastoresExecute(r ApiUpdateCloudDatastor
 }
 
 type ApiUpdateCloudFoldersRequest struct {
-	ctx context.Context
-	ApiService *CloudsAPIService
-	zoneId float32
-	id int64
+	ctx                       context.Context
+	ApiService                *CloudsAPIService
+	zoneId                    float32
+	id                        int64
 	updateCloudFoldersRequest *UpdateCloudFoldersRequest
 }
 
@@ -2689,29 +2689,29 @@ UpdateCloudFolders Updates a Resource Folder for Specified Cloud
 
 Updates a resource folder for specified cloud.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param zoneId The ID of the cloud
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateCloudFoldersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param zoneId The ID of the cloud
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateCloudFoldersRequest
 */
 func (a *CloudsAPIService) UpdateCloudFolders(ctx context.Context, zoneId float32, id int64) ApiUpdateCloudFoldersRequest {
 	return ApiUpdateCloudFoldersRequest{
 		ApiService: a,
-		ctx: ctx,
-		zoneId: zoneId,
-		id: id,
+		ctx:        ctx,
+		zoneId:     zoneId,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return UpdateCloudFolders200Response
+//
+//	@return UpdateCloudFolders200Response
 func (a *CloudsAPIService) UpdateCloudFoldersExecute(r ApiUpdateCloudFoldersRequest) (*UpdateCloudFolders200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UpdateCloudFolders200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UpdateCloudFolders200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CloudsAPIService.UpdateCloudFolders")
@@ -2765,7 +2765,7 @@ func (a *CloudsAPIService) UpdateCloudFoldersExecute(r ApiUpdateCloudFoldersRequ
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2774,8 +2774,8 @@ func (a *CloudsAPIService) UpdateCloudFoldersExecute(r ApiUpdateCloudFoldersRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2785,8 +2785,8 @@ func (a *CloudsAPIService) UpdateCloudFoldersExecute(r ApiUpdateCloudFoldersRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2794,8 +2794,8 @@ func (a *CloudsAPIService) UpdateCloudFoldersExecute(r ApiUpdateCloudFoldersRequ
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2804,11 +2804,11 @@ func (a *CloudsAPIService) UpdateCloudFoldersExecute(r ApiUpdateCloudFoldersRequ
 }
 
 type ApiUpdateCloudLogoRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *CloudsAPIService
-	id int64
-	logo *os.File
-	darkLogo *os.File
+	id         int64
+	logo       *os.File
+	darkLogo   *os.File
 }
 
 // Logo File png,jpg,svg
@@ -2832,27 +2832,27 @@ UpdateCloudLogo Update Logo For Cloud
 
 Use this command to update the logo and dark logo images for a cloud. This endpoint expects multipart form data as the request format, not JSON.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateCloudLogoRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateCloudLogoRequest
 */
 func (a *CloudsAPIService) UpdateCloudLogo(ctx context.Context, id int64) ApiUpdateCloudLogoRequest {
 	return ApiUpdateCloudLogoRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *CloudsAPIService) UpdateCloudLogoExecute(r ApiUpdateCloudLogoRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CloudsAPIService.UpdateCloudLogo")
@@ -2885,8 +2885,8 @@ func (a *CloudsAPIService) UpdateCloudLogoExecute(r ApiUpdateCloudLogoRequest) (
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	var logoLocalVarFormFileName string
-	var logoLocalVarFileName     string
-	var logoLocalVarFileBytes    []byte
+	var logoLocalVarFileName string
+	var logoLocalVarFileBytes []byte
 
 	logoLocalVarFormFileName = "logo"
 	logoLocalVarFile := r.logo
@@ -2900,8 +2900,8 @@ func (a *CloudsAPIService) UpdateCloudLogoExecute(r ApiUpdateCloudLogoRequest) (
 		formFiles = append(formFiles, formFile{fileBytes: logoLocalVarFileBytes, fileName: logoLocalVarFileName, formFileName: logoLocalVarFormFileName})
 	}
 	var darkLogoLocalVarFormFileName string
-	var darkLogoLocalVarFileName     string
-	var darkLogoLocalVarFileBytes    []byte
+	var darkLogoLocalVarFileName string
+	var darkLogoLocalVarFileBytes []byte
 
 	darkLogoLocalVarFormFileName = "darkLogo"
 	darkLogoLocalVarFile := r.darkLogo
@@ -2933,7 +2933,7 @@ func (a *CloudsAPIService) UpdateCloudLogoExecute(r ApiUpdateCloudLogoRequest) (
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2942,8 +2942,8 @@ func (a *CloudsAPIService) UpdateCloudLogoExecute(r ApiUpdateCloudLogoRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2953,8 +2953,8 @@ func (a *CloudsAPIService) UpdateCloudLogoExecute(r ApiUpdateCloudLogoRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2962,8 +2962,8 @@ func (a *CloudsAPIService) UpdateCloudLogoExecute(r ApiUpdateCloudLogoRequest) (
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2972,10 +2972,10 @@ func (a *CloudsAPIService) UpdateCloudLogoExecute(r ApiUpdateCloudLogoRequest) (
 }
 
 type ApiUpdateCloudResourcePoolRequest struct {
-	ctx context.Context
-	ApiService *CloudsAPIService
-	zoneId float32
-	id int64
+	ctx                            context.Context
+	ApiService                     *CloudsAPIService
+	zoneId                         float32
+	id                             int64
 	updateCloudResourcePoolRequest *UpdateCloudResourcePoolRequest
 }
 
@@ -2993,29 +2993,29 @@ UpdateCloudResourcePool Updates a Specified Resource Pool for Specified Cloud
 
 Updates a resource pool for specified cloud.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param zoneId The ID of the cloud
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateCloudResourcePoolRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param zoneId The ID of the cloud
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateCloudResourcePoolRequest
 */
 func (a *CloudsAPIService) UpdateCloudResourcePool(ctx context.Context, zoneId float32, id int64) ApiUpdateCloudResourcePoolRequest {
 	return ApiUpdateCloudResourcePoolRequest{
 		ApiService: a,
-		ctx: ctx,
-		zoneId: zoneId,
-		id: id,
+		ctx:        ctx,
+		zoneId:     zoneId,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddCloudResourcePool200Response
+//
+//	@return AddCloudResourcePool200Response
 func (a *CloudsAPIService) UpdateCloudResourcePoolExecute(r ApiUpdateCloudResourcePoolRequest) (*AddCloudResourcePool200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddCloudResourcePool200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddCloudResourcePool200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CloudsAPIService.UpdateCloudResourcePool")
@@ -3069,7 +3069,7 @@ func (a *CloudsAPIService) UpdateCloudResourcePoolExecute(r ApiUpdateCloudResour
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -3078,8 +3078,8 @@ func (a *CloudsAPIService) UpdateCloudResourcePoolExecute(r ApiUpdateCloudResour
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -3089,8 +3089,8 @@ func (a *CloudsAPIService) UpdateCloudResourcePoolExecute(r ApiUpdateCloudResour
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3098,8 +3098,8 @@ func (a *CloudsAPIService) UpdateCloudResourcePoolExecute(r ApiUpdateCloudResour
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3108,9 +3108,9 @@ func (a *CloudsAPIService) UpdateCloudResourcePoolExecute(r ApiUpdateCloudResour
 }
 
 type ApiUpdateCloudSecurityGroupsRequest struct {
-	ctx context.Context
-	ApiService *CloudsAPIService
-	id int64
+	ctx                              context.Context
+	ApiService                       *CloudsAPIService
+	id                               int64
 	updateCloudSecurityGroupsRequest *UpdateCloudSecurityGroupsRequest
 }
 
@@ -3128,27 +3128,27 @@ UpdateCloudSecurityGroups Sets Security Groups for a Cloud
 
 Sets security groups for acloud.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateCloudSecurityGroupsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateCloudSecurityGroupsRequest
 */
 func (a *CloudsAPIService) UpdateCloudSecurityGroups(ctx context.Context, id int64) ApiUpdateCloudSecurityGroupsRequest {
 	return ApiUpdateCloudSecurityGroupsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return UpdateCloudSecurityGroups200Response
+//
+//	@return UpdateCloudSecurityGroups200Response
 func (a *CloudsAPIService) UpdateCloudSecurityGroupsExecute(r ApiUpdateCloudSecurityGroupsRequest) (*UpdateCloudSecurityGroups200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UpdateCloudSecurityGroups200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UpdateCloudSecurityGroups200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CloudsAPIService.UpdateCloudSecurityGroups")
@@ -3201,7 +3201,7 @@ func (a *CloudsAPIService) UpdateCloudSecurityGroupsExecute(r ApiUpdateCloudSecu
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -3210,8 +3210,8 @@ func (a *CloudsAPIService) UpdateCloudSecurityGroupsExecute(r ApiUpdateCloudSecu
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -3221,8 +3221,8 @@ func (a *CloudsAPIService) UpdateCloudSecurityGroupsExecute(r ApiUpdateCloudSecu
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3230,8 +3230,8 @@ func (a *CloudsAPIService) UpdateCloudSecurityGroupsExecute(r ApiUpdateCloudSecu
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3240,9 +3240,9 @@ func (a *CloudsAPIService) UpdateCloudSecurityGroupsExecute(r ApiUpdateCloudSecu
 }
 
 type ApiUpdateCloudsRequest struct {
-	ctx context.Context
-	ApiService *CloudsAPIService
-	id int64
+	ctx                 context.Context
+	ApiService          *CloudsAPIService
+	id                  int64
 	updateCloudsRequest *UpdateCloudsRequest
 }
 
@@ -3260,27 +3260,27 @@ UpdateClouds Updates a Cloud
 
 Updates a cloud.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateCloudsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateCloudsRequest
 */
 func (a *CloudsAPIService) UpdateClouds(ctx context.Context, id int64) ApiUpdateCloudsRequest {
 	return ApiUpdateCloudsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddClouds200Response
+//
+//	@return AddClouds200Response
 func (a *CloudsAPIService) UpdateCloudsExecute(r ApiUpdateCloudsRequest) (*AddClouds200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddClouds200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddClouds200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CloudsAPIService.UpdateClouds")
@@ -3333,7 +3333,7 @@ func (a *CloudsAPIService) UpdateCloudsExecute(r ApiUpdateCloudsRequest) (*AddCl
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -3342,8 +3342,8 @@ func (a *CloudsAPIService) UpdateCloudsExecute(r ApiUpdateCloudsRequest) (*AddCl
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -3353,8 +3353,8 @@ func (a *CloudsAPIService) UpdateCloudsExecute(r ApiUpdateCloudsRequest) (*AddCl
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3362,8 +3362,8 @@ func (a *CloudsAPIService) UpdateCloudsExecute(r ApiUpdateCloudsRequest) (*AddCl
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

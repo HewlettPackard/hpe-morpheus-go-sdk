@@ -20,9 +20,9 @@ var _ MappedNullable = &GetClusterHistory200ResponseAllOfProcessesInnerCreatedBy
 
 // GetClusterHistory200ResponseAllOfProcessesInnerCreatedBy struct for GetClusterHistory200ResponseAllOfProcessesInnerCreatedBy
 type GetClusterHistory200ResponseAllOfProcessesInnerCreatedBy struct {
-	Username *string `json:"username,omitempty"`
-	DisplayName *string `json:"displayName,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Username             *string                `json:"username,omitempty"`
+	DisplayName          *string                `json:"displayName,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _GetClusterHistory200ResponseAllOfProcessesInnerCreatedBy GetClusterHistory200ResponseAllOfProcessesInnerCreatedBy
@@ -109,7 +109,7 @@ func (o *GetClusterHistory200ResponseAllOfProcessesInnerCreatedBy) SetDisplayNam
 }
 
 func (o GetClusterHistory200ResponseAllOfProcessesInnerCreatedBy) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o GetClusterHistory200ResponseAllOfProcessesInnerCreatedBy) ToMap() (map[s
 
 	return toSerialize, nil
 }
-
 func (o *GetClusterHistory200ResponseAllOfProcessesInnerCreatedBy) UnmarshalJSON(data []byte) (err error) {
-	varGetClusterHistory200ResponseAllOfProcessesInnerCreatedBy := _GetClusterHistory200ResponseAllOfProcessesInnerCreatedBy{}
-
-	err = json.Unmarshal(data, &varGetClusterHistory200ResponseAllOfProcessesInnerCreatedBy)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetClusterHistory200ResponseAllOfProcessesInnerCreatedBy(varGetClusterHistory200ResponseAllOfProcessesInnerCreatedBy)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "username")
-		delete(additionalProperties, "displayName")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetClusterHistory200ResponseAllOfProcessesInnerCreatedBy struct {
-	value *GetClusterHistory200ResponseAllOfProcessesInnerCreatedBy
-	isSet bool
-}
-
-func (v NullableGetClusterHistory200ResponseAllOfProcessesInnerCreatedBy) Get() *GetClusterHistory200ResponseAllOfProcessesInnerCreatedBy {
-	return v.value
-}
-
-func (v *NullableGetClusterHistory200ResponseAllOfProcessesInnerCreatedBy) Set(val *GetClusterHistory200ResponseAllOfProcessesInnerCreatedBy) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetClusterHistory200ResponseAllOfProcessesInnerCreatedBy) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetClusterHistory200ResponseAllOfProcessesInnerCreatedBy) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetClusterHistory200ResponseAllOfProcessesInnerCreatedBy(val *GetClusterHistory200ResponseAllOfProcessesInnerCreatedBy) *NullableGetClusterHistory200ResponseAllOfProcessesInnerCreatedBy {
-	return &NullableGetClusterHistory200ResponseAllOfProcessesInnerCreatedBy{value: val, isSet: true}
-}
-
-func (v NullableGetClusterHistory200ResponseAllOfProcessesInnerCreatedBy) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetClusterHistory200ResponseAllOfProcessesInnerCreatedBy) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

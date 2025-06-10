@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf type satisfies the MappedNullable interface at compile time
@@ -22,9 +21,9 @@ var _ MappedNullable = &ListCloudResourcePools200ResponseAllOfResourcePoolsInner
 // ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf Type AWS
 type ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf struct {
 	// Provide the base CIDR Block to use for this VPC (must be between a /16 and /28 Block)
-	CidrBlock string `json:"cidrBlock"`
-	Tenancy string `json:"tenancy"`
-	AdditionalProperties map[string]interface{}
+	CidrBlock            string                 `json:"cidrBlock"`
+	Tenancy              string                 `json:"tenancy"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf
@@ -99,7 +98,7 @@ func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf) Se
 }
 
 func (o ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -117,85 +116,8 @@ func (o ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf) ToM
 
 	return toSerialize, nil
 }
-
 func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"cidrBlock",
-		"tenancy",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf := _ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf{}
-
-	err = json.Unmarshal(data, &varListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf(varListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "cidrBlock")
-		delete(additionalProperties, "tenancy")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf struct {
-	value *ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf
-	isSet bool
-}
-
-func (v NullableListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf) Get() *ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf {
-	return v.value
-}
-
-func (v *NullableListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf) Set(val *ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf(val *ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf) *NullableListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf {
-	return &NullableListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf{value: val, isSet: true}
-}
-
-func (v NullableListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

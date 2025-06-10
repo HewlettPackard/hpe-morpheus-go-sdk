@@ -43,20 +43,20 @@ type CatalogItemTypeWorkflowUpdate struct {
 	// Can be used to feature the catalog item type.
 	Featured *bool `json:"featured,omitempty"`
 	// Can users order more than one of this item at a time.
-	AllowQuantity *bool `json:"allowQuantity,omitempty"`
-	Workflow *GetAlerts200ResponseAllOfChecksInnerAccount `json:"workflow,omitempty"`
+	AllowQuantity *bool                                        `json:"allowQuantity,omitempty"`
+	Workflow      *GetAlerts200ResponseAllOfChecksInnerAccount `json:"workflow,omitempty"`
 	// Context for running the workflow, determines if a target resource must be selected.
 	Context *string `json:"context,omitempty"`
 	// Configuration object that contains settings for the workflow.
 	WorkflowConfig *string `json:"workflowConfig,omitempty"`
 	// Form Type determines if the configuration options come from a Form (form) or a list of Inputs (optionTypes).
-	FormType *string `json:"formType,omitempty"`
-	Form *AddCatalogItemTypeRequestCatalogItemTypeOneOfForm `json:"form,omitempty"`
+	FormType *string                                            `json:"formType,omitempty"`
+	Form     *AddCatalogItemTypeRequestCatalogItemTypeOneOfForm `json:"form,omitempty"`
 	// Array of option type IDs. Only applies to formType 'optionTypes'.
 	OptionTypes []int64 `json:"optionTypes,omitempty"`
 	// Documentation content for this Catalog Item. Markdown-formatted text is accepted and displayed appropriately when the item is ordered from the Service Catalog. A new Catalog Item-type Wiki entry will also be added containing this information.
-	Content *string `json:"content,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Content              *string                `json:"content,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _CatalogItemTypeWorkflowUpdate CatalogItemTypeWorkflowUpdate
@@ -707,7 +707,7 @@ func (o *CatalogItemTypeWorkflowUpdate) SetContent(v string) {
 }
 
 func (o CatalogItemTypeWorkflowUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -780,80 +780,8 @@ func (o CatalogItemTypeWorkflowUpdate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *CatalogItemTypeWorkflowUpdate) UnmarshalJSON(data []byte) (err error) {
-	varCatalogItemTypeWorkflowUpdate := _CatalogItemTypeWorkflowUpdate{}
-
-	err = json.Unmarshal(data, &varCatalogItemTypeWorkflowUpdate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CatalogItemTypeWorkflowUpdate(varCatalogItemTypeWorkflowUpdate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "layoutCode")
-		delete(additionalProperties, "iconPath")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "featured")
-		delete(additionalProperties, "allowQuantity")
-		delete(additionalProperties, "workflow")
-		delete(additionalProperties, "context")
-		delete(additionalProperties, "workflowConfig")
-		delete(additionalProperties, "formType")
-		delete(additionalProperties, "form")
-		delete(additionalProperties, "optionTypes")
-		delete(additionalProperties, "content")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCatalogItemTypeWorkflowUpdate struct {
-	value *CatalogItemTypeWorkflowUpdate
-	isSet bool
-}
-
-func (v NullableCatalogItemTypeWorkflowUpdate) Get() *CatalogItemTypeWorkflowUpdate {
-	return v.value
-}
-
-func (v *NullableCatalogItemTypeWorkflowUpdate) Set(val *CatalogItemTypeWorkflowUpdate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCatalogItemTypeWorkflowUpdate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCatalogItemTypeWorkflowUpdate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCatalogItemTypeWorkflowUpdate(val *CatalogItemTypeWorkflowUpdate) *NullableCatalogItemTypeWorkflowUpdate {
-	return &NullableCatalogItemTypeWorkflowUpdate{value: val, isSet: true}
-}
-
-func (v NullableCatalogItemTypeWorkflowUpdate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCatalogItemTypeWorkflowUpdate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

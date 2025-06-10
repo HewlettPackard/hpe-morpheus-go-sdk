@@ -14,6 +14,7 @@ package sdk
 import (
 	"encoding/json"
 	"fmt"
+
 	"gopkg.in/validator.v2"
 )
 
@@ -32,6 +33,17 @@ func AddVDIAppsRequestVdiAppOneOfAsAddVDIAppsRequestVdiApp(v *AddVDIAppsRequestV
 	}
 }
 
+func (dst *AddVDIAppsRequestVdiApp) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddVDIAppsRequestVdiApp{}
+	}
+
+	if out, ok := data.(AddVDIAppsRequestVdiAppOneOf); ok {
+		dst.AddVDIAppsRequestVdiAppOneOf = &out
+	}
+
+	return dst, nil
+}
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddVDIAppsRequestVdiApp) UnmarshalJSON(data []byte) error {
@@ -76,7 +88,7 @@ func (src AddVDIAppsRequestVdiApp) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddVDIAppsRequestVdiApp) GetActualInstance() (interface{}) {
+func (obj *AddVDIAppsRequestVdiApp) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -89,7 +101,7 @@ func (obj *AddVDIAppsRequestVdiApp) GetActualInstance() (interface{}) {
 }
 
 // Get the actual instance value
-func (obj AddVDIAppsRequestVdiApp) GetActualInstanceValue() (interface{}) {
+func (obj AddVDIAppsRequestVdiApp) GetActualInstanceValue() interface{} {
 	if obj.AddVDIAppsRequestVdiAppOneOf != nil {
 		return *obj.AddVDIAppsRequestVdiAppOneOf
 	}
@@ -133,5 +145,3 @@ func (v *NullableAddVDIAppsRequestVdiApp) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -14,6 +14,7 @@ package sdk
 import (
 	"encoding/json"
 	"fmt"
+
 	"gopkg.in/validator.v2"
 )
 
@@ -22,7 +23,7 @@ var _ fmt.Stringer
 
 // AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId - struct for AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId
 type AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId struct {
-	Int64 *int64
+	Int64  *int64
 	String *string
 }
 
@@ -40,6 +41,21 @@ func StringAsAddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId(v *str
 	}
 }
 
+func (dst *AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId{}
+	}
+
+	if out, ok := data.(int64); ok {
+		dst.Int64 = &out
+	}
+
+	if out, ok := data.(string); ok {
+		dst.String = &out
+	}
+
+	return dst, nil
+}
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId) UnmarshalJSON(data []byte) error {
@@ -106,7 +122,7 @@ func (src AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId) MarshalJ
 }
 
 // Get the actual instance
-func (obj *AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId) GetActualInstance() (interface{}) {
+func (obj *AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -123,7 +139,7 @@ func (obj *AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId) GetActu
 }
 
 // Get the actual instance value
-func (obj AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId) GetActualInstanceValue() (interface{}) {
+func (obj AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId) GetActualInstanceValue() interface{} {
 	if obj.Int64 != nil {
 		return *obj.Int64
 	}
@@ -171,5 +187,3 @@ func (v *NullableAddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId) U
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

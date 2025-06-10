@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddIdentitySourcesRequest type satisfies the MappedNullable interface at compile time
@@ -21,8 +20,8 @@ var _ MappedNullable = &AddIdentitySourcesRequest{}
 
 // AddIdentitySourcesRequest struct for AddIdentitySourcesRequest
 type AddIdentitySourcesRequest struct {
-	UserSource AddIdentitySourcesRequestUserSource `json:"userSource"`
-	AdditionalProperties map[string]interface{}
+	UserSource           AddIdentitySourcesRequestUserSource `json:"userSource"`
+	AdditionalProperties map[string]interface{}              `json:",remain"`
 }
 
 type _AddIdentitySourcesRequest AddIdentitySourcesRequest
@@ -70,7 +69,7 @@ func (o *AddIdentitySourcesRequest) SetUserSource(v AddIdentitySourcesRequestUse
 }
 
 func (o AddIdentitySourcesRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -87,83 +86,8 @@ func (o AddIdentitySourcesRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *AddIdentitySourcesRequest) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"userSource",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddIdentitySourcesRequest := _AddIdentitySourcesRequest{}
-
-	err = json.Unmarshal(data, &varAddIdentitySourcesRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddIdentitySourcesRequest(varAddIdentitySourcesRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "userSource")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddIdentitySourcesRequest struct {
-	value *AddIdentitySourcesRequest
-	isSet bool
-}
-
-func (v NullableAddIdentitySourcesRequest) Get() *AddIdentitySourcesRequest {
-	return v.value
-}
-
-func (v *NullableAddIdentitySourcesRequest) Set(val *AddIdentitySourcesRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddIdentitySourcesRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddIdentitySourcesRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddIdentitySourcesRequest(val *AddIdentitySourcesRequest) *NullableAddIdentitySourcesRequest {
-	return &NullableAddIdentitySourcesRequest{value: val, isSet: true}
-}
-
-func (v NullableAddIdentitySourcesRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddIdentitySourcesRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

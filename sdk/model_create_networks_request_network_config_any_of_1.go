@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the CreateNetworksRequestNetworkConfigAnyOf1 type satisfies the MappedNullable interface at compile time
@@ -26,9 +25,9 @@ type CreateNetworksRequestNetworkConfigAnyOf1 struct {
 	// Network CIDR
 	Cidr string `json:"cidr"`
 	// Assign public IPs by default.
-	AssignPublicIp bool `json:"assignPublicIp"`
-	ZonePool CreateNetworksRequestNetworkConfigAnyOf1ZonePool `json:"zonePool"`
-	AdditionalProperties map[string]interface{}
+	AssignPublicIp       bool                                             `json:"assignPublicIp"`
+	ZonePool             CreateNetworksRequestNetworkConfigAnyOf1ZonePool `json:"zonePool"`
+	AdditionalProperties map[string]interface{}                           `json:",remain"`
 }
 
 type _CreateNetworksRequestNetworkConfigAnyOf1 CreateNetworksRequestNetworkConfigAnyOf1
@@ -151,7 +150,7 @@ func (o *CreateNetworksRequestNetworkConfigAnyOf1) SetZonePool(v CreateNetworksR
 }
 
 func (o CreateNetworksRequestNetworkConfigAnyOf1) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -171,89 +170,8 @@ func (o CreateNetworksRequestNetworkConfigAnyOf1) ToMap() (map[string]interface{
 
 	return toSerialize, nil
 }
-
 func (o *CreateNetworksRequestNetworkConfigAnyOf1) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"availabilityZone",
-		"cidr",
-		"assignPublicIp",
-		"zonePool",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varCreateNetworksRequestNetworkConfigAnyOf1 := _CreateNetworksRequestNetworkConfigAnyOf1{}
-
-	err = json.Unmarshal(data, &varCreateNetworksRequestNetworkConfigAnyOf1)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CreateNetworksRequestNetworkConfigAnyOf1(varCreateNetworksRequestNetworkConfigAnyOf1)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "availabilityZone")
-		delete(additionalProperties, "cidr")
-		delete(additionalProperties, "assignPublicIp")
-		delete(additionalProperties, "zonePool")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCreateNetworksRequestNetworkConfigAnyOf1 struct {
-	value *CreateNetworksRequestNetworkConfigAnyOf1
-	isSet bool
-}
-
-func (v NullableCreateNetworksRequestNetworkConfigAnyOf1) Get() *CreateNetworksRequestNetworkConfigAnyOf1 {
-	return v.value
-}
-
-func (v *NullableCreateNetworksRequestNetworkConfigAnyOf1) Set(val *CreateNetworksRequestNetworkConfigAnyOf1) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCreateNetworksRequestNetworkConfigAnyOf1) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCreateNetworksRequestNetworkConfigAnyOf1) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCreateNetworksRequestNetworkConfigAnyOf1(val *CreateNetworksRequestNetworkConfigAnyOf1) *NullableCreateNetworksRequestNetworkConfigAnyOf1 {
-	return &NullableCreateNetworksRequestNetworkConfigAnyOf1{value: val, isSet: true}
-}
-
-func (v NullableCreateNetworksRequestNetworkConfigAnyOf1) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCreateNetworksRequestNetworkConfigAnyOf1) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

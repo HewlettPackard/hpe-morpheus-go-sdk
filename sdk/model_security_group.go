@@ -20,22 +20,22 @@ var _ MappedNullable = &SecurityGroup{}
 
 // SecurityGroup struct for SecurityGroup
 type SecurityGroup struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	AccountId *int64 `json:"accountId,omitempty"`
-	GroupSource *string `json:"groupSource,omitempty"`
-	ExternalId *string `json:"externalId,omitempty"`
-	Enabled *string `json:"enabled,omitempty"`
-	SyncSource *string `json:"syncSource,omitempty"`
-	Visibility *string `json:"visibility,omitempty"`
-	Active *bool `json:"active,omitempty"`
-	Zone *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"zone,omitempty"`
-	Locations []ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner `json:"locations,omitempty"`
-	Rules []ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner `json:"rules,omitempty"`
-	Tenants []ListSecurityGroups200ResponseAllOfSecurityGroupsInnerTenantsInner `json:"tenants,omitempty"`
-	ResourcePermission *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions `json:"resourcePermission,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                   `json:"id,omitempty"`
+	Name                 *string                                                                  `json:"name,omitempty"`
+	Description          *string                                                                  `json:"description,omitempty"`
+	AccountId            *int64                                                                   `json:"accountId,omitempty"`
+	GroupSource          *string                                                                  `json:"groupSource,omitempty"`
+	ExternalId           *string                                                                  `json:"externalId,omitempty"`
+	Enabled              *string                                                                  `json:"enabled,omitempty"`
+	SyncSource           *string                                                                  `json:"syncSource,omitempty"`
+	Visibility           *string                                                                  `json:"visibility,omitempty"`
+	Active               *bool                                                                    `json:"active,omitempty"`
+	Zone                 *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                       `json:"zone,omitempty"`
+	Locations            []ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner    `json:"locations,omitempty"`
+	Rules                []ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner        `json:"rules,omitempty"`
+	Tenants              []ListSecurityGroups200ResponseAllOfSecurityGroupsInnerTenantsInner      `json:"tenants,omitempty"`
+	ResourcePermission   *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions `json:"resourcePermission,omitempty"`
+	AdditionalProperties map[string]interface{}                                                   `json:",remain"`
 }
 
 type _SecurityGroup SecurityGroup
@@ -538,7 +538,7 @@ func (o *SecurityGroup) SetResourcePermission(v ListClusterDatastores200Response
 }
 
 func (o SecurityGroup) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -599,76 +599,8 @@ func (o SecurityGroup) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *SecurityGroup) UnmarshalJSON(data []byte) (err error) {
-	varSecurityGroup := _SecurityGroup{}
-
-	err = json.Unmarshal(data, &varSecurityGroup)
-
-	if err != nil {
-		return err
-	}
-
-	*o = SecurityGroup(varSecurityGroup)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "accountId")
-		delete(additionalProperties, "groupSource")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "syncSource")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "zone")
-		delete(additionalProperties, "locations")
-		delete(additionalProperties, "rules")
-		delete(additionalProperties, "tenants")
-		delete(additionalProperties, "resourcePermission")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableSecurityGroup struct {
-	value *SecurityGroup
-	isSet bool
-}
-
-func (v NullableSecurityGroup) Get() *SecurityGroup {
-	return v.value
-}
-
-func (v *NullableSecurityGroup) Set(val *SecurityGroup) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSecurityGroup) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSecurityGroup) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSecurityGroup(val *SecurityGroup) *NullableSecurityGroup {
-	return &NullableSecurityGroup{value: val, isSet: true}
-}
-
-func (v NullableSecurityGroup) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSecurityGroup) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -20,18 +20,18 @@ var _ MappedNullable = &GetClusterNamespace200ResponseNamespacePermissionsResour
 
 // GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions struct for GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions
 type GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions struct {
-	AllGroups *bool `json:"allGroups,omitempty"`
-	DefaultStore *bool `json:"defaultStore,omitempty"`
-	AllPlans *bool `json:"allPlans,omitempty"`
-	DefaultTarget *bool `json:"defaultTarget,omitempty"`
-	MorpheusResourceType *string `json:"morpheusResourceType,omitempty"`
-	MorpheusResourceId *int64 `json:"morpheusResourceId,omitempty"`
-	CanManage *bool `json:"canManage,omitempty"`
-	All *bool `json:"all,omitempty"`
-	Account *GetAlerts200ResponseAllOfChecksInnerAccount `json:"account,omitempty"`
-	Sites []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner `json:"sites,omitempty"`
-	Plans []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner `json:"plans,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AllGroups            *bool                                                                            `json:"allGroups,omitempty"`
+	DefaultStore         *bool                                                                            `json:"defaultStore,omitempty"`
+	AllPlans             *bool                                                                            `json:"allPlans,omitempty"`
+	DefaultTarget        *bool                                                                            `json:"defaultTarget,omitempty"`
+	MorpheusResourceType *string                                                                          `json:"morpheusResourceType,omitempty"`
+	MorpheusResourceId   *int64                                                                           `json:"morpheusResourceId,omitempty"`
+	CanManage            *bool                                                                            `json:"canManage,omitempty"`
+	All                  *bool                                                                            `json:"all,omitempty"`
+	Account              *GetAlerts200ResponseAllOfChecksInnerAccount                                     `json:"account,omitempty"`
+	Sites                []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner `json:"sites,omitempty"`
+	Plans                []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner `json:"plans,omitempty"`
+	AdditionalProperties map[string]interface{}                                                           `json:",remain"`
 }
 
 type _GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions
@@ -406,7 +406,7 @@ func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) 
 }
 
 func (o GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -455,72 +455,8 @@ func (o GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) T
 
 	return toSerialize, nil
 }
-
 func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) UnmarshalJSON(data []byte) (err error) {
-	varGetClusterNamespace200ResponseNamespacePermissionsResourcePermissions := _GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions{}
-
-	err = json.Unmarshal(data, &varGetClusterNamespace200ResponseNamespacePermissionsResourcePermissions)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions(varGetClusterNamespace200ResponseNamespacePermissionsResourcePermissions)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "allGroups")
-		delete(additionalProperties, "defaultStore")
-		delete(additionalProperties, "allPlans")
-		delete(additionalProperties, "defaultTarget")
-		delete(additionalProperties, "morpheusResourceType")
-		delete(additionalProperties, "morpheusResourceId")
-		delete(additionalProperties, "canManage")
-		delete(additionalProperties, "all")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "sites")
-		delete(additionalProperties, "plans")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetClusterNamespace200ResponseNamespacePermissionsResourcePermissions struct {
-	value *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions
-	isSet bool
-}
-
-func (v NullableGetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) Get() *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions {
-	return v.value
-}
-
-func (v *NullableGetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) Set(val *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetClusterNamespace200ResponseNamespacePermissionsResourcePermissions(val *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) *NullableGetClusterNamespace200ResponseNamespacePermissionsResourcePermissions {
-	return &NullableGetClusterNamespace200ResponseNamespacePermissionsResourcePermissions{value: val, isSet: true}
-}
-
-func (v NullableGetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

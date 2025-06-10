@@ -45,8 +45,8 @@ type UpdateInstanceThresholdRequestInstanceThreshold struct {
 	// Min Disk (%)
 	MinDisk *float32 `json:"minDisk,omitempty"`
 	// Max Disk (%)
-	MaxDisk *float32 `json:"maxDisk,omitempty"`
-	AdditionalProperties map[string]interface{}
+	MaxDisk              *float32               `json:"maxDisk,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UpdateInstanceThresholdRequestInstanceThreshold UpdateInstanceThresholdRequestInstanceThreshold
@@ -529,7 +529,7 @@ func (o *UpdateInstanceThresholdRequestInstanceThreshold) SetMaxDisk(v float32) 
 }
 
 func (o UpdateInstanceThresholdRequestInstanceThreshold) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -584,74 +584,8 @@ func (o UpdateInstanceThresholdRequestInstanceThreshold) ToMap() (map[string]int
 
 	return toSerialize, nil
 }
-
 func (o *UpdateInstanceThresholdRequestInstanceThreshold) UnmarshalJSON(data []byte) (err error) {
-	varUpdateInstanceThresholdRequestInstanceThreshold := _UpdateInstanceThresholdRequestInstanceThreshold{}
-
-	err = json.Unmarshal(data, &varUpdateInstanceThresholdRequestInstanceThreshold)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateInstanceThresholdRequestInstanceThreshold(varUpdateInstanceThresholdRequestInstanceThreshold)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "autoUp")
-		delete(additionalProperties, "autoDown")
-		delete(additionalProperties, "minCount")
-		delete(additionalProperties, "maxCount")
-		delete(additionalProperties, "cpuEnabled")
-		delete(additionalProperties, "minCpu")
-		delete(additionalProperties, "maxCpu")
-		delete(additionalProperties, "memoryEnabled")
-		delete(additionalProperties, "minMemory")
-		delete(additionalProperties, "maxMemory")
-		delete(additionalProperties, "diskEnabled")
-		delete(additionalProperties, "minDisk")
-		delete(additionalProperties, "maxDisk")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateInstanceThresholdRequestInstanceThreshold struct {
-	value *UpdateInstanceThresholdRequestInstanceThreshold
-	isSet bool
-}
-
-func (v NullableUpdateInstanceThresholdRequestInstanceThreshold) Get() *UpdateInstanceThresholdRequestInstanceThreshold {
-	return v.value
-}
-
-func (v *NullableUpdateInstanceThresholdRequestInstanceThreshold) Set(val *UpdateInstanceThresholdRequestInstanceThreshold) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateInstanceThresholdRequestInstanceThreshold) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateInstanceThresholdRequestInstanceThreshold) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateInstanceThresholdRequestInstanceThreshold(val *UpdateInstanceThresholdRequestInstanceThreshold) *NullableUpdateInstanceThresholdRequestInstanceThreshold {
-	return &NullableUpdateInstanceThresholdRequestInstanceThreshold{value: val, isSet: true}
-}
-
-func (v NullableUpdateInstanceThresholdRequestInstanceThreshold) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateInstanceThresholdRequestInstanceThreshold) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -19,10 +19,9 @@ import (
 // very silly way of avoiding `"fmt" imported and not used` errors
 var _ fmt.Stringer
 
-
 // ListIdentitySources200ResponseAllOfUserSourcesInner struct for ListIdentitySources200ResponseAllOfUserSourcesInner
 type ListIdentitySources200ResponseAllOfUserSourcesInner struct {
-	ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf
+	ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf  *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf
 	ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1 *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1
 	ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2 *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2
 	ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3 *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3
@@ -32,11 +31,51 @@ type ListIdentitySources200ResponseAllOfUserSourcesInner struct {
 	ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7 *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7
 }
 
+func (dst *ListIdentitySources200ResponseAllOfUserSourcesInner) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &ListIdentitySources200ResponseAllOfUserSourcesInner{}
+	}
+
+	if out, ok := data.(ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf); ok {
+		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf = &out
+	}
+
+	if out, ok := data.(ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1); ok {
+		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1 = &out
+	}
+
+	if out, ok := data.(ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2); ok {
+		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2 = &out
+	}
+
+	if out, ok := data.(ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3); ok {
+		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3 = &out
+	}
+
+	if out, ok := data.(ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4); ok {
+		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4 = &out
+	}
+
+	if out, ok := data.(ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5); ok {
+		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5 = &out
+	}
+
+	if out, ok := data.(ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6); ok {
+		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6 = &out
+	}
+
+	if out, ok := data.(ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7); ok {
+		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7 = &out
+	}
+
+	return dst, nil
+}
+
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ListIdentitySources200ResponseAllOfUserSourcesInner) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf
-	err = json.Unmarshal(data, &dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf);
+	err = json.Unmarshal(data, &dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf)
 	if err == nil {
 		jsonListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf, _ := json.Marshal(dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf)
 		if string(jsonListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf) == "{}" { // empty struct
@@ -49,7 +88,7 @@ func (dst *ListIdentitySources200ResponseAllOfUserSourcesInner) UnmarshalJSON(da
 	}
 
 	// try to unmarshal JSON data into ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1
-	err = json.Unmarshal(data, &dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1);
+	err = json.Unmarshal(data, &dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1)
 	if err == nil {
 		jsonListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1, _ := json.Marshal(dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1)
 		if string(jsonListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1) == "{}" { // empty struct
@@ -62,7 +101,7 @@ func (dst *ListIdentitySources200ResponseAllOfUserSourcesInner) UnmarshalJSON(da
 	}
 
 	// try to unmarshal JSON data into ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2
-	err = json.Unmarshal(data, &dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2);
+	err = json.Unmarshal(data, &dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2)
 	if err == nil {
 		jsonListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2, _ := json.Marshal(dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2)
 		if string(jsonListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2) == "{}" { // empty struct
@@ -75,7 +114,7 @@ func (dst *ListIdentitySources200ResponseAllOfUserSourcesInner) UnmarshalJSON(da
 	}
 
 	// try to unmarshal JSON data into ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3
-	err = json.Unmarshal(data, &dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3);
+	err = json.Unmarshal(data, &dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3)
 	if err == nil {
 		jsonListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3, _ := json.Marshal(dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3)
 		if string(jsonListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3) == "{}" { // empty struct
@@ -88,7 +127,7 @@ func (dst *ListIdentitySources200ResponseAllOfUserSourcesInner) UnmarshalJSON(da
 	}
 
 	// try to unmarshal JSON data into ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4
-	err = json.Unmarshal(data, &dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4);
+	err = json.Unmarshal(data, &dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4)
 	if err == nil {
 		jsonListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4, _ := json.Marshal(dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4)
 		if string(jsonListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4) == "{}" { // empty struct
@@ -101,7 +140,7 @@ func (dst *ListIdentitySources200ResponseAllOfUserSourcesInner) UnmarshalJSON(da
 	}
 
 	// try to unmarshal JSON data into ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5
-	err = json.Unmarshal(data, &dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5);
+	err = json.Unmarshal(data, &dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5)
 	if err == nil {
 		jsonListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5, _ := json.Marshal(dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5)
 		if string(jsonListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5) == "{}" { // empty struct
@@ -114,7 +153,7 @@ func (dst *ListIdentitySources200ResponseAllOfUserSourcesInner) UnmarshalJSON(da
 	}
 
 	// try to unmarshal JSON data into ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6
-	err = json.Unmarshal(data, &dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6);
+	err = json.Unmarshal(data, &dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6)
 	if err == nil {
 		jsonListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6, _ := json.Marshal(dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6)
 		if string(jsonListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6) == "{}" { // empty struct
@@ -127,7 +166,7 @@ func (dst *ListIdentitySources200ResponseAllOfUserSourcesInner) UnmarshalJSON(da
 	}
 
 	// try to unmarshal JSON data into ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7
-	err = json.Unmarshal(data, &dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7);
+	err = json.Unmarshal(data, &dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7)
 	if err == nil {
 		jsonListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7, _ := json.Marshal(dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7)
 		if string(jsonListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7) == "{}" { // empty struct
@@ -179,7 +218,6 @@ func (src ListIdentitySources200ResponseAllOfUserSourcesInner) MarshalJSON() ([]
 	return nil, nil // no data in anyOf schemas
 }
 
-
 type NullableListIdentitySources200ResponseAllOfUserSourcesInner struct {
 	value *ListIdentitySources200ResponseAllOfUserSourcesInner
 	isSet bool
@@ -215,5 +253,3 @@ func (v *NullableListIdentitySources200ResponseAllOfUserSourcesInner) UnmarshalJ
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

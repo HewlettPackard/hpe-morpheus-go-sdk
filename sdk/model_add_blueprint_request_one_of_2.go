@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddBlueprintRequestOneOf2 type satisfies the MappedNullable interface at compile time
@@ -28,9 +27,9 @@ type AddBlueprintRequestOneOf2 struct {
 	// Blueprint Type
 	Type string `json:"type"`
 	// Array of label strings, can be used for filtering.
-	Labels []string `json:"labels,omitempty"`
-	Helm AddBlueprintRequestOneOf2Helm `json:"helm"`
-	AdditionalProperties map[string]interface{}
+	Labels               []string                      `json:"labels,omitempty"`
+	Helm                 AddBlueprintRequestOneOf2Helm `json:"helm"`
+	AdditionalProperties map[string]interface{}        `json:",remain"`
 }
 
 type _AddBlueprintRequestOneOf2 AddBlueprintRequestOneOf2
@@ -192,7 +191,7 @@ func (o *AddBlueprintRequestOneOf2) SetHelm(v AddBlueprintRequestOneOf2Helm) {
 }
 
 func (o AddBlueprintRequestOneOf2) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -217,89 +216,8 @@ func (o AddBlueprintRequestOneOf2) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *AddBlueprintRequestOneOf2) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-		"type",
-		"helm",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddBlueprintRequestOneOf2 := _AddBlueprintRequestOneOf2{}
-
-	err = json.Unmarshal(data, &varAddBlueprintRequestOneOf2)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddBlueprintRequestOneOf2(varAddBlueprintRequestOneOf2)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "image")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "helm")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddBlueprintRequestOneOf2 struct {
-	value *AddBlueprintRequestOneOf2
-	isSet bool
-}
-
-func (v NullableAddBlueprintRequestOneOf2) Get() *AddBlueprintRequestOneOf2 {
-	return v.value
-}
-
-func (v *NullableAddBlueprintRequestOneOf2) Set(val *AddBlueprintRequestOneOf2) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddBlueprintRequestOneOf2) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddBlueprintRequestOneOf2) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddBlueprintRequestOneOf2(val *AddBlueprintRequestOneOf2) *NullableAddBlueprintRequestOneOf2 {
-	return &NullableAddBlueprintRequestOneOf2{value: val, isSet: true}
-}
-
-func (v NullableAddBlueprintRequestOneOf2) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddBlueprintRequestOneOf2) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

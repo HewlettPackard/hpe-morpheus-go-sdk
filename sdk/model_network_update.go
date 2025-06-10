@@ -34,7 +34,7 @@ type NetworkUpdate struct {
 	DnsPrimary *string `json:"dnsPrimary,omitempty"`
 	// Secondary DNS Server
 	DnsSecondary *string `json:"dnsSecondary,omitempty"`
-	VlanId *int64 `json:"vlanId,omitempty"`
+	VlanId       *int64  `json:"vlanId,omitempty"`
 	// Network Pool ID
 	Pool *int64 `json:"pool,omitempty"`
 	// Allow IP Override
@@ -44,11 +44,11 @@ type NetworkUpdate struct {
 	// Activate (true) or disable (false) the network
 	Active *bool `json:"active,omitempty"`
 	// DHCP Server enabled network
-	DhcpServer *bool `json:"dhcpServer,omitempty"`
+	DhcpServer    *bool                                      `json:"dhcpServer,omitempty"`
 	NetworkDomain *CreateNetworksRequestNetworkNetworkDomain `json:"networkDomain,omitempty"`
 	// Search Domains
-	SearchDomains *string `json:"searchDomains,omitempty"`
-	NetworkProxy *CreateNetworksRequestNetworkNetworkProxy `json:"networkProxy,omitempty"`
+	SearchDomains *string                                   `json:"searchDomains,omitempty"`
+	NetworkProxy  *CreateNetworksRequestNetworkNetworkProxy `json:"networkProxy,omitempty"`
 	// Bypass Proxy for Appliance URL
 	ApplianceUrlProxyBypass *bool `json:"applianceUrlProxyBypass,omitempty"`
 	// Comma-separated list of ip addresses or name servers to exclude proxy traversal for. Typically locally routable servers are excluded.
@@ -58,9 +58,9 @@ type NetworkUpdate struct {
 	// Configuration object. Settings vary by type.
 	Config map[string]interface{} `json:"config,omitempty"`
 	// Array of tenant account ids that are allowed access
-	Tenants []GetAlerts200ResponseAllOfChecksInnerAccount `json:"tenants,omitempty"`
-	ResourcePermissions *UpdateNetworkRequestNetworkResourcePermissions `json:"resourcePermissions,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Tenants              []GetAlerts200ResponseAllOfChecksInnerAccount   `json:"tenants,omitempty"`
+	ResourcePermissions  *UpdateNetworkRequestNetworkResourcePermissions `json:"resourcePermissions,omitempty"`
+	AdditionalProperties map[string]interface{}                          `json:",remain"`
 }
 
 type _NetworkUpdate NetworkUpdate
@@ -791,7 +791,7 @@ func (o *NetworkUpdate) SetResourcePermissions(v UpdateNetworkRequestNetworkReso
 }
 
 func (o NetworkUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -873,83 +873,8 @@ func (o NetworkUpdate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *NetworkUpdate) UnmarshalJSON(data []byte) (err error) {
-	varNetworkUpdate := _NetworkUpdate{}
-
-	err = json.Unmarshal(data, &varNetworkUpdate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = NetworkUpdate(varNetworkUpdate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "displayName")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "cidr")
-		delete(additionalProperties, "gateway")
-		delete(additionalProperties, "dnsPrimary")
-		delete(additionalProperties, "dnsSecondary")
-		delete(additionalProperties, "vlanId")
-		delete(additionalProperties, "pool")
-		delete(additionalProperties, "allowStaticOverride")
-		delete(additionalProperties, "assignPublicIp")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "dhcpServer")
-		delete(additionalProperties, "networkDomain")
-		delete(additionalProperties, "searchDomains")
-		delete(additionalProperties, "networkProxy")
-		delete(additionalProperties, "applianceUrlProxyBypass")
-		delete(additionalProperties, "noProxy")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "tenants")
-		delete(additionalProperties, "resourcePermissions")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableNetworkUpdate struct {
-	value *NetworkUpdate
-	isSet bool
-}
-
-func (v NullableNetworkUpdate) Get() *NetworkUpdate {
-	return v.value
-}
-
-func (v *NullableNetworkUpdate) Set(val *NetworkUpdate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableNetworkUpdate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableNetworkUpdate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableNetworkUpdate(val *NetworkUpdate) *NullableNetworkUpdate {
-	return &NullableNetworkUpdate{value: val, isSet: true}
-}
-
-func (v NullableNetworkUpdate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableNetworkUpdate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

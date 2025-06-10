@@ -20,8 +20,8 @@ var _ MappedNullable = &AddInstanceDeployRequest{}
 
 // AddInstanceDeployRequest struct for AddInstanceDeployRequest
 type AddInstanceDeployRequest struct {
-	AppDeploy *AddInstanceDeployRequestAppDeploy `json:"appDeploy,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AppDeploy            *AddInstanceDeployRequestAppDeploy `json:"appDeploy,omitempty"`
+	AdditionalProperties map[string]interface{}             `json:",remain"`
 }
 
 type _AddInstanceDeployRequest AddInstanceDeployRequest
@@ -76,7 +76,7 @@ func (o *AddInstanceDeployRequest) SetAppDeploy(v AddInstanceDeployRequestAppDep
 }
 
 func (o AddInstanceDeployRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o AddInstanceDeployRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *AddInstanceDeployRequest) UnmarshalJSON(data []byte) (err error) {
-	varAddInstanceDeployRequest := _AddInstanceDeployRequest{}
-
-	err = json.Unmarshal(data, &varAddInstanceDeployRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddInstanceDeployRequest(varAddInstanceDeployRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "appDeploy")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddInstanceDeployRequest struct {
-	value *AddInstanceDeployRequest
-	isSet bool
-}
-
-func (v NullableAddInstanceDeployRequest) Get() *AddInstanceDeployRequest {
-	return v.value
-}
-
-func (v *NullableAddInstanceDeployRequest) Set(val *AddInstanceDeployRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddInstanceDeployRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddInstanceDeployRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddInstanceDeployRequest(val *AddInstanceDeployRequest) *NullableAddInstanceDeployRequest {
-	return &NullableAddInstanceDeployRequest{value: val, isSet: true}
-}
-
-func (v NullableAddInstanceDeployRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddInstanceDeployRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

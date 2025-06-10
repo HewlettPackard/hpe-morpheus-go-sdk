@@ -31,8 +31,8 @@ type AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1 struct {
 	// Enable Nested Virtualization
 	NestedVirtualization *string `json:"nestedVirtualization,omitempty"`
 	// VMWare Folder External ID (as a String) or ID (as an Integer or String)
-	VmwareFolderId *string `json:"vmwareFolderId,omitempty"`
-	AdditionalProperties map[string]interface{}
+	VmwareFolderId       *string                `json:"vmwareFolderId,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1 AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1
@@ -255,7 +255,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) SetVmw
 }
 
 func (o AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -289,67 +289,8 @@ func (o AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) ToMap()
 
 	return toSerialize, nil
 }
-
 func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) UnmarshalJSON(data []byte) (err error) {
-	varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1 := _AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1{}
-
-	err = json.Unmarshal(data, &varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1(varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "noAgent")
-		delete(additionalProperties, "resourcePoolId")
-		delete(additionalProperties, "hostId")
-		delete(additionalProperties, "smbiosAssetTag")
-		delete(additionalProperties, "nestedVirtualization")
-		delete(additionalProperties, "vmwareFolderId")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1 struct {
-	value *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1
-	isSet bool
-}
-
-func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) Get() *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1 {
-	return v.value
-}
-
-func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) Set(val *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1(val *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1 {
-	return &NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1{value: val, isSet: true}
-}
-
-func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

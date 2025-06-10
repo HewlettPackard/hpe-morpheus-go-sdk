@@ -20,8 +20,8 @@ var _ MappedNullable = &UpdateCloudDatastores200Response{}
 
 // UpdateCloudDatastores200Response struct for UpdateCloudDatastores200Response
 type UpdateCloudDatastores200Response struct {
-	Datastore *UpdateCloudDatastores200ResponseDatastore `json:"datastore,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Datastore            *UpdateCloudDatastores200ResponseDatastore `json:"datastore,omitempty"`
+	AdditionalProperties map[string]interface{}                     `json:",remain"`
 }
 
 type _UpdateCloudDatastores200Response UpdateCloudDatastores200Response
@@ -76,7 +76,7 @@ func (o *UpdateCloudDatastores200Response) SetDatastore(v UpdateCloudDatastores2
 }
 
 func (o UpdateCloudDatastores200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o UpdateCloudDatastores200Response) ToMap() (map[string]interface{}, error
 
 	return toSerialize, nil
 }
-
 func (o *UpdateCloudDatastores200Response) UnmarshalJSON(data []byte) (err error) {
-	varUpdateCloudDatastores200Response := _UpdateCloudDatastores200Response{}
-
-	err = json.Unmarshal(data, &varUpdateCloudDatastores200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateCloudDatastores200Response(varUpdateCloudDatastores200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "datastore")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateCloudDatastores200Response struct {
-	value *UpdateCloudDatastores200Response
-	isSet bool
-}
-
-func (v NullableUpdateCloudDatastores200Response) Get() *UpdateCloudDatastores200Response {
-	return v.value
-}
-
-func (v *NullableUpdateCloudDatastores200Response) Set(val *UpdateCloudDatastores200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateCloudDatastores200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateCloudDatastores200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateCloudDatastores200Response(val *UpdateCloudDatastores200Response) *NullableUpdateCloudDatastores200Response {
-	return &NullableUpdateCloudDatastores200Response{value: val, isSet: true}
-}
-
-func (v NullableUpdateCloudDatastores200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateCloudDatastores200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -20,14 +20,14 @@ var _ MappedNullable = &GetClusterMasters200ResponseMastersInnerStats{}
 
 // GetClusterMasters200ResponseMastersInnerStats struct for GetClusterMasters200ResponseMastersInnerStats
 type GetClusterMasters200ResponseMastersInnerStats struct {
-	UsedStorage *int64 `json:"usedStorage,omitempty"`
-	ReservedStorage *int64 `json:"reservedStorage,omitempty"`
-	MaxStorage *int64 `json:"maxStorage,omitempty"`
-	UsedMemory *int64 `json:"usedMemory,omitempty"`
-	ReservedMemory *int64 `json:"reservedMemory,omitempty"`
-	MaxMemory *int64 `json:"maxMemory,omitempty"`
-	CpuUsage *float32 `json:"cpuUsage,omitempty"`
-	AdditionalProperties map[string]interface{}
+	UsedStorage          *int64                 `json:"usedStorage,omitempty"`
+	ReservedStorage      *int64                 `json:"reservedStorage,omitempty"`
+	MaxStorage           *int64                 `json:"maxStorage,omitempty"`
+	UsedMemory           *int64                 `json:"usedMemory,omitempty"`
+	ReservedMemory       *int64                 `json:"reservedMemory,omitempty"`
+	MaxMemory            *int64                 `json:"maxMemory,omitempty"`
+	CpuUsage             *float32               `json:"cpuUsage,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _GetClusterMasters200ResponseMastersInnerStats GetClusterMasters200ResponseMastersInnerStats
@@ -274,7 +274,7 @@ func (o *GetClusterMasters200ResponseMastersInnerStats) SetCpuUsage(v float32) {
 }
 
 func (o GetClusterMasters200ResponseMastersInnerStats) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -311,68 +311,8 @@ func (o GetClusterMasters200ResponseMastersInnerStats) ToMap() (map[string]inter
 
 	return toSerialize, nil
 }
-
 func (o *GetClusterMasters200ResponseMastersInnerStats) UnmarshalJSON(data []byte) (err error) {
-	varGetClusterMasters200ResponseMastersInnerStats := _GetClusterMasters200ResponseMastersInnerStats{}
-
-	err = json.Unmarshal(data, &varGetClusterMasters200ResponseMastersInnerStats)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetClusterMasters200ResponseMastersInnerStats(varGetClusterMasters200ResponseMastersInnerStats)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "usedStorage")
-		delete(additionalProperties, "reservedStorage")
-		delete(additionalProperties, "maxStorage")
-		delete(additionalProperties, "usedMemory")
-		delete(additionalProperties, "reservedMemory")
-		delete(additionalProperties, "maxMemory")
-		delete(additionalProperties, "cpuUsage")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetClusterMasters200ResponseMastersInnerStats struct {
-	value *GetClusterMasters200ResponseMastersInnerStats
-	isSet bool
-}
-
-func (v NullableGetClusterMasters200ResponseMastersInnerStats) Get() *GetClusterMasters200ResponseMastersInnerStats {
-	return v.value
-}
-
-func (v *NullableGetClusterMasters200ResponseMastersInnerStats) Set(val *GetClusterMasters200ResponseMastersInnerStats) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetClusterMasters200ResponseMastersInnerStats) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetClusterMasters200ResponseMastersInnerStats) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetClusterMasters200ResponseMastersInnerStats(val *GetClusterMasters200ResponseMastersInnerStats) *NullableGetClusterMasters200ResponseMastersInnerStats {
-	return &NullableGetClusterMasters200ResponseMastersInnerStats{value: val, isSet: true}
-}
-
-func (v NullableGetClusterMasters200ResponseMastersInnerStats) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetClusterMasters200ResponseMastersInnerStats) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

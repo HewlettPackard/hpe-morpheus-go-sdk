@@ -20,9 +20,9 @@ var _ MappedNullable = &ListJobs200ResponseAllOfJobsInnerAnyOfSecurityPackage{}
 
 // ListJobs200ResponseAllOfJobsInnerAnyOfSecurityPackage Task object for security scan type jobs.
 type ListJobs200ResponseAllOfJobsInnerAnyOfSecurityPackage struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListJobs200ResponseAllOfJobsInnerAnyOfSecurityPackage ListJobs200ResponseAllOfJobsInnerAnyOfSecurityPackage
@@ -109,7 +109,7 @@ func (o *ListJobs200ResponseAllOfJobsInnerAnyOfSecurityPackage) SetName(v string
 }
 
 func (o ListJobs200ResponseAllOfJobsInnerAnyOfSecurityPackage) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o ListJobs200ResponseAllOfJobsInnerAnyOfSecurityPackage) ToMap() (map[stri
 
 	return toSerialize, nil
 }
-
 func (o *ListJobs200ResponseAllOfJobsInnerAnyOfSecurityPackage) UnmarshalJSON(data []byte) (err error) {
-	varListJobs200ResponseAllOfJobsInnerAnyOfSecurityPackage := _ListJobs200ResponseAllOfJobsInnerAnyOfSecurityPackage{}
-
-	err = json.Unmarshal(data, &varListJobs200ResponseAllOfJobsInnerAnyOfSecurityPackage)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListJobs200ResponseAllOfJobsInnerAnyOfSecurityPackage(varListJobs200ResponseAllOfJobsInnerAnyOfSecurityPackage)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListJobs200ResponseAllOfJobsInnerAnyOfSecurityPackage struct {
-	value *ListJobs200ResponseAllOfJobsInnerAnyOfSecurityPackage
-	isSet bool
-}
-
-func (v NullableListJobs200ResponseAllOfJobsInnerAnyOfSecurityPackage) Get() *ListJobs200ResponseAllOfJobsInnerAnyOfSecurityPackage {
-	return v.value
-}
-
-func (v *NullableListJobs200ResponseAllOfJobsInnerAnyOfSecurityPackage) Set(val *ListJobs200ResponseAllOfJobsInnerAnyOfSecurityPackage) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListJobs200ResponseAllOfJobsInnerAnyOfSecurityPackage) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListJobs200ResponseAllOfJobsInnerAnyOfSecurityPackage) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListJobs200ResponseAllOfJobsInnerAnyOfSecurityPackage(val *ListJobs200ResponseAllOfJobsInnerAnyOfSecurityPackage) *NullableListJobs200ResponseAllOfJobsInnerAnyOfSecurityPackage {
-	return &NullableListJobs200ResponseAllOfJobsInnerAnyOfSecurityPackage{value: val, isSet: true}
-}
-
-func (v NullableListJobs200ResponseAllOfJobsInnerAnyOfSecurityPackage) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListJobs200ResponseAllOfJobsInnerAnyOfSecurityPackage) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

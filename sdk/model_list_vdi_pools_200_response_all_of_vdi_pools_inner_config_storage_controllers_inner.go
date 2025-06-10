@@ -20,20 +20,20 @@ var _ MappedNullable = &ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageCo
 
 // ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner struct for ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner
 type ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Active *bool `json:"active,omitempty"`
-	TypeId *int64 `json:"typeId,omitempty"`
-	TypeName *string `json:"typeName,omitempty"`
-	UnitNumber *string `json:"unitNumber,omitempty"`
-	BusNumber *string `json:"busNumber,omitempty"`
-	MaxDevices *float32 `json:"maxDevices,omitempty"`
-	Removable *bool `json:"removable,omitempty"`
-	Editable *bool `json:"editable,omitempty"`
-	ReservedUnitNumber *float32 `json:"reservedUnitNumber,omitempty"`
-	Category *string `json:"category,omitempty"`
-	DisplayOrder *float32 `json:"displayOrder,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	Active               *bool                  `json:"active,omitempty"`
+	TypeId               *int64                 `json:"typeId,omitempty"`
+	TypeName             *string                `json:"typeName,omitempty"`
+	UnitNumber           *string                `json:"unitNumber,omitempty"`
+	BusNumber            *string                `json:"busNumber,omitempty"`
+	MaxDevices           *float32               `json:"maxDevices,omitempty"`
+	Removable            *bool                  `json:"removable,omitempty"`
+	Editable             *bool                  `json:"editable,omitempty"`
+	ReservedUnitNumber   *float32               `json:"reservedUnitNumber,omitempty"`
+	Category             *string                `json:"category,omitempty"`
+	DisplayOrder         *float32               `json:"displayOrder,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner
@@ -472,7 +472,7 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner)
 }
 
 func (o ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -527,74 +527,8 @@ func (o ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner) 
 
 	return toSerialize, nil
 }
-
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner) UnmarshalJSON(data []byte) (err error) {
-	varListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner := _ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner{}
-
-	err = json.Unmarshal(data, &varListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner(varListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "typeId")
-		delete(additionalProperties, "typeName")
-		delete(additionalProperties, "unitNumber")
-		delete(additionalProperties, "busNumber")
-		delete(additionalProperties, "maxDevices")
-		delete(additionalProperties, "removable")
-		delete(additionalProperties, "editable")
-		delete(additionalProperties, "reservedUnitNumber")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "displayOrder")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner struct {
-	value *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner
-	isSet bool
-}
-
-func (v NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner) Get() *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner {
-	return v.value
-}
-
-func (v *NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner) Set(val *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner(val *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner) *NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner {
-	return &NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner{value: val, isSet: true}
-}
-
-func (v NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

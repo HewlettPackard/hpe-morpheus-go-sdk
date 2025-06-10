@@ -43,20 +43,20 @@ type UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2 struct {
 	// Can be used to feature the catalog item type.
 	Featured *bool `json:"featured,omitempty"`
 	// Can users order more than one of this item at a time.
-	AllowQuantity *bool `json:"allowQuantity,omitempty"`
-	Workflow *GetAlerts200ResponseAllOfChecksInnerAccount `json:"workflow,omitempty"`
+	AllowQuantity *bool                                        `json:"allowQuantity,omitempty"`
+	Workflow      *GetAlerts200ResponseAllOfChecksInnerAccount `json:"workflow,omitempty"`
 	// Context for running the workflow, determines if a target resource must be selected.
 	Context *string `json:"context,omitempty"`
 	// Configuration object that contains settings for the workflow.
 	WorkflowConfig *string `json:"workflowConfig,omitempty"`
 	// Form Type determines if the configuration options come from a Form (form) or a list of Inputs (optionTypes).
-	FormType *string `json:"formType,omitempty"`
-	Form *AddCatalogItemTypeRequestCatalogItemTypeOneOfForm `json:"form,omitempty"`
+	FormType *string                                            `json:"formType,omitempty"`
+	Form     *AddCatalogItemTypeRequestCatalogItemTypeOneOfForm `json:"form,omitempty"`
 	// Array of option type IDs. Only applies to formType 'optionTypes'.
 	OptionTypes []int64 `json:"optionTypes,omitempty"`
 	// Documentation content for this Catalog Item. Markdown-formatted text is accepted and displayed appropriately when the item is ordered from the Service Catalog. A new Catalog Item-type Wiki entry will also be added containing this information.
-	Content *string `json:"content,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Content              *string                `json:"content,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2 UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2
@@ -707,7 +707,7 @@ func (o *UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2) SetContent(v string)
 }
 
 func (o UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -780,80 +780,8 @@ func (o UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2) ToMap() (map[string]i
 
 	return toSerialize, nil
 }
-
 func (o *UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2) UnmarshalJSON(data []byte) (err error) {
-	varUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2 := _UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2{}
-
-	err = json.Unmarshal(data, &varUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2(varUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "layoutCode")
-		delete(additionalProperties, "iconPath")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "featured")
-		delete(additionalProperties, "allowQuantity")
-		delete(additionalProperties, "workflow")
-		delete(additionalProperties, "context")
-		delete(additionalProperties, "workflowConfig")
-		delete(additionalProperties, "formType")
-		delete(additionalProperties, "form")
-		delete(additionalProperties, "optionTypes")
-		delete(additionalProperties, "content")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2 struct {
-	value *UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2
-	isSet bool
-}
-
-func (v NullableUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2) Get() *UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2 {
-	return v.value
-}
-
-func (v *NullableUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2) Set(val *UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2(val *UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2) *NullableUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2 {
-	return &NullableUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2{value: val, isSet: true}
-}
-
-func (v NullableUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

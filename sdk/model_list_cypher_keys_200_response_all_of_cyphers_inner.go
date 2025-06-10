@@ -21,15 +21,15 @@ var _ MappedNullable = &ListCypherKeys200ResponseAllOfCyphersInner{}
 
 // ListCypherKeys200ResponseAllOfCyphersInner struct for ListCypherKeys200ResponseAllOfCyphersInner
 type ListCypherKeys200ResponseAllOfCyphersInner struct {
-	Id *int32 `json:"id,omitempty"`
-	ItemKey *string `json:"itemKey,omitempty"`
-	LeaseTimeout *int64 `json:"leaseTimeout,omitempty"`
-	ExpireDate *time.Time `json:"expireDate,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	LastAccessed *time.Time `json:"lastAccessed,omitempty"`
-	CreatedBy *string `json:"createdBy,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int32                 `json:"id,omitempty"`
+	ItemKey              *string                `json:"itemKey,omitempty"`
+	LeaseTimeout         *int64                 `json:"leaseTimeout,omitempty"`
+	ExpireDate           *time.Time             `json:"expireDate,omitempty"`
+	DateCreated          *time.Time             `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time             `json:"lastUpdated,omitempty"`
+	LastAccessed         *time.Time             `json:"lastAccessed,omitempty"`
+	CreatedBy            *string                `json:"createdBy,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListCypherKeys200ResponseAllOfCyphersInner ListCypherKeys200ResponseAllOfCyphersInner
@@ -308,7 +308,7 @@ func (o *ListCypherKeys200ResponseAllOfCyphersInner) SetCreatedBy(v string) {
 }
 
 func (o ListCypherKeys200ResponseAllOfCyphersInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -348,69 +348,8 @@ func (o ListCypherKeys200ResponseAllOfCyphersInner) ToMap() (map[string]interfac
 
 	return toSerialize, nil
 }
-
 func (o *ListCypherKeys200ResponseAllOfCyphersInner) UnmarshalJSON(data []byte) (err error) {
-	varListCypherKeys200ResponseAllOfCyphersInner := _ListCypherKeys200ResponseAllOfCyphersInner{}
-
-	err = json.Unmarshal(data, &varListCypherKeys200ResponseAllOfCyphersInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListCypherKeys200ResponseAllOfCyphersInner(varListCypherKeys200ResponseAllOfCyphersInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "itemKey")
-		delete(additionalProperties, "leaseTimeout")
-		delete(additionalProperties, "expireDate")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "lastAccessed")
-		delete(additionalProperties, "createdBy")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListCypherKeys200ResponseAllOfCyphersInner struct {
-	value *ListCypherKeys200ResponseAllOfCyphersInner
-	isSet bool
-}
-
-func (v NullableListCypherKeys200ResponseAllOfCyphersInner) Get() *ListCypherKeys200ResponseAllOfCyphersInner {
-	return v.value
-}
-
-func (v *NullableListCypherKeys200ResponseAllOfCyphersInner) Set(val *ListCypherKeys200ResponseAllOfCyphersInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListCypherKeys200ResponseAllOfCyphersInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListCypherKeys200ResponseAllOfCyphersInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListCypherKeys200ResponseAllOfCyphersInner(val *ListCypherKeys200ResponseAllOfCyphersInner) *NullableListCypherKeys200ResponseAllOfCyphersInner {
-	return &NullableListCypherKeys200ResponseAllOfCyphersInner{value: val, isSet: true}
-}
-
-func (v NullableListCypherKeys200ResponseAllOfCyphersInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListCypherKeys200ResponseAllOfCyphersInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

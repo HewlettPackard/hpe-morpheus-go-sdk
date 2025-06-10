@@ -20,8 +20,8 @@ var _ MappedNullable = &UpdateSpecTemplateRequest{}
 
 // UpdateSpecTemplateRequest struct for UpdateSpecTemplateRequest
 type UpdateSpecTemplateRequest struct {
-	SpecTemplate *UpdateSpecTemplateRequestSpecTemplate `json:"specTemplate,omitempty"`
-	AdditionalProperties map[string]interface{}
+	SpecTemplate         *UpdateSpecTemplateRequestSpecTemplate `json:"specTemplate,omitempty"`
+	AdditionalProperties map[string]interface{}                 `json:",remain"`
 }
 
 type _UpdateSpecTemplateRequest UpdateSpecTemplateRequest
@@ -76,7 +76,7 @@ func (o *UpdateSpecTemplateRequest) SetSpecTemplate(v UpdateSpecTemplateRequestS
 }
 
 func (o UpdateSpecTemplateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o UpdateSpecTemplateRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *UpdateSpecTemplateRequest) UnmarshalJSON(data []byte) (err error) {
-	varUpdateSpecTemplateRequest := _UpdateSpecTemplateRequest{}
-
-	err = json.Unmarshal(data, &varUpdateSpecTemplateRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateSpecTemplateRequest(varUpdateSpecTemplateRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "specTemplate")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateSpecTemplateRequest struct {
-	value *UpdateSpecTemplateRequest
-	isSet bool
-}
-
-func (v NullableUpdateSpecTemplateRequest) Get() *UpdateSpecTemplateRequest {
-	return v.value
-}
-
-func (v *NullableUpdateSpecTemplateRequest) Set(val *UpdateSpecTemplateRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateSpecTemplateRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateSpecTemplateRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateSpecTemplateRequest(val *UpdateSpecTemplateRequest) *NullableUpdateSpecTemplateRequest {
-	return &NullableUpdateSpecTemplateRequest{value: val, isSet: true}
-}
-
-func (v NullableUpdateSpecTemplateRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateSpecTemplateRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

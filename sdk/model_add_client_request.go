@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddClientRequest type satisfies the MappedNullable interface at compile time
@@ -21,8 +20,8 @@ var _ MappedNullable = &AddClientRequest{}
 
 // AddClientRequest struct for AddClientRequest
 type AddClientRequest struct {
-	Client AddClientRequestClient `json:"client"`
-	AdditionalProperties map[string]interface{}
+	Client               AddClientRequestClient `json:"client"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddClientRequest AddClientRequest
@@ -70,7 +69,7 @@ func (o *AddClientRequest) SetClient(v AddClientRequestClient) {
 }
 
 func (o AddClientRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -87,83 +86,8 @@ func (o AddClientRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *AddClientRequest) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"client",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddClientRequest := _AddClientRequest{}
-
-	err = json.Unmarshal(data, &varAddClientRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddClientRequest(varAddClientRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "client")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddClientRequest struct {
-	value *AddClientRequest
-	isSet bool
-}
-
-func (v NullableAddClientRequest) Get() *AddClientRequest {
-	return v.value
-}
-
-func (v *NullableAddClientRequest) Set(val *AddClientRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddClientRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddClientRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddClientRequest(val *AddClientRequest) *NullableAddClientRequest {
-	return &NullableAddClientRequest{value: val, isSet: true}
-}
-
-func (v NullableAddClientRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddClientRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

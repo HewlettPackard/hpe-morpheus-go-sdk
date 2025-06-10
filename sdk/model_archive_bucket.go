@@ -21,22 +21,22 @@ var _ MappedNullable = &ArchiveBucket{}
 
 // ArchiveBucket struct for ArchiveBucket
 type ArchiveBucket struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	StorageProvider *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"storageProvider,omitempty"`
-	Owner *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"owner,omitempty"`
-	CreatedBy *ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy `json:"createdBy,omitempty"`
-	IsPublic *bool `json:"isPublic,omitempty"`
-	Visibility *string `json:"visibility,omitempty"`
-	Code *string `json:"code,omitempty"`
-	FilePath *string `json:"filePath,omitempty"`
-	RawSize *int64 `json:"rawSize,omitempty"`
-	FileCount *int64 `json:"fileCount,omitempty"`
-	Accounts []map[string]interface{} `json:"accounts,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                  `json:"id,omitempty"`
+	Name                 *string                                                                 `json:"name,omitempty"`
+	Description          *string                                                                 `json:"description,omitempty"`
+	StorageProvider      *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"storageProvider,omitempty"`
+	Owner                *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"owner,omitempty"`
+	CreatedBy            *ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy         `json:"createdBy,omitempty"`
+	IsPublic             *bool                                                                   `json:"isPublic,omitempty"`
+	Visibility           *string                                                                 `json:"visibility,omitempty"`
+	Code                 *string                                                                 `json:"code,omitempty"`
+	FilePath             *string                                                                 `json:"filePath,omitempty"`
+	RawSize              *int64                                                                  `json:"rawSize,omitempty"`
+	FileCount            *int64                                                                  `json:"fileCount,omitempty"`
+	Accounts             []map[string]interface{}                                                `json:"accounts,omitempty"`
+	DateCreated          *time.Time                                                              `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                              `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
 }
 
 type _ArchiveBucket ArchiveBucket
@@ -539,7 +539,7 @@ func (o *ArchiveBucket) SetLastUpdated(v time.Time) {
 }
 
 func (o ArchiveBucket) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -600,76 +600,8 @@ func (o ArchiveBucket) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ArchiveBucket) UnmarshalJSON(data []byte) (err error) {
-	varArchiveBucket := _ArchiveBucket{}
-
-	err = json.Unmarshal(data, &varArchiveBucket)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ArchiveBucket(varArchiveBucket)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "storageProvider")
-		delete(additionalProperties, "owner")
-		delete(additionalProperties, "createdBy")
-		delete(additionalProperties, "isPublic")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "filePath")
-		delete(additionalProperties, "rawSize")
-		delete(additionalProperties, "fileCount")
-		delete(additionalProperties, "accounts")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableArchiveBucket struct {
-	value *ArchiveBucket
-	isSet bool
-}
-
-func (v NullableArchiveBucket) Get() *ArchiveBucket {
-	return v.value
-}
-
-func (v *NullableArchiveBucket) Set(val *ArchiveBucket) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableArchiveBucket) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableArchiveBucket) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableArchiveBucket(val *ArchiveBucket) *NullableArchiveBucket {
-	return &NullableArchiveBucket{value: val, isSet: true}
-}
-
-func (v NullableArchiveBucket) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableArchiveBucket) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

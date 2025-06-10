@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddStorageVolumesRequestStorageVolume type satisfies the MappedNullable interface at compile time
@@ -26,10 +25,10 @@ type AddStorageVolumesRequestStorageVolume struct {
 	// Storage Type Code or ID
 	Type string `json:"type"`
 	// Configuration object with parameters that vary by `type`.
-	Config map[string]interface{} `json:"config,omitempty"`
-	StorageServer AddClusterLayoutsRequestLayoutMastersInnerContainerType `json:"storageServer"`
-	StorageGroup *AddClusterLayoutsRequestLayoutMastersInnerContainerType `json:"storageGroup,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Config               map[string]interface{}                                   `json:"config,omitempty"`
+	StorageServer        AddClusterLayoutsRequestLayoutMastersInnerContainerType  `json:"storageServer"`
+	StorageGroup         *AddClusterLayoutsRequestLayoutMastersInnerContainerType `json:"storageGroup,omitempty"`
+	AdditionalProperties map[string]interface{}                                   `json:",remain"`
 }
 
 type _AddStorageVolumesRequestStorageVolume AddStorageVolumesRequestStorageVolume
@@ -191,7 +190,7 @@ func (o *AddStorageVolumesRequestStorageVolume) SetStorageGroup(v AddClusterLayo
 }
 
 func (o AddStorageVolumesRequestStorageVolume) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -216,89 +215,8 @@ func (o AddStorageVolumesRequestStorageVolume) ToMap() (map[string]interface{}, 
 
 	return toSerialize, nil
 }
-
 func (o *AddStorageVolumesRequestStorageVolume) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-		"type",
-		"storageServer",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddStorageVolumesRequestStorageVolume := _AddStorageVolumesRequestStorageVolume{}
-
-	err = json.Unmarshal(data, &varAddStorageVolumesRequestStorageVolume)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddStorageVolumesRequestStorageVolume(varAddStorageVolumesRequestStorageVolume)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "storageServer")
-		delete(additionalProperties, "storageGroup")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddStorageVolumesRequestStorageVolume struct {
-	value *AddStorageVolumesRequestStorageVolume
-	isSet bool
-}
-
-func (v NullableAddStorageVolumesRequestStorageVolume) Get() *AddStorageVolumesRequestStorageVolume {
-	return v.value
-}
-
-func (v *NullableAddStorageVolumesRequestStorageVolume) Set(val *AddStorageVolumesRequestStorageVolume) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddStorageVolumesRequestStorageVolume) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddStorageVolumesRequestStorageVolume) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddStorageVolumesRequestStorageVolume(val *AddStorageVolumesRequestStorageVolume) *NullableAddStorageVolumesRequestStorageVolume {
-	return &NullableAddStorageVolumesRequestStorageVolume{value: val, isSet: true}
-}
-
-func (v NullableAddStorageVolumesRequestStorageVolume) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddStorageVolumesRequestStorageVolume) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

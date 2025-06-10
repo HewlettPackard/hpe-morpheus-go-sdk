@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddBlueprintRequestOneOfArmGit type satisfies the MappedNullable interface at compile time
@@ -28,8 +27,8 @@ type AddBlueprintRequestOneOfArmGit struct {
 	// Morpheus SCM Integration ID
 	IntegrationId int64 `json:"integrationId"`
 	// Branch Name
-	Branch string `json:"branch"`
-	AdditionalProperties map[string]interface{}
+	Branch               string                 `json:"branch"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddBlueprintRequestOneOfArmGit AddBlueprintRequestOneOfArmGit
@@ -152,7 +151,7 @@ func (o *AddBlueprintRequestOneOfArmGit) SetBranch(v string) {
 }
 
 func (o AddBlueprintRequestOneOfArmGit) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -172,89 +171,8 @@ func (o AddBlueprintRequestOneOfArmGit) ToMap() (map[string]interface{}, error) 
 
 	return toSerialize, nil
 }
-
 func (o *AddBlueprintRequestOneOfArmGit) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"repoId",
-		"path",
-		"integrationId",
-		"branch",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddBlueprintRequestOneOfArmGit := _AddBlueprintRequestOneOfArmGit{}
-
-	err = json.Unmarshal(data, &varAddBlueprintRequestOneOfArmGit)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddBlueprintRequestOneOfArmGit(varAddBlueprintRequestOneOfArmGit)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "repoId")
-		delete(additionalProperties, "path")
-		delete(additionalProperties, "integrationId")
-		delete(additionalProperties, "branch")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddBlueprintRequestOneOfArmGit struct {
-	value *AddBlueprintRequestOneOfArmGit
-	isSet bool
-}
-
-func (v NullableAddBlueprintRequestOneOfArmGit) Get() *AddBlueprintRequestOneOfArmGit {
-	return v.value
-}
-
-func (v *NullableAddBlueprintRequestOneOfArmGit) Set(val *AddBlueprintRequestOneOfArmGit) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddBlueprintRequestOneOfArmGit) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddBlueprintRequestOneOfArmGit) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddBlueprintRequestOneOfArmGit(val *AddBlueprintRequestOneOfArmGit) *NullableAddBlueprintRequestOneOfArmGit {
-	return &NullableAddBlueprintRequestOneOfArmGit{value: val, isSet: true}
-}
-
-func (v NullableAddBlueprintRequestOneOfArmGit) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddBlueprintRequestOneOfArmGit) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

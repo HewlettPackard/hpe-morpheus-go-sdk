@@ -21,14 +21,13 @@ import (
 	"strings"
 )
 
-
 // IdentitySourcesAPIService IdentitySourcesAPI service
 type IdentitySourcesAPIService service
 
 type ApiAddIdentitySourcesRequest struct {
-	ctx context.Context
-	ApiService *IdentitySourcesAPIService
-	accountId *int64
+	ctx                       context.Context
+	ApiService                *IdentitySourcesAPIService
+	accountId                 *int64
 	addIdentitySourcesRequest *AddIdentitySourcesRequest
 }
 
@@ -52,25 +51,25 @@ AddIdentitySources Creates an Identity Source
 
 Creates an identity source.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddIdentitySourcesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddIdentitySourcesRequest
 */
 func (a *IdentitySourcesAPIService) AddIdentitySources(ctx context.Context) ApiAddIdentitySourcesRequest {
 	return ApiAddIdentitySourcesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddIdentitySources200Response
+//
+//	@return AddIdentitySources200Response
 func (a *IdentitySourcesAPIService) AddIdentitySourcesExecute(r ApiAddIdentitySourcesRequest) (*AddIdentitySources200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddIdentitySources200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddIdentitySources200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentitySourcesAPIService.AddIdentitySources")
@@ -125,7 +124,7 @@ func (a *IdentitySourcesAPIService) AddIdentitySourcesExecute(r ApiAddIdentitySo
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -134,8 +133,8 @@ func (a *IdentitySourcesAPIService) AddIdentitySourcesExecute(r ApiAddIdentitySo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -145,8 +144,8 @@ func (a *IdentitySourcesAPIService) AddIdentitySourcesExecute(r ApiAddIdentitySo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -154,8 +153,8 @@ func (a *IdentitySourcesAPIService) AddIdentitySourcesExecute(r ApiAddIdentitySo
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -164,9 +163,9 @@ func (a *IdentitySourcesAPIService) AddIdentitySourcesExecute(r ApiAddIdentitySo
 }
 
 type ApiGetIdentitySourcesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentitySourcesAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetIdentitySourcesRequest) Execute() (*GetIdentitySources200Response, *http.Response, error) {
@@ -178,27 +177,27 @@ GetIdentitySources Retrieves a Specific Identity Source
 
 Retrieves a specific identity source.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetIdentitySourcesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetIdentitySourcesRequest
 */
 func (a *IdentitySourcesAPIService) GetIdentitySources(ctx context.Context, id int64) ApiGetIdentitySourcesRequest {
 	return ApiGetIdentitySourcesRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetIdentitySources200Response
+//
+//	@return GetIdentitySources200Response
 func (a *IdentitySourcesAPIService) GetIdentitySourcesExecute(r ApiGetIdentitySourcesRequest) (*GetIdentitySources200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetIdentitySources200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetIdentitySources200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentitySourcesAPIService.GetIdentitySources")
@@ -249,7 +248,7 @@ func (a *IdentitySourcesAPIService) GetIdentitySourcesExecute(r ApiGetIdentitySo
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -258,8 +257,8 @@ func (a *IdentitySourcesAPIService) GetIdentitySourcesExecute(r ApiGetIdentitySo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -269,8 +268,8 @@ func (a *IdentitySourcesAPIService) GetIdentitySourcesExecute(r ApiGetIdentitySo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -278,8 +277,8 @@ func (a *IdentitySourcesAPIService) GetIdentitySourcesExecute(r ApiGetIdentitySo
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -288,15 +287,15 @@ func (a *IdentitySourcesAPIService) GetIdentitySourcesExecute(r ApiGetIdentitySo
 }
 
 type ApiListIdentitySourcesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentitySourcesAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	name *string
-	accountId *int64
+	max        *int64
+	offset     *int64
+	sort       *string
+	direction  *string
+	phrase     *string
+	name       *string
+	accountId  *int64
 }
 
 // Maximum number of records to return
@@ -350,25 +349,25 @@ ListIdentitySources Retrieves all Identity Sources
 
 Retrieves all identity sources.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListIdentitySourcesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListIdentitySourcesRequest
 */
 func (a *IdentitySourcesAPIService) ListIdentitySources(ctx context.Context) ApiListIdentitySourcesRequest {
 	return ApiListIdentitySourcesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListIdentitySources200Response
+//
+//	@return ListIdentitySources200Response
 func (a *IdentitySourcesAPIService) ListIdentitySourcesExecute(r ApiListIdentitySourcesRequest) (*ListIdentitySources200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListIdentitySources200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListIdentitySources200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentitySourcesAPIService.ListIdentitySources")
@@ -451,7 +450,7 @@ func (a *IdentitySourcesAPIService) ListIdentitySourcesExecute(r ApiListIdentity
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -460,8 +459,8 @@ func (a *IdentitySourcesAPIService) ListIdentitySourcesExecute(r ApiListIdentity
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -471,8 +470,8 @@ func (a *IdentitySourcesAPIService) ListIdentitySourcesExecute(r ApiListIdentity
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -480,8 +479,8 @@ func (a *IdentitySourcesAPIService) ListIdentitySourcesExecute(r ApiListIdentity
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -490,9 +489,9 @@ func (a *IdentitySourcesAPIService) ListIdentitySourcesExecute(r ApiListIdentity
 }
 
 type ApiRemoveIdentitySourcesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentitySourcesAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiRemoveIdentitySourcesRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -504,27 +503,27 @@ RemoveIdentitySources Deletes an Identity Source
 
 Deletes a specified identity source.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiRemoveIdentitySourcesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiRemoveIdentitySourcesRequest
 */
 func (a *IdentitySourcesAPIService) RemoveIdentitySources(ctx context.Context, id int64) ApiRemoveIdentitySourcesRequest {
 	return ApiRemoveIdentitySourcesRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *IdentitySourcesAPIService) RemoveIdentitySourcesExecute(r ApiRemoveIdentitySourcesRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentitySourcesAPIService.RemoveIdentitySources")
@@ -575,7 +574,7 @@ func (a *IdentitySourcesAPIService) RemoveIdentitySourcesExecute(r ApiRemoveIden
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -584,8 +583,8 @@ func (a *IdentitySourcesAPIService) RemoveIdentitySourcesExecute(r ApiRemoveIden
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -595,8 +594,8 @@ func (a *IdentitySourcesAPIService) RemoveIdentitySourcesExecute(r ApiRemoveIden
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -604,8 +603,8 @@ func (a *IdentitySourcesAPIService) RemoveIdentitySourcesExecute(r ApiRemoveIden
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -614,9 +613,9 @@ func (a *IdentitySourcesAPIService) RemoveIdentitySourcesExecute(r ApiRemoveIden
 }
 
 type ApiUpdateIdentitySourceSubdomainsRequest struct {
-	ctx context.Context
-	ApiService *IdentitySourcesAPIService
-	id int64
+	ctx                                   context.Context
+	ApiService                            *IdentitySourcesAPIService
+	id                                    int64
 	updateIdentitySourceSubdomainsRequest *UpdateIdentitySourceSubdomainsRequest
 }
 
@@ -634,27 +633,27 @@ UpdateIdentitySourceSubdomains Updates an Identity Source Subdomain
 
 Updates an identity source subdomain.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateIdentitySourceSubdomainsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateIdentitySourceSubdomainsRequest
 */
 func (a *IdentitySourcesAPIService) UpdateIdentitySourceSubdomains(ctx context.Context, id int64) ApiUpdateIdentitySourceSubdomainsRequest {
 	return ApiUpdateIdentitySourceSubdomainsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return UpdateIdentitySourceSubdomains200Response
+//
+//	@return UpdateIdentitySourceSubdomains200Response
 func (a *IdentitySourcesAPIService) UpdateIdentitySourceSubdomainsExecute(r ApiUpdateIdentitySourceSubdomainsRequest) (*UpdateIdentitySourceSubdomains200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UpdateIdentitySourceSubdomains200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UpdateIdentitySourceSubdomains200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentitySourcesAPIService.UpdateIdentitySourceSubdomains")
@@ -707,7 +706,7 @@ func (a *IdentitySourcesAPIService) UpdateIdentitySourceSubdomainsExecute(r ApiU
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -716,8 +715,8 @@ func (a *IdentitySourcesAPIService) UpdateIdentitySourceSubdomainsExecute(r ApiU
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -727,8 +726,8 @@ func (a *IdentitySourcesAPIService) UpdateIdentitySourceSubdomainsExecute(r ApiU
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -736,8 +735,8 @@ func (a *IdentitySourcesAPIService) UpdateIdentitySourceSubdomainsExecute(r ApiU
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -746,9 +745,9 @@ func (a *IdentitySourcesAPIService) UpdateIdentitySourceSubdomainsExecute(r ApiU
 }
 
 type ApiUpdateIdentitySourcesRequest struct {
-	ctx context.Context
-	ApiService *IdentitySourcesAPIService
-	id int64
+	ctx                       context.Context
+	ApiService                *IdentitySourcesAPIService
+	id                        int64
 	addIdentitySourcesRequest *AddIdentitySourcesRequest
 }
 
@@ -766,27 +765,27 @@ UpdateIdentitySources Updates an Identity Source
 
 Updates an identity source.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateIdentitySourcesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateIdentitySourcesRequest
 */
 func (a *IdentitySourcesAPIService) UpdateIdentitySources(ctx context.Context, id int64) ApiUpdateIdentitySourcesRequest {
 	return ApiUpdateIdentitySourcesRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddIdentitySources200Response
+//
+//	@return AddIdentitySources200Response
 func (a *IdentitySourcesAPIService) UpdateIdentitySourcesExecute(r ApiUpdateIdentitySourcesRequest) (*AddIdentitySources200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddIdentitySources200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddIdentitySources200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentitySourcesAPIService.UpdateIdentitySources")
@@ -839,7 +838,7 @@ func (a *IdentitySourcesAPIService) UpdateIdentitySourcesExecute(r ApiUpdateIden
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -848,8 +847,8 @@ func (a *IdentitySourcesAPIService) UpdateIdentitySourcesExecute(r ApiUpdateIden
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -859,8 +858,8 @@ func (a *IdentitySourcesAPIService) UpdateIdentitySourcesExecute(r ApiUpdateIden
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -868,8 +867,8 @@ func (a *IdentitySourcesAPIService) UpdateIdentitySourcesExecute(r ApiUpdateIden
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

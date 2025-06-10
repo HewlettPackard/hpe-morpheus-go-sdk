@@ -14,6 +14,7 @@ package sdk
 import (
 	"encoding/json"
 	"fmt"
+
 	"gopkg.in/validator.v2"
 )
 
@@ -22,8 +23,8 @@ var _ fmt.Stringer
 
 // AddTasks200ResponseAllOfTask - struct for AddTasks200ResponseAllOfTask
 type AddTasks200ResponseAllOfTask struct {
-	ListTasks200ResponseAllOfTasksInnerAnyOf *ListTasks200ResponseAllOfTasksInnerAnyOf
-	ListTasks200ResponseAllOfTasksInnerAnyOf1 *ListTasks200ResponseAllOfTasksInnerAnyOf1
+	ListTasks200ResponseAllOfTasksInnerAnyOf   *ListTasks200ResponseAllOfTasksInnerAnyOf
+	ListTasks200ResponseAllOfTasksInnerAnyOf1  *ListTasks200ResponseAllOfTasksInnerAnyOf1
 	ListTasks200ResponseAllOfTasksInnerAnyOf10 *ListTasks200ResponseAllOfTasksInnerAnyOf10
 	ListTasks200ResponseAllOfTasksInnerAnyOf11 *ListTasks200ResponseAllOfTasksInnerAnyOf11
 	ListTasks200ResponseAllOfTasksInnerAnyOf12 *ListTasks200ResponseAllOfTasksInnerAnyOf12
@@ -31,14 +32,14 @@ type AddTasks200ResponseAllOfTask struct {
 	ListTasks200ResponseAllOfTasksInnerAnyOf14 *ListTasks200ResponseAllOfTasksInnerAnyOf14
 	ListTasks200ResponseAllOfTasksInnerAnyOf15 *ListTasks200ResponseAllOfTasksInnerAnyOf15
 	ListTasks200ResponseAllOfTasksInnerAnyOf16 *ListTasks200ResponseAllOfTasksInnerAnyOf16
-	ListTasks200ResponseAllOfTasksInnerAnyOf2 *ListTasks200ResponseAllOfTasksInnerAnyOf2
-	ListTasks200ResponseAllOfTasksInnerAnyOf3 *ListTasks200ResponseAllOfTasksInnerAnyOf3
-	ListTasks200ResponseAllOfTasksInnerAnyOf4 *ListTasks200ResponseAllOfTasksInnerAnyOf4
-	ListTasks200ResponseAllOfTasksInnerAnyOf5 *ListTasks200ResponseAllOfTasksInnerAnyOf5
-	ListTasks200ResponseAllOfTasksInnerAnyOf6 *ListTasks200ResponseAllOfTasksInnerAnyOf6
-	ListTasks200ResponseAllOfTasksInnerAnyOf7 *ListTasks200ResponseAllOfTasksInnerAnyOf7
-	ListTasks200ResponseAllOfTasksInnerAnyOf8 *ListTasks200ResponseAllOfTasksInnerAnyOf8
-	ListTasks200ResponseAllOfTasksInnerAnyOf9 *ListTasks200ResponseAllOfTasksInnerAnyOf9
+	ListTasks200ResponseAllOfTasksInnerAnyOf2  *ListTasks200ResponseAllOfTasksInnerAnyOf2
+	ListTasks200ResponseAllOfTasksInnerAnyOf3  *ListTasks200ResponseAllOfTasksInnerAnyOf3
+	ListTasks200ResponseAllOfTasksInnerAnyOf4  *ListTasks200ResponseAllOfTasksInnerAnyOf4
+	ListTasks200ResponseAllOfTasksInnerAnyOf5  *ListTasks200ResponseAllOfTasksInnerAnyOf5
+	ListTasks200ResponseAllOfTasksInnerAnyOf6  *ListTasks200ResponseAllOfTasksInnerAnyOf6
+	ListTasks200ResponseAllOfTasksInnerAnyOf7  *ListTasks200ResponseAllOfTasksInnerAnyOf7
+	ListTasks200ResponseAllOfTasksInnerAnyOf8  *ListTasks200ResponseAllOfTasksInnerAnyOf8
+	ListTasks200ResponseAllOfTasksInnerAnyOf9  *ListTasks200ResponseAllOfTasksInnerAnyOf9
 }
 
 // ListTasks200ResponseAllOfTasksInnerAnyOfAsAddTasks200ResponseAllOfTask is a convenience function that returns ListTasks200ResponseAllOfTasksInnerAnyOf wrapped in AddTasks200ResponseAllOfTask
@@ -160,6 +161,81 @@ func ListTasks200ResponseAllOfTasksInnerAnyOf9AsAddTasks200ResponseAllOfTask(v *
 	}
 }
 
+func (dst *AddTasks200ResponseAllOfTask) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddTasks200ResponseAllOfTask{}
+	}
+
+	if out, ok := data.(ListTasks200ResponseAllOfTasksInnerAnyOf); ok {
+		dst.ListTasks200ResponseAllOfTasksInnerAnyOf = &out
+	}
+
+	if out, ok := data.(ListTasks200ResponseAllOfTasksInnerAnyOf1); ok {
+		dst.ListTasks200ResponseAllOfTasksInnerAnyOf1 = &out
+	}
+
+	if out, ok := data.(ListTasks200ResponseAllOfTasksInnerAnyOf10); ok {
+		dst.ListTasks200ResponseAllOfTasksInnerAnyOf10 = &out
+	}
+
+	if out, ok := data.(ListTasks200ResponseAllOfTasksInnerAnyOf11); ok {
+		dst.ListTasks200ResponseAllOfTasksInnerAnyOf11 = &out
+	}
+
+	if out, ok := data.(ListTasks200ResponseAllOfTasksInnerAnyOf12); ok {
+		dst.ListTasks200ResponseAllOfTasksInnerAnyOf12 = &out
+	}
+
+	if out, ok := data.(ListTasks200ResponseAllOfTasksInnerAnyOf13); ok {
+		dst.ListTasks200ResponseAllOfTasksInnerAnyOf13 = &out
+	}
+
+	if out, ok := data.(ListTasks200ResponseAllOfTasksInnerAnyOf14); ok {
+		dst.ListTasks200ResponseAllOfTasksInnerAnyOf14 = &out
+	}
+
+	if out, ok := data.(ListTasks200ResponseAllOfTasksInnerAnyOf15); ok {
+		dst.ListTasks200ResponseAllOfTasksInnerAnyOf15 = &out
+	}
+
+	if out, ok := data.(ListTasks200ResponseAllOfTasksInnerAnyOf16); ok {
+		dst.ListTasks200ResponseAllOfTasksInnerAnyOf16 = &out
+	}
+
+	if out, ok := data.(ListTasks200ResponseAllOfTasksInnerAnyOf2); ok {
+		dst.ListTasks200ResponseAllOfTasksInnerAnyOf2 = &out
+	}
+
+	if out, ok := data.(ListTasks200ResponseAllOfTasksInnerAnyOf3); ok {
+		dst.ListTasks200ResponseAllOfTasksInnerAnyOf3 = &out
+	}
+
+	if out, ok := data.(ListTasks200ResponseAllOfTasksInnerAnyOf4); ok {
+		dst.ListTasks200ResponseAllOfTasksInnerAnyOf4 = &out
+	}
+
+	if out, ok := data.(ListTasks200ResponseAllOfTasksInnerAnyOf5); ok {
+		dst.ListTasks200ResponseAllOfTasksInnerAnyOf5 = &out
+	}
+
+	if out, ok := data.(ListTasks200ResponseAllOfTasksInnerAnyOf6); ok {
+		dst.ListTasks200ResponseAllOfTasksInnerAnyOf6 = &out
+	}
+
+	if out, ok := data.(ListTasks200ResponseAllOfTasksInnerAnyOf7); ok {
+		dst.ListTasks200ResponseAllOfTasksInnerAnyOf7 = &out
+	}
+
+	if out, ok := data.(ListTasks200ResponseAllOfTasksInnerAnyOf8); ok {
+		dst.ListTasks200ResponseAllOfTasksInnerAnyOf8 = &out
+	}
+
+	if out, ok := data.(ListTasks200ResponseAllOfTasksInnerAnyOf9); ok {
+		dst.ListTasks200ResponseAllOfTasksInnerAnyOf9 = &out
+	}
+
+	return dst, nil
+}
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddTasks200ResponseAllOfTask) UnmarshalJSON(data []byte) error {
@@ -556,7 +632,7 @@ func (src AddTasks200ResponseAllOfTask) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddTasks200ResponseAllOfTask) GetActualInstance() (interface{}) {
+func (obj *AddTasks200ResponseAllOfTask) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -633,7 +709,7 @@ func (obj *AddTasks200ResponseAllOfTask) GetActualInstance() (interface{}) {
 }
 
 // Get the actual instance value
-func (obj AddTasks200ResponseAllOfTask) GetActualInstanceValue() (interface{}) {
+func (obj AddTasks200ResponseAllOfTask) GetActualInstanceValue() interface{} {
 	if obj.ListTasks200ResponseAllOfTasksInnerAnyOf != nil {
 		return *obj.ListTasks200ResponseAllOfTasksInnerAnyOf
 	}
@@ -741,5 +817,3 @@ func (v *NullableAddTasks200ResponseAllOfTask) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

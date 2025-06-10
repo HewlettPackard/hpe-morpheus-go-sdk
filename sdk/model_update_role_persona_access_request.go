@@ -14,6 +14,7 @@ package sdk
 import (
 	"encoding/json"
 	"fmt"
+
 	"gopkg.in/validator.v2"
 )
 
@@ -22,7 +23,7 @@ var _ fmt.Stringer
 
 // UpdateRolePersonaAccessRequest - struct for UpdateRolePersonaAccessRequest
 type UpdateRolePersonaAccessRequest struct {
-	UpdateRolePersonaAccessRequestOneOf *UpdateRolePersonaAccessRequestOneOf
+	UpdateRolePersonaAccessRequestOneOf  *UpdateRolePersonaAccessRequestOneOf
 	UpdateRolePersonaAccessRequestOneOf1 *UpdateRolePersonaAccessRequestOneOf1
 }
 
@@ -40,6 +41,21 @@ func UpdateRolePersonaAccessRequestOneOf1AsUpdateRolePersonaAccessRequest(v *Upd
 	}
 }
 
+func (dst *UpdateRolePersonaAccessRequest) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &UpdateRolePersonaAccessRequest{}
+	}
+
+	if out, ok := data.(UpdateRolePersonaAccessRequestOneOf); ok {
+		dst.UpdateRolePersonaAccessRequestOneOf = &out
+	}
+
+	if out, ok := data.(UpdateRolePersonaAccessRequestOneOf1); ok {
+		dst.UpdateRolePersonaAccessRequestOneOf1 = &out
+	}
+
+	return dst, nil
+}
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *UpdateRolePersonaAccessRequest) UnmarshalJSON(data []byte) error {
@@ -106,7 +122,7 @@ func (src UpdateRolePersonaAccessRequest) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *UpdateRolePersonaAccessRequest) GetActualInstance() (interface{}) {
+func (obj *UpdateRolePersonaAccessRequest) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -123,7 +139,7 @@ func (obj *UpdateRolePersonaAccessRequest) GetActualInstance() (interface{}) {
 }
 
 // Get the actual instance value
-func (obj UpdateRolePersonaAccessRequest) GetActualInstanceValue() (interface{}) {
+func (obj UpdateRolePersonaAccessRequest) GetActualInstanceValue() interface{} {
 	if obj.UpdateRolePersonaAccessRequestOneOf != nil {
 		return *obj.UpdateRolePersonaAccessRequestOneOf
 	}
@@ -171,5 +187,3 @@ func (v *NullableUpdateRolePersonaAccessRequest) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

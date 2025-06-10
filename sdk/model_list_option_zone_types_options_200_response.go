@@ -20,9 +20,9 @@ var _ MappedNullable = &ListOptionZoneTypesOptions200Response{}
 
 // ListOptionZoneTypesOptions200Response struct for ListOptionZoneTypesOptions200Response
 type ListOptionZoneTypesOptions200Response struct {
-	Data []ListOptionZoneTypesOptions200ResponseAllOfDataInner `json:"data,omitempty"`
-	Success *bool `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Data                 []ListOptionZoneTypesOptions200ResponseAllOfDataInner `json:"data,omitempty"`
+	Success              *bool                                                 `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}                                `json:",remain"`
 }
 
 type _ListOptionZoneTypesOptions200Response ListOptionZoneTypesOptions200Response
@@ -109,7 +109,7 @@ func (o *ListOptionZoneTypesOptions200Response) SetSuccess(v bool) {
 }
 
 func (o ListOptionZoneTypesOptions200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o ListOptionZoneTypesOptions200Response) ToMap() (map[string]interface{}, 
 
 	return toSerialize, nil
 }
-
 func (o *ListOptionZoneTypesOptions200Response) UnmarshalJSON(data []byte) (err error) {
-	varListOptionZoneTypesOptions200Response := _ListOptionZoneTypesOptions200Response{}
-
-	err = json.Unmarshal(data, &varListOptionZoneTypesOptions200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListOptionZoneTypesOptions200Response(varListOptionZoneTypesOptions200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "data")
-		delete(additionalProperties, "success")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListOptionZoneTypesOptions200Response struct {
-	value *ListOptionZoneTypesOptions200Response
-	isSet bool
-}
-
-func (v NullableListOptionZoneTypesOptions200Response) Get() *ListOptionZoneTypesOptions200Response {
-	return v.value
-}
-
-func (v *NullableListOptionZoneTypesOptions200Response) Set(val *ListOptionZoneTypesOptions200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListOptionZoneTypesOptions200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListOptionZoneTypesOptions200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListOptionZoneTypesOptions200Response(val *ListOptionZoneTypesOptions200Response) *NullableListOptionZoneTypesOptions200Response {
-	return &NullableListOptionZoneTypesOptions200Response{value: val, isSet: true}
-}
-
-func (v NullableListOptionZoneTypesOptions200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListOptionZoneTypesOptions200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

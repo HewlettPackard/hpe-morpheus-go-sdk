@@ -21,22 +21,22 @@ var _ MappedNullable = &ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf{}
 
 // ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf struct for ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf
 type ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	Type *string `json:"type,omitempty"`
-	IntegrationType *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"integrationType,omitempty"`
-	Url *string `json:"url,omitempty"`
-	ServiceKey *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"serviceKey,omitempty"`
-	IsPlugin *bool `json:"isPlugin,omitempty"`
-	Config *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig `json:"config,omitempty"`
-	Status *string `json:"status,omitempty"`
-	StatusDate *time.Time `json:"statusDate,omitempty"`
-	StatusMessage *string `json:"statusMessage,omitempty"`
-	LastSync *string `json:"lastSync,omitempty"`
-	LastSyncDuration *int64 `json:"lastSyncDuration,omitempty"`
-	Credential *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential `json:"credential,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                  `json:"id,omitempty"`
+	Name                 *string                                                                 `json:"name,omitempty"`
+	Enabled              *bool                                                                   `json:"enabled,omitempty"`
+	Type                 *string                                                                 `json:"type,omitempty"`
+	IntegrationType      *ListBackupSettings200ResponseBackupSettingsDefaultSchedule             `json:"integrationType,omitempty"`
+	Url                  *string                                                                 `json:"url,omitempty"`
+	ServiceKey           *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"serviceKey,omitempty"`
+	IsPlugin             *bool                                                                   `json:"isPlugin,omitempty"`
+	Config               *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig           `json:"config,omitempty"`
+	Status               *string                                                                 `json:"status,omitempty"`
+	StatusDate           *time.Time                                                              `json:"statusDate,omitempty"`
+	StatusMessage        *string                                                                 `json:"statusMessage,omitempty"`
+	LastSync             *string                                                                 `json:"lastSync,omitempty"`
+	LastSyncDuration     *int64                                                                  `json:"lastSyncDuration,omitempty"`
+	Credential           *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential       `json:"credential,omitempty"`
+	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
 }
 
 type _ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf
@@ -539,7 +539,7 @@ func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf) SetCredential(v
 }
 
 func (o ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -600,76 +600,8 @@ func (o ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf) ToMap() (map[str
 
 	return toSerialize, nil
 }
-
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf) UnmarshalJSON(data []byte) (err error) {
-	varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf := _ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf{}
-
-	err = json.Unmarshal(data, &varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf(varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "integrationType")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "serviceKey")
-		delete(additionalProperties, "isPlugin")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "statusDate")
-		delete(additionalProperties, "statusMessage")
-		delete(additionalProperties, "lastSync")
-		delete(additionalProperties, "lastSyncDuration")
-		delete(additionalProperties, "credential")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf struct {
-	value *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf
-	isSet bool
-}
-
-func (v NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf) Get() *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf {
-	return v.value
-}
-
-func (v *NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf) Set(val *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf(val *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf) *NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf {
-	return &NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf{value: val, isSet: true}
-}
-
-func (v NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -19,18 +19,33 @@ import (
 // very silly way of avoiding `"fmt" imported and not used` errors
 var _ fmt.Stringer
 
-
 // AddVDIGateways200Response struct for AddVDIGateways200Response
 type AddVDIGateways200Response struct {
 	AddVDIGateways200ResponseAnyOf *AddVDIGateways200ResponseAnyOf
-	DeleteAlerts200Response *DeleteAlerts200Response
+	DeleteAlerts200Response        *DeleteAlerts200Response
+}
+
+func (dst *AddVDIGateways200Response) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddVDIGateways200Response{}
+	}
+
+	if out, ok := data.(AddVDIGateways200ResponseAnyOf); ok {
+		dst.AddVDIGateways200ResponseAnyOf = &out
+	}
+
+	if out, ok := data.(DeleteAlerts200Response); ok {
+		dst.DeleteAlerts200Response = &out
+	}
+
+	return dst, nil
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AddVDIGateways200Response) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into AddVDIGateways200ResponseAnyOf
-	err = json.Unmarshal(data, &dst.AddVDIGateways200ResponseAnyOf);
+	err = json.Unmarshal(data, &dst.AddVDIGateways200ResponseAnyOf)
 	if err == nil {
 		jsonAddVDIGateways200ResponseAnyOf, _ := json.Marshal(dst.AddVDIGateways200ResponseAnyOf)
 		if string(jsonAddVDIGateways200ResponseAnyOf) == "{}" { // empty struct
@@ -43,7 +58,7 @@ func (dst *AddVDIGateways200Response) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into DeleteAlerts200Response
-	err = json.Unmarshal(data, &dst.DeleteAlerts200Response);
+	err = json.Unmarshal(data, &dst.DeleteAlerts200Response)
 	if err == nil {
 		jsonDeleteAlerts200Response, _ := json.Marshal(dst.DeleteAlerts200Response)
 		if string(jsonDeleteAlerts200Response) == "{}" { // empty struct
@@ -70,7 +85,6 @@ func (src AddVDIGateways200Response) MarshalJSON() ([]byte, error) {
 
 	return nil, nil // no data in anyOf schemas
 }
-
 
 type NullableAddVDIGateways200Response struct {
 	value *AddVDIGateways200Response
@@ -107,5 +121,3 @@ func (v *NullableAddVDIGateways200Response) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

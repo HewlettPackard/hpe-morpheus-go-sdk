@@ -21,33 +21,33 @@ var _ MappedNullable = &ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProf
 
 // ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner struct for ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner
 type ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner struct {
-	Id *int64 `json:"id,omitempty"`
-	LoadBalancer *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer `json:"loadBalancer,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Category *string `json:"category,omitempty"`
-	ServiceType *string `json:"serviceType,omitempty"`
-	ServiceTypeDisplay *string `json:"serviceTypeDisplay,omitempty"`
-	Visibility *string `json:"visibility,omitempty"`
-	Description *string `json:"description,omitempty"`
-	InternalId *string `json:"internalId,omitempty"`
-	ExternalId *string `json:"externalId,omitempty"`
-	ProxyType *string `json:"proxyType,omitempty"`
-	RedirectRewrite *string `json:"redirectRewrite,omitempty"`
-	PersistenceType *string `json:"persistenceType,omitempty"`
-	SslEnabled *string `json:"sslEnabled,omitempty"`
-	SslCert *string `json:"sslCert,omitempty"`
-	AccountCertificate *string `json:"accountCertificate,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	RedirectUrl *string `json:"redirectUrl,omitempty"`
-	InsertXforwardedFor *bool `json:"insertXforwardedFor,omitempty"`
-	PersistenceCookieName *string `json:"persistenceCookieName,omitempty"`
-	PersistenceExpiresIn *string `json:"persistenceExpiresIn,omitempty"`
-	Editable *bool `json:"editable,omitempty"`
-	Config map[string]interface{} `json:"config,omitempty"`
-	CreatedBy *string `json:"createdBy,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                    *int64                                                                         `json:"id,omitempty"`
+	LoadBalancer          *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer `json:"loadBalancer,omitempty"`
+	Name                  *string                                                                        `json:"name,omitempty"`
+	Category              *string                                                                        `json:"category,omitempty"`
+	ServiceType           *string                                                                        `json:"serviceType,omitempty"`
+	ServiceTypeDisplay    *string                                                                        `json:"serviceTypeDisplay,omitempty"`
+	Visibility            *string                                                                        `json:"visibility,omitempty"`
+	Description           *string                                                                        `json:"description,omitempty"`
+	InternalId            *string                                                                        `json:"internalId,omitempty"`
+	ExternalId            *string                                                                        `json:"externalId,omitempty"`
+	ProxyType             *string                                                                        `json:"proxyType,omitempty"`
+	RedirectRewrite       *string                                                                        `json:"redirectRewrite,omitempty"`
+	PersistenceType       *string                                                                        `json:"persistenceType,omitempty"`
+	SslEnabled            *string                                                                        `json:"sslEnabled,omitempty"`
+	SslCert               *string                                                                        `json:"sslCert,omitempty"`
+	AccountCertificate    *string                                                                        `json:"accountCertificate,omitempty"`
+	Enabled               *bool                                                                          `json:"enabled,omitempty"`
+	RedirectUrl           *string                                                                        `json:"redirectUrl,omitempty"`
+	InsertXforwardedFor   *bool                                                                          `json:"insertXforwardedFor,omitempty"`
+	PersistenceCookieName *string                                                                        `json:"persistenceCookieName,omitempty"`
+	PersistenceExpiresIn  *string                                                                        `json:"persistenceExpiresIn,omitempty"`
+	Editable              *bool                                                                          `json:"editable,omitempty"`
+	Config                map[string]interface{}                                                         `json:"config,omitempty"`
+	CreatedBy             *string                                                                        `json:"createdBy,omitempty"`
+	DateCreated           *time.Time                                                                     `json:"dateCreated,omitempty"`
+	LastUpdated           *time.Time                                                                     `json:"lastUpdated,omitempty"`
+	AdditionalProperties  map[string]interface{}                                                         `json:",remain"`
 }
 
 type _ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner
@@ -902,7 +902,7 @@ func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) SetL
 }
 
 func (o ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -996,87 +996,8 @@ func (o ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) ToMap
 
 	return toSerialize, nil
 }
-
 func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) UnmarshalJSON(data []byte) (err error) {
-	varListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner := _ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner{}
-
-	err = json.Unmarshal(data, &varListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner(varListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "loadBalancer")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "serviceType")
-		delete(additionalProperties, "serviceTypeDisplay")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "internalId")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "proxyType")
-		delete(additionalProperties, "redirectRewrite")
-		delete(additionalProperties, "persistenceType")
-		delete(additionalProperties, "sslEnabled")
-		delete(additionalProperties, "sslCert")
-		delete(additionalProperties, "accountCertificate")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "redirectUrl")
-		delete(additionalProperties, "insertXforwardedFor")
-		delete(additionalProperties, "persistenceCookieName")
-		delete(additionalProperties, "persistenceExpiresIn")
-		delete(additionalProperties, "editable")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "createdBy")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner struct {
-	value *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner
-	isSet bool
-}
-
-func (v NullableListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) Get() *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner {
-	return v.value
-}
-
-func (v *NullableListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) Set(val *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner(val *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) *NullableListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner {
-	return &NullableListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner{value: val, isSet: true}
-}
-
-func (v NullableListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

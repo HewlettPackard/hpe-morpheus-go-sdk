@@ -20,8 +20,8 @@ var _ MappedNullable = &ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14
 
 // ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14Config struct for ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14Config
 type ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14Config struct {
-	SaltApplyOnMinion *bool `json:"saltApplyOnMinion,omitempty"`
-	AdditionalProperties map[string]interface{}
+	SaltApplyOnMinion    *bool                  `json:"saltApplyOnMinion,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14Config ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14Config
@@ -76,7 +76,7 @@ func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14Config) SetSalt
 }
 
 func (o ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14Config) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14Config) ToMap() 
 
 	return toSerialize, nil
 }
-
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14Config) UnmarshalJSON(data []byte) (err error) {
-	varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14Config := _ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14Config{}
-
-	err = json.Unmarshal(data, &varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14Config)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14Config(varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14Config)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "saltApplyOnMinion")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14Config struct {
-	value *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14Config
-	isSet bool
-}
-
-func (v NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14Config) Get() *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14Config {
-	return v.value
-}
-
-func (v *NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14Config) Set(val *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14Config) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14Config) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14Config) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14Config(val *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14Config) *NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14Config {
-	return &NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14Config{value: val, isSet: true}
-}
-
-func (v NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14Config) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14Config) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

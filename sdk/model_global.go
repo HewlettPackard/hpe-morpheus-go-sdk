@@ -21,8 +21,8 @@ var _ MappedNullable = &Global{}
 // Global struct for Global
 type Global struct {
 	// Global (All Tenants), load users from all tenants. The default is to only see your own tenant. This is only available to master tenant users with permission to manage tenants and users.
-	Global *bool `json:"global,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Global               *bool                  `json:"global,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _Global Global
@@ -81,7 +81,7 @@ func (o *Global) SetGlobal(v bool) {
 }
 
 func (o Global) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -100,62 +100,8 @@ func (o Global) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *Global) UnmarshalJSON(data []byte) (err error) {
-	varGlobal := _Global{}
-
-	err = json.Unmarshal(data, &varGlobal)
-
-	if err != nil {
-		return err
-	}
-
-	*o = Global(varGlobal)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "global")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGlobal struct {
-	value *Global
-	isSet bool
-}
-
-func (v NullableGlobal) Get() *Global {
-	return v.value
-}
-
-func (v *NullableGlobal) Set(val *Global) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGlobal) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGlobal) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGlobal(val *Global) *NullableGlobal {
-	return &NullableGlobal{value: val, isSet: true}
-}
-
-func (v NullableGlobal) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGlobal) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

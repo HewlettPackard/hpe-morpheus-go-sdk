@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddFileTemplateRequestContainerTemplate type satisfies the MappedNullable interface at compile time
@@ -40,8 +39,8 @@ type AddFileTemplateRequestContainerTemplate struct {
 	// Setting Name
 	SettingName *string `json:"settingName,omitempty"`
 	// Setting Category
-	SettingCategory *string `json:"settingCategory,omitempty"`
-	AdditionalProperties map[string]interface{}
+	SettingCategory      *string                `json:"settingCategory,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddFileTemplateRequestContainerTemplate AddFileTemplateRequestContainerTemplate
@@ -370,7 +369,7 @@ func (o *AddFileTemplateRequestContainerTemplate) SetSettingCategory(v string) {
 }
 
 func (o AddFileTemplateRequestContainerTemplate) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -412,93 +411,8 @@ func (o AddFileTemplateRequestContainerTemplate) ToMap() (map[string]interface{}
 
 	return toSerialize, nil
 }
-
 func (o *AddFileTemplateRequestContainerTemplate) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-		"fileName",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddFileTemplateRequestContainerTemplate := _AddFileTemplateRequestContainerTemplate{}
-
-	err = json.Unmarshal(data, &varAddFileTemplateRequestContainerTemplate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddFileTemplateRequestContainerTemplate(varAddFileTemplateRequestContainerTemplate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "fileName")
-		delete(additionalProperties, "filePath")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "templatePhase")
-		delete(additionalProperties, "template")
-		delete(additionalProperties, "fileOwner")
-		delete(additionalProperties, "settingName")
-		delete(additionalProperties, "settingCategory")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddFileTemplateRequestContainerTemplate struct {
-	value *AddFileTemplateRequestContainerTemplate
-	isSet bool
-}
-
-func (v NullableAddFileTemplateRequestContainerTemplate) Get() *AddFileTemplateRequestContainerTemplate {
-	return v.value
-}
-
-func (v *NullableAddFileTemplateRequestContainerTemplate) Set(val *AddFileTemplateRequestContainerTemplate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddFileTemplateRequestContainerTemplate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddFileTemplateRequestContainerTemplate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddFileTemplateRequestContainerTemplate(val *AddFileTemplateRequestContainerTemplate) *NullableAddFileTemplateRequestContainerTemplate {
-	return &NullableAddFileTemplateRequestContainerTemplate{value: val, isSet: true}
-}
-
-func (v NullableAddFileTemplateRequestContainerTemplate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddFileTemplateRequestContainerTemplate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

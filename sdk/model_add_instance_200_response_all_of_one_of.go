@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddInstance200ResponseAllOfOneOf type satisfies the MappedNullable interface at compile time
@@ -21,8 +20,8 @@ var _ MappedNullable = &AddInstance200ResponseAllOfOneOf{}
 
 // AddInstance200ResponseAllOfOneOf struct for AddInstance200ResponseAllOfOneOf
 type AddInstance200ResponseAllOfOneOf struct {
-	Instance AddInstance200ResponseAllOfOneOfInstance `json:"instance"`
-	AdditionalProperties map[string]interface{}
+	Instance             AddInstance200ResponseAllOfOneOfInstance `json:"instance"`
+	AdditionalProperties map[string]interface{}                   `json:",remain"`
 }
 
 type _AddInstance200ResponseAllOfOneOf AddInstance200ResponseAllOfOneOf
@@ -70,7 +69,7 @@ func (o *AddInstance200ResponseAllOfOneOf) SetInstance(v AddInstance200ResponseA
 }
 
 func (o AddInstance200ResponseAllOfOneOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -87,83 +86,8 @@ func (o AddInstance200ResponseAllOfOneOf) ToMap() (map[string]interface{}, error
 
 	return toSerialize, nil
 }
-
 func (o *AddInstance200ResponseAllOfOneOf) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"instance",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddInstance200ResponseAllOfOneOf := _AddInstance200ResponseAllOfOneOf{}
-
-	err = json.Unmarshal(data, &varAddInstance200ResponseAllOfOneOf)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddInstance200ResponseAllOfOneOf(varAddInstance200ResponseAllOfOneOf)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "instance")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddInstance200ResponseAllOfOneOf struct {
-	value *AddInstance200ResponseAllOfOneOf
-	isSet bool
-}
-
-func (v NullableAddInstance200ResponseAllOfOneOf) Get() *AddInstance200ResponseAllOfOneOf {
-	return v.value
-}
-
-func (v *NullableAddInstance200ResponseAllOfOneOf) Set(val *AddInstance200ResponseAllOfOneOf) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddInstance200ResponseAllOfOneOf) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddInstance200ResponseAllOfOneOf) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddInstance200ResponseAllOfOneOf(val *AddInstance200ResponseAllOfOneOf) *NullableAddInstance200ResponseAllOfOneOf {
-	return &NullableAddInstance200ResponseAllOfOneOf{value: val, isSet: true}
-}
-
-func (v NullableAddInstance200ResponseAllOfOneOf) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddInstance200ResponseAllOfOneOf) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

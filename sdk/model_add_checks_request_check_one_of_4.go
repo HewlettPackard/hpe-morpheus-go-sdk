@@ -18,13 +18,13 @@ import (
 // checks if the AddChecksRequestCheckOneOf4 type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &AddChecksRequestCheckOneOf4{}
 
-// AddChecksRequestCheckOneOf4 A push Check is not polled regularly by the standard monitoring system. Instead it is expected that an external API push updates as to the status of the check timed closely with the configured check interval setting. This is used to throttle the push from performing too many status updates. To push an update using the api key one must send a json payload like so: `curl -XPOST https://<morpheus url>/api/monitoring/push?apiKey=<apiKey> -H 'Content-Type: application/json' -d '{\"success\":true, \"message\": \"any comment goes here\"}'` The API Key will be returned on successful creation or can be found by getting this check. 
+// AddChecksRequestCheckOneOf4 A push Check is not polled regularly by the standard monitoring system. Instead it is expected that an external API push updates as to the status of the check timed closely with the configured check interval setting. This is used to throttle the push from performing too many status updates. To push an update using the api key one must send a json payload like so: `curl -XPOST https://<morpheus url>/api/monitoring/push?apiKey=<apiKey> -H 'Content-Type: application/json' -d '{\"success\":true, \"message\": \"any comment goes here\"}'` The API Key will be returned on successful creation or can be found by getting this check.
 type AddChecksRequestCheckOneOf4 struct {
 	// Unique name scoped to your account for the check
 	Name *string `json:"name,omitempty"`
 	// Optional description field
-	Description *string `json:"description,omitempty"`
-	CheckType *AddChecksRequestCheckOneOf4CheckType `json:"checkType,omitempty"`
+	Description *string                               `json:"description,omitempty"`
+	CheckType   *AddChecksRequestCheckOneOf4CheckType `json:"checkType,omitempty"`
 	// Number of seconds you want between check executions (minimum value is 60, depending on your subscription plan)
 	CheckInterval *int32 `json:"checkInterval,omitempty"`
 	// Used to determine if check should affect account wide availability calculations
@@ -32,8 +32,8 @@ type AddChecksRequestCheckOneOf4 struct {
 	// Used to determine if check should be scheduled to execute
 	Active *bool `json:"active,omitempty"`
 	// Severity level threshold for sending notifications.
-	Severity *string `json:"severity,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Severity             *string                `json:"severity,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddChecksRequestCheckOneOf4 AddChecksRequestCheckOneOf4
@@ -296,7 +296,7 @@ func (o *AddChecksRequestCheckOneOf4) SetSeverity(v string) {
 }
 
 func (o AddChecksRequestCheckOneOf4) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -333,68 +333,8 @@ func (o AddChecksRequestCheckOneOf4) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *AddChecksRequestCheckOneOf4) UnmarshalJSON(data []byte) (err error) {
-	varAddChecksRequestCheckOneOf4 := _AddChecksRequestCheckOneOf4{}
-
-	err = json.Unmarshal(data, &varAddChecksRequestCheckOneOf4)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddChecksRequestCheckOneOf4(varAddChecksRequestCheckOneOf4)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "checkType")
-		delete(additionalProperties, "checkInterval")
-		delete(additionalProperties, "inUptime")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "severity")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddChecksRequestCheckOneOf4 struct {
-	value *AddChecksRequestCheckOneOf4
-	isSet bool
-}
-
-func (v NullableAddChecksRequestCheckOneOf4) Get() *AddChecksRequestCheckOneOf4 {
-	return v.value
-}
-
-func (v *NullableAddChecksRequestCheckOneOf4) Set(val *AddChecksRequestCheckOneOf4) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddChecksRequestCheckOneOf4) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddChecksRequestCheckOneOf4) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddChecksRequestCheckOneOf4(val *AddChecksRequestCheckOneOf4) *NullableAddChecksRequestCheckOneOf4 {
-	return &NullableAddChecksRequestCheckOneOf4{value: val, isSet: true}
-}
-
-func (v NullableAddChecksRequestCheckOneOf4) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddChecksRequestCheckOneOf4) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

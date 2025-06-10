@@ -29,8 +29,8 @@ type UpdateEnvironmentsRequestEnvironment struct {
 	// Sort order
 	SortOrder *int64 `json:"sortOrder,omitempty"`
 	// Set to false to deactivate the environment
-	Active *bool `json:"active,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Active               *bool                  `json:"active,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UpdateEnvironmentsRequestEnvironment UpdateEnvironmentsRequestEnvironment
@@ -221,7 +221,7 @@ func (o *UpdateEnvironmentsRequestEnvironment) SetActive(v bool) {
 }
 
 func (o UpdateEnvironmentsRequestEnvironment) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -252,66 +252,8 @@ func (o UpdateEnvironmentsRequestEnvironment) ToMap() (map[string]interface{}, e
 
 	return toSerialize, nil
 }
-
 func (o *UpdateEnvironmentsRequestEnvironment) UnmarshalJSON(data []byte) (err error) {
-	varUpdateEnvironmentsRequestEnvironment := _UpdateEnvironmentsRequestEnvironment{}
-
-	err = json.Unmarshal(data, &varUpdateEnvironmentsRequestEnvironment)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateEnvironmentsRequestEnvironment(varUpdateEnvironmentsRequestEnvironment)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "sortOrder")
-		delete(additionalProperties, "active")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateEnvironmentsRequestEnvironment struct {
-	value *UpdateEnvironmentsRequestEnvironment
-	isSet bool
-}
-
-func (v NullableUpdateEnvironmentsRequestEnvironment) Get() *UpdateEnvironmentsRequestEnvironment {
-	return v.value
-}
-
-func (v *NullableUpdateEnvironmentsRequestEnvironment) Set(val *UpdateEnvironmentsRequestEnvironment) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateEnvironmentsRequestEnvironment) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateEnvironmentsRequestEnvironment) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateEnvironmentsRequestEnvironment(val *UpdateEnvironmentsRequestEnvironment) *NullableUpdateEnvironmentsRequestEnvironment {
-	return &NullableUpdateEnvironmentsRequestEnvironment{value: val, isSet: true}
-}
-
-func (v NullableUpdateEnvironmentsRequestEnvironment) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateEnvironmentsRequestEnvironment) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

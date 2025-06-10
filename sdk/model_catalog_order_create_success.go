@@ -20,11 +20,11 @@ var _ MappedNullable = &CatalogOrderCreateSuccess{}
 
 // CatalogOrderCreateSuccess struct for CatalogOrderCreateSuccess
 type CatalogOrderCreateSuccess struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Items []AddCatalogOrder200ResponseAllOfOrderItemsInner `json:"items,omitempty"`
-	Stats *ListCatalogCart200ResponseCartStats `json:"stats,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                           `json:"id,omitempty"`
+	Name                 *string                                          `json:"name,omitempty"`
+	Items                []AddCatalogOrder200ResponseAllOfOrderItemsInner `json:"items,omitempty"`
+	Stats                *ListCatalogCart200ResponseCartStats             `json:"stats,omitempty"`
+	AdditionalProperties map[string]interface{}                           `json:",remain"`
 }
 
 type _CatalogOrderCreateSuccess CatalogOrderCreateSuccess
@@ -175,7 +175,7 @@ func (o *CatalogOrderCreateSuccess) SetStats(v ListCatalogCart200ResponseCartSta
 }
 
 func (o CatalogOrderCreateSuccess) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -203,65 +203,8 @@ func (o CatalogOrderCreateSuccess) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *CatalogOrderCreateSuccess) UnmarshalJSON(data []byte) (err error) {
-	varCatalogOrderCreateSuccess := _CatalogOrderCreateSuccess{}
-
-	err = json.Unmarshal(data, &varCatalogOrderCreateSuccess)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CatalogOrderCreateSuccess(varCatalogOrderCreateSuccess)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "items")
-		delete(additionalProperties, "stats")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCatalogOrderCreateSuccess struct {
-	value *CatalogOrderCreateSuccess
-	isSet bool
-}
-
-func (v NullableCatalogOrderCreateSuccess) Get() *CatalogOrderCreateSuccess {
-	return v.value
-}
-
-func (v *NullableCatalogOrderCreateSuccess) Set(val *CatalogOrderCreateSuccess) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCatalogOrderCreateSuccess) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCatalogOrderCreateSuccess) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCatalogOrderCreateSuccess(val *CatalogOrderCreateSuccess) *NullableCatalogOrderCreateSuccess {
-	return &NullableCatalogOrderCreateSuccess{value: val, isSet: true}
-}
-
-func (v NullableCatalogOrderCreateSuccess) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCatalogOrderCreateSuccess) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -39,8 +39,8 @@ type UpdateServicePlansRequestServicePlanConfigRanges struct {
 	// Custom min cores allowed per socket
 	MinCoresPerSocket *string `json:"minCoresPerSocket,omitempty"`
 	// Custom max cores allowed per socket
-	MaxCoresPerSocket *string `json:"maxCoresPerSocket,omitempty"`
-	AdditionalProperties map[string]interface{}
+	MaxCoresPerSocket    *string                `json:"maxCoresPerSocket,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UpdateServicePlansRequestServicePlanConfigRanges UpdateServicePlansRequestServicePlanConfigRanges
@@ -383,7 +383,7 @@ func (o *UpdateServicePlansRequestServicePlanConfigRanges) SetMaxCoresPerSocket(
 }
 
 func (o UpdateServicePlansRequestServicePlanConfigRanges) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -429,71 +429,8 @@ func (o UpdateServicePlansRequestServicePlanConfigRanges) ToMap() (map[string]in
 
 	return toSerialize, nil
 }
-
 func (o *UpdateServicePlansRequestServicePlanConfigRanges) UnmarshalJSON(data []byte) (err error) {
-	varUpdateServicePlansRequestServicePlanConfigRanges := _UpdateServicePlansRequestServicePlanConfigRanges{}
-
-	err = json.Unmarshal(data, &varUpdateServicePlansRequestServicePlanConfigRanges)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateServicePlansRequestServicePlanConfigRanges(varUpdateServicePlansRequestServicePlanConfigRanges)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "minStorage")
-		delete(additionalProperties, "maxStorage")
-		delete(additionalProperties, "minMemory")
-		delete(additionalProperties, "maxMemory")
-		delete(additionalProperties, "minCores")
-		delete(additionalProperties, "maxCores")
-		delete(additionalProperties, "minSockets")
-		delete(additionalProperties, "maxSockets")
-		delete(additionalProperties, "minCoresPerSocket")
-		delete(additionalProperties, "maxCoresPerSocket")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateServicePlansRequestServicePlanConfigRanges struct {
-	value *UpdateServicePlansRequestServicePlanConfigRanges
-	isSet bool
-}
-
-func (v NullableUpdateServicePlansRequestServicePlanConfigRanges) Get() *UpdateServicePlansRequestServicePlanConfigRanges {
-	return v.value
-}
-
-func (v *NullableUpdateServicePlansRequestServicePlanConfigRanges) Set(val *UpdateServicePlansRequestServicePlanConfigRanges) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateServicePlansRequestServicePlanConfigRanges) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateServicePlansRequestServicePlanConfigRanges) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateServicePlansRequestServicePlanConfigRanges(val *UpdateServicePlansRequestServicePlanConfigRanges) *NullableUpdateServicePlansRequestServicePlanConfigRanges {
-	return &NullableUpdateServicePlansRequestServicePlanConfigRanges{value: val, isSet: true}
-}
-
-func (v NullableUpdateServicePlansRequestServicePlanConfigRanges) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateServicePlansRequestServicePlanConfigRanges) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

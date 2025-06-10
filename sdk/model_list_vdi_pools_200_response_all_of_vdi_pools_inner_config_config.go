@@ -20,16 +20,16 @@ var _ MappedNullable = &ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig{}
 
 // ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig struct for ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig
 type ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig struct {
-	CreateUser *bool `json:"createUser,omitempty"`
-	IsEC2 *bool `json:"isEC2,omitempty"`
-	IsVpcSelectable *bool `json:"isVpcSelectable,omitempty"`
-	NoAgent *bool `json:"noAgent,omitempty"`
-	SmbiosAssetTag *string `json:"smbiosAssetTag,omitempty"`
-	NestedVirtualization *string `json:"nestedVirtualization,omitempty"`
-	VmwareFolderId *string `json:"vmwareFolderId,omitempty"`
-	ResourcePoolId *int64 `json:"resourcePoolId,omitempty"`
-	PoolProviderType *string `json:"poolProviderType,omitempty"`
-	AdditionalProperties map[string]interface{}
+	CreateUser           *bool                  `json:"createUser,omitempty"`
+	IsEC2                *bool                  `json:"isEC2,omitempty"`
+	IsVpcSelectable      *bool                  `json:"isVpcSelectable,omitempty"`
+	NoAgent              *bool                  `json:"noAgent,omitempty"`
+	SmbiosAssetTag       *string                `json:"smbiosAssetTag,omitempty"`
+	NestedVirtualization *string                `json:"nestedVirtualization,omitempty"`
+	VmwareFolderId       *string                `json:"vmwareFolderId,omitempty"`
+	ResourcePoolId       *int64                 `json:"resourcePoolId,omitempty"`
+	PoolProviderType     *string                `json:"poolProviderType,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig
@@ -340,7 +340,7 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig) SetPoolProviderT
 }
 
 func (o ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -383,70 +383,8 @@ func (o ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig) ToMap() (map[stri
 
 	return toSerialize, nil
 }
-
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig) UnmarshalJSON(data []byte) (err error) {
-	varListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig := _ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig{}
-
-	err = json.Unmarshal(data, &varListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig(varListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "createUser")
-		delete(additionalProperties, "isEC2")
-		delete(additionalProperties, "isVpcSelectable")
-		delete(additionalProperties, "noAgent")
-		delete(additionalProperties, "smbiosAssetTag")
-		delete(additionalProperties, "nestedVirtualization")
-		delete(additionalProperties, "vmwareFolderId")
-		delete(additionalProperties, "resourcePoolId")
-		delete(additionalProperties, "poolProviderType")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig struct {
-	value *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig
-	isSet bool
-}
-
-func (v NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig) Get() *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig {
-	return v.value
-}
-
-func (v *NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig) Set(val *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig(val *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig) *NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig {
-	return &NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig{value: val, isSet: true}
-}
-
-func (v NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigConfig) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

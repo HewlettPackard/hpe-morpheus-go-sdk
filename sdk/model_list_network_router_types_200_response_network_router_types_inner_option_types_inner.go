@@ -20,36 +20,36 @@ var _ MappedNullable = &ListNetworkRouterTypes200ResponseNetworkRouterTypesInner
 
 // ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner struct for ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner
 type ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Code *string `json:"code,omitempty"`
-	FieldName *string `json:"fieldName,omitempty"`
-	FieldLabel *string `json:"fieldLabel,omitempty"`
-	FieldContext *string `json:"fieldContext,omitempty"`
-	FieldGroup *string `json:"fieldGroup,omitempty"`
-	FieldClass *string `json:"fieldClass,omitempty"`
-	FieldAddOn *string `json:"fieldAddOn,omitempty"`
-	FieldComponent *string `json:"fieldComponent,omitempty"`
-	FieldInput *string `json:"fieldInput,omitempty"`
-	PlaceHolder *string `json:"placeHolder,omitempty"`
-	HelpBlock *string `json:"helpBlock,omitempty"`
-	DefaultValue *string `json:"defaultValue,omitempty"`
-	OptionSource *string `json:"optionSource,omitempty"`
-	OptionList *string `json:"optionList,omitempty"`
-	Type *string `json:"type,omitempty"`
-	Advanced *bool `json:"advanced,omitempty"`
-	Required *bool `json:"required,omitempty"`
-	Editable *bool `json:"editable,omitempty"`
-	Creatable *bool `json:"creatable,omitempty"`
-	Config map[string]interface{} `json:"config,omitempty"`
-	DisplayOrder *int64 `json:"displayOrder,omitempty"`
-	WrapperClass *string `json:"wrapperClass,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	NoBlank *bool `json:"noBlank,omitempty"`
-	DependsOnCode *string `json:"dependsOnCode,omitempty"`
-	ContextualDefault *bool `json:"contextualDefault,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	Description          *string                `json:"description,omitempty"`
+	Code                 *string                `json:"code,omitempty"`
+	FieldName            *string                `json:"fieldName,omitempty"`
+	FieldLabel           *string                `json:"fieldLabel,omitempty"`
+	FieldContext         *string                `json:"fieldContext,omitempty"`
+	FieldGroup           *string                `json:"fieldGroup,omitempty"`
+	FieldClass           *string                `json:"fieldClass,omitempty"`
+	FieldAddOn           *string                `json:"fieldAddOn,omitempty"`
+	FieldComponent       *string                `json:"fieldComponent,omitempty"`
+	FieldInput           *string                `json:"fieldInput,omitempty"`
+	PlaceHolder          *string                `json:"placeHolder,omitempty"`
+	HelpBlock            *string                `json:"helpBlock,omitempty"`
+	DefaultValue         *string                `json:"defaultValue,omitempty"`
+	OptionSource         *string                `json:"optionSource,omitempty"`
+	OptionList           *string                `json:"optionList,omitempty"`
+	Type                 *string                `json:"type,omitempty"`
+	Advanced             *bool                  `json:"advanced,omitempty"`
+	Required             *bool                  `json:"required,omitempty"`
+	Editable             *bool                  `json:"editable,omitempty"`
+	Creatable            *bool                  `json:"creatable,omitempty"`
+	Config               map[string]interface{} `json:"config,omitempty"`
+	DisplayOrder         *int64                 `json:"displayOrder,omitempty"`
+	WrapperClass         *string                `json:"wrapperClass,omitempty"`
+	Enabled              *bool                  `json:"enabled,omitempty"`
+	NoBlank              *bool                  `json:"noBlank,omitempty"`
+	DependsOnCode        *string                `json:"dependsOnCode,omitempty"`
+	ContextualDefault    *bool                  `json:"contextualDefault,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner
@@ -1000,7 +1000,7 @@ func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInne
 }
 
 func (o ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1103,90 +1103,8 @@ func (o ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner
 
 	return toSerialize, nil
 }
-
 func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) UnmarshalJSON(data []byte) (err error) {
-	varListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner := _ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner{}
-
-	err = json.Unmarshal(data, &varListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner(varListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "fieldName")
-		delete(additionalProperties, "fieldLabel")
-		delete(additionalProperties, "fieldContext")
-		delete(additionalProperties, "fieldGroup")
-		delete(additionalProperties, "fieldClass")
-		delete(additionalProperties, "fieldAddOn")
-		delete(additionalProperties, "fieldComponent")
-		delete(additionalProperties, "fieldInput")
-		delete(additionalProperties, "placeHolder")
-		delete(additionalProperties, "helpBlock")
-		delete(additionalProperties, "defaultValue")
-		delete(additionalProperties, "optionSource")
-		delete(additionalProperties, "optionList")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "advanced")
-		delete(additionalProperties, "required")
-		delete(additionalProperties, "editable")
-		delete(additionalProperties, "creatable")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "displayOrder")
-		delete(additionalProperties, "wrapperClass")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "noBlank")
-		delete(additionalProperties, "dependsOnCode")
-		delete(additionalProperties, "contextualDefault")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner struct {
-	value *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner
-	isSet bool
-}
-
-func (v NullableListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) Get() *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner {
-	return v.value
-}
-
-func (v *NullableListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) Set(val *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner(val *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) *NullableListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner {
-	return &NullableListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner{value: val, isSet: true}
-}
-
-func (v NullableListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

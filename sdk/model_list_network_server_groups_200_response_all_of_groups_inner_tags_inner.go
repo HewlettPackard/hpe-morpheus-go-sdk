@@ -20,10 +20,10 @@ var _ MappedNullable = &ListNetworkServerGroups200ResponseAllOfGroupsInnerTagsIn
 
 // ListNetworkServerGroups200ResponseAllOfGroupsInnerTagsInner struct for ListNetworkServerGroups200ResponseAllOfGroupsInnerTagsInner
 type ListNetworkServerGroups200ResponseAllOfGroupsInnerTagsInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Value *string `json:"value,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	Value                *string                `json:"value,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListNetworkServerGroups200ResponseAllOfGroupsInnerTagsInner ListNetworkServerGroups200ResponseAllOfGroupsInnerTagsInner
@@ -142,7 +142,7 @@ func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerTagsInner) SetValue(v
 }
 
 func (o ListNetworkServerGroups200ResponseAllOfGroupsInnerTagsInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -167,64 +167,8 @@ func (o ListNetworkServerGroups200ResponseAllOfGroupsInnerTagsInner) ToMap() (ma
 
 	return toSerialize, nil
 }
-
 func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerTagsInner) UnmarshalJSON(data []byte) (err error) {
-	varListNetworkServerGroups200ResponseAllOfGroupsInnerTagsInner := _ListNetworkServerGroups200ResponseAllOfGroupsInnerTagsInner{}
-
-	err = json.Unmarshal(data, &varListNetworkServerGroups200ResponseAllOfGroupsInnerTagsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListNetworkServerGroups200ResponseAllOfGroupsInnerTagsInner(varListNetworkServerGroups200ResponseAllOfGroupsInnerTagsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "value")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListNetworkServerGroups200ResponseAllOfGroupsInnerTagsInner struct {
-	value *ListNetworkServerGroups200ResponseAllOfGroupsInnerTagsInner
-	isSet bool
-}
-
-func (v NullableListNetworkServerGroups200ResponseAllOfGroupsInnerTagsInner) Get() *ListNetworkServerGroups200ResponseAllOfGroupsInnerTagsInner {
-	return v.value
-}
-
-func (v *NullableListNetworkServerGroups200ResponseAllOfGroupsInnerTagsInner) Set(val *ListNetworkServerGroups200ResponseAllOfGroupsInnerTagsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListNetworkServerGroups200ResponseAllOfGroupsInnerTagsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListNetworkServerGroups200ResponseAllOfGroupsInnerTagsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListNetworkServerGroups200ResponseAllOfGroupsInnerTagsInner(val *ListNetworkServerGroups200ResponseAllOfGroupsInnerTagsInner) *NullableListNetworkServerGroups200ResponseAllOfGroupsInnerTagsInner {
-	return &NullableListNetworkServerGroups200ResponseAllOfGroupsInnerTagsInner{value: val, isSet: true}
-}
-
-func (v NullableListNetworkServerGroups200ResponseAllOfGroupsInnerTagsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListNetworkServerGroups200ResponseAllOfGroupsInnerTagsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

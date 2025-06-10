@@ -20,8 +20,8 @@ var _ MappedNullable = &SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesI
 
 // SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume struct for SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume
 type SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume struct {
-	Id *int32 `json:"id,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int32                 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume
@@ -76,7 +76,7 @@ func (o *SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume) Set
 }
 
 func (o SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume) ToMa
 
 	return toSerialize, nil
 }
-
 func (o *SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume) UnmarshalJSON(data []byte) (err error) {
-	varSnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume := _SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume{}
-
-	err = json.Unmarshal(data, &varSnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume)
-
-	if err != nil {
-		return err
-	}
-
-	*o = SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume(varSnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableSnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume struct {
-	value *SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume
-	isSet bool
-}
-
-func (v NullableSnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume) Get() *SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume {
-	return v.value
-}
-
-func (v *NullableSnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume) Set(val *SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume(val *SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume) *NullableSnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume {
-	return &NullableSnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume{value: val, isSet: true}
-}
-
-func (v NullableSnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

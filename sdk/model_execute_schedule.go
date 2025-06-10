@@ -21,17 +21,17 @@ var _ MappedNullable = &ExecuteSchedule{}
 
 // ExecuteSchedule struct for ExecuteSchedule
 type ExecuteSchedule struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Visibility *string `json:"visibility,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	ScheduleType *string `json:"scheduleType,omitempty"`
-	ScheduleTimezone *string `json:"scheduleTimezone,omitempty"`
-	Cron *string `json:"cron,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	Description          *string                `json:"description,omitempty"`
+	Visibility           *string                `json:"visibility,omitempty"`
+	Enabled              *bool                  `json:"enabled,omitempty"`
+	ScheduleType         *string                `json:"scheduleType,omitempty"`
+	ScheduleTimezone     *string                `json:"scheduleTimezone,omitempty"`
+	Cron                 *string                `json:"cron,omitempty"`
+	DateCreated          *time.Time             `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time             `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ExecuteSchedule ExecuteSchedule
@@ -374,7 +374,7 @@ func (o *ExecuteSchedule) SetLastUpdated(v time.Time) {
 }
 
 func (o ExecuteSchedule) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -420,71 +420,8 @@ func (o ExecuteSchedule) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ExecuteSchedule) UnmarshalJSON(data []byte) (err error) {
-	varExecuteSchedule := _ExecuteSchedule{}
-
-	err = json.Unmarshal(data, &varExecuteSchedule)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ExecuteSchedule(varExecuteSchedule)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "scheduleType")
-		delete(additionalProperties, "scheduleTimezone")
-		delete(additionalProperties, "cron")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableExecuteSchedule struct {
-	value *ExecuteSchedule
-	isSet bool
-}
-
-func (v NullableExecuteSchedule) Get() *ExecuteSchedule {
-	return v.value
-}
-
-func (v *NullableExecuteSchedule) Set(val *ExecuteSchedule) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableExecuteSchedule) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableExecuteSchedule) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableExecuteSchedule(val *ExecuteSchedule) *NullableExecuteSchedule {
-	return &NullableExecuteSchedule{value: val, isSet: true}
-}
-
-func (v NullableExecuteSchedule) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableExecuteSchedule) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

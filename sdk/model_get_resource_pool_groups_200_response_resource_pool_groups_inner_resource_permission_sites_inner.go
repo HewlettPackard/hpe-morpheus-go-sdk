@@ -20,9 +20,9 @@ var _ MappedNullable = &GetResourcePoolGroups200ResponseResourcePoolGroupsInnerR
 
 // GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner struct for GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner
 type GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Default *bool `json:"default,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Default              *bool                  `json:"default,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner
@@ -109,7 +109,7 @@ func (o *GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissi
 }
 
 func (o GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissio
 
 	return toSerialize, nil
 }
-
 func (o *GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner) UnmarshalJSON(data []byte) (err error) {
-	varGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner := _GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner{}
-
-	err = json.Unmarshal(data, &varGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner(varGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "default")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner struct {
-	value *GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner
-	isSet bool
-}
-
-func (v NullableGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner) Get() *GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner {
-	return v.value
-}
-
-func (v *NullableGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner) Set(val *GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner(val *GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner) *NullableGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner {
-	return &NullableGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner{value: val, isSet: true}
-}
-
-func (v NullableGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

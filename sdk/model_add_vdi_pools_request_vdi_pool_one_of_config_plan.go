@@ -14,6 +14,7 @@ package sdk
 import (
 	"encoding/json"
 	"fmt"
+
 	"gopkg.in/validator.v2"
 )
 
@@ -22,7 +23,7 @@ var _ fmt.Stringer
 
 // AddVDIPoolsRequestVdiPoolOneOfConfigPlan - struct for AddVDIPoolsRequestVdiPoolOneOfConfigPlan
 type AddVDIPoolsRequestVdiPoolOneOfConfigPlan struct {
-	Int64 *int64
+	Int64  *int64
 	String *string
 }
 
@@ -40,6 +41,21 @@ func StringAsAddVDIPoolsRequestVdiPoolOneOfConfigPlan(v *string) AddVDIPoolsRequ
 	}
 }
 
+func (dst *AddVDIPoolsRequestVdiPoolOneOfConfigPlan) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddVDIPoolsRequestVdiPoolOneOfConfigPlan{}
+	}
+
+	if out, ok := data.(int64); ok {
+		dst.Int64 = &out
+	}
+
+	if out, ok := data.(string); ok {
+		dst.String = &out
+	}
+
+	return dst, nil
+}
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddVDIPoolsRequestVdiPoolOneOfConfigPlan) UnmarshalJSON(data []byte) error {
@@ -106,7 +122,7 @@ func (src AddVDIPoolsRequestVdiPoolOneOfConfigPlan) MarshalJSON() ([]byte, error
 }
 
 // Get the actual instance
-func (obj *AddVDIPoolsRequestVdiPoolOneOfConfigPlan) GetActualInstance() (interface{}) {
+func (obj *AddVDIPoolsRequestVdiPoolOneOfConfigPlan) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -123,7 +139,7 @@ func (obj *AddVDIPoolsRequestVdiPoolOneOfConfigPlan) GetActualInstance() (interf
 }
 
 // Get the actual instance value
-func (obj AddVDIPoolsRequestVdiPoolOneOfConfigPlan) GetActualInstanceValue() (interface{}) {
+func (obj AddVDIPoolsRequestVdiPoolOneOfConfigPlan) GetActualInstanceValue() interface{} {
 	if obj.Int64 != nil {
 		return *obj.Int64
 	}
@@ -171,5 +187,3 @@ func (v *NullableAddVDIPoolsRequestVdiPoolOneOfConfigPlan) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

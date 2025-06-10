@@ -21,14 +21,13 @@ import (
 	"strings"
 )
 
-
 // AppsAPIService AppsAPI service
 type AppsAPIService service
 
 type ApiAddAppInstanceRequest struct {
-	ctx context.Context
-	ApiService *AppsAPIService
-	id int64
+	ctx                   context.Context
+	ApiService            *AppsAPIService
+	id                    int64
 	addAppInstanceRequest *AddAppInstanceRequest
 }
 
@@ -46,26 +45,27 @@ AddAppInstance Add Existing Instance to App
 
 Add Existing Instance to App
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiAddAppInstanceRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiAddAppInstanceRequest
 */
 func (a *AppsAPIService) AddAppInstance(ctx context.Context, id int64) ApiAddAppInstanceRequest {
 	return ApiAddAppInstanceRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetApp200Response
+//
+//	@return GetApp200Response
 func (a *AppsAPIService) AddAppInstanceExecute(r ApiAddAppInstanceRequest) (*GetApp200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetApp200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetApp200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AppsAPIService.AddAppInstance")
@@ -118,7 +118,7 @@ func (a *AppsAPIService) AddAppInstanceExecute(r ApiAddAppInstanceRequest) (*Get
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -127,8 +127,8 @@ func (a *AppsAPIService) AddAppInstanceExecute(r ApiAddAppInstanceRequest) (*Get
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -138,8 +138,8 @@ func (a *AppsAPIService) AddAppInstanceExecute(r ApiAddAppInstanceRequest) (*Get
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -147,8 +147,8 @@ func (a *AppsAPIService) AddAppInstanceExecute(r ApiAddAppInstanceRequest) (*Get
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -157,9 +157,9 @@ func (a *AppsAPIService) AddAppInstanceExecute(r ApiAddAppInstanceRequest) (*Get
 }
 
 type ApiAddAppUndoDeleteRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AppsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiAddAppUndoDeleteRequest) Execute() (*GetApp200Response, *http.Response, error) {
@@ -171,26 +171,27 @@ AddAppUndoDelete Undo Delete of an App
 
 This operation will undo the delete of an app that is pending removal.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiAddAppUndoDeleteRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiAddAppUndoDeleteRequest
 */
 func (a *AppsAPIService) AddAppUndoDelete(ctx context.Context, id int64) ApiAddAppUndoDeleteRequest {
 	return ApiAddAppUndoDeleteRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetApp200Response
+//
+//	@return GetApp200Response
 func (a *AppsAPIService) AddAppUndoDeleteExecute(r ApiAddAppUndoDeleteRequest) (*GetApp200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetApp200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetApp200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AppsAPIService.AddAppUndoDelete")
@@ -241,7 +242,7 @@ func (a *AppsAPIService) AddAppUndoDeleteExecute(r ApiAddAppUndoDeleteRequest) (
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -250,8 +251,8 @@ func (a *AppsAPIService) AddAppUndoDeleteExecute(r ApiAddAppUndoDeleteRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -261,8 +262,8 @@ func (a *AppsAPIService) AddAppUndoDeleteExecute(r ApiAddAppUndoDeleteRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -270,8 +271,8 @@ func (a *AppsAPIService) AddAppUndoDeleteExecute(r ApiAddAppUndoDeleteRequest) (
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -280,8 +281,8 @@ func (a *AppsAPIService) AddAppUndoDeleteExecute(r ApiAddAppUndoDeleteRequest) (
 }
 
 type ApiAddAppsRequest struct {
-	ctx context.Context
-	ApiService *AppsAPIService
+	ctx            context.Context
+	ApiService     *AppsAPIService
 	addAppsRequest *AddAppsRequest
 }
 
@@ -299,24 +300,25 @@ AddApps Create an App
 
 Create an App
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddAppsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddAppsRequest
 */
 func (a *AppsAPIService) AddApps(ctx context.Context) ApiAddAppsRequest {
 	return ApiAddAppsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddApps200Response
+//
+//	@return AddApps200Response
 func (a *AppsAPIService) AddAppsExecute(r ApiAddAppsRequest) (*AddApps200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddApps200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddApps200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AppsAPIService.AddApps")
@@ -368,7 +370,7 @@ func (a *AppsAPIService) AddAppsExecute(r ApiAddAppsRequest) (*AddApps200Respons
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -377,8 +379,8 @@ func (a *AppsAPIService) AddAppsExecute(r ApiAddAppsRequest) (*AddApps200Respons
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -388,8 +390,8 @@ func (a *AppsAPIService) AddAppsExecute(r ApiAddAppsRequest) (*AddApps200Respons
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -397,8 +399,8 @@ func (a *AppsAPIService) AddAppsExecute(r ApiAddAppsRequest) (*AddApps200Respons
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -407,9 +409,9 @@ func (a *AppsAPIService) AddAppsExecute(r ApiAddAppsRequest) (*AddApps200Respons
 }
 
 type ApiApplyAppStateRequest struct {
-	ctx context.Context
-	ApiService *AppsAPIService
-	id int64
+	ctx                  context.Context
+	ApiService           *AppsAPIService
+	id                   int64
 	applyAppStateRequest *ApplyAppStateRequest
 }
 
@@ -427,27 +429,27 @@ ApplyAppState Apply State of an App
 
 This endpoint provides a way to apply the state of an app. This action only applies to Terraform, CloudFormation and ARM and will return an HTTP 400 error for other types.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiApplyAppStateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiApplyAppStateRequest
 */
 func (a *AppsAPIService) ApplyAppState(ctx context.Context, id int64) ApiApplyAppStateRequest {
 	return ApiApplyAppStateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *AppsAPIService) ApplyAppStateExecute(r ApiApplyAppStateRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AppsAPIService.ApplyAppState")
@@ -500,7 +502,7 @@ func (a *AppsAPIService) ApplyAppStateExecute(r ApiApplyAppStateRequest) (*Delet
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -509,8 +511,8 @@ func (a *AppsAPIService) ApplyAppStateExecute(r ApiApplyAppStateRequest) (*Delet
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -520,8 +522,8 @@ func (a *AppsAPIService) ApplyAppStateExecute(r ApiApplyAppStateRequest) (*Delet
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -529,8 +531,8 @@ func (a *AppsAPIService) ApplyAppStateExecute(r ApiApplyAppStateRequest) (*Delet
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -539,15 +541,15 @@ func (a *AppsAPIService) ApplyAppStateExecute(r ApiApplyAppStateRequest) (*Delet
 }
 
 type ApiDeleteAppRequest struct {
-	ctx context.Context
-	ApiService *AppsAPIService
-	id int64
-	removeInstances *string
-	preserveVolumes *string
-	keepBackups *string
+	ctx                context.Context
+	ApiService         *AppsAPIService
+	id                 int64
+	removeInstances    *string
+	preserveVolumes    *string
+	keepBackups        *string
 	releaseFloatingIps *string
-	releaseEIPs *string
-	force *string
+	releaseEIPs        *string
+	force              *string
 }
 
 // Remove Instances
@@ -595,26 +597,27 @@ DeleteApp Delete an App
 
 Will delete an app. Use removeInstances=on to also delete the instances in the app and all associated monitors and backups.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiDeleteAppRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeleteAppRequest
 */
 func (a *AppsAPIService) DeleteApp(ctx context.Context, id int64) ApiDeleteAppRequest {
 	return ApiDeleteAppRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *AppsAPIService) DeleteAppExecute(r ApiDeleteAppRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AppsAPIService.DeleteApp")
@@ -701,7 +704,7 @@ func (a *AppsAPIService) DeleteAppExecute(r ApiDeleteAppRequest) (*DeleteAlerts2
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -710,8 +713,8 @@ func (a *AppsAPIService) DeleteAppExecute(r ApiDeleteAppRequest) (*DeleteAlerts2
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -721,8 +724,8 @@ func (a *AppsAPIService) DeleteAppExecute(r ApiDeleteAppRequest) (*DeleteAlerts2
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -730,8 +733,8 @@ func (a *AppsAPIService) DeleteAppExecute(r ApiDeleteAppRequest) (*DeleteAlerts2
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -740,9 +743,9 @@ func (a *AppsAPIService) DeleteAppExecute(r ApiDeleteAppRequest) (*DeleteAlerts2
 }
 
 type ApiGetAppRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AppsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetAppRequest) Execute() (*GetApp200Response, *http.Response, error) {
@@ -754,26 +757,27 @@ GetApp Get a Specific App
 
 This endpoint retrieves a specific app.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetAppRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetAppRequest
 */
 func (a *AppsAPIService) GetApp(ctx context.Context, id int64) ApiGetAppRequest {
 	return ApiGetAppRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetApp200Response
+//
+//	@return GetApp200Response
 func (a *AppsAPIService) GetAppExecute(r ApiGetAppRequest) (*GetApp200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetApp200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetApp200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AppsAPIService.GetApp")
@@ -824,7 +828,7 @@ func (a *AppsAPIService) GetAppExecute(r ApiGetAppRequest) (*GetApp200Response, 
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -833,8 +837,8 @@ func (a *AppsAPIService) GetAppExecute(r ApiGetAppRequest) (*GetApp200Response, 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -844,8 +848,8 @@ func (a *AppsAPIService) GetAppExecute(r ApiGetAppRequest) (*GetApp200Response, 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -853,8 +857,8 @@ func (a *AppsAPIService) GetAppExecute(r ApiGetAppRequest) (*GetApp200Response, 
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -863,9 +867,9 @@ func (a *AppsAPIService) GetAppExecute(r ApiGetAppRequest) (*GetApp200Response, 
 }
 
 type ApiGetAppSecurityGroupsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AppsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetAppSecurityGroupsRequest) Execute() (*GetAppSecurityGroups200Response, *http.Response, error) {
@@ -877,26 +881,27 @@ GetAppSecurityGroups Get Security Groups for an App
 
 This returns a list of all of the security groups applied to an app and whether the firewall is enabled.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetAppSecurityGroupsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetAppSecurityGroupsRequest
 */
 func (a *AppsAPIService) GetAppSecurityGroups(ctx context.Context, id int64) ApiGetAppSecurityGroupsRequest {
 	return ApiGetAppSecurityGroupsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetAppSecurityGroups200Response
+//
+//	@return GetAppSecurityGroups200Response
 func (a *AppsAPIService) GetAppSecurityGroupsExecute(r ApiGetAppSecurityGroupsRequest) (*GetAppSecurityGroups200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetAppSecurityGroups200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetAppSecurityGroups200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AppsAPIService.GetAppSecurityGroups")
@@ -947,7 +952,7 @@ func (a *AppsAPIService) GetAppSecurityGroupsExecute(r ApiGetAppSecurityGroupsRe
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -956,8 +961,8 @@ func (a *AppsAPIService) GetAppSecurityGroupsExecute(r ApiGetAppSecurityGroupsRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -967,8 +972,8 @@ func (a *AppsAPIService) GetAppSecurityGroupsExecute(r ApiGetAppSecurityGroupsRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -976,8 +981,8 @@ func (a *AppsAPIService) GetAppSecurityGroupsExecute(r ApiGetAppSecurityGroupsRe
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -986,9 +991,9 @@ func (a *AppsAPIService) GetAppSecurityGroupsExecute(r ApiGetAppSecurityGroupsRe
 }
 
 type ApiGetAppStateRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AppsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetAppStateRequest) Execute() (*GetAppState200Response, *http.Response, error) {
@@ -1000,27 +1005,27 @@ GetAppState Get State of an App
 
 This endpoint provides a way to view the state of an app. The response includes output and resource planning information from the template provider software such as Terraform. This action only applies to Terraform, CloudFormation and ARM and will return an HTTP 400 error for other types.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetAppStateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetAppStateRequest
 */
 func (a *AppsAPIService) GetAppState(ctx context.Context, id int64) ApiGetAppStateRequest {
 	return ApiGetAppStateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetAppState200Response
+//
+//	@return GetAppState200Response
 func (a *AppsAPIService) GetAppStateExecute(r ApiGetAppStateRequest) (*GetAppState200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetAppState200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetAppState200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AppsAPIService.GetAppState")
@@ -1071,7 +1076,7 @@ func (a *AppsAPIService) GetAppStateExecute(r ApiGetAppStateRequest) (*GetAppSta
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1080,8 +1085,8 @@ func (a *AppsAPIService) GetAppStateExecute(r ApiGetAppStateRequest) (*GetAppSta
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1091,8 +1096,8 @@ func (a *AppsAPIService) GetAppStateExecute(r ApiGetAppStateRequest) (*GetAppSta
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1100,8 +1105,8 @@ func (a *AppsAPIService) GetAppStateExecute(r ApiGetAppStateRequest) (*GetAppSta
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1110,16 +1115,16 @@ func (a *AppsAPIService) GetAppStateExecute(r ApiGetAppStateRequest) (*GetAppSta
 }
 
 type ApiListAppsRequest struct {
-	ctx context.Context
-	ApiService *AppsAPIService
-	max *int64
-	offset *int64
-	name *string
-	phrase *string
-	createdBy *int64
+	ctx         context.Context
+	ApiService  *AppsAPIService
+	max         *int64
+	offset      *int64
+	name        *string
+	phrase      *string
+	createdBy   *int64
 	showDeleted *bool
-	labels *string
-	allLabels *string
+	labels      *string
+	allLabels   *string
 }
 
 // Maximum number of records to return
@@ -1179,25 +1184,25 @@ ListApps Get All Apps
 
 This endpoint retrieves a paginated list of apps.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListAppsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListAppsRequest
 */
 func (a *AppsAPIService) ListApps(ctx context.Context) ApiListAppsRequest {
 	return ApiListAppsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListApps200Response
+//
+//	@return ListApps200Response
 func (a *AppsAPIService) ListAppsExecute(r ApiListAppsRequest) (*ListApps200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListApps200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListApps200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AppsAPIService.ListApps")
@@ -1280,7 +1285,7 @@ func (a *AppsAPIService) ListAppsExecute(r ApiListAppsRequest) (*ListApps200Resp
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1289,8 +1294,8 @@ func (a *AppsAPIService) ListAppsExecute(r ApiListAppsRequest) (*ListApps200Resp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1300,8 +1305,8 @@ func (a *AppsAPIService) ListAppsExecute(r ApiListAppsRequest) (*ListApps200Resp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1309,8 +1314,8 @@ func (a *AppsAPIService) ListAppsExecute(r ApiListAppsRequest) (*ListApps200Resp
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1319,9 +1324,9 @@ func (a *AppsAPIService) ListAppsExecute(r ApiListAppsRequest) (*ListApps200Resp
 }
 
 type ApiPrepareAppApplyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AppsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiPrepareAppApplyRequest) Execute() (*PrepareAppApply200Response, *http.Response, error) {
@@ -1333,27 +1338,27 @@ PrepareAppApply Prepare To Apply an App
 
 This endpoint provides a way to view the current app configuration and templateParameter variables available to apply. This action only applies to Terraform, CloudFormation and ARM and will return an HTTP 400 error for other types.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiPrepareAppApplyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiPrepareAppApplyRequest
 */
 func (a *AppsAPIService) PrepareAppApply(ctx context.Context, id int64) ApiPrepareAppApplyRequest {
 	return ApiPrepareAppApplyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return PrepareAppApply200Response
+//
+//	@return PrepareAppApply200Response
 func (a *AppsAPIService) PrepareAppApplyExecute(r ApiPrepareAppApplyRequest) (*PrepareAppApply200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PrepareAppApply200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PrepareAppApply200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AppsAPIService.PrepareAppApply")
@@ -1404,7 +1409,7 @@ func (a *AppsAPIService) PrepareAppApplyExecute(r ApiPrepareAppApplyRequest) (*P
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1413,8 +1418,8 @@ func (a *AppsAPIService) PrepareAppApplyExecute(r ApiPrepareAppApplyRequest) (*P
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1424,8 +1429,8 @@ func (a *AppsAPIService) PrepareAppApplyExecute(r ApiPrepareAppApplyRequest) (*P
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1433,8 +1438,8 @@ func (a *AppsAPIService) PrepareAppApplyExecute(r ApiPrepareAppApplyRequest) (*P
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1443,10 +1448,10 @@ func (a *AppsAPIService) PrepareAppApplyExecute(r ApiPrepareAppApplyRequest) (*P
 }
 
 type ApiRefreshAppStateRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AppsAPIService
-	id int64
-	body *map[string]interface{}
+	id         int64
+	body       *map[string]interface{}
 }
 
 func (r ApiRefreshAppStateRequest) Body(body map[string]interface{}) ApiRefreshAppStateRequest {
@@ -1461,29 +1466,29 @@ func (r ApiRefreshAppStateRequest) Execute() (*DeleteAlerts200Response, *http.Re
 /*
 RefreshAppState Refresh State of an App
 
-This endpoint provides a way to refresh the state of an app. This action only applies to Terraform, CloudFormation and ARM and will return an HTTP 400 error for other types.  
+This endpoint provides a way to refresh the state of an app. This action only applies to Terraform, CloudFormation and ARM and will return an HTTP 400 error for other types.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiRefreshAppStateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiRefreshAppStateRequest
 */
 func (a *AppsAPIService) RefreshAppState(ctx context.Context, id int64) ApiRefreshAppStateRequest {
 	return ApiRefreshAppStateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *AppsAPIService) RefreshAppStateExecute(r ApiRefreshAppStateRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AppsAPIService.RefreshAppState")
@@ -1536,7 +1541,7 @@ func (a *AppsAPIService) RefreshAppStateExecute(r ApiRefreshAppStateRequest) (*D
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1545,8 +1550,8 @@ func (a *AppsAPIService) RefreshAppStateExecute(r ApiRefreshAppStateRequest) (*D
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1556,8 +1561,8 @@ func (a *AppsAPIService) RefreshAppStateExecute(r ApiRefreshAppStateRequest) (*D
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1565,8 +1570,8 @@ func (a *AppsAPIService) RefreshAppStateExecute(r ApiRefreshAppStateRequest) (*D
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1575,9 +1580,9 @@ func (a *AppsAPIService) RefreshAppStateExecute(r ApiRefreshAppStateRequest) (*D
 }
 
 type ApiRemoveAppInstanceRequest struct {
-	ctx context.Context
-	ApiService *AppsAPIService
-	id int64
+	ctx                      context.Context
+	ApiService               *AppsAPIService
+	id                       int64
 	removeAppInstanceRequest *RemoveAppInstanceRequest
 }
 
@@ -1595,26 +1600,27 @@ RemoveAppInstance Remove Instance from App
 
 Remove Instance from App
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiRemoveAppInstanceRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiRemoveAppInstanceRequest
 */
 func (a *AppsAPIService) RemoveAppInstance(ctx context.Context, id int64) ApiRemoveAppInstanceRequest {
 	return ApiRemoveAppInstanceRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetApp200Response
+//
+//	@return GetApp200Response
 func (a *AppsAPIService) RemoveAppInstanceExecute(r ApiRemoveAppInstanceRequest) (*GetApp200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetApp200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetApp200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AppsAPIService.RemoveAppInstance")
@@ -1667,7 +1673,7 @@ func (a *AppsAPIService) RemoveAppInstanceExecute(r ApiRemoveAppInstanceRequest)
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1676,8 +1682,8 @@ func (a *AppsAPIService) RemoveAppInstanceExecute(r ApiRemoveAppInstanceRequest)
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1687,8 +1693,8 @@ func (a *AppsAPIService) RemoveAppInstanceExecute(r ApiRemoveAppInstanceRequest)
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1696,8 +1702,8 @@ func (a *AppsAPIService) RemoveAppInstanceExecute(r ApiRemoveAppInstanceRequest)
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1706,9 +1712,9 @@ func (a *AppsAPIService) RemoveAppInstanceExecute(r ApiRemoveAppInstanceRequest)
 }
 
 type ApiSetAppSecurityGroupsRequest struct {
-	ctx context.Context
-	ApiService *AppsAPIService
-	id int64
+	ctx                         context.Context
+	ApiService                  *AppsAPIService
+	id                          int64
 	setAppSecurityGroupsRequest *SetAppSecurityGroupsRequest
 }
 
@@ -1726,26 +1732,27 @@ SetAppSecurityGroups Set Security Groups for an App
 
 Set Security Groups for an App
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiSetAppSecurityGroupsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiSetAppSecurityGroupsRequest
 */
 func (a *AppsAPIService) SetAppSecurityGroups(ctx context.Context, id int64) ApiSetAppSecurityGroupsRequest {
 	return ApiSetAppSecurityGroupsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return SetAppSecurityGroups200Response
+//
+//	@return SetAppSecurityGroups200Response
 func (a *AppsAPIService) SetAppSecurityGroupsExecute(r ApiSetAppSecurityGroupsRequest) (*SetAppSecurityGroups200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *SetAppSecurityGroups200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *SetAppSecurityGroups200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AppsAPIService.SetAppSecurityGroups")
@@ -1798,7 +1805,7 @@ func (a *AppsAPIService) SetAppSecurityGroupsExecute(r ApiSetAppSecurityGroupsRe
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1807,8 +1814,8 @@ func (a *AppsAPIService) SetAppSecurityGroupsExecute(r ApiSetAppSecurityGroupsRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1818,8 +1825,8 @@ func (a *AppsAPIService) SetAppSecurityGroupsExecute(r ApiSetAppSecurityGroupsRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1827,8 +1834,8 @@ func (a *AppsAPIService) SetAppSecurityGroupsExecute(r ApiSetAppSecurityGroupsRe
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1837,9 +1844,9 @@ func (a *AppsAPIService) SetAppSecurityGroupsExecute(r ApiSetAppSecurityGroupsRe
 }
 
 type ApiUpdateAppRequest struct {
-	ctx context.Context
-	ApiService *AppsAPIService
-	id int64
+	ctx              context.Context
+	ApiService       *AppsAPIService
+	id               int64
 	updateAppRequest *UpdateAppRequest
 }
 
@@ -1857,26 +1864,27 @@ UpdateApp Updating an App
 
 This endpoint provides updating of some basic app settings.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateAppRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateAppRequest
 */
 func (a *AppsAPIService) UpdateApp(ctx context.Context, id int64) ApiUpdateAppRequest {
 	return ApiUpdateAppRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetApp200Response
+//
+//	@return GetApp200Response
 func (a *AppsAPIService) UpdateAppExecute(r ApiUpdateAppRequest) (*GetApp200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetApp200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetApp200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AppsAPIService.UpdateApp")
@@ -1929,7 +1937,7 @@ func (a *AppsAPIService) UpdateAppExecute(r ApiUpdateAppRequest) (*GetApp200Resp
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1938,8 +1946,8 @@ func (a *AppsAPIService) UpdateAppExecute(r ApiUpdateAppRequest) (*GetApp200Resp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1949,8 +1957,8 @@ func (a *AppsAPIService) UpdateAppExecute(r ApiUpdateAppRequest) (*GetApp200Resp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1958,8 +1966,8 @@ func (a *AppsAPIService) UpdateAppExecute(r ApiUpdateAppRequest) (*GetApp200Resp
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1968,9 +1976,9 @@ func (a *AppsAPIService) UpdateAppExecute(r ApiUpdateAppRequest) (*GetApp200Resp
 }
 
 type ApiValidateAppStateRequest struct {
-	ctx context.Context
-	ApiService *AppsAPIService
-	id int64
+	ctx                  context.Context
+	ApiService           *AppsAPIService
+	id                   int64
 	applyAppStateRequest *ApplyAppStateRequest
 }
 
@@ -1990,27 +1998,27 @@ This endpoint provides a way to validate app configuration and templateParameter
 
 Note: This call is asyncronous and returns the execution-id. For the results of the proposed change see [/api/execution-request/{uniqueId}](/reference/getexecutionrequest)
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiValidateAppStateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiValidateAppStateRequest
 */
 func (a *AppsAPIService) ValidateAppState(ctx context.Context, id int64) ApiValidateAppStateRequest {
 	return ApiValidateAppStateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ValidateAppState200Response
+//
+//	@return ValidateAppState200Response
 func (a *AppsAPIService) ValidateAppStateExecute(r ApiValidateAppStateRequest) (*ValidateAppState200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ValidateAppState200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ValidateAppState200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AppsAPIService.ValidateAppState")
@@ -2063,7 +2071,7 @@ func (a *AppsAPIService) ValidateAppStateExecute(r ApiValidateAppStateRequest) (
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2072,8 +2080,8 @@ func (a *AppsAPIService) ValidateAppStateExecute(r ApiValidateAppStateRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2083,8 +2091,8 @@ func (a *AppsAPIService) ValidateAppStateExecute(r ApiValidateAppStateRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2092,8 +2100,8 @@ func (a *AppsAPIService) ValidateAppStateExecute(r ApiValidateAppStateRequest) (
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

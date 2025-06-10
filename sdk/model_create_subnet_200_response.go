@@ -20,8 +20,8 @@ var _ MappedNullable = &CreateSubnet200Response{}
 
 // CreateSubnet200Response struct for CreateSubnet200Response
 type CreateSubnet200Response struct {
-	Subnet *GetNetworkSubnets200ResponseAllOfSubnetsInner `json:"subnet,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Subnet               *GetNetworkSubnets200ResponseAllOfSubnetsInner `json:"subnet,omitempty"`
+	AdditionalProperties map[string]interface{}                         `json:",remain"`
 }
 
 type _CreateSubnet200Response CreateSubnet200Response
@@ -76,7 +76,7 @@ func (o *CreateSubnet200Response) SetSubnet(v GetNetworkSubnets200ResponseAllOfS
 }
 
 func (o CreateSubnet200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o CreateSubnet200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *CreateSubnet200Response) UnmarshalJSON(data []byte) (err error) {
-	varCreateSubnet200Response := _CreateSubnet200Response{}
-
-	err = json.Unmarshal(data, &varCreateSubnet200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CreateSubnet200Response(varCreateSubnet200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "subnet")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCreateSubnet200Response struct {
-	value *CreateSubnet200Response
-	isSet bool
-}
-
-func (v NullableCreateSubnet200Response) Get() *CreateSubnet200Response {
-	return v.value
-}
-
-func (v *NullableCreateSubnet200Response) Set(val *CreateSubnet200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCreateSubnet200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCreateSubnet200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCreateSubnet200Response(val *CreateSubnet200Response) *NullableCreateSubnet200Response {
-	return &NullableCreateSubnet200Response{value: val, isSet: true}
-}
-
-func (v NullableCreateSubnet200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCreateSubnet200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

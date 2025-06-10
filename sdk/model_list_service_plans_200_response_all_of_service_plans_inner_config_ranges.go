@@ -20,19 +20,19 @@ var _ MappedNullable = &ListServicePlans200ResponseAllOfServicePlansInnerConfigR
 
 // ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges struct for ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges
 type ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges struct {
-	MinStorage *string `json:"minStorage,omitempty"`
-	MaxStorage *string `json:"maxStorage,omitempty"`
-	MinPerDiskSize *string `json:"minPerDiskSize,omitempty"`
-	MaxPerDiskSize *string `json:"maxPerDiskSize,omitempty"`
-	MinMemory *float32 `json:"minMemory,omitempty"`
-	MaxMemory *float32 `json:"maxMemory,omitempty"`
-	MinCores *string `json:"minCores,omitempty"`
-	MaxCores *string `json:"maxCores,omitempty"`
-	MinSockets *string `json:"minSockets,omitempty"`
-	MaxSockets *string `json:"maxSockets,omitempty"`
-	MinCoresPerSocket *string `json:"minCoresPerSocket,omitempty"`
-	MaxCoresPerSocket *string `json:"maxCoresPerSocket,omitempty"`
-	AdditionalProperties map[string]interface{}
+	MinStorage           *string                `json:"minStorage,omitempty"`
+	MaxStorage           *string                `json:"maxStorage,omitempty"`
+	MinPerDiskSize       *string                `json:"minPerDiskSize,omitempty"`
+	MaxPerDiskSize       *string                `json:"maxPerDiskSize,omitempty"`
+	MinMemory            *float32               `json:"minMemory,omitempty"`
+	MaxMemory            *float32               `json:"maxMemory,omitempty"`
+	MinCores             *string                `json:"minCores,omitempty"`
+	MaxCores             *string                `json:"maxCores,omitempty"`
+	MinSockets           *string                `json:"minSockets,omitempty"`
+	MaxSockets           *string                `json:"maxSockets,omitempty"`
+	MinCoresPerSocket    *string                `json:"minCoresPerSocket,omitempty"`
+	MaxCoresPerSocket    *string                `json:"maxCoresPerSocket,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges
@@ -439,7 +439,7 @@ func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) SetMaxCo
 }
 
 func (o ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -491,73 +491,8 @@ func (o ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) ToMap() (
 
 	return toSerialize, nil
 }
-
 func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) UnmarshalJSON(data []byte) (err error) {
-	varListServicePlans200ResponseAllOfServicePlansInnerConfigRanges := _ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges{}
-
-	err = json.Unmarshal(data, &varListServicePlans200ResponseAllOfServicePlansInnerConfigRanges)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges(varListServicePlans200ResponseAllOfServicePlansInnerConfigRanges)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "minStorage")
-		delete(additionalProperties, "maxStorage")
-		delete(additionalProperties, "minPerDiskSize")
-		delete(additionalProperties, "maxPerDiskSize")
-		delete(additionalProperties, "minMemory")
-		delete(additionalProperties, "maxMemory")
-		delete(additionalProperties, "minCores")
-		delete(additionalProperties, "maxCores")
-		delete(additionalProperties, "minSockets")
-		delete(additionalProperties, "maxSockets")
-		delete(additionalProperties, "minCoresPerSocket")
-		delete(additionalProperties, "maxCoresPerSocket")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListServicePlans200ResponseAllOfServicePlansInnerConfigRanges struct {
-	value *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges
-	isSet bool
-}
-
-func (v NullableListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) Get() *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges {
-	return v.value
-}
-
-func (v *NullableListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) Set(val *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListServicePlans200ResponseAllOfServicePlansInnerConfigRanges(val *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) *NullableListServicePlans200ResponseAllOfServicePlansInnerConfigRanges {
-	return &NullableListServicePlans200ResponseAllOfServicePlansInnerConfigRanges{value: val, isSet: true}
-}
-
-func (v NullableListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

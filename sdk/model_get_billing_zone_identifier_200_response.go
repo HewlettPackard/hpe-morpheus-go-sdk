@@ -20,9 +20,9 @@ var _ MappedNullable = &GetBillingZoneIdentifier200Response{}
 
 // GetBillingZoneIdentifier200Response struct for GetBillingZoneIdentifier200Response
 type GetBillingZoneIdentifier200Response struct {
-	BillingInfo *ListBillingAccount200ResponseAllOfBillingInfoZonesInner `json:"billingInfo,omitempty"`
-	Success *bool `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}
+	BillingInfo          *ListBillingAccount200ResponseAllOfBillingInfoZonesInner `json:"billingInfo,omitempty"`
+	Success              *bool                                                    `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}                                   `json:",remain"`
 }
 
 type _GetBillingZoneIdentifier200Response GetBillingZoneIdentifier200Response
@@ -109,7 +109,7 @@ func (o *GetBillingZoneIdentifier200Response) SetSuccess(v bool) {
 }
 
 func (o GetBillingZoneIdentifier200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o GetBillingZoneIdentifier200Response) ToMap() (map[string]interface{}, er
 
 	return toSerialize, nil
 }
-
 func (o *GetBillingZoneIdentifier200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetBillingZoneIdentifier200Response := _GetBillingZoneIdentifier200Response{}
-
-	err = json.Unmarshal(data, &varGetBillingZoneIdentifier200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetBillingZoneIdentifier200Response(varGetBillingZoneIdentifier200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "billingInfo")
-		delete(additionalProperties, "success")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetBillingZoneIdentifier200Response struct {
-	value *GetBillingZoneIdentifier200Response
-	isSet bool
-}
-
-func (v NullableGetBillingZoneIdentifier200Response) Get() *GetBillingZoneIdentifier200Response {
-	return v.value
-}
-
-func (v *NullableGetBillingZoneIdentifier200Response) Set(val *GetBillingZoneIdentifier200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetBillingZoneIdentifier200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetBillingZoneIdentifier200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetBillingZoneIdentifier200Response(val *GetBillingZoneIdentifier200Response) *NullableGetBillingZoneIdentifier200Response {
-	return &NullableGetBillingZoneIdentifier200Response{value: val, isSet: true}
-}
-
-func (v NullableGetBillingZoneIdentifier200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetBillingZoneIdentifier200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

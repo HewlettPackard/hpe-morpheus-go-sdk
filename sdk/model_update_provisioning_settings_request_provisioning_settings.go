@@ -37,15 +37,15 @@ type UpdateProvisioningSettingsRequestProvisioningSettings struct {
 	// Cloud-init username
 	CloudInitUsername *string `json:"cloudInitUsername,omitempty"`
 	// Cloud-init password
-	CloudInitPassword *string `json:"cloudInitPassword,omitempty"`
-	CloudInitKeyPair *UpdateProvisioningSettingsRequestProvisioningSettingsCloudInitKeyPair `json:"cloudInitKeyPair,omitempty"`
+	CloudInitPassword     *string                                                                     `json:"cloudInitPassword,omitempty"`
+	CloudInitKeyPair      *UpdateProvisioningSettingsRequestProvisioningSettingsCloudInitKeyPair      `json:"cloudInitKeyPair,omitempty"`
 	DeployStorageProvider *UpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvider `json:"deployStorageProvider,omitempty"`
 	// Windows administrator password
 	WindowsPassword *string `json:"windowsPassword,omitempty"`
 	// PXE Boot default root password
-	PxeRootPassword *string `json:"pxeRootPassword,omitempty"`
-	DefaultTemplateType *UpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType `json:"defaultTemplateType,omitempty"`
-	AdditionalProperties map[string]interface{}
+	PxeRootPassword      *string                                                                   `json:"pxeRootPassword,omitempty"`
+	DefaultTemplateType  *UpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType `json:"defaultTemplateType,omitempty"`
+	AdditionalProperties map[string]interface{}                                                    `json:",remain"`
 }
 
 type _UpdateProvisioningSettingsRequestProvisioningSettings UpdateProvisioningSettingsRequestProvisioningSettings
@@ -516,7 +516,7 @@ func (o *UpdateProvisioningSettingsRequestProvisioningSettings) SetDefaultTempla
 }
 
 func (o UpdateProvisioningSettingsRequestProvisioningSettings) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -574,75 +574,8 @@ func (o UpdateProvisioningSettingsRequestProvisioningSettings) ToMap() (map[stri
 
 	return toSerialize, nil
 }
-
 func (o *UpdateProvisioningSettingsRequestProvisioningSettings) UnmarshalJSON(data []byte) (err error) {
-	varUpdateProvisioningSettingsRequestProvisioningSettings := _UpdateProvisioningSettingsRequestProvisioningSettings{}
-
-	err = json.Unmarshal(data, &varUpdateProvisioningSettingsRequestProvisioningSettings)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateProvisioningSettingsRequestProvisioningSettings(varUpdateProvisioningSettingsRequestProvisioningSettings)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "allowZoneSelection")
-		delete(additionalProperties, "allowServerSelection")
-		delete(additionalProperties, "requireEnvironments")
-		delete(additionalProperties, "showPricing")
-		delete(additionalProperties, "hideDatastoreStats")
-		delete(additionalProperties, "crossTenantNamingPolicies")
-		delete(additionalProperties, "reuseSequence")
-		delete(additionalProperties, "cloudInitUsername")
-		delete(additionalProperties, "cloudInitPassword")
-		delete(additionalProperties, "cloudInitKeyPair")
-		delete(additionalProperties, "deployStorageProvider")
-		delete(additionalProperties, "windowsPassword")
-		delete(additionalProperties, "pxeRootPassword")
-		delete(additionalProperties, "defaultTemplateType")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateProvisioningSettingsRequestProvisioningSettings struct {
-	value *UpdateProvisioningSettingsRequestProvisioningSettings
-	isSet bool
-}
-
-func (v NullableUpdateProvisioningSettingsRequestProvisioningSettings) Get() *UpdateProvisioningSettingsRequestProvisioningSettings {
-	return v.value
-}
-
-func (v *NullableUpdateProvisioningSettingsRequestProvisioningSettings) Set(val *UpdateProvisioningSettingsRequestProvisioningSettings) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateProvisioningSettingsRequestProvisioningSettings) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateProvisioningSettingsRequestProvisioningSettings) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateProvisioningSettingsRequestProvisioningSettings(val *UpdateProvisioningSettingsRequestProvisioningSettings) *NullableUpdateProvisioningSettingsRequestProvisioningSettings {
-	return &NullableUpdateProvisioningSettingsRequestProvisioningSettings{value: val, isSet: true}
-}
-
-func (v NullableUpdateProvisioningSettingsRequestProvisioningSettings) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateProvisioningSettingsRequestProvisioningSettings) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

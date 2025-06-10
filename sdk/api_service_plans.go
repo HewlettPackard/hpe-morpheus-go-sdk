@@ -21,14 +21,13 @@ import (
 	"strings"
 )
 
-
 // ServicePlansAPIService ServicePlansAPI service
 type ServicePlansAPIService service
 
 type ApiActivateServicePlansRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ServicePlansAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiActivateServicePlansRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -40,27 +39,27 @@ ActivateServicePlans Activates a Service Plan
 
 Activates a service plan.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiActivateServicePlansRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiActivateServicePlansRequest
 */
 func (a *ServicePlansAPIService) ActivateServicePlans(ctx context.Context, id int64) ApiActivateServicePlansRequest {
 	return ApiActivateServicePlansRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *ServicePlansAPIService) ActivateServicePlansExecute(r ApiActivateServicePlansRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServicePlansAPIService.ActivateServicePlans")
@@ -111,7 +110,7 @@ func (a *ServicePlansAPIService) ActivateServicePlansExecute(r ApiActivateServic
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -120,8 +119,8 @@ func (a *ServicePlansAPIService) ActivateServicePlansExecute(r ApiActivateServic
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -131,8 +130,8 @@ func (a *ServicePlansAPIService) ActivateServicePlansExecute(r ApiActivateServic
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -140,8 +139,8 @@ func (a *ServicePlansAPIService) ActivateServicePlansExecute(r ApiActivateServic
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -150,8 +149,8 @@ func (a *ServicePlansAPIService) ActivateServicePlansExecute(r ApiActivateServic
 }
 
 type ApiAddServicePlansRequest struct {
-	ctx context.Context
-	ApiService *ServicePlansAPIService
+	ctx                    context.Context
+	ApiService             *ServicePlansAPIService
 	addServicePlansRequest *AddServicePlansRequest
 }
 
@@ -169,25 +168,25 @@ AddServicePlans Creates a Service Plan
 
 Creates a service plan.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddServicePlansRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddServicePlansRequest
 */
 func (a *ServicePlansAPIService) AddServicePlans(ctx context.Context) ApiAddServicePlansRequest {
 	return ApiAddServicePlansRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddServicePlans200Response
+//
+//	@return AddServicePlans200Response
 func (a *ServicePlansAPIService) AddServicePlansExecute(r ApiAddServicePlansRequest) (*AddServicePlans200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddServicePlans200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddServicePlans200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServicePlansAPIService.AddServicePlans")
@@ -239,7 +238,7 @@ func (a *ServicePlansAPIService) AddServicePlansExecute(r ApiAddServicePlansRequ
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -248,8 +247,8 @@ func (a *ServicePlansAPIService) AddServicePlansExecute(r ApiAddServicePlansRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -259,8 +258,8 @@ func (a *ServicePlansAPIService) AddServicePlansExecute(r ApiAddServicePlansRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -268,8 +267,8 @@ func (a *ServicePlansAPIService) AddServicePlansExecute(r ApiAddServicePlansRequ
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -278,9 +277,9 @@ func (a *ServicePlansAPIService) AddServicePlansExecute(r ApiAddServicePlansRequ
 }
 
 type ApiDeactivateServicePlansRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ServicePlansAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiDeactivateServicePlansRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -292,27 +291,27 @@ DeactivateServicePlans Deactivates a Service Plan
 
 Deactivates a service plan.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiDeactivateServicePlansRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeactivateServicePlansRequest
 */
 func (a *ServicePlansAPIService) DeactivateServicePlans(ctx context.Context, id int64) ApiDeactivateServicePlansRequest {
 	return ApiDeactivateServicePlansRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *ServicePlansAPIService) DeactivateServicePlansExecute(r ApiDeactivateServicePlansRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServicePlansAPIService.DeactivateServicePlans")
@@ -363,7 +362,7 @@ func (a *ServicePlansAPIService) DeactivateServicePlansExecute(r ApiDeactivateSe
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -372,8 +371,8 @@ func (a *ServicePlansAPIService) DeactivateServicePlansExecute(r ApiDeactivateSe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -383,8 +382,8 @@ func (a *ServicePlansAPIService) DeactivateServicePlansExecute(r ApiDeactivateSe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -392,8 +391,8 @@ func (a *ServicePlansAPIService) DeactivateServicePlansExecute(r ApiDeactivateSe
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -402,9 +401,9 @@ func (a *ServicePlansAPIService) DeactivateServicePlansExecute(r ApiDeactivateSe
 }
 
 type ApiGetServicePlansRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ServicePlansAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetServicePlansRequest) Execute() (*GetServicePlans200Response, *http.Response, error) {
@@ -416,27 +415,27 @@ GetServicePlans Retrieves a Specific Service Plan
 
 Retrieves a specific service plan.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetServicePlansRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetServicePlansRequest
 */
 func (a *ServicePlansAPIService) GetServicePlans(ctx context.Context, id int64) ApiGetServicePlansRequest {
 	return ApiGetServicePlansRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetServicePlans200Response
+//
+//	@return GetServicePlans200Response
 func (a *ServicePlansAPIService) GetServicePlansExecute(r ApiGetServicePlansRequest) (*GetServicePlans200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetServicePlans200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetServicePlans200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServicePlansAPIService.GetServicePlans")
@@ -487,7 +486,7 @@ func (a *ServicePlansAPIService) GetServicePlansExecute(r ApiGetServicePlansRequ
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -496,8 +495,8 @@ func (a *ServicePlansAPIService) GetServicePlansExecute(r ApiGetServicePlansRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -507,8 +506,8 @@ func (a *ServicePlansAPIService) GetServicePlansExecute(r ApiGetServicePlansRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -516,8 +515,8 @@ func (a *ServicePlansAPIService) GetServicePlansExecute(r ApiGetServicePlansRequ
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -526,15 +525,15 @@ func (a *ServicePlansAPIService) GetServicePlansExecute(r ApiGetServicePlansRequ
 }
 
 type ApiListServicePlansRequest struct {
-	ctx context.Context
-	ApiService *ServicePlansAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	name *string
-	includeZones *bool
+	ctx             context.Context
+	ApiService      *ServicePlansAPIService
+	max             *int64
+	offset          *int64
+	sort            *string
+	direction       *string
+	phrase          *string
+	name            *string
+	includeZones    *bool
 	provisionTypeId *int64
 	includeInactive *bool
 }
@@ -602,25 +601,25 @@ ListServicePlans Retrieves all Service Plans
 
 Retrieves all service plans.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListServicePlansRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListServicePlansRequest
 */
 func (a *ServicePlansAPIService) ListServicePlans(ctx context.Context) ApiListServicePlansRequest {
 	return ApiListServicePlansRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListServicePlans200Response
+//
+//	@return ListServicePlans200Response
 func (a *ServicePlansAPIService) ListServicePlansExecute(r ApiListServicePlansRequest) (*ListServicePlans200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListServicePlans200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListServicePlans200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServicePlansAPIService.ListServicePlans")
@@ -712,7 +711,7 @@ func (a *ServicePlansAPIService) ListServicePlansExecute(r ApiListServicePlansRe
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -721,8 +720,8 @@ func (a *ServicePlansAPIService) ListServicePlansExecute(r ApiListServicePlansRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -732,8 +731,8 @@ func (a *ServicePlansAPIService) ListServicePlansExecute(r ApiListServicePlansRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -741,8 +740,8 @@ func (a *ServicePlansAPIService) ListServicePlansExecute(r ApiListServicePlansRe
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -751,9 +750,9 @@ func (a *ServicePlansAPIService) ListServicePlansExecute(r ApiListServicePlansRe
 }
 
 type ApiRemoveServicePlansRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ServicePlansAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiRemoveServicePlansRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -765,27 +764,27 @@ RemoveServicePlans Deletes a Service Plan
 
 Deletes a specified service plan.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiRemoveServicePlansRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiRemoveServicePlansRequest
 */
 func (a *ServicePlansAPIService) RemoveServicePlans(ctx context.Context, id int64) ApiRemoveServicePlansRequest {
 	return ApiRemoveServicePlansRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *ServicePlansAPIService) RemoveServicePlansExecute(r ApiRemoveServicePlansRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServicePlansAPIService.RemoveServicePlans")
@@ -836,7 +835,7 @@ func (a *ServicePlansAPIService) RemoveServicePlansExecute(r ApiRemoveServicePla
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -845,8 +844,8 @@ func (a *ServicePlansAPIService) RemoveServicePlansExecute(r ApiRemoveServicePla
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -856,8 +855,8 @@ func (a *ServicePlansAPIService) RemoveServicePlansExecute(r ApiRemoveServicePla
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -865,8 +864,8 @@ func (a *ServicePlansAPIService) RemoveServicePlansExecute(r ApiRemoveServicePla
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -875,9 +874,9 @@ func (a *ServicePlansAPIService) RemoveServicePlansExecute(r ApiRemoveServicePla
 }
 
 type ApiUpdateServicePlansRequest struct {
-	ctx context.Context
-	ApiService *ServicePlansAPIService
-	id int64
+	ctx                       context.Context
+	ApiService                *ServicePlansAPIService
+	id                        int64
 	updateServicePlansRequest *UpdateServicePlansRequest
 }
 
@@ -895,27 +894,27 @@ UpdateServicePlans Updates a Service Plan
 
 Updates a service plan.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateServicePlansRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateServicePlansRequest
 */
 func (a *ServicePlansAPIService) UpdateServicePlans(ctx context.Context, id int64) ApiUpdateServicePlansRequest {
 	return ApiUpdateServicePlansRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddServicePlans200Response
+//
+//	@return AddServicePlans200Response
 func (a *ServicePlansAPIService) UpdateServicePlansExecute(r ApiUpdateServicePlansRequest) (*AddServicePlans200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddServicePlans200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddServicePlans200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServicePlansAPIService.UpdateServicePlans")
@@ -968,7 +967,7 @@ func (a *ServicePlansAPIService) UpdateServicePlansExecute(r ApiUpdateServicePla
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -977,8 +976,8 @@ func (a *ServicePlansAPIService) UpdateServicePlansExecute(r ApiUpdateServicePla
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -988,8 +987,8 @@ func (a *ServicePlansAPIService) UpdateServicePlansExecute(r ApiUpdateServicePla
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -997,8 +996,8 @@ func (a *ServicePlansAPIService) UpdateServicePlansExecute(r ApiUpdateServicePla
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

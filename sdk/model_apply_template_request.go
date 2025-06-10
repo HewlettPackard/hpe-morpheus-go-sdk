@@ -25,8 +25,8 @@ type ApplyTemplateRequest struct {
 	// Name or ID of desired Spec Template to apply to cluster
 	SpecTemplate *string `json:"specTemplate,omitempty"`
 	// Yaml of template to apply to cluster
-	SpecYaml *string `json:"specYaml,omitempty"`
-	AdditionalProperties map[string]interface{}
+	SpecYaml             *string                `json:"specYaml,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ApplyTemplateRequest ApplyTemplateRequest
@@ -145,7 +145,7 @@ func (o *ApplyTemplateRequest) SetSpecYaml(v string) {
 }
 
 func (o ApplyTemplateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -170,64 +170,8 @@ func (o ApplyTemplateRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ApplyTemplateRequest) UnmarshalJSON(data []byte) (err error) {
-	varApplyTemplateRequest := _ApplyTemplateRequest{}
-
-	err = json.Unmarshal(data, &varApplyTemplateRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ApplyTemplateRequest(varApplyTemplateRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "serviceUrl")
-		delete(additionalProperties, "specTemplate")
-		delete(additionalProperties, "specYaml")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableApplyTemplateRequest struct {
-	value *ApplyTemplateRequest
-	isSet bool
-}
-
-func (v NullableApplyTemplateRequest) Get() *ApplyTemplateRequest {
-	return v.value
-}
-
-func (v *NullableApplyTemplateRequest) Set(val *ApplyTemplateRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableApplyTemplateRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableApplyTemplateRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableApplyTemplateRequest(val *ApplyTemplateRequest) *NullableApplyTemplateRequest {
-	return &NullableApplyTemplateRequest{value: val, isSet: true}
-}
-
-func (v NullableApplyTemplateRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableApplyTemplateRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

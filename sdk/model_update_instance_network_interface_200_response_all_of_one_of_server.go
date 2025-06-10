@@ -21,39 +21,39 @@ var _ MappedNullable = &UpdateInstanceNetworkInterface200ResponseAllOfOneOfServe
 
 // UpdateInstanceNetworkInterface200ResponseAllOfOneOfServer struct for UpdateInstanceNetworkInterface200ResponseAllOfOneOfServer
 type UpdateInstanceNetworkInterface200ResponseAllOfOneOfServer struct {
-	Id *int64 `json:"id,omitempty"`
-	ExternalId *string `json:"externalId,omitempty"`
-	AccountId *int64 `json:"accountId,omitempty"`
-	Name *string `json:"name,omitempty"`
-	DisplayName *string `json:"displayName,omitempty"`
-	Visibility *string `json:"visibility,omitempty"`
-	Description *string `json:"description,omitempty"`
-	ZoneId *int64 `json:"zoneId,omitempty"`
-	SiteId *int64 `json:"siteId,omitempty"`
-	SshHost *string `json:"sshHost,omitempty"`
-	SshPort *int64 `json:"sshPort,omitempty"`
-	ExternalIp *string `json:"externalIp,omitempty"`
-	InternalIp *string `json:"internalIp,omitempty"`
-	VolumeId *string `json:"volumeId,omitempty"`
-	Platform *string `json:"platform,omitempty"`
-	PlatformVersion *string `json:"platformVersion,omitempty"`
-	SshUsername *string `json:"sshUsername,omitempty"`
-	SshPassword *string `json:"sshPassword,omitempty"`
-	OsDevice *string `json:"osDevice,omitempty"`
-	DataDevice *string `json:"dataDevice,omitempty"`
-	LvmEnabled *bool `json:"lvmEnabled,omitempty"`
-	ApiKey *string `json:"apiKey,omitempty"`
-	SoftwareRaid *bool `json:"softwareRaid,omitempty"`
-	Config *string `json:"config,omitempty"`
-	CapacityInfo *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerCapacityInfo `json:"capacityInfo,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	LastStats *string `json:"lastStats,omitempty"`
-	Status *string `json:"status,omitempty"`
-	ComputeServerType *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType `json:"computeServerType,omitempty"`
-	Interfaces []UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerInterfacesInner `json:"interfaces,omitempty"`
-	Zone *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone `json:"zone,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                      `json:"id,omitempty"`
+	ExternalId           *string                                                                     `json:"externalId,omitempty"`
+	AccountId            *int64                                                                      `json:"accountId,omitempty"`
+	Name                 *string                                                                     `json:"name,omitempty"`
+	DisplayName          *string                                                                     `json:"displayName,omitempty"`
+	Visibility           *string                                                                     `json:"visibility,omitempty"`
+	Description          *string                                                                     `json:"description,omitempty"`
+	ZoneId               *int64                                                                      `json:"zoneId,omitempty"`
+	SiteId               *int64                                                                      `json:"siteId,omitempty"`
+	SshHost              *string                                                                     `json:"sshHost,omitempty"`
+	SshPort              *int64                                                                      `json:"sshPort,omitempty"`
+	ExternalIp           *string                                                                     `json:"externalIp,omitempty"`
+	InternalIp           *string                                                                     `json:"internalIp,omitempty"`
+	VolumeId             *string                                                                     `json:"volumeId,omitempty"`
+	Platform             *string                                                                     `json:"platform,omitempty"`
+	PlatformVersion      *string                                                                     `json:"platformVersion,omitempty"`
+	SshUsername          *string                                                                     `json:"sshUsername,omitempty"`
+	SshPassword          *string                                                                     `json:"sshPassword,omitempty"`
+	OsDevice             *string                                                                     `json:"osDevice,omitempty"`
+	DataDevice           *string                                                                     `json:"dataDevice,omitempty"`
+	LvmEnabled           *bool                                                                       `json:"lvmEnabled,omitempty"`
+	ApiKey               *string                                                                     `json:"apiKey,omitempty"`
+	SoftwareRaid         *bool                                                                       `json:"softwareRaid,omitempty"`
+	Config               *string                                                                     `json:"config,omitempty"`
+	CapacityInfo         *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerCapacityInfo      `json:"capacityInfo,omitempty"`
+	DateCreated          *time.Time                                                                  `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                                  `json:"lastUpdated,omitempty"`
+	LastStats            *string                                                                     `json:"lastStats,omitempty"`
+	Status               *string                                                                     `json:"status,omitempty"`
+	ComputeServerType    *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType `json:"computeServerType,omitempty"`
+	Interfaces           []UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerInterfacesInner  `json:"interfaces,omitempty"`
+	Zone                 *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone              `json:"zone,omitempty"`
+	AdditionalProperties map[string]interface{}                                                      `json:",remain"`
 }
 
 type _UpdateInstanceNetworkInterface200ResponseAllOfOneOfServer UpdateInstanceNetworkInterface200ResponseAllOfOneOfServer
@@ -1100,7 +1100,7 @@ func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServer) SetZone(v Up
 }
 
 func (o UpdateInstanceNetworkInterface200ResponseAllOfOneOfServer) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1212,93 +1212,8 @@ func (o UpdateInstanceNetworkInterface200ResponseAllOfOneOfServer) ToMap() (map[
 
 	return toSerialize, nil
 }
-
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServer) UnmarshalJSON(data []byte) (err error) {
-	varUpdateInstanceNetworkInterface200ResponseAllOfOneOfServer := _UpdateInstanceNetworkInterface200ResponseAllOfOneOfServer{}
-
-	err = json.Unmarshal(data, &varUpdateInstanceNetworkInterface200ResponseAllOfOneOfServer)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateInstanceNetworkInterface200ResponseAllOfOneOfServer(varUpdateInstanceNetworkInterface200ResponseAllOfOneOfServer)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "accountId")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "displayName")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "zoneId")
-		delete(additionalProperties, "siteId")
-		delete(additionalProperties, "sshHost")
-		delete(additionalProperties, "sshPort")
-		delete(additionalProperties, "externalIp")
-		delete(additionalProperties, "internalIp")
-		delete(additionalProperties, "volumeId")
-		delete(additionalProperties, "platform")
-		delete(additionalProperties, "platformVersion")
-		delete(additionalProperties, "sshUsername")
-		delete(additionalProperties, "sshPassword")
-		delete(additionalProperties, "osDevice")
-		delete(additionalProperties, "dataDevice")
-		delete(additionalProperties, "lvmEnabled")
-		delete(additionalProperties, "apiKey")
-		delete(additionalProperties, "softwareRaid")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "capacityInfo")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "lastStats")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "computeServerType")
-		delete(additionalProperties, "interfaces")
-		delete(additionalProperties, "zone")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServer struct {
-	value *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServer
-	isSet bool
-}
-
-func (v NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServer) Get() *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServer {
-	return v.value
-}
-
-func (v *NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServer) Set(val *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServer) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServer) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServer) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServer(val *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServer) *NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServer {
-	return &NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServer{value: val, isSet: true}
-}
-
-func (v NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServer) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServer) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

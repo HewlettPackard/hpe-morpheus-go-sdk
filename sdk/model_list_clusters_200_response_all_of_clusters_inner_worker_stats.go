@@ -20,15 +20,15 @@ var _ MappedNullable = &ListClusters200ResponseAllOfClustersInnerWorkerStats{}
 
 // ListClusters200ResponseAllOfClustersInnerWorkerStats struct for ListClusters200ResponseAllOfClustersInnerWorkerStats
 type ListClusters200ResponseAllOfClustersInnerWorkerStats struct {
-	UsedStorage *int64 `json:"usedStorage,omitempty"`
-	MaxStorage *int64 `json:"maxStorage,omitempty"`
-	UsedMemory *int64 `json:"usedMemory,omitempty"`
-	MaxMemory *int64 `json:"maxMemory,omitempty"`
-	UsedCpu *int64 `json:"usedCpu,omitempty"`
-	CpuUsage *float32 `json:"cpuUsage,omitempty"`
-	CpuUsagePeak *float32 `json:"cpuUsagePeak,omitempty"`
-	CpuUsageAvg *float32 `json:"cpuUsageAvg,omitempty"`
-	AdditionalProperties map[string]interface{}
+	UsedStorage          *int64                 `json:"usedStorage,omitempty"`
+	MaxStorage           *int64                 `json:"maxStorage,omitempty"`
+	UsedMemory           *int64                 `json:"usedMemory,omitempty"`
+	MaxMemory            *int64                 `json:"maxMemory,omitempty"`
+	UsedCpu              *int64                 `json:"usedCpu,omitempty"`
+	CpuUsage             *float32               `json:"cpuUsage,omitempty"`
+	CpuUsagePeak         *float32               `json:"cpuUsagePeak,omitempty"`
+	CpuUsageAvg          *float32               `json:"cpuUsageAvg,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListClusters200ResponseAllOfClustersInnerWorkerStats ListClusters200ResponseAllOfClustersInnerWorkerStats
@@ -307,7 +307,7 @@ func (o *ListClusters200ResponseAllOfClustersInnerWorkerStats) SetCpuUsageAvg(v 
 }
 
 func (o ListClusters200ResponseAllOfClustersInnerWorkerStats) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -347,69 +347,8 @@ func (o ListClusters200ResponseAllOfClustersInnerWorkerStats) ToMap() (map[strin
 
 	return toSerialize, nil
 }
-
 func (o *ListClusters200ResponseAllOfClustersInnerWorkerStats) UnmarshalJSON(data []byte) (err error) {
-	varListClusters200ResponseAllOfClustersInnerWorkerStats := _ListClusters200ResponseAllOfClustersInnerWorkerStats{}
-
-	err = json.Unmarshal(data, &varListClusters200ResponseAllOfClustersInnerWorkerStats)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListClusters200ResponseAllOfClustersInnerWorkerStats(varListClusters200ResponseAllOfClustersInnerWorkerStats)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "usedStorage")
-		delete(additionalProperties, "maxStorage")
-		delete(additionalProperties, "usedMemory")
-		delete(additionalProperties, "maxMemory")
-		delete(additionalProperties, "usedCpu")
-		delete(additionalProperties, "cpuUsage")
-		delete(additionalProperties, "cpuUsagePeak")
-		delete(additionalProperties, "cpuUsageAvg")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListClusters200ResponseAllOfClustersInnerWorkerStats struct {
-	value *ListClusters200ResponseAllOfClustersInnerWorkerStats
-	isSet bool
-}
-
-func (v NullableListClusters200ResponseAllOfClustersInnerWorkerStats) Get() *ListClusters200ResponseAllOfClustersInnerWorkerStats {
-	return v.value
-}
-
-func (v *NullableListClusters200ResponseAllOfClustersInnerWorkerStats) Set(val *ListClusters200ResponseAllOfClustersInnerWorkerStats) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListClusters200ResponseAllOfClustersInnerWorkerStats) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListClusters200ResponseAllOfClustersInnerWorkerStats) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListClusters200ResponseAllOfClustersInnerWorkerStats(val *ListClusters200ResponseAllOfClustersInnerWorkerStats) *NullableListClusters200ResponseAllOfClustersInnerWorkerStats {
-	return &NullableListClusters200ResponseAllOfClustersInnerWorkerStats{value: val, isSet: true}
-}
-
-func (v NullableListClusters200ResponseAllOfClustersInnerWorkerStats) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListClusters200ResponseAllOfClustersInnerWorkerStats) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

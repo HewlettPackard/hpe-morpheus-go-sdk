@@ -21,23 +21,23 @@ var _ MappedNullable = &IntegrationCypher{}
 
 // IntegrationCypher struct for IntegrationCypher
 type IntegrationCypher struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	Type *string `json:"type,omitempty"`
-	IntegrationType *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"integrationType,omitempty"`
-	Url *string `json:"url,omitempty"`
-	Token *string `json:"token,omitempty"`
-	TokenHash *string `json:"tokenHash,omitempty"`
-	IsPlugin *bool `json:"isPlugin,omitempty"`
-	Config map[string]interface{} `json:"config,omitempty"`
-	Status *string `json:"status,omitempty"`
-	StatusDate *time.Time `json:"statusDate,omitempty"`
-	StatusMessage *string `json:"statusMessage,omitempty"`
-	LastSync *string `json:"lastSync,omitempty"`
-	LastSyncDuration *string `json:"lastSyncDuration,omitempty"`
-	Credential *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential `json:"credential,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                            `json:"id,omitempty"`
+	Name                 *string                                                           `json:"name,omitempty"`
+	Enabled              *bool                                                             `json:"enabled,omitempty"`
+	Type                 *string                                                           `json:"type,omitempty"`
+	IntegrationType      *ListBackupSettings200ResponseBackupSettingsDefaultSchedule       `json:"integrationType,omitempty"`
+	Url                  *string                                                           `json:"url,omitempty"`
+	Token                *string                                                           `json:"token,omitempty"`
+	TokenHash            *string                                                           `json:"tokenHash,omitempty"`
+	IsPlugin             *bool                                                             `json:"isPlugin,omitempty"`
+	Config               map[string]interface{}                                            `json:"config,omitempty"`
+	Status               *string                                                           `json:"status,omitempty"`
+	StatusDate           *time.Time                                                        `json:"statusDate,omitempty"`
+	StatusMessage        *string                                                           `json:"statusMessage,omitempty"`
+	LastSync             *string                                                           `json:"lastSync,omitempty"`
+	LastSyncDuration     *string                                                           `json:"lastSyncDuration,omitempty"`
+	Credential           *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential `json:"credential,omitempty"`
+	AdditionalProperties map[string]interface{}                                            `json:",remain"`
 }
 
 type _IntegrationCypher IntegrationCypher
@@ -572,7 +572,7 @@ func (o *IntegrationCypher) SetCredential(v ListIntegrations200ResponseAnyOfInte
 }
 
 func (o IntegrationCypher) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -636,77 +636,8 @@ func (o IntegrationCypher) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *IntegrationCypher) UnmarshalJSON(data []byte) (err error) {
-	varIntegrationCypher := _IntegrationCypher{}
-
-	err = json.Unmarshal(data, &varIntegrationCypher)
-
-	if err != nil {
-		return err
-	}
-
-	*o = IntegrationCypher(varIntegrationCypher)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "integrationType")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "token")
-		delete(additionalProperties, "tokenHash")
-		delete(additionalProperties, "isPlugin")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "statusDate")
-		delete(additionalProperties, "statusMessage")
-		delete(additionalProperties, "lastSync")
-		delete(additionalProperties, "lastSyncDuration")
-		delete(additionalProperties, "credential")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableIntegrationCypher struct {
-	value *IntegrationCypher
-	isSet bool
-}
-
-func (v NullableIntegrationCypher) Get() *IntegrationCypher {
-	return v.value
-}
-
-func (v *NullableIntegrationCypher) Set(val *IntegrationCypher) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableIntegrationCypher) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableIntegrationCypher) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableIntegrationCypher(val *IntegrationCypher) *NullableIntegrationCypher {
-	return &NullableIntegrationCypher{value: val, isSet: true}
-}
-
-func (v NullableIntegrationCypher) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableIntegrationCypher) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

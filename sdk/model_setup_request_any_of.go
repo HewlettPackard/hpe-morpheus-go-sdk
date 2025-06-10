@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the SetupRequestAnyOf type satisfies the MappedNullable interface at compile time
@@ -40,8 +39,8 @@ type SetupRequestAnyOf struct {
 	// Hub Mode. Determines if and how the appliance should connect with the Morpheus Hub. The default value (skip) means do not connect with the hub, and you will be installing your license manually. If you login or register with the hub then a Community Edition license will be installed automatically.
 	Hubmode *string `json:"hubmode,omitempty"`
 	// License Key to install on setup.
-	LicenseKey *string `json:"licenseKey,omitempty"`
-	AdditionalProperties map[string]interface{}
+	LicenseKey           *string                `json:"licenseKey,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _SetupRequestAnyOf SetupRequestAnyOf
@@ -353,7 +352,7 @@ func (o *SetupRequestAnyOf) SetLicenseKey(v string) {
 }
 
 func (o SetupRequestAnyOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -389,96 +388,8 @@ func (o SetupRequestAnyOf) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *SetupRequestAnyOf) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"applianceName",
-		"accountName",
-		"username",
-		"email",
-		"password",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varSetupRequestAnyOf := _SetupRequestAnyOf{}
-
-	err = json.Unmarshal(data, &varSetupRequestAnyOf)
-
-	if err != nil {
-		return err
-	}
-
-	*o = SetupRequestAnyOf(varSetupRequestAnyOf)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "applianceName")
-		delete(additionalProperties, "applianceUrl")
-		delete(additionalProperties, "accountName")
-		delete(additionalProperties, "firstName")
-		delete(additionalProperties, "lastName")
-		delete(additionalProperties, "username")
-		delete(additionalProperties, "email")
-		delete(additionalProperties, "password")
-		delete(additionalProperties, "hubmode")
-		delete(additionalProperties, "licenseKey")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableSetupRequestAnyOf struct {
-	value *SetupRequestAnyOf
-	isSet bool
-}
-
-func (v NullableSetupRequestAnyOf) Get() *SetupRequestAnyOf {
-	return v.value
-}
-
-func (v *NullableSetupRequestAnyOf) Set(val *SetupRequestAnyOf) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSetupRequestAnyOf) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSetupRequestAnyOf) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSetupRequestAnyOf(val *SetupRequestAnyOf) *NullableSetupRequestAnyOf {
-	return &NullableSetupRequestAnyOf{value: val, isSet: true}
-}
-
-func (v NullableSetupRequestAnyOf) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSetupRequestAnyOf) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

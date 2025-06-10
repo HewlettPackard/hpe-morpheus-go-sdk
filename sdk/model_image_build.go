@@ -20,29 +20,29 @@ var _ MappedNullable = &ImageBuild{}
 
 // ImageBuild struct for ImageBuild
 type ImageBuild struct {
-	Id *int64 `json:"id,omitempty"`
-	Account *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
-	Type *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"type,omitempty"`
-	Site *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"site,omitempty"`
-	Zone *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"zone,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	BootScript *ListImageBuilds200ResponseAllOfImageBuildsInnerBootScript `json:"bootScript,omitempty"`
-	BootCommand *string `json:"bootCommand,omitempty"`
-	PreseedScript *ListImageBuilds200ResponseAllOfImageBuildsInnerBootScript `json:"preseedScript,omitempty"`
-	Scripts []ListImageBuilds200ResponseAllOfImageBuildsInnerScriptsInner `json:"scripts,omitempty"`
-	SshUsername *string `json:"sshUsername,omitempty"`
-	SshPassword *string `json:"sshPassword,omitempty"`
-	StorageProvider *string `json:"storageProvider,omitempty"`
-	BuildOutputName *string `json:"buildOutputName,omitempty"`
-	ConversionFormats *string `json:"conversionFormats,omitempty"`
-	IsCloudInit *bool `json:"isCloudInit,omitempty"`
-	VmToolsInstalled *bool `json:"vmToolsInstalled,omitempty"`
-	KeepResults *int64 `json:"keepResults,omitempty"`
-	Config *AddImageBuild200ResponseAllOfImageBuildConfig `json:"config,omitempty"`
-	LastResult *AddImageBuild200ResponseAllOfImageBuildLastResult `json:"lastResult,omitempty"`
-	ExecutionCount *int64 `json:"executionCount,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                  `json:"id,omitempty"`
+	Account              *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
+	Type                 *ListBackupSettings200ResponseBackupSettingsDefaultSchedule             `json:"type,omitempty"`
+	Site                 *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"site,omitempty"`
+	Zone                 *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"zone,omitempty"`
+	Name                 *string                                                                 `json:"name,omitempty"`
+	Description          *string                                                                 `json:"description,omitempty"`
+	BootScript           *ListImageBuilds200ResponseAllOfImageBuildsInnerBootScript              `json:"bootScript,omitempty"`
+	BootCommand          *string                                                                 `json:"bootCommand,omitempty"`
+	PreseedScript        *ListImageBuilds200ResponseAllOfImageBuildsInnerBootScript              `json:"preseedScript,omitempty"`
+	Scripts              []ListImageBuilds200ResponseAllOfImageBuildsInnerScriptsInner           `json:"scripts,omitempty"`
+	SshUsername          *string                                                                 `json:"sshUsername,omitempty"`
+	SshPassword          *string                                                                 `json:"sshPassword,omitempty"`
+	StorageProvider      *string                                                                 `json:"storageProvider,omitempty"`
+	BuildOutputName      *string                                                                 `json:"buildOutputName,omitempty"`
+	ConversionFormats    *string                                                                 `json:"conversionFormats,omitempty"`
+	IsCloudInit          *bool                                                                   `json:"isCloudInit,omitempty"`
+	VmToolsInstalled     *bool                                                                   `json:"vmToolsInstalled,omitempty"`
+	KeepResults          *int64                                                                  `json:"keepResults,omitempty"`
+	Config               *AddImageBuild200ResponseAllOfImageBuildConfig                          `json:"config,omitempty"`
+	LastResult           *AddImageBuild200ResponseAllOfImageBuildLastResult                      `json:"lastResult,omitempty"`
+	ExecutionCount       *int64                                                                  `json:"executionCount,omitempty"`
+	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
 }
 
 type _ImageBuild ImageBuild
@@ -769,7 +769,7 @@ func (o *ImageBuild) SetExecutionCount(v int64) {
 }
 
 func (o ImageBuild) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -851,83 +851,8 @@ func (o ImageBuild) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ImageBuild) UnmarshalJSON(data []byte) (err error) {
-	varImageBuild := _ImageBuild{}
-
-	err = json.Unmarshal(data, &varImageBuild)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ImageBuild(varImageBuild)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "site")
-		delete(additionalProperties, "zone")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "bootScript")
-		delete(additionalProperties, "bootCommand")
-		delete(additionalProperties, "preseedScript")
-		delete(additionalProperties, "scripts")
-		delete(additionalProperties, "sshUsername")
-		delete(additionalProperties, "sshPassword")
-		delete(additionalProperties, "storageProvider")
-		delete(additionalProperties, "buildOutputName")
-		delete(additionalProperties, "conversionFormats")
-		delete(additionalProperties, "isCloudInit")
-		delete(additionalProperties, "vmToolsInstalled")
-		delete(additionalProperties, "keepResults")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "lastResult")
-		delete(additionalProperties, "executionCount")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableImageBuild struct {
-	value *ImageBuild
-	isSet bool
-}
-
-func (v NullableImageBuild) Get() *ImageBuild {
-	return v.value
-}
-
-func (v *NullableImageBuild) Set(val *ImageBuild) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableImageBuild) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableImageBuild) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableImageBuild(val *ImageBuild) *NullableImageBuild {
-	return &NullableImageBuild{value: val, isSet: true}
-}
-
-func (v NullableImageBuild) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableImageBuild) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

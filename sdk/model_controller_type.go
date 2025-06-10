@@ -20,14 +20,14 @@ var _ MappedNullable = &ControllerType{}
 
 // ControllerType struct for ControllerType
 type ControllerType struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	DisplayOrder *int64 `json:"displayOrder,omitempty"`
-	Category *string `json:"category,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	Creatable *bool `json:"creatable,omitempty"`
-	MaxDevices *int64 `json:"maxDevices,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	DisplayOrder         *int64                 `json:"displayOrder,omitempty"`
+	Category             *string                `json:"category,omitempty"`
+	Enabled              *bool                  `json:"enabled,omitempty"`
+	Creatable            *bool                  `json:"creatable,omitempty"`
+	MaxDevices           *int64                 `json:"maxDevices,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ControllerType ControllerType
@@ -274,7 +274,7 @@ func (o *ControllerType) SetMaxDevices(v int64) {
 }
 
 func (o ControllerType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -311,68 +311,8 @@ func (o ControllerType) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ControllerType) UnmarshalJSON(data []byte) (err error) {
-	varControllerType := _ControllerType{}
-
-	err = json.Unmarshal(data, &varControllerType)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ControllerType(varControllerType)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "displayOrder")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "creatable")
-		delete(additionalProperties, "maxDevices")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableControllerType struct {
-	value *ControllerType
-	isSet bool
-}
-
-func (v NullableControllerType) Get() *ControllerType {
-	return v.value
-}
-
-func (v *NullableControllerType) Set(val *ControllerType) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableControllerType) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableControllerType) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableControllerType(val *ControllerType) *NullableControllerType {
-	return &NullableControllerType{value: val, isSet: true}
-}
-
-func (v NullableControllerType) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableControllerType) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

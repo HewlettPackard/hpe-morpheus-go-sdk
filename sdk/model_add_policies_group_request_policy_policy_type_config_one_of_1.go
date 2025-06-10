@@ -18,11 +18,11 @@ import (
 // checks if the AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf1 type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf1{}
 
-// AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf1 - Backup Creation 
+// AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf1 - Backup Creation
 type AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf1 struct {
-	CreateBackupType *string `json:"createBackupType,omitempty"`
-	CreateBackup *bool `json:"createBackup,omitempty"`
-	AdditionalProperties map[string]interface{}
+	CreateBackupType     *string                `json:"createBackupType,omitempty"`
+	CreateBackup         *bool                  `json:"createBackup,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf1 AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf1
@@ -109,7 +109,7 @@ func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf1) SetCreateBackup(v 
 }
 
 func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf1) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf1) ToMap() (map[string
 
 	return toSerialize, nil
 }
-
 func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf1) UnmarshalJSON(data []byte) (err error) {
-	varAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf1 := _AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf1{}
-
-	err = json.Unmarshal(data, &varAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf1)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf1(varAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf1)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "createBackupType")
-		delete(additionalProperties, "createBackup")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf1 struct {
-	value *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf1
-	isSet bool
-}
-
-func (v NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf1) Get() *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf1 {
-	return v.value
-}
-
-func (v *NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf1) Set(val *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf1) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf1) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf1) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf1(val *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf1) *NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf1 {
-	return &NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf1{value: val, isSet: true}
-}
-
-func (v NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf1) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf1) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

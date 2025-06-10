@@ -20,8 +20,8 @@ var _ MappedNullable = &AppStats{}
 
 // AppStats struct for AppStats
 type AppStats struct {
-	Stats *ListApps200ResponseAllOfAppsInnerStats `json:"stats,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Stats                *ListApps200ResponseAllOfAppsInnerStats `json:"stats,omitempty"`
+	AdditionalProperties map[string]interface{}                  `json:",remain"`
 }
 
 type _AppStats AppStats
@@ -76,7 +76,7 @@ func (o *AppStats) SetStats(v ListApps200ResponseAllOfAppsInnerStats) {
 }
 
 func (o AppStats) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o AppStats) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *AppStats) UnmarshalJSON(data []byte) (err error) {
-	varAppStats := _AppStats{}
-
-	err = json.Unmarshal(data, &varAppStats)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AppStats(varAppStats)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "stats")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAppStats struct {
-	value *AppStats
-	isSet bool
-}
-
-func (v NullableAppStats) Get() *AppStats {
-	return v.value
-}
-
-func (v *NullableAppStats) Set(val *AppStats) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAppStats) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAppStats) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAppStats(val *AppStats) *NullableAppStats {
-	return &NullableAppStats{value: val, isSet: true}
-}
-
-func (v NullableAppStats) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAppStats) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

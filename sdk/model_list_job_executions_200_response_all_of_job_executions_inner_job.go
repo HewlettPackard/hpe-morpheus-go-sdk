@@ -20,11 +20,11 @@ var _ MappedNullable = &ListJobExecutions200ResponseAllOfJobExecutionsInnerJob{}
 
 // ListJobExecutions200ResponseAllOfJobExecutionsInnerJob struct for ListJobExecutions200ResponseAllOfJobExecutionsInnerJob
 type ListJobExecutions200ResponseAllOfJobExecutionsInnerJob struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Type *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"type,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                      `json:"id,omitempty"`
+	Name                 *string                                                     `json:"name,omitempty"`
+	Description          *string                                                     `json:"description,omitempty"`
+	Type                 *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"type,omitempty"`
+	AdditionalProperties map[string]interface{}                                      `json:",remain"`
 }
 
 type _ListJobExecutions200ResponseAllOfJobExecutionsInnerJob ListJobExecutions200ResponseAllOfJobExecutionsInnerJob
@@ -175,7 +175,7 @@ func (o *ListJobExecutions200ResponseAllOfJobExecutionsInnerJob) SetType(v ListB
 }
 
 func (o ListJobExecutions200ResponseAllOfJobExecutionsInnerJob) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -203,65 +203,8 @@ func (o ListJobExecutions200ResponseAllOfJobExecutionsInnerJob) ToMap() (map[str
 
 	return toSerialize, nil
 }
-
 func (o *ListJobExecutions200ResponseAllOfJobExecutionsInnerJob) UnmarshalJSON(data []byte) (err error) {
-	varListJobExecutions200ResponseAllOfJobExecutionsInnerJob := _ListJobExecutions200ResponseAllOfJobExecutionsInnerJob{}
-
-	err = json.Unmarshal(data, &varListJobExecutions200ResponseAllOfJobExecutionsInnerJob)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListJobExecutions200ResponseAllOfJobExecutionsInnerJob(varListJobExecutions200ResponseAllOfJobExecutionsInnerJob)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "type")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListJobExecutions200ResponseAllOfJobExecutionsInnerJob struct {
-	value *ListJobExecutions200ResponseAllOfJobExecutionsInnerJob
-	isSet bool
-}
-
-func (v NullableListJobExecutions200ResponseAllOfJobExecutionsInnerJob) Get() *ListJobExecutions200ResponseAllOfJobExecutionsInnerJob {
-	return v.value
-}
-
-func (v *NullableListJobExecutions200ResponseAllOfJobExecutionsInnerJob) Set(val *ListJobExecutions200ResponseAllOfJobExecutionsInnerJob) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListJobExecutions200ResponseAllOfJobExecutionsInnerJob) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListJobExecutions200ResponseAllOfJobExecutionsInnerJob) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListJobExecutions200ResponseAllOfJobExecutionsInnerJob(val *ListJobExecutions200ResponseAllOfJobExecutionsInnerJob) *NullableListJobExecutions200ResponseAllOfJobExecutionsInnerJob {
-	return &NullableListJobExecutions200ResponseAllOfJobExecutionsInnerJob{value: val, isSet: true}
-}
-
-func (v NullableListJobExecutions200ResponseAllOfJobExecutionsInnerJob) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListJobExecutions200ResponseAllOfJobExecutionsInnerJob) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

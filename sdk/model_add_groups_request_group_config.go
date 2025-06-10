@@ -31,8 +31,8 @@ type AddGroupsRequestGroupConfig struct {
 	// Optional Configuration Management Integration ID
 	ConfigManagementId *string `json:"configManagementId,omitempty"`
 	// Enable or disable CMDB Discovery
-	ConfigCmdbDiscovery *bool `json:"configCmdbDiscovery,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ConfigCmdbDiscovery  *bool                  `json:"configCmdbDiscovery,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddGroupsRequestGroupConfig AddGroupsRequestGroupConfig
@@ -247,7 +247,7 @@ func (o *AddGroupsRequestGroupConfig) SetConfigCmdbDiscovery(v bool) {
 }
 
 func (o AddGroupsRequestGroupConfig) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -281,67 +281,8 @@ func (o AddGroupsRequestGroupConfig) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *AddGroupsRequestGroupConfig) UnmarshalJSON(data []byte) (err error) {
-	varAddGroupsRequestGroupConfig := _AddGroupsRequestGroupConfig{}
-
-	err = json.Unmarshal(data, &varAddGroupsRequestGroupConfig)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddGroupsRequestGroupConfig(varAddGroupsRequestGroupConfig)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "dnsIntegrationId")
-		delete(additionalProperties, "configCmdbId")
-		delete(additionalProperties, "configCmId")
-		delete(additionalProperties, "serviceRegistryId")
-		delete(additionalProperties, "configManagementId")
-		delete(additionalProperties, "configCmdbDiscovery")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddGroupsRequestGroupConfig struct {
-	value *AddGroupsRequestGroupConfig
-	isSet bool
-}
-
-func (v NullableAddGroupsRequestGroupConfig) Get() *AddGroupsRequestGroupConfig {
-	return v.value
-}
-
-func (v *NullableAddGroupsRequestGroupConfig) Set(val *AddGroupsRequestGroupConfig) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddGroupsRequestGroupConfig) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddGroupsRequestGroupConfig) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddGroupsRequestGroupConfig(val *AddGroupsRequestGroupConfig) *NullableAddGroupsRequestGroupConfig {
-	return &NullableAddGroupsRequestGroupConfig{value: val, isSet: true}
-}
-
-func (v NullableAddGroupsRequestGroupConfig) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddGroupsRequestGroupConfig) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

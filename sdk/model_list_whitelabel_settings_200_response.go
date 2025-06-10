@@ -20,8 +20,8 @@ var _ MappedNullable = &ListWhitelabelSettings200Response{}
 
 // ListWhitelabelSettings200Response struct for ListWhitelabelSettings200Response
 type ListWhitelabelSettings200Response struct {
-	WhitelabelSettings *ListWhitelabelSettings200ResponseWhitelabelSettings `json:"whitelabelSettings,omitempty"`
-	AdditionalProperties map[string]interface{}
+	WhitelabelSettings   *ListWhitelabelSettings200ResponseWhitelabelSettings `json:"whitelabelSettings,omitempty"`
+	AdditionalProperties map[string]interface{}                               `json:",remain"`
 }
 
 type _ListWhitelabelSettings200Response ListWhitelabelSettings200Response
@@ -76,7 +76,7 @@ func (o *ListWhitelabelSettings200Response) SetWhitelabelSettings(v ListWhitelab
 }
 
 func (o ListWhitelabelSettings200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o ListWhitelabelSettings200Response) ToMap() (map[string]interface{}, erro
 
 	return toSerialize, nil
 }
-
 func (o *ListWhitelabelSettings200Response) UnmarshalJSON(data []byte) (err error) {
-	varListWhitelabelSettings200Response := _ListWhitelabelSettings200Response{}
-
-	err = json.Unmarshal(data, &varListWhitelabelSettings200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListWhitelabelSettings200Response(varListWhitelabelSettings200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "whitelabelSettings")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListWhitelabelSettings200Response struct {
-	value *ListWhitelabelSettings200Response
-	isSet bool
-}
-
-func (v NullableListWhitelabelSettings200Response) Get() *ListWhitelabelSettings200Response {
-	return v.value
-}
-
-func (v *NullableListWhitelabelSettings200Response) Set(val *ListWhitelabelSettings200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListWhitelabelSettings200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListWhitelabelSettings200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListWhitelabelSettings200Response(val *ListWhitelabelSettings200Response) *NullableListWhitelabelSettings200Response {
-	return &NullableListWhitelabelSettings200Response{value: val, isSet: true}
-}
-
-func (v NullableListWhitelabelSettings200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListWhitelabelSettings200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

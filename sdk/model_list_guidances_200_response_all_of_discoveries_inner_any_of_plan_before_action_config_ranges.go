@@ -20,13 +20,13 @@ var _ MappedNullable = &ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBe
 
 // ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfigRanges struct for ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfigRanges
 type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfigRanges struct {
-	MinStorage *string `json:"minStorage,omitempty"`
-	MaxStorage *string `json:"maxStorage,omitempty"`
-	MinMemory *string `json:"minMemory,omitempty"`
-	MaxMemory *string `json:"maxMemory,omitempty"`
-	MinCores *string `json:"minCores,omitempty"`
-	MaxCores *string `json:"maxCores,omitempty"`
-	AdditionalProperties map[string]interface{}
+	MinStorage           *string                `json:"minStorage,omitempty"`
+	MaxStorage           *string                `json:"maxStorage,omitempty"`
+	MinMemory            *string                `json:"minMemory,omitempty"`
+	MaxMemory            *string                `json:"maxMemory,omitempty"`
+	MinCores             *string                `json:"minCores,omitempty"`
+	MaxCores             *string                `json:"maxCores,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfigRanges ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfigRanges
@@ -241,7 +241,7 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfi
 }
 
 func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfigRanges) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -275,67 +275,8 @@ func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfig
 
 	return toSerialize, nil
 }
-
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfigRanges) UnmarshalJSON(data []byte) (err error) {
-	varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfigRanges := _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfigRanges{}
-
-	err = json.Unmarshal(data, &varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfigRanges)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfigRanges(varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfigRanges)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "minStorage")
-		delete(additionalProperties, "maxStorage")
-		delete(additionalProperties, "minMemory")
-		delete(additionalProperties, "maxMemory")
-		delete(additionalProperties, "minCores")
-		delete(additionalProperties, "maxCores")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfigRanges struct {
-	value *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfigRanges
-	isSet bool
-}
-
-func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfigRanges) Get() *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfigRanges {
-	return v.value
-}
-
-func (v *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfigRanges) Set(val *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfigRanges) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfigRanges) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfigRanges) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfigRanges(val *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfigRanges) *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfigRanges {
-	return &NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfigRanges{value: val, isSet: true}
-}
-
-func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfigRanges) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfigRanges) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

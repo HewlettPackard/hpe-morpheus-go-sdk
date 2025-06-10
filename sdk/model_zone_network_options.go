@@ -20,15 +20,15 @@ var _ MappedNullable = &ZoneNetworkOptions{}
 
 // ZoneNetworkOptions struct for ZoneNetworkOptions
 type ZoneNetworkOptions struct {
-	Networks []ZoneNetworkOptionsNetworksInner `json:"networks,omitempty"`
-	NetworkGroups []ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner `json:"networkGroups,omitempty"`
-	NetworkTypes []ZoneNetworkOptionsNetworkTypesInner `json:"networkTypes,omitempty"`
-	NetworkSubnets []ZoneNetworkOptionsNetworkSubnetsInner `json:"networkSubnets,omitempty"`
-	HasNetworks *bool `json:"hasNetworks,omitempty"`
-	MaxNetworks *int64 `json:"maxNetworks,omitempty"`
-	EnableNetworkTypeSelection *string `json:"enableNetworkTypeSelection,omitempty"`
-	SupportsNetworkSelection *bool `json:"supportsNetworkSelection,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Networks                   []ZoneNetworkOptionsNetworksInner                               `json:"networks,omitempty"`
+	NetworkGroups              []ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner `json:"networkGroups,omitempty"`
+	NetworkTypes               []ZoneNetworkOptionsNetworkTypesInner                           `json:"networkTypes,omitempty"`
+	NetworkSubnets             []ZoneNetworkOptionsNetworkSubnetsInner                         `json:"networkSubnets,omitempty"`
+	HasNetworks                *bool                                                           `json:"hasNetworks,omitempty"`
+	MaxNetworks                *int64                                                          `json:"maxNetworks,omitempty"`
+	EnableNetworkTypeSelection *string                                                         `json:"enableNetworkTypeSelection,omitempty"`
+	SupportsNetworkSelection   *bool                                                           `json:"supportsNetworkSelection,omitempty"`
+	AdditionalProperties       map[string]interface{}                                          `json:",remain"`
 }
 
 type _ZoneNetworkOptions ZoneNetworkOptions
@@ -307,7 +307,7 @@ func (o *ZoneNetworkOptions) SetSupportsNetworkSelection(v bool) {
 }
 
 func (o ZoneNetworkOptions) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -347,69 +347,8 @@ func (o ZoneNetworkOptions) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ZoneNetworkOptions) UnmarshalJSON(data []byte) (err error) {
-	varZoneNetworkOptions := _ZoneNetworkOptions{}
-
-	err = json.Unmarshal(data, &varZoneNetworkOptions)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ZoneNetworkOptions(varZoneNetworkOptions)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "networks")
-		delete(additionalProperties, "networkGroups")
-		delete(additionalProperties, "networkTypes")
-		delete(additionalProperties, "networkSubnets")
-		delete(additionalProperties, "hasNetworks")
-		delete(additionalProperties, "maxNetworks")
-		delete(additionalProperties, "enableNetworkTypeSelection")
-		delete(additionalProperties, "supportsNetworkSelection")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableZoneNetworkOptions struct {
-	value *ZoneNetworkOptions
-	isSet bool
-}
-
-func (v NullableZoneNetworkOptions) Get() *ZoneNetworkOptions {
-	return v.value
-}
-
-func (v *NullableZoneNetworkOptions) Set(val *ZoneNetworkOptions) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableZoneNetworkOptions) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableZoneNetworkOptions) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableZoneNetworkOptions(val *ZoneNetworkOptions) *NullableZoneNetworkOptions {
-	return &NullableZoneNetworkOptions{value: val, isSet: true}
-}
-
-func (v NullableZoneNetworkOptions) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableZoneNetworkOptions) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

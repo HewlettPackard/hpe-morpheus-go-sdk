@@ -20,22 +20,22 @@ var _ MappedNullable = &ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions{}
 
 // ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions struct for ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions
 type ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions struct {
-	ChefDataKey *string `json:"chefDataKey,omitempty"`
-	ChefDataKeyHash *string `json:"chefDataKeyHash,omitempty"`
-	ChefRunList *string `json:"chefRunList,omitempty"`
-	LocalScriptGitRef *string `json:"localScriptGitRef,omitempty"`
-	ChefDataKeyPath *string `json:"chefDataKeyPath,omitempty"`
-	LocalScriptGitId *string `json:"localScriptGitId,omitempty"`
-	Port *string `json:"port,omitempty"`
-	ChefEnv *string `json:"chefEnv,omitempty"`
-	ChefNodeName *string `json:"chefNodeName,omitempty"`
-	Host *string `json:"host,omitempty"`
-	SshKey *string `json:"sshKey,omitempty"`
-	Username *string `json:"username,omitempty"`
-	Password *string `json:"password,omitempty"`
-	PasswordHash *string `json:"passwordHash,omitempty"`
-	ChefAttributes *string `json:"chefAttributes,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ChefDataKey          *string                `json:"chefDataKey,omitempty"`
+	ChefDataKeyHash      *string                `json:"chefDataKeyHash,omitempty"`
+	ChefRunList          *string                `json:"chefRunList,omitempty"`
+	LocalScriptGitRef    *string                `json:"localScriptGitRef,omitempty"`
+	ChefDataKeyPath      *string                `json:"chefDataKeyPath,omitempty"`
+	LocalScriptGitId     *string                `json:"localScriptGitId,omitempty"`
+	Port                 *string                `json:"port,omitempty"`
+	ChefEnv              *string                `json:"chefEnv,omitempty"`
+	ChefNodeName         *string                `json:"chefNodeName,omitempty"`
+	Host                 *string                `json:"host,omitempty"`
+	SshKey               *string                `json:"sshKey,omitempty"`
+	Username             *string                `json:"username,omitempty"`
+	Password             *string                `json:"password,omitempty"`
+	PasswordHash         *string                `json:"passwordHash,omitempty"`
+	ChefAttributes       *string                `json:"chefAttributes,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions
@@ -538,7 +538,7 @@ func (o *ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions) SetChefAttributes
 }
 
 func (o ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -599,76 +599,8 @@ func (o ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions) ToMap() (map[strin
 
 	return toSerialize, nil
 }
-
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions) UnmarshalJSON(data []byte) (err error) {
-	varListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions := _ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions{}
-
-	err = json.Unmarshal(data, &varListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions(varListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "chefDataKey")
-		delete(additionalProperties, "chefDataKeyHash")
-		delete(additionalProperties, "chefRunList")
-		delete(additionalProperties, "localScriptGitRef")
-		delete(additionalProperties, "chefDataKeyPath")
-		delete(additionalProperties, "localScriptGitId")
-		delete(additionalProperties, "port")
-		delete(additionalProperties, "chefEnv")
-		delete(additionalProperties, "chefNodeName")
-		delete(additionalProperties, "host")
-		delete(additionalProperties, "sshKey")
-		delete(additionalProperties, "username")
-		delete(additionalProperties, "password")
-		delete(additionalProperties, "passwordHash")
-		delete(additionalProperties, "chefAttributes")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions struct {
-	value *ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions
-	isSet bool
-}
-
-func (v NullableListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions) Get() *ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions {
-	return v.value
-}
-
-func (v *NullableListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions) Set(val *ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions(val *ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions) *NullableListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions {
-	return &NullableListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions{value: val, isSet: true}
-}
-
-func (v NullableListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

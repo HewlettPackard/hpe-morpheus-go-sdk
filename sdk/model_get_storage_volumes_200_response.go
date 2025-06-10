@@ -20,8 +20,8 @@ var _ MappedNullable = &GetStorageVolumes200Response{}
 
 // GetStorageVolumes200Response struct for GetStorageVolumes200Response
 type GetStorageVolumes200Response struct {
-	StorageVolume *ListClusterVolumes200ResponseAllOfVolumesInner `json:"storageVolume,omitempty"`
-	AdditionalProperties map[string]interface{}
+	StorageVolume        *ListClusterVolumes200ResponseAllOfVolumesInner `json:"storageVolume,omitempty"`
+	AdditionalProperties map[string]interface{}                          `json:",remain"`
 }
 
 type _GetStorageVolumes200Response GetStorageVolumes200Response
@@ -76,7 +76,7 @@ func (o *GetStorageVolumes200Response) SetStorageVolume(v ListClusterVolumes200R
 }
 
 func (o GetStorageVolumes200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o GetStorageVolumes200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *GetStorageVolumes200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetStorageVolumes200Response := _GetStorageVolumes200Response{}
-
-	err = json.Unmarshal(data, &varGetStorageVolumes200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetStorageVolumes200Response(varGetStorageVolumes200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "storageVolume")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetStorageVolumes200Response struct {
-	value *GetStorageVolumes200Response
-	isSet bool
-}
-
-func (v NullableGetStorageVolumes200Response) Get() *GetStorageVolumes200Response {
-	return v.value
-}
-
-func (v *NullableGetStorageVolumes200Response) Set(val *GetStorageVolumes200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetStorageVolumes200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetStorageVolumes200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetStorageVolumes200Response(val *GetStorageVolumes200Response) *NullableGetStorageVolumes200Response {
-	return &NullableGetStorageVolumes200Response{value: val, isSet: true}
-}
-
-func (v NullableGetStorageVolumes200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetStorageVolumes200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

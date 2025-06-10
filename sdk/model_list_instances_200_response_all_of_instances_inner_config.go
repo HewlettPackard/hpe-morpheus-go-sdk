@@ -20,36 +20,36 @@ var _ MappedNullable = &ListInstances200ResponseAllOfInstancesInnerConfig{}
 
 // ListInstances200ResponseAllOfInstancesInnerConfig struct for ListInstances200ResponseAllOfInstancesInnerConfig
 type ListInstances200ResponseAllOfInstancesInnerConfig struct {
-	CreateUser *bool `json:"createUser,omitempty"`
-	IsEC2 *bool `json:"isEC2,omitempty"`
-	IsVpcSelectable *bool `json:"isVpcSelectable,omitempty"`
-	NoAgent *ListInstances200ResponseAllOfInstancesInnerConfigNoAgent `json:"noAgent,omitempty"`
-	SecurityGroups []ListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner `json:"securityGroups,omitempty"`
-	SmbiosAssetTag *string `json:"smbiosAssetTag,omitempty"`
-	NestedVirtualization *string `json:"nestedVirtualization,omitempty"`
-	VmwareFolderId *string `json:"vmwareFolderId,omitempty"`
-	CustomOptions map[string]interface{} `json:"customOptions,omitempty"`
-	ResourcePoolId *ListInstances200ResponseAllOfInstancesInnerConfigResourcePoolId `json:"resourcePoolId,omitempty"`
-	PoolProviderType *string `json:"poolProviderType,omitempty"`
-	UserGroup *ListInstances200ResponseAllOfInstancesInnerConfigUserGroup `json:"userGroup,omitempty"`
-	ExpireDays *string `json:"expireDays,omitempty"`
-	ShutdownDays *string `json:"shutdownDays,omitempty"`
-	Name *string `json:"name,omitempty"`
-	HostName *string `json:"hostName,omitempty"`
-	InstanceType *ListInstances200ResponseAllOfInstancesInnerConfigInstanceType `json:"instanceType,omitempty"`
-	Site *GetAlerts200ResponseAllOfChecksInnerAccount `json:"site,omitempty"`
-	EnvironmentPrefix *string `json:"environmentPrefix,omitempty"`
-	Layout *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigPlan `json:"layout,omitempty"`
-	Type *string `json:"type,omitempty"`
-	InstanceContext *string `json:"instanceContext,omitempty"`
-	MemoryDisplay *string `json:"memoryDisplay,omitempty"`
-	Expose []map[string]interface{} `json:"expose,omitempty"`
-	CreateBackup *bool `json:"createBackup,omitempty"`
-	Backup *ListInstances200ResponseAllOfInstancesInnerConfigBackup `json:"backup,omitempty"`
-	ReplicationGroup *ListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup `json:"replicationGroup,omitempty"`
-	LayoutSize *int64 `json:"layoutSize,omitempty"`
-	LbInstances []map[string]interface{} `json:"lbInstances,omitempty"`
-	AdditionalProperties map[string]interface{}
+	CreateUser           *bool                                                                  `json:"createUser,omitempty"`
+	IsEC2                *bool                                                                  `json:"isEC2,omitempty"`
+	IsVpcSelectable      *bool                                                                  `json:"isVpcSelectable,omitempty"`
+	NoAgent              *ListInstances200ResponseAllOfInstancesInnerConfigNoAgent              `json:"noAgent,omitempty"`
+	SecurityGroups       []ListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner `json:"securityGroups,omitempty"`
+	SmbiosAssetTag       *string                                                                `json:"smbiosAssetTag,omitempty"`
+	NestedVirtualization *string                                                                `json:"nestedVirtualization,omitempty"`
+	VmwareFolderId       *string                                                                `json:"vmwareFolderId,omitempty"`
+	CustomOptions        map[string]interface{}                                                 `json:"customOptions,omitempty"`
+	ResourcePoolId       *ListInstances200ResponseAllOfInstancesInnerConfigResourcePoolId       `json:"resourcePoolId,omitempty"`
+	PoolProviderType     *string                                                                `json:"poolProviderType,omitempty"`
+	UserGroup            *ListInstances200ResponseAllOfInstancesInnerConfigUserGroup            `json:"userGroup,omitempty"`
+	ExpireDays           *string                                                                `json:"expireDays,omitempty"`
+	ShutdownDays         *string                                                                `json:"shutdownDays,omitempty"`
+	Name                 *string                                                                `json:"name,omitempty"`
+	HostName             *string                                                                `json:"hostName,omitempty"`
+	InstanceType         *ListInstances200ResponseAllOfInstancesInnerConfigInstanceType         `json:"instanceType,omitempty"`
+	Site                 *GetAlerts200ResponseAllOfChecksInnerAccount                           `json:"site,omitempty"`
+	EnvironmentPrefix    *string                                                                `json:"environmentPrefix,omitempty"`
+	Layout               *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigPlan             `json:"layout,omitempty"`
+	Type                 *string                                                                `json:"type,omitempty"`
+	InstanceContext      *string                                                                `json:"instanceContext,omitempty"`
+	MemoryDisplay        *string                                                                `json:"memoryDisplay,omitempty"`
+	Expose               []map[string]interface{}                                               `json:"expose,omitempty"`
+	CreateBackup         *bool                                                                  `json:"createBackup,omitempty"`
+	Backup               *ListInstances200ResponseAllOfInstancesInnerConfigBackup               `json:"backup,omitempty"`
+	ReplicationGroup     *ListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup     `json:"replicationGroup,omitempty"`
+	LayoutSize           *int64                                                                 `json:"layoutSize,omitempty"`
+	LbInstances          []map[string]interface{}                                               `json:"lbInstances,omitempty"`
+	AdditionalProperties map[string]interface{}                                                 `json:",remain"`
 }
 
 type _ListInstances200ResponseAllOfInstancesInnerConfig ListInstances200ResponseAllOfInstancesInnerConfig
@@ -1000,7 +1000,7 @@ func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetLbInstances(v []m
 }
 
 func (o ListInstances200ResponseAllOfInstancesInnerConfig) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1103,90 +1103,8 @@ func (o ListInstances200ResponseAllOfInstancesInnerConfig) ToMap() (map[string]i
 
 	return toSerialize, nil
 }
-
 func (o *ListInstances200ResponseAllOfInstancesInnerConfig) UnmarshalJSON(data []byte) (err error) {
-	varListInstances200ResponseAllOfInstancesInnerConfig := _ListInstances200ResponseAllOfInstancesInnerConfig{}
-
-	err = json.Unmarshal(data, &varListInstances200ResponseAllOfInstancesInnerConfig)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListInstances200ResponseAllOfInstancesInnerConfig(varListInstances200ResponseAllOfInstancesInnerConfig)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "createUser")
-		delete(additionalProperties, "isEC2")
-		delete(additionalProperties, "isVpcSelectable")
-		delete(additionalProperties, "noAgent")
-		delete(additionalProperties, "securityGroups")
-		delete(additionalProperties, "smbiosAssetTag")
-		delete(additionalProperties, "nestedVirtualization")
-		delete(additionalProperties, "vmwareFolderId")
-		delete(additionalProperties, "customOptions")
-		delete(additionalProperties, "resourcePoolId")
-		delete(additionalProperties, "poolProviderType")
-		delete(additionalProperties, "userGroup")
-		delete(additionalProperties, "expireDays")
-		delete(additionalProperties, "shutdownDays")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "hostName")
-		delete(additionalProperties, "instanceType")
-		delete(additionalProperties, "site")
-		delete(additionalProperties, "environmentPrefix")
-		delete(additionalProperties, "layout")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "instanceContext")
-		delete(additionalProperties, "memoryDisplay")
-		delete(additionalProperties, "expose")
-		delete(additionalProperties, "createBackup")
-		delete(additionalProperties, "backup")
-		delete(additionalProperties, "replicationGroup")
-		delete(additionalProperties, "layoutSize")
-		delete(additionalProperties, "lbInstances")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListInstances200ResponseAllOfInstancesInnerConfig struct {
-	value *ListInstances200ResponseAllOfInstancesInnerConfig
-	isSet bool
-}
-
-func (v NullableListInstances200ResponseAllOfInstancesInnerConfig) Get() *ListInstances200ResponseAllOfInstancesInnerConfig {
-	return v.value
-}
-
-func (v *NullableListInstances200ResponseAllOfInstancesInnerConfig) Set(val *ListInstances200ResponseAllOfInstancesInnerConfig) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListInstances200ResponseAllOfInstancesInnerConfig) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListInstances200ResponseAllOfInstancesInnerConfig) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListInstances200ResponseAllOfInstancesInnerConfig(val *ListInstances200ResponseAllOfInstancesInnerConfig) *NullableListInstances200ResponseAllOfInstancesInnerConfig {
-	return &NullableListInstances200ResponseAllOfInstancesInnerConfig{value: val, isSet: true}
-}
-
-func (v NullableListInstances200ResponseAllOfInstancesInnerConfig) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListInstances200ResponseAllOfInstancesInnerConfig) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

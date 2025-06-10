@@ -20,9 +20,9 @@ var _ MappedNullable = &ForgotPassword200Response{}
 
 // ForgotPassword200Response struct for ForgotPassword200Response
 type ForgotPassword200Response struct {
-	Success *bool `json:"success,omitempty"`
-	Msg *string `json:"msg,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Success              *bool                  `json:"success,omitempty"`
+	Msg                  *string                `json:"msg,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ForgotPassword200Response ForgotPassword200Response
@@ -109,7 +109,7 @@ func (o *ForgotPassword200Response) SetMsg(v string) {
 }
 
 func (o ForgotPassword200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o ForgotPassword200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ForgotPassword200Response) UnmarshalJSON(data []byte) (err error) {
-	varForgotPassword200Response := _ForgotPassword200Response{}
-
-	err = json.Unmarshal(data, &varForgotPassword200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ForgotPassword200Response(varForgotPassword200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "success")
-		delete(additionalProperties, "msg")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableForgotPassword200Response struct {
-	value *ForgotPassword200Response
-	isSet bool
-}
-
-func (v NullableForgotPassword200Response) Get() *ForgotPassword200Response {
-	return v.value
-}
-
-func (v *NullableForgotPassword200Response) Set(val *ForgotPassword200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableForgotPassword200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableForgotPassword200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableForgotPassword200Response(val *ForgotPassword200Response) *NullableForgotPassword200Response {
-	return &NullableForgotPassword200Response{value: val, isSet: true}
-}
-
-func (v NullableForgotPassword200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableForgotPassword200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

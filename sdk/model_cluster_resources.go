@@ -21,20 +21,20 @@ var _ MappedNullable = &ClusterResources{}
 
 // ClusterResources struct for ClusterResources
 type ClusterResources struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Category *string `json:"category,omitempty"`
-	ResourceLevel *string `json:"resourceLevel,omitempty"`
-	ResourceType *string `json:"resourceType,omitempty"`
-	Managed *bool `json:"managed,omitempty"`
-	Status *string `json:"status,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	Owner *GetAlerts200ResponseAllOfChecksInnerContainer `json:"owner,omitempty"`
-	TotalCpuUsage *int64 `json:"totalCpuUsage,omitempty"`
-	Stats map[string]interface{} `json:"stats,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                         `json:"id,omitempty"`
+	Name                 *string                                        `json:"name,omitempty"`
+	Code                 *string                                        `json:"code,omitempty"`
+	Description          *string                                        `json:"description,omitempty"`
+	Category             *string                                        `json:"category,omitempty"`
+	ResourceLevel        *string                                        `json:"resourceLevel,omitempty"`
+	ResourceType         *string                                        `json:"resourceType,omitempty"`
+	Managed              *bool                                          `json:"managed,omitempty"`
+	Status               *string                                        `json:"status,omitempty"`
+	LastUpdated          *time.Time                                     `json:"lastUpdated,omitempty"`
+	Owner                *GetAlerts200ResponseAllOfChecksInnerContainer `json:"owner,omitempty"`
+	TotalCpuUsage        *int64                                         `json:"totalCpuUsage,omitempty"`
+	Stats                map[string]interface{}                         `json:"stats,omitempty"`
+	AdditionalProperties map[string]interface{}                         `json:",remain"`
 }
 
 type _ClusterResources ClusterResources
@@ -473,7 +473,7 @@ func (o *ClusterResources) SetStats(v map[string]interface{}) {
 }
 
 func (o ClusterResources) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -528,74 +528,8 @@ func (o ClusterResources) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ClusterResources) UnmarshalJSON(data []byte) (err error) {
-	varClusterResources := _ClusterResources{}
-
-	err = json.Unmarshal(data, &varClusterResources)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ClusterResources(varClusterResources)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "resourceLevel")
-		delete(additionalProperties, "resourceType")
-		delete(additionalProperties, "managed")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "owner")
-		delete(additionalProperties, "totalCpuUsage")
-		delete(additionalProperties, "stats")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableClusterResources struct {
-	value *ClusterResources
-	isSet bool
-}
-
-func (v NullableClusterResources) Get() *ClusterResources {
-	return v.value
-}
-
-func (v *NullableClusterResources) Set(val *ClusterResources) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableClusterResources) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableClusterResources) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableClusterResources(val *ClusterResources) *NullableClusterResources {
-	return &NullableClusterResources{value: val, isSet: true}
-}
-
-func (v NullableClusterResources) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableClusterResources) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

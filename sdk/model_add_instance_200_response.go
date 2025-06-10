@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddInstance200Response type satisfies the MappedNullable interface at compile time
@@ -21,10 +20,10 @@ var _ MappedNullable = &AddInstance200Response{}
 
 // AddInstance200Response struct for AddInstance200Response
 type AddInstance200Response struct {
-	Instance AddInstance200ResponseAllOfOneOfInstance `json:"instance"`
-	Success *bool `json:"success,omitempty"`
-	Errors map[string]interface{} `json:"errors,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Instance             AddInstance200ResponseAllOfOneOfInstance `json:"instance"`
+	Success              *bool                                    `json:"success,omitempty"`
+	Errors               map[string]interface{}                   `json:"errors,omitempty"`
+	AdditionalProperties map[string]interface{}                   `json:",remain"`
 }
 
 type _AddInstance200Response AddInstance200Response
@@ -136,7 +135,7 @@ func (o *AddInstance200Response) SetErrors(v map[string]interface{}) {
 }
 
 func (o AddInstance200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -159,85 +158,8 @@ func (o AddInstance200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *AddInstance200Response) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"instance",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddInstance200Response := _AddInstance200Response{}
-
-	err = json.Unmarshal(data, &varAddInstance200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddInstance200Response(varAddInstance200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "instance")
-		delete(additionalProperties, "success")
-		delete(additionalProperties, "errors")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddInstance200Response struct {
-	value *AddInstance200Response
-	isSet bool
-}
-
-func (v NullableAddInstance200Response) Get() *AddInstance200Response {
-	return v.value
-}
-
-func (v *NullableAddInstance200Response) Set(val *AddInstance200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddInstance200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddInstance200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddInstance200Response(val *AddInstance200Response) *NullableAddInstance200Response {
-	return &NullableAddInstance200Response{value: val, isSet: true}
-}
-
-func (v NullableAddInstance200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddInstance200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

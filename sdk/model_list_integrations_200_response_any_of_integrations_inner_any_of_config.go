@@ -20,18 +20,18 @@ var _ MappedNullable = &ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCo
 
 // ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig struct for ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig
 type ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig struct {
-	Inventory *string `json:"inventory,omitempty"`
-	DefaultBranch *string `json:"defaultBranch,omitempty"`
-	CacheEnabled *string `json:"cacheEnabled,omitempty"`
-	AnsiblePlaybooks *string `json:"ansiblePlaybooks,omitempty"`
-	AnsibleRoles *string `json:"ansibleRoles,omitempty"`
-	AnsibleGroupVars *string `json:"ansibleGroupVars,omitempty"`
-	AnsibleHostVars *string `json:"ansibleHostVars,omitempty"`
-	AnsibleCommandBus *bool `json:"ansibleCommandBus,omitempty"`
-	AnsibleVerbose *bool `json:"ansibleVerbose,omitempty"`
-	AnsibleGalaxyEnabled *bool `json:"ansibleGalaxyEnabled,omitempty"`
-	AnsibleDefaultBranch *string `json:"ansibleDefaultBranch,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Inventory            *string                `json:"inventory,omitempty"`
+	DefaultBranch        *string                `json:"defaultBranch,omitempty"`
+	CacheEnabled         *string                `json:"cacheEnabled,omitempty"`
+	AnsiblePlaybooks     *string                `json:"ansiblePlaybooks,omitempty"`
+	AnsibleRoles         *string                `json:"ansibleRoles,omitempty"`
+	AnsibleGroupVars     *string                `json:"ansibleGroupVars,omitempty"`
+	AnsibleHostVars      *string                `json:"ansibleHostVars,omitempty"`
+	AnsibleCommandBus    *bool                  `json:"ansibleCommandBus,omitempty"`
+	AnsibleVerbose       *bool                  `json:"ansibleVerbose,omitempty"`
+	AnsibleGalaxyEnabled *bool                  `json:"ansibleGalaxyEnabled,omitempty"`
+	AnsibleDefaultBranch *string                `json:"ansibleDefaultBranch,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig
@@ -406,7 +406,7 @@ func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) SetAnsibl
 }
 
 func (o ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -455,72 +455,8 @@ func (o ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) ToMap() (m
 
 	return toSerialize, nil
 }
-
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) UnmarshalJSON(data []byte) (err error) {
-	varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig := _ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig{}
-
-	err = json.Unmarshal(data, &varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig(varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "inventory")
-		delete(additionalProperties, "defaultBranch")
-		delete(additionalProperties, "cacheEnabled")
-		delete(additionalProperties, "ansiblePlaybooks")
-		delete(additionalProperties, "ansibleRoles")
-		delete(additionalProperties, "ansibleGroupVars")
-		delete(additionalProperties, "ansibleHostVars")
-		delete(additionalProperties, "ansibleCommandBus")
-		delete(additionalProperties, "ansibleVerbose")
-		delete(additionalProperties, "ansibleGalaxyEnabled")
-		delete(additionalProperties, "ansibleDefaultBranch")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig struct {
-	value *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig
-	isSet bool
-}
-
-func (v NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) Get() *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig {
-	return v.value
-}
-
-func (v *NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) Set(val *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig(val *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) *NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig {
-	return &NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig{value: val, isSet: true}
-}
-
-func (v NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfConfig) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

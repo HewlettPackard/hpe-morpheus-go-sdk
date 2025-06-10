@@ -23,16 +23,16 @@ type UpdateHostManagedRequestServer struct {
 	// SSH username to use when provisioning
 	SshUsername *string `json:"sshUsername,omitempty"`
 	// SSH password to use, if not specified the account public key can be used
-	SshPassword *string `json:"sshPassword,omitempty"`
-	ServerOs *UpdateHostInstallAgentRequestServerServerOs `json:"serverOs,omitempty"`
-	Plan *UpdateHostManagedRequestServerPlan `json:"plan,omitempty"`
-	Account *UpdateHostManagedRequestServerAccount `json:"account,omitempty"`
+	SshPassword *string                                      `json:"sshPassword,omitempty"`
+	ServerOs    *UpdateHostInstallAgentRequestServerServerOs `json:"serverOs,omitempty"`
+	Plan        *UpdateHostManagedRequestServerPlan          `json:"plan,omitempty"`
+	Account     *UpdateHostManagedRequestServerAccount       `json:"account,omitempty"`
 	// Specific group to assign the server
 	ProvisionSiteId *int64 `json:"provisionSiteId,omitempty"`
 	// Metadata tags, Array of objects having a name and value, this adds or updates the specified tags and removes any tags not specified.
-	Tags []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner `json:"tags,omitempty"`
-	Config *UpdateHostManagedRequestServerConfig `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Tags                 []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner `json:"tags,omitempty"`
+	Config               *UpdateHostManagedRequestServerConfig                           `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}                                          `json:",remain"`
 }
 
 type _UpdateHostManagedRequestServer UpdateHostManagedRequestServer
@@ -311,7 +311,7 @@ func (o *UpdateHostManagedRequestServer) SetConfig(v UpdateHostManagedRequestSer
 }
 
 func (o UpdateHostManagedRequestServer) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -351,69 +351,8 @@ func (o UpdateHostManagedRequestServer) ToMap() (map[string]interface{}, error) 
 
 	return toSerialize, nil
 }
-
 func (o *UpdateHostManagedRequestServer) UnmarshalJSON(data []byte) (err error) {
-	varUpdateHostManagedRequestServer := _UpdateHostManagedRequestServer{}
-
-	err = json.Unmarshal(data, &varUpdateHostManagedRequestServer)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateHostManagedRequestServer(varUpdateHostManagedRequestServer)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "sshUsername")
-		delete(additionalProperties, "sshPassword")
-		delete(additionalProperties, "serverOs")
-		delete(additionalProperties, "plan")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "provisionSiteId")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "config")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateHostManagedRequestServer struct {
-	value *UpdateHostManagedRequestServer
-	isSet bool
-}
-
-func (v NullableUpdateHostManagedRequestServer) Get() *UpdateHostManagedRequestServer {
-	return v.value
-}
-
-func (v *NullableUpdateHostManagedRequestServer) Set(val *UpdateHostManagedRequestServer) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateHostManagedRequestServer) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateHostManagedRequestServer) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateHostManagedRequestServer(val *UpdateHostManagedRequestServer) *NullableUpdateHostManagedRequestServer {
-	return &NullableUpdateHostManagedRequestServer{value: val, isSet: true}
-}
-
-func (v NullableUpdateHostManagedRequestServer) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateHostManagedRequestServer) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

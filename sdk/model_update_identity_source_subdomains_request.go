@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the UpdateIdentitySourceSubdomainsRequest type satisfies the MappedNullable interface at compile time
@@ -22,8 +21,8 @@ var _ MappedNullable = &UpdateIdentitySourceSubdomainsRequest{}
 // UpdateIdentitySourceSubdomainsRequest struct for UpdateIdentitySourceSubdomainsRequest
 type UpdateIdentitySourceSubdomainsRequest struct {
 	// New Subdomain for account
-	Subdomain string `json:"subdomain"`
-	AdditionalProperties map[string]interface{}
+	Subdomain            string                 `json:"subdomain"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UpdateIdentitySourceSubdomainsRequest UpdateIdentitySourceSubdomainsRequest
@@ -71,7 +70,7 @@ func (o *UpdateIdentitySourceSubdomainsRequest) SetSubdomain(v string) {
 }
 
 func (o UpdateIdentitySourceSubdomainsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -88,83 +87,8 @@ func (o UpdateIdentitySourceSubdomainsRequest) ToMap() (map[string]interface{}, 
 
 	return toSerialize, nil
 }
-
 func (o *UpdateIdentitySourceSubdomainsRequest) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"subdomain",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varUpdateIdentitySourceSubdomainsRequest := _UpdateIdentitySourceSubdomainsRequest{}
-
-	err = json.Unmarshal(data, &varUpdateIdentitySourceSubdomainsRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateIdentitySourceSubdomainsRequest(varUpdateIdentitySourceSubdomainsRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "subdomain")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateIdentitySourceSubdomainsRequest struct {
-	value *UpdateIdentitySourceSubdomainsRequest
-	isSet bool
-}
-
-func (v NullableUpdateIdentitySourceSubdomainsRequest) Get() *UpdateIdentitySourceSubdomainsRequest {
-	return v.value
-}
-
-func (v *NullableUpdateIdentitySourceSubdomainsRequest) Set(val *UpdateIdentitySourceSubdomainsRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateIdentitySourceSubdomainsRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateIdentitySourceSubdomainsRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateIdentitySourceSubdomainsRequest(val *UpdateIdentitySourceSubdomainsRequest) *NullableUpdateIdentitySourceSubdomainsRequest {
-	return &NullableUpdateIdentitySourceSubdomainsRequest{value: val, isSet: true}
-}
-
-func (v NullableUpdateIdentitySourceSubdomainsRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateIdentitySourceSubdomainsRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

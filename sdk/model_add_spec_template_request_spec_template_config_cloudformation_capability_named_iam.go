@@ -14,6 +14,7 @@ package sdk
 import (
 	"encoding/json"
 	"fmt"
+
 	"gopkg.in/validator.v2"
 )
 
@@ -22,7 +23,7 @@ var _ fmt.Stringer
 
 // AddSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYNAMEDIAM - struct for AddSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYNAMEDIAM
 type AddSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYNAMEDIAM struct {
-	Bool *bool
+	Bool   *bool
 	String *string
 }
 
@@ -40,6 +41,21 @@ func StringAsAddSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYNAM
 	}
 }
 
+func (dst *AddSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYNAMEDIAM) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYNAMEDIAM{}
+	}
+
+	if out, ok := data.(bool); ok {
+		dst.Bool = &out
+	}
+
+	if out, ok := data.(string); ok {
+		dst.String = &out
+	}
+
+	return dst, nil
+}
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYNAMEDIAM) UnmarshalJSON(data []byte) error {
@@ -106,7 +122,7 @@ func (src AddSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYNAMEDI
 }
 
 // Get the actual instance
-func (obj *AddSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYNAMEDIAM) GetActualInstance() (interface{}) {
+func (obj *AddSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYNAMEDIAM) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -123,7 +139,7 @@ func (obj *AddSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYNAMED
 }
 
 // Get the actual instance value
-func (obj AddSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYNAMEDIAM) GetActualInstanceValue() (interface{}) {
+func (obj AddSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYNAMEDIAM) GetActualInstanceValue() interface{} {
 	if obj.Bool != nil {
 		return *obj.Bool
 	}
@@ -171,5 +187,3 @@ func (v *NullableAddSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILIT
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

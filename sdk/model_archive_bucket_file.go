@@ -21,19 +21,19 @@ var _ MappedNullable = &ArchiveBucketFile{}
 
 // ArchiveBucketFile struct for ArchiveBucketFile
 type ArchiveBucketFile struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	FilePath *string `json:"filePath,omitempty"`
-	ArchiveBucket *GetArchiveBucket200ResponseArchiveFilesInnerArchiveBucket `json:"archiveBucket,omitempty"`
-	CreatedBy *GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy `json:"createdBy,omitempty"`
-	IsDirectory *bool `json:"isDirectory,omitempty"`
-	Status *string `json:"status,omitempty"`
-	RawSize *int64 `json:"rawSize,omitempty"`
-	ContentType *string `json:"contentType,omitempty"`
-	DownloadCount *int64 `json:"downloadCount,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                     `json:"id,omitempty"`
+	Name                 *string                                                    `json:"name,omitempty"`
+	FilePath             *string                                                    `json:"filePath,omitempty"`
+	ArchiveBucket        *GetArchiveBucket200ResponseArchiveFilesInnerArchiveBucket `json:"archiveBucket,omitempty"`
+	CreatedBy            *GetArchiveBucket200ResponseArchiveFilesInnerCreatedBy     `json:"createdBy,omitempty"`
+	IsDirectory          *bool                                                      `json:"isDirectory,omitempty"`
+	Status               *string                                                    `json:"status,omitempty"`
+	RawSize              *int64                                                     `json:"rawSize,omitempty"`
+	ContentType          *string                                                    `json:"contentType,omitempty"`
+	DownloadCount        *int64                                                     `json:"downloadCount,omitempty"`
+	DateCreated          *time.Time                                                 `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                 `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}                                     `json:",remain"`
 }
 
 type _ArchiveBucketFile ArchiveBucketFile
@@ -440,7 +440,7 @@ func (o *ArchiveBucketFile) SetLastUpdated(v time.Time) {
 }
 
 func (o ArchiveBucketFile) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -492,73 +492,8 @@ func (o ArchiveBucketFile) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ArchiveBucketFile) UnmarshalJSON(data []byte) (err error) {
-	varArchiveBucketFile := _ArchiveBucketFile{}
-
-	err = json.Unmarshal(data, &varArchiveBucketFile)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ArchiveBucketFile(varArchiveBucketFile)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "filePath")
-		delete(additionalProperties, "archiveBucket")
-		delete(additionalProperties, "createdBy")
-		delete(additionalProperties, "isDirectory")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "rawSize")
-		delete(additionalProperties, "contentType")
-		delete(additionalProperties, "downloadCount")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableArchiveBucketFile struct {
-	value *ArchiveBucketFile
-	isSet bool
-}
-
-func (v NullableArchiveBucketFile) Get() *ArchiveBucketFile {
-	return v.value
-}
-
-func (v *NullableArchiveBucketFile) Set(val *ArchiveBucketFile) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableArchiveBucketFile) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableArchiveBucketFile) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableArchiveBucketFile(val *ArchiveBucketFile) *NullableArchiveBucketFile {
-	return &NullableArchiveBucketFile{value: val, isSet: true}
-}
-
-func (v NullableArchiveBucketFile) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableArchiveBucketFile) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

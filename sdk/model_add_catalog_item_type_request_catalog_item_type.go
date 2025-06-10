@@ -14,6 +14,7 @@ package sdk
 import (
 	"encoding/json"
 	"fmt"
+
 	"gopkg.in/validator.v2"
 )
 
@@ -22,7 +23,7 @@ var _ fmt.Stringer
 
 // AddCatalogItemTypeRequestCatalogItemType - struct for AddCatalogItemTypeRequestCatalogItemType
 type AddCatalogItemTypeRequestCatalogItemType struct {
-	AddCatalogItemTypeRequestCatalogItemTypeOneOf *AddCatalogItemTypeRequestCatalogItemTypeOneOf
+	AddCatalogItemTypeRequestCatalogItemTypeOneOf  *AddCatalogItemTypeRequestCatalogItemTypeOneOf
 	AddCatalogItemTypeRequestCatalogItemTypeOneOf1 *AddCatalogItemTypeRequestCatalogItemTypeOneOf1
 	AddCatalogItemTypeRequestCatalogItemTypeOneOf2 *AddCatalogItemTypeRequestCatalogItemTypeOneOf2
 }
@@ -48,6 +49,25 @@ func AddCatalogItemTypeRequestCatalogItemTypeOneOf2AsAddCatalogItemTypeRequestCa
 	}
 }
 
+func (dst *AddCatalogItemTypeRequestCatalogItemType) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddCatalogItemTypeRequestCatalogItemType{}
+	}
+
+	if out, ok := data.(AddCatalogItemTypeRequestCatalogItemTypeOneOf); ok {
+		dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf = &out
+	}
+
+	if out, ok := data.(AddCatalogItemTypeRequestCatalogItemTypeOneOf1); ok {
+		dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf1 = &out
+	}
+
+	if out, ok := data.(AddCatalogItemTypeRequestCatalogItemTypeOneOf2); ok {
+		dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf2 = &out
+	}
+
+	return dst, nil
+}
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddCatalogItemTypeRequestCatalogItemType) UnmarshalJSON(data []byte) error {
@@ -136,7 +156,7 @@ func (src AddCatalogItemTypeRequestCatalogItemType) MarshalJSON() ([]byte, error
 }
 
 // Get the actual instance
-func (obj *AddCatalogItemTypeRequestCatalogItemType) GetActualInstance() (interface{}) {
+func (obj *AddCatalogItemTypeRequestCatalogItemType) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -157,7 +177,7 @@ func (obj *AddCatalogItemTypeRequestCatalogItemType) GetActualInstance() (interf
 }
 
 // Get the actual instance value
-func (obj AddCatalogItemTypeRequestCatalogItemType) GetActualInstanceValue() (interface{}) {
+func (obj AddCatalogItemTypeRequestCatalogItemType) GetActualInstanceValue() interface{} {
 	if obj.AddCatalogItemTypeRequestCatalogItemTypeOneOf != nil {
 		return *obj.AddCatalogItemTypeRequestCatalogItemTypeOneOf
 	}
@@ -209,5 +229,3 @@ func (v *NullableAddCatalogItemTypeRequestCatalogItemType) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

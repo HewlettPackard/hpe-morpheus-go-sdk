@@ -21,8 +21,8 @@ var _ MappedNullable = &UpdateHostAssignTenantRequest{}
 // UpdateHostAssignTenantRequest struct for UpdateHostAssignTenantRequest
 type UpdateHostAssignTenantRequest struct {
 	// Move associated instances to specified Tenant account.
-	MoveAssociatedInstances *bool `json:"moveAssociatedInstances,omitempty"`
-	AdditionalProperties map[string]interface{}
+	MoveAssociatedInstances *bool                  `json:"moveAssociatedInstances,omitempty"`
+	AdditionalProperties    map[string]interface{} `json:",remain"`
 }
 
 type _UpdateHostAssignTenantRequest UpdateHostAssignTenantRequest
@@ -81,7 +81,7 @@ func (o *UpdateHostAssignTenantRequest) SetMoveAssociatedInstances(v bool) {
 }
 
 func (o UpdateHostAssignTenantRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -100,62 +100,8 @@ func (o UpdateHostAssignTenantRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *UpdateHostAssignTenantRequest) UnmarshalJSON(data []byte) (err error) {
-	varUpdateHostAssignTenantRequest := _UpdateHostAssignTenantRequest{}
-
-	err = json.Unmarshal(data, &varUpdateHostAssignTenantRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateHostAssignTenantRequest(varUpdateHostAssignTenantRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "moveAssociatedInstances")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateHostAssignTenantRequest struct {
-	value *UpdateHostAssignTenantRequest
-	isSet bool
-}
-
-func (v NullableUpdateHostAssignTenantRequest) Get() *UpdateHostAssignTenantRequest {
-	return v.value
-}
-
-func (v *NullableUpdateHostAssignTenantRequest) Set(val *UpdateHostAssignTenantRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateHostAssignTenantRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateHostAssignTenantRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateHostAssignTenantRequest(val *UpdateHostAssignTenantRequest) *NullableUpdateHostAssignTenantRequest {
-	return &NullableUpdateHostAssignTenantRequest{value: val, isSet: true}
-}
-
-func (v NullableUpdateHostAssignTenantRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateHostAssignTenantRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

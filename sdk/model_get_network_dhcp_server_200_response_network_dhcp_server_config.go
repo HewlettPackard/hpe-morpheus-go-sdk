@@ -20,10 +20,10 @@ var _ MappedNullable = &GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig{}
 
 // GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig struct for GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig
 type GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig struct {
-	EdgeCluster *string `json:"edgeCluster,omitempty"`
-	PreferredEdgeNode1 *string `json:"preferredEdgeNode1,omitempty"`
-	PreferredEdgeNode2 *string `json:"preferredEdgeNode2,omitempty"`
-	AdditionalProperties map[string]interface{}
+	EdgeCluster          *string                `json:"edgeCluster,omitempty"`
+	PreferredEdgeNode1   *string                `json:"preferredEdgeNode1,omitempty"`
+	PreferredEdgeNode2   *string                `json:"preferredEdgeNode2,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig
@@ -142,7 +142,7 @@ func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig) SetPreferredEdg
 }
 
 func (o GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -167,64 +167,8 @@ func (o GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig) ToMap() (map[str
 
 	return toSerialize, nil
 }
-
 func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig) UnmarshalJSON(data []byte) (err error) {
-	varGetNetworkDhcpServer200ResponseNetworkDhcpServerConfig := _GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig{}
-
-	err = json.Unmarshal(data, &varGetNetworkDhcpServer200ResponseNetworkDhcpServerConfig)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig(varGetNetworkDhcpServer200ResponseNetworkDhcpServerConfig)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "edgeCluster")
-		delete(additionalProperties, "preferredEdgeNode1")
-		delete(additionalProperties, "preferredEdgeNode2")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetNetworkDhcpServer200ResponseNetworkDhcpServerConfig struct {
-	value *GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig
-	isSet bool
-}
-
-func (v NullableGetNetworkDhcpServer200ResponseNetworkDhcpServerConfig) Get() *GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig {
-	return v.value
-}
-
-func (v *NullableGetNetworkDhcpServer200ResponseNetworkDhcpServerConfig) Set(val *GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetNetworkDhcpServer200ResponseNetworkDhcpServerConfig) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetNetworkDhcpServer200ResponseNetworkDhcpServerConfig) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetNetworkDhcpServer200ResponseNetworkDhcpServerConfig(val *GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig) *NullableGetNetworkDhcpServer200ResponseNetworkDhcpServerConfig {
-	return &NullableGetNetworkDhcpServer200ResponseNetworkDhcpServerConfig{value: val, isSet: true}
-}
-
-func (v NullableGetNetworkDhcpServer200ResponseNetworkDhcpServerConfig) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetNetworkDhcpServer200ResponseNetworkDhcpServerConfig) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

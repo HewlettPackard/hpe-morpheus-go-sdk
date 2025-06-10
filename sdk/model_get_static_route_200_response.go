@@ -20,8 +20,8 @@ var _ MappedNullable = &GetStaticRoute200Response{}
 
 // GetStaticRoute200Response struct for GetStaticRoute200Response
 type GetStaticRoute200Response struct {
-	NetworkRoute *GetStaticRoutes200ResponseNetworkRoutesInner `json:"networkRoute,omitempty"`
-	AdditionalProperties map[string]interface{}
+	NetworkRoute         *GetStaticRoutes200ResponseNetworkRoutesInner `json:"networkRoute,omitempty"`
+	AdditionalProperties map[string]interface{}                        `json:",remain"`
 }
 
 type _GetStaticRoute200Response GetStaticRoute200Response
@@ -76,7 +76,7 @@ func (o *GetStaticRoute200Response) SetNetworkRoute(v GetStaticRoutes200Response
 }
 
 func (o GetStaticRoute200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o GetStaticRoute200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *GetStaticRoute200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetStaticRoute200Response := _GetStaticRoute200Response{}
-
-	err = json.Unmarshal(data, &varGetStaticRoute200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetStaticRoute200Response(varGetStaticRoute200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "networkRoute")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetStaticRoute200Response struct {
-	value *GetStaticRoute200Response
-	isSet bool
-}
-
-func (v NullableGetStaticRoute200Response) Get() *GetStaticRoute200Response {
-	return v.value
-}
-
-func (v *NullableGetStaticRoute200Response) Set(val *GetStaticRoute200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetStaticRoute200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetStaticRoute200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetStaticRoute200Response(val *GetStaticRoute200Response) *NullableGetStaticRoute200Response {
-	return &NullableGetStaticRoute200Response{value: val, isSet: true}
-}
-
-func (v NullableGetStaticRoute200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetStaticRoute200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

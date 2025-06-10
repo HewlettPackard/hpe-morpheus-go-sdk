@@ -20,8 +20,8 @@ var _ MappedNullable = &GetBackups200Response{}
 
 // GetBackups200Response struct for GetBackups200Response
 type GetBackups200Response struct {
-	Backup *ListBackups200ResponseAllOfBackupsInner `json:"backup,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Backup               *ListBackups200ResponseAllOfBackupsInner `json:"backup,omitempty"`
+	AdditionalProperties map[string]interface{}                   `json:",remain"`
 }
 
 type _GetBackups200Response GetBackups200Response
@@ -76,7 +76,7 @@ func (o *GetBackups200Response) SetBackup(v ListBackups200ResponseAllOfBackupsIn
 }
 
 func (o GetBackups200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o GetBackups200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *GetBackups200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetBackups200Response := _GetBackups200Response{}
-
-	err = json.Unmarshal(data, &varGetBackups200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetBackups200Response(varGetBackups200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "backup")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetBackups200Response struct {
-	value *GetBackups200Response
-	isSet bool
-}
-
-func (v NullableGetBackups200Response) Get() *GetBackups200Response {
-	return v.value
-}
-
-func (v *NullableGetBackups200Response) Set(val *GetBackups200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetBackups200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetBackups200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetBackups200Response(val *GetBackups200Response) *NullableGetBackups200Response {
-	return &NullableGetBackups200Response{value: val, isSet: true}
-}
-
-func (v NullableGetBackups200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetBackups200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

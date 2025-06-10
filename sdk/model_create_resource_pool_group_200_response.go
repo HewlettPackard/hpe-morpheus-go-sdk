@@ -20,8 +20,8 @@ var _ MappedNullable = &CreateResourcePoolGroup200Response{}
 
 // CreateResourcePoolGroup200Response struct for CreateResourcePoolGroup200Response
 type CreateResourcePoolGroup200Response struct {
-	ResourcePoolGroup *GetResourcePoolGroups200ResponseResourcePoolGroupsInner `json:"resourcePoolGroup,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ResourcePoolGroup    *GetResourcePoolGroups200ResponseResourcePoolGroupsInner `json:"resourcePoolGroup,omitempty"`
+	AdditionalProperties map[string]interface{}                                   `json:",remain"`
 }
 
 type _CreateResourcePoolGroup200Response CreateResourcePoolGroup200Response
@@ -76,7 +76,7 @@ func (o *CreateResourcePoolGroup200Response) SetResourcePoolGroup(v GetResourceP
 }
 
 func (o CreateResourcePoolGroup200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o CreateResourcePoolGroup200Response) ToMap() (map[string]interface{}, err
 
 	return toSerialize, nil
 }
-
 func (o *CreateResourcePoolGroup200Response) UnmarshalJSON(data []byte) (err error) {
-	varCreateResourcePoolGroup200Response := _CreateResourcePoolGroup200Response{}
-
-	err = json.Unmarshal(data, &varCreateResourcePoolGroup200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CreateResourcePoolGroup200Response(varCreateResourcePoolGroup200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "resourcePoolGroup")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCreateResourcePoolGroup200Response struct {
-	value *CreateResourcePoolGroup200Response
-	isSet bool
-}
-
-func (v NullableCreateResourcePoolGroup200Response) Get() *CreateResourcePoolGroup200Response {
-	return v.value
-}
-
-func (v *NullableCreateResourcePoolGroup200Response) Set(val *CreateResourcePoolGroup200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCreateResourcePoolGroup200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCreateResourcePoolGroup200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCreateResourcePoolGroup200Response(val *CreateResourcePoolGroup200Response) *NullableCreateResourcePoolGroup200Response {
-	return &NullableCreateResourcePoolGroup200Response{value: val, isSet: true}
-}
-
-func (v NullableCreateResourcePoolGroup200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCreateResourcePoolGroup200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

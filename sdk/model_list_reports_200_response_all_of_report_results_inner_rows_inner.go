@@ -20,11 +20,11 @@ var _ MappedNullable = &ListReports200ResponseAllOfReportResultsInnerRowsInner{}
 
 // ListReports200ResponseAllOfReportResultsInnerRowsInner struct for ListReports200ResponseAllOfReportResultsInnerRowsInner
 type ListReports200ResponseAllOfReportResultsInnerRowsInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Section *string `json:"section,omitempty"`
-	Data *string `json:"data,omitempty"`
-	DisplayOrder *string `json:"displayOrder,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Section              *string                `json:"section,omitempty"`
+	Data                 *string                `json:"data,omitempty"`
+	DisplayOrder         *string                `json:"displayOrder,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListReports200ResponseAllOfReportResultsInnerRowsInner ListReports200ResponseAllOfReportResultsInnerRowsInner
@@ -175,7 +175,7 @@ func (o *ListReports200ResponseAllOfReportResultsInnerRowsInner) SetDisplayOrder
 }
 
 func (o ListReports200ResponseAllOfReportResultsInnerRowsInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -203,65 +203,8 @@ func (o ListReports200ResponseAllOfReportResultsInnerRowsInner) ToMap() (map[str
 
 	return toSerialize, nil
 }
-
 func (o *ListReports200ResponseAllOfReportResultsInnerRowsInner) UnmarshalJSON(data []byte) (err error) {
-	varListReports200ResponseAllOfReportResultsInnerRowsInner := _ListReports200ResponseAllOfReportResultsInnerRowsInner{}
-
-	err = json.Unmarshal(data, &varListReports200ResponseAllOfReportResultsInnerRowsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListReports200ResponseAllOfReportResultsInnerRowsInner(varListReports200ResponseAllOfReportResultsInnerRowsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "section")
-		delete(additionalProperties, "data")
-		delete(additionalProperties, "displayOrder")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListReports200ResponseAllOfReportResultsInnerRowsInner struct {
-	value *ListReports200ResponseAllOfReportResultsInnerRowsInner
-	isSet bool
-}
-
-func (v NullableListReports200ResponseAllOfReportResultsInnerRowsInner) Get() *ListReports200ResponseAllOfReportResultsInnerRowsInner {
-	return v.value
-}
-
-func (v *NullableListReports200ResponseAllOfReportResultsInnerRowsInner) Set(val *ListReports200ResponseAllOfReportResultsInnerRowsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListReports200ResponseAllOfReportResultsInnerRowsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListReports200ResponseAllOfReportResultsInnerRowsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListReports200ResponseAllOfReportResultsInnerRowsInner(val *ListReports200ResponseAllOfReportResultsInnerRowsInner) *NullableListReports200ResponseAllOfReportResultsInnerRowsInner {
-	return &NullableListReports200ResponseAllOfReportResultsInnerRowsInner{value: val, isSet: true}
-}
-
-func (v NullableListReports200ResponseAllOfReportResultsInnerRowsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListReports200ResponseAllOfReportResultsInnerRowsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

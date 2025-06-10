@@ -20,8 +20,8 @@ var _ MappedNullable = &AddEmailTemplateRequest{}
 
 // AddEmailTemplateRequest struct for AddEmailTemplateRequest
 type AddEmailTemplateRequest struct {
-	EmailTemplate *ListEmailTemplates200ResponseAllOfEmailTemplatesInner `json:"emailTemplate,omitempty"`
-	AdditionalProperties map[string]interface{}
+	EmailTemplate        *ListEmailTemplates200ResponseAllOfEmailTemplatesInner `json:"emailTemplate,omitempty"`
+	AdditionalProperties map[string]interface{}                                 `json:",remain"`
 }
 
 type _AddEmailTemplateRequest AddEmailTemplateRequest
@@ -76,7 +76,7 @@ func (o *AddEmailTemplateRequest) SetEmailTemplate(v ListEmailTemplates200Respon
 }
 
 func (o AddEmailTemplateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o AddEmailTemplateRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *AddEmailTemplateRequest) UnmarshalJSON(data []byte) (err error) {
-	varAddEmailTemplateRequest := _AddEmailTemplateRequest{}
-
-	err = json.Unmarshal(data, &varAddEmailTemplateRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddEmailTemplateRequest(varAddEmailTemplateRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "emailTemplate")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddEmailTemplateRequest struct {
-	value *AddEmailTemplateRequest
-	isSet bool
-}
-
-func (v NullableAddEmailTemplateRequest) Get() *AddEmailTemplateRequest {
-	return v.value
-}
-
-func (v *NullableAddEmailTemplateRequest) Set(val *AddEmailTemplateRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddEmailTemplateRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddEmailTemplateRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddEmailTemplateRequest(val *AddEmailTemplateRequest) *NullableAddEmailTemplateRequest {
-	return &NullableAddEmailTemplateRequest{value: val, isSet: true}
-}
-
-func (v NullableAddEmailTemplateRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddEmailTemplateRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

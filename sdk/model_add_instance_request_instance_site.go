@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddInstanceRequestInstanceSite type satisfies the MappedNullable interface at compile time
@@ -22,8 +21,8 @@ var _ MappedNullable = &AddInstanceRequestInstanceSite{}
 // AddInstanceRequestInstanceSite struct for AddInstanceRequestInstanceSite
 type AddInstanceRequestInstanceSite struct {
 	// The Group ID to provision the instance into.
-	Id int64 `json:"id"`
-	AdditionalProperties map[string]interface{}
+	Id                   int64                  `json:"id"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddInstanceRequestInstanceSite AddInstanceRequestInstanceSite
@@ -71,7 +70,7 @@ func (o *AddInstanceRequestInstanceSite) SetId(v int64) {
 }
 
 func (o AddInstanceRequestInstanceSite) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -88,83 +87,8 @@ func (o AddInstanceRequestInstanceSite) ToMap() (map[string]interface{}, error) 
 
 	return toSerialize, nil
 }
-
 func (o *AddInstanceRequestInstanceSite) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"id",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddInstanceRequestInstanceSite := _AddInstanceRequestInstanceSite{}
-
-	err = json.Unmarshal(data, &varAddInstanceRequestInstanceSite)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddInstanceRequestInstanceSite(varAddInstanceRequestInstanceSite)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddInstanceRequestInstanceSite struct {
-	value *AddInstanceRequestInstanceSite
-	isSet bool
-}
-
-func (v NullableAddInstanceRequestInstanceSite) Get() *AddInstanceRequestInstanceSite {
-	return v.value
-}
-
-func (v *NullableAddInstanceRequestInstanceSite) Set(val *AddInstanceRequestInstanceSite) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddInstanceRequestInstanceSite) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddInstanceRequestInstanceSite) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddInstanceRequestInstanceSite(val *AddInstanceRequestInstanceSite) *NullableAddInstanceRequestInstanceSite {
-	return &NullableAddInstanceRequestInstanceSite{value: val, isSet: true}
-}
-
-func (v NullableAddInstanceRequestInstanceSite) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddInstanceRequestInstanceSite) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

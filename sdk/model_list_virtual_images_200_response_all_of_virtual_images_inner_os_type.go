@@ -20,17 +20,17 @@ var _ MappedNullable = &ListVirtualImages200ResponseAllOfVirtualImagesInnerOsTyp
 
 // ListVirtualImages200ResponseAllOfVirtualImagesInnerOsType struct for ListVirtualImages200ResponseAllOfVirtualImagesInnerOsType
 type ListVirtualImages200ResponseAllOfVirtualImagesInnerOsType struct {
-	Id *int64 `json:"id,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Vendor *string `json:"vendor,omitempty"`
-	Category *string `json:"category,omitempty"`
-	OsFamily *string `json:"osFamily,omitempty"`
-	OsVersion *string `json:"osVersion,omitempty"`
-	BitCount *int64 `json:"bitCount,omitempty"`
-	Platform *string `json:"platform,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Code                 *string                `json:"code,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	Description          *string                `json:"description,omitempty"`
+	Vendor               *string                `json:"vendor,omitempty"`
+	Category             *string                `json:"category,omitempty"`
+	OsFamily             *string                `json:"osFamily,omitempty"`
+	OsVersion            *string                `json:"osVersion,omitempty"`
+	BitCount             *int64                 `json:"bitCount,omitempty"`
+	Platform             *string                `json:"platform,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListVirtualImages200ResponseAllOfVirtualImagesInnerOsType ListVirtualImages200ResponseAllOfVirtualImagesInnerOsType
@@ -373,7 +373,7 @@ func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerOsType) SetPlatform(
 }
 
 func (o ListVirtualImages200ResponseAllOfVirtualImagesInnerOsType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -419,71 +419,8 @@ func (o ListVirtualImages200ResponseAllOfVirtualImagesInnerOsType) ToMap() (map[
 
 	return toSerialize, nil
 }
-
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerOsType) UnmarshalJSON(data []byte) (err error) {
-	varListVirtualImages200ResponseAllOfVirtualImagesInnerOsType := _ListVirtualImages200ResponseAllOfVirtualImagesInnerOsType{}
-
-	err = json.Unmarshal(data, &varListVirtualImages200ResponseAllOfVirtualImagesInnerOsType)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListVirtualImages200ResponseAllOfVirtualImagesInnerOsType(varListVirtualImages200ResponseAllOfVirtualImagesInnerOsType)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "vendor")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "osFamily")
-		delete(additionalProperties, "osVersion")
-		delete(additionalProperties, "bitCount")
-		delete(additionalProperties, "platform")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListVirtualImages200ResponseAllOfVirtualImagesInnerOsType struct {
-	value *ListVirtualImages200ResponseAllOfVirtualImagesInnerOsType
-	isSet bool
-}
-
-func (v NullableListVirtualImages200ResponseAllOfVirtualImagesInnerOsType) Get() *ListVirtualImages200ResponseAllOfVirtualImagesInnerOsType {
-	return v.value
-}
-
-func (v *NullableListVirtualImages200ResponseAllOfVirtualImagesInnerOsType) Set(val *ListVirtualImages200ResponseAllOfVirtualImagesInnerOsType) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListVirtualImages200ResponseAllOfVirtualImagesInnerOsType) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListVirtualImages200ResponseAllOfVirtualImagesInnerOsType) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListVirtualImages200ResponseAllOfVirtualImagesInnerOsType(val *ListVirtualImages200ResponseAllOfVirtualImagesInnerOsType) *NullableListVirtualImages200ResponseAllOfVirtualImagesInnerOsType {
-	return &NullableListVirtualImages200ResponseAllOfVirtualImagesInnerOsType{value: val, isSet: true}
-}
-
-func (v NullableListVirtualImages200ResponseAllOfVirtualImagesInnerOsType) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListVirtualImages200ResponseAllOfVirtualImagesInnerOsType) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

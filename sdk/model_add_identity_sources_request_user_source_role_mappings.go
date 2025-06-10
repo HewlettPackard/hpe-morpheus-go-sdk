@@ -14,6 +14,7 @@ package sdk
 import (
 	"encoding/json"
 	"fmt"
+
 	"gopkg.in/validator.v2"
 )
 
@@ -23,7 +24,7 @@ var _ fmt.Stringer
 // AddIdentitySourcesRequestUserSourceRoleMappings - struct for AddIdentitySourcesRequestUserSourceRoleMappings
 type AddIdentitySourcesRequestUserSourceRoleMappings struct {
 	ArrayOfAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInner *[]AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInner
-	MapmapOfStringstring *map[string]string
+	MapmapOfStringstring                                             *map[string]string
 }
 
 // []AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerAsAddIdentitySourcesRequestUserSourceRoleMappings is a convenience function that returns []AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInner wrapped in AddIdentitySourcesRequestUserSourceRoleMappings
@@ -40,6 +41,21 @@ func MapmapOfStringstringAsAddIdentitySourcesRequestUserSourceRoleMappings(v *ma
 	}
 }
 
+func (dst *AddIdentitySourcesRequestUserSourceRoleMappings) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddIdentitySourcesRequestUserSourceRoleMappings{}
+	}
+
+	if out, ok := data.([]AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInner); ok {
+		dst.ArrayOfAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInner = &out
+	}
+
+	if out, ok := data.(map[string]string); ok {
+		dst.MapmapOfStringstring = &out
+	}
+
+	return dst, nil
+}
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddIdentitySourcesRequestUserSourceRoleMappings) UnmarshalJSON(data []byte) error {
@@ -106,7 +122,7 @@ func (src AddIdentitySourcesRequestUserSourceRoleMappings) MarshalJSON() ([]byte
 }
 
 // Get the actual instance
-func (obj *AddIdentitySourcesRequestUserSourceRoleMappings) GetActualInstance() (interface{}) {
+func (obj *AddIdentitySourcesRequestUserSourceRoleMappings) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -123,7 +139,7 @@ func (obj *AddIdentitySourcesRequestUserSourceRoleMappings) GetActualInstance() 
 }
 
 // Get the actual instance value
-func (obj AddIdentitySourcesRequestUserSourceRoleMappings) GetActualInstanceValue() (interface{}) {
+func (obj AddIdentitySourcesRequestUserSourceRoleMappings) GetActualInstanceValue() interface{} {
 	if obj.ArrayOfAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInner != nil {
 		return *obj.ArrayOfAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInner
 	}
@@ -171,5 +187,3 @@ func (v *NullableAddIdentitySourcesRequestUserSourceRoleMappings) UnmarshalJSON(
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

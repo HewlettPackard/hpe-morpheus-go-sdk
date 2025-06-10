@@ -20,19 +20,19 @@ var _ MappedNullable = &PriceSet{}
 
 // PriceSet struct for PriceSet
 type PriceSet struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Active *bool `json:"active,omitempty"`
-	PriceUnit *string `json:"priceUnit,omitempty"`
-	Type *string `json:"type,omitempty"`
-	RegionCode *string `json:"regionCode,omitempty"`
-	SystemCreated *bool `json:"systemCreated,omitempty"`
-	Zone *string `json:"zone,omitempty"`
-	ZonePool *string `json:"zonePool,omitempty"`
-	Account *string `json:"account,omitempty"`
-	Prices []ListPriceSets200ResponseAllOfPriceSetsInnerPricesInner `json:"prices,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                   `json:"id,omitempty"`
+	Name                 *string                                                  `json:"name,omitempty"`
+	Code                 *string                                                  `json:"code,omitempty"`
+	Active               *bool                                                    `json:"active,omitempty"`
+	PriceUnit            *string                                                  `json:"priceUnit,omitempty"`
+	Type                 *string                                                  `json:"type,omitempty"`
+	RegionCode           *string                                                  `json:"regionCode,omitempty"`
+	SystemCreated        *bool                                                    `json:"systemCreated,omitempty"`
+	Zone                 *string                                                  `json:"zone,omitempty"`
+	ZonePool             *string                                                  `json:"zonePool,omitempty"`
+	Account              *string                                                  `json:"account,omitempty"`
+	Prices               []ListPriceSets200ResponseAllOfPriceSetsInnerPricesInner `json:"prices,omitempty"`
+	AdditionalProperties map[string]interface{}                                   `json:",remain"`
 }
 
 type _PriceSet PriceSet
@@ -439,7 +439,7 @@ func (o *PriceSet) SetPrices(v []ListPriceSets200ResponseAllOfPriceSetsInnerPric
 }
 
 func (o PriceSet) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -491,73 +491,8 @@ func (o PriceSet) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *PriceSet) UnmarshalJSON(data []byte) (err error) {
-	varPriceSet := _PriceSet{}
-
-	err = json.Unmarshal(data, &varPriceSet)
-
-	if err != nil {
-		return err
-	}
-
-	*o = PriceSet(varPriceSet)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "priceUnit")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "regionCode")
-		delete(additionalProperties, "systemCreated")
-		delete(additionalProperties, "zone")
-		delete(additionalProperties, "zonePool")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "prices")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullablePriceSet struct {
-	value *PriceSet
-	isSet bool
-}
-
-func (v NullablePriceSet) Get() *PriceSet {
-	return v.value
-}
-
-func (v *NullablePriceSet) Set(val *PriceSet) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullablePriceSet) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullablePriceSet) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullablePriceSet(val *PriceSet) *NullablePriceSet {
-	return &NullablePriceSet{value: val, isSet: true}
-}
-
-func (v NullablePriceSet) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullablePriceSet) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

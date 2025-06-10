@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddBlueprintRequestOneOf1CloudFormationGit type satisfies the MappedNullable interface at compile time
@@ -28,8 +27,8 @@ type AddBlueprintRequestOneOf1CloudFormationGit struct {
 	// Morpheus SCM Integration ID
 	IntegrationId int64 `json:"integrationId"`
 	// Branch Name
-	Branch string `json:"branch"`
-	AdditionalProperties map[string]interface{}
+	Branch               string                 `json:"branch"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddBlueprintRequestOneOf1CloudFormationGit AddBlueprintRequestOneOf1CloudFormationGit
@@ -152,7 +151,7 @@ func (o *AddBlueprintRequestOneOf1CloudFormationGit) SetBranch(v string) {
 }
 
 func (o AddBlueprintRequestOneOf1CloudFormationGit) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -172,89 +171,8 @@ func (o AddBlueprintRequestOneOf1CloudFormationGit) ToMap() (map[string]interfac
 
 	return toSerialize, nil
 }
-
 func (o *AddBlueprintRequestOneOf1CloudFormationGit) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"repoId",
-		"path",
-		"integrationId",
-		"branch",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddBlueprintRequestOneOf1CloudFormationGit := _AddBlueprintRequestOneOf1CloudFormationGit{}
-
-	err = json.Unmarshal(data, &varAddBlueprintRequestOneOf1CloudFormationGit)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddBlueprintRequestOneOf1CloudFormationGit(varAddBlueprintRequestOneOf1CloudFormationGit)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "repoId")
-		delete(additionalProperties, "path")
-		delete(additionalProperties, "integrationId")
-		delete(additionalProperties, "branch")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddBlueprintRequestOneOf1CloudFormationGit struct {
-	value *AddBlueprintRequestOneOf1CloudFormationGit
-	isSet bool
-}
-
-func (v NullableAddBlueprintRequestOneOf1CloudFormationGit) Get() *AddBlueprintRequestOneOf1CloudFormationGit {
-	return v.value
-}
-
-func (v *NullableAddBlueprintRequestOneOf1CloudFormationGit) Set(val *AddBlueprintRequestOneOf1CloudFormationGit) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddBlueprintRequestOneOf1CloudFormationGit) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddBlueprintRequestOneOf1CloudFormationGit) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddBlueprintRequestOneOf1CloudFormationGit(val *AddBlueprintRequestOneOf1CloudFormationGit) *NullableAddBlueprintRequestOneOf1CloudFormationGit {
-	return &NullableAddBlueprintRequestOneOf1CloudFormationGit{value: val, isSet: true}
-}
-
-func (v NullableAddBlueprintRequestOneOf1CloudFormationGit) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddBlueprintRequestOneOf1CloudFormationGit) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

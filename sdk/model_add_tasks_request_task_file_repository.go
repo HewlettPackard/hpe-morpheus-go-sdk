@@ -21,8 +21,8 @@ var _ MappedNullable = &AddTasksRequestTaskFileRepository{}
 // AddTasksRequestTaskFileRepository struct for AddTasksRequestTaskFileRepository
 type AddTasksRequestTaskFileRepository struct {
 	// Code Repository ID, required for type `repository`. Use `/api/options/codeRepositories` to see available repositories.
-	Id *int64 `json:"id,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddTasksRequestTaskFileRepository AddTasksRequestTaskFileRepository
@@ -77,7 +77,7 @@ func (o *AddTasksRequestTaskFileRepository) SetId(v int64) {
 }
 
 func (o AddTasksRequestTaskFileRepository) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -96,62 +96,8 @@ func (o AddTasksRequestTaskFileRepository) ToMap() (map[string]interface{}, erro
 
 	return toSerialize, nil
 }
-
 func (o *AddTasksRequestTaskFileRepository) UnmarshalJSON(data []byte) (err error) {
-	varAddTasksRequestTaskFileRepository := _AddTasksRequestTaskFileRepository{}
-
-	err = json.Unmarshal(data, &varAddTasksRequestTaskFileRepository)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddTasksRequestTaskFileRepository(varAddTasksRequestTaskFileRepository)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddTasksRequestTaskFileRepository struct {
-	value *AddTasksRequestTaskFileRepository
-	isSet bool
-}
-
-func (v NullableAddTasksRequestTaskFileRepository) Get() *AddTasksRequestTaskFileRepository {
-	return v.value
-}
-
-func (v *NullableAddTasksRequestTaskFileRepository) Set(val *AddTasksRequestTaskFileRepository) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddTasksRequestTaskFileRepository) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddTasksRequestTaskFileRepository) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddTasksRequestTaskFileRepository(val *AddTasksRequestTaskFileRepository) *NullableAddTasksRequestTaskFileRepository {
-	return &NullableAddTasksRequestTaskFileRepository{value: val, isSet: true}
-}
-
-func (v NullableAddTasksRequestTaskFileRepository) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddTasksRequestTaskFileRepository) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

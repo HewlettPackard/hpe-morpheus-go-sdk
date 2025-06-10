@@ -21,8 +21,8 @@ var _ MappedNullable = &CustomOptionsForAzure{}
 // CustomOptionsForAzure struct for CustomOptionsForAzure
 type CustomOptionsForAzure struct {
 	// External ID of Azure Resource Group
-	ResourceGroup *string `json:"resourceGroup,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ResourceGroup        *string                `json:"resourceGroup,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _CustomOptionsForAzure CustomOptionsForAzure
@@ -77,7 +77,7 @@ func (o *CustomOptionsForAzure) SetResourceGroup(v string) {
 }
 
 func (o CustomOptionsForAzure) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -96,62 +96,8 @@ func (o CustomOptionsForAzure) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *CustomOptionsForAzure) UnmarshalJSON(data []byte) (err error) {
-	varCustomOptionsForAzure := _CustomOptionsForAzure{}
-
-	err = json.Unmarshal(data, &varCustomOptionsForAzure)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CustomOptionsForAzure(varCustomOptionsForAzure)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "resourceGroup")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCustomOptionsForAzure struct {
-	value *CustomOptionsForAzure
-	isSet bool
-}
-
-func (v NullableCustomOptionsForAzure) Get() *CustomOptionsForAzure {
-	return v.value
-}
-
-func (v *NullableCustomOptionsForAzure) Set(val *CustomOptionsForAzure) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCustomOptionsForAzure) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCustomOptionsForAzure) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCustomOptionsForAzure(val *CustomOptionsForAzure) *NullableCustomOptionsForAzure {
-	return &NullableCustomOptionsForAzure{value: val, isSet: true}
-}
-
-func (v NullableCustomOptionsForAzure) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCustomOptionsForAzure) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

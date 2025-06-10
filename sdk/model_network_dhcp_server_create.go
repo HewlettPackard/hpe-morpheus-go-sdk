@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the NetworkDhcpServerCreate type satisfies the MappedNullable interface at compile time
@@ -26,9 +25,9 @@ type NetworkDhcpServerCreate struct {
 	// Optional lease time for the DHCP Server
 	LeaseTime int64 `json:"leaseTime"`
 	// Name
-	Name string `json:"name"`
-	Config CreateNetworkDhcpServerRequestNetworkDhcpServerConfig `json:"config"`
-	AdditionalProperties map[string]interface{}
+	Name                 string                                                `json:"name"`
+	Config               CreateNetworkDhcpServerRequestNetworkDhcpServerConfig `json:"config"`
+	AdditionalProperties map[string]interface{}                                `json:",remain"`
 }
 
 type _NetworkDhcpServerCreate NetworkDhcpServerCreate
@@ -153,7 +152,7 @@ func (o *NetworkDhcpServerCreate) SetConfig(v CreateNetworkDhcpServerRequestNetw
 }
 
 func (o NetworkDhcpServerCreate) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -173,89 +172,8 @@ func (o NetworkDhcpServerCreate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *NetworkDhcpServerCreate) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"serverIpAddress",
-		"leaseTime",
-		"name",
-		"config",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varNetworkDhcpServerCreate := _NetworkDhcpServerCreate{}
-
-	err = json.Unmarshal(data, &varNetworkDhcpServerCreate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = NetworkDhcpServerCreate(varNetworkDhcpServerCreate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "serverIpAddress")
-		delete(additionalProperties, "leaseTime")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "config")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableNetworkDhcpServerCreate struct {
-	value *NetworkDhcpServerCreate
-	isSet bool
-}
-
-func (v NullableNetworkDhcpServerCreate) Get() *NetworkDhcpServerCreate {
-	return v.value
-}
-
-func (v *NullableNetworkDhcpServerCreate) Set(val *NetworkDhcpServerCreate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableNetworkDhcpServerCreate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableNetworkDhcpServerCreate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableNetworkDhcpServerCreate(val *NetworkDhcpServerCreate) *NullableNetworkDhcpServerCreate {
-	return &NullableNetworkDhcpServerCreate{value: val, isSet: true}
-}
-
-func (v NullableNetworkDhcpServerCreate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableNetworkDhcpServerCreate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the UpdateClusterPermissionsRequest type satisfies the MappedNullable interface at compile time
@@ -21,8 +20,8 @@ var _ MappedNullable = &UpdateClusterPermissionsRequest{}
 
 // UpdateClusterPermissionsRequest Key for server configuration
 type UpdateClusterPermissionsRequest struct {
-	Permissions UpdateClusterDatastoreRequestDatastorePermissions `json:"permissions"`
-	AdditionalProperties map[string]interface{}
+	Permissions          UpdateClusterDatastoreRequestDatastorePermissions `json:"permissions"`
+	AdditionalProperties map[string]interface{}                            `json:",remain"`
 }
 
 type _UpdateClusterPermissionsRequest UpdateClusterPermissionsRequest
@@ -70,7 +69,7 @@ func (o *UpdateClusterPermissionsRequest) SetPermissions(v UpdateClusterDatastor
 }
 
 func (o UpdateClusterPermissionsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -87,83 +86,8 @@ func (o UpdateClusterPermissionsRequest) ToMap() (map[string]interface{}, error)
 
 	return toSerialize, nil
 }
-
 func (o *UpdateClusterPermissionsRequest) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"permissions",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varUpdateClusterPermissionsRequest := _UpdateClusterPermissionsRequest{}
-
-	err = json.Unmarshal(data, &varUpdateClusterPermissionsRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateClusterPermissionsRequest(varUpdateClusterPermissionsRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "permissions")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateClusterPermissionsRequest struct {
-	value *UpdateClusterPermissionsRequest
-	isSet bool
-}
-
-func (v NullableUpdateClusterPermissionsRequest) Get() *UpdateClusterPermissionsRequest {
-	return v.value
-}
-
-func (v *NullableUpdateClusterPermissionsRequest) Set(val *UpdateClusterPermissionsRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateClusterPermissionsRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateClusterPermissionsRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateClusterPermissionsRequest(val *UpdateClusterPermissionsRequest) *NullableUpdateClusterPermissionsRequest {
-	return &NullableUpdateClusterPermissionsRequest{value: val, isSet: true}
-}
-
-func (v NullableUpdateClusterPermissionsRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateClusterPermissionsRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

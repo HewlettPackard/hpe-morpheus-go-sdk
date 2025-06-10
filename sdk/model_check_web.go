@@ -18,13 +18,13 @@ import (
 // checks if the CheckWeb type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &CheckWeb{}
 
-// CheckWeb Web check type allows you to perform a standard web request and validate the response came back successfully.  Additionally, you can check for matching text within the result. 
+// CheckWeb Web check type allows you to perform a standard web request and validate the response came back successfully.  Additionally, you can check for matching text within the result.
 type CheckWeb struct {
 	// Unique name scoped to your account for the check
 	Name *string `json:"name,omitempty"`
 	// Optional description field
-	Description *string `json:"description,omitempty"`
-	CheckType *AddChecksRequestCheckOneOfCheckType `json:"checkType,omitempty"`
+	Description *string                              `json:"description,omitempty"`
+	CheckType   *AddChecksRequestCheckOneOfCheckType `json:"checkType,omitempty"`
 	// Number of seconds you want between check executions (minimum value is 60, depending on your subscription plan)
 	CheckInterval *int32 `json:"checkInterval,omitempty"`
 	// Used to determine if check should affect account wide availability calculations
@@ -32,9 +32,9 @@ type CheckWeb struct {
 	// Used to determine if check should be scheduled to execute
 	Active *bool `json:"active,omitempty"`
 	// Severity level threshold for sending notifications.
-	Severity *string `json:"severity,omitempty"`
-	Config *AddChecksRequestCheckOneOfConfig `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Severity             *string                           `json:"severity,omitempty"`
+	Config               *AddChecksRequestCheckOneOfConfig `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}            `json:",remain"`
 }
 
 type _CheckWeb CheckWeb
@@ -329,7 +329,7 @@ func (o *CheckWeb) SetConfig(v AddChecksRequestCheckOneOfConfig) {
 }
 
 func (o CheckWeb) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -369,69 +369,8 @@ func (o CheckWeb) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *CheckWeb) UnmarshalJSON(data []byte) (err error) {
-	varCheckWeb := _CheckWeb{}
-
-	err = json.Unmarshal(data, &varCheckWeb)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CheckWeb(varCheckWeb)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "checkType")
-		delete(additionalProperties, "checkInterval")
-		delete(additionalProperties, "inUptime")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "severity")
-		delete(additionalProperties, "config")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCheckWeb struct {
-	value *CheckWeb
-	isSet bool
-}
-
-func (v NullableCheckWeb) Get() *CheckWeb {
-	return v.value
-}
-
-func (v *NullableCheckWeb) Set(val *CheckWeb) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCheckWeb) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCheckWeb) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCheckWeb(val *CheckWeb) *NullableCheckWeb {
-	return &NullableCheckWeb{value: val, isSet: true}
-}
-
-func (v NullableCheckWeb) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCheckWeb) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

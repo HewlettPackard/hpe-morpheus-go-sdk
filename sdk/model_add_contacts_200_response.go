@@ -20,9 +20,9 @@ var _ MappedNullable = &AddContacts200Response{}
 
 // AddContacts200Response struct for AddContacts200Response
 type AddContacts200Response struct {
-	Contact *ListContacts200ResponseAllOfContactsInner `json:"contact,omitempty"`
-	Success *bool `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Contact              *ListContacts200ResponseAllOfContactsInner `json:"contact,omitempty"`
+	Success              *bool                                      `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}                     `json:",remain"`
 }
 
 type _AddContacts200Response AddContacts200Response
@@ -109,7 +109,7 @@ func (o *AddContacts200Response) SetSuccess(v bool) {
 }
 
 func (o AddContacts200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o AddContacts200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *AddContacts200Response) UnmarshalJSON(data []byte) (err error) {
-	varAddContacts200Response := _AddContacts200Response{}
-
-	err = json.Unmarshal(data, &varAddContacts200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddContacts200Response(varAddContacts200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "contact")
-		delete(additionalProperties, "success")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddContacts200Response struct {
-	value *AddContacts200Response
-	isSet bool
-}
-
-func (v NullableAddContacts200Response) Get() *AddContacts200Response {
-	return v.value
-}
-
-func (v *NullableAddContacts200Response) Set(val *AddContacts200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddContacts200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddContacts200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddContacts200Response(val *AddContacts200Response) *NullableAddContacts200Response {
-	return &NullableAddContacts200Response{value: val, isSet: true}
-}
-
-func (v NullableAddContacts200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddContacts200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

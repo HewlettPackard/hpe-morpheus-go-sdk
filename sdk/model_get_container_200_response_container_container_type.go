@@ -20,11 +20,11 @@ var _ MappedNullable = &GetContainer200ResponseContainerContainerType{}
 
 // GetContainer200ResponseContainerContainerType struct for GetContainer200ResponseContainerContainerType
 type GetContainer200ResponseContainerContainerType struct {
-	Id *int32 `json:"id,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Category *string `json:"category,omitempty"`
-	Name *string `json:"name,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int32                 `json:"id,omitempty"`
+	Code                 *string                `json:"code,omitempty"`
+	Category             *string                `json:"category,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _GetContainer200ResponseContainerContainerType GetContainer200ResponseContainerContainerType
@@ -175,7 +175,7 @@ func (o *GetContainer200ResponseContainerContainerType) SetName(v string) {
 }
 
 func (o GetContainer200ResponseContainerContainerType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -203,65 +203,8 @@ func (o GetContainer200ResponseContainerContainerType) ToMap() (map[string]inter
 
 	return toSerialize, nil
 }
-
 func (o *GetContainer200ResponseContainerContainerType) UnmarshalJSON(data []byte) (err error) {
-	varGetContainer200ResponseContainerContainerType := _GetContainer200ResponseContainerContainerType{}
-
-	err = json.Unmarshal(data, &varGetContainer200ResponseContainerContainerType)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetContainer200ResponseContainerContainerType(varGetContainer200ResponseContainerContainerType)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "name")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetContainer200ResponseContainerContainerType struct {
-	value *GetContainer200ResponseContainerContainerType
-	isSet bool
-}
-
-func (v NullableGetContainer200ResponseContainerContainerType) Get() *GetContainer200ResponseContainerContainerType {
-	return v.value
-}
-
-func (v *NullableGetContainer200ResponseContainerContainerType) Set(val *GetContainer200ResponseContainerContainerType) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetContainer200ResponseContainerContainerType) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetContainer200ResponseContainerContainerType) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetContainer200ResponseContainerContainerType(val *GetContainer200ResponseContainerContainerType) *NullableGetContainer200ResponseContainerContainerType {
-	return &NullableGetContainer200ResponseContainerContainerType{value: val, isSet: true}
-}
-
-func (v NullableGetContainer200ResponseContainerContainerType) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetContainer200ResponseContainerContainerType) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

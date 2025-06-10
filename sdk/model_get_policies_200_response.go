@@ -20,8 +20,8 @@ var _ MappedNullable = &GetPolicies200Response{}
 
 // GetPolicies200Response struct for GetPolicies200Response
 type GetPolicies200Response struct {
-	Policy *AddPolicies200ResponseAllOfPolicy `json:"policy,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Policy               *AddPolicies200ResponseAllOfPolicy `json:"policy,omitempty"`
+	AdditionalProperties map[string]interface{}             `json:",remain"`
 }
 
 type _GetPolicies200Response GetPolicies200Response
@@ -76,7 +76,7 @@ func (o *GetPolicies200Response) SetPolicy(v AddPolicies200ResponseAllOfPolicy) 
 }
 
 func (o GetPolicies200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o GetPolicies200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *GetPolicies200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetPolicies200Response := _GetPolicies200Response{}
-
-	err = json.Unmarshal(data, &varGetPolicies200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetPolicies200Response(varGetPolicies200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "policy")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetPolicies200Response struct {
-	value *GetPolicies200Response
-	isSet bool
-}
-
-func (v NullableGetPolicies200Response) Get() *GetPolicies200Response {
-	return v.value
-}
-
-func (v *NullableGetPolicies200Response) Set(val *GetPolicies200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetPolicies200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetPolicies200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetPolicies200Response(val *GetPolicies200Response) *NullableGetPolicies200Response {
-	return &NullableGetPolicies200Response{value: val, isSet: true}
-}
-
-func (v NullableGetPolicies200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetPolicies200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

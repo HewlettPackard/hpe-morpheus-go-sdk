@@ -22,17 +22,17 @@ var _ MappedNullable = &StorageDatastoreCreate{}
 type StorageDatastoreCreate struct {
 	Name *string `json:"name,omitempty"`
 	// The code of the datatoreType
-	DatastoreType *string `json:"datastoreType,omitempty"`
-	RefType *string `json:"refType,omitempty"`
-	RefId *int64 `json:"refId,omitempty"`
-	StorageServer *GetAlerts200ResponseAllOfChecksInnerAccount `json:"storageServer,omitempty"`
-	Visibility *string `json:"visibility,omitempty"`
-	Active *bool `json:"active,omitempty"`
-	DefaultStore *bool `json:"defaultStore,omitempty"`
-	Tenants []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner `json:"tenants,omitempty"`
-	ResourcePermissions *SaveCloudDatastoreRequestDatastoreResourcePermissions `json:"resourcePermissions,omitempty"`
-	Datastores []map[string]interface{} `json:"datastores,omitempty"`
-	AdditionalProperties map[string]interface{}
+	DatastoreType        *string                                                          `json:"datastoreType,omitempty"`
+	RefType              *string                                                          `json:"refType,omitempty"`
+	RefId                *int64                                                           `json:"refId,omitempty"`
+	StorageServer        *GetAlerts200ResponseAllOfChecksInnerAccount                     `json:"storageServer,omitempty"`
+	Visibility           *string                                                          `json:"visibility,omitempty"`
+	Active               *bool                                                            `json:"active,omitempty"`
+	DefaultStore         *bool                                                            `json:"defaultStore,omitempty"`
+	Tenants              []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner `json:"tenants,omitempty"`
+	ResourcePermissions  *SaveCloudDatastoreRequestDatastoreResourcePermissions           `json:"resourcePermissions,omitempty"`
+	Datastores           []map[string]interface{}                                         `json:"datastores,omitempty"`
+	AdditionalProperties map[string]interface{}                                           `json:",remain"`
 }
 
 type _StorageDatastoreCreate StorageDatastoreCreate
@@ -407,7 +407,7 @@ func (o *StorageDatastoreCreate) SetDatastores(v []map[string]interface{}) {
 }
 
 func (o StorageDatastoreCreate) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -456,72 +456,8 @@ func (o StorageDatastoreCreate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *StorageDatastoreCreate) UnmarshalJSON(data []byte) (err error) {
-	varStorageDatastoreCreate := _StorageDatastoreCreate{}
-
-	err = json.Unmarshal(data, &varStorageDatastoreCreate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = StorageDatastoreCreate(varStorageDatastoreCreate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "datastoreType")
-		delete(additionalProperties, "refType")
-		delete(additionalProperties, "refId")
-		delete(additionalProperties, "storageServer")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "defaultStore")
-		delete(additionalProperties, "tenants")
-		delete(additionalProperties, "resourcePermissions")
-		delete(additionalProperties, "datastores")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableStorageDatastoreCreate struct {
-	value *StorageDatastoreCreate
-	isSet bool
-}
-
-func (v NullableStorageDatastoreCreate) Get() *StorageDatastoreCreate {
-	return v.value
-}
-
-func (v *NullableStorageDatastoreCreate) Set(val *StorageDatastoreCreate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableStorageDatastoreCreate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableStorageDatastoreCreate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableStorageDatastoreCreate(val *StorageDatastoreCreate) *NullableStorageDatastoreCreate {
-	return &NullableStorageDatastoreCreate{value: val, isSet: true}
-}
-
-func (v NullableStorageDatastoreCreate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableStorageDatastoreCreate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

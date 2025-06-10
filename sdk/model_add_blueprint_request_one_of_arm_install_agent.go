@@ -14,6 +14,7 @@ package sdk
 import (
 	"encoding/json"
 	"fmt"
+
 	"gopkg.in/validator.v2"
 )
 
@@ -22,7 +23,7 @@ var _ fmt.Stringer
 
 // AddBlueprintRequestOneOfArmInstallAgent - Install Morpheus Agent
 type AddBlueprintRequestOneOfArmInstallAgent struct {
-	Bool *bool
+	Bool   *bool
 	String *string
 }
 
@@ -40,6 +41,21 @@ func StringAsAddBlueprintRequestOneOfArmInstallAgent(v *string) AddBlueprintRequ
 	}
 }
 
+func (dst *AddBlueprintRequestOneOfArmInstallAgent) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddBlueprintRequestOneOfArmInstallAgent{}
+	}
+
+	if out, ok := data.(bool); ok {
+		dst.Bool = &out
+	}
+
+	if out, ok := data.(string); ok {
+		dst.String = &out
+	}
+
+	return dst, nil
+}
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddBlueprintRequestOneOfArmInstallAgent) UnmarshalJSON(data []byte) error {
@@ -106,7 +122,7 @@ func (src AddBlueprintRequestOneOfArmInstallAgent) MarshalJSON() ([]byte, error)
 }
 
 // Get the actual instance
-func (obj *AddBlueprintRequestOneOfArmInstallAgent) GetActualInstance() (interface{}) {
+func (obj *AddBlueprintRequestOneOfArmInstallAgent) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -123,7 +139,7 @@ func (obj *AddBlueprintRequestOneOfArmInstallAgent) GetActualInstance() (interfa
 }
 
 // Get the actual instance value
-func (obj AddBlueprintRequestOneOfArmInstallAgent) GetActualInstanceValue() (interface{}) {
+func (obj AddBlueprintRequestOneOfArmInstallAgent) GetActualInstanceValue() interface{} {
 	if obj.Bool != nil {
 		return *obj.Bool
 	}
@@ -171,5 +187,3 @@ func (v *NullableAddBlueprintRequestOneOfArmInstallAgent) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

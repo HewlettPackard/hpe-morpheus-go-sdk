@@ -14,6 +14,7 @@ package sdk
 import (
 	"encoding/json"
 	"fmt"
+
 	"gopkg.in/validator.v2"
 )
 
@@ -23,7 +24,7 @@ var _ fmt.Stringer
 // AddClusterRequestClusterType - struct for AddClusterRequestClusterType
 type AddClusterRequestClusterType struct {
 	AddClusterRequestClusterTypeOneOf *AddClusterRequestClusterTypeOneOf
-	String *string
+	String                            *string
 }
 
 // AddClusterRequestClusterTypeOneOfAsAddClusterRequestClusterType is a convenience function that returns AddClusterRequestClusterTypeOneOf wrapped in AddClusterRequestClusterType
@@ -40,6 +41,21 @@ func StringAsAddClusterRequestClusterType(v *string) AddClusterRequestClusterTyp
 	}
 }
 
+func (dst *AddClusterRequestClusterType) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddClusterRequestClusterType{}
+	}
+
+	if out, ok := data.(AddClusterRequestClusterTypeOneOf); ok {
+		dst.AddClusterRequestClusterTypeOneOf = &out
+	}
+
+	if out, ok := data.(string); ok {
+		dst.String = &out
+	}
+
+	return dst, nil
+}
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddClusterRequestClusterType) UnmarshalJSON(data []byte) error {
@@ -106,7 +122,7 @@ func (src AddClusterRequestClusterType) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddClusterRequestClusterType) GetActualInstance() (interface{}) {
+func (obj *AddClusterRequestClusterType) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -123,7 +139,7 @@ func (obj *AddClusterRequestClusterType) GetActualInstance() (interface{}) {
 }
 
 // Get the actual instance value
-func (obj AddClusterRequestClusterType) GetActualInstanceValue() (interface{}) {
+func (obj AddClusterRequestClusterType) GetActualInstanceValue() interface{} {
 	if obj.AddClusterRequestClusterTypeOneOf != nil {
 		return *obj.AddClusterRequestClusterTypeOneOf
 	}
@@ -171,5 +187,3 @@ func (v *NullableAddClusterRequestClusterType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,21 +20,21 @@ var _ MappedNullable = &GetContainer200ResponseContainerStats{}
 
 // GetContainer200ResponseContainerStats struct for GetContainer200ResponseContainerStats
 type GetContainer200ResponseContainerStats struct {
-	Ts *string `json:"ts,omitempty"`
-	Running *bool `json:"running,omitempty"`
-	UserCpuUsage *float32 `json:"userCpuUsage,omitempty"`
-	SystemCpuUsage *float32 `json:"systemCpuUsage,omitempty"`
-	UsedMemory *int32 `json:"usedMemory,omitempty"`
-	MaxMemory *int32 `json:"maxMemory,omitempty"`
-	CacheMemory *int32 `json:"cacheMemory,omitempty"`
-	MaxStorage *int32 `json:"maxStorage,omitempty"`
-	UsedStorage *int32 `json:"usedStorage,omitempty"`
-	ReadIOPS *int32 `json:"readIOPS,omitempty"`
-	WriteIOPS *float32 `json:"writeIOPS,omitempty"`
-	TotalIOPS *float32 `json:"totalIOPS,omitempty"`
-	NetTxUsage *int32 `json:"netTxUsage,omitempty"`
-	NetRxUsage *int32 `json:"netRxUsage,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Ts                   *string                `json:"ts,omitempty"`
+	Running              *bool                  `json:"running,omitempty"`
+	UserCpuUsage         *float32               `json:"userCpuUsage,omitempty"`
+	SystemCpuUsage       *float32               `json:"systemCpuUsage,omitempty"`
+	UsedMemory           *int32                 `json:"usedMemory,omitempty"`
+	MaxMemory            *int32                 `json:"maxMemory,omitempty"`
+	CacheMemory          *int32                 `json:"cacheMemory,omitempty"`
+	MaxStorage           *int32                 `json:"maxStorage,omitempty"`
+	UsedStorage          *int32                 `json:"usedStorage,omitempty"`
+	ReadIOPS             *int32                 `json:"readIOPS,omitempty"`
+	WriteIOPS            *float32               `json:"writeIOPS,omitempty"`
+	TotalIOPS            *float32               `json:"totalIOPS,omitempty"`
+	NetTxUsage           *int32                 `json:"netTxUsage,omitempty"`
+	NetRxUsage           *int32                 `json:"netRxUsage,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _GetContainer200ResponseContainerStats GetContainer200ResponseContainerStats
@@ -505,7 +505,7 @@ func (o *GetContainer200ResponseContainerStats) SetNetRxUsage(v int32) {
 }
 
 func (o GetContainer200ResponseContainerStats) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -563,75 +563,8 @@ func (o GetContainer200ResponseContainerStats) ToMap() (map[string]interface{}, 
 
 	return toSerialize, nil
 }
-
 func (o *GetContainer200ResponseContainerStats) UnmarshalJSON(data []byte) (err error) {
-	varGetContainer200ResponseContainerStats := _GetContainer200ResponseContainerStats{}
-
-	err = json.Unmarshal(data, &varGetContainer200ResponseContainerStats)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetContainer200ResponseContainerStats(varGetContainer200ResponseContainerStats)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "ts")
-		delete(additionalProperties, "running")
-		delete(additionalProperties, "userCpuUsage")
-		delete(additionalProperties, "systemCpuUsage")
-		delete(additionalProperties, "usedMemory")
-		delete(additionalProperties, "maxMemory")
-		delete(additionalProperties, "cacheMemory")
-		delete(additionalProperties, "maxStorage")
-		delete(additionalProperties, "usedStorage")
-		delete(additionalProperties, "readIOPS")
-		delete(additionalProperties, "writeIOPS")
-		delete(additionalProperties, "totalIOPS")
-		delete(additionalProperties, "netTxUsage")
-		delete(additionalProperties, "netRxUsage")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetContainer200ResponseContainerStats struct {
-	value *GetContainer200ResponseContainerStats
-	isSet bool
-}
-
-func (v NullableGetContainer200ResponseContainerStats) Get() *GetContainer200ResponseContainerStats {
-	return v.value
-}
-
-func (v *NullableGetContainer200ResponseContainerStats) Set(val *GetContainer200ResponseContainerStats) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetContainer200ResponseContainerStats) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetContainer200ResponseContainerStats) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetContainer200ResponseContainerStats(val *GetContainer200ResponseContainerStats) *NullableGetContainer200ResponseContainerStats {
-	return &NullableGetContainer200ResponseContainerStats{value: val, isSet: true}
-}
-
-func (v NullableGetContainer200ResponseContainerStats) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetContainer200ResponseContainerStats) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

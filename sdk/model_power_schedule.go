@@ -21,45 +21,45 @@ var _ MappedNullable = &PowerSchedule{}
 
 // PowerSchedule struct for PowerSchedule
 type PowerSchedule struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Visibility *string `json:"visibility,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	ScheduleType *string `json:"scheduleType,omitempty"`
-	ScheduleTimezone *string `json:"scheduleTimezone,omitempty"`
-	MondayOn *int64 `json:"mondayOn,omitempty"`
-	MondayOnTime *string `json:"mondayOnTime,omitempty"`
-	MondayOff *int64 `json:"mondayOff,omitempty"`
-	MondayOffTime *string `json:"mondayOffTime,omitempty"`
-	TuesdayOn *int64 `json:"tuesdayOn,omitempty"`
-	TuesdayOnTime *string `json:"tuesdayOnTime,omitempty"`
-	TuesdayOff *int64 `json:"tuesdayOff,omitempty"`
-	TuesdayOffTime *string `json:"tuesdayOffTime,omitempty"`
-	WednesdayOn *int64 `json:"wednesdayOn,omitempty"`
-	WednesdayOnTime *string `json:"wednesdayOnTime,omitempty"`
-	WednesdayOff *int64 `json:"wednesdayOff,omitempty"`
-	WednesdayOffTime *string `json:"wednesdayOffTime,omitempty"`
-	ThursdayOn *int64 `json:"thursdayOn,omitempty"`
-	ThursdayOnTime *string `json:"thursdayOnTime,omitempty"`
-	ThursdayOff *int64 `json:"thursdayOff,omitempty"`
-	ThursdayOffTime *string `json:"thursdayOffTime,omitempty"`
-	FridayOn *int64 `json:"fridayOn,omitempty"`
-	FridayOnTime *string `json:"fridayOnTime,omitempty"`
-	FridayOff *int64 `json:"fridayOff,omitempty"`
-	FridayOffTime *string `json:"fridayOffTime,omitempty"`
-	SaturdayOn *int64 `json:"saturdayOn,omitempty"`
-	SaturdayOnTime *string `json:"saturdayOnTime,omitempty"`
-	SaturdayOff *int64 `json:"saturdayOff,omitempty"`
-	SaturdayOffTime *string `json:"saturdayOffTime,omitempty"`
-	SundayOn *int64 `json:"sundayOn,omitempty"`
-	SundayOnTime *string `json:"sundayOnTime,omitempty"`
-	SundayOff *int64 `json:"sundayOff,omitempty"`
-	SundayOffTime *string `json:"sundayOffTime,omitempty"`
-	TotalMonthlyHoursSaved *float32 `json:"totalMonthlyHoursSaved,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                     *int64                 `json:"id,omitempty"`
+	Name                   *string                `json:"name,omitempty"`
+	Description            *string                `json:"description,omitempty"`
+	Visibility             *string                `json:"visibility,omitempty"`
+	Enabled                *bool                  `json:"enabled,omitempty"`
+	ScheduleType           *string                `json:"scheduleType,omitempty"`
+	ScheduleTimezone       *string                `json:"scheduleTimezone,omitempty"`
+	MondayOn               *int64                 `json:"mondayOn,omitempty"`
+	MondayOnTime           *string                `json:"mondayOnTime,omitempty"`
+	MondayOff              *int64                 `json:"mondayOff,omitempty"`
+	MondayOffTime          *string                `json:"mondayOffTime,omitempty"`
+	TuesdayOn              *int64                 `json:"tuesdayOn,omitempty"`
+	TuesdayOnTime          *string                `json:"tuesdayOnTime,omitempty"`
+	TuesdayOff             *int64                 `json:"tuesdayOff,omitempty"`
+	TuesdayOffTime         *string                `json:"tuesdayOffTime,omitempty"`
+	WednesdayOn            *int64                 `json:"wednesdayOn,omitempty"`
+	WednesdayOnTime        *string                `json:"wednesdayOnTime,omitempty"`
+	WednesdayOff           *int64                 `json:"wednesdayOff,omitempty"`
+	WednesdayOffTime       *string                `json:"wednesdayOffTime,omitempty"`
+	ThursdayOn             *int64                 `json:"thursdayOn,omitempty"`
+	ThursdayOnTime         *string                `json:"thursdayOnTime,omitempty"`
+	ThursdayOff            *int64                 `json:"thursdayOff,omitempty"`
+	ThursdayOffTime        *string                `json:"thursdayOffTime,omitempty"`
+	FridayOn               *int64                 `json:"fridayOn,omitempty"`
+	FridayOnTime           *string                `json:"fridayOnTime,omitempty"`
+	FridayOff              *int64                 `json:"fridayOff,omitempty"`
+	FridayOffTime          *string                `json:"fridayOffTime,omitempty"`
+	SaturdayOn             *int64                 `json:"saturdayOn,omitempty"`
+	SaturdayOnTime         *string                `json:"saturdayOnTime,omitempty"`
+	SaturdayOff            *int64                 `json:"saturdayOff,omitempty"`
+	SaturdayOffTime        *string                `json:"saturdayOffTime,omitempty"`
+	SundayOn               *int64                 `json:"sundayOn,omitempty"`
+	SundayOnTime           *string                `json:"sundayOnTime,omitempty"`
+	SundayOff              *int64                 `json:"sundayOff,omitempty"`
+	SundayOffTime          *string                `json:"sundayOffTime,omitempty"`
+	TotalMonthlyHoursSaved *float32               `json:"totalMonthlyHoursSaved,omitempty"`
+	DateCreated            *time.Time             `json:"dateCreated,omitempty"`
+	LastUpdated            *time.Time             `json:"lastUpdated,omitempty"`
+	AdditionalProperties   map[string]interface{} `json:",remain"`
 }
 
 type _PowerSchedule PowerSchedule
@@ -1298,7 +1298,7 @@ func (o *PowerSchedule) SetLastUpdated(v time.Time) {
 }
 
 func (o PowerSchedule) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1428,99 +1428,8 @@ func (o PowerSchedule) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *PowerSchedule) UnmarshalJSON(data []byte) (err error) {
-	varPowerSchedule := _PowerSchedule{}
-
-	err = json.Unmarshal(data, &varPowerSchedule)
-
-	if err != nil {
-		return err
-	}
-
-	*o = PowerSchedule(varPowerSchedule)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "scheduleType")
-		delete(additionalProperties, "scheduleTimezone")
-		delete(additionalProperties, "mondayOn")
-		delete(additionalProperties, "mondayOnTime")
-		delete(additionalProperties, "mondayOff")
-		delete(additionalProperties, "mondayOffTime")
-		delete(additionalProperties, "tuesdayOn")
-		delete(additionalProperties, "tuesdayOnTime")
-		delete(additionalProperties, "tuesdayOff")
-		delete(additionalProperties, "tuesdayOffTime")
-		delete(additionalProperties, "wednesdayOn")
-		delete(additionalProperties, "wednesdayOnTime")
-		delete(additionalProperties, "wednesdayOff")
-		delete(additionalProperties, "wednesdayOffTime")
-		delete(additionalProperties, "thursdayOn")
-		delete(additionalProperties, "thursdayOnTime")
-		delete(additionalProperties, "thursdayOff")
-		delete(additionalProperties, "thursdayOffTime")
-		delete(additionalProperties, "fridayOn")
-		delete(additionalProperties, "fridayOnTime")
-		delete(additionalProperties, "fridayOff")
-		delete(additionalProperties, "fridayOffTime")
-		delete(additionalProperties, "saturdayOn")
-		delete(additionalProperties, "saturdayOnTime")
-		delete(additionalProperties, "saturdayOff")
-		delete(additionalProperties, "saturdayOffTime")
-		delete(additionalProperties, "sundayOn")
-		delete(additionalProperties, "sundayOnTime")
-		delete(additionalProperties, "sundayOff")
-		delete(additionalProperties, "sundayOffTime")
-		delete(additionalProperties, "totalMonthlyHoursSaved")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullablePowerSchedule struct {
-	value *PowerSchedule
-	isSet bool
-}
-
-func (v NullablePowerSchedule) Get() *PowerSchedule {
-	return v.value
-}
-
-func (v *NullablePowerSchedule) Set(val *PowerSchedule) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullablePowerSchedule) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullablePowerSchedule) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullablePowerSchedule(val *PowerSchedule) *NullablePowerSchedule {
-	return &NullablePowerSchedule{value: val, isSet: true}
-}
-
-func (v NullablePowerSchedule) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullablePowerSchedule) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -20,11 +20,11 @@ var _ MappedNullable = &ListImageBuilds200ResponseAllOfImageBuildsInnerScriptsIn
 
 // ListImageBuilds200ResponseAllOfImageBuildsInnerScriptsInner struct for ListImageBuilds200ResponseAllOfImageBuildsInnerScriptsInner
 type ListImageBuilds200ResponseAllOfImageBuildsInnerScriptsInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Type *string `json:"type,omitempty"`
-	Phase *string `json:"phase,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	Type                 *string                `json:"type,omitempty"`
+	Phase                *string                `json:"phase,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListImageBuilds200ResponseAllOfImageBuildsInnerScriptsInner ListImageBuilds200ResponseAllOfImageBuildsInnerScriptsInner
@@ -175,7 +175,7 @@ func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerScriptsInner) SetPhase(v
 }
 
 func (o ListImageBuilds200ResponseAllOfImageBuildsInnerScriptsInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -203,65 +203,8 @@ func (o ListImageBuilds200ResponseAllOfImageBuildsInnerScriptsInner) ToMap() (ma
 
 	return toSerialize, nil
 }
-
 func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerScriptsInner) UnmarshalJSON(data []byte) (err error) {
-	varListImageBuilds200ResponseAllOfImageBuildsInnerScriptsInner := _ListImageBuilds200ResponseAllOfImageBuildsInnerScriptsInner{}
-
-	err = json.Unmarshal(data, &varListImageBuilds200ResponseAllOfImageBuildsInnerScriptsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListImageBuilds200ResponseAllOfImageBuildsInnerScriptsInner(varListImageBuilds200ResponseAllOfImageBuildsInnerScriptsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "phase")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListImageBuilds200ResponseAllOfImageBuildsInnerScriptsInner struct {
-	value *ListImageBuilds200ResponseAllOfImageBuildsInnerScriptsInner
-	isSet bool
-}
-
-func (v NullableListImageBuilds200ResponseAllOfImageBuildsInnerScriptsInner) Get() *ListImageBuilds200ResponseAllOfImageBuildsInnerScriptsInner {
-	return v.value
-}
-
-func (v *NullableListImageBuilds200ResponseAllOfImageBuildsInnerScriptsInner) Set(val *ListImageBuilds200ResponseAllOfImageBuildsInnerScriptsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListImageBuilds200ResponseAllOfImageBuildsInnerScriptsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListImageBuilds200ResponseAllOfImageBuildsInnerScriptsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListImageBuilds200ResponseAllOfImageBuildsInnerScriptsInner(val *ListImageBuilds200ResponseAllOfImageBuildsInnerScriptsInner) *NullableListImageBuilds200ResponseAllOfImageBuildsInnerScriptsInner {
-	return &NullableListImageBuilds200ResponseAllOfImageBuildsInnerScriptsInner{value: val, isSet: true}
-}
-
-func (v NullableListImageBuilds200ResponseAllOfImageBuildsInnerScriptsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListImageBuilds200ResponseAllOfImageBuildsInnerScriptsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

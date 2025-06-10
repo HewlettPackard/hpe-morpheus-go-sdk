@@ -20,11 +20,11 @@ var _ MappedNullable = &ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19Mo
 
 // ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19Motd struct for ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19Motd
 type ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19Motd struct {
-	Title *string `json:"title,omitempty"`
-	Message *string `json:"message,omitempty"`
-	Type *string `json:"type,omitempty"`
-	FullPage *string `json:"_fullPage,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Title                *string                `json:"title,omitempty"`
+	Message              *string                `json:"message,omitempty"`
+	Type                 *string                `json:"type,omitempty"`
+	FullPage             *string                `json:"_fullPage,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19Motd ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19Motd
@@ -175,7 +175,7 @@ func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19Motd) SetFullPage
 }
 
 func (o ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19Motd) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -203,65 +203,8 @@ func (o ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19Motd) ToMap() (map
 
 	return toSerialize, nil
 }
-
 func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19Motd) UnmarshalJSON(data []byte) (err error) {
-	varListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19Motd := _ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19Motd{}
-
-	err = json.Unmarshal(data, &varListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19Motd)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19Motd(varListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19Motd)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "title")
-		delete(additionalProperties, "message")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "_fullPage")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19Motd struct {
-	value *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19Motd
-	isSet bool
-}
-
-func (v NullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19Motd) Get() *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19Motd {
-	return v.value
-}
-
-func (v *NullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19Motd) Set(val *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19Motd) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19Motd) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19Motd) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19Motd(val *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19Motd) *NullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19Motd {
-	return &NullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19Motd{value: val, isSet: true}
-}
-
-func (v NullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19Motd) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19Motd) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

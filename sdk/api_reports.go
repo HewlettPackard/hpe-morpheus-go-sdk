@@ -21,15 +21,14 @@ import (
 	"strings"
 )
 
-
 // ReportsAPIService ReportsAPI service
 type ReportsAPIService service
 
 type ApiDownloadReportsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ReportsAPIService
-	id int64
-	format string
+	id         int64
+	format     string
 }
 
 func (r ApiDownloadReportsRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -41,29 +40,29 @@ DownloadReports Downloads a specific report result as a file attachment
 
 This endpoint downloads a specific report result as a file attachment. The default file format is `.json`.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @param format Format of the rendered report file, `.json` or `.csv`.
- @return ApiDownloadReportsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@param format Format of the rendered report file, `.json` or `.csv`.
+	@return ApiDownloadReportsRequest
 */
 func (a *ReportsAPIService) DownloadReports(ctx context.Context, id int64, format string) ApiDownloadReportsRequest {
 	return ApiDownloadReportsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
-		format: format,
+		ctx:        ctx,
+		id:         id,
+		format:     format,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *ReportsAPIService) DownloadReportsExecute(r ApiDownloadReportsRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReportsAPIService.DownloadReports")
@@ -115,7 +114,7 @@ func (a *ReportsAPIService) DownloadReportsExecute(r ApiDownloadReportsRequest) 
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -124,8 +123,8 @@ func (a *ReportsAPIService) DownloadReportsExecute(r ApiDownloadReportsRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -135,8 +134,8 @@ func (a *ReportsAPIService) DownloadReportsExecute(r ApiDownloadReportsRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -144,8 +143,8 @@ func (a *ReportsAPIService) DownloadReportsExecute(r ApiDownloadReportsRequest) 
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -154,16 +153,16 @@ func (a *ReportsAPIService) DownloadReportsExecute(r ApiDownloadReportsRequest) 
 }
 
 type ApiGetReportTypesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ReportsAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	name *string
-	code *string
-	category *string
+	max        *int64
+	offset     *int64
+	sort       *string
+	direction  *string
+	phrase     *string
+	name       *string
+	code       *string
+	category   *string
 }
 
 // Maximum number of records to return
@@ -223,25 +222,25 @@ GetReportTypes This endpoint retrieves all available report types
 
 This endpoint retrieves all available report types. A report type has optionTypes that define the parameters available when executing a report of that type. The sample response has been abbreviated.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetReportTypesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetReportTypesRequest
 */
 func (a *ReportsAPIService) GetReportTypes(ctx context.Context) ApiGetReportTypesRequest {
 	return ApiGetReportTypesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return GetReportTypes200Response
+//
+//	@return GetReportTypes200Response
 func (a *ReportsAPIService) GetReportTypesExecute(r ApiGetReportTypesRequest) (*GetReportTypes200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetReportTypes200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetReportTypes200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReportsAPIService.GetReportTypes")
@@ -327,7 +326,7 @@ func (a *ReportsAPIService) GetReportTypesExecute(r ApiGetReportTypesRequest) (*
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -336,8 +335,8 @@ func (a *ReportsAPIService) GetReportTypesExecute(r ApiGetReportTypesRequest) (*
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -347,8 +346,8 @@ func (a *ReportsAPIService) GetReportTypesExecute(r ApiGetReportTypesRequest) (*
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -356,8 +355,8 @@ func (a *ReportsAPIService) GetReportTypesExecute(r ApiGetReportTypesRequest) (*
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -366,9 +365,9 @@ func (a *ReportsAPIService) GetReportTypesExecute(r ApiGetReportTypesRequest) (*
 }
 
 type ApiGetReportsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ReportsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetReportsRequest) Execute() (*GetReports200Response, *http.Response, error) {
@@ -380,27 +379,27 @@ GetReports This endpoint returns a specific report result
 
 This endpoint retrieves a specific report result. The response includes the result data as rows which can be used to render the report. Each report type will have sections for data and headers that vary by type, use Download a Specific Report to get the results organized by section.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetReportsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetReportsRequest
 */
 func (a *ReportsAPIService) GetReports(ctx context.Context, id int64) ApiGetReportsRequest {
 	return ApiGetReportsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetReports200Response
+//
+//	@return GetReports200Response
 func (a *ReportsAPIService) GetReportsExecute(r ApiGetReportsRequest) (*GetReports200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetReports200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetReports200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReportsAPIService.GetReports")
@@ -451,7 +450,7 @@ func (a *ReportsAPIService) GetReportsExecute(r ApiGetReportsRequest) (*GetRepor
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -460,8 +459,8 @@ func (a *ReportsAPIService) GetReportsExecute(r ApiGetReportsRequest) (*GetRepor
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -471,8 +470,8 @@ func (a *ReportsAPIService) GetReportsExecute(r ApiGetReportsRequest) (*GetRepor
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -480,8 +479,8 @@ func (a *ReportsAPIService) GetReportsExecute(r ApiGetReportsRequest) (*GetRepor
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -490,16 +489,16 @@ func (a *ReportsAPIService) GetReportsExecute(r ApiGetReportsRequest) (*GetRepor
 }
 
 type ApiListReportsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ReportsAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	name *string
+	max        *int64
+	offset     *int64
+	sort       *string
+	direction  *string
+	phrase     *string
+	name       *string
 	reportType *string
-	category *string
+	category   *string
 }
 
 // Maximum number of records to return
@@ -559,25 +558,25 @@ ListReports Returns all reports
 
 This endpoint returns all reports. This is results of reports that have been executed in the past.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListReportsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListReportsRequest
 */
 func (a *ReportsAPIService) ListReports(ctx context.Context) ApiListReportsRequest {
 	return ApiListReportsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListReports200Response
+//
+//	@return ListReports200Response
 func (a *ReportsAPIService) ListReportsExecute(r ApiListReportsRequest) (*ListReports200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListReports200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListReports200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReportsAPIService.ListReports")
@@ -663,7 +662,7 @@ func (a *ReportsAPIService) ListReportsExecute(r ApiListReportsRequest) (*ListRe
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -672,8 +671,8 @@ func (a *ReportsAPIService) ListReportsExecute(r ApiListReportsRequest) (*ListRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -683,8 +682,8 @@ func (a *ReportsAPIService) ListReportsExecute(r ApiListReportsRequest) (*ListRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -692,8 +691,8 @@ func (a *ReportsAPIService) ListReportsExecute(r ApiListReportsRequest) (*ListRe
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -702,9 +701,9 @@ func (a *ReportsAPIService) ListReportsExecute(r ApiListReportsRequest) (*ListRe
 }
 
 type ApiRemoveReportsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ReportsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiRemoveReportsRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -716,27 +715,27 @@ RemoveReports This endpoint will delete a report result
 
 This endpoint will delete a report result.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiRemoveReportsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiRemoveReportsRequest
 */
 func (a *ReportsAPIService) RemoveReports(ctx context.Context, id int64) ApiRemoveReportsRequest {
 	return ApiRemoveReportsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *ReportsAPIService) RemoveReportsExecute(r ApiRemoveReportsRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReportsAPIService.RemoveReports")
@@ -787,7 +786,7 @@ func (a *ReportsAPIService) RemoveReportsExecute(r ApiRemoveReportsRequest) (*De
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -796,8 +795,8 @@ func (a *ReportsAPIService) RemoveReportsExecute(r ApiRemoveReportsRequest) (*De
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -807,8 +806,8 @@ func (a *ReportsAPIService) RemoveReportsExecute(r ApiRemoveReportsRequest) (*De
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -816,8 +815,8 @@ func (a *ReportsAPIService) RemoveReportsExecute(r ApiRemoveReportsRequest) (*De
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -826,8 +825,8 @@ func (a *ReportsAPIService) RemoveReportsExecute(r ApiRemoveReportsRequest) (*De
 }
 
 type ApiRunReportsRequest struct {
-	ctx context.Context
-	ApiService *ReportsAPIService
+	ctx               context.Context
+	ApiService        *ReportsAPIService
 	runReportsRequest *RunReportsRequest
 }
 
@@ -847,25 +846,25 @@ This endpoint execute the specified report type and create a new report result.
 
 The available parameters vary by report type. Refer to the defined `inputs` for each report.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiRunReportsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiRunReportsRequest
 */
 func (a *ReportsAPIService) RunReports(ctx context.Context) ApiRunReportsRequest {
 	return ApiRunReportsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return RunReports200Response
+//
+//	@return RunReports200Response
 func (a *ReportsAPIService) RunReportsExecute(r ApiRunReportsRequest) (*RunReports200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *RunReports200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *RunReports200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReportsAPIService.RunReports")
@@ -917,7 +916,7 @@ func (a *ReportsAPIService) RunReportsExecute(r ApiRunReportsRequest) (*RunRepor
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -926,8 +925,8 @@ func (a *ReportsAPIService) RunReportsExecute(r ApiRunReportsRequest) (*RunRepor
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -937,8 +936,8 @@ func (a *ReportsAPIService) RunReportsExecute(r ApiRunReportsRequest) (*RunRepor
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -946,8 +945,8 @@ func (a *ReportsAPIService) RunReportsExecute(r ApiRunReportsRequest) (*RunRepor
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

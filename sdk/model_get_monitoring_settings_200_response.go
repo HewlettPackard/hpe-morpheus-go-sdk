@@ -20,8 +20,8 @@ var _ MappedNullable = &GetMonitoringSettings200Response{}
 
 // GetMonitoringSettings200Response struct for GetMonitoringSettings200Response
 type GetMonitoringSettings200Response struct {
-	MonitoringSettings *GetMonitoringSettings200ResponseMonitoringSettings `json:"monitoringSettings,omitempty"`
-	AdditionalProperties map[string]interface{}
+	MonitoringSettings   *GetMonitoringSettings200ResponseMonitoringSettings `json:"monitoringSettings,omitempty"`
+	AdditionalProperties map[string]interface{}                              `json:",remain"`
 }
 
 type _GetMonitoringSettings200Response GetMonitoringSettings200Response
@@ -76,7 +76,7 @@ func (o *GetMonitoringSettings200Response) SetMonitoringSettings(v GetMonitoring
 }
 
 func (o GetMonitoringSettings200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o GetMonitoringSettings200Response) ToMap() (map[string]interface{}, error
 
 	return toSerialize, nil
 }
-
 func (o *GetMonitoringSettings200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetMonitoringSettings200Response := _GetMonitoringSettings200Response{}
-
-	err = json.Unmarshal(data, &varGetMonitoringSettings200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetMonitoringSettings200Response(varGetMonitoringSettings200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "monitoringSettings")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetMonitoringSettings200Response struct {
-	value *GetMonitoringSettings200Response
-	isSet bool
-}
-
-func (v NullableGetMonitoringSettings200Response) Get() *GetMonitoringSettings200Response {
-	return v.value
-}
-
-func (v *NullableGetMonitoringSettings200Response) Set(val *GetMonitoringSettings200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetMonitoringSettings200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetMonitoringSettings200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetMonitoringSettings200Response(val *GetMonitoringSettings200Response) *NullableGetMonitoringSettings200Response {
-	return &NullableGetMonitoringSettings200Response{value: val, isSet: true}
-}
-
-func (v NullableGetMonitoringSettings200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetMonitoringSettings200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -20,9 +20,9 @@ var _ MappedNullable = &GetInvoices200Response{}
 
 // GetInvoices200Response struct for GetInvoices200Response
 type GetInvoices200Response struct {
-	Invoice *ListInvoices200ResponseAllOfInvoicesInner `json:"invoice,omitempty"`
-	MasterAccount *bool `json:"masterAccount,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Invoice              *ListInvoices200ResponseAllOfInvoicesInner `json:"invoice,omitempty"`
+	MasterAccount        *bool                                      `json:"masterAccount,omitempty"`
+	AdditionalProperties map[string]interface{}                     `json:",remain"`
 }
 
 type _GetInvoices200Response GetInvoices200Response
@@ -109,7 +109,7 @@ func (o *GetInvoices200Response) SetMasterAccount(v bool) {
 }
 
 func (o GetInvoices200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o GetInvoices200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *GetInvoices200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetInvoices200Response := _GetInvoices200Response{}
-
-	err = json.Unmarshal(data, &varGetInvoices200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetInvoices200Response(varGetInvoices200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "invoice")
-		delete(additionalProperties, "masterAccount")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetInvoices200Response struct {
-	value *GetInvoices200Response
-	isSet bool
-}
-
-func (v NullableGetInvoices200Response) Get() *GetInvoices200Response {
-	return v.value
-}
-
-func (v *NullableGetInvoices200Response) Set(val *GetInvoices200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetInvoices200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetInvoices200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetInvoices200Response(val *GetInvoices200Response) *NullableGetInvoices200Response {
-	return &NullableGetInvoices200Response{value: val, isSet: true}
-}
-
-func (v NullableGetInvoices200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetInvoices200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

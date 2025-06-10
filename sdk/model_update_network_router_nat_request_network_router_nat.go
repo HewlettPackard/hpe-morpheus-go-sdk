@@ -20,8 +20,8 @@ var _ MappedNullable = &UpdateNetworkRouterNatRequestNetworkRouterNAT{}
 
 // UpdateNetworkRouterNatRequestNetworkRouterNAT For a full list of available NAT options, see natOptionTypes in the specific Network Router Type
 type UpdateNetworkRouterNatRequestNetworkRouterNAT struct {
-	Name interface{} `json:"name,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Name                 interface{}            `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UpdateNetworkRouterNatRequestNetworkRouterNAT UpdateNetworkRouterNatRequestNetworkRouterNAT
@@ -77,7 +77,7 @@ func (o *UpdateNetworkRouterNatRequestNetworkRouterNAT) SetName(v interface{}) {
 }
 
 func (o UpdateNetworkRouterNatRequestNetworkRouterNAT) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -96,62 +96,8 @@ func (o UpdateNetworkRouterNatRequestNetworkRouterNAT) ToMap() (map[string]inter
 
 	return toSerialize, nil
 }
-
 func (o *UpdateNetworkRouterNatRequestNetworkRouterNAT) UnmarshalJSON(data []byte) (err error) {
-	varUpdateNetworkRouterNatRequestNetworkRouterNAT := _UpdateNetworkRouterNatRequestNetworkRouterNAT{}
-
-	err = json.Unmarshal(data, &varUpdateNetworkRouterNatRequestNetworkRouterNAT)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateNetworkRouterNatRequestNetworkRouterNAT(varUpdateNetworkRouterNatRequestNetworkRouterNAT)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateNetworkRouterNatRequestNetworkRouterNAT struct {
-	value *UpdateNetworkRouterNatRequestNetworkRouterNAT
-	isSet bool
-}
-
-func (v NullableUpdateNetworkRouterNatRequestNetworkRouterNAT) Get() *UpdateNetworkRouterNatRequestNetworkRouterNAT {
-	return v.value
-}
-
-func (v *NullableUpdateNetworkRouterNatRequestNetworkRouterNAT) Set(val *UpdateNetworkRouterNatRequestNetworkRouterNAT) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateNetworkRouterNatRequestNetworkRouterNAT) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateNetworkRouterNatRequestNetworkRouterNAT) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateNetworkRouterNatRequestNetworkRouterNAT(val *UpdateNetworkRouterNatRequestNetworkRouterNAT) *NullableUpdateNetworkRouterNatRequestNetworkRouterNAT {
-	return &NullableUpdateNetworkRouterNatRequestNetworkRouterNAT{value: val, isSet: true}
-}
-
-func (v NullableUpdateNetworkRouterNatRequestNetworkRouterNAT) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateNetworkRouterNatRequestNetworkRouterNAT) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

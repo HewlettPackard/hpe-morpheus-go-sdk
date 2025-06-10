@@ -21,17 +21,16 @@ import (
 	"strings"
 )
 
-
 // CypherAPIService CypherAPI service
 type CypherAPIService service
 
 type ApiAddCypherKeyRequest struct {
-	ctx context.Context
-	ApiService *CypherAPIService
-	cypherPath string
-	ttl *AddCypherKeyTtlParameter
-	value *string
-	type_ *string
+	ctx                 context.Context
+	ApiService          *CypherAPIService
+	cypherPath          string
+	ttl                 *AddCypherKeyTtlParameter
+	value               *string
+	type_               *string
 	addCypherKeyRequest *AddCypherKeyRequest
 }
 
@@ -67,26 +66,27 @@ AddCypherKey Write a Cypher
 
 This endpoint will create or update a cypher key.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param cypherPath The key includes a mount prefix separated by a /. For example, the key secret/foo uses the secret mount.  Available Mounts  <table>   <tr>     <th>Mount</th>     <th>Description</th>     <th>Example</th>   </tr>   <tr>     <td>password</td>     <td>Generates a secure password of specified character length in the key pattern (or 15) with symbols, numbers, upper case, and lower case letters (i.e. password/15/mypass generates a 15 character password).</td>     <td>password/15/mypass</td>   </tr>   <tr>     <td>tfvars</td>     <td>This is a module to store a tfvars file for terraform.</td>     <td>tfvars/mytfvar</td>   </tr>   <tr>     <td>secret</td>     <td>This is the standard secret module that stores a key/value in encrypted form. Capable of storing entire JSON object or a String.</td>     <td>secret/foo</td>   </tr>   <tr>     <td>uuid</td>     <td>Returns a new UUID by key name when requested and stores the generated UUID by key name for a given lease timeout period.</td>     <td>uuid/autoMac1</td>   </tr>   <tr>     <td>key</td>     <td>Generates a Base 64 encoded AES Key of specified bit length in the key pattern (i.e. key/128/mykey generates a 128-bit key)</td>     <td>key/128/mykey</td>   </tr> </table> 
- @return ApiAddCypherKeyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param cypherPath The key includes a mount prefix separated by a /. For example, the key secret/foo uses the secret mount.  Available Mounts  <table>   <tr>     <th>Mount</th>     <th>Description</th>     <th>Example</th>   </tr>   <tr>     <td>password</td>     <td>Generates a secure password of specified character length in the key pattern (or 15) with symbols, numbers, upper case, and lower case letters (i.e. password/15/mypass generates a 15 character password).</td>     <td>password/15/mypass</td>   </tr>   <tr>     <td>tfvars</td>     <td>This is a module to store a tfvars file for terraform.</td>     <td>tfvars/mytfvar</td>   </tr>   <tr>     <td>secret</td>     <td>This is the standard secret module that stores a key/value in encrypted form. Capable of storing entire JSON object or a String.</td>     <td>secret/foo</td>   </tr>   <tr>     <td>uuid</td>     <td>Returns a new UUID by key name when requested and stores the generated UUID by key name for a given lease timeout period.</td>     <td>uuid/autoMac1</td>   </tr>   <tr>     <td>key</td>     <td>Generates a Base 64 encoded AES Key of specified bit length in the key pattern (i.e. key/128/mykey generates a 128-bit key)</td>     <td>key/128/mykey</td>   </tr> </table>
+	@return ApiAddCypherKeyRequest
 */
 func (a *CypherAPIService) AddCypherKey(ctx context.Context, cypherPath string) ApiAddCypherKeyRequest {
 	return ApiAddCypherKeyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		cypherPath: cypherPath,
 	}
 }
 
 // Execute executes the request
-//  @return AddCypherKey200Response
+//
+//	@return AddCypherKey200Response
 func (a *CypherAPIService) AddCypherKeyExecute(r ApiAddCypherKeyRequest) (*AddCypherKey200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddCypherKey200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddCypherKey200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CypherAPIService.AddCypherKey")
@@ -148,7 +148,7 @@ func (a *CypherAPIService) AddCypherKeyExecute(r ApiAddCypherKeyRequest) (*AddCy
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -157,8 +157,8 @@ func (a *CypherAPIService) AddCypherKeyExecute(r ApiAddCypherKeyRequest) (*AddCy
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -168,8 +168,8 @@ func (a *CypherAPIService) AddCypherKeyExecute(r ApiAddCypherKeyRequest) (*AddCy
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -177,8 +177,8 @@ func (a *CypherAPIService) AddCypherKeyExecute(r ApiAddCypherKeyRequest) (*AddCy
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -187,12 +187,12 @@ func (a *CypherAPIService) AddCypherKeyExecute(r ApiAddCypherKeyRequest) (*AddCy
 }
 
 type ApiGetCypherKeyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *CypherAPIService
 	cypherPath string
 	leaseToken *string
-	sort *string
-	direction *string
+	sort       *string
+	direction  *string
 }
 
 // An execution lease token.
@@ -220,32 +220,32 @@ func (r ApiGetCypherKeyRequest) Execute() (*GetCypherKey200Response, *http.Respo
 /*
 GetCypherKey Read or Create a Cypher Key
 
-This endpoint retrieves a specific cypher key. The value of the key is decrypted and returned as data. It may be a String or an object with many {"key":"value"} pairs. 
-The type depends on the cypher mount's capabilities and what type of data was written to the key. 
+This endpoint retrieves a specific cypher key. The value of the key is decrypted and returned as data. It may be a String or an object with many {"key":"value"} pairs.
+The type depends on the cypher mount's capabilities and what type of data was written to the key.
 For example the `secret/` mount allows either a string or an object, while the `password/` mount will always store and return a string.
 This endpoint can also create a key. This only applies to mount types `uuid`, `key`, `password`.  Refer to the `POST` endpoint for more information.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param cypherPath The cypher key including the mount prefix.
- @return ApiGetCypherKeyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param cypherPath The cypher key including the mount prefix.
+	@return ApiGetCypherKeyRequest
 */
 func (a *CypherAPIService) GetCypherKey(ctx context.Context, cypherPath string) ApiGetCypherKeyRequest {
 	return ApiGetCypherKeyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		cypherPath: cypherPath,
 	}
 }
 
 // Execute executes the request
-//  @return GetCypherKey200Response
+//
+//	@return GetCypherKey200Response
 func (a *CypherAPIService) GetCypherKeyExecute(r ApiGetCypherKeyRequest) (*GetCypherKey200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetCypherKey200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetCypherKey200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CypherAPIService.GetCypherKey")
@@ -353,7 +353,7 @@ func (a *CypherAPIService) GetCypherKeyExecute(r ApiGetCypherKeyRequest) (*GetCy
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -362,8 +362,8 @@ func (a *CypherAPIService) GetCypherKeyExecute(r ApiGetCypherKeyRequest) (*GetCy
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -373,8 +373,8 @@ func (a *CypherAPIService) GetCypherKeyExecute(r ApiGetCypherKeyRequest) (*GetCy
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -382,8 +382,8 @@ func (a *CypherAPIService) GetCypherKeyExecute(r ApiGetCypherKeyRequest) (*GetCy
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -392,16 +392,16 @@ func (a *CypherAPIService) GetCypherKeyExecute(r ApiGetCypherKeyRequest) (*GetCy
 }
 
 type ApiListCypherKeysRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *CypherAPIService
 	leaseToken *string
-	list *bool
-	key *string
-	phrase *string
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
+	list       *bool
+	key        *string
+	phrase     *string
+	max        *int64
+	offset     *int64
+	sort       *string
+	direction  *string
 }
 
 // An execution lease token.
@@ -461,24 +461,25 @@ ListCypherKeys List Cypher Keys
 
 This endpoint retrieves all cypher keys associated with the account, or user.  This method can be used to list keys as well, by passing the query parameter list=true.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListCypherKeysRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListCypherKeysRequest
 */
 func (a *CypherAPIService) ListCypherKeys(ctx context.Context) ApiListCypherKeysRequest {
 	return ApiListCypherKeysRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListCypherKeys200Response
+//
+//	@return ListCypherKeys200Response
 func (a *CypherAPIService) ListCypherKeysExecute(r ApiListCypherKeysRequest) (*ListCypherKeys200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListCypherKeys200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListCypherKeys200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CypherAPIService.ListCypherKeys")
@@ -609,7 +610,7 @@ func (a *CypherAPIService) ListCypherKeysExecute(r ApiListCypherKeysRequest) (*L
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -618,8 +619,8 @@ func (a *CypherAPIService) ListCypherKeysExecute(r ApiListCypherKeysRequest) (*L
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -629,8 +630,8 @@ func (a *CypherAPIService) ListCypherKeysExecute(r ApiListCypherKeysRequest) (*L
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -638,8 +639,8 @@ func (a *CypherAPIService) ListCypherKeysExecute(r ApiListCypherKeysRequest) (*L
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -648,7 +649,7 @@ func (a *CypherAPIService) ListCypherKeysExecute(r ApiListCypherKeysRequest) (*L
 }
 
 type ApiRemoveCypherRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *CypherAPIService
 	cypherPath string
 }
@@ -662,27 +663,27 @@ RemoveCypher Delete a Cypher
 
 Will delete a cypher from the system and make it no longer usable.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param cypherPath The cypher key including the mount prefix.
- @return ApiRemoveCypherRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param cypherPath The cypher key including the mount prefix.
+	@return ApiRemoveCypherRequest
 */
 func (a *CypherAPIService) RemoveCypher(ctx context.Context, cypherPath string) ApiRemoveCypherRequest {
 	return ApiRemoveCypherRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		cypherPath: cypherPath,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *CypherAPIService) RemoveCypherExecute(r ApiRemoveCypherRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CypherAPIService.RemoveCypher")
@@ -733,7 +734,7 @@ func (a *CypherAPIService) RemoveCypherExecute(r ApiRemoveCypherRequest) (*Delet
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -742,8 +743,8 @@ func (a *CypherAPIService) RemoveCypherExecute(r ApiRemoveCypherRequest) (*Delet
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -753,8 +754,8 @@ func (a *CypherAPIService) RemoveCypherExecute(r ApiRemoveCypherRequest) (*Delet
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -762,8 +763,8 @@ func (a *CypherAPIService) RemoveCypherExecute(r ApiRemoveCypherRequest) (*Delet
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

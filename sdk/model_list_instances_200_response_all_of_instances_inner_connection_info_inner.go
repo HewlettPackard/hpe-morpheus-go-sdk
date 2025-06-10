@@ -20,10 +20,10 @@ var _ MappedNullable = &ListInstances200ResponseAllOfInstancesInnerConnectionInf
 
 // ListInstances200ResponseAllOfInstancesInnerConnectionInfoInner struct for ListInstances200ResponseAllOfInstancesInnerConnectionInfoInner
 type ListInstances200ResponseAllOfInstancesInnerConnectionInfoInner struct {
-	Ip *string `json:"ip,omitempty"`
-	Port *int32 `json:"port,omitempty"`
-	Name *string `json:"name,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Ip                   *string                `json:"ip,omitempty"`
+	Port                 *int32                 `json:"port,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListInstances200ResponseAllOfInstancesInnerConnectionInfoInner ListInstances200ResponseAllOfInstancesInnerConnectionInfoInner
@@ -142,7 +142,7 @@ func (o *ListInstances200ResponseAllOfInstancesInnerConnectionInfoInner) SetName
 }
 
 func (o ListInstances200ResponseAllOfInstancesInnerConnectionInfoInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -167,64 +167,8 @@ func (o ListInstances200ResponseAllOfInstancesInnerConnectionInfoInner) ToMap() 
 
 	return toSerialize, nil
 }
-
 func (o *ListInstances200ResponseAllOfInstancesInnerConnectionInfoInner) UnmarshalJSON(data []byte) (err error) {
-	varListInstances200ResponseAllOfInstancesInnerConnectionInfoInner := _ListInstances200ResponseAllOfInstancesInnerConnectionInfoInner{}
-
-	err = json.Unmarshal(data, &varListInstances200ResponseAllOfInstancesInnerConnectionInfoInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListInstances200ResponseAllOfInstancesInnerConnectionInfoInner(varListInstances200ResponseAllOfInstancesInnerConnectionInfoInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "ip")
-		delete(additionalProperties, "port")
-		delete(additionalProperties, "name")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListInstances200ResponseAllOfInstancesInnerConnectionInfoInner struct {
-	value *ListInstances200ResponseAllOfInstancesInnerConnectionInfoInner
-	isSet bool
-}
-
-func (v NullableListInstances200ResponseAllOfInstancesInnerConnectionInfoInner) Get() *ListInstances200ResponseAllOfInstancesInnerConnectionInfoInner {
-	return v.value
-}
-
-func (v *NullableListInstances200ResponseAllOfInstancesInnerConnectionInfoInner) Set(val *ListInstances200ResponseAllOfInstancesInnerConnectionInfoInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListInstances200ResponseAllOfInstancesInnerConnectionInfoInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListInstances200ResponseAllOfInstancesInnerConnectionInfoInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListInstances200ResponseAllOfInstancesInnerConnectionInfoInner(val *ListInstances200ResponseAllOfInstancesInnerConnectionInfoInner) *NullableListInstances200ResponseAllOfInstancesInnerConnectionInfoInner {
-	return &NullableListInstances200ResponseAllOfInstancesInnerConnectionInfoInner{value: val, isSet: true}
-}
-
-func (v NullableListInstances200ResponseAllOfInstancesInnerConnectionInfoInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListInstances200ResponseAllOfInstancesInnerConnectionInfoInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

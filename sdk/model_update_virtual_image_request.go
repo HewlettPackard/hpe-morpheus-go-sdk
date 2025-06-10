@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the UpdateVirtualImageRequest type satisfies the MappedNullable interface at compile time
@@ -21,8 +20,8 @@ var _ MappedNullable = &UpdateVirtualImageRequest{}
 
 // UpdateVirtualImageRequest struct for UpdateVirtualImageRequest
 type UpdateVirtualImageRequest struct {
-	VirtualImage UpdateVirtualImageRequestVirtualImage `json:"virtualImage"`
-	AdditionalProperties map[string]interface{}
+	VirtualImage         UpdateVirtualImageRequestVirtualImage `json:"virtualImage"`
+	AdditionalProperties map[string]interface{}                `json:",remain"`
 }
 
 type _UpdateVirtualImageRequest UpdateVirtualImageRequest
@@ -70,7 +69,7 @@ func (o *UpdateVirtualImageRequest) SetVirtualImage(v UpdateVirtualImageRequestV
 }
 
 func (o UpdateVirtualImageRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -87,83 +86,8 @@ func (o UpdateVirtualImageRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *UpdateVirtualImageRequest) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"virtualImage",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varUpdateVirtualImageRequest := _UpdateVirtualImageRequest{}
-
-	err = json.Unmarshal(data, &varUpdateVirtualImageRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateVirtualImageRequest(varUpdateVirtualImageRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "virtualImage")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateVirtualImageRequest struct {
-	value *UpdateVirtualImageRequest
-	isSet bool
-}
-
-func (v NullableUpdateVirtualImageRequest) Get() *UpdateVirtualImageRequest {
-	return v.value
-}
-
-func (v *NullableUpdateVirtualImageRequest) Set(val *UpdateVirtualImageRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateVirtualImageRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateVirtualImageRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateVirtualImageRequest(val *UpdateVirtualImageRequest) *NullableUpdateVirtualImageRequest {
-	return &NullableUpdateVirtualImageRequest{value: val, isSet: true}
-}
-
-func (v NullableUpdateVirtualImageRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateVirtualImageRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

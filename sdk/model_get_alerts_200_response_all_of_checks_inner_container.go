@@ -20,8 +20,8 @@ var _ MappedNullable = &GetAlerts200ResponseAllOfChecksInnerContainer{}
 
 // GetAlerts200ResponseAllOfChecksInnerContainer struct for GetAlerts200ResponseAllOfChecksInnerContainer
 type GetAlerts200ResponseAllOfChecksInnerContainer struct {
-	Id *int64 `json:"id,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _GetAlerts200ResponseAllOfChecksInnerContainer GetAlerts200ResponseAllOfChecksInnerContainer
@@ -76,7 +76,7 @@ func (o *GetAlerts200ResponseAllOfChecksInnerContainer) SetId(v int64) {
 }
 
 func (o GetAlerts200ResponseAllOfChecksInnerContainer) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o GetAlerts200ResponseAllOfChecksInnerContainer) ToMap() (map[string]inter
 
 	return toSerialize, nil
 }
-
 func (o *GetAlerts200ResponseAllOfChecksInnerContainer) UnmarshalJSON(data []byte) (err error) {
-	varGetAlerts200ResponseAllOfChecksInnerContainer := _GetAlerts200ResponseAllOfChecksInnerContainer{}
-
-	err = json.Unmarshal(data, &varGetAlerts200ResponseAllOfChecksInnerContainer)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetAlerts200ResponseAllOfChecksInnerContainer(varGetAlerts200ResponseAllOfChecksInnerContainer)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetAlerts200ResponseAllOfChecksInnerContainer struct {
-	value *GetAlerts200ResponseAllOfChecksInnerContainer
-	isSet bool
-}
-
-func (v NullableGetAlerts200ResponseAllOfChecksInnerContainer) Get() *GetAlerts200ResponseAllOfChecksInnerContainer {
-	return v.value
-}
-
-func (v *NullableGetAlerts200ResponseAllOfChecksInnerContainer) Set(val *GetAlerts200ResponseAllOfChecksInnerContainer) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetAlerts200ResponseAllOfChecksInnerContainer) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetAlerts200ResponseAllOfChecksInnerContainer) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetAlerts200ResponseAllOfChecksInnerContainer(val *GetAlerts200ResponseAllOfChecksInnerContainer) *NullableGetAlerts200ResponseAllOfChecksInnerContainer {
-	return &NullableGetAlerts200ResponseAllOfChecksInnerContainer{value: val, isSet: true}
-}
-
-func (v NullableGetAlerts200ResponseAllOfChecksInnerContainer) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetAlerts200ResponseAllOfChecksInnerContainer) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

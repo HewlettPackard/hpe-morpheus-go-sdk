@@ -20,15 +20,15 @@ var _ MappedNullable = &ResizeInstanceRequest{}
 
 // ResizeInstanceRequest struct for ResizeInstanceRequest
 type ResizeInstanceRequest struct {
-	Instance *ResizeInstanceRequestInstance `json:"instance,omitempty"`
+	Instance           *ResizeInstanceRequestInstance                                         `json:"instance,omitempty"`
 	ServicePlanOptions *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigServicePlanOptions `json:"servicePlanOptions,omitempty"`
 	// Can be used to grow just the logical volume of the instance instead of choosing a plan
 	Volumes []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner `json:"volumes,omitempty"`
 	// Delete the original volumes after resizing. (Amazon only)
 	DeleteOriginalVolumes *bool `json:"deleteOriginalVolumes,omitempty"`
 	// Key for network configuration. Include id to update an existing interface. The existing interfaces and their id can be retrieved with the hosts API.
-	NetworkInterfaces []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInner `json:"networkInterfaces,omitempty"`
-	AdditionalProperties map[string]interface{}
+	NetworkInterfaces    []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInner `json:"networkInterfaces,omitempty"`
+	AdditionalProperties map[string]interface{}                                                      `json:",remain"`
 }
 
 type _ResizeInstanceRequest ResizeInstanceRequest
@@ -215,7 +215,7 @@ func (o *ResizeInstanceRequest) SetNetworkInterfaces(v []AddCatalogItemTypeReque
 }
 
 func (o ResizeInstanceRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -246,66 +246,8 @@ func (o ResizeInstanceRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ResizeInstanceRequest) UnmarshalJSON(data []byte) (err error) {
-	varResizeInstanceRequest := _ResizeInstanceRequest{}
-
-	err = json.Unmarshal(data, &varResizeInstanceRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ResizeInstanceRequest(varResizeInstanceRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "instance")
-		delete(additionalProperties, "servicePlanOptions")
-		delete(additionalProperties, "volumes")
-		delete(additionalProperties, "deleteOriginalVolumes")
-		delete(additionalProperties, "networkInterfaces")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableResizeInstanceRequest struct {
-	value *ResizeInstanceRequest
-	isSet bool
-}
-
-func (v NullableResizeInstanceRequest) Get() *ResizeInstanceRequest {
-	return v.value
-}
-
-func (v *NullableResizeInstanceRequest) Set(val *ResizeInstanceRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableResizeInstanceRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableResizeInstanceRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableResizeInstanceRequest(val *ResizeInstanceRequest) *NullableResizeInstanceRequest {
-	return &NullableResizeInstanceRequest{value: val, isSet: true}
-}
-
-func (v NullableResizeInstanceRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableResizeInstanceRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

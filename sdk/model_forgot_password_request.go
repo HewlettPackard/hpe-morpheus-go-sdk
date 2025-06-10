@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the ForgotPasswordRequest type satisfies the MappedNullable interface at compile time
@@ -21,9 +20,9 @@ var _ MappedNullable = &ForgotPasswordRequest{}
 
 // ForgotPasswordRequest struct for ForgotPasswordRequest
 type ForgotPasswordRequest struct {
-	// Specified as \"username\" or \"tenantId\\username\" with proper HTML encoding and used in conjunction with `password`. 
-	Username string `json:"username"`
-	AdditionalProperties map[string]interface{}
+	// Specified as \"username\" or \"tenantId\\username\" with proper HTML encoding and used in conjunction with `password`.
+	Username             string                 `json:"username"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ForgotPasswordRequest ForgotPasswordRequest
@@ -71,7 +70,7 @@ func (o *ForgotPasswordRequest) SetUsername(v string) {
 }
 
 func (o ForgotPasswordRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -88,83 +87,8 @@ func (o ForgotPasswordRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ForgotPasswordRequest) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"username",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varForgotPasswordRequest := _ForgotPasswordRequest{}
-
-	err = json.Unmarshal(data, &varForgotPasswordRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ForgotPasswordRequest(varForgotPasswordRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "username")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableForgotPasswordRequest struct {
-	value *ForgotPasswordRequest
-	isSet bool
-}
-
-func (v NullableForgotPasswordRequest) Get() *ForgotPasswordRequest {
-	return v.value
-}
-
-func (v *NullableForgotPasswordRequest) Set(val *ForgotPasswordRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableForgotPasswordRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableForgotPasswordRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableForgotPasswordRequest(val *ForgotPasswordRequest) *NullableForgotPasswordRequest {
-	return &NullableForgotPasswordRequest{value: val, isSet: true}
-}
-
-func (v NullableForgotPasswordRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableForgotPasswordRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

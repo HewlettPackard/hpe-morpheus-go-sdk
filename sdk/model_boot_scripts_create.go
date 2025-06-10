@@ -23,8 +23,8 @@ type BootScriptsCreate struct {
 	// A name for the boot script
 	FileName *string `json:"fileName,omitempty"`
 	// The script content
-	Content *string `json:"content,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Content              *string                `json:"content,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _BootScriptsCreate BootScriptsCreate
@@ -111,7 +111,7 @@ func (o *BootScriptsCreate) SetContent(v string) {
 }
 
 func (o BootScriptsCreate) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -133,63 +133,8 @@ func (o BootScriptsCreate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *BootScriptsCreate) UnmarshalJSON(data []byte) (err error) {
-	varBootScriptsCreate := _BootScriptsCreate{}
-
-	err = json.Unmarshal(data, &varBootScriptsCreate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = BootScriptsCreate(varBootScriptsCreate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "fileName")
-		delete(additionalProperties, "content")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableBootScriptsCreate struct {
-	value *BootScriptsCreate
-	isSet bool
-}
-
-func (v NullableBootScriptsCreate) Get() *BootScriptsCreate {
-	return v.value
-}
-
-func (v *NullableBootScriptsCreate) Set(val *BootScriptsCreate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableBootScriptsCreate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableBootScriptsCreate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableBootScriptsCreate(val *BootScriptsCreate) *NullableBootScriptsCreate {
-	return &NullableBootScriptsCreate{value: val, isSet: true}
-}
-
-func (v NullableBootScriptsCreate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableBootScriptsCreate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

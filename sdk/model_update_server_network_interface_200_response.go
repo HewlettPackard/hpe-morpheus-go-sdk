@@ -20,13 +20,13 @@ var _ MappedNullable = &UpdateServerNetworkInterface200Response{}
 
 // UpdateServerNetworkInterface200Response struct for UpdateServerNetworkInterface200Response
 type UpdateServerNetworkInterface200Response struct {
-	NetworkInterface *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface `json:"networkInterface,omitempty"`
-	InterfaceType *string `json:"interfaceType,omitempty"`
-	NetId *int64 `json:"netId,omitempty"`
-	Server *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServer `json:"server,omitempty"`
-	Success *bool `json:"success,omitempty"`
-	Errors map[string]interface{} `json:"errors,omitempty"`
-	AdditionalProperties map[string]interface{}
+	NetworkInterface     *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface `json:"networkInterface,omitempty"`
+	InterfaceType        *string                                                              `json:"interfaceType,omitempty"`
+	NetId                *int64                                                               `json:"netId,omitempty"`
+	Server               *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServer           `json:"server,omitempty"`
+	Success              *bool                                                                `json:"success,omitempty"`
+	Errors               map[string]interface{}                                               `json:"errors,omitempty"`
+	AdditionalProperties map[string]interface{}                                               `json:",remain"`
 }
 
 type _UpdateServerNetworkInterface200Response UpdateServerNetworkInterface200Response
@@ -241,7 +241,7 @@ func (o *UpdateServerNetworkInterface200Response) SetErrors(v map[string]interfa
 }
 
 func (o UpdateServerNetworkInterface200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -275,67 +275,8 @@ func (o UpdateServerNetworkInterface200Response) ToMap() (map[string]interface{}
 
 	return toSerialize, nil
 }
-
 func (o *UpdateServerNetworkInterface200Response) UnmarshalJSON(data []byte) (err error) {
-	varUpdateServerNetworkInterface200Response := _UpdateServerNetworkInterface200Response{}
-
-	err = json.Unmarshal(data, &varUpdateServerNetworkInterface200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateServerNetworkInterface200Response(varUpdateServerNetworkInterface200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "networkInterface")
-		delete(additionalProperties, "interfaceType")
-		delete(additionalProperties, "netId")
-		delete(additionalProperties, "server")
-		delete(additionalProperties, "success")
-		delete(additionalProperties, "errors")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateServerNetworkInterface200Response struct {
-	value *UpdateServerNetworkInterface200Response
-	isSet bool
-}
-
-func (v NullableUpdateServerNetworkInterface200Response) Get() *UpdateServerNetworkInterface200Response {
-	return v.value
-}
-
-func (v *NullableUpdateServerNetworkInterface200Response) Set(val *UpdateServerNetworkInterface200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateServerNetworkInterface200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateServerNetworkInterface200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateServerNetworkInterface200Response(val *UpdateServerNetworkInterface200Response) *NullableUpdateServerNetworkInterface200Response {
-	return &NullableUpdateServerNetworkInterface200Response{value: val, isSet: true}
-}
-
-func (v NullableUpdateServerNetworkInterface200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateServerNetworkInterface200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -20,65 +20,65 @@ var _ MappedNullable = &StorageVolume{}
 
 // StorageVolume struct for StorageVolume
 type StorageVolume struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Controller *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"controller,omitempty"`
-	ControllerId *int64 `json:"controllerId,omitempty"`
-	ControllerMountPoint *string `json:"controllerMountPoint,omitempty"`
-	Resizeable *bool `json:"resizeable,omitempty"`
-	RootVolume *bool `json:"rootVolume,omitempty"`
-	UnitNumber *string `json:"unitNumber,omitempty"`
-	DeviceName *string `json:"deviceName,omitempty"`
-	DeviceDisplayName *string `json:"deviceDisplayName,omitempty"`
-	VolumeName *string `json:"volumeName,omitempty"`
-	VolumePath *string `json:"volumePath,omitempty"`
-	VolumeType *string `json:"volumeType,omitempty"`
-	RefType *string `json:"refType,omitempty"`
-	RefId *int64 `json:"refId,omitempty"`
-	DiskMode *string `json:"diskMode,omitempty"`
-	DiskType *string `json:"diskType,omitempty"`
-	Type *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"type,omitempty"`
-	TypeId *int64 `json:"typeId,omitempty"`
-	Category *string `json:"category,omitempty"`
-	Status *string `json:"status,omitempty"`
-	StatusMessage *string `json:"statusMessage,omitempty"`
-	ConfigurableIOPS *bool `json:"configurableIOPS,omitempty"`
-	MaxStorage *int64 `json:"maxStorage,omitempty"`
-	UsedStorage *int64 `json:"usedStorage,omitempty"`
-	DisplayOrder *int64 `json:"displayOrder,omitempty"`
-	MaxIOPS *string `json:"maxIOPS,omitempty"`
-	Uuid *string `json:"uuid,omitempty"`
-	Active *bool `json:"active,omitempty"`
-	ReadOnly *bool `json:"readOnly,omitempty"`
-	Removable *bool `json:"removable,omitempty"`
-	PoolName *string `json:"poolName,omitempty"`
-	Zone *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"zone,omitempty"`
-	ZoneId *int64 `json:"zoneId,omitempty"`
-	Datastore *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"datastore,omitempty"`
-	DatastoreId *int64 `json:"datastoreId,omitempty"`
-	DatastoreOption *string `json:"datastoreOption,omitempty"`
-	StorageGroup *string `json:"storageGroup,omitempty"`
-	Namespace *string `json:"namespace,omitempty"`
-	StorageServer *string `json:"storageServer,omitempty"`
-	Source *string `json:"source,omitempty"`
-	UniqueId *string `json:"uniqueId,omitempty"`
-	InternalId *string `json:"internalId,omitempty"`
-	ExternalId *string `json:"externalId,omitempty"`
-	ProvisionType *string `json:"provisionType,omitempty"`
-	CopyType *string `json:"copyType,omitempty"`
-	FiberWwn *string `json:"fiberWwn,omitempty"`
-	FileName *string `json:"fileName,omitempty"`
-	ClaimName *string `json:"claimName,omitempty"`
-	SharePath *string `json:"sharePath,omitempty"`
-	SourceId *string `json:"sourceId,omitempty"`
-	SourceImage *string `json:"sourceImage,omitempty"`
-	ImageType *string `json:"imageType,omitempty"`
-	Online *bool `json:"online,omitempty"`
-	RawData *string `json:"rawData,omitempty"`
-	Account *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
-	Owner *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"owner,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                  `json:"id,omitempty"`
+	Name                 *string                                                                 `json:"name,omitempty"`
+	Description          *string                                                                 `json:"description,omitempty"`
+	Controller           *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                      `json:"controller,omitempty"`
+	ControllerId         *int64                                                                  `json:"controllerId,omitempty"`
+	ControllerMountPoint *string                                                                 `json:"controllerMountPoint,omitempty"`
+	Resizeable           *bool                                                                   `json:"resizeable,omitempty"`
+	RootVolume           *bool                                                                   `json:"rootVolume,omitempty"`
+	UnitNumber           *string                                                                 `json:"unitNumber,omitempty"`
+	DeviceName           *string                                                                 `json:"deviceName,omitempty"`
+	DeviceDisplayName    *string                                                                 `json:"deviceDisplayName,omitempty"`
+	VolumeName           *string                                                                 `json:"volumeName,omitempty"`
+	VolumePath           *string                                                                 `json:"volumePath,omitempty"`
+	VolumeType           *string                                                                 `json:"volumeType,omitempty"`
+	RefType              *string                                                                 `json:"refType,omitempty"`
+	RefId                *int64                                                                  `json:"refId,omitempty"`
+	DiskMode             *string                                                                 `json:"diskMode,omitempty"`
+	DiskType             *string                                                                 `json:"diskType,omitempty"`
+	Type                 *ListBackupSettings200ResponseBackupSettingsDefaultSchedule             `json:"type,omitempty"`
+	TypeId               *int64                                                                  `json:"typeId,omitempty"`
+	Category             *string                                                                 `json:"category,omitempty"`
+	Status               *string                                                                 `json:"status,omitempty"`
+	StatusMessage        *string                                                                 `json:"statusMessage,omitempty"`
+	ConfigurableIOPS     *bool                                                                   `json:"configurableIOPS,omitempty"`
+	MaxStorage           *int64                                                                  `json:"maxStorage,omitempty"`
+	UsedStorage          *int64                                                                  `json:"usedStorage,omitempty"`
+	DisplayOrder         *int64                                                                  `json:"displayOrder,omitempty"`
+	MaxIOPS              *string                                                                 `json:"maxIOPS,omitempty"`
+	Uuid                 *string                                                                 `json:"uuid,omitempty"`
+	Active               *bool                                                                   `json:"active,omitempty"`
+	ReadOnly             *bool                                                                   `json:"readOnly,omitempty"`
+	Removable            *bool                                                                   `json:"removable,omitempty"`
+	PoolName             *string                                                                 `json:"poolName,omitempty"`
+	Zone                 *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"zone,omitempty"`
+	ZoneId               *int64                                                                  `json:"zoneId,omitempty"`
+	Datastore            *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"datastore,omitempty"`
+	DatastoreId          *int64                                                                  `json:"datastoreId,omitempty"`
+	DatastoreOption      *string                                                                 `json:"datastoreOption,omitempty"`
+	StorageGroup         *string                                                                 `json:"storageGroup,omitempty"`
+	Namespace            *string                                                                 `json:"namespace,omitempty"`
+	StorageServer        *string                                                                 `json:"storageServer,omitempty"`
+	Source               *string                                                                 `json:"source,omitempty"`
+	UniqueId             *string                                                                 `json:"uniqueId,omitempty"`
+	InternalId           *string                                                                 `json:"internalId,omitempty"`
+	ExternalId           *string                                                                 `json:"externalId,omitempty"`
+	ProvisionType        *string                                                                 `json:"provisionType,omitempty"`
+	CopyType             *string                                                                 `json:"copyType,omitempty"`
+	FiberWwn             *string                                                                 `json:"fiberWwn,omitempty"`
+	FileName             *string                                                                 `json:"fileName,omitempty"`
+	ClaimName            *string                                                                 `json:"claimName,omitempty"`
+	SharePath            *string                                                                 `json:"sharePath,omitempty"`
+	SourceId             *string                                                                 `json:"sourceId,omitempty"`
+	SourceImage          *string                                                                 `json:"sourceImage,omitempty"`
+	ImageType            *string                                                                 `json:"imageType,omitempty"`
+	Online               *bool                                                                   `json:"online,omitempty"`
+	RawData              *string                                                                 `json:"rawData,omitempty"`
+	Account              *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
+	Owner                *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"owner,omitempty"`
+	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
 }
 
 type _StorageVolume StorageVolume
@@ -1957,7 +1957,7 @@ func (o *StorageVolume) SetOwner(v ListApplianceSettings200ResponseApplianceSett
 }
 
 func (o StorageVolume) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -2147,119 +2147,8 @@ func (o StorageVolume) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *StorageVolume) UnmarshalJSON(data []byte) (err error) {
-	varStorageVolume := _StorageVolume{}
-
-	err = json.Unmarshal(data, &varStorageVolume)
-
-	if err != nil {
-		return err
-	}
-
-	*o = StorageVolume(varStorageVolume)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "controller")
-		delete(additionalProperties, "controllerId")
-		delete(additionalProperties, "controllerMountPoint")
-		delete(additionalProperties, "resizeable")
-		delete(additionalProperties, "rootVolume")
-		delete(additionalProperties, "unitNumber")
-		delete(additionalProperties, "deviceName")
-		delete(additionalProperties, "deviceDisplayName")
-		delete(additionalProperties, "volumeName")
-		delete(additionalProperties, "volumePath")
-		delete(additionalProperties, "volumeType")
-		delete(additionalProperties, "refType")
-		delete(additionalProperties, "refId")
-		delete(additionalProperties, "diskMode")
-		delete(additionalProperties, "diskType")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "typeId")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "statusMessage")
-		delete(additionalProperties, "configurableIOPS")
-		delete(additionalProperties, "maxStorage")
-		delete(additionalProperties, "usedStorage")
-		delete(additionalProperties, "displayOrder")
-		delete(additionalProperties, "maxIOPS")
-		delete(additionalProperties, "uuid")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "readOnly")
-		delete(additionalProperties, "removable")
-		delete(additionalProperties, "poolName")
-		delete(additionalProperties, "zone")
-		delete(additionalProperties, "zoneId")
-		delete(additionalProperties, "datastore")
-		delete(additionalProperties, "datastoreId")
-		delete(additionalProperties, "datastoreOption")
-		delete(additionalProperties, "storageGroup")
-		delete(additionalProperties, "namespace")
-		delete(additionalProperties, "storageServer")
-		delete(additionalProperties, "source")
-		delete(additionalProperties, "uniqueId")
-		delete(additionalProperties, "internalId")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "provisionType")
-		delete(additionalProperties, "copyType")
-		delete(additionalProperties, "fiberWwn")
-		delete(additionalProperties, "fileName")
-		delete(additionalProperties, "claimName")
-		delete(additionalProperties, "sharePath")
-		delete(additionalProperties, "sourceId")
-		delete(additionalProperties, "sourceImage")
-		delete(additionalProperties, "imageType")
-		delete(additionalProperties, "online")
-		delete(additionalProperties, "rawData")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "owner")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableStorageVolume struct {
-	value *StorageVolume
-	isSet bool
-}
-
-func (v NullableStorageVolume) Get() *StorageVolume {
-	return v.value
-}
-
-func (v *NullableStorageVolume) Set(val *StorageVolume) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableStorageVolume) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableStorageVolume) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableStorageVolume(val *StorageVolume) *NullableStorageVolume {
-	return &NullableStorageVolume{value: val, isSet: true}
-}
-
-func (v NullableStorageVolume) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableStorageVolume) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -21,24 +21,24 @@ var _ MappedNullable = &ListHosts200ResponseAllOfServersInnerStats{}
 
 // ListHosts200ResponseAllOfServersInnerStats struct for ListHosts200ResponseAllOfServersInnerStats
 type ListHosts200ResponseAllOfServersInnerStats struct {
-	Ts *time.Time `json:"ts,omitempty"`
-	FreeSwap *int64 `json:"freeSwap,omitempty"`
-	UsedSwap *int64 `json:"usedSwap,omitempty"`
-	CpuIdleTime *int64 `json:"cpuIdleTime,omitempty"`
-	CpuSystemTime *int64 `json:"cpuSystemTime,omitempty"`
-	CpuUserTime *int64 `json:"cpuUserTime,omitempty"`
-	CpuTotalTime *int64 `json:"cpuTotalTime,omitempty"`
-	MaxMemory *int64 `json:"maxMemory,omitempty"`
-	UsedMemory *int64 `json:"usedMemory,omitempty"`
-	MaxStorage *int64 `json:"maxStorage,omitempty"`
-	UsedStorage *int64 `json:"usedStorage,omitempty"`
-	ReservedStorage *int64 `json:"reservedStorage,omitempty"`
-	CpuUsage *float32 `json:"cpuUsage,omitempty"`
-	FreeMemory *int64 `json:"freeMemory,omitempty"`
-	NetTxUsage *int64 `json:"netTxUsage,omitempty"`
-	NetRxUsage *int64 `json:"netRxUsage,omitempty"`
-	NetworkBandwidth *int64 `json:"networkBandwidth,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Ts                   *time.Time             `json:"ts,omitempty"`
+	FreeSwap             *int64                 `json:"freeSwap,omitempty"`
+	UsedSwap             *int64                 `json:"usedSwap,omitempty"`
+	CpuIdleTime          *int64                 `json:"cpuIdleTime,omitempty"`
+	CpuSystemTime        *int64                 `json:"cpuSystemTime,omitempty"`
+	CpuUserTime          *int64                 `json:"cpuUserTime,omitempty"`
+	CpuTotalTime         *int64                 `json:"cpuTotalTime,omitempty"`
+	MaxMemory            *int64                 `json:"maxMemory,omitempty"`
+	UsedMemory           *int64                 `json:"usedMemory,omitempty"`
+	MaxStorage           *int64                 `json:"maxStorage,omitempty"`
+	UsedStorage          *int64                 `json:"usedStorage,omitempty"`
+	ReservedStorage      *int64                 `json:"reservedStorage,omitempty"`
+	CpuUsage             *float32               `json:"cpuUsage,omitempty"`
+	FreeMemory           *int64                 `json:"freeMemory,omitempty"`
+	NetTxUsage           *int64                 `json:"netTxUsage,omitempty"`
+	NetRxUsage           *int64                 `json:"netRxUsage,omitempty"`
+	NetworkBandwidth     *int64                 `json:"networkBandwidth,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListHosts200ResponseAllOfServersInnerStats ListHosts200ResponseAllOfServersInnerStats
@@ -605,7 +605,7 @@ func (o *ListHosts200ResponseAllOfServersInnerStats) SetNetworkBandwidth(v int64
 }
 
 func (o ListHosts200ResponseAllOfServersInnerStats) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -672,78 +672,8 @@ func (o ListHosts200ResponseAllOfServersInnerStats) ToMap() (map[string]interfac
 
 	return toSerialize, nil
 }
-
 func (o *ListHosts200ResponseAllOfServersInnerStats) UnmarshalJSON(data []byte) (err error) {
-	varListHosts200ResponseAllOfServersInnerStats := _ListHosts200ResponseAllOfServersInnerStats{}
-
-	err = json.Unmarshal(data, &varListHosts200ResponseAllOfServersInnerStats)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListHosts200ResponseAllOfServersInnerStats(varListHosts200ResponseAllOfServersInnerStats)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "ts")
-		delete(additionalProperties, "freeSwap")
-		delete(additionalProperties, "usedSwap")
-		delete(additionalProperties, "cpuIdleTime")
-		delete(additionalProperties, "cpuSystemTime")
-		delete(additionalProperties, "cpuUserTime")
-		delete(additionalProperties, "cpuTotalTime")
-		delete(additionalProperties, "maxMemory")
-		delete(additionalProperties, "usedMemory")
-		delete(additionalProperties, "maxStorage")
-		delete(additionalProperties, "usedStorage")
-		delete(additionalProperties, "reservedStorage")
-		delete(additionalProperties, "cpuUsage")
-		delete(additionalProperties, "freeMemory")
-		delete(additionalProperties, "netTxUsage")
-		delete(additionalProperties, "netRxUsage")
-		delete(additionalProperties, "networkBandwidth")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListHosts200ResponseAllOfServersInnerStats struct {
-	value *ListHosts200ResponseAllOfServersInnerStats
-	isSet bool
-}
-
-func (v NullableListHosts200ResponseAllOfServersInnerStats) Get() *ListHosts200ResponseAllOfServersInnerStats {
-	return v.value
-}
-
-func (v *NullableListHosts200ResponseAllOfServersInnerStats) Set(val *ListHosts200ResponseAllOfServersInnerStats) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListHosts200ResponseAllOfServersInnerStats) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListHosts200ResponseAllOfServersInnerStats) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListHosts200ResponseAllOfServersInnerStats(val *ListHosts200ResponseAllOfServersInnerStats) *NullableListHosts200ResponseAllOfServersInnerStats {
-	return &NullableListHosts200ResponseAllOfServersInnerStats{value: val, isSet: true}
-}
-
-func (v NullableListHosts200ResponseAllOfServersInnerStats) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListHosts200ResponseAllOfServersInnerStats) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

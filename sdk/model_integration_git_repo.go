@@ -21,22 +21,22 @@ var _ MappedNullable = &IntegrationGitRepo{}
 
 // IntegrationGitRepo struct for IntegrationGitRepo
 type IntegrationGitRepo struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	Type *string `json:"type,omitempty"`
-	IntegrationType *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"integrationType,omitempty"`
-	Url *string `json:"url,omitempty"`
-	ServiceKey *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"serviceKey,omitempty"`
-	IsPlugin *bool `json:"isPlugin,omitempty"`
-	Config *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7Config `json:"config,omitempty"`
-	Status *string `json:"status,omitempty"`
-	StatusDate *time.Time `json:"statusDate,omitempty"`
-	StatusMessage *string `json:"statusMessage,omitempty"`
-	LastSync *string `json:"lastSync,omitempty"`
-	LastSyncDuration *string `json:"lastSyncDuration,omitempty"`
-	Credential *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential `json:"credential,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                  `json:"id,omitempty"`
+	Name                 *string                                                                 `json:"name,omitempty"`
+	Enabled              *bool                                                                   `json:"enabled,omitempty"`
+	Type                 *string                                                                 `json:"type,omitempty"`
+	IntegrationType      *ListBackupSettings200ResponseBackupSettingsDefaultSchedule             `json:"integrationType,omitempty"`
+	Url                  *string                                                                 `json:"url,omitempty"`
+	ServiceKey           *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"serviceKey,omitempty"`
+	IsPlugin             *bool                                                                   `json:"isPlugin,omitempty"`
+	Config               *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7Config          `json:"config,omitempty"`
+	Status               *string                                                                 `json:"status,omitempty"`
+	StatusDate           *time.Time                                                              `json:"statusDate,omitempty"`
+	StatusMessage        *string                                                                 `json:"statusMessage,omitempty"`
+	LastSync             *string                                                                 `json:"lastSync,omitempty"`
+	LastSyncDuration     *string                                                                 `json:"lastSyncDuration,omitempty"`
+	Credential           *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential       `json:"credential,omitempty"`
+	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
 }
 
 type _IntegrationGitRepo IntegrationGitRepo
@@ -539,7 +539,7 @@ func (o *IntegrationGitRepo) SetCredential(v ListIntegrations200ResponseAnyOfInt
 }
 
 func (o IntegrationGitRepo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -600,76 +600,8 @@ func (o IntegrationGitRepo) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *IntegrationGitRepo) UnmarshalJSON(data []byte) (err error) {
-	varIntegrationGitRepo := _IntegrationGitRepo{}
-
-	err = json.Unmarshal(data, &varIntegrationGitRepo)
-
-	if err != nil {
-		return err
-	}
-
-	*o = IntegrationGitRepo(varIntegrationGitRepo)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "integrationType")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "serviceKey")
-		delete(additionalProperties, "isPlugin")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "statusDate")
-		delete(additionalProperties, "statusMessage")
-		delete(additionalProperties, "lastSync")
-		delete(additionalProperties, "lastSyncDuration")
-		delete(additionalProperties, "credential")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableIntegrationGitRepo struct {
-	value *IntegrationGitRepo
-	isSet bool
-}
-
-func (v NullableIntegrationGitRepo) Get() *IntegrationGitRepo {
-	return v.value
-}
-
-func (v *NullableIntegrationGitRepo) Set(val *IntegrationGitRepo) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableIntegrationGitRepo) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableIntegrationGitRepo) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableIntegrationGitRepo(val *IntegrationGitRepo) *NullableIntegrationGitRepo {
-	return &NullableIntegrationGitRepo{value: val, isSet: true}
-}
-
-func (v NullableIntegrationGitRepo) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableIntegrationGitRepo) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

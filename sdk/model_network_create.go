@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the NetworkCreate type satisfies the MappedNullable interface at compile time
@@ -28,12 +27,12 @@ type NetworkCreate struct {
 	// Array of label strings, can be used for filtering.
 	Labels []string `json:"labels,omitempty"`
 	// Description
-	Description *string `json:"description,omitempty"`
-	Site CreateNetworksRequestNetworkSite `json:"site"`
-	Zone CreateNetworksRequestNetworkZone `json:"zone"`
-	Type *CreateNetworksRequestNetworkType `json:"type,omitempty"`
-	Ipv4Enabled *bool `json:"ipv4Enabled,omitempty"`
-	Ipv6Enabled *bool `json:"ipv6Enabled,omitempty"`
+	Description *string                           `json:"description,omitempty"`
+	Site        CreateNetworksRequestNetworkSite  `json:"site"`
+	Zone        CreateNetworksRequestNetworkZone  `json:"zone"`
+	Type        *CreateNetworksRequestNetworkType `json:"type,omitempty"`
+	Ipv4Enabled *bool                             `json:"ipv4Enabled,omitempty"`
+	Ipv6Enabled *bool                             `json:"ipv6Enabled,omitempty"`
 	// CIDR Network
 	Cidr *string `json:"cidr,omitempty"`
 	// Network Gateway
@@ -51,7 +50,7 @@ type NetworkCreate struct {
 	DnsSecondaryIPv6 *string `json:"dnsSecondaryIPv6,omitempty"`
 	// IPv6 Network CIDR
 	CidrIPv6 *string `json:"cidrIPv6,omitempty"`
-	VlanId *int64 `json:"vlanId,omitempty"`
+	VlanId   *int64  `json:"vlanId,omitempty"`
 	// Network Pool ID
 	Pool *int64 `json:"pool,omitempty"`
 	// IPv6 Network Pool ID
@@ -65,22 +64,22 @@ type NetworkCreate struct {
 	// DHCP Server enabled network
 	DhcpServer *bool `json:"dhcpServer,omitempty"`
 	// IPv6 DHCP Server enabled network
-	DhcpServerIPv6 *bool `json:"dhcpServerIPv6,omitempty"`
-	NetworkDomain *CreateNetworksRequestNetworkNetworkDomain `json:"networkDomain,omitempty"`
+	DhcpServerIPv6 *bool                                      `json:"dhcpServerIPv6,omitempty"`
+	NetworkDomain  *CreateNetworksRequestNetworkNetworkDomain `json:"networkDomain,omitempty"`
 	// Search Domains
-	SearchDomains *string `json:"searchDomains,omitempty"`
-	NetworkProxy *CreateNetworksRequestNetworkNetworkProxy `json:"networkProxy,omitempty"`
+	SearchDomains *string                                   `json:"searchDomains,omitempty"`
+	NetworkProxy  *CreateNetworksRequestNetworkNetworkProxy `json:"networkProxy,omitempty"`
 	// Bypass Proxy for Appliance URL
 	ApplianceUrlProxyBypass *bool `json:"applianceUrlProxyBypass,omitempty"`
 	// Comma-separated list of ip addresses or name servers to exclude proxy traversal for. Typically locally routable servers are excluded.
 	NoProxy *string `json:"noProxy,omitempty"`
 	// Visibility, private or public.
-	Visibility *string `json:"visibility,omitempty"`
-	Config *CreateNetworksRequestNetworkConfig `json:"config,omitempty"`
+	Visibility *string                             `json:"visibility,omitempty"`
+	Config     *CreateNetworksRequestNetworkConfig `json:"config,omitempty"`
 	// Array of tenant account ids that are allowed access
-	Tenants []GetAlerts200ResponseAllOfChecksInnerAccount `json:"tenants,omitempty"`
-	ResourcePermissions *CreateNetworksRequestNetworkResourcePermissions `json:"resourcePermissions,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Tenants              []GetAlerts200ResponseAllOfChecksInnerAccount    `json:"tenants,omitempty"`
+	ResourcePermissions  *CreateNetworksRequestNetworkResourcePermissions `json:"resourcePermissions,omitempty"`
+	AdditionalProperties map[string]interface{}                           `json:",remain"`
 }
 
 type _NetworkCreate NetworkCreate
@@ -1206,7 +1205,7 @@ func (o *NetworkCreate) SetResourcePermissions(v CreateNetworksRequestNetworkRes
 }
 
 func (o NetworkCreate) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1321,119 +1320,8 @@ func (o NetworkCreate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *NetworkCreate) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-		"site",
-		"zone",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varNetworkCreate := _NetworkCreate{}
-
-	err = json.Unmarshal(data, &varNetworkCreate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = NetworkCreate(varNetworkCreate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "displayName")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "site")
-		delete(additionalProperties, "zone")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "ipv4Enabled")
-		delete(additionalProperties, "ipv6Enabled")
-		delete(additionalProperties, "cidr")
-		delete(additionalProperties, "gateway")
-		delete(additionalProperties, "dnsPrimary")
-		delete(additionalProperties, "dnsSecondary")
-		delete(additionalProperties, "gatewayIPv6")
-		delete(additionalProperties, "netmaskIPv6")
-		delete(additionalProperties, "dnsPrimaryIPv6")
-		delete(additionalProperties, "dnsSecondaryIPv6")
-		delete(additionalProperties, "cidrIPv6")
-		delete(additionalProperties, "vlanId")
-		delete(additionalProperties, "pool")
-		delete(additionalProperties, "poolIPv6")
-		delete(additionalProperties, "allowStaticOverride")
-		delete(additionalProperties, "assignPublicIp")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "dhcpServer")
-		delete(additionalProperties, "dhcpServerIPv6")
-		delete(additionalProperties, "networkDomain")
-		delete(additionalProperties, "searchDomains")
-		delete(additionalProperties, "networkProxy")
-		delete(additionalProperties, "applianceUrlProxyBypass")
-		delete(additionalProperties, "noProxy")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "tenants")
-		delete(additionalProperties, "resourcePermissions")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableNetworkCreate struct {
-	value *NetworkCreate
-	isSet bool
-}
-
-func (v NullableNetworkCreate) Get() *NetworkCreate {
-	return v.value
-}
-
-func (v *NullableNetworkCreate) Set(val *NetworkCreate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableNetworkCreate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableNetworkCreate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableNetworkCreate(val *NetworkCreate) *NullableNetworkCreate {
-	return &NullableNetworkCreate{value: val, isSet: true}
-}
-
-func (v NullableNetworkCreate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableNetworkCreate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

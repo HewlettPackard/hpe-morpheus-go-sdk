@@ -21,47 +21,47 @@ var _ MappedNullable = &ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsIn
 
 // ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner struct for ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner
 type ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner struct {
-	Id *int64 `json:"id,omitempty"`
-	LoadBalancer *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer `json:"loadBalancer,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Category *string `json:"category,omitempty"`
-	Visibility *string `json:"visibility,omitempty"`
-	Description *string `json:"description,omitempty"`
-	InternalId *string `json:"internalId,omitempty"`
-	ExternalId *string `json:"externalId,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	VipSticky *string `json:"vipSticky,omitempty"`
-	VipBalance *string `json:"vipBalance,omitempty"`
-	AllowNat *string `json:"allowNat,omitempty"`
-	AllowSnat *string `json:"allowSnat,omitempty"`
-	VipClientIpMode *string `json:"vipClientIpMode,omitempty"`
-	VipServerIpMode *string `json:"vipServerIpMode,omitempty"`
-	MinActive *int64 `json:"minActive,omitempty"`
-	MinInService *string `json:"minInService,omitempty"`
-	MinUpMonitor *string `json:"minUpMonitor,omitempty"`
-	MinUpAction *string `json:"minUpAction,omitempty"`
-	MaxQueueDepth *string `json:"maxQueueDepth,omitempty"`
-	MaxQueueTime *string `json:"maxQueueTime,omitempty"`
-	NumberActive *int64 `json:"numberActive,omitempty"`
-	NumberInService *int64 `json:"numberInService,omitempty"`
-	HealthScore *int64 `json:"healthScore,omitempty"`
-	PerformanceScore *int64 `json:"performanceScore,omitempty"`
-	HealthPenalty *int64 `json:"healthPenalty,omitempty"`
-	SecurityPenalty *int64 `json:"securityPenalty,omitempty"`
-	ErrorPenalty *int64 `json:"errorPenalty,omitempty"`
-	DownAction *string `json:"downAction,omitempty"`
-	RampTime *string `json:"rampTime,omitempty"`
-	Port *string `json:"port,omitempty"`
-	PortType *string `json:"portType,omitempty"`
-	Status *string `json:"status,omitempty"`
-	Nodes []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"nodes,omitempty"`
-	Monitors []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"monitors,omitempty"`
-	Members []map[string]interface{} `json:"members,omitempty"`
-	Config map[string]interface{} `json:"config,omitempty"`
-	CreatedBy *string `json:"createdBy,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                         `json:"id,omitempty"`
+	LoadBalancer         *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer `json:"loadBalancer,omitempty"`
+	Name                 *string                                                                        `json:"name,omitempty"`
+	Category             *string                                                                        `json:"category,omitempty"`
+	Visibility           *string                                                                        `json:"visibility,omitempty"`
+	Description          *string                                                                        `json:"description,omitempty"`
+	InternalId           *string                                                                        `json:"internalId,omitempty"`
+	ExternalId           *string                                                                        `json:"externalId,omitempty"`
+	Enabled              *bool                                                                          `json:"enabled,omitempty"`
+	VipSticky            *string                                                                        `json:"vipSticky,omitempty"`
+	VipBalance           *string                                                                        `json:"vipBalance,omitempty"`
+	AllowNat             *string                                                                        `json:"allowNat,omitempty"`
+	AllowSnat            *string                                                                        `json:"allowSnat,omitempty"`
+	VipClientIpMode      *string                                                                        `json:"vipClientIpMode,omitempty"`
+	VipServerIpMode      *string                                                                        `json:"vipServerIpMode,omitempty"`
+	MinActive            *int64                                                                         `json:"minActive,omitempty"`
+	MinInService         *string                                                                        `json:"minInService,omitempty"`
+	MinUpMonitor         *string                                                                        `json:"minUpMonitor,omitempty"`
+	MinUpAction          *string                                                                        `json:"minUpAction,omitempty"`
+	MaxQueueDepth        *string                                                                        `json:"maxQueueDepth,omitempty"`
+	MaxQueueTime         *string                                                                        `json:"maxQueueTime,omitempty"`
+	NumberActive         *int64                                                                         `json:"numberActive,omitempty"`
+	NumberInService      *int64                                                                         `json:"numberInService,omitempty"`
+	HealthScore          *int64                                                                         `json:"healthScore,omitempty"`
+	PerformanceScore     *int64                                                                         `json:"performanceScore,omitempty"`
+	HealthPenalty        *int64                                                                         `json:"healthPenalty,omitempty"`
+	SecurityPenalty      *int64                                                                         `json:"securityPenalty,omitempty"`
+	ErrorPenalty         *int64                                                                         `json:"errorPenalty,omitempty"`
+	DownAction           *string                                                                        `json:"downAction,omitempty"`
+	RampTime             *string                                                                        `json:"rampTime,omitempty"`
+	Port                 *string                                                                        `json:"port,omitempty"`
+	PortType             *string                                                                        `json:"portType,omitempty"`
+	Status               *string                                                                        `json:"status,omitempty"`
+	Nodes                []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner       `json:"nodes,omitempty"`
+	Monitors             []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner       `json:"monitors,omitempty"`
+	Members              []map[string]interface{}                                                       `json:"members,omitempty"`
+	Config               map[string]interface{}                                                         `json:"config,omitempty"`
+	CreatedBy            *string                                                                        `json:"createdBy,omitempty"`
+	DateCreated          *time.Time                                                                     `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                                     `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}                                                         `json:",remain"`
 }
 
 type _ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner
@@ -1364,7 +1364,7 @@ func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) SetLastUpd
 }
 
 func (o ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1500,101 +1500,8 @@ func (o ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) ToMap() (ma
 
 	return toSerialize, nil
 }
-
 func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) UnmarshalJSON(data []byte) (err error) {
-	varListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner := _ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner{}
-
-	err = json.Unmarshal(data, &varListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner(varListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "loadBalancer")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "internalId")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "vipSticky")
-		delete(additionalProperties, "vipBalance")
-		delete(additionalProperties, "allowNat")
-		delete(additionalProperties, "allowSnat")
-		delete(additionalProperties, "vipClientIpMode")
-		delete(additionalProperties, "vipServerIpMode")
-		delete(additionalProperties, "minActive")
-		delete(additionalProperties, "minInService")
-		delete(additionalProperties, "minUpMonitor")
-		delete(additionalProperties, "minUpAction")
-		delete(additionalProperties, "maxQueueDepth")
-		delete(additionalProperties, "maxQueueTime")
-		delete(additionalProperties, "numberActive")
-		delete(additionalProperties, "numberInService")
-		delete(additionalProperties, "healthScore")
-		delete(additionalProperties, "performanceScore")
-		delete(additionalProperties, "healthPenalty")
-		delete(additionalProperties, "securityPenalty")
-		delete(additionalProperties, "errorPenalty")
-		delete(additionalProperties, "downAction")
-		delete(additionalProperties, "rampTime")
-		delete(additionalProperties, "port")
-		delete(additionalProperties, "portType")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "nodes")
-		delete(additionalProperties, "monitors")
-		delete(additionalProperties, "members")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "createdBy")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner struct {
-	value *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner
-	isSet bool
-}
-
-func (v NullableListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) Get() *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner {
-	return v.value
-}
-
-func (v *NullableListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) Set(val *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner(val *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) *NullableListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner {
-	return &NullableListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner{value: val, isSet: true}
-}
-
-func (v NullableListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

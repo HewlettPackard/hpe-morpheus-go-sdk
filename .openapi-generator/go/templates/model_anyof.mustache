@@ -13,6 +13,23 @@ type {{classname}} struct {
 	{{/anyOf}}
 }
 
+{{#useMapStructs}}
+func (dst *{{classname}}) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &{{classname}}{}
+	}
+
+	{{#anyOf}}
+	if out, ok := data.({{.}}); ok {
+		dst.{{#lambda.type-to-name}}{{{.}}}{{/lambda.type-to-name}} = &out
+	}
+	
+	{{/anyOf}}
+
+	return dst, nil
+}
+{{/useMapStructs}}
+
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *{{classname}}) UnmarshalJSON(data []byte) error {
 	var err error

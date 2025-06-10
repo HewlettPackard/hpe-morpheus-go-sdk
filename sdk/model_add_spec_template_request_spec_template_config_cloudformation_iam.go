@@ -14,6 +14,7 @@ package sdk
 import (
 	"encoding/json"
 	"fmt"
+
 	"gopkg.in/validator.v2"
 )
 
@@ -22,7 +23,7 @@ var _ fmt.Stringer
 
 // AddSpecTemplateRequestSpecTemplateConfigCloudformationIAM - struct for AddSpecTemplateRequestSpecTemplateConfigCloudformationIAM
 type AddSpecTemplateRequestSpecTemplateConfigCloudformationIAM struct {
-	Bool *bool
+	Bool   *bool
 	String *string
 }
 
@@ -40,6 +41,21 @@ func StringAsAddSpecTemplateRequestSpecTemplateConfigCloudformationIAM(v *string
 	}
 }
 
+func (dst *AddSpecTemplateRequestSpecTemplateConfigCloudformationIAM) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddSpecTemplateRequestSpecTemplateConfigCloudformationIAM{}
+	}
+
+	if out, ok := data.(bool); ok {
+		dst.Bool = &out
+	}
+
+	if out, ok := data.(string); ok {
+		dst.String = &out
+	}
+
+	return dst, nil
+}
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddSpecTemplateRequestSpecTemplateConfigCloudformationIAM) UnmarshalJSON(data []byte) error {
@@ -106,7 +122,7 @@ func (src AddSpecTemplateRequestSpecTemplateConfigCloudformationIAM) MarshalJSON
 }
 
 // Get the actual instance
-func (obj *AddSpecTemplateRequestSpecTemplateConfigCloudformationIAM) GetActualInstance() (interface{}) {
+func (obj *AddSpecTemplateRequestSpecTemplateConfigCloudformationIAM) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -123,7 +139,7 @@ func (obj *AddSpecTemplateRequestSpecTemplateConfigCloudformationIAM) GetActualI
 }
 
 // Get the actual instance value
-func (obj AddSpecTemplateRequestSpecTemplateConfigCloudformationIAM) GetActualInstanceValue() (interface{}) {
+func (obj AddSpecTemplateRequestSpecTemplateConfigCloudformationIAM) GetActualInstanceValue() interface{} {
 	if obj.Bool != nil {
 		return *obj.Bool
 	}
@@ -171,5 +187,3 @@ func (v *NullableAddSpecTemplateRequestSpecTemplateConfigCloudformationIAM) Unma
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

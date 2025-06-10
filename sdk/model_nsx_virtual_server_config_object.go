@@ -20,9 +20,9 @@ var _ MappedNullable = &NSXVirtualServerConfigObject{}
 
 // NSXVirtualServerConfigObject struct for NSXVirtualServerConfigObject
 type NSXVirtualServerConfigObject struct {
-	// The Load Balancer Application Profile ID The Options API `/api/options/nsxt/nsxtLBVirtualServerApplicationProfile?loadBalancerId=42&loadBalancerInstance.vipProtocol=tcp` can be used to see which options are available. 
-	ApplicationProfile *string `json:"applicationProfile,omitempty"`
-	AdditionalProperties map[string]interface{}
+	// The Load Balancer Application Profile ID The Options API `/api/options/nsxt/nsxtLBVirtualServerApplicationProfile?loadBalancerId=42&loadBalancerInstance.vipProtocol=tcp` can be used to see which options are available.
+	ApplicationProfile   *string                `json:"applicationProfile,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _NSXVirtualServerConfigObject NSXVirtualServerConfigObject
@@ -77,7 +77,7 @@ func (o *NSXVirtualServerConfigObject) SetApplicationProfile(v string) {
 }
 
 func (o NSXVirtualServerConfigObject) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -96,62 +96,8 @@ func (o NSXVirtualServerConfigObject) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *NSXVirtualServerConfigObject) UnmarshalJSON(data []byte) (err error) {
-	varNSXVirtualServerConfigObject := _NSXVirtualServerConfigObject{}
-
-	err = json.Unmarshal(data, &varNSXVirtualServerConfigObject)
-
-	if err != nil {
-		return err
-	}
-
-	*o = NSXVirtualServerConfigObject(varNSXVirtualServerConfigObject)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "applicationProfile")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableNSXVirtualServerConfigObject struct {
-	value *NSXVirtualServerConfigObject
-	isSet bool
-}
-
-func (v NullableNSXVirtualServerConfigObject) Get() *NSXVirtualServerConfigObject {
-	return v.value
-}
-
-func (v *NullableNSXVirtualServerConfigObject) Set(val *NSXVirtualServerConfigObject) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableNSXVirtualServerConfigObject) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableNSXVirtualServerConfigObject) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableNSXVirtualServerConfigObject(val *NSXVirtualServerConfigObject) *NullableNSXVirtualServerConfigObject {
-	return &NullableNSXVirtualServerConfigObject{value: val, isSet: true}
-}
-
-func (v NullableNSXVirtualServerConfigObject) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableNSXVirtualServerConfigObject) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -21,8 +21,8 @@ var _ MappedNullable = &RemoveInstancesFromControlRequest{}
 // RemoveInstancesFromControlRequest struct for RemoveInstancesFromControlRequest
 type RemoveInstancesFromControlRequest struct {
 	// Array of Ids of brownfield Instances to be deleted
-	Ids []int64 `json:"ids,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Ids                  []int64                `json:"ids,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _RemoveInstancesFromControlRequest RemoveInstancesFromControlRequest
@@ -77,7 +77,7 @@ func (o *RemoveInstancesFromControlRequest) SetIds(v []int64) {
 }
 
 func (o RemoveInstancesFromControlRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -96,62 +96,8 @@ func (o RemoveInstancesFromControlRequest) ToMap() (map[string]interface{}, erro
 
 	return toSerialize, nil
 }
-
 func (o *RemoveInstancesFromControlRequest) UnmarshalJSON(data []byte) (err error) {
-	varRemoveInstancesFromControlRequest := _RemoveInstancesFromControlRequest{}
-
-	err = json.Unmarshal(data, &varRemoveInstancesFromControlRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = RemoveInstancesFromControlRequest(varRemoveInstancesFromControlRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "ids")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableRemoveInstancesFromControlRequest struct {
-	value *RemoveInstancesFromControlRequest
-	isSet bool
-}
-
-func (v NullableRemoveInstancesFromControlRequest) Get() *RemoveInstancesFromControlRequest {
-	return v.value
-}
-
-func (v *NullableRemoveInstancesFromControlRequest) Set(val *RemoveInstancesFromControlRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableRemoveInstancesFromControlRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableRemoveInstancesFromControlRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableRemoveInstancesFromControlRequest(val *RemoveInstancesFromControlRequest) *NullableRemoveInstancesFromControlRequest {
-	return &NullableRemoveInstancesFromControlRequest{value: val, isSet: true}
-}
-
-func (v NullableRemoveInstancesFromControlRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableRemoveInstancesFromControlRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

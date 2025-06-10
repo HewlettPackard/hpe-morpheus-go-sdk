@@ -20,9 +20,9 @@ var _ MappedNullable = &ListCertificates200ResponseCertificatesInnerType{}
 
 // ListCertificates200ResponseCertificatesInnerType struct for ListCertificates200ResponseCertificatesInnerType
 type ListCertificates200ResponseCertificatesInnerType struct {
-	Id *int64 `json:"id,omitempty"`
-	Code *string `json:"code,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Code                 *string                `json:"code,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListCertificates200ResponseCertificatesInnerType ListCertificates200ResponseCertificatesInnerType
@@ -109,7 +109,7 @@ func (o *ListCertificates200ResponseCertificatesInnerType) SetCode(v string) {
 }
 
 func (o ListCertificates200ResponseCertificatesInnerType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o ListCertificates200ResponseCertificatesInnerType) ToMap() (map[string]in
 
 	return toSerialize, nil
 }
-
 func (o *ListCertificates200ResponseCertificatesInnerType) UnmarshalJSON(data []byte) (err error) {
-	varListCertificates200ResponseCertificatesInnerType := _ListCertificates200ResponseCertificatesInnerType{}
-
-	err = json.Unmarshal(data, &varListCertificates200ResponseCertificatesInnerType)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListCertificates200ResponseCertificatesInnerType(varListCertificates200ResponseCertificatesInnerType)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "code")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListCertificates200ResponseCertificatesInnerType struct {
-	value *ListCertificates200ResponseCertificatesInnerType
-	isSet bool
-}
-
-func (v NullableListCertificates200ResponseCertificatesInnerType) Get() *ListCertificates200ResponseCertificatesInnerType {
-	return v.value
-}
-
-func (v *NullableListCertificates200ResponseCertificatesInnerType) Set(val *ListCertificates200ResponseCertificatesInnerType) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListCertificates200ResponseCertificatesInnerType) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListCertificates200ResponseCertificatesInnerType) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListCertificates200ResponseCertificatesInnerType(val *ListCertificates200ResponseCertificatesInnerType) *NullableListCertificates200ResponseCertificatesInnerType {
-	return &NullableListCertificates200ResponseCertificatesInnerType{value: val, isSet: true}
-}
-
-func (v NullableListCertificates200ResponseCertificatesInnerType) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListCertificates200ResponseCertificatesInnerType) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

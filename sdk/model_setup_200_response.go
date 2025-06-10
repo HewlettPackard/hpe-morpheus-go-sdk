@@ -28,8 +28,8 @@ type Setup200Response struct {
 	// The Appliance Server URL as defined under Appliance Settings.
 	ApplianceUrl *string `json:"applianceUrl,omitempty"`
 	// Flag to determine if the appliance has been setup, only true when appliance is a fresh install and has not been initialized.
-	SetupNeeded *bool `json:"setupNeeded,omitempty"`
-	AdditionalProperties map[string]interface{}
+	SetupNeeded          *bool                  `json:"setupNeeded,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _Setup200Response Setup200Response
@@ -212,7 +212,7 @@ func (o *Setup200Response) SetSetupNeeded(v bool) {
 }
 
 func (o Setup200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -243,66 +243,8 @@ func (o Setup200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *Setup200Response) UnmarshalJSON(data []byte) (err error) {
-	varSetup200Response := _Setup200Response{}
-
-	err = json.Unmarshal(data, &varSetup200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = Setup200Response(varSetup200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "success")
-		delete(additionalProperties, "buildVersion")
-		delete(additionalProperties, "uuid")
-		delete(additionalProperties, "applianceUrl")
-		delete(additionalProperties, "setupNeeded")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableSetup200Response struct {
-	value *Setup200Response
-	isSet bool
-}
-
-func (v NullableSetup200Response) Get() *Setup200Response {
-	return v.value
-}
-
-func (v *NullableSetup200Response) Set(val *Setup200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSetup200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSetup200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSetup200Response(val *Setup200Response) *NullableSetup200Response {
-	return &NullableSetup200Response{value: val, isSet: true}
-}
-
-func (v NullableSetup200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSetup200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

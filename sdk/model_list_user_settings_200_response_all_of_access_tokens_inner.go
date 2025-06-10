@@ -21,13 +21,13 @@ var _ MappedNullable = &ListUserSettings200ResponseAllOfAccessTokensInner{}
 
 // ListUserSettings200ResponseAllOfAccessTokensInner struct for ListUserSettings200ResponseAllOfAccessTokensInner
 type ListUserSettings200ResponseAllOfAccessTokensInner struct {
-	ClientId *string `json:"clientId,omitempty"`
-	Username *string `json:"username,omitempty"`
-	Expiration *time.Time `json:"expiration,omitempty"`
-	TokenType *string `json:"tokenType,omitempty"`
-	MaskedAccessToken *string `json:"maskedAccessToken,omitempty"`
-	MaskedRefreshToken *string `json:"maskedRefreshToken,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ClientId             *string                `json:"clientId,omitempty"`
+	Username             *string                `json:"username,omitempty"`
+	Expiration           *time.Time             `json:"expiration,omitempty"`
+	TokenType            *string                `json:"tokenType,omitempty"`
+	MaskedAccessToken    *string                `json:"maskedAccessToken,omitempty"`
+	MaskedRefreshToken   *string                `json:"maskedRefreshToken,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListUserSettings200ResponseAllOfAccessTokensInner ListUserSettings200ResponseAllOfAccessTokensInner
@@ -242,7 +242,7 @@ func (o *ListUserSettings200ResponseAllOfAccessTokensInner) SetMaskedRefreshToke
 }
 
 func (o ListUserSettings200ResponseAllOfAccessTokensInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -276,67 +276,8 @@ func (o ListUserSettings200ResponseAllOfAccessTokensInner) ToMap() (map[string]i
 
 	return toSerialize, nil
 }
-
 func (o *ListUserSettings200ResponseAllOfAccessTokensInner) UnmarshalJSON(data []byte) (err error) {
-	varListUserSettings200ResponseAllOfAccessTokensInner := _ListUserSettings200ResponseAllOfAccessTokensInner{}
-
-	err = json.Unmarshal(data, &varListUserSettings200ResponseAllOfAccessTokensInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListUserSettings200ResponseAllOfAccessTokensInner(varListUserSettings200ResponseAllOfAccessTokensInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "clientId")
-		delete(additionalProperties, "username")
-		delete(additionalProperties, "expiration")
-		delete(additionalProperties, "tokenType")
-		delete(additionalProperties, "maskedAccessToken")
-		delete(additionalProperties, "maskedRefreshToken")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListUserSettings200ResponseAllOfAccessTokensInner struct {
-	value *ListUserSettings200ResponseAllOfAccessTokensInner
-	isSet bool
-}
-
-func (v NullableListUserSettings200ResponseAllOfAccessTokensInner) Get() *ListUserSettings200ResponseAllOfAccessTokensInner {
-	return v.value
-}
-
-func (v *NullableListUserSettings200ResponseAllOfAccessTokensInner) Set(val *ListUserSettings200ResponseAllOfAccessTokensInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListUserSettings200ResponseAllOfAccessTokensInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListUserSettings200ResponseAllOfAccessTokensInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListUserSettings200ResponseAllOfAccessTokensInner(val *ListUserSettings200ResponseAllOfAccessTokensInner) *NullableListUserSettings200ResponseAllOfAccessTokensInner {
-	return &NullableListUserSettings200ResponseAllOfAccessTokensInner{value: val, isSet: true}
-}
-
-func (v NullableListUserSettings200ResponseAllOfAccessTokensInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListUserSettings200ResponseAllOfAccessTokensInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

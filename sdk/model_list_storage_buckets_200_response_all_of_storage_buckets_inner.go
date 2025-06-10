@@ -20,22 +20,22 @@ var _ MappedNullable = &ListStorageBuckets200ResponseAllOfStorageBucketsInner{}
 
 // ListStorageBuckets200ResponseAllOfStorageBucketsInner struct for ListStorageBuckets200ResponseAllOfStorageBucketsInner
 type ListStorageBuckets200ResponseAllOfStorageBucketsInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Active *bool `json:"active,omitempty"`
-	AccountId *int64 `json:"accountId,omitempty"`
-	ProviderType *string `json:"providerType,omitempty"`
-	Config *ListStorageBuckets200ResponseAllOfStorageBucketsInnerConfig `json:"config,omitempty"`
-	BucketName *string `json:"bucketName,omitempty"`
-	ReadOnly *bool `json:"readOnly,omitempty"`
-	DefaultBackupTarget *bool `json:"defaultBackupTarget,omitempty"`
-	DefaultDeploymentTarget *bool `json:"defaultDeploymentTarget,omitempty"`
-	DefaultVirtualImageTarget *bool `json:"defaultVirtualImageTarget,omitempty"`
-	CopyToStore *bool `json:"copyToStore,omitempty"`
-	RetentionPolicyType *string `json:"retentionPolicyType,omitempty"`
-	RetentionPolicyDays *string `json:"retentionPolicyDays,omitempty"`
-	RetentionProvider *string `json:"retentionProvider,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                        *int64                                                       `json:"id,omitempty"`
+	Name                      *string                                                      `json:"name,omitempty"`
+	Active                    *bool                                                        `json:"active,omitempty"`
+	AccountId                 *int64                                                       `json:"accountId,omitempty"`
+	ProviderType              *string                                                      `json:"providerType,omitempty"`
+	Config                    *ListStorageBuckets200ResponseAllOfStorageBucketsInnerConfig `json:"config,omitempty"`
+	BucketName                *string                                                      `json:"bucketName,omitempty"`
+	ReadOnly                  *bool                                                        `json:"readOnly,omitempty"`
+	DefaultBackupTarget       *bool                                                        `json:"defaultBackupTarget,omitempty"`
+	DefaultDeploymentTarget   *bool                                                        `json:"defaultDeploymentTarget,omitempty"`
+	DefaultVirtualImageTarget *bool                                                        `json:"defaultVirtualImageTarget,omitempty"`
+	CopyToStore               *bool                                                        `json:"copyToStore,omitempty"`
+	RetentionPolicyType       *string                                                      `json:"retentionPolicyType,omitempty"`
+	RetentionPolicyDays       *string                                                      `json:"retentionPolicyDays,omitempty"`
+	RetentionProvider         *string                                                      `json:"retentionProvider,omitempty"`
+	AdditionalProperties      map[string]interface{}                                       `json:",remain"`
 }
 
 type _ListStorageBuckets200ResponseAllOfStorageBucketsInner ListStorageBuckets200ResponseAllOfStorageBucketsInner
@@ -538,7 +538,7 @@ func (o *ListStorageBuckets200ResponseAllOfStorageBucketsInner) SetRetentionProv
 }
 
 func (o ListStorageBuckets200ResponseAllOfStorageBucketsInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -599,76 +599,8 @@ func (o ListStorageBuckets200ResponseAllOfStorageBucketsInner) ToMap() (map[stri
 
 	return toSerialize, nil
 }
-
 func (o *ListStorageBuckets200ResponseAllOfStorageBucketsInner) UnmarshalJSON(data []byte) (err error) {
-	varListStorageBuckets200ResponseAllOfStorageBucketsInner := _ListStorageBuckets200ResponseAllOfStorageBucketsInner{}
-
-	err = json.Unmarshal(data, &varListStorageBuckets200ResponseAllOfStorageBucketsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListStorageBuckets200ResponseAllOfStorageBucketsInner(varListStorageBuckets200ResponseAllOfStorageBucketsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "accountId")
-		delete(additionalProperties, "providerType")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "bucketName")
-		delete(additionalProperties, "readOnly")
-		delete(additionalProperties, "defaultBackupTarget")
-		delete(additionalProperties, "defaultDeploymentTarget")
-		delete(additionalProperties, "defaultVirtualImageTarget")
-		delete(additionalProperties, "copyToStore")
-		delete(additionalProperties, "retentionPolicyType")
-		delete(additionalProperties, "retentionPolicyDays")
-		delete(additionalProperties, "retentionProvider")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListStorageBuckets200ResponseAllOfStorageBucketsInner struct {
-	value *ListStorageBuckets200ResponseAllOfStorageBucketsInner
-	isSet bool
-}
-
-func (v NullableListStorageBuckets200ResponseAllOfStorageBucketsInner) Get() *ListStorageBuckets200ResponseAllOfStorageBucketsInner {
-	return v.value
-}
-
-func (v *NullableListStorageBuckets200ResponseAllOfStorageBucketsInner) Set(val *ListStorageBuckets200ResponseAllOfStorageBucketsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListStorageBuckets200ResponseAllOfStorageBucketsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListStorageBuckets200ResponseAllOfStorageBucketsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListStorageBuckets200ResponseAllOfStorageBucketsInner(val *ListStorageBuckets200ResponseAllOfStorageBucketsInner) *NullableListStorageBuckets200ResponseAllOfStorageBucketsInner {
-	return &NullableListStorageBuckets200ResponseAllOfStorageBucketsInner{value: val, isSet: true}
-}
-
-func (v NullableListStorageBuckets200ResponseAllOfStorageBucketsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListStorageBuckets200ResponseAllOfStorageBucketsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

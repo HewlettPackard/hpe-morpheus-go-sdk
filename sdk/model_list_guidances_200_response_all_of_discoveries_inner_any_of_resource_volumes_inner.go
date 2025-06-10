@@ -20,22 +20,22 @@ var _ MappedNullable = &ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResour
 
 // ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceVolumesInner struct for ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceVolumesInner
 type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceVolumesInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	ControllerId *int64 `json:"controllerId,omitempty"`
-	ControllerMountPoint *string `json:"controllerMountPoint,omitempty"`
-	Resizeable *bool `json:"resizeable,omitempty"`
-	PlanResizable *bool `json:"planResizable,omitempty"`
-	RootVolume *bool `json:"rootVolume,omitempty"`
-	UnitNumber *string `json:"unitNumber,omitempty"`
-	TypeId *int64 `json:"typeId,omitempty"`
-	ConfigurableIOPS *bool `json:"configurableIOPS,omitempty"`
-	DatastoreId *int64 `json:"datastoreId,omitempty"`
-	MaxStorage *int64 `json:"maxStorage,omitempty"`
-	DisplayOrder *int64 `json:"displayOrder,omitempty"`
-	MaxIOPS *string `json:"maxIOPS,omitempty"`
-	Uuid *string `json:"uuid,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	ControllerId         *int64                 `json:"controllerId,omitempty"`
+	ControllerMountPoint *string                `json:"controllerMountPoint,omitempty"`
+	Resizeable           *bool                  `json:"resizeable,omitempty"`
+	PlanResizable        *bool                  `json:"planResizable,omitempty"`
+	RootVolume           *bool                  `json:"rootVolume,omitempty"`
+	UnitNumber           *string                `json:"unitNumber,omitempty"`
+	TypeId               *int64                 `json:"typeId,omitempty"`
+	ConfigurableIOPS     *bool                  `json:"configurableIOPS,omitempty"`
+	DatastoreId          *int64                 `json:"datastoreId,omitempty"`
+	MaxStorage           *int64                 `json:"maxStorage,omitempty"`
+	DisplayOrder         *int64                 `json:"displayOrder,omitempty"`
+	MaxIOPS              *string                `json:"maxIOPS,omitempty"`
+	Uuid                 *string                `json:"uuid,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceVolumesInner ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceVolumesInner
@@ -538,7 +538,7 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceVolumesInner)
 }
 
 func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceVolumesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -599,76 +599,8 @@ func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceVolumesInner) 
 
 	return toSerialize, nil
 }
-
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceVolumesInner) UnmarshalJSON(data []byte) (err error) {
-	varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceVolumesInner := _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceVolumesInner{}
-
-	err = json.Unmarshal(data, &varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceVolumesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceVolumesInner(varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceVolumesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "controllerId")
-		delete(additionalProperties, "controllerMountPoint")
-		delete(additionalProperties, "resizeable")
-		delete(additionalProperties, "planResizable")
-		delete(additionalProperties, "rootVolume")
-		delete(additionalProperties, "unitNumber")
-		delete(additionalProperties, "typeId")
-		delete(additionalProperties, "configurableIOPS")
-		delete(additionalProperties, "datastoreId")
-		delete(additionalProperties, "maxStorage")
-		delete(additionalProperties, "displayOrder")
-		delete(additionalProperties, "maxIOPS")
-		delete(additionalProperties, "uuid")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceVolumesInner struct {
-	value *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceVolumesInner
-	isSet bool
-}
-
-func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceVolumesInner) Get() *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceVolumesInner {
-	return v.value
-}
-
-func (v *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceVolumesInner) Set(val *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceVolumesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceVolumesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceVolumesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceVolumesInner(val *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceVolumesInner) *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceVolumesInner {
-	return &NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceVolumesInner{value: val, isSet: true}
-}
-
-func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceVolumesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceVolumesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

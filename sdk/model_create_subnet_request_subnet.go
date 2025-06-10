@@ -28,8 +28,8 @@ type CreateSubnetRequestSubnet struct {
 	// private or public
 	Visibility *string `json:"visibility,omitempty"`
 	// Array of label strings, can be used for filtering.
-	Labels []string `json:"labels,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Labels               []string               `json:"labels,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _CreateSubnetRequestSubnet CreateSubnetRequestSubnet
@@ -216,7 +216,7 @@ func (o *CreateSubnetRequestSubnet) SetLabels(v []string) {
 }
 
 func (o CreateSubnetRequestSubnet) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -247,66 +247,8 @@ func (o CreateSubnetRequestSubnet) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *CreateSubnetRequestSubnet) UnmarshalJSON(data []byte) (err error) {
-	varCreateSubnetRequestSubnet := _CreateSubnetRequestSubnet{}
-
-	err = json.Unmarshal(data, &varCreateSubnetRequestSubnet)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CreateSubnetRequestSubnet(varCreateSubnetRequestSubnet)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "tenants")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "labels")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCreateSubnetRequestSubnet struct {
-	value *CreateSubnetRequestSubnet
-	isSet bool
-}
-
-func (v NullableCreateSubnetRequestSubnet) Get() *CreateSubnetRequestSubnet {
-	return v.value
-}
-
-func (v *NullableCreateSubnetRequestSubnet) Set(val *CreateSubnetRequestSubnet) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCreateSubnetRequestSubnet) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCreateSubnetRequestSubnet) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCreateSubnetRequestSubnet(val *CreateSubnetRequestSubnet) *NullableCreateSubnetRequestSubnet {
-	return &NullableCreateSubnetRequestSubnet{value: val, isSet: true}
-}
-
-func (v NullableCreateSubnetRequestSubnet) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCreateSubnetRequestSubnet) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

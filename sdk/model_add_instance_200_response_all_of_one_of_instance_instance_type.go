@@ -20,12 +20,12 @@ var _ MappedNullable = &AddInstance200ResponseAllOfOneOfInstanceInstanceType{}
 
 // AddInstance200ResponseAllOfOneOfInstanceInstanceType struct for AddInstance200ResponseAllOfOneOfInstanceInstanceType
 type AddInstance200ResponseAllOfOneOfInstanceInstanceType struct {
-	Id *int64 `json:"id,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Category *string `json:"category,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Image *string `json:"image,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Code                 *string                `json:"code,omitempty"`
+	Category             *string                `json:"category,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	Image                *string                `json:"image,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddInstance200ResponseAllOfOneOfInstanceInstanceType AddInstance200ResponseAllOfOneOfInstanceInstanceType
@@ -208,7 +208,7 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceInstanceType) SetImage(v string
 }
 
 func (o AddInstance200ResponseAllOfOneOfInstanceInstanceType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -239,66 +239,8 @@ func (o AddInstance200ResponseAllOfOneOfInstanceInstanceType) ToMap() (map[strin
 
 	return toSerialize, nil
 }
-
 func (o *AddInstance200ResponseAllOfOneOfInstanceInstanceType) UnmarshalJSON(data []byte) (err error) {
-	varAddInstance200ResponseAllOfOneOfInstanceInstanceType := _AddInstance200ResponseAllOfOneOfInstanceInstanceType{}
-
-	err = json.Unmarshal(data, &varAddInstance200ResponseAllOfOneOfInstanceInstanceType)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddInstance200ResponseAllOfOneOfInstanceInstanceType(varAddInstance200ResponseAllOfOneOfInstanceInstanceType)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "image")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddInstance200ResponseAllOfOneOfInstanceInstanceType struct {
-	value *AddInstance200ResponseAllOfOneOfInstanceInstanceType
-	isSet bool
-}
-
-func (v NullableAddInstance200ResponseAllOfOneOfInstanceInstanceType) Get() *AddInstance200ResponseAllOfOneOfInstanceInstanceType {
-	return v.value
-}
-
-func (v *NullableAddInstance200ResponseAllOfOneOfInstanceInstanceType) Set(val *AddInstance200ResponseAllOfOneOfInstanceInstanceType) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddInstance200ResponseAllOfOneOfInstanceInstanceType) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddInstance200ResponseAllOfOneOfInstanceInstanceType) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddInstance200ResponseAllOfOneOfInstanceInstanceType(val *AddInstance200ResponseAllOfOneOfInstanceInstanceType) *NullableAddInstance200ResponseAllOfOneOfInstanceInstanceType {
-	return &NullableAddInstance200ResponseAllOfOneOfInstanceInstanceType{value: val, isSet: true}
-}
-
-func (v NullableAddInstance200ResponseAllOfOneOfInstanceInstanceType) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddInstance200ResponseAllOfOneOfInstanceInstanceType) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

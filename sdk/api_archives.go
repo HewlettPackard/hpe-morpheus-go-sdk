@@ -18,17 +18,16 @@ import (
 	"io"
 	"net/http"
 	"net/url"
-	"strings"
 	"os"
+	"strings"
 )
-
 
 // ArchivesAPIService ArchivesAPI service
 type ArchivesAPIService service
 
 type ApiAddArchiveBucketRequest struct {
-	ctx context.Context
-	ApiService *ArchivesAPIService
+	ctx                     context.Context
+	ApiService              *ArchivesAPIService
 	addArchiveBucketRequest *AddArchiveBucketRequest
 }
 
@@ -46,24 +45,25 @@ AddArchiveBucket Create an Archive Bucket
 
 Create an Archive Bucket
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddArchiveBucketRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddArchiveBucketRequest
 */
 func (a *ArchivesAPIService) AddArchiveBucket(ctx context.Context) ApiAddArchiveBucketRequest {
 	return ApiAddArchiveBucketRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddArchiveBucket200Response
+//
+//	@return AddArchiveBucket200Response
 func (a *ArchivesAPIService) AddArchiveBucketExecute(r ApiAddArchiveBucketRequest) (*AddArchiveBucket200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddArchiveBucket200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddArchiveBucket200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArchivesAPIService.AddArchiveBucket")
@@ -115,7 +115,7 @@ func (a *ArchivesAPIService) AddArchiveBucketExecute(r ApiAddArchiveBucketReques
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -124,8 +124,8 @@ func (a *ArchivesAPIService) AddArchiveBucketExecute(r ApiAddArchiveBucketReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -135,8 +135,8 @@ func (a *ArchivesAPIService) AddArchiveBucketExecute(r ApiAddArchiveBucketReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -144,8 +144,8 @@ func (a *ArchivesAPIService) AddArchiveBucketExecute(r ApiAddArchiveBucketReques
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -154,12 +154,12 @@ func (a *ArchivesAPIService) AddArchiveBucketExecute(r ApiAddArchiveBucketReques
 }
 
 type ApiAddArchiveFileRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ArchivesAPIService
-	bucket string
-	filepath string
-	filename *string
-	file *os.File
+	bucket     string
+	filepath   string
+	filename   *string
+	file       *os.File
 }
 
 // Specify a filename for archive file. The base filename of the uploaded file is the default.
@@ -184,29 +184,29 @@ Upload a file to the specified archive bucket and file path.
 
 This will overwrite the file if it already exists.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bucket Bucket name
- @param filepath The path to to search for files under. Default is the root directory /.
- @return ApiAddArchiveFileRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param bucket Bucket name
+	@param filepath The path to to search for files under. Default is the root directory /.
+	@return ApiAddArchiveFileRequest
 */
 func (a *ArchivesAPIService) AddArchiveFile(ctx context.Context, bucket string, filepath string) ApiAddArchiveFileRequest {
 	return ApiAddArchiveFileRequest{
 		ApiService: a,
-		ctx: ctx,
-		bucket: bucket,
-		filepath: filepath,
+		ctx:        ctx,
+		bucket:     bucket,
+		filepath:   filepath,
 	}
 }
 
 // Execute executes the request
-//  @return AddArchiveFile200Response
+//
+//	@return AddArchiveFile200Response
 func (a *ArchivesAPIService) AddArchiveFileExecute(r ApiAddArchiveFileRequest) (*AddArchiveFile200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddArchiveFile200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddArchiveFile200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArchivesAPIService.AddArchiveFile")
@@ -243,8 +243,8 @@ func (a *ArchivesAPIService) AddArchiveFileExecute(r ApiAddArchiveFileRequest) (
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	var fileLocalVarFormFileName string
-	var fileLocalVarFileName     string
-	var fileLocalVarFileBytes    []byte
+	var fileLocalVarFileName string
+	var fileLocalVarFileBytes []byte
 
 	fileLocalVarFormFileName = "file"
 	fileLocalVarFile := r.file
@@ -276,7 +276,7 @@ func (a *ArchivesAPIService) AddArchiveFileExecute(r ApiAddArchiveFileRequest) (
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -285,8 +285,8 @@ func (a *ArchivesAPIService) AddArchiveFileExecute(r ApiAddArchiveFileRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -296,8 +296,8 @@ func (a *ArchivesAPIService) AddArchiveFileExecute(r ApiAddArchiveFileRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -305,8 +305,8 @@ func (a *ArchivesAPIService) AddArchiveFileExecute(r ApiAddArchiveFileRequest) (
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -315,9 +315,9 @@ func (a *ArchivesAPIService) AddArchiveFileExecute(r ApiAddArchiveFileRequest) (
 }
 
 type ApiAddArchiveFileLinkRequest struct {
-	ctx context.Context
-	ApiService *ArchivesAPIService
-	id int64
+	ctx           context.Context
+	ApiService    *ArchivesAPIService
+	id            int64
 	expireSeconds *int64
 }
 
@@ -336,26 +336,27 @@ AddArchiveFileLink Create an Archive File Link
 
 This returns a secret token that can be used to download the file via a public url, without any other authentication or authorization. File links can be set to expire after a certain amount of time.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiAddArchiveFileLinkRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiAddArchiveFileLinkRequest
 */
 func (a *ArchivesAPIService) AddArchiveFileLink(ctx context.Context, id int64) ApiAddArchiveFileLinkRequest {
 	return ApiAddArchiveFileLinkRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddArchiveFileLink200Response
+//
+//	@return AddArchiveFileLink200Response
 func (a *ArchivesAPIService) AddArchiveFileLinkExecute(r ApiAddArchiveFileLinkRequest) (*AddArchiveFileLink200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddArchiveFileLink200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddArchiveFileLink200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArchivesAPIService.AddArchiveFileLink")
@@ -412,7 +413,7 @@ func (a *ArchivesAPIService) AddArchiveFileLinkExecute(r ApiAddArchiveFileLinkRe
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -421,8 +422,8 @@ func (a *ArchivesAPIService) AddArchiveFileLinkExecute(r ApiAddArchiveFileLinkRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -432,8 +433,8 @@ func (a *ArchivesAPIService) AddArchiveFileLinkExecute(r ApiAddArchiveFileLinkRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -441,8 +442,8 @@ func (a *ArchivesAPIService) AddArchiveFileLinkExecute(r ApiAddArchiveFileLinkRe
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -451,9 +452,9 @@ func (a *ArchivesAPIService) AddArchiveFileLinkExecute(r ApiAddArchiveFileLinkRe
 }
 
 type ApiDeleteArchiveBucketRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ArchivesAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiDeleteArchiveBucketRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -465,26 +466,27 @@ DeleteArchiveBucket Delete an Archive Bucket
 
 Will delete an archive bucket from the system and make it no longer usable.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiDeleteArchiveBucketRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeleteArchiveBucketRequest
 */
 func (a *ArchivesAPIService) DeleteArchiveBucket(ctx context.Context, id int64) ApiDeleteArchiveBucketRequest {
 	return ApiDeleteArchiveBucketRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *ArchivesAPIService) DeleteArchiveBucketExecute(r ApiDeleteArchiveBucketRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArchivesAPIService.DeleteArchiveBucket")
@@ -535,7 +537,7 @@ func (a *ArchivesAPIService) DeleteArchiveBucketExecute(r ApiDeleteArchiveBucket
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -544,8 +546,8 @@ func (a *ArchivesAPIService) DeleteArchiveBucketExecute(r ApiDeleteArchiveBucket
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -555,8 +557,8 @@ func (a *ArchivesAPIService) DeleteArchiveBucketExecute(r ApiDeleteArchiveBucket
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -564,8 +566,8 @@ func (a *ArchivesAPIService) DeleteArchiveBucketExecute(r ApiDeleteArchiveBucket
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -574,9 +576,9 @@ func (a *ArchivesAPIService) DeleteArchiveBucketExecute(r ApiDeleteArchiveBucket
 }
 
 type ApiDeleteArchiveFileRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ArchivesAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiDeleteArchiveFileRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -590,27 +592,27 @@ Permanently delete a file or directory.
 
 Deleting a directory will also delete all the files under it.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiDeleteArchiveFileRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeleteArchiveFileRequest
 */
 func (a *ArchivesAPIService) DeleteArchiveFile(ctx context.Context, id int64) ApiDeleteArchiveFileRequest {
 	return ApiDeleteArchiveFileRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *ArchivesAPIService) DeleteArchiveFileExecute(r ApiDeleteArchiveFileRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArchivesAPIService.DeleteArchiveFile")
@@ -661,7 +663,7 @@ func (a *ArchivesAPIService) DeleteArchiveFileExecute(r ApiDeleteArchiveFileRequ
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -670,8 +672,8 @@ func (a *ArchivesAPIService) DeleteArchiveFileExecute(r ApiDeleteArchiveFileRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -681,8 +683,8 @@ func (a *ArchivesAPIService) DeleteArchiveFileExecute(r ApiDeleteArchiveFileRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -690,8 +692,8 @@ func (a *ArchivesAPIService) DeleteArchiveFileExecute(r ApiDeleteArchiveFileRequ
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -700,10 +702,10 @@ func (a *ArchivesAPIService) DeleteArchiveFileExecute(r ApiDeleteArchiveFileRequ
 }
 
 type ApiDeleteArchiveFileLinkRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ArchivesAPIService
-	id int64
-	linkId int64
+	id         int64
+	linkId     int64
 }
 
 func (r ApiDeleteArchiveFileLinkRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -715,28 +717,29 @@ DeleteArchiveFileLink Delete an Archive File Link
 
 This will delete the link from the system, so it can no longer be used.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @param linkId The ID of the archive file link.
- @return ApiDeleteArchiveFileLinkRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@param linkId The ID of the archive file link.
+	@return ApiDeleteArchiveFileLinkRequest
 */
 func (a *ArchivesAPIService) DeleteArchiveFileLink(ctx context.Context, id int64, linkId int64) ApiDeleteArchiveFileLinkRequest {
 	return ApiDeleteArchiveFileLinkRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
-		linkId: linkId,
+		ctx:        ctx,
+		id:         id,
+		linkId:     linkId,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *ArchivesAPIService) DeleteArchiveFileLinkExecute(r ApiDeleteArchiveFileLinkRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArchivesAPIService.DeleteArchiveFileLink")
@@ -788,7 +791,7 @@ func (a *ArchivesAPIService) DeleteArchiveFileLinkExecute(r ApiDeleteArchiveFile
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -797,8 +800,8 @@ func (a *ArchivesAPIService) DeleteArchiveFileLinkExecute(r ApiDeleteArchiveFile
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -808,8 +811,8 @@ func (a *ArchivesAPIService) DeleteArchiveFileLinkExecute(r ApiDeleteArchiveFile
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -817,8 +820,8 @@ func (a *ArchivesAPIService) DeleteArchiveFileLinkExecute(r ApiDeleteArchiveFile
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -827,9 +830,9 @@ func (a *ArchivesAPIService) DeleteArchiveFileLinkExecute(r ApiDeleteArchiveFile
 }
 
 type ApiGetArchiveBucketRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ArchivesAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetArchiveBucketRequest) Execute() (*GetArchiveBucket200Response, *http.Response, error) {
@@ -841,26 +844,27 @@ GetArchiveBucket Get a Specific Archive Bucket
 
 This endpoint retrieves a specific archive bucket.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetArchiveBucketRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetArchiveBucketRequest
 */
 func (a *ArchivesAPIService) GetArchiveBucket(ctx context.Context, id int64) ApiGetArchiveBucketRequest {
 	return ApiGetArchiveBucketRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetArchiveBucket200Response
+//
+//	@return GetArchiveBucket200Response
 func (a *ArchivesAPIService) GetArchiveBucketExecute(r ApiGetArchiveBucketRequest) (*GetArchiveBucket200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetArchiveBucket200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetArchiveBucket200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArchivesAPIService.GetArchiveBucket")
@@ -911,7 +915,7 @@ func (a *ArchivesAPIService) GetArchiveBucketExecute(r ApiGetArchiveBucketReques
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -920,8 +924,8 @@ func (a *ArchivesAPIService) GetArchiveBucketExecute(r ApiGetArchiveBucketReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -931,8 +935,8 @@ func (a *ArchivesAPIService) GetArchiveBucketExecute(r ApiGetArchiveBucketReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -940,8 +944,8 @@ func (a *ArchivesAPIService) GetArchiveBucketExecute(r ApiGetArchiveBucketReques
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -950,10 +954,10 @@ func (a *ArchivesAPIService) GetArchiveBucketExecute(r ApiGetArchiveBucketReques
 }
 
 type ApiGetArchiveFileRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ArchivesAPIService
-	bucket string
-	filepath string
+	bucket     string
+	filepath   string
 }
 
 func (r ApiGetArchiveFileRequest) Execute() (*http.Response, error) {
@@ -967,27 +971,26 @@ Download the file as an authorized user with access to the bucket.
 
 Downloading a directory will return a .zip file containing all files under it.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bucket Bucket name
- @param filepath The path to to search for files under. Default is the root directory /.
- @return ApiGetArchiveFileRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param bucket Bucket name
+	@param filepath The path to to search for files under. Default is the root directory /.
+	@return ApiGetArchiveFileRequest
 */
 func (a *ArchivesAPIService) GetArchiveFile(ctx context.Context, bucket string, filepath string) ApiGetArchiveFileRequest {
 	return ApiGetArchiveFileRequest{
 		ApiService: a,
-		ctx: ctx,
-		bucket: bucket,
-		filepath: filepath,
+		ctx:        ctx,
+		bucket:     bucket,
+		filepath:   filepath,
 	}
 }
 
 // Execute executes the request
 func (a *ArchivesAPIService) GetArchiveFileExecute(r ApiGetArchiveFileRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArchivesAPIService.GetArchiveFile")
@@ -1039,7 +1042,7 @@ func (a *ArchivesAPIService) GetArchiveFileExecute(r ApiGetArchiveFileRequest) (
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1048,8 +1051,8 @@ func (a *ArchivesAPIService) GetArchiveFileExecute(r ApiGetArchiveFileRequest) (
 				newErr.err = err
 				return localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1059,8 +1062,8 @@ func (a *ArchivesAPIService) GetArchiveFileExecute(r ApiGetArchiveFileRequest) (
 				newErr.err = err
 				return localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarHTTPResponse, newErr
 	}
@@ -1069,9 +1072,9 @@ func (a *ArchivesAPIService) GetArchiveFileExecute(r ApiGetArchiveFileRequest) (
 }
 
 type ApiGetArchiveFileDetailRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ArchivesAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetArchiveFileDetailRequest) Execute() (*GetArchiveFileDetail200Response, *http.Response, error) {
@@ -1083,26 +1086,27 @@ GetArchiveFileDetail Get Archive File Details
 
 Get details about a specific archive file.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetArchiveFileDetailRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetArchiveFileDetailRequest
 */
 func (a *ArchivesAPIService) GetArchiveFileDetail(ctx context.Context, id int64) ApiGetArchiveFileDetailRequest {
 	return ApiGetArchiveFileDetailRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetArchiveFileDetail200Response
+//
+//	@return GetArchiveFileDetail200Response
 func (a *ArchivesAPIService) GetArchiveFileDetailExecute(r ApiGetArchiveFileDetailRequest) (*GetArchiveFileDetail200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetArchiveFileDetail200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetArchiveFileDetail200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArchivesAPIService.GetArchiveFileDetail")
@@ -1153,7 +1157,7 @@ func (a *ArchivesAPIService) GetArchiveFileDetailExecute(r ApiGetArchiveFileDeta
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1162,8 +1166,8 @@ func (a *ArchivesAPIService) GetArchiveFileDetailExecute(r ApiGetArchiveFileDeta
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1173,8 +1177,8 @@ func (a *ArchivesAPIService) GetArchiveFileDetailExecute(r ApiGetArchiveFileDeta
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1182,8 +1186,8 @@ func (a *ArchivesAPIService) GetArchiveFileDetailExecute(r ApiGetArchiveFileDeta
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1192,9 +1196,9 @@ func (a *ArchivesAPIService) GetArchiveFileDetailExecute(r ApiGetArchiveFileDeta
 }
 
 type ApiGetArchiveFileLinksRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ArchivesAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetArchiveFileLinksRequest) Execute() (*GetArchiveFileLinks200Response, *http.Response, error) {
@@ -1206,26 +1210,27 @@ GetArchiveFileLinks Get Archive File Links
 
 This endpoint retrieves the links that have been created for the specified file.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetArchiveFileLinksRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetArchiveFileLinksRequest
 */
 func (a *ArchivesAPIService) GetArchiveFileLinks(ctx context.Context, id int64) ApiGetArchiveFileLinksRequest {
 	return ApiGetArchiveFileLinksRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetArchiveFileLinks200Response
+//
+//	@return GetArchiveFileLinks200Response
 func (a *ArchivesAPIService) GetArchiveFileLinksExecute(r ApiGetArchiveFileLinksRequest) (*GetArchiveFileLinks200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetArchiveFileLinks200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetArchiveFileLinks200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArchivesAPIService.GetArchiveFileLinks")
@@ -1276,7 +1281,7 @@ func (a *ArchivesAPIService) GetArchiveFileLinksExecute(r ApiGetArchiveFileLinks
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1285,8 +1290,8 @@ func (a *ArchivesAPIService) GetArchiveFileLinksExecute(r ApiGetArchiveFileLinks
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1296,8 +1301,8 @@ func (a *ArchivesAPIService) GetArchiveFileLinksExecute(r ApiGetArchiveFileLinks
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1305,8 +1310,8 @@ func (a *ArchivesAPIService) GetArchiveFileLinksExecute(r ApiGetArchiveFileLinks
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1315,10 +1320,10 @@ func (a *ArchivesAPIService) GetArchiveFileLinksExecute(r ApiGetArchiveFileLinks
 }
 
 type ApiGetArchivePublicFileRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ArchivesAPIService
-	bucket string
-	filepath string
+	bucket     string
+	filepath   string
 }
 
 func (r ApiGetArchivePublicFileRequest) Execute() (*http.Response, error) {
@@ -1330,26 +1335,26 @@ GetArchivePublicFile Download a Public Archive File
 
 Files in an archive bucket that has Public URL enabled can be downloaded via this endpoint without any authentication, anonymously.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bucket Bucket name
- @param filepath The path to to search for files under. Default is the root directory /.
- @return ApiGetArchivePublicFileRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param bucket Bucket name
+	@param filepath The path to to search for files under. Default is the root directory /.
+	@return ApiGetArchivePublicFileRequest
 */
 func (a *ArchivesAPIService) GetArchivePublicFile(ctx context.Context, bucket string, filepath string) ApiGetArchivePublicFileRequest {
 	return ApiGetArchivePublicFileRequest{
 		ApiService: a,
-		ctx: ctx,
-		bucket: bucket,
-		filepath: filepath,
+		ctx:        ctx,
+		bucket:     bucket,
+		filepath:   filepath,
 	}
 }
 
 // Execute executes the request
 func (a *ArchivesAPIService) GetArchivePublicFileExecute(r ApiGetArchivePublicFileRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArchivesAPIService.GetArchivePublicFile")
@@ -1401,7 +1406,7 @@ func (a *ArchivesAPIService) GetArchivePublicFileExecute(r ApiGetArchivePublicFi
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1410,8 +1415,8 @@ func (a *ArchivesAPIService) GetArchivePublicFileExecute(r ApiGetArchivePublicFi
 				newErr.err = err
 				return localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1421,8 +1426,8 @@ func (a *ArchivesAPIService) GetArchivePublicFileExecute(r ApiGetArchivePublicFi
 				newErr.err = err
 				return localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarHTTPResponse, newErr
 	}
@@ -1431,9 +1436,9 @@ func (a *ArchivesAPIService) GetArchivePublicFileExecute(r ApiGetArchivePublicFi
 }
 
 type ApiGetArchivePublicFileLinkRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ArchivesAPIService
-	s *string
+	s          *string
 }
 
 // The secret access token for the archive file being downloaded.
@@ -1451,22 +1456,22 @@ GetArchivePublicFileLink Download an Archive File Link
 
 Download an archive file link.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetArchivePublicFileLinkRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetArchivePublicFileLinkRequest
 */
 func (a *ArchivesAPIService) GetArchivePublicFileLink(ctx context.Context) ApiGetArchivePublicFileLinkRequest {
 	return ApiGetArchivePublicFileLinkRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *ArchivesAPIService) GetArchivePublicFileLinkExecute(r ApiGetArchivePublicFileLinkRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArchivesAPIService.GetArchivePublicFileLink")
@@ -1520,7 +1525,7 @@ func (a *ArchivesAPIService) GetArchivePublicFileLinkExecute(r ApiGetArchivePubl
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1529,8 +1534,8 @@ func (a *ArchivesAPIService) GetArchivePublicFileLinkExecute(r ApiGetArchivePubl
 				newErr.err = err
 				return localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1540,8 +1545,8 @@ func (a *ArchivesAPIService) GetArchivePublicFileLinkExecute(r ApiGetArchivePubl
 				newErr.err = err
 				return localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarHTTPResponse, newErr
 	}
@@ -1550,10 +1555,10 @@ func (a *ArchivesAPIService) GetArchivePublicFileLinkExecute(r ApiGetArchivePubl
 }
 
 type ApiListArchiveBucketsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ArchivesAPIService
-	name *string
-	phrase *string
+	name       *string
+	phrase     *string
 }
 
 // Filter by name
@@ -1577,24 +1582,25 @@ ListArchiveBuckets Get All Archive Buckets
 
 This endpoint retrieves all archive buckets associated with the account.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListArchiveBucketsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListArchiveBucketsRequest
 */
 func (a *ArchivesAPIService) ListArchiveBuckets(ctx context.Context) ApiListArchiveBucketsRequest {
 	return ApiListArchiveBucketsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListArchiveBuckets200Response
+//
+//	@return ListArchiveBuckets200Response
 func (a *ArchivesAPIService) ListArchiveBucketsExecute(r ApiListArchiveBucketsRequest) (*ListArchiveBuckets200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListArchiveBuckets200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListArchiveBuckets200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArchivesAPIService.ListArchiveBuckets")
@@ -1650,7 +1656,7 @@ func (a *ArchivesAPIService) ListArchiveBucketsExecute(r ApiListArchiveBucketsRe
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1659,8 +1665,8 @@ func (a *ArchivesAPIService) ListArchiveBucketsExecute(r ApiListArchiveBucketsRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1670,8 +1676,8 @@ func (a *ArchivesAPIService) ListArchiveBucketsExecute(r ApiListArchiveBucketsRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1679,8 +1685,8 @@ func (a *ArchivesAPIService) ListArchiveBucketsExecute(r ApiListArchiveBucketsRe
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1689,13 +1695,13 @@ func (a *ArchivesAPIService) ListArchiveBucketsExecute(r ApiListArchiveBucketsRe
 }
 
 type ApiListArchiveFilesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ArchivesAPIService
-	bucket string
-	filepath string
-	name *string
-	phrase *string
-	fullTree *bool
+	bucket     string
+	filepath   string
+	name       *string
+	phrase     *string
+	fullTree   *bool
 }
 
 // If specified will return an exact match on file name
@@ -1704,7 +1710,7 @@ func (r ApiListArchiveFilesRequest) Name(name string) ApiListArchiveFilesRequest
 	return r
 }
 
-// Search phrase for partial matches on file name, wildcard may be specified as %, eg. example-% This also searches for files under sub directories too. 
+// Search phrase for partial matches on file name, wildcard may be specified as %, eg. example-% This also searches for files under sub directories too.
 func (r ApiListArchiveFilesRequest) Phrase(phrase string) ApiListArchiveFilesRequest {
 	r.phrase = &phrase
 	return r
@@ -1725,28 +1731,29 @@ ListArchiveFiles Get All Archive Files
 
 This endpoint retrieves all files in an archive bucket under the specified `filePath`.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bucket Bucket name
- @param filepath The path to to search for files under. Default is the root directory /.
- @return ApiListArchiveFilesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param bucket Bucket name
+	@param filepath The path to to search for files under. Default is the root directory /.
+	@return ApiListArchiveFilesRequest
 */
 func (a *ArchivesAPIService) ListArchiveFiles(ctx context.Context, bucket string, filepath string) ApiListArchiveFilesRequest {
 	return ApiListArchiveFilesRequest{
 		ApiService: a,
-		ctx: ctx,
-		bucket: bucket,
-		filepath: filepath,
+		ctx:        ctx,
+		bucket:     bucket,
+		filepath:   filepath,
 	}
 }
 
 // Execute executes the request
-//  @return ListArchiveFiles200Response
+//
+//	@return ListArchiveFiles200Response
 func (a *ArchivesAPIService) ListArchiveFilesExecute(r ApiListArchiveFilesRequest) (*ListArchiveFiles200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListArchiveFiles200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListArchiveFiles200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArchivesAPIService.ListArchiveFiles")
@@ -1810,7 +1817,7 @@ func (a *ArchivesAPIService) ListArchiveFilesExecute(r ApiListArchiveFilesReques
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1819,8 +1826,8 @@ func (a *ArchivesAPIService) ListArchiveFilesExecute(r ApiListArchiveFilesReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1830,8 +1837,8 @@ func (a *ArchivesAPIService) ListArchiveFilesExecute(r ApiListArchiveFilesReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1839,8 +1846,8 @@ func (a *ArchivesAPIService) ListArchiveFilesExecute(r ApiListArchiveFilesReques
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1849,9 +1856,9 @@ func (a *ArchivesAPIService) ListArchiveFilesExecute(r ApiListArchiveFilesReques
 }
 
 type ApiUpdateArchiveBucketRequest struct {
-	ctx context.Context
-	ApiService *ArchivesAPIService
-	id int64
+	ctx                        context.Context
+	ApiService                 *ArchivesAPIService
+	id                         int64
 	updateArchiveBucketRequest *UpdateArchiveBucketRequest
 }
 
@@ -1869,26 +1876,27 @@ UpdateArchiveBucket Update an Archive Bucket
 
 Update an Archive Bucket
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateArchiveBucketRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateArchiveBucketRequest
 */
 func (a *ArchivesAPIService) UpdateArchiveBucket(ctx context.Context, id int64) ApiUpdateArchiveBucketRequest {
 	return ApiUpdateArchiveBucketRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddArchiveBucket200Response
+//
+//	@return AddArchiveBucket200Response
 func (a *ArchivesAPIService) UpdateArchiveBucketExecute(r ApiUpdateArchiveBucketRequest) (*AddArchiveBucket200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddArchiveBucket200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddArchiveBucket200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArchivesAPIService.UpdateArchiveBucket")
@@ -1941,7 +1949,7 @@ func (a *ArchivesAPIService) UpdateArchiveBucketExecute(r ApiUpdateArchiveBucket
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1950,8 +1958,8 @@ func (a *ArchivesAPIService) UpdateArchiveBucketExecute(r ApiUpdateArchiveBucket
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1961,8 +1969,8 @@ func (a *ArchivesAPIService) UpdateArchiveBucketExecute(r ApiUpdateArchiveBucket
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1970,8 +1978,8 @@ func (a *ArchivesAPIService) UpdateArchiveBucketExecute(r ApiUpdateArchiveBucket
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

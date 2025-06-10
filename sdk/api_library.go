@@ -18,18 +18,17 @@ import (
 	"io"
 	"net/http"
 	"net/url"
-	"strings"
 	"os"
+	"strings"
 	"time"
 )
-
 
 // LibraryAPIService LibraryAPI service
 type LibraryAPIService service
 
 type ApiAddFileTemplateRequest struct {
-	ctx context.Context
-	ApiService *LibraryAPIService
+	ctx                    context.Context
+	ApiService             *LibraryAPIService
 	addFileTemplateRequest *AddFileTemplateRequest
 }
 
@@ -47,24 +46,25 @@ AddFileTemplate Create a File Template
 
 Use this command to create a file template.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddFileTemplateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddFileTemplateRequest
 */
 func (a *LibraryAPIService) AddFileTemplate(ctx context.Context) ApiAddFileTemplateRequest {
 	return ApiAddFileTemplateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddClusterLayouts200Response
+//
+//	@return AddClusterLayouts200Response
 func (a *LibraryAPIService) AddFileTemplateExecute(r ApiAddFileTemplateRequest) (*AddClusterLayouts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddClusterLayouts200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddClusterLayouts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.AddFileTemplate")
@@ -116,7 +116,7 @@ func (a *LibraryAPIService) AddFileTemplateExecute(r ApiAddFileTemplateRequest) 
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -125,8 +125,8 @@ func (a *LibraryAPIService) AddFileTemplateExecute(r ApiAddFileTemplateRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -136,8 +136,8 @@ func (a *LibraryAPIService) AddFileTemplateExecute(r ApiAddFileTemplateRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -145,8 +145,8 @@ func (a *LibraryAPIService) AddFileTemplateExecute(r ApiAddFileTemplateRequest) 
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -155,8 +155,8 @@ func (a *LibraryAPIService) AddFileTemplateExecute(r ApiAddFileTemplateRequest) 
 }
 
 type ApiAddInstanceTypeRequest struct {
-	ctx context.Context
-	ApiService *LibraryAPIService
+	ctx                    context.Context
+	ApiService             *LibraryAPIService
 	addInstanceTypeRequest *AddInstanceTypeRequest
 }
 
@@ -174,24 +174,25 @@ AddInstanceType Create an Instance Type
 
 Use this command to create an instance type.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddInstanceTypeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddInstanceTypeRequest
 */
 func (a *LibraryAPIService) AddInstanceType(ctx context.Context) ApiAddInstanceTypeRequest {
 	return ApiAddInstanceTypeRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *LibraryAPIService) AddInstanceTypeExecute(r ApiAddInstanceTypeRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.AddInstanceType")
@@ -243,7 +244,7 @@ func (a *LibraryAPIService) AddInstanceTypeExecute(r ApiAddInstanceTypeRequest) 
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -252,8 +253,8 @@ func (a *LibraryAPIService) AddInstanceTypeExecute(r ApiAddInstanceTypeRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -263,8 +264,8 @@ func (a *LibraryAPIService) AddInstanceTypeExecute(r ApiAddInstanceTypeRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -272,8 +273,8 @@ func (a *LibraryAPIService) AddInstanceTypeExecute(r ApiAddInstanceTypeRequest) 
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -282,9 +283,9 @@ func (a *LibraryAPIService) AddInstanceTypeExecute(r ApiAddInstanceTypeRequest) 
 }
 
 type ApiAddLayoutRequest struct {
-	ctx context.Context
-	ApiService *LibraryAPIService
-	instanceTypeId int64
+	ctx              context.Context
+	ApiService       *LibraryAPIService
+	instanceTypeId   int64
 	addLayoutRequest *AddLayoutRequest
 }
 
@@ -302,26 +303,27 @@ AddLayout Create a Layout
 
 Use this command to create a layout.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param instanceTypeId The ID of the instance type
- @return ApiAddLayoutRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param instanceTypeId The ID of the instance type
+	@return ApiAddLayoutRequest
 */
 func (a *LibraryAPIService) AddLayout(ctx context.Context, instanceTypeId int64) ApiAddLayoutRequest {
 	return ApiAddLayoutRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		instanceTypeId: instanceTypeId,
 	}
 }
 
 // Execute executes the request
-//  @return AddLayout200Response
+//
+//	@return AddLayout200Response
 func (a *LibraryAPIService) AddLayoutExecute(r ApiAddLayoutRequest) (*AddLayout200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddLayout200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddLayout200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.AddLayout")
@@ -374,7 +376,7 @@ func (a *LibraryAPIService) AddLayoutExecute(r ApiAddLayoutRequest) (*AddLayout2
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -383,8 +385,8 @@ func (a *LibraryAPIService) AddLayoutExecute(r ApiAddLayoutRequest) (*AddLayout2
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -394,8 +396,8 @@ func (a *LibraryAPIService) AddLayoutExecute(r ApiAddLayoutRequest) (*AddLayout2
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -403,8 +405,8 @@ func (a *LibraryAPIService) AddLayoutExecute(r ApiAddLayoutRequest) (*AddLayout2
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -413,8 +415,8 @@ func (a *LibraryAPIService) AddLayoutExecute(r ApiAddLayoutRequest) (*AddLayout2
 }
 
 type ApiAddNodeTypeRequest struct {
-	ctx context.Context
-	ApiService *LibraryAPIService
+	ctx                context.Context
+	ApiService         *LibraryAPIService
 	addNodeTypeRequest *AddNodeTypeRequest
 }
 
@@ -432,24 +434,25 @@ AddNodeType Create a Node Type
 
 Use this command to create a node type.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddNodeTypeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddNodeTypeRequest
 */
 func (a *LibraryAPIService) AddNodeType(ctx context.Context) ApiAddNodeTypeRequest {
 	return ApiAddNodeTypeRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddNodeType200Response
+//
+//	@return AddNodeType200Response
 func (a *LibraryAPIService) AddNodeTypeExecute(r ApiAddNodeTypeRequest) (*AddNodeType200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddNodeType200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddNodeType200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.AddNodeType")
@@ -501,7 +504,7 @@ func (a *LibraryAPIService) AddNodeTypeExecute(r ApiAddNodeTypeRequest) (*AddNod
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -510,8 +513,8 @@ func (a *LibraryAPIService) AddNodeTypeExecute(r ApiAddNodeTypeRequest) (*AddNod
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -521,8 +524,8 @@ func (a *LibraryAPIService) AddNodeTypeExecute(r ApiAddNodeTypeRequest) (*AddNod
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -530,8 +533,8 @@ func (a *LibraryAPIService) AddNodeTypeExecute(r ApiAddNodeTypeRequest) (*AddNod
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -540,8 +543,8 @@ func (a *LibraryAPIService) AddNodeTypeExecute(r ApiAddNodeTypeRequest) (*AddNod
 }
 
 type ApiAddOptionFormRequest struct {
-	ctx context.Context
-	ApiService *LibraryAPIService
+	ctx                  context.Context
+	ApiService           *LibraryAPIService
 	addOptionFormRequest *AddOptionFormRequest
 }
 
@@ -559,24 +562,25 @@ AddOptionForm Create an Option Form
 
 Use this command to create an option form.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddOptionFormRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddOptionFormRequest
 */
 func (a *LibraryAPIService) AddOptionForm(ctx context.Context) ApiAddOptionFormRequest {
 	return ApiAddOptionFormRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *LibraryAPIService) AddOptionFormExecute(r ApiAddOptionFormRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.AddOptionForm")
@@ -628,7 +632,7 @@ func (a *LibraryAPIService) AddOptionFormExecute(r ApiAddOptionFormRequest) (*De
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -637,8 +641,8 @@ func (a *LibraryAPIService) AddOptionFormExecute(r ApiAddOptionFormRequest) (*De
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -648,8 +652,8 @@ func (a *LibraryAPIService) AddOptionFormExecute(r ApiAddOptionFormRequest) (*De
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -657,8 +661,8 @@ func (a *LibraryAPIService) AddOptionFormExecute(r ApiAddOptionFormRequest) (*De
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -667,8 +671,8 @@ func (a *LibraryAPIService) AddOptionFormExecute(r ApiAddOptionFormRequest) (*De
 }
 
 type ApiAddOptionListRequest struct {
-	ctx context.Context
-	ApiService *LibraryAPIService
+	ctx                  context.Context
+	ApiService           *LibraryAPIService
 	addOptionListRequest *AddOptionListRequest
 }
 
@@ -686,24 +690,25 @@ AddOptionList Create an Option List
 
 Use this command to create an option list.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddOptionListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddOptionListRequest
 */
 func (a *LibraryAPIService) AddOptionList(ctx context.Context) ApiAddOptionListRequest {
 	return ApiAddOptionListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *LibraryAPIService) AddOptionListExecute(r ApiAddOptionListRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.AddOptionList")
@@ -755,7 +760,7 @@ func (a *LibraryAPIService) AddOptionListExecute(r ApiAddOptionListRequest) (*De
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -764,8 +769,8 @@ func (a *LibraryAPIService) AddOptionListExecute(r ApiAddOptionListRequest) (*De
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -775,8 +780,8 @@ func (a *LibraryAPIService) AddOptionListExecute(r ApiAddOptionListRequest) (*De
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -784,8 +789,8 @@ func (a *LibraryAPIService) AddOptionListExecute(r ApiAddOptionListRequest) (*De
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -794,8 +799,8 @@ func (a *LibraryAPIService) AddOptionListExecute(r ApiAddOptionListRequest) (*De
 }
 
 type ApiAddOptionTypeRequest struct {
-	ctx context.Context
-	ApiService *LibraryAPIService
+	ctx                  context.Context
+	ApiService           *LibraryAPIService
 	addOptionTypeRequest *AddOptionTypeRequest
 }
 
@@ -813,24 +818,25 @@ AddOptionType Create an Input
 
 Use this command to create an option type.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddOptionTypeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddOptionTypeRequest
 */
 func (a *LibraryAPIService) AddOptionType(ctx context.Context) ApiAddOptionTypeRequest {
 	return ApiAddOptionTypeRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddClusterLayouts200Response
+//
+//	@return AddClusterLayouts200Response
 func (a *LibraryAPIService) AddOptionTypeExecute(r ApiAddOptionTypeRequest) (*AddClusterLayouts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddClusterLayouts200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddClusterLayouts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.AddOptionType")
@@ -882,7 +888,7 @@ func (a *LibraryAPIService) AddOptionTypeExecute(r ApiAddOptionTypeRequest) (*Ad
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -891,8 +897,8 @@ func (a *LibraryAPIService) AddOptionTypeExecute(r ApiAddOptionTypeRequest) (*Ad
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -902,8 +908,8 @@ func (a *LibraryAPIService) AddOptionTypeExecute(r ApiAddOptionTypeRequest) (*Ad
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -911,8 +917,8 @@ func (a *LibraryAPIService) AddOptionTypeExecute(r ApiAddOptionTypeRequest) (*Ad
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -921,8 +927,8 @@ func (a *LibraryAPIService) AddOptionTypeExecute(r ApiAddOptionTypeRequest) (*Ad
 }
 
 type ApiAddOsTypeImageRequest struct {
-	ctx context.Context
-	ApiService *LibraryAPIService
+	ctx                   context.Context
+	ApiService            *LibraryAPIService
 	addOsTypeImageRequest *AddOsTypeImageRequest
 }
 
@@ -940,22 +946,22 @@ AddOsTypeImage Create an OsTypeImage
 
 This endpoint will create an osTypeImage.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddOsTypeImageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddOsTypeImageRequest
 */
 func (a *LibraryAPIService) AddOsTypeImage(ctx context.Context) ApiAddOsTypeImageRequest {
 	return ApiAddOsTypeImageRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *LibraryAPIService) AddOsTypeImageExecute(r ApiAddOsTypeImageRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.AddOsTypeImage")
@@ -1007,7 +1013,7 @@ func (a *LibraryAPIService) AddOsTypeImageExecute(r ApiAddOsTypeImageRequest) (*
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1016,8 +1022,8 @@ func (a *LibraryAPIService) AddOsTypeImageExecute(r ApiAddOsTypeImageRequest) (*
 				newErr.err = err
 				return localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1027,8 +1033,8 @@ func (a *LibraryAPIService) AddOsTypeImageExecute(r ApiAddOsTypeImageRequest) (*
 				newErr.err = err
 				return localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarHTTPResponse, newErr
 	}
@@ -1037,8 +1043,8 @@ func (a *LibraryAPIService) AddOsTypeImageExecute(r ApiAddOsTypeImageRequest) (*
 }
 
 type ApiAddOsTypesRequest struct {
-	ctx context.Context
-	ApiService *LibraryAPIService
+	ctx               context.Context
+	ApiService        *LibraryAPIService
 	addOsTypesRequest *AddOsTypesRequest
 }
 
@@ -1056,24 +1062,25 @@ AddOsTypes Create an OsType
 
 Use command to create an ostype.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddOsTypesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddOsTypesRequest
 */
 func (a *LibraryAPIService) AddOsTypes(ctx context.Context) ApiAddOsTypesRequest {
 	return ApiAddOsTypesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddClusterLayouts200Response
+//
+//	@return AddClusterLayouts200Response
 func (a *LibraryAPIService) AddOsTypesExecute(r ApiAddOsTypesRequest) (*AddClusterLayouts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddClusterLayouts200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddClusterLayouts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.AddOsTypes")
@@ -1125,7 +1132,7 @@ func (a *LibraryAPIService) AddOsTypesExecute(r ApiAddOsTypesRequest) (*AddClust
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1134,8 +1141,8 @@ func (a *LibraryAPIService) AddOsTypesExecute(r ApiAddOsTypesRequest) (*AddClust
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1145,8 +1152,8 @@ func (a *LibraryAPIService) AddOsTypesExecute(r ApiAddOsTypesRequest) (*AddClust
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1154,8 +1161,8 @@ func (a *LibraryAPIService) AddOsTypesExecute(r ApiAddOsTypesRequest) (*AddClust
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1164,8 +1171,8 @@ func (a *LibraryAPIService) AddOsTypesExecute(r ApiAddOsTypesRequest) (*AddClust
 }
 
 type ApiAddScriptRequest struct {
-	ctx context.Context
-	ApiService *LibraryAPIService
+	ctx              context.Context
+	ApiService       *LibraryAPIService
 	addScriptRequest *AddScriptRequest
 }
 
@@ -1183,24 +1190,25 @@ AddScript Create a Script
 
 Use this command to create a script.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddScriptRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddScriptRequest
 */
 func (a *LibraryAPIService) AddScript(ctx context.Context) ApiAddScriptRequest {
 	return ApiAddScriptRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddScript200Response
+//
+//	@return AddScript200Response
 func (a *LibraryAPIService) AddScriptExecute(r ApiAddScriptRequest) (*AddScript200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddScript200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddScript200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.AddScript")
@@ -1252,7 +1260,7 @@ func (a *LibraryAPIService) AddScriptExecute(r ApiAddScriptRequest) (*AddScript2
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1261,8 +1269,8 @@ func (a *LibraryAPIService) AddScriptExecute(r ApiAddScriptRequest) (*AddScript2
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1272,8 +1280,8 @@ func (a *LibraryAPIService) AddScriptExecute(r ApiAddScriptRequest) (*AddScript2
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1281,8 +1289,8 @@ func (a *LibraryAPIService) AddScriptExecute(r ApiAddScriptRequest) (*AddScript2
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1291,8 +1299,8 @@ func (a *LibraryAPIService) AddScriptExecute(r ApiAddScriptRequest) (*AddScript2
 }
 
 type ApiAddSpecTemplateRequest struct {
-	ctx context.Context
-	ApiService *LibraryAPIService
+	ctx                    context.Context
+	ApiService             *LibraryAPIService
 	addSpecTemplateRequest *AddSpecTemplateRequest
 }
 
@@ -1310,24 +1318,25 @@ AddSpecTemplate Create a Spec Template
 
 Use this command to create a spec template.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddSpecTemplateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddSpecTemplateRequest
 */
 func (a *LibraryAPIService) AddSpecTemplate(ctx context.Context) ApiAddSpecTemplateRequest {
 	return ApiAddSpecTemplateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddClusterLayouts200Response
+//
+//	@return AddClusterLayouts200Response
 func (a *LibraryAPIService) AddSpecTemplateExecute(r ApiAddSpecTemplateRequest) (*AddClusterLayouts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddClusterLayouts200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddClusterLayouts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.AddSpecTemplate")
@@ -1379,7 +1388,7 @@ func (a *LibraryAPIService) AddSpecTemplateExecute(r ApiAddSpecTemplateRequest) 
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1388,8 +1397,8 @@ func (a *LibraryAPIService) AddSpecTemplateExecute(r ApiAddSpecTemplateRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1399,8 +1408,8 @@ func (a *LibraryAPIService) AddSpecTemplateExecute(r ApiAddSpecTemplateRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1408,8 +1417,8 @@ func (a *LibraryAPIService) AddSpecTemplateExecute(r ApiAddSpecTemplateRequest) 
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1418,8 +1427,8 @@ func (a *LibraryAPIService) AddSpecTemplateExecute(r ApiAddSpecTemplateRequest) 
 }
 
 type ApiAddVirtualImageRequest struct {
-	ctx context.Context
-	ApiService *LibraryAPIService
+	ctx                    context.Context
+	ApiService             *LibraryAPIService
 	addVirtualImageRequest *AddVirtualImageRequest
 }
 
@@ -1437,24 +1446,25 @@ AddVirtualImage Create a Virtual Image
 
 This endpoint creates a new virtual image, without any files yet.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddVirtualImageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddVirtualImageRequest
 */
 func (a *LibraryAPIService) AddVirtualImage(ctx context.Context) ApiAddVirtualImageRequest {
 	return ApiAddVirtualImageRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddVirtualImage200Response
+//
+//	@return AddVirtualImage200Response
 func (a *LibraryAPIService) AddVirtualImageExecute(r ApiAddVirtualImageRequest) (*AddVirtualImage200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddVirtualImage200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddVirtualImage200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.AddVirtualImage")
@@ -1506,7 +1516,7 @@ func (a *LibraryAPIService) AddVirtualImageExecute(r ApiAddVirtualImageRequest) 
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1515,8 +1525,8 @@ func (a *LibraryAPIService) AddVirtualImageExecute(r ApiAddVirtualImageRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1526,8 +1536,8 @@ func (a *LibraryAPIService) AddVirtualImageExecute(r ApiAddVirtualImageRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1535,8 +1545,8 @@ func (a *LibraryAPIService) AddVirtualImageExecute(r ApiAddVirtualImageRequest) 
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1545,12 +1555,12 @@ func (a *LibraryAPIService) AddVirtualImageExecute(r ApiAddVirtualImageRequest) 
 }
 
 type ApiAddVirtualImageFileRequest struct {
-	ctx context.Context
-	ApiService *LibraryAPIService
+	ctx            context.Context
+	ApiService     *LibraryAPIService
 	virtualImageId float32
-	filename *string
-	url *string
-	body *os.File
+	filename       *string
+	url            *string
+	body           *os.File
 }
 
 // The name of the file
@@ -1579,26 +1589,27 @@ AddVirtualImageFile Upload Virtual Image File
 
 This will upload the file and associate it to the Virtual Image.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param virtualImageId Virtual Image ID
- @return ApiAddVirtualImageFileRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param virtualImageId Virtual Image ID
+	@return ApiAddVirtualImageFileRequest
 */
 func (a *LibraryAPIService) AddVirtualImageFile(ctx context.Context, virtualImageId float32) ApiAddVirtualImageFileRequest {
 	return ApiAddVirtualImageFileRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		virtualImageId: virtualImageId,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *LibraryAPIService) AddVirtualImageFileExecute(r ApiAddVirtualImageFileRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.AddVirtualImageFile")
@@ -1657,7 +1668,7 @@ func (a *LibraryAPIService) AddVirtualImageFileExecute(r ApiAddVirtualImageFileR
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1666,8 +1677,8 @@ func (a *LibraryAPIService) AddVirtualImageFileExecute(r ApiAddVirtualImageFileR
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1677,8 +1688,8 @@ func (a *LibraryAPIService) AddVirtualImageFileExecute(r ApiAddVirtualImageFileR
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1686,8 +1697,8 @@ func (a *LibraryAPIService) AddVirtualImageFileExecute(r ApiAddVirtualImageFileR
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1696,9 +1707,9 @@ func (a *LibraryAPIService) AddVirtualImageFileExecute(r ApiAddVirtualImageFileR
 }
 
 type ApiConvertImageRequest struct {
-	ctx context.Context
-	ApiService *LibraryAPIService
-	virtualImageId float32
+	ctx                 context.Context
+	ApiService          *LibraryAPIService
+	virtualImageId      float32
 	convertImageRequest *ConvertImageRequest
 }
 
@@ -1716,26 +1727,27 @@ ConvertImage Convert Virtual Image File
 
 This will convert an existing virtual image to a new virtual image in specified format.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param virtualImageId Virtual Image ID
- @return ApiConvertImageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param virtualImageId Virtual Image ID
+	@return ApiConvertImageRequest
 */
 func (a *LibraryAPIService) ConvertImage(ctx context.Context, virtualImageId float32) ApiConvertImageRequest {
 	return ApiConvertImageRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		virtualImageId: virtualImageId,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *LibraryAPIService) ConvertImageExecute(r ApiConvertImageRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.ConvertImage")
@@ -1788,7 +1800,7 @@ func (a *LibraryAPIService) ConvertImageExecute(r ApiConvertImageRequest) (*Dele
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1797,8 +1809,8 @@ func (a *LibraryAPIService) ConvertImageExecute(r ApiConvertImageRequest) (*Dele
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1808,8 +1820,8 @@ func (a *LibraryAPIService) ConvertImageExecute(r ApiConvertImageRequest) (*Dele
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1817,8 +1829,8 @@ func (a *LibraryAPIService) ConvertImageExecute(r ApiConvertImageRequest) (*Dele
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1827,9 +1839,9 @@ func (a *LibraryAPIService) ConvertImageExecute(r ApiConvertImageRequest) (*Dele
 }
 
 type ApiDeleteFileTemplateRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *LibraryAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiDeleteFileTemplateRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -1841,26 +1853,27 @@ DeleteFileTemplate Delete a File Template
 
 Will delete a file template
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiDeleteFileTemplateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeleteFileTemplateRequest
 */
 func (a *LibraryAPIService) DeleteFileTemplate(ctx context.Context, id int64) ApiDeleteFileTemplateRequest {
 	return ApiDeleteFileTemplateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *LibraryAPIService) DeleteFileTemplateExecute(r ApiDeleteFileTemplateRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.DeleteFileTemplate")
@@ -1911,7 +1924,7 @@ func (a *LibraryAPIService) DeleteFileTemplateExecute(r ApiDeleteFileTemplateReq
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1920,8 +1933,8 @@ func (a *LibraryAPIService) DeleteFileTemplateExecute(r ApiDeleteFileTemplateReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1931,8 +1944,8 @@ func (a *LibraryAPIService) DeleteFileTemplateExecute(r ApiDeleteFileTemplateReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1940,8 +1953,8 @@ func (a *LibraryAPIService) DeleteFileTemplateExecute(r ApiDeleteFileTemplateReq
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1950,8 +1963,8 @@ func (a *LibraryAPIService) DeleteFileTemplateExecute(r ApiDeleteFileTemplateReq
 }
 
 type ApiDeleteInstanceTypeRequest struct {
-	ctx context.Context
-	ApiService *LibraryAPIService
+	ctx            context.Context
+	ApiService     *LibraryAPIService
 	instanceTypeId int64
 }
 
@@ -1964,26 +1977,27 @@ DeleteInstanceType Delete an Instance Type
 
 Will delete an instance type
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param instanceTypeId The ID of the instance type
- @return ApiDeleteInstanceTypeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param instanceTypeId The ID of the instance type
+	@return ApiDeleteInstanceTypeRequest
 */
 func (a *LibraryAPIService) DeleteInstanceType(ctx context.Context, instanceTypeId int64) ApiDeleteInstanceTypeRequest {
 	return ApiDeleteInstanceTypeRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		instanceTypeId: instanceTypeId,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *LibraryAPIService) DeleteInstanceTypeExecute(r ApiDeleteInstanceTypeRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.DeleteInstanceType")
@@ -2034,7 +2048,7 @@ func (a *LibraryAPIService) DeleteInstanceTypeExecute(r ApiDeleteInstanceTypeReq
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2043,8 +2057,8 @@ func (a *LibraryAPIService) DeleteInstanceTypeExecute(r ApiDeleteInstanceTypeReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2054,8 +2068,8 @@ func (a *LibraryAPIService) DeleteInstanceTypeExecute(r ApiDeleteInstanceTypeReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2063,8 +2077,8 @@ func (a *LibraryAPIService) DeleteInstanceTypeExecute(r ApiDeleteInstanceTypeReq
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2073,9 +2087,9 @@ func (a *LibraryAPIService) DeleteInstanceTypeExecute(r ApiDeleteInstanceTypeReq
 }
 
 type ApiDeleteLayoutRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *LibraryAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiDeleteLayoutRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -2087,26 +2101,27 @@ DeleteLayout Delete a Layout
 
 Will delete a layout
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiDeleteLayoutRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeleteLayoutRequest
 */
 func (a *LibraryAPIService) DeleteLayout(ctx context.Context, id int64) ApiDeleteLayoutRequest {
 	return ApiDeleteLayoutRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *LibraryAPIService) DeleteLayoutExecute(r ApiDeleteLayoutRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.DeleteLayout")
@@ -2157,7 +2172,7 @@ func (a *LibraryAPIService) DeleteLayoutExecute(r ApiDeleteLayoutRequest) (*Dele
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2166,8 +2181,8 @@ func (a *LibraryAPIService) DeleteLayoutExecute(r ApiDeleteLayoutRequest) (*Dele
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2177,8 +2192,8 @@ func (a *LibraryAPIService) DeleteLayoutExecute(r ApiDeleteLayoutRequest) (*Dele
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2186,8 +2201,8 @@ func (a *LibraryAPIService) DeleteLayoutExecute(r ApiDeleteLayoutRequest) (*Dele
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2196,9 +2211,9 @@ func (a *LibraryAPIService) DeleteLayoutExecute(r ApiDeleteLayoutRequest) (*Dele
 }
 
 type ApiDeleteNodeTypeRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *LibraryAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiDeleteNodeTypeRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -2210,26 +2225,27 @@ DeleteNodeType Delete a Node Type
 
 Will delete a node type
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiDeleteNodeTypeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeleteNodeTypeRequest
 */
 func (a *LibraryAPIService) DeleteNodeType(ctx context.Context, id int64) ApiDeleteNodeTypeRequest {
 	return ApiDeleteNodeTypeRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *LibraryAPIService) DeleteNodeTypeExecute(r ApiDeleteNodeTypeRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.DeleteNodeType")
@@ -2280,7 +2296,7 @@ func (a *LibraryAPIService) DeleteNodeTypeExecute(r ApiDeleteNodeTypeRequest) (*
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2289,8 +2305,8 @@ func (a *LibraryAPIService) DeleteNodeTypeExecute(r ApiDeleteNodeTypeRequest) (*
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2300,8 +2316,8 @@ func (a *LibraryAPIService) DeleteNodeTypeExecute(r ApiDeleteNodeTypeRequest) (*
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2309,8 +2325,8 @@ func (a *LibraryAPIService) DeleteNodeTypeExecute(r ApiDeleteNodeTypeRequest) (*
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2319,9 +2335,9 @@ func (a *LibraryAPIService) DeleteNodeTypeExecute(r ApiDeleteNodeTypeRequest) (*
 }
 
 type ApiDeleteOptionFormRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *LibraryAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiDeleteOptionFormRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -2333,26 +2349,27 @@ DeleteOptionForm Delete an Option Form
 
 Will delete an option form.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiDeleteOptionFormRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeleteOptionFormRequest
 */
 func (a *LibraryAPIService) DeleteOptionForm(ctx context.Context, id int64) ApiDeleteOptionFormRequest {
 	return ApiDeleteOptionFormRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *LibraryAPIService) DeleteOptionFormExecute(r ApiDeleteOptionFormRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.DeleteOptionForm")
@@ -2403,7 +2420,7 @@ func (a *LibraryAPIService) DeleteOptionFormExecute(r ApiDeleteOptionFormRequest
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2412,8 +2429,8 @@ func (a *LibraryAPIService) DeleteOptionFormExecute(r ApiDeleteOptionFormRequest
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2423,8 +2440,8 @@ func (a *LibraryAPIService) DeleteOptionFormExecute(r ApiDeleteOptionFormRequest
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2432,8 +2449,8 @@ func (a *LibraryAPIService) DeleteOptionFormExecute(r ApiDeleteOptionFormRequest
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2442,9 +2459,9 @@ func (a *LibraryAPIService) DeleteOptionFormExecute(r ApiDeleteOptionFormRequest
 }
 
 type ApiDeleteOptionListRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *LibraryAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiDeleteOptionListRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -2456,26 +2473,27 @@ DeleteOptionList Delete an Option List
 
 Will delete an option list.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiDeleteOptionListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeleteOptionListRequest
 */
 func (a *LibraryAPIService) DeleteOptionList(ctx context.Context, id int64) ApiDeleteOptionListRequest {
 	return ApiDeleteOptionListRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *LibraryAPIService) DeleteOptionListExecute(r ApiDeleteOptionListRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.DeleteOptionList")
@@ -2526,7 +2544,7 @@ func (a *LibraryAPIService) DeleteOptionListExecute(r ApiDeleteOptionListRequest
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2535,8 +2553,8 @@ func (a *LibraryAPIService) DeleteOptionListExecute(r ApiDeleteOptionListRequest
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2546,8 +2564,8 @@ func (a *LibraryAPIService) DeleteOptionListExecute(r ApiDeleteOptionListRequest
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2555,8 +2573,8 @@ func (a *LibraryAPIService) DeleteOptionListExecute(r ApiDeleteOptionListRequest
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2565,9 +2583,9 @@ func (a *LibraryAPIService) DeleteOptionListExecute(r ApiDeleteOptionListRequest
 }
 
 type ApiDeleteOptionTypeRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *LibraryAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiDeleteOptionTypeRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -2579,26 +2597,27 @@ DeleteOptionType Delete an Input
 
 Will delete an option type.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiDeleteOptionTypeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeleteOptionTypeRequest
 */
 func (a *LibraryAPIService) DeleteOptionType(ctx context.Context, id int64) ApiDeleteOptionTypeRequest {
 	return ApiDeleteOptionTypeRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *LibraryAPIService) DeleteOptionTypeExecute(r ApiDeleteOptionTypeRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.DeleteOptionType")
@@ -2649,7 +2668,7 @@ func (a *LibraryAPIService) DeleteOptionTypeExecute(r ApiDeleteOptionTypeRequest
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2658,8 +2677,8 @@ func (a *LibraryAPIService) DeleteOptionTypeExecute(r ApiDeleteOptionTypeRequest
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2669,8 +2688,8 @@ func (a *LibraryAPIService) DeleteOptionTypeExecute(r ApiDeleteOptionTypeRequest
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2678,8 +2697,8 @@ func (a *LibraryAPIService) DeleteOptionTypeExecute(r ApiDeleteOptionTypeRequest
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2688,9 +2707,9 @@ func (a *LibraryAPIService) DeleteOptionTypeExecute(r ApiDeleteOptionTypeRequest
 }
 
 type ApiDeleteOsTypeRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *LibraryAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiDeleteOsTypeRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -2702,26 +2721,27 @@ DeleteOsType Delete an OsType
 
 Will delete an osType
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiDeleteOsTypeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeleteOsTypeRequest
 */
 func (a *LibraryAPIService) DeleteOsType(ctx context.Context, id int64) ApiDeleteOsTypeRequest {
 	return ApiDeleteOsTypeRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *LibraryAPIService) DeleteOsTypeExecute(r ApiDeleteOsTypeRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.DeleteOsType")
@@ -2772,7 +2792,7 @@ func (a *LibraryAPIService) DeleteOsTypeExecute(r ApiDeleteOsTypeRequest) (*Dele
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2781,8 +2801,8 @@ func (a *LibraryAPIService) DeleteOsTypeExecute(r ApiDeleteOsTypeRequest) (*Dele
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2792,8 +2812,8 @@ func (a *LibraryAPIService) DeleteOsTypeExecute(r ApiDeleteOsTypeRequest) (*Dele
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2801,8 +2821,8 @@ func (a *LibraryAPIService) DeleteOsTypeExecute(r ApiDeleteOsTypeRequest) (*Dele
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2811,9 +2831,9 @@ func (a *LibraryAPIService) DeleteOsTypeExecute(r ApiDeleteOsTypeRequest) (*Dele
 }
 
 type ApiDeleteOsTypeImageRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *LibraryAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiDeleteOsTypeImageRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -2825,26 +2845,27 @@ DeleteOsTypeImage Delete an OsTypeImage
 
 Will delete an osTypeImage
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiDeleteOsTypeImageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeleteOsTypeImageRequest
 */
 func (a *LibraryAPIService) DeleteOsTypeImage(ctx context.Context, id int64) ApiDeleteOsTypeImageRequest {
 	return ApiDeleteOsTypeImageRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *LibraryAPIService) DeleteOsTypeImageExecute(r ApiDeleteOsTypeImageRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.DeleteOsTypeImage")
@@ -2895,7 +2916,7 @@ func (a *LibraryAPIService) DeleteOsTypeImageExecute(r ApiDeleteOsTypeImageReque
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2904,8 +2925,8 @@ func (a *LibraryAPIService) DeleteOsTypeImageExecute(r ApiDeleteOsTypeImageReque
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2915,8 +2936,8 @@ func (a *LibraryAPIService) DeleteOsTypeImageExecute(r ApiDeleteOsTypeImageReque
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2924,8 +2945,8 @@ func (a *LibraryAPIService) DeleteOsTypeImageExecute(r ApiDeleteOsTypeImageReque
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2934,9 +2955,9 @@ func (a *LibraryAPIService) DeleteOsTypeImageExecute(r ApiDeleteOsTypeImageReque
 }
 
 type ApiDeleteScriptRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *LibraryAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiDeleteScriptRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -2948,26 +2969,27 @@ DeleteScript Delete a Script
 
 Will delete a script
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiDeleteScriptRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeleteScriptRequest
 */
 func (a *LibraryAPIService) DeleteScript(ctx context.Context, id int64) ApiDeleteScriptRequest {
 	return ApiDeleteScriptRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *LibraryAPIService) DeleteScriptExecute(r ApiDeleteScriptRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.DeleteScript")
@@ -3018,7 +3040,7 @@ func (a *LibraryAPIService) DeleteScriptExecute(r ApiDeleteScriptRequest) (*Dele
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -3027,8 +3049,8 @@ func (a *LibraryAPIService) DeleteScriptExecute(r ApiDeleteScriptRequest) (*Dele
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -3038,8 +3060,8 @@ func (a *LibraryAPIService) DeleteScriptExecute(r ApiDeleteScriptRequest) (*Dele
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3047,8 +3069,8 @@ func (a *LibraryAPIService) DeleteScriptExecute(r ApiDeleteScriptRequest) (*Dele
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3057,9 +3079,9 @@ func (a *LibraryAPIService) DeleteScriptExecute(r ApiDeleteScriptRequest) (*Dele
 }
 
 type ApiDeleteSpecTemplateRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *LibraryAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiDeleteSpecTemplateRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -3071,26 +3093,27 @@ DeleteSpecTemplate Delete a Spec Template
 
 Will delete a spec template
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiDeleteSpecTemplateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeleteSpecTemplateRequest
 */
 func (a *LibraryAPIService) DeleteSpecTemplate(ctx context.Context, id int64) ApiDeleteSpecTemplateRequest {
 	return ApiDeleteSpecTemplateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *LibraryAPIService) DeleteSpecTemplateExecute(r ApiDeleteSpecTemplateRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.DeleteSpecTemplate")
@@ -3141,7 +3164,7 @@ func (a *LibraryAPIService) DeleteSpecTemplateExecute(r ApiDeleteSpecTemplateReq
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -3150,8 +3173,8 @@ func (a *LibraryAPIService) DeleteSpecTemplateExecute(r ApiDeleteSpecTemplateReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -3161,8 +3184,8 @@ func (a *LibraryAPIService) DeleteSpecTemplateExecute(r ApiDeleteSpecTemplateReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3170,8 +3193,8 @@ func (a *LibraryAPIService) DeleteSpecTemplateExecute(r ApiDeleteSpecTemplateReq
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3180,9 +3203,9 @@ func (a *LibraryAPIService) DeleteSpecTemplateExecute(r ApiDeleteSpecTemplateReq
 }
 
 type ApiGetFileTemplateRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *LibraryAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetFileTemplateRequest) Execute() (*GetFileTemplate200Response, *http.Response, error) {
@@ -3196,27 +3219,27 @@ This endpoint retrieves a specific file template.
 
 The value of template will be masked as ************ for system owned file templates.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetFileTemplateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetFileTemplateRequest
 */
 func (a *LibraryAPIService) GetFileTemplate(ctx context.Context, id int64) ApiGetFileTemplateRequest {
 	return ApiGetFileTemplateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetFileTemplate200Response
+//
+//	@return GetFileTemplate200Response
 func (a *LibraryAPIService) GetFileTemplateExecute(r ApiGetFileTemplateRequest) (*GetFileTemplate200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetFileTemplate200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetFileTemplate200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetFileTemplate")
@@ -3267,7 +3290,7 @@ func (a *LibraryAPIService) GetFileTemplateExecute(r ApiGetFileTemplateRequest) 
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -3276,8 +3299,8 @@ func (a *LibraryAPIService) GetFileTemplateExecute(r ApiGetFileTemplateRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -3287,8 +3310,8 @@ func (a *LibraryAPIService) GetFileTemplateExecute(r ApiGetFileTemplateRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3296,8 +3319,8 @@ func (a *LibraryAPIService) GetFileTemplateExecute(r ApiGetFileTemplateRequest) 
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3306,9 +3329,9 @@ func (a *LibraryAPIService) GetFileTemplateExecute(r ApiGetFileTemplateRequest) 
 }
 
 type ApiGetInputRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *LibraryAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetInputRequest) Execute() (*GetInput200Response, *http.Response, error) {
@@ -3320,27 +3343,27 @@ GetInput Get A Specific Input
 
 This endpoint retrieves a specific option type.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetInputRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetInputRequest
 */
 func (a *LibraryAPIService) GetInput(ctx context.Context, id int64) ApiGetInputRequest {
 	return ApiGetInputRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetInput200Response
+//
+//	@return GetInput200Response
 func (a *LibraryAPIService) GetInputExecute(r ApiGetInputRequest) (*GetInput200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetInput200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetInput200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetInput")
@@ -3391,7 +3414,7 @@ func (a *LibraryAPIService) GetInputExecute(r ApiGetInputRequest) (*GetInput200R
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -3400,8 +3423,8 @@ func (a *LibraryAPIService) GetInputExecute(r ApiGetInputRequest) (*GetInput200R
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -3411,8 +3434,8 @@ func (a *LibraryAPIService) GetInputExecute(r ApiGetInputRequest) (*GetInput200R
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3420,8 +3443,8 @@ func (a *LibraryAPIService) GetInputExecute(r ApiGetInputRequest) (*GetInput200R
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3430,8 +3453,8 @@ func (a *LibraryAPIService) GetInputExecute(r ApiGetInputRequest) (*GetInput200R
 }
 
 type ApiGetInstanceTypeRequest struct {
-	ctx context.Context
-	ApiService *LibraryAPIService
+	ctx            context.Context
+	ApiService     *LibraryAPIService
 	instanceTypeId int64
 }
 
@@ -3444,26 +3467,27 @@ GetInstanceType Get a Specific Instance Type
 
 This endpoint retrieves a specific instance type.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param instanceTypeId The ID of the instance type
- @return ApiGetInstanceTypeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param instanceTypeId The ID of the instance type
+	@return ApiGetInstanceTypeRequest
 */
 func (a *LibraryAPIService) GetInstanceType(ctx context.Context, instanceTypeId int64) ApiGetInstanceTypeRequest {
 	return ApiGetInstanceTypeRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		instanceTypeId: instanceTypeId,
 	}
 }
 
 // Execute executes the request
-//  @return GetInstanceType200Response
+//
+//	@return GetInstanceType200Response
 func (a *LibraryAPIService) GetInstanceTypeExecute(r ApiGetInstanceTypeRequest) (*GetInstanceType200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetInstanceType200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetInstanceType200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetInstanceType")
@@ -3514,7 +3538,7 @@ func (a *LibraryAPIService) GetInstanceTypeExecute(r ApiGetInstanceTypeRequest) 
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -3523,8 +3547,8 @@ func (a *LibraryAPIService) GetInstanceTypeExecute(r ApiGetInstanceTypeRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -3534,8 +3558,8 @@ func (a *LibraryAPIService) GetInstanceTypeExecute(r ApiGetInstanceTypeRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3543,8 +3567,8 @@ func (a *LibraryAPIService) GetInstanceTypeExecute(r ApiGetInstanceTypeRequest) 
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3553,9 +3577,9 @@ func (a *LibraryAPIService) GetInstanceTypeExecute(r ApiGetInstanceTypeRequest) 
 }
 
 type ApiGetLayoutRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *LibraryAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetLayoutRequest) Execute() (*AddLayout200Response, *http.Response, error) {
@@ -3567,26 +3591,27 @@ GetLayout Get a Specific Layout
 
 This endpoint retrieves a specific layout.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetLayoutRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetLayoutRequest
 */
 func (a *LibraryAPIService) GetLayout(ctx context.Context, id int64) ApiGetLayoutRequest {
 	return ApiGetLayoutRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddLayout200Response
+//
+//	@return AddLayout200Response
 func (a *LibraryAPIService) GetLayoutExecute(r ApiGetLayoutRequest) (*AddLayout200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddLayout200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddLayout200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetLayout")
@@ -3637,7 +3662,7 @@ func (a *LibraryAPIService) GetLayoutExecute(r ApiGetLayoutRequest) (*AddLayout2
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -3646,8 +3671,8 @@ func (a *LibraryAPIService) GetLayoutExecute(r ApiGetLayoutRequest) (*AddLayout2
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -3657,8 +3682,8 @@ func (a *LibraryAPIService) GetLayoutExecute(r ApiGetLayoutRequest) (*AddLayout2
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3666,8 +3691,8 @@ func (a *LibraryAPIService) GetLayoutExecute(r ApiGetLayoutRequest) (*AddLayout2
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3676,9 +3701,9 @@ func (a *LibraryAPIService) GetLayoutExecute(r ApiGetLayoutRequest) (*AddLayout2
 }
 
 type ApiGetNodeTypeRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *LibraryAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetNodeTypeRequest) Execute() (*GetNodeType200Response, *http.Response, error) {
@@ -3690,26 +3715,27 @@ GetNodeType Get a Specific Node Type
 
 This endpoint retrieves a specific node type.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetNodeTypeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetNodeTypeRequest
 */
 func (a *LibraryAPIService) GetNodeType(ctx context.Context, id int64) ApiGetNodeTypeRequest {
 	return ApiGetNodeTypeRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetNodeType200Response
+//
+//	@return GetNodeType200Response
 func (a *LibraryAPIService) GetNodeTypeExecute(r ApiGetNodeTypeRequest) (*GetNodeType200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetNodeType200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetNodeType200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetNodeType")
@@ -3760,7 +3786,7 @@ func (a *LibraryAPIService) GetNodeTypeExecute(r ApiGetNodeTypeRequest) (*GetNod
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -3769,8 +3795,8 @@ func (a *LibraryAPIService) GetNodeTypeExecute(r ApiGetNodeTypeRequest) (*GetNod
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -3780,8 +3806,8 @@ func (a *LibraryAPIService) GetNodeTypeExecute(r ApiGetNodeTypeRequest) (*GetNod
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3789,8 +3815,8 @@ func (a *LibraryAPIService) GetNodeTypeExecute(r ApiGetNodeTypeRequest) (*GetNod
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3799,9 +3825,9 @@ func (a *LibraryAPIService) GetNodeTypeExecute(r ApiGetNodeTypeRequest) (*GetNod
 }
 
 type ApiGetOptionFormRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *LibraryAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetOptionFormRequest) Execute() (*GetOptionForm200Response, *http.Response, error) {
@@ -3813,26 +3839,27 @@ GetOptionForm Get a Specific Option Form
 
 This endpoint retrieves a specific option form.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetOptionFormRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetOptionFormRequest
 */
 func (a *LibraryAPIService) GetOptionForm(ctx context.Context, id int64) ApiGetOptionFormRequest {
 	return ApiGetOptionFormRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetOptionForm200Response
+//
+//	@return GetOptionForm200Response
 func (a *LibraryAPIService) GetOptionFormExecute(r ApiGetOptionFormRequest) (*GetOptionForm200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetOptionForm200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetOptionForm200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetOptionForm")
@@ -3883,7 +3910,7 @@ func (a *LibraryAPIService) GetOptionFormExecute(r ApiGetOptionFormRequest) (*Ge
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -3892,8 +3919,8 @@ func (a *LibraryAPIService) GetOptionFormExecute(r ApiGetOptionFormRequest) (*Ge
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -3903,8 +3930,8 @@ func (a *LibraryAPIService) GetOptionFormExecute(r ApiGetOptionFormRequest) (*Ge
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3912,8 +3939,8 @@ func (a *LibraryAPIService) GetOptionFormExecute(r ApiGetOptionFormRequest) (*Ge
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3922,9 +3949,9 @@ func (a *LibraryAPIService) GetOptionFormExecute(r ApiGetOptionFormRequest) (*Ge
 }
 
 type ApiGetOptionListRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *LibraryAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetOptionListRequest) Execute() (*GetOptionList200Response, *http.Response, error) {
@@ -3936,26 +3963,27 @@ GetOptionList Get a Specific Option List
 
 This endpoint retrieves a specific option list.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetOptionListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetOptionListRequest
 */
 func (a *LibraryAPIService) GetOptionList(ctx context.Context, id int64) ApiGetOptionListRequest {
 	return ApiGetOptionListRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetOptionList200Response
+//
+//	@return GetOptionList200Response
 func (a *LibraryAPIService) GetOptionListExecute(r ApiGetOptionListRequest) (*GetOptionList200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetOptionList200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetOptionList200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetOptionList")
@@ -4006,7 +4034,7 @@ func (a *LibraryAPIService) GetOptionListExecute(r ApiGetOptionListRequest) (*Ge
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -4015,8 +4043,8 @@ func (a *LibraryAPIService) GetOptionListExecute(r ApiGetOptionListRequest) (*Ge
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -4026,8 +4054,8 @@ func (a *LibraryAPIService) GetOptionListExecute(r ApiGetOptionListRequest) (*Ge
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4035,8 +4063,8 @@ func (a *LibraryAPIService) GetOptionListExecute(r ApiGetOptionListRequest) (*Ge
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4045,9 +4073,9 @@ func (a *LibraryAPIService) GetOptionListExecute(r ApiGetOptionListRequest) (*Ge
 }
 
 type ApiGetOptionListItemsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *LibraryAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetOptionListItemsRequest) Execute() (*GetOptionListItems200Response, *http.Response, error) {
@@ -4059,26 +4087,27 @@ GetOptionListItems List Items for a Specific Option List
 
 This endpoint retrieves the items for a specific option list.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetOptionListItemsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetOptionListItemsRequest
 */
 func (a *LibraryAPIService) GetOptionListItems(ctx context.Context, id int64) ApiGetOptionListItemsRequest {
 	return ApiGetOptionListItemsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetOptionListItems200Response
+//
+//	@return GetOptionListItems200Response
 func (a *LibraryAPIService) GetOptionListItemsExecute(r ApiGetOptionListItemsRequest) (*GetOptionListItems200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetOptionListItems200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetOptionListItems200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetOptionListItems")
@@ -4129,7 +4158,7 @@ func (a *LibraryAPIService) GetOptionListItemsExecute(r ApiGetOptionListItemsReq
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -4138,8 +4167,8 @@ func (a *LibraryAPIService) GetOptionListItemsExecute(r ApiGetOptionListItemsReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -4149,8 +4178,8 @@ func (a *LibraryAPIService) GetOptionListItemsExecute(r ApiGetOptionListItemsReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4158,8 +4187,8 @@ func (a *LibraryAPIService) GetOptionListItemsExecute(r ApiGetOptionListItemsReq
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4168,9 +4197,9 @@ func (a *LibraryAPIService) GetOptionListItemsExecute(r ApiGetOptionListItemsReq
 }
 
 type ApiGetOsTypeRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *LibraryAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetOsTypeRequest) Execute() (*GetOsType200Response, *http.Response, error) {
@@ -4182,26 +4211,27 @@ GetOsType Get an OsType
 
 This endpoint retrieves a specific osType.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetOsTypeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetOsTypeRequest
 */
 func (a *LibraryAPIService) GetOsType(ctx context.Context, id int64) ApiGetOsTypeRequest {
 	return ApiGetOsTypeRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetOsType200Response
+//
+//	@return GetOsType200Response
 func (a *LibraryAPIService) GetOsTypeExecute(r ApiGetOsTypeRequest) (*GetOsType200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetOsType200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetOsType200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetOsType")
@@ -4252,7 +4282,7 @@ func (a *LibraryAPIService) GetOsTypeExecute(r ApiGetOsTypeRequest) (*GetOsType2
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -4261,8 +4291,8 @@ func (a *LibraryAPIService) GetOsTypeExecute(r ApiGetOsTypeRequest) (*GetOsType2
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -4272,8 +4302,8 @@ func (a *LibraryAPIService) GetOsTypeExecute(r ApiGetOsTypeRequest) (*GetOsType2
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4281,8 +4311,8 @@ func (a *LibraryAPIService) GetOsTypeExecute(r ApiGetOsTypeRequest) (*GetOsType2
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4291,9 +4321,9 @@ func (a *LibraryAPIService) GetOsTypeExecute(r ApiGetOsTypeRequest) (*GetOsType2
 }
 
 type ApiGetOsTypeImageRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *LibraryAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetOsTypeImageRequest) Execute() (*GetOsTypeImage200Response, *http.Response, error) {
@@ -4305,26 +4335,27 @@ GetOsTypeImage Get an OsTypeImage
 
 This endpoint retrieves a specific osTypeImage.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetOsTypeImageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetOsTypeImageRequest
 */
 func (a *LibraryAPIService) GetOsTypeImage(ctx context.Context, id int64) ApiGetOsTypeImageRequest {
 	return ApiGetOsTypeImageRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetOsTypeImage200Response
+//
+//	@return GetOsTypeImage200Response
 func (a *LibraryAPIService) GetOsTypeImageExecute(r ApiGetOsTypeImageRequest) (*GetOsTypeImage200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetOsTypeImage200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetOsTypeImage200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetOsTypeImage")
@@ -4375,7 +4406,7 @@ func (a *LibraryAPIService) GetOsTypeImageExecute(r ApiGetOsTypeImageRequest) (*
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -4384,8 +4415,8 @@ func (a *LibraryAPIService) GetOsTypeImageExecute(r ApiGetOsTypeImageRequest) (*
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -4395,8 +4426,8 @@ func (a *LibraryAPIService) GetOsTypeImageExecute(r ApiGetOsTypeImageRequest) (*
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4404,8 +4435,8 @@ func (a *LibraryAPIService) GetOsTypeImageExecute(r ApiGetOsTypeImageRequest) (*
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4414,9 +4445,9 @@ func (a *LibraryAPIService) GetOsTypeImageExecute(r ApiGetOsTypeImageRequest) (*
 }
 
 type ApiGetScriptRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *LibraryAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetScriptRequest) Execute() (*GetScript200Response, *http.Response, error) {
@@ -4430,27 +4461,27 @@ This endpoint retrieves a specific script.
 
 The value of script will be masked as ************ for system owned scripts.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetScriptRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetScriptRequest
 */
 func (a *LibraryAPIService) GetScript(ctx context.Context, id int64) ApiGetScriptRequest {
 	return ApiGetScriptRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetScript200Response
+//
+//	@return GetScript200Response
 func (a *LibraryAPIService) GetScriptExecute(r ApiGetScriptRequest) (*GetScript200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetScript200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetScript200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetScript")
@@ -4501,7 +4532,7 @@ func (a *LibraryAPIService) GetScriptExecute(r ApiGetScriptRequest) (*GetScript2
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -4510,8 +4541,8 @@ func (a *LibraryAPIService) GetScriptExecute(r ApiGetScriptRequest) (*GetScript2
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -4521,8 +4552,8 @@ func (a *LibraryAPIService) GetScriptExecute(r ApiGetScriptRequest) (*GetScript2
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4530,8 +4561,8 @@ func (a *LibraryAPIService) GetScriptExecute(r ApiGetScriptRequest) (*GetScript2
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4540,9 +4571,9 @@ func (a *LibraryAPIService) GetScriptExecute(r ApiGetScriptRequest) (*GetScript2
 }
 
 type ApiGetSecurityPackageTypeRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *LibraryAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetSecurityPackageTypeRequest) Execute() (*GetSecurityPackageType200Response, *http.Response, error) {
@@ -4554,27 +4585,27 @@ GetSecurityPackageType Retrieves a Specific Security Package Type
 
 Retrieves a specific security package type.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetSecurityPackageTypeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetSecurityPackageTypeRequest
 */
 func (a *LibraryAPIService) GetSecurityPackageType(ctx context.Context, id int64) ApiGetSecurityPackageTypeRequest {
 	return ApiGetSecurityPackageTypeRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetSecurityPackageType200Response
+//
+//	@return GetSecurityPackageType200Response
 func (a *LibraryAPIService) GetSecurityPackageTypeExecute(r ApiGetSecurityPackageTypeRequest) (*GetSecurityPackageType200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetSecurityPackageType200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetSecurityPackageType200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetSecurityPackageType")
@@ -4625,7 +4656,7 @@ func (a *LibraryAPIService) GetSecurityPackageTypeExecute(r ApiGetSecurityPackag
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -4634,8 +4665,8 @@ func (a *LibraryAPIService) GetSecurityPackageTypeExecute(r ApiGetSecurityPackag
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -4645,8 +4676,8 @@ func (a *LibraryAPIService) GetSecurityPackageTypeExecute(r ApiGetSecurityPackag
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4654,8 +4685,8 @@ func (a *LibraryAPIService) GetSecurityPackageTypeExecute(r ApiGetSecurityPackag
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4664,9 +4695,9 @@ func (a *LibraryAPIService) GetSecurityPackageTypeExecute(r ApiGetSecurityPackag
 }
 
 type ApiGetSpecTemplateRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *LibraryAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetSpecTemplateRequest) Execute() (*GetSpecTemplate200Response, *http.Response, error) {
@@ -4678,26 +4709,27 @@ GetSpecTemplate Get a Specific Spec Template
 
 This endpoint retrieves a specific spec template.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetSpecTemplateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetSpecTemplateRequest
 */
 func (a *LibraryAPIService) GetSpecTemplate(ctx context.Context, id int64) ApiGetSpecTemplateRequest {
 	return ApiGetSpecTemplateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetSpecTemplate200Response
+//
+//	@return GetSpecTemplate200Response
 func (a *LibraryAPIService) GetSpecTemplateExecute(r ApiGetSpecTemplateRequest) (*GetSpecTemplate200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetSpecTemplate200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetSpecTemplate200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetSpecTemplate")
@@ -4748,7 +4780,7 @@ func (a *LibraryAPIService) GetSpecTemplateExecute(r ApiGetSpecTemplateRequest) 
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -4757,8 +4789,8 @@ func (a *LibraryAPIService) GetSpecTemplateExecute(r ApiGetSpecTemplateRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -4768,8 +4800,8 @@ func (a *LibraryAPIService) GetSpecTemplateExecute(r ApiGetSpecTemplateRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4777,8 +4809,8 @@ func (a *LibraryAPIService) GetSpecTemplateExecute(r ApiGetSpecTemplateRequest) 
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4787,8 +4819,8 @@ func (a *LibraryAPIService) GetSpecTemplateExecute(r ApiGetSpecTemplateRequest) 
 }
 
 type ApiGetVirtualImageRequest struct {
-	ctx context.Context
-	ApiService *LibraryAPIService
+	ctx            context.Context
+	ApiService     *LibraryAPIService
 	virtualImageId float32
 }
 
@@ -4801,26 +4833,27 @@ GetVirtualImage Get a Specific Virtual Image
 
 This endpoint retrieves a specific virtual image and its files.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param virtualImageId Virtual Image ID
- @return ApiGetVirtualImageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param virtualImageId Virtual Image ID
+	@return ApiGetVirtualImageRequest
 */
 func (a *LibraryAPIService) GetVirtualImage(ctx context.Context, virtualImageId float32) ApiGetVirtualImageRequest {
 	return ApiGetVirtualImageRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		virtualImageId: virtualImageId,
 	}
 }
 
 // Execute executes the request
-//  @return GetVirtualImage200Response
+//
+//	@return GetVirtualImage200Response
 func (a *LibraryAPIService) GetVirtualImageExecute(r ApiGetVirtualImageRequest) (*GetVirtualImage200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetVirtualImage200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetVirtualImage200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetVirtualImage")
@@ -4871,7 +4904,7 @@ func (a *LibraryAPIService) GetVirtualImageExecute(r ApiGetVirtualImageRequest) 
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -4880,8 +4913,8 @@ func (a *LibraryAPIService) GetVirtualImageExecute(r ApiGetVirtualImageRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -4891,8 +4924,8 @@ func (a *LibraryAPIService) GetVirtualImageExecute(r ApiGetVirtualImageRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4900,8 +4933,8 @@ func (a *LibraryAPIService) GetVirtualImageExecute(r ApiGetVirtualImageRequest) 
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4910,17 +4943,17 @@ func (a *LibraryAPIService) GetVirtualImageExecute(r ApiGetVirtualImageRequest) 
 }
 
 type ApiListFileTemplatesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *LibraryAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	name *string
-	labels *string
-	allLabels *string
-	fileName *string
+	max        *int64
+	offset     *int64
+	sort       *string
+	direction  *string
+	phrase     *string
+	name       *string
+	labels     *string
+	allLabels  *string
+	fileName   *string
 }
 
 // Maximum number of records to return
@@ -4988,25 +5021,25 @@ This endpoint retrieves all file templates.
 
 The value of template will be masked as ************ for system owned file templates.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListFileTemplatesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListFileTemplatesRequest
 */
 func (a *LibraryAPIService) ListFileTemplates(ctx context.Context) ApiListFileTemplatesRequest {
 	return ApiListFileTemplatesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListFileTemplates200Response
+//
+//	@return ListFileTemplates200Response
 func (a *LibraryAPIService) ListFileTemplatesExecute(r ApiListFileTemplatesRequest) (*ListFileTemplates200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListFileTemplates200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListFileTemplates200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.ListFileTemplates")
@@ -5095,7 +5128,7 @@ func (a *LibraryAPIService) ListFileTemplatesExecute(r ApiListFileTemplatesReque
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -5104,8 +5137,8 @@ func (a *LibraryAPIService) ListFileTemplatesExecute(r ApiListFileTemplatesReque
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -5115,8 +5148,8 @@ func (a *LibraryAPIService) ListFileTemplatesExecute(r ApiListFileTemplatesReque
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -5124,8 +5157,8 @@ func (a *LibraryAPIService) ListFileTemplatesExecute(r ApiListFileTemplatesReque
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -5134,20 +5167,20 @@ func (a *LibraryAPIService) ListFileTemplatesExecute(r ApiListFileTemplatesReque
 }
 
 type ApiListInputsRequest struct {
-	ctx context.Context
-	ApiService *LibraryAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	name *string
-	code *string
-	labels *string
-	allLabels *string
-	fieldName *string
+	ctx          context.Context
+	ApiService   *LibraryAPIService
+	max          *int64
+	offset       *int64
+	sort         *string
+	direction    *string
+	phrase       *string
+	name         *string
+	code         *string
+	labels       *string
+	allLabels    *string
+	fieldName    *string
 	fieldContext *string
-	fieldLabel *string
+	fieldLabel   *string
 }
 
 // Maximum number of records to return
@@ -5231,25 +5264,25 @@ ListInputs Get All Inputs
 
 This endpoint retrieves all option types.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListInputsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListInputsRequest
 */
 func (a *LibraryAPIService) ListInputs(ctx context.Context) ApiListInputsRequest {
 	return ApiListInputsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListInputs200Response
+//
+//	@return ListInputs200Response
 func (a *LibraryAPIService) ListInputsExecute(r ApiListInputsRequest) (*ListInputs200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListInputs200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListInputs200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.ListInputs")
@@ -5347,7 +5380,7 @@ func (a *LibraryAPIService) ListInputsExecute(r ApiListInputsRequest) (*ListInpu
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -5356,8 +5389,8 @@ func (a *LibraryAPIService) ListInputsExecute(r ApiListInputsRequest) (*ListInpu
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -5367,8 +5400,8 @@ func (a *LibraryAPIService) ListInputsExecute(r ApiListInputsRequest) (*ListInpu
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -5376,8 +5409,8 @@ func (a *LibraryAPIService) ListInputsExecute(r ApiListInputsRequest) (*ListInpu
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -5386,19 +5419,19 @@ func (a *LibraryAPIService) ListInputsExecute(r ApiListInputsRequest) (*ListInpu
 }
 
 type ApiListInstanceTypesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *LibraryAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	name *string
-	code *string
-	featured *bool
-	labels *string
-	allLabels *string
-	details *bool
+	max        *int64
+	offset     *int64
+	sort       *string
+	direction  *string
+	phrase     *string
+	name       *string
+	code       *string
+	featured   *bool
+	labels     *string
+	allLabels  *string
+	details    *bool
 }
 
 // Maximum number of records to return
@@ -5476,25 +5509,25 @@ ListInstanceTypes Get All Instance Types
 
 This endpoint retrieves all instance types.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListInstanceTypesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListInstanceTypesRequest
 */
 func (a *LibraryAPIService) ListInstanceTypes(ctx context.Context) ApiListInstanceTypesRequest {
 	return ApiListInstanceTypesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListInstanceTypesProvisioning200Response
+//
+//	@return ListInstanceTypesProvisioning200Response
 func (a *LibraryAPIService) ListInstanceTypesExecute(r ApiListInstanceTypesRequest) (*ListInstanceTypesProvisioning200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListInstanceTypesProvisioning200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListInstanceTypesProvisioning200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.ListInstanceTypes")
@@ -5589,7 +5622,7 @@ func (a *LibraryAPIService) ListInstanceTypesExecute(r ApiListInstanceTypesReque
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -5598,8 +5631,8 @@ func (a *LibraryAPIService) ListInstanceTypesExecute(r ApiListInstanceTypesReque
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -5609,8 +5642,8 @@ func (a *LibraryAPIService) ListInstanceTypesExecute(r ApiListInstanceTypesReque
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -5618,8 +5651,8 @@ func (a *LibraryAPIService) ListInstanceTypesExecute(r ApiListInstanceTypesReque
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -5628,18 +5661,18 @@ func (a *LibraryAPIService) ListInstanceTypesExecute(r ApiListInstanceTypesReque
 }
 
 type ApiListLayoutsRequest struct {
-	ctx context.Context
-	ApiService *LibraryAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	name *string
-	code *string
+	ctx           context.Context
+	ApiService    *LibraryAPIService
+	max           *int64
+	offset        *int64
+	sort          *string
+	direction     *string
+	phrase        *string
+	name          *string
+	code          *string
 	provisionType *string
-	labels *string
-	allLabels *string
+	labels        *string
+	allLabels     *string
 }
 
 // Maximum number of records to return
@@ -5684,7 +5717,7 @@ func (r ApiListLayoutsRequest) Code(code string) ApiListLayoutsRequest {
 	return r
 }
 
-// Filter by &#x60;Provision Type&#x60; code. Refer to &#x60;Provision Types&#x60; API for up to date listings. 
+// Filter by &#x60;Provision Type&#x60; code. Refer to &#x60;Provision Types&#x60; API for up to date listings.
 func (r ApiListLayoutsRequest) ProvisionType(provisionType string) ApiListLayoutsRequest {
 	r.provisionType = &provisionType
 	return r
@@ -5711,25 +5744,25 @@ ListLayouts Get All Layouts
 
 This endpoint retrieves all layouts.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListLayoutsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListLayoutsRequest
 */
 func (a *LibraryAPIService) ListLayouts(ctx context.Context) ApiListLayoutsRequest {
 	return ApiListLayoutsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListLayoutsForInstanceType200Response
+//
+//	@return ListLayoutsForInstanceType200Response
 func (a *LibraryAPIService) ListLayoutsExecute(r ApiListLayoutsRequest) (*ListLayoutsForInstanceType200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListLayoutsForInstanceType200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListLayoutsForInstanceType200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.ListLayouts")
@@ -5821,7 +5854,7 @@ func (a *LibraryAPIService) ListLayoutsExecute(r ApiListLayoutsRequest) (*ListLa
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -5830,8 +5863,8 @@ func (a *LibraryAPIService) ListLayoutsExecute(r ApiListLayoutsRequest) (*ListLa
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -5841,8 +5874,8 @@ func (a *LibraryAPIService) ListLayoutsExecute(r ApiListLayoutsRequest) (*ListLa
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -5850,8 +5883,8 @@ func (a *LibraryAPIService) ListLayoutsExecute(r ApiListLayoutsRequest) (*ListLa
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -5860,19 +5893,19 @@ func (a *LibraryAPIService) ListLayoutsExecute(r ApiListLayoutsRequest) (*ListLa
 }
 
 type ApiListLayoutsForInstanceTypeRequest struct {
-	ctx context.Context
-	ApiService *LibraryAPIService
+	ctx            context.Context
+	ApiService     *LibraryAPIService
 	instanceTypeId int64
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	name *string
-	code *string
-	provisionType *string
-	labels *string
-	allLabels *string
+	max            *int64
+	offset         *int64
+	sort           *string
+	direction      *string
+	phrase         *string
+	name           *string
+	code           *string
+	provisionType  *string
+	labels         *string
+	allLabels      *string
 }
 
 // Maximum number of records to return
@@ -5917,7 +5950,7 @@ func (r ApiListLayoutsForInstanceTypeRequest) Code(code string) ApiListLayoutsFo
 	return r
 }
 
-// Filter by &#x60;Provision Type&#x60; code. Refer to &#x60;Provision Types&#x60; API for up to date listings. 
+// Filter by &#x60;Provision Type&#x60; code. Refer to &#x60;Provision Types&#x60; API for up to date listings.
 func (r ApiListLayoutsForInstanceTypeRequest) ProvisionType(provisionType string) ApiListLayoutsForInstanceTypeRequest {
 	r.provisionType = &provisionType
 	return r
@@ -5944,26 +5977,27 @@ ListLayoutsForInstanceType Get All Layouts For an Instance Type
 
 This endpoint retrieves all layouts for a specific instance type.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param instanceTypeId The ID of the instance type
- @return ApiListLayoutsForInstanceTypeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param instanceTypeId The ID of the instance type
+	@return ApiListLayoutsForInstanceTypeRequest
 */
 func (a *LibraryAPIService) ListLayoutsForInstanceType(ctx context.Context, instanceTypeId int64) ApiListLayoutsForInstanceTypeRequest {
 	return ApiListLayoutsForInstanceTypeRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		instanceTypeId: instanceTypeId,
 	}
 }
 
 // Execute executes the request
-//  @return ListLayoutsForInstanceType200Response
+//
+//	@return ListLayoutsForInstanceType200Response
 func (a *LibraryAPIService) ListLayoutsForInstanceTypeExecute(r ApiListLayoutsForInstanceTypeRequest) (*ListLayoutsForInstanceType200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListLayoutsForInstanceType200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListLayoutsForInstanceType200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.ListLayoutsForInstanceType")
@@ -6056,7 +6090,7 @@ func (a *LibraryAPIService) ListLayoutsForInstanceTypeExecute(r ApiListLayoutsFo
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -6065,8 +6099,8 @@ func (a *LibraryAPIService) ListLayoutsForInstanceTypeExecute(r ApiListLayoutsFo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -6076,8 +6110,8 @@ func (a *LibraryAPIService) ListLayoutsForInstanceTypeExecute(r ApiListLayoutsFo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -6085,8 +6119,8 @@ func (a *LibraryAPIService) ListLayoutsForInstanceTypeExecute(r ApiListLayoutsFo
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -6095,18 +6129,18 @@ func (a *LibraryAPIService) ListLayoutsForInstanceTypeExecute(r ApiListLayoutsFo
 }
 
 type ApiListNodeTypesRequest struct {
-	ctx context.Context
-	ApiService *LibraryAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	name *string
-	code *string
+	ctx           context.Context
+	ApiService    *LibraryAPIService
+	max           *int64
+	offset        *int64
+	sort          *string
+	direction     *string
+	phrase        *string
+	name          *string
+	code          *string
 	provisionType *string
-	labels *string
-	allLabels *string
+	labels        *string
+	allLabels     *string
 }
 
 // Maximum number of records to return
@@ -6151,7 +6185,7 @@ func (r ApiListNodeTypesRequest) Code(code string) ApiListNodeTypesRequest {
 	return r
 }
 
-// Filter by &#x60;Provision Type&#x60; code. Refer to &#x60;Provision Types&#x60; API for up to date listings. 
+// Filter by &#x60;Provision Type&#x60; code. Refer to &#x60;Provision Types&#x60; API for up to date listings.
 func (r ApiListNodeTypesRequest) ProvisionType(provisionType string) ApiListNodeTypesRequest {
 	r.provisionType = &provisionType
 	return r
@@ -6178,24 +6212,25 @@ ListNodeTypes Get All Node Types
 
 This endpoint retrieves all node types.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListNodeTypesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListNodeTypesRequest
 */
 func (a *LibraryAPIService) ListNodeTypes(ctx context.Context) ApiListNodeTypesRequest {
 	return ApiListNodeTypesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListNodeTypes200Response
+//
+//	@return ListNodeTypes200Response
 func (a *LibraryAPIService) ListNodeTypesExecute(r ApiListNodeTypesRequest) (*ListNodeTypes200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListNodeTypes200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListNodeTypes200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.ListNodeTypes")
@@ -6287,7 +6322,7 @@ func (a *LibraryAPIService) ListNodeTypesExecute(r ApiListNodeTypesRequest) (*Li
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -6296,8 +6331,8 @@ func (a *LibraryAPIService) ListNodeTypesExecute(r ApiListNodeTypesRequest) (*Li
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -6307,8 +6342,8 @@ func (a *LibraryAPIService) ListNodeTypesExecute(r ApiListNodeTypesRequest) (*Li
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -6316,8 +6351,8 @@ func (a *LibraryAPIService) ListNodeTypesExecute(r ApiListNodeTypesRequest) (*Li
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -6326,17 +6361,17 @@ func (a *LibraryAPIService) ListNodeTypesExecute(r ApiListNodeTypesRequest) (*Li
 }
 
 type ApiListOptionFormsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *LibraryAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	name *string
-	code *string
-	labels *string
-	allLabels *string
+	max        *int64
+	offset     *int64
+	sort       *string
+	direction  *string
+	phrase     *string
+	name       *string
+	code       *string
+	labels     *string
+	allLabels  *string
 }
 
 // Maximum number of records to return
@@ -6402,24 +6437,25 @@ ListOptionForms Get All Option Forms
 
 This endpoint retrieves all option forms.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListOptionFormsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListOptionFormsRequest
 */
 func (a *LibraryAPIService) ListOptionForms(ctx context.Context) ApiListOptionFormsRequest {
 	return ApiListOptionFormsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListOptionForms200Response
+//
+//	@return ListOptionForms200Response
 func (a *LibraryAPIService) ListOptionFormsExecute(r ApiListOptionFormsRequest) (*ListOptionForms200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListOptionForms200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListOptionForms200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.ListOptionForms")
@@ -6508,7 +6544,7 @@ func (a *LibraryAPIService) ListOptionFormsExecute(r ApiListOptionFormsRequest) 
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -6517,8 +6553,8 @@ func (a *LibraryAPIService) ListOptionFormsExecute(r ApiListOptionFormsRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -6528,8 +6564,8 @@ func (a *LibraryAPIService) ListOptionFormsExecute(r ApiListOptionFormsRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -6537,8 +6573,8 @@ func (a *LibraryAPIService) ListOptionFormsExecute(r ApiListOptionFormsRequest) 
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -6547,16 +6583,16 @@ func (a *LibraryAPIService) ListOptionFormsExecute(r ApiListOptionFormsRequest) 
 }
 
 type ApiListOptionListsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *LibraryAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	name *string
-	labels *string
-	allLabels *string
+	max        *int64
+	offset     *int64
+	sort       *string
+	direction  *string
+	phrase     *string
+	name       *string
+	labels     *string
+	allLabels  *string
 }
 
 // Maximum number of records to return
@@ -6616,24 +6652,25 @@ ListOptionLists Get All Option Lists
 
 This endpoint retrieves all option lists.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListOptionListsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListOptionListsRequest
 */
 func (a *LibraryAPIService) ListOptionLists(ctx context.Context) ApiListOptionListsRequest {
 	return ApiListOptionListsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListOptionLists200Response
+//
+//	@return ListOptionLists200Response
 func (a *LibraryAPIService) ListOptionListsExecute(r ApiListOptionListsRequest) (*ListOptionLists200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListOptionLists200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListOptionLists200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.ListOptionLists")
@@ -6719,7 +6756,7 @@ func (a *LibraryAPIService) ListOptionListsExecute(r ApiListOptionListsRequest) 
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -6728,8 +6765,8 @@ func (a *LibraryAPIService) ListOptionListsExecute(r ApiListOptionListsRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -6739,8 +6776,8 @@ func (a *LibraryAPIService) ListOptionListsExecute(r ApiListOptionListsRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -6748,8 +6785,8 @@ func (a *LibraryAPIService) ListOptionListsExecute(r ApiListOptionListsRequest) 
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -6758,14 +6795,14 @@ func (a *LibraryAPIService) ListOptionListsExecute(r ApiListOptionListsRequest) 
 }
 
 type ApiListOsTypesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *LibraryAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	name *string
+	max        *int64
+	offset     *int64
+	sort       *string
+	direction  *string
+	phrase     *string
+	name       *string
 }
 
 // Maximum number of records to return
@@ -6813,25 +6850,25 @@ ListOsTypes Retrieves all OsTypes
 
 Retrieves all osTypes.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListOsTypesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListOsTypesRequest
 */
 func (a *LibraryAPIService) ListOsTypes(ctx context.Context) ApiListOsTypesRequest {
 	return ApiListOsTypesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListOsTypes200Response
+//
+//	@return ListOsTypes200Response
 func (a *LibraryAPIService) ListOsTypesExecute(r ApiListOsTypesRequest) (*ListOsTypes200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListOsTypes200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListOsTypes200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.ListOsTypes")
@@ -6911,7 +6948,7 @@ func (a *LibraryAPIService) ListOsTypesExecute(r ApiListOsTypesRequest) (*ListOs
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -6920,8 +6957,8 @@ func (a *LibraryAPIService) ListOsTypesExecute(r ApiListOsTypesRequest) (*ListOs
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -6931,8 +6968,8 @@ func (a *LibraryAPIService) ListOsTypesExecute(r ApiListOsTypesRequest) (*ListOs
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -6940,8 +6977,8 @@ func (a *LibraryAPIService) ListOsTypesExecute(r ApiListOsTypesRequest) (*ListOs
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -6950,16 +6987,16 @@ func (a *LibraryAPIService) ListOsTypesExecute(r ApiListOsTypesRequest) (*ListOs
 }
 
 type ApiListScriptsRequest struct {
-	ctx context.Context
-	ApiService *LibraryAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	labels *string
-	allLabels *string
-	scriptType *string
+	ctx         context.Context
+	ApiService  *LibraryAPIService
+	max         *int64
+	offset      *int64
+	sort        *string
+	direction   *string
+	phrase      *string
+	labels      *string
+	allLabels   *string
+	scriptType  *string
 	scriptPhase *string
 }
 
@@ -7028,25 +7065,25 @@ This endpoint retrieves all scripts.
 
 The value of script will be masked as ************ for system owned scripts.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListScriptsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListScriptsRequest
 */
 func (a *LibraryAPIService) ListScripts(ctx context.Context) ApiListScriptsRequest {
 	return ApiListScriptsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListScripts200Response
+//
+//	@return ListScripts200Response
 func (a *LibraryAPIService) ListScriptsExecute(r ApiListScriptsRequest) (*ListScripts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListScripts200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListScripts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.ListScripts")
@@ -7135,7 +7172,7 @@ func (a *LibraryAPIService) ListScriptsExecute(r ApiListScriptsRequest) (*ListSc
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -7144,8 +7181,8 @@ func (a *LibraryAPIService) ListScriptsExecute(r ApiListScriptsRequest) (*ListSc
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -7155,8 +7192,8 @@ func (a *LibraryAPIService) ListScriptsExecute(r ApiListScriptsRequest) (*ListSc
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -7164,8 +7201,8 @@ func (a *LibraryAPIService) ListScriptsExecute(r ApiListScriptsRequest) (*ListSc
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -7174,7 +7211,7 @@ func (a *LibraryAPIService) ListScriptsExecute(r ApiListScriptsRequest) (*ListSc
 }
 
 type ApiListSecurityPackageTypesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *LibraryAPIService
 }
 
@@ -7185,27 +7222,27 @@ func (r ApiListSecurityPackageTypesRequest) Execute() (*ListSecurityPackageTypes
 /*
 ListSecurityPackageTypes Retrieves all Security Package Types
 
-Retrieves all Security Package Types
+# Retrieves all Security Package Types
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListSecurityPackageTypesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListSecurityPackageTypesRequest
 */
 func (a *LibraryAPIService) ListSecurityPackageTypes(ctx context.Context) ApiListSecurityPackageTypesRequest {
 	return ApiListSecurityPackageTypesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListSecurityPackageTypes200Response
+//
+//	@return ListSecurityPackageTypes200Response
 func (a *LibraryAPIService) ListSecurityPackageTypesExecute(r ApiListSecurityPackageTypesRequest) (*ListSecurityPackageTypes200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListSecurityPackageTypes200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListSecurityPackageTypes200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.ListSecurityPackageTypes")
@@ -7255,7 +7292,7 @@ func (a *LibraryAPIService) ListSecurityPackageTypesExecute(r ApiListSecurityPac
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -7264,8 +7301,8 @@ func (a *LibraryAPIService) ListSecurityPackageTypesExecute(r ApiListSecurityPac
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -7275,8 +7312,8 @@ func (a *LibraryAPIService) ListSecurityPackageTypesExecute(r ApiListSecurityPac
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -7284,8 +7321,8 @@ func (a *LibraryAPIService) ListSecurityPackageTypesExecute(r ApiListSecurityPac
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -7294,16 +7331,16 @@ func (a *LibraryAPIService) ListSecurityPackageTypesExecute(r ApiListSecurityPac
 }
 
 type ApiListSpecTemplatesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *LibraryAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	name *string
-	labels *string
-	allLabels *string
+	max        *int64
+	offset     *int64
+	sort       *string
+	direction  *string
+	phrase     *string
+	name       *string
+	labels     *string
+	allLabels  *string
 }
 
 // Maximum number of records to return
@@ -7363,24 +7400,25 @@ ListSpecTemplates Get All Spec Templates
 
 This endpoint retrieves all spec templates.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListSpecTemplatesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListSpecTemplatesRequest
 */
 func (a *LibraryAPIService) ListSpecTemplates(ctx context.Context) ApiListSpecTemplatesRequest {
 	return ApiListSpecTemplatesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListSpecTemplates200Response
+//
+//	@return ListSpecTemplates200Response
 func (a *LibraryAPIService) ListSpecTemplatesExecute(r ApiListSpecTemplatesRequest) (*ListSpecTemplates200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListSpecTemplates200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListSpecTemplates200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.ListSpecTemplates")
@@ -7466,7 +7504,7 @@ func (a *LibraryAPIService) ListSpecTemplatesExecute(r ApiListSpecTemplatesReque
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -7475,8 +7513,8 @@ func (a *LibraryAPIService) ListSpecTemplatesExecute(r ApiListSpecTemplatesReque
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -7486,8 +7524,8 @@ func (a *LibraryAPIService) ListSpecTemplatesExecute(r ApiListSpecTemplatesReque
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -7495,8 +7533,8 @@ func (a *LibraryAPIService) ListSpecTemplatesExecute(r ApiListSpecTemplatesReque
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -7505,8 +7543,8 @@ func (a *LibraryAPIService) ListSpecTemplatesExecute(r ApiListSpecTemplatesReque
 }
 
 type ApiListVirtualImageLocationsRequest struct {
-	ctx context.Context
-	ApiService *LibraryAPIService
+	ctx            context.Context
+	ApiService     *LibraryAPIService
 	virtualImageId float32
 }
 
@@ -7519,26 +7557,27 @@ ListVirtualImageLocations Get a List of Virtual Image Locations
 
 This endpoint retrieves a specific virtual image and its files.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param virtualImageId Virtual Image ID
- @return ApiListVirtualImageLocationsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param virtualImageId Virtual Image ID
+	@return ApiListVirtualImageLocationsRequest
 */
 func (a *LibraryAPIService) ListVirtualImageLocations(ctx context.Context, virtualImageId float32) ApiListVirtualImageLocationsRequest {
 	return ApiListVirtualImageLocationsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		virtualImageId: virtualImageId,
 	}
 }
 
 // Execute executes the request
-//  @return ListVirtualImageLocations200Response
+//
+//	@return ListVirtualImageLocations200Response
 func (a *LibraryAPIService) ListVirtualImageLocationsExecute(r ApiListVirtualImageLocationsRequest) (*ListVirtualImageLocations200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListVirtualImageLocations200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListVirtualImageLocations200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.ListVirtualImageLocations")
@@ -7589,7 +7628,7 @@ func (a *LibraryAPIService) ListVirtualImageLocationsExecute(r ApiListVirtualIma
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -7598,8 +7637,8 @@ func (a *LibraryAPIService) ListVirtualImageLocationsExecute(r ApiListVirtualIma
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -7609,8 +7648,8 @@ func (a *LibraryAPIService) ListVirtualImageLocationsExecute(r ApiListVirtualIma
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -7618,8 +7657,8 @@ func (a *LibraryAPIService) ListVirtualImageLocationsExecute(r ApiListVirtualIma
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -7628,18 +7667,18 @@ func (a *LibraryAPIService) ListVirtualImageLocationsExecute(r ApiListVirtualIma
 }
 
 type ApiListVirtualImagesRequest struct {
-	ctx context.Context
-	ApiService *LibraryAPIService
-	max *int64
-	offset *int64
-	name *string
-	phrase *string
+	ctx         context.Context
+	ApiService  *LibraryAPIService
+	max         *int64
+	offset      *int64
+	name        *string
+	phrase      *string
 	lastUpdated *time.Time
-	filterType *string
-	imageType *string
-	tagsName *string
-	labels *string
-	allLabels *string
+	filterType  *string
+	imageType   *string
+	tagsName    *string
+	labels      *string
+	allLabels   *string
 }
 
 // Maximum number of records to return
@@ -7684,7 +7723,7 @@ func (r ApiListVirtualImagesRequest) ImageType(imageType string) ApiListVirtualI
 	return r
 }
 
-// Filter by tags (metadata). This allows filtering by a tag name and value(s) 
+// Filter by tags (metadata). This allows filtering by a tag name and value(s)
 func (r ApiListVirtualImagesRequest) TagsName(tagsName string) ApiListVirtualImagesRequest {
 	r.tagsName = &tagsName
 	return r
@@ -7711,24 +7750,25 @@ ListVirtualImages Get List of Virtual Images
 
 This endpoint retrieves a list of virtual images for the specified filter.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListVirtualImagesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListVirtualImagesRequest
 */
 func (a *LibraryAPIService) ListVirtualImages(ctx context.Context) ApiListVirtualImagesRequest {
 	return ApiListVirtualImagesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListVirtualImages200Response
+//
+//	@return ListVirtualImages200Response
 func (a *LibraryAPIService) ListVirtualImagesExecute(r ApiListVirtualImagesRequest) (*ListVirtualImages200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListVirtualImages200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListVirtualImages200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.ListVirtualImages")
@@ -7817,7 +7857,7 @@ func (a *LibraryAPIService) ListVirtualImagesExecute(r ApiListVirtualImagesReque
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -7826,8 +7866,8 @@ func (a *LibraryAPIService) ListVirtualImagesExecute(r ApiListVirtualImagesReque
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -7837,8 +7877,8 @@ func (a *LibraryAPIService) ListVirtualImagesExecute(r ApiListVirtualImagesReque
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -7846,8 +7886,8 @@ func (a *LibraryAPIService) ListVirtualImagesExecute(r ApiListVirtualImagesReque
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -7856,9 +7896,9 @@ func (a *LibraryAPIService) ListVirtualImagesExecute(r ApiListVirtualImagesReque
 }
 
 type ApiRemoveSecurityScansRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *LibraryAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiRemoveSecurityScansRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -7870,27 +7910,27 @@ RemoveSecurityScans Deletes a Security Scan
 
 Deletes a specified security scan.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiRemoveSecurityScansRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiRemoveSecurityScansRequest
 */
 func (a *LibraryAPIService) RemoveSecurityScans(ctx context.Context, id int64) ApiRemoveSecurityScansRequest {
 	return ApiRemoveSecurityScansRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *LibraryAPIService) RemoveSecurityScansExecute(r ApiRemoveSecurityScansRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.RemoveSecurityScans")
@@ -7941,7 +7981,7 @@ func (a *LibraryAPIService) RemoveSecurityScansExecute(r ApiRemoveSecurityScansR
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -7950,8 +7990,8 @@ func (a *LibraryAPIService) RemoveSecurityScansExecute(r ApiRemoveSecurityScansR
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -7961,8 +8001,8 @@ func (a *LibraryAPIService) RemoveSecurityScansExecute(r ApiRemoveSecurityScansR
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -7970,8 +8010,8 @@ func (a *LibraryAPIService) RemoveSecurityScansExecute(r ApiRemoveSecurityScansR
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -7980,8 +8020,8 @@ func (a *LibraryAPIService) RemoveSecurityScansExecute(r ApiRemoveSecurityScansR
 }
 
 type ApiRemoveVirtualImageRequest struct {
-	ctx context.Context
-	ApiService *LibraryAPIService
+	ctx            context.Context
+	ApiService     *LibraryAPIService
 	virtualImageId float32
 }
 
@@ -7994,26 +8034,27 @@ RemoveVirtualImage Delete a Virtual Image
 
 Will delete a virtual image and any associated files, use removeFromCloud=true to also delete image locations from all clouds.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param virtualImageId Virtual Image ID
- @return ApiRemoveVirtualImageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param virtualImageId Virtual Image ID
+	@return ApiRemoveVirtualImageRequest
 */
 func (a *LibraryAPIService) RemoveVirtualImage(ctx context.Context, virtualImageId float32) ApiRemoveVirtualImageRequest {
 	return ApiRemoveVirtualImageRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		virtualImageId: virtualImageId,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *LibraryAPIService) RemoveVirtualImageExecute(r ApiRemoveVirtualImageRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.RemoveVirtualImage")
@@ -8064,7 +8105,7 @@ func (a *LibraryAPIService) RemoveVirtualImageExecute(r ApiRemoveVirtualImageReq
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -8073,8 +8114,8 @@ func (a *LibraryAPIService) RemoveVirtualImageExecute(r ApiRemoveVirtualImageReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -8084,8 +8125,8 @@ func (a *LibraryAPIService) RemoveVirtualImageExecute(r ApiRemoveVirtualImageReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -8093,8 +8134,8 @@ func (a *LibraryAPIService) RemoveVirtualImageExecute(r ApiRemoveVirtualImageReq
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -8103,10 +8144,10 @@ func (a *LibraryAPIService) RemoveVirtualImageExecute(r ApiRemoveVirtualImageReq
 }
 
 type ApiRemoveVirtualImageFileRequest struct {
-	ctx context.Context
-	ApiService *LibraryAPIService
+	ctx            context.Context
+	ApiService     *LibraryAPIService
 	virtualImageId float32
-	filename *string
+	filename       *string
 }
 
 // The name of the file
@@ -8124,26 +8165,27 @@ RemoveVirtualImageFile Remove Virtual Image File
 
 Remove Virtual Image File
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param virtualImageId Virtual Image ID
- @return ApiRemoveVirtualImageFileRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param virtualImageId Virtual Image ID
+	@return ApiRemoveVirtualImageFileRequest
 */
 func (a *LibraryAPIService) RemoveVirtualImageFile(ctx context.Context, virtualImageId float32) ApiRemoveVirtualImageFileRequest {
 	return ApiRemoveVirtualImageFileRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		virtualImageId: virtualImageId,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *LibraryAPIService) RemoveVirtualImageFileExecute(r ApiRemoveVirtualImageFileRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.RemoveVirtualImageFile")
@@ -8197,7 +8239,7 @@ func (a *LibraryAPIService) RemoveVirtualImageFileExecute(r ApiRemoveVirtualImag
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -8206,8 +8248,8 @@ func (a *LibraryAPIService) RemoveVirtualImageFileExecute(r ApiRemoveVirtualImag
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -8217,8 +8259,8 @@ func (a *LibraryAPIService) RemoveVirtualImageFileExecute(r ApiRemoveVirtualImag
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -8226,8 +8268,8 @@ func (a *LibraryAPIService) RemoveVirtualImageFileExecute(r ApiRemoveVirtualImag
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -8236,10 +8278,10 @@ func (a *LibraryAPIService) RemoveVirtualImageFileExecute(r ApiRemoveVirtualImag
 }
 
 type ApiRemoveVirtualImageLocationRequest struct {
-	ctx context.Context
-	ApiService *LibraryAPIService
+	ctx            context.Context
+	ApiService     *LibraryAPIService
 	virtualImageId float32
-	id int64
+	id             int64
 }
 
 func (r ApiRemoveVirtualImageLocationRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -8251,28 +8293,29 @@ RemoveVirtualImageLocation Delete a Virtual Image Location
 
 Will delete a virtual image location, use removeFromCloud=true to all also delete image locations from all clouds as well.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param virtualImageId Virtual Image ID
- @param id Morpheus ID of the Object being referenced
- @return ApiRemoveVirtualImageLocationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param virtualImageId Virtual Image ID
+	@param id Morpheus ID of the Object being referenced
+	@return ApiRemoveVirtualImageLocationRequest
 */
 func (a *LibraryAPIService) RemoveVirtualImageLocation(ctx context.Context, virtualImageId float32, id int64) ApiRemoveVirtualImageLocationRequest {
 	return ApiRemoveVirtualImageLocationRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		virtualImageId: virtualImageId,
-		id: id,
+		id:             id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *LibraryAPIService) RemoveVirtualImageLocationExecute(r ApiRemoveVirtualImageLocationRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.RemoveVirtualImageLocation")
@@ -8324,7 +8367,7 @@ func (a *LibraryAPIService) RemoveVirtualImageLocationExecute(r ApiRemoveVirtual
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -8333,8 +8376,8 @@ func (a *LibraryAPIService) RemoveVirtualImageLocationExecute(r ApiRemoveVirtual
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -8344,8 +8387,8 @@ func (a *LibraryAPIService) RemoveVirtualImageLocationExecute(r ApiRemoveVirtual
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -8353,8 +8396,8 @@ func (a *LibraryAPIService) RemoveVirtualImageLocationExecute(r ApiRemoveVirtual
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -8363,8 +8406,8 @@ func (a *LibraryAPIService) RemoveVirtualImageLocationExecute(r ApiRemoveVirtual
 }
 
 type ApiSetInstanceTypeFeaturedRequest struct {
-	ctx context.Context
-	ApiService *LibraryAPIService
+	ctx            context.Context
+	ApiService     *LibraryAPIService
 	instanceTypeId int64
 }
 
@@ -8377,27 +8420,27 @@ SetInstanceTypeFeatured Toggle Featured For Instance Type
 
 Use this command to toggle the featured flag for an existing instance type. This will change the value from false to true, or from true to false.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param instanceTypeId The ID of the instance type
- @return ApiSetInstanceTypeFeaturedRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param instanceTypeId The ID of the instance type
+	@return ApiSetInstanceTypeFeaturedRequest
 */
 func (a *LibraryAPIService) SetInstanceTypeFeatured(ctx context.Context, instanceTypeId int64) ApiSetInstanceTypeFeaturedRequest {
 	return ApiSetInstanceTypeFeaturedRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		instanceTypeId: instanceTypeId,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *LibraryAPIService) SetInstanceTypeFeaturedExecute(r ApiSetInstanceTypeFeaturedRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.SetInstanceTypeFeatured")
@@ -8448,7 +8491,7 @@ func (a *LibraryAPIService) SetInstanceTypeFeaturedExecute(r ApiSetInstanceTypeF
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -8457,8 +8500,8 @@ func (a *LibraryAPIService) SetInstanceTypeFeaturedExecute(r ApiSetInstanceTypeF
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -8468,8 +8511,8 @@ func (a *LibraryAPIService) SetInstanceTypeFeaturedExecute(r ApiSetInstanceTypeF
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -8477,8 +8520,8 @@ func (a *LibraryAPIService) SetInstanceTypeFeaturedExecute(r ApiSetInstanceTypeF
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -8487,9 +8530,9 @@ func (a *LibraryAPIService) SetInstanceTypeFeaturedExecute(r ApiSetInstanceTypeF
 }
 
 type ApiUpdateFileTemplateRequest struct {
-	ctx context.Context
-	ApiService *LibraryAPIService
-	id int64
+	ctx                       context.Context
+	ApiService                *LibraryAPIService
+	id                        int64
 	updateFileTemplateRequest *UpdateFileTemplateRequest
 }
 
@@ -8507,26 +8550,27 @@ UpdateFileTemplate Update a File Template
 
 Use this command to update an existing file template.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateFileTemplateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateFileTemplateRequest
 */
 func (a *LibraryAPIService) UpdateFileTemplate(ctx context.Context, id int64) ApiUpdateFileTemplateRequest {
 	return ApiUpdateFileTemplateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *LibraryAPIService) UpdateFileTemplateExecute(r ApiUpdateFileTemplateRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.UpdateFileTemplate")
@@ -8579,7 +8623,7 @@ func (a *LibraryAPIService) UpdateFileTemplateExecute(r ApiUpdateFileTemplateReq
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -8588,8 +8632,8 @@ func (a *LibraryAPIService) UpdateFileTemplateExecute(r ApiUpdateFileTemplateReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -8599,8 +8643,8 @@ func (a *LibraryAPIService) UpdateFileTemplateExecute(r ApiUpdateFileTemplateReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -8608,8 +8652,8 @@ func (a *LibraryAPIService) UpdateFileTemplateExecute(r ApiUpdateFileTemplateReq
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -8618,9 +8662,9 @@ func (a *LibraryAPIService) UpdateFileTemplateExecute(r ApiUpdateFileTemplateReq
 }
 
 type ApiUpdateInstanceTypeRequest struct {
-	ctx context.Context
-	ApiService *LibraryAPIService
-	instanceTypeId int64
+	ctx                       context.Context
+	ApiService                *LibraryAPIService
+	instanceTypeId            int64
 	updateInstanceTypeRequest *UpdateInstanceTypeRequest
 }
 
@@ -8638,26 +8682,27 @@ UpdateInstanceType Update an Instance Type
 
 Use this command to update an existing instance type.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param instanceTypeId The ID of the instance type
- @return ApiUpdateInstanceTypeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param instanceTypeId The ID of the instance type
+	@return ApiUpdateInstanceTypeRequest
 */
 func (a *LibraryAPIService) UpdateInstanceType(ctx context.Context, instanceTypeId int64) ApiUpdateInstanceTypeRequest {
 	return ApiUpdateInstanceTypeRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		instanceTypeId: instanceTypeId,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *LibraryAPIService) UpdateInstanceTypeExecute(r ApiUpdateInstanceTypeRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.UpdateInstanceType")
@@ -8710,7 +8755,7 @@ func (a *LibraryAPIService) UpdateInstanceTypeExecute(r ApiUpdateInstanceTypeReq
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -8719,8 +8764,8 @@ func (a *LibraryAPIService) UpdateInstanceTypeExecute(r ApiUpdateInstanceTypeReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -8730,8 +8775,8 @@ func (a *LibraryAPIService) UpdateInstanceTypeExecute(r ApiUpdateInstanceTypeReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -8739,8 +8784,8 @@ func (a *LibraryAPIService) UpdateInstanceTypeExecute(r ApiUpdateInstanceTypeReq
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -8749,11 +8794,11 @@ func (a *LibraryAPIService) UpdateInstanceTypeExecute(r ApiUpdateInstanceTypeReq
 }
 
 type ApiUpdateInstanceTypeLogoRequest struct {
-	ctx context.Context
-	ApiService *LibraryAPIService
+	ctx            context.Context
+	ApiService     *LibraryAPIService
 	instanceTypeId int64
-	logo *os.File
-	darkLogo *os.File
+	logo           *os.File
+	darkLogo       *os.File
 }
 
 // Logo File png,jpg,svg
@@ -8777,27 +8822,27 @@ UpdateInstanceTypeLogo Update Logo For Instance Type
 
 Use this command to update the logo and dark logo images for an existing instance type. This endpoint expects multipart form data as the request format, not JSON.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param instanceTypeId The ID of the instance type
- @return ApiUpdateInstanceTypeLogoRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param instanceTypeId The ID of the instance type
+	@return ApiUpdateInstanceTypeLogoRequest
 */
 func (a *LibraryAPIService) UpdateInstanceTypeLogo(ctx context.Context, instanceTypeId int64) ApiUpdateInstanceTypeLogoRequest {
 	return ApiUpdateInstanceTypeLogoRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		instanceTypeId: instanceTypeId,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *LibraryAPIService) UpdateInstanceTypeLogoExecute(r ApiUpdateInstanceTypeLogoRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.UpdateInstanceTypeLogo")
@@ -8830,8 +8875,8 @@ func (a *LibraryAPIService) UpdateInstanceTypeLogoExecute(r ApiUpdateInstanceTyp
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	var logoLocalVarFormFileName string
-	var logoLocalVarFileName     string
-	var logoLocalVarFileBytes    []byte
+	var logoLocalVarFileName string
+	var logoLocalVarFileBytes []byte
 
 	logoLocalVarFormFileName = "logo"
 	logoLocalVarFile := r.logo
@@ -8845,8 +8890,8 @@ func (a *LibraryAPIService) UpdateInstanceTypeLogoExecute(r ApiUpdateInstanceTyp
 		formFiles = append(formFiles, formFile{fileBytes: logoLocalVarFileBytes, fileName: logoLocalVarFileName, formFileName: logoLocalVarFormFileName})
 	}
 	var darkLogoLocalVarFormFileName string
-	var darkLogoLocalVarFileName     string
-	var darkLogoLocalVarFileBytes    []byte
+	var darkLogoLocalVarFileName string
+	var darkLogoLocalVarFileBytes []byte
 
 	darkLogoLocalVarFormFileName = "darkLogo"
 	darkLogoLocalVarFile := r.darkLogo
@@ -8878,7 +8923,7 @@ func (a *LibraryAPIService) UpdateInstanceTypeLogoExecute(r ApiUpdateInstanceTyp
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -8887,8 +8932,8 @@ func (a *LibraryAPIService) UpdateInstanceTypeLogoExecute(r ApiUpdateInstanceTyp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -8898,8 +8943,8 @@ func (a *LibraryAPIService) UpdateInstanceTypeLogoExecute(r ApiUpdateInstanceTyp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -8907,8 +8952,8 @@ func (a *LibraryAPIService) UpdateInstanceTypeLogoExecute(r ApiUpdateInstanceTyp
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -8917,9 +8962,9 @@ func (a *LibraryAPIService) UpdateInstanceTypeLogoExecute(r ApiUpdateInstanceTyp
 }
 
 type ApiUpdateLayoutRequest struct {
-	ctx context.Context
-	ApiService *LibraryAPIService
-	id int64
+	ctx                 context.Context
+	ApiService          *LibraryAPIService
+	id                  int64
 	updateLayoutRequest *UpdateLayoutRequest
 }
 
@@ -8937,26 +8982,27 @@ UpdateLayout Update a Layout
 
 Use this command to update an existing layout.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateLayoutRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateLayoutRequest
 */
 func (a *LibraryAPIService) UpdateLayout(ctx context.Context, id int64) ApiUpdateLayoutRequest {
 	return ApiUpdateLayoutRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *LibraryAPIService) UpdateLayoutExecute(r ApiUpdateLayoutRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.UpdateLayout")
@@ -9009,7 +9055,7 @@ func (a *LibraryAPIService) UpdateLayoutExecute(r ApiUpdateLayoutRequest) (*Dele
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -9018,8 +9064,8 @@ func (a *LibraryAPIService) UpdateLayoutExecute(r ApiUpdateLayoutRequest) (*Dele
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -9029,8 +9075,8 @@ func (a *LibraryAPIService) UpdateLayoutExecute(r ApiUpdateLayoutRequest) (*Dele
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -9038,8 +9084,8 @@ func (a *LibraryAPIService) UpdateLayoutExecute(r ApiUpdateLayoutRequest) (*Dele
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -9048,9 +9094,9 @@ func (a *LibraryAPIService) UpdateLayoutExecute(r ApiUpdateLayoutRequest) (*Dele
 }
 
 type ApiUpdateLayoutPermissionsRequest struct {
-	ctx context.Context
-	ApiService *LibraryAPIService
-	id int64
+	ctx                            context.Context
+	ApiService                     *LibraryAPIService
+	id                             int64
 	updateLayoutPermissionsRequest *UpdateLayoutPermissionsRequest
 }
 
@@ -9068,26 +9114,27 @@ UpdateLayoutPermissions Update Layout Permissions
 
 Use this command to update permissions for an existing layout.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateLayoutPermissionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateLayoutPermissionsRequest
 */
 func (a *LibraryAPIService) UpdateLayoutPermissions(ctx context.Context, id int64) ApiUpdateLayoutPermissionsRequest {
 	return ApiUpdateLayoutPermissionsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *LibraryAPIService) UpdateLayoutPermissionsExecute(r ApiUpdateLayoutPermissionsRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.UpdateLayoutPermissions")
@@ -9140,7 +9187,7 @@ func (a *LibraryAPIService) UpdateLayoutPermissionsExecute(r ApiUpdateLayoutPerm
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -9149,8 +9196,8 @@ func (a *LibraryAPIService) UpdateLayoutPermissionsExecute(r ApiUpdateLayoutPerm
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -9160,8 +9207,8 @@ func (a *LibraryAPIService) UpdateLayoutPermissionsExecute(r ApiUpdateLayoutPerm
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -9169,8 +9216,8 @@ func (a *LibraryAPIService) UpdateLayoutPermissionsExecute(r ApiUpdateLayoutPerm
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -9179,9 +9226,9 @@ func (a *LibraryAPIService) UpdateLayoutPermissionsExecute(r ApiUpdateLayoutPerm
 }
 
 type ApiUpdateNodeTypeRequest struct {
-	ctx context.Context
-	ApiService *LibraryAPIService
-	id int64
+	ctx                   context.Context
+	ApiService            *LibraryAPIService
+	id                    int64
 	updateNodeTypeRequest *UpdateNodeTypeRequest
 }
 
@@ -9199,26 +9246,27 @@ UpdateNodeType Update a Node Type
 
 Use this command to update an existing node type.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateNodeTypeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateNodeTypeRequest
 */
 func (a *LibraryAPIService) UpdateNodeType(ctx context.Context, id int64) ApiUpdateNodeTypeRequest {
 	return ApiUpdateNodeTypeRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *LibraryAPIService) UpdateNodeTypeExecute(r ApiUpdateNodeTypeRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.UpdateNodeType")
@@ -9271,7 +9319,7 @@ func (a *LibraryAPIService) UpdateNodeTypeExecute(r ApiUpdateNodeTypeRequest) (*
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -9280,8 +9328,8 @@ func (a *LibraryAPIService) UpdateNodeTypeExecute(r ApiUpdateNodeTypeRequest) (*
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -9291,8 +9339,8 @@ func (a *LibraryAPIService) UpdateNodeTypeExecute(r ApiUpdateNodeTypeRequest) (*
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -9300,8 +9348,8 @@ func (a *LibraryAPIService) UpdateNodeTypeExecute(r ApiUpdateNodeTypeRequest) (*
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -9310,9 +9358,9 @@ func (a *LibraryAPIService) UpdateNodeTypeExecute(r ApiUpdateNodeTypeRequest) (*
 }
 
 type ApiUpdateOptionFormRequest struct {
-	ctx context.Context
-	ApiService *LibraryAPIService
-	id int64
+	ctx                  context.Context
+	ApiService           *LibraryAPIService
+	id                   int64
 	addOptionFormRequest *AddOptionFormRequest
 }
 
@@ -9330,26 +9378,27 @@ UpdateOptionForm Update an Option Form
 
 Use this command to update an existing option form.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateOptionFormRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateOptionFormRequest
 */
 func (a *LibraryAPIService) UpdateOptionForm(ctx context.Context, id int64) ApiUpdateOptionFormRequest {
 	return ApiUpdateOptionFormRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *LibraryAPIService) UpdateOptionFormExecute(r ApiUpdateOptionFormRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.UpdateOptionForm")
@@ -9402,7 +9451,7 @@ func (a *LibraryAPIService) UpdateOptionFormExecute(r ApiUpdateOptionFormRequest
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -9411,8 +9460,8 @@ func (a *LibraryAPIService) UpdateOptionFormExecute(r ApiUpdateOptionFormRequest
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -9422,8 +9471,8 @@ func (a *LibraryAPIService) UpdateOptionFormExecute(r ApiUpdateOptionFormRequest
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -9431,8 +9480,8 @@ func (a *LibraryAPIService) UpdateOptionFormExecute(r ApiUpdateOptionFormRequest
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -9441,9 +9490,9 @@ func (a *LibraryAPIService) UpdateOptionFormExecute(r ApiUpdateOptionFormRequest
 }
 
 type ApiUpdateOptionListRequest struct {
-	ctx context.Context
-	ApiService *LibraryAPIService
-	id int64
+	ctx                     context.Context
+	ApiService              *LibraryAPIService
+	id                      int64
 	updateOptionListRequest *UpdateOptionListRequest
 }
 
@@ -9461,26 +9510,27 @@ UpdateOptionList Update an Option List
 
 Use this command to update an existing option list.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateOptionListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateOptionListRequest
 */
 func (a *LibraryAPIService) UpdateOptionList(ctx context.Context, id int64) ApiUpdateOptionListRequest {
 	return ApiUpdateOptionListRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *LibraryAPIService) UpdateOptionListExecute(r ApiUpdateOptionListRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.UpdateOptionList")
@@ -9533,7 +9583,7 @@ func (a *LibraryAPIService) UpdateOptionListExecute(r ApiUpdateOptionListRequest
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -9542,8 +9592,8 @@ func (a *LibraryAPIService) UpdateOptionListExecute(r ApiUpdateOptionListRequest
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -9553,8 +9603,8 @@ func (a *LibraryAPIService) UpdateOptionListExecute(r ApiUpdateOptionListRequest
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -9562,8 +9612,8 @@ func (a *LibraryAPIService) UpdateOptionListExecute(r ApiUpdateOptionListRequest
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -9572,9 +9622,9 @@ func (a *LibraryAPIService) UpdateOptionListExecute(r ApiUpdateOptionListRequest
 }
 
 type ApiUpdateOptionTypeRequest struct {
-	ctx context.Context
-	ApiService *LibraryAPIService
-	id int64
+	ctx                     context.Context
+	ApiService              *LibraryAPIService
+	id                      int64
 	updateOptionTypeRequest *UpdateOptionTypeRequest
 }
 
@@ -9592,26 +9642,27 @@ UpdateOptionType Update an Input
 
 Use this command to update an existing option type.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateOptionTypeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateOptionTypeRequest
 */
 func (a *LibraryAPIService) UpdateOptionType(ctx context.Context, id int64) ApiUpdateOptionTypeRequest {
 	return ApiUpdateOptionTypeRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *LibraryAPIService) UpdateOptionTypeExecute(r ApiUpdateOptionTypeRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.UpdateOptionType")
@@ -9664,7 +9715,7 @@ func (a *LibraryAPIService) UpdateOptionTypeExecute(r ApiUpdateOptionTypeRequest
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -9673,8 +9724,8 @@ func (a *LibraryAPIService) UpdateOptionTypeExecute(r ApiUpdateOptionTypeRequest
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -9684,8 +9735,8 @@ func (a *LibraryAPIService) UpdateOptionTypeExecute(r ApiUpdateOptionTypeRequest
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -9693,8 +9744,8 @@ func (a *LibraryAPIService) UpdateOptionTypeExecute(r ApiUpdateOptionTypeRequest
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -9703,9 +9754,9 @@ func (a *LibraryAPIService) UpdateOptionTypeExecute(r ApiUpdateOptionTypeRequest
 }
 
 type ApiUpdateOsTypeRequest struct {
-	ctx context.Context
-	ApiService *LibraryAPIService
-	id int64
+	ctx                 context.Context
+	ApiService          *LibraryAPIService
+	id                  int64
 	updateOsTypeRequest *UpdateOsTypeRequest
 }
 
@@ -9723,26 +9774,27 @@ UpdateOsType Update an OsType
 
 Use this command to update an existing ostype.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateOsTypeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateOsTypeRequest
 */
 func (a *LibraryAPIService) UpdateOsType(ctx context.Context, id int64) ApiUpdateOsTypeRequest {
 	return ApiUpdateOsTypeRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *LibraryAPIService) UpdateOsTypeExecute(r ApiUpdateOsTypeRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.UpdateOsType")
@@ -9795,7 +9847,7 @@ func (a *LibraryAPIService) UpdateOsTypeExecute(r ApiUpdateOsTypeRequest) (*Dele
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -9804,8 +9856,8 @@ func (a *LibraryAPIService) UpdateOsTypeExecute(r ApiUpdateOsTypeRequest) (*Dele
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -9815,8 +9867,8 @@ func (a *LibraryAPIService) UpdateOsTypeExecute(r ApiUpdateOsTypeRequest) (*Dele
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -9824,8 +9876,8 @@ func (a *LibraryAPIService) UpdateOsTypeExecute(r ApiUpdateOsTypeRequest) (*Dele
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -9834,9 +9886,9 @@ func (a *LibraryAPIService) UpdateOsTypeExecute(r ApiUpdateOsTypeRequest) (*Dele
 }
 
 type ApiUpdateScriptRequest struct {
-	ctx context.Context
-	ApiService *LibraryAPIService
-	id int64
+	ctx                 context.Context
+	ApiService          *LibraryAPIService
+	id                  int64
 	updateScriptRequest *UpdateScriptRequest
 }
 
@@ -9854,26 +9906,27 @@ UpdateScript Update a Script
 
 Use this command to update an existing script.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateScriptRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateScriptRequest
 */
 func (a *LibraryAPIService) UpdateScript(ctx context.Context, id int64) ApiUpdateScriptRequest {
 	return ApiUpdateScriptRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddScript200Response
+//
+//	@return AddScript200Response
 func (a *LibraryAPIService) UpdateScriptExecute(r ApiUpdateScriptRequest) (*AddScript200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddScript200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddScript200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.UpdateScript")
@@ -9926,7 +9979,7 @@ func (a *LibraryAPIService) UpdateScriptExecute(r ApiUpdateScriptRequest) (*AddS
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -9935,8 +9988,8 @@ func (a *LibraryAPIService) UpdateScriptExecute(r ApiUpdateScriptRequest) (*AddS
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -9946,8 +9999,8 @@ func (a *LibraryAPIService) UpdateScriptExecute(r ApiUpdateScriptRequest) (*AddS
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -9955,8 +10008,8 @@ func (a *LibraryAPIService) UpdateScriptExecute(r ApiUpdateScriptRequest) (*AddS
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -9965,9 +10018,9 @@ func (a *LibraryAPIService) UpdateScriptExecute(r ApiUpdateScriptRequest) (*AddS
 }
 
 type ApiUpdateSpecTemplateRequest struct {
-	ctx context.Context
-	ApiService *LibraryAPIService
-	id int64
+	ctx                       context.Context
+	ApiService                *LibraryAPIService
+	id                        int64
 	updateSpecTemplateRequest *UpdateSpecTemplateRequest
 }
 
@@ -9985,26 +10038,27 @@ UpdateSpecTemplate Update a Spec Template
 
 Use this command to update an existing spec template.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateSpecTemplateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateSpecTemplateRequest
 */
 func (a *LibraryAPIService) UpdateSpecTemplate(ctx context.Context, id int64) ApiUpdateSpecTemplateRequest {
 	return ApiUpdateSpecTemplateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *LibraryAPIService) UpdateSpecTemplateExecute(r ApiUpdateSpecTemplateRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.UpdateSpecTemplate")
@@ -10057,7 +10111,7 @@ func (a *LibraryAPIService) UpdateSpecTemplateExecute(r ApiUpdateSpecTemplateReq
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -10066,8 +10120,8 @@ func (a *LibraryAPIService) UpdateSpecTemplateExecute(r ApiUpdateSpecTemplateReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -10077,8 +10131,8 @@ func (a *LibraryAPIService) UpdateSpecTemplateExecute(r ApiUpdateSpecTemplateReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -10086,8 +10140,8 @@ func (a *LibraryAPIService) UpdateSpecTemplateExecute(r ApiUpdateSpecTemplateReq
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -10096,9 +10150,9 @@ func (a *LibraryAPIService) UpdateSpecTemplateExecute(r ApiUpdateSpecTemplateReq
 }
 
 type ApiUpdateVirtualImageRequest struct {
-	ctx context.Context
-	ApiService *LibraryAPIService
-	virtualImageId float32
+	ctx                       context.Context
+	ApiService                *LibraryAPIService
+	virtualImageId            float32
 	updateVirtualImageRequest *UpdateVirtualImageRequest
 }
 
@@ -10116,26 +10170,27 @@ UpdateVirtualImage Update a Virtual Image
 
 This endpoint updates an existing virtual image.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param virtualImageId Virtual Image ID
- @return ApiUpdateVirtualImageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param virtualImageId Virtual Image ID
+	@return ApiUpdateVirtualImageRequest
 */
 func (a *LibraryAPIService) UpdateVirtualImage(ctx context.Context, virtualImageId float32) ApiUpdateVirtualImageRequest {
 	return ApiUpdateVirtualImageRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		virtualImageId: virtualImageId,
 	}
 }
 
 // Execute executes the request
-//  @return AddVirtualImage200Response
+//
+//	@return AddVirtualImage200Response
 func (a *LibraryAPIService) UpdateVirtualImageExecute(r ApiUpdateVirtualImageRequest) (*AddVirtualImage200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddVirtualImage200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddVirtualImage200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.UpdateVirtualImage")
@@ -10188,7 +10243,7 @@ func (a *LibraryAPIService) UpdateVirtualImageExecute(r ApiUpdateVirtualImageReq
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -10197,8 +10252,8 @@ func (a *LibraryAPIService) UpdateVirtualImageExecute(r ApiUpdateVirtualImageReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -10208,8 +10263,8 @@ func (a *LibraryAPIService) UpdateVirtualImageExecute(r ApiUpdateVirtualImageReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -10217,8 +10272,8 @@ func (a *LibraryAPIService) UpdateVirtualImageExecute(r ApiUpdateVirtualImageReq
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

@@ -21,13 +21,12 @@ import (
 	"strings"
 )
 
-
 // IncidentsAPIService IncidentsAPI service
 type IncidentsAPIService service
 
 type ApiAddIncidentRequest struct {
-	ctx context.Context
-	ApiService *IncidentsAPIService
+	ctx                context.Context
+	ApiService         *IncidentsAPIService
 	addIncidentRequest *AddIncidentRequest
 }
 
@@ -45,24 +44,25 @@ AddIncident Create a New Incident
 
 Create a new incident.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddIncidentRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddIncidentRequest
 */
 func (a *IncidentsAPIService) AddIncident(ctx context.Context) ApiAddIncidentRequest {
 	return ApiAddIncidentRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddIncident200Response
+//
+//	@return AddIncident200Response
 func (a *IncidentsAPIService) AddIncidentExecute(r ApiAddIncidentRequest) (*AddIncident200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddIncident200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddIncident200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IncidentsAPIService.AddIncident")
@@ -114,7 +114,7 @@ func (a *IncidentsAPIService) AddIncidentExecute(r ApiAddIncidentRequest) (*AddI
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -123,8 +123,8 @@ func (a *IncidentsAPIService) AddIncidentExecute(r ApiAddIncidentRequest) (*AddI
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -134,8 +134,8 @@ func (a *IncidentsAPIService) AddIncidentExecute(r ApiAddIncidentRequest) (*AddI
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -143,8 +143,8 @@ func (a *IncidentsAPIService) AddIncidentExecute(r ApiAddIncidentRequest) (*AddI
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -153,9 +153,9 @@ func (a *IncidentsAPIService) AddIncidentExecute(r ApiAddIncidentRequest) (*AddI
 }
 
 type ApiDeleteIncidentsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IncidentsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiDeleteIncidentsRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -167,26 +167,27 @@ DeleteIncidents Close a Specific Incident
 
 Close an existing monitoring incident.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiDeleteIncidentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeleteIncidentsRequest
 */
 func (a *IncidentsAPIService) DeleteIncidents(ctx context.Context, id int64) ApiDeleteIncidentsRequest {
 	return ApiDeleteIncidentsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *IncidentsAPIService) DeleteIncidentsExecute(r ApiDeleteIncidentsRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IncidentsAPIService.DeleteIncidents")
@@ -237,7 +238,7 @@ func (a *IncidentsAPIService) DeleteIncidentsExecute(r ApiDeleteIncidentsRequest
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -246,8 +247,8 @@ func (a *IncidentsAPIService) DeleteIncidentsExecute(r ApiDeleteIncidentsRequest
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -257,8 +258,8 @@ func (a *IncidentsAPIService) DeleteIncidentsExecute(r ApiDeleteIncidentsRequest
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -266,8 +267,8 @@ func (a *IncidentsAPIService) DeleteIncidentsExecute(r ApiDeleteIncidentsRequest
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -276,9 +277,9 @@ func (a *IncidentsAPIService) DeleteIncidentsExecute(r ApiDeleteIncidentsRequest
 }
 
 type ApiGetIncidentsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IncidentsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetIncidentsRequest) Execute() (*GetIncidents200Response, *http.Response, error) {
@@ -290,26 +291,27 @@ GetIncidents Get a Specific Incident
 
 Get details about a specific incident.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetIncidentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetIncidentsRequest
 */
 func (a *IncidentsAPIService) GetIncidents(ctx context.Context, id int64) ApiGetIncidentsRequest {
 	return ApiGetIncidentsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetIncidents200Response
+//
+//	@return GetIncidents200Response
 func (a *IncidentsAPIService) GetIncidentsExecute(r ApiGetIncidentsRequest) (*GetIncidents200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetIncidents200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetIncidents200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IncidentsAPIService.GetIncidents")
@@ -360,7 +362,7 @@ func (a *IncidentsAPIService) GetIncidentsExecute(r ApiGetIncidentsRequest) (*Ge
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -369,8 +371,8 @@ func (a *IncidentsAPIService) GetIncidentsExecute(r ApiGetIncidentsRequest) (*Ge
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -380,8 +382,8 @@ func (a *IncidentsAPIService) GetIncidentsExecute(r ApiGetIncidentsRequest) (*Ge
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -389,8 +391,8 @@ func (a *IncidentsAPIService) GetIncidentsExecute(r ApiGetIncidentsRequest) (*Ge
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -399,12 +401,12 @@ func (a *IncidentsAPIService) GetIncidentsExecute(r ApiGetIncidentsRequest) (*Ge
 }
 
 type ApiListIncidentsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IncidentsAPIService
-	max *int64
-	offset *int64
-	status *string
-	severity *string
+	max        *int64
+	offset     *int64
+	status     *string
+	severity   *string
 }
 
 // Maximum number of records to return
@@ -440,24 +442,25 @@ ListIncidents List All Incidents
 
 Get a list of monitoring incidents.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListIncidentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListIncidentsRequest
 */
 func (a *IncidentsAPIService) ListIncidents(ctx context.Context) ApiListIncidentsRequest {
 	return ApiListIncidentsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListIncidents200Response
+//
+//	@return ListIncidents200Response
 func (a *IncidentsAPIService) ListIncidentsExecute(r ApiListIncidentsRequest) (*ListIncidents200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListIncidents200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListIncidents200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IncidentsAPIService.ListIncidents")
@@ -525,7 +528,7 @@ func (a *IncidentsAPIService) ListIncidentsExecute(r ApiListIncidentsRequest) (*
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -534,8 +537,8 @@ func (a *IncidentsAPIService) ListIncidentsExecute(r ApiListIncidentsRequest) (*
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -545,8 +548,8 @@ func (a *IncidentsAPIService) ListIncidentsExecute(r ApiListIncidentsRequest) (*
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -554,8 +557,8 @@ func (a *IncidentsAPIService) ListIncidentsExecute(r ApiListIncidentsRequest) (*
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -564,9 +567,9 @@ func (a *IncidentsAPIService) ListIncidentsExecute(r ApiListIncidentsRequest) (*
 }
 
 type ApiUpdateIncidentsRequest struct {
-	ctx context.Context
-	ApiService *IncidentsAPIService
-	id int64
+	ctx                    context.Context
+	ApiService             *IncidentsAPIService
+	id                     int64
 	updateIncidentsRequest *UpdateIncidentsRequest
 }
 
@@ -584,26 +587,27 @@ UpdateIncidents Update Incident
 
 Update an existing incident.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateIncidentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateIncidentsRequest
 */
 func (a *IncidentsAPIService) UpdateIncidents(ctx context.Context, id int64) ApiUpdateIncidentsRequest {
 	return ApiUpdateIncidentsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddIncident200Response
+//
+//	@return AddIncident200Response
 func (a *IncidentsAPIService) UpdateIncidentsExecute(r ApiUpdateIncidentsRequest) (*AddIncident200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddIncident200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddIncident200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IncidentsAPIService.UpdateIncidents")
@@ -656,7 +660,7 @@ func (a *IncidentsAPIService) UpdateIncidentsExecute(r ApiUpdateIncidentsRequest
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -665,8 +669,8 @@ func (a *IncidentsAPIService) UpdateIncidentsExecute(r ApiUpdateIncidentsRequest
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -676,8 +680,8 @@ func (a *IncidentsAPIService) UpdateIncidentsExecute(r ApiUpdateIncidentsRequest
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -685,8 +689,8 @@ func (a *IncidentsAPIService) UpdateIncidentsExecute(r ApiUpdateIncidentsRequest
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -695,9 +699,9 @@ func (a *IncidentsAPIService) UpdateIncidentsExecute(r ApiUpdateIncidentsRequest
 }
 
 type ApiUpdateIncidentsReopenRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IncidentsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiUpdateIncidentsReopenRequest) Execute() (*ExecuteContainerAction200Response, *http.Response, error) {
@@ -709,26 +713,27 @@ UpdateIncidentsReopen Reopen a Specific Incident
 
 Get details about a specific incident.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateIncidentsReopenRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateIncidentsReopenRequest
 */
 func (a *IncidentsAPIService) UpdateIncidentsReopen(ctx context.Context, id int64) ApiUpdateIncidentsReopenRequest {
 	return ApiUpdateIncidentsReopenRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ExecuteContainerAction200Response
+//
+//	@return ExecuteContainerAction200Response
 func (a *IncidentsAPIService) UpdateIncidentsReopenExecute(r ApiUpdateIncidentsReopenRequest) (*ExecuteContainerAction200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ExecuteContainerAction200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ExecuteContainerAction200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IncidentsAPIService.UpdateIncidentsReopen")
@@ -779,7 +784,7 @@ func (a *IncidentsAPIService) UpdateIncidentsReopenExecute(r ApiUpdateIncidentsR
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -788,8 +793,8 @@ func (a *IncidentsAPIService) UpdateIncidentsReopenExecute(r ApiUpdateIncidentsR
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -799,8 +804,8 @@ func (a *IncidentsAPIService) UpdateIncidentsReopenExecute(r ApiUpdateIncidentsR
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -808,8 +813,8 @@ func (a *IncidentsAPIService) UpdateIncidentsReopenExecute(r ApiUpdateIncidentsR
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -818,8 +823,8 @@ func (a *IncidentsAPIService) UpdateIncidentsReopenExecute(r ApiUpdateIncidentsR
 }
 
 type ApiUpdateMuteAllIncidentsRequest struct {
-	ctx context.Context
-	ApiService *IncidentsAPIService
+	ctx                           context.Context
+	ApiService                    *IncidentsAPIService
 	updateMuteAllCheckAppsRequest *UpdateMuteAllCheckAppsRequest
 }
 
@@ -837,24 +842,25 @@ UpdateMuteAllIncidents Mute All Incidents
 
 Mute all existing incident.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiUpdateMuteAllIncidentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiUpdateMuteAllIncidentsRequest
 */
 func (a *IncidentsAPIService) UpdateMuteAllIncidents(ctx context.Context) ApiUpdateMuteAllIncidentsRequest {
 	return ApiUpdateMuteAllIncidentsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return UpdateMuteAllCheckApps200Response
+//
+//	@return UpdateMuteAllCheckApps200Response
 func (a *IncidentsAPIService) UpdateMuteAllIncidentsExecute(r ApiUpdateMuteAllIncidentsRequest) (*UpdateMuteAllCheckApps200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UpdateMuteAllCheckApps200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UpdateMuteAllCheckApps200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IncidentsAPIService.UpdateMuteAllIncidents")
@@ -906,7 +912,7 @@ func (a *IncidentsAPIService) UpdateMuteAllIncidentsExecute(r ApiUpdateMuteAllIn
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -915,8 +921,8 @@ func (a *IncidentsAPIService) UpdateMuteAllIncidentsExecute(r ApiUpdateMuteAllIn
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -926,8 +932,8 @@ func (a *IncidentsAPIService) UpdateMuteAllIncidentsExecute(r ApiUpdateMuteAllIn
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -935,8 +941,8 @@ func (a *IncidentsAPIService) UpdateMuteAllIncidentsExecute(r ApiUpdateMuteAllIn
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -945,9 +951,9 @@ func (a *IncidentsAPIService) UpdateMuteAllIncidentsExecute(r ApiUpdateMuteAllIn
 }
 
 type ApiUpdateMuteIncidentsRequest struct {
-	ctx context.Context
-	ApiService *IncidentsAPIService
-	id int64
+	ctx                           context.Context
+	ApiService                    *IncidentsAPIService
+	id                            int64
 	updateMuteAllCheckAppsRequest *UpdateMuteAllCheckAppsRequest
 }
 
@@ -965,26 +971,27 @@ UpdateMuteIncidents Mute Incident
 
 Mute an existing incident.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateMuteIncidentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateMuteIncidentsRequest
 */
 func (a *IncidentsAPIService) UpdateMuteIncidents(ctx context.Context, id int64) ApiUpdateMuteIncidentsRequest {
 	return ApiUpdateMuteIncidentsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return UpdateMuteCheckApps200Response
+//
+//	@return UpdateMuteCheckApps200Response
 func (a *IncidentsAPIService) UpdateMuteIncidentsExecute(r ApiUpdateMuteIncidentsRequest) (*UpdateMuteCheckApps200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UpdateMuteCheckApps200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UpdateMuteCheckApps200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IncidentsAPIService.UpdateMuteIncidents")
@@ -1037,7 +1044,7 @@ func (a *IncidentsAPIService) UpdateMuteIncidentsExecute(r ApiUpdateMuteIncident
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1046,8 +1053,8 @@ func (a *IncidentsAPIService) UpdateMuteIncidentsExecute(r ApiUpdateMuteIncident
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1057,8 +1064,8 @@ func (a *IncidentsAPIService) UpdateMuteIncidentsExecute(r ApiUpdateMuteIncident
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1066,8 +1073,8 @@ func (a *IncidentsAPIService) UpdateMuteIncidentsExecute(r ApiUpdateMuteIncident
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

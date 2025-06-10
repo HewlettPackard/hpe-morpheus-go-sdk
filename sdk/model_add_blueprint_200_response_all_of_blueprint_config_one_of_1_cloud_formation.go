@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation type satisfies the MappedNullable interface at compile time
@@ -26,14 +25,14 @@ type AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation struct {
 	// CloudFormation Template in JSON
 	Json *string `json:"json,omitempty"`
 	// CloudFormation Template in YAML
-	Yaml *string `json:"yaml,omitempty"`
-	Git *AddBlueprintRequestOneOf1CloudFormationGit `json:"git,omitempty"`
-	IAM *AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationIAM `json:"IAM,omitempty"`
-	CAPABILITY_NAMED_IAM *AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationCAPABILITYNAMEDIAM `json:"CAPABILITY_NAMED_IAM,omitempty"`
+	Yaml                   *string                                                                              `json:"yaml,omitempty"`
+	Git                    *AddBlueprintRequestOneOf1CloudFormationGit                                          `json:"git,omitempty"`
+	IAM                    *AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationIAM                  `json:"IAM,omitempty"`
+	CAPABILITY_NAMED_IAM   *AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationCAPABILITYNAMEDIAM   `json:"CAPABILITY_NAMED_IAM,omitempty"`
 	CAPABILITY_AUTO_EXPAND *AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationCAPABILITYAUTOEXPAND `json:"CAPABILITY_AUTO_EXPAND,omitempty"`
-	InstallAgent *AddBlueprintRequestOneOfArmInstallAgent `json:"installAgent,omitempty"`
-	CloudInitEnabled *AddBlueprintRequestOneOfArmCloudInitEnabled `json:"cloudInitEnabled,omitempty"`
-	AdditionalProperties map[string]interface{}
+	InstallAgent           *AddBlueprintRequestOneOfArmInstallAgent                                             `json:"installAgent,omitempty"`
+	CloudInitEnabled       *AddBlueprintRequestOneOfArmCloudInitEnabled                                         `json:"cloudInitEnabled,omitempty"`
+	AdditionalProperties   map[string]interface{}                                                               `json:",remain"`
 }
 
 type _AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation
@@ -337,7 +336,7 @@ func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation) SetClo
 }
 
 func (o AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -378,91 +377,8 @@ func (o AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation) ToMap()
 
 	return toSerialize, nil
 }
-
 func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"configType",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation := _AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation{}
-
-	err = json.Unmarshal(data, &varAddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation(varAddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "configType")
-		delete(additionalProperties, "json")
-		delete(additionalProperties, "yaml")
-		delete(additionalProperties, "git")
-		delete(additionalProperties, "IAM")
-		delete(additionalProperties, "CAPABILITY_NAMED_IAM")
-		delete(additionalProperties, "CAPABILITY_AUTO_EXPAND")
-		delete(additionalProperties, "installAgent")
-		delete(additionalProperties, "cloudInitEnabled")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation struct {
-	value *AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation
-	isSet bool
-}
-
-func (v NullableAddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation) Get() *AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation {
-	return v.value
-}
-
-func (v *NullableAddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation) Set(val *AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation(val *AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation) *NullableAddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation {
-	return &NullableAddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation{value: val, isSet: true}
-}
-
-func (v NullableAddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner type satisfies the MappedNullable interface at compile time
@@ -50,7 +49,7 @@ type ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner struct {
 	// Export as Tag
 	ExportMeta *bool `json:"exportMeta,omitempty"`
 	// Used primarily on tasks and workflows. Basically wether or not the field can be overridden optionally when the object is run
-	Editable *bool `json:"editable,omitempty"`
+	Editable   *bool                                     `json:"editable,omitempty"`
 	OptionList *AddOptionTypeRequestOptionTypeOptionList `json:"optionList,omitempty"`
 	// Display Value On Details
 	DisplayValueOnDetails *bool `json:"displayValueOnDetails,omitempty"`
@@ -67,8 +66,8 @@ type ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner struct {
 	// Verify Pattern, A regexp string that validates the input, use (?i) to make the matcher case insensitive
 	VerifyPattern *string `json:"verifyPattern,omitempty"`
 	// A fieldName that will trigger required attribute of this input
-	RequireOnCode *string `json:"requireOnCode,omitempty"`
-	AdditionalProperties map[string]interface{}
+	RequireOnCode        *string                `json:"requireOnCode,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner
@@ -877,7 +876,7 @@ func (o *ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) SetRequire
 }
 
 func (o ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -961,107 +960,8 @@ func (o ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) ToMap() (ma
 
 	return toSerialize, nil
 }
-
 func (o *ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"fieldName",
-		"fieldLabel",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner := _ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner{}
-
-	err = json.Unmarshal(data, &varListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner(varListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "fieldName")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "fieldLabel")
-		delete(additionalProperties, "fieldCode")
-		delete(additionalProperties, "placeHolder")
-		delete(additionalProperties, "helpBlock")
-		delete(additionalProperties, "helpBlockFieldCode")
-		delete(additionalProperties, "defaultValue")
-		delete(additionalProperties, "required")
-		delete(additionalProperties, "exportMeta")
-		delete(additionalProperties, "editable")
-		delete(additionalProperties, "optionList")
-		delete(additionalProperties, "displayValueOnDetails")
-		delete(additionalProperties, "isLocked")
-		delete(additionalProperties, "isHidden")
-		delete(additionalProperties, "excludeFromSearch")
-		delete(additionalProperties, "dependsOnCode")
-		delete(additionalProperties, "visibleOnCode")
-		delete(additionalProperties, "verifyPattern")
-		delete(additionalProperties, "requireOnCode")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner struct {
-	value *ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner
-	isSet bool
-}
-
-func (v NullableListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) Get() *ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner {
-	return v.value
-}
-
-func (v *NullableListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) Set(val *ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner(val *ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) *NullableListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner {
-	return &NullableListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner{value: val, isSet: true}
-}
-
-func (v NullableListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

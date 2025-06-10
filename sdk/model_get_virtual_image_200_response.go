@@ -20,8 +20,8 @@ var _ MappedNullable = &GetVirtualImage200Response{}
 
 // GetVirtualImage200Response struct for GetVirtualImage200Response
 type GetVirtualImage200Response struct {
-	VirtualImage *ListVirtualImages200ResponseAllOfVirtualImagesInner `json:"virtualImage,omitempty"`
-	AdditionalProperties map[string]interface{}
+	VirtualImage         *ListVirtualImages200ResponseAllOfVirtualImagesInner `json:"virtualImage,omitempty"`
+	AdditionalProperties map[string]interface{}                               `json:",remain"`
 }
 
 type _GetVirtualImage200Response GetVirtualImage200Response
@@ -76,7 +76,7 @@ func (o *GetVirtualImage200Response) SetVirtualImage(v ListVirtualImages200Respo
 }
 
 func (o GetVirtualImage200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o GetVirtualImage200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *GetVirtualImage200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetVirtualImage200Response := _GetVirtualImage200Response{}
-
-	err = json.Unmarshal(data, &varGetVirtualImage200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetVirtualImage200Response(varGetVirtualImage200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "virtualImage")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetVirtualImage200Response struct {
-	value *GetVirtualImage200Response
-	isSet bool
-}
-
-func (v NullableGetVirtualImage200Response) Get() *GetVirtualImage200Response {
-	return v.value
-}
-
-func (v *NullableGetVirtualImage200Response) Set(val *GetVirtualImage200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetVirtualImage200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetVirtualImage200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetVirtualImage200Response(val *GetVirtualImage200Response) *NullableGetVirtualImage200Response {
-	return &NullableGetVirtualImage200Response{value: val, isSet: true}
-}
-
-func (v NullableGetVirtualImage200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetVirtualImage200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

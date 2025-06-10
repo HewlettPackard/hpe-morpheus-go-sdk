@@ -21,38 +21,38 @@ var _ MappedNullable = &ServicePlan{}
 
 // ServicePlan struct for ServicePlan
 type ServicePlan struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Active *bool `json:"active,omitempty"`
-	SortOrder *int64 `json:"sortOrder,omitempty"`
-	Description *string `json:"description,omitempty"`
-	MaxStorage *float32 `json:"maxStorage,omitempty"`
-	MaxMemory *float32 `json:"maxMemory,omitempty"`
-	MaxCpu *float32 `json:"maxCpu,omitempty"`
-	MaxCores *float32 `json:"maxCores,omitempty"`
-	MaxDisks *float32 `json:"maxDisks,omitempty"`
-	CoresPerSocket *float32 `json:"coresPerSocket,omitempty"`
-	CustomCpu *bool `json:"customCpu,omitempty"`
-	CustomCores *bool `json:"customCores,omitempty"`
-	CustomMaxStorage *bool `json:"customMaxStorage,omitempty"`
-	CustomMaxDataStorage *bool `json:"customMaxDataStorage,omitempty"`
-	CustomMaxMemory *bool `json:"customMaxMemory,omitempty"`
-	AddVolumes *bool `json:"addVolumes,omitempty"`
-	MemoryOptionSource *string `json:"memoryOptionSource,omitempty"`
-	CpuOptionSource *string `json:"cpuOptionSource,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	RegionCode *string `json:"regionCode,omitempty"`
-	Visibility *string `json:"visibility,omitempty"`
-	Editable *bool `json:"editable,omitempty"`
-	ProvisionType *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType `json:"provisionType,omitempty"`
-	Tenants *string `json:"tenants,omitempty"`
-	PriceSets []ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionPriceSetsInner `json:"priceSets,omitempty"`
-	Config *ListServicePlans200ResponseAllOfServicePlansInnerConfig `json:"config,omitempty"`
-	Zones []ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"zones,omitempty"`
-	Permissions *AddServicePlans200ResponseAllOfServicePlanPermissions `json:"permissions,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                             `json:"id,omitempty"`
+	Name                 *string                                                                            `json:"name,omitempty"`
+	Code                 *string                                                                            `json:"code,omitempty"`
+	Active               *bool                                                                              `json:"active,omitempty"`
+	SortOrder            *int64                                                                             `json:"sortOrder,omitempty"`
+	Description          *string                                                                            `json:"description,omitempty"`
+	MaxStorage           *float32                                                                           `json:"maxStorage,omitempty"`
+	MaxMemory            *float32                                                                           `json:"maxMemory,omitempty"`
+	MaxCpu               *float32                                                                           `json:"maxCpu,omitempty"`
+	MaxCores             *float32                                                                           `json:"maxCores,omitempty"`
+	MaxDisks             *float32                                                                           `json:"maxDisks,omitempty"`
+	CoresPerSocket       *float32                                                                           `json:"coresPerSocket,omitempty"`
+	CustomCpu            *bool                                                                              `json:"customCpu,omitempty"`
+	CustomCores          *bool                                                                              `json:"customCores,omitempty"`
+	CustomMaxStorage     *bool                                                                              `json:"customMaxStorage,omitempty"`
+	CustomMaxDataStorage *bool                                                                              `json:"customMaxDataStorage,omitempty"`
+	CustomMaxMemory      *bool                                                                              `json:"customMaxMemory,omitempty"`
+	AddVolumes           *bool                                                                              `json:"addVolumes,omitempty"`
+	MemoryOptionSource   *string                                                                            `json:"memoryOptionSource,omitempty"`
+	CpuOptionSource      *string                                                                            `json:"cpuOptionSource,omitempty"`
+	DateCreated          *time.Time                                                                         `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                                         `json:"lastUpdated,omitempty"`
+	RegionCode           *string                                                                            `json:"regionCode,omitempty"`
+	Visibility           *string                                                                            `json:"visibility,omitempty"`
+	Editable             *bool                                                                              `json:"editable,omitempty"`
+	ProvisionType        *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType   `json:"provisionType,omitempty"`
+	Tenants              *string                                                                            `json:"tenants,omitempty"`
+	PriceSets            []ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionPriceSetsInner `json:"priceSets,omitempty"`
+	Config               *ListServicePlans200ResponseAllOfServicePlansInnerConfig                           `json:"config,omitempty"`
+	Zones                []ListBackupSettings200ResponseBackupSettingsDefaultSchedule                       `json:"zones,omitempty"`
+	Permissions          *AddServicePlans200ResponseAllOfServicePlanPermissions                             `json:"permissions,omitempty"`
+	AdditionalProperties map[string]interface{}                                                             `json:",remain"`
 }
 
 type _ServicePlan ServicePlan
@@ -1067,7 +1067,7 @@ func (o *ServicePlan) SetPermissions(v AddServicePlans200ResponseAllOfServicePla
 }
 
 func (o ServicePlan) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1176,92 +1176,8 @@ func (o ServicePlan) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ServicePlan) UnmarshalJSON(data []byte) (err error) {
-	varServicePlan := _ServicePlan{}
-
-	err = json.Unmarshal(data, &varServicePlan)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ServicePlan(varServicePlan)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "sortOrder")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "maxStorage")
-		delete(additionalProperties, "maxMemory")
-		delete(additionalProperties, "maxCpu")
-		delete(additionalProperties, "maxCores")
-		delete(additionalProperties, "maxDisks")
-		delete(additionalProperties, "coresPerSocket")
-		delete(additionalProperties, "customCpu")
-		delete(additionalProperties, "customCores")
-		delete(additionalProperties, "customMaxStorage")
-		delete(additionalProperties, "customMaxDataStorage")
-		delete(additionalProperties, "customMaxMemory")
-		delete(additionalProperties, "addVolumes")
-		delete(additionalProperties, "memoryOptionSource")
-		delete(additionalProperties, "cpuOptionSource")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "regionCode")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "editable")
-		delete(additionalProperties, "provisionType")
-		delete(additionalProperties, "tenants")
-		delete(additionalProperties, "priceSets")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "zones")
-		delete(additionalProperties, "permissions")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableServicePlan struct {
-	value *ServicePlan
-	isSet bool
-}
-
-func (v NullableServicePlan) Get() *ServicePlan {
-	return v.value
-}
-
-func (v *NullableServicePlan) Set(val *ServicePlan) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableServicePlan) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableServicePlan) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableServicePlan(val *ServicePlan) *NullableServicePlan {
-	return &NullableServicePlan{value: val, isSet: true}
-}
-
-func (v NullableServicePlan) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableServicePlan) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

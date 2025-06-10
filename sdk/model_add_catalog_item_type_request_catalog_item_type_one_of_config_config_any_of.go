@@ -37,8 +37,8 @@ type AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf struct {
 	// Diagnostics Storage Account
 	DiagnosticsStorageAccount *string `json:"diagnosticsStorageAccount,omitempty"`
 	// Create User
-	CreateUser *bool `json:"createUser,omitempty"`
-	AdditionalProperties map[string]interface{}
+	CreateUser           *bool                  `json:"createUser,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf
@@ -353,7 +353,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) SetCrea
 }
 
 func (o AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -396,70 +396,8 @@ func (o AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) ToMap() 
 
 	return toSerialize, nil
 }
-
 func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) UnmarshalJSON(data []byte) (err error) {
-	varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf := _AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf{}
-
-	err = json.Unmarshal(data, &varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf(varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "resourcePoolId")
-		delete(additionalProperties, "availabilityOptions")
-		delete(additionalProperties, "availabilitySet")
-		delete(additionalProperties, "availabilityZone")
-		delete(additionalProperties, "azurefloatingIp")
-		delete(additionalProperties, "bootDiagnostics")
-		delete(additionalProperties, "osGuestDiagnostics")
-		delete(additionalProperties, "diagnosticsStorageAccount")
-		delete(additionalProperties, "createUser")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf struct {
-	value *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf
-	isSet bool
-}
-
-func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) Get() *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf {
-	return v.value
-}
-
-func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) Set(val *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf(val *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf {
-	return &NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf{value: val, isSet: true}
-}
-
-func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

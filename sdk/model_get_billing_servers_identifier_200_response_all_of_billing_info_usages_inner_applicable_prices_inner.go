@@ -21,14 +21,14 @@ var _ MappedNullable = &GetBillingServersIdentifier200ResponseAllOfBillingInfoUs
 
 // GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInner struct for GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInner
 type GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInner struct {
-	StartDate *time.Time `json:"startDate,omitempty"`
-	EndDate *time.Time `json:"endDate,omitempty"`
-	NumUnits *float32 `json:"numUnits,omitempty"`
-	Cost *float32 `json:"cost,omitempty"`
-	Price *float32 `json:"price,omitempty"`
-	Currency *string `json:"currency,omitempty"`
-	Prices []GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInnerPricesInner `json:"prices,omitempty"`
-	AdditionalProperties map[string]interface{}
+	StartDate            *time.Time                                                                                          `json:"startDate,omitempty"`
+	EndDate              *time.Time                                                                                          `json:"endDate,omitempty"`
+	NumUnits             *float32                                                                                            `json:"numUnits,omitempty"`
+	Cost                 *float32                                                                                            `json:"cost,omitempty"`
+	Price                *float32                                                                                            `json:"price,omitempty"`
+	Currency             *string                                                                                             `json:"currency,omitempty"`
+	Prices               []GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInnerPricesInner `json:"prices,omitempty"`
+	AdditionalProperties map[string]interface{}                                                                              `json:",remain"`
 }
 
 type _GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInner GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInner
@@ -275,7 +275,7 @@ func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplic
 }
 
 func (o GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -312,68 +312,8 @@ func (o GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplica
 
 	return toSerialize, nil
 }
-
 func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInner) UnmarshalJSON(data []byte) (err error) {
-	varGetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInner := _GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInner{}
-
-	err = json.Unmarshal(data, &varGetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInner(varGetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "startDate")
-		delete(additionalProperties, "endDate")
-		delete(additionalProperties, "numUnits")
-		delete(additionalProperties, "cost")
-		delete(additionalProperties, "price")
-		delete(additionalProperties, "currency")
-		delete(additionalProperties, "prices")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInner struct {
-	value *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInner
-	isSet bool
-}
-
-func (v NullableGetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInner) Get() *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInner {
-	return v.value
-}
-
-func (v *NullableGetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInner) Set(val *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInner(val *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInner) *NullableGetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInner {
-	return &NullableGetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInner{value: val, isSet: true}
-}
-
-func (v NullableGetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

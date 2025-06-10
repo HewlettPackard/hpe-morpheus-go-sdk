@@ -20,9 +20,9 @@ var _ MappedNullable = &AddTenant200Response{}
 
 // AddTenant200Response struct for AddTenant200Response
 type AddTenant200Response struct {
-	Account *ListTenants200ResponseAllOfAccountsInner `json:"account,omitempty"`
-	Success *bool `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Account              *ListTenants200ResponseAllOfAccountsInner `json:"account,omitempty"`
+	Success              *bool                                     `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}                    `json:",remain"`
 }
 
 type _AddTenant200Response AddTenant200Response
@@ -109,7 +109,7 @@ func (o *AddTenant200Response) SetSuccess(v bool) {
 }
 
 func (o AddTenant200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o AddTenant200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *AddTenant200Response) UnmarshalJSON(data []byte) (err error) {
-	varAddTenant200Response := _AddTenant200Response{}
-
-	err = json.Unmarshal(data, &varAddTenant200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddTenant200Response(varAddTenant200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "success")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddTenant200Response struct {
-	value *AddTenant200Response
-	isSet bool
-}
-
-func (v NullableAddTenant200Response) Get() *AddTenant200Response {
-	return v.value
-}
-
-func (v *NullableAddTenant200Response) Set(val *AddTenant200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddTenant200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddTenant200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddTenant200Response(val *AddTenant200Response) *NullableAddTenant200Response {
-	return &NullableAddTenant200Response{value: val, isSet: true}
-}
-
-func (v NullableAddTenant200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddTenant200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

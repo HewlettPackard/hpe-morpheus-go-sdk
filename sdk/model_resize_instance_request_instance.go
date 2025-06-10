@@ -20,8 +20,8 @@ var _ MappedNullable = &ResizeInstanceRequestInstance{}
 
 // ResizeInstanceRequestInstance The map containing the id of the service plan you wish to apply to the containers in this instance.
 type ResizeInstanceRequestInstance struct {
-	Plan *ResizeInstanceRequestInstancePlan `json:"plan,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Plan                 *ResizeInstanceRequestInstancePlan `json:"plan,omitempty"`
+	AdditionalProperties map[string]interface{}             `json:",remain"`
 }
 
 type _ResizeInstanceRequestInstance ResizeInstanceRequestInstance
@@ -76,7 +76,7 @@ func (o *ResizeInstanceRequestInstance) SetPlan(v ResizeInstanceRequestInstanceP
 }
 
 func (o ResizeInstanceRequestInstance) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o ResizeInstanceRequestInstance) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ResizeInstanceRequestInstance) UnmarshalJSON(data []byte) (err error) {
-	varResizeInstanceRequestInstance := _ResizeInstanceRequestInstance{}
-
-	err = json.Unmarshal(data, &varResizeInstanceRequestInstance)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ResizeInstanceRequestInstance(varResizeInstanceRequestInstance)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "plan")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableResizeInstanceRequestInstance struct {
-	value *ResizeInstanceRequestInstance
-	isSet bool
-}
-
-func (v NullableResizeInstanceRequestInstance) Get() *ResizeInstanceRequestInstance {
-	return v.value
-}
-
-func (v *NullableResizeInstanceRequestInstance) Set(val *ResizeInstanceRequestInstance) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableResizeInstanceRequestInstance) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableResizeInstanceRequestInstance) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableResizeInstanceRequestInstance(val *ResizeInstanceRequestInstance) *NullableResizeInstanceRequestInstance {
-	return &NullableResizeInstanceRequestInstance{value: val, isSet: true}
-}
-
-func (v NullableResizeInstanceRequestInstance) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableResizeInstanceRequestInstance) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

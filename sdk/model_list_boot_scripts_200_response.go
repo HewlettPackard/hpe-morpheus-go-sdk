@@ -20,10 +20,10 @@ var _ MappedNullable = &ListBootScripts200Response{}
 
 // ListBootScripts200Response struct for ListBootScripts200Response
 type ListBootScripts200Response struct {
-	BootScripts []ListBootScripts200ResponseAllOfBootScriptsInner `json:"bootScripts,omitempty"`
-	BootScriptCount *int64 `json:"bootScriptCount,omitempty"`
-	Meta *ListActivity200ResponseAllOfMeta `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}
+	BootScripts          []ListBootScripts200ResponseAllOfBootScriptsInner `json:"bootScripts,omitempty"`
+	BootScriptCount      *int64                                            `json:"bootScriptCount,omitempty"`
+	Meta                 *ListActivity200ResponseAllOfMeta                 `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}                            `json:",remain"`
 }
 
 type _ListBootScripts200Response ListBootScripts200Response
@@ -142,7 +142,7 @@ func (o *ListBootScripts200Response) SetMeta(v ListActivity200ResponseAllOfMeta)
 }
 
 func (o ListBootScripts200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -167,64 +167,8 @@ func (o ListBootScripts200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ListBootScripts200Response) UnmarshalJSON(data []byte) (err error) {
-	varListBootScripts200Response := _ListBootScripts200Response{}
-
-	err = json.Unmarshal(data, &varListBootScripts200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListBootScripts200Response(varListBootScripts200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "bootScripts")
-		delete(additionalProperties, "bootScriptCount")
-		delete(additionalProperties, "meta")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListBootScripts200Response struct {
-	value *ListBootScripts200Response
-	isSet bool
-}
-
-func (v NullableListBootScripts200Response) Get() *ListBootScripts200Response {
-	return v.value
-}
-
-func (v *NullableListBootScripts200Response) Set(val *ListBootScripts200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListBootScripts200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListBootScripts200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListBootScripts200Response(val *ListBootScripts200Response) *NullableListBootScripts200Response {
-	return &NullableListBootScripts200Response{value: val, isSet: true}
-}
-
-func (v NullableListBootScripts200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListBootScripts200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

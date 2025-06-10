@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the UpdateChecksRequest type satisfies the MappedNullable interface at compile time
@@ -21,8 +20,8 @@ var _ MappedNullable = &UpdateChecksRequest{}
 
 // UpdateChecksRequest struct for UpdateChecksRequest
 type UpdateChecksRequest struct {
-	Check UpdateChecksRequestCheck `json:"check"`
-	AdditionalProperties map[string]interface{}
+	Check                UpdateChecksRequestCheck `json:"check"`
+	AdditionalProperties map[string]interface{}   `json:",remain"`
 }
 
 type _UpdateChecksRequest UpdateChecksRequest
@@ -70,7 +69,7 @@ func (o *UpdateChecksRequest) SetCheck(v UpdateChecksRequestCheck) {
 }
 
 func (o UpdateChecksRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -87,83 +86,8 @@ func (o UpdateChecksRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *UpdateChecksRequest) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"check",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varUpdateChecksRequest := _UpdateChecksRequest{}
-
-	err = json.Unmarshal(data, &varUpdateChecksRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateChecksRequest(varUpdateChecksRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "check")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateChecksRequest struct {
-	value *UpdateChecksRequest
-	isSet bool
-}
-
-func (v NullableUpdateChecksRequest) Get() *UpdateChecksRequest {
-	return v.value
-}
-
-func (v *NullableUpdateChecksRequest) Set(val *UpdateChecksRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateChecksRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateChecksRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateChecksRequest(val *UpdateChecksRequest) *NullableUpdateChecksRequest {
-	return &NullableUpdateChecksRequest{value: val, isSet: true}
-}
-
-func (v NullableUpdateChecksRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateChecksRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

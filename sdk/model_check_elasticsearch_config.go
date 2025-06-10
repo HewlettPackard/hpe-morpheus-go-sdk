@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the CheckElasticsearchConfig type satisfies the MappedNullable interface at compile time
@@ -24,11 +23,11 @@ type CheckElasticsearchConfig struct {
 	// Hostname or IP address of the Elasticsearch server
 	EsHost string `json:"esHost"`
 	// Port to connect to the HTTP service
-	EsPort string `json:"esPort"`
-	CheckUser *string `json:"checkUser,omitempty"`
-	TextCheckOn *string `json:"textCheckOn,omitempty"`
-	CheckPassword *string `json:"checkPassword,omitempty"`
-	WebTextMatch *string `json:"webTextMatch,omitempty"`
+	EsPort            string  `json:"esPort"`
+	CheckUser         *string `json:"checkUser,omitempty"`
+	TextCheckOn       *string `json:"textCheckOn,omitempty"`
+	CheckPassword     *string `json:"checkPassword,omitempty"`
+	WebTextMatch      *string `json:"webTextMatch,omitempty"`
 	CheckPasswordHash *string `json:"checkPasswordHash,omitempty"`
 	// Set to on to turn on tunneling
 	TunnelOn *string `json:"tunnelOn,omitempty"`
@@ -39,8 +38,8 @@ type CheckElasticsearchConfig struct {
 	// SSH user on the proxy host to login as
 	SshUser *string `json:"sshUser,omitempty"`
 	// Password for user, if not using key based authentication
-	SshPassword *string `json:"sshPassword,omitempty"`
-	AdditionalProperties map[string]interface{}
+	SshPassword          *string                `json:"sshPassword,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _CheckElasticsearchConfig CheckElasticsearchConfig
@@ -437,7 +436,7 @@ func (o *CheckElasticsearchConfig) SetSshPassword(v string) {
 }
 
 func (o CheckElasticsearchConfig) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -485,95 +484,8 @@ func (o CheckElasticsearchConfig) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *CheckElasticsearchConfig) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"esHost",
-		"esPort",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varCheckElasticsearchConfig := _CheckElasticsearchConfig{}
-
-	err = json.Unmarshal(data, &varCheckElasticsearchConfig)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CheckElasticsearchConfig(varCheckElasticsearchConfig)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "esHost")
-		delete(additionalProperties, "esPort")
-		delete(additionalProperties, "checkUser")
-		delete(additionalProperties, "textCheckOn")
-		delete(additionalProperties, "checkPassword")
-		delete(additionalProperties, "webTextMatch")
-		delete(additionalProperties, "checkPasswordHash")
-		delete(additionalProperties, "tunnelOn")
-		delete(additionalProperties, "sshHost")
-		delete(additionalProperties, "sshPort")
-		delete(additionalProperties, "sshUser")
-		delete(additionalProperties, "sshPassword")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCheckElasticsearchConfig struct {
-	value *CheckElasticsearchConfig
-	isSet bool
-}
-
-func (v NullableCheckElasticsearchConfig) Get() *CheckElasticsearchConfig {
-	return v.value
-}
-
-func (v *NullableCheckElasticsearchConfig) Set(val *CheckElasticsearchConfig) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCheckElasticsearchConfig) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCheckElasticsearchConfig) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCheckElasticsearchConfig(val *CheckElasticsearchConfig) *NullableCheckElasticsearchConfig {
-	return &NullableCheckElasticsearchConfig{value: val, isSet: true}
-}
-
-func (v NullableCheckElasticsearchConfig) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCheckElasticsearchConfig) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

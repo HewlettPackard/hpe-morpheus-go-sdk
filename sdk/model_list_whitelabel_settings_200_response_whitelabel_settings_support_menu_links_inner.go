@@ -20,10 +20,10 @@ var _ MappedNullable = &ListWhitelabelSettings200ResponseWhitelabelSettingsSuppo
 
 // ListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner struct for ListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner
 type ListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner struct {
-	Url *string `json:"url,omitempty"`
-	Label *string `json:"label,omitempty"`
-	LabelCode *string `json:"labelCode,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Url                  *string                `json:"url,omitempty"`
+	Label                *string                `json:"label,omitempty"`
+	LabelCode            *string                `json:"labelCode,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner ListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner
@@ -142,7 +142,7 @@ func (o *ListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInne
 }
 
 func (o ListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -167,64 +167,8 @@ func (o ListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner
 
 	return toSerialize, nil
 }
-
 func (o *ListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner) UnmarshalJSON(data []byte) (err error) {
-	varListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner := _ListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner{}
-
-	err = json.Unmarshal(data, &varListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner(varListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "label")
-		delete(additionalProperties, "labelCode")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner struct {
-	value *ListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner
-	isSet bool
-}
-
-func (v NullableListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner) Get() *ListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner {
-	return v.value
-}
-
-func (v *NullableListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner) Set(val *ListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner(val *ListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner) *NullableListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner {
-	return &NullableListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner{value: val, isSet: true}
-}
-
-func (v NullableListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

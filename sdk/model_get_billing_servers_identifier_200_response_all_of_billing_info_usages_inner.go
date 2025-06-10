@@ -21,25 +21,25 @@ var _ MappedNullable = &GetBillingServersIdentifier200ResponseAllOfBillingInfoUs
 
 // GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner struct for GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner
 type GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner struct {
-	Cost *float32 `json:"cost,omitempty"`
-	Price *float32 `json:"price,omitempty"`
-	CreatedByUser *string `json:"createdByUser,omitempty"`
-	CreatedByUserId *int64 `json:"createdByUserId,omitempty"`
-	SiteId *string `json:"siteId,omitempty"`
-	SiteName *string `json:"siteName,omitempty"`
-	SiteUUID *string `json:"siteUUID,omitempty"`
-	SiteCode *string `json:"siteCode,omitempty"`
-	Currency *string `json:"currency,omitempty"`
-	StartDate *time.Time `json:"startDate,omitempty"`
-	EndDate *time.Time `json:"endDate,omitempty"`
-	Status *string `json:"status,omitempty"`
-	Tags []map[string]interface{} `json:"tags,omitempty"`
-	ApplicablePrices []GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInner `json:"applicablePrices,omitempty"`
-	ServicePlanId *int64 `json:"servicePlanId,omitempty"`
-	ServicePlanName *string `json:"servicePlanName,omitempty"`
-	ResourcePoolId *int64 `json:"resourcePoolId,omitempty"`
-	ResourcePoolName *string `json:"resourcePoolName,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Cost                 *float32                                                                                 `json:"cost,omitempty"`
+	Price                *float32                                                                                 `json:"price,omitempty"`
+	CreatedByUser        *string                                                                                  `json:"createdByUser,omitempty"`
+	CreatedByUserId      *int64                                                                                   `json:"createdByUserId,omitempty"`
+	SiteId               *string                                                                                  `json:"siteId,omitempty"`
+	SiteName             *string                                                                                  `json:"siteName,omitempty"`
+	SiteUUID             *string                                                                                  `json:"siteUUID,omitempty"`
+	SiteCode             *string                                                                                  `json:"siteCode,omitempty"`
+	Currency             *string                                                                                  `json:"currency,omitempty"`
+	StartDate            *time.Time                                                                               `json:"startDate,omitempty"`
+	EndDate              *time.Time                                                                               `json:"endDate,omitempty"`
+	Status               *string                                                                                  `json:"status,omitempty"`
+	Tags                 []map[string]interface{}                                                                 `json:"tags,omitempty"`
+	ApplicablePrices     []GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInner `json:"applicablePrices,omitempty"`
+	ServicePlanId        *int64                                                                                   `json:"servicePlanId,omitempty"`
+	ServicePlanName      *string                                                                                  `json:"servicePlanName,omitempty"`
+	ResourcePoolId       *int64                                                                                   `json:"resourcePoolId,omitempty"`
+	ResourcePoolName     *string                                                                                  `json:"resourcePoolName,omitempty"`
+	AdditionalProperties map[string]interface{}                                                                   `json:",remain"`
 }
 
 type _GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner
@@ -638,7 +638,7 @@ func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner) SetR
 }
 
 func (o GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -708,79 +708,8 @@ func (o GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner) ToMap
 
 	return toSerialize, nil
 }
-
 func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner) UnmarshalJSON(data []byte) (err error) {
-	varGetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner := _GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner{}
-
-	err = json.Unmarshal(data, &varGetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner(varGetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "cost")
-		delete(additionalProperties, "price")
-		delete(additionalProperties, "createdByUser")
-		delete(additionalProperties, "createdByUserId")
-		delete(additionalProperties, "siteId")
-		delete(additionalProperties, "siteName")
-		delete(additionalProperties, "siteUUID")
-		delete(additionalProperties, "siteCode")
-		delete(additionalProperties, "currency")
-		delete(additionalProperties, "startDate")
-		delete(additionalProperties, "endDate")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "applicablePrices")
-		delete(additionalProperties, "servicePlanId")
-		delete(additionalProperties, "servicePlanName")
-		delete(additionalProperties, "resourcePoolId")
-		delete(additionalProperties, "resourcePoolName")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner struct {
-	value *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner
-	isSet bool
-}
-
-func (v NullableGetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner) Get() *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner {
-	return v.value
-}
-
-func (v *NullableGetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner) Set(val *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner(val *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner) *NullableGetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner {
-	return &NullableGetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner{value: val, isSet: true}
-}
-
-func (v NullableGetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

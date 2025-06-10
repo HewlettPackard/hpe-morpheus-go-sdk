@@ -25,22 +25,22 @@ type ListRoles200ResponseAllOfRolesInner struct {
 	// a unique name of the role
 	Name *string `json:"name,omitempty"`
 	// Alias for name
-	Authority *string `json:"authority,omitempty"`
+	Authority   *string `json:"authority,omitempty"`
 	Description *string `json:"description,omitempty"`
 	// An optional override for the default landing page after login for a user.
-	LandingUrl *string `json:"landingUrl,omitempty"`
-	Scope *string `json:"scope,omitempty"`
-	RoleType *string `json:"roleType,omitempty"`
-	Multitenant *bool `json:"multitenant,omitempty"`
-	MultitenantLocked *bool `json:"multitenantLocked,omitempty"`
-	ParentRoleId *string `json:"parentRoleId,omitempty"`
-	Diverged *bool `json:"diverged,omitempty"`
-	OwnerId *int64 `json:"ownerId,omitempty"`
-	Owner *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"owner,omitempty"`
-	DefaultPersona *string `json:"defaultPersona,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}
+	LandingUrl           *string                                                                 `json:"landingUrl,omitempty"`
+	Scope                *string                                                                 `json:"scope,omitempty"`
+	RoleType             *string                                                                 `json:"roleType,omitempty"`
+	Multitenant          *bool                                                                   `json:"multitenant,omitempty"`
+	MultitenantLocked    *bool                                                                   `json:"multitenantLocked,omitempty"`
+	ParentRoleId         *string                                                                 `json:"parentRoleId,omitempty"`
+	Diverged             *bool                                                                   `json:"diverged,omitempty"`
+	OwnerId              *int64                                                                  `json:"ownerId,omitempty"`
+	Owner                *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"owner,omitempty"`
+	DefaultPersona       *string                                                                 `json:"defaultPersona,omitempty"`
+	DateCreated          *time.Time                                                              `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                              `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
 }
 
 type _ListRoles200ResponseAllOfRolesInner ListRoles200ResponseAllOfRolesInner
@@ -575,7 +575,7 @@ func (o *ListRoles200ResponseAllOfRolesInner) SetLastUpdated(v time.Time) {
 }
 
 func (o ListRoles200ResponseAllOfRolesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -639,77 +639,8 @@ func (o ListRoles200ResponseAllOfRolesInner) ToMap() (map[string]interface{}, er
 
 	return toSerialize, nil
 }
-
 func (o *ListRoles200ResponseAllOfRolesInner) UnmarshalJSON(data []byte) (err error) {
-	varListRoles200ResponseAllOfRolesInner := _ListRoles200ResponseAllOfRolesInner{}
-
-	err = json.Unmarshal(data, &varListRoles200ResponseAllOfRolesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListRoles200ResponseAllOfRolesInner(varListRoles200ResponseAllOfRolesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "authority")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "landingUrl")
-		delete(additionalProperties, "scope")
-		delete(additionalProperties, "roleType")
-		delete(additionalProperties, "multitenant")
-		delete(additionalProperties, "multitenantLocked")
-		delete(additionalProperties, "parentRoleId")
-		delete(additionalProperties, "diverged")
-		delete(additionalProperties, "ownerId")
-		delete(additionalProperties, "owner")
-		delete(additionalProperties, "defaultPersona")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListRoles200ResponseAllOfRolesInner struct {
-	value *ListRoles200ResponseAllOfRolesInner
-	isSet bool
-}
-
-func (v NullableListRoles200ResponseAllOfRolesInner) Get() *ListRoles200ResponseAllOfRolesInner {
-	return v.value
-}
-
-func (v *NullableListRoles200ResponseAllOfRolesInner) Set(val *ListRoles200ResponseAllOfRolesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListRoles200ResponseAllOfRolesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListRoles200ResponseAllOfRolesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListRoles200ResponseAllOfRolesInner(val *ListRoles200ResponseAllOfRolesInner) *NullableListRoles200ResponseAllOfRolesInner {
-	return &NullableListRoles200ResponseAllOfRolesInner{value: val, isSet: true}
-}
-
-func (v NullableListRoles200ResponseAllOfRolesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListRoles200ResponseAllOfRolesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

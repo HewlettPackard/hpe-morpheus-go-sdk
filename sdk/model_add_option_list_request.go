@@ -20,8 +20,8 @@ var _ MappedNullable = &AddOptionListRequest{}
 
 // AddOptionListRequest struct for AddOptionListRequest
 type AddOptionListRequest struct {
-	OptionTypeList *AddOptionListRequestOptionTypeList `json:"optionTypeList,omitempty"`
-	AdditionalProperties map[string]interface{}
+	OptionTypeList       *AddOptionListRequestOptionTypeList `json:"optionTypeList,omitempty"`
+	AdditionalProperties map[string]interface{}              `json:",remain"`
 }
 
 type _AddOptionListRequest AddOptionListRequest
@@ -76,7 +76,7 @@ func (o *AddOptionListRequest) SetOptionTypeList(v AddOptionListRequestOptionTyp
 }
 
 func (o AddOptionListRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o AddOptionListRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *AddOptionListRequest) UnmarshalJSON(data []byte) (err error) {
-	varAddOptionListRequest := _AddOptionListRequest{}
-
-	err = json.Unmarshal(data, &varAddOptionListRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddOptionListRequest(varAddOptionListRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "optionTypeList")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddOptionListRequest struct {
-	value *AddOptionListRequest
-	isSet bool
-}
-
-func (v NullableAddOptionListRequest) Get() *AddOptionListRequest {
-	return v.value
-}
-
-func (v *NullableAddOptionListRequest) Set(val *AddOptionListRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddOptionListRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddOptionListRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddOptionListRequest(val *AddOptionListRequest) *NullableAddOptionListRequest {
-	return &NullableAddOptionListRequest{value: val, isSet: true}
-}
-
-func (v NullableAddOptionListRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddOptionListRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

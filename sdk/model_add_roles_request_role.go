@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddRolesRequestRole type satisfies the MappedNullable interface at compile time
@@ -34,8 +33,8 @@ type AddRolesRequestRole struct {
 	// Multitenant roles are copied to all tenant accounts and kept in sync until a sub-tenant user modifies their copy of the role. *Only available to master tenant*
 	Multitenant *bool `json:"multitenant,omitempty"`
 	// Multitenant Locked, prevents sub-tenant users from modifying their copy of multienant roles. *Only available to master tenant*
-	MultitenantLocked *bool `json:"multitenantLocked,omitempty"`
-	DefaultPersona *string `json:"defaultPersona,omitempty"`
+	MultitenantLocked *bool   `json:"multitenantLocked,omitempty"`
+	DefaultPersona    *string `json:"defaultPersona,omitempty"`
 	// Set the access level for the specified permissions.
 	FeaturePermissions []AddRolesRequestRoleFeaturePermissionsInner `json:"featurePermissions,omitempty"`
 	// Set the default access level for for groups (sites). Only applies to user roles.
@@ -79,8 +78,8 @@ type AddRolesRequestRole struct {
 	// Set the access level for the specified workflows (taskSets)
 	TaskSets []AddRolesRequestRoleTaskSetsInner `json:"taskSets,omitempty"`
 	// Set the role owner (tenant) by ID. *Only available to master tenant*
-	Owner *int64 `json:"owner,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Owner                *int64                 `json:"owner,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddRolesRequestRole AddRolesRequestRole
@@ -1068,7 +1067,7 @@ func (o *AddRolesRequestRole) SetOwner(v int64) {
 }
 
 func (o AddRolesRequestRole) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1172,112 +1171,8 @@ func (o AddRolesRequestRole) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *AddRolesRequestRole) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"authority",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddRolesRequestRole := _AddRolesRequestRole{}
-
-	err = json.Unmarshal(data, &varAddRolesRequestRole)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddRolesRequestRole(varAddRolesRequestRole)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "authority")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "landingUrl")
-		delete(additionalProperties, "roleType")
-		delete(additionalProperties, "baseRoleId")
-		delete(additionalProperties, "multitenant")
-		delete(additionalProperties, "multitenantLocked")
-		delete(additionalProperties, "defaultPersona")
-		delete(additionalProperties, "featurePermissions")
-		delete(additionalProperties, "globalSiteAccess")
-		delete(additionalProperties, "sites")
-		delete(additionalProperties, "globalZoneAccess")
-		delete(additionalProperties, "zones")
-		delete(additionalProperties, "globalInstanceTypeAccess")
-		delete(additionalProperties, "instanceTypes")
-		delete(additionalProperties, "globalAppTemplateAccess")
-		delete(additionalProperties, "appTemplates")
-		delete(additionalProperties, "globalCatalogItemTypeAccess")
-		delete(additionalProperties, "catalogItemTypes")
-		delete(additionalProperties, "globalPersonaAccess")
-		delete(additionalProperties, "personas")
-		delete(additionalProperties, "globalVdiPoolAccess")
-		delete(additionalProperties, "vdiPools")
-		delete(additionalProperties, "globalReportTypeAccess")
-		delete(additionalProperties, "reportTypes")
-		delete(additionalProperties, "globalTaskAccess")
-		delete(additionalProperties, "tasks")
-		delete(additionalProperties, "globalTaskSetAccess")
-		delete(additionalProperties, "taskSets")
-		delete(additionalProperties, "owner")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddRolesRequestRole struct {
-	value *AddRolesRequestRole
-	isSet bool
-}
-
-func (v NullableAddRolesRequestRole) Get() *AddRolesRequestRole {
-	return v.value
-}
-
-func (v *NullableAddRolesRequestRole) Set(val *AddRolesRequestRole) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddRolesRequestRole) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddRolesRequestRole) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddRolesRequestRole(val *AddRolesRequestRole) *NullableAddRolesRequestRole {
-	return &NullableAddRolesRequestRole{value: val, isSet: true}
-}
-
-func (v NullableAddRolesRequestRole) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddRolesRequestRole) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

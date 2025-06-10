@@ -20,12 +20,11 @@ import (
 	"net/url"
 )
 
-
 // LicenseAPIService LicenseAPI service
 type LicenseAPIService service
 
 type ApiGetLicenseRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *LicenseAPIService
 }
 
@@ -38,24 +37,25 @@ GetLicense Get license
 
 Get details about the license that is currently installed on the appliance. This returns the license details, but not the key itself. Your license key will never be returned and should always be kept secret.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetLicenseRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetLicenseRequest
 */
 func (a *LicenseAPIService) GetLicense(ctx context.Context) ApiGetLicenseRequest {
 	return ApiGetLicenseRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return GetLicense200Response
+//
+//	@return GetLicense200Response
 func (a *LicenseAPIService) GetLicenseExecute(r ApiGetLicenseRequest) (*GetLicense200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetLicense200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetLicense200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LicenseAPIService.GetLicense")
@@ -105,7 +105,7 @@ func (a *LicenseAPIService) GetLicenseExecute(r ApiGetLicenseRequest) (*GetLicen
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -114,8 +114,8 @@ func (a *LicenseAPIService) GetLicenseExecute(r ApiGetLicenseRequest) (*GetLicen
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -125,8 +125,8 @@ func (a *LicenseAPIService) GetLicenseExecute(r ApiGetLicenseRequest) (*GetLicen
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -134,8 +134,8 @@ func (a *LicenseAPIService) GetLicenseExecute(r ApiGetLicenseRequest) (*GetLicen
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -144,8 +144,8 @@ func (a *LicenseAPIService) GetLicenseExecute(r ApiGetLicenseRequest) (*GetLicen
 }
 
 type ApiInstallLicenseRequest struct {
-	ctx context.Context
-	ApiService *LicenseAPIService
+	ctx                   context.Context
+	ApiService            *LicenseAPIService
 	installLicenseRequest *InstallLicenseRequest
 }
 
@@ -163,24 +163,25 @@ InstallLicense Install license key
 
 Install a new license key. This will potentially change the enabled features and capabilities of your Morpheus appliance.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiInstallLicenseRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiInstallLicenseRequest
 */
 func (a *LicenseAPIService) InstallLicense(ctx context.Context) ApiInstallLicenseRequest {
 	return ApiInstallLicenseRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return GetLicense200Response
+//
+//	@return GetLicense200Response
 func (a *LicenseAPIService) InstallLicenseExecute(r ApiInstallLicenseRequest) (*GetLicense200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetLicense200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetLicense200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LicenseAPIService.InstallLicense")
@@ -232,7 +233,7 @@ func (a *LicenseAPIService) InstallLicenseExecute(r ApiInstallLicenseRequest) (*
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -241,8 +242,8 @@ func (a *LicenseAPIService) InstallLicenseExecute(r ApiInstallLicenseRequest) (*
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -252,8 +253,8 @@ func (a *LicenseAPIService) InstallLicenseExecute(r ApiInstallLicenseRequest) (*
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -261,8 +262,8 @@ func (a *LicenseAPIService) InstallLicenseExecute(r ApiInstallLicenseRequest) (*
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -271,8 +272,8 @@ func (a *LicenseAPIService) InstallLicenseExecute(r ApiInstallLicenseRequest) (*
 }
 
 type ApiTestLicenseRequest struct {
-	ctx context.Context
-	ApiService *LicenseAPIService
+	ctx                   context.Context
+	ApiService            *LicenseAPIService
 	installLicenseRequest *InstallLicenseRequest
 }
 
@@ -290,24 +291,25 @@ TestLicense Test license key
 
 This endpoint can be used to decode a license to see if it is valid and inspect the license settings, such as who it belongs to and the enabled features. This is only a test, it does not install the key, or make any changes to your appliance.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiTestLicenseRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiTestLicenseRequest
 */
 func (a *LicenseAPIService) TestLicense(ctx context.Context) ApiTestLicenseRequest {
 	return ApiTestLicenseRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return GetLicense200Response
+//
+//	@return GetLicense200Response
 func (a *LicenseAPIService) TestLicenseExecute(r ApiTestLicenseRequest) (*GetLicense200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetLicense200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetLicense200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LicenseAPIService.TestLicense")
@@ -359,7 +361,7 @@ func (a *LicenseAPIService) TestLicenseExecute(r ApiTestLicenseRequest) (*GetLic
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -368,8 +370,8 @@ func (a *LicenseAPIService) TestLicenseExecute(r ApiTestLicenseRequest) (*GetLic
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -379,8 +381,8 @@ func (a *LicenseAPIService) TestLicenseExecute(r ApiTestLicenseRequest) (*GetLic
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -388,8 +390,8 @@ func (a *LicenseAPIService) TestLicenseExecute(r ApiTestLicenseRequest) (*GetLic
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -398,9 +400,9 @@ func (a *LicenseAPIService) TestLicenseExecute(r ApiTestLicenseRequest) (*GetLic
 }
 
 type ApiUninstallLicenseRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *LicenseAPIService
-	keyId *int64
+	keyId      *int64
 }
 
 // Key ID (only the first 8 characters are required to identify license to uninstall).
@@ -418,24 +420,25 @@ UninstallLicense Uninstall license key
 
 Uninstall your appliance license(s), leaving the appliance with no license installed. This will change the enabled features and capabilities of your Morpheus appliance.  The `keyId` parameter can be used to only uninstall a specific license
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiUninstallLicenseRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiUninstallLicenseRequest
 */
 func (a *LicenseAPIService) UninstallLicense(ctx context.Context) ApiUninstallLicenseRequest {
 	return ApiUninstallLicenseRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *LicenseAPIService) UninstallLicenseExecute(r ApiUninstallLicenseRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LicenseAPIService.UninstallLicense")
@@ -488,7 +491,7 @@ func (a *LicenseAPIService) UninstallLicenseExecute(r ApiUninstallLicenseRequest
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -497,8 +500,8 @@ func (a *LicenseAPIService) UninstallLicenseExecute(r ApiUninstallLicenseRequest
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -508,8 +511,8 @@ func (a *LicenseAPIService) UninstallLicenseExecute(r ApiUninstallLicenseRequest
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -517,8 +520,8 @@ func (a *LicenseAPIService) UninstallLicenseExecute(r ApiUninstallLicenseRequest
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

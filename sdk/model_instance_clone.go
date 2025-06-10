@@ -21,9 +21,9 @@ var _ MappedNullable = &InstanceClone{}
 // InstanceClone struct for InstanceClone
 type InstanceClone struct {
 	// A name for the new cloned instance. If none is specified the existing name will be duplicated with the 'clone' suffix added.
-	Name *string `json:"name,omitempty"`
-	Group *CloneInstanceRequestGroup `json:"group,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Name                 *string                    `json:"name,omitempty"`
+	Group                *CloneInstanceRequestGroup `json:"group,omitempty"`
+	AdditionalProperties map[string]interface{}     `json:",remain"`
 }
 
 type _InstanceClone InstanceClone
@@ -110,7 +110,7 @@ func (o *InstanceClone) SetGroup(v CloneInstanceRequestGroup) {
 }
 
 func (o InstanceClone) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -132,63 +132,8 @@ func (o InstanceClone) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *InstanceClone) UnmarshalJSON(data []byte) (err error) {
-	varInstanceClone := _InstanceClone{}
-
-	err = json.Unmarshal(data, &varInstanceClone)
-
-	if err != nil {
-		return err
-	}
-
-	*o = InstanceClone(varInstanceClone)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "group")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableInstanceClone struct {
-	value *InstanceClone
-	isSet bool
-}
-
-func (v NullableInstanceClone) Get() *InstanceClone {
-	return v.value
-}
-
-func (v *NullableInstanceClone) Set(val *InstanceClone) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableInstanceClone) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableInstanceClone) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableInstanceClone(val *InstanceClone) *NullableInstanceClone {
-	return &NullableInstanceClone{value: val, isSet: true}
-}
-
-func (v NullableInstanceClone) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableInstanceClone) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

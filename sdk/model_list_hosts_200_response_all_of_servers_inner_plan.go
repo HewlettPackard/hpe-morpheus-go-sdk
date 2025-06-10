@@ -20,10 +20,10 @@ var _ MappedNullable = &ListHosts200ResponseAllOfServersInnerPlan{}
 
 // ListHosts200ResponseAllOfServersInnerPlan struct for ListHosts200ResponseAllOfServersInnerPlan
 type ListHosts200ResponseAllOfServersInnerPlan struct {
-	Id *int64 `json:"id,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Name *string `json:"name,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Code                 *string                `json:"code,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListHosts200ResponseAllOfServersInnerPlan ListHosts200ResponseAllOfServersInnerPlan
@@ -142,7 +142,7 @@ func (o *ListHosts200ResponseAllOfServersInnerPlan) SetName(v string) {
 }
 
 func (o ListHosts200ResponseAllOfServersInnerPlan) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -167,64 +167,8 @@ func (o ListHosts200ResponseAllOfServersInnerPlan) ToMap() (map[string]interface
 
 	return toSerialize, nil
 }
-
 func (o *ListHosts200ResponseAllOfServersInnerPlan) UnmarshalJSON(data []byte) (err error) {
-	varListHosts200ResponseAllOfServersInnerPlan := _ListHosts200ResponseAllOfServersInnerPlan{}
-
-	err = json.Unmarshal(data, &varListHosts200ResponseAllOfServersInnerPlan)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListHosts200ResponseAllOfServersInnerPlan(varListHosts200ResponseAllOfServersInnerPlan)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "name")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListHosts200ResponseAllOfServersInnerPlan struct {
-	value *ListHosts200ResponseAllOfServersInnerPlan
-	isSet bool
-}
-
-func (v NullableListHosts200ResponseAllOfServersInnerPlan) Get() *ListHosts200ResponseAllOfServersInnerPlan {
-	return v.value
-}
-
-func (v *NullableListHosts200ResponseAllOfServersInnerPlan) Set(val *ListHosts200ResponseAllOfServersInnerPlan) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListHosts200ResponseAllOfServersInnerPlan) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListHosts200ResponseAllOfServersInnerPlan) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListHosts200ResponseAllOfServersInnerPlan(val *ListHosts200ResponseAllOfServersInnerPlan) *NullableListHosts200ResponseAllOfServersInnerPlan {
-	return &NullableListHosts200ResponseAllOfServersInnerPlan{value: val, isSet: true}
-}
-
-func (v NullableListHosts200ResponseAllOfServersInnerPlan) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListHosts200ResponseAllOfServersInnerPlan) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

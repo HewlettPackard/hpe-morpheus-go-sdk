@@ -20,17 +20,17 @@ var _ MappedNullable = &ListCatalogTypes200ResponseAllOfCatalogItemTypesInner{}
 
 // ListCatalogTypes200ResponseAllOfCatalogItemTypesInner struct for ListCatalogTypes200ResponseAllOfCatalogItemTypesInner
 type ListCatalogTypes200ResponseAllOfCatalogItemTypesInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Type *string `json:"type,omitempty"`
-	Context *string `json:"context,omitempty"`
-	Featured *bool `json:"featured,omitempty"`
-	AllowQuantity *bool `json:"allowQuantity,omitempty"`
-	ImagePath *string `json:"imagePath,omitempty"`
-	DarkImagePath *string `json:"darkImagePath,omitempty"`
-	FormType *string `json:"formType,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	Description          *string                `json:"description,omitempty"`
+	Type                 *string                `json:"type,omitempty"`
+	Context              *string                `json:"context,omitempty"`
+	Featured             *bool                  `json:"featured,omitempty"`
+	AllowQuantity        *bool                  `json:"allowQuantity,omitempty"`
+	ImagePath            *string                `json:"imagePath,omitempty"`
+	DarkImagePath        *string                `json:"darkImagePath,omitempty"`
+	FormType             *string                `json:"formType,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListCatalogTypes200ResponseAllOfCatalogItemTypesInner ListCatalogTypes200ResponseAllOfCatalogItemTypesInner
@@ -373,7 +373,7 @@ func (o *ListCatalogTypes200ResponseAllOfCatalogItemTypesInner) SetFormType(v st
 }
 
 func (o ListCatalogTypes200ResponseAllOfCatalogItemTypesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -419,71 +419,8 @@ func (o ListCatalogTypes200ResponseAllOfCatalogItemTypesInner) ToMap() (map[stri
 
 	return toSerialize, nil
 }
-
 func (o *ListCatalogTypes200ResponseAllOfCatalogItemTypesInner) UnmarshalJSON(data []byte) (err error) {
-	varListCatalogTypes200ResponseAllOfCatalogItemTypesInner := _ListCatalogTypes200ResponseAllOfCatalogItemTypesInner{}
-
-	err = json.Unmarshal(data, &varListCatalogTypes200ResponseAllOfCatalogItemTypesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListCatalogTypes200ResponseAllOfCatalogItemTypesInner(varListCatalogTypes200ResponseAllOfCatalogItemTypesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "context")
-		delete(additionalProperties, "featured")
-		delete(additionalProperties, "allowQuantity")
-		delete(additionalProperties, "imagePath")
-		delete(additionalProperties, "darkImagePath")
-		delete(additionalProperties, "formType")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListCatalogTypes200ResponseAllOfCatalogItemTypesInner struct {
-	value *ListCatalogTypes200ResponseAllOfCatalogItemTypesInner
-	isSet bool
-}
-
-func (v NullableListCatalogTypes200ResponseAllOfCatalogItemTypesInner) Get() *ListCatalogTypes200ResponseAllOfCatalogItemTypesInner {
-	return v.value
-}
-
-func (v *NullableListCatalogTypes200ResponseAllOfCatalogItemTypesInner) Set(val *ListCatalogTypes200ResponseAllOfCatalogItemTypesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListCatalogTypes200ResponseAllOfCatalogItemTypesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListCatalogTypes200ResponseAllOfCatalogItemTypesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListCatalogTypes200ResponseAllOfCatalogItemTypesInner(val *ListCatalogTypes200ResponseAllOfCatalogItemTypesInner) *NullableListCatalogTypes200ResponseAllOfCatalogItemTypesInner {
-	return &NullableListCatalogTypes200ResponseAllOfCatalogItemTypesInner{value: val, isSet: true}
-}
-
-func (v NullableListCatalogTypes200ResponseAllOfCatalogItemTypesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListCatalogTypes200ResponseAllOfCatalogItemTypesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

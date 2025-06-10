@@ -21,8 +21,8 @@ var _ MappedNullable = &AddBaremetalHostRequestServerComputeServerTypeAnyOf{}
 // AddBaremetalHostRequestServerComputeServerTypeAnyOf struct for AddBaremetalHostRequestServerComputeServerTypeAnyOf
 type AddBaremetalHostRequestServerComputeServerTypeAnyOf struct {
 	// The ComputeServerType's code
-	Code *string `json:"code,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Code                 *string                `json:"code,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddBaremetalHostRequestServerComputeServerTypeAnyOf AddBaremetalHostRequestServerComputeServerTypeAnyOf
@@ -77,7 +77,7 @@ func (o *AddBaremetalHostRequestServerComputeServerTypeAnyOf) SetCode(v string) 
 }
 
 func (o AddBaremetalHostRequestServerComputeServerTypeAnyOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -96,62 +96,8 @@ func (o AddBaremetalHostRequestServerComputeServerTypeAnyOf) ToMap() (map[string
 
 	return toSerialize, nil
 }
-
 func (o *AddBaremetalHostRequestServerComputeServerTypeAnyOf) UnmarshalJSON(data []byte) (err error) {
-	varAddBaremetalHostRequestServerComputeServerTypeAnyOf := _AddBaremetalHostRequestServerComputeServerTypeAnyOf{}
-
-	err = json.Unmarshal(data, &varAddBaremetalHostRequestServerComputeServerTypeAnyOf)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddBaremetalHostRequestServerComputeServerTypeAnyOf(varAddBaremetalHostRequestServerComputeServerTypeAnyOf)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "code")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddBaremetalHostRequestServerComputeServerTypeAnyOf struct {
-	value *AddBaremetalHostRequestServerComputeServerTypeAnyOf
-	isSet bool
-}
-
-func (v NullableAddBaremetalHostRequestServerComputeServerTypeAnyOf) Get() *AddBaremetalHostRequestServerComputeServerTypeAnyOf {
-	return v.value
-}
-
-func (v *NullableAddBaremetalHostRequestServerComputeServerTypeAnyOf) Set(val *AddBaremetalHostRequestServerComputeServerTypeAnyOf) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddBaremetalHostRequestServerComputeServerTypeAnyOf) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddBaremetalHostRequestServerComputeServerTypeAnyOf) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddBaremetalHostRequestServerComputeServerTypeAnyOf(val *AddBaremetalHostRequestServerComputeServerTypeAnyOf) *NullableAddBaremetalHostRequestServerComputeServerTypeAnyOf {
-	return &NullableAddBaremetalHostRequestServerComputeServerTypeAnyOf{value: val, isSet: true}
-}
-
-func (v NullableAddBaremetalHostRequestServerComputeServerTypeAnyOf) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddBaremetalHostRequestServerComputeServerTypeAnyOf) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

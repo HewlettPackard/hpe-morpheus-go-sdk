@@ -25,8 +25,8 @@ type ServicePlanOptions struct {
 	// Cores Per Socket
 	CoresPerSocket *int64 `json:"coresPerSocket,omitempty"`
 	// Memory in bytes For backwards compatability, values less than 1048576 are treated as being in MB and will be converted to bytes
-	MaxMemory *int64 `json:"maxMemory,omitempty"`
-	AdditionalProperties map[string]interface{}
+	MaxMemory            *int64                 `json:"maxMemory,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ServicePlanOptions ServicePlanOptions
@@ -145,7 +145,7 @@ func (o *ServicePlanOptions) SetMaxMemory(v int64) {
 }
 
 func (o ServicePlanOptions) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -170,64 +170,8 @@ func (o ServicePlanOptions) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ServicePlanOptions) UnmarshalJSON(data []byte) (err error) {
-	varServicePlanOptions := _ServicePlanOptions{}
-
-	err = json.Unmarshal(data, &varServicePlanOptions)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ServicePlanOptions(varServicePlanOptions)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "maxCores")
-		delete(additionalProperties, "coresPerSocket")
-		delete(additionalProperties, "maxMemory")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableServicePlanOptions struct {
-	value *ServicePlanOptions
-	isSet bool
-}
-
-func (v NullableServicePlanOptions) Get() *ServicePlanOptions {
-	return v.value
-}
-
-func (v *NullableServicePlanOptions) Set(val *ServicePlanOptions) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableServicePlanOptions) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableServicePlanOptions) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableServicePlanOptions(val *ServicePlanOptions) *NullableServicePlanOptions {
-	return &NullableServicePlanOptions{value: val, isSet: true}
-}
-
-func (v NullableServicePlanOptions) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableServicePlanOptions) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

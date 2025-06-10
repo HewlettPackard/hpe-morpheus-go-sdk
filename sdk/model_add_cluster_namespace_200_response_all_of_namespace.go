@@ -20,13 +20,13 @@ var _ MappedNullable = &AddClusterNamespace200ResponseAllOfNamespace{}
 
 // AddClusterNamespace200ResponseAllOfNamespace struct for AddClusterNamespace200ResponseAllOfNamespace
 type AddClusterNamespace200ResponseAllOfNamespace struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	RegionCode *string `json:"regionCode,omitempty"`
-	ExternalId *string `json:"externalId,omitempty"`
-	Status *string `json:"status,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	Description          *string                `json:"description,omitempty"`
+	RegionCode           *string                `json:"regionCode,omitempty"`
+	ExternalId           *string                `json:"externalId,omitempty"`
+	Status               *string                `json:"status,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddClusterNamespace200ResponseAllOfNamespace AddClusterNamespace200ResponseAllOfNamespace
@@ -241,7 +241,7 @@ func (o *AddClusterNamespace200ResponseAllOfNamespace) SetStatus(v string) {
 }
 
 func (o AddClusterNamespace200ResponseAllOfNamespace) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -275,67 +275,8 @@ func (o AddClusterNamespace200ResponseAllOfNamespace) ToMap() (map[string]interf
 
 	return toSerialize, nil
 }
-
 func (o *AddClusterNamespace200ResponseAllOfNamespace) UnmarshalJSON(data []byte) (err error) {
-	varAddClusterNamespace200ResponseAllOfNamespace := _AddClusterNamespace200ResponseAllOfNamespace{}
-
-	err = json.Unmarshal(data, &varAddClusterNamespace200ResponseAllOfNamespace)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddClusterNamespace200ResponseAllOfNamespace(varAddClusterNamespace200ResponseAllOfNamespace)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "regionCode")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "status")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddClusterNamespace200ResponseAllOfNamespace struct {
-	value *AddClusterNamespace200ResponseAllOfNamespace
-	isSet bool
-}
-
-func (v NullableAddClusterNamespace200ResponseAllOfNamespace) Get() *AddClusterNamespace200ResponseAllOfNamespace {
-	return v.value
-}
-
-func (v *NullableAddClusterNamespace200ResponseAllOfNamespace) Set(val *AddClusterNamespace200ResponseAllOfNamespace) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddClusterNamespace200ResponseAllOfNamespace) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddClusterNamespace200ResponseAllOfNamespace) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddClusterNamespace200ResponseAllOfNamespace(val *AddClusterNamespace200ResponseAllOfNamespace) *NullableAddClusterNamespace200ResponseAllOfNamespace {
-	return &NullableAddClusterNamespace200ResponseAllOfNamespace{value: val, isSet: true}
-}
-
-func (v NullableAddClusterNamespace200ResponseAllOfNamespace) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddClusterNamespace200ResponseAllOfNamespace) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

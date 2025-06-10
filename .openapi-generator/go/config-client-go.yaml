@@ -7,6 +7,7 @@ additionalProperties:
   isGoSubmodule: true
   withGoMod: false
   disallowAdditionalPropertiesIfNotPresent: false
+  useMapStructs: true
 
 files:
   errors.mustache:

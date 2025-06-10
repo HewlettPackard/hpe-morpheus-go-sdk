@@ -21,13 +21,12 @@ import (
 	"strings"
 )
 
-
 // KeyPairsAPIService KeyPairsAPI service
 type KeyPairsAPIService service
 
 type ApiAddKeyPairsRequest struct {
-	ctx context.Context
-	ApiService *KeyPairsAPIService
+	ctx                context.Context
+	ApiService         *KeyPairsAPIService
 	addKeyPairsRequest *AddKeyPairsRequest
 }
 
@@ -45,25 +44,25 @@ AddKeyPairs Creates a Key Pair
 
 Creates a Key Pair.  Private keys are typically optional.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddKeyPairsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddKeyPairsRequest
 */
 func (a *KeyPairsAPIService) AddKeyPairs(ctx context.Context) ApiAddKeyPairsRequest {
 	return ApiAddKeyPairsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddKeyPairs200Response
+//
+//	@return AddKeyPairs200Response
 func (a *KeyPairsAPIService) AddKeyPairsExecute(r ApiAddKeyPairsRequest) (*AddKeyPairs200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddKeyPairs200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddKeyPairs200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsAPIService.AddKeyPairs")
@@ -115,7 +114,7 @@ func (a *KeyPairsAPIService) AddKeyPairsExecute(r ApiAddKeyPairsRequest) (*AddKe
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -124,8 +123,8 @@ func (a *KeyPairsAPIService) AddKeyPairsExecute(r ApiAddKeyPairsRequest) (*AddKe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -135,8 +134,8 @@ func (a *KeyPairsAPIService) AddKeyPairsExecute(r ApiAddKeyPairsRequest) (*AddKe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -144,8 +143,8 @@ func (a *KeyPairsAPIService) AddKeyPairsExecute(r ApiAddKeyPairsRequest) (*AddKe
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -154,8 +153,8 @@ func (a *KeyPairsAPIService) AddKeyPairsExecute(r ApiAddKeyPairsRequest) (*AddKe
 }
 
 type ApiGenerateKeyPairsRequest struct {
-	ctx context.Context
-	ApiService *KeyPairsAPIService
+	ctx                     context.Context
+	ApiService              *KeyPairsAPIService
 	generateKeyPairsRequest *GenerateKeyPairsRequest
 }
 
@@ -173,25 +172,25 @@ GenerateKeyPairs Generates a Key Pair
 
 Generates a Key Pair.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGenerateKeyPairsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGenerateKeyPairsRequest
 */
 func (a *KeyPairsAPIService) GenerateKeyPairs(ctx context.Context) ApiGenerateKeyPairsRequest {
 	return ApiGenerateKeyPairsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return GenerateKeyPairs200Response
+//
+//	@return GenerateKeyPairs200Response
 func (a *KeyPairsAPIService) GenerateKeyPairsExecute(r ApiGenerateKeyPairsRequest) (*GenerateKeyPairs200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GenerateKeyPairs200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GenerateKeyPairs200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsAPIService.GenerateKeyPairs")
@@ -243,7 +242,7 @@ func (a *KeyPairsAPIService) GenerateKeyPairsExecute(r ApiGenerateKeyPairsReques
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -252,8 +251,8 @@ func (a *KeyPairsAPIService) GenerateKeyPairsExecute(r ApiGenerateKeyPairsReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -263,8 +262,8 @@ func (a *KeyPairsAPIService) GenerateKeyPairsExecute(r ApiGenerateKeyPairsReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -272,8 +271,8 @@ func (a *KeyPairsAPIService) GenerateKeyPairsExecute(r ApiGenerateKeyPairsReques
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -282,9 +281,9 @@ func (a *KeyPairsAPIService) GenerateKeyPairsExecute(r ApiGenerateKeyPairsReques
 }
 
 type ApiGetKeyPairsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *KeyPairsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetKeyPairsRequest) Execute() (*GetKeyPairs200Response, *http.Response, error) {
@@ -296,27 +295,27 @@ GetKeyPairs Retrieves a Specific Key Pair
 
 Retrieves a specific key pair.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetKeyPairsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetKeyPairsRequest
 */
 func (a *KeyPairsAPIService) GetKeyPairs(ctx context.Context, id int64) ApiGetKeyPairsRequest {
 	return ApiGetKeyPairsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetKeyPairs200Response
+//
+//	@return GetKeyPairs200Response
 func (a *KeyPairsAPIService) GetKeyPairsExecute(r ApiGetKeyPairsRequest) (*GetKeyPairs200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetKeyPairs200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetKeyPairs200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsAPIService.GetKeyPairs")
@@ -367,7 +366,7 @@ func (a *KeyPairsAPIService) GetKeyPairsExecute(r ApiGetKeyPairsRequest) (*GetKe
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -376,8 +375,8 @@ func (a *KeyPairsAPIService) GetKeyPairsExecute(r ApiGetKeyPairsRequest) (*GetKe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -387,8 +386,8 @@ func (a *KeyPairsAPIService) GetKeyPairsExecute(r ApiGetKeyPairsRequest) (*GetKe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -396,8 +395,8 @@ func (a *KeyPairsAPIService) GetKeyPairsExecute(r ApiGetKeyPairsRequest) (*GetKe
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -406,9 +405,9 @@ func (a *KeyPairsAPIService) GetKeyPairsExecute(r ApiGetKeyPairsRequest) (*GetKe
 }
 
 type ApiRemoveKeyPairsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *KeyPairsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiRemoveKeyPairsRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -420,27 +419,27 @@ RemoveKeyPairs Deletes a Key Pair
 
 Deletes a specified key pair.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiRemoveKeyPairsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiRemoveKeyPairsRequest
 */
 func (a *KeyPairsAPIService) RemoveKeyPairs(ctx context.Context, id int64) ApiRemoveKeyPairsRequest {
 	return ApiRemoveKeyPairsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *KeyPairsAPIService) RemoveKeyPairsExecute(r ApiRemoveKeyPairsRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairsAPIService.RemoveKeyPairs")
@@ -491,7 +490,7 @@ func (a *KeyPairsAPIService) RemoveKeyPairsExecute(r ApiRemoveKeyPairsRequest) (
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -500,8 +499,8 @@ func (a *KeyPairsAPIService) RemoveKeyPairsExecute(r ApiRemoveKeyPairsRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -511,8 +510,8 @@ func (a *KeyPairsAPIService) RemoveKeyPairsExecute(r ApiRemoveKeyPairsRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -520,8 +519,8 @@ func (a *KeyPairsAPIService) RemoveKeyPairsExecute(r ApiRemoveKeyPairsRequest) (
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

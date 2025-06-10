@@ -20,8 +20,8 @@ var _ MappedNullable = &GetStorageVolumeTypes200Response{}
 
 // GetStorageVolumeTypes200Response struct for GetStorageVolumeTypes200Response
 type GetStorageVolumeTypes200Response struct {
-	StorageVolumeType *ListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner `json:"storageVolumeType,omitempty"`
-	AdditionalProperties map[string]interface{}
+	StorageVolumeType    *ListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner `json:"storageVolumeType,omitempty"`
+	AdditionalProperties map[string]interface{}                                         `json:",remain"`
 }
 
 type _GetStorageVolumeTypes200Response GetStorageVolumeTypes200Response
@@ -76,7 +76,7 @@ func (o *GetStorageVolumeTypes200Response) SetStorageVolumeType(v ListStorageVol
 }
 
 func (o GetStorageVolumeTypes200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o GetStorageVolumeTypes200Response) ToMap() (map[string]interface{}, error
 
 	return toSerialize, nil
 }
-
 func (o *GetStorageVolumeTypes200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetStorageVolumeTypes200Response := _GetStorageVolumeTypes200Response{}
-
-	err = json.Unmarshal(data, &varGetStorageVolumeTypes200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetStorageVolumeTypes200Response(varGetStorageVolumeTypes200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "storageVolumeType")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetStorageVolumeTypes200Response struct {
-	value *GetStorageVolumeTypes200Response
-	isSet bool
-}
-
-func (v NullableGetStorageVolumeTypes200Response) Get() *GetStorageVolumeTypes200Response {
-	return v.value
-}
-
-func (v *NullableGetStorageVolumeTypes200Response) Set(val *GetStorageVolumeTypes200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetStorageVolumeTypes200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetStorageVolumeTypes200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetStorageVolumeTypes200Response(val *GetStorageVolumeTypes200Response) *NullableGetStorageVolumeTypes200Response {
-	return &NullableGetStorageVolumeTypes200Response{value: val, isSet: true}
-}
-
-func (v NullableGetStorageVolumeTypes200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetStorageVolumeTypes200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

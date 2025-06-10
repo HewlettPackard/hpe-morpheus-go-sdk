@@ -20,8 +20,8 @@ var _ MappedNullable = &CreateResourcePoolGroupRequest{}
 
 // CreateResourcePoolGroupRequest struct for CreateResourcePoolGroupRequest
 type CreateResourcePoolGroupRequest struct {
-	ResourcePoolGroup *CreateResourcePoolGroupRequestResourcePoolGroup `json:"resourcePoolGroup,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ResourcePoolGroup    *CreateResourcePoolGroupRequestResourcePoolGroup `json:"resourcePoolGroup,omitempty"`
+	AdditionalProperties map[string]interface{}                           `json:",remain"`
 }
 
 type _CreateResourcePoolGroupRequest CreateResourcePoolGroupRequest
@@ -76,7 +76,7 @@ func (o *CreateResourcePoolGroupRequest) SetResourcePoolGroup(v CreateResourcePo
 }
 
 func (o CreateResourcePoolGroupRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o CreateResourcePoolGroupRequest) ToMap() (map[string]interface{}, error) 
 
 	return toSerialize, nil
 }
-
 func (o *CreateResourcePoolGroupRequest) UnmarshalJSON(data []byte) (err error) {
-	varCreateResourcePoolGroupRequest := _CreateResourcePoolGroupRequest{}
-
-	err = json.Unmarshal(data, &varCreateResourcePoolGroupRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CreateResourcePoolGroupRequest(varCreateResourcePoolGroupRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "resourcePoolGroup")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCreateResourcePoolGroupRequest struct {
-	value *CreateResourcePoolGroupRequest
-	isSet bool
-}
-
-func (v NullableCreateResourcePoolGroupRequest) Get() *CreateResourcePoolGroupRequest {
-	return v.value
-}
-
-func (v *NullableCreateResourcePoolGroupRequest) Set(val *CreateResourcePoolGroupRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCreateResourcePoolGroupRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCreateResourcePoolGroupRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCreateResourcePoolGroupRequest(val *CreateResourcePoolGroupRequest) *NullableCreateResourcePoolGroupRequest {
-	return &NullableCreateResourcePoolGroupRequest{value: val, isSet: true}
-}
-
-func (v NullableCreateResourcePoolGroupRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCreateResourcePoolGroupRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

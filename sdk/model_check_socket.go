@@ -18,13 +18,13 @@ import (
 // checks if the CheckSocket type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &CheckSocket{}
 
-// CheckSocket Socket check confirms a certain TCP port is up and responding in your environment.  It can be configured do an initial send upon connect and compare and expected response of the service. 
+// CheckSocket Socket check confirms a certain TCP port is up and responding in your environment.  It can be configured do an initial send upon connect and compare and expected response of the service.
 type CheckSocket struct {
 	// Unique name scoped to your account for the check
 	Name *string `json:"name,omitempty"`
 	// Optional description field
-	Description *string `json:"description,omitempty"`
-	CheckType *AddChecksRequestCheckOneOf2CheckType `json:"checkType,omitempty"`
+	Description *string                               `json:"description,omitempty"`
+	CheckType   *AddChecksRequestCheckOneOf2CheckType `json:"checkType,omitempty"`
 	// Number of seconds you want between check executions (minimum value is 60, depending on your subscription plan)
 	CheckInterval *int32 `json:"checkInterval,omitempty"`
 	// Used to determine if check should affect account wide availability calculations
@@ -32,9 +32,9 @@ type CheckSocket struct {
 	// Used to determine if check should be scheduled to execute
 	Active *bool `json:"active,omitempty"`
 	// Severity level threshold for sending notifications.
-	Severity *string `json:"severity,omitempty"`
-	Config *AddChecksRequestCheckOneOf2Config `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Severity             *string                            `json:"severity,omitempty"`
+	Config               *AddChecksRequestCheckOneOf2Config `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}             `json:",remain"`
 }
 
 type _CheckSocket CheckSocket
@@ -329,7 +329,7 @@ func (o *CheckSocket) SetConfig(v AddChecksRequestCheckOneOf2Config) {
 }
 
 func (o CheckSocket) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -369,69 +369,8 @@ func (o CheckSocket) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *CheckSocket) UnmarshalJSON(data []byte) (err error) {
-	varCheckSocket := _CheckSocket{}
-
-	err = json.Unmarshal(data, &varCheckSocket)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CheckSocket(varCheckSocket)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "checkType")
-		delete(additionalProperties, "checkInterval")
-		delete(additionalProperties, "inUptime")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "severity")
-		delete(additionalProperties, "config")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCheckSocket struct {
-	value *CheckSocket
-	isSet bool
-}
-
-func (v NullableCheckSocket) Get() *CheckSocket {
-	return v.value
-}
-
-func (v *NullableCheckSocket) Set(val *CheckSocket) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCheckSocket) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCheckSocket) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCheckSocket(val *CheckSocket) *NullableCheckSocket {
-	return &NullableCheckSocket{value: val, isSet: true}
-}
-
-func (v NullableCheckSocket) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCheckSocket) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

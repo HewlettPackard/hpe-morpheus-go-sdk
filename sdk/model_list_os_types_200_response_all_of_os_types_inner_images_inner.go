@@ -20,14 +20,14 @@ var _ MappedNullable = &ListOsTypes200ResponseAllOfOsTypesInnerImagesInner{}
 
 // ListOsTypes200ResponseAllOfOsTypesInnerImagesInner struct for ListOsTypes200ResponseAllOfOsTypesInnerImagesInner
 type ListOsTypes200ResponseAllOfOsTypesInnerImagesInner struct {
-	Id *int64 `json:"id,omitempty"`
-	VirtualImageId *int64 `json:"virtualImageId,omitempty"`
-	VirtualImageName *string `json:"virtualImageName,omitempty"`
-	Account *int64 `json:"account,omitempty"`
-	ProvisionType *int64 `json:"provisionType,omitempty"`
-	ComputeZoneType *int64 `json:"computeZoneType,omitempty"`
-	Zone *int64 `json:"zone,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	VirtualImageId       *int64                 `json:"virtualImageId,omitempty"`
+	VirtualImageName     *string                `json:"virtualImageName,omitempty"`
+	Account              *int64                 `json:"account,omitempty"`
+	ProvisionType        *int64                 `json:"provisionType,omitempty"`
+	ComputeZoneType      *int64                 `json:"computeZoneType,omitempty"`
+	Zone                 *int64                 `json:"zone,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListOsTypes200ResponseAllOfOsTypesInnerImagesInner ListOsTypes200ResponseAllOfOsTypesInnerImagesInner
@@ -274,7 +274,7 @@ func (o *ListOsTypes200ResponseAllOfOsTypesInnerImagesInner) SetZone(v int64) {
 }
 
 func (o ListOsTypes200ResponseAllOfOsTypesInnerImagesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -311,68 +311,8 @@ func (o ListOsTypes200ResponseAllOfOsTypesInnerImagesInner) ToMap() (map[string]
 
 	return toSerialize, nil
 }
-
 func (o *ListOsTypes200ResponseAllOfOsTypesInnerImagesInner) UnmarshalJSON(data []byte) (err error) {
-	varListOsTypes200ResponseAllOfOsTypesInnerImagesInner := _ListOsTypes200ResponseAllOfOsTypesInnerImagesInner{}
-
-	err = json.Unmarshal(data, &varListOsTypes200ResponseAllOfOsTypesInnerImagesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListOsTypes200ResponseAllOfOsTypesInnerImagesInner(varListOsTypes200ResponseAllOfOsTypesInnerImagesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "virtualImageId")
-		delete(additionalProperties, "virtualImageName")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "provisionType")
-		delete(additionalProperties, "computeZoneType")
-		delete(additionalProperties, "zone")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListOsTypes200ResponseAllOfOsTypesInnerImagesInner struct {
-	value *ListOsTypes200ResponseAllOfOsTypesInnerImagesInner
-	isSet bool
-}
-
-func (v NullableListOsTypes200ResponseAllOfOsTypesInnerImagesInner) Get() *ListOsTypes200ResponseAllOfOsTypesInnerImagesInner {
-	return v.value
-}
-
-func (v *NullableListOsTypes200ResponseAllOfOsTypesInnerImagesInner) Set(val *ListOsTypes200ResponseAllOfOsTypesInnerImagesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListOsTypes200ResponseAllOfOsTypesInnerImagesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListOsTypes200ResponseAllOfOsTypesInnerImagesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListOsTypes200ResponseAllOfOsTypesInnerImagesInner(val *ListOsTypes200ResponseAllOfOsTypesInnerImagesInner) *NullableListOsTypes200ResponseAllOfOsTypesInnerImagesInner {
-	return &NullableListOsTypes200ResponseAllOfOsTypesInnerImagesInner{value: val, isSet: true}
-}
-
-func (v NullableListOsTypes200ResponseAllOfOsTypesInnerImagesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListOsTypes200ResponseAllOfOsTypesInnerImagesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -20,9 +20,9 @@ var _ MappedNullable = &ClusterApplyTemplate{}
 
 // ClusterApplyTemplate struct for ClusterApplyTemplate
 type ClusterApplyTemplate struct {
-	Success *bool `json:"success,omitempty"`
-	ExecutionId *string `json:"executionId,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Success              *bool                  `json:"success,omitempty"`
+	ExecutionId          *string                `json:"executionId,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ClusterApplyTemplate ClusterApplyTemplate
@@ -109,7 +109,7 @@ func (o *ClusterApplyTemplate) SetExecutionId(v string) {
 }
 
 func (o ClusterApplyTemplate) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o ClusterApplyTemplate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ClusterApplyTemplate) UnmarshalJSON(data []byte) (err error) {
-	varClusterApplyTemplate := _ClusterApplyTemplate{}
-
-	err = json.Unmarshal(data, &varClusterApplyTemplate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ClusterApplyTemplate(varClusterApplyTemplate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "success")
-		delete(additionalProperties, "executionId")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableClusterApplyTemplate struct {
-	value *ClusterApplyTemplate
-	isSet bool
-}
-
-func (v NullableClusterApplyTemplate) Get() *ClusterApplyTemplate {
-	return v.value
-}
-
-func (v *NullableClusterApplyTemplate) Set(val *ClusterApplyTemplate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableClusterApplyTemplate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableClusterApplyTemplate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableClusterApplyTemplate(val *ClusterApplyTemplate) *NullableClusterApplyTemplate {
-	return &NullableClusterApplyTemplate{value: val, isSet: true}
-}
-
-func (v NullableClusterApplyTemplate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableClusterApplyTemplate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

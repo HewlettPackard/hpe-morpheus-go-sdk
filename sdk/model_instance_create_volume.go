@@ -31,11 +31,11 @@ type InstanceCreateVolume struct {
 	// Can be used to select pre-existing LV choices from Morpheus.
 	SizeId *int64 `json:"sizeId,omitempty"`
 	// Identifier for LV type
-	StorageType *int64 `json:"storageType,omitempty"`
+	StorageType *int64                                                                      `json:"storageType,omitempty"`
 	DatastoreId *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInnerDatastoreId `json:"datastoreId,omitempty"`
-	// The controller mount point specification for this volume in the format: `\"id:busNumber:typeId:unitNumber\"` For new storage controllers the id is passed as -1, so an example value would be: `\"-1:1:6:0\"` which translates to id: -1 (new), busNumber: 1, storage controller type id: 6 (SCSI VMware Paravirtual), unit number: 0. The current list of storage controllers is returned for instances and servers for determining existing id values. Use `/api/provision-types?code=vmware` to see the available `controllerTypes` for vmware. 
-	ControllerMountPoint *string `json:"controllerMountPoint,omitempty"`
-	AdditionalProperties map[string]interface{}
+	// The controller mount point specification for this volume in the format: `\"id:busNumber:typeId:unitNumber\"` For new storage controllers the id is passed as -1, so an example value would be: `\"-1:1:6:0\"` which translates to id: -1 (new), busNumber: 1, storage controller type id: 6 (SCSI VMware Paravirtual), unit number: 0. The current list of storage controllers is returned for instances and servers for determining existing id values. Use `/api/provision-types?code=vmware` to see the available `controllerTypes` for vmware.
+	ControllerMountPoint *string                `json:"controllerMountPoint,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _InstanceCreateVolume InstanceCreateVolume
@@ -326,7 +326,7 @@ func (o *InstanceCreateVolume) SetControllerMountPoint(v string) {
 }
 
 func (o InstanceCreateVolume) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -366,69 +366,8 @@ func (o InstanceCreateVolume) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *InstanceCreateVolume) UnmarshalJSON(data []byte) (err error) {
-	varInstanceCreateVolume := _InstanceCreateVolume{}
-
-	err = json.Unmarshal(data, &varInstanceCreateVolume)
-
-	if err != nil {
-		return err
-	}
-
-	*o = InstanceCreateVolume(varInstanceCreateVolume)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "rootVolume")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "size")
-		delete(additionalProperties, "sizeId")
-		delete(additionalProperties, "storageType")
-		delete(additionalProperties, "datastoreId")
-		delete(additionalProperties, "controllerMountPoint")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableInstanceCreateVolume struct {
-	value *InstanceCreateVolume
-	isSet bool
-}
-
-func (v NullableInstanceCreateVolume) Get() *InstanceCreateVolume {
-	return v.value
-}
-
-func (v *NullableInstanceCreateVolume) Set(val *InstanceCreateVolume) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableInstanceCreateVolume) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableInstanceCreateVolume) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableInstanceCreateVolume(val *InstanceCreateVolume) *NullableInstanceCreateVolume {
-	return &NullableInstanceCreateVolume{value: val, isSet: true}
-}
-
-func (v NullableInstanceCreateVolume) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableInstanceCreateVolume) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddInstanceTypeRequestInstanceTypePriceSetsInner type satisfies the MappedNullable interface at compile time
@@ -22,8 +21,8 @@ var _ MappedNullable = &AddInstanceTypeRequestInstanceTypePriceSetsInner{}
 // AddInstanceTypeRequestInstanceTypePriceSetsInner struct for AddInstanceTypeRequestInstanceTypePriceSetsInner
 type AddInstanceTypeRequestInstanceTypePriceSetsInner struct {
 	// Price Set ID
-	Id int64 `json:"id"`
-	AdditionalProperties map[string]interface{}
+	Id                   int64                  `json:"id"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddInstanceTypeRequestInstanceTypePriceSetsInner AddInstanceTypeRequestInstanceTypePriceSetsInner
@@ -71,7 +70,7 @@ func (o *AddInstanceTypeRequestInstanceTypePriceSetsInner) SetId(v int64) {
 }
 
 func (o AddInstanceTypeRequestInstanceTypePriceSetsInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -88,83 +87,8 @@ func (o AddInstanceTypeRequestInstanceTypePriceSetsInner) ToMap() (map[string]in
 
 	return toSerialize, nil
 }
-
 func (o *AddInstanceTypeRequestInstanceTypePriceSetsInner) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"id",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddInstanceTypeRequestInstanceTypePriceSetsInner := _AddInstanceTypeRequestInstanceTypePriceSetsInner{}
-
-	err = json.Unmarshal(data, &varAddInstanceTypeRequestInstanceTypePriceSetsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddInstanceTypeRequestInstanceTypePriceSetsInner(varAddInstanceTypeRequestInstanceTypePriceSetsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddInstanceTypeRequestInstanceTypePriceSetsInner struct {
-	value *AddInstanceTypeRequestInstanceTypePriceSetsInner
-	isSet bool
-}
-
-func (v NullableAddInstanceTypeRequestInstanceTypePriceSetsInner) Get() *AddInstanceTypeRequestInstanceTypePriceSetsInner {
-	return v.value
-}
-
-func (v *NullableAddInstanceTypeRequestInstanceTypePriceSetsInner) Set(val *AddInstanceTypeRequestInstanceTypePriceSetsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddInstanceTypeRequestInstanceTypePriceSetsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddInstanceTypeRequestInstanceTypePriceSetsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddInstanceTypeRequestInstanceTypePriceSetsInner(val *AddInstanceTypeRequestInstanceTypePriceSetsInner) *NullableAddInstanceTypeRequestInstanceTypePriceSetsInner {
-	return &NullableAddInstanceTypeRequestInstanceTypePriceSetsInner{value: val, isSet: true}
-}
-
-func (v NullableAddInstanceTypeRequestInstanceTypePriceSetsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddInstanceTypeRequestInstanceTypePriceSetsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

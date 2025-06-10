@@ -14,6 +14,7 @@ package sdk
 import (
 	"encoding/json"
 	"fmt"
+
 	"gopkg.in/validator.v2"
 )
 
@@ -22,7 +23,7 @@ var _ fmt.Stringer
 
 // UpdateRoleCatalogItemTypeAccessRequest - struct for UpdateRoleCatalogItemTypeAccessRequest
 type UpdateRoleCatalogItemTypeAccessRequest struct {
-	UpdateRoleCatalogItemTypeAccessRequestOneOf *UpdateRoleCatalogItemTypeAccessRequestOneOf
+	UpdateRoleCatalogItemTypeAccessRequestOneOf  *UpdateRoleCatalogItemTypeAccessRequestOneOf
 	UpdateRoleCatalogItemTypeAccessRequestOneOf1 *UpdateRoleCatalogItemTypeAccessRequestOneOf1
 }
 
@@ -40,6 +41,21 @@ func UpdateRoleCatalogItemTypeAccessRequestOneOf1AsUpdateRoleCatalogItemTypeAcce
 	}
 }
 
+func (dst *UpdateRoleCatalogItemTypeAccessRequest) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &UpdateRoleCatalogItemTypeAccessRequest{}
+	}
+
+	if out, ok := data.(UpdateRoleCatalogItemTypeAccessRequestOneOf); ok {
+		dst.UpdateRoleCatalogItemTypeAccessRequestOneOf = &out
+	}
+
+	if out, ok := data.(UpdateRoleCatalogItemTypeAccessRequestOneOf1); ok {
+		dst.UpdateRoleCatalogItemTypeAccessRequestOneOf1 = &out
+	}
+
+	return dst, nil
+}
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *UpdateRoleCatalogItemTypeAccessRequest) UnmarshalJSON(data []byte) error {
@@ -106,7 +122,7 @@ func (src UpdateRoleCatalogItemTypeAccessRequest) MarshalJSON() ([]byte, error) 
 }
 
 // Get the actual instance
-func (obj *UpdateRoleCatalogItemTypeAccessRequest) GetActualInstance() (interface{}) {
+func (obj *UpdateRoleCatalogItemTypeAccessRequest) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -123,7 +139,7 @@ func (obj *UpdateRoleCatalogItemTypeAccessRequest) GetActualInstance() (interfac
 }
 
 // Get the actual instance value
-func (obj UpdateRoleCatalogItemTypeAccessRequest) GetActualInstanceValue() (interface{}) {
+func (obj UpdateRoleCatalogItemTypeAccessRequest) GetActualInstanceValue() interface{} {
 	if obj.UpdateRoleCatalogItemTypeAccessRequestOneOf != nil {
 		return *obj.UpdateRoleCatalogItemTypeAccessRequestOneOf
 	}
@@ -171,5 +187,3 @@ func (v *NullableUpdateRoleCatalogItemTypeAccessRequest) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

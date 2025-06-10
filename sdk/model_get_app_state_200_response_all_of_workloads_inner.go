@@ -21,14 +21,14 @@ var _ MappedNullable = &GetAppState200ResponseAllOfWorkloadsInner{}
 
 // GetAppState200ResponseAllOfWorkloadsInner struct for GetAppState200ResponseAllOfWorkloadsInner
 type GetAppState200ResponseAllOfWorkloadsInner struct {
-	RefType *string `json:"refType,omitempty"`
-	RefId *int64 `json:"refId,omitempty"`
-	RefName *string `json:"refName,omitempty"`
-	SubRefName *string `json:"subRefName,omitempty"`
-	StateDate *time.Time `json:"stateDate,omitempty"`
-	Status *string `json:"status,omitempty"`
-	IacDrift *bool `json:"iacDrift,omitempty"`
-	AdditionalProperties map[string]interface{}
+	RefType              *string                `json:"refType,omitempty"`
+	RefId                *int64                 `json:"refId,omitempty"`
+	RefName              *string                `json:"refName,omitempty"`
+	SubRefName           *string                `json:"subRefName,omitempty"`
+	StateDate            *time.Time             `json:"stateDate,omitempty"`
+	Status               *string                `json:"status,omitempty"`
+	IacDrift             *bool                  `json:"iacDrift,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _GetAppState200ResponseAllOfWorkloadsInner GetAppState200ResponseAllOfWorkloadsInner
@@ -275,7 +275,7 @@ func (o *GetAppState200ResponseAllOfWorkloadsInner) SetIacDrift(v bool) {
 }
 
 func (o GetAppState200ResponseAllOfWorkloadsInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -312,68 +312,8 @@ func (o GetAppState200ResponseAllOfWorkloadsInner) ToMap() (map[string]interface
 
 	return toSerialize, nil
 }
-
 func (o *GetAppState200ResponseAllOfWorkloadsInner) UnmarshalJSON(data []byte) (err error) {
-	varGetAppState200ResponseAllOfWorkloadsInner := _GetAppState200ResponseAllOfWorkloadsInner{}
-
-	err = json.Unmarshal(data, &varGetAppState200ResponseAllOfWorkloadsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetAppState200ResponseAllOfWorkloadsInner(varGetAppState200ResponseAllOfWorkloadsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "refType")
-		delete(additionalProperties, "refId")
-		delete(additionalProperties, "refName")
-		delete(additionalProperties, "subRefName")
-		delete(additionalProperties, "stateDate")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "iacDrift")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetAppState200ResponseAllOfWorkloadsInner struct {
-	value *GetAppState200ResponseAllOfWorkloadsInner
-	isSet bool
-}
-
-func (v NullableGetAppState200ResponseAllOfWorkloadsInner) Get() *GetAppState200ResponseAllOfWorkloadsInner {
-	return v.value
-}
-
-func (v *NullableGetAppState200ResponseAllOfWorkloadsInner) Set(val *GetAppState200ResponseAllOfWorkloadsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetAppState200ResponseAllOfWorkloadsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetAppState200ResponseAllOfWorkloadsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetAppState200ResponseAllOfWorkloadsInner(val *GetAppState200ResponseAllOfWorkloadsInner) *NullableGetAppState200ResponseAllOfWorkloadsInner {
-	return &NullableGetAppState200ResponseAllOfWorkloadsInner{value: val, isSet: true}
-}
-
-func (v NullableGetAppState200ResponseAllOfWorkloadsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetAppState200ResponseAllOfWorkloadsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

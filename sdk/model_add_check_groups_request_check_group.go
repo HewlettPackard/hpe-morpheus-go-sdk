@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddCheckGroupsRequestCheckGroup type satisfies the MappedNullable interface at compile time
@@ -32,9 +31,9 @@ type AddCheckGroupsRequestCheckGroup struct {
 	// Determines the maximum severity level this group can incur on an incident when failing
 	Severity *string `json:"severity,omitempty"`
 	// Used to determine if check group is active
-	Active *bool `json:"active,omitempty"`
-	Checks []int32 `json:"checks,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Active               *bool                  `json:"active,omitempty"`
+	Checks               []int32                `json:"checks,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddCheckGroupsRequestCheckGroup AddCheckGroupsRequestCheckGroup
@@ -290,7 +289,7 @@ func (o *AddCheckGroupsRequestCheckGroup) SetChecks(v []int32) {
 }
 
 func (o AddCheckGroupsRequestCheckGroup) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -325,89 +324,8 @@ func (o AddCheckGroupsRequestCheckGroup) ToMap() (map[string]interface{}, error)
 
 	return toSerialize, nil
 }
-
 func (o *AddCheckGroupsRequestCheckGroup) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddCheckGroupsRequestCheckGroup := _AddCheckGroupsRequestCheckGroup{}
-
-	err = json.Unmarshal(data, &varAddCheckGroupsRequestCheckGroup)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddCheckGroupsRequestCheckGroup(varAddCheckGroupsRequestCheckGroup)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "minHappy")
-		delete(additionalProperties, "inUptime")
-		delete(additionalProperties, "severity")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "checks")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddCheckGroupsRequestCheckGroup struct {
-	value *AddCheckGroupsRequestCheckGroup
-	isSet bool
-}
-
-func (v NullableAddCheckGroupsRequestCheckGroup) Get() *AddCheckGroupsRequestCheckGroup {
-	return v.value
-}
-
-func (v *NullableAddCheckGroupsRequestCheckGroup) Set(val *AddCheckGroupsRequestCheckGroup) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddCheckGroupsRequestCheckGroup) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddCheckGroupsRequestCheckGroup) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddCheckGroupsRequestCheckGroup(val *AddCheckGroupsRequestCheckGroup) *NullableAddCheckGroupsRequestCheckGroup {
-	return &NullableAddCheckGroupsRequestCheckGroup{value: val, isSet: true}
-}
-
-func (v NullableAddCheckGroupsRequestCheckGroup) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddCheckGroupsRequestCheckGroup) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

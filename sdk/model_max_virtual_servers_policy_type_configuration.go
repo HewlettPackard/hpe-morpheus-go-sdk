@@ -18,10 +18,10 @@ import (
 // checks if the MaxVirtualServersPolicyTypeConfiguration type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &MaxVirtualServersPolicyTypeConfiguration{}
 
-// MaxVirtualServersPolicyTypeConfiguration Configuration settings for the following policy types: - Max Virtual Servers 
+// MaxVirtualServersPolicyTypeConfiguration Configuration settings for the following policy types: - Max Virtual Servers
 type MaxVirtualServersPolicyTypeConfiguration struct {
-	MaxVirtualServers *string `json:"maxVirtualServers,omitempty"`
-	AdditionalProperties map[string]interface{}
+	MaxVirtualServers    *string                `json:"maxVirtualServers,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _MaxVirtualServersPolicyTypeConfiguration MaxVirtualServersPolicyTypeConfiguration
@@ -76,7 +76,7 @@ func (o *MaxVirtualServersPolicyTypeConfiguration) SetMaxVirtualServers(v string
 }
 
 func (o MaxVirtualServersPolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o MaxVirtualServersPolicyTypeConfiguration) ToMap() (map[string]interface{
 
 	return toSerialize, nil
 }
-
 func (o *MaxVirtualServersPolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
-	varMaxVirtualServersPolicyTypeConfiguration := _MaxVirtualServersPolicyTypeConfiguration{}
-
-	err = json.Unmarshal(data, &varMaxVirtualServersPolicyTypeConfiguration)
-
-	if err != nil {
-		return err
-	}
-
-	*o = MaxVirtualServersPolicyTypeConfiguration(varMaxVirtualServersPolicyTypeConfiguration)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "maxVirtualServers")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableMaxVirtualServersPolicyTypeConfiguration struct {
-	value *MaxVirtualServersPolicyTypeConfiguration
-	isSet bool
-}
-
-func (v NullableMaxVirtualServersPolicyTypeConfiguration) Get() *MaxVirtualServersPolicyTypeConfiguration {
-	return v.value
-}
-
-func (v *NullableMaxVirtualServersPolicyTypeConfiguration) Set(val *MaxVirtualServersPolicyTypeConfiguration) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableMaxVirtualServersPolicyTypeConfiguration) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableMaxVirtualServersPolicyTypeConfiguration) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableMaxVirtualServersPolicyTypeConfiguration(val *MaxVirtualServersPolicyTypeConfiguration) *NullableMaxVirtualServersPolicyTypeConfiguration {
-	return &NullableMaxVirtualServersPolicyTypeConfiguration{value: val, isSet: true}
-}
-
-func (v NullableMaxVirtualServersPolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableMaxVirtualServersPolicyTypeConfiguration) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

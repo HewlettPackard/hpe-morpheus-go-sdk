@@ -20,17 +20,17 @@ var _ MappedNullable = &ListImageBuilds200ResponseAllOfImageBuildsInnerConfigVol
 
 // ListImageBuilds200ResponseAllOfImageBuildsInnerConfigVolumesInner struct for ListImageBuilds200ResponseAllOfImageBuildsInnerConfigVolumesInner
 type ListImageBuilds200ResponseAllOfImageBuildsInnerConfigVolumesInner struct {
-	VolumeCustomizable *bool `json:"volumeCustomizable,omitempty"`
-	VId *int64 `json:"vId,omitempty"`
-	ReadonlyName *bool `json:"readonlyName,omitempty"`
-	Size *int64 `json:"size,omitempty"`
-	MaxIOPS *string `json:"maxIOPS,omitempty"`
-	Name *string `json:"name,omitempty"`
-	RootVolume *bool `json:"rootVolume,omitempty"`
-	StorageType *int64 `json:"storageType,omitempty"`
-	DatastoreId *string `json:"datastoreId,omitempty"`
-	MaxStorage *int64 `json:"maxStorage,omitempty"`
-	AdditionalProperties map[string]interface{}
+	VolumeCustomizable   *bool                  `json:"volumeCustomizable,omitempty"`
+	VId                  *int64                 `json:"vId,omitempty"`
+	ReadonlyName         *bool                  `json:"readonlyName,omitempty"`
+	Size                 *int64                 `json:"size,omitempty"`
+	MaxIOPS              *string                `json:"maxIOPS,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	RootVolume           *bool                  `json:"rootVolume,omitempty"`
+	StorageType          *int64                 `json:"storageType,omitempty"`
+	DatastoreId          *string                `json:"datastoreId,omitempty"`
+	MaxStorage           *int64                 `json:"maxStorage,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListImageBuilds200ResponseAllOfImageBuildsInnerConfigVolumesInner ListImageBuilds200ResponseAllOfImageBuildsInnerConfigVolumesInner
@@ -373,7 +373,7 @@ func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigVolumesInner) SetM
 }
 
 func (o ListImageBuilds200ResponseAllOfImageBuildsInnerConfigVolumesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -419,71 +419,8 @@ func (o ListImageBuilds200ResponseAllOfImageBuildsInnerConfigVolumesInner) ToMap
 
 	return toSerialize, nil
 }
-
 func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigVolumesInner) UnmarshalJSON(data []byte) (err error) {
-	varListImageBuilds200ResponseAllOfImageBuildsInnerConfigVolumesInner := _ListImageBuilds200ResponseAllOfImageBuildsInnerConfigVolumesInner{}
-
-	err = json.Unmarshal(data, &varListImageBuilds200ResponseAllOfImageBuildsInnerConfigVolumesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListImageBuilds200ResponseAllOfImageBuildsInnerConfigVolumesInner(varListImageBuilds200ResponseAllOfImageBuildsInnerConfigVolumesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "volumeCustomizable")
-		delete(additionalProperties, "vId")
-		delete(additionalProperties, "readonlyName")
-		delete(additionalProperties, "size")
-		delete(additionalProperties, "maxIOPS")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "rootVolume")
-		delete(additionalProperties, "storageType")
-		delete(additionalProperties, "datastoreId")
-		delete(additionalProperties, "maxStorage")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListImageBuilds200ResponseAllOfImageBuildsInnerConfigVolumesInner struct {
-	value *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigVolumesInner
-	isSet bool
-}
-
-func (v NullableListImageBuilds200ResponseAllOfImageBuildsInnerConfigVolumesInner) Get() *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigVolumesInner {
-	return v.value
-}
-
-func (v *NullableListImageBuilds200ResponseAllOfImageBuildsInnerConfigVolumesInner) Set(val *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigVolumesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListImageBuilds200ResponseAllOfImageBuildsInnerConfigVolumesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListImageBuilds200ResponseAllOfImageBuildsInnerConfigVolumesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListImageBuilds200ResponseAllOfImageBuildsInnerConfigVolumesInner(val *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigVolumesInner) *NullableListImageBuilds200ResponseAllOfImageBuildsInnerConfigVolumesInner {
-	return &NullableListImageBuilds200ResponseAllOfImageBuildsInnerConfigVolumesInner{value: val, isSet: true}
-}
-
-func (v NullableListImageBuilds200ResponseAllOfImageBuildsInnerConfigVolumesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListImageBuilds200ResponseAllOfImageBuildsInnerConfigVolumesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

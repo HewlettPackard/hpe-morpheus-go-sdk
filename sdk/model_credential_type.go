@@ -20,15 +20,15 @@ var _ MappedNullable = &CredentialType{}
 
 // CredentialType struct for CredentialType
 type CredentialType struct {
-	Id *int64 `json:"id,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	Creatable *bool `json:"creatable,omitempty"`
-	Editable *bool `json:"editable,omitempty"`
-	OptionTypes []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                      `json:"id,omitempty"`
+	Code                 *string                                                                     `json:"code,omitempty"`
+	Name                 *string                                                                     `json:"name,omitempty"`
+	Description          *string                                                                     `json:"description,omitempty"`
+	Enabled              *bool                                                                       `json:"enabled,omitempty"`
+	Creatable            *bool                                                                       `json:"creatable,omitempty"`
+	Editable             *bool                                                                       `json:"editable,omitempty"`
+	OptionTypes          []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
+	AdditionalProperties map[string]interface{}                                                      `json:",remain"`
 }
 
 type _CredentialType CredentialType
@@ -307,7 +307,7 @@ func (o *CredentialType) SetOptionTypes(v []ListCatalogItemTypes200ResponseAllOf
 }
 
 func (o CredentialType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -347,69 +347,8 @@ func (o CredentialType) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *CredentialType) UnmarshalJSON(data []byte) (err error) {
-	varCredentialType := _CredentialType{}
-
-	err = json.Unmarshal(data, &varCredentialType)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CredentialType(varCredentialType)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "creatable")
-		delete(additionalProperties, "editable")
-		delete(additionalProperties, "optionTypes")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCredentialType struct {
-	value *CredentialType
-	isSet bool
-}
-
-func (v NullableCredentialType) Get() *CredentialType {
-	return v.value
-}
-
-func (v *NullableCredentialType) Set(val *CredentialType) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCredentialType) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCredentialType) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCredentialType(val *CredentialType) *NullableCredentialType {
-	return &NullableCredentialType{value: val, isSet: true}
-}
-
-func (v NullableCredentialType) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCredentialType) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

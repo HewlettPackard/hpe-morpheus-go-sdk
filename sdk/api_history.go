@@ -21,14 +21,13 @@ import (
 	"strings"
 )
 
-
 // HistoryAPIService HistoryAPI service
 type HistoryAPIService service
 
 type ApiCancelProcessRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HistoryAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiCancelProcessRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -40,27 +39,27 @@ CancelProcess Cancel a Specific Process
 
 Cancel a specific process. This will return an error status if the process is not cancelable.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Process ID
- @return ApiCancelProcessRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Process ID
+	@return ApiCancelProcessRequest
 */
 func (a *HistoryAPIService) CancelProcess(ctx context.Context, id int64) ApiCancelProcessRequest {
 	return ApiCancelProcessRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *HistoryAPIService) CancelProcessExecute(r ApiCancelProcessRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HistoryAPIService.CancelProcess")
@@ -111,7 +110,7 @@ func (a *HistoryAPIService) CancelProcessExecute(r ApiCancelProcessRequest) (*De
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -120,8 +119,8 @@ func (a *HistoryAPIService) CancelProcessExecute(r ApiCancelProcessRequest) (*De
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -131,8 +130,8 @@ func (a *HistoryAPIService) CancelProcessExecute(r ApiCancelProcessRequest) (*De
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -140,8 +139,8 @@ func (a *HistoryAPIService) CancelProcessExecute(r ApiCancelProcessRequest) (*De
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -150,9 +149,9 @@ func (a *HistoryAPIService) CancelProcessExecute(r ApiCancelProcessRequest) (*De
 }
 
 type ApiGetHistoryRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HistoryAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetHistoryRequest) Execute() (*GetHistory200Response, *http.Response, error) {
@@ -164,27 +163,27 @@ GetHistory Retrieves a Specific Process
 
 Retrieves a specific process.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetHistoryRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetHistoryRequest
 */
 func (a *HistoryAPIService) GetHistory(ctx context.Context, id int64) ApiGetHistoryRequest {
 	return ApiGetHistoryRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetHistory200Response
+//
+//	@return GetHistory200Response
 func (a *HistoryAPIService) GetHistoryExecute(r ApiGetHistoryRequest) (*GetHistory200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetHistory200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetHistory200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HistoryAPIService.GetHistory")
@@ -235,7 +234,7 @@ func (a *HistoryAPIService) GetHistoryExecute(r ApiGetHistoryRequest) (*GetHisto
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -244,8 +243,8 @@ func (a *HistoryAPIService) GetHistoryExecute(r ApiGetHistoryRequest) (*GetHisto
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -255,8 +254,8 @@ func (a *HistoryAPIService) GetHistoryExecute(r ApiGetHistoryRequest) (*GetHisto
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -264,8 +263,8 @@ func (a *HistoryAPIService) GetHistoryExecute(r ApiGetHistoryRequest) (*GetHisto
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -274,14 +273,14 @@ func (a *HistoryAPIService) GetHistoryExecute(r ApiGetHistoryRequest) (*GetHisto
 }
 
 type ApiListHistoryRequest struct {
-	ctx context.Context
-	ApiService *HistoryAPIService
-	instanceId *int64
+	ctx         context.Context
+	ApiService  *HistoryAPIService
+	instanceId  *int64
 	containerId *int64
-	serverId *int64
-	zoneId *int64
-	appId *int64
-	phrase *string
+	serverId    *int64
+	zoneId      *int64
+	appId       *int64
+	phrase      *string
 }
 
 // The Instance ID for Filtering
@@ -327,27 +326,27 @@ func (r ApiListHistoryRequest) Execute() (*ListHistory200Response, *http.Respons
 /*
 ListHistory Retrieves Process History
 
-Retrieves process history for objects
+# Retrieves process history for objects
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListHistoryRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListHistoryRequest
 */
 func (a *HistoryAPIService) ListHistory(ctx context.Context) ApiListHistoryRequest {
 	return ApiListHistoryRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListHistory200Response
+//
+//	@return ListHistory200Response
 func (a *HistoryAPIService) ListHistoryExecute(r ApiListHistoryRequest) (*ListHistory200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListHistory200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListHistory200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HistoryAPIService.ListHistory")
@@ -415,7 +414,7 @@ func (a *HistoryAPIService) ListHistoryExecute(r ApiListHistoryRequest) (*ListHi
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -424,8 +423,8 @@ func (a *HistoryAPIService) ListHistoryExecute(r ApiListHistoryRequest) (*ListHi
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -435,8 +434,8 @@ func (a *HistoryAPIService) ListHistoryExecute(r ApiListHistoryRequest) (*ListHi
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -444,8 +443,8 @@ func (a *HistoryAPIService) ListHistoryExecute(r ApiListHistoryRequest) (*ListHi
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -454,9 +453,9 @@ func (a *HistoryAPIService) ListHistoryExecute(r ApiListHistoryRequest) (*ListHi
 }
 
 type ApiRetryProcessRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HistoryAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiRetryProcessRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -468,27 +467,27 @@ RetryProcess Retry a Specific Process
 
 Retry a specific process. This will return an error if the process is not retryable.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Process ID
- @return ApiRetryProcessRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Process ID
+	@return ApiRetryProcessRequest
 */
 func (a *HistoryAPIService) RetryProcess(ctx context.Context, id int64) ApiRetryProcessRequest {
 	return ApiRetryProcessRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *HistoryAPIService) RetryProcessExecute(r ApiRetryProcessRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HistoryAPIService.RetryProcess")
@@ -539,7 +538,7 @@ func (a *HistoryAPIService) RetryProcessExecute(r ApiRetryProcessRequest) (*Dele
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -548,8 +547,8 @@ func (a *HistoryAPIService) RetryProcessExecute(r ApiRetryProcessRequest) (*Dele
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -559,8 +558,8 @@ func (a *HistoryAPIService) RetryProcessExecute(r ApiRetryProcessRequest) (*Dele
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -568,8 +567,8 @@ func (a *HistoryAPIService) RetryProcessExecute(r ApiRetryProcessRequest) (*Dele
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

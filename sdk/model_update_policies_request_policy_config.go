@@ -19,46 +19,173 @@ import (
 // very silly way of avoiding `"fmt" imported and not used` errors
 var _ fmt.Stringer
 
-
 // UpdatePoliciesRequestPolicyConfig A map of config values. The expected values vary by policy type. See `Retrieves all Policy Types` endpoint for `fieldName`(s) of required options.
 type UpdatePoliciesRequestPolicyConfig struct {
-	ApprovePolicyTypeConfiguration *ApprovePolicyTypeConfiguration
-	BackupCreationPolicyTypeConfiguration *BackupCreationPolicyTypeConfiguration
-	BackupTargetsPolicyTypeConfiguration *BackupTargetsPolicyTypeConfiguration
-	BudgetPolicyTypeConfiguration *BudgetPolicyTypeConfiguration
-	ClusterResourceNamePolicyTypeConfiguration *ClusterResourceNamePolicyTypeConfiguration
-	CypherAccessPolicyTypeConfiguration *CypherAccessPolicyTypeConfiguration
-	DelayedDeletePolicyTypeConfiguration *DelayedDeletePolicyTypeConfiguration
-	ExpirationPolicyTypeConfiguration *ExpirationPolicyTypeConfiguration
-	FileShareStorageQuotaPolicyTypeConfiguration *FileShareStorageQuotaPolicyTypeConfiguration
-	HostnamePolicyTypeConfiguration *HostnamePolicyTypeConfiguration
-	InstanceNamePolicyTypeConfiguration *InstanceNamePolicyTypeConfiguration
-	MaxContainersPolicyTypeConfiguration *MaxContainersPolicyTypeConfiguration
-	MaxCoresPolicyTypeConfiguration1 *MaxCoresPolicyTypeConfiguration1
-	MaxHostsPolicyTypeConfiguration *MaxHostsPolicyTypeConfiguration
-	MaxLoadBalancerPoolsPolicyTypeConfiguration *MaxLoadBalancerPoolsPolicyTypeConfiguration
-	MaxMemoryPolicyTypeConfiguration1 *MaxMemoryPolicyTypeConfiguration1
-	MaxPoolMembersPolicyTypeConfiguration *MaxPoolMembersPolicyTypeConfiguration
+	ApprovePolicyTypeConfiguration                          *ApprovePolicyTypeConfiguration
+	BackupCreationPolicyTypeConfiguration                   *BackupCreationPolicyTypeConfiguration
+	BackupTargetsPolicyTypeConfiguration                    *BackupTargetsPolicyTypeConfiguration
+	BudgetPolicyTypeConfiguration                           *BudgetPolicyTypeConfiguration
+	ClusterResourceNamePolicyTypeConfiguration              *ClusterResourceNamePolicyTypeConfiguration
+	CypherAccessPolicyTypeConfiguration                     *CypherAccessPolicyTypeConfiguration
+	DelayedDeletePolicyTypeConfiguration                    *DelayedDeletePolicyTypeConfiguration
+	ExpirationPolicyTypeConfiguration                       *ExpirationPolicyTypeConfiguration
+	FileShareStorageQuotaPolicyTypeConfiguration            *FileShareStorageQuotaPolicyTypeConfiguration
+	HostnamePolicyTypeConfiguration                         *HostnamePolicyTypeConfiguration
+	InstanceNamePolicyTypeConfiguration                     *InstanceNamePolicyTypeConfiguration
+	MaxContainersPolicyTypeConfiguration                    *MaxContainersPolicyTypeConfiguration
+	MaxCoresPolicyTypeConfiguration1                        *MaxCoresPolicyTypeConfiguration1
+	MaxHostsPolicyTypeConfiguration                         *MaxHostsPolicyTypeConfiguration
+	MaxLoadBalancerPoolsPolicyTypeConfiguration             *MaxLoadBalancerPoolsPolicyTypeConfiguration
+	MaxMemoryPolicyTypeConfiguration1                       *MaxMemoryPolicyTypeConfiguration1
+	MaxPoolMembersPolicyTypeConfiguration                   *MaxPoolMembersPolicyTypeConfiguration
 	MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration1 *MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration1
-	MaxVMsPolicyTypeConfiguration *MaxVMsPolicyTypeConfiguration
-	MaxVirtualServersPolicyTypeConfiguration *MaxVirtualServersPolicyTypeConfiguration
-	MessageOfTheDayPolicyTypeConfiguration *MessageOfTheDayPolicyTypeConfiguration
-	NetworkQuotaPolicyTypeConfiguration *NetworkQuotaPolicyTypeConfiguration
-	PowerSchedulePolicyTypeConfiguration *PowerSchedulePolicyTypeConfiguration
-	RouterQuotaPolicyTypeConfiguration *RouterQuotaPolicyTypeConfiguration
-	ShutdownPolicyTypeConfiguration *ShutdownPolicyTypeConfiguration
-	StorageServerStorageQuotaPolicyTypeConfiguration *StorageServerStorageQuotaPolicyTypeConfiguration
-	TagsPolicyTypeConfiguration *TagsPolicyTypeConfiguration
-	UserCreationPolicyTypeConfiguration *UserCreationPolicyTypeConfiguration
-	UserGroupCreationPolicyTypeConfiguration *UserGroupCreationPolicyTypeConfiguration
-	WorkflowPolicyTypeConfiguration *WorkflowPolicyTypeConfiguration
+	MaxVMsPolicyTypeConfiguration                           *MaxVMsPolicyTypeConfiguration
+	MaxVirtualServersPolicyTypeConfiguration                *MaxVirtualServersPolicyTypeConfiguration
+	MessageOfTheDayPolicyTypeConfiguration                  *MessageOfTheDayPolicyTypeConfiguration
+	NetworkQuotaPolicyTypeConfiguration                     *NetworkQuotaPolicyTypeConfiguration
+	PowerSchedulePolicyTypeConfiguration                    *PowerSchedulePolicyTypeConfiguration
+	RouterQuotaPolicyTypeConfiguration                      *RouterQuotaPolicyTypeConfiguration
+	ShutdownPolicyTypeConfiguration                         *ShutdownPolicyTypeConfiguration
+	StorageServerStorageQuotaPolicyTypeConfiguration        *StorageServerStorageQuotaPolicyTypeConfiguration
+	TagsPolicyTypeConfiguration                             *TagsPolicyTypeConfiguration
+	UserCreationPolicyTypeConfiguration                     *UserCreationPolicyTypeConfiguration
+	UserGroupCreationPolicyTypeConfiguration                *UserGroupCreationPolicyTypeConfiguration
+	WorkflowPolicyTypeConfiguration                         *WorkflowPolicyTypeConfiguration
+}
+
+func (dst *UpdatePoliciesRequestPolicyConfig) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &UpdatePoliciesRequestPolicyConfig{}
+	}
+
+	if out, ok := data.(ApprovePolicyTypeConfiguration); ok {
+		dst.ApprovePolicyTypeConfiguration = &out
+	}
+
+	if out, ok := data.(BackupCreationPolicyTypeConfiguration); ok {
+		dst.BackupCreationPolicyTypeConfiguration = &out
+	}
+
+	if out, ok := data.(BackupTargetsPolicyTypeConfiguration); ok {
+		dst.BackupTargetsPolicyTypeConfiguration = &out
+	}
+
+	if out, ok := data.(BudgetPolicyTypeConfiguration); ok {
+		dst.BudgetPolicyTypeConfiguration = &out
+	}
+
+	if out, ok := data.(ClusterResourceNamePolicyTypeConfiguration); ok {
+		dst.ClusterResourceNamePolicyTypeConfiguration = &out
+	}
+
+	if out, ok := data.(CypherAccessPolicyTypeConfiguration); ok {
+		dst.CypherAccessPolicyTypeConfiguration = &out
+	}
+
+	if out, ok := data.(DelayedDeletePolicyTypeConfiguration); ok {
+		dst.DelayedDeletePolicyTypeConfiguration = &out
+	}
+
+	if out, ok := data.(ExpirationPolicyTypeConfiguration); ok {
+		dst.ExpirationPolicyTypeConfiguration = &out
+	}
+
+	if out, ok := data.(FileShareStorageQuotaPolicyTypeConfiguration); ok {
+		dst.FileShareStorageQuotaPolicyTypeConfiguration = &out
+	}
+
+	if out, ok := data.(HostnamePolicyTypeConfiguration); ok {
+		dst.HostnamePolicyTypeConfiguration = &out
+	}
+
+	if out, ok := data.(InstanceNamePolicyTypeConfiguration); ok {
+		dst.InstanceNamePolicyTypeConfiguration = &out
+	}
+
+	if out, ok := data.(MaxContainersPolicyTypeConfiguration); ok {
+		dst.MaxContainersPolicyTypeConfiguration = &out
+	}
+
+	if out, ok := data.(MaxCoresPolicyTypeConfiguration1); ok {
+		dst.MaxCoresPolicyTypeConfiguration1 = &out
+	}
+
+	if out, ok := data.(MaxHostsPolicyTypeConfiguration); ok {
+		dst.MaxHostsPolicyTypeConfiguration = &out
+	}
+
+	if out, ok := data.(MaxLoadBalancerPoolsPolicyTypeConfiguration); ok {
+		dst.MaxLoadBalancerPoolsPolicyTypeConfiguration = &out
+	}
+
+	if out, ok := data.(MaxMemoryPolicyTypeConfiguration1); ok {
+		dst.MaxMemoryPolicyTypeConfiguration1 = &out
+	}
+
+	if out, ok := data.(MaxPoolMembersPolicyTypeConfiguration); ok {
+		dst.MaxPoolMembersPolicyTypeConfiguration = &out
+	}
+
+	if out, ok := data.(MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration1); ok {
+		dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration1 = &out
+	}
+
+	if out, ok := data.(MaxVMsPolicyTypeConfiguration); ok {
+		dst.MaxVMsPolicyTypeConfiguration = &out
+	}
+
+	if out, ok := data.(MaxVirtualServersPolicyTypeConfiguration); ok {
+		dst.MaxVirtualServersPolicyTypeConfiguration = &out
+	}
+
+	if out, ok := data.(MessageOfTheDayPolicyTypeConfiguration); ok {
+		dst.MessageOfTheDayPolicyTypeConfiguration = &out
+	}
+
+	if out, ok := data.(NetworkQuotaPolicyTypeConfiguration); ok {
+		dst.NetworkQuotaPolicyTypeConfiguration = &out
+	}
+
+	if out, ok := data.(PowerSchedulePolicyTypeConfiguration); ok {
+		dst.PowerSchedulePolicyTypeConfiguration = &out
+	}
+
+	if out, ok := data.(RouterQuotaPolicyTypeConfiguration); ok {
+		dst.RouterQuotaPolicyTypeConfiguration = &out
+	}
+
+	if out, ok := data.(ShutdownPolicyTypeConfiguration); ok {
+		dst.ShutdownPolicyTypeConfiguration = &out
+	}
+
+	if out, ok := data.(StorageServerStorageQuotaPolicyTypeConfiguration); ok {
+		dst.StorageServerStorageQuotaPolicyTypeConfiguration = &out
+	}
+
+	if out, ok := data.(TagsPolicyTypeConfiguration); ok {
+		dst.TagsPolicyTypeConfiguration = &out
+	}
+
+	if out, ok := data.(UserCreationPolicyTypeConfiguration); ok {
+		dst.UserCreationPolicyTypeConfiguration = &out
+	}
+
+	if out, ok := data.(UserGroupCreationPolicyTypeConfiguration); ok {
+		dst.UserGroupCreationPolicyTypeConfiguration = &out
+	}
+
+	if out, ok := data.(WorkflowPolicyTypeConfiguration); ok {
+		dst.WorkflowPolicyTypeConfiguration = &out
+	}
+
+	return dst, nil
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *UpdatePoliciesRequestPolicyConfig) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into ApprovePolicyTypeConfiguration
-	err = json.Unmarshal(data, &dst.ApprovePolicyTypeConfiguration);
+	err = json.Unmarshal(data, &dst.ApprovePolicyTypeConfiguration)
 	if err == nil {
 		jsonApprovePolicyTypeConfiguration, _ := json.Marshal(dst.ApprovePolicyTypeConfiguration)
 		if string(jsonApprovePolicyTypeConfiguration) == "{}" { // empty struct
@@ -71,7 +198,7 @@ func (dst *UpdatePoliciesRequestPolicyConfig) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into BackupCreationPolicyTypeConfiguration
-	err = json.Unmarshal(data, &dst.BackupCreationPolicyTypeConfiguration);
+	err = json.Unmarshal(data, &dst.BackupCreationPolicyTypeConfiguration)
 	if err == nil {
 		jsonBackupCreationPolicyTypeConfiguration, _ := json.Marshal(dst.BackupCreationPolicyTypeConfiguration)
 		if string(jsonBackupCreationPolicyTypeConfiguration) == "{}" { // empty struct
@@ -84,7 +211,7 @@ func (dst *UpdatePoliciesRequestPolicyConfig) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into BackupTargetsPolicyTypeConfiguration
-	err = json.Unmarshal(data, &dst.BackupTargetsPolicyTypeConfiguration);
+	err = json.Unmarshal(data, &dst.BackupTargetsPolicyTypeConfiguration)
 	if err == nil {
 		jsonBackupTargetsPolicyTypeConfiguration, _ := json.Marshal(dst.BackupTargetsPolicyTypeConfiguration)
 		if string(jsonBackupTargetsPolicyTypeConfiguration) == "{}" { // empty struct
@@ -97,7 +224,7 @@ func (dst *UpdatePoliciesRequestPolicyConfig) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into BudgetPolicyTypeConfiguration
-	err = json.Unmarshal(data, &dst.BudgetPolicyTypeConfiguration);
+	err = json.Unmarshal(data, &dst.BudgetPolicyTypeConfiguration)
 	if err == nil {
 		jsonBudgetPolicyTypeConfiguration, _ := json.Marshal(dst.BudgetPolicyTypeConfiguration)
 		if string(jsonBudgetPolicyTypeConfiguration) == "{}" { // empty struct
@@ -110,7 +237,7 @@ func (dst *UpdatePoliciesRequestPolicyConfig) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into ClusterResourceNamePolicyTypeConfiguration
-	err = json.Unmarshal(data, &dst.ClusterResourceNamePolicyTypeConfiguration);
+	err = json.Unmarshal(data, &dst.ClusterResourceNamePolicyTypeConfiguration)
 	if err == nil {
 		jsonClusterResourceNamePolicyTypeConfiguration, _ := json.Marshal(dst.ClusterResourceNamePolicyTypeConfiguration)
 		if string(jsonClusterResourceNamePolicyTypeConfiguration) == "{}" { // empty struct
@@ -123,7 +250,7 @@ func (dst *UpdatePoliciesRequestPolicyConfig) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into CypherAccessPolicyTypeConfiguration
-	err = json.Unmarshal(data, &dst.CypherAccessPolicyTypeConfiguration);
+	err = json.Unmarshal(data, &dst.CypherAccessPolicyTypeConfiguration)
 	if err == nil {
 		jsonCypherAccessPolicyTypeConfiguration, _ := json.Marshal(dst.CypherAccessPolicyTypeConfiguration)
 		if string(jsonCypherAccessPolicyTypeConfiguration) == "{}" { // empty struct
@@ -136,7 +263,7 @@ func (dst *UpdatePoliciesRequestPolicyConfig) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into DelayedDeletePolicyTypeConfiguration
-	err = json.Unmarshal(data, &dst.DelayedDeletePolicyTypeConfiguration);
+	err = json.Unmarshal(data, &dst.DelayedDeletePolicyTypeConfiguration)
 	if err == nil {
 		jsonDelayedDeletePolicyTypeConfiguration, _ := json.Marshal(dst.DelayedDeletePolicyTypeConfiguration)
 		if string(jsonDelayedDeletePolicyTypeConfiguration) == "{}" { // empty struct
@@ -149,7 +276,7 @@ func (dst *UpdatePoliciesRequestPolicyConfig) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into ExpirationPolicyTypeConfiguration
-	err = json.Unmarshal(data, &dst.ExpirationPolicyTypeConfiguration);
+	err = json.Unmarshal(data, &dst.ExpirationPolicyTypeConfiguration)
 	if err == nil {
 		jsonExpirationPolicyTypeConfiguration, _ := json.Marshal(dst.ExpirationPolicyTypeConfiguration)
 		if string(jsonExpirationPolicyTypeConfiguration) == "{}" { // empty struct
@@ -162,7 +289,7 @@ func (dst *UpdatePoliciesRequestPolicyConfig) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into FileShareStorageQuotaPolicyTypeConfiguration
-	err = json.Unmarshal(data, &dst.FileShareStorageQuotaPolicyTypeConfiguration);
+	err = json.Unmarshal(data, &dst.FileShareStorageQuotaPolicyTypeConfiguration)
 	if err == nil {
 		jsonFileShareStorageQuotaPolicyTypeConfiguration, _ := json.Marshal(dst.FileShareStorageQuotaPolicyTypeConfiguration)
 		if string(jsonFileShareStorageQuotaPolicyTypeConfiguration) == "{}" { // empty struct
@@ -175,7 +302,7 @@ func (dst *UpdatePoliciesRequestPolicyConfig) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into HostnamePolicyTypeConfiguration
-	err = json.Unmarshal(data, &dst.HostnamePolicyTypeConfiguration);
+	err = json.Unmarshal(data, &dst.HostnamePolicyTypeConfiguration)
 	if err == nil {
 		jsonHostnamePolicyTypeConfiguration, _ := json.Marshal(dst.HostnamePolicyTypeConfiguration)
 		if string(jsonHostnamePolicyTypeConfiguration) == "{}" { // empty struct
@@ -188,7 +315,7 @@ func (dst *UpdatePoliciesRequestPolicyConfig) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into InstanceNamePolicyTypeConfiguration
-	err = json.Unmarshal(data, &dst.InstanceNamePolicyTypeConfiguration);
+	err = json.Unmarshal(data, &dst.InstanceNamePolicyTypeConfiguration)
 	if err == nil {
 		jsonInstanceNamePolicyTypeConfiguration, _ := json.Marshal(dst.InstanceNamePolicyTypeConfiguration)
 		if string(jsonInstanceNamePolicyTypeConfiguration) == "{}" { // empty struct
@@ -201,7 +328,7 @@ func (dst *UpdatePoliciesRequestPolicyConfig) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into MaxContainersPolicyTypeConfiguration
-	err = json.Unmarshal(data, &dst.MaxContainersPolicyTypeConfiguration);
+	err = json.Unmarshal(data, &dst.MaxContainersPolicyTypeConfiguration)
 	if err == nil {
 		jsonMaxContainersPolicyTypeConfiguration, _ := json.Marshal(dst.MaxContainersPolicyTypeConfiguration)
 		if string(jsonMaxContainersPolicyTypeConfiguration) == "{}" { // empty struct
@@ -214,7 +341,7 @@ func (dst *UpdatePoliciesRequestPolicyConfig) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into MaxCoresPolicyTypeConfiguration1
-	err = json.Unmarshal(data, &dst.MaxCoresPolicyTypeConfiguration1);
+	err = json.Unmarshal(data, &dst.MaxCoresPolicyTypeConfiguration1)
 	if err == nil {
 		jsonMaxCoresPolicyTypeConfiguration1, _ := json.Marshal(dst.MaxCoresPolicyTypeConfiguration1)
 		if string(jsonMaxCoresPolicyTypeConfiguration1) == "{}" { // empty struct
@@ -227,7 +354,7 @@ func (dst *UpdatePoliciesRequestPolicyConfig) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into MaxHostsPolicyTypeConfiguration
-	err = json.Unmarshal(data, &dst.MaxHostsPolicyTypeConfiguration);
+	err = json.Unmarshal(data, &dst.MaxHostsPolicyTypeConfiguration)
 	if err == nil {
 		jsonMaxHostsPolicyTypeConfiguration, _ := json.Marshal(dst.MaxHostsPolicyTypeConfiguration)
 		if string(jsonMaxHostsPolicyTypeConfiguration) == "{}" { // empty struct
@@ -240,7 +367,7 @@ func (dst *UpdatePoliciesRequestPolicyConfig) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into MaxLoadBalancerPoolsPolicyTypeConfiguration
-	err = json.Unmarshal(data, &dst.MaxLoadBalancerPoolsPolicyTypeConfiguration);
+	err = json.Unmarshal(data, &dst.MaxLoadBalancerPoolsPolicyTypeConfiguration)
 	if err == nil {
 		jsonMaxLoadBalancerPoolsPolicyTypeConfiguration, _ := json.Marshal(dst.MaxLoadBalancerPoolsPolicyTypeConfiguration)
 		if string(jsonMaxLoadBalancerPoolsPolicyTypeConfiguration) == "{}" { // empty struct
@@ -253,7 +380,7 @@ func (dst *UpdatePoliciesRequestPolicyConfig) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into MaxMemoryPolicyTypeConfiguration1
-	err = json.Unmarshal(data, &dst.MaxMemoryPolicyTypeConfiguration1);
+	err = json.Unmarshal(data, &dst.MaxMemoryPolicyTypeConfiguration1)
 	if err == nil {
 		jsonMaxMemoryPolicyTypeConfiguration1, _ := json.Marshal(dst.MaxMemoryPolicyTypeConfiguration1)
 		if string(jsonMaxMemoryPolicyTypeConfiguration1) == "{}" { // empty struct
@@ -266,7 +393,7 @@ func (dst *UpdatePoliciesRequestPolicyConfig) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into MaxPoolMembersPolicyTypeConfiguration
-	err = json.Unmarshal(data, &dst.MaxPoolMembersPolicyTypeConfiguration);
+	err = json.Unmarshal(data, &dst.MaxPoolMembersPolicyTypeConfiguration)
 	if err == nil {
 		jsonMaxPoolMembersPolicyTypeConfiguration, _ := json.Marshal(dst.MaxPoolMembersPolicyTypeConfiguration)
 		if string(jsonMaxPoolMembersPolicyTypeConfiguration) == "{}" { // empty struct
@@ -279,7 +406,7 @@ func (dst *UpdatePoliciesRequestPolicyConfig) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration1
-	err = json.Unmarshal(data, &dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration1);
+	err = json.Unmarshal(data, &dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration1)
 	if err == nil {
 		jsonMaxStorageAndObjectStorageQuotaPolicyTypeConfiguration1, _ := json.Marshal(dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration1)
 		if string(jsonMaxStorageAndObjectStorageQuotaPolicyTypeConfiguration1) == "{}" { // empty struct
@@ -292,7 +419,7 @@ func (dst *UpdatePoliciesRequestPolicyConfig) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into MaxVMsPolicyTypeConfiguration
-	err = json.Unmarshal(data, &dst.MaxVMsPolicyTypeConfiguration);
+	err = json.Unmarshal(data, &dst.MaxVMsPolicyTypeConfiguration)
 	if err == nil {
 		jsonMaxVMsPolicyTypeConfiguration, _ := json.Marshal(dst.MaxVMsPolicyTypeConfiguration)
 		if string(jsonMaxVMsPolicyTypeConfiguration) == "{}" { // empty struct
@@ -305,7 +432,7 @@ func (dst *UpdatePoliciesRequestPolicyConfig) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into MaxVirtualServersPolicyTypeConfiguration
-	err = json.Unmarshal(data, &dst.MaxVirtualServersPolicyTypeConfiguration);
+	err = json.Unmarshal(data, &dst.MaxVirtualServersPolicyTypeConfiguration)
 	if err == nil {
 		jsonMaxVirtualServersPolicyTypeConfiguration, _ := json.Marshal(dst.MaxVirtualServersPolicyTypeConfiguration)
 		if string(jsonMaxVirtualServersPolicyTypeConfiguration) == "{}" { // empty struct
@@ -318,7 +445,7 @@ func (dst *UpdatePoliciesRequestPolicyConfig) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into MessageOfTheDayPolicyTypeConfiguration
-	err = json.Unmarshal(data, &dst.MessageOfTheDayPolicyTypeConfiguration);
+	err = json.Unmarshal(data, &dst.MessageOfTheDayPolicyTypeConfiguration)
 	if err == nil {
 		jsonMessageOfTheDayPolicyTypeConfiguration, _ := json.Marshal(dst.MessageOfTheDayPolicyTypeConfiguration)
 		if string(jsonMessageOfTheDayPolicyTypeConfiguration) == "{}" { // empty struct
@@ -331,7 +458,7 @@ func (dst *UpdatePoliciesRequestPolicyConfig) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into NetworkQuotaPolicyTypeConfiguration
-	err = json.Unmarshal(data, &dst.NetworkQuotaPolicyTypeConfiguration);
+	err = json.Unmarshal(data, &dst.NetworkQuotaPolicyTypeConfiguration)
 	if err == nil {
 		jsonNetworkQuotaPolicyTypeConfiguration, _ := json.Marshal(dst.NetworkQuotaPolicyTypeConfiguration)
 		if string(jsonNetworkQuotaPolicyTypeConfiguration) == "{}" { // empty struct
@@ -344,7 +471,7 @@ func (dst *UpdatePoliciesRequestPolicyConfig) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into PowerSchedulePolicyTypeConfiguration
-	err = json.Unmarshal(data, &dst.PowerSchedulePolicyTypeConfiguration);
+	err = json.Unmarshal(data, &dst.PowerSchedulePolicyTypeConfiguration)
 	if err == nil {
 		jsonPowerSchedulePolicyTypeConfiguration, _ := json.Marshal(dst.PowerSchedulePolicyTypeConfiguration)
 		if string(jsonPowerSchedulePolicyTypeConfiguration) == "{}" { // empty struct
@@ -357,7 +484,7 @@ func (dst *UpdatePoliciesRequestPolicyConfig) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into RouterQuotaPolicyTypeConfiguration
-	err = json.Unmarshal(data, &dst.RouterQuotaPolicyTypeConfiguration);
+	err = json.Unmarshal(data, &dst.RouterQuotaPolicyTypeConfiguration)
 	if err == nil {
 		jsonRouterQuotaPolicyTypeConfiguration, _ := json.Marshal(dst.RouterQuotaPolicyTypeConfiguration)
 		if string(jsonRouterQuotaPolicyTypeConfiguration) == "{}" { // empty struct
@@ -370,7 +497,7 @@ func (dst *UpdatePoliciesRequestPolicyConfig) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into ShutdownPolicyTypeConfiguration
-	err = json.Unmarshal(data, &dst.ShutdownPolicyTypeConfiguration);
+	err = json.Unmarshal(data, &dst.ShutdownPolicyTypeConfiguration)
 	if err == nil {
 		jsonShutdownPolicyTypeConfiguration, _ := json.Marshal(dst.ShutdownPolicyTypeConfiguration)
 		if string(jsonShutdownPolicyTypeConfiguration) == "{}" { // empty struct
@@ -383,7 +510,7 @@ func (dst *UpdatePoliciesRequestPolicyConfig) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into StorageServerStorageQuotaPolicyTypeConfiguration
-	err = json.Unmarshal(data, &dst.StorageServerStorageQuotaPolicyTypeConfiguration);
+	err = json.Unmarshal(data, &dst.StorageServerStorageQuotaPolicyTypeConfiguration)
 	if err == nil {
 		jsonStorageServerStorageQuotaPolicyTypeConfiguration, _ := json.Marshal(dst.StorageServerStorageQuotaPolicyTypeConfiguration)
 		if string(jsonStorageServerStorageQuotaPolicyTypeConfiguration) == "{}" { // empty struct
@@ -396,7 +523,7 @@ func (dst *UpdatePoliciesRequestPolicyConfig) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into TagsPolicyTypeConfiguration
-	err = json.Unmarshal(data, &dst.TagsPolicyTypeConfiguration);
+	err = json.Unmarshal(data, &dst.TagsPolicyTypeConfiguration)
 	if err == nil {
 		jsonTagsPolicyTypeConfiguration, _ := json.Marshal(dst.TagsPolicyTypeConfiguration)
 		if string(jsonTagsPolicyTypeConfiguration) == "{}" { // empty struct
@@ -409,7 +536,7 @@ func (dst *UpdatePoliciesRequestPolicyConfig) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into UserCreationPolicyTypeConfiguration
-	err = json.Unmarshal(data, &dst.UserCreationPolicyTypeConfiguration);
+	err = json.Unmarshal(data, &dst.UserCreationPolicyTypeConfiguration)
 	if err == nil {
 		jsonUserCreationPolicyTypeConfiguration, _ := json.Marshal(dst.UserCreationPolicyTypeConfiguration)
 		if string(jsonUserCreationPolicyTypeConfiguration) == "{}" { // empty struct
@@ -422,7 +549,7 @@ func (dst *UpdatePoliciesRequestPolicyConfig) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into UserGroupCreationPolicyTypeConfiguration
-	err = json.Unmarshal(data, &dst.UserGroupCreationPolicyTypeConfiguration);
+	err = json.Unmarshal(data, &dst.UserGroupCreationPolicyTypeConfiguration)
 	if err == nil {
 		jsonUserGroupCreationPolicyTypeConfiguration, _ := json.Marshal(dst.UserGroupCreationPolicyTypeConfiguration)
 		if string(jsonUserGroupCreationPolicyTypeConfiguration) == "{}" { // empty struct
@@ -435,7 +562,7 @@ func (dst *UpdatePoliciesRequestPolicyConfig) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into WorkflowPolicyTypeConfiguration
-	err = json.Unmarshal(data, &dst.WorkflowPolicyTypeConfiguration);
+	err = json.Unmarshal(data, &dst.WorkflowPolicyTypeConfiguration)
 	if err == nil {
 		jsonWorkflowPolicyTypeConfiguration, _ := json.Marshal(dst.WorkflowPolicyTypeConfiguration)
 		if string(jsonWorkflowPolicyTypeConfiguration) == "{}" { // empty struct
@@ -575,7 +702,6 @@ func (src UpdatePoliciesRequestPolicyConfig) MarshalJSON() ([]byte, error) {
 	return nil, nil // no data in anyOf schemas
 }
 
-
 type NullableUpdatePoliciesRequestPolicyConfig struct {
 	value *UpdatePoliciesRequestPolicyConfig
 	isSet bool
@@ -611,5 +737,3 @@ func (v *NullableUpdatePoliciesRequestPolicyConfig) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

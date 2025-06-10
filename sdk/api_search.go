@@ -20,17 +20,16 @@ import (
 	"net/url"
 )
 
-
 // SearchAPIService SearchAPI service
 type SearchAPIService service
 
 type ApiSearchRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SearchAPIService
-	max *int64
-	offset *int64
-	phrase *string
-	query *string
+	max        *int64
+	offset     *int64
+	phrase     *string
+	query      *string
 }
 
 // Maximum number of records to return
@@ -68,25 +67,25 @@ This endpoint provides global search for all types of objects, with the results 
 
 The `phrase` parameter can be specified as part of the URL or as a query parameter. If phrase is not specified, then 0 results (hits) will be returned.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSearchRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSearchRequest
 */
 func (a *SearchAPIService) Search(ctx context.Context) ApiSearchRequest {
 	return ApiSearchRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return Search200Response
+//
+//	@return Search200Response
 func (a *SearchAPIService) SearchExecute(r ApiSearchRequest) (*Search200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Search200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Search200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SearchAPIService.Search")
@@ -154,7 +153,7 @@ func (a *SearchAPIService) SearchExecute(r ApiSearchRequest) (*Search200Response
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -163,8 +162,8 @@ func (a *SearchAPIService) SearchExecute(r ApiSearchRequest) (*Search200Response
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -174,8 +173,8 @@ func (a *SearchAPIService) SearchExecute(r ApiSearchRequest) (*Search200Response
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -183,8 +182,8 @@ func (a *SearchAPIService) SearchExecute(r ApiSearchRequest) (*Search200Response
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

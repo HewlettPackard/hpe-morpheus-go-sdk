@@ -21,10 +21,10 @@ var _ MappedNullable = &ListUsers200Response{}
 // ListUsers200Response struct for ListUsers200Response
 type ListUsers200Response struct {
 	Users []AddUserTenant200ResponseAllOfUser `json:"users,omitempty"`
-	Meta *ListActivity200ResponseAllOfMeta `json:"meta,omitempty"`
+	Meta  *ListActivity200ResponseAllOfMeta   `json:"meta,omitempty"`
 	// Global (All Tenants), load users from all tenants. The default is to only see your own tenant. This is only available to master tenant users with permission to manage tenants and users.
-	Global *bool `json:"global,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Global               *bool                  `json:"global,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListUsers200Response ListUsers200Response
@@ -147,7 +147,7 @@ func (o *ListUsers200Response) SetGlobal(v bool) {
 }
 
 func (o ListUsers200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -172,64 +172,8 @@ func (o ListUsers200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ListUsers200Response) UnmarshalJSON(data []byte) (err error) {
-	varListUsers200Response := _ListUsers200Response{}
-
-	err = json.Unmarshal(data, &varListUsers200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListUsers200Response(varListUsers200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "users")
-		delete(additionalProperties, "meta")
-		delete(additionalProperties, "global")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListUsers200Response struct {
-	value *ListUsers200Response
-	isSet bool
-}
-
-func (v NullableListUsers200Response) Get() *ListUsers200Response {
-	return v.value
-}
-
-func (v *NullableListUsers200Response) Set(val *ListUsers200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListUsers200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListUsers200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListUsers200Response(val *ListUsers200Response) *NullableListUsers200Response {
-	return &NullableListUsers200Response{value: val, isSet: true}
-}
-
-func (v NullableListUsers200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListUsers200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

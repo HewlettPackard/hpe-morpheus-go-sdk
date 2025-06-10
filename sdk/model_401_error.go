@@ -20,8 +20,8 @@ var _ MappedNullable = &Model401Error{}
 
 // Model401Error struct for Model401Error
 type Model401Error struct {
-	Msg *string `json:"msg,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Msg                  *string                `json:"msg,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _Model401Error Model401Error
@@ -76,7 +76,7 @@ func (o *Model401Error) SetMsg(v string) {
 }
 
 func (o Model401Error) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o Model401Error) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *Model401Error) UnmarshalJSON(data []byte) (err error) {
-	varModel401Error := _Model401Error{}
-
-	err = json.Unmarshal(data, &varModel401Error)
-
-	if err != nil {
-		return err
-	}
-
-	*o = Model401Error(varModel401Error)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "msg")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableModel401Error struct {
-	value *Model401Error
-	isSet bool
-}
-
-func (v NullableModel401Error) Get() *Model401Error {
-	return v.value
-}
-
-func (v *NullableModel401Error) Set(val *Model401Error) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableModel401Error) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableModel401Error) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableModel401Error(val *Model401Error) *NullableModel401Error {
-	return &NullableModel401Error{value: val, isSet: true}
-}
-
-func (v NullableModel401Error) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableModel401Error) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

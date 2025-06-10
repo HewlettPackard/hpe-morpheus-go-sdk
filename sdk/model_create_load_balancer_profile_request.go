@@ -20,8 +20,8 @@ var _ MappedNullable = &CreateLoadBalancerProfileRequest{}
 
 // CreateLoadBalancerProfileRequest struct for CreateLoadBalancerProfileRequest
 type CreateLoadBalancerProfileRequest struct {
-	LoadBalancerProfile *CreateLoadBalancerProfileRequestLoadBalancerProfile `json:"loadBalancerProfile,omitempty"`
-	AdditionalProperties map[string]interface{}
+	LoadBalancerProfile  *CreateLoadBalancerProfileRequestLoadBalancerProfile `json:"loadBalancerProfile,omitempty"`
+	AdditionalProperties map[string]interface{}                               `json:",remain"`
 }
 
 type _CreateLoadBalancerProfileRequest CreateLoadBalancerProfileRequest
@@ -76,7 +76,7 @@ func (o *CreateLoadBalancerProfileRequest) SetLoadBalancerProfile(v CreateLoadBa
 }
 
 func (o CreateLoadBalancerProfileRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o CreateLoadBalancerProfileRequest) ToMap() (map[string]interface{}, error
 
 	return toSerialize, nil
 }
-
 func (o *CreateLoadBalancerProfileRequest) UnmarshalJSON(data []byte) (err error) {
-	varCreateLoadBalancerProfileRequest := _CreateLoadBalancerProfileRequest{}
-
-	err = json.Unmarshal(data, &varCreateLoadBalancerProfileRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CreateLoadBalancerProfileRequest(varCreateLoadBalancerProfileRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "loadBalancerProfile")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCreateLoadBalancerProfileRequest struct {
-	value *CreateLoadBalancerProfileRequest
-	isSet bool
-}
-
-func (v NullableCreateLoadBalancerProfileRequest) Get() *CreateLoadBalancerProfileRequest {
-	return v.value
-}
-
-func (v *NullableCreateLoadBalancerProfileRequest) Set(val *CreateLoadBalancerProfileRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCreateLoadBalancerProfileRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCreateLoadBalancerProfileRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCreateLoadBalancerProfileRequest(val *CreateLoadBalancerProfileRequest) *NullableCreateLoadBalancerProfileRequest {
-	return &NullableCreateLoadBalancerProfileRequest{value: val, isSet: true}
-}
-
-func (v NullableCreateLoadBalancerProfileRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCreateLoadBalancerProfileRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

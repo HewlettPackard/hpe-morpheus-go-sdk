@@ -20,9 +20,9 @@ var _ MappedNullable = &ListCodeRepositories200Response{}
 
 // ListCodeRepositories200Response struct for ListCodeRepositories200Response
 type ListCodeRepositories200Response struct {
-	Success *bool `json:"success,omitempty"`
-	Data []ListCodeRepositories200ResponseAllOfDataInner `json:"data,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Success              *bool                                           `json:"success,omitempty"`
+	Data                 []ListCodeRepositories200ResponseAllOfDataInner `json:"data,omitempty"`
+	AdditionalProperties map[string]interface{}                          `json:",remain"`
 }
 
 type _ListCodeRepositories200Response ListCodeRepositories200Response
@@ -109,7 +109,7 @@ func (o *ListCodeRepositories200Response) SetData(v []ListCodeRepositories200Res
 }
 
 func (o ListCodeRepositories200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o ListCodeRepositories200Response) ToMap() (map[string]interface{}, error)
 
 	return toSerialize, nil
 }
-
 func (o *ListCodeRepositories200Response) UnmarshalJSON(data []byte) (err error) {
-	varListCodeRepositories200Response := _ListCodeRepositories200Response{}
-
-	err = json.Unmarshal(data, &varListCodeRepositories200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListCodeRepositories200Response(varListCodeRepositories200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "success")
-		delete(additionalProperties, "data")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListCodeRepositories200Response struct {
-	value *ListCodeRepositories200Response
-	isSet bool
-}
-
-func (v NullableListCodeRepositories200Response) Get() *ListCodeRepositories200Response {
-	return v.value
-}
-
-func (v *NullableListCodeRepositories200Response) Set(val *ListCodeRepositories200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListCodeRepositories200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListCodeRepositories200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListCodeRepositories200Response(val *ListCodeRepositories200Response) *NullableListCodeRepositories200Response {
-	return &NullableListCodeRepositories200Response{value: val, isSet: true}
-}
-
-func (v NullableListCodeRepositories200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListCodeRepositories200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

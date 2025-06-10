@@ -20,8 +20,8 @@ var _ MappedNullable = &GetLoadBalancerProfile200Response{}
 
 // GetLoadBalancerProfile200Response struct for GetLoadBalancerProfile200Response
 type GetLoadBalancerProfile200Response struct {
-	LoadBalancerProfile *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner `json:"loadBalancerProfile,omitempty"`
-	AdditionalProperties map[string]interface{}
+	LoadBalancerProfile  *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner `json:"loadBalancerProfile,omitempty"`
+	AdditionalProperties map[string]interface{}                                             `json:",remain"`
 }
 
 type _GetLoadBalancerProfile200Response GetLoadBalancerProfile200Response
@@ -76,7 +76,7 @@ func (o *GetLoadBalancerProfile200Response) SetLoadBalancerProfile(v ListLoadBal
 }
 
 func (o GetLoadBalancerProfile200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o GetLoadBalancerProfile200Response) ToMap() (map[string]interface{}, erro
 
 	return toSerialize, nil
 }
-
 func (o *GetLoadBalancerProfile200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetLoadBalancerProfile200Response := _GetLoadBalancerProfile200Response{}
-
-	err = json.Unmarshal(data, &varGetLoadBalancerProfile200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetLoadBalancerProfile200Response(varGetLoadBalancerProfile200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "loadBalancerProfile")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetLoadBalancerProfile200Response struct {
-	value *GetLoadBalancerProfile200Response
-	isSet bool
-}
-
-func (v NullableGetLoadBalancerProfile200Response) Get() *GetLoadBalancerProfile200Response {
-	return v.value
-}
-
-func (v *NullableGetLoadBalancerProfile200Response) Set(val *GetLoadBalancerProfile200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetLoadBalancerProfile200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetLoadBalancerProfile200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetLoadBalancerProfile200Response(val *GetLoadBalancerProfile200Response) *NullableGetLoadBalancerProfile200Response {
-	return &NullableGetLoadBalancerProfile200Response{value: val, isSet: true}
-}
-
-func (v NullableGetLoadBalancerProfile200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetLoadBalancerProfile200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

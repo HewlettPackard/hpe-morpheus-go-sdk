@@ -20,38 +20,38 @@ var _ MappedNullable = &CreateNetworkPool200ResponseNetworkPool{}
 
 // CreateNetworkPool200ResponseNetworkPool struct for CreateNetworkPool200ResponseNetworkPool
 type CreateNetworkPool200ResponseNetworkPool struct {
-	Id *int64 `json:"id,omitempty"`
-	Type *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"type,omitempty"`
-	Account *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
-	Category *string `json:"category,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Name *string `json:"name,omitempty"`
-	DisplayName *string `json:"displayName,omitempty"`
-	InternalId *string `json:"internalId,omitempty"`
-	ExternalId *string `json:"externalId,omitempty"`
-	DnsDomain *string `json:"dnsDomain,omitempty"`
-	DnsSearchPath *string `json:"dnsSearchPath,omitempty"`
-	HostPrefix *string `json:"hostPrefix,omitempty"`
-	HttpProxy *string `json:"httpProxy,omitempty"`
-	DnsServers []string `json:"dnsServers,omitempty"`
-	DnsSuffixList []string `json:"dnsSuffixList,omitempty"`
-	DhcpServer *bool `json:"dhcpServer,omitempty"`
-	DhcpIp *string `json:"dhcpIp,omitempty"`
-	Gateway *string `json:"gateway,omitempty"`
-	Netmask *string `json:"netmask,omitempty"`
-	SubnetAddress *string `json:"subnetAddress,omitempty"`
-	IpCount *int64 `json:"ipCount,omitempty"`
-	FreeCount *int64 `json:"freeCount,omitempty"`
-	PoolEnabled *bool `json:"poolEnabled,omitempty"`
-	TftpServer *string `json:"tftpServer,omitempty"`
-	BootFile *string `json:"bootFile,omitempty"`
-	RefType *string `json:"refType,omitempty"`
-	RefId *string `json:"refId,omitempty"`
-	ParentType *string `json:"parentType,omitempty"`
-	ParentId *string `json:"parentId,omitempty"`
-	PoolGroup *string `json:"poolGroup,omitempty"`
-	IpRanges []CreateNetworkPool200ResponseNetworkPoolIpRangesInner `json:"ipRanges,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                  `json:"id,omitempty"`
+	Type                 *ListBackupSettings200ResponseBackupSettingsDefaultSchedule             `json:"type,omitempty"`
+	Account              *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
+	Category             *string                                                                 `json:"category,omitempty"`
+	Code                 *string                                                                 `json:"code,omitempty"`
+	Name                 *string                                                                 `json:"name,omitempty"`
+	DisplayName          *string                                                                 `json:"displayName,omitempty"`
+	InternalId           *string                                                                 `json:"internalId,omitempty"`
+	ExternalId           *string                                                                 `json:"externalId,omitempty"`
+	DnsDomain            *string                                                                 `json:"dnsDomain,omitempty"`
+	DnsSearchPath        *string                                                                 `json:"dnsSearchPath,omitempty"`
+	HostPrefix           *string                                                                 `json:"hostPrefix,omitempty"`
+	HttpProxy            *string                                                                 `json:"httpProxy,omitempty"`
+	DnsServers           []string                                                                `json:"dnsServers,omitempty"`
+	DnsSuffixList        []string                                                                `json:"dnsSuffixList,omitempty"`
+	DhcpServer           *bool                                                                   `json:"dhcpServer,omitempty"`
+	DhcpIp               *string                                                                 `json:"dhcpIp,omitempty"`
+	Gateway              *string                                                                 `json:"gateway,omitempty"`
+	Netmask              *string                                                                 `json:"netmask,omitempty"`
+	SubnetAddress        *string                                                                 `json:"subnetAddress,omitempty"`
+	IpCount              *int64                                                                  `json:"ipCount,omitempty"`
+	FreeCount            *int64                                                                  `json:"freeCount,omitempty"`
+	PoolEnabled          *bool                                                                   `json:"poolEnabled,omitempty"`
+	TftpServer           *string                                                                 `json:"tftpServer,omitempty"`
+	BootFile             *string                                                                 `json:"bootFile,omitempty"`
+	RefType              *string                                                                 `json:"refType,omitempty"`
+	RefId                *string                                                                 `json:"refId,omitempty"`
+	ParentType           *string                                                                 `json:"parentType,omitempty"`
+	ParentId             *string                                                                 `json:"parentId,omitempty"`
+	PoolGroup            *string                                                                 `json:"poolGroup,omitempty"`
+	IpRanges             []CreateNetworkPool200ResponseNetworkPoolIpRangesInner                  `json:"ipRanges,omitempty"`
+	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
 }
 
 type _CreateNetworkPool200ResponseNetworkPool CreateNetworkPool200ResponseNetworkPool
@@ -1066,7 +1066,7 @@ func (o *CreateNetworkPool200ResponseNetworkPool) SetIpRanges(v []CreateNetworkP
 }
 
 func (o CreateNetworkPool200ResponseNetworkPool) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1175,92 +1175,8 @@ func (o CreateNetworkPool200ResponseNetworkPool) ToMap() (map[string]interface{}
 
 	return toSerialize, nil
 }
-
 func (o *CreateNetworkPool200ResponseNetworkPool) UnmarshalJSON(data []byte) (err error) {
-	varCreateNetworkPool200ResponseNetworkPool := _CreateNetworkPool200ResponseNetworkPool{}
-
-	err = json.Unmarshal(data, &varCreateNetworkPool200ResponseNetworkPool)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CreateNetworkPool200ResponseNetworkPool(varCreateNetworkPool200ResponseNetworkPool)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "displayName")
-		delete(additionalProperties, "internalId")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "dnsDomain")
-		delete(additionalProperties, "dnsSearchPath")
-		delete(additionalProperties, "hostPrefix")
-		delete(additionalProperties, "httpProxy")
-		delete(additionalProperties, "dnsServers")
-		delete(additionalProperties, "dnsSuffixList")
-		delete(additionalProperties, "dhcpServer")
-		delete(additionalProperties, "dhcpIp")
-		delete(additionalProperties, "gateway")
-		delete(additionalProperties, "netmask")
-		delete(additionalProperties, "subnetAddress")
-		delete(additionalProperties, "ipCount")
-		delete(additionalProperties, "freeCount")
-		delete(additionalProperties, "poolEnabled")
-		delete(additionalProperties, "tftpServer")
-		delete(additionalProperties, "bootFile")
-		delete(additionalProperties, "refType")
-		delete(additionalProperties, "refId")
-		delete(additionalProperties, "parentType")
-		delete(additionalProperties, "parentId")
-		delete(additionalProperties, "poolGroup")
-		delete(additionalProperties, "ipRanges")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCreateNetworkPool200ResponseNetworkPool struct {
-	value *CreateNetworkPool200ResponseNetworkPool
-	isSet bool
-}
-
-func (v NullableCreateNetworkPool200ResponseNetworkPool) Get() *CreateNetworkPool200ResponseNetworkPool {
-	return v.value
-}
-
-func (v *NullableCreateNetworkPool200ResponseNetworkPool) Set(val *CreateNetworkPool200ResponseNetworkPool) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCreateNetworkPool200ResponseNetworkPool) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCreateNetworkPool200ResponseNetworkPool) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCreateNetworkPool200ResponseNetworkPool(val *CreateNetworkPool200ResponseNetworkPool) *NullableCreateNetworkPool200ResponseNetworkPool {
-	return &NullableCreateNetworkPool200ResponseNetworkPool{value: val, isSet: true}
-}
-
-func (v NullableCreateNetworkPool200ResponseNetworkPool) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCreateNetworkPool200ResponseNetworkPool) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

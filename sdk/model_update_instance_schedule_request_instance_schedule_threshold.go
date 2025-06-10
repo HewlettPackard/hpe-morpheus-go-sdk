@@ -47,8 +47,8 @@ type UpdateInstanceScheduleRequestInstanceScheduleThreshold struct {
 	// Min Disk (%)
 	MinDisk *float64 `json:"minDisk,omitempty"`
 	// Max Disk (%)
-	MaxDisk *float64 `json:"maxDisk,omitempty"`
-	AdditionalProperties map[string]interface{}
+	MaxDisk              *float64               `json:"maxDisk,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UpdateInstanceScheduleRequestInstanceScheduleThreshold UpdateInstanceScheduleRequestInstanceScheduleThreshold
@@ -519,7 +519,7 @@ func (o *UpdateInstanceScheduleRequestInstanceScheduleThreshold) SetMaxDisk(v fl
 }
 
 func (o UpdateInstanceScheduleRequestInstanceScheduleThreshold) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -577,75 +577,8 @@ func (o UpdateInstanceScheduleRequestInstanceScheduleThreshold) ToMap() (map[str
 
 	return toSerialize, nil
 }
-
 func (o *UpdateInstanceScheduleRequestInstanceScheduleThreshold) UnmarshalJSON(data []byte) (err error) {
-	varUpdateInstanceScheduleRequestInstanceScheduleThreshold := _UpdateInstanceScheduleRequestInstanceScheduleThreshold{}
-
-	err = json.Unmarshal(data, &varUpdateInstanceScheduleRequestInstanceScheduleThreshold)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateInstanceScheduleRequestInstanceScheduleThreshold(varUpdateInstanceScheduleRequestInstanceScheduleThreshold)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "sourceThresholdId")
-		delete(additionalProperties, "autoUp")
-		delete(additionalProperties, "autoDown")
-		delete(additionalProperties, "minCount")
-		delete(additionalProperties, "maxCount")
-		delete(additionalProperties, "cpuEnabled")
-		delete(additionalProperties, "minCpu")
-		delete(additionalProperties, "maxCpu")
-		delete(additionalProperties, "memoryEnabled")
-		delete(additionalProperties, "minMemory")
-		delete(additionalProperties, "maxMemory")
-		delete(additionalProperties, "diskEnabled")
-		delete(additionalProperties, "minDisk")
-		delete(additionalProperties, "maxDisk")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateInstanceScheduleRequestInstanceScheduleThreshold struct {
-	value *UpdateInstanceScheduleRequestInstanceScheduleThreshold
-	isSet bool
-}
-
-func (v NullableUpdateInstanceScheduleRequestInstanceScheduleThreshold) Get() *UpdateInstanceScheduleRequestInstanceScheduleThreshold {
-	return v.value
-}
-
-func (v *NullableUpdateInstanceScheduleRequestInstanceScheduleThreshold) Set(val *UpdateInstanceScheduleRequestInstanceScheduleThreshold) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateInstanceScheduleRequestInstanceScheduleThreshold) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateInstanceScheduleRequestInstanceScheduleThreshold) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateInstanceScheduleRequestInstanceScheduleThreshold(val *UpdateInstanceScheduleRequestInstanceScheduleThreshold) *NullableUpdateInstanceScheduleRequestInstanceScheduleThreshold {
-	return &NullableUpdateInstanceScheduleRequestInstanceScheduleThreshold{value: val, isSet: true}
-}
-
-func (v NullableUpdateInstanceScheduleRequestInstanceScheduleThreshold) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateInstanceScheduleRequestInstanceScheduleThreshold) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

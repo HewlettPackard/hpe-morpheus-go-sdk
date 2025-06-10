@@ -20,8 +20,8 @@ var _ MappedNullable = &ListVirtualImages200ResponseAllOfVirtualImagesInnerConfi
 
 // ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig struct for ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig
 type ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig struct {
-	MemorySizeType *string `json:"memorySizeType,omitempty"`
-	AdditionalProperties map[string]interface{}
+	MemorySizeType       *string                `json:"memorySizeType,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig
@@ -76,7 +76,7 @@ func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig) SetMemorySiz
 }
 
 func (o ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig) ToMap() (map[
 
 	return toSerialize, nil
 }
-
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig) UnmarshalJSON(data []byte) (err error) {
-	varListVirtualImages200ResponseAllOfVirtualImagesInnerConfig := _ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig{}
-
-	err = json.Unmarshal(data, &varListVirtualImages200ResponseAllOfVirtualImagesInnerConfig)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig(varListVirtualImages200ResponseAllOfVirtualImagesInnerConfig)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "memorySizeType")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListVirtualImages200ResponseAllOfVirtualImagesInnerConfig struct {
-	value *ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig
-	isSet bool
-}
-
-func (v NullableListVirtualImages200ResponseAllOfVirtualImagesInnerConfig) Get() *ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig {
-	return v.value
-}
-
-func (v *NullableListVirtualImages200ResponseAllOfVirtualImagesInnerConfig) Set(val *ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListVirtualImages200ResponseAllOfVirtualImagesInnerConfig) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListVirtualImages200ResponseAllOfVirtualImagesInnerConfig) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListVirtualImages200ResponseAllOfVirtualImagesInnerConfig(val *ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig) *NullableListVirtualImages200ResponseAllOfVirtualImagesInnerConfig {
-	return &NullableListVirtualImages200ResponseAllOfVirtualImagesInnerConfig{value: val, isSet: true}
-}
-
-func (v NullableListVirtualImages200ResponseAllOfVirtualImagesInnerConfig) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListVirtualImages200ResponseAllOfVirtualImagesInnerConfig) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

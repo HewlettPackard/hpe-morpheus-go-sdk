@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the RolePermissionTaskSetAll type satisfies the MappedNullable interface at compile time
@@ -24,8 +23,8 @@ type RolePermissionTaskSetAll struct {
 	// Apply to all workflows (taskSets)
 	AllTaskSets bool `json:"allTaskSets"`
 	// The new access level.
-	Access string `json:"access"`
-	AdditionalProperties map[string]interface{}
+	Access               string                 `json:"access"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _RolePermissionTaskSetAll RolePermissionTaskSetAll
@@ -98,7 +97,7 @@ func (o *RolePermissionTaskSetAll) SetAccess(v string) {
 }
 
 func (o RolePermissionTaskSetAll) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -116,85 +115,8 @@ func (o RolePermissionTaskSetAll) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *RolePermissionTaskSetAll) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"allTaskSets",
-		"access",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varRolePermissionTaskSetAll := _RolePermissionTaskSetAll{}
-
-	err = json.Unmarshal(data, &varRolePermissionTaskSetAll)
-
-	if err != nil {
-		return err
-	}
-
-	*o = RolePermissionTaskSetAll(varRolePermissionTaskSetAll)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "allTaskSets")
-		delete(additionalProperties, "access")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableRolePermissionTaskSetAll struct {
-	value *RolePermissionTaskSetAll
-	isSet bool
-}
-
-func (v NullableRolePermissionTaskSetAll) Get() *RolePermissionTaskSetAll {
-	return v.value
-}
-
-func (v *NullableRolePermissionTaskSetAll) Set(val *RolePermissionTaskSetAll) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableRolePermissionTaskSetAll) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableRolePermissionTaskSetAll) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableRolePermissionTaskSetAll(val *RolePermissionTaskSetAll) *NullableRolePermissionTaskSetAll {
-	return &NullableRolePermissionTaskSetAll{value: val, isSet: true}
-}
-
-func (v NullableRolePermissionTaskSetAll) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableRolePermissionTaskSetAll) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

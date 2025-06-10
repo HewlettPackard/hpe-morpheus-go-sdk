@@ -20,9 +20,9 @@ var _ MappedNullable = &UpdateCatalogItemType200Response{}
 
 // UpdateCatalogItemType200Response struct for UpdateCatalogItemType200Response
 type UpdateCatalogItemType200Response struct {
-	CatalogItemType *ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInner `json:"catalogItemType,omitempty"`
-	Success *bool `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}
+	CatalogItemType      *ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInner `json:"catalogItemType,omitempty"`
+	Success              *bool                                                      `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}                                     `json:",remain"`
 }
 
 type _UpdateCatalogItemType200Response UpdateCatalogItemType200Response
@@ -109,7 +109,7 @@ func (o *UpdateCatalogItemType200Response) SetSuccess(v bool) {
 }
 
 func (o UpdateCatalogItemType200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o UpdateCatalogItemType200Response) ToMap() (map[string]interface{}, error
 
 	return toSerialize, nil
 }
-
 func (o *UpdateCatalogItemType200Response) UnmarshalJSON(data []byte) (err error) {
-	varUpdateCatalogItemType200Response := _UpdateCatalogItemType200Response{}
-
-	err = json.Unmarshal(data, &varUpdateCatalogItemType200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateCatalogItemType200Response(varUpdateCatalogItemType200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "catalogItemType")
-		delete(additionalProperties, "success")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateCatalogItemType200Response struct {
-	value *UpdateCatalogItemType200Response
-	isSet bool
-}
-
-func (v NullableUpdateCatalogItemType200Response) Get() *UpdateCatalogItemType200Response {
-	return v.value
-}
-
-func (v *NullableUpdateCatalogItemType200Response) Set(val *UpdateCatalogItemType200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateCatalogItemType200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateCatalogItemType200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateCatalogItemType200Response(val *UpdateCatalogItemType200Response) *NullableUpdateCatalogItemType200Response {
-	return &NullableUpdateCatalogItemType200Response{value: val, isSet: true}
-}
-
-func (v NullableUpdateCatalogItemType200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateCatalogItemType200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

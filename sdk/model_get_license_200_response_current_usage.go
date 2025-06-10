@@ -43,8 +43,8 @@ type GetLicense200ResponseCurrentUsage struct {
 	// Total Distributed Workers
 	DistributedWorkers *int64 `json:"distributedWorkers,omitempty"`
 	// Total Discovered Objects
-	DiscoveredObjects *int64 `json:"discoveredObjects,omitempty"`
-	AdditionalProperties map[string]interface{}
+	DiscoveredObjects    *int64                 `json:"discoveredObjects,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _GetLicense200ResponseCurrentUsage GetLicense200ResponseCurrentUsage
@@ -451,7 +451,7 @@ func (o *GetLicense200ResponseCurrentUsage) SetDiscoveredObjects(v int64) {
 }
 
 func (o GetLicense200ResponseCurrentUsage) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -503,73 +503,8 @@ func (o GetLicense200ResponseCurrentUsage) ToMap() (map[string]interface{}, erro
 
 	return toSerialize, nil
 }
-
 func (o *GetLicense200ResponseCurrentUsage) UnmarshalJSON(data []byte) (err error) {
-	varGetLicense200ResponseCurrentUsage := _GetLicense200ResponseCurrentUsage{}
-
-	err = json.Unmarshal(data, &varGetLicense200ResponseCurrentUsage)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetLicense200ResponseCurrentUsage(varGetLicense200ResponseCurrentUsage)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "memory")
-		delete(additionalProperties, "storage")
-		delete(additionalProperties, "workloads")
-		delete(additionalProperties, "discoveredServers")
-		delete(additionalProperties, "hosts")
-		delete(additionalProperties, "mvm")
-		delete(additionalProperties, "mvmSockets")
-		delete(additionalProperties, "iac")
-		delete(additionalProperties, "xaas")
-		delete(additionalProperties, "executions")
-		delete(additionalProperties, "distributedWorkers")
-		delete(additionalProperties, "discoveredObjects")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetLicense200ResponseCurrentUsage struct {
-	value *GetLicense200ResponseCurrentUsage
-	isSet bool
-}
-
-func (v NullableGetLicense200ResponseCurrentUsage) Get() *GetLicense200ResponseCurrentUsage {
-	return v.value
-}
-
-func (v *NullableGetLicense200ResponseCurrentUsage) Set(val *GetLicense200ResponseCurrentUsage) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetLicense200ResponseCurrentUsage) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetLicense200ResponseCurrentUsage) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetLicense200ResponseCurrentUsage(val *GetLicense200ResponseCurrentUsage) *NullableGetLicense200ResponseCurrentUsage {
-	return &NullableGetLicense200ResponseCurrentUsage{value: val, isSet: true}
-}
-
-func (v NullableGetLicense200ResponseCurrentUsage) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetLicense200ResponseCurrentUsage) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

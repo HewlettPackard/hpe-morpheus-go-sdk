@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the UpdateSecurityGroupRulesRequest type satisfies the MappedNullable interface at compile time
@@ -21,8 +20,8 @@ var _ MappedNullable = &UpdateSecurityGroupRulesRequest{}
 
 // UpdateSecurityGroupRulesRequest struct for UpdateSecurityGroupRulesRequest
 type UpdateSecurityGroupRulesRequest struct {
-	Rule UpdateSecurityGroupRulesRequestRule `json:"rule"`
-	AdditionalProperties map[string]interface{}
+	Rule                 UpdateSecurityGroupRulesRequestRule `json:"rule"`
+	AdditionalProperties map[string]interface{}              `json:",remain"`
 }
 
 type _UpdateSecurityGroupRulesRequest UpdateSecurityGroupRulesRequest
@@ -70,7 +69,7 @@ func (o *UpdateSecurityGroupRulesRequest) SetRule(v UpdateSecurityGroupRulesRequ
 }
 
 func (o UpdateSecurityGroupRulesRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -87,83 +86,8 @@ func (o UpdateSecurityGroupRulesRequest) ToMap() (map[string]interface{}, error)
 
 	return toSerialize, nil
 }
-
 func (o *UpdateSecurityGroupRulesRequest) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"rule",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varUpdateSecurityGroupRulesRequest := _UpdateSecurityGroupRulesRequest{}
-
-	err = json.Unmarshal(data, &varUpdateSecurityGroupRulesRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateSecurityGroupRulesRequest(varUpdateSecurityGroupRulesRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "rule")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateSecurityGroupRulesRequest struct {
-	value *UpdateSecurityGroupRulesRequest
-	isSet bool
-}
-
-func (v NullableUpdateSecurityGroupRulesRequest) Get() *UpdateSecurityGroupRulesRequest {
-	return v.value
-}
-
-func (v *NullableUpdateSecurityGroupRulesRequest) Set(val *UpdateSecurityGroupRulesRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateSecurityGroupRulesRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateSecurityGroupRulesRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateSecurityGroupRulesRequest(val *UpdateSecurityGroupRulesRequest) *NullableUpdateSecurityGroupRulesRequest {
-	return &NullableUpdateSecurityGroupRulesRequest{value: val, isSet: true}
-}
-
-func (v NullableUpdateSecurityGroupRulesRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateSecurityGroupRulesRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

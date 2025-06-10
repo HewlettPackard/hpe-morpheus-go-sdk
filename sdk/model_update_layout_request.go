@@ -20,8 +20,8 @@ var _ MappedNullable = &UpdateLayoutRequest{}
 
 // UpdateLayoutRequest struct for UpdateLayoutRequest
 type UpdateLayoutRequest struct {
-	InstanceTypeLayout *UpdateLayoutRequestInstanceTypeLayout `json:"instanceTypeLayout,omitempty"`
-	AdditionalProperties map[string]interface{}
+	InstanceTypeLayout   *UpdateLayoutRequestInstanceTypeLayout `json:"instanceTypeLayout,omitempty"`
+	AdditionalProperties map[string]interface{}                 `json:",remain"`
 }
 
 type _UpdateLayoutRequest UpdateLayoutRequest
@@ -76,7 +76,7 @@ func (o *UpdateLayoutRequest) SetInstanceTypeLayout(v UpdateLayoutRequestInstanc
 }
 
 func (o UpdateLayoutRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o UpdateLayoutRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *UpdateLayoutRequest) UnmarshalJSON(data []byte) (err error) {
-	varUpdateLayoutRequest := _UpdateLayoutRequest{}
-
-	err = json.Unmarshal(data, &varUpdateLayoutRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateLayoutRequest(varUpdateLayoutRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "instanceTypeLayout")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateLayoutRequest struct {
-	value *UpdateLayoutRequest
-	isSet bool
-}
-
-func (v NullableUpdateLayoutRequest) Get() *UpdateLayoutRequest {
-	return v.value
-}
-
-func (v *NullableUpdateLayoutRequest) Set(val *UpdateLayoutRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateLayoutRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateLayoutRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateLayoutRequest(val *UpdateLayoutRequest) *NullableUpdateLayoutRequest {
-	return &NullableUpdateLayoutRequest{value: val, isSet: true}
-}
-
-func (v NullableUpdateLayoutRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateLayoutRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

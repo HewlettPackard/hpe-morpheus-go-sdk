@@ -23,8 +23,8 @@ type CloneImageContainerActionRequest struct {
 	// Image Template Name
 	TemplateName *string `json:"templateName,omitempty"`
 	// Zone Folder externalId. This is required for VMware
-	ZoneFolder *string `json:"zoneFolder,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ZoneFolder           *string                `json:"zoneFolder,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _CloneImageContainerActionRequest CloneImageContainerActionRequest
@@ -115,7 +115,7 @@ func (o *CloneImageContainerActionRequest) SetZoneFolder(v string) {
 }
 
 func (o CloneImageContainerActionRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -137,63 +137,8 @@ func (o CloneImageContainerActionRequest) ToMap() (map[string]interface{}, error
 
 	return toSerialize, nil
 }
-
 func (o *CloneImageContainerActionRequest) UnmarshalJSON(data []byte) (err error) {
-	varCloneImageContainerActionRequest := _CloneImageContainerActionRequest{}
-
-	err = json.Unmarshal(data, &varCloneImageContainerActionRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CloneImageContainerActionRequest(varCloneImageContainerActionRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "templateName")
-		delete(additionalProperties, "zoneFolder")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCloneImageContainerActionRequest struct {
-	value *CloneImageContainerActionRequest
-	isSet bool
-}
-
-func (v NullableCloneImageContainerActionRequest) Get() *CloneImageContainerActionRequest {
-	return v.value
-}
-
-func (v *NullableCloneImageContainerActionRequest) Set(val *CloneImageContainerActionRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCloneImageContainerActionRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCloneImageContainerActionRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCloneImageContainerActionRequest(val *CloneImageContainerActionRequest) *NullableCloneImageContainerActionRequest {
-	return &NullableCloneImageContainerActionRequest{value: val, isSet: true}
-}
-
-func (v NullableCloneImageContainerActionRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCloneImageContainerActionRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

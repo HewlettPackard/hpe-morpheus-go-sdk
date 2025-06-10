@@ -20,8 +20,8 @@ var _ MappedNullable = &AddCatalogItemTypeRequest{}
 
 // AddCatalogItemTypeRequest struct for AddCatalogItemTypeRequest
 type AddCatalogItemTypeRequest struct {
-	CatalogItemType *AddCatalogItemTypeRequestCatalogItemType `json:"catalogItemType,omitempty"`
-	AdditionalProperties map[string]interface{}
+	CatalogItemType      *AddCatalogItemTypeRequestCatalogItemType `json:"catalogItemType,omitempty"`
+	AdditionalProperties map[string]interface{}                    `json:",remain"`
 }
 
 type _AddCatalogItemTypeRequest AddCatalogItemTypeRequest
@@ -76,7 +76,7 @@ func (o *AddCatalogItemTypeRequest) SetCatalogItemType(v AddCatalogItemTypeReque
 }
 
 func (o AddCatalogItemTypeRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o AddCatalogItemTypeRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *AddCatalogItemTypeRequest) UnmarshalJSON(data []byte) (err error) {
-	varAddCatalogItemTypeRequest := _AddCatalogItemTypeRequest{}
-
-	err = json.Unmarshal(data, &varAddCatalogItemTypeRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddCatalogItemTypeRequest(varAddCatalogItemTypeRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "catalogItemType")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddCatalogItemTypeRequest struct {
-	value *AddCatalogItemTypeRequest
-	isSet bool
-}
-
-func (v NullableAddCatalogItemTypeRequest) Get() *AddCatalogItemTypeRequest {
-	return v.value
-}
-
-func (v *NullableAddCatalogItemTypeRequest) Set(val *AddCatalogItemTypeRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddCatalogItemTypeRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddCatalogItemTypeRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddCatalogItemTypeRequest(val *AddCatalogItemTypeRequest) *NullableAddCatalogItemTypeRequest {
-	return &NullableAddCatalogItemTypeRequest{value: val, isSet: true}
-}
-
-func (v NullableAddCatalogItemTypeRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddCatalogItemTypeRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -21,21 +21,21 @@ var _ MappedNullable = &ListClusterContainers200ResponseAllOfContainersInnerStat
 
 // ListClusterContainers200ResponseAllOfContainersInnerStats struct for ListClusterContainers200ResponseAllOfContainersInnerStats
 type ListClusterContainers200ResponseAllOfContainersInnerStats struct {
-	Ts *time.Time `json:"ts,omitempty"`
-	Running *bool `json:"running,omitempty"`
-	UserCpuUsage *float32 `json:"userCpuUsage,omitempty"`
-	SystemCpuUsage *float32 `json:"systemCpuUsage,omitempty"`
-	UsedMemory *int64 `json:"usedMemory,omitempty"`
-	MaxMemory *int64 `json:"maxMemory,omitempty"`
-	CacheMemory *int64 `json:"cacheMemory,omitempty"`
-	MaxStorage *int64 `json:"maxStorage,omitempty"`
-	UsedStorage *int64 `json:"usedStorage,omitempty"`
-	ReadIOPS *int64 `json:"readIOPS,omitempty"`
-	WriteIOPS *int64 `json:"writeIOPS,omitempty"`
-	TotalIOPS *int64 `json:"totalIOPS,omitempty"`
-	NetTxUsage *int64 `json:"netTxUsage,omitempty"`
-	NetRxUsage *int64 `json:"netRxUsage,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Ts                   *time.Time             `json:"ts,omitempty"`
+	Running              *bool                  `json:"running,omitempty"`
+	UserCpuUsage         *float32               `json:"userCpuUsage,omitempty"`
+	SystemCpuUsage       *float32               `json:"systemCpuUsage,omitempty"`
+	UsedMemory           *int64                 `json:"usedMemory,omitempty"`
+	MaxMemory            *int64                 `json:"maxMemory,omitempty"`
+	CacheMemory          *int64                 `json:"cacheMemory,omitempty"`
+	MaxStorage           *int64                 `json:"maxStorage,omitempty"`
+	UsedStorage          *int64                 `json:"usedStorage,omitempty"`
+	ReadIOPS             *int64                 `json:"readIOPS,omitempty"`
+	WriteIOPS            *int64                 `json:"writeIOPS,omitempty"`
+	TotalIOPS            *int64                 `json:"totalIOPS,omitempty"`
+	NetTxUsage           *int64                 `json:"netTxUsage,omitempty"`
+	NetRxUsage           *int64                 `json:"netRxUsage,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListClusterContainers200ResponseAllOfContainersInnerStats ListClusterContainers200ResponseAllOfContainersInnerStats
@@ -506,7 +506,7 @@ func (o *ListClusterContainers200ResponseAllOfContainersInnerStats) SetNetRxUsag
 }
 
 func (o ListClusterContainers200ResponseAllOfContainersInnerStats) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -564,75 +564,8 @@ func (o ListClusterContainers200ResponseAllOfContainersInnerStats) ToMap() (map[
 
 	return toSerialize, nil
 }
-
 func (o *ListClusterContainers200ResponseAllOfContainersInnerStats) UnmarshalJSON(data []byte) (err error) {
-	varListClusterContainers200ResponseAllOfContainersInnerStats := _ListClusterContainers200ResponseAllOfContainersInnerStats{}
-
-	err = json.Unmarshal(data, &varListClusterContainers200ResponseAllOfContainersInnerStats)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListClusterContainers200ResponseAllOfContainersInnerStats(varListClusterContainers200ResponseAllOfContainersInnerStats)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "ts")
-		delete(additionalProperties, "running")
-		delete(additionalProperties, "userCpuUsage")
-		delete(additionalProperties, "systemCpuUsage")
-		delete(additionalProperties, "usedMemory")
-		delete(additionalProperties, "maxMemory")
-		delete(additionalProperties, "cacheMemory")
-		delete(additionalProperties, "maxStorage")
-		delete(additionalProperties, "usedStorage")
-		delete(additionalProperties, "readIOPS")
-		delete(additionalProperties, "writeIOPS")
-		delete(additionalProperties, "totalIOPS")
-		delete(additionalProperties, "netTxUsage")
-		delete(additionalProperties, "netRxUsage")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListClusterContainers200ResponseAllOfContainersInnerStats struct {
-	value *ListClusterContainers200ResponseAllOfContainersInnerStats
-	isSet bool
-}
-
-func (v NullableListClusterContainers200ResponseAllOfContainersInnerStats) Get() *ListClusterContainers200ResponseAllOfContainersInnerStats {
-	return v.value
-}
-
-func (v *NullableListClusterContainers200ResponseAllOfContainersInnerStats) Set(val *ListClusterContainers200ResponseAllOfContainersInnerStats) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListClusterContainers200ResponseAllOfContainersInnerStats) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListClusterContainers200ResponseAllOfContainersInnerStats) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListClusterContainers200ResponseAllOfContainersInnerStats(val *ListClusterContainers200ResponseAllOfContainersInnerStats) *NullableListClusterContainers200ResponseAllOfContainersInnerStats {
-	return &NullableListClusterContainers200ResponseAllOfContainersInnerStats{value: val, isSet: true}
-}
-
-func (v NullableListClusterContainers200ResponseAllOfContainersInnerStats) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListClusterContainers200ResponseAllOfContainersInnerStats) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

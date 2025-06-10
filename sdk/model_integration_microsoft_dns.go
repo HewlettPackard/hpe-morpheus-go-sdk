@@ -21,22 +21,22 @@ var _ MappedNullable = &IntegrationMicrosoftDNS{}
 
 // IntegrationMicrosoftDNS struct for IntegrationMicrosoftDNS
 type IntegrationMicrosoftDNS struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	Type *string `json:"type,omitempty"`
-	IntegrationType *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"integrationType,omitempty"`
-	Url *string `json:"url,omitempty"`
-	ServiceFlag *bool `json:"serviceFlag,omitempty"`
-	IsPlugin *bool `json:"isPlugin,omitempty"`
-	Config map[string]interface{} `json:"config,omitempty"`
-	Status *string `json:"status,omitempty"`
-	StatusDate *time.Time `json:"statusDate,omitempty"`
-	StatusMessage *string `json:"statusMessage,omitempty"`
-	LastSync *string `json:"lastSync,omitempty"`
-	LastSyncDuration *string `json:"lastSyncDuration,omitempty"`
-	Credential *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential `json:"credential,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                            `json:"id,omitempty"`
+	Name                 *string                                                           `json:"name,omitempty"`
+	Enabled              *bool                                                             `json:"enabled,omitempty"`
+	Type                 *string                                                           `json:"type,omitempty"`
+	IntegrationType      *ListBackupSettings200ResponseBackupSettingsDefaultSchedule       `json:"integrationType,omitempty"`
+	Url                  *string                                                           `json:"url,omitempty"`
+	ServiceFlag          *bool                                                             `json:"serviceFlag,omitempty"`
+	IsPlugin             *bool                                                             `json:"isPlugin,omitempty"`
+	Config               map[string]interface{}                                            `json:"config,omitempty"`
+	Status               *string                                                           `json:"status,omitempty"`
+	StatusDate           *time.Time                                                        `json:"statusDate,omitempty"`
+	StatusMessage        *string                                                           `json:"statusMessage,omitempty"`
+	LastSync             *string                                                           `json:"lastSync,omitempty"`
+	LastSyncDuration     *string                                                           `json:"lastSyncDuration,omitempty"`
+	Credential           *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential `json:"credential,omitempty"`
+	AdditionalProperties map[string]interface{}                                            `json:",remain"`
 }
 
 type _IntegrationMicrosoftDNS IntegrationMicrosoftDNS
@@ -539,7 +539,7 @@ func (o *IntegrationMicrosoftDNS) SetCredential(v ListIntegrations200ResponseAny
 }
 
 func (o IntegrationMicrosoftDNS) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -600,76 +600,8 @@ func (o IntegrationMicrosoftDNS) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *IntegrationMicrosoftDNS) UnmarshalJSON(data []byte) (err error) {
-	varIntegrationMicrosoftDNS := _IntegrationMicrosoftDNS{}
-
-	err = json.Unmarshal(data, &varIntegrationMicrosoftDNS)
-
-	if err != nil {
-		return err
-	}
-
-	*o = IntegrationMicrosoftDNS(varIntegrationMicrosoftDNS)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "integrationType")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "serviceFlag")
-		delete(additionalProperties, "isPlugin")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "statusDate")
-		delete(additionalProperties, "statusMessage")
-		delete(additionalProperties, "lastSync")
-		delete(additionalProperties, "lastSyncDuration")
-		delete(additionalProperties, "credential")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableIntegrationMicrosoftDNS struct {
-	value *IntegrationMicrosoftDNS
-	isSet bool
-}
-
-func (v NullableIntegrationMicrosoftDNS) Get() *IntegrationMicrosoftDNS {
-	return v.value
-}
-
-func (v *NullableIntegrationMicrosoftDNS) Set(val *IntegrationMicrosoftDNS) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableIntegrationMicrosoftDNS) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableIntegrationMicrosoftDNS) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableIntegrationMicrosoftDNS(val *IntegrationMicrosoftDNS) *NullableIntegrationMicrosoftDNS {
-	return &NullableIntegrationMicrosoftDNS{value: val, isSet: true}
-}
-
-func (v NullableIntegrationMicrosoftDNS) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableIntegrationMicrosoftDNS) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

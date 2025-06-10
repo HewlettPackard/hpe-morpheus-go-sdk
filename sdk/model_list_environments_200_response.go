@@ -20,9 +20,9 @@ var _ MappedNullable = &ListEnvironments200Response{}
 
 // ListEnvironments200Response struct for ListEnvironments200Response
 type ListEnvironments200Response struct {
-	Environments []ListEnvironments200ResponseAllOfEnvironmentsInner `json:"environments,omitempty"`
-	Meta *ListActivity200ResponseAllOfMeta `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Environments         []ListEnvironments200ResponseAllOfEnvironmentsInner `json:"environments,omitempty"`
+	Meta                 *ListActivity200ResponseAllOfMeta                   `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}                              `json:",remain"`
 }
 
 type _ListEnvironments200Response ListEnvironments200Response
@@ -109,7 +109,7 @@ func (o *ListEnvironments200Response) SetMeta(v ListActivity200ResponseAllOfMeta
 }
 
 func (o ListEnvironments200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o ListEnvironments200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ListEnvironments200Response) UnmarshalJSON(data []byte) (err error) {
-	varListEnvironments200Response := _ListEnvironments200Response{}
-
-	err = json.Unmarshal(data, &varListEnvironments200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListEnvironments200Response(varListEnvironments200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "environments")
-		delete(additionalProperties, "meta")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListEnvironments200Response struct {
-	value *ListEnvironments200Response
-	isSet bool
-}
-
-func (v NullableListEnvironments200Response) Get() *ListEnvironments200Response {
-	return v.value
-}
-
-func (v *NullableListEnvironments200Response) Set(val *ListEnvironments200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListEnvironments200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListEnvironments200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListEnvironments200Response(val *ListEnvironments200Response) *NullableListEnvironments200Response {
-	return &NullableListEnvironments200Response{value: val, isSet: true}
-}
-
-func (v NullableListEnvironments200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListEnvironments200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

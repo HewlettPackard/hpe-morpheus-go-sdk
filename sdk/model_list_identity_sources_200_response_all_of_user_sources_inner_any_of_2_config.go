@@ -20,16 +20,16 @@ var _ MappedNullable = &ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf
 
 // ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2Config struct for ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2Config
 type ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2Config struct {
-	Url *string `json:"url,omitempty"`
-	Domain *string `json:"domain,omitempty"`
-	UseSSL *string `json:"useSSL,omitempty"`
-	BindingUsername *string `json:"bindingUsername,omitempty"`
-	BindingPassword *string `json:"bindingPassword,omitempty"`
-	RequiredGroup *string `json:"requiredGroup,omitempty"`
-	RequiredGroupDN *string `json:"requiredGroupDN,omitempty"`
-	SearchMemberGroups *bool `json:"searchMemberGroups,omitempty"`
-	BindingPasswordHash *string `json:"bindingPasswordHash,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Url                  *string                `json:"url,omitempty"`
+	Domain               *string                `json:"domain,omitempty"`
+	UseSSL               *string                `json:"useSSL,omitempty"`
+	BindingUsername      *string                `json:"bindingUsername,omitempty"`
+	BindingPassword      *string                `json:"bindingPassword,omitempty"`
+	RequiredGroup        *string                `json:"requiredGroup,omitempty"`
+	RequiredGroupDN      *string                `json:"requiredGroupDN,omitempty"`
+	SearchMemberGroups   *bool                  `json:"searchMemberGroups,omitempty"`
+	BindingPasswordHash  *string                `json:"bindingPasswordHash,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2Config ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2Config
@@ -340,7 +340,7 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2Config) SetBin
 }
 
 func (o ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2Config) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -383,70 +383,8 @@ func (o ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2Config) ToMap()
 
 	return toSerialize, nil
 }
-
 func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2Config) UnmarshalJSON(data []byte) (err error) {
-	varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2Config := _ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2Config{}
-
-	err = json.Unmarshal(data, &varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2Config)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2Config(varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2Config)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "domain")
-		delete(additionalProperties, "useSSL")
-		delete(additionalProperties, "bindingUsername")
-		delete(additionalProperties, "bindingPassword")
-		delete(additionalProperties, "requiredGroup")
-		delete(additionalProperties, "requiredGroupDN")
-		delete(additionalProperties, "searchMemberGroups")
-		delete(additionalProperties, "bindingPasswordHash")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2Config struct {
-	value *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2Config
-	isSet bool
-}
-
-func (v NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2Config) Get() *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2Config {
-	return v.value
-}
-
-func (v *NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2Config) Set(val *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2Config) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2Config) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2Config) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2Config(val *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2Config) *NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2Config {
-	return &NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2Config{value: val, isSet: true}
-}
-
-func (v NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2Config) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2Config) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

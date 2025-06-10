@@ -45,8 +45,8 @@ type UserSourceCreateSaml struct {
 	// Role Attribute Name
 	RoleAttributeName *string `json:"roleAttributeName,omitempty"`
 	// Role Attibute Required Value
-	RequiredAttributeValue *string `json:"requiredAttributeValue,omitempty"`
-	AdditionalProperties map[string]interface{}
+	RequiredAttributeValue *string                `json:"requiredAttributeValue,omitempty"`
+	AdditionalProperties   map[string]interface{} `json:",remain"`
 }
 
 type _UserSourceCreateSaml UserSourceCreateSaml
@@ -497,7 +497,7 @@ func (o *UserSourceCreateSaml) SetRequiredAttributeValue(v string) {
 }
 
 func (o UserSourceCreateSaml) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -552,74 +552,8 @@ func (o UserSourceCreateSaml) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *UserSourceCreateSaml) UnmarshalJSON(data []byte) (err error) {
-	varUserSourceCreateSaml := _UserSourceCreateSaml{}
-
-	err = json.Unmarshal(data, &varUserSourceCreateSaml)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UserSourceCreateSaml(varUserSourceCreateSaml)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "doNotIncludeSAMLRequest")
-		delete(additionalProperties, "logoutUrl")
-		delete(additionalProperties, "SAMLSignatureMode")
-		delete(additionalProperties, "request509Certificate")
-		delete(additionalProperties, "requestPrivateKey")
-		delete(additionalProperties, "doNotValidateSignature")
-		delete(additionalProperties, "publicKey")
-		delete(additionalProperties, "privateKey")
-		delete(additionalProperties, "givenNameAttribute")
-		delete(additionalProperties, "surnameAttribute")
-		delete(additionalProperties, "roleAttributeName")
-		delete(additionalProperties, "requiredAttributeValue")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUserSourceCreateSaml struct {
-	value *UserSourceCreateSaml
-	isSet bool
-}
-
-func (v NullableUserSourceCreateSaml) Get() *UserSourceCreateSaml {
-	return v.value
-}
-
-func (v *NullableUserSourceCreateSaml) Set(val *UserSourceCreateSaml) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUserSourceCreateSaml) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUserSourceCreateSaml) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUserSourceCreateSaml(val *UserSourceCreateSaml) *NullableUserSourceCreateSaml {
-	return &NullableUserSourceCreateSaml{value: val, isSet: true}
-}
-
-func (v NullableUserSourceCreateSaml) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUserSourceCreateSaml) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

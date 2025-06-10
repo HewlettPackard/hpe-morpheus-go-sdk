@@ -20,8 +20,8 @@ var _ MappedNullable = &CreateInstanceScheduleRequest{}
 
 // CreateInstanceScheduleRequest struct for CreateInstanceScheduleRequest
 type CreateInstanceScheduleRequest struct {
-	InstanceSchedule *CreateInstanceScheduleRequestInstanceSchedule `json:"instanceSchedule,omitempty"`
-	AdditionalProperties map[string]interface{}
+	InstanceSchedule     *CreateInstanceScheduleRequestInstanceSchedule `json:"instanceSchedule,omitempty"`
+	AdditionalProperties map[string]interface{}                         `json:",remain"`
 }
 
 type _CreateInstanceScheduleRequest CreateInstanceScheduleRequest
@@ -76,7 +76,7 @@ func (o *CreateInstanceScheduleRequest) SetInstanceSchedule(v CreateInstanceSche
 }
 
 func (o CreateInstanceScheduleRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o CreateInstanceScheduleRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *CreateInstanceScheduleRequest) UnmarshalJSON(data []byte) (err error) {
-	varCreateInstanceScheduleRequest := _CreateInstanceScheduleRequest{}
-
-	err = json.Unmarshal(data, &varCreateInstanceScheduleRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CreateInstanceScheduleRequest(varCreateInstanceScheduleRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "instanceSchedule")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCreateInstanceScheduleRequest struct {
-	value *CreateInstanceScheduleRequest
-	isSet bool
-}
-
-func (v NullableCreateInstanceScheduleRequest) Get() *CreateInstanceScheduleRequest {
-	return v.value
-}
-
-func (v *NullableCreateInstanceScheduleRequest) Set(val *CreateInstanceScheduleRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCreateInstanceScheduleRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCreateInstanceScheduleRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCreateInstanceScheduleRequest(val *CreateInstanceScheduleRequest) *NullableCreateInstanceScheduleRequest {
-	return &NullableCreateInstanceScheduleRequest{value: val, isSet: true}
-}
-
-func (v NullableCreateInstanceScheduleRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCreateInstanceScheduleRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

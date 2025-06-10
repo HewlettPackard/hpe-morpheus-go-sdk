@@ -20,11 +20,11 @@ var _ MappedNullable = &ListClusterDatastores200ResponseAllOfDatastoresInnerLoca
 
 // ListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner struct for ListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner
 type ListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner struct {
-	RefType *string `json:"refType,omitempty"`
-	RefId *int64 `json:"refId,omitempty"`
-	Status *string `json:"status,omitempty"`
-	StatusMessage *string `json:"statusMessage,omitempty"`
-	AdditionalProperties map[string]interface{}
+	RefType              *string                `json:"refType,omitempty"`
+	RefId                *int64                 `json:"refId,omitempty"`
+	Status               *string                `json:"status,omitempty"`
+	StatusMessage        *string                `json:"statusMessage,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner ListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner
@@ -175,7 +175,7 @@ func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner) Set
 }
 
 func (o ListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -203,65 +203,8 @@ func (o ListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner) ToMa
 
 	return toSerialize, nil
 }
-
 func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner) UnmarshalJSON(data []byte) (err error) {
-	varListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner := _ListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner{}
-
-	err = json.Unmarshal(data, &varListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner(varListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "refType")
-		delete(additionalProperties, "refId")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "statusMessage")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner struct {
-	value *ListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner
-	isSet bool
-}
-
-func (v NullableListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner) Get() *ListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner {
-	return v.value
-}
-
-func (v *NullableListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner) Set(val *ListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner(val *ListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner) *NullableListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner {
-	return &NullableListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner{value: val, isSet: true}
-}
-
-func (v NullableListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

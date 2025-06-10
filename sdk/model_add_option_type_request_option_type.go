@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddOptionTypeRequestOptionType type satisfies the MappedNullable interface at compile time
@@ -44,9 +43,9 @@ type AddOptionTypeRequestOptionType struct {
 	// Export as Tag
 	ExportMeta *bool `json:"exportMeta,omitempty"`
 	// Used primarily on tasks and workflows. Basically wether or not the field can be overridden optionally when the object is run
-	Editable *bool `json:"editable,omitempty"`
-	OptionList *AddOptionTypeRequestOptionTypeOptionList `json:"optionList,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Editable             *bool                                     `json:"editable,omitempty"`
+	OptionList           *AddOptionTypeRequestOptionTypeOptionList `json:"optionList,omitempty"`
+	AdditionalProperties map[string]interface{}                    `json:",remain"`
 }
 
 type _AddOptionTypeRequestOptionType AddOptionTypeRequestOptionType
@@ -494,7 +493,7 @@ func (o *AddOptionTypeRequestOptionType) SetOptionList(v AddOptionTypeRequestOpt
 }
 
 func (o AddOptionTypeRequestOptionType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -547,95 +546,8 @@ func (o AddOptionTypeRequestOptionType) ToMap() (map[string]interface{}, error) 
 
 	return toSerialize, nil
 }
-
 func (o *AddOptionTypeRequestOptionType) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddOptionTypeRequestOptionType := _AddOptionTypeRequestOptionType{}
-
-	err = json.Unmarshal(data, &varAddOptionTypeRequestOptionType)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddOptionTypeRequestOptionType(varAddOptionTypeRequestOptionType)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "fieldName")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "fieldLabel")
-		delete(additionalProperties, "placeHolder")
-		delete(additionalProperties, "verifyPattern")
-		delete(additionalProperties, "defaultValue")
-		delete(additionalProperties, "required")
-		delete(additionalProperties, "exportMeta")
-		delete(additionalProperties, "editable")
-		delete(additionalProperties, "optionList")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddOptionTypeRequestOptionType struct {
-	value *AddOptionTypeRequestOptionType
-	isSet bool
-}
-
-func (v NullableAddOptionTypeRequestOptionType) Get() *AddOptionTypeRequestOptionType {
-	return v.value
-}
-
-func (v *NullableAddOptionTypeRequestOptionType) Set(val *AddOptionTypeRequestOptionType) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddOptionTypeRequestOptionType) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddOptionTypeRequestOptionType) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddOptionTypeRequestOptionType(val *AddOptionTypeRequestOptionType) *NullableAddOptionTypeRequestOptionType {
-	return &NullableAddOptionTypeRequestOptionType{value: val, isSet: true}
-}
-
-func (v NullableAddOptionTypeRequestOptionType) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddOptionTypeRequestOptionType) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

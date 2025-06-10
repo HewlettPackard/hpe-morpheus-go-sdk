@@ -20,11 +20,11 @@ var _ MappedNullable = &AddRoles200ResponseAllOfInstanceTypePermissionsInner{}
 
 // AddRoles200ResponseAllOfInstanceTypePermissionsInner struct for AddRoles200ResponseAllOfInstanceTypePermissionsInner
 type AddRoles200ResponseAllOfInstanceTypePermissionsInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Access *string `json:"access,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Code                 *string                `json:"code,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	Access               *string                `json:"access,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddRoles200ResponseAllOfInstanceTypePermissionsInner AddRoles200ResponseAllOfInstanceTypePermissionsInner
@@ -175,7 +175,7 @@ func (o *AddRoles200ResponseAllOfInstanceTypePermissionsInner) SetAccess(v strin
 }
 
 func (o AddRoles200ResponseAllOfInstanceTypePermissionsInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -203,65 +203,8 @@ func (o AddRoles200ResponseAllOfInstanceTypePermissionsInner) ToMap() (map[strin
 
 	return toSerialize, nil
 }
-
 func (o *AddRoles200ResponseAllOfInstanceTypePermissionsInner) UnmarshalJSON(data []byte) (err error) {
-	varAddRoles200ResponseAllOfInstanceTypePermissionsInner := _AddRoles200ResponseAllOfInstanceTypePermissionsInner{}
-
-	err = json.Unmarshal(data, &varAddRoles200ResponseAllOfInstanceTypePermissionsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddRoles200ResponseAllOfInstanceTypePermissionsInner(varAddRoles200ResponseAllOfInstanceTypePermissionsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "access")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddRoles200ResponseAllOfInstanceTypePermissionsInner struct {
-	value *AddRoles200ResponseAllOfInstanceTypePermissionsInner
-	isSet bool
-}
-
-func (v NullableAddRoles200ResponseAllOfInstanceTypePermissionsInner) Get() *AddRoles200ResponseAllOfInstanceTypePermissionsInner {
-	return v.value
-}
-
-func (v *NullableAddRoles200ResponseAllOfInstanceTypePermissionsInner) Set(val *AddRoles200ResponseAllOfInstanceTypePermissionsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddRoles200ResponseAllOfInstanceTypePermissionsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddRoles200ResponseAllOfInstanceTypePermissionsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddRoles200ResponseAllOfInstanceTypePermissionsInner(val *AddRoles200ResponseAllOfInstanceTypePermissionsInner) *NullableAddRoles200ResponseAllOfInstanceTypePermissionsInner {
-	return &NullableAddRoles200ResponseAllOfInstanceTypePermissionsInner{value: val, isSet: true}
-}
-
-func (v NullableAddRoles200ResponseAllOfInstanceTypePermissionsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddRoles200ResponseAllOfInstanceTypePermissionsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

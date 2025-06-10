@@ -21,14 +21,13 @@ import (
 	"strings"
 )
 
-
 // ProvisioningAPIService ProvisioningAPI service
 type ProvisioningAPIService service
 
 type ApiGetProvisionTypesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ProvisioningAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetProvisionTypesRequest) Execute() (*GetProvisionTypes200Response, *http.Response, error) {
@@ -40,27 +39,27 @@ GetProvisionTypes Retrieves a Specific Provision Type
 
 Retrieves a specific provision type.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetProvisionTypesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetProvisionTypesRequest
 */
 func (a *ProvisioningAPIService) GetProvisionTypes(ctx context.Context, id int64) ApiGetProvisionTypesRequest {
 	return ApiGetProvisionTypesRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetProvisionTypes200Response
+//
+//	@return GetProvisionTypes200Response
 func (a *ProvisioningAPIService) GetProvisionTypesExecute(r ApiGetProvisionTypesRequest) (*GetProvisionTypes200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetProvisionTypes200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetProvisionTypes200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProvisioningAPIService.GetProvisionTypes")
@@ -111,7 +110,7 @@ func (a *ProvisioningAPIService) GetProvisionTypesExecute(r ApiGetProvisionTypes
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -120,8 +119,8 @@ func (a *ProvisioningAPIService) GetProvisionTypesExecute(r ApiGetProvisionTypes
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -131,8 +130,8 @@ func (a *ProvisioningAPIService) GetProvisionTypesExecute(r ApiGetProvisionTypes
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -140,8 +139,8 @@ func (a *ProvisioningAPIService) GetProvisionTypesExecute(r ApiGetProvisionTypes
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -150,15 +149,15 @@ func (a *ProvisioningAPIService) GetProvisionTypesExecute(r ApiGetProvisionTypes
 }
 
 type ApiListProvisionTypesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ProvisioningAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	name *string
-	code *string
+	max        *int64
+	offset     *int64
+	sort       *string
+	direction  *string
+	phrase     *string
+	name       *string
+	code       *string
 }
 
 // Maximum number of records to return
@@ -212,25 +211,25 @@ ListProvisionTypes Retrieves all Provision Types
 
 Retrieves all provision types.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListProvisionTypesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListProvisionTypesRequest
 */
 func (a *ProvisioningAPIService) ListProvisionTypes(ctx context.Context) ApiListProvisionTypesRequest {
 	return ApiListProvisionTypesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListProvisionTypes200Response
+//
+//	@return ListProvisionTypes200Response
 func (a *ProvisioningAPIService) ListProvisionTypesExecute(r ApiListProvisionTypesRequest) (*ListProvisionTypes200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListProvisionTypes200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListProvisionTypes200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProvisioningAPIService.ListProvisionTypes")
@@ -313,7 +312,7 @@ func (a *ProvisioningAPIService) ListProvisionTypesExecute(r ApiListProvisionTyp
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -322,8 +321,8 @@ func (a *ProvisioningAPIService) ListProvisionTypesExecute(r ApiListProvisionTyp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -333,8 +332,8 @@ func (a *ProvisioningAPIService) ListProvisionTypesExecute(r ApiListProvisionTyp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -342,8 +341,8 @@ func (a *ProvisioningAPIService) ListProvisionTypesExecute(r ApiListProvisionTyp
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

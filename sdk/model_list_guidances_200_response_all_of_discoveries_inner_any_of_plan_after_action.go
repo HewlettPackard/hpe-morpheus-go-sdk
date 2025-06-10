@@ -21,36 +21,36 @@ var _ MappedNullable = &ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAf
 
 // ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction struct for ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction
 type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Active *bool `json:"active,omitempty"`
-	SortOrder *int64 `json:"sortOrder,omitempty"`
-	Description *string `json:"description,omitempty"`
-	MaxStorage *int64 `json:"maxStorage,omitempty"`
-	MaxMemory *int64 `json:"maxMemory,omitempty"`
-	MaxCpu *int64 `json:"maxCpu,omitempty"`
-	MaxCores *int64 `json:"maxCores,omitempty"`
-	MaxDisks *string `json:"maxDisks,omitempty"`
-	CoresPerSocket *int64 `json:"coresPerSocket,omitempty"`
-	CustomCpu *bool `json:"customCpu,omitempty"`
-	CustomCores *bool `json:"customCores,omitempty"`
-	CustomMaxStorage *bool `json:"customMaxStorage,omitempty"`
-	CustomMaxDataStorage *bool `json:"customMaxDataStorage,omitempty"`
-	CustomMaxMemory *bool `json:"customMaxMemory,omitempty"`
-	AddVolumes *bool `json:"addVolumes,omitempty"`
-	MemoryOptionSource *string `json:"memoryOptionSource,omitempty"`
-	CpuOptionSource *string `json:"cpuOptionSource,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	RegionCode *string `json:"regionCode,omitempty"`
-	Visibility *string `json:"visibility,omitempty"`
-	Editable *bool `json:"editable,omitempty"`
-	ProvisionType *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType `json:"provisionType,omitempty"`
-	Tenants *string `json:"tenants,omitempty"`
-	PriceSets []ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionPriceSetsInner `json:"priceSets,omitempty"`
-	Config *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfig `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                             `json:"id,omitempty"`
+	Name                 *string                                                                            `json:"name,omitempty"`
+	Code                 *string                                                                            `json:"code,omitempty"`
+	Active               *bool                                                                              `json:"active,omitempty"`
+	SortOrder            *int64                                                                             `json:"sortOrder,omitempty"`
+	Description          *string                                                                            `json:"description,omitempty"`
+	MaxStorage           *int64                                                                             `json:"maxStorage,omitempty"`
+	MaxMemory            *int64                                                                             `json:"maxMemory,omitempty"`
+	MaxCpu               *int64                                                                             `json:"maxCpu,omitempty"`
+	MaxCores             *int64                                                                             `json:"maxCores,omitempty"`
+	MaxDisks             *string                                                                            `json:"maxDisks,omitempty"`
+	CoresPerSocket       *int64                                                                             `json:"coresPerSocket,omitempty"`
+	CustomCpu            *bool                                                                              `json:"customCpu,omitempty"`
+	CustomCores          *bool                                                                              `json:"customCores,omitempty"`
+	CustomMaxStorage     *bool                                                                              `json:"customMaxStorage,omitempty"`
+	CustomMaxDataStorage *bool                                                                              `json:"customMaxDataStorage,omitempty"`
+	CustomMaxMemory      *bool                                                                              `json:"customMaxMemory,omitempty"`
+	AddVolumes           *bool                                                                              `json:"addVolumes,omitempty"`
+	MemoryOptionSource   *string                                                                            `json:"memoryOptionSource,omitempty"`
+	CpuOptionSource      *string                                                                            `json:"cpuOptionSource,omitempty"`
+	DateCreated          *time.Time                                                                         `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                                         `json:"lastUpdated,omitempty"`
+	RegionCode           *string                                                                            `json:"regionCode,omitempty"`
+	Visibility           *string                                                                            `json:"visibility,omitempty"`
+	Editable             *bool                                                                              `json:"editable,omitempty"`
+	ProvisionType        *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType   `json:"provisionType,omitempty"`
+	Tenants              *string                                                                            `json:"tenants,omitempty"`
+	PriceSets            []ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionPriceSetsInner `json:"priceSets,omitempty"`
+	Config               *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfig          `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}                                                             `json:",remain"`
 }
 
 type _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction
@@ -1001,7 +1001,7 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) SetC
 }
 
 func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1104,90 +1104,8 @@ func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) ToMap
 
 	return toSerialize, nil
 }
-
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) UnmarshalJSON(data []byte) (err error) {
-	varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction := _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction{}
-
-	err = json.Unmarshal(data, &varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction(varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "sortOrder")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "maxStorage")
-		delete(additionalProperties, "maxMemory")
-		delete(additionalProperties, "maxCpu")
-		delete(additionalProperties, "maxCores")
-		delete(additionalProperties, "maxDisks")
-		delete(additionalProperties, "coresPerSocket")
-		delete(additionalProperties, "customCpu")
-		delete(additionalProperties, "customCores")
-		delete(additionalProperties, "customMaxStorage")
-		delete(additionalProperties, "customMaxDataStorage")
-		delete(additionalProperties, "customMaxMemory")
-		delete(additionalProperties, "addVolumes")
-		delete(additionalProperties, "memoryOptionSource")
-		delete(additionalProperties, "cpuOptionSource")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "regionCode")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "editable")
-		delete(additionalProperties, "provisionType")
-		delete(additionalProperties, "tenants")
-		delete(additionalProperties, "priceSets")
-		delete(additionalProperties, "config")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction struct {
-	value *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction
-	isSet bool
-}
-
-func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) Get() *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction {
-	return v.value
-}
-
-func (v *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) Set(val *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction(val *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction {
-	return &NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction{value: val, isSet: true}
-}
-
-func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

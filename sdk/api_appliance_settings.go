@@ -20,12 +20,11 @@ import (
 	"net/url"
 )
 
-
 // ApplianceSettingsAPIService ApplianceSettingsAPI service
 type ApplianceSettingsAPIService service
 
 type ApiListApplianceSettingsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ApplianceSettingsAPIService
 }
 
@@ -38,24 +37,25 @@ ListApplianceSettings Get Appliance Settings
 
 This endpoint retrieves appliance settings.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListApplianceSettingsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListApplianceSettingsRequest
 */
 func (a *ApplianceSettingsAPIService) ListApplianceSettings(ctx context.Context) ApiListApplianceSettingsRequest {
 	return ApiListApplianceSettingsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListApplianceSettings200Response
+//
+//	@return ListApplianceSettings200Response
 func (a *ApplianceSettingsAPIService) ListApplianceSettingsExecute(r ApiListApplianceSettingsRequest) (*ListApplianceSettings200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListApplianceSettings200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListApplianceSettings200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceSettingsAPIService.ListApplianceSettings")
@@ -105,7 +105,7 @@ func (a *ApplianceSettingsAPIService) ListApplianceSettingsExecute(r ApiListAppl
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -114,8 +114,8 @@ func (a *ApplianceSettingsAPIService) ListApplianceSettingsExecute(r ApiListAppl
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -125,8 +125,8 @@ func (a *ApplianceSettingsAPIService) ListApplianceSettingsExecute(r ApiListAppl
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -134,8 +134,8 @@ func (a *ApplianceSettingsAPIService) ListApplianceSettingsExecute(r ApiListAppl
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -144,7 +144,7 @@ func (a *ApplianceSettingsAPIService) ListApplianceSettingsExecute(r ApiListAppl
 }
 
 type ApiReindexRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ApplianceSettingsAPIService
 }
 
@@ -157,24 +157,25 @@ Reindex Reindex Search
 
 Reindex all searchable data
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiReindexRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiReindexRequest
 */
 func (a *ApplianceSettingsAPIService) Reindex(ctx context.Context) ApiReindexRequest {
 	return ApiReindexRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *ApplianceSettingsAPIService) ReindexExecute(r ApiReindexRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceSettingsAPIService.Reindex")
@@ -224,7 +225,7 @@ func (a *ApplianceSettingsAPIService) ReindexExecute(r ApiReindexRequest) (*Dele
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -233,8 +234,8 @@ func (a *ApplianceSettingsAPIService) ReindexExecute(r ApiReindexRequest) (*Dele
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -244,8 +245,8 @@ func (a *ApplianceSettingsAPIService) ReindexExecute(r ApiReindexRequest) (*Dele
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -253,8 +254,8 @@ func (a *ApplianceSettingsAPIService) ReindexExecute(r ApiReindexRequest) (*Dele
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -263,9 +264,9 @@ func (a *ApplianceSettingsAPIService) ReindexExecute(r ApiReindexRequest) (*Dele
 }
 
 type ApiSetApplianceSettingsMaintenanceModeRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ApplianceSettingsAPIService
-	enabled *bool
+	enabled    *bool
 }
 
 // Pass true to turn on maintenance mode, or false to turn it off. If no value is given then it will be toggled from off to on or vice versa.
@@ -283,24 +284,25 @@ SetApplianceSettingsMaintenanceMode Toggle Maintenance Mode
 
 This endpoint allows toggling the appliance maintenance mode.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSetApplianceSettingsMaintenanceModeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSetApplianceSettingsMaintenanceModeRequest
 */
 func (a *ApplianceSettingsAPIService) SetApplianceSettingsMaintenanceMode(ctx context.Context) ApiSetApplianceSettingsMaintenanceModeRequest {
 	return ApiSetApplianceSettingsMaintenanceModeRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *ApplianceSettingsAPIService) SetApplianceSettingsMaintenanceModeExecute(r ApiSetApplianceSettingsMaintenanceModeRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceSettingsAPIService.SetApplianceSettingsMaintenanceMode")
@@ -353,7 +355,7 @@ func (a *ApplianceSettingsAPIService) SetApplianceSettingsMaintenanceModeExecute
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -362,8 +364,8 @@ func (a *ApplianceSettingsAPIService) SetApplianceSettingsMaintenanceModeExecute
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -373,8 +375,8 @@ func (a *ApplianceSettingsAPIService) SetApplianceSettingsMaintenanceModeExecute
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -382,8 +384,8 @@ func (a *ApplianceSettingsAPIService) SetApplianceSettingsMaintenanceModeExecute
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -392,8 +394,8 @@ func (a *ApplianceSettingsAPIService) SetApplianceSettingsMaintenanceModeExecute
 }
 
 type ApiUpdateApplianceSettingsRequest struct {
-	ctx context.Context
-	ApiService *ApplianceSettingsAPIService
+	ctx                            context.Context
+	ApiService                     *ApplianceSettingsAPIService
 	updateApplianceSettingsRequest *UpdateApplianceSettingsRequest
 }
 
@@ -411,24 +413,25 @@ UpdateApplianceSettings Update Appliance Settings
 
 Update Appliance Settings
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiUpdateApplianceSettingsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiUpdateApplianceSettingsRequest
 */
 func (a *ApplianceSettingsAPIService) UpdateApplianceSettings(ctx context.Context) ApiUpdateApplianceSettingsRequest {
 	return ApiUpdateApplianceSettingsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *ApplianceSettingsAPIService) UpdateApplianceSettingsExecute(r ApiUpdateApplianceSettingsRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceSettingsAPIService.UpdateApplianceSettings")
@@ -480,7 +483,7 @@ func (a *ApplianceSettingsAPIService) UpdateApplianceSettingsExecute(r ApiUpdate
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -489,8 +492,8 @@ func (a *ApplianceSettingsAPIService) UpdateApplianceSettingsExecute(r ApiUpdate
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -500,8 +503,8 @@ func (a *ApplianceSettingsAPIService) UpdateApplianceSettingsExecute(r ApiUpdate
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -509,8 +512,8 @@ func (a *ApplianceSettingsAPIService) UpdateApplianceSettingsExecute(r ApiUpdate
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

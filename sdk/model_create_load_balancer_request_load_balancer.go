@@ -31,9 +31,9 @@ type CreateLoadBalancerRequestLoadBalancer struct {
 	// private or public
 	Visibility *string `json:"visibility,omitempty"`
 	// Array of tenant account ids that are allowed access
-	Tenants []CreateLoadBalancerRequestLoadBalancerTenantsInner `json:"tenants,omitempty"`
-	ResourcePermission *CreateLoadBalancerRequestLoadBalancerResourcePermission `json:"resourcePermission,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Tenants              []CreateLoadBalancerRequestLoadBalancerTenantsInner      `json:"tenants,omitempty"`
+	ResourcePermission   *CreateLoadBalancerRequestLoadBalancerResourcePermission `json:"resourcePermission,omitempty"`
+	AdditionalProperties map[string]interface{}                                   `json:",remain"`
 }
 
 type _CreateLoadBalancerRequestLoadBalancer CreateLoadBalancerRequestLoadBalancer
@@ -284,7 +284,7 @@ func (o *CreateLoadBalancerRequestLoadBalancer) SetResourcePermission(v CreateLo
 }
 
 func (o CreateLoadBalancerRequestLoadBalancer) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -321,68 +321,8 @@ func (o CreateLoadBalancerRequestLoadBalancer) ToMap() (map[string]interface{}, 
 
 	return toSerialize, nil
 }
-
 func (o *CreateLoadBalancerRequestLoadBalancer) UnmarshalJSON(data []byte) (err error) {
-	varCreateLoadBalancerRequestLoadBalancer := _CreateLoadBalancerRequestLoadBalancer{}
-
-	err = json.Unmarshal(data, &varCreateLoadBalancerRequestLoadBalancer)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CreateLoadBalancerRequestLoadBalancer(varCreateLoadBalancerRequestLoadBalancer)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "networkServerId")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "tenants")
-		delete(additionalProperties, "resourcePermission")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCreateLoadBalancerRequestLoadBalancer struct {
-	value *CreateLoadBalancerRequestLoadBalancer
-	isSet bool
-}
-
-func (v NullableCreateLoadBalancerRequestLoadBalancer) Get() *CreateLoadBalancerRequestLoadBalancer {
-	return v.value
-}
-
-func (v *NullableCreateLoadBalancerRequestLoadBalancer) Set(val *CreateLoadBalancerRequestLoadBalancer) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCreateLoadBalancerRequestLoadBalancer) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCreateLoadBalancerRequestLoadBalancer) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCreateLoadBalancerRequestLoadBalancer(val *CreateLoadBalancerRequestLoadBalancer) *NullableCreateLoadBalancerRequestLoadBalancer {
-	return &NullableCreateLoadBalancerRequestLoadBalancer{value: val, isSet: true}
-}
-
-func (v NullableCreateLoadBalancerRequestLoadBalancer) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCreateLoadBalancerRequestLoadBalancer) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

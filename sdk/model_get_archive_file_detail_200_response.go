@@ -20,9 +20,9 @@ var _ MappedNullable = &GetArchiveFileDetail200Response{}
 
 // GetArchiveFileDetail200Response struct for GetArchiveFileDetail200Response
 type GetArchiveFileDetail200Response struct {
-	ArchiveFile *GetArchiveBucket200ResponseArchiveFilesInner `json:"archiveFile,omitempty"`
-	IsOwner *bool `json:"isOwner,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ArchiveFile          *GetArchiveBucket200ResponseArchiveFilesInner `json:"archiveFile,omitempty"`
+	IsOwner              *bool                                         `json:"isOwner,omitempty"`
+	AdditionalProperties map[string]interface{}                        `json:",remain"`
 }
 
 type _GetArchiveFileDetail200Response GetArchiveFileDetail200Response
@@ -109,7 +109,7 @@ func (o *GetArchiveFileDetail200Response) SetIsOwner(v bool) {
 }
 
 func (o GetArchiveFileDetail200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o GetArchiveFileDetail200Response) ToMap() (map[string]interface{}, error)
 
 	return toSerialize, nil
 }
-
 func (o *GetArchiveFileDetail200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetArchiveFileDetail200Response := _GetArchiveFileDetail200Response{}
-
-	err = json.Unmarshal(data, &varGetArchiveFileDetail200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetArchiveFileDetail200Response(varGetArchiveFileDetail200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "archiveFile")
-		delete(additionalProperties, "isOwner")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetArchiveFileDetail200Response struct {
-	value *GetArchiveFileDetail200Response
-	isSet bool
-}
-
-func (v NullableGetArchiveFileDetail200Response) Get() *GetArchiveFileDetail200Response {
-	return v.value
-}
-
-func (v *NullableGetArchiveFileDetail200Response) Set(val *GetArchiveFileDetail200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetArchiveFileDetail200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetArchiveFileDetail200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetArchiveFileDetail200Response(val *GetArchiveFileDetail200Response) *NullableGetArchiveFileDetail200Response {
-	return &NullableGetArchiveFileDetail200Response{value: val, isSet: true}
-}
-
-func (v NullableGetArchiveFileDetail200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetArchiveFileDetail200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

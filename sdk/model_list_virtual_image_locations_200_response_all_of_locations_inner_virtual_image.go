@@ -20,11 +20,11 @@ var _ MappedNullable = &ListVirtualImageLocations200ResponseAllOfLocationsInnerV
 
 // ListVirtualImageLocations200ResponseAllOfLocationsInnerVirtualImage struct for ListVirtualImageLocations200ResponseAllOfLocationsInnerVirtualImage
 type ListVirtualImageLocations200ResponseAllOfLocationsInnerVirtualImage struct {
-	Id *int64 `json:"id,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Name *string `json:"name,omitempty"`
-	ImageType *string `json:"imageType,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Code                 *string                `json:"code,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	ImageType            *string                `json:"imageType,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListVirtualImageLocations200ResponseAllOfLocationsInnerVirtualImage ListVirtualImageLocations200ResponseAllOfLocationsInnerVirtualImage
@@ -175,7 +175,7 @@ func (o *ListVirtualImageLocations200ResponseAllOfLocationsInnerVirtualImage) Se
 }
 
 func (o ListVirtualImageLocations200ResponseAllOfLocationsInnerVirtualImage) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -203,65 +203,8 @@ func (o ListVirtualImageLocations200ResponseAllOfLocationsInnerVirtualImage) ToM
 
 	return toSerialize, nil
 }
-
 func (o *ListVirtualImageLocations200ResponseAllOfLocationsInnerVirtualImage) UnmarshalJSON(data []byte) (err error) {
-	varListVirtualImageLocations200ResponseAllOfLocationsInnerVirtualImage := _ListVirtualImageLocations200ResponseAllOfLocationsInnerVirtualImage{}
-
-	err = json.Unmarshal(data, &varListVirtualImageLocations200ResponseAllOfLocationsInnerVirtualImage)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListVirtualImageLocations200ResponseAllOfLocationsInnerVirtualImage(varListVirtualImageLocations200ResponseAllOfLocationsInnerVirtualImage)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "imageType")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListVirtualImageLocations200ResponseAllOfLocationsInnerVirtualImage struct {
-	value *ListVirtualImageLocations200ResponseAllOfLocationsInnerVirtualImage
-	isSet bool
-}
-
-func (v NullableListVirtualImageLocations200ResponseAllOfLocationsInnerVirtualImage) Get() *ListVirtualImageLocations200ResponseAllOfLocationsInnerVirtualImage {
-	return v.value
-}
-
-func (v *NullableListVirtualImageLocations200ResponseAllOfLocationsInnerVirtualImage) Set(val *ListVirtualImageLocations200ResponseAllOfLocationsInnerVirtualImage) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListVirtualImageLocations200ResponseAllOfLocationsInnerVirtualImage) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListVirtualImageLocations200ResponseAllOfLocationsInnerVirtualImage) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListVirtualImageLocations200ResponseAllOfLocationsInnerVirtualImage(val *ListVirtualImageLocations200ResponseAllOfLocationsInnerVirtualImage) *NullableListVirtualImageLocations200ResponseAllOfLocationsInnerVirtualImage {
-	return &NullableListVirtualImageLocations200ResponseAllOfLocationsInnerVirtualImage{value: val, isSet: true}
-}
-
-func (v NullableListVirtualImageLocations200ResponseAllOfLocationsInnerVirtualImage) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListVirtualImageLocations200ResponseAllOfLocationsInnerVirtualImage) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

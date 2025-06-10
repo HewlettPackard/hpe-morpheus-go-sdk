@@ -31,8 +31,8 @@ type UpdateUserRequestUser struct {
 	// Password
 	Password *string `json:"password,omitempty"`
 	// List of Roles
-	Roles []UpdateUserRequestUserRolesInner `json:"roles,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Roles                []UpdateUserRequestUserRolesInner `json:"roles,omitempty"`
+	AdditionalProperties map[string]interface{}            `json:",remain"`
 }
 
 type _UpdateUserRequestUser UpdateUserRequestUser
@@ -86,6 +86,7 @@ func (o *UpdateUserRequestUser) IsSetFirstName() bool {
 func (o *UpdateUserRequestUser) SetFirstName(v string) {
 	o.FirstName.Set(&v)
 }
+
 // SetFirstNameNil sets the value for FirstName to be an explicit nil
 func (o *UpdateUserRequestUser) SetFirstNameNil() {
 	o.FirstName.Set(nil)
@@ -128,6 +129,7 @@ func (o *UpdateUserRequestUser) IsSetLastName() bool {
 func (o *UpdateUserRequestUser) SetLastName(v string) {
 	o.LastName.Set(&v)
 }
+
 // SetLastNameNil sets the value for LastName to be an explicit nil
 func (o *UpdateUserRequestUser) SetLastNameNil() {
 	o.LastName.Set(nil)
@@ -267,7 +269,7 @@ func (o *UpdateUserRequestUser) SetRoles(v []UpdateUserRequestUserRolesInner) {
 }
 
 func (o UpdateUserRequestUser) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -301,67 +303,8 @@ func (o UpdateUserRequestUser) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *UpdateUserRequestUser) UnmarshalJSON(data []byte) (err error) {
-	varUpdateUserRequestUser := _UpdateUserRequestUser{}
-
-	err = json.Unmarshal(data, &varUpdateUserRequestUser)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateUserRequestUser(varUpdateUserRequestUser)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "firstName")
-		delete(additionalProperties, "lastName")
-		delete(additionalProperties, "username")
-		delete(additionalProperties, "email")
-		delete(additionalProperties, "password")
-		delete(additionalProperties, "roles")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateUserRequestUser struct {
-	value *UpdateUserRequestUser
-	isSet bool
-}
-
-func (v NullableUpdateUserRequestUser) Get() *UpdateUserRequestUser {
-	return v.value
-}
-
-func (v *NullableUpdateUserRequestUser) Set(val *UpdateUserRequestUser) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateUserRequestUser) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateUserRequestUser) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateUserRequestUser(val *UpdateUserRequestUser) *NullableUpdateUserRequestUser {
-	return &NullableUpdateUserRequestUser{value: val, isSet: true}
-}
-
-func (v NullableUpdateUserRequestUser) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateUserRequestUser) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

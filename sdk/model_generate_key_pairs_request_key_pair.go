@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the GenerateKeyPairsRequestKeyPair type satisfies the MappedNullable interface at compile time
@@ -21,8 +20,8 @@ var _ MappedNullable = &GenerateKeyPairsRequestKeyPair{}
 
 // GenerateKeyPairsRequestKeyPair struct for GenerateKeyPairsRequestKeyPair
 type GenerateKeyPairsRequestKeyPair struct {
-	Name string `json:"name"`
-	AdditionalProperties map[string]interface{}
+	Name                 string                 `json:"name"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _GenerateKeyPairsRequestKeyPair GenerateKeyPairsRequestKeyPair
@@ -70,7 +69,7 @@ func (o *GenerateKeyPairsRequestKeyPair) SetName(v string) {
 }
 
 func (o GenerateKeyPairsRequestKeyPair) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -87,83 +86,8 @@ func (o GenerateKeyPairsRequestKeyPair) ToMap() (map[string]interface{}, error) 
 
 	return toSerialize, nil
 }
-
 func (o *GenerateKeyPairsRequestKeyPair) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varGenerateKeyPairsRequestKeyPair := _GenerateKeyPairsRequestKeyPair{}
-
-	err = json.Unmarshal(data, &varGenerateKeyPairsRequestKeyPair)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GenerateKeyPairsRequestKeyPair(varGenerateKeyPairsRequestKeyPair)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGenerateKeyPairsRequestKeyPair struct {
-	value *GenerateKeyPairsRequestKeyPair
-	isSet bool
-}
-
-func (v NullableGenerateKeyPairsRequestKeyPair) Get() *GenerateKeyPairsRequestKeyPair {
-	return v.value
-}
-
-func (v *NullableGenerateKeyPairsRequestKeyPair) Set(val *GenerateKeyPairsRequestKeyPair) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGenerateKeyPairsRequestKeyPair) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGenerateKeyPairsRequestKeyPair) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGenerateKeyPairsRequestKeyPair(val *GenerateKeyPairsRequestKeyPair) *NullableGenerateKeyPairsRequestKeyPair {
-	return &NullableGenerateKeyPairsRequestKeyPair{value: val, isSet: true}
-}
-
-func (v NullableGenerateKeyPairsRequestKeyPair) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGenerateKeyPairsRequestKeyPair) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

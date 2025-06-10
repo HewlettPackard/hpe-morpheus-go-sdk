@@ -27,9 +27,9 @@ type UpdateSpecTemplateRequestSpecTemplateFile struct {
 	// Content Path, the repo file location or url. Required when sourceType is repository or url.
 	ContentPath *string `json:"contentPath,omitempty"`
 	// Content Ref, the branch/tag. Only used when sourceType is repo.
-	ContentRef *string `json:"contentRef,omitempty"`
-	Repository *UpdateSpecTemplateRequestSpecTemplateFileRepository `json:"repository,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ContentRef           *string                                              `json:"contentRef,omitempty"`
+	Repository           *UpdateSpecTemplateRequestSpecTemplateFileRepository `json:"repository,omitempty"`
+	AdditionalProperties map[string]interface{}                               `json:",remain"`
 }
 
 type _UpdateSpecTemplateRequestSpecTemplateFile UpdateSpecTemplateRequestSpecTemplateFile
@@ -216,7 +216,7 @@ func (o *UpdateSpecTemplateRequestSpecTemplateFile) SetRepository(v UpdateSpecTe
 }
 
 func (o UpdateSpecTemplateRequestSpecTemplateFile) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -247,66 +247,8 @@ func (o UpdateSpecTemplateRequestSpecTemplateFile) ToMap() (map[string]interface
 
 	return toSerialize, nil
 }
-
 func (o *UpdateSpecTemplateRequestSpecTemplateFile) UnmarshalJSON(data []byte) (err error) {
-	varUpdateSpecTemplateRequestSpecTemplateFile := _UpdateSpecTemplateRequestSpecTemplateFile{}
-
-	err = json.Unmarshal(data, &varUpdateSpecTemplateRequestSpecTemplateFile)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateSpecTemplateRequestSpecTemplateFile(varUpdateSpecTemplateRequestSpecTemplateFile)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "sourceType")
-		delete(additionalProperties, "content")
-		delete(additionalProperties, "contentPath")
-		delete(additionalProperties, "contentRef")
-		delete(additionalProperties, "repository")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateSpecTemplateRequestSpecTemplateFile struct {
-	value *UpdateSpecTemplateRequestSpecTemplateFile
-	isSet bool
-}
-
-func (v NullableUpdateSpecTemplateRequestSpecTemplateFile) Get() *UpdateSpecTemplateRequestSpecTemplateFile {
-	return v.value
-}
-
-func (v *NullableUpdateSpecTemplateRequestSpecTemplateFile) Set(val *UpdateSpecTemplateRequestSpecTemplateFile) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateSpecTemplateRequestSpecTemplateFile) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateSpecTemplateRequestSpecTemplateFile) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateSpecTemplateRequestSpecTemplateFile(val *UpdateSpecTemplateRequestSpecTemplateFile) *NullableUpdateSpecTemplateRequestSpecTemplateFile {
-	return &NullableUpdateSpecTemplateRequestSpecTemplateFile{value: val, isSet: true}
-}
-
-func (v NullableUpdateSpecTemplateRequestSpecTemplateFile) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateSpecTemplateRequestSpecTemplateFile) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

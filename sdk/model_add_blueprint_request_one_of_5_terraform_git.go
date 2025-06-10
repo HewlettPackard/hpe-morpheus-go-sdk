@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddBlueprintRequestOneOf5TerraformGit type satisfies the MappedNullable interface at compile time
@@ -28,8 +27,8 @@ type AddBlueprintRequestOneOf5TerraformGit struct {
 	// Morpheus SCM Integration ID
 	IntegrationId int64 `json:"integrationId"`
 	// Branch Name
-	Branch string `json:"branch"`
-	AdditionalProperties map[string]interface{}
+	Branch               string                 `json:"branch"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddBlueprintRequestOneOf5TerraformGit AddBlueprintRequestOneOf5TerraformGit
@@ -152,7 +151,7 @@ func (o *AddBlueprintRequestOneOf5TerraformGit) SetBranch(v string) {
 }
 
 func (o AddBlueprintRequestOneOf5TerraformGit) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -172,89 +171,8 @@ func (o AddBlueprintRequestOneOf5TerraformGit) ToMap() (map[string]interface{}, 
 
 	return toSerialize, nil
 }
-
 func (o *AddBlueprintRequestOneOf5TerraformGit) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"repoId",
-		"path",
-		"integrationId",
-		"branch",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddBlueprintRequestOneOf5TerraformGit := _AddBlueprintRequestOneOf5TerraformGit{}
-
-	err = json.Unmarshal(data, &varAddBlueprintRequestOneOf5TerraformGit)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddBlueprintRequestOneOf5TerraformGit(varAddBlueprintRequestOneOf5TerraformGit)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "repoId")
-		delete(additionalProperties, "path")
-		delete(additionalProperties, "integrationId")
-		delete(additionalProperties, "branch")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddBlueprintRequestOneOf5TerraformGit struct {
-	value *AddBlueprintRequestOneOf5TerraformGit
-	isSet bool
-}
-
-func (v NullableAddBlueprintRequestOneOf5TerraformGit) Get() *AddBlueprintRequestOneOf5TerraformGit {
-	return v.value
-}
-
-func (v *NullableAddBlueprintRequestOneOf5TerraformGit) Set(val *AddBlueprintRequestOneOf5TerraformGit) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddBlueprintRequestOneOf5TerraformGit) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddBlueprintRequestOneOf5TerraformGit) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddBlueprintRequestOneOf5TerraformGit(val *AddBlueprintRequestOneOf5TerraformGit) *NullableAddBlueprintRequestOneOf5TerraformGit {
-	return &NullableAddBlueprintRequestOneOf5TerraformGit{value: val, isSet: true}
-}
-
-func (v NullableAddBlueprintRequestOneOf5TerraformGit) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddBlueprintRequestOneOf5TerraformGit) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

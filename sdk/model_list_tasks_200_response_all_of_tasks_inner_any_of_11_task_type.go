@@ -20,10 +20,10 @@ var _ MappedNullable = &ListTasks200ResponseAllOfTasksInnerAnyOf11TaskType{}
 
 // ListTasks200ResponseAllOfTasksInnerAnyOf11TaskType struct for ListTasks200ResponseAllOfTasksInnerAnyOf11TaskType
 type ListTasks200ResponseAllOfTasksInnerAnyOf11TaskType struct {
-	Id *int64 `json:"id,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Name *string `json:"name,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Code                 *string                `json:"code,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListTasks200ResponseAllOfTasksInnerAnyOf11TaskType ListTasks200ResponseAllOfTasksInnerAnyOf11TaskType
@@ -142,7 +142,7 @@ func (o *ListTasks200ResponseAllOfTasksInnerAnyOf11TaskType) SetName(v string) {
 }
 
 func (o ListTasks200ResponseAllOfTasksInnerAnyOf11TaskType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -167,64 +167,8 @@ func (o ListTasks200ResponseAllOfTasksInnerAnyOf11TaskType) ToMap() (map[string]
 
 	return toSerialize, nil
 }
-
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf11TaskType) UnmarshalJSON(data []byte) (err error) {
-	varListTasks200ResponseAllOfTasksInnerAnyOf11TaskType := _ListTasks200ResponseAllOfTasksInnerAnyOf11TaskType{}
-
-	err = json.Unmarshal(data, &varListTasks200ResponseAllOfTasksInnerAnyOf11TaskType)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListTasks200ResponseAllOfTasksInnerAnyOf11TaskType(varListTasks200ResponseAllOfTasksInnerAnyOf11TaskType)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "name")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListTasks200ResponseAllOfTasksInnerAnyOf11TaskType struct {
-	value *ListTasks200ResponseAllOfTasksInnerAnyOf11TaskType
-	isSet bool
-}
-
-func (v NullableListTasks200ResponseAllOfTasksInnerAnyOf11TaskType) Get() *ListTasks200ResponseAllOfTasksInnerAnyOf11TaskType {
-	return v.value
-}
-
-func (v *NullableListTasks200ResponseAllOfTasksInnerAnyOf11TaskType) Set(val *ListTasks200ResponseAllOfTasksInnerAnyOf11TaskType) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListTasks200ResponseAllOfTasksInnerAnyOf11TaskType) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListTasks200ResponseAllOfTasksInnerAnyOf11TaskType) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListTasks200ResponseAllOfTasksInnerAnyOf11TaskType(val *ListTasks200ResponseAllOfTasksInnerAnyOf11TaskType) *NullableListTasks200ResponseAllOfTasksInnerAnyOf11TaskType {
-	return &NullableListTasks200ResponseAllOfTasksInnerAnyOf11TaskType{value: val, isSet: true}
-}
-
-func (v NullableListTasks200ResponseAllOfTasksInnerAnyOf11TaskType) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListTasks200ResponseAllOfTasksInnerAnyOf11TaskType) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

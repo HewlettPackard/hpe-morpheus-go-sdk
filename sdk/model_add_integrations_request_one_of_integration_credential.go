@@ -14,16 +14,17 @@ package sdk
 import (
 	"encoding/json"
 	"fmt"
+
 	"gopkg.in/validator.v2"
 )
 
 // very silly way of avoiding `"fmt" imported and not used` errors
 var _ fmt.Stringer
 
-// AddIntegrationsRequestOneOfIntegrationCredential - Map containing Credential ID or the default {\"type\": \"local\"}  which means use the values set in the local task options username and password instead of associating a credential. 
+// AddIntegrationsRequestOneOfIntegrationCredential - Map containing Credential ID or the default {\"type\": \"local\"}  which means use the values set in the local task options username and password instead of associating a credential.
 type AddIntegrationsRequestOneOfIntegrationCredential struct {
 	AddIntegrationsRequestOneOfIntegrationCredentialOneOf *AddIntegrationsRequestOneOfIntegrationCredentialOneOf
-	GetAlerts200ResponseAllOfChecksInnerAccount *GetAlerts200ResponseAllOfChecksInnerAccount
+	GetAlerts200ResponseAllOfChecksInnerAccount           *GetAlerts200ResponseAllOfChecksInnerAccount
 }
 
 // AddIntegrationsRequestOneOfIntegrationCredentialOneOfAsAddIntegrationsRequestOneOfIntegrationCredential is a convenience function that returns AddIntegrationsRequestOneOfIntegrationCredentialOneOf wrapped in AddIntegrationsRequestOneOfIntegrationCredential
@@ -40,6 +41,21 @@ func GetAlerts200ResponseAllOfChecksInnerAccountAsAddIntegrationsRequestOneOfInt
 	}
 }
 
+func (dst *AddIntegrationsRequestOneOfIntegrationCredential) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddIntegrationsRequestOneOfIntegrationCredential{}
+	}
+
+	if out, ok := data.(AddIntegrationsRequestOneOfIntegrationCredentialOneOf); ok {
+		dst.AddIntegrationsRequestOneOfIntegrationCredentialOneOf = &out
+	}
+
+	if out, ok := data.(GetAlerts200ResponseAllOfChecksInnerAccount); ok {
+		dst.GetAlerts200ResponseAllOfChecksInnerAccount = &out
+	}
+
+	return dst, nil
+}
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddIntegrationsRequestOneOfIntegrationCredential) UnmarshalJSON(data []byte) error {
@@ -106,7 +122,7 @@ func (src AddIntegrationsRequestOneOfIntegrationCredential) MarshalJSON() ([]byt
 }
 
 // Get the actual instance
-func (obj *AddIntegrationsRequestOneOfIntegrationCredential) GetActualInstance() (interface{}) {
+func (obj *AddIntegrationsRequestOneOfIntegrationCredential) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -123,7 +139,7 @@ func (obj *AddIntegrationsRequestOneOfIntegrationCredential) GetActualInstance()
 }
 
 // Get the actual instance value
-func (obj AddIntegrationsRequestOneOfIntegrationCredential) GetActualInstanceValue() (interface{}) {
+func (obj AddIntegrationsRequestOneOfIntegrationCredential) GetActualInstanceValue() interface{} {
 	if obj.AddIntegrationsRequestOneOfIntegrationCredentialOneOf != nil {
 		return *obj.AddIntegrationsRequestOneOfIntegrationCredentialOneOf
 	}
@@ -171,5 +187,3 @@ func (v *NullableAddIntegrationsRequestOneOfIntegrationCredential) UnmarshalJSON
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,27 +20,27 @@ var _ MappedNullable = &ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf
 
 // ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config struct for ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config
 type ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config struct {
-	Url *string `json:"url,omitempty"`
-	LogoutUrl *string `json:"logoutUrl,omitempty"`
-	DoNotIncludeSAMLRequest *bool `json:"doNotIncludeSAMLRequest,omitempty"`
-	SAMLSignatureMode *string `json:"SAMLSignatureMode,omitempty"`
-	DoNotValidateSignature *bool `json:"doNotValidateSignature,omitempty"`
-	DoNotValidateStatusCode *bool `json:"doNotValidateStatusCode,omitempty"`
-	DoNotValidateDestination *bool `json:"doNotValidateDestination,omitempty"`
-	DoNotValidateIssueInstants *bool `json:"doNotValidateIssueInstants,omitempty"`
-	DoNotValidateAssertions *bool `json:"doNotValidateAssertions,omitempty"`
-	GivenNameAttribute *string `json:"givenNameAttribute,omitempty"`
-	SurnameAttribute *string `json:"surnameAttribute,omitempty"`
-	EmailAttribute *string `json:"emailAttribute,omitempty"`
-	RequiredAttributeValue *string `json:"requiredAttributeValue,omitempty"`
-	RoleAttributeName *string `json:"roleAttributeName,omitempty"`
-	AzureTenantId *string `json:"azureTenantId,omitempty"`
-	AzureAppId *string `json:"azureAppId,omitempty"`
-	AzureAppSecret *string `json:"azureAppSecret,omitempty"`
-	RoleLinkAttributeName *string `json:"roleLinkAttributeName,omitempty"`
-	PublicKey *string `json:"publicKey,omitempty"`
-	AzureAppSecretHash *string `json:"azureAppSecretHash,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Url                        *string                `json:"url,omitempty"`
+	LogoutUrl                  *string                `json:"logoutUrl,omitempty"`
+	DoNotIncludeSAMLRequest    *bool                  `json:"doNotIncludeSAMLRequest,omitempty"`
+	SAMLSignatureMode          *string                `json:"SAMLSignatureMode,omitempty"`
+	DoNotValidateSignature     *bool                  `json:"doNotValidateSignature,omitempty"`
+	DoNotValidateStatusCode    *bool                  `json:"doNotValidateStatusCode,omitempty"`
+	DoNotValidateDestination   *bool                  `json:"doNotValidateDestination,omitempty"`
+	DoNotValidateIssueInstants *bool                  `json:"doNotValidateIssueInstants,omitempty"`
+	DoNotValidateAssertions    *bool                  `json:"doNotValidateAssertions,omitempty"`
+	GivenNameAttribute         *string                `json:"givenNameAttribute,omitempty"`
+	SurnameAttribute           *string                `json:"surnameAttribute,omitempty"`
+	EmailAttribute             *string                `json:"emailAttribute,omitempty"`
+	RequiredAttributeValue     *string                `json:"requiredAttributeValue,omitempty"`
+	RoleAttributeName          *string                `json:"roleAttributeName,omitempty"`
+	AzureTenantId              *string                `json:"azureTenantId,omitempty"`
+	AzureAppId                 *string                `json:"azureAppId,omitempty"`
+	AzureAppSecret             *string                `json:"azureAppSecret,omitempty"`
+	RoleLinkAttributeName      *string                `json:"roleLinkAttributeName,omitempty"`
+	PublicKey                  *string                `json:"publicKey,omitempty"`
+	AzureAppSecretHash         *string                `json:"azureAppSecretHash,omitempty"`
+	AdditionalProperties       map[string]interface{} `json:",remain"`
 }
 
 type _ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config
@@ -703,7 +703,7 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config) SetAzu
 }
 
 func (o ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -779,81 +779,8 @@ func (o ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config) ToMap()
 
 	return toSerialize, nil
 }
-
 func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config) UnmarshalJSON(data []byte) (err error) {
-	varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config := _ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config{}
-
-	err = json.Unmarshal(data, &varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config(varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "logoutUrl")
-		delete(additionalProperties, "doNotIncludeSAMLRequest")
-		delete(additionalProperties, "SAMLSignatureMode")
-		delete(additionalProperties, "doNotValidateSignature")
-		delete(additionalProperties, "doNotValidateStatusCode")
-		delete(additionalProperties, "doNotValidateDestination")
-		delete(additionalProperties, "doNotValidateIssueInstants")
-		delete(additionalProperties, "doNotValidateAssertions")
-		delete(additionalProperties, "givenNameAttribute")
-		delete(additionalProperties, "surnameAttribute")
-		delete(additionalProperties, "emailAttribute")
-		delete(additionalProperties, "requiredAttributeValue")
-		delete(additionalProperties, "roleAttributeName")
-		delete(additionalProperties, "azureTenantId")
-		delete(additionalProperties, "azureAppId")
-		delete(additionalProperties, "azureAppSecret")
-		delete(additionalProperties, "roleLinkAttributeName")
-		delete(additionalProperties, "publicKey")
-		delete(additionalProperties, "azureAppSecretHash")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config struct {
-	value *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config
-	isSet bool
-}
-
-func (v NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config) Get() *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config {
-	return v.value
-}
-
-func (v *NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config) Set(val *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config(val *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config) *NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config {
-	return &NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config{value: val, isSet: true}
-}
-
-func (v NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6Config) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

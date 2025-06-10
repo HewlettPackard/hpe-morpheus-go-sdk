@@ -25,9 +25,9 @@ type BlueprintKubernetesCreateSuccess struct {
 	// Path to display image. Defaults to an internal Morpheus image.
 	Image *string `json:"image,omitempty"`
 	// Blueprint Type
-	Type *string `json:"type,omitempty"`
+	Type       *string                              `json:"type,omitempty"`
 	Kubernetes *AddBlueprintRequestOneOf3Kubernetes `json:"kubernetes,omitempty"`
-	Config *AddBlueprintRequestOneOf3Config `json:"config,omitempty"`
+	Config     *AddBlueprintRequestOneOf3Config     `json:"config,omitempty"`
 	// Private or Public Access
 	Visibility *string `json:"visibility,omitempty"`
 	// Resource Permission Block
@@ -35,8 +35,8 @@ type BlueprintKubernetesCreateSuccess struct {
 	// Owner
 	Owner map[string]interface{} `json:"owner,omitempty"`
 	// Tenant
-	Tenant map[string]interface{} `json:"tenant,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Tenant               map[string]interface{} `json:"tenant,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _BlueprintKubernetesCreateSuccess BlueprintKubernetesCreateSuccess
@@ -351,7 +351,7 @@ func (o *BlueprintKubernetesCreateSuccess) SetTenant(v map[string]interface{}) {
 }
 
 func (o BlueprintKubernetesCreateSuccess) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -394,70 +394,8 @@ func (o BlueprintKubernetesCreateSuccess) ToMap() (map[string]interface{}, error
 
 	return toSerialize, nil
 }
-
 func (o *BlueprintKubernetesCreateSuccess) UnmarshalJSON(data []byte) (err error) {
-	varBlueprintKubernetesCreateSuccess := _BlueprintKubernetesCreateSuccess{}
-
-	err = json.Unmarshal(data, &varBlueprintKubernetesCreateSuccess)
-
-	if err != nil {
-		return err
-	}
-
-	*o = BlueprintKubernetesCreateSuccess(varBlueprintKubernetesCreateSuccess)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "image")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "kubernetes")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "resourcePermission")
-		delete(additionalProperties, "owner")
-		delete(additionalProperties, "tenant")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableBlueprintKubernetesCreateSuccess struct {
-	value *BlueprintKubernetesCreateSuccess
-	isSet bool
-}
-
-func (v NullableBlueprintKubernetesCreateSuccess) Get() *BlueprintKubernetesCreateSuccess {
-	return v.value
-}
-
-func (v *NullableBlueprintKubernetesCreateSuccess) Set(val *BlueprintKubernetesCreateSuccess) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableBlueprintKubernetesCreateSuccess) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableBlueprintKubernetesCreateSuccess) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableBlueprintKubernetesCreateSuccess(val *BlueprintKubernetesCreateSuccess) *NullableBlueprintKubernetesCreateSuccess {
-	return &NullableBlueprintKubernetesCreateSuccess{value: val, isSet: true}
-}
-
-func (v NullableBlueprintKubernetesCreateSuccess) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableBlueprintKubernetesCreateSuccess) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

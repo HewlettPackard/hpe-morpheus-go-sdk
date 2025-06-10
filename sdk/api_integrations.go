@@ -21,14 +21,13 @@ import (
 	"strings"
 )
 
-
 // IntegrationsAPIService IntegrationsAPI service
 type IntegrationsAPIService service
 
 type ApiAddIntegrationSnowObjectsRequest struct {
-	ctx context.Context
-	ApiService *IntegrationsAPIService
-	id int64
+	ctx                              context.Context
+	ApiService                       *IntegrationsAPIService
+	id                               int64
 	addIntegrationSnowObjectsRequest *AddIntegrationSnowObjectsRequest
 }
 
@@ -47,27 +46,27 @@ AddIntegrationSnowObjects Creates an Exposed ServiceNow Catalog Item
 This endpoint creates an Exposed Catalog Item.
 This is an integration object of type `catalog` that references a `Catalog Item Type.`
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiAddIntegrationSnowObjectsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiAddIntegrationSnowObjectsRequest
 */
 func (a *IntegrationsAPIService) AddIntegrationSnowObjects(ctx context.Context, id int64) ApiAddIntegrationSnowObjectsRequest {
 	return ApiAddIntegrationSnowObjectsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddIntegrationSnowObjects200Response
+//
+//	@return AddIntegrationSnowObjects200Response
 func (a *IntegrationsAPIService) AddIntegrationSnowObjectsExecute(r ApiAddIntegrationSnowObjectsRequest) (*AddIntegrationSnowObjects200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddIntegrationSnowObjects200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddIntegrationSnowObjects200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IntegrationsAPIService.AddIntegrationSnowObjects")
@@ -120,7 +119,7 @@ func (a *IntegrationsAPIService) AddIntegrationSnowObjectsExecute(r ApiAddIntegr
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -129,8 +128,8 @@ func (a *IntegrationsAPIService) AddIntegrationSnowObjectsExecute(r ApiAddIntegr
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -140,8 +139,8 @@ func (a *IntegrationsAPIService) AddIntegrationSnowObjectsExecute(r ApiAddIntegr
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -149,8 +148,8 @@ func (a *IntegrationsAPIService) AddIntegrationSnowObjectsExecute(r ApiAddIntegr
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -159,8 +158,8 @@ func (a *IntegrationsAPIService) AddIntegrationSnowObjectsExecute(r ApiAddIntegr
 }
 
 type ApiAddIntegrationsRequest struct {
-	ctx context.Context
-	ApiService *IntegrationsAPIService
+	ctx                    context.Context
+	ApiService             *IntegrationsAPIService
 	addIntegrationsRequest *AddIntegrationsRequest
 }
 
@@ -178,25 +177,25 @@ AddIntegrations Creates an Integration
 
 Creates an integration.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddIntegrationsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddIntegrationsRequest
 */
 func (a *IntegrationsAPIService) AddIntegrations(ctx context.Context) ApiAddIntegrationsRequest {
 	return ApiAddIntegrationsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddIntegrations200Response
+//
+//	@return AddIntegrations200Response
 func (a *IntegrationsAPIService) AddIntegrationsExecute(r ApiAddIntegrationsRequest) (*AddIntegrations200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddIntegrations200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddIntegrations200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IntegrationsAPIService.AddIntegrations")
@@ -248,7 +247,7 @@ func (a *IntegrationsAPIService) AddIntegrationsExecute(r ApiAddIntegrationsRequ
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -257,8 +256,8 @@ func (a *IntegrationsAPIService) AddIntegrationsExecute(r ApiAddIntegrationsRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -268,8 +267,8 @@ func (a *IntegrationsAPIService) AddIntegrationsExecute(r ApiAddIntegrationsRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -277,8 +276,8 @@ func (a *IntegrationsAPIService) AddIntegrationsExecute(r ApiAddIntegrationsRequ
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -287,9 +286,9 @@ func (a *IntegrationsAPIService) AddIntegrationsExecute(r ApiAddIntegrationsRequ
 }
 
 type ApiGetIntegrationInventoryRequest struct {
-	ctx context.Context
-	ApiService *IntegrationsAPIService
-	id int64
+	ctx         context.Context
+	ApiService  *IntegrationsAPIService
+	id          int64
 	inventoryId int64
 }
 
@@ -303,29 +302,29 @@ GetIntegrationInventory Get a Specific Integration Inventory
 This endpoint retrieves a specific integration inventory.
 Only certain types of integrations support this operation, such as Ansible Tower.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Integration
- @param inventoryId Morpheus ID of the Integration Inventory
- @return ApiGetIntegrationInventoryRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Integration
+	@param inventoryId Morpheus ID of the Integration Inventory
+	@return ApiGetIntegrationInventoryRequest
 */
 func (a *IntegrationsAPIService) GetIntegrationInventory(ctx context.Context, id int64, inventoryId int64) ApiGetIntegrationInventoryRequest {
 	return ApiGetIntegrationInventoryRequest{
-		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ApiService:  a,
+		ctx:         ctx,
+		id:          id,
 		inventoryId: inventoryId,
 	}
 }
 
 // Execute executes the request
-//  @return GetIntegrationInventory200Response
+//
+//	@return GetIntegrationInventory200Response
 func (a *IntegrationsAPIService) GetIntegrationInventoryExecute(r ApiGetIntegrationInventoryRequest) (*GetIntegrationInventory200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetIntegrationInventory200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetIntegrationInventory200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IntegrationsAPIService.GetIntegrationInventory")
@@ -377,7 +376,7 @@ func (a *IntegrationsAPIService) GetIntegrationInventoryExecute(r ApiGetIntegrat
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -386,8 +385,8 @@ func (a *IntegrationsAPIService) GetIntegrationInventoryExecute(r ApiGetIntegrat
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -397,8 +396,8 @@ func (a *IntegrationsAPIService) GetIntegrationInventoryExecute(r ApiGetIntegrat
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -406,8 +405,8 @@ func (a *IntegrationsAPIService) GetIntegrationInventoryExecute(r ApiGetIntegrat
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -416,10 +415,10 @@ func (a *IntegrationsAPIService) GetIntegrationInventoryExecute(r ApiGetIntegrat
 }
 
 type ApiGetIntegrationObjectsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IntegrationsAPIService
-	id int64
-	objectId int64
+	id         int64
+	objectId   int64
 }
 
 func (r ApiGetIntegrationObjectsRequest) Execute() (*GetIntegrationObjects200Response, *http.Response, error) {
@@ -431,28 +430,29 @@ GetIntegrationObjects Get a Specific ServiceNow Integration Object
 
 This endpoint retrieves a specific ServiceNow integration object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @param objectId Morpheus ID of the Object being created or referenced
- @return ApiGetIntegrationObjectsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@param objectId Morpheus ID of the Object being created or referenced
+	@return ApiGetIntegrationObjectsRequest
 */
 func (a *IntegrationsAPIService) GetIntegrationObjects(ctx context.Context, id int64, objectId int64) ApiGetIntegrationObjectsRequest {
 	return ApiGetIntegrationObjectsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
-		objectId: objectId,
+		ctx:        ctx,
+		id:         id,
+		objectId:   objectId,
 	}
 }
 
 // Execute executes the request
-//  @return GetIntegrationObjects200Response
+//
+//	@return GetIntegrationObjects200Response
 func (a *IntegrationsAPIService) GetIntegrationObjectsExecute(r ApiGetIntegrationObjectsRequest) (*GetIntegrationObjects200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetIntegrationObjects200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetIntegrationObjects200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IntegrationsAPIService.GetIntegrationObjects")
@@ -504,7 +504,7 @@ func (a *IntegrationsAPIService) GetIntegrationObjectsExecute(r ApiGetIntegratio
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -513,8 +513,8 @@ func (a *IntegrationsAPIService) GetIntegrationObjectsExecute(r ApiGetIntegratio
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -524,8 +524,8 @@ func (a *IntegrationsAPIService) GetIntegrationObjectsExecute(r ApiGetIntegratio
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -533,8 +533,8 @@ func (a *IntegrationsAPIService) GetIntegrationObjectsExecute(r ApiGetIntegratio
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -543,9 +543,9 @@ func (a *IntegrationsAPIService) GetIntegrationObjectsExecute(r ApiGetIntegratio
 }
 
 type ApiGetIntegrationTypeOptionTypesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IntegrationsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetIntegrationTypeOptionTypesRequest) Execute() (*GetIntegrationTypeOptionTypes200Response, *http.Response, error) {
@@ -557,27 +557,27 @@ GetIntegrationTypeOptionTypes Retrieves a Option Types for a Specific Integratio
 
 This endpoint will retrieve the list of option types for a specific integration type.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetIntegrationTypeOptionTypesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetIntegrationTypeOptionTypesRequest
 */
 func (a *IntegrationsAPIService) GetIntegrationTypeOptionTypes(ctx context.Context, id int64) ApiGetIntegrationTypeOptionTypesRequest {
 	return ApiGetIntegrationTypeOptionTypesRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetIntegrationTypeOptionTypes200Response
+//
+//	@return GetIntegrationTypeOptionTypes200Response
 func (a *IntegrationsAPIService) GetIntegrationTypeOptionTypesExecute(r ApiGetIntegrationTypeOptionTypesRequest) (*GetIntegrationTypeOptionTypes200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetIntegrationTypeOptionTypes200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetIntegrationTypeOptionTypes200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IntegrationsAPIService.GetIntegrationTypeOptionTypes")
@@ -628,7 +628,7 @@ func (a *IntegrationsAPIService) GetIntegrationTypeOptionTypesExecute(r ApiGetIn
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -637,8 +637,8 @@ func (a *IntegrationsAPIService) GetIntegrationTypeOptionTypesExecute(r ApiGetIn
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -648,8 +648,8 @@ func (a *IntegrationsAPIService) GetIntegrationTypeOptionTypesExecute(r ApiGetIn
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -657,8 +657,8 @@ func (a *IntegrationsAPIService) GetIntegrationTypeOptionTypesExecute(r ApiGetIn
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -667,9 +667,9 @@ func (a *IntegrationsAPIService) GetIntegrationTypeOptionTypesExecute(r ApiGetIn
 }
 
 type ApiGetIntegrationTypesRequest struct {
-	ctx context.Context
-	ApiService *IntegrationsAPIService
-	id int64
+	ctx         context.Context
+	ApiService  *IntegrationsAPIService
+	id          int64
 	optiontypes *bool
 }
 
@@ -688,27 +688,27 @@ GetIntegrationTypes Retrieves a Specific Integration Type
 
 Retrieves a specific integration type.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetIntegrationTypesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetIntegrationTypesRequest
 */
 func (a *IntegrationsAPIService) GetIntegrationTypes(ctx context.Context, id int64) ApiGetIntegrationTypesRequest {
 	return ApiGetIntegrationTypesRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetIntegrationTypes200Response
+//
+//	@return GetIntegrationTypes200Response
 func (a *IntegrationsAPIService) GetIntegrationTypesExecute(r ApiGetIntegrationTypesRequest) (*GetIntegrationTypes200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetIntegrationTypes200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetIntegrationTypes200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IntegrationsAPIService.GetIntegrationTypes")
@@ -765,7 +765,7 @@ func (a *IntegrationsAPIService) GetIntegrationTypesExecute(r ApiGetIntegrationT
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -774,8 +774,8 @@ func (a *IntegrationsAPIService) GetIntegrationTypesExecute(r ApiGetIntegrationT
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -785,8 +785,8 @@ func (a *IntegrationsAPIService) GetIntegrationTypesExecute(r ApiGetIntegrationT
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -794,8 +794,8 @@ func (a *IntegrationsAPIService) GetIntegrationTypesExecute(r ApiGetIntegrationT
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -804,9 +804,9 @@ func (a *IntegrationsAPIService) GetIntegrationTypesExecute(r ApiGetIntegrationT
 }
 
 type ApiGetIntegrationsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IntegrationsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetIntegrationsRequest) Execute() (*AddIntegrations200Response, *http.Response, error) {
@@ -818,27 +818,27 @@ GetIntegrations Retrieves a Specific Integration
 
 Retrieves a specific integration.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetIntegrationsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetIntegrationsRequest
 */
 func (a *IntegrationsAPIService) GetIntegrations(ctx context.Context, id int64) ApiGetIntegrationsRequest {
 	return ApiGetIntegrationsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddIntegrations200Response
+//
+//	@return AddIntegrations200Response
 func (a *IntegrationsAPIService) GetIntegrationsExecute(r ApiGetIntegrationsRequest) (*AddIntegrations200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddIntegrations200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddIntegrations200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IntegrationsAPIService.GetIntegrations")
@@ -889,7 +889,7 @@ func (a *IntegrationsAPIService) GetIntegrationsExecute(r ApiGetIntegrationsRequ
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -898,8 +898,8 @@ func (a *IntegrationsAPIService) GetIntegrationsExecute(r ApiGetIntegrationsRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -909,8 +909,8 @@ func (a *IntegrationsAPIService) GetIntegrationsExecute(r ApiGetIntegrationsRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -918,8 +918,8 @@ func (a *IntegrationsAPIService) GetIntegrationsExecute(r ApiGetIntegrationsRequ
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -928,15 +928,15 @@ func (a *IntegrationsAPIService) GetIntegrationsExecute(r ApiGetIntegrationsRequ
 }
 
 type ApiListIntegrationInventoryRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IntegrationsAPIService
-	id int64
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	name *string
+	id         int64
+	max        *int64
+	offset     *int64
+	sort       *string
+	direction  *string
+	phrase     *string
+	name       *string
 }
 
 // Maximum number of records to return
@@ -985,27 +985,27 @@ ListIntegrationInventory Get All Integration Inventory
 This endpoint retrieves a list of inventory for a specific integration.
 Only certain types of integrations support this operation, such as Ansible Tower.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Integration
- @return ApiListIntegrationInventoryRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Integration
+	@return ApiListIntegrationInventoryRequest
 */
 func (a *IntegrationsAPIService) ListIntegrationInventory(ctx context.Context, id int64) ApiListIntegrationInventoryRequest {
 	return ApiListIntegrationInventoryRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ListIntegrationInventory200Response
+//
+//	@return ListIntegrationInventory200Response
 func (a *IntegrationsAPIService) ListIntegrationInventoryExecute(r ApiListIntegrationInventoryRequest) (*ListIntegrationInventory200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListIntegrationInventory200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListIntegrationInventory200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IntegrationsAPIService.ListIntegrationInventory")
@@ -1086,7 +1086,7 @@ func (a *IntegrationsAPIService) ListIntegrationInventoryExecute(r ApiListIntegr
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1095,8 +1095,8 @@ func (a *IntegrationsAPIService) ListIntegrationInventoryExecute(r ApiListIntegr
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1106,8 +1106,8 @@ func (a *IntegrationsAPIService) ListIntegrationInventoryExecute(r ApiListIntegr
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1115,8 +1115,8 @@ func (a *IntegrationsAPIService) ListIntegrationInventoryExecute(r ApiListIntegr
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1125,17 +1125,17 @@ func (a *IntegrationsAPIService) ListIntegrationInventoryExecute(r ApiListIntegr
 }
 
 type ApiListIntegrationObjectsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IntegrationsAPIService
-	id int64
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	name *string
-	value *string
-	refId *int64
+	id         int64
+	max        *int64
+	offset     *int64
+	sort       *string
+	direction  *string
+	phrase     *string
+	name       *string
+	value      *string
+	refId      *int64
 }
 
 // Maximum number of records to return
@@ -1174,7 +1174,7 @@ func (r ApiListIntegrationObjectsRequest) Name(name string) ApiListIntegrationOb
 	return r
 }
 
-// The type of data being stored, string or object. The data type depends on the cypher mount being used. Most mounts use string as their data type, but secret uses object by default.  You can store a string instead by passing &#x60;type&#x3D;string&#x60;. This means the data value returned by the API will be a string instead of an object. 
+// The type of data being stored, string or object. The data type depends on the cypher mount being used. Most mounts use string as their data type, but secret uses object by default.  You can store a string instead by passing &#x60;type&#x3D;string&#x60;. This means the data value returned by the API will be a string instead of an object.
 func (r ApiListIntegrationObjectsRequest) Value(value string) ApiListIntegrationObjectsRequest {
 	r.value = &value
 	return r
@@ -1195,27 +1195,27 @@ ListIntegrationObjects Get ServiceNow Integration Objects
 
 This endpoint retrieves a list of exposed objects for a specific ServiceNow integration.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiListIntegrationObjectsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiListIntegrationObjectsRequest
 */
 func (a *IntegrationsAPIService) ListIntegrationObjects(ctx context.Context, id int64) ApiListIntegrationObjectsRequest {
 	return ApiListIntegrationObjectsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ListIntegrationObjects200Response
+//
+//	@return ListIntegrationObjects200Response
 func (a *IntegrationsAPIService) ListIntegrationObjectsExecute(r ApiListIntegrationObjectsRequest) (*ListIntegrationObjects200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListIntegrationObjects200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListIntegrationObjects200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IntegrationsAPIService.ListIntegrationObjects")
@@ -1302,7 +1302,7 @@ func (a *IntegrationsAPIService) ListIntegrationObjectsExecute(r ApiListIntegrat
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1311,8 +1311,8 @@ func (a *IntegrationsAPIService) ListIntegrationObjectsExecute(r ApiListIntegrat
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1322,8 +1322,8 @@ func (a *IntegrationsAPIService) ListIntegrationObjectsExecute(r ApiListIntegrat
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1331,8 +1331,8 @@ func (a *IntegrationsAPIService) ListIntegrationObjectsExecute(r ApiListIntegrat
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1341,26 +1341,26 @@ func (a *IntegrationsAPIService) ListIntegrationObjectsExecute(r ApiListIntegrat
 }
 
 type ApiListIntegrationTypesRequest struct {
-	ctx context.Context
-	ApiService *IntegrationsAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	name *string
-	code *string
-	optiontypes *bool
-	description *string
-	category *string
-	creatable *bool
-	enabled *bool
-	hasCMDB *bool
+	ctx              context.Context
+	ApiService       *IntegrationsAPIService
+	max              *int64
+	offset           *int64
+	sort             *string
+	direction        *string
+	phrase           *string
+	name             *string
+	code             *string
+	optiontypes      *bool
+	description      *string
+	category         *string
+	creatable        *bool
+	enabled          *bool
+	hasCMDB          *bool
 	hasCMDBDiscovery *bool
-	hasCM *bool
-	hasDNS *bool
-	hasApprovals *bool
-	isPlugin *bool
+	hasCM            *bool
+	hasDNS           *bool
+	hasApprovals     *bool
+	isPlugin         *bool
 }
 
 // Maximum number of records to return
@@ -1481,25 +1481,25 @@ ListIntegrationTypes Retrieves all Integration Types
 An Integration Type is specific third party software that the appliance can be configured to integrate with,
 such as Ansible, Chef, Git, ServiceNOW, etc.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListIntegrationTypesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListIntegrationTypesRequest
 */
 func (a *IntegrationsAPIService) ListIntegrationTypes(ctx context.Context) ApiListIntegrationTypesRequest {
 	return ApiListIntegrationTypesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListIntegrationTypes200Response
+//
+//	@return ListIntegrationTypes200Response
 func (a *IntegrationsAPIService) ListIntegrationTypesExecute(r ApiListIntegrationTypesRequest) (*ListIntegrationTypes200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListIntegrationTypes200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListIntegrationTypes200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IntegrationsAPIService.ListIntegrationTypes")
@@ -1618,7 +1618,7 @@ func (a *IntegrationsAPIService) ListIntegrationTypesExecute(r ApiListIntegratio
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1627,8 +1627,8 @@ func (a *IntegrationsAPIService) ListIntegrationTypesExecute(r ApiListIntegratio
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1638,8 +1638,8 @@ func (a *IntegrationsAPIService) ListIntegrationTypesExecute(r ApiListIntegratio
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1647,8 +1647,8 @@ func (a *IntegrationsAPIService) ListIntegrationTypesExecute(r ApiListIntegratio
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1657,23 +1657,23 @@ func (a *IntegrationsAPIService) ListIntegrationTypesExecute(r ApiListIntegratio
 }
 
 type ApiListIntegrationsRequest struct {
-	ctx context.Context
-	ApiService *IntegrationsAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	name *string
-	id *int64
-	url *string
-	host *string
-	port *string
-	username *string
-	version *int64
+	ctx            context.Context
+	ApiService     *IntegrationsAPIService
+	max            *int64
+	offset         *int64
+	sort           *string
+	direction      *string
+	phrase         *string
+	name           *string
+	id             *int64
+	url            *string
+	host           *string
+	port           *string
+	username       *string
+	version        *int64
 	windowsVersion *string
-	status *string
-	objects *bool
+	status         *string
+	objects        *bool
 }
 
 // Maximum number of records to return
@@ -1760,7 +1760,7 @@ func (r ApiListIntegrationsRequest) Status(status string) ApiListIntegrationsReq
 	return r
 }
 
-// Include &#x60;objects&#x3D;true&#x60; to return the Integration Objects for each integration.  Available in api version 5.2.8/5.3.2. 
+// Include &#x60;objects&#x3D;true&#x60; to return the Integration Objects for each integration.  Available in api version 5.2.8/5.3.2.
 func (r ApiListIntegrationsRequest) Objects(objects bool) ApiListIntegrationsRequest {
 	r.objects = &objects
 	return r
@@ -1775,25 +1775,25 @@ ListIntegrations Retrieves all Integrations
 
 Retrieves all integrations.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListIntegrationsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListIntegrationsRequest
 */
 func (a *IntegrationsAPIService) ListIntegrations(ctx context.Context) ApiListIntegrationsRequest {
 	return ApiListIntegrationsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListIntegrations200Response
+//
+//	@return ListIntegrations200Response
 func (a *IntegrationsAPIService) ListIntegrationsExecute(r ApiListIntegrationsRequest) (*ListIntegrations200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListIntegrations200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListIntegrations200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IntegrationsAPIService.ListIntegrations")
@@ -1903,7 +1903,7 @@ func (a *IntegrationsAPIService) ListIntegrationsExecute(r ApiListIntegrationsRe
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1912,8 +1912,8 @@ func (a *IntegrationsAPIService) ListIntegrationsExecute(r ApiListIntegrationsRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1923,8 +1923,8 @@ func (a *IntegrationsAPIService) ListIntegrationsExecute(r ApiListIntegrationsRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1932,8 +1932,8 @@ func (a *IntegrationsAPIService) ListIntegrationsExecute(r ApiListIntegrationsRe
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1942,9 +1942,9 @@ func (a *IntegrationsAPIService) ListIntegrationsExecute(r ApiListIntegrationsRe
 }
 
 type ApiRefreshIntegrationsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IntegrationsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiRefreshIntegrationsRequest) Execute() (*AddIntegrations200Response, *http.Response, error) {
@@ -1957,27 +1957,27 @@ RefreshIntegrations Refresh an Integration
 This endpoint will refresh an existing Integration.
 Only some types support this and will actually perform an action as a result.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiRefreshIntegrationsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiRefreshIntegrationsRequest
 */
 func (a *IntegrationsAPIService) RefreshIntegrations(ctx context.Context, id int64) ApiRefreshIntegrationsRequest {
 	return ApiRefreshIntegrationsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddIntegrations200Response
+//
+//	@return AddIntegrations200Response
 func (a *IntegrationsAPIService) RefreshIntegrationsExecute(r ApiRefreshIntegrationsRequest) (*AddIntegrations200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddIntegrations200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddIntegrations200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IntegrationsAPIService.RefreshIntegrations")
@@ -2028,7 +2028,7 @@ func (a *IntegrationsAPIService) RefreshIntegrationsExecute(r ApiRefreshIntegrat
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2037,8 +2037,8 @@ func (a *IntegrationsAPIService) RefreshIntegrationsExecute(r ApiRefreshIntegrat
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2048,8 +2048,8 @@ func (a *IntegrationsAPIService) RefreshIntegrationsExecute(r ApiRefreshIntegrat
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2057,8 +2057,8 @@ func (a *IntegrationsAPIService) RefreshIntegrationsExecute(r ApiRefreshIntegrat
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2067,10 +2067,10 @@ func (a *IntegrationsAPIService) RefreshIntegrationsExecute(r ApiRefreshIntegrat
 }
 
 type ApiRemoveIntegrationObjectsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IntegrationsAPIService
-	id int64
-	objectId int64
+	id         int64
+	objectId   int64
 }
 
 func (r ApiRemoveIntegrationObjectsRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -2082,29 +2082,29 @@ RemoveIntegrationObjects Deletes a ServiceNow Integration object
 
 Deletes a specified ServiceNow integration object.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @param objectId Morpheus ID of the Object being created or referenced
- @return ApiRemoveIntegrationObjectsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@param objectId Morpheus ID of the Object being created or referenced
+	@return ApiRemoveIntegrationObjectsRequest
 */
 func (a *IntegrationsAPIService) RemoveIntegrationObjects(ctx context.Context, id int64, objectId int64) ApiRemoveIntegrationObjectsRequest {
 	return ApiRemoveIntegrationObjectsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
-		objectId: objectId,
+		ctx:        ctx,
+		id:         id,
+		objectId:   objectId,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *IntegrationsAPIService) RemoveIntegrationObjectsExecute(r ApiRemoveIntegrationObjectsRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IntegrationsAPIService.RemoveIntegrationObjects")
@@ -2156,7 +2156,7 @@ func (a *IntegrationsAPIService) RemoveIntegrationObjectsExecute(r ApiRemoveInte
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2165,8 +2165,8 @@ func (a *IntegrationsAPIService) RemoveIntegrationObjectsExecute(r ApiRemoveInte
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2176,8 +2176,8 @@ func (a *IntegrationsAPIService) RemoveIntegrationObjectsExecute(r ApiRemoveInte
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2185,8 +2185,8 @@ func (a *IntegrationsAPIService) RemoveIntegrationObjectsExecute(r ApiRemoveInte
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2195,9 +2195,9 @@ func (a *IntegrationsAPIService) RemoveIntegrationObjectsExecute(r ApiRemoveInte
 }
 
 type ApiRemoveIntegrationsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IntegrationsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiRemoveIntegrationsRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -2209,27 +2209,27 @@ RemoveIntegrations Deletes an Integration
 
 Deletes a specified integration.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiRemoveIntegrationsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiRemoveIntegrationsRequest
 */
 func (a *IntegrationsAPIService) RemoveIntegrations(ctx context.Context, id int64) ApiRemoveIntegrationsRequest {
 	return ApiRemoveIntegrationsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *IntegrationsAPIService) RemoveIntegrationsExecute(r ApiRemoveIntegrationsRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IntegrationsAPIService.RemoveIntegrations")
@@ -2280,7 +2280,7 @@ func (a *IntegrationsAPIService) RemoveIntegrationsExecute(r ApiRemoveIntegratio
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2289,8 +2289,8 @@ func (a *IntegrationsAPIService) RemoveIntegrationsExecute(r ApiRemoveIntegratio
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2300,8 +2300,8 @@ func (a *IntegrationsAPIService) RemoveIntegrationsExecute(r ApiRemoveIntegratio
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2309,8 +2309,8 @@ func (a *IntegrationsAPIService) RemoveIntegrationsExecute(r ApiRemoveIntegratio
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2319,10 +2319,10 @@ func (a *IntegrationsAPIService) RemoveIntegrationsExecute(r ApiRemoveIntegratio
 }
 
 type ApiUpdateIntegrationInventoryRequest struct {
-	ctx context.Context
-	ApiService *IntegrationsAPIService
-	id int64
-	inventoryId int64
+	ctx                               context.Context
+	ApiService                        *IntegrationsAPIService
+	id                                int64
+	inventoryId                       int64
 	updateIntegrationInventoryRequest *UpdateIntegrationInventoryRequest
 }
 
@@ -2340,28 +2340,29 @@ UpdateIntegrationInventory Updating an Integration Inventory
 
 This endpoint provides updating of integration inventory
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Integration
- @param inventoryId Morpheus ID of the Integration Inventory
- @return ApiUpdateIntegrationInventoryRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Integration
+	@param inventoryId Morpheus ID of the Integration Inventory
+	@return ApiUpdateIntegrationInventoryRequest
 */
 func (a *IntegrationsAPIService) UpdateIntegrationInventory(ctx context.Context, id int64, inventoryId int64) ApiUpdateIntegrationInventoryRequest {
 	return ApiUpdateIntegrationInventoryRequest{
-		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ApiService:  a,
+		ctx:         ctx,
+		id:          id,
 		inventoryId: inventoryId,
 	}
 }
 
 // Execute executes the request
-//  @return UpdateIntegrationInventory200Response
+//
+//	@return UpdateIntegrationInventory200Response
 func (a *IntegrationsAPIService) UpdateIntegrationInventoryExecute(r ApiUpdateIntegrationInventoryRequest) (*UpdateIntegrationInventory200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UpdateIntegrationInventory200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UpdateIntegrationInventory200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IntegrationsAPIService.UpdateIntegrationInventory")
@@ -2415,7 +2416,7 @@ func (a *IntegrationsAPIService) UpdateIntegrationInventoryExecute(r ApiUpdateIn
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2424,8 +2425,8 @@ func (a *IntegrationsAPIService) UpdateIntegrationInventoryExecute(r ApiUpdateIn
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2435,8 +2436,8 @@ func (a *IntegrationsAPIService) UpdateIntegrationInventoryExecute(r ApiUpdateIn
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2444,8 +2445,8 @@ func (a *IntegrationsAPIService) UpdateIntegrationInventoryExecute(r ApiUpdateIn
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2454,9 +2455,9 @@ func (a *IntegrationsAPIService) UpdateIntegrationInventoryExecute(r ApiUpdateIn
 }
 
 type ApiUpdateIntegrationsRequest struct {
-	ctx context.Context
-	ApiService *IntegrationsAPIService
-	id int64
+	ctx                    context.Context
+	ApiService             *IntegrationsAPIService
+	id                     int64
 	addIntegrationsRequest *AddIntegrationsRequest
 }
 
@@ -2474,27 +2475,27 @@ UpdateIntegrations Updates an Integration
 
 Updates an integration.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateIntegrationsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateIntegrationsRequest
 */
 func (a *IntegrationsAPIService) UpdateIntegrations(ctx context.Context, id int64) ApiUpdateIntegrationsRequest {
 	return ApiUpdateIntegrationsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddIntegrations200Response
+//
+//	@return AddIntegrations200Response
 func (a *IntegrationsAPIService) UpdateIntegrationsExecute(r ApiUpdateIntegrationsRequest) (*AddIntegrations200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddIntegrations200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddIntegrations200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IntegrationsAPIService.UpdateIntegrations")
@@ -2547,7 +2548,7 @@ func (a *IntegrationsAPIService) UpdateIntegrationsExecute(r ApiUpdateIntegratio
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2556,8 +2557,8 @@ func (a *IntegrationsAPIService) UpdateIntegrationsExecute(r ApiUpdateIntegratio
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2567,8 +2568,8 @@ func (a *IntegrationsAPIService) UpdateIntegrationsExecute(r ApiUpdateIntegratio
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2576,8 +2577,8 @@ func (a *IntegrationsAPIService) UpdateIntegrationsExecute(r ApiUpdateIntegratio
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

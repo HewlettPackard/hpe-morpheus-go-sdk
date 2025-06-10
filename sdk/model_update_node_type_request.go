@@ -20,8 +20,8 @@ var _ MappedNullable = &UpdateNodeTypeRequest{}
 
 // UpdateNodeTypeRequest struct for UpdateNodeTypeRequest
 type UpdateNodeTypeRequest struct {
-	ContainerType *UpdateNodeTypeRequestContainerType `json:"containerType,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ContainerType        *UpdateNodeTypeRequestContainerType `json:"containerType,omitempty"`
+	AdditionalProperties map[string]interface{}              `json:",remain"`
 }
 
 type _UpdateNodeTypeRequest UpdateNodeTypeRequest
@@ -76,7 +76,7 @@ func (o *UpdateNodeTypeRequest) SetContainerType(v UpdateNodeTypeRequestContaine
 }
 
 func (o UpdateNodeTypeRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o UpdateNodeTypeRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *UpdateNodeTypeRequest) UnmarshalJSON(data []byte) (err error) {
-	varUpdateNodeTypeRequest := _UpdateNodeTypeRequest{}
-
-	err = json.Unmarshal(data, &varUpdateNodeTypeRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateNodeTypeRequest(varUpdateNodeTypeRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "containerType")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateNodeTypeRequest struct {
-	value *UpdateNodeTypeRequest
-	isSet bool
-}
-
-func (v NullableUpdateNodeTypeRequest) Get() *UpdateNodeTypeRequest {
-	return v.value
-}
-
-func (v *NullableUpdateNodeTypeRequest) Set(val *UpdateNodeTypeRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateNodeTypeRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateNodeTypeRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateNodeTypeRequest(val *UpdateNodeTypeRequest) *NullableUpdateNodeTypeRequest {
-	return &NullableUpdateNodeTypeRequest{value: val, isSet: true}
-}
-
-func (v NullableUpdateNodeTypeRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateNodeTypeRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

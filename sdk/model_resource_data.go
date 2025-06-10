@@ -20,11 +20,11 @@ var _ MappedNullable = &ResourceData{}
 
 // ResourceData struct for ResourceData
 type ResourceData struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Category *string `json:"category,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	Code                 *string                `json:"code,omitempty"`
+	Category             *string                `json:"category,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ResourceData ResourceData
@@ -175,7 +175,7 @@ func (o *ResourceData) SetCategory(v string) {
 }
 
 func (o ResourceData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -203,65 +203,8 @@ func (o ResourceData) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ResourceData) UnmarshalJSON(data []byte) (err error) {
-	varResourceData := _ResourceData{}
-
-	err = json.Unmarshal(data, &varResourceData)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ResourceData(varResourceData)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "category")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableResourceData struct {
-	value *ResourceData
-	isSet bool
-}
-
-func (v NullableResourceData) Get() *ResourceData {
-	return v.value
-}
-
-func (v *NullableResourceData) Set(val *ResourceData) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableResourceData) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableResourceData) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableResourceData(val *ResourceData) *NullableResourceData {
-	return &NullableResourceData{value: val, isSet: true}
-}
-
-func (v NullableResourceData) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableResourceData) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

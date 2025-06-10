@@ -20,8 +20,8 @@ var _ MappedNullable = &UpdateNetworkServerRequest{}
 
 // UpdateNetworkServerRequest struct for UpdateNetworkServerRequest
 type UpdateNetworkServerRequest struct {
-	NetworkServer *UpdateNetworkServerRequestNetworkServer `json:"networkServer,omitempty"`
-	AdditionalProperties map[string]interface{}
+	NetworkServer        *UpdateNetworkServerRequestNetworkServer `json:"networkServer,omitempty"`
+	AdditionalProperties map[string]interface{}                   `json:",remain"`
 }
 
 type _UpdateNetworkServerRequest UpdateNetworkServerRequest
@@ -76,7 +76,7 @@ func (o *UpdateNetworkServerRequest) SetNetworkServer(v UpdateNetworkServerReque
 }
 
 func (o UpdateNetworkServerRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o UpdateNetworkServerRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *UpdateNetworkServerRequest) UnmarshalJSON(data []byte) (err error) {
-	varUpdateNetworkServerRequest := _UpdateNetworkServerRequest{}
-
-	err = json.Unmarshal(data, &varUpdateNetworkServerRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateNetworkServerRequest(varUpdateNetworkServerRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "networkServer")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateNetworkServerRequest struct {
-	value *UpdateNetworkServerRequest
-	isSet bool
-}
-
-func (v NullableUpdateNetworkServerRequest) Get() *UpdateNetworkServerRequest {
-	return v.value
-}
-
-func (v *NullableUpdateNetworkServerRequest) Set(val *UpdateNetworkServerRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateNetworkServerRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateNetworkServerRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateNetworkServerRequest(val *UpdateNetworkServerRequest) *NullableUpdateNetworkServerRequest {
-	return &NullableUpdateNetworkServerRequest{value: val, isSet: true}
-}
-
-func (v NullableUpdateNetworkServerRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateNetworkServerRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

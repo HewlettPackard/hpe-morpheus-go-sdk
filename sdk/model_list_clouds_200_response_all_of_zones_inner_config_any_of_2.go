@@ -20,40 +20,40 @@ var _ MappedNullable = &ListClouds200ResponseAllOfZonesInnerConfigAnyOf2{}
 
 // ListClouds200ResponseAllOfZonesInnerConfigAnyOf2 struct for ListClouds200ResponseAllOfZonesInnerConfigAnyOf2
 type ListClouds200ResponseAllOfZonesInnerConfigAnyOf2 struct {
-	SubscriberId *string `json:"subscriberId,omitempty"`
-	TenantId *string `json:"tenantId,omitempty"`
-	ClientId *string `json:"clientId,omitempty"`
-	ClientSecret *string `json:"clientSecret,omitempty"`
-	ResourceGroup *string `json:"resourceGroup,omitempty"`
-	ImportExisting *string `json:"importExisting,omitempty"`
-	InventoryLevel *string `json:"inventoryLevel,omitempty"`
-	ApplianceUrl *string `json:"applianceUrl,omitempty"`
-	DatacenterName *string `json:"datacenterName,omitempty"`
-	NetworkServerId *string `json:"networkServer.id,omitempty"`
-	NetworkServer *ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer `json:"networkServer,omitempty"`
-	SecurityMode *string `json:"securityMode,omitempty"`
-	CertificateProvider *string `json:"certificateProvider,omitempty"`
-	BackupMode *string `json:"backupMode,omitempty"`
-	ReplicationMode *string `json:"replicationMode,omitempty"`
-	DnsIntegrationId *string `json:"dnsIntegrationId,omitempty"`
-	ConfigManagementId *string `json:"configManagementId,omitempty"`
-	ConfigCmdbId *string `json:"configCmdbId,omitempty"`
-	SecurityServer *string `json:"securityServer,omitempty"`
-	AccountType *string `json:"accountType,omitempty"`
-	ServiceRegistryId *string `json:"serviceRegistryId,omitempty"`
-	CloudType *string `json:"cloudType,omitempty"`
-	RpcMode *string `json:"rpcMode,omitempty"`
-	DiskEncryption *string `json:"diskEncryption,omitempty"`
-	EncryptionSet *string `json:"encryptionSet,omitempty"`
-	CspTenantId *string `json:"cspTenantId,omitempty"`
-	CspClientId *string `json:"cspClientId,omitempty"`
-	CspClientSecret *string `json:"cspClientSecret,omitempty"`
-	CspCustomer *string `json:"cspCustomer,omitempty"`
-	ConfigCmdbDiscovery *bool `json:"configCmdbDiscovery,omitempty"`
-	AzureCostingMode *string `json:"azureCostingMode,omitempty"`
-	ClientSecretHash *string `json:"clientSecretHash,omitempty"`
-	CspClientSecretHash *string `json:"cspClientSecretHash,omitempty"`
-	AdditionalProperties map[string]interface{}
+	SubscriberId         *string                                                       `json:"subscriberId,omitempty"`
+	TenantId             *string                                                       `json:"tenantId,omitempty"`
+	ClientId             *string                                                       `json:"clientId,omitempty"`
+	ClientSecret         *string                                                       `json:"clientSecret,omitempty"`
+	ResourceGroup        *string                                                       `json:"resourceGroup,omitempty"`
+	ImportExisting       *string                                                       `json:"importExisting,omitempty"`
+	InventoryLevel       *string                                                       `json:"inventoryLevel,omitempty"`
+	ApplianceUrl         *string                                                       `json:"applianceUrl,omitempty"`
+	DatacenterName       *string                                                       `json:"datacenterName,omitempty"`
+	NetworkServerId      *string                                                       `json:"networkServer.id,omitempty"`
+	NetworkServer        *ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer `json:"networkServer,omitempty"`
+	SecurityMode         *string                                                       `json:"securityMode,omitempty"`
+	CertificateProvider  *string                                                       `json:"certificateProvider,omitempty"`
+	BackupMode           *string                                                       `json:"backupMode,omitempty"`
+	ReplicationMode      *string                                                       `json:"replicationMode,omitempty"`
+	DnsIntegrationId     *string                                                       `json:"dnsIntegrationId,omitempty"`
+	ConfigManagementId   *string                                                       `json:"configManagementId,omitempty"`
+	ConfigCmdbId         *string                                                       `json:"configCmdbId,omitempty"`
+	SecurityServer       *string                                                       `json:"securityServer,omitempty"`
+	AccountType          *string                                                       `json:"accountType,omitempty"`
+	ServiceRegistryId    *string                                                       `json:"serviceRegistryId,omitempty"`
+	CloudType            *string                                                       `json:"cloudType,omitempty"`
+	RpcMode              *string                                                       `json:"rpcMode,omitempty"`
+	DiskEncryption       *string                                                       `json:"diskEncryption,omitempty"`
+	EncryptionSet        *string                                                       `json:"encryptionSet,omitempty"`
+	CspTenantId          *string                                                       `json:"cspTenantId,omitempty"`
+	CspClientId          *string                                                       `json:"cspClientId,omitempty"`
+	CspClientSecret      *string                                                       `json:"cspClientSecret,omitempty"`
+	CspCustomer          *string                                                       `json:"cspCustomer,omitempty"`
+	ConfigCmdbDiscovery  *bool                                                         `json:"configCmdbDiscovery,omitempty"`
+	AzureCostingMode     *string                                                       `json:"azureCostingMode,omitempty"`
+	ClientSecretHash     *string                                                       `json:"clientSecretHash,omitempty"`
+	CspClientSecretHash  *string                                                       `json:"cspClientSecretHash,omitempty"`
+	AdditionalProperties map[string]interface{}                                        `json:",remain"`
 }
 
 type _ListClouds200ResponseAllOfZonesInnerConfigAnyOf2 ListClouds200ResponseAllOfZonesInnerConfigAnyOf2
@@ -1132,7 +1132,7 @@ func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2) SetCspClientSecretHas
 }
 
 func (o ListClouds200ResponseAllOfZonesInnerConfigAnyOf2) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1247,94 +1247,8 @@ func (o ListClouds200ResponseAllOfZonesInnerConfigAnyOf2) ToMap() (map[string]in
 
 	return toSerialize, nil
 }
-
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2) UnmarshalJSON(data []byte) (err error) {
-	varListClouds200ResponseAllOfZonesInnerConfigAnyOf2 := _ListClouds200ResponseAllOfZonesInnerConfigAnyOf2{}
-
-	err = json.Unmarshal(data, &varListClouds200ResponseAllOfZonesInnerConfigAnyOf2)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListClouds200ResponseAllOfZonesInnerConfigAnyOf2(varListClouds200ResponseAllOfZonesInnerConfigAnyOf2)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "subscriberId")
-		delete(additionalProperties, "tenantId")
-		delete(additionalProperties, "clientId")
-		delete(additionalProperties, "clientSecret")
-		delete(additionalProperties, "resourceGroup")
-		delete(additionalProperties, "importExisting")
-		delete(additionalProperties, "inventoryLevel")
-		delete(additionalProperties, "applianceUrl")
-		delete(additionalProperties, "datacenterName")
-		delete(additionalProperties, "networkServer.id")
-		delete(additionalProperties, "networkServer")
-		delete(additionalProperties, "securityMode")
-		delete(additionalProperties, "certificateProvider")
-		delete(additionalProperties, "backupMode")
-		delete(additionalProperties, "replicationMode")
-		delete(additionalProperties, "dnsIntegrationId")
-		delete(additionalProperties, "configManagementId")
-		delete(additionalProperties, "configCmdbId")
-		delete(additionalProperties, "securityServer")
-		delete(additionalProperties, "accountType")
-		delete(additionalProperties, "serviceRegistryId")
-		delete(additionalProperties, "cloudType")
-		delete(additionalProperties, "rpcMode")
-		delete(additionalProperties, "diskEncryption")
-		delete(additionalProperties, "encryptionSet")
-		delete(additionalProperties, "cspTenantId")
-		delete(additionalProperties, "cspClientId")
-		delete(additionalProperties, "cspClientSecret")
-		delete(additionalProperties, "cspCustomer")
-		delete(additionalProperties, "configCmdbDiscovery")
-		delete(additionalProperties, "azureCostingMode")
-		delete(additionalProperties, "clientSecretHash")
-		delete(additionalProperties, "cspClientSecretHash")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListClouds200ResponseAllOfZonesInnerConfigAnyOf2 struct {
-	value *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2
-	isSet bool
-}
-
-func (v NullableListClouds200ResponseAllOfZonesInnerConfigAnyOf2) Get() *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2 {
-	return v.value
-}
-
-func (v *NullableListClouds200ResponseAllOfZonesInnerConfigAnyOf2) Set(val *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListClouds200ResponseAllOfZonesInnerConfigAnyOf2) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListClouds200ResponseAllOfZonesInnerConfigAnyOf2) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListClouds200ResponseAllOfZonesInnerConfigAnyOf2(val *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2) *NullableListClouds200ResponseAllOfZonesInnerConfigAnyOf2 {
-	return &NullableListClouds200ResponseAllOfZonesInnerConfigAnyOf2{value: val, isSet: true}
-}
-
-func (v NullableListClouds200ResponseAllOfZonesInnerConfigAnyOf2) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListClouds200ResponseAllOfZonesInnerConfigAnyOf2) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

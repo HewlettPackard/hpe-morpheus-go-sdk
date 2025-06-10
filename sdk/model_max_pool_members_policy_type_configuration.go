@@ -18,10 +18,10 @@ import (
 // checks if the MaxPoolMembersPolicyTypeConfiguration type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &MaxPoolMembersPolicyTypeConfiguration{}
 
-// MaxPoolMembersPolicyTypeConfiguration Configuration settings for the following policy types: - Max Pool Members 
+// MaxPoolMembersPolicyTypeConfiguration Configuration settings for the following policy types: - Max Pool Members
 type MaxPoolMembersPolicyTypeConfiguration struct {
-	MaxPoolMembers *string `json:"maxPoolMembers,omitempty"`
-	AdditionalProperties map[string]interface{}
+	MaxPoolMembers       *string                `json:"maxPoolMembers,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _MaxPoolMembersPolicyTypeConfiguration MaxPoolMembersPolicyTypeConfiguration
@@ -76,7 +76,7 @@ func (o *MaxPoolMembersPolicyTypeConfiguration) SetMaxPoolMembers(v string) {
 }
 
 func (o MaxPoolMembersPolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o MaxPoolMembersPolicyTypeConfiguration) ToMap() (map[string]interface{}, 
 
 	return toSerialize, nil
 }
-
 func (o *MaxPoolMembersPolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
-	varMaxPoolMembersPolicyTypeConfiguration := _MaxPoolMembersPolicyTypeConfiguration{}
-
-	err = json.Unmarshal(data, &varMaxPoolMembersPolicyTypeConfiguration)
-
-	if err != nil {
-		return err
-	}
-
-	*o = MaxPoolMembersPolicyTypeConfiguration(varMaxPoolMembersPolicyTypeConfiguration)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "maxPoolMembers")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableMaxPoolMembersPolicyTypeConfiguration struct {
-	value *MaxPoolMembersPolicyTypeConfiguration
-	isSet bool
-}
-
-func (v NullableMaxPoolMembersPolicyTypeConfiguration) Get() *MaxPoolMembersPolicyTypeConfiguration {
-	return v.value
-}
-
-func (v *NullableMaxPoolMembersPolicyTypeConfiguration) Set(val *MaxPoolMembersPolicyTypeConfiguration) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableMaxPoolMembersPolicyTypeConfiguration) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableMaxPoolMembersPolicyTypeConfiguration) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableMaxPoolMembersPolicyTypeConfiguration(val *MaxPoolMembersPolicyTypeConfiguration) *NullableMaxPoolMembersPolicyTypeConfiguration {
-	return &NullableMaxPoolMembersPolicyTypeConfiguration{value: val, isSet: true}
-}
-
-func (v NullableMaxPoolMembersPolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableMaxPoolMembersPolicyTypeConfiguration) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

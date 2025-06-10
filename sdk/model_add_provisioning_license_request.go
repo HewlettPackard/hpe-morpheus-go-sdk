@@ -20,8 +20,8 @@ var _ MappedNullable = &AddProvisioningLicenseRequest{}
 
 // AddProvisioningLicenseRequest struct for AddProvisioningLicenseRequest
 type AddProvisioningLicenseRequest struct {
-	License *AddProvisioningLicenseRequestLicense `json:"license,omitempty"`
-	AdditionalProperties map[string]interface{}
+	License              *AddProvisioningLicenseRequestLicense `json:"license,omitempty"`
+	AdditionalProperties map[string]interface{}                `json:",remain"`
 }
 
 type _AddProvisioningLicenseRequest AddProvisioningLicenseRequest
@@ -76,7 +76,7 @@ func (o *AddProvisioningLicenseRequest) SetLicense(v AddProvisioningLicenseReque
 }
 
 func (o AddProvisioningLicenseRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o AddProvisioningLicenseRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *AddProvisioningLicenseRequest) UnmarshalJSON(data []byte) (err error) {
-	varAddProvisioningLicenseRequest := _AddProvisioningLicenseRequest{}
-
-	err = json.Unmarshal(data, &varAddProvisioningLicenseRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddProvisioningLicenseRequest(varAddProvisioningLicenseRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "license")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddProvisioningLicenseRequest struct {
-	value *AddProvisioningLicenseRequest
-	isSet bool
-}
-
-func (v NullableAddProvisioningLicenseRequest) Get() *AddProvisioningLicenseRequest {
-	return v.value
-}
-
-func (v *NullableAddProvisioningLicenseRequest) Set(val *AddProvisioningLicenseRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddProvisioningLicenseRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddProvisioningLicenseRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddProvisioningLicenseRequest(val *AddProvisioningLicenseRequest) *NullableAddProvisioningLicenseRequest {
-	return &NullableAddProvisioningLicenseRequest{value: val, isSet: true}
-}
-
-func (v NullableAddProvisioningLicenseRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddProvisioningLicenseRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

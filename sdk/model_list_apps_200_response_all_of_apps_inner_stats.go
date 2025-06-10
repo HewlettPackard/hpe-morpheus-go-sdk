@@ -20,17 +20,17 @@ var _ MappedNullable = &ListApps200ResponseAllOfAppsInnerStats{}
 
 // ListApps200ResponseAllOfAppsInnerStats struct for ListApps200ResponseAllOfAppsInnerStats
 type ListApps200ResponseAllOfAppsInnerStats struct {
-	UsedMemory *int64 `json:"usedMemory,omitempty"`
-	MaxMemory *int64 `json:"maxMemory,omitempty"`
-	UsedStorage *int64 `json:"usedStorage,omitempty"`
-	MaxStorage *int64 `json:"maxStorage,omitempty"`
-	Running *int64 `json:"running,omitempty"`
-	Total *int64 `json:"total,omitempty"`
-	CpuUsage *float32 `json:"cpuUsage,omitempty"`
-	InstanceCount *int64 `json:"instanceCount,omitempty"`
-	InstanceDayCount []int64 `json:"instanceDayCount,omitempty"`
-	InstanceDayCountTotal *int64 `json:"instanceDayCountTotal,omitempty"`
-	AdditionalProperties map[string]interface{}
+	UsedMemory            *int64                 `json:"usedMemory,omitempty"`
+	MaxMemory             *int64                 `json:"maxMemory,omitempty"`
+	UsedStorage           *int64                 `json:"usedStorage,omitempty"`
+	MaxStorage            *int64                 `json:"maxStorage,omitempty"`
+	Running               *int64                 `json:"running,omitempty"`
+	Total                 *int64                 `json:"total,omitempty"`
+	CpuUsage              *float32               `json:"cpuUsage,omitempty"`
+	InstanceCount         *int64                 `json:"instanceCount,omitempty"`
+	InstanceDayCount      []int64                `json:"instanceDayCount,omitempty"`
+	InstanceDayCountTotal *int64                 `json:"instanceDayCountTotal,omitempty"`
+	AdditionalProperties  map[string]interface{} `json:",remain"`
 }
 
 type _ListApps200ResponseAllOfAppsInnerStats ListApps200ResponseAllOfAppsInnerStats
@@ -373,7 +373,7 @@ func (o *ListApps200ResponseAllOfAppsInnerStats) SetInstanceDayCountTotal(v int6
 }
 
 func (o ListApps200ResponseAllOfAppsInnerStats) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -419,71 +419,8 @@ func (o ListApps200ResponseAllOfAppsInnerStats) ToMap() (map[string]interface{},
 
 	return toSerialize, nil
 }
-
 func (o *ListApps200ResponseAllOfAppsInnerStats) UnmarshalJSON(data []byte) (err error) {
-	varListApps200ResponseAllOfAppsInnerStats := _ListApps200ResponseAllOfAppsInnerStats{}
-
-	err = json.Unmarshal(data, &varListApps200ResponseAllOfAppsInnerStats)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListApps200ResponseAllOfAppsInnerStats(varListApps200ResponseAllOfAppsInnerStats)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "usedMemory")
-		delete(additionalProperties, "maxMemory")
-		delete(additionalProperties, "usedStorage")
-		delete(additionalProperties, "maxStorage")
-		delete(additionalProperties, "running")
-		delete(additionalProperties, "total")
-		delete(additionalProperties, "cpuUsage")
-		delete(additionalProperties, "instanceCount")
-		delete(additionalProperties, "instanceDayCount")
-		delete(additionalProperties, "instanceDayCountTotal")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListApps200ResponseAllOfAppsInnerStats struct {
-	value *ListApps200ResponseAllOfAppsInnerStats
-	isSet bool
-}
-
-func (v NullableListApps200ResponseAllOfAppsInnerStats) Get() *ListApps200ResponseAllOfAppsInnerStats {
-	return v.value
-}
-
-func (v *NullableListApps200ResponseAllOfAppsInnerStats) Set(val *ListApps200ResponseAllOfAppsInnerStats) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListApps200ResponseAllOfAppsInnerStats) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListApps200ResponseAllOfAppsInnerStats) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListApps200ResponseAllOfAppsInnerStats(val *ListApps200ResponseAllOfAppsInnerStats) *NullableListApps200ResponseAllOfAppsInnerStats {
-	return &NullableListApps200ResponseAllOfAppsInnerStats{value: val, isSet: true}
-}
-
-func (v NullableListApps200ResponseAllOfAppsInnerStats) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListApps200ResponseAllOfAppsInnerStats) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

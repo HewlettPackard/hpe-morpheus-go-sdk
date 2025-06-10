@@ -20,8 +20,8 @@ var _ MappedNullable = &UpdateInstanceTypeRequest{}
 
 // UpdateInstanceTypeRequest struct for UpdateInstanceTypeRequest
 type UpdateInstanceTypeRequest struct {
-	InstanceType *UpdateInstanceTypeRequestInstanceType `json:"instanceType,omitempty"`
-	AdditionalProperties map[string]interface{}
+	InstanceType         *UpdateInstanceTypeRequestInstanceType `json:"instanceType,omitempty"`
+	AdditionalProperties map[string]interface{}                 `json:",remain"`
 }
 
 type _UpdateInstanceTypeRequest UpdateInstanceTypeRequest
@@ -76,7 +76,7 @@ func (o *UpdateInstanceTypeRequest) SetInstanceType(v UpdateInstanceTypeRequestI
 }
 
 func (o UpdateInstanceTypeRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o UpdateInstanceTypeRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *UpdateInstanceTypeRequest) UnmarshalJSON(data []byte) (err error) {
-	varUpdateInstanceTypeRequest := _UpdateInstanceTypeRequest{}
-
-	err = json.Unmarshal(data, &varUpdateInstanceTypeRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateInstanceTypeRequest(varUpdateInstanceTypeRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "instanceType")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateInstanceTypeRequest struct {
-	value *UpdateInstanceTypeRequest
-	isSet bool
-}
-
-func (v NullableUpdateInstanceTypeRequest) Get() *UpdateInstanceTypeRequest {
-	return v.value
-}
-
-func (v *NullableUpdateInstanceTypeRequest) Set(val *UpdateInstanceTypeRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateInstanceTypeRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateInstanceTypeRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateInstanceTypeRequest(val *UpdateInstanceTypeRequest) *NullableUpdateInstanceTypeRequest {
-	return &NullableUpdateInstanceTypeRequest{value: val, isSet: true}
-}
-
-func (v NullableUpdateInstanceTypeRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateInstanceTypeRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

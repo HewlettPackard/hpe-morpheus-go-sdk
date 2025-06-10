@@ -43,9 +43,9 @@ type OptionTypeUpdate struct {
 	// Export as Tag
 	ExportMeta *bool `json:"exportMeta,omitempty"`
 	// Used primarily on tasks and workflows. Basically wether or not the field can be overridden optionally when the object is run
-	Editable *bool `json:"editable,omitempty"`
-	OptionList *AddOptionTypeRequestOptionTypeOptionList `json:"optionList,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Editable             *bool                                     `json:"editable,omitempty"`
+	OptionList           *AddOptionTypeRequestOptionTypeOptionList `json:"optionList,omitempty"`
+	AdditionalProperties map[string]interface{}                    `json:",remain"`
 }
 
 type _OptionTypeUpdate OptionTypeUpdate
@@ -500,7 +500,7 @@ func (o *OptionTypeUpdate) SetOptionList(v AddOptionTypeRequestOptionTypeOptionL
 }
 
 func (o OptionTypeUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -555,74 +555,8 @@ func (o OptionTypeUpdate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *OptionTypeUpdate) UnmarshalJSON(data []byte) (err error) {
-	varOptionTypeUpdate := _OptionTypeUpdate{}
-
-	err = json.Unmarshal(data, &varOptionTypeUpdate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = OptionTypeUpdate(varOptionTypeUpdate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "fieldName")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "fieldLabel")
-		delete(additionalProperties, "placeHolder")
-		delete(additionalProperties, "verifyPattern")
-		delete(additionalProperties, "defaultValue")
-		delete(additionalProperties, "required")
-		delete(additionalProperties, "exportMeta")
-		delete(additionalProperties, "editable")
-		delete(additionalProperties, "optionList")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableOptionTypeUpdate struct {
-	value *OptionTypeUpdate
-	isSet bool
-}
-
-func (v NullableOptionTypeUpdate) Get() *OptionTypeUpdate {
-	return v.value
-}
-
-func (v *NullableOptionTypeUpdate) Set(val *OptionTypeUpdate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableOptionTypeUpdate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableOptionTypeUpdate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableOptionTypeUpdate(val *OptionTypeUpdate) *NullableOptionTypeUpdate {
-	return &NullableOptionTypeUpdate{value: val, isSet: true}
-}
-
-func (v NullableOptionTypeUpdate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableOptionTypeUpdate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

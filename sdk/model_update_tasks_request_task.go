@@ -25,24 +25,24 @@ type UpdateTasksRequestTask struct {
 	// A unique code for the task
 	Code *string `json:"code,omitempty"`
 	// Visibility
-	Visibility *string `json:"visibility,omitempty"`
-	TaskType *AddTasksRequestTaskTaskType `json:"taskType,omitempty"`
+	Visibility *string                      `json:"visibility,omitempty"`
+	TaskType   *AddTasksRequestTaskTaskType `json:"taskType,omitempty"`
 	// An array of Category labels for filtering
 	Labels []string `json:"labels,omitempty"`
 	// Map of options specific to each `task type`. eg. script
 	TaskOptions map[string]interface{} `json:"taskOptions,omitempty"`
-	ResultType *string `json:"resultType,omitempty"`
-	// The execution target. eg. local,remote,resource. The default value varies by task type. 
+	ResultType  *string                `json:"resultType,omitempty"`
+	// The execution target. eg. local,remote,resource. The default value varies by task type.
 	ExecuteTarget *string `json:"executeTarget,omitempty"`
 	// If the task should be retried or not.
 	Retryable *bool `json:"retryable,omitempty"`
 	// The number of times to retry.
 	RetryCount *int32 `json:"retryCount,omitempty"`
 	// The delay, between retries.
-	RetryDelaySeconds *float32 `json:"retryDelaySeconds,omitempty"`
-	File *AddTasksRequestTaskFile `json:"file,omitempty"`
-	Credential *AddIntegrationsRequestOneOfIntegrationCredential `json:"credential,omitempty"`
-	AdditionalProperties map[string]interface{}
+	RetryDelaySeconds    *float32                                          `json:"retryDelaySeconds,omitempty"`
+	File                 *AddTasksRequestTaskFile                          `json:"file,omitempty"`
+	Credential           *AddIntegrationsRequestOneOfIntegrationCredential `json:"credential,omitempty"`
+	AdditionalProperties map[string]interface{}                            `json:",remain"`
 }
 
 type _UpdateTasksRequestTask UpdateTasksRequestTask
@@ -489,7 +489,7 @@ func (o *UpdateTasksRequestTask) SetCredential(v AddIntegrationsRequestOneOfInte
 }
 
 func (o UpdateTasksRequestTask) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -544,74 +544,8 @@ func (o UpdateTasksRequestTask) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *UpdateTasksRequestTask) UnmarshalJSON(data []byte) (err error) {
-	varUpdateTasksRequestTask := _UpdateTasksRequestTask{}
-
-	err = json.Unmarshal(data, &varUpdateTasksRequestTask)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateTasksRequestTask(varUpdateTasksRequestTask)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "taskType")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "taskOptions")
-		delete(additionalProperties, "resultType")
-		delete(additionalProperties, "executeTarget")
-		delete(additionalProperties, "retryable")
-		delete(additionalProperties, "retryCount")
-		delete(additionalProperties, "retryDelaySeconds")
-		delete(additionalProperties, "file")
-		delete(additionalProperties, "credential")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateTasksRequestTask struct {
-	value *UpdateTasksRequestTask
-	isSet bool
-}
-
-func (v NullableUpdateTasksRequestTask) Get() *UpdateTasksRequestTask {
-	return v.value
-}
-
-func (v *NullableUpdateTasksRequestTask) Set(val *UpdateTasksRequestTask) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateTasksRequestTask) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateTasksRequestTask) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateTasksRequestTask(val *UpdateTasksRequestTask) *NullableUpdateTasksRequestTask {
-	return &NullableUpdateTasksRequestTask{value: val, isSet: true}
-}
-
-func (v NullableUpdateTasksRequestTask) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateTasksRequestTask) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

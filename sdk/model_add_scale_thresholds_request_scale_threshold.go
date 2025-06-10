@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddScaleThresholdsRequestScaleThreshold type satisfies the MappedNullable interface at compile time
@@ -48,8 +47,8 @@ type AddScaleThresholdsRequestScaleThreshold struct {
 	// Min Disk (%)
 	MinDisk *float64 `json:"minDisk,omitempty"`
 	// Max Disk (%)
-	MaxDisk *float64 `json:"maxDisk,omitempty"`
-	AdditionalProperties map[string]interface{}
+	MaxDisk              *float64               `json:"maxDisk,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddScaleThresholdsRequestScaleThreshold AddScaleThresholdsRequestScaleThreshold
@@ -557,7 +556,7 @@ func (o *AddScaleThresholdsRequestScaleThreshold) SetMaxDisk(v float64) {
 }
 
 func (o AddScaleThresholdsRequestScaleThreshold) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -613,96 +612,8 @@ func (o AddScaleThresholdsRequestScaleThreshold) ToMap() (map[string]interface{}
 
 	return toSerialize, nil
 }
-
 func (o *AddScaleThresholdsRequestScaleThreshold) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddScaleThresholdsRequestScaleThreshold := _AddScaleThresholdsRequestScaleThreshold{}
-
-	err = json.Unmarshal(data, &varAddScaleThresholdsRequestScaleThreshold)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddScaleThresholdsRequestScaleThreshold(varAddScaleThresholdsRequestScaleThreshold)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "autoUp")
-		delete(additionalProperties, "autoDown")
-		delete(additionalProperties, "minCount")
-		delete(additionalProperties, "maxCount")
-		delete(additionalProperties, "cpuEnabled")
-		delete(additionalProperties, "minCpu")
-		delete(additionalProperties, "maxCpu")
-		delete(additionalProperties, "memoryEnabled")
-		delete(additionalProperties, "minMemory")
-		delete(additionalProperties, "maxMemory")
-		delete(additionalProperties, "diskEnabled")
-		delete(additionalProperties, "minDisk")
-		delete(additionalProperties, "maxDisk")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddScaleThresholdsRequestScaleThreshold struct {
-	value *AddScaleThresholdsRequestScaleThreshold
-	isSet bool
-}
-
-func (v NullableAddScaleThresholdsRequestScaleThreshold) Get() *AddScaleThresholdsRequestScaleThreshold {
-	return v.value
-}
-
-func (v *NullableAddScaleThresholdsRequestScaleThreshold) Set(val *AddScaleThresholdsRequestScaleThreshold) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddScaleThresholdsRequestScaleThreshold) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddScaleThresholdsRequestScaleThreshold) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddScaleThresholdsRequestScaleThreshold(val *AddScaleThresholdsRequestScaleThreshold) *NullableAddScaleThresholdsRequestScaleThreshold {
-	return &NullableAddScaleThresholdsRequestScaleThreshold{value: val, isSet: true}
-}
-
-func (v NullableAddScaleThresholdsRequestScaleThreshold) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddScaleThresholdsRequestScaleThreshold) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

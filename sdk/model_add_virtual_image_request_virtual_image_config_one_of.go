@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddVirtualImageRequestVirtualImageConfigOneOf type satisfies the MappedNullable interface at compile time
@@ -28,8 +27,8 @@ type AddVirtualImageRequestVirtualImageConfigOneOf struct {
 	// The name of the sku in the Azure Marketplace
 	Sku string `json:"sku"`
 	// The name of the version in the Azure Marketplace
-	Version string `json:"version"`
-	AdditionalProperties map[string]interface{}
+	Version              string                 `json:"version"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddVirtualImageRequestVirtualImageConfigOneOf AddVirtualImageRequestVirtualImageConfigOneOf
@@ -152,7 +151,7 @@ func (o *AddVirtualImageRequestVirtualImageConfigOneOf) SetVersion(v string) {
 }
 
 func (o AddVirtualImageRequestVirtualImageConfigOneOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -172,89 +171,8 @@ func (o AddVirtualImageRequestVirtualImageConfigOneOf) ToMap() (map[string]inter
 
 	return toSerialize, nil
 }
-
 func (o *AddVirtualImageRequestVirtualImageConfigOneOf) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"publisher",
-		"offer",
-		"sku",
-		"version",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddVirtualImageRequestVirtualImageConfigOneOf := _AddVirtualImageRequestVirtualImageConfigOneOf{}
-
-	err = json.Unmarshal(data, &varAddVirtualImageRequestVirtualImageConfigOneOf)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddVirtualImageRequestVirtualImageConfigOneOf(varAddVirtualImageRequestVirtualImageConfigOneOf)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "publisher")
-		delete(additionalProperties, "offer")
-		delete(additionalProperties, "sku")
-		delete(additionalProperties, "version")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddVirtualImageRequestVirtualImageConfigOneOf struct {
-	value *AddVirtualImageRequestVirtualImageConfigOneOf
-	isSet bool
-}
-
-func (v NullableAddVirtualImageRequestVirtualImageConfigOneOf) Get() *AddVirtualImageRequestVirtualImageConfigOneOf {
-	return v.value
-}
-
-func (v *NullableAddVirtualImageRequestVirtualImageConfigOneOf) Set(val *AddVirtualImageRequestVirtualImageConfigOneOf) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddVirtualImageRequestVirtualImageConfigOneOf) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddVirtualImageRequestVirtualImageConfigOneOf) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddVirtualImageRequestVirtualImageConfigOneOf(val *AddVirtualImageRequestVirtualImageConfigOneOf) *NullableAddVirtualImageRequestVirtualImageConfigOneOf {
-	return &NullableAddVirtualImageRequestVirtualImageConfigOneOf{value: val, isSet: true}
-}
-
-func (v NullableAddVirtualImageRequestVirtualImageConfigOneOf) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddVirtualImageRequestVirtualImageConfigOneOf) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the ClusterNamespaceCreate type satisfies the MappedNullable interface at compile time
@@ -26,9 +25,9 @@ type ClusterNamespaceCreate struct {
 	// Namespace description
 	Description *string `json:"description,omitempty"`
 	// Namespace active
-	Active *bool `json:"active,omitempty"`
-	ResourcePermissions *AddClusterNamespaceRequestNamespaceResourcePermissions `json:"resourcePermissions,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Active               *bool                                                   `json:"active,omitempty"`
+	ResourcePermissions  *AddClusterNamespaceRequestNamespaceResourcePermissions `json:"resourcePermissions,omitempty"`
+	AdditionalProperties map[string]interface{}                                  `json:",remain"`
 }
 
 type _ClusterNamespaceCreate ClusterNamespaceCreate
@@ -176,7 +175,7 @@ func (o *ClusterNamespaceCreate) SetResourcePermissions(v AddClusterNamespaceReq
 }
 
 func (o ClusterNamespaceCreate) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -202,86 +201,8 @@ func (o ClusterNamespaceCreate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ClusterNamespaceCreate) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varClusterNamespaceCreate := _ClusterNamespaceCreate{}
-
-	err = json.Unmarshal(data, &varClusterNamespaceCreate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ClusterNamespaceCreate(varClusterNamespaceCreate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "resourcePermissions")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableClusterNamespaceCreate struct {
-	value *ClusterNamespaceCreate
-	isSet bool
-}
-
-func (v NullableClusterNamespaceCreate) Get() *ClusterNamespaceCreate {
-	return v.value
-}
-
-func (v *NullableClusterNamespaceCreate) Set(val *ClusterNamespaceCreate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableClusterNamespaceCreate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableClusterNamespaceCreate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableClusterNamespaceCreate(val *ClusterNamespaceCreate) *NullableClusterNamespaceCreate {
-	return &NullableClusterNamespaceCreate{value: val, isSet: true}
-}
-
-func (v NullableClusterNamespaceCreate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableClusterNamespaceCreate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

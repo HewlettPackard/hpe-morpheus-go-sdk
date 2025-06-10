@@ -21,31 +21,31 @@ var _ MappedNullable = &GetInstanceThreshold200ResponseInstanceThreshold{}
 
 // GetInstanceThreshold200ResponseInstanceThreshold struct for GetInstanceThreshold200ResponseInstanceThreshold
 type GetInstanceThreshold200ResponseInstanceThreshold struct {
-	Id *int64 `json:"id,omitempty"`
-	AutoUp *bool `json:"autoUp,omitempty"`
-	AutoDown *bool `json:"autoDown,omitempty"`
-	MinCount *int64 `json:"minCount,omitempty"`
-	MaxCount *int64 `json:"maxCount,omitempty"`
-	ScaleIncrement *int64 `json:"scaleIncrement,omitempty"`
-	CpuEnabled *bool `json:"cpuEnabled,omitempty"`
-	MinCpu *int64 `json:"minCpu,omitempty"`
-	MaxCpu *int64 `json:"maxCpu,omitempty"`
-	MemoryEnabled *bool `json:"memoryEnabled,omitempty"`
-	MinMemory *int64 `json:"minMemory,omitempty"`
-	MaxMemory *int64 `json:"maxMemory,omitempty"`
-	DiskEnabled *bool `json:"diskEnabled,omitempty"`
-	MinDisk *int64 `json:"minDisk,omitempty"`
-	MaxDisk *int64 `json:"maxDisk,omitempty"`
-	MinNetwork *string `json:"minNetwork,omitempty"`
-	NetworkEnabled *bool `json:"networkEnabled,omitempty"`
-	IopsEnabled *bool `json:"iopsEnabled,omitempty"`
-	MinIops *string `json:"minIops,omitempty"`
-	MaxIops *string `json:"maxIops,omitempty"`
-	Comment *string `json:"comment,omitempty"`
-	ZoneId *int64 `json:"zoneId,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	AutoUp               *bool                  `json:"autoUp,omitempty"`
+	AutoDown             *bool                  `json:"autoDown,omitempty"`
+	MinCount             *int64                 `json:"minCount,omitempty"`
+	MaxCount             *int64                 `json:"maxCount,omitempty"`
+	ScaleIncrement       *int64                 `json:"scaleIncrement,omitempty"`
+	CpuEnabled           *bool                  `json:"cpuEnabled,omitempty"`
+	MinCpu               *int64                 `json:"minCpu,omitempty"`
+	MaxCpu               *int64                 `json:"maxCpu,omitempty"`
+	MemoryEnabled        *bool                  `json:"memoryEnabled,omitempty"`
+	MinMemory            *int64                 `json:"minMemory,omitempty"`
+	MaxMemory            *int64                 `json:"maxMemory,omitempty"`
+	DiskEnabled          *bool                  `json:"diskEnabled,omitempty"`
+	MinDisk              *int64                 `json:"minDisk,omitempty"`
+	MaxDisk              *int64                 `json:"maxDisk,omitempty"`
+	MinNetwork           *string                `json:"minNetwork,omitempty"`
+	NetworkEnabled       *bool                  `json:"networkEnabled,omitempty"`
+	IopsEnabled          *bool                  `json:"iopsEnabled,omitempty"`
+	MinIops              *string                `json:"minIops,omitempty"`
+	MaxIops              *string                `json:"maxIops,omitempty"`
+	Comment              *string                `json:"comment,omitempty"`
+	ZoneId               *int64                 `json:"zoneId,omitempty"`
+	DateCreated          *time.Time             `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time             `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _GetInstanceThreshold200ResponseInstanceThreshold GetInstanceThreshold200ResponseInstanceThreshold
@@ -836,7 +836,7 @@ func (o *GetInstanceThreshold200ResponseInstanceThreshold) SetLastUpdated(v time
 }
 
 func (o GetInstanceThreshold200ResponseInstanceThreshold) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -924,85 +924,8 @@ func (o GetInstanceThreshold200ResponseInstanceThreshold) ToMap() (map[string]in
 
 	return toSerialize, nil
 }
-
 func (o *GetInstanceThreshold200ResponseInstanceThreshold) UnmarshalJSON(data []byte) (err error) {
-	varGetInstanceThreshold200ResponseInstanceThreshold := _GetInstanceThreshold200ResponseInstanceThreshold{}
-
-	err = json.Unmarshal(data, &varGetInstanceThreshold200ResponseInstanceThreshold)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetInstanceThreshold200ResponseInstanceThreshold(varGetInstanceThreshold200ResponseInstanceThreshold)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "autoUp")
-		delete(additionalProperties, "autoDown")
-		delete(additionalProperties, "minCount")
-		delete(additionalProperties, "maxCount")
-		delete(additionalProperties, "scaleIncrement")
-		delete(additionalProperties, "cpuEnabled")
-		delete(additionalProperties, "minCpu")
-		delete(additionalProperties, "maxCpu")
-		delete(additionalProperties, "memoryEnabled")
-		delete(additionalProperties, "minMemory")
-		delete(additionalProperties, "maxMemory")
-		delete(additionalProperties, "diskEnabled")
-		delete(additionalProperties, "minDisk")
-		delete(additionalProperties, "maxDisk")
-		delete(additionalProperties, "minNetwork")
-		delete(additionalProperties, "networkEnabled")
-		delete(additionalProperties, "iopsEnabled")
-		delete(additionalProperties, "minIops")
-		delete(additionalProperties, "maxIops")
-		delete(additionalProperties, "comment")
-		delete(additionalProperties, "zoneId")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetInstanceThreshold200ResponseInstanceThreshold struct {
-	value *GetInstanceThreshold200ResponseInstanceThreshold
-	isSet bool
-}
-
-func (v NullableGetInstanceThreshold200ResponseInstanceThreshold) Get() *GetInstanceThreshold200ResponseInstanceThreshold {
-	return v.value
-}
-
-func (v *NullableGetInstanceThreshold200ResponseInstanceThreshold) Set(val *GetInstanceThreshold200ResponseInstanceThreshold) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetInstanceThreshold200ResponseInstanceThreshold) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetInstanceThreshold200ResponseInstanceThreshold) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetInstanceThreshold200ResponseInstanceThreshold(val *GetInstanceThreshold200ResponseInstanceThreshold) *NullableGetInstanceThreshold200ResponseInstanceThreshold {
-	return &NullableGetInstanceThreshold200ResponseInstanceThreshold{value: val, isSet: true}
-}
-
-func (v NullableGetInstanceThreshold200ResponseInstanceThreshold) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetInstanceThreshold200ResponseInstanceThreshold) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

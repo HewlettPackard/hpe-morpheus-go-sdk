@@ -20,10 +20,10 @@ var _ MappedNullable = &CreateLoadBalancerPoolNode200Response{}
 
 // CreateLoadBalancerPoolNode200Response struct for CreateLoadBalancerPoolNode200Response
 type CreateLoadBalancerPoolNode200Response struct {
-	LoadBalancerNode *ListLoadBalancerPoolNodes200ResponseAllOfLoadBalancerNodesInner `json:"loadBalancerNode,omitempty"`
-	Success *bool `json:"success,omitempty"`
-	Msg *string `json:"msg,omitempty"`
-	AdditionalProperties map[string]interface{}
+	LoadBalancerNode     *ListLoadBalancerPoolNodes200ResponseAllOfLoadBalancerNodesInner `json:"loadBalancerNode,omitempty"`
+	Success              *bool                                                            `json:"success,omitempty"`
+	Msg                  *string                                                          `json:"msg,omitempty"`
+	AdditionalProperties map[string]interface{}                                           `json:",remain"`
 }
 
 type _CreateLoadBalancerPoolNode200Response CreateLoadBalancerPoolNode200Response
@@ -142,7 +142,7 @@ func (o *CreateLoadBalancerPoolNode200Response) SetMsg(v string) {
 }
 
 func (o CreateLoadBalancerPoolNode200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -167,64 +167,8 @@ func (o CreateLoadBalancerPoolNode200Response) ToMap() (map[string]interface{}, 
 
 	return toSerialize, nil
 }
-
 func (o *CreateLoadBalancerPoolNode200Response) UnmarshalJSON(data []byte) (err error) {
-	varCreateLoadBalancerPoolNode200Response := _CreateLoadBalancerPoolNode200Response{}
-
-	err = json.Unmarshal(data, &varCreateLoadBalancerPoolNode200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CreateLoadBalancerPoolNode200Response(varCreateLoadBalancerPoolNode200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "loadBalancerNode")
-		delete(additionalProperties, "success")
-		delete(additionalProperties, "msg")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCreateLoadBalancerPoolNode200Response struct {
-	value *CreateLoadBalancerPoolNode200Response
-	isSet bool
-}
-
-func (v NullableCreateLoadBalancerPoolNode200Response) Get() *CreateLoadBalancerPoolNode200Response {
-	return v.value
-}
-
-func (v *NullableCreateLoadBalancerPoolNode200Response) Set(val *CreateLoadBalancerPoolNode200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCreateLoadBalancerPoolNode200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCreateLoadBalancerPoolNode200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCreateLoadBalancerPoolNode200Response(val *CreateLoadBalancerPoolNode200Response) *NullableCreateLoadBalancerPoolNode200Response {
-	return &NullableCreateLoadBalancerPoolNode200Response{value: val, isSet: true}
-}
-
-func (v NullableCreateLoadBalancerPoolNode200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCreateLoadBalancerPoolNode200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

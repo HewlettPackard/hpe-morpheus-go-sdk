@@ -20,8 +20,8 @@ var _ MappedNullable = &CatalogCartItemCreate{}
 
 // CatalogCartItemCreate struct for CatalogCartItemCreate
 type CatalogCartItemCreate struct {
-	Item *AddCatalogCartItemRequestItem `json:"item,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Item                 *AddCatalogCartItemRequestItem `json:"item,omitempty"`
+	AdditionalProperties map[string]interface{}         `json:",remain"`
 }
 
 type _CatalogCartItemCreate CatalogCartItemCreate
@@ -76,7 +76,7 @@ func (o *CatalogCartItemCreate) SetItem(v AddCatalogCartItemRequestItem) {
 }
 
 func (o CatalogCartItemCreate) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o CatalogCartItemCreate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *CatalogCartItemCreate) UnmarshalJSON(data []byte) (err error) {
-	varCatalogCartItemCreate := _CatalogCartItemCreate{}
-
-	err = json.Unmarshal(data, &varCatalogCartItemCreate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CatalogCartItemCreate(varCatalogCartItemCreate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "item")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCatalogCartItemCreate struct {
-	value *CatalogCartItemCreate
-	isSet bool
-}
-
-func (v NullableCatalogCartItemCreate) Get() *CatalogCartItemCreate {
-	return v.value
-}
-
-func (v *NullableCatalogCartItemCreate) Set(val *CatalogCartItemCreate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCatalogCartItemCreate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCatalogCartItemCreate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCatalogCartItemCreate(val *CatalogCartItemCreate) *NullableCatalogCartItemCreate {
-	return &NullableCatalogCartItemCreate{value: val, isSet: true}
-}
-
-func (v NullableCatalogCartItemCreate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCatalogCartItemCreate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

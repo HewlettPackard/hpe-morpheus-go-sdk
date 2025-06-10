@@ -20,10 +20,10 @@ var _ MappedNullable = &ListInvoiceLineItems200Response{}
 
 // ListInvoiceLineItems200Response struct for ListInvoiceLineItems200Response
 type ListInvoiceLineItems200Response struct {
-	LineItems []ListInvoiceLineItems200ResponseAllOfLineItemsInner `json:"lineItems,omitempty"`
-	MasterAccount *bool `json:"masterAccount,omitempty"`
-	Meta *ListActivity200ResponseAllOfMeta `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}
+	LineItems            []ListInvoiceLineItems200ResponseAllOfLineItemsInner `json:"lineItems,omitempty"`
+	MasterAccount        *bool                                                `json:"masterAccount,omitempty"`
+	Meta                 *ListActivity200ResponseAllOfMeta                    `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}                               `json:",remain"`
 }
 
 type _ListInvoiceLineItems200Response ListInvoiceLineItems200Response
@@ -142,7 +142,7 @@ func (o *ListInvoiceLineItems200Response) SetMeta(v ListActivity200ResponseAllOf
 }
 
 func (o ListInvoiceLineItems200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -167,64 +167,8 @@ func (o ListInvoiceLineItems200Response) ToMap() (map[string]interface{}, error)
 
 	return toSerialize, nil
 }
-
 func (o *ListInvoiceLineItems200Response) UnmarshalJSON(data []byte) (err error) {
-	varListInvoiceLineItems200Response := _ListInvoiceLineItems200Response{}
-
-	err = json.Unmarshal(data, &varListInvoiceLineItems200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListInvoiceLineItems200Response(varListInvoiceLineItems200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "lineItems")
-		delete(additionalProperties, "masterAccount")
-		delete(additionalProperties, "meta")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListInvoiceLineItems200Response struct {
-	value *ListInvoiceLineItems200Response
-	isSet bool
-}
-
-func (v NullableListInvoiceLineItems200Response) Get() *ListInvoiceLineItems200Response {
-	return v.value
-}
-
-func (v *NullableListInvoiceLineItems200Response) Set(val *ListInvoiceLineItems200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListInvoiceLineItems200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListInvoiceLineItems200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListInvoiceLineItems200Response(val *ListInvoiceLineItems200Response) *NullableListInvoiceLineItems200Response {
-	return &NullableListInvoiceLineItems200Response{value: val, isSet: true}
-}
-
-func (v NullableListInvoiceLineItems200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListInvoiceLineItems200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

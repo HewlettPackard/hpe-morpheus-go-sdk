@@ -20,17 +20,17 @@ var _ MappedNullable = &AddSecurityGroupLocations200ResponseAllOfSecurityGroupLo
 
 // AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation struct for AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation
 type AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	ExternalId *string `json:"externalId,omitempty"`
-	IacId *string `json:"iacId,omitempty"`
-	Zone *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"zone,omitempty"`
-	ZonePool *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"zonePool,omitempty"`
-	Status *string `json:"status,omitempty"`
-	Priority *string `json:"priority,omitempty"`
-	GroupLayer *string `json:"groupLayer,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                  `json:"id,omitempty"`
+	Name                 *string                                                                 `json:"name,omitempty"`
+	Description          *string                                                                 `json:"description,omitempty"`
+	ExternalId           *string                                                                 `json:"externalId,omitempty"`
+	IacId                *string                                                                 `json:"iacId,omitempty"`
+	Zone                 *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"zone,omitempty"`
+	ZonePool             *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"zonePool,omitempty"`
+	Status               *string                                                                 `json:"status,omitempty"`
+	Priority             *string                                                                 `json:"priority,omitempty"`
+	GroupLayer           *string                                                                 `json:"groupLayer,omitempty"`
+	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
 }
 
 type _AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation
@@ -373,7 +373,7 @@ func (o *AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation) SetGrou
 }
 
 func (o AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -419,71 +419,8 @@ func (o AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation) ToMap() 
 
 	return toSerialize, nil
 }
-
 func (o *AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation) UnmarshalJSON(data []byte) (err error) {
-	varAddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation := _AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation{}
-
-	err = json.Unmarshal(data, &varAddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation(varAddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "iacId")
-		delete(additionalProperties, "zone")
-		delete(additionalProperties, "zonePool")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "priority")
-		delete(additionalProperties, "groupLayer")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation struct {
-	value *AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation
-	isSet bool
-}
-
-func (v NullableAddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation) Get() *AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation {
-	return v.value
-}
-
-func (v *NullableAddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation) Set(val *AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation(val *AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation) *NullableAddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation {
-	return &NullableAddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation{value: val, isSet: true}
-}
-
-func (v NullableAddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

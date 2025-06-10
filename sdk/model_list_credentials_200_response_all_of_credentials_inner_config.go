@@ -20,14 +20,14 @@ var _ MappedNullable = &ListCredentials200ResponseAllOfCredentialsInnerConfig{}
 
 // ListCredentials200ResponseAllOfCredentialsInnerConfig struct for ListCredentials200ResponseAllOfCredentialsInnerConfig
 type ListCredentials200ResponseAllOfCredentialsInnerConfig struct {
-	ClientSecret *string `json:"clientSecret,omitempty"`
-	ClientId *string `json:"clientId,omitempty"`
-	ClientAuth *string `json:"clientAuth,omitempty"`
-	Scope *string `json:"scope,omitempty"`
-	GrantType *string `json:"grantType,omitempty"`
-	AccessTokenUrl *string `json:"accessTokenUrl,omitempty"`
-	ClientSecretHash *string `json:"clientSecretHash,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ClientSecret         *string                `json:"clientSecret,omitempty"`
+	ClientId             *string                `json:"clientId,omitempty"`
+	ClientAuth           *string                `json:"clientAuth,omitempty"`
+	Scope                *string                `json:"scope,omitempty"`
+	GrantType            *string                `json:"grantType,omitempty"`
+	AccessTokenUrl       *string                `json:"accessTokenUrl,omitempty"`
+	ClientSecretHash     *string                `json:"clientSecretHash,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListCredentials200ResponseAllOfCredentialsInnerConfig ListCredentials200ResponseAllOfCredentialsInnerConfig
@@ -274,7 +274,7 @@ func (o *ListCredentials200ResponseAllOfCredentialsInnerConfig) SetClientSecretH
 }
 
 func (o ListCredentials200ResponseAllOfCredentialsInnerConfig) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -311,68 +311,8 @@ func (o ListCredentials200ResponseAllOfCredentialsInnerConfig) ToMap() (map[stri
 
 	return toSerialize, nil
 }
-
 func (o *ListCredentials200ResponseAllOfCredentialsInnerConfig) UnmarshalJSON(data []byte) (err error) {
-	varListCredentials200ResponseAllOfCredentialsInnerConfig := _ListCredentials200ResponseAllOfCredentialsInnerConfig{}
-
-	err = json.Unmarshal(data, &varListCredentials200ResponseAllOfCredentialsInnerConfig)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListCredentials200ResponseAllOfCredentialsInnerConfig(varListCredentials200ResponseAllOfCredentialsInnerConfig)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "clientSecret")
-		delete(additionalProperties, "clientId")
-		delete(additionalProperties, "clientAuth")
-		delete(additionalProperties, "scope")
-		delete(additionalProperties, "grantType")
-		delete(additionalProperties, "accessTokenUrl")
-		delete(additionalProperties, "clientSecretHash")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListCredentials200ResponseAllOfCredentialsInnerConfig struct {
-	value *ListCredentials200ResponseAllOfCredentialsInnerConfig
-	isSet bool
-}
-
-func (v NullableListCredentials200ResponseAllOfCredentialsInnerConfig) Get() *ListCredentials200ResponseAllOfCredentialsInnerConfig {
-	return v.value
-}
-
-func (v *NullableListCredentials200ResponseAllOfCredentialsInnerConfig) Set(val *ListCredentials200ResponseAllOfCredentialsInnerConfig) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListCredentials200ResponseAllOfCredentialsInnerConfig) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListCredentials200ResponseAllOfCredentialsInnerConfig) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListCredentials200ResponseAllOfCredentialsInnerConfig(val *ListCredentials200ResponseAllOfCredentialsInnerConfig) *NullableListCredentials200ResponseAllOfCredentialsInnerConfig {
-	return &NullableListCredentials200ResponseAllOfCredentialsInnerConfig{value: val, isSet: true}
-}
-
-func (v NullableListCredentials200ResponseAllOfCredentialsInnerConfig) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListCredentials200ResponseAllOfCredentialsInnerConfig) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

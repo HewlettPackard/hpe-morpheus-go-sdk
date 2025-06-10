@@ -20,8 +20,8 @@ var _ MappedNullable = &AddLayoutRequestInstanceTypeLayoutPermissions{}
 
 // AddLayoutRequestInstanceTypeLayoutPermissions Permissions object for upgrading group access
 type AddLayoutRequestInstanceTypeLayoutPermissions struct {
-	ResourcePermissions *AddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissions `json:"resourcePermissions,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ResourcePermissions  *AddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissions `json:"resourcePermissions,omitempty"`
+	AdditionalProperties map[string]interface{}                                            `json:",remain"`
 }
 
 type _AddLayoutRequestInstanceTypeLayoutPermissions AddLayoutRequestInstanceTypeLayoutPermissions
@@ -76,7 +76,7 @@ func (o *AddLayoutRequestInstanceTypeLayoutPermissions) SetResourcePermissions(v
 }
 
 func (o AddLayoutRequestInstanceTypeLayoutPermissions) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o AddLayoutRequestInstanceTypeLayoutPermissions) ToMap() (map[string]inter
 
 	return toSerialize, nil
 }
-
 func (o *AddLayoutRequestInstanceTypeLayoutPermissions) UnmarshalJSON(data []byte) (err error) {
-	varAddLayoutRequestInstanceTypeLayoutPermissions := _AddLayoutRequestInstanceTypeLayoutPermissions{}
-
-	err = json.Unmarshal(data, &varAddLayoutRequestInstanceTypeLayoutPermissions)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddLayoutRequestInstanceTypeLayoutPermissions(varAddLayoutRequestInstanceTypeLayoutPermissions)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "resourcePermissions")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddLayoutRequestInstanceTypeLayoutPermissions struct {
-	value *AddLayoutRequestInstanceTypeLayoutPermissions
-	isSet bool
-}
-
-func (v NullableAddLayoutRequestInstanceTypeLayoutPermissions) Get() *AddLayoutRequestInstanceTypeLayoutPermissions {
-	return v.value
-}
-
-func (v *NullableAddLayoutRequestInstanceTypeLayoutPermissions) Set(val *AddLayoutRequestInstanceTypeLayoutPermissions) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddLayoutRequestInstanceTypeLayoutPermissions) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddLayoutRequestInstanceTypeLayoutPermissions) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddLayoutRequestInstanceTypeLayoutPermissions(val *AddLayoutRequestInstanceTypeLayoutPermissions) *NullableAddLayoutRequestInstanceTypeLayoutPermissions {
-	return &NullableAddLayoutRequestInstanceTypeLayoutPermissions{value: val, isSet: true}
-}
-
-func (v NullableAddLayoutRequestInstanceTypeLayoutPermissions) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddLayoutRequestInstanceTypeLayoutPermissions) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

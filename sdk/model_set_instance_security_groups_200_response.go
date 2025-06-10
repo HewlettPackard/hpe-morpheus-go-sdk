@@ -21,9 +21,9 @@ var _ MappedNullable = &SetInstanceSecurityGroups200Response{}
 // SetInstanceSecurityGroups200Response struct for SetInstanceSecurityGroups200Response
 type SetInstanceSecurityGroups200Response struct {
 	// Array of security group objects
-	SecurityGroups []SetInstanceSecurityGroups200ResponseAllOfSecurityGroupsInner `json:"securityGroups,omitempty"`
-	Success *bool `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}
+	SecurityGroups       []SetInstanceSecurityGroups200ResponseAllOfSecurityGroupsInner `json:"securityGroups,omitempty"`
+	Success              *bool                                                          `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}                                         `json:",remain"`
 }
 
 type _SetInstanceSecurityGroups200Response SetInstanceSecurityGroups200Response
@@ -110,7 +110,7 @@ func (o *SetInstanceSecurityGroups200Response) SetSuccess(v bool) {
 }
 
 func (o SetInstanceSecurityGroups200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -132,63 +132,8 @@ func (o SetInstanceSecurityGroups200Response) ToMap() (map[string]interface{}, e
 
 	return toSerialize, nil
 }
-
 func (o *SetInstanceSecurityGroups200Response) UnmarshalJSON(data []byte) (err error) {
-	varSetInstanceSecurityGroups200Response := _SetInstanceSecurityGroups200Response{}
-
-	err = json.Unmarshal(data, &varSetInstanceSecurityGroups200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = SetInstanceSecurityGroups200Response(varSetInstanceSecurityGroups200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "securityGroups")
-		delete(additionalProperties, "success")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableSetInstanceSecurityGroups200Response struct {
-	value *SetInstanceSecurityGroups200Response
-	isSet bool
-}
-
-func (v NullableSetInstanceSecurityGroups200Response) Get() *SetInstanceSecurityGroups200Response {
-	return v.value
-}
-
-func (v *NullableSetInstanceSecurityGroups200Response) Set(val *SetInstanceSecurityGroups200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSetInstanceSecurityGroups200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSetInstanceSecurityGroups200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSetInstanceSecurityGroups200Response(val *SetInstanceSecurityGroups200Response) *NullableSetInstanceSecurityGroups200Response {
-	return &NullableSetInstanceSecurityGroups200Response{value: val, isSet: true}
-}
-
-func (v NullableSetInstanceSecurityGroups200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSetInstanceSecurityGroups200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

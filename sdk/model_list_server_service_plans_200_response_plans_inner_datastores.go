@@ -20,9 +20,9 @@ var _ MappedNullable = &ListServerServicePlans200ResponsePlansInnerDatastores{}
 
 // ListServerServicePlans200ResponsePlansInnerDatastores struct for ListServerServicePlans200ResponsePlansInnerDatastores
 type ListServerServicePlans200ResponsePlansInnerDatastores struct {
-	Cluster []map[string]interface{} `json:"cluster,omitempty"`
-	Store []map[string]interface{} `json:"store,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Cluster              []map[string]interface{} `json:"cluster,omitempty"`
+	Store                []map[string]interface{} `json:"store,omitempty"`
+	AdditionalProperties map[string]interface{}   `json:",remain"`
 }
 
 type _ListServerServicePlans200ResponsePlansInnerDatastores ListServerServicePlans200ResponsePlansInnerDatastores
@@ -109,7 +109,7 @@ func (o *ListServerServicePlans200ResponsePlansInnerDatastores) SetStore(v []map
 }
 
 func (o ListServerServicePlans200ResponsePlansInnerDatastores) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o ListServerServicePlans200ResponsePlansInnerDatastores) ToMap() (map[stri
 
 	return toSerialize, nil
 }
-
 func (o *ListServerServicePlans200ResponsePlansInnerDatastores) UnmarshalJSON(data []byte) (err error) {
-	varListServerServicePlans200ResponsePlansInnerDatastores := _ListServerServicePlans200ResponsePlansInnerDatastores{}
-
-	err = json.Unmarshal(data, &varListServerServicePlans200ResponsePlansInnerDatastores)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListServerServicePlans200ResponsePlansInnerDatastores(varListServerServicePlans200ResponsePlansInnerDatastores)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "cluster")
-		delete(additionalProperties, "store")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListServerServicePlans200ResponsePlansInnerDatastores struct {
-	value *ListServerServicePlans200ResponsePlansInnerDatastores
-	isSet bool
-}
-
-func (v NullableListServerServicePlans200ResponsePlansInnerDatastores) Get() *ListServerServicePlans200ResponsePlansInnerDatastores {
-	return v.value
-}
-
-func (v *NullableListServerServicePlans200ResponsePlansInnerDatastores) Set(val *ListServerServicePlans200ResponsePlansInnerDatastores) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListServerServicePlans200ResponsePlansInnerDatastores) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListServerServicePlans200ResponsePlansInnerDatastores) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListServerServicePlans200ResponsePlansInnerDatastores(val *ListServerServicePlans200ResponsePlansInnerDatastores) *NullableListServerServicePlans200ResponsePlansInnerDatastores {
-	return &NullableListServerServicePlans200ResponsePlansInnerDatastores{value: val, isSet: true}
-}
-
-func (v NullableListServerServicePlans200ResponsePlansInnerDatastores) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListServerServicePlans200ResponsePlansInnerDatastores) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

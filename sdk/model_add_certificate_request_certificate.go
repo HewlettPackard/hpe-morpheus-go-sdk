@@ -37,8 +37,8 @@ type AddCertificateRequestCertificate struct {
 	// Certificate Type Code to create a certificate of a type other than the default 'internal'.
 	Type *string `json:"type,omitempty"`
 	// ID of the Service (Trust Integration) to create the certificate with, if using a type other than 'internal'. eg. Internal, NSXT or Venafi
-	IntegrationId *int64 `json:"integrationId,omitempty"`
-	AdditionalProperties map[string]interface{}
+	IntegrationId        *int64                 `json:"integrationId,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddCertificateRequestCertificate AddCertificateRequestCertificate
@@ -357,7 +357,7 @@ func (o *AddCertificateRequestCertificate) SetIntegrationId(v int64) {
 }
 
 func (o AddCertificateRequestCertificate) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -400,70 +400,8 @@ func (o AddCertificateRequestCertificate) ToMap() (map[string]interface{}, error
 
 	return toSerialize, nil
 }
-
 func (o *AddCertificateRequestCertificate) UnmarshalJSON(data []byte) (err error) {
-	varAddCertificateRequestCertificate := _AddCertificateRequestCertificate{}
-
-	err = json.Unmarshal(data, &varAddCertificateRequestCertificate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddCertificateRequestCertificate(varAddCertificateRequestCertificate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "certFile")
-		delete(additionalProperties, "keyFile")
-		delete(additionalProperties, "chainFile")
-		delete(additionalProperties, "domainName")
-		delete(additionalProperties, "wildcard")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "integrationId")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddCertificateRequestCertificate struct {
-	value *AddCertificateRequestCertificate
-	isSet bool
-}
-
-func (v NullableAddCertificateRequestCertificate) Get() *AddCertificateRequestCertificate {
-	return v.value
-}
-
-func (v *NullableAddCertificateRequestCertificate) Set(val *AddCertificateRequestCertificate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddCertificateRequestCertificate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddCertificateRequestCertificate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddCertificateRequestCertificate(val *AddCertificateRequestCertificate) *NullableAddCertificateRequestCertificate {
-	return &NullableAddCertificateRequestCertificate{value: val, isSet: true}
-}
-
-func (v NullableAddCertificateRequestCertificate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddCertificateRequestCertificate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

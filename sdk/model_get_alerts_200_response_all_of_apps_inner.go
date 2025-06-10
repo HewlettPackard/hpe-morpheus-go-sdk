@@ -21,32 +21,32 @@ var _ MappedNullable = &GetAlerts200ResponseAllOfAppsInner{}
 
 // GetAlerts200ResponseAllOfAppsInner struct for GetAlerts200ResponseAllOfAppsInner
 type GetAlerts200ResponseAllOfAppsInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Account *GetAlerts200ResponseAllOfChecksInnerAccount `json:"account,omitempty"`
-	Active *bool `json:"active,omitempty"`
-	App *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"app,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	InUptime *bool `json:"inUptime,omitempty"`
-	LastCheckStatus *string `json:"lastCheckStatus,omitempty"`
-	LastWarningDate *time.Time `json:"lastWarningDate,omitempty"`
-	LastErrorDate *time.Time `json:"lastErrorDate,omitempty"`
-	LastSuccessDate *time.Time `json:"lastSuccessDate,omitempty"`
-	LastRunDate *time.Time `json:"lastRunDate,omitempty"`
-	LastError *string `json:"lastError,omitempty"`
-	LastTimer *int64 `json:"lastTimer,omitempty"`
-	Health *int64 `json:"health,omitempty"`
-	History *string `json:"history,omitempty"`
-	Severity *string `json:"severity,omitempty"`
-	CreateIncident *bool `json:"createIncident,omitempty"`
-	Muted *bool `json:"muted,omitempty"`
-	CreatedBy *ListActivity200ResponseAllOfActivityInnerActivityInnerUser `json:"createdBy,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	Availability *string `json:"availability,omitempty"`
-	Checks []int64 `json:"checks,omitempty"`
-	CheckGroups []int64 `json:"checkGroups,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                      `json:"id,omitempty"`
+	Account              *GetAlerts200ResponseAllOfChecksInnerAccount                `json:"account,omitempty"`
+	Active               *bool                                                       `json:"active,omitempty"`
+	App                  *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"app,omitempty"`
+	Name                 *string                                                     `json:"name,omitempty"`
+	Description          *string                                                     `json:"description,omitempty"`
+	InUptime             *bool                                                       `json:"inUptime,omitempty"`
+	LastCheckStatus      *string                                                     `json:"lastCheckStatus,omitempty"`
+	LastWarningDate      *time.Time                                                  `json:"lastWarningDate,omitempty"`
+	LastErrorDate        *time.Time                                                  `json:"lastErrorDate,omitempty"`
+	LastSuccessDate      *time.Time                                                  `json:"lastSuccessDate,omitempty"`
+	LastRunDate          *time.Time                                                  `json:"lastRunDate,omitempty"`
+	LastError            *string                                                     `json:"lastError,omitempty"`
+	LastTimer            *int64                                                      `json:"lastTimer,omitempty"`
+	Health               *int64                                                      `json:"health,omitempty"`
+	History              *string                                                     `json:"history,omitempty"`
+	Severity             *string                                                     `json:"severity,omitempty"`
+	CreateIncident       *bool                                                       `json:"createIncident,omitempty"`
+	Muted                *bool                                                       `json:"muted,omitempty"`
+	CreatedBy            *ListActivity200ResponseAllOfActivityInnerActivityInnerUser `json:"createdBy,omitempty"`
+	DateCreated          *time.Time                                                  `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                  `json:"lastUpdated,omitempty"`
+	Availability         *string                                                     `json:"availability,omitempty"`
+	Checks               []int64                                                     `json:"checks,omitempty"`
+	CheckGroups          []int64                                                     `json:"checkGroups,omitempty"`
+	AdditionalProperties map[string]interface{}                                      `json:",remain"`
 }
 
 type _GetAlerts200ResponseAllOfAppsInner GetAlerts200ResponseAllOfAppsInner
@@ -869,7 +869,7 @@ func (o *GetAlerts200ResponseAllOfAppsInner) SetCheckGroups(v []int64) {
 }
 
 func (o GetAlerts200ResponseAllOfAppsInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -960,86 +960,8 @@ func (o GetAlerts200ResponseAllOfAppsInner) ToMap() (map[string]interface{}, err
 
 	return toSerialize, nil
 }
-
 func (o *GetAlerts200ResponseAllOfAppsInner) UnmarshalJSON(data []byte) (err error) {
-	varGetAlerts200ResponseAllOfAppsInner := _GetAlerts200ResponseAllOfAppsInner{}
-
-	err = json.Unmarshal(data, &varGetAlerts200ResponseAllOfAppsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetAlerts200ResponseAllOfAppsInner(varGetAlerts200ResponseAllOfAppsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "app")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "inUptime")
-		delete(additionalProperties, "lastCheckStatus")
-		delete(additionalProperties, "lastWarningDate")
-		delete(additionalProperties, "lastErrorDate")
-		delete(additionalProperties, "lastSuccessDate")
-		delete(additionalProperties, "lastRunDate")
-		delete(additionalProperties, "lastError")
-		delete(additionalProperties, "lastTimer")
-		delete(additionalProperties, "health")
-		delete(additionalProperties, "history")
-		delete(additionalProperties, "severity")
-		delete(additionalProperties, "createIncident")
-		delete(additionalProperties, "muted")
-		delete(additionalProperties, "createdBy")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "availability")
-		delete(additionalProperties, "checks")
-		delete(additionalProperties, "checkGroups")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetAlerts200ResponseAllOfAppsInner struct {
-	value *GetAlerts200ResponseAllOfAppsInner
-	isSet bool
-}
-
-func (v NullableGetAlerts200ResponseAllOfAppsInner) Get() *GetAlerts200ResponseAllOfAppsInner {
-	return v.value
-}
-
-func (v *NullableGetAlerts200ResponseAllOfAppsInner) Set(val *GetAlerts200ResponseAllOfAppsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetAlerts200ResponseAllOfAppsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetAlerts200ResponseAllOfAppsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetAlerts200ResponseAllOfAppsInner(val *GetAlerts200ResponseAllOfAppsInner) *NullableGetAlerts200ResponseAllOfAppsInner {
-	return &NullableGetAlerts200ResponseAllOfAppsInner{value: val, isSet: true}
-}
-
-func (v NullableGetAlerts200ResponseAllOfAppsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetAlerts200ResponseAllOfAppsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

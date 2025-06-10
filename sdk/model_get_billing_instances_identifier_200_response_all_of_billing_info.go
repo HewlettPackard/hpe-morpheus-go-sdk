@@ -21,16 +21,16 @@ var _ MappedNullable = &GetBillingInstancesIdentifier200ResponseAllOfBillingInfo
 
 // GetBillingInstancesIdentifier200ResponseAllOfBillingInfo struct for GetBillingInstancesIdentifier200ResponseAllOfBillingInfo
 type GetBillingInstancesIdentifier200ResponseAllOfBillingInfo struct {
-	InstanceId *int64 `json:"instanceId,omitempty"`
-	InstanceUUID *string `json:"instanceUUID,omitempty"`
-	StartDate *time.Time `json:"startDate,omitempty"`
-	EndDate *time.Time `json:"endDate,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Price *float32 `json:"price,omitempty"`
-	Cost *float32 `json:"cost,omitempty"`
-	Currency *string `json:"currency,omitempty"`
-	Containers []GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner `json:"containers,omitempty"`
-	AdditionalProperties map[string]interface{}
+	InstanceId           *int64                                                                    `json:"instanceId,omitempty"`
+	InstanceUUID         *string                                                                   `json:"instanceUUID,omitempty"`
+	StartDate            *time.Time                                                                `json:"startDate,omitempty"`
+	EndDate              *time.Time                                                                `json:"endDate,omitempty"`
+	Name                 *string                                                                   `json:"name,omitempty"`
+	Price                *float32                                                                  `json:"price,omitempty"`
+	Cost                 *float32                                                                  `json:"cost,omitempty"`
+	Currency             *string                                                                   `json:"currency,omitempty"`
+	Containers           []GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner `json:"containers,omitempty"`
+	AdditionalProperties map[string]interface{}                                                    `json:",remain"`
 }
 
 type _GetBillingInstancesIdentifier200ResponseAllOfBillingInfo GetBillingInstancesIdentifier200ResponseAllOfBillingInfo
@@ -341,7 +341,7 @@ func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfo) SetContainers
 }
 
 func (o GetBillingInstancesIdentifier200ResponseAllOfBillingInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -384,70 +384,8 @@ func (o GetBillingInstancesIdentifier200ResponseAllOfBillingInfo) ToMap() (map[s
 
 	return toSerialize, nil
 }
-
 func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfo) UnmarshalJSON(data []byte) (err error) {
-	varGetBillingInstancesIdentifier200ResponseAllOfBillingInfo := _GetBillingInstancesIdentifier200ResponseAllOfBillingInfo{}
-
-	err = json.Unmarshal(data, &varGetBillingInstancesIdentifier200ResponseAllOfBillingInfo)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetBillingInstancesIdentifier200ResponseAllOfBillingInfo(varGetBillingInstancesIdentifier200ResponseAllOfBillingInfo)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "instanceId")
-		delete(additionalProperties, "instanceUUID")
-		delete(additionalProperties, "startDate")
-		delete(additionalProperties, "endDate")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "price")
-		delete(additionalProperties, "cost")
-		delete(additionalProperties, "currency")
-		delete(additionalProperties, "containers")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetBillingInstancesIdentifier200ResponseAllOfBillingInfo struct {
-	value *GetBillingInstancesIdentifier200ResponseAllOfBillingInfo
-	isSet bool
-}
-
-func (v NullableGetBillingInstancesIdentifier200ResponseAllOfBillingInfo) Get() *GetBillingInstancesIdentifier200ResponseAllOfBillingInfo {
-	return v.value
-}
-
-func (v *NullableGetBillingInstancesIdentifier200ResponseAllOfBillingInfo) Set(val *GetBillingInstancesIdentifier200ResponseAllOfBillingInfo) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetBillingInstancesIdentifier200ResponseAllOfBillingInfo) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetBillingInstancesIdentifier200ResponseAllOfBillingInfo) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetBillingInstancesIdentifier200ResponseAllOfBillingInfo(val *GetBillingInstancesIdentifier200ResponseAllOfBillingInfo) *NullableGetBillingInstancesIdentifier200ResponseAllOfBillingInfo {
-	return &NullableGetBillingInstancesIdentifier200ResponseAllOfBillingInfo{value: val, isSet: true}
-}
-
-func (v NullableGetBillingInstancesIdentifier200ResponseAllOfBillingInfo) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetBillingInstancesIdentifier200ResponseAllOfBillingInfo) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

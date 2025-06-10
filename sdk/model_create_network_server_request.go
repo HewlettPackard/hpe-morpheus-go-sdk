@@ -20,8 +20,8 @@ var _ MappedNullable = &CreateNetworkServerRequest{}
 
 // CreateNetworkServerRequest struct for CreateNetworkServerRequest
 type CreateNetworkServerRequest struct {
-	NetworkServer *NSXNetworkServer `json:"networkServer,omitempty"`
-	AdditionalProperties map[string]interface{}
+	NetworkServer        *NSXNetworkServer      `json:"networkServer,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _CreateNetworkServerRequest CreateNetworkServerRequest
@@ -76,7 +76,7 @@ func (o *CreateNetworkServerRequest) SetNetworkServer(v NSXNetworkServer) {
 }
 
 func (o CreateNetworkServerRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o CreateNetworkServerRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *CreateNetworkServerRequest) UnmarshalJSON(data []byte) (err error) {
-	varCreateNetworkServerRequest := _CreateNetworkServerRequest{}
-
-	err = json.Unmarshal(data, &varCreateNetworkServerRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CreateNetworkServerRequest(varCreateNetworkServerRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "networkServer")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCreateNetworkServerRequest struct {
-	value *CreateNetworkServerRequest
-	isSet bool
-}
-
-func (v NullableCreateNetworkServerRequest) Get() *CreateNetworkServerRequest {
-	return v.value
-}
-
-func (v *NullableCreateNetworkServerRequest) Set(val *CreateNetworkServerRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCreateNetworkServerRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCreateNetworkServerRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCreateNetworkServerRequest(val *CreateNetworkServerRequest) *NullableCreateNetworkServerRequest {
-	return &NullableCreateNetworkServerRequest{value: val, isSet: true}
-}
-
-func (v NullableCreateNetworkServerRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCreateNetworkServerRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

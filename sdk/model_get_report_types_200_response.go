@@ -20,8 +20,8 @@ var _ MappedNullable = &GetReportTypes200Response{}
 
 // GetReportTypes200Response struct for GetReportTypes200Response
 type GetReportTypes200Response struct {
-	ReportTypes []GetReportTypes200ResponseReportTypesInner `json:"reportTypes,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ReportTypes          []GetReportTypes200ResponseReportTypesInner `json:"reportTypes,omitempty"`
+	AdditionalProperties map[string]interface{}                      `json:",remain"`
 }
 
 type _GetReportTypes200Response GetReportTypes200Response
@@ -76,7 +76,7 @@ func (o *GetReportTypes200Response) SetReportTypes(v []GetReportTypes200Response
 }
 
 func (o GetReportTypes200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o GetReportTypes200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *GetReportTypes200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetReportTypes200Response := _GetReportTypes200Response{}
-
-	err = json.Unmarshal(data, &varGetReportTypes200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetReportTypes200Response(varGetReportTypes200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "reportTypes")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetReportTypes200Response struct {
-	value *GetReportTypes200Response
-	isSet bool
-}
-
-func (v NullableGetReportTypes200Response) Get() *GetReportTypes200Response {
-	return v.value
-}
-
-func (v *NullableGetReportTypes200Response) Set(val *GetReportTypes200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetReportTypes200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetReportTypes200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetReportTypes200Response(val *GetReportTypes200Response) *NullableGetReportTypes200Response {
-	return &NullableGetReportTypes200Response{value: val, isSet: true}
-}
-
-func (v NullableGetReportTypes200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetReportTypes200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -21,19 +21,19 @@ var _ MappedNullable = &OsTypeImage{}
 // OsTypeImage struct for OsTypeImage
 type OsTypeImage struct {
 	Id *int64 `json:"id,omitempty"`
-	// The id of the virtual image. 
+	// The id of the virtual image.
 	VirtualImageId *int64 `json:"virtualImageId,omitempty"`
-	// The name of the virtual image.  
+	// The name of the virtual image.
 	VirtualImageName *string `json:"virtualImageName,omitempty"`
-	// The account attached to the osTypeImage.  
+	// The account attached to the osTypeImage.
 	Account *int64 `json:"account,omitempty"`
-	// The Provision Type of the osTypeImage. 
+	// The Provision Type of the osTypeImage.
 	ProvisionType *int64 `json:"provisionType,omitempty"`
-	// The zone type of the osTypeImage. 
+	// The zone type of the osTypeImage.
 	ComputeZoneType *int64 `json:"computeZoneType,omitempty"`
-	// The cloud that is attached to osTypeImage. 
-	Zone *int64 `json:"zone,omitempty"`
-	AdditionalProperties map[string]interface{}
+	// The cloud that is attached to osTypeImage.
+	Zone                 *int64                 `json:"zone,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _OsTypeImage OsTypeImage
@@ -280,7 +280,7 @@ func (o *OsTypeImage) SetZone(v int64) {
 }
 
 func (o OsTypeImage) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -317,68 +317,8 @@ func (o OsTypeImage) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *OsTypeImage) UnmarshalJSON(data []byte) (err error) {
-	varOsTypeImage := _OsTypeImage{}
-
-	err = json.Unmarshal(data, &varOsTypeImage)
-
-	if err != nil {
-		return err
-	}
-
-	*o = OsTypeImage(varOsTypeImage)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "virtualImageId")
-		delete(additionalProperties, "virtualImageName")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "provisionType")
-		delete(additionalProperties, "computeZoneType")
-		delete(additionalProperties, "zone")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableOsTypeImage struct {
-	value *OsTypeImage
-	isSet bool
-}
-
-func (v NullableOsTypeImage) Get() *OsTypeImage {
-	return v.value
-}
-
-func (v *NullableOsTypeImage) Set(val *OsTypeImage) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableOsTypeImage) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableOsTypeImage) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableOsTypeImage(val *OsTypeImage) *NullableOsTypeImage {
-	return &NullableOsTypeImage{value: val, isSet: true}
-}
-
-func (v NullableOsTypeImage) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableOsTypeImage) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

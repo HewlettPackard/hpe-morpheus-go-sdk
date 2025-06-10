@@ -21,11 +21,11 @@ var _ MappedNullable = &ListHealthAlarms200ResponseAllOfAlarmInner{}
 
 // ListHealthAlarms200ResponseAllOfAlarmInner struct for ListHealthAlarms200ResponseAllOfAlarmInner
 type ListHealthAlarms200ResponseAllOfAlarmInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	DateCreated          *time.Time             `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time             `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListHealthAlarms200ResponseAllOfAlarmInner ListHealthAlarms200ResponseAllOfAlarmInner
@@ -176,7 +176,7 @@ func (o *ListHealthAlarms200ResponseAllOfAlarmInner) SetLastUpdated(v time.Time)
 }
 
 func (o ListHealthAlarms200ResponseAllOfAlarmInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -204,65 +204,8 @@ func (o ListHealthAlarms200ResponseAllOfAlarmInner) ToMap() (map[string]interfac
 
 	return toSerialize, nil
 }
-
 func (o *ListHealthAlarms200ResponseAllOfAlarmInner) UnmarshalJSON(data []byte) (err error) {
-	varListHealthAlarms200ResponseAllOfAlarmInner := _ListHealthAlarms200ResponseAllOfAlarmInner{}
-
-	err = json.Unmarshal(data, &varListHealthAlarms200ResponseAllOfAlarmInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListHealthAlarms200ResponseAllOfAlarmInner(varListHealthAlarms200ResponseAllOfAlarmInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListHealthAlarms200ResponseAllOfAlarmInner struct {
-	value *ListHealthAlarms200ResponseAllOfAlarmInner
-	isSet bool
-}
-
-func (v NullableListHealthAlarms200ResponseAllOfAlarmInner) Get() *ListHealthAlarms200ResponseAllOfAlarmInner {
-	return v.value
-}
-
-func (v *NullableListHealthAlarms200ResponseAllOfAlarmInner) Set(val *ListHealthAlarms200ResponseAllOfAlarmInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListHealthAlarms200ResponseAllOfAlarmInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListHealthAlarms200ResponseAllOfAlarmInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListHealthAlarms200ResponseAllOfAlarmInner(val *ListHealthAlarms200ResponseAllOfAlarmInner) *NullableListHealthAlarms200ResponseAllOfAlarmInner {
-	return &NullableListHealthAlarms200ResponseAllOfAlarmInner{value: val, isSet: true}
-}
-
-func (v NullableListHealthAlarms200ResponseAllOfAlarmInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListHealthAlarms200ResponseAllOfAlarmInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

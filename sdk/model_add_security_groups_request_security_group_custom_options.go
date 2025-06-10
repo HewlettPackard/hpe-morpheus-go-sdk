@@ -19,19 +19,38 @@ import (
 // very silly way of avoiding `"fmt" imported and not used` errors
 var _ fmt.Stringer
 
-
 // AddSecurityGroupsRequestSecurityGroupCustomOptions struct for AddSecurityGroupsRequestSecurityGroupCustomOptions
 type AddSecurityGroupsRequestSecurityGroupCustomOptions struct {
-	CustomOptionsForAmazon *CustomOptionsForAmazon
-	CustomOptionsForAzure *CustomOptionsForAzure
+	CustomOptionsForAmazon                     *CustomOptionsForAmazon
+	CustomOptionsForAzure                      *CustomOptionsForAzure
 	CustomOptionsForOpenstackOpenTelekomHuawei *CustomOptionsForOpenstackOpenTelekomHuawei
+}
+
+func (dst *AddSecurityGroupsRequestSecurityGroupCustomOptions) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddSecurityGroupsRequestSecurityGroupCustomOptions{}
+	}
+
+	if out, ok := data.(CustomOptionsForAmazon); ok {
+		dst.CustomOptionsForAmazon = &out
+	}
+
+	if out, ok := data.(CustomOptionsForAzure); ok {
+		dst.CustomOptionsForAzure = &out
+	}
+
+	if out, ok := data.(CustomOptionsForOpenstackOpenTelekomHuawei); ok {
+		dst.CustomOptionsForOpenstackOpenTelekomHuawei = &out
+	}
+
+	return dst, nil
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AddSecurityGroupsRequestSecurityGroupCustomOptions) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into CustomOptionsForAmazon
-	err = json.Unmarshal(data, &dst.CustomOptionsForAmazon);
+	err = json.Unmarshal(data, &dst.CustomOptionsForAmazon)
 	if err == nil {
 		jsonCustomOptionsForAmazon, _ := json.Marshal(dst.CustomOptionsForAmazon)
 		if string(jsonCustomOptionsForAmazon) == "{}" { // empty struct
@@ -44,7 +63,7 @@ func (dst *AddSecurityGroupsRequestSecurityGroupCustomOptions) UnmarshalJSON(dat
 	}
 
 	// try to unmarshal JSON data into CustomOptionsForAzure
-	err = json.Unmarshal(data, &dst.CustomOptionsForAzure);
+	err = json.Unmarshal(data, &dst.CustomOptionsForAzure)
 	if err == nil {
 		jsonCustomOptionsForAzure, _ := json.Marshal(dst.CustomOptionsForAzure)
 		if string(jsonCustomOptionsForAzure) == "{}" { // empty struct
@@ -57,7 +76,7 @@ func (dst *AddSecurityGroupsRequestSecurityGroupCustomOptions) UnmarshalJSON(dat
 	}
 
 	// try to unmarshal JSON data into CustomOptionsForOpenstackOpenTelekomHuawei
-	err = json.Unmarshal(data, &dst.CustomOptionsForOpenstackOpenTelekomHuawei);
+	err = json.Unmarshal(data, &dst.CustomOptionsForOpenstackOpenTelekomHuawei)
 	if err == nil {
 		jsonCustomOptionsForOpenstackOpenTelekomHuawei, _ := json.Marshal(dst.CustomOptionsForOpenstackOpenTelekomHuawei)
 		if string(jsonCustomOptionsForOpenstackOpenTelekomHuawei) == "{}" { // empty struct
@@ -88,7 +107,6 @@ func (src AddSecurityGroupsRequestSecurityGroupCustomOptions) MarshalJSON() ([]b
 
 	return nil, nil // no data in anyOf schemas
 }
-
 
 type NullableAddSecurityGroupsRequestSecurityGroupCustomOptions struct {
 	value *AddSecurityGroupsRequestSecurityGroupCustomOptions
@@ -125,5 +143,3 @@ func (v *NullableAddSecurityGroupsRequestSecurityGroupCustomOptions) UnmarshalJS
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

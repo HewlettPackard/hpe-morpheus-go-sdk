@@ -36,8 +36,8 @@ type UpdateIncidentsRequestIncident struct {
 	// Set start time
 	EndDate *time.Time `json:"endDate,omitempty"`
 	// Set 'In Availability'
-	InUptime *bool `json:"inUptime,omitempty"`
-	AdditionalProperties map[string]interface{}
+	InUptime             *bool                  `json:"inUptime,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UpdateIncidentsRequestIncident UpdateIncidentsRequestIncident
@@ -316,7 +316,7 @@ func (o *UpdateIncidentsRequestIncident) SetInUptime(v bool) {
 }
 
 func (o UpdateIncidentsRequestIncident) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -356,69 +356,8 @@ func (o UpdateIncidentsRequestIncident) ToMap() (map[string]interface{}, error) 
 
 	return toSerialize, nil
 }
-
 func (o *UpdateIncidentsRequestIncident) UnmarshalJSON(data []byte) (err error) {
-	varUpdateIncidentsRequestIncident := _UpdateIncidentsRequestIncident{}
-
-	err = json.Unmarshal(data, &varUpdateIncidentsRequestIncident)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateIncidentsRequestIncident(varUpdateIncidentsRequestIncident)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "resolution")
-		delete(additionalProperties, "comment")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "severity")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "startDate")
-		delete(additionalProperties, "endDate")
-		delete(additionalProperties, "inUptime")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateIncidentsRequestIncident struct {
-	value *UpdateIncidentsRequestIncident
-	isSet bool
-}
-
-func (v NullableUpdateIncidentsRequestIncident) Get() *UpdateIncidentsRequestIncident {
-	return v.value
-}
-
-func (v *NullableUpdateIncidentsRequestIncident) Set(val *UpdateIncidentsRequestIncident) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateIncidentsRequestIncident) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateIncidentsRequestIncident) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateIncidentsRequestIncident(val *UpdateIncidentsRequestIncident) *NullableUpdateIncidentsRequestIncident {
-	return &NullableUpdateIncidentsRequestIncident{value: val, isSet: true}
-}
-
-func (v NullableUpdateIncidentsRequestIncident) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateIncidentsRequestIncident) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

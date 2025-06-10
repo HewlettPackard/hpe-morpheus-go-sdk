@@ -20,13 +20,13 @@ var _ MappedNullable = &ZoneNetworkOptionsNetworkSubnetsInner{}
 
 // ZoneNetworkOptionsNetworkSubnetsInner struct for ZoneNetworkOptionsNetworkSubnetsInner
 type ZoneNetworkOptionsNetworkSubnetsInner struct {
-	Id *string `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Active *bool `json:"active,omitempty"`
-	DhcpServer *bool `json:"dhcpServer,omitempty"`
-	AllowStaticOverride *bool `json:"allowStaticOverride,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *string                `json:"id,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	Code                 *string                `json:"code,omitempty"`
+	Active               *bool                  `json:"active,omitempty"`
+	DhcpServer           *bool                  `json:"dhcpServer,omitempty"`
+	AllowStaticOverride  *bool                  `json:"allowStaticOverride,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ZoneNetworkOptionsNetworkSubnetsInner ZoneNetworkOptionsNetworkSubnetsInner
@@ -241,7 +241,7 @@ func (o *ZoneNetworkOptionsNetworkSubnetsInner) SetAllowStaticOverride(v bool) {
 }
 
 func (o ZoneNetworkOptionsNetworkSubnetsInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -275,67 +275,8 @@ func (o ZoneNetworkOptionsNetworkSubnetsInner) ToMap() (map[string]interface{}, 
 
 	return toSerialize, nil
 }
-
 func (o *ZoneNetworkOptionsNetworkSubnetsInner) UnmarshalJSON(data []byte) (err error) {
-	varZoneNetworkOptionsNetworkSubnetsInner := _ZoneNetworkOptionsNetworkSubnetsInner{}
-
-	err = json.Unmarshal(data, &varZoneNetworkOptionsNetworkSubnetsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ZoneNetworkOptionsNetworkSubnetsInner(varZoneNetworkOptionsNetworkSubnetsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "dhcpServer")
-		delete(additionalProperties, "allowStaticOverride")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableZoneNetworkOptionsNetworkSubnetsInner struct {
-	value *ZoneNetworkOptionsNetworkSubnetsInner
-	isSet bool
-}
-
-func (v NullableZoneNetworkOptionsNetworkSubnetsInner) Get() *ZoneNetworkOptionsNetworkSubnetsInner {
-	return v.value
-}
-
-func (v *NullableZoneNetworkOptionsNetworkSubnetsInner) Set(val *ZoneNetworkOptionsNetworkSubnetsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableZoneNetworkOptionsNetworkSubnetsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableZoneNetworkOptionsNetworkSubnetsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableZoneNetworkOptionsNetworkSubnetsInner(val *ZoneNetworkOptionsNetworkSubnetsInner) *NullableZoneNetworkOptionsNetworkSubnetsInner {
-	return &NullableZoneNetworkOptionsNetworkSubnetsInner{value: val, isSet: true}
-}
-
-func (v NullableZoneNetworkOptionsNetworkSubnetsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableZoneNetworkOptionsNetworkSubnetsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

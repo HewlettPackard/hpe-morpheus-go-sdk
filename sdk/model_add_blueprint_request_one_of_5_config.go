@@ -21,8 +21,8 @@ var _ MappedNullable = &AddBlueprintRequestOneOf5Config{}
 // AddBlueprintRequestOneOf5Config struct for AddBlueprintRequestOneOf5Config
 type AddBlueprintRequestOneOf5Config struct {
 	// Array of Terraform specs in Morpheus
-	Specs []AddBlueprintRequestOneOf3ConfigSpecsInner `json:"specs,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Specs                []AddBlueprintRequestOneOf3ConfigSpecsInner `json:"specs,omitempty"`
+	AdditionalProperties map[string]interface{}                      `json:",remain"`
 }
 
 type _AddBlueprintRequestOneOf5Config AddBlueprintRequestOneOf5Config
@@ -77,7 +77,7 @@ func (o *AddBlueprintRequestOneOf5Config) SetSpecs(v []AddBlueprintRequestOneOf3
 }
 
 func (o AddBlueprintRequestOneOf5Config) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -96,62 +96,8 @@ func (o AddBlueprintRequestOneOf5Config) ToMap() (map[string]interface{}, error)
 
 	return toSerialize, nil
 }
-
 func (o *AddBlueprintRequestOneOf5Config) UnmarshalJSON(data []byte) (err error) {
-	varAddBlueprintRequestOneOf5Config := _AddBlueprintRequestOneOf5Config{}
-
-	err = json.Unmarshal(data, &varAddBlueprintRequestOneOf5Config)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddBlueprintRequestOneOf5Config(varAddBlueprintRequestOneOf5Config)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "specs")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddBlueprintRequestOneOf5Config struct {
-	value *AddBlueprintRequestOneOf5Config
-	isSet bool
-}
-
-func (v NullableAddBlueprintRequestOneOf5Config) Get() *AddBlueprintRequestOneOf5Config {
-	return v.value
-}
-
-func (v *NullableAddBlueprintRequestOneOf5Config) Set(val *AddBlueprintRequestOneOf5Config) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddBlueprintRequestOneOf5Config) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddBlueprintRequestOneOf5Config) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddBlueprintRequestOneOf5Config(val *AddBlueprintRequestOneOf5Config) *NullableAddBlueprintRequestOneOf5Config {
-	return &NullableAddBlueprintRequestOneOf5Config{value: val, isSet: true}
-}
-
-func (v NullableAddBlueprintRequestOneOf5Config) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddBlueprintRequestOneOf5Config) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

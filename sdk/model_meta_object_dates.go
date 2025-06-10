@@ -21,9 +21,9 @@ var _ MappedNullable = &MetaObjectDates{}
 
 // MetaObjectDates struct for MetaObjectDates
 type MetaObjectDates struct {
-	StartDate *time.Time `json:"startDate,omitempty"`
-	EndDate *time.Time `json:"endDate,omitempty"`
-	AdditionalProperties map[string]interface{}
+	StartDate            *time.Time             `json:"startDate,omitempty"`
+	EndDate              *time.Time             `json:"endDate,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _MetaObjectDates MetaObjectDates
@@ -110,7 +110,7 @@ func (o *MetaObjectDates) SetEndDate(v time.Time) {
 }
 
 func (o MetaObjectDates) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -132,63 +132,8 @@ func (o MetaObjectDates) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *MetaObjectDates) UnmarshalJSON(data []byte) (err error) {
-	varMetaObjectDates := _MetaObjectDates{}
-
-	err = json.Unmarshal(data, &varMetaObjectDates)
-
-	if err != nil {
-		return err
-	}
-
-	*o = MetaObjectDates(varMetaObjectDates)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "startDate")
-		delete(additionalProperties, "endDate")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableMetaObjectDates struct {
-	value *MetaObjectDates
-	isSet bool
-}
-
-func (v NullableMetaObjectDates) Get() *MetaObjectDates {
-	return v.value
-}
-
-func (v *NullableMetaObjectDates) Set(val *MetaObjectDates) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableMetaObjectDates) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableMetaObjectDates) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableMetaObjectDates(val *MetaObjectDates) *NullableMetaObjectDates {
-	return &NullableMetaObjectDates{value: val, isSet: true}
-}
-
-func (v NullableMetaObjectDates) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableMetaObjectDates) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

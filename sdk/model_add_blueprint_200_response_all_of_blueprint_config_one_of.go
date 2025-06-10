@@ -25,8 +25,8 @@ type AddBlueprint200ResponseAllOfBlueprintConfigOneOf struct {
 	// Path to display image. Defaults to an internal Morpheus image.
 	Image *string `json:"image,omitempty"`
 	// Blueprint Type
-	Type *string `json:"type,omitempty"`
-	Arm *AddBlueprintRequestOneOfArm `json:"arm,omitempty"`
+	Type *string                      `json:"type,omitempty"`
+	Arm  *AddBlueprintRequestOneOfArm `json:"arm,omitempty"`
 	// Private or Public Access
 	Visibility *string `json:"visibility,omitempty"`
 	// Resource Permission Block
@@ -34,8 +34,8 @@ type AddBlueprint200ResponseAllOfBlueprintConfigOneOf struct {
 	// Owner
 	Owner map[string]interface{} `json:"owner,omitempty"`
 	// Tenant
-	Tenant map[string]interface{} `json:"tenant,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Tenant               map[string]interface{} `json:"tenant,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddBlueprint200ResponseAllOfBlueprintConfigOneOf AddBlueprint200ResponseAllOfBlueprintConfigOneOf
@@ -318,7 +318,7 @@ func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf) SetTenant(v map[strin
 }
 
 func (o AddBlueprint200ResponseAllOfBlueprintConfigOneOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -358,69 +358,8 @@ func (o AddBlueprint200ResponseAllOfBlueprintConfigOneOf) ToMap() (map[string]in
 
 	return toSerialize, nil
 }
-
 func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf) UnmarshalJSON(data []byte) (err error) {
-	varAddBlueprint200ResponseAllOfBlueprintConfigOneOf := _AddBlueprint200ResponseAllOfBlueprintConfigOneOf{}
-
-	err = json.Unmarshal(data, &varAddBlueprint200ResponseAllOfBlueprintConfigOneOf)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddBlueprint200ResponseAllOfBlueprintConfigOneOf(varAddBlueprint200ResponseAllOfBlueprintConfigOneOf)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "image")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "arm")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "resourcePermission")
-		delete(additionalProperties, "owner")
-		delete(additionalProperties, "tenant")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddBlueprint200ResponseAllOfBlueprintConfigOneOf struct {
-	value *AddBlueprint200ResponseAllOfBlueprintConfigOneOf
-	isSet bool
-}
-
-func (v NullableAddBlueprint200ResponseAllOfBlueprintConfigOneOf) Get() *AddBlueprint200ResponseAllOfBlueprintConfigOneOf {
-	return v.value
-}
-
-func (v *NullableAddBlueprint200ResponseAllOfBlueprintConfigOneOf) Set(val *AddBlueprint200ResponseAllOfBlueprintConfigOneOf) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddBlueprint200ResponseAllOfBlueprintConfigOneOf) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddBlueprint200ResponseAllOfBlueprintConfigOneOf) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddBlueprint200ResponseAllOfBlueprintConfigOneOf(val *AddBlueprint200ResponseAllOfBlueprintConfigOneOf) *NullableAddBlueprint200ResponseAllOfBlueprintConfigOneOf {
-	return &NullableAddBlueprint200ResponseAllOfBlueprintConfigOneOf{value: val, isSet: true}
-}
-
-func (v NullableAddBlueprint200ResponseAllOfBlueprintConfigOneOf) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddBlueprint200ResponseAllOfBlueprintConfigOneOf) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

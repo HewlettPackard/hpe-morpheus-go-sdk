@@ -32,13 +32,13 @@ type UpdateLoadBalancerVirtualServerRequestLoadBalancerInstance struct {
 	VipProtocol *string `json:"vipProtocol,omitempty"`
 	// VIP Hostname
 	VipHostname *string `json:"vipHostname,omitempty"`
-	Pool *int64 `json:"pool,omitempty"`
+	Pool        *int64  `json:"pool,omitempty"`
 	// SSL Client Certificate ID
 	SslCert *int64 `json:"sslCert,omitempty"`
 	// SSL Server Certificate ID
-	SslServerCert *int64 `json:"sslServerCert,omitempty"`
-	Config *CreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{}
+	SslServerCert        *int64                                                            `json:"sslServerCert,omitempty"`
+	Config               *CreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}                                            `json:",remain"`
 }
 
 type _UpdateLoadBalancerVirtualServerRequestLoadBalancerInstance UpdateLoadBalancerVirtualServerRequestLoadBalancerInstance
@@ -381,7 +381,7 @@ func (o *UpdateLoadBalancerVirtualServerRequestLoadBalancerInstance) SetConfig(v
 }
 
 func (o UpdateLoadBalancerVirtualServerRequestLoadBalancerInstance) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -427,71 +427,8 @@ func (o UpdateLoadBalancerVirtualServerRequestLoadBalancerInstance) ToMap() (map
 
 	return toSerialize, nil
 }
-
 func (o *UpdateLoadBalancerVirtualServerRequestLoadBalancerInstance) UnmarshalJSON(data []byte) (err error) {
-	varUpdateLoadBalancerVirtualServerRequestLoadBalancerInstance := _UpdateLoadBalancerVirtualServerRequestLoadBalancerInstance{}
-
-	err = json.Unmarshal(data, &varUpdateLoadBalancerVirtualServerRequestLoadBalancerInstance)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateLoadBalancerVirtualServerRequestLoadBalancerInstance(varUpdateLoadBalancerVirtualServerRequestLoadBalancerInstance)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "vipName")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "vipAddress")
-		delete(additionalProperties, "vipPort")
-		delete(additionalProperties, "vipProtocol")
-		delete(additionalProperties, "vipHostname")
-		delete(additionalProperties, "pool")
-		delete(additionalProperties, "sslCert")
-		delete(additionalProperties, "sslServerCert")
-		delete(additionalProperties, "config")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateLoadBalancerVirtualServerRequestLoadBalancerInstance struct {
-	value *UpdateLoadBalancerVirtualServerRequestLoadBalancerInstance
-	isSet bool
-}
-
-func (v NullableUpdateLoadBalancerVirtualServerRequestLoadBalancerInstance) Get() *UpdateLoadBalancerVirtualServerRequestLoadBalancerInstance {
-	return v.value
-}
-
-func (v *NullableUpdateLoadBalancerVirtualServerRequestLoadBalancerInstance) Set(val *UpdateLoadBalancerVirtualServerRequestLoadBalancerInstance) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateLoadBalancerVirtualServerRequestLoadBalancerInstance) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateLoadBalancerVirtualServerRequestLoadBalancerInstance) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateLoadBalancerVirtualServerRequestLoadBalancerInstance(val *UpdateLoadBalancerVirtualServerRequestLoadBalancerInstance) *NullableUpdateLoadBalancerVirtualServerRequestLoadBalancerInstance {
-	return &NullableUpdateLoadBalancerVirtualServerRequestLoadBalancerInstance{value: val, isSet: true}
-}
-
-func (v NullableUpdateLoadBalancerVirtualServerRequestLoadBalancerInstance) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateLoadBalancerVirtualServerRequestLoadBalancerInstance) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the SolarWindsNetworkPoolServer type satisfies the MappedNullable interface at compile time
@@ -36,10 +35,10 @@ type SolarWindsNetworkPoolServer struct {
 	// Throttle Rate
 	ServiceThrottleRate *int64 `json:"serviceThrottleRate,omitempty"`
 	// Disable SSL SNI Verification
-	IgnoreSsl *bool `json:"ignoreSsl,omitempty"`
-	Config *BluecatNetworkPoolServerConfig `json:"config,omitempty"`
-	Credential *NSXNetworkServerCredential `json:"credential,omitempty"`
-	AdditionalProperties map[string]interface{}
+	IgnoreSsl            *bool                           `json:"ignoreSsl,omitempty"`
+	Config               *BluecatNetworkPoolServerConfig `json:"config,omitempty"`
+	Credential           *NSXNetworkServerCredential     `json:"credential,omitempty"`
+	AdditionalProperties map[string]interface{}          `json:",remain"`
 }
 
 type _SolarWindsNetworkPoolServer SolarWindsNetworkPoolServer
@@ -373,7 +372,7 @@ func (o *SolarWindsNetworkPoolServer) SetCredential(v NSXNetworkServerCredential
 }
 
 func (o SolarWindsNetworkPoolServer) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -413,94 +412,8 @@ func (o SolarWindsNetworkPoolServer) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *SolarWindsNetworkPoolServer) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"type",
-		"name",
-		"serviceUrl",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varSolarWindsNetworkPoolServer := _SolarWindsNetworkPoolServer{}
-
-	err = json.Unmarshal(data, &varSolarWindsNetworkPoolServer)
-
-	if err != nil {
-		return err
-	}
-
-	*o = SolarWindsNetworkPoolServer(varSolarWindsNetworkPoolServer)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "serviceUrl")
-		delete(additionalProperties, "serviceUsername")
-		delete(additionalProperties, "servicePassword")
-		delete(additionalProperties, "serviceThrottleRate")
-		delete(additionalProperties, "ignoreSsl")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "credential")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableSolarWindsNetworkPoolServer struct {
-	value *SolarWindsNetworkPoolServer
-	isSet bool
-}
-
-func (v NullableSolarWindsNetworkPoolServer) Get() *SolarWindsNetworkPoolServer {
-	return v.value
-}
-
-func (v *NullableSolarWindsNetworkPoolServer) Set(val *SolarWindsNetworkPoolServer) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSolarWindsNetworkPoolServer) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSolarWindsNetworkPoolServer) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSolarWindsNetworkPoolServer(val *SolarWindsNetworkPoolServer) *NullableSolarWindsNetworkPoolServer {
-	return &NullableSolarWindsNetworkPoolServer{value: val, isSet: true}
-}
-
-func (v NullableSolarWindsNetworkPoolServer) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSolarWindsNetworkPoolServer) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

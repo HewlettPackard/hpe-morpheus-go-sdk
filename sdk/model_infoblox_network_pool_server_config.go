@@ -23,8 +23,8 @@ type InfobloxNetworkPoolServerConfig struct {
 	// Inventory Existing
 	InventoryExisting *string `json:"inventoryExisting,omitempty"`
 	// Extra Attributes
-	ExtraAttributes *string `json:"extraAttributes,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ExtraAttributes      *string                `json:"extraAttributes,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _InfobloxNetworkPoolServerConfig InfobloxNetworkPoolServerConfig
@@ -115,7 +115,7 @@ func (o *InfobloxNetworkPoolServerConfig) SetExtraAttributes(v string) {
 }
 
 func (o InfobloxNetworkPoolServerConfig) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -137,63 +137,8 @@ func (o InfobloxNetworkPoolServerConfig) ToMap() (map[string]interface{}, error)
 
 	return toSerialize, nil
 }
-
 func (o *InfobloxNetworkPoolServerConfig) UnmarshalJSON(data []byte) (err error) {
-	varInfobloxNetworkPoolServerConfig := _InfobloxNetworkPoolServerConfig{}
-
-	err = json.Unmarshal(data, &varInfobloxNetworkPoolServerConfig)
-
-	if err != nil {
-		return err
-	}
-
-	*o = InfobloxNetworkPoolServerConfig(varInfobloxNetworkPoolServerConfig)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "inventoryExisting")
-		delete(additionalProperties, "extraAttributes")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableInfobloxNetworkPoolServerConfig struct {
-	value *InfobloxNetworkPoolServerConfig
-	isSet bool
-}
-
-func (v NullableInfobloxNetworkPoolServerConfig) Get() *InfobloxNetworkPoolServerConfig {
-	return v.value
-}
-
-func (v *NullableInfobloxNetworkPoolServerConfig) Set(val *InfobloxNetworkPoolServerConfig) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableInfobloxNetworkPoolServerConfig) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableInfobloxNetworkPoolServerConfig) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableInfobloxNetworkPoolServerConfig(val *InfobloxNetworkPoolServerConfig) *NullableInfobloxNetworkPoolServerConfig {
-	return &NullableInfobloxNetworkPoolServerConfig{value: val, isSet: true}
-}
-
-func (v NullableInfobloxNetworkPoolServerConfig) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableInfobloxNetworkPoolServerConfig) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

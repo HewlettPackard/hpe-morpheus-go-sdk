@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the UpdateBackupsRequest type satisfies the MappedNullable interface at compile time
@@ -21,8 +20,8 @@ var _ MappedNullable = &UpdateBackupsRequest{}
 
 // UpdateBackupsRequest struct for UpdateBackupsRequest
 type UpdateBackupsRequest struct {
-	Backup UpdateBackupsRequestBackup `json:"backup"`
-	AdditionalProperties map[string]interface{}
+	Backup               UpdateBackupsRequestBackup `json:"backup"`
+	AdditionalProperties map[string]interface{}     `json:",remain"`
 }
 
 type _UpdateBackupsRequest UpdateBackupsRequest
@@ -70,7 +69,7 @@ func (o *UpdateBackupsRequest) SetBackup(v UpdateBackupsRequestBackup) {
 }
 
 func (o UpdateBackupsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -87,83 +86,8 @@ func (o UpdateBackupsRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *UpdateBackupsRequest) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"backup",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varUpdateBackupsRequest := _UpdateBackupsRequest{}
-
-	err = json.Unmarshal(data, &varUpdateBackupsRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateBackupsRequest(varUpdateBackupsRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "backup")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateBackupsRequest struct {
-	value *UpdateBackupsRequest
-	isSet bool
-}
-
-func (v NullableUpdateBackupsRequest) Get() *UpdateBackupsRequest {
-	return v.value
-}
-
-func (v *NullableUpdateBackupsRequest) Set(val *UpdateBackupsRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateBackupsRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateBackupsRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateBackupsRequest(val *UpdateBackupsRequest) *NullableUpdateBackupsRequest {
-	return &NullableUpdateBackupsRequest{value: val, isSet: true}
-}
-
-func (v NullableUpdateBackupsRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateBackupsRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

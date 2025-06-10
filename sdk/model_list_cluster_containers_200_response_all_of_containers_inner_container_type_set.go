@@ -20,10 +20,10 @@ var _ MappedNullable = &ListClusterContainers200ResponseAllOfContainersInnerCont
 
 // ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet struct for ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet
 type ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet struct {
-	Id *string `json:"id,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Category *string `json:"category,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *string                `json:"id,omitempty"`
+	Code                 *string                `json:"code,omitempty"`
+	Category             *string                `json:"category,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet
@@ -142,7 +142,7 @@ func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet) S
 }
 
 func (o ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -167,64 +167,8 @@ func (o ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet) To
 
 	return toSerialize, nil
 }
-
 func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet) UnmarshalJSON(data []byte) (err error) {
-	varListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet := _ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet{}
-
-	err = json.Unmarshal(data, &varListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet(varListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "category")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet struct {
-	value *ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet
-	isSet bool
-}
-
-func (v NullableListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet) Get() *ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet {
-	return v.value
-}
-
-func (v *NullableListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet) Set(val *ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet(val *ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet) *NullableListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet {
-	return &NullableListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet{value: val, isSet: true}
-}
-
-func (v NullableListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

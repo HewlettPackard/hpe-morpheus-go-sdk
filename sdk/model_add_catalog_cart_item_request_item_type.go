@@ -21,8 +21,8 @@ var _ MappedNullable = &AddCatalogCartItemRequestItemType{}
 // AddCatalogCartItemRequestItemType struct for AddCatalogCartItemRequestItemType
 type AddCatalogCartItemRequestItemType struct {
 	// Catalog item name
-	Name *string `json:"name,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Name                 *string                `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddCatalogCartItemRequestItemType AddCatalogCartItemRequestItemType
@@ -77,7 +77,7 @@ func (o *AddCatalogCartItemRequestItemType) SetName(v string) {
 }
 
 func (o AddCatalogCartItemRequestItemType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -96,62 +96,8 @@ func (o AddCatalogCartItemRequestItemType) ToMap() (map[string]interface{}, erro
 
 	return toSerialize, nil
 }
-
 func (o *AddCatalogCartItemRequestItemType) UnmarshalJSON(data []byte) (err error) {
-	varAddCatalogCartItemRequestItemType := _AddCatalogCartItemRequestItemType{}
-
-	err = json.Unmarshal(data, &varAddCatalogCartItemRequestItemType)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddCatalogCartItemRequestItemType(varAddCatalogCartItemRequestItemType)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddCatalogCartItemRequestItemType struct {
-	value *AddCatalogCartItemRequestItemType
-	isSet bool
-}
-
-func (v NullableAddCatalogCartItemRequestItemType) Get() *AddCatalogCartItemRequestItemType {
-	return v.value
-}
-
-func (v *NullableAddCatalogCartItemRequestItemType) Set(val *AddCatalogCartItemRequestItemType) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddCatalogCartItemRequestItemType) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddCatalogCartItemRequestItemType) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddCatalogCartItemRequestItemType(val *AddCatalogCartItemRequestItemType) *NullableAddCatalogCartItemRequestItemType {
-	return &NullableAddCatalogCartItemRequestItemType{value: val, isSet: true}
-}
-
-func (v NullableAddCatalogCartItemRequestItemType) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddCatalogCartItemRequestItemType) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

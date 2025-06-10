@@ -25,8 +25,8 @@ type Model200SuccessExpanded struct {
 	// Message containing a description of the result, usually a message about the error that occurred
 	Msg *string `json:"msg,omitempty"`
 	// Validation errors, with a key for Object containing error messages for each invalid parameter (key)
-	Errors map[string]interface{} `json:"errors,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Errors               map[string]interface{} `json:"errors,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _Model200SuccessExpanded Model200SuccessExpanded
@@ -149,7 +149,7 @@ func (o *Model200SuccessExpanded) SetErrors(v map[string]interface{}) {
 }
 
 func (o Model200SuccessExpanded) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -174,64 +174,8 @@ func (o Model200SuccessExpanded) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *Model200SuccessExpanded) UnmarshalJSON(data []byte) (err error) {
-	varModel200SuccessExpanded := _Model200SuccessExpanded{}
-
-	err = json.Unmarshal(data, &varModel200SuccessExpanded)
-
-	if err != nil {
-		return err
-	}
-
-	*o = Model200SuccessExpanded(varModel200SuccessExpanded)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "success")
-		delete(additionalProperties, "msg")
-		delete(additionalProperties, "errors")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableModel200SuccessExpanded struct {
-	value *Model200SuccessExpanded
-	isSet bool
-}
-
-func (v NullableModel200SuccessExpanded) Get() *Model200SuccessExpanded {
-	return v.value
-}
-
-func (v *NullableModel200SuccessExpanded) Set(val *Model200SuccessExpanded) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableModel200SuccessExpanded) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableModel200SuccessExpanded) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableModel200SuccessExpanded(val *Model200SuccessExpanded) *NullableModel200SuccessExpanded {
-	return &NullableModel200SuccessExpanded{value: val, isSet: true}
-}
-
-func (v NullableModel200SuccessExpanded) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableModel200SuccessExpanded) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

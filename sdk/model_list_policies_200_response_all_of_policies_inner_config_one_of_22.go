@@ -13,16 +13,15 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf22 type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf22{}
 
-// ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf22 - Router Quota 
+// ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf22 - Router Quota
 type ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf22 struct {
-	MaxRouters string `json:"maxRouters"`
-	AdditionalProperties map[string]interface{}
+	MaxRouters           string                 `json:"maxRouters"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf22 ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf22
@@ -70,7 +69,7 @@ func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf22) SetMaxRouters(v
 }
 
 func (o ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf22) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -87,83 +86,8 @@ func (o ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf22) ToMap() (map[str
 
 	return toSerialize, nil
 }
-
 func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf22) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"maxRouters",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varListPolicies200ResponseAllOfPoliciesInnerConfigOneOf22 := _ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf22{}
-
-	err = json.Unmarshal(data, &varListPolicies200ResponseAllOfPoliciesInnerConfigOneOf22)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf22(varListPolicies200ResponseAllOfPoliciesInnerConfigOneOf22)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "maxRouters")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf22 struct {
-	value *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf22
-	isSet bool
-}
-
-func (v NullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf22) Get() *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf22 {
-	return v.value
-}
-
-func (v *NullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf22) Set(val *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf22) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf22) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf22) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf22(val *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf22) *NullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf22 {
-	return &NullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf22{value: val, isSet: true}
-}
-
-func (v NullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf22) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf22) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

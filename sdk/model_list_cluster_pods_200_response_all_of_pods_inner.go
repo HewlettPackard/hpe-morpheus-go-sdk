@@ -21,20 +21,20 @@ var _ MappedNullable = &ListClusterPods200ResponseAllOfPodsInner{}
 
 // ListClusterPods200ResponseAllOfPodsInner struct for ListClusterPods200ResponseAllOfPodsInner
 type ListClusterPods200ResponseAllOfPodsInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Category *string `json:"category,omitempty"`
-	ResourceLevel *string `json:"resourceLevel,omitempty"`
-	ResourceType *string `json:"resourceType,omitempty"`
-	Managed *bool `json:"managed,omitempty"`
-	Status *string `json:"status,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	Owner *GetAlerts200ResponseAllOfChecksInnerAccount `json:"owner,omitempty"`
-	TotalCpuUsage *int64 `json:"totalCpuUsage,omitempty"`
-	Stats map[string]interface{} `json:"stats,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                       `json:"id,omitempty"`
+	Name                 *string                                      `json:"name,omitempty"`
+	Code                 *string                                      `json:"code,omitempty"`
+	Description          *string                                      `json:"description,omitempty"`
+	Category             *string                                      `json:"category,omitempty"`
+	ResourceLevel        *string                                      `json:"resourceLevel,omitempty"`
+	ResourceType         *string                                      `json:"resourceType,omitempty"`
+	Managed              *bool                                        `json:"managed,omitempty"`
+	Status               *string                                      `json:"status,omitempty"`
+	LastUpdated          *time.Time                                   `json:"lastUpdated,omitempty"`
+	Owner                *GetAlerts200ResponseAllOfChecksInnerAccount `json:"owner,omitempty"`
+	TotalCpuUsage        *int64                                       `json:"totalCpuUsage,omitempty"`
+	Stats                map[string]interface{}                       `json:"stats,omitempty"`
+	AdditionalProperties map[string]interface{}                       `json:",remain"`
 }
 
 type _ListClusterPods200ResponseAllOfPodsInner ListClusterPods200ResponseAllOfPodsInner
@@ -473,7 +473,7 @@ func (o *ListClusterPods200ResponseAllOfPodsInner) SetStats(v map[string]interfa
 }
 
 func (o ListClusterPods200ResponseAllOfPodsInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -528,74 +528,8 @@ func (o ListClusterPods200ResponseAllOfPodsInner) ToMap() (map[string]interface{
 
 	return toSerialize, nil
 }
-
 func (o *ListClusterPods200ResponseAllOfPodsInner) UnmarshalJSON(data []byte) (err error) {
-	varListClusterPods200ResponseAllOfPodsInner := _ListClusterPods200ResponseAllOfPodsInner{}
-
-	err = json.Unmarshal(data, &varListClusterPods200ResponseAllOfPodsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListClusterPods200ResponseAllOfPodsInner(varListClusterPods200ResponseAllOfPodsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "resourceLevel")
-		delete(additionalProperties, "resourceType")
-		delete(additionalProperties, "managed")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "owner")
-		delete(additionalProperties, "totalCpuUsage")
-		delete(additionalProperties, "stats")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListClusterPods200ResponseAllOfPodsInner struct {
-	value *ListClusterPods200ResponseAllOfPodsInner
-	isSet bool
-}
-
-func (v NullableListClusterPods200ResponseAllOfPodsInner) Get() *ListClusterPods200ResponseAllOfPodsInner {
-	return v.value
-}
-
-func (v *NullableListClusterPods200ResponseAllOfPodsInner) Set(val *ListClusterPods200ResponseAllOfPodsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListClusterPods200ResponseAllOfPodsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListClusterPods200ResponseAllOfPodsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListClusterPods200ResponseAllOfPodsInner(val *ListClusterPods200ResponseAllOfPodsInner) *NullableListClusterPods200ResponseAllOfPodsInner {
-	return &NullableListClusterPods200ResponseAllOfPodsInner{value: val, isSet: true}
-}
-
-func (v NullableListClusterPods200ResponseAllOfPodsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListClusterPods200ResponseAllOfPodsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

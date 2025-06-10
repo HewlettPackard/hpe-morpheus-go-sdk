@@ -25,8 +25,8 @@ type RefreshCloudsRequest struct {
 	// Rebuild. Pass `true` to purge existing invoices for the period before refreshing. Only applies to mode `costing`.
 	Rebuild *string `json:"rebuild,omitempty"`
 	// Period. Invoice billing period to refresh in the format `YYYYMM`. The default period is the current month. Only applies to mode `costing`.
-	Period *string `json:"period,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Period               *string                `json:"period,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _RefreshCloudsRequest RefreshCloudsRequest
@@ -145,7 +145,7 @@ func (o *RefreshCloudsRequest) SetPeriod(v string) {
 }
 
 func (o RefreshCloudsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -170,64 +170,8 @@ func (o RefreshCloudsRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *RefreshCloudsRequest) UnmarshalJSON(data []byte) (err error) {
-	varRefreshCloudsRequest := _RefreshCloudsRequest{}
-
-	err = json.Unmarshal(data, &varRefreshCloudsRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = RefreshCloudsRequest(varRefreshCloudsRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "mode")
-		delete(additionalProperties, "rebuild")
-		delete(additionalProperties, "period")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableRefreshCloudsRequest struct {
-	value *RefreshCloudsRequest
-	isSet bool
-}
-
-func (v NullableRefreshCloudsRequest) Get() *RefreshCloudsRequest {
-	return v.value
-}
-
-func (v *NullableRefreshCloudsRequest) Set(val *RefreshCloudsRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableRefreshCloudsRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableRefreshCloudsRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableRefreshCloudsRequest(val *RefreshCloudsRequest) *NullableRefreshCloudsRequest {
-	return &NullableRefreshCloudsRequest{value: val, isSet: true}
-}
-
-func (v NullableRefreshCloudsRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableRefreshCloudsRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

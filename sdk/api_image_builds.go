@@ -21,13 +21,12 @@ import (
 	"strings"
 )
 
-
 // ImageBuildsAPIService ImageBuildsAPI service
 type ImageBuildsAPIService service
 
 type ApiAddBootScriptRequest struct {
-	ctx context.Context
-	ApiService *ImageBuildsAPIService
+	ctx                  context.Context
+	ApiService           *ImageBuildsAPIService
 	addBootScriptRequest *AddBootScriptRequest
 }
 
@@ -45,24 +44,25 @@ AddBootScript Create a Boot Script
 
 Create a Boot Script
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddBootScriptRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddBootScriptRequest
 */
 func (a *ImageBuildsAPIService) AddBootScript(ctx context.Context) ApiAddBootScriptRequest {
 	return ApiAddBootScriptRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddBootScript200Response
+//
+//	@return AddBootScript200Response
 func (a *ImageBuildsAPIService) AddBootScriptExecute(r ApiAddBootScriptRequest) (*AddBootScript200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddBootScript200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddBootScript200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImageBuildsAPIService.AddBootScript")
@@ -114,7 +114,7 @@ func (a *ImageBuildsAPIService) AddBootScriptExecute(r ApiAddBootScriptRequest) 
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -123,8 +123,8 @@ func (a *ImageBuildsAPIService) AddBootScriptExecute(r ApiAddBootScriptRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -134,8 +134,8 @@ func (a *ImageBuildsAPIService) AddBootScriptExecute(r ApiAddBootScriptRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -143,8 +143,8 @@ func (a *ImageBuildsAPIService) AddBootScriptExecute(r ApiAddBootScriptRequest) 
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -153,8 +153,8 @@ func (a *ImageBuildsAPIService) AddBootScriptExecute(r ApiAddBootScriptRequest) 
 }
 
 type ApiAddImageBuildRequest struct {
-	ctx context.Context
-	ApiService *ImageBuildsAPIService
+	ctx                  context.Context
+	ApiService           *ImageBuildsAPIService
 	addImageBuildRequest *AddImageBuildRequest
 }
 
@@ -172,24 +172,25 @@ AddImageBuild Create an Image Build
 
 Create an Image Build
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddImageBuildRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddImageBuildRequest
 */
 func (a *ImageBuildsAPIService) AddImageBuild(ctx context.Context) ApiAddImageBuildRequest {
 	return ApiAddImageBuildRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddImageBuild200Response
+//
+//	@return AddImageBuild200Response
 func (a *ImageBuildsAPIService) AddImageBuildExecute(r ApiAddImageBuildRequest) (*AddImageBuild200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddImageBuild200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddImageBuild200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImageBuildsAPIService.AddImageBuild")
@@ -241,7 +242,7 @@ func (a *ImageBuildsAPIService) AddImageBuildExecute(r ApiAddImageBuildRequest) 
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -250,8 +251,8 @@ func (a *ImageBuildsAPIService) AddImageBuildExecute(r ApiAddImageBuildRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -261,8 +262,8 @@ func (a *ImageBuildsAPIService) AddImageBuildExecute(r ApiAddImageBuildRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -270,8 +271,8 @@ func (a *ImageBuildsAPIService) AddImageBuildExecute(r ApiAddImageBuildRequest) 
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -280,8 +281,8 @@ func (a *ImageBuildsAPIService) AddImageBuildExecute(r ApiAddImageBuildRequest) 
 }
 
 type ApiAddPreseedScriptRequest struct {
-	ctx context.Context
-	ApiService *ImageBuildsAPIService
+	ctx                     context.Context
+	ApiService              *ImageBuildsAPIService
 	addPreseedScriptRequest *AddPreseedScriptRequest
 }
 
@@ -299,24 +300,25 @@ AddPreseedScript Create a Preseed Script
 
 Create a Preseed Script
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddPreseedScriptRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddPreseedScriptRequest
 */
 func (a *ImageBuildsAPIService) AddPreseedScript(ctx context.Context) ApiAddPreseedScriptRequest {
 	return ApiAddPreseedScriptRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddPreseedScript200Response
+//
+//	@return AddPreseedScript200Response
 func (a *ImageBuildsAPIService) AddPreseedScriptExecute(r ApiAddPreseedScriptRequest) (*AddPreseedScript200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddPreseedScript200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddPreseedScript200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImageBuildsAPIService.AddPreseedScript")
@@ -368,7 +370,7 @@ func (a *ImageBuildsAPIService) AddPreseedScriptExecute(r ApiAddPreseedScriptReq
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -377,8 +379,8 @@ func (a *ImageBuildsAPIService) AddPreseedScriptExecute(r ApiAddPreseedScriptReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -388,8 +390,8 @@ func (a *ImageBuildsAPIService) AddPreseedScriptExecute(r ApiAddPreseedScriptReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -397,8 +399,8 @@ func (a *ImageBuildsAPIService) AddPreseedScriptExecute(r ApiAddPreseedScriptReq
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -407,9 +409,9 @@ func (a *ImageBuildsAPIService) AddPreseedScriptExecute(r ApiAddPreseedScriptReq
 }
 
 type ApiDeleteBootScriptRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ImageBuildsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiDeleteBootScriptRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -421,26 +423,27 @@ DeleteBootScript Delete a Boot Script
 
 Will delete a boot script from the system and make it no longer usable.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiDeleteBootScriptRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeleteBootScriptRequest
 */
 func (a *ImageBuildsAPIService) DeleteBootScript(ctx context.Context, id int64) ApiDeleteBootScriptRequest {
 	return ApiDeleteBootScriptRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *ImageBuildsAPIService) DeleteBootScriptExecute(r ApiDeleteBootScriptRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImageBuildsAPIService.DeleteBootScript")
@@ -491,7 +494,7 @@ func (a *ImageBuildsAPIService) DeleteBootScriptExecute(r ApiDeleteBootScriptReq
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -500,8 +503,8 @@ func (a *ImageBuildsAPIService) DeleteBootScriptExecute(r ApiDeleteBootScriptReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -511,8 +514,8 @@ func (a *ImageBuildsAPIService) DeleteBootScriptExecute(r ApiDeleteBootScriptReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -520,8 +523,8 @@ func (a *ImageBuildsAPIService) DeleteBootScriptExecute(r ApiDeleteBootScriptReq
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -530,9 +533,9 @@ func (a *ImageBuildsAPIService) DeleteBootScriptExecute(r ApiDeleteBootScriptReq
 }
 
 type ApiDeleteImageBuildRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ImageBuildsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiDeleteImageBuildRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -544,26 +547,27 @@ DeleteImageBuild Delete an Image Build
 
 Will delete an image build from the system and make it no longer usable.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiDeleteImageBuildRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeleteImageBuildRequest
 */
 func (a *ImageBuildsAPIService) DeleteImageBuild(ctx context.Context, id int64) ApiDeleteImageBuildRequest {
 	return ApiDeleteImageBuildRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *ImageBuildsAPIService) DeleteImageBuildExecute(r ApiDeleteImageBuildRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImageBuildsAPIService.DeleteImageBuild")
@@ -614,7 +618,7 @@ func (a *ImageBuildsAPIService) DeleteImageBuildExecute(r ApiDeleteImageBuildReq
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -623,8 +627,8 @@ func (a *ImageBuildsAPIService) DeleteImageBuildExecute(r ApiDeleteImageBuildReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -634,8 +638,8 @@ func (a *ImageBuildsAPIService) DeleteImageBuildExecute(r ApiDeleteImageBuildReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -643,8 +647,8 @@ func (a *ImageBuildsAPIService) DeleteImageBuildExecute(r ApiDeleteImageBuildReq
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -653,9 +657,9 @@ func (a *ImageBuildsAPIService) DeleteImageBuildExecute(r ApiDeleteImageBuildReq
 }
 
 type ApiDeletePreseedScriptRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ImageBuildsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiDeletePreseedScriptRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -667,26 +671,27 @@ DeletePreseedScript Delete a Preseed Script
 
 Will delete a preseed script from the system and make it no longer usable.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiDeletePreseedScriptRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeletePreseedScriptRequest
 */
 func (a *ImageBuildsAPIService) DeletePreseedScript(ctx context.Context, id int64) ApiDeletePreseedScriptRequest {
 	return ApiDeletePreseedScriptRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *ImageBuildsAPIService) DeletePreseedScriptExecute(r ApiDeletePreseedScriptRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImageBuildsAPIService.DeletePreseedScript")
@@ -737,7 +742,7 @@ func (a *ImageBuildsAPIService) DeletePreseedScriptExecute(r ApiDeletePreseedScr
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -746,8 +751,8 @@ func (a *ImageBuildsAPIService) DeletePreseedScriptExecute(r ApiDeletePreseedScr
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -757,8 +762,8 @@ func (a *ImageBuildsAPIService) DeletePreseedScriptExecute(r ApiDeletePreseedScr
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -766,8 +771,8 @@ func (a *ImageBuildsAPIService) DeletePreseedScriptExecute(r ApiDeletePreseedScr
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -776,9 +781,9 @@ func (a *ImageBuildsAPIService) DeletePreseedScriptExecute(r ApiDeletePreseedScr
 }
 
 type ApiExecuteImageBuildRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ImageBuildsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiExecuteImageBuildRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -790,26 +795,27 @@ ExecuteImageBuild Run an Image Build
 
 Running an image build is done asynchronously. This api will kick off the new execution and update the image build status.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiExecuteImageBuildRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiExecuteImageBuildRequest
 */
 func (a *ImageBuildsAPIService) ExecuteImageBuild(ctx context.Context, id int64) ApiExecuteImageBuildRequest {
 	return ApiExecuteImageBuildRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *ImageBuildsAPIService) ExecuteImageBuildExecute(r ApiExecuteImageBuildRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImageBuildsAPIService.ExecuteImageBuild")
@@ -860,7 +866,7 @@ func (a *ImageBuildsAPIService) ExecuteImageBuildExecute(r ApiExecuteImageBuildR
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -869,8 +875,8 @@ func (a *ImageBuildsAPIService) ExecuteImageBuildExecute(r ApiExecuteImageBuildR
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -880,8 +886,8 @@ func (a *ImageBuildsAPIService) ExecuteImageBuildExecute(r ApiExecuteImageBuildR
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -889,8 +895,8 @@ func (a *ImageBuildsAPIService) ExecuteImageBuildExecute(r ApiExecuteImageBuildR
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -899,9 +905,9 @@ func (a *ImageBuildsAPIService) ExecuteImageBuildExecute(r ApiExecuteImageBuildR
 }
 
 type ApiGetBootScriptRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ImageBuildsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetBootScriptRequest) Execute() (*GetBootScript200Response, *http.Response, error) {
@@ -913,26 +919,27 @@ GetBootScript Get a Specific Boot Script
 
 This endpoint retrieves a specific boot script.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetBootScriptRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetBootScriptRequest
 */
 func (a *ImageBuildsAPIService) GetBootScript(ctx context.Context, id int64) ApiGetBootScriptRequest {
 	return ApiGetBootScriptRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetBootScript200Response
+//
+//	@return GetBootScript200Response
 func (a *ImageBuildsAPIService) GetBootScriptExecute(r ApiGetBootScriptRequest) (*GetBootScript200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetBootScript200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetBootScript200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImageBuildsAPIService.GetBootScript")
@@ -983,7 +990,7 @@ func (a *ImageBuildsAPIService) GetBootScriptExecute(r ApiGetBootScriptRequest) 
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -992,8 +999,8 @@ func (a *ImageBuildsAPIService) GetBootScriptExecute(r ApiGetBootScriptRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1003,8 +1010,8 @@ func (a *ImageBuildsAPIService) GetBootScriptExecute(r ApiGetBootScriptRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1012,8 +1019,8 @@ func (a *ImageBuildsAPIService) GetBootScriptExecute(r ApiGetBootScriptRequest) 
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1022,9 +1029,9 @@ func (a *ImageBuildsAPIService) GetBootScriptExecute(r ApiGetBootScriptRequest) 
 }
 
 type ApiGetImageBuildRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ImageBuildsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetImageBuildRequest) Execute() (*GetImageBuild200Response, *http.Response, error) {
@@ -1036,26 +1043,27 @@ GetImageBuild Get a Specific Image Build
 
 This endpoint retrieves a specific image build.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetImageBuildRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetImageBuildRequest
 */
 func (a *ImageBuildsAPIService) GetImageBuild(ctx context.Context, id int64) ApiGetImageBuildRequest {
 	return ApiGetImageBuildRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetImageBuild200Response
+//
+//	@return GetImageBuild200Response
 func (a *ImageBuildsAPIService) GetImageBuildExecute(r ApiGetImageBuildRequest) (*GetImageBuild200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetImageBuild200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetImageBuild200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImageBuildsAPIService.GetImageBuild")
@@ -1106,7 +1114,7 @@ func (a *ImageBuildsAPIService) GetImageBuildExecute(r ApiGetImageBuildRequest) 
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1115,8 +1123,8 @@ func (a *ImageBuildsAPIService) GetImageBuildExecute(r ApiGetImageBuildRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1126,8 +1134,8 @@ func (a *ImageBuildsAPIService) GetImageBuildExecute(r ApiGetImageBuildRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1135,8 +1143,8 @@ func (a *ImageBuildsAPIService) GetImageBuildExecute(r ApiGetImageBuildRequest) 
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1145,11 +1153,11 @@ func (a *ImageBuildsAPIService) GetImageBuildExecute(r ApiGetImageBuildRequest) 
 }
 
 type ApiGetImageBuildExecutionsRequest struct {
-	ctx context.Context
-	ApiService *ImageBuildsAPIService
-	id int64
+	ctx         context.Context
+	ApiService  *ImageBuildsAPIService
+	id          int64
 	buildNumber *int64
-	status *string
+	status      *string
 }
 
 // If specified will return an exact match on buildNumber
@@ -1173,26 +1181,27 @@ GetImageBuildExecutions List Image Build Executions
 
 List all executions for an image build. This same info is also returned by the image build GET api, which returns the 100 most recent executions.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetImageBuildExecutionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetImageBuildExecutionsRequest
 */
 func (a *ImageBuildsAPIService) GetImageBuildExecutions(ctx context.Context, id int64) ApiGetImageBuildExecutionsRequest {
 	return ApiGetImageBuildExecutionsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetImageBuildExecutions200Response
+//
+//	@return GetImageBuildExecutions200Response
 func (a *ImageBuildsAPIService) GetImageBuildExecutionsExecute(r ApiGetImageBuildExecutionsRequest) (*GetImageBuildExecutions200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetImageBuildExecutions200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetImageBuildExecutions200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImageBuildsAPIService.GetImageBuildExecutions")
@@ -1249,7 +1258,7 @@ func (a *ImageBuildsAPIService) GetImageBuildExecutionsExecute(r ApiGetImageBuil
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1258,8 +1267,8 @@ func (a *ImageBuildsAPIService) GetImageBuildExecutionsExecute(r ApiGetImageBuil
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1269,8 +1278,8 @@ func (a *ImageBuildsAPIService) GetImageBuildExecutionsExecute(r ApiGetImageBuil
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1278,8 +1287,8 @@ func (a *ImageBuildsAPIService) GetImageBuildExecutionsExecute(r ApiGetImageBuil
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1288,9 +1297,9 @@ func (a *ImageBuildsAPIService) GetImageBuildExecutionsExecute(r ApiGetImageBuil
 }
 
 type ApiGetPreseedScriptRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ImageBuildsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetPreseedScriptRequest) Execute() (*GetPreseedScript200Response, *http.Response, error) {
@@ -1302,26 +1311,27 @@ GetPreseedScript Get a Specific Preseed Script
 
 This endpoint retrieves a specific preseed script.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetPreseedScriptRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetPreseedScriptRequest
 */
 func (a *ImageBuildsAPIService) GetPreseedScript(ctx context.Context, id int64) ApiGetPreseedScriptRequest {
 	return ApiGetPreseedScriptRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetPreseedScript200Response
+//
+//	@return GetPreseedScript200Response
 func (a *ImageBuildsAPIService) GetPreseedScriptExecute(r ApiGetPreseedScriptRequest) (*GetPreseedScript200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetPreseedScript200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetPreseedScript200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImageBuildsAPIService.GetPreseedScript")
@@ -1372,7 +1382,7 @@ func (a *ImageBuildsAPIService) GetPreseedScriptExecute(r ApiGetPreseedScriptReq
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1381,8 +1391,8 @@ func (a *ImageBuildsAPIService) GetPreseedScriptExecute(r ApiGetPreseedScriptReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1392,8 +1402,8 @@ func (a *ImageBuildsAPIService) GetPreseedScriptExecute(r ApiGetPreseedScriptReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1401,8 +1411,8 @@ func (a *ImageBuildsAPIService) GetPreseedScriptExecute(r ApiGetPreseedScriptReq
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1411,10 +1421,10 @@ func (a *ImageBuildsAPIService) GetPreseedScriptExecute(r ApiGetPreseedScriptReq
 }
 
 type ApiListBootScriptsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ImageBuildsAPIService
-	name *string
-	phrase *string
+	name       *string
+	phrase     *string
 }
 
 // Filter by name
@@ -1440,25 +1450,25 @@ Boot Scripts are used in the Image Builder service. See Image Builds.
 
 This endpoint retrieves all boot scripts associated with the account.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListBootScriptsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListBootScriptsRequest
 */
 func (a *ImageBuildsAPIService) ListBootScripts(ctx context.Context) ApiListBootScriptsRequest {
 	return ApiListBootScriptsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListBootScripts200Response
+//
+//	@return ListBootScripts200Response
 func (a *ImageBuildsAPIService) ListBootScriptsExecute(r ApiListBootScriptsRequest) (*ListBootScripts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListBootScripts200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListBootScripts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImageBuildsAPIService.ListBootScripts")
@@ -1514,7 +1524,7 @@ func (a *ImageBuildsAPIService) ListBootScriptsExecute(r ApiListBootScriptsReque
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1523,8 +1533,8 @@ func (a *ImageBuildsAPIService) ListBootScriptsExecute(r ApiListBootScriptsReque
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1534,8 +1544,8 @@ func (a *ImageBuildsAPIService) ListBootScriptsExecute(r ApiListBootScriptsReque
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1543,8 +1553,8 @@ func (a *ImageBuildsAPIService) ListBootScriptsExecute(r ApiListBootScriptsReque
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1553,10 +1563,10 @@ func (a *ImageBuildsAPIService) ListBootScriptsExecute(r ApiListBootScriptsReque
 }
 
 type ApiListImageBuildsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ImageBuildsAPIService
-	name *string
-	phrase *string
+	name       *string
+	phrase     *string
 }
 
 // Filter by name
@@ -1580,24 +1590,25 @@ ListImageBuilds Get All Image Builds
 
 This endpoint retrieves all image builds associated with the account.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListImageBuildsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListImageBuildsRequest
 */
 func (a *ImageBuildsAPIService) ListImageBuilds(ctx context.Context) ApiListImageBuildsRequest {
 	return ApiListImageBuildsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListImageBuilds200Response
+//
+//	@return ListImageBuilds200Response
 func (a *ImageBuildsAPIService) ListImageBuildsExecute(r ApiListImageBuildsRequest) (*ListImageBuilds200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListImageBuilds200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListImageBuilds200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImageBuildsAPIService.ListImageBuilds")
@@ -1653,7 +1664,7 @@ func (a *ImageBuildsAPIService) ListImageBuildsExecute(r ApiListImageBuildsReque
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1662,8 +1673,8 @@ func (a *ImageBuildsAPIService) ListImageBuildsExecute(r ApiListImageBuildsReque
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1673,8 +1684,8 @@ func (a *ImageBuildsAPIService) ListImageBuildsExecute(r ApiListImageBuildsReque
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1682,8 +1693,8 @@ func (a *ImageBuildsAPIService) ListImageBuildsExecute(r ApiListImageBuildsReque
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1692,10 +1703,10 @@ func (a *ImageBuildsAPIService) ListImageBuildsExecute(r ApiListImageBuildsReque
 }
 
 type ApiListPreseedScriptsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ImageBuildsAPIService
-	name *string
-	phrase *string
+	name       *string
+	phrase     *string
 }
 
 // Filter by name
@@ -1721,25 +1732,25 @@ Preseed Scripts are used in the Image Builder service. See Image Builds.
 
 This endpoint retrieves all preseed scripts associated with the account.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListPreseedScriptsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListPreseedScriptsRequest
 */
 func (a *ImageBuildsAPIService) ListPreseedScripts(ctx context.Context) ApiListPreseedScriptsRequest {
 	return ApiListPreseedScriptsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListPreseedScripts200Response
+//
+//	@return ListPreseedScripts200Response
 func (a *ImageBuildsAPIService) ListPreseedScriptsExecute(r ApiListPreseedScriptsRequest) (*ListPreseedScripts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListPreseedScripts200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListPreseedScripts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImageBuildsAPIService.ListPreseedScripts")
@@ -1795,7 +1806,7 @@ func (a *ImageBuildsAPIService) ListPreseedScriptsExecute(r ApiListPreseedScript
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1804,8 +1815,8 @@ func (a *ImageBuildsAPIService) ListPreseedScriptsExecute(r ApiListPreseedScript
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1815,8 +1826,8 @@ func (a *ImageBuildsAPIService) ListPreseedScriptsExecute(r ApiListPreseedScript
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1824,8 +1835,8 @@ func (a *ImageBuildsAPIService) ListPreseedScriptsExecute(r ApiListPreseedScript
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1834,9 +1845,9 @@ func (a *ImageBuildsAPIService) ListPreseedScriptsExecute(r ApiListPreseedScript
 }
 
 type ApiUpdateBootScriptRequest struct {
-	ctx context.Context
-	ApiService *ImageBuildsAPIService
-	id int64
+	ctx                  context.Context
+	ApiService           *ImageBuildsAPIService
+	id                   int64
 	addBootScriptRequest *AddBootScriptRequest
 }
 
@@ -1854,26 +1865,27 @@ UpdateBootScript Update a Boot Script
 
 Update a Boot Script
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateBootScriptRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateBootScriptRequest
 */
 func (a *ImageBuildsAPIService) UpdateBootScript(ctx context.Context, id int64) ApiUpdateBootScriptRequest {
 	return ApiUpdateBootScriptRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddBootScript200Response
+//
+//	@return AddBootScript200Response
 func (a *ImageBuildsAPIService) UpdateBootScriptExecute(r ApiUpdateBootScriptRequest) (*AddBootScript200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddBootScript200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddBootScript200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImageBuildsAPIService.UpdateBootScript")
@@ -1926,7 +1938,7 @@ func (a *ImageBuildsAPIService) UpdateBootScriptExecute(r ApiUpdateBootScriptReq
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1935,8 +1947,8 @@ func (a *ImageBuildsAPIService) UpdateBootScriptExecute(r ApiUpdateBootScriptReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1946,8 +1958,8 @@ func (a *ImageBuildsAPIService) UpdateBootScriptExecute(r ApiUpdateBootScriptReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1955,8 +1967,8 @@ func (a *ImageBuildsAPIService) UpdateBootScriptExecute(r ApiUpdateBootScriptReq
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1965,9 +1977,9 @@ func (a *ImageBuildsAPIService) UpdateBootScriptExecute(r ApiUpdateBootScriptReq
 }
 
 type ApiUpdateImageBuildRequest struct {
-	ctx context.Context
-	ApiService *ImageBuildsAPIService
-	id int64
+	ctx                  context.Context
+	ApiService           *ImageBuildsAPIService
+	id                   int64
 	addImageBuildRequest *AddImageBuildRequest
 }
 
@@ -1985,26 +1997,27 @@ UpdateImageBuild Update an Image Build
 
 Update an Image Build
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateImageBuildRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateImageBuildRequest
 */
 func (a *ImageBuildsAPIService) UpdateImageBuild(ctx context.Context, id int64) ApiUpdateImageBuildRequest {
 	return ApiUpdateImageBuildRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return UpdateImageBuild200Response
+//
+//	@return UpdateImageBuild200Response
 func (a *ImageBuildsAPIService) UpdateImageBuildExecute(r ApiUpdateImageBuildRequest) (*UpdateImageBuild200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UpdateImageBuild200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UpdateImageBuild200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImageBuildsAPIService.UpdateImageBuild")
@@ -2057,7 +2070,7 @@ func (a *ImageBuildsAPIService) UpdateImageBuildExecute(r ApiUpdateImageBuildReq
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2066,8 +2079,8 @@ func (a *ImageBuildsAPIService) UpdateImageBuildExecute(r ApiUpdateImageBuildReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2077,8 +2090,8 @@ func (a *ImageBuildsAPIService) UpdateImageBuildExecute(r ApiUpdateImageBuildReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2086,8 +2099,8 @@ func (a *ImageBuildsAPIService) UpdateImageBuildExecute(r ApiUpdateImageBuildReq
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2096,9 +2109,9 @@ func (a *ImageBuildsAPIService) UpdateImageBuildExecute(r ApiUpdateImageBuildReq
 }
 
 type ApiUpdatePreseedScriptRequest struct {
-	ctx context.Context
-	ApiService *ImageBuildsAPIService
-	id int64
+	ctx                     context.Context
+	ApiService              *ImageBuildsAPIService
+	id                      int64
 	addPreseedScriptRequest *AddPreseedScriptRequest
 }
 
@@ -2116,26 +2129,27 @@ UpdatePreseedScript Update a Preseed Script
 
 Update a Preseed Script
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdatePreseedScriptRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdatePreseedScriptRequest
 */
 func (a *ImageBuildsAPIService) UpdatePreseedScript(ctx context.Context, id int64) ApiUpdatePreseedScriptRequest {
 	return ApiUpdatePreseedScriptRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddPreseedScript200Response
+//
+//	@return AddPreseedScript200Response
 func (a *ImageBuildsAPIService) UpdatePreseedScriptExecute(r ApiUpdatePreseedScriptRequest) (*AddPreseedScript200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddPreseedScript200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddPreseedScript200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImageBuildsAPIService.UpdatePreseedScript")
@@ -2188,7 +2202,7 @@ func (a *ImageBuildsAPIService) UpdatePreseedScriptExecute(r ApiUpdatePreseedScr
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2197,8 +2211,8 @@ func (a *ImageBuildsAPIService) UpdatePreseedScriptExecute(r ApiUpdatePreseedScr
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2208,8 +2222,8 @@ func (a *ImageBuildsAPIService) UpdatePreseedScriptExecute(r ApiUpdatePreseedScr
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2217,8 +2231,8 @@ func (a *ImageBuildsAPIService) UpdatePreseedScriptExecute(r ApiUpdatePreseedScr
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

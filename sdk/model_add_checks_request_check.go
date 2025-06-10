@@ -14,6 +14,7 @@ package sdk
 import (
 	"encoding/json"
 	"fmt"
+
 	"gopkg.in/validator.v2"
 )
 
@@ -22,7 +23,7 @@ var _ fmt.Stringer
 
 // AddChecksRequestCheck - Payload for creating a new monitoring check
 type AddChecksRequestCheck struct {
-	AddChecksRequestCheckOneOf *AddChecksRequestCheckOneOf
+	AddChecksRequestCheckOneOf  *AddChecksRequestCheckOneOf
 	AddChecksRequestCheckOneOf1 *AddChecksRequestCheckOneOf1
 	AddChecksRequestCheckOneOf2 *AddChecksRequestCheckOneOf2
 	AddChecksRequestCheckOneOf3 *AddChecksRequestCheckOneOf3
@@ -64,6 +65,33 @@ func AddChecksRequestCheckOneOf4AsAddChecksRequestCheck(v *AddChecksRequestCheck
 	}
 }
 
+func (dst *AddChecksRequestCheck) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddChecksRequestCheck{}
+	}
+
+	if out, ok := data.(AddChecksRequestCheckOneOf); ok {
+		dst.AddChecksRequestCheckOneOf = &out
+	}
+
+	if out, ok := data.(AddChecksRequestCheckOneOf1); ok {
+		dst.AddChecksRequestCheckOneOf1 = &out
+	}
+
+	if out, ok := data.(AddChecksRequestCheckOneOf2); ok {
+		dst.AddChecksRequestCheckOneOf2 = &out
+	}
+
+	if out, ok := data.(AddChecksRequestCheckOneOf3); ok {
+		dst.AddChecksRequestCheckOneOf3 = &out
+	}
+
+	if out, ok := data.(AddChecksRequestCheckOneOf4); ok {
+		dst.AddChecksRequestCheckOneOf4 = &out
+	}
+
+	return dst, nil
+}
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddChecksRequestCheck) UnmarshalJSON(data []byte) error {
@@ -196,7 +224,7 @@ func (src AddChecksRequestCheck) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddChecksRequestCheck) GetActualInstance() (interface{}) {
+func (obj *AddChecksRequestCheck) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -225,7 +253,7 @@ func (obj *AddChecksRequestCheck) GetActualInstance() (interface{}) {
 }
 
 // Get the actual instance value
-func (obj AddChecksRequestCheck) GetActualInstanceValue() (interface{}) {
+func (obj AddChecksRequestCheck) GetActualInstanceValue() interface{} {
 	if obj.AddChecksRequestCheckOneOf != nil {
 		return *obj.AddChecksRequestCheckOneOf
 	}
@@ -285,5 +313,3 @@ func (v *NullableAddChecksRequestCheck) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

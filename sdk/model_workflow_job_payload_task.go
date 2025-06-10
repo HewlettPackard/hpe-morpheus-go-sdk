@@ -20,8 +20,8 @@ var _ MappedNullable = &WorkflowJobPayloadTask{}
 
 // WorkflowJobPayloadTask struct for WorkflowJobPayloadTask
 type WorkflowJobPayloadTask struct {
-	Id *int64 `json:"id,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _WorkflowJobPayloadTask WorkflowJobPayloadTask
@@ -76,7 +76,7 @@ func (o *WorkflowJobPayloadTask) SetId(v int64) {
 }
 
 func (o WorkflowJobPayloadTask) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o WorkflowJobPayloadTask) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *WorkflowJobPayloadTask) UnmarshalJSON(data []byte) (err error) {
-	varWorkflowJobPayloadTask := _WorkflowJobPayloadTask{}
-
-	err = json.Unmarshal(data, &varWorkflowJobPayloadTask)
-
-	if err != nil {
-		return err
-	}
-
-	*o = WorkflowJobPayloadTask(varWorkflowJobPayloadTask)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableWorkflowJobPayloadTask struct {
-	value *WorkflowJobPayloadTask
-	isSet bool
-}
-
-func (v NullableWorkflowJobPayloadTask) Get() *WorkflowJobPayloadTask {
-	return v.value
-}
-
-func (v *NullableWorkflowJobPayloadTask) Set(val *WorkflowJobPayloadTask) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableWorkflowJobPayloadTask) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableWorkflowJobPayloadTask) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableWorkflowJobPayloadTask(val *WorkflowJobPayloadTask) *NullableWorkflowJobPayloadTask {
-	return &NullableWorkflowJobPayloadTask{value: val, isSet: true}
-}
-
-func (v NullableWorkflowJobPayloadTask) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableWorkflowJobPayloadTask) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

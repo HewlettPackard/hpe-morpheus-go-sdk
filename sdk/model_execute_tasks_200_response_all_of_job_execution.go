@@ -20,9 +20,9 @@ var _ MappedNullable = &ExecuteTasks200ResponseAllOfJobExecution{}
 
 // ExecuteTasks200ResponseAllOfJobExecution struct for ExecuteTasks200ResponseAllOfJobExecution
 type ExecuteTasks200ResponseAllOfJobExecution struct {
-	Id *int64 `json:"id,omitempty"`
-	ProcessId *string `json:"processId,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	ProcessId            *string                `json:"processId,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ExecuteTasks200ResponseAllOfJobExecution ExecuteTasks200ResponseAllOfJobExecution
@@ -109,7 +109,7 @@ func (o *ExecuteTasks200ResponseAllOfJobExecution) SetProcessId(v string) {
 }
 
 func (o ExecuteTasks200ResponseAllOfJobExecution) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o ExecuteTasks200ResponseAllOfJobExecution) ToMap() (map[string]interface{
 
 	return toSerialize, nil
 }
-
 func (o *ExecuteTasks200ResponseAllOfJobExecution) UnmarshalJSON(data []byte) (err error) {
-	varExecuteTasks200ResponseAllOfJobExecution := _ExecuteTasks200ResponseAllOfJobExecution{}
-
-	err = json.Unmarshal(data, &varExecuteTasks200ResponseAllOfJobExecution)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ExecuteTasks200ResponseAllOfJobExecution(varExecuteTasks200ResponseAllOfJobExecution)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "processId")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableExecuteTasks200ResponseAllOfJobExecution struct {
-	value *ExecuteTasks200ResponseAllOfJobExecution
-	isSet bool
-}
-
-func (v NullableExecuteTasks200ResponseAllOfJobExecution) Get() *ExecuteTasks200ResponseAllOfJobExecution {
-	return v.value
-}
-
-func (v *NullableExecuteTasks200ResponseAllOfJobExecution) Set(val *ExecuteTasks200ResponseAllOfJobExecution) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableExecuteTasks200ResponseAllOfJobExecution) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableExecuteTasks200ResponseAllOfJobExecution) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableExecuteTasks200ResponseAllOfJobExecution(val *ExecuteTasks200ResponseAllOfJobExecution) *NullableExecuteTasks200ResponseAllOfJobExecution {
-	return &NullableExecuteTasks200ResponseAllOfJobExecution{value: val, isSet: true}
-}
-
-func (v NullableExecuteTasks200ResponseAllOfJobExecution) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableExecuteTasks200ResponseAllOfJobExecution) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

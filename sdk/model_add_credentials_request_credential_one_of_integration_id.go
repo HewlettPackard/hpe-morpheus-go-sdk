@@ -14,6 +14,7 @@ package sdk
 import (
 	"encoding/json"
 	"fmt"
+
 	"gopkg.in/validator.v2"
 )
 
@@ -22,7 +23,7 @@ var _ fmt.Stringer
 
 // AddCredentialsRequestCredentialOneOfIntegrationId - struct for AddCredentialsRequestCredentialOneOfIntegrationId
 type AddCredentialsRequestCredentialOneOfIntegrationId struct {
-	Int64 *int64
+	Int64  *int64
 	String *string
 }
 
@@ -40,6 +41,21 @@ func StringAsAddCredentialsRequestCredentialOneOfIntegrationId(v *string) AddCre
 	}
 }
 
+func (dst *AddCredentialsRequestCredentialOneOfIntegrationId) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddCredentialsRequestCredentialOneOfIntegrationId{}
+	}
+
+	if out, ok := data.(int64); ok {
+		dst.Int64 = &out
+	}
+
+	if out, ok := data.(string); ok {
+		dst.String = &out
+	}
+
+	return dst, nil
+}
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddCredentialsRequestCredentialOneOfIntegrationId) UnmarshalJSON(data []byte) error {
@@ -106,7 +122,7 @@ func (src AddCredentialsRequestCredentialOneOfIntegrationId) MarshalJSON() ([]by
 }
 
 // Get the actual instance
-func (obj *AddCredentialsRequestCredentialOneOfIntegrationId) GetActualInstance() (interface{}) {
+func (obj *AddCredentialsRequestCredentialOneOfIntegrationId) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -123,7 +139,7 @@ func (obj *AddCredentialsRequestCredentialOneOfIntegrationId) GetActualInstance(
 }
 
 // Get the actual instance value
-func (obj AddCredentialsRequestCredentialOneOfIntegrationId) GetActualInstanceValue() (interface{}) {
+func (obj AddCredentialsRequestCredentialOneOfIntegrationId) GetActualInstanceValue() interface{} {
 	if obj.Int64 != nil {
 		return *obj.Int64
 	}
@@ -171,5 +187,3 @@ func (v *NullableAddCredentialsRequestCredentialOneOfIntegrationId) UnmarshalJSO
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

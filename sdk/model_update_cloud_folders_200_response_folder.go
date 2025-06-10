@@ -20,22 +20,22 @@ var _ MappedNullable = &UpdateCloudFolders200ResponseFolder{}
 
 // UpdateCloudFolders200ResponseFolder struct for UpdateCloudFolders200ResponseFolder
 type UpdateCloudFolders200ResponseFolder struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Zone *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"zone,omitempty"`
-	Parent *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"parent,omitempty"`
-	Type *string `json:"type,omitempty"`
-	ExternalId *string `json:"externalId,omitempty"`
-	Visibility *string `json:"visibility,omitempty"`
-	ReadOnly *bool `json:"readOnly,omitempty"`
-	DefaultFolder *bool `json:"defaultFolder,omitempty"`
-	DefaultStore *bool `json:"defaultStore,omitempty"`
-	Active *bool `json:"active,omitempty"`
-	Tenants []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner `json:"tenants,omitempty"`
-	ResourcePermissions *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission `json:"resourcePermissions,omitempty"`
-	Depth *int64 `json:"depth,omitempty"`
-	Success *bool `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                  `json:"id,omitempty"`
+	Name                 *string                                                                 `json:"name,omitempty"`
+	Zone                 *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"zone,omitempty"`
+	Parent               *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                      `json:"parent,omitempty"`
+	Type                 *string                                                                 `json:"type,omitempty"`
+	ExternalId           *string                                                                 `json:"externalId,omitempty"`
+	Visibility           *string                                                                 `json:"visibility,omitempty"`
+	ReadOnly             *bool                                                                   `json:"readOnly,omitempty"`
+	DefaultFolder        *bool                                                                   `json:"defaultFolder,omitempty"`
+	DefaultStore         *bool                                                                   `json:"defaultStore,omitempty"`
+	Active               *bool                                                                   `json:"active,omitempty"`
+	Tenants              []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner        `json:"tenants,omitempty"`
+	ResourcePermissions  *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission   `json:"resourcePermissions,omitempty"`
+	Depth                *int64                                                                  `json:"depth,omitempty"`
+	Success              *bool                                                                   `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
 }
 
 type _UpdateCloudFolders200ResponseFolder UpdateCloudFolders200ResponseFolder
@@ -538,7 +538,7 @@ func (o *UpdateCloudFolders200ResponseFolder) SetSuccess(v bool) {
 }
 
 func (o UpdateCloudFolders200ResponseFolder) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -599,76 +599,8 @@ func (o UpdateCloudFolders200ResponseFolder) ToMap() (map[string]interface{}, er
 
 	return toSerialize, nil
 }
-
 func (o *UpdateCloudFolders200ResponseFolder) UnmarshalJSON(data []byte) (err error) {
-	varUpdateCloudFolders200ResponseFolder := _UpdateCloudFolders200ResponseFolder{}
-
-	err = json.Unmarshal(data, &varUpdateCloudFolders200ResponseFolder)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateCloudFolders200ResponseFolder(varUpdateCloudFolders200ResponseFolder)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "zone")
-		delete(additionalProperties, "parent")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "readOnly")
-		delete(additionalProperties, "defaultFolder")
-		delete(additionalProperties, "defaultStore")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "tenants")
-		delete(additionalProperties, "resourcePermissions")
-		delete(additionalProperties, "depth")
-		delete(additionalProperties, "success")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateCloudFolders200ResponseFolder struct {
-	value *UpdateCloudFolders200ResponseFolder
-	isSet bool
-}
-
-func (v NullableUpdateCloudFolders200ResponseFolder) Get() *UpdateCloudFolders200ResponseFolder {
-	return v.value
-}
-
-func (v *NullableUpdateCloudFolders200ResponseFolder) Set(val *UpdateCloudFolders200ResponseFolder) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateCloudFolders200ResponseFolder) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateCloudFolders200ResponseFolder) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateCloudFolders200ResponseFolder(val *UpdateCloudFolders200ResponseFolder) *NullableUpdateCloudFolders200ResponseFolder {
-	return &NullableUpdateCloudFolders200ResponseFolder{value: val, isSet: true}
-}
-
-func (v NullableUpdateCloudFolders200ResponseFolder) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateCloudFolders200ResponseFolder) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

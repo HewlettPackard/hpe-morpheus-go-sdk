@@ -20,9 +20,9 @@ var _ MappedNullable = &GetNetworkRouter200ResponseNetworkRouterPermissions{}
 
 // GetNetworkRouter200ResponseNetworkRouterPermissions struct for GetNetworkRouter200ResponseNetworkRouterPermissions
 type GetNetworkRouter200ResponseNetworkRouterPermissions struct {
-	Visibility *string `json:"visibility,omitempty"`
-	TenantPermissions *GetNetworkRouter200ResponseNetworkRouterPermissionsTenantPermissions `json:"tenantPermissions,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Visibility           *string                                                               `json:"visibility,omitempty"`
+	TenantPermissions    *GetNetworkRouter200ResponseNetworkRouterPermissionsTenantPermissions `json:"tenantPermissions,omitempty"`
+	AdditionalProperties map[string]interface{}                                                `json:",remain"`
 }
 
 type _GetNetworkRouter200ResponseNetworkRouterPermissions GetNetworkRouter200ResponseNetworkRouterPermissions
@@ -109,7 +109,7 @@ func (o *GetNetworkRouter200ResponseNetworkRouterPermissions) SetTenantPermissio
 }
 
 func (o GetNetworkRouter200ResponseNetworkRouterPermissions) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o GetNetworkRouter200ResponseNetworkRouterPermissions) ToMap() (map[string
 
 	return toSerialize, nil
 }
-
 func (o *GetNetworkRouter200ResponseNetworkRouterPermissions) UnmarshalJSON(data []byte) (err error) {
-	varGetNetworkRouter200ResponseNetworkRouterPermissions := _GetNetworkRouter200ResponseNetworkRouterPermissions{}
-
-	err = json.Unmarshal(data, &varGetNetworkRouter200ResponseNetworkRouterPermissions)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetNetworkRouter200ResponseNetworkRouterPermissions(varGetNetworkRouter200ResponseNetworkRouterPermissions)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "tenantPermissions")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetNetworkRouter200ResponseNetworkRouterPermissions struct {
-	value *GetNetworkRouter200ResponseNetworkRouterPermissions
-	isSet bool
-}
-
-func (v NullableGetNetworkRouter200ResponseNetworkRouterPermissions) Get() *GetNetworkRouter200ResponseNetworkRouterPermissions {
-	return v.value
-}
-
-func (v *NullableGetNetworkRouter200ResponseNetworkRouterPermissions) Set(val *GetNetworkRouter200ResponseNetworkRouterPermissions) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetNetworkRouter200ResponseNetworkRouterPermissions) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetNetworkRouter200ResponseNetworkRouterPermissions) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetNetworkRouter200ResponseNetworkRouterPermissions(val *GetNetworkRouter200ResponseNetworkRouterPermissions) *NullableGetNetworkRouter200ResponseNetworkRouterPermissions {
-	return &NullableGetNetworkRouter200ResponseNetworkRouterPermissions{value: val, isSet: true}
-}
-
-func (v NullableGetNetworkRouter200ResponseNetworkRouterPermissions) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetNetworkRouter200ResponseNetworkRouterPermissions) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

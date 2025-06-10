@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the RolePermissionCloud type satisfies the MappedNullable interface at compile time
@@ -24,8 +23,8 @@ type RolePermissionCloud struct {
 	// `id` of the cloud (zone)
 	CloudId int32 `json:"cloudId"`
 	// The new access level.
-	Access string `json:"access"`
-	AdditionalProperties map[string]interface{}
+	Access               string                 `json:"access"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _RolePermissionCloud RolePermissionCloud
@@ -98,7 +97,7 @@ func (o *RolePermissionCloud) SetAccess(v string) {
 }
 
 func (o RolePermissionCloud) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -116,85 +115,8 @@ func (o RolePermissionCloud) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *RolePermissionCloud) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"cloudId",
-		"access",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varRolePermissionCloud := _RolePermissionCloud{}
-
-	err = json.Unmarshal(data, &varRolePermissionCloud)
-
-	if err != nil {
-		return err
-	}
-
-	*o = RolePermissionCloud(varRolePermissionCloud)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "cloudId")
-		delete(additionalProperties, "access")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableRolePermissionCloud struct {
-	value *RolePermissionCloud
-	isSet bool
-}
-
-func (v NullableRolePermissionCloud) Get() *RolePermissionCloud {
-	return v.value
-}
-
-func (v *NullableRolePermissionCloud) Set(val *RolePermissionCloud) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableRolePermissionCloud) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableRolePermissionCloud) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableRolePermissionCloud(val *RolePermissionCloud) *NullableRolePermissionCloud {
-	return &NullableRolePermissionCloud{value: val, isSet: true}
-}
-
-func (v NullableRolePermissionCloud) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableRolePermissionCloud) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

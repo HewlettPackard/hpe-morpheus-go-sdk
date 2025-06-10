@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddVDIPoolsRequestVdiPoolOneOf1 type satisfies the MappedNullable interface at compile time
@@ -27,15 +26,15 @@ type AddVDIPoolsRequestVdiPoolOneOf1 struct {
 	Description *string `json:"description,omitempty"`
 	// Owner (User) ID
 	Owner *int64 `json:"owner,omitempty"`
-	// Min Idle - Sets the minimum number of idle instances on standby in the pool. The pool will always try to maintain this number of available instances on standby. 
+	// Min Idle - Sets the minimum number of idle instances on standby in the pool. The pool will always try to maintain this number of available instances on standby.
 	MinIdle *float32 `json:"minIdle,omitempty"`
 	// The initial size of the pool to be allocated on creation
 	InitialPoolSize *float32 `json:"initialPoolSize,omitempty"`
-	// Sets the maximum number of idle instances on standby in the pool. If the number of idle instances supersedes this, the pool will start removing instances 
+	// Sets the maximum number of idle instances on standby in the pool. If the number of idle instances supersedes this, the pool will start removing instances
 	MaxIdle *float32 `json:"maxIdle,omitempty"`
-	// Max limit on number of allocations and instances within the pool. 
+	// Max limit on number of allocations and instances within the pool.
 	MaxPoolSize float32 `json:"maxPoolSize"`
-	// Time (in minutes) after a user disconnects before an allocation is recycled or shutdown depending on persistence. 
+	// Time (in minutes) after a user disconnects before an allocation is recycled or shutdown depending on persistence.
 	AllocationTimeoutMinutes *float32 `json:"allocationTimeoutMinutes,omitempty"`
 	// Persistent Desktop Pool
 	PersistentUser *bool `json:"persistentUser,omitempty"`
@@ -60,8 +59,8 @@ type AddVDIPoolsRequestVdiPoolOneOf1 struct {
 	// VDI Gateway ID
 	Gateway *int64 `json:"gateway,omitempty"`
 	// Instance Config JSON. Passing as a string will preserve property order.  See `config` object for required values.
-	InstanceConfig *string `json:"instanceConfig,omitempty"`
-	Config AddVDIPoolsRequestVdiPoolOneOfConfig `json:"config"`
+	InstanceConfig *string                              `json:"instanceConfig,omitempty"`
+	Config         AddVDIPoolsRequestVdiPoolOneOfConfig `json:"config"`
 	// Guest Console Jump Host
 	GuestConsoleJumpHost *string `json:"guestConsoleJumpHost,omitempty"`
 	// Guest Console Jump Port
@@ -71,8 +70,8 @@ type AddVDIPoolsRequestVdiPoolOneOf1 struct {
 	// Guest Console Jump Password
 	GuestConsoleJumpPassword *string `json:"guestConsoleJumpPassword,omitempty"`
 	// Guest Console Jump Key Pair. see `Key Pair`
-	GuestConsoleJumpKeypair *int64 `json:"guestConsoleJumpKeypair,omitempty"`
-	AdditionalProperties map[string]interface{}
+	GuestConsoleJumpKeypair *int64                 `json:"guestConsoleJumpKeypair,omitempty"`
+	AdditionalProperties    map[string]interface{} `json:",remain"`
 }
 
 type _AddVDIPoolsRequestVdiPoolOneOf1 AddVDIPoolsRequestVdiPoolOneOf1
@@ -938,7 +937,7 @@ func (o *AddVDIPoolsRequestVdiPoolOneOf1) SetGuestConsoleJumpKeypair(v int64) {
 }
 
 func (o AddVDIPoolsRequestVdiPoolOneOf1) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1026,110 +1025,8 @@ func (o AddVDIPoolsRequestVdiPoolOneOf1) ToMap() (map[string]interface{}, error)
 
 	return toSerialize, nil
 }
-
 func (o *AddVDIPoolsRequestVdiPoolOneOf1) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-		"maxPoolSize",
-		"config",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddVDIPoolsRequestVdiPoolOneOf1 := _AddVDIPoolsRequestVdiPoolOneOf1{}
-
-	err = json.Unmarshal(data, &varAddVDIPoolsRequestVdiPoolOneOf1)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddVDIPoolsRequestVdiPoolOneOf1(varAddVDIPoolsRequestVdiPoolOneOf1)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "owner")
-		delete(additionalProperties, "minIdle")
-		delete(additionalProperties, "initialPoolSize")
-		delete(additionalProperties, "maxIdle")
-		delete(additionalProperties, "maxPoolSize")
-		delete(additionalProperties, "allocationTimeoutMinutes")
-		delete(additionalProperties, "persistentUser")
-		delete(additionalProperties, "recyclable")
-		delete(additionalProperties, "allowCopy")
-		delete(additionalProperties, "allowPrinter")
-		delete(additionalProperties, "allowFileshare")
-		delete(additionalProperties, "allowHypervisorConsole")
-		delete(additionalProperties, "autoCreateLocalUserOnReservation")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "iconPath")
-		delete(additionalProperties, "apps")
-		delete(additionalProperties, "gateway")
-		delete(additionalProperties, "instanceConfig")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "guestConsoleJumpHost")
-		delete(additionalProperties, "guestConsoleJumpPort")
-		delete(additionalProperties, "guestConsoleJumpUsername")
-		delete(additionalProperties, "guestConsoleJumpPassword")
-		delete(additionalProperties, "guestConsoleJumpKeypair")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddVDIPoolsRequestVdiPoolOneOf1 struct {
-	value *AddVDIPoolsRequestVdiPoolOneOf1
-	isSet bool
-}
-
-func (v NullableAddVDIPoolsRequestVdiPoolOneOf1) Get() *AddVDIPoolsRequestVdiPoolOneOf1 {
-	return v.value
-}
-
-func (v *NullableAddVDIPoolsRequestVdiPoolOneOf1) Set(val *AddVDIPoolsRequestVdiPoolOneOf1) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddVDIPoolsRequestVdiPoolOneOf1) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddVDIPoolsRequestVdiPoolOneOf1) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddVDIPoolsRequestVdiPoolOneOf1(val *AddVDIPoolsRequestVdiPoolOneOf1) *NullableAddVDIPoolsRequestVdiPoolOneOf1 {
-	return &NullableAddVDIPoolsRequestVdiPoolOneOf1{value: val, isSet: true}
-}
-
-func (v NullableAddVDIPoolsRequestVdiPoolOneOf1) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddVDIPoolsRequestVdiPoolOneOf1) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

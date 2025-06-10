@@ -20,17 +20,17 @@ var _ MappedNullable = &UpdateInstanceNetworkInterface200ResponseAllOfOneOfServe
 
 // UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone struct for UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone
 type UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone struct {
-	Id *int64 `json:"id,omitempty"`
-	AccountId *int64 `json:"accountId,omitempty"`
-	Groups []int64 `json:"groups,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Location *string `json:"location,omitempty"`
-	Visibility *string `json:"visibility,omitempty"`
-	ZoneTypeId *int64 `json:"zoneTypeId,omitempty"`
-	NetworkServer *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServer `json:"networkServer,omitempty"`
-	SecurityServer *string `json:"securityServer,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                      `json:"id,omitempty"`
+	AccountId            *int64                                                                      `json:"accountId,omitempty"`
+	Groups               []int64                                                                     `json:"groups,omitempty"`
+	Name                 *string                                                                     `json:"name,omitempty"`
+	Description          *string                                                                     `json:"description,omitempty"`
+	Location             *string                                                                     `json:"location,omitempty"`
+	Visibility           *string                                                                     `json:"visibility,omitempty"`
+	ZoneTypeId           *int64                                                                      `json:"zoneTypeId,omitempty"`
+	NetworkServer        *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServer `json:"networkServer,omitempty"`
+	SecurityServer       *string                                                                     `json:"securityServer,omitempty"`
+	AdditionalProperties map[string]interface{}                                                      `json:",remain"`
 }
 
 type _UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone
@@ -373,7 +373,7 @@ func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone) SetSecur
 }
 
 func (o UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -419,71 +419,8 @@ func (o UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone) ToMap() (
 
 	return toSerialize, nil
 }
-
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone) UnmarshalJSON(data []byte) (err error) {
-	varUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone := _UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone{}
-
-	err = json.Unmarshal(data, &varUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone(varUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "accountId")
-		delete(additionalProperties, "groups")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "location")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "zoneTypeId")
-		delete(additionalProperties, "networkServer")
-		delete(additionalProperties, "securityServer")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone struct {
-	value *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone
-	isSet bool
-}
-
-func (v NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone) Get() *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone {
-	return v.value
-}
-
-func (v *NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone) Set(val *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone(val *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone) *NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone {
-	return &NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone{value: val, isSet: true}
-}
-
-func (v NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZone) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

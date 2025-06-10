@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddSpecTemplateRequestSpecTemplate type satisfies the MappedNullable interface at compile time
@@ -24,11 +23,11 @@ type AddSpecTemplateRequestSpecTemplate struct {
 	// Spec template name
 	Name string `json:"name"`
 	// Array of label strings, can be used for filtering.
-	Labels []string `json:"labels,omitempty"`
-	Type AddSpecTemplateRequestSpecTemplateType `json:"type"`
-	File AddSpecTemplateRequestSpecTemplateFile `json:"file"`
-	Config *AddSpecTemplateRequestSpecTemplateConfig `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Labels               []string                                  `json:"labels,omitempty"`
+	Type                 AddSpecTemplateRequestSpecTemplateType    `json:"type"`
+	File                 AddSpecTemplateRequestSpecTemplateFile    `json:"file"`
+	Config               *AddSpecTemplateRequestSpecTemplateConfig `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}                    `json:",remain"`
 }
 
 type _AddSpecTemplateRequestSpecTemplate AddSpecTemplateRequestSpecTemplate
@@ -190,7 +189,7 @@ func (o *AddSpecTemplateRequestSpecTemplate) SetConfig(v AddSpecTemplateRequestS
 }
 
 func (o AddSpecTemplateRequestSpecTemplate) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -215,89 +214,8 @@ func (o AddSpecTemplateRequestSpecTemplate) ToMap() (map[string]interface{}, err
 
 	return toSerialize, nil
 }
-
 func (o *AddSpecTemplateRequestSpecTemplate) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-		"type",
-		"file",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddSpecTemplateRequestSpecTemplate := _AddSpecTemplateRequestSpecTemplate{}
-
-	err = json.Unmarshal(data, &varAddSpecTemplateRequestSpecTemplate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddSpecTemplateRequestSpecTemplate(varAddSpecTemplateRequestSpecTemplate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "file")
-		delete(additionalProperties, "config")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddSpecTemplateRequestSpecTemplate struct {
-	value *AddSpecTemplateRequestSpecTemplate
-	isSet bool
-}
-
-func (v NullableAddSpecTemplateRequestSpecTemplate) Get() *AddSpecTemplateRequestSpecTemplate {
-	return v.value
-}
-
-func (v *NullableAddSpecTemplateRequestSpecTemplate) Set(val *AddSpecTemplateRequestSpecTemplate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddSpecTemplateRequestSpecTemplate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddSpecTemplateRequestSpecTemplate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddSpecTemplateRequestSpecTemplate(val *AddSpecTemplateRequestSpecTemplate) *NullableAddSpecTemplateRequestSpecTemplate {
-	return &NullableAddSpecTemplateRequestSpecTemplate{value: val, isSet: true}
-}
-
-func (v NullableAddSpecTemplateRequestSpecTemplate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddSpecTemplateRequestSpecTemplate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

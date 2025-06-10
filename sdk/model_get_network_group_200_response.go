@@ -20,8 +20,8 @@ var _ MappedNullable = &GetNetworkGroup200Response{}
 
 // GetNetworkGroup200Response struct for GetNetworkGroup200Response
 type GetNetworkGroup200Response struct {
-	NetworkGroup *GetNetworkGroups200ResponseNetworkGroupsInner `json:"networkGroup,omitempty"`
-	AdditionalProperties map[string]interface{}
+	NetworkGroup         *GetNetworkGroups200ResponseNetworkGroupsInner `json:"networkGroup,omitempty"`
+	AdditionalProperties map[string]interface{}                         `json:",remain"`
 }
 
 type _GetNetworkGroup200Response GetNetworkGroup200Response
@@ -76,7 +76,7 @@ func (o *GetNetworkGroup200Response) SetNetworkGroup(v GetNetworkGroups200Respon
 }
 
 func (o GetNetworkGroup200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o GetNetworkGroup200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *GetNetworkGroup200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetNetworkGroup200Response := _GetNetworkGroup200Response{}
-
-	err = json.Unmarshal(data, &varGetNetworkGroup200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetNetworkGroup200Response(varGetNetworkGroup200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "networkGroup")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetNetworkGroup200Response struct {
-	value *GetNetworkGroup200Response
-	isSet bool
-}
-
-func (v NullableGetNetworkGroup200Response) Get() *GetNetworkGroup200Response {
-	return v.value
-}
-
-func (v *NullableGetNetworkGroup200Response) Set(val *GetNetworkGroup200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetNetworkGroup200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetNetworkGroup200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetNetworkGroup200Response(val *GetNetworkGroup200Response) *NullableGetNetworkGroup200Response {
-	return &NullableGetNetworkGroup200Response{value: val, isSet: true}
-}
-
-func (v NullableGetNetworkGroup200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetNetworkGroup200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

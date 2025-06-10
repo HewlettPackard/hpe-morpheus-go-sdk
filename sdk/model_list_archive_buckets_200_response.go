@@ -20,10 +20,10 @@ var _ MappedNullable = &ListArchiveBuckets200Response{}
 
 // ListArchiveBuckets200Response struct for ListArchiveBuckets200Response
 type ListArchiveBuckets200Response struct {
-	ArchiveBuckets []ListArchiveBuckets200ResponseAllOfArchiveBucketsInner `json:"archiveBuckets,omitempty"`
-	ArchiveBucketCount *int64 `json:"archiveBucketCount,omitempty"`
-	Meta *ListActivity200ResponseAllOfMeta `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ArchiveBuckets       []ListArchiveBuckets200ResponseAllOfArchiveBucketsInner `json:"archiveBuckets,omitempty"`
+	ArchiveBucketCount   *int64                                                  `json:"archiveBucketCount,omitempty"`
+	Meta                 *ListActivity200ResponseAllOfMeta                       `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}                                  `json:",remain"`
 }
 
 type _ListArchiveBuckets200Response ListArchiveBuckets200Response
@@ -142,7 +142,7 @@ func (o *ListArchiveBuckets200Response) SetMeta(v ListActivity200ResponseAllOfMe
 }
 
 func (o ListArchiveBuckets200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -167,64 +167,8 @@ func (o ListArchiveBuckets200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ListArchiveBuckets200Response) UnmarshalJSON(data []byte) (err error) {
-	varListArchiveBuckets200Response := _ListArchiveBuckets200Response{}
-
-	err = json.Unmarshal(data, &varListArchiveBuckets200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListArchiveBuckets200Response(varListArchiveBuckets200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "archiveBuckets")
-		delete(additionalProperties, "archiveBucketCount")
-		delete(additionalProperties, "meta")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListArchiveBuckets200Response struct {
-	value *ListArchiveBuckets200Response
-	isSet bool
-}
-
-func (v NullableListArchiveBuckets200Response) Get() *ListArchiveBuckets200Response {
-	return v.value
-}
-
-func (v *NullableListArchiveBuckets200Response) Set(val *ListArchiveBuckets200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListArchiveBuckets200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListArchiveBuckets200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListArchiveBuckets200Response(val *ListArchiveBuckets200Response) *NullableListArchiveBuckets200Response {
-	return &NullableListArchiveBuckets200Response{value: val, isSet: true}
-}
-
-func (v NullableListArchiveBuckets200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListArchiveBuckets200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

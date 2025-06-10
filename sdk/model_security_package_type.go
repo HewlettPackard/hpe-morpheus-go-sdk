@@ -20,13 +20,13 @@ var _ MappedNullable = &SecurityPackageType{}
 
 // SecurityPackageType struct for SecurityPackageType
 type SecurityPackageType struct {
-	Id *int64 `json:"id,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	OptionTypes []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                      `json:"id,omitempty"`
+	Code                 *string                                                                     `json:"code,omitempty"`
+	Name                 *string                                                                     `json:"name,omitempty"`
+	Description          *string                                                                     `json:"description,omitempty"`
+	Enabled              *bool                                                                       `json:"enabled,omitempty"`
+	OptionTypes          []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
+	AdditionalProperties map[string]interface{}                                                      `json:",remain"`
 }
 
 type _SecurityPackageType SecurityPackageType
@@ -241,7 +241,7 @@ func (o *SecurityPackageType) SetOptionTypes(v []ListCatalogItemTypes200Response
 }
 
 func (o SecurityPackageType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -275,67 +275,8 @@ func (o SecurityPackageType) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *SecurityPackageType) UnmarshalJSON(data []byte) (err error) {
-	varSecurityPackageType := _SecurityPackageType{}
-
-	err = json.Unmarshal(data, &varSecurityPackageType)
-
-	if err != nil {
-		return err
-	}
-
-	*o = SecurityPackageType(varSecurityPackageType)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "optionTypes")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableSecurityPackageType struct {
-	value *SecurityPackageType
-	isSet bool
-}
-
-func (v NullableSecurityPackageType) Get() *SecurityPackageType {
-	return v.value
-}
-
-func (v *NullableSecurityPackageType) Set(val *SecurityPackageType) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSecurityPackageType) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSecurityPackageType) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSecurityPackageType(val *SecurityPackageType) *NullableSecurityPackageType {
-	return &NullableSecurityPackageType{value: val, isSet: true}
-}
-
-func (v NullableSecurityPackageType) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSecurityPackageType) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

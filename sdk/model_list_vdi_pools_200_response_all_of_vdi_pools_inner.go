@@ -21,43 +21,43 @@ var _ MappedNullable = &ListVDIPools200ResponseAllOfVdiPoolsInner{}
 
 // ListVDIPools200ResponseAllOfVdiPoolsInner struct for ListVDIPools200ResponseAllOfVdiPoolsInner
 type ListVDIPools200ResponseAllOfVdiPoolsInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	MinIdle *int64 `json:"minIdle,omitempty"`
-	MaxIdle *int64 `json:"maxIdle,omitempty"`
-	InitialPoolSize *int64 `json:"initialPoolSize,omitempty"`
-	MaxPoolSize *int64 `json:"maxPoolSize,omitempty"`
-	AllocationTimeoutMinutes *int64 `json:"allocationTimeoutMinutes,omitempty"`
-	PersistentUser *bool `json:"persistentUser,omitempty"`
-	Recyclable *bool `json:"recyclable,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	AutoCreateLocalUserOnReservation *bool `json:"autoCreateLocalUserOnReservation,omitempty"`
-	AllowHypervisorConsole *bool `json:"allowHypervisorConsole,omitempty"`
-	AllowCopy *bool `json:"allowCopy,omitempty"`
-	AllowPrinter *bool `json:"allowPrinter,omitempty"`
-	AllowFileshare *bool `json:"allowFileshare,omitempty"`
-	GuestConsoleJumpHost *string `json:"guestConsoleJumpHost,omitempty"`
-	GuestConsoleJumpPort *string `json:"guestConsoleJumpPort,omitempty"`
-	GuestConsoleJumpUsername *string `json:"guestConsoleJumpUsername,omitempty"`
-	GuestConsoleJumpPassword *string `json:"guestConsoleJumpPassword,omitempty"`
-	GuestConsoleJumpKeypair *string `json:"guestConsoleJumpKeypair,omitempty"`
-	Gateway *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"gateway,omitempty"`
-	IconPath *string `json:"iconPath,omitempty"`
-	Logo *string `json:"logo,omitempty"`
-	Apps []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"apps,omitempty"`
-	Owner *ListVDIPools200ResponseAllOfVdiPoolsInnerOwner `json:"owner,omitempty"`
-	Config *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig `json:"config,omitempty"`
-	Group *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"group,omitempty"`
-	Cloud *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"cloud,omitempty"`
-	UsedCount *int64 `json:"usedCount,omitempty"`
-	ReservedCount *int64 `json:"reservedCount,omitempty"`
-	PreparingCount *int64 `json:"preparingCount,omitempty"`
-	IdleCount *int64 `json:"idleCount,omitempty"`
-	Status *string `json:"status,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                               *int64                                                                   `json:"id,omitempty"`
+	Name                             *string                                                                  `json:"name,omitempty"`
+	Description                      *string                                                                  `json:"description,omitempty"`
+	MinIdle                          *int64                                                                   `json:"minIdle,omitempty"`
+	MaxIdle                          *int64                                                                   `json:"maxIdle,omitempty"`
+	InitialPoolSize                  *int64                                                                   `json:"initialPoolSize,omitempty"`
+	MaxPoolSize                      *int64                                                                   `json:"maxPoolSize,omitempty"`
+	AllocationTimeoutMinutes         *int64                                                                   `json:"allocationTimeoutMinutes,omitempty"`
+	PersistentUser                   *bool                                                                    `json:"persistentUser,omitempty"`
+	Recyclable                       *bool                                                                    `json:"recyclable,omitempty"`
+	Enabled                          *bool                                                                    `json:"enabled,omitempty"`
+	AutoCreateLocalUserOnReservation *bool                                                                    `json:"autoCreateLocalUserOnReservation,omitempty"`
+	AllowHypervisorConsole           *bool                                                                    `json:"allowHypervisorConsole,omitempty"`
+	AllowCopy                        *bool                                                                    `json:"allowCopy,omitempty"`
+	AllowPrinter                     *bool                                                                    `json:"allowPrinter,omitempty"`
+	AllowFileshare                   *bool                                                                    `json:"allowFileshare,omitempty"`
+	GuestConsoleJumpHost             *string                                                                  `json:"guestConsoleJumpHost,omitempty"`
+	GuestConsoleJumpPort             *string                                                                  `json:"guestConsoleJumpPort,omitempty"`
+	GuestConsoleJumpUsername         *string                                                                  `json:"guestConsoleJumpUsername,omitempty"`
+	GuestConsoleJumpPassword         *string                                                                  `json:"guestConsoleJumpPassword,omitempty"`
+	GuestConsoleJumpKeypair          *string                                                                  `json:"guestConsoleJumpKeypair,omitempty"`
+	Gateway                          *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                       `json:"gateway,omitempty"`
+	IconPath                         *string                                                                  `json:"iconPath,omitempty"`
+	Logo                             *string                                                                  `json:"logo,omitempty"`
+	Apps                             []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"apps,omitempty"`
+	Owner                            *ListVDIPools200ResponseAllOfVdiPoolsInnerOwner                          `json:"owner,omitempty"`
+	Config                           *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig                         `json:"config,omitempty"`
+	Group                            *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                       `json:"group,omitempty"`
+	Cloud                            *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                       `json:"cloud,omitempty"`
+	UsedCount                        *int64                                                                   `json:"usedCount,omitempty"`
+	ReservedCount                    *int64                                                                   `json:"reservedCount,omitempty"`
+	PreparingCount                   *int64                                                                   `json:"preparingCount,omitempty"`
+	IdleCount                        *int64                                                                   `json:"idleCount,omitempty"`
+	Status                           *string                                                                  `json:"status,omitempty"`
+	DateCreated                      *time.Time                                                               `json:"dateCreated,omitempty"`
+	LastUpdated                      *time.Time                                                               `json:"lastUpdated,omitempty"`
+	AdditionalProperties             map[string]interface{}                                                   `json:",remain"`
 }
 
 type _ListVDIPools200ResponseAllOfVdiPoolsInner ListVDIPools200ResponseAllOfVdiPoolsInner
@@ -1232,7 +1232,7 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) SetLastUpdated(v time.Time) 
 }
 
 func (o ListVDIPools200ResponseAllOfVdiPoolsInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1356,97 +1356,8 @@ func (o ListVDIPools200ResponseAllOfVdiPoolsInner) ToMap() (map[string]interface
 
 	return toSerialize, nil
 }
-
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) UnmarshalJSON(data []byte) (err error) {
-	varListVDIPools200ResponseAllOfVdiPoolsInner := _ListVDIPools200ResponseAllOfVdiPoolsInner{}
-
-	err = json.Unmarshal(data, &varListVDIPools200ResponseAllOfVdiPoolsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListVDIPools200ResponseAllOfVdiPoolsInner(varListVDIPools200ResponseAllOfVdiPoolsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "minIdle")
-		delete(additionalProperties, "maxIdle")
-		delete(additionalProperties, "initialPoolSize")
-		delete(additionalProperties, "maxPoolSize")
-		delete(additionalProperties, "allocationTimeoutMinutes")
-		delete(additionalProperties, "persistentUser")
-		delete(additionalProperties, "recyclable")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "autoCreateLocalUserOnReservation")
-		delete(additionalProperties, "allowHypervisorConsole")
-		delete(additionalProperties, "allowCopy")
-		delete(additionalProperties, "allowPrinter")
-		delete(additionalProperties, "allowFileshare")
-		delete(additionalProperties, "guestConsoleJumpHost")
-		delete(additionalProperties, "guestConsoleJumpPort")
-		delete(additionalProperties, "guestConsoleJumpUsername")
-		delete(additionalProperties, "guestConsoleJumpPassword")
-		delete(additionalProperties, "guestConsoleJumpKeypair")
-		delete(additionalProperties, "gateway")
-		delete(additionalProperties, "iconPath")
-		delete(additionalProperties, "logo")
-		delete(additionalProperties, "apps")
-		delete(additionalProperties, "owner")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "group")
-		delete(additionalProperties, "cloud")
-		delete(additionalProperties, "usedCount")
-		delete(additionalProperties, "reservedCount")
-		delete(additionalProperties, "preparingCount")
-		delete(additionalProperties, "idleCount")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListVDIPools200ResponseAllOfVdiPoolsInner struct {
-	value *ListVDIPools200ResponseAllOfVdiPoolsInner
-	isSet bool
-}
-
-func (v NullableListVDIPools200ResponseAllOfVdiPoolsInner) Get() *ListVDIPools200ResponseAllOfVdiPoolsInner {
-	return v.value
-}
-
-func (v *NullableListVDIPools200ResponseAllOfVdiPoolsInner) Set(val *ListVDIPools200ResponseAllOfVdiPoolsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListVDIPools200ResponseAllOfVdiPoolsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListVDIPools200ResponseAllOfVdiPoolsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListVDIPools200ResponseAllOfVdiPoolsInner(val *ListVDIPools200ResponseAllOfVdiPoolsInner) *NullableListVDIPools200ResponseAllOfVdiPoolsInner {
-	return &NullableListVDIPools200ResponseAllOfVdiPoolsInner{value: val, isSet: true}
-}
-
-func (v NullableListVDIPools200ResponseAllOfVdiPoolsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListVDIPools200ResponseAllOfVdiPoolsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

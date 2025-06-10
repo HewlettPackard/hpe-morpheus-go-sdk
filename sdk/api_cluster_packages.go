@@ -21,13 +21,12 @@ import (
 	"strings"
 )
 
-
 // ClusterPackagesAPIService ClusterPackagesAPI service
 type ClusterPackagesAPIService service
 
 type ApiAddClusterPackageRequest struct {
-	ctx context.Context
-	ApiService *ClusterPackagesAPIService
+	ctx                      context.Context
+	ApiService               *ClusterPackagesAPIService
 	addClusterPackageRequest *AddClusterPackageRequest
 }
 
@@ -45,24 +44,25 @@ AddClusterPackage Create a Cluster Package
 
 Use this command to create a cluster package.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddClusterPackageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddClusterPackageRequest
 */
 func (a *ClusterPackagesAPIService) AddClusterPackage(ctx context.Context) ApiAddClusterPackageRequest {
 	return ApiAddClusterPackageRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddClusterLayouts200Response
+//
+//	@return AddClusterLayouts200Response
 func (a *ClusterPackagesAPIService) AddClusterPackageExecute(r ApiAddClusterPackageRequest) (*AddClusterLayouts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddClusterLayouts200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddClusterLayouts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClusterPackagesAPIService.AddClusterPackage")
@@ -114,7 +114,7 @@ func (a *ClusterPackagesAPIService) AddClusterPackageExecute(r ApiAddClusterPack
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -123,8 +123,8 @@ func (a *ClusterPackagesAPIService) AddClusterPackageExecute(r ApiAddClusterPack
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -134,8 +134,8 @@ func (a *ClusterPackagesAPIService) AddClusterPackageExecute(r ApiAddClusterPack
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -143,8 +143,8 @@ func (a *ClusterPackagesAPIService) AddClusterPackageExecute(r ApiAddClusterPack
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -153,9 +153,9 @@ func (a *ClusterPackagesAPIService) AddClusterPackageExecute(r ApiAddClusterPack
 }
 
 type ApiDeleteClusterPackageRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClusterPackagesAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiDeleteClusterPackageRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -167,26 +167,27 @@ DeleteClusterPackage Delete a Cluster Package
 
 Will delete a cluster package
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiDeleteClusterPackageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeleteClusterPackageRequest
 */
 func (a *ClusterPackagesAPIService) DeleteClusterPackage(ctx context.Context, id int64) ApiDeleteClusterPackageRequest {
 	return ApiDeleteClusterPackageRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *ClusterPackagesAPIService) DeleteClusterPackageExecute(r ApiDeleteClusterPackageRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClusterPackagesAPIService.DeleteClusterPackage")
@@ -237,7 +238,7 @@ func (a *ClusterPackagesAPIService) DeleteClusterPackageExecute(r ApiDeleteClust
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -246,8 +247,8 @@ func (a *ClusterPackagesAPIService) DeleteClusterPackageExecute(r ApiDeleteClust
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -257,8 +258,8 @@ func (a *ClusterPackagesAPIService) DeleteClusterPackageExecute(r ApiDeleteClust
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -266,8 +267,8 @@ func (a *ClusterPackagesAPIService) DeleteClusterPackageExecute(r ApiDeleteClust
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -276,9 +277,9 @@ func (a *ClusterPackagesAPIService) DeleteClusterPackageExecute(r ApiDeleteClust
 }
 
 type ApiGetClusterPackageRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClusterPackagesAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetClusterPackageRequest) Execute() (*GetClusterPackage200Response, *http.Response, error) {
@@ -290,26 +291,27 @@ GetClusterPackage Get a Specific Cluster Package
 
 This endpoint retrieves a specific cluster package.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetClusterPackageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetClusterPackageRequest
 */
 func (a *ClusterPackagesAPIService) GetClusterPackage(ctx context.Context, id int64) ApiGetClusterPackageRequest {
 	return ApiGetClusterPackageRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetClusterPackage200Response
+//
+//	@return GetClusterPackage200Response
 func (a *ClusterPackagesAPIService) GetClusterPackageExecute(r ApiGetClusterPackageRequest) (*GetClusterPackage200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetClusterPackage200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetClusterPackage200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClusterPackagesAPIService.GetClusterPackage")
@@ -360,7 +362,7 @@ func (a *ClusterPackagesAPIService) GetClusterPackageExecute(r ApiGetClusterPack
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -369,8 +371,8 @@ func (a *ClusterPackagesAPIService) GetClusterPackageExecute(r ApiGetClusterPack
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -380,8 +382,8 @@ func (a *ClusterPackagesAPIService) GetClusterPackageExecute(r ApiGetClusterPack
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -389,8 +391,8 @@ func (a *ClusterPackagesAPIService) GetClusterPackageExecute(r ApiGetClusterPack
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -399,15 +401,15 @@ func (a *ClusterPackagesAPIService) GetClusterPackageExecute(r ApiGetClusterPack
 }
 
 type ApiListClusterPackagesRequest struct {
-	ctx context.Context
-	ApiService *ClusterPackagesAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	name *string
+	ctx         context.Context
+	ApiService  *ClusterPackagesAPIService
+	max         *int64
+	offset      *int64
+	sort        *string
+	direction   *string
+	name        *string
 	description *string
-	phrase *string
+	phrase      *string
 }
 
 // Maximum number of records to return
@@ -461,24 +463,25 @@ ListClusterPackages Get All Cluster Packages
 
 This endpoint retrieves all cluster packages.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListClusterPackagesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListClusterPackagesRequest
 */
 func (a *ClusterPackagesAPIService) ListClusterPackages(ctx context.Context) ApiListClusterPackagesRequest {
 	return ApiListClusterPackagesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListClusterPackages200Response
+//
+//	@return ListClusterPackages200Response
 func (a *ClusterPackagesAPIService) ListClusterPackagesExecute(r ApiListClusterPackagesRequest) (*ListClusterPackages200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListClusterPackages200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListClusterPackages200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClusterPackagesAPIService.ListClusterPackages")
@@ -561,7 +564,7 @@ func (a *ClusterPackagesAPIService) ListClusterPackagesExecute(r ApiListClusterP
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -570,8 +573,8 @@ func (a *ClusterPackagesAPIService) ListClusterPackagesExecute(r ApiListClusterP
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -581,8 +584,8 @@ func (a *ClusterPackagesAPIService) ListClusterPackagesExecute(r ApiListClusterP
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -590,8 +593,8 @@ func (a *ClusterPackagesAPIService) ListClusterPackagesExecute(r ApiListClusterP
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -600,9 +603,9 @@ func (a *ClusterPackagesAPIService) ListClusterPackagesExecute(r ApiListClusterP
 }
 
 type ApiUpdateClusterPackageRequest struct {
-	ctx context.Context
-	ApiService *ClusterPackagesAPIService
-	id int64
+	ctx                         context.Context
+	ApiService                  *ClusterPackagesAPIService
+	id                          int64
 	updateClusterPackageRequest *UpdateClusterPackageRequest
 }
 
@@ -620,26 +623,27 @@ UpdateClusterPackage Update a Cluster Package
 
 Use this command to update an existing cluster package.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateClusterPackageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateClusterPackageRequest
 */
 func (a *ClusterPackagesAPIService) UpdateClusterPackage(ctx context.Context, id int64) ApiUpdateClusterPackageRequest {
 	return ApiUpdateClusterPackageRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *ClusterPackagesAPIService) UpdateClusterPackageExecute(r ApiUpdateClusterPackageRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClusterPackagesAPIService.UpdateClusterPackage")
@@ -692,7 +696,7 @@ func (a *ClusterPackagesAPIService) UpdateClusterPackageExecute(r ApiUpdateClust
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -701,8 +705,8 @@ func (a *ClusterPackagesAPIService) UpdateClusterPackageExecute(r ApiUpdateClust
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -712,8 +716,8 @@ func (a *ClusterPackagesAPIService) UpdateClusterPackageExecute(r ApiUpdateClust
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -721,8 +725,8 @@ func (a *ClusterPackagesAPIService) UpdateClusterPackageExecute(r ApiUpdateClust
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

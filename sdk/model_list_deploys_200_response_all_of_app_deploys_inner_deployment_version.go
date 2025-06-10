@@ -20,10 +20,10 @@ var _ MappedNullable = &ListDeploys200ResponseAllOfAppDeploysInnerDeploymentVers
 
 // ListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion struct for ListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion
 type ListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion struct {
-	Id *int64 `json:"id,omitempty"`
-	UserVersion *string `json:"userVersion,omitempty"`
-	DeployType *string `json:"deployType,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	UserVersion          *string                `json:"userVersion,omitempty"`
+	DeployType           *string                `json:"deployType,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion ListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion
@@ -142,7 +142,7 @@ func (o *ListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion) SetDeployT
 }
 
 func (o ListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -167,64 +167,8 @@ func (o ListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion) ToMap() (ma
 
 	return toSerialize, nil
 }
-
 func (o *ListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion) UnmarshalJSON(data []byte) (err error) {
-	varListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion := _ListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion{}
-
-	err = json.Unmarshal(data, &varListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion(varListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "userVersion")
-		delete(additionalProperties, "deployType")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion struct {
-	value *ListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion
-	isSet bool
-}
-
-func (v NullableListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion) Get() *ListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion {
-	return v.value
-}
-
-func (v *NullableListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion) Set(val *ListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion(val *ListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion) *NullableListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion {
-	return &NullableListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion{value: val, isSet: true}
-}
-
-func (v NullableListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

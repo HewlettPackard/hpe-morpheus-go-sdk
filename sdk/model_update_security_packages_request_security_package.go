@@ -31,8 +31,8 @@ type UpdateSecurityPackagesRequestSecurityPackage struct {
 	// URL to download the security package zip file from
 	Url *string `json:"url,omitempty"`
 	// Can be used to disable the security package
-	Enabled *bool `json:"enabled,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Enabled              *bool                  `json:"enabled,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UpdateSecurityPackagesRequestSecurityPackage UpdateSecurityPackagesRequestSecurityPackage
@@ -251,7 +251,7 @@ func (o *UpdateSecurityPackagesRequestSecurityPackage) SetEnabled(v bool) {
 }
 
 func (o UpdateSecurityPackagesRequestSecurityPackage) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -285,67 +285,8 @@ func (o UpdateSecurityPackagesRequestSecurityPackage) ToMap() (map[string]interf
 
 	return toSerialize, nil
 }
-
 func (o *UpdateSecurityPackagesRequestSecurityPackage) UnmarshalJSON(data []byte) (err error) {
-	varUpdateSecurityPackagesRequestSecurityPackage := _UpdateSecurityPackagesRequestSecurityPackage{}
-
-	err = json.Unmarshal(data, &varUpdateSecurityPackagesRequestSecurityPackage)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateSecurityPackagesRequestSecurityPackage(varUpdateSecurityPackagesRequestSecurityPackage)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "enabled")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateSecurityPackagesRequestSecurityPackage struct {
-	value *UpdateSecurityPackagesRequestSecurityPackage
-	isSet bool
-}
-
-func (v NullableUpdateSecurityPackagesRequestSecurityPackage) Get() *UpdateSecurityPackagesRequestSecurityPackage {
-	return v.value
-}
-
-func (v *NullableUpdateSecurityPackagesRequestSecurityPackage) Set(val *UpdateSecurityPackagesRequestSecurityPackage) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateSecurityPackagesRequestSecurityPackage) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateSecurityPackagesRequestSecurityPackage) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateSecurityPackagesRequestSecurityPackage(val *UpdateSecurityPackagesRequestSecurityPackage) *NullableUpdateSecurityPackagesRequestSecurityPackage {
-	return &NullableUpdateSecurityPackagesRequestSecurityPackage{value: val, isSet: true}
-}
-
-func (v NullableUpdateSecurityPackagesRequestSecurityPackage) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateSecurityPackagesRequestSecurityPackage) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

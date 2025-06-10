@@ -21,15 +21,15 @@ var _ MappedNullable = &AddCatalogCartItemRequestItem{}
 // AddCatalogCartItemRequestItem struct for AddCatalogCartItemRequestItem
 type AddCatalogCartItemRequestItem struct {
 	Type *AddCatalogCartItemRequestItemType `json:"type,omitempty"`
-	// Quantity for this catalog item. Will be overridden to 1 if quantity not allowed by the item type. 
+	// Quantity for this catalog item. Will be overridden to 1 if quantity not allowed by the item type.
 	Quantity *int64 `json:"quantity,omitempty"`
-	// Config Object, required options depend on the catalog item type's associated option types. The values passed in here are injected into the instance config or app spec or workflow script(s) defined by the type. 
+	// Config Object, required options depend on the catalog item type's associated option types. The values passed in here are injected into the instance config or app spec or workflow script(s) defined by the type.
 	Config map[string]interface{} `json:"config,omitempty"`
-	// Context Type for running the workflow, determines if a target resource must be selected. `instance`, `server`, or `appliance`. This may only be passed if the type allows it, usually the type determines the context for the user. Only applies to type `workflow`. 
+	// Context Type for running the workflow, determines if a target resource must be selected. `instance`, `server`, or `appliance`. This may only be passed if the type allows it, usually the type determines the context for the user. Only applies to type `workflow`.
 	Context *string `json:"context,omitempty"`
-	// Resource (Instance or Server) ID for context when running the `workflow`. Only applies to type `workflow` and only required when context is `instance` or `server`. 
-	Target *int64 `json:"target,omitempty"`
-	AdditionalProperties map[string]interface{}
+	// Resource (Instance or Server) ID for context when running the `workflow`. Only applies to type `workflow` and only required when context is `instance` or `server`.
+	Target               *int64                 `json:"target,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddCatalogCartItemRequestItem AddCatalogCartItemRequestItem
@@ -212,7 +212,7 @@ func (o *AddCatalogCartItemRequestItem) SetTarget(v int64) {
 }
 
 func (o AddCatalogCartItemRequestItem) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -243,66 +243,8 @@ func (o AddCatalogCartItemRequestItem) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *AddCatalogCartItemRequestItem) UnmarshalJSON(data []byte) (err error) {
-	varAddCatalogCartItemRequestItem := _AddCatalogCartItemRequestItem{}
-
-	err = json.Unmarshal(data, &varAddCatalogCartItemRequestItem)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddCatalogCartItemRequestItem(varAddCatalogCartItemRequestItem)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "quantity")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "context")
-		delete(additionalProperties, "target")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddCatalogCartItemRequestItem struct {
-	value *AddCatalogCartItemRequestItem
-	isSet bool
-}
-
-func (v NullableAddCatalogCartItemRequestItem) Get() *AddCatalogCartItemRequestItem {
-	return v.value
-}
-
-func (v *NullableAddCatalogCartItemRequestItem) Set(val *AddCatalogCartItemRequestItem) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddCatalogCartItemRequestItem) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddCatalogCartItemRequestItem) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddCatalogCartItemRequestItem(val *AddCatalogCartItemRequestItem) *NullableAddCatalogCartItemRequestItem {
-	return &NullableAddCatalogCartItemRequestItem{value: val, isSet: true}
-}
-
-func (v NullableAddCatalogCartItemRequestItem) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddCatalogCartItemRequestItem) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

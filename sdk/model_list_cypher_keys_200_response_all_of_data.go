@@ -20,8 +20,8 @@ var _ MappedNullable = &ListCypherKeys200ResponseAllOfData{}
 
 // ListCypherKeys200ResponseAllOfData struct for ListCypherKeys200ResponseAllOfData
 type ListCypherKeys200ResponseAllOfData struct {
-	Keys []string `json:"keys,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Keys                 []string               `json:"keys,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListCypherKeys200ResponseAllOfData ListCypherKeys200ResponseAllOfData
@@ -76,7 +76,7 @@ func (o *ListCypherKeys200ResponseAllOfData) SetKeys(v []string) {
 }
 
 func (o ListCypherKeys200ResponseAllOfData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o ListCypherKeys200ResponseAllOfData) ToMap() (map[string]interface{}, err
 
 	return toSerialize, nil
 }
-
 func (o *ListCypherKeys200ResponseAllOfData) UnmarshalJSON(data []byte) (err error) {
-	varListCypherKeys200ResponseAllOfData := _ListCypherKeys200ResponseAllOfData{}
-
-	err = json.Unmarshal(data, &varListCypherKeys200ResponseAllOfData)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListCypherKeys200ResponseAllOfData(varListCypherKeys200ResponseAllOfData)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "keys")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListCypherKeys200ResponseAllOfData struct {
-	value *ListCypherKeys200ResponseAllOfData
-	isSet bool
-}
-
-func (v NullableListCypherKeys200ResponseAllOfData) Get() *ListCypherKeys200ResponseAllOfData {
-	return v.value
-}
-
-func (v *NullableListCypherKeys200ResponseAllOfData) Set(val *ListCypherKeys200ResponseAllOfData) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListCypherKeys200ResponseAllOfData) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListCypherKeys200ResponseAllOfData) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListCypherKeys200ResponseAllOfData(val *ListCypherKeys200ResponseAllOfData) *NullableListCypherKeys200ResponseAllOfData {
-	return &NullableListCypherKeys200ResponseAllOfData{value: val, isSet: true}
-}
-
-func (v NullableListCypherKeys200ResponseAllOfData) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListCypherKeys200ResponseAllOfData) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -19,22 +19,53 @@ import (
 // very silly way of avoiding `"fmt" imported and not used` errors
 var _ fmt.Stringer
 
-
 // GetAlerts200ResponseAllOfChecksInnerConfig struct for GetAlerts200ResponseAllOfChecksInnerConfig
 type GetAlerts200ResponseAllOfChecksInnerConfig struct {
-	GetAlerts200ResponseAllOfChecksInnerConfigAnyOf *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf
+	GetAlerts200ResponseAllOfChecksInnerConfigAnyOf  *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf
 	GetAlerts200ResponseAllOfChecksInnerConfigAnyOf1 *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf1
 	GetAlerts200ResponseAllOfChecksInnerConfigAnyOf2 *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf2
 	GetAlerts200ResponseAllOfChecksInnerConfigAnyOf3 *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf3
 	GetAlerts200ResponseAllOfChecksInnerConfigAnyOf4 *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf4
-	MapmapOfStringAny *map[string]interface{}
+	MapmapOfStringAny                                *map[string]interface{}
+}
+
+func (dst *GetAlerts200ResponseAllOfChecksInnerConfig) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &GetAlerts200ResponseAllOfChecksInnerConfig{}
+	}
+
+	if out, ok := data.(GetAlerts200ResponseAllOfChecksInnerConfigAnyOf); ok {
+		dst.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf = &out
+	}
+
+	if out, ok := data.(GetAlerts200ResponseAllOfChecksInnerConfigAnyOf1); ok {
+		dst.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf1 = &out
+	}
+
+	if out, ok := data.(GetAlerts200ResponseAllOfChecksInnerConfigAnyOf2); ok {
+		dst.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf2 = &out
+	}
+
+	if out, ok := data.(GetAlerts200ResponseAllOfChecksInnerConfigAnyOf3); ok {
+		dst.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf3 = &out
+	}
+
+	if out, ok := data.(GetAlerts200ResponseAllOfChecksInnerConfigAnyOf4); ok {
+		dst.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf4 = &out
+	}
+
+	if out, ok := data.(map[string]interface{}); ok {
+		dst.MapmapOfStringAny = &out
+	}
+
+	return dst, nil
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *GetAlerts200ResponseAllOfChecksInnerConfig) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into GetAlerts200ResponseAllOfChecksInnerConfigAnyOf
-	err = json.Unmarshal(data, &dst.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf);
+	err = json.Unmarshal(data, &dst.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf)
 	if err == nil {
 		jsonGetAlerts200ResponseAllOfChecksInnerConfigAnyOf, _ := json.Marshal(dst.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf)
 		if string(jsonGetAlerts200ResponseAllOfChecksInnerConfigAnyOf) == "{}" { // empty struct
@@ -47,7 +78,7 @@ func (dst *GetAlerts200ResponseAllOfChecksInnerConfig) UnmarshalJSON(data []byte
 	}
 
 	// try to unmarshal JSON data into GetAlerts200ResponseAllOfChecksInnerConfigAnyOf1
-	err = json.Unmarshal(data, &dst.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf1);
+	err = json.Unmarshal(data, &dst.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf1)
 	if err == nil {
 		jsonGetAlerts200ResponseAllOfChecksInnerConfigAnyOf1, _ := json.Marshal(dst.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf1)
 		if string(jsonGetAlerts200ResponseAllOfChecksInnerConfigAnyOf1) == "{}" { // empty struct
@@ -60,7 +91,7 @@ func (dst *GetAlerts200ResponseAllOfChecksInnerConfig) UnmarshalJSON(data []byte
 	}
 
 	// try to unmarshal JSON data into GetAlerts200ResponseAllOfChecksInnerConfigAnyOf2
-	err = json.Unmarshal(data, &dst.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf2);
+	err = json.Unmarshal(data, &dst.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf2)
 	if err == nil {
 		jsonGetAlerts200ResponseAllOfChecksInnerConfigAnyOf2, _ := json.Marshal(dst.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf2)
 		if string(jsonGetAlerts200ResponseAllOfChecksInnerConfigAnyOf2) == "{}" { // empty struct
@@ -73,7 +104,7 @@ func (dst *GetAlerts200ResponseAllOfChecksInnerConfig) UnmarshalJSON(data []byte
 	}
 
 	// try to unmarshal JSON data into GetAlerts200ResponseAllOfChecksInnerConfigAnyOf3
-	err = json.Unmarshal(data, &dst.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf3);
+	err = json.Unmarshal(data, &dst.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf3)
 	if err == nil {
 		jsonGetAlerts200ResponseAllOfChecksInnerConfigAnyOf3, _ := json.Marshal(dst.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf3)
 		if string(jsonGetAlerts200ResponseAllOfChecksInnerConfigAnyOf3) == "{}" { // empty struct
@@ -86,7 +117,7 @@ func (dst *GetAlerts200ResponseAllOfChecksInnerConfig) UnmarshalJSON(data []byte
 	}
 
 	// try to unmarshal JSON data into GetAlerts200ResponseAllOfChecksInnerConfigAnyOf4
-	err = json.Unmarshal(data, &dst.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf4);
+	err = json.Unmarshal(data, &dst.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf4)
 	if err == nil {
 		jsonGetAlerts200ResponseAllOfChecksInnerConfigAnyOf4, _ := json.Marshal(dst.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf4)
 		if string(jsonGetAlerts200ResponseAllOfChecksInnerConfigAnyOf4) == "{}" { // empty struct
@@ -99,7 +130,7 @@ func (dst *GetAlerts200ResponseAllOfChecksInnerConfig) UnmarshalJSON(data []byte
 	}
 
 	// try to unmarshal JSON data into MapmapOfStringAny
-	err = json.Unmarshal(data, &dst.MapmapOfStringAny);
+	err = json.Unmarshal(data, &dst.MapmapOfStringAny)
 	if err == nil {
 		jsonMapmapOfStringAny, _ := json.Marshal(dst.MapmapOfStringAny)
 		if string(jsonMapmapOfStringAny) == "{}" { // empty struct
@@ -143,7 +174,6 @@ func (src GetAlerts200ResponseAllOfChecksInnerConfig) MarshalJSON() ([]byte, err
 	return nil, nil // no data in anyOf schemas
 }
 
-
 type NullableGetAlerts200ResponseAllOfChecksInnerConfig struct {
 	value *GetAlerts200ResponseAllOfChecksInnerConfig
 	isSet bool
@@ -179,5 +209,3 @@ func (v *NullableGetAlerts200ResponseAllOfChecksInnerConfig) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

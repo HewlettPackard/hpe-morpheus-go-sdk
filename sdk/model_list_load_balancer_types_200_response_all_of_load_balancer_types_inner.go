@@ -20,16 +20,16 @@ var _ MappedNullable = &ListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesIn
 
 // ListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner struct for ListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner
 type ListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	Internal *bool `json:"internal,omitempty"`
-	Creatable *bool `json:"creatable,omitempty"`
-	CreateType *string `json:"createType,omitempty"`
-	OptionTypes []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
-	VipOptionTypes []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"vipOptionTypes,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                      `json:"id,omitempty"`
+	Name                 *string                                                                     `json:"name,omitempty"`
+	Code                 *string                                                                     `json:"code,omitempty"`
+	Enabled              *bool                                                                       `json:"enabled,omitempty"`
+	Internal             *bool                                                                       `json:"internal,omitempty"`
+	Creatable            *bool                                                                       `json:"creatable,omitempty"`
+	CreateType           *string                                                                     `json:"createType,omitempty"`
+	OptionTypes          []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
+	VipOptionTypes       []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"vipOptionTypes,omitempty"`
+	AdditionalProperties map[string]interface{}                                                      `json:",remain"`
 }
 
 type _ListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner ListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner
@@ -340,7 +340,7 @@ func (o *ListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner) SetVipOpti
 }
 
 func (o ListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -383,70 +383,8 @@ func (o ListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner) ToMap() (ma
 
 	return toSerialize, nil
 }
-
 func (o *ListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner) UnmarshalJSON(data []byte) (err error) {
-	varListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner := _ListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner{}
-
-	err = json.Unmarshal(data, &varListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner(varListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "internal")
-		delete(additionalProperties, "creatable")
-		delete(additionalProperties, "createType")
-		delete(additionalProperties, "optionTypes")
-		delete(additionalProperties, "vipOptionTypes")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner struct {
-	value *ListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner
-	isSet bool
-}
-
-func (v NullableListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner) Get() *ListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner {
-	return v.value
-}
-
-func (v *NullableListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner) Set(val *ListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner(val *ListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner) *NullableListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner {
-	return &NullableListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner{value: val, isSet: true}
-}
-
-func (v NullableListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

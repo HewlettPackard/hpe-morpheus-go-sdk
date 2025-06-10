@@ -21,8 +21,8 @@ var _ MappedNullable = &AddCatalogOrderRequestOrderItemsInnerType{}
 // AddCatalogOrderRequestOrderItemsInnerType struct for AddCatalogOrderRequestOrderItemsInnerType
 type AddCatalogOrderRequestOrderItemsInnerType struct {
 	// Order Name as a way to identify the order.
-	Name *string `json:"name,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Name                 *string                `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddCatalogOrderRequestOrderItemsInnerType AddCatalogOrderRequestOrderItemsInnerType
@@ -77,7 +77,7 @@ func (o *AddCatalogOrderRequestOrderItemsInnerType) SetName(v string) {
 }
 
 func (o AddCatalogOrderRequestOrderItemsInnerType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -96,62 +96,8 @@ func (o AddCatalogOrderRequestOrderItemsInnerType) ToMap() (map[string]interface
 
 	return toSerialize, nil
 }
-
 func (o *AddCatalogOrderRequestOrderItemsInnerType) UnmarshalJSON(data []byte) (err error) {
-	varAddCatalogOrderRequestOrderItemsInnerType := _AddCatalogOrderRequestOrderItemsInnerType{}
-
-	err = json.Unmarshal(data, &varAddCatalogOrderRequestOrderItemsInnerType)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddCatalogOrderRequestOrderItemsInnerType(varAddCatalogOrderRequestOrderItemsInnerType)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddCatalogOrderRequestOrderItemsInnerType struct {
-	value *AddCatalogOrderRequestOrderItemsInnerType
-	isSet bool
-}
-
-func (v NullableAddCatalogOrderRequestOrderItemsInnerType) Get() *AddCatalogOrderRequestOrderItemsInnerType {
-	return v.value
-}
-
-func (v *NullableAddCatalogOrderRequestOrderItemsInnerType) Set(val *AddCatalogOrderRequestOrderItemsInnerType) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddCatalogOrderRequestOrderItemsInnerType) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddCatalogOrderRequestOrderItemsInnerType) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddCatalogOrderRequestOrderItemsInnerType(val *AddCatalogOrderRequestOrderItemsInnerType) *NullableAddCatalogOrderRequestOrderItemsInnerType {
-	return &NullableAddCatalogOrderRequestOrderItemsInnerType{value: val, isSet: true}
-}
-
-func (v NullableAddCatalogOrderRequestOrderItemsInnerType) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddCatalogOrderRequestOrderItemsInnerType) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

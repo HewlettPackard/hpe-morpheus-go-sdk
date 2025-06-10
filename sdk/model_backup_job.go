@@ -24,19 +24,19 @@ type BackupJob struct {
 	// Backup ID
 	Id *int64 `json:"id,omitempty"`
 	// Name
-	Name *string `json:"name,omitempty"`
-	Schedule *ListBackups200ResponseAllOfBackupsInnerSchedule `json:"schedule,omitempty"`
-	RetentionCount *int64 `json:"retentionCount,omitempty"`
-	ExternalId *string `json:"externalId,omitempty"`
-	BackupProvider *ListBackups200ResponseAllOfBackupsInnerBackupProvider `json:"backupProvider,omitempty"`
+	Name              *string                                                   `json:"name,omitempty"`
+	Schedule          *ListBackups200ResponseAllOfBackupsInnerSchedule          `json:"schedule,omitempty"`
+	RetentionCount    *int64                                                    `json:"retentionCount,omitempty"`
+	ExternalId        *string                                                   `json:"externalId,omitempty"`
+	BackupProvider    *ListBackups200ResponseAllOfBackupsInnerBackupProvider    `json:"backupProvider,omitempty"`
 	BackupRespository *ListBackups200ResponseAllOfBackupsInnerBackupRespository `json:"backupRespository,omitempty"`
 	// Cron Expression
 	CronExpression *string `json:"cronExpression,omitempty"`
 	// Next Fire is the datetime the job will next occur on according to its schedule
-	NextFire *time.Time `json:"nextFire,omitempty"`
-	Source *string `json:"source,omitempty"`
-	Visibility *string `json:"visibility,omitempty"`
-	Account *ListBackupJobs200ResponseAllOfJobsInnerAccount `json:"account,omitempty"`
+	NextFire   *time.Time                                      `json:"nextFire,omitempty"`
+	Source     *string                                         `json:"source,omitempty"`
+	Visibility *string                                         `json:"visibility,omitempty"`
+	Account    *ListBackupJobs200ResponseAllOfJobsInnerAccount `json:"account,omitempty"`
 	// Enabled
 	Enabled *bool `json:"enabled,omitempty"`
 	// Date Created
@@ -44,8 +44,8 @@ type BackupJob struct {
 	// Last Updated
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
 	// Backups associated with this job
-	Backups []ListBackupJobs200ResponseAllOfJobsInnerBackupsInner `json:"backups,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Backups              []ListBackupJobs200ResponseAllOfJobsInnerBackupsInner `json:"backups,omitempty"`
+	AdditionalProperties map[string]interface{}                                `json:",remain"`
 }
 
 type _BackupJob BackupJob
@@ -580,7 +580,7 @@ func (o *BackupJob) SetBackups(v []ListBackupJobs200ResponseAllOfJobsInnerBackup
 }
 
 func (o BackupJob) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -644,77 +644,8 @@ func (o BackupJob) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *BackupJob) UnmarshalJSON(data []byte) (err error) {
-	varBackupJob := _BackupJob{}
-
-	err = json.Unmarshal(data, &varBackupJob)
-
-	if err != nil {
-		return err
-	}
-
-	*o = BackupJob(varBackupJob)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "schedule")
-		delete(additionalProperties, "retentionCount")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "backupProvider")
-		delete(additionalProperties, "backupRespository")
-		delete(additionalProperties, "cronExpression")
-		delete(additionalProperties, "nextFire")
-		delete(additionalProperties, "source")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "backups")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableBackupJob struct {
-	value *BackupJob
-	isSet bool
-}
-
-func (v NullableBackupJob) Get() *BackupJob {
-	return v.value
-}
-
-func (v *NullableBackupJob) Set(val *BackupJob) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableBackupJob) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableBackupJob) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableBackupJob(val *BackupJob) *NullableBackupJob {
-	return &NullableBackupJob{value: val, isSet: true}
-}
-
-func (v NullableBackupJob) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableBackupJob) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

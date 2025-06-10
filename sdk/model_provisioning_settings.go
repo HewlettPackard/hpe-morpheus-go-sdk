@@ -20,21 +20,21 @@ var _ MappedNullable = &ProvisioningSettings{}
 
 // ProvisioningSettings struct for ProvisioningSettings
 type ProvisioningSettings struct {
-	AllowZoneSelection *bool `json:"allowZoneSelection,omitempty"`
-	AllowServerSelection *bool `json:"allowServerSelection,omitempty"`
-	RequireEnvironments *bool `json:"requireEnvironments,omitempty"`
-	ShowPricing *bool `json:"showPricing,omitempty"`
-	HideDatastoreStats *bool `json:"hideDatastoreStats,omitempty"`
-	CrossTenantNamingPolicies *bool `json:"crossTenantNamingPolicies,omitempty"`
-	ReuseSequence *bool `json:"reuseSequence,omitempty"`
-	CloudInitUsername *string `json:"cloudInitUsername,omitempty"`
-	CloudInitPassword *string `json:"cloudInitPassword,omitempty"`
-	CloudInitKeyPair *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"cloudInitKeyPair,omitempty"`
-	WindowsPassword *string `json:"windowsPassword,omitempty"`
-	PxeRootPassword *string `json:"pxeRootPassword,omitempty"`
-	DefaultTemplateType *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"defaultTemplateType,omitempty"`
-	DeployStorageProvider *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"deployStorageProvider,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AllowZoneSelection        *bool                                                                   `json:"allowZoneSelection,omitempty"`
+	AllowServerSelection      *bool                                                                   `json:"allowServerSelection,omitempty"`
+	RequireEnvironments       *bool                                                                   `json:"requireEnvironments,omitempty"`
+	ShowPricing               *bool                                                                   `json:"showPricing,omitempty"`
+	HideDatastoreStats        *bool                                                                   `json:"hideDatastoreStats,omitempty"`
+	CrossTenantNamingPolicies *bool                                                                   `json:"crossTenantNamingPolicies,omitempty"`
+	ReuseSequence             *bool                                                                   `json:"reuseSequence,omitempty"`
+	CloudInitUsername         *string                                                                 `json:"cloudInitUsername,omitempty"`
+	CloudInitPassword         *string                                                                 `json:"cloudInitPassword,omitempty"`
+	CloudInitKeyPair          *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"cloudInitKeyPair,omitempty"`
+	WindowsPassword           *string                                                                 `json:"windowsPassword,omitempty"`
+	PxeRootPassword           *string                                                                 `json:"pxeRootPassword,omitempty"`
+	DefaultTemplateType       *ListBackupSettings200ResponseBackupSettingsDefaultSchedule             `json:"defaultTemplateType,omitempty"`
+	DeployStorageProvider     *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"deployStorageProvider,omitempty"`
+	AdditionalProperties      map[string]interface{}                                                  `json:",remain"`
 }
 
 type _ProvisioningSettings ProvisioningSettings
@@ -505,7 +505,7 @@ func (o *ProvisioningSettings) SetDeployStorageProvider(v ListApplianceSettings2
 }
 
 func (o ProvisioningSettings) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -563,75 +563,8 @@ func (o ProvisioningSettings) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ProvisioningSettings) UnmarshalJSON(data []byte) (err error) {
-	varProvisioningSettings := _ProvisioningSettings{}
-
-	err = json.Unmarshal(data, &varProvisioningSettings)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ProvisioningSettings(varProvisioningSettings)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "allowZoneSelection")
-		delete(additionalProperties, "allowServerSelection")
-		delete(additionalProperties, "requireEnvironments")
-		delete(additionalProperties, "showPricing")
-		delete(additionalProperties, "hideDatastoreStats")
-		delete(additionalProperties, "crossTenantNamingPolicies")
-		delete(additionalProperties, "reuseSequence")
-		delete(additionalProperties, "cloudInitUsername")
-		delete(additionalProperties, "cloudInitPassword")
-		delete(additionalProperties, "cloudInitKeyPair")
-		delete(additionalProperties, "windowsPassword")
-		delete(additionalProperties, "pxeRootPassword")
-		delete(additionalProperties, "defaultTemplateType")
-		delete(additionalProperties, "deployStorageProvider")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableProvisioningSettings struct {
-	value *ProvisioningSettings
-	isSet bool
-}
-
-func (v NullableProvisioningSettings) Get() *ProvisioningSettings {
-	return v.value
-}
-
-func (v *NullableProvisioningSettings) Set(val *ProvisioningSettings) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableProvisioningSettings) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableProvisioningSettings) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableProvisioningSettings(val *ProvisioningSettings) *NullableProvisioningSettings {
-	return &NullableProvisioningSettings{value: val, isSet: true}
-}
-
-func (v NullableProvisioningSettings) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableProvisioningSettings) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

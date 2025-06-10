@@ -19,19 +19,38 @@ import (
 // very silly way of avoiding `"fmt" imported and not used` errors
 var _ fmt.Stringer
 
-
 // AddBackupsRequestBackup struct for AddBackupsRequestBackup
 type AddBackupsRequestBackup struct {
-	BackupInstance *BackupInstance
-	BackupServerHost *BackupServerHost
+	BackupInstance        *BackupInstance
+	BackupServerHost      *BackupServerHost
 	BackupStorageProvider *BackupStorageProvider
+}
+
+func (dst *AddBackupsRequestBackup) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddBackupsRequestBackup{}
+	}
+
+	if out, ok := data.(BackupInstance); ok {
+		dst.BackupInstance = &out
+	}
+
+	if out, ok := data.(BackupServerHost); ok {
+		dst.BackupServerHost = &out
+	}
+
+	if out, ok := data.(BackupStorageProvider); ok {
+		dst.BackupStorageProvider = &out
+	}
+
+	return dst, nil
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AddBackupsRequestBackup) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into BackupInstance
-	err = json.Unmarshal(data, &dst.BackupInstance);
+	err = json.Unmarshal(data, &dst.BackupInstance)
 	if err == nil {
 		jsonBackupInstance, _ := json.Marshal(dst.BackupInstance)
 		if string(jsonBackupInstance) == "{}" { // empty struct
@@ -44,7 +63,7 @@ func (dst *AddBackupsRequestBackup) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into BackupServerHost
-	err = json.Unmarshal(data, &dst.BackupServerHost);
+	err = json.Unmarshal(data, &dst.BackupServerHost)
 	if err == nil {
 		jsonBackupServerHost, _ := json.Marshal(dst.BackupServerHost)
 		if string(jsonBackupServerHost) == "{}" { // empty struct
@@ -57,7 +76,7 @@ func (dst *AddBackupsRequestBackup) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into BackupStorageProvider
-	err = json.Unmarshal(data, &dst.BackupStorageProvider);
+	err = json.Unmarshal(data, &dst.BackupStorageProvider)
 	if err == nil {
 		jsonBackupStorageProvider, _ := json.Marshal(dst.BackupStorageProvider)
 		if string(jsonBackupStorageProvider) == "{}" { // empty struct
@@ -88,7 +107,6 @@ func (src AddBackupsRequestBackup) MarshalJSON() ([]byte, error) {
 
 	return nil, nil // no data in anyOf schemas
 }
-
 
 type NullableAddBackupsRequestBackup struct {
 	value *AddBackupsRequestBackup
@@ -125,5 +143,3 @@ func (v *NullableAddBackupsRequestBackup) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

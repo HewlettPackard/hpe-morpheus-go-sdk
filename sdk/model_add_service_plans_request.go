@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddServicePlansRequest type satisfies the MappedNullable interface at compile time
@@ -21,8 +20,8 @@ var _ MappedNullable = &AddServicePlansRequest{}
 
 // AddServicePlansRequest struct for AddServicePlansRequest
 type AddServicePlansRequest struct {
-	ServicePlan AddServicePlansRequestServicePlan `json:"servicePlan"`
-	AdditionalProperties map[string]interface{}
+	ServicePlan          AddServicePlansRequestServicePlan `json:"servicePlan"`
+	AdditionalProperties map[string]interface{}            `json:",remain"`
 }
 
 type _AddServicePlansRequest AddServicePlansRequest
@@ -70,7 +69,7 @@ func (o *AddServicePlansRequest) SetServicePlan(v AddServicePlansRequestServiceP
 }
 
 func (o AddServicePlansRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -87,83 +86,8 @@ func (o AddServicePlansRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *AddServicePlansRequest) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"servicePlan",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddServicePlansRequest := _AddServicePlansRequest{}
-
-	err = json.Unmarshal(data, &varAddServicePlansRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddServicePlansRequest(varAddServicePlansRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "servicePlan")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddServicePlansRequest struct {
-	value *AddServicePlansRequest
-	isSet bool
-}
-
-func (v NullableAddServicePlansRequest) Get() *AddServicePlansRequest {
-	return v.value
-}
-
-func (v *NullableAddServicePlansRequest) Set(val *AddServicePlansRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddServicePlansRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddServicePlansRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddServicePlansRequest(val *AddServicePlansRequest) *NullableAddServicePlansRequest {
-	return &NullableAddServicePlansRequest{value: val, isSet: true}
-}
-
-func (v NullableAddServicePlansRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddServicePlansRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

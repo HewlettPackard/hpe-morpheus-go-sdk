@@ -20,10 +20,10 @@ var _ MappedNullable = &ListBillingInstances200ResponseAllOfBillingInfoInstances
 
 // ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerVolumesInner struct for ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerVolumesInner
 type ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerVolumesInner struct {
-	Size *int64 `json:"size,omitempty"`
-	TypeCode *string `json:"typeCode,omitempty"`
-	Datastore *ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerVolumesInnerDatastore `json:"datastore,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Size                 *int64                                                                                                        `json:"size,omitempty"`
+	TypeCode             *string                                                                                                       `json:"typeCode,omitempty"`
+	Datastore            *ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerVolumesInnerDatastore `json:"datastore,omitempty"`
+	AdditionalProperties map[string]interface{}                                                                                        `json:",remain"`
 }
 
 type _ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerVolumesInner ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerVolumesInner
@@ -142,7 +142,7 @@ func (o *ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainers
 }
 
 func (o ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerVolumesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -167,64 +167,8 @@ func (o ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersI
 
 	return toSerialize, nil
 }
-
 func (o *ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerVolumesInner) UnmarshalJSON(data []byte) (err error) {
-	varListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerVolumesInner := _ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerVolumesInner{}
-
-	err = json.Unmarshal(data, &varListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerVolumesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerVolumesInner(varListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerVolumesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "size")
-		delete(additionalProperties, "typeCode")
-		delete(additionalProperties, "datastore")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerVolumesInner struct {
-	value *ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerVolumesInner
-	isSet bool
-}
-
-func (v NullableListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerVolumesInner) Get() *ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerVolumesInner {
-	return v.value
-}
-
-func (v *NullableListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerVolumesInner) Set(val *ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerVolumesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerVolumesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerVolumesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerVolumesInner(val *ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerVolumesInner) *NullableListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerVolumesInner {
-	return &NullableListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerVolumesInner{value: val, isSet: true}
-}
-
-func (v NullableListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerVolumesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInnerVolumesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

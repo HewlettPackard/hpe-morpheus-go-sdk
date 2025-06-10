@@ -23,9 +23,9 @@ type UpdateServicePlansRequestServicePlanConfig struct {
 	// Specifies range min / max storage multiplier
 	StorageSizeType *string `json:"storageSizeType,omitempty"`
 	// Specifies range min / max memory multiplier
-	MemorySizeType *string `json:"memorySizeType,omitempty"`
-	Ranges *UpdateServicePlansRequestServicePlanConfigRanges `json:"ranges,omitempty"`
-	AdditionalProperties map[string]interface{}
+	MemorySizeType       *string                                           `json:"memorySizeType,omitempty"`
+	Ranges               *UpdateServicePlansRequestServicePlanConfigRanges `json:"ranges,omitempty"`
+	AdditionalProperties map[string]interface{}                            `json:",remain"`
 }
 
 type _UpdateServicePlansRequestServicePlanConfig UpdateServicePlansRequestServicePlanConfig
@@ -152,7 +152,7 @@ func (o *UpdateServicePlansRequestServicePlanConfig) SetRanges(v UpdateServicePl
 }
 
 func (o UpdateServicePlansRequestServicePlanConfig) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -177,64 +177,8 @@ func (o UpdateServicePlansRequestServicePlanConfig) ToMap() (map[string]interfac
 
 	return toSerialize, nil
 }
-
 func (o *UpdateServicePlansRequestServicePlanConfig) UnmarshalJSON(data []byte) (err error) {
-	varUpdateServicePlansRequestServicePlanConfig := _UpdateServicePlansRequestServicePlanConfig{}
-
-	err = json.Unmarshal(data, &varUpdateServicePlansRequestServicePlanConfig)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateServicePlansRequestServicePlanConfig(varUpdateServicePlansRequestServicePlanConfig)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "storageSizeType")
-		delete(additionalProperties, "memorySizeType")
-		delete(additionalProperties, "ranges")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateServicePlansRequestServicePlanConfig struct {
-	value *UpdateServicePlansRequestServicePlanConfig
-	isSet bool
-}
-
-func (v NullableUpdateServicePlansRequestServicePlanConfig) Get() *UpdateServicePlansRequestServicePlanConfig {
-	return v.value
-}
-
-func (v *NullableUpdateServicePlansRequestServicePlanConfig) Set(val *UpdateServicePlansRequestServicePlanConfig) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateServicePlansRequestServicePlanConfig) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateServicePlansRequestServicePlanConfig) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateServicePlansRequestServicePlanConfig(val *UpdateServicePlansRequestServicePlanConfig) *NullableUpdateServicePlansRequestServicePlanConfig {
-	return &NullableUpdateServicePlansRequestServicePlanConfig{value: val, isSet: true}
-}
-
-func (v NullableUpdateServicePlansRequestServicePlanConfig) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateServicePlansRequestServicePlanConfig) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

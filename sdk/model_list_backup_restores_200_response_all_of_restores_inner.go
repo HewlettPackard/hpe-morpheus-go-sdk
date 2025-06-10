@@ -22,26 +22,26 @@ var _ MappedNullable = &ListBackupRestores200ResponseAllOfRestoresInner{}
 // ListBackupRestores200ResponseAllOfRestoresInner struct for ListBackupRestores200ResponseAllOfRestoresInner
 type ListBackupRestores200ResponseAllOfRestoresInner struct {
 	// Backup Result ID
-	Id *int64 `json:"id,omitempty"`
-	BackupResultId *int64 `json:"backupResultId,omitempty"`
-	BackupId *int64 `json:"backupId,omitempty"`
-	Backup *ListBackupRestores200ResponseAllOfRestoresInnerBackup `json:"backup,omitempty"`
-	ContainerId *int64 `json:"containerId,omitempty"`
-	Container *ListBackupRestores200ResponseAllOfRestoresInnerContainer `json:"container,omitempty"`
-	Instance *ListBackups200ResponseAllOfBackupsInnerInstance `json:"instance,omitempty"`
-	RestoreToNew *bool `json:"restoreToNew,omitempty"`
-	Status *string `json:"status,omitempty"`
-	ErrorMessage *string `json:"errorMessage,omitempty"`
-	StartDate *time.Time `json:"startDate,omitempty"`
-	EndDate *time.Time `json:"endDate,omitempty"`
-	DurationMillis *int64 `json:"durationMillis,omitempty"`
-	ExternalId *string `json:"externalId,omitempty"`
-	ExternalStatusRef *string `json:"externalStatusRef,omitempty"`
+	Id                *int64                                                    `json:"id,omitempty"`
+	BackupResultId    *int64                                                    `json:"backupResultId,omitempty"`
+	BackupId          *int64                                                    `json:"backupId,omitempty"`
+	Backup            *ListBackupRestores200ResponseAllOfRestoresInnerBackup    `json:"backup,omitempty"`
+	ContainerId       *int64                                                    `json:"containerId,omitempty"`
+	Container         *ListBackupRestores200ResponseAllOfRestoresInnerContainer `json:"container,omitempty"`
+	Instance          *ListBackups200ResponseAllOfBackupsInnerInstance          `json:"instance,omitempty"`
+	RestoreToNew      *bool                                                     `json:"restoreToNew,omitempty"`
+	Status            *string                                                   `json:"status,omitempty"`
+	ErrorMessage      *string                                                   `json:"errorMessage,omitempty"`
+	StartDate         *time.Time                                                `json:"startDate,omitempty"`
+	EndDate           *time.Time                                                `json:"endDate,omitempty"`
+	DurationMillis    *int64                                                    `json:"durationMillis,omitempty"`
+	ExternalId        *string                                                   `json:"externalId,omitempty"`
+	ExternalStatusRef *string                                                   `json:"externalStatusRef,omitempty"`
 	// Date Created
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	// Last Updated
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}
+	LastUpdated          *time.Time             `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListBackupRestores200ResponseAllOfRestoresInner ListBackupRestores200ResponseAllOfRestoresInner
@@ -608,7 +608,7 @@ func (o *ListBackupRestores200ResponseAllOfRestoresInner) SetLastUpdated(v time.
 }
 
 func (o ListBackupRestores200ResponseAllOfRestoresInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -675,78 +675,8 @@ func (o ListBackupRestores200ResponseAllOfRestoresInner) ToMap() (map[string]int
 
 	return toSerialize, nil
 }
-
 func (o *ListBackupRestores200ResponseAllOfRestoresInner) UnmarshalJSON(data []byte) (err error) {
-	varListBackupRestores200ResponseAllOfRestoresInner := _ListBackupRestores200ResponseAllOfRestoresInner{}
-
-	err = json.Unmarshal(data, &varListBackupRestores200ResponseAllOfRestoresInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListBackupRestores200ResponseAllOfRestoresInner(varListBackupRestores200ResponseAllOfRestoresInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "backupResultId")
-		delete(additionalProperties, "backupId")
-		delete(additionalProperties, "backup")
-		delete(additionalProperties, "containerId")
-		delete(additionalProperties, "container")
-		delete(additionalProperties, "instance")
-		delete(additionalProperties, "restoreToNew")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "errorMessage")
-		delete(additionalProperties, "startDate")
-		delete(additionalProperties, "endDate")
-		delete(additionalProperties, "durationMillis")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "externalStatusRef")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListBackupRestores200ResponseAllOfRestoresInner struct {
-	value *ListBackupRestores200ResponseAllOfRestoresInner
-	isSet bool
-}
-
-func (v NullableListBackupRestores200ResponseAllOfRestoresInner) Get() *ListBackupRestores200ResponseAllOfRestoresInner {
-	return v.value
-}
-
-func (v *NullableListBackupRestores200ResponseAllOfRestoresInner) Set(val *ListBackupRestores200ResponseAllOfRestoresInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListBackupRestores200ResponseAllOfRestoresInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListBackupRestores200ResponseAllOfRestoresInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListBackupRestores200ResponseAllOfRestoresInner(val *ListBackupRestores200ResponseAllOfRestoresInner) *NullableListBackupRestores200ResponseAllOfRestoresInner {
-	return &NullableListBackupRestores200ResponseAllOfRestoresInner{value: val, isSet: true}
-}
-
-func (v NullableListBackupRestores200ResponseAllOfRestoresInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListBackupRestores200ResponseAllOfRestoresInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

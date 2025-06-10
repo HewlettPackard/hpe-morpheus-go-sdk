@@ -20,23 +20,23 @@ var _ MappedNullable = &GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeI
 
 // GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner struct for GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner
 type GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner struct {
-	Id *int32 `json:"id,omitempty"`
-	Account *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount `json:"account,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Labels []string `json:"labels,omitempty"`
-	ShortName *string `json:"shortName,omitempty"`
-	Code *string `json:"code,omitempty"`
-	ContainerVersion *string `json:"containerVersion,omitempty"`
-	ProvisionType *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerProvisionType `json:"provisionType,omitempty"`
-	VirtualImage *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount `json:"virtualImage,omitempty"`
-	OsType *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount `json:"osType,omitempty"`
-	Category *string `json:"category,omitempty"`
-	Config map[string]interface{} `json:"config,omitempty"`
-	ContainerPorts []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInner `json:"containerPorts,omitempty"`
-	ContainerScripts []map[string]interface{} `json:"containerScripts,omitempty"`
-	ContainerTemplates []map[string]interface{} `json:"containerTemplates,omitempty"`
-	EnvironmentVariables []map[string]interface{} `json:"environmentVariables,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int32                                                                                                                  `json:"id,omitempty"`
+	Account              *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount              `json:"account,omitempty"`
+	Name                 *string                                                                                                                 `json:"name,omitempty"`
+	Labels               []string                                                                                                                `json:"labels,omitempty"`
+	ShortName            *string                                                                                                                 `json:"shortName,omitempty"`
+	Code                 *string                                                                                                                 `json:"code,omitempty"`
+	ContainerVersion     *string                                                                                                                 `json:"containerVersion,omitempty"`
+	ProvisionType        *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerProvisionType        `json:"provisionType,omitempty"`
+	VirtualImage         *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount              `json:"virtualImage,omitempty"`
+	OsType               *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount              `json:"osType,omitempty"`
+	Category             *string                                                                                                                 `json:"category,omitempty"`
+	Config               map[string]interface{}                                                                                                  `json:"config,omitempty"`
+	ContainerPorts       []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInner `json:"containerPorts,omitempty"`
+	ContainerScripts     []map[string]interface{}                                                                                                `json:"containerScripts,omitempty"`
+	ContainerTemplates   []map[string]interface{}                                                                                                `json:"containerTemplates,omitempty"`
+	EnvironmentVariables []map[string]interface{}                                                                                                `json:"environmentVariables,omitempty"`
+	AdditionalProperties map[string]interface{}                                                                                                  `json:",remain"`
 }
 
 type _GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner
@@ -571,7 +571,7 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 }
 
 func (o GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -635,77 +635,8 @@ func (o GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayou
 
 	return toSerialize, nil
 }
-
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner) UnmarshalJSON(data []byte) (err error) {
-	varGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner := _GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner{}
-
-	err = json.Unmarshal(data, &varGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner(varGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "shortName")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "containerVersion")
-		delete(additionalProperties, "provisionType")
-		delete(additionalProperties, "virtualImage")
-		delete(additionalProperties, "osType")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "containerPorts")
-		delete(additionalProperties, "containerScripts")
-		delete(additionalProperties, "containerTemplates")
-		delete(additionalProperties, "environmentVariables")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner struct {
-	value *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner
-	isSet bool
-}
-
-func (v NullableGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner) Get() *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner {
-	return v.value
-}
-
-func (v *NullableGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner) Set(val *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner(val *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner) *NullableGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner {
-	return &NullableGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner{value: val, isSet: true}
-}
-
-func (v NullableGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

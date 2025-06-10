@@ -20,9 +20,9 @@ var _ MappedNullable = &AddBaremetalHost200Response{}
 
 // AddBaremetalHost200Response struct for AddBaremetalHost200Response
 type AddBaremetalHost200Response struct {
-	Success *bool `json:"success,omitempty"`
-	Server *ListHosts200ResponseAllOfServersInner `json:"server,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Success              *bool                                  `json:"success,omitempty"`
+	Server               *ListHosts200ResponseAllOfServersInner `json:"server,omitempty"`
+	AdditionalProperties map[string]interface{}                 `json:",remain"`
 }
 
 type _AddBaremetalHost200Response AddBaremetalHost200Response
@@ -109,7 +109,7 @@ func (o *AddBaremetalHost200Response) SetServer(v ListHosts200ResponseAllOfServe
 }
 
 func (o AddBaremetalHost200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o AddBaremetalHost200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *AddBaremetalHost200Response) UnmarshalJSON(data []byte) (err error) {
-	varAddBaremetalHost200Response := _AddBaremetalHost200Response{}
-
-	err = json.Unmarshal(data, &varAddBaremetalHost200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddBaremetalHost200Response(varAddBaremetalHost200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "success")
-		delete(additionalProperties, "server")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddBaremetalHost200Response struct {
-	value *AddBaremetalHost200Response
-	isSet bool
-}
-
-func (v NullableAddBaremetalHost200Response) Get() *AddBaremetalHost200Response {
-	return v.value
-}
-
-func (v *NullableAddBaremetalHost200Response) Set(val *AddBaremetalHost200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddBaremetalHost200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddBaremetalHost200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddBaremetalHost200Response(val *AddBaremetalHost200Response) *NullableAddBaremetalHost200Response {
-	return &NullableAddBaremetalHost200Response{value: val, isSet: true}
-}
-
-func (v NullableAddBaremetalHost200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddBaremetalHost200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

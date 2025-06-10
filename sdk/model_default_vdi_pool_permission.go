@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the DefaultVDIPoolPermission type satisfies the MappedNullable interface at compile time
@@ -24,8 +23,8 @@ type DefaultVDIPoolPermission struct {
 	// `VdiPools` is the code for Default VDI Pool Access
 	PermissionCode string `json:"permissionCode"`
 	// The new access level.
-	Access string `json:"access"`
-	AdditionalProperties map[string]interface{}
+	Access               string                 `json:"access"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _DefaultVDIPoolPermission DefaultVDIPoolPermission
@@ -98,7 +97,7 @@ func (o *DefaultVDIPoolPermission) SetAccess(v string) {
 }
 
 func (o DefaultVDIPoolPermission) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -116,85 +115,8 @@ func (o DefaultVDIPoolPermission) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *DefaultVDIPoolPermission) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"permissionCode",
-		"access",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varDefaultVDIPoolPermission := _DefaultVDIPoolPermission{}
-
-	err = json.Unmarshal(data, &varDefaultVDIPoolPermission)
-
-	if err != nil {
-		return err
-	}
-
-	*o = DefaultVDIPoolPermission(varDefaultVDIPoolPermission)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "permissionCode")
-		delete(additionalProperties, "access")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableDefaultVDIPoolPermission struct {
-	value *DefaultVDIPoolPermission
-	isSet bool
-}
-
-func (v NullableDefaultVDIPoolPermission) Get() *DefaultVDIPoolPermission {
-	return v.value
-}
-
-func (v *NullableDefaultVDIPoolPermission) Set(val *DefaultVDIPoolPermission) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableDefaultVDIPoolPermission) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableDefaultVDIPoolPermission) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableDefaultVDIPoolPermission(val *DefaultVDIPoolPermission) *NullableDefaultVDIPoolPermission {
-	return &NullableDefaultVDIPoolPermission{value: val, isSet: true}
-}
-
-func (v NullableDefaultVDIPoolPermission) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableDefaultVDIPoolPermission) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

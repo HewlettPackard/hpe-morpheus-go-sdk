@@ -20,8 +20,8 @@ var _ MappedNullable = &CreateNetworkProxy200Response{}
 
 // CreateNetworkProxy200Response struct for CreateNetworkProxy200Response
 type CreateNetworkProxy200Response struct {
-	NetworkProxy *CreateNetworkProxy200ResponseNetworkProxy `json:"networkProxy,omitempty"`
-	AdditionalProperties map[string]interface{}
+	NetworkProxy         *CreateNetworkProxy200ResponseNetworkProxy `json:"networkProxy,omitempty"`
+	AdditionalProperties map[string]interface{}                     `json:",remain"`
 }
 
 type _CreateNetworkProxy200Response CreateNetworkProxy200Response
@@ -76,7 +76,7 @@ func (o *CreateNetworkProxy200Response) SetNetworkProxy(v CreateNetworkProxy200R
 }
 
 func (o CreateNetworkProxy200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o CreateNetworkProxy200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *CreateNetworkProxy200Response) UnmarshalJSON(data []byte) (err error) {
-	varCreateNetworkProxy200Response := _CreateNetworkProxy200Response{}
-
-	err = json.Unmarshal(data, &varCreateNetworkProxy200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CreateNetworkProxy200Response(varCreateNetworkProxy200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "networkProxy")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCreateNetworkProxy200Response struct {
-	value *CreateNetworkProxy200Response
-	isSet bool
-}
-
-func (v NullableCreateNetworkProxy200Response) Get() *CreateNetworkProxy200Response {
-	return v.value
-}
-
-func (v *NullableCreateNetworkProxy200Response) Set(val *CreateNetworkProxy200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCreateNetworkProxy200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCreateNetworkProxy200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCreateNetworkProxy200Response(val *CreateNetworkProxy200Response) *NullableCreateNetworkProxy200Response {
-	return &NullableCreateNetworkProxy200Response{value: val, isSet: true}
-}
-
-func (v NullableCreateNetworkProxy200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCreateNetworkProxy200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

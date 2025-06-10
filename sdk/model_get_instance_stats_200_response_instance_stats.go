@@ -41,8 +41,8 @@ type GetInstanceStats200ResponseInstanceStats struct {
 	// Total number of instances
 	Total *float32 `json:"total,omitempty"`
 	// Total number of containers across all instances
-	TotalContainers *float32 `json:"totalContainers,omitempty"`
-	AdditionalProperties map[string]interface{}
+	TotalContainers      *float32               `json:"totalContainers,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _GetInstanceStats200ResponseInstanceStats GetInstanceStats200ResponseInstanceStats
@@ -417,7 +417,7 @@ func (o *GetInstanceStats200ResponseInstanceStats) SetTotalContainers(v float32)
 }
 
 func (o GetInstanceStats200ResponseInstanceStats) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -466,72 +466,8 @@ func (o GetInstanceStats200ResponseInstanceStats) ToMap() (map[string]interface{
 
 	return toSerialize, nil
 }
-
 func (o *GetInstanceStats200ResponseInstanceStats) UnmarshalJSON(data []byte) (err error) {
-	varGetInstanceStats200ResponseInstanceStats := _GetInstanceStats200ResponseInstanceStats{}
-
-	err = json.Unmarshal(data, &varGetInstanceStats200ResponseInstanceStats)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetInstanceStats200ResponseInstanceStats(varGetInstanceStats200ResponseInstanceStats)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "maxCpu")
-		delete(additionalProperties, "maxCores")
-		delete(additionalProperties, "cpuUsageAverage")
-		delete(additionalProperties, "cpuUsagePeak")
-		delete(additionalProperties, "usedMemory")
-		delete(additionalProperties, "maxMemory")
-		delete(additionalProperties, "usedStorage")
-		delete(additionalProperties, "maxStorage")
-		delete(additionalProperties, "running")
-		delete(additionalProperties, "total")
-		delete(additionalProperties, "totalContainers")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetInstanceStats200ResponseInstanceStats struct {
-	value *GetInstanceStats200ResponseInstanceStats
-	isSet bool
-}
-
-func (v NullableGetInstanceStats200ResponseInstanceStats) Get() *GetInstanceStats200ResponseInstanceStats {
-	return v.value
-}
-
-func (v *NullableGetInstanceStats200ResponseInstanceStats) Set(val *GetInstanceStats200ResponseInstanceStats) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetInstanceStats200ResponseInstanceStats) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetInstanceStats200ResponseInstanceStats) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetInstanceStats200ResponseInstanceStats(val *GetInstanceStats200ResponseInstanceStats) *NullableGetInstanceStats200ResponseInstanceStats {
-	return &NullableGetInstanceStats200ResponseInstanceStats{value: val, isSet: true}
-}
-
-func (v NullableGetInstanceStats200ResponseInstanceStats) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetInstanceStats200ResponseInstanceStats) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

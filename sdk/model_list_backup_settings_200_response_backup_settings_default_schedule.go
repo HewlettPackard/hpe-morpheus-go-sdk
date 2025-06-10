@@ -20,10 +20,10 @@ var _ MappedNullable = &ListBackupSettings200ResponseBackupSettingsDefaultSchedu
 
 // ListBackupSettings200ResponseBackupSettingsDefaultSchedule struct for ListBackupSettings200ResponseBackupSettingsDefaultSchedule
 type ListBackupSettings200ResponseBackupSettingsDefaultSchedule struct {
-	Id *int64 `json:"id,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Name *string `json:"name,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Code                 *string                `json:"code,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListBackupSettings200ResponseBackupSettingsDefaultSchedule ListBackupSettings200ResponseBackupSettingsDefaultSchedule
@@ -142,7 +142,7 @@ func (o *ListBackupSettings200ResponseBackupSettingsDefaultSchedule) SetName(v s
 }
 
 func (o ListBackupSettings200ResponseBackupSettingsDefaultSchedule) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -167,64 +167,8 @@ func (o ListBackupSettings200ResponseBackupSettingsDefaultSchedule) ToMap() (map
 
 	return toSerialize, nil
 }
-
 func (o *ListBackupSettings200ResponseBackupSettingsDefaultSchedule) UnmarshalJSON(data []byte) (err error) {
-	varListBackupSettings200ResponseBackupSettingsDefaultSchedule := _ListBackupSettings200ResponseBackupSettingsDefaultSchedule{}
-
-	err = json.Unmarshal(data, &varListBackupSettings200ResponseBackupSettingsDefaultSchedule)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListBackupSettings200ResponseBackupSettingsDefaultSchedule(varListBackupSettings200ResponseBackupSettingsDefaultSchedule)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "name")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListBackupSettings200ResponseBackupSettingsDefaultSchedule struct {
-	value *ListBackupSettings200ResponseBackupSettingsDefaultSchedule
-	isSet bool
-}
-
-func (v NullableListBackupSettings200ResponseBackupSettingsDefaultSchedule) Get() *ListBackupSettings200ResponseBackupSettingsDefaultSchedule {
-	return v.value
-}
-
-func (v *NullableListBackupSettings200ResponseBackupSettingsDefaultSchedule) Set(val *ListBackupSettings200ResponseBackupSettingsDefaultSchedule) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListBackupSettings200ResponseBackupSettingsDefaultSchedule) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListBackupSettings200ResponseBackupSettingsDefaultSchedule) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListBackupSettings200ResponseBackupSettingsDefaultSchedule(val *ListBackupSettings200ResponseBackupSettingsDefaultSchedule) *NullableListBackupSettings200ResponseBackupSettingsDefaultSchedule {
-	return &NullableListBackupSettings200ResponseBackupSettingsDefaultSchedule{value: val, isSet: true}
-}
-
-func (v NullableListBackupSettings200ResponseBackupSettingsDefaultSchedule) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListBackupSettings200ResponseBackupSettingsDefaultSchedule) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -14,6 +14,7 @@ package sdk
 import (
 	"encoding/json"
 	"fmt"
+
 	"gopkg.in/validator.v2"
 )
 
@@ -23,7 +24,7 @@ var _ fmt.Stringer
 // ListInstances200ResponseAllOfInstancesInnerEvarsInnerValue - struct for ListInstances200ResponseAllOfInstancesInnerEvarsInnerValue
 type ListInstances200ResponseAllOfInstancesInnerEvarsInnerValue struct {
 	Float32 *float32
-	String *string
+	String  *string
 }
 
 // float32AsListInstances200ResponseAllOfInstancesInnerEvarsInnerValue is a convenience function that returns float32 wrapped in ListInstances200ResponseAllOfInstancesInnerEvarsInnerValue
@@ -40,6 +41,21 @@ func StringAsListInstances200ResponseAllOfInstancesInnerEvarsInnerValue(v *strin
 	}
 }
 
+func (dst *ListInstances200ResponseAllOfInstancesInnerEvarsInnerValue) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &ListInstances200ResponseAllOfInstancesInnerEvarsInnerValue{}
+	}
+
+	if out, ok := data.(float32); ok {
+		dst.Float32 = &out
+	}
+
+	if out, ok := data.(string); ok {
+		dst.String = &out
+	}
+
+	return dst, nil
+}
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ListInstances200ResponseAllOfInstancesInnerEvarsInnerValue) UnmarshalJSON(data []byte) error {
@@ -106,7 +122,7 @@ func (src ListInstances200ResponseAllOfInstancesInnerEvarsInnerValue) MarshalJSO
 }
 
 // Get the actual instance
-func (obj *ListInstances200ResponseAllOfInstancesInnerEvarsInnerValue) GetActualInstance() (interface{}) {
+func (obj *ListInstances200ResponseAllOfInstancesInnerEvarsInnerValue) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -123,7 +139,7 @@ func (obj *ListInstances200ResponseAllOfInstancesInnerEvarsInnerValue) GetActual
 }
 
 // Get the actual instance value
-func (obj ListInstances200ResponseAllOfInstancesInnerEvarsInnerValue) GetActualInstanceValue() (interface{}) {
+func (obj ListInstances200ResponseAllOfInstancesInnerEvarsInnerValue) GetActualInstanceValue() interface{} {
 	if obj.Float32 != nil {
 		return *obj.Float32
 	}
@@ -171,5 +187,3 @@ func (v *NullableListInstances200ResponseAllOfInstancesInnerEvarsInnerValue) Unm
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

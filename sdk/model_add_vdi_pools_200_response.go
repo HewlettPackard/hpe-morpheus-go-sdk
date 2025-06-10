@@ -19,18 +19,33 @@ import (
 // very silly way of avoiding `"fmt" imported and not used` errors
 var _ fmt.Stringer
 
-
 // AddVDIPools200Response struct for AddVDIPools200Response
 type AddVDIPools200Response struct {
 	AddVDIPools200ResponseAnyOf *AddVDIPools200ResponseAnyOf
-	DeleteAlerts200Response *DeleteAlerts200Response
+	DeleteAlerts200Response     *DeleteAlerts200Response
+}
+
+func (dst *AddVDIPools200Response) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddVDIPools200Response{}
+	}
+
+	if out, ok := data.(AddVDIPools200ResponseAnyOf); ok {
+		dst.AddVDIPools200ResponseAnyOf = &out
+	}
+
+	if out, ok := data.(DeleteAlerts200Response); ok {
+		dst.DeleteAlerts200Response = &out
+	}
+
+	return dst, nil
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AddVDIPools200Response) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into AddVDIPools200ResponseAnyOf
-	err = json.Unmarshal(data, &dst.AddVDIPools200ResponseAnyOf);
+	err = json.Unmarshal(data, &dst.AddVDIPools200ResponseAnyOf)
 	if err == nil {
 		jsonAddVDIPools200ResponseAnyOf, _ := json.Marshal(dst.AddVDIPools200ResponseAnyOf)
 		if string(jsonAddVDIPools200ResponseAnyOf) == "{}" { // empty struct
@@ -43,7 +58,7 @@ func (dst *AddVDIPools200Response) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into DeleteAlerts200Response
-	err = json.Unmarshal(data, &dst.DeleteAlerts200Response);
+	err = json.Unmarshal(data, &dst.DeleteAlerts200Response)
 	if err == nil {
 		jsonDeleteAlerts200Response, _ := json.Marshal(dst.DeleteAlerts200Response)
 		if string(jsonDeleteAlerts200Response) == "{}" { // empty struct
@@ -70,7 +85,6 @@ func (src AddVDIPools200Response) MarshalJSON() ([]byte, error) {
 
 	return nil, nil // no data in anyOf schemas
 }
-
 
 type NullableAddVDIPools200Response struct {
 	value *AddVDIPools200Response
@@ -107,5 +121,3 @@ func (v *NullableAddVDIPools200Response) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -21,8 +21,8 @@ var _ MappedNullable = &ManageHostPlacementRequestServerPreferredParentServer{}
 // ManageHostPlacementRequestServerPreferredParentServer Object containing id of preferred target host to place VM on
 type ManageHostPlacementRequestServerPreferredParentServer struct {
 	// Server ID
-	Id *int64 `json:"id,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ManageHostPlacementRequestServerPreferredParentServer ManageHostPlacementRequestServerPreferredParentServer
@@ -77,7 +77,7 @@ func (o *ManageHostPlacementRequestServerPreferredParentServer) SetId(v int64) {
 }
 
 func (o ManageHostPlacementRequestServerPreferredParentServer) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -96,62 +96,8 @@ func (o ManageHostPlacementRequestServerPreferredParentServer) ToMap() (map[stri
 
 	return toSerialize, nil
 }
-
 func (o *ManageHostPlacementRequestServerPreferredParentServer) UnmarshalJSON(data []byte) (err error) {
-	varManageHostPlacementRequestServerPreferredParentServer := _ManageHostPlacementRequestServerPreferredParentServer{}
-
-	err = json.Unmarshal(data, &varManageHostPlacementRequestServerPreferredParentServer)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ManageHostPlacementRequestServerPreferredParentServer(varManageHostPlacementRequestServerPreferredParentServer)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableManageHostPlacementRequestServerPreferredParentServer struct {
-	value *ManageHostPlacementRequestServerPreferredParentServer
-	isSet bool
-}
-
-func (v NullableManageHostPlacementRequestServerPreferredParentServer) Get() *ManageHostPlacementRequestServerPreferredParentServer {
-	return v.value
-}
-
-func (v *NullableManageHostPlacementRequestServerPreferredParentServer) Set(val *ManageHostPlacementRequestServerPreferredParentServer) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableManageHostPlacementRequestServerPreferredParentServer) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableManageHostPlacementRequestServerPreferredParentServer) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableManageHostPlacementRequestServerPreferredParentServer(val *ManageHostPlacementRequestServerPreferredParentServer) *NullableManageHostPlacementRequestServerPreferredParentServer {
-	return &NullableManageHostPlacementRequestServerPreferredParentServer{value: val, isSet: true}
-}
-
-func (v NullableManageHostPlacementRequestServerPreferredParentServer) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableManageHostPlacementRequestServerPreferredParentServer) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -18,10 +18,10 @@ import (
 // checks if the DelayedDeletePolicyTypeConfiguration type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &DelayedDeletePolicyTypeConfiguration{}
 
-// DelayedDeletePolicyTypeConfiguration Configuration settings for the following policy types: - Delayed Delete 
+// DelayedDeletePolicyTypeConfiguration Configuration settings for the following policy types: - Delayed Delete
 type DelayedDeletePolicyTypeConfiguration struct {
-	RemovalAge *string `json:"removalAge,omitempty"`
-	AdditionalProperties map[string]interface{}
+	RemovalAge           *string                `json:"removalAge,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _DelayedDeletePolicyTypeConfiguration DelayedDeletePolicyTypeConfiguration
@@ -76,7 +76,7 @@ func (o *DelayedDeletePolicyTypeConfiguration) SetRemovalAge(v string) {
 }
 
 func (o DelayedDeletePolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o DelayedDeletePolicyTypeConfiguration) ToMap() (map[string]interface{}, e
 
 	return toSerialize, nil
 }
-
 func (o *DelayedDeletePolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
-	varDelayedDeletePolicyTypeConfiguration := _DelayedDeletePolicyTypeConfiguration{}
-
-	err = json.Unmarshal(data, &varDelayedDeletePolicyTypeConfiguration)
-
-	if err != nil {
-		return err
-	}
-
-	*o = DelayedDeletePolicyTypeConfiguration(varDelayedDeletePolicyTypeConfiguration)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "removalAge")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableDelayedDeletePolicyTypeConfiguration struct {
-	value *DelayedDeletePolicyTypeConfiguration
-	isSet bool
-}
-
-func (v NullableDelayedDeletePolicyTypeConfiguration) Get() *DelayedDeletePolicyTypeConfiguration {
-	return v.value
-}
-
-func (v *NullableDelayedDeletePolicyTypeConfiguration) Set(val *DelayedDeletePolicyTypeConfiguration) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableDelayedDeletePolicyTypeConfiguration) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableDelayedDeletePolicyTypeConfiguration) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableDelayedDeletePolicyTypeConfiguration(val *DelayedDeletePolicyTypeConfiguration) *NullableDelayedDeletePolicyTypeConfiguration {
-	return &NullableDelayedDeletePolicyTypeConfiguration{value: val, isSet: true}
-}
-
-func (v NullableDelayedDeletePolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableDelayedDeletePolicyTypeConfiguration) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -27,8 +27,8 @@ type UserSourceCreateLDAP struct {
 	// Binding Password
 	BindingPassword *string `json:"bindingPassword,omitempty"`
 	// User DN Expression
-	RequiredGroup *string `json:"requiredGroup,omitempty"`
-	AdditionalProperties map[string]interface{}
+	RequiredGroup        *string                `json:"requiredGroup,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UserSourceCreateLDAP UserSourceCreateLDAP
@@ -179,7 +179,7 @@ func (o *UserSourceCreateLDAP) SetRequiredGroup(v string) {
 }
 
 func (o UserSourceCreateLDAP) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -207,65 +207,8 @@ func (o UserSourceCreateLDAP) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *UserSourceCreateLDAP) UnmarshalJSON(data []byte) (err error) {
-	varUserSourceCreateLDAP := _UserSourceCreateLDAP{}
-
-	err = json.Unmarshal(data, &varUserSourceCreateLDAP)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UserSourceCreateLDAP(varUserSourceCreateLDAP)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "bindingUsername")
-		delete(additionalProperties, "bindingPassword")
-		delete(additionalProperties, "requiredGroup")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUserSourceCreateLDAP struct {
-	value *UserSourceCreateLDAP
-	isSet bool
-}
-
-func (v NullableUserSourceCreateLDAP) Get() *UserSourceCreateLDAP {
-	return v.value
-}
-
-func (v *NullableUserSourceCreateLDAP) Set(val *UserSourceCreateLDAP) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUserSourceCreateLDAP) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUserSourceCreateLDAP) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUserSourceCreateLDAP(val *UserSourceCreateLDAP) *NullableUserSourceCreateLDAP {
-	return &NullableUserSourceCreateLDAP{value: val, isSet: true}
-}
-
-func (v NullableUserSourceCreateLDAP) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUserSourceCreateLDAP) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

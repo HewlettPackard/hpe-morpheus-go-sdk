@@ -20,8 +20,8 @@ var _ MappedNullable = &CatalogOrderCreate{}
 
 // CatalogOrderCreate struct for CatalogOrderCreate
 type CatalogOrderCreate struct {
-	Items []AddCatalogOrderRequestOrderItemsInner `json:"items,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Items                []AddCatalogOrderRequestOrderItemsInner `json:"items,omitempty"`
+	AdditionalProperties map[string]interface{}                  `json:",remain"`
 }
 
 type _CatalogOrderCreate CatalogOrderCreate
@@ -76,7 +76,7 @@ func (o *CatalogOrderCreate) SetItems(v []AddCatalogOrderRequestOrderItemsInner)
 }
 
 func (o CatalogOrderCreate) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o CatalogOrderCreate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *CatalogOrderCreate) UnmarshalJSON(data []byte) (err error) {
-	varCatalogOrderCreate := _CatalogOrderCreate{}
-
-	err = json.Unmarshal(data, &varCatalogOrderCreate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CatalogOrderCreate(varCatalogOrderCreate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "items")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCatalogOrderCreate struct {
-	value *CatalogOrderCreate
-	isSet bool
-}
-
-func (v NullableCatalogOrderCreate) Get() *CatalogOrderCreate {
-	return v.value
-}
-
-func (v *NullableCatalogOrderCreate) Set(val *CatalogOrderCreate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCatalogOrderCreate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCatalogOrderCreate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCatalogOrderCreate(val *CatalogOrderCreate) *NullableCatalogOrderCreate {
-	return &NullableCatalogOrderCreate{value: val, isSet: true}
-}
-
-func (v NullableCatalogOrderCreate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCatalogOrderCreate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

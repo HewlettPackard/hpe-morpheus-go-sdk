@@ -20,10 +20,10 @@ var _ MappedNullable = &ListApps200ResponseAllOfAppsInnerBlueprint{}
 
 // ListApps200ResponseAllOfAppsInnerBlueprint struct for ListApps200ResponseAllOfAppsInnerBlueprint
 type ListApps200ResponseAllOfAppsInnerBlueprint struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Type *string `json:"type,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	Type                 *string                `json:"type,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListApps200ResponseAllOfAppsInnerBlueprint ListApps200ResponseAllOfAppsInnerBlueprint
@@ -142,7 +142,7 @@ func (o *ListApps200ResponseAllOfAppsInnerBlueprint) SetType(v string) {
 }
 
 func (o ListApps200ResponseAllOfAppsInnerBlueprint) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -167,64 +167,8 @@ func (o ListApps200ResponseAllOfAppsInnerBlueprint) ToMap() (map[string]interfac
 
 	return toSerialize, nil
 }
-
 func (o *ListApps200ResponseAllOfAppsInnerBlueprint) UnmarshalJSON(data []byte) (err error) {
-	varListApps200ResponseAllOfAppsInnerBlueprint := _ListApps200ResponseAllOfAppsInnerBlueprint{}
-
-	err = json.Unmarshal(data, &varListApps200ResponseAllOfAppsInnerBlueprint)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListApps200ResponseAllOfAppsInnerBlueprint(varListApps200ResponseAllOfAppsInnerBlueprint)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "type")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListApps200ResponseAllOfAppsInnerBlueprint struct {
-	value *ListApps200ResponseAllOfAppsInnerBlueprint
-	isSet bool
-}
-
-func (v NullableListApps200ResponseAllOfAppsInnerBlueprint) Get() *ListApps200ResponseAllOfAppsInnerBlueprint {
-	return v.value
-}
-
-func (v *NullableListApps200ResponseAllOfAppsInnerBlueprint) Set(val *ListApps200ResponseAllOfAppsInnerBlueprint) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListApps200ResponseAllOfAppsInnerBlueprint) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListApps200ResponseAllOfAppsInnerBlueprint) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListApps200ResponseAllOfAppsInnerBlueprint(val *ListApps200ResponseAllOfAppsInnerBlueprint) *NullableListApps200ResponseAllOfAppsInnerBlueprint {
-	return &NullableListApps200ResponseAllOfAppsInnerBlueprint{value: val, isSet: true}
-}
-
-func (v NullableListApps200ResponseAllOfAppsInnerBlueprint) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListApps200ResponseAllOfAppsInnerBlueprint) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

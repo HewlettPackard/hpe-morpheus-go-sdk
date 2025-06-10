@@ -29,14 +29,14 @@ type BackupSettingsUpdate struct {
 	// When enabled, a Backup will be created to backup the Morpheus appliance database
 	BackupAppliance *bool `json:"backupAppliance,omitempty"`
 	// Use this to update existing backups with new settings
-	UpdateExisting *bool `json:"updateExisting,omitempty"`
+	UpdateExisting  *bool                                                     `json:"updateExisting,omitempty"`
 	DefaultSchedule *UpdateBackupSettingsRequestBackupSettingsDefaultSchedule `json:"defaultSchedule,omitempty"`
 	// Use this to clear existing default backup schedule
-	ClearDefaultSchedule *bool `json:"clearDefaultSchedule,omitempty"`
+	ClearDefaultSchedule *bool                                                          `json:"clearDefaultSchedule,omitempty"`
 	DefaultStorageBucket *UpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket `json:"defaultStorageBucket,omitempty"`
 	// Use this to clear default store bucket
-	ClearDefaultStorageBucket *bool `json:"clearDefaultStorageBucket,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ClearDefaultStorageBucket *bool                  `json:"clearDefaultStorageBucket,omitempty"`
+	AdditionalProperties      map[string]interface{} `json:",remain"`
 }
 
 type _BackupSettingsUpdate BackupSettingsUpdate
@@ -347,7 +347,7 @@ func (o *BackupSettingsUpdate) SetClearDefaultStorageBucket(v bool) {
 }
 
 func (o BackupSettingsUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -390,70 +390,8 @@ func (o BackupSettingsUpdate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *BackupSettingsUpdate) UnmarshalJSON(data []byte) (err error) {
-	varBackupSettingsUpdate := _BackupSettingsUpdate{}
-
-	err = json.Unmarshal(data, &varBackupSettingsUpdate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = BackupSettingsUpdate(varBackupSettingsUpdate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "backupsEnabled")
-		delete(additionalProperties, "retentionCount")
-		delete(additionalProperties, "createBackups")
-		delete(additionalProperties, "backupAppliance")
-		delete(additionalProperties, "updateExisting")
-		delete(additionalProperties, "defaultSchedule")
-		delete(additionalProperties, "clearDefaultSchedule")
-		delete(additionalProperties, "defaultStorageBucket")
-		delete(additionalProperties, "clearDefaultStorageBucket")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableBackupSettingsUpdate struct {
-	value *BackupSettingsUpdate
-	isSet bool
-}
-
-func (v NullableBackupSettingsUpdate) Get() *BackupSettingsUpdate {
-	return v.value
-}
-
-func (v *NullableBackupSettingsUpdate) Set(val *BackupSettingsUpdate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableBackupSettingsUpdate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableBackupSettingsUpdate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableBackupSettingsUpdate(val *BackupSettingsUpdate) *NullableBackupSettingsUpdate {
-	return &NullableBackupSettingsUpdate{value: val, isSet: true}
-}
-
-func (v NullableBackupSettingsUpdate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableBackupSettingsUpdate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

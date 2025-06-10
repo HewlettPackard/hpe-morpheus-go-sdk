@@ -21,7 +21,7 @@ var _ MappedNullable = &InstanceTypeLayoutUpdate{}
 // InstanceTypeLayoutUpdate struct for InstanceTypeLayoutUpdate
 type InstanceTypeLayoutUpdate struct {
 	// Layout name
-	Name *string `json:"name,omitempty"`
+	Name   *string  `json:"name,omitempty"`
 	Labels []string `json:"labels,omitempty"`
 	// Version of the layout
 	InstanceVersion *string `json:"instanceVersion,omitempty"`
@@ -46,9 +46,9 @@ type InstanceTypeLayoutUpdate struct {
 	// The environmentVariables parameter is array of env objects
 	EnvironmentVariables []AddClusterLayoutsRequestLayoutEnvironmentVariablesInner `json:"environmentVariables,omitempty"`
 	// Array of price set objects
-	PriceSets []AddInstanceTypeRequestInstanceTypePriceSetsInner `json:"priceSets,omitempty"`
-	Permissions *AddLayoutRequestInstanceTypeLayoutPermissions `json:"permissions,omitempty"`
-	AdditionalProperties map[string]interface{}
+	PriceSets            []AddInstanceTypeRequestInstanceTypePriceSetsInner `json:"priceSets,omitempty"`
+	Permissions          *AddLayoutRequestInstanceTypeLayoutPermissions     `json:"permissions,omitempty"`
+	AdditionalProperties map[string]interface{}                             `json:",remain"`
 }
 
 type _InstanceTypeLayoutUpdate InstanceTypeLayoutUpdate
@@ -563,7 +563,7 @@ func (o *InstanceTypeLayoutUpdate) SetPermissions(v AddLayoutRequestInstanceType
 }
 
 func (o InstanceTypeLayoutUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -624,76 +624,8 @@ func (o InstanceTypeLayoutUpdate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *InstanceTypeLayoutUpdate) UnmarshalJSON(data []byte) (err error) {
-	varInstanceTypeLayoutUpdate := _InstanceTypeLayoutUpdate{}
-
-	err = json.Unmarshal(data, &varInstanceTypeLayoutUpdate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = InstanceTypeLayoutUpdate(varInstanceTypeLayoutUpdate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "instanceVersion")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "creatable")
-		delete(additionalProperties, "provisionTypeCode")
-		delete(additionalProperties, "memoryRequirement")
-		delete(additionalProperties, "hasAutoScale")
-		delete(additionalProperties, "supportsConvertToManaged")
-		delete(additionalProperties, "containerTypes")
-		delete(additionalProperties, "optionTypes")
-		delete(additionalProperties, "specTemplates")
-		delete(additionalProperties, "environmentVariables")
-		delete(additionalProperties, "priceSets")
-		delete(additionalProperties, "permissions")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableInstanceTypeLayoutUpdate struct {
-	value *InstanceTypeLayoutUpdate
-	isSet bool
-}
-
-func (v NullableInstanceTypeLayoutUpdate) Get() *InstanceTypeLayoutUpdate {
-	return v.value
-}
-
-func (v *NullableInstanceTypeLayoutUpdate) Set(val *InstanceTypeLayoutUpdate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableInstanceTypeLayoutUpdate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableInstanceTypeLayoutUpdate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableInstanceTypeLayoutUpdate(val *InstanceTypeLayoutUpdate) *NullableInstanceTypeLayoutUpdate {
-	return &NullableInstanceTypeLayoutUpdate{value: val, isSet: true}
-}
-
-func (v NullableInstanceTypeLayoutUpdate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableInstanceTypeLayoutUpdate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

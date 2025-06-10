@@ -20,10 +20,10 @@ var _ MappedNullable = &UpdateWikiAppRequestPage{}
 
 // UpdateWikiAppRequestPage struct for UpdateWikiAppRequestPage
 type UpdateWikiAppRequestPage struct {
-	Name *string `json:"name,omitempty"`
-	Category *string `json:"category,omitempty"`
-	Content *string `json:"content,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Name                 *string                `json:"name,omitempty"`
+	Category             *string                `json:"category,omitempty"`
+	Content              *string                `json:"content,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UpdateWikiAppRequestPage UpdateWikiAppRequestPage
@@ -142,7 +142,7 @@ func (o *UpdateWikiAppRequestPage) SetContent(v string) {
 }
 
 func (o UpdateWikiAppRequestPage) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -167,64 +167,8 @@ func (o UpdateWikiAppRequestPage) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *UpdateWikiAppRequestPage) UnmarshalJSON(data []byte) (err error) {
-	varUpdateWikiAppRequestPage := _UpdateWikiAppRequestPage{}
-
-	err = json.Unmarshal(data, &varUpdateWikiAppRequestPage)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateWikiAppRequestPage(varUpdateWikiAppRequestPage)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "content")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateWikiAppRequestPage struct {
-	value *UpdateWikiAppRequestPage
-	isSet bool
-}
-
-func (v NullableUpdateWikiAppRequestPage) Get() *UpdateWikiAppRequestPage {
-	return v.value
-}
-
-func (v *NullableUpdateWikiAppRequestPage) Set(val *UpdateWikiAppRequestPage) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateWikiAppRequestPage) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateWikiAppRequestPage) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateWikiAppRequestPage(val *UpdateWikiAppRequestPage) *NullableUpdateWikiAppRequestPage {
-	return &NullableUpdateWikiAppRequestPage{value: val, isSet: true}
-}
-
-func (v NullableUpdateWikiAppRequestPage) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateWikiAppRequestPage) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

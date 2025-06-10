@@ -19,21 +19,48 @@ import (
 // very silly way of avoiding `"fmt" imported and not used` errors
 var _ fmt.Stringer
 
-
 // AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig struct for AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig
 type AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig struct {
-	AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf
+	AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf  *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf
 	AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1 *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1
 	AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2 *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2
 	AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3 *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3
-	MapmapOfStringAny *map[string]interface{}
+	MapmapOfStringAny                                               *map[string]interface{}
+}
+
+func (dst *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig{}
+	}
+
+	if out, ok := data.(AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf); ok {
+		dst.AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf = &out
+	}
+
+	if out, ok := data.(AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1); ok {
+		dst.AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1 = &out
+	}
+
+	if out, ok := data.(AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2); ok {
+		dst.AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2 = &out
+	}
+
+	if out, ok := data.(AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3); ok {
+		dst.AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3 = &out
+	}
+
+	if out, ok := data.(map[string]interface{}); ok {
+		dst.MapmapOfStringAny = &out
+	}
+
+	return dst, nil
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf
-	err = json.Unmarshal(data, &dst.AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf);
+	err = json.Unmarshal(data, &dst.AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf)
 	if err == nil {
 		jsonAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf, _ := json.Marshal(dst.AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf)
 		if string(jsonAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) == "{}" { // empty struct
@@ -46,7 +73,7 @@ func (dst *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig) UnmarshalJ
 	}
 
 	// try to unmarshal JSON data into AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1
-	err = json.Unmarshal(data, &dst.AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1);
+	err = json.Unmarshal(data, &dst.AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1)
 	if err == nil {
 		jsonAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1, _ := json.Marshal(dst.AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1)
 		if string(jsonAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) == "{}" { // empty struct
@@ -59,7 +86,7 @@ func (dst *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig) UnmarshalJ
 	}
 
 	// try to unmarshal JSON data into AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2
-	err = json.Unmarshal(data, &dst.AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2);
+	err = json.Unmarshal(data, &dst.AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2)
 	if err == nil {
 		jsonAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2, _ := json.Marshal(dst.AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2)
 		if string(jsonAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) == "{}" { // empty struct
@@ -72,7 +99,7 @@ func (dst *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig) UnmarshalJ
 	}
 
 	// try to unmarshal JSON data into AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3
-	err = json.Unmarshal(data, &dst.AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3);
+	err = json.Unmarshal(data, &dst.AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3)
 	if err == nil {
 		jsonAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3, _ := json.Marshal(dst.AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3)
 		if string(jsonAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) == "{}" { // empty struct
@@ -85,7 +112,7 @@ func (dst *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig) UnmarshalJ
 	}
 
 	// try to unmarshal JSON data into MapmapOfStringAny
-	err = json.Unmarshal(data, &dst.MapmapOfStringAny);
+	err = json.Unmarshal(data, &dst.MapmapOfStringAny)
 	if err == nil {
 		jsonMapmapOfStringAny, _ := json.Marshal(dst.MapmapOfStringAny)
 		if string(jsonMapmapOfStringAny) == "{}" { // empty struct
@@ -125,7 +152,6 @@ func (src AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig) MarshalJSON
 	return nil, nil // no data in anyOf schemas
 }
 
-
 type NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig struct {
 	value *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig
 	isSet bool
@@ -161,5 +187,3 @@ func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig) Unma
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

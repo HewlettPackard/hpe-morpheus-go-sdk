@@ -25,8 +25,8 @@ type UpdateBlueprintPermissionsRequestResourcePermission struct {
 	// Array of objects identifying groups with access
 	Sites []GetAlerts200ResponseAllOfChecksInnerAccount `json:"sites,omitempty"`
 	// User ID, can be used to change blueprint owner.
-	OwnerId *int64 `json:"ownerId,omitempty"`
-	AdditionalProperties map[string]interface{}
+	OwnerId              *int64                 `json:"ownerId,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UpdateBlueprintPermissionsRequestResourcePermission UpdateBlueprintPermissionsRequestResourcePermission
@@ -145,7 +145,7 @@ func (o *UpdateBlueprintPermissionsRequestResourcePermission) SetOwnerId(v int64
 }
 
 func (o UpdateBlueprintPermissionsRequestResourcePermission) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -170,64 +170,8 @@ func (o UpdateBlueprintPermissionsRequestResourcePermission) ToMap() (map[string
 
 	return toSerialize, nil
 }
-
 func (o *UpdateBlueprintPermissionsRequestResourcePermission) UnmarshalJSON(data []byte) (err error) {
-	varUpdateBlueprintPermissionsRequestResourcePermission := _UpdateBlueprintPermissionsRequestResourcePermission{}
-
-	err = json.Unmarshal(data, &varUpdateBlueprintPermissionsRequestResourcePermission)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateBlueprintPermissionsRequestResourcePermission(varUpdateBlueprintPermissionsRequestResourcePermission)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "all")
-		delete(additionalProperties, "sites")
-		delete(additionalProperties, "ownerId")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateBlueprintPermissionsRequestResourcePermission struct {
-	value *UpdateBlueprintPermissionsRequestResourcePermission
-	isSet bool
-}
-
-func (v NullableUpdateBlueprintPermissionsRequestResourcePermission) Get() *UpdateBlueprintPermissionsRequestResourcePermission {
-	return v.value
-}
-
-func (v *NullableUpdateBlueprintPermissionsRequestResourcePermission) Set(val *UpdateBlueprintPermissionsRequestResourcePermission) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateBlueprintPermissionsRequestResourcePermission) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateBlueprintPermissionsRequestResourcePermission) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateBlueprintPermissionsRequestResourcePermission(val *UpdateBlueprintPermissionsRequestResourcePermission) *NullableUpdateBlueprintPermissionsRequestResourcePermission {
-	return &NullableUpdateBlueprintPermissionsRequestResourcePermission{value: val, isSet: true}
-}
-
-func (v NullableUpdateBlueprintPermissionsRequestResourcePermission) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateBlueprintPermissionsRequestResourcePermission) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

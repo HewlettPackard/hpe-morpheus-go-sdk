@@ -23,8 +23,8 @@ type AddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissions struct {
 	// Set to true to grant access to all groups
 	All *bool `json:"all,omitempty"`
 	// Array of objects identifying groups with access
-	Sites []GetAlerts200ResponseAllOfChecksInnerAccount `json:"sites,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Sites                []GetAlerts200ResponseAllOfChecksInnerAccount `json:"sites,omitempty"`
+	AdditionalProperties map[string]interface{}                        `json:",remain"`
 }
 
 type _AddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissions AddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissions
@@ -111,7 +111,7 @@ func (o *AddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissions) SetSi
 }
 
 func (o AddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissions) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -133,63 +133,8 @@ func (o AddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissions) ToMap(
 
 	return toSerialize, nil
 }
-
 func (o *AddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissions) UnmarshalJSON(data []byte) (err error) {
-	varAddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissions := _AddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissions{}
-
-	err = json.Unmarshal(data, &varAddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissions)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissions(varAddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissions)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "all")
-		delete(additionalProperties, "sites")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissions struct {
-	value *AddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissions
-	isSet bool
-}
-
-func (v NullableAddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissions) Get() *AddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissions {
-	return v.value
-}
-
-func (v *NullableAddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissions) Set(val *AddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissions) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissions) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissions) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissions(val *AddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissions) *NullableAddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissions {
-	return &NullableAddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissions{value: val, isSet: true}
-}
-
-func (v NullableAddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissions) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissions) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

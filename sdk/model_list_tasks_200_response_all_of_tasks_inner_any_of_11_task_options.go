@@ -20,17 +20,17 @@ var _ MappedNullable = &ListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions{}
 
 // ListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions struct for ListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions
 type ListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions struct {
-	Port *string `json:"port,omitempty"`
-	Host *string `json:"host,omitempty"`
-	Username *string `json:"username,omitempty"`
-	PuppetEnvironment *string `json:"puppetEnvironment,omitempty"`
-	PuppetNodeName *string `json:"puppetNodeName,omitempty"`
-	SshKey *string `json:"sshKey,omitempty"`
-	LocalScriptGitId *string `json:"localScriptGitId,omitempty"`
-	LocalScriptGitRef *string `json:"localScriptGitRef,omitempty"`
-	Password *string `json:"password,omitempty"`
-	PasswordHash *string `json:"passwordHash,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Port                 *string                `json:"port,omitempty"`
+	Host                 *string                `json:"host,omitempty"`
+	Username             *string                `json:"username,omitempty"`
+	PuppetEnvironment    *string                `json:"puppetEnvironment,omitempty"`
+	PuppetNodeName       *string                `json:"puppetNodeName,omitempty"`
+	SshKey               *string                `json:"sshKey,omitempty"`
+	LocalScriptGitId     *string                `json:"localScriptGitId,omitempty"`
+	LocalScriptGitRef    *string                `json:"localScriptGitRef,omitempty"`
+	Password             *string                `json:"password,omitempty"`
+	PasswordHash         *string                `json:"passwordHash,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions ListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions
@@ -373,7 +373,7 @@ func (o *ListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions) SetPasswordHash(
 }
 
 func (o ListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -419,71 +419,8 @@ func (o ListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions) ToMap() (map[stri
 
 	return toSerialize, nil
 }
-
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions) UnmarshalJSON(data []byte) (err error) {
-	varListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions := _ListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions{}
-
-	err = json.Unmarshal(data, &varListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions(varListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "port")
-		delete(additionalProperties, "host")
-		delete(additionalProperties, "username")
-		delete(additionalProperties, "puppetEnvironment")
-		delete(additionalProperties, "puppetNodeName")
-		delete(additionalProperties, "sshKey")
-		delete(additionalProperties, "localScriptGitId")
-		delete(additionalProperties, "localScriptGitRef")
-		delete(additionalProperties, "password")
-		delete(additionalProperties, "passwordHash")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions struct {
-	value *ListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions
-	isSet bool
-}
-
-func (v NullableListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions) Get() *ListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions {
-	return v.value
-}
-
-func (v *NullableListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions) Set(val *ListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions(val *ListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions) *NullableListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions {
-	return &NullableListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions{value: val, isSet: true}
-}
-
-func (v NullableListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

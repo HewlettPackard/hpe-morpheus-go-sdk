@@ -20,16 +20,16 @@ var _ MappedNullable = &ListNetworkPoolServerTypes200ResponseAllOfNetworkPoolSer
 
 // ListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner struct for ListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner
 type ListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner struct {
-	Id *int64 `json:"id,omitempty"`
-	PoolService *string `json:"poolService,omitempty"`
-	Selectable *bool `json:"selectable,omitempty"`
-	Code *string `json:"code,omitempty"`
-	IntegrationCode *string `json:"integrationCode,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	Description *string `json:"description,omitempty"`
-	OptionTypes []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                      `json:"id,omitempty"`
+	PoolService          *string                                                                     `json:"poolService,omitempty"`
+	Selectable           *bool                                                                       `json:"selectable,omitempty"`
+	Code                 *string                                                                     `json:"code,omitempty"`
+	IntegrationCode      *string                                                                     `json:"integrationCode,omitempty"`
+	Name                 *string                                                                     `json:"name,omitempty"`
+	Enabled              *bool                                                                       `json:"enabled,omitempty"`
+	Description          *string                                                                     `json:"description,omitempty"`
+	OptionTypes          []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
+	AdditionalProperties map[string]interface{}                                                      `json:",remain"`
 }
 
 type _ListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner ListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner
@@ -340,7 +340,7 @@ func (o *ListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner) 
 }
 
 func (o ListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -383,70 +383,8 @@ func (o ListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner) T
 
 	return toSerialize, nil
 }
-
 func (o *ListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner) UnmarshalJSON(data []byte) (err error) {
-	varListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner := _ListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner{}
-
-	err = json.Unmarshal(data, &varListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner(varListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "poolService")
-		delete(additionalProperties, "selectable")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "integrationCode")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "optionTypes")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner struct {
-	value *ListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner
-	isSet bool
-}
-
-func (v NullableListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner) Get() *ListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner {
-	return v.value
-}
-
-func (v *NullableListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner) Set(val *ListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner(val *ListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner) *NullableListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner {
-	return &NullableListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner{value: val, isSet: true}
-}
-
-func (v NullableListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListNetworkPoolServerTypes200ResponseAllOfNetworkPoolServerTypesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

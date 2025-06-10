@@ -20,8 +20,8 @@ var _ MappedNullable = &CreateNetworkTransportZoneRequest{}
 
 // CreateNetworkTransportZoneRequest The parameters for creating a network transport zone is type dependent. The following lists the common parameters. See get a specific type to list available options for the network server type.
 type CreateNetworkTransportZoneRequest struct {
-	NetworkScope *CreateNetworkTransportZoneRequestNetworkScope `json:"networkScope,omitempty"`
-	AdditionalProperties map[string]interface{}
+	NetworkScope         *CreateNetworkTransportZoneRequestNetworkScope `json:"networkScope,omitempty"`
+	AdditionalProperties map[string]interface{}                         `json:",remain"`
 }
 
 type _CreateNetworkTransportZoneRequest CreateNetworkTransportZoneRequest
@@ -76,7 +76,7 @@ func (o *CreateNetworkTransportZoneRequest) SetNetworkScope(v CreateNetworkTrans
 }
 
 func (o CreateNetworkTransportZoneRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o CreateNetworkTransportZoneRequest) ToMap() (map[string]interface{}, erro
 
 	return toSerialize, nil
 }
-
 func (o *CreateNetworkTransportZoneRequest) UnmarshalJSON(data []byte) (err error) {
-	varCreateNetworkTransportZoneRequest := _CreateNetworkTransportZoneRequest{}
-
-	err = json.Unmarshal(data, &varCreateNetworkTransportZoneRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CreateNetworkTransportZoneRequest(varCreateNetworkTransportZoneRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "networkScope")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCreateNetworkTransportZoneRequest struct {
-	value *CreateNetworkTransportZoneRequest
-	isSet bool
-}
-
-func (v NullableCreateNetworkTransportZoneRequest) Get() *CreateNetworkTransportZoneRequest {
-	return v.value
-}
-
-func (v *NullableCreateNetworkTransportZoneRequest) Set(val *CreateNetworkTransportZoneRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCreateNetworkTransportZoneRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCreateNetworkTransportZoneRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCreateNetworkTransportZoneRequest(val *CreateNetworkTransportZoneRequest) *NullableCreateNetworkTransportZoneRequest {
-	return &NullableCreateNetworkTransportZoneRequest{value: val, isSet: true}
-}
-
-func (v NullableCreateNetworkTransportZoneRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCreateNetworkTransportZoneRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

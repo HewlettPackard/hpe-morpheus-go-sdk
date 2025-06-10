@@ -20,18 +20,18 @@ var _ MappedNullable = &CreateNetworkProxy200ResponseNetworkProxy{}
 
 // CreateNetworkProxy200ResponseNetworkProxy struct for CreateNetworkProxy200ResponseNetworkProxy
 type CreateNetworkProxy200ResponseNetworkProxy struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	ProxyHost *string `json:"proxyHost,omitempty"`
-	ProxyPort *int64 `json:"proxyPort,omitempty"`
-	ProxyUser *string `json:"proxyUser,omitempty"`
-	ProxyPassword *string `json:"proxyPassword,omitempty"`
-	ProxyDomain *string `json:"proxyDomain,omitempty"`
-	ProxyWorkstation *string `json:"proxyWorkstation,omitempty"`
-	Visibility *string `json:"visibility,omitempty"`
-	Account *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
-	Owner *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"owner,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                  `json:"id,omitempty"`
+	Name                 *string                                                                 `json:"name,omitempty"`
+	ProxyHost            *string                                                                 `json:"proxyHost,omitempty"`
+	ProxyPort            *int64                                                                  `json:"proxyPort,omitempty"`
+	ProxyUser            *string                                                                 `json:"proxyUser,omitempty"`
+	ProxyPassword        *string                                                                 `json:"proxyPassword,omitempty"`
+	ProxyDomain          *string                                                                 `json:"proxyDomain,omitempty"`
+	ProxyWorkstation     *string                                                                 `json:"proxyWorkstation,omitempty"`
+	Visibility           *string                                                                 `json:"visibility,omitempty"`
+	Account              *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
+	Owner                *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"owner,omitempty"`
+	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
 }
 
 type _CreateNetworkProxy200ResponseNetworkProxy CreateNetworkProxy200ResponseNetworkProxy
@@ -406,7 +406,7 @@ func (o *CreateNetworkProxy200ResponseNetworkProxy) SetOwner(v ListApplianceSett
 }
 
 func (o CreateNetworkProxy200ResponseNetworkProxy) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -455,72 +455,8 @@ func (o CreateNetworkProxy200ResponseNetworkProxy) ToMap() (map[string]interface
 
 	return toSerialize, nil
 }
-
 func (o *CreateNetworkProxy200ResponseNetworkProxy) UnmarshalJSON(data []byte) (err error) {
-	varCreateNetworkProxy200ResponseNetworkProxy := _CreateNetworkProxy200ResponseNetworkProxy{}
-
-	err = json.Unmarshal(data, &varCreateNetworkProxy200ResponseNetworkProxy)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CreateNetworkProxy200ResponseNetworkProxy(varCreateNetworkProxy200ResponseNetworkProxy)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "proxyHost")
-		delete(additionalProperties, "proxyPort")
-		delete(additionalProperties, "proxyUser")
-		delete(additionalProperties, "proxyPassword")
-		delete(additionalProperties, "proxyDomain")
-		delete(additionalProperties, "proxyWorkstation")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "owner")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCreateNetworkProxy200ResponseNetworkProxy struct {
-	value *CreateNetworkProxy200ResponseNetworkProxy
-	isSet bool
-}
-
-func (v NullableCreateNetworkProxy200ResponseNetworkProxy) Get() *CreateNetworkProxy200ResponseNetworkProxy {
-	return v.value
-}
-
-func (v *NullableCreateNetworkProxy200ResponseNetworkProxy) Set(val *CreateNetworkProxy200ResponseNetworkProxy) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCreateNetworkProxy200ResponseNetworkProxy) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCreateNetworkProxy200ResponseNetworkProxy) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCreateNetworkProxy200ResponseNetworkProxy(val *CreateNetworkProxy200ResponseNetworkProxy) *NullableCreateNetworkProxy200ResponseNetworkProxy {
-	return &NullableCreateNetworkProxy200ResponseNetworkProxy{value: val, isSet: true}
-}
-
-func (v NullableCreateNetworkProxy200ResponseNetworkProxy) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCreateNetworkProxy200ResponseNetworkProxy) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

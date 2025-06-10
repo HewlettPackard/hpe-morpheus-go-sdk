@@ -20,8 +20,8 @@ var _ MappedNullable = &GetProvisionTypes200Response{}
 
 // GetProvisionTypes200Response struct for GetProvisionTypes200Response
 type GetProvisionTypes200Response struct {
-	ProvisionType *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionType `json:"provisionType,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ProvisionType        *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionType `json:"provisionType,omitempty"`
+	AdditionalProperties map[string]interface{}                                                                        `json:",remain"`
 }
 
 type _GetProvisionTypes200Response GetProvisionTypes200Response
@@ -76,7 +76,7 @@ func (o *GetProvisionTypes200Response) SetProvisionType(v GetInstanceTypeProvisi
 }
 
 func (o GetProvisionTypes200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o GetProvisionTypes200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *GetProvisionTypes200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetProvisionTypes200Response := _GetProvisionTypes200Response{}
-
-	err = json.Unmarshal(data, &varGetProvisionTypes200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetProvisionTypes200Response(varGetProvisionTypes200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "provisionType")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetProvisionTypes200Response struct {
-	value *GetProvisionTypes200Response
-	isSet bool
-}
-
-func (v NullableGetProvisionTypes200Response) Get() *GetProvisionTypes200Response {
-	return v.value
-}
-
-func (v *NullableGetProvisionTypes200Response) Set(val *GetProvisionTypes200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetProvisionTypes200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetProvisionTypes200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetProvisionTypes200Response(val *GetProvisionTypes200Response) *NullableGetProvisionTypes200Response {
-	return &NullableGetProvisionTypes200Response{value: val, isSet: true}
-}
-
-func (v NullableGetProvisionTypes200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetProvisionTypes200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

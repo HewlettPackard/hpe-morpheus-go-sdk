@@ -21,8 +21,8 @@ var _ MappedNullable = &SaveClusterDatastoreRequestDatastoreConfigAnyOf1{}
 // SaveClusterDatastoreRequestDatastoreConfigAnyOf1 struct for SaveClusterDatastoreRequestDatastoreConfigAnyOf1
 type SaveClusterDatastoreRequestDatastoreConfigAnyOf1 struct {
 	// Block device for target GFS2.
-	BlockDevice *string `json:"blockDevice,omitempty"`
-	AdditionalProperties map[string]interface{}
+	BlockDevice          *string                `json:"blockDevice,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _SaveClusterDatastoreRequestDatastoreConfigAnyOf1 SaveClusterDatastoreRequestDatastoreConfigAnyOf1
@@ -77,7 +77,7 @@ func (o *SaveClusterDatastoreRequestDatastoreConfigAnyOf1) SetBlockDevice(v stri
 }
 
 func (o SaveClusterDatastoreRequestDatastoreConfigAnyOf1) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -96,62 +96,8 @@ func (o SaveClusterDatastoreRequestDatastoreConfigAnyOf1) ToMap() (map[string]in
 
 	return toSerialize, nil
 }
-
 func (o *SaveClusterDatastoreRequestDatastoreConfigAnyOf1) UnmarshalJSON(data []byte) (err error) {
-	varSaveClusterDatastoreRequestDatastoreConfigAnyOf1 := _SaveClusterDatastoreRequestDatastoreConfigAnyOf1{}
-
-	err = json.Unmarshal(data, &varSaveClusterDatastoreRequestDatastoreConfigAnyOf1)
-
-	if err != nil {
-		return err
-	}
-
-	*o = SaveClusterDatastoreRequestDatastoreConfigAnyOf1(varSaveClusterDatastoreRequestDatastoreConfigAnyOf1)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "blockDevice")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableSaveClusterDatastoreRequestDatastoreConfigAnyOf1 struct {
-	value *SaveClusterDatastoreRequestDatastoreConfigAnyOf1
-	isSet bool
-}
-
-func (v NullableSaveClusterDatastoreRequestDatastoreConfigAnyOf1) Get() *SaveClusterDatastoreRequestDatastoreConfigAnyOf1 {
-	return v.value
-}
-
-func (v *NullableSaveClusterDatastoreRequestDatastoreConfigAnyOf1) Set(val *SaveClusterDatastoreRequestDatastoreConfigAnyOf1) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSaveClusterDatastoreRequestDatastoreConfigAnyOf1) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSaveClusterDatastoreRequestDatastoreConfigAnyOf1) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSaveClusterDatastoreRequestDatastoreConfigAnyOf1(val *SaveClusterDatastoreRequestDatastoreConfigAnyOf1) *NullableSaveClusterDatastoreRequestDatastoreConfigAnyOf1 {
-	return &NullableSaveClusterDatastoreRequestDatastoreConfigAnyOf1{value: val, isSet: true}
-}
-
-func (v NullableSaveClusterDatastoreRequestDatastoreConfigAnyOf1) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSaveClusterDatastoreRequestDatastoreConfigAnyOf1) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

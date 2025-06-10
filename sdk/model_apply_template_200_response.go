@@ -20,9 +20,9 @@ var _ MappedNullable = &ApplyTemplate200Response{}
 
 // ApplyTemplate200Response struct for ApplyTemplate200Response
 type ApplyTemplate200Response struct {
-	Success *bool `json:"success,omitempty"`
-	ExecutionId *string `json:"executionId,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Success              *bool                  `json:"success,omitempty"`
+	ExecutionId          *string                `json:"executionId,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ApplyTemplate200Response ApplyTemplate200Response
@@ -109,7 +109,7 @@ func (o *ApplyTemplate200Response) SetExecutionId(v string) {
 }
 
 func (o ApplyTemplate200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o ApplyTemplate200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ApplyTemplate200Response) UnmarshalJSON(data []byte) (err error) {
-	varApplyTemplate200Response := _ApplyTemplate200Response{}
-
-	err = json.Unmarshal(data, &varApplyTemplate200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ApplyTemplate200Response(varApplyTemplate200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "success")
-		delete(additionalProperties, "executionId")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableApplyTemplate200Response struct {
-	value *ApplyTemplate200Response
-	isSet bool
-}
-
-func (v NullableApplyTemplate200Response) Get() *ApplyTemplate200Response {
-	return v.value
-}
-
-func (v *NullableApplyTemplate200Response) Set(val *ApplyTemplate200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableApplyTemplate200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableApplyTemplate200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableApplyTemplate200Response(val *ApplyTemplate200Response) *NullableApplyTemplate200Response {
-	return &NullableApplyTemplate200Response{value: val, isSet: true}
-}
-
-func (v NullableApplyTemplate200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableApplyTemplate200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

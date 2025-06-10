@@ -18,11 +18,11 @@ import (
 // checks if the ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner{}
 
-// ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner The account that owns the email template is associated with. This is set by morpheus. 
+// ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner The account that owns the email template is associated with. This is set by morpheus.
 type ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner
@@ -109,7 +109,7 @@ func (o *ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner) SetName(v s
 }
 
 func (o ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner) ToMap() (map
 
 	return toSerialize, nil
 }
-
 func (o *ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner) UnmarshalJSON(data []byte) (err error) {
-	varListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner := _ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner{}
-
-	err = json.Unmarshal(data, &varListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner(varListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner struct {
-	value *ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner
-	isSet bool
-}
-
-func (v NullableListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner) Get() *ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner {
-	return v.value
-}
-
-func (v *NullableListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner) Set(val *ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner(val *ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner) *NullableListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner {
-	return &NullableListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner{value: val, isSet: true}
-}
-
-func (v NullableListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -25,8 +25,8 @@ type UserSourceCreateOkta struct {
 	// Administrator API Token
 	AdministratorAPIToken *string `json:"administratorAPIToken,omitempty"`
 	// Required Group
-	RequiredGroup *string `json:"requiredGroup,omitempty"`
-	AdditionalProperties map[string]interface{}
+	RequiredGroup        *string                `json:"requiredGroup,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UserSourceCreateOkta UserSourceCreateOkta
@@ -145,7 +145,7 @@ func (o *UserSourceCreateOkta) SetRequiredGroup(v string) {
 }
 
 func (o UserSourceCreateOkta) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -170,64 +170,8 @@ func (o UserSourceCreateOkta) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *UserSourceCreateOkta) UnmarshalJSON(data []byte) (err error) {
-	varUserSourceCreateOkta := _UserSourceCreateOkta{}
-
-	err = json.Unmarshal(data, &varUserSourceCreateOkta)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UserSourceCreateOkta(varUserSourceCreateOkta)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "administratorAPIToken")
-		delete(additionalProperties, "requiredGroup")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUserSourceCreateOkta struct {
-	value *UserSourceCreateOkta
-	isSet bool
-}
-
-func (v NullableUserSourceCreateOkta) Get() *UserSourceCreateOkta {
-	return v.value
-}
-
-func (v *NullableUserSourceCreateOkta) Set(val *UserSourceCreateOkta) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUserSourceCreateOkta) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUserSourceCreateOkta) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUserSourceCreateOkta(val *UserSourceCreateOkta) *NullableUserSourceCreateOkta {
-	return &NullableUserSourceCreateOkta{value: val, isSet: true}
-}
-
-func (v NullableUserSourceCreateOkta) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUserSourceCreateOkta) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

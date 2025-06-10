@@ -21,7 +21,7 @@ var _ MappedNullable = &GetInstanceThreshold200ResponseInstanceSchedulesInner{}
 
 // GetInstanceThreshold200ResponseInstanceSchedulesInner struct for GetInstanceThreshold200ResponseInstanceSchedulesInner
 type GetInstanceThreshold200ResponseInstanceSchedulesInner struct {
-	Id *int64 `json:"id,omitempty"`
+	Id           *int64  `json:"id,omitempty"`
 	ScheduleType *string `json:"scheduleType,omitempty"`
 	// Time Zone eg. America/New_York, Europe/Amsterdam, etc. Only used and required for scheduleType `dayOfWeek`
 	ScheduleTimezone *string `json:"scheduleTimezone,omitempty"`
@@ -40,11 +40,11 @@ type GetInstanceThreshold200ResponseInstanceSchedulesInner struct {
 	// Start day and time or start date formatted for display
 	StartDisplay *string `json:"startDisplay,omitempty"`
 	// End day and time or end date formatted for display
-	EndDisplay *string `json:"endDisplay,omitempty"`
-	Threshold *GetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold `json:"threshold,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}
+	EndDisplay           *string                                                         `json:"endDisplay,omitempty"`
+	Threshold            *GetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold `json:"threshold,omitempty"`
+	DateCreated          *time.Time                                                      `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                      `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}                                          `json:",remain"`
 }
 
 type _GetInstanceThreshold200ResponseInstanceSchedulesInner GetInstanceThreshold200ResponseInstanceSchedulesInner
@@ -523,7 +523,7 @@ func (o *GetInstanceThreshold200ResponseInstanceSchedulesInner) SetLastUpdated(v
 }
 
 func (o GetInstanceThreshold200ResponseInstanceSchedulesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -581,75 +581,8 @@ func (o GetInstanceThreshold200ResponseInstanceSchedulesInner) ToMap() (map[stri
 
 	return toSerialize, nil
 }
-
 func (o *GetInstanceThreshold200ResponseInstanceSchedulesInner) UnmarshalJSON(data []byte) (err error) {
-	varGetInstanceThreshold200ResponseInstanceSchedulesInner := _GetInstanceThreshold200ResponseInstanceSchedulesInner{}
-
-	err = json.Unmarshal(data, &varGetInstanceThreshold200ResponseInstanceSchedulesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetInstanceThreshold200ResponseInstanceSchedulesInner(varGetInstanceThreshold200ResponseInstanceSchedulesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "scheduleType")
-		delete(additionalProperties, "scheduleTimezone")
-		delete(additionalProperties, "startDayOfWeek")
-		delete(additionalProperties, "startTime")
-		delete(additionalProperties, "endDayOfWeek")
-		delete(additionalProperties, "endTime")
-		delete(additionalProperties, "startDate")
-		delete(additionalProperties, "endDate")
-		delete(additionalProperties, "startDisplay")
-		delete(additionalProperties, "endDisplay")
-		delete(additionalProperties, "threshold")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetInstanceThreshold200ResponseInstanceSchedulesInner struct {
-	value *GetInstanceThreshold200ResponseInstanceSchedulesInner
-	isSet bool
-}
-
-func (v NullableGetInstanceThreshold200ResponseInstanceSchedulesInner) Get() *GetInstanceThreshold200ResponseInstanceSchedulesInner {
-	return v.value
-}
-
-func (v *NullableGetInstanceThreshold200ResponseInstanceSchedulesInner) Set(val *GetInstanceThreshold200ResponseInstanceSchedulesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetInstanceThreshold200ResponseInstanceSchedulesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetInstanceThreshold200ResponseInstanceSchedulesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetInstanceThreshold200ResponseInstanceSchedulesInner(val *GetInstanceThreshold200ResponseInstanceSchedulesInner) *NullableGetInstanceThreshold200ResponseInstanceSchedulesInner {
-	return &NullableGetInstanceThreshold200ResponseInstanceSchedulesInner{value: val, isSet: true}
-}
-
-func (v NullableGetInstanceThreshold200ResponseInstanceSchedulesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetInstanceThreshold200ResponseInstanceSchedulesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -23,8 +23,8 @@ type ListNetworks200ResponseAllOfNetworksInnerZone struct {
 	// Cloud ID
 	Id *int64 `json:"id,omitempty"`
 	// Cloud Name
-	Name *string `json:"name,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Name                 *string                `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListNetworks200ResponseAllOfNetworksInnerZone ListNetworks200ResponseAllOfNetworksInnerZone
@@ -111,7 +111,7 @@ func (o *ListNetworks200ResponseAllOfNetworksInnerZone) SetName(v string) {
 }
 
 func (o ListNetworks200ResponseAllOfNetworksInnerZone) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -133,63 +133,8 @@ func (o ListNetworks200ResponseAllOfNetworksInnerZone) ToMap() (map[string]inter
 
 	return toSerialize, nil
 }
-
 func (o *ListNetworks200ResponseAllOfNetworksInnerZone) UnmarshalJSON(data []byte) (err error) {
-	varListNetworks200ResponseAllOfNetworksInnerZone := _ListNetworks200ResponseAllOfNetworksInnerZone{}
-
-	err = json.Unmarshal(data, &varListNetworks200ResponseAllOfNetworksInnerZone)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListNetworks200ResponseAllOfNetworksInnerZone(varListNetworks200ResponseAllOfNetworksInnerZone)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListNetworks200ResponseAllOfNetworksInnerZone struct {
-	value *ListNetworks200ResponseAllOfNetworksInnerZone
-	isSet bool
-}
-
-func (v NullableListNetworks200ResponseAllOfNetworksInnerZone) Get() *ListNetworks200ResponseAllOfNetworksInnerZone {
-	return v.value
-}
-
-func (v *NullableListNetworks200ResponseAllOfNetworksInnerZone) Set(val *ListNetworks200ResponseAllOfNetworksInnerZone) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListNetworks200ResponseAllOfNetworksInnerZone) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListNetworks200ResponseAllOfNetworksInnerZone) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListNetworks200ResponseAllOfNetworksInnerZone(val *ListNetworks200ResponseAllOfNetworksInnerZone) *NullableListNetworks200ResponseAllOfNetworksInnerZone {
-	return &NullableListNetworks200ResponseAllOfNetworksInnerZone{value: val, isSet: true}
-}
-
-func (v NullableListNetworks200ResponseAllOfNetworksInnerZone) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListNetworks200ResponseAllOfNetworksInnerZone) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -25,8 +25,8 @@ type AddPowerScheduleInstances200Response struct {
 	// Message containing a description of the result, usually a message about the error that occurred
 	Msg *string `json:"msg,omitempty"`
 	// Validation errors, with a key for Object containing error messages for each invalid parameter (key)
-	Errors map[string]interface{} `json:"errors,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Errors               map[string]interface{} `json:"errors,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddPowerScheduleInstances200Response AddPowerScheduleInstances200Response
@@ -149,7 +149,7 @@ func (o *AddPowerScheduleInstances200Response) SetErrors(v map[string]interface{
 }
 
 func (o AddPowerScheduleInstances200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -174,64 +174,8 @@ func (o AddPowerScheduleInstances200Response) ToMap() (map[string]interface{}, e
 
 	return toSerialize, nil
 }
-
 func (o *AddPowerScheduleInstances200Response) UnmarshalJSON(data []byte) (err error) {
-	varAddPowerScheduleInstances200Response := _AddPowerScheduleInstances200Response{}
-
-	err = json.Unmarshal(data, &varAddPowerScheduleInstances200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddPowerScheduleInstances200Response(varAddPowerScheduleInstances200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "success")
-		delete(additionalProperties, "msg")
-		delete(additionalProperties, "errors")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddPowerScheduleInstances200Response struct {
-	value *AddPowerScheduleInstances200Response
-	isSet bool
-}
-
-func (v NullableAddPowerScheduleInstances200Response) Get() *AddPowerScheduleInstances200Response {
-	return v.value
-}
-
-func (v *NullableAddPowerScheduleInstances200Response) Set(val *AddPowerScheduleInstances200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddPowerScheduleInstances200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddPowerScheduleInstances200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddPowerScheduleInstances200Response(val *AddPowerScheduleInstances200Response) *NullableAddPowerScheduleInstances200Response {
-	return &NullableAddPowerScheduleInstances200Response{value: val, isSet: true}
-}
-
-func (v NullableAddPowerScheduleInstances200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddPowerScheduleInstances200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

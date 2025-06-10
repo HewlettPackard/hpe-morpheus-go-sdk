@@ -22,13 +22,12 @@ import (
 	"time"
 )
 
-
 // ChecksAPIService ChecksAPI service
 type ChecksAPIService service
 
 type ApiAddCheckAppsRequest struct {
-	ctx context.Context
-	ApiService *ChecksAPIService
+	ctx                 context.Context
+	ApiService          *ChecksAPIService
 	addCheckAppsRequest *AddCheckAppsRequest
 }
 
@@ -46,24 +45,25 @@ AddCheckApps Create a New Check App
 
 Create a new check app.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddCheckAppsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddCheckAppsRequest
 */
 func (a *ChecksAPIService) AddCheckApps(ctx context.Context) ApiAddCheckAppsRequest {
 	return ApiAddCheckAppsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddCheckApps200Response
+//
+//	@return AddCheckApps200Response
 func (a *ChecksAPIService) AddCheckAppsExecute(r ApiAddCheckAppsRequest) (*AddCheckApps200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddCheckApps200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddCheckApps200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChecksAPIService.AddCheckApps")
@@ -115,7 +115,7 @@ func (a *ChecksAPIService) AddCheckAppsExecute(r ApiAddCheckAppsRequest) (*AddCh
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -124,8 +124,8 @@ func (a *ChecksAPIService) AddCheckAppsExecute(r ApiAddCheckAppsRequest) (*AddCh
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -135,8 +135,8 @@ func (a *ChecksAPIService) AddCheckAppsExecute(r ApiAddCheckAppsRequest) (*AddCh
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -144,8 +144,8 @@ func (a *ChecksAPIService) AddCheckAppsExecute(r ApiAddCheckAppsRequest) (*AddCh
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -154,8 +154,8 @@ func (a *ChecksAPIService) AddCheckAppsExecute(r ApiAddCheckAppsRequest) (*AddCh
 }
 
 type ApiAddCheckGroupsRequest struct {
-	ctx context.Context
-	ApiService *ChecksAPIService
+	ctx                   context.Context
+	ApiService            *ChecksAPIService
 	addCheckGroupsRequest *AddCheckGroupsRequest
 }
 
@@ -173,24 +173,25 @@ AddCheckGroups Create a New Check Group
 
 Create a new check group.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddCheckGroupsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddCheckGroupsRequest
 */
 func (a *ChecksAPIService) AddCheckGroups(ctx context.Context) ApiAddCheckGroupsRequest {
 	return ApiAddCheckGroupsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddCheckGroups200Response
+//
+//	@return AddCheckGroups200Response
 func (a *ChecksAPIService) AddCheckGroupsExecute(r ApiAddCheckGroupsRequest) (*AddCheckGroups200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddCheckGroups200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddCheckGroups200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChecksAPIService.AddCheckGroups")
@@ -242,7 +243,7 @@ func (a *ChecksAPIService) AddCheckGroupsExecute(r ApiAddCheckGroupsRequest) (*A
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -251,8 +252,8 @@ func (a *ChecksAPIService) AddCheckGroupsExecute(r ApiAddCheckGroupsRequest) (*A
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -262,8 +263,8 @@ func (a *ChecksAPIService) AddCheckGroupsExecute(r ApiAddCheckGroupsRequest) (*A
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -271,8 +272,8 @@ func (a *ChecksAPIService) AddCheckGroupsExecute(r ApiAddCheckGroupsRequest) (*A
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -281,8 +282,8 @@ func (a *ChecksAPIService) AddCheckGroupsExecute(r ApiAddCheckGroupsRequest) (*A
 }
 
 type ApiAddChecksRequest struct {
-	ctx context.Context
-	ApiService *ChecksAPIService
+	ctx              context.Context
+	ApiService       *ChecksAPIService
 	addChecksRequest *AddChecksRequest
 }
 
@@ -304,25 +305,25 @@ SSH tunneling options allow the different check types to tunnel to a host via a 
 
 To enable SSH tunneling for a check, add `tunnelOn`, `sshHost`, `sshUser`, and optionally, `sshPort` and `sshPassword` parameters to any check type config as seen earlier in the Check Types section.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddChecksRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddChecksRequest
 */
 func (a *ChecksAPIService) AddChecks(ctx context.Context) ApiAddChecksRequest {
 	return ApiAddChecksRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddChecks200Response
+//
+//	@return AddChecks200Response
 func (a *ChecksAPIService) AddChecksExecute(r ApiAddChecksRequest) (*AddChecks200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddChecks200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddChecks200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChecksAPIService.AddChecks")
@@ -374,7 +375,7 @@ func (a *ChecksAPIService) AddChecksExecute(r ApiAddChecksRequest) (*AddChecks20
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -383,8 +384,8 @@ func (a *ChecksAPIService) AddChecksExecute(r ApiAddChecksRequest) (*AddChecks20
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -394,8 +395,8 @@ func (a *ChecksAPIService) AddChecksExecute(r ApiAddChecksRequest) (*AddChecks20
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -403,8 +404,8 @@ func (a *ChecksAPIService) AddChecksExecute(r ApiAddChecksRequest) (*AddChecks20
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -413,9 +414,9 @@ func (a *ChecksAPIService) AddChecksExecute(r ApiAddChecksRequest) (*AddChecks20
 }
 
 type ApiDeleteCheckAppsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ChecksAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiDeleteCheckAppsRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -427,26 +428,27 @@ DeleteCheckApps Delete a Specific Check App
 
 Delete an existing monitoring check app.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiDeleteCheckAppsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeleteCheckAppsRequest
 */
 func (a *ChecksAPIService) DeleteCheckApps(ctx context.Context, id int64) ApiDeleteCheckAppsRequest {
 	return ApiDeleteCheckAppsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *ChecksAPIService) DeleteCheckAppsExecute(r ApiDeleteCheckAppsRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChecksAPIService.DeleteCheckApps")
@@ -497,7 +499,7 @@ func (a *ChecksAPIService) DeleteCheckAppsExecute(r ApiDeleteCheckAppsRequest) (
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -506,8 +508,8 @@ func (a *ChecksAPIService) DeleteCheckAppsExecute(r ApiDeleteCheckAppsRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -517,8 +519,8 @@ func (a *ChecksAPIService) DeleteCheckAppsExecute(r ApiDeleteCheckAppsRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -526,8 +528,8 @@ func (a *ChecksAPIService) DeleteCheckAppsExecute(r ApiDeleteCheckAppsRequest) (
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -536,9 +538,9 @@ func (a *ChecksAPIService) DeleteCheckAppsExecute(r ApiDeleteCheckAppsRequest) (
 }
 
 type ApiDeleteCheckGroupsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ChecksAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiDeleteCheckGroupsRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -550,26 +552,27 @@ DeleteCheckGroups Delete a Specific Check Group
 
 Delete an existing monitoring check group.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiDeleteCheckGroupsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeleteCheckGroupsRequest
 */
 func (a *ChecksAPIService) DeleteCheckGroups(ctx context.Context, id int64) ApiDeleteCheckGroupsRequest {
 	return ApiDeleteCheckGroupsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *ChecksAPIService) DeleteCheckGroupsExecute(r ApiDeleteCheckGroupsRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChecksAPIService.DeleteCheckGroups")
@@ -620,7 +623,7 @@ func (a *ChecksAPIService) DeleteCheckGroupsExecute(r ApiDeleteCheckGroupsReques
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -629,8 +632,8 @@ func (a *ChecksAPIService) DeleteCheckGroupsExecute(r ApiDeleteCheckGroupsReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -640,8 +643,8 @@ func (a *ChecksAPIService) DeleteCheckGroupsExecute(r ApiDeleteCheckGroupsReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -649,8 +652,8 @@ func (a *ChecksAPIService) DeleteCheckGroupsExecute(r ApiDeleteCheckGroupsReques
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -659,9 +662,9 @@ func (a *ChecksAPIService) DeleteCheckGroupsExecute(r ApiDeleteCheckGroupsReques
 }
 
 type ApiDeleteChecksRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ChecksAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiDeleteChecksRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -673,26 +676,27 @@ DeleteChecks Delete a Specific Check
 
 Delete an existing monitoring check.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiDeleteChecksRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeleteChecksRequest
 */
 func (a *ChecksAPIService) DeleteChecks(ctx context.Context, id int64) ApiDeleteChecksRequest {
 	return ApiDeleteChecksRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *ChecksAPIService) DeleteChecksExecute(r ApiDeleteChecksRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChecksAPIService.DeleteChecks")
@@ -743,7 +747,7 @@ func (a *ChecksAPIService) DeleteChecksExecute(r ApiDeleteChecksRequest) (*Delet
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -752,8 +756,8 @@ func (a *ChecksAPIService) DeleteChecksExecute(r ApiDeleteChecksRequest) (*Delet
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -763,8 +767,8 @@ func (a *ChecksAPIService) DeleteChecksExecute(r ApiDeleteChecksRequest) (*Delet
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -772,8 +776,8 @@ func (a *ChecksAPIService) DeleteChecksExecute(r ApiDeleteChecksRequest) (*Delet
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -782,9 +786,9 @@ func (a *ChecksAPIService) DeleteChecksExecute(r ApiDeleteChecksRequest) (*Delet
 }
 
 type ApiGetCheckAppsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ChecksAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetCheckAppsRequest) Execute() (*GetCheckApps200Response, *http.Response, error) {
@@ -796,26 +800,27 @@ GetCheckApps Get a Specific Check App
 
 Get details about a specific monitoring check app.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetCheckAppsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetCheckAppsRequest
 */
 func (a *ChecksAPIService) GetCheckApps(ctx context.Context, id int64) ApiGetCheckAppsRequest {
 	return ApiGetCheckAppsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetCheckApps200Response
+//
+//	@return GetCheckApps200Response
 func (a *ChecksAPIService) GetCheckAppsExecute(r ApiGetCheckAppsRequest) (*GetCheckApps200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetCheckApps200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetCheckApps200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChecksAPIService.GetCheckApps")
@@ -866,7 +871,7 @@ func (a *ChecksAPIService) GetCheckAppsExecute(r ApiGetCheckAppsRequest) (*GetCh
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -875,8 +880,8 @@ func (a *ChecksAPIService) GetCheckAppsExecute(r ApiGetCheckAppsRequest) (*GetCh
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -886,8 +891,8 @@ func (a *ChecksAPIService) GetCheckAppsExecute(r ApiGetCheckAppsRequest) (*GetCh
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -895,8 +900,8 @@ func (a *ChecksAPIService) GetCheckAppsExecute(r ApiGetCheckAppsRequest) (*GetCh
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -905,9 +910,9 @@ func (a *ChecksAPIService) GetCheckAppsExecute(r ApiGetCheckAppsRequest) (*GetCh
 }
 
 type ApiGetCheckGroupsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ChecksAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetCheckGroupsRequest) Execute() (*GetCheckGroups200Response, *http.Response, error) {
@@ -919,26 +924,27 @@ GetCheckGroups Get a Specific Check Group
 
 Get details about a specific monitoring check group.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetCheckGroupsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetCheckGroupsRequest
 */
 func (a *ChecksAPIService) GetCheckGroups(ctx context.Context, id int64) ApiGetCheckGroupsRequest {
 	return ApiGetCheckGroupsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetCheckGroups200Response
+//
+//	@return GetCheckGroups200Response
 func (a *ChecksAPIService) GetCheckGroupsExecute(r ApiGetCheckGroupsRequest) (*GetCheckGroups200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetCheckGroups200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetCheckGroups200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChecksAPIService.GetCheckGroups")
@@ -989,7 +995,7 @@ func (a *ChecksAPIService) GetCheckGroupsExecute(r ApiGetCheckGroupsRequest) (*G
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -998,8 +1004,8 @@ func (a *ChecksAPIService) GetCheckGroupsExecute(r ApiGetCheckGroupsRequest) (*G
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1009,8 +1015,8 @@ func (a *ChecksAPIService) GetCheckGroupsExecute(r ApiGetCheckGroupsRequest) (*G
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1018,8 +1024,8 @@ func (a *ChecksAPIService) GetCheckGroupsExecute(r ApiGetCheckGroupsRequest) (*G
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1028,9 +1034,9 @@ func (a *ChecksAPIService) GetCheckGroupsExecute(r ApiGetCheckGroupsRequest) (*G
 }
 
 type ApiGetCheckTypesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ChecksAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetCheckTypesRequest) Execute() (*GetCheckTypes200Response, *http.Response, error) {
@@ -1042,26 +1048,27 @@ GetCheckTypes Get a Specific Check Type
 
 Get details about a specific monitoring check type.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetCheckTypesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetCheckTypesRequest
 */
 func (a *ChecksAPIService) GetCheckTypes(ctx context.Context, id int64) ApiGetCheckTypesRequest {
 	return ApiGetCheckTypesRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetCheckTypes200Response
+//
+//	@return GetCheckTypes200Response
 func (a *ChecksAPIService) GetCheckTypesExecute(r ApiGetCheckTypesRequest) (*GetCheckTypes200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetCheckTypes200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetCheckTypes200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChecksAPIService.GetCheckTypes")
@@ -1112,7 +1119,7 @@ func (a *ChecksAPIService) GetCheckTypesExecute(r ApiGetCheckTypesRequest) (*Get
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1121,8 +1128,8 @@ func (a *ChecksAPIService) GetCheckTypesExecute(r ApiGetCheckTypesRequest) (*Get
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1132,8 +1139,8 @@ func (a *ChecksAPIService) GetCheckTypesExecute(r ApiGetCheckTypesRequest) (*Get
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1141,8 +1148,8 @@ func (a *ChecksAPIService) GetCheckTypesExecute(r ApiGetCheckTypesRequest) (*Get
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1151,9 +1158,9 @@ func (a *ChecksAPIService) GetCheckTypesExecute(r ApiGetCheckTypesRequest) (*Get
 }
 
 type ApiGetChecksRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ChecksAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetChecksRequest) Execute() (*GetChecks200Response, *http.Response, error) {
@@ -1165,26 +1172,27 @@ GetChecks Get a Specific Check
 
 Get details about a specific monitoring check.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetChecksRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetChecksRequest
 */
 func (a *ChecksAPIService) GetChecks(ctx context.Context, id int64) ApiGetChecksRequest {
 	return ApiGetChecksRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetChecks200Response
+//
+//	@return GetChecks200Response
 func (a *ChecksAPIService) GetChecksExecute(r ApiGetChecksRequest) (*GetChecks200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetChecks200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetChecks200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChecksAPIService.GetChecks")
@@ -1235,7 +1243,7 @@ func (a *ChecksAPIService) GetChecksExecute(r ApiGetChecksRequest) (*GetChecks20
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1244,8 +1252,8 @@ func (a *ChecksAPIService) GetChecksExecute(r ApiGetChecksRequest) (*GetChecks20
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1255,8 +1263,8 @@ func (a *ChecksAPIService) GetChecksExecute(r ApiGetChecksRequest) (*GetChecks20
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1264,8 +1272,8 @@ func (a *ChecksAPIService) GetChecksExecute(r ApiGetChecksRequest) (*GetChecks20
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1274,16 +1282,16 @@ func (a *ChecksAPIService) GetChecksExecute(r ApiGetChecksRequest) (*GetChecks20
 }
 
 type ApiListCheckAppsRequest struct {
-	ctx context.Context
-	ApiService *ChecksAPIService
-	max *int64
-	offset *int64
-	sort *string
-	name *string
-	phrase *string
-	status *string
+	ctx         context.Context
+	ApiService  *ChecksAPIService
+	max         *int64
+	offset      *int64
+	sort        *string
+	name        *string
+	phrase      *string
+	status      *string
 	lastUpdated *time.Time
-	deleted *bool
+	deleted     *bool
 }
 
 // Maximum number of records to return
@@ -1343,24 +1351,25 @@ ListCheckApps List All Check Apps
 
 Get a list of check apps.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListCheckAppsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListCheckAppsRequest
 */
 func (a *ChecksAPIService) ListCheckApps(ctx context.Context) ApiListCheckAppsRequest {
 	return ApiListCheckAppsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListCheckApps200Response
+//
+//	@return ListCheckApps200Response
 func (a *ChecksAPIService) ListCheckAppsExecute(r ApiListCheckAppsRequest) (*ListCheckApps200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListCheckApps200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListCheckApps200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChecksAPIService.ListCheckApps")
@@ -1443,7 +1452,7 @@ func (a *ChecksAPIService) ListCheckAppsExecute(r ApiListCheckAppsRequest) (*Lis
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1452,8 +1461,8 @@ func (a *ChecksAPIService) ListCheckAppsExecute(r ApiListCheckAppsRequest) (*Lis
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1463,8 +1472,8 @@ func (a *ChecksAPIService) ListCheckAppsExecute(r ApiListCheckAppsRequest) (*Lis
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1472,8 +1481,8 @@ func (a *ChecksAPIService) ListCheckAppsExecute(r ApiListCheckAppsRequest) (*Lis
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1482,16 +1491,16 @@ func (a *ChecksAPIService) ListCheckAppsExecute(r ApiListCheckAppsRequest) (*Lis
 }
 
 type ApiListCheckGroupsRequest struct {
-	ctx context.Context
-	ApiService *ChecksAPIService
-	max *int64
-	offset *int64
-	sort *string
-	name *string
-	phrase *string
-	status *string
+	ctx         context.Context
+	ApiService  *ChecksAPIService
+	max         *int64
+	offset      *int64
+	sort        *string
+	name        *string
+	phrase      *string
+	status      *string
 	lastUpdated *time.Time
-	deleted *bool
+	deleted     *bool
 }
 
 // Maximum number of records to return
@@ -1551,24 +1560,25 @@ ListCheckGroups List All Check Groups
 
 Get a list of check groups.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListCheckGroupsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListCheckGroupsRequest
 */
 func (a *ChecksAPIService) ListCheckGroups(ctx context.Context) ApiListCheckGroupsRequest {
 	return ApiListCheckGroupsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListCheckGroups200Response
+//
+//	@return ListCheckGroups200Response
 func (a *ChecksAPIService) ListCheckGroupsExecute(r ApiListCheckGroupsRequest) (*ListCheckGroups200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListCheckGroups200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListCheckGroups200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChecksAPIService.ListCheckGroups")
@@ -1651,7 +1661,7 @@ func (a *ChecksAPIService) ListCheckGroupsExecute(r ApiListCheckGroupsRequest) (
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1660,8 +1670,8 @@ func (a *ChecksAPIService) ListCheckGroupsExecute(r ApiListCheckGroupsRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1671,8 +1681,8 @@ func (a *ChecksAPIService) ListCheckGroupsExecute(r ApiListCheckGroupsRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1680,8 +1690,8 @@ func (a *ChecksAPIService) ListCheckGroupsExecute(r ApiListCheckGroupsRequest) (
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1690,13 +1700,13 @@ func (a *ChecksAPIService) ListCheckGroupsExecute(r ApiListCheckGroupsRequest) (
 }
 
 type ApiListCheckTypesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ChecksAPIService
-	max *int64
-	offset *int64
-	sort *string
-	name *string
-	phrase *string
+	max        *int64
+	offset     *int64
+	sort       *string
+	name       *string
+	phrase     *string
 }
 
 // Maximum number of records to return
@@ -1738,24 +1748,25 @@ ListCheckTypes List All Check Types
 
 Get a list of monitoring check types.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListCheckTypesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListCheckTypesRequest
 */
 func (a *ChecksAPIService) ListCheckTypes(ctx context.Context) ApiListCheckTypesRequest {
 	return ApiListCheckTypesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListCheckTypes200Response
+//
+//	@return ListCheckTypes200Response
 func (a *ChecksAPIService) ListCheckTypesExecute(r ApiListCheckTypesRequest) (*ListCheckTypes200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListCheckTypes200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListCheckTypes200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChecksAPIService.ListCheckTypes")
@@ -1829,7 +1840,7 @@ func (a *ChecksAPIService) ListCheckTypesExecute(r ApiListCheckTypesRequest) (*L
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1838,8 +1849,8 @@ func (a *ChecksAPIService) ListCheckTypesExecute(r ApiListCheckTypesRequest) (*L
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1849,8 +1860,8 @@ func (a *ChecksAPIService) ListCheckTypesExecute(r ApiListCheckTypesRequest) (*L
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1858,8 +1869,8 @@ func (a *ChecksAPIService) ListCheckTypesExecute(r ApiListCheckTypesRequest) (*L
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1868,16 +1879,16 @@ func (a *ChecksAPIService) ListCheckTypesExecute(r ApiListCheckTypesRequest) (*L
 }
 
 type ApiListChecksRequest struct {
-	ctx context.Context
-	ApiService *ChecksAPIService
-	max *int64
-	offset *int64
-	sort *string
-	name *string
-	phrase *string
-	status *string
+	ctx         context.Context
+	ApiService  *ChecksAPIService
+	max         *int64
+	offset      *int64
+	sort        *string
+	name        *string
+	phrase      *string
+	status      *string
 	lastUpdated *time.Time
-	deleted *bool
+	deleted     *bool
 }
 
 // Maximum number of records to return
@@ -1937,24 +1948,25 @@ ListChecks List All Checks
 
 Get a list of monitoring checks.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListChecksRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListChecksRequest
 */
 func (a *ChecksAPIService) ListChecks(ctx context.Context) ApiListChecksRequest {
 	return ApiListChecksRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListChecks200Response
+//
+//	@return ListChecks200Response
 func (a *ChecksAPIService) ListChecksExecute(r ApiListChecksRequest) (*ListChecks200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListChecks200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListChecks200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChecksAPIService.ListChecks")
@@ -2037,7 +2049,7 @@ func (a *ChecksAPIService) ListChecksExecute(r ApiListChecksRequest) (*ListCheck
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2046,8 +2058,8 @@ func (a *ChecksAPIService) ListChecksExecute(r ApiListChecksRequest) (*ListCheck
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2057,8 +2069,8 @@ func (a *ChecksAPIService) ListChecksExecute(r ApiListChecksRequest) (*ListCheck
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2066,8 +2078,8 @@ func (a *ChecksAPIService) ListChecksExecute(r ApiListChecksRequest) (*ListCheck
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2076,9 +2088,9 @@ func (a *ChecksAPIService) ListChecksExecute(r ApiListChecksRequest) (*ListCheck
 }
 
 type ApiUpdateCheckAppsRequest struct {
-	ctx context.Context
-	ApiService *ChecksAPIService
-	id int64
+	ctx                    context.Context
+	ApiService             *ChecksAPIService
+	id                     int64
 	updateCheckAppsRequest *UpdateCheckAppsRequest
 }
 
@@ -2096,26 +2108,27 @@ UpdateCheckApps Update Check App
 
 Update an existing monitoring check app.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateCheckAppsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateCheckAppsRequest
 */
 func (a *ChecksAPIService) UpdateCheckApps(ctx context.Context, id int64) ApiUpdateCheckAppsRequest {
 	return ApiUpdateCheckAppsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return UpdateCheckApps200Response
+//
+//	@return UpdateCheckApps200Response
 func (a *ChecksAPIService) UpdateCheckAppsExecute(r ApiUpdateCheckAppsRequest) (*UpdateCheckApps200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UpdateCheckApps200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UpdateCheckApps200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChecksAPIService.UpdateCheckApps")
@@ -2168,7 +2181,7 @@ func (a *ChecksAPIService) UpdateCheckAppsExecute(r ApiUpdateCheckAppsRequest) (
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2177,8 +2190,8 @@ func (a *ChecksAPIService) UpdateCheckAppsExecute(r ApiUpdateCheckAppsRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2188,8 +2201,8 @@ func (a *ChecksAPIService) UpdateCheckAppsExecute(r ApiUpdateCheckAppsRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2197,8 +2210,8 @@ func (a *ChecksAPIService) UpdateCheckAppsExecute(r ApiUpdateCheckAppsRequest) (
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2207,9 +2220,9 @@ func (a *ChecksAPIService) UpdateCheckAppsExecute(r ApiUpdateCheckAppsRequest) (
 }
 
 type ApiUpdateCheckGroupsRequest struct {
-	ctx context.Context
-	ApiService *ChecksAPIService
-	id int64
+	ctx                      context.Context
+	ApiService               *ChecksAPIService
+	id                       int64
 	updateCheckGroupsRequest *UpdateCheckGroupsRequest
 }
 
@@ -2227,26 +2240,27 @@ UpdateCheckGroups Update Check Group
 
 Update an existing monitoring check group.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateCheckGroupsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateCheckGroupsRequest
 */
 func (a *ChecksAPIService) UpdateCheckGroups(ctx context.Context, id int64) ApiUpdateCheckGroupsRequest {
 	return ApiUpdateCheckGroupsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddCheckGroups200Response
+//
+//	@return AddCheckGroups200Response
 func (a *ChecksAPIService) UpdateCheckGroupsExecute(r ApiUpdateCheckGroupsRequest) (*AddCheckGroups200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddCheckGroups200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddCheckGroups200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChecksAPIService.UpdateCheckGroups")
@@ -2299,7 +2313,7 @@ func (a *ChecksAPIService) UpdateCheckGroupsExecute(r ApiUpdateCheckGroupsReques
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2308,8 +2322,8 @@ func (a *ChecksAPIService) UpdateCheckGroupsExecute(r ApiUpdateCheckGroupsReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2319,8 +2333,8 @@ func (a *ChecksAPIService) UpdateCheckGroupsExecute(r ApiUpdateCheckGroupsReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2328,8 +2342,8 @@ func (a *ChecksAPIService) UpdateCheckGroupsExecute(r ApiUpdateCheckGroupsReques
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2338,9 +2352,9 @@ func (a *ChecksAPIService) UpdateCheckGroupsExecute(r ApiUpdateCheckGroupsReques
 }
 
 type ApiUpdateChecksRequest struct {
-	ctx context.Context
-	ApiService *ChecksAPIService
-	id int64
+	ctx                 context.Context
+	ApiService          *ChecksAPIService
+	id                  int64
 	updateChecksRequest *UpdateChecksRequest
 }
 
@@ -2358,26 +2372,27 @@ UpdateChecks Updates a Check
 
 Updates a monitoring check.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateChecksRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateChecksRequest
 */
 func (a *ChecksAPIService) UpdateChecks(ctx context.Context, id int64) ApiUpdateChecksRequest {
 	return ApiUpdateChecksRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddChecks200Response
+//
+//	@return AddChecks200Response
 func (a *ChecksAPIService) UpdateChecksExecute(r ApiUpdateChecksRequest) (*AddChecks200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddChecks200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddChecks200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChecksAPIService.UpdateChecks")
@@ -2430,7 +2445,7 @@ func (a *ChecksAPIService) UpdateChecksExecute(r ApiUpdateChecksRequest) (*AddCh
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2439,8 +2454,8 @@ func (a *ChecksAPIService) UpdateChecksExecute(r ApiUpdateChecksRequest) (*AddCh
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2450,8 +2465,8 @@ func (a *ChecksAPIService) UpdateChecksExecute(r ApiUpdateChecksRequest) (*AddCh
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2459,8 +2474,8 @@ func (a *ChecksAPIService) UpdateChecksExecute(r ApiUpdateChecksRequest) (*AddCh
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2469,8 +2484,8 @@ func (a *ChecksAPIService) UpdateChecksExecute(r ApiUpdateChecksRequest) (*AddCh
 }
 
 type ApiUpdateMuteAllCheckAppsRequest struct {
-	ctx context.Context
-	ApiService *ChecksAPIService
+	ctx                           context.Context
+	ApiService                    *ChecksAPIService
 	updateMuteAllCheckAppsRequest *UpdateMuteAllCheckAppsRequest
 }
 
@@ -2488,24 +2503,25 @@ UpdateMuteAllCheckApps Mute All Check Apps
 
 Mute all existing check apps.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiUpdateMuteAllCheckAppsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiUpdateMuteAllCheckAppsRequest
 */
 func (a *ChecksAPIService) UpdateMuteAllCheckApps(ctx context.Context) ApiUpdateMuteAllCheckAppsRequest {
 	return ApiUpdateMuteAllCheckAppsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return UpdateMuteAllCheckApps200Response
+//
+//	@return UpdateMuteAllCheckApps200Response
 func (a *ChecksAPIService) UpdateMuteAllCheckAppsExecute(r ApiUpdateMuteAllCheckAppsRequest) (*UpdateMuteAllCheckApps200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UpdateMuteAllCheckApps200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UpdateMuteAllCheckApps200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChecksAPIService.UpdateMuteAllCheckApps")
@@ -2557,7 +2573,7 @@ func (a *ChecksAPIService) UpdateMuteAllCheckAppsExecute(r ApiUpdateMuteAllCheck
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2566,8 +2582,8 @@ func (a *ChecksAPIService) UpdateMuteAllCheckAppsExecute(r ApiUpdateMuteAllCheck
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2577,8 +2593,8 @@ func (a *ChecksAPIService) UpdateMuteAllCheckAppsExecute(r ApiUpdateMuteAllCheck
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2586,8 +2602,8 @@ func (a *ChecksAPIService) UpdateMuteAllCheckAppsExecute(r ApiUpdateMuteAllCheck
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2596,8 +2612,8 @@ func (a *ChecksAPIService) UpdateMuteAllCheckAppsExecute(r ApiUpdateMuteAllCheck
 }
 
 type ApiUpdateMuteAllCheckGroupsRequest struct {
-	ctx context.Context
-	ApiService *ChecksAPIService
+	ctx                           context.Context
+	ApiService                    *ChecksAPIService
 	updateMuteAllCheckAppsRequest *UpdateMuteAllCheckAppsRequest
 }
 
@@ -2615,24 +2631,25 @@ UpdateMuteAllCheckGroups Mute All Check Groups
 
 Mute all existing check groups.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiUpdateMuteAllCheckGroupsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiUpdateMuteAllCheckGroupsRequest
 */
 func (a *ChecksAPIService) UpdateMuteAllCheckGroups(ctx context.Context) ApiUpdateMuteAllCheckGroupsRequest {
 	return ApiUpdateMuteAllCheckGroupsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return UpdateMuteAllCheckApps200Response
+//
+//	@return UpdateMuteAllCheckApps200Response
 func (a *ChecksAPIService) UpdateMuteAllCheckGroupsExecute(r ApiUpdateMuteAllCheckGroupsRequest) (*UpdateMuteAllCheckApps200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UpdateMuteAllCheckApps200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UpdateMuteAllCheckApps200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChecksAPIService.UpdateMuteAllCheckGroups")
@@ -2684,7 +2701,7 @@ func (a *ChecksAPIService) UpdateMuteAllCheckGroupsExecute(r ApiUpdateMuteAllChe
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2693,8 +2710,8 @@ func (a *ChecksAPIService) UpdateMuteAllCheckGroupsExecute(r ApiUpdateMuteAllChe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2704,8 +2721,8 @@ func (a *ChecksAPIService) UpdateMuteAllCheckGroupsExecute(r ApiUpdateMuteAllChe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2713,8 +2730,8 @@ func (a *ChecksAPIService) UpdateMuteAllCheckGroupsExecute(r ApiUpdateMuteAllChe
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2723,8 +2740,8 @@ func (a *ChecksAPIService) UpdateMuteAllCheckGroupsExecute(r ApiUpdateMuteAllChe
 }
 
 type ApiUpdateMuteAllChecksRequest struct {
-	ctx context.Context
-	ApiService *ChecksAPIService
+	ctx                           context.Context
+	ApiService                    *ChecksAPIService
 	updateMuteAllCheckAppsRequest *UpdateMuteAllCheckAppsRequest
 }
 
@@ -2742,24 +2759,25 @@ UpdateMuteAllChecks Mute All Checks
 
 Mute all existing checks.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiUpdateMuteAllChecksRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiUpdateMuteAllChecksRequest
 */
 func (a *ChecksAPIService) UpdateMuteAllChecks(ctx context.Context) ApiUpdateMuteAllChecksRequest {
 	return ApiUpdateMuteAllChecksRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return UpdateMuteAllCheckApps200Response
+//
+//	@return UpdateMuteAllCheckApps200Response
 func (a *ChecksAPIService) UpdateMuteAllChecksExecute(r ApiUpdateMuteAllChecksRequest) (*UpdateMuteAllCheckApps200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UpdateMuteAllCheckApps200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UpdateMuteAllCheckApps200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChecksAPIService.UpdateMuteAllChecks")
@@ -2811,7 +2829,7 @@ func (a *ChecksAPIService) UpdateMuteAllChecksExecute(r ApiUpdateMuteAllChecksRe
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2820,8 +2838,8 @@ func (a *ChecksAPIService) UpdateMuteAllChecksExecute(r ApiUpdateMuteAllChecksRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2831,8 +2849,8 @@ func (a *ChecksAPIService) UpdateMuteAllChecksExecute(r ApiUpdateMuteAllChecksRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2840,8 +2858,8 @@ func (a *ChecksAPIService) UpdateMuteAllChecksExecute(r ApiUpdateMuteAllChecksRe
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2850,9 +2868,9 @@ func (a *ChecksAPIService) UpdateMuteAllChecksExecute(r ApiUpdateMuteAllChecksRe
 }
 
 type ApiUpdateMuteCheckAppsRequest struct {
-	ctx context.Context
-	ApiService *ChecksAPIService
-	id int64
+	ctx                           context.Context
+	ApiService                    *ChecksAPIService
+	id                            int64
 	updateMuteAllCheckAppsRequest *UpdateMuteAllCheckAppsRequest
 }
 
@@ -2870,26 +2888,27 @@ UpdateMuteCheckApps Mute Check App
 
 Mute an existing check app.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateMuteCheckAppsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateMuteCheckAppsRequest
 */
 func (a *ChecksAPIService) UpdateMuteCheckApps(ctx context.Context, id int64) ApiUpdateMuteCheckAppsRequest {
 	return ApiUpdateMuteCheckAppsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return UpdateMuteCheckApps200Response
+//
+//	@return UpdateMuteCheckApps200Response
 func (a *ChecksAPIService) UpdateMuteCheckAppsExecute(r ApiUpdateMuteCheckAppsRequest) (*UpdateMuteCheckApps200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UpdateMuteCheckApps200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UpdateMuteCheckApps200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChecksAPIService.UpdateMuteCheckApps")
@@ -2942,7 +2961,7 @@ func (a *ChecksAPIService) UpdateMuteCheckAppsExecute(r ApiUpdateMuteCheckAppsRe
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2951,8 +2970,8 @@ func (a *ChecksAPIService) UpdateMuteCheckAppsExecute(r ApiUpdateMuteCheckAppsRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2962,8 +2981,8 @@ func (a *ChecksAPIService) UpdateMuteCheckAppsExecute(r ApiUpdateMuteCheckAppsRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2971,8 +2990,8 @@ func (a *ChecksAPIService) UpdateMuteCheckAppsExecute(r ApiUpdateMuteCheckAppsRe
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2981,9 +3000,9 @@ func (a *ChecksAPIService) UpdateMuteCheckAppsExecute(r ApiUpdateMuteCheckAppsRe
 }
 
 type ApiUpdateMuteCheckGroupsRequest struct {
-	ctx context.Context
-	ApiService *ChecksAPIService
-	id int64
+	ctx                           context.Context
+	ApiService                    *ChecksAPIService
+	id                            int64
 	updateMuteAllCheckAppsRequest *UpdateMuteAllCheckAppsRequest
 }
 
@@ -3001,26 +3020,27 @@ UpdateMuteCheckGroups Mute Check Group
 
 Mute an existing check group.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateMuteCheckGroupsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateMuteCheckGroupsRequest
 */
 func (a *ChecksAPIService) UpdateMuteCheckGroups(ctx context.Context, id int64) ApiUpdateMuteCheckGroupsRequest {
 	return ApiUpdateMuteCheckGroupsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return UpdateMuteCheckApps200Response
+//
+//	@return UpdateMuteCheckApps200Response
 func (a *ChecksAPIService) UpdateMuteCheckGroupsExecute(r ApiUpdateMuteCheckGroupsRequest) (*UpdateMuteCheckApps200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UpdateMuteCheckApps200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UpdateMuteCheckApps200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChecksAPIService.UpdateMuteCheckGroups")
@@ -3073,7 +3093,7 @@ func (a *ChecksAPIService) UpdateMuteCheckGroupsExecute(r ApiUpdateMuteCheckGrou
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -3082,8 +3102,8 @@ func (a *ChecksAPIService) UpdateMuteCheckGroupsExecute(r ApiUpdateMuteCheckGrou
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -3093,8 +3113,8 @@ func (a *ChecksAPIService) UpdateMuteCheckGroupsExecute(r ApiUpdateMuteCheckGrou
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3102,8 +3122,8 @@ func (a *ChecksAPIService) UpdateMuteCheckGroupsExecute(r ApiUpdateMuteCheckGrou
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3112,9 +3132,9 @@ func (a *ChecksAPIService) UpdateMuteCheckGroupsExecute(r ApiUpdateMuteCheckGrou
 }
 
 type ApiUpdateMuteChecksRequest struct {
-	ctx context.Context
-	ApiService *ChecksAPIService
-	id int64
+	ctx                           context.Context
+	ApiService                    *ChecksAPIService
+	id                            int64
 	updateMuteAllCheckAppsRequest *UpdateMuteAllCheckAppsRequest
 }
 
@@ -3132,26 +3152,27 @@ UpdateMuteChecks Mute Check
 
 Mute an existing check.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateMuteChecksRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateMuteChecksRequest
 */
 func (a *ChecksAPIService) UpdateMuteChecks(ctx context.Context, id int64) ApiUpdateMuteChecksRequest {
 	return ApiUpdateMuteChecksRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return UpdateMuteCheckApps200Response
+//
+//	@return UpdateMuteCheckApps200Response
 func (a *ChecksAPIService) UpdateMuteChecksExecute(r ApiUpdateMuteChecksRequest) (*UpdateMuteCheckApps200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UpdateMuteCheckApps200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UpdateMuteCheckApps200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChecksAPIService.UpdateMuteChecks")
@@ -3204,7 +3225,7 @@ func (a *ChecksAPIService) UpdateMuteChecksExecute(r ApiUpdateMuteChecksRequest)
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -3213,8 +3234,8 @@ func (a *ChecksAPIService) UpdateMuteChecksExecute(r ApiUpdateMuteChecksRequest)
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -3224,8 +3245,8 @@ func (a *ChecksAPIService) UpdateMuteChecksExecute(r ApiUpdateMuteChecksRequest)
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3233,8 +3254,8 @@ func (a *ChecksAPIService) UpdateMuteChecksExecute(r ApiUpdateMuteChecksRequest)
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

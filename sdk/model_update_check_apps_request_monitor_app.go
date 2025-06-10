@@ -29,10 +29,10 @@ type UpdateCheckAppsRequestMonitorApp struct {
 	// Severity level of incidents that are created when this check fails
 	Severity *string `json:"severity,omitempty"`
 	// Used to determine if check app is active
-	Active *bool `json:"active,omitempty"`
-	Checks []int32 `json:"checks,omitempty"`
-	CheckGroups []int32 `json:"checkGroups,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Active               *bool                  `json:"active,omitempty"`
+	Checks               []int32                `json:"checks,omitempty"`
+	CheckGroups          []int32                `json:"checkGroups,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UpdateCheckAppsRequestMonitorApp UpdateCheckAppsRequestMonitorApp
@@ -291,7 +291,7 @@ func (o *UpdateCheckAppsRequestMonitorApp) SetCheckGroups(v []int32) {
 }
 
 func (o UpdateCheckAppsRequestMonitorApp) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -328,68 +328,8 @@ func (o UpdateCheckAppsRequestMonitorApp) ToMap() (map[string]interface{}, error
 
 	return toSerialize, nil
 }
-
 func (o *UpdateCheckAppsRequestMonitorApp) UnmarshalJSON(data []byte) (err error) {
-	varUpdateCheckAppsRequestMonitorApp := _UpdateCheckAppsRequestMonitorApp{}
-
-	err = json.Unmarshal(data, &varUpdateCheckAppsRequestMonitorApp)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateCheckAppsRequestMonitorApp(varUpdateCheckAppsRequestMonitorApp)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "inUptime")
-		delete(additionalProperties, "severity")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "checks")
-		delete(additionalProperties, "checkGroups")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateCheckAppsRequestMonitorApp struct {
-	value *UpdateCheckAppsRequestMonitorApp
-	isSet bool
-}
-
-func (v NullableUpdateCheckAppsRequestMonitorApp) Get() *UpdateCheckAppsRequestMonitorApp {
-	return v.value
-}
-
-func (v *NullableUpdateCheckAppsRequestMonitorApp) Set(val *UpdateCheckAppsRequestMonitorApp) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateCheckAppsRequestMonitorApp) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateCheckAppsRequestMonitorApp) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateCheckAppsRequestMonitorApp(val *UpdateCheckAppsRequestMonitorApp) *NullableUpdateCheckAppsRequestMonitorApp {
-	return &NullableUpdateCheckAppsRequestMonitorApp{value: val, isSet: true}
-}
-
-func (v NullableUpdateCheckAppsRequestMonitorApp) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateCheckAppsRequestMonitorApp) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

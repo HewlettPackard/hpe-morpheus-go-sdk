@@ -20,12 +20,12 @@ var _ MappedNullable = &UpdateClientsRequestClient{}
 
 // UpdateClientsRequestClient struct for UpdateClientsRequestClient
 type UpdateClientsRequestClient struct {
-	ClientId *string `json:"clientId,omitempty"`
-	AccessTokenValiditySeconds *int64 `json:"accessTokenValiditySeconds,omitempty"`
-	RefreshTokenValiditySeconds *int64 `json:"refreshTokenValiditySeconds,omitempty"`
+	ClientId                    *string `json:"clientId,omitempty"`
+	AccessTokenValiditySeconds  *int64  `json:"accessTokenValiditySeconds,omitempty"`
+	RefreshTokenValiditySeconds *int64  `json:"refreshTokenValiditySeconds,omitempty"`
 	// List of Redirect URIs for use with the OpenID Authorization Code Flow
-	RedirectUris []string `json:"redirectUris,omitempty"`
-	AdditionalProperties map[string]interface{}
+	RedirectUris         []string               `json:"redirectUris,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UpdateClientsRequestClient UpdateClientsRequestClient
@@ -176,7 +176,7 @@ func (o *UpdateClientsRequestClient) SetRedirectUris(v []string) {
 }
 
 func (o UpdateClientsRequestClient) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -204,65 +204,8 @@ func (o UpdateClientsRequestClient) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *UpdateClientsRequestClient) UnmarshalJSON(data []byte) (err error) {
-	varUpdateClientsRequestClient := _UpdateClientsRequestClient{}
-
-	err = json.Unmarshal(data, &varUpdateClientsRequestClient)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateClientsRequestClient(varUpdateClientsRequestClient)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "clientId")
-		delete(additionalProperties, "accessTokenValiditySeconds")
-		delete(additionalProperties, "refreshTokenValiditySeconds")
-		delete(additionalProperties, "redirectUris")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateClientsRequestClient struct {
-	value *UpdateClientsRequestClient
-	isSet bool
-}
-
-func (v NullableUpdateClientsRequestClient) Get() *UpdateClientsRequestClient {
-	return v.value
-}
-
-func (v *NullableUpdateClientsRequestClient) Set(val *UpdateClientsRequestClient) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateClientsRequestClient) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateClientsRequestClient) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateClientsRequestClient(val *UpdateClientsRequestClient) *NullableUpdateClientsRequestClient {
-	return &NullableUpdateClientsRequestClient{value: val, isSet: true}
-}
-
-func (v NullableUpdateClientsRequestClient) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateClientsRequestClient) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

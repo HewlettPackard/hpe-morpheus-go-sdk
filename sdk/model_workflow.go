@@ -21,21 +21,21 @@ var _ MappedNullable = &Workflow{}
 
 // Workflow struct for Workflow
 type Workflow struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Type *string `json:"type,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Labels []string `json:"labels,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	AccountId *int64 `json:"accountId,omitempty"`
-	Platform *string `json:"platform,omitempty"`
-	Visibility *string `json:"visibility,omitempty"`
-	AllowCustomConfig *bool `json:"allowCustomConfig,omitempty"`
-	Tasks []int64 `json:"tasks,omitempty"`
-	OptionTypes []ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner `json:"optionTypes,omitempty"`
-	TaskSetTasks []ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInner `json:"taskSetTasks,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                        `json:"id,omitempty"`
+	Name                 *string                                                       `json:"name,omitempty"`
+	Type                 *string                                                       `json:"type,omitempty"`
+	Description          *string                                                       `json:"description,omitempty"`
+	Labels               []string                                                      `json:"labels,omitempty"`
+	DateCreated          *time.Time                                                    `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                    `json:"lastUpdated,omitempty"`
+	AccountId            *int64                                                        `json:"accountId,omitempty"`
+	Platform             *string                                                       `json:"platform,omitempty"`
+	Visibility           *string                                                       `json:"visibility,omitempty"`
+	AllowCustomConfig    *bool                                                         `json:"allowCustomConfig,omitempty"`
+	Tasks                []int64                                                       `json:"tasks,omitempty"`
+	OptionTypes          []ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner  `json:"optionTypes,omitempty"`
+	TaskSetTasks         []ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInner `json:"taskSetTasks,omitempty"`
+	AdditionalProperties map[string]interface{}                                        `json:",remain"`
 }
 
 type _Workflow Workflow
@@ -506,7 +506,7 @@ func (o *Workflow) SetTaskSetTasks(v []ListWorkflows200ResponseAllOfTaskSetsInne
 }
 
 func (o Workflow) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -564,75 +564,8 @@ func (o Workflow) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *Workflow) UnmarshalJSON(data []byte) (err error) {
-	varWorkflow := _Workflow{}
-
-	err = json.Unmarshal(data, &varWorkflow)
-
-	if err != nil {
-		return err
-	}
-
-	*o = Workflow(varWorkflow)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "accountId")
-		delete(additionalProperties, "platform")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "allowCustomConfig")
-		delete(additionalProperties, "tasks")
-		delete(additionalProperties, "optionTypes")
-		delete(additionalProperties, "taskSetTasks")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableWorkflow struct {
-	value *Workflow
-	isSet bool
-}
-
-func (v NullableWorkflow) Get() *Workflow {
-	return v.value
-}
-
-func (v *NullableWorkflow) Set(val *Workflow) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableWorkflow) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableWorkflow) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableWorkflow(val *Workflow) *NullableWorkflow {
-	return &NullableWorkflow{value: val, isSet: true}
-}
-
-func (v NullableWorkflow) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableWorkflow) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

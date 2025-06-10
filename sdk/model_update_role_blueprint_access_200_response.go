@@ -20,9 +20,9 @@ var _ MappedNullable = &UpdateRoleBlueprintAccess200Response{}
 
 // UpdateRoleBlueprintAccess200Response struct for UpdateRoleBlueprintAccess200Response
 type UpdateRoleBlueprintAccess200Response struct {
-	Access *string `json:"access,omitempty"`
-	Success *bool `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Access               *string                `json:"access,omitempty"`
+	Success              *bool                  `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UpdateRoleBlueprintAccess200Response UpdateRoleBlueprintAccess200Response
@@ -109,7 +109,7 @@ func (o *UpdateRoleBlueprintAccess200Response) SetSuccess(v bool) {
 }
 
 func (o UpdateRoleBlueprintAccess200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o UpdateRoleBlueprintAccess200Response) ToMap() (map[string]interface{}, e
 
 	return toSerialize, nil
 }
-
 func (o *UpdateRoleBlueprintAccess200Response) UnmarshalJSON(data []byte) (err error) {
-	varUpdateRoleBlueprintAccess200Response := _UpdateRoleBlueprintAccess200Response{}
-
-	err = json.Unmarshal(data, &varUpdateRoleBlueprintAccess200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateRoleBlueprintAccess200Response(varUpdateRoleBlueprintAccess200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "access")
-		delete(additionalProperties, "success")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateRoleBlueprintAccess200Response struct {
-	value *UpdateRoleBlueprintAccess200Response
-	isSet bool
-}
-
-func (v NullableUpdateRoleBlueprintAccess200Response) Get() *UpdateRoleBlueprintAccess200Response {
-	return v.value
-}
-
-func (v *NullableUpdateRoleBlueprintAccess200Response) Set(val *UpdateRoleBlueprintAccess200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateRoleBlueprintAccess200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateRoleBlueprintAccess200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateRoleBlueprintAccess200Response(val *UpdateRoleBlueprintAccess200Response) *NullableUpdateRoleBlueprintAccess200Response {
-	return &NullableUpdateRoleBlueprintAccess200Response{value: val, isSet: true}
-}
-
-func (v NullableUpdateRoleBlueprintAccess200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateRoleBlueprintAccess200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -14,6 +14,7 @@ package sdk
 import (
 	"encoding/json"
 	"fmt"
+
 	"gopkg.in/validator.v2"
 )
 
@@ -22,7 +23,7 @@ var _ fmt.Stringer
 
 // AddSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYAUTOEXPAND - struct for AddSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYAUTOEXPAND
 type AddSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYAUTOEXPAND struct {
-	Bool *bool
+	Bool   *bool
 	String *string
 }
 
@@ -40,6 +41,21 @@ func StringAsAddSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYAUT
 	}
 }
 
+func (dst *AddSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYAUTOEXPAND) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYAUTOEXPAND{}
+	}
+
+	if out, ok := data.(bool); ok {
+		dst.Bool = &out
+	}
+
+	if out, ok := data.(string); ok {
+		dst.String = &out
+	}
+
+	return dst, nil
+}
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYAUTOEXPAND) UnmarshalJSON(data []byte) error {
@@ -106,7 +122,7 @@ func (src AddSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYAUTOEX
 }
 
 // Get the actual instance
-func (obj *AddSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYAUTOEXPAND) GetActualInstance() (interface{}) {
+func (obj *AddSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYAUTOEXPAND) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -123,7 +139,7 @@ func (obj *AddSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYAUTOE
 }
 
 // Get the actual instance value
-func (obj AddSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYAUTOEXPAND) GetActualInstanceValue() (interface{}) {
+func (obj AddSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILITYAUTOEXPAND) GetActualInstanceValue() interface{} {
 	if obj.Bool != nil {
 		return *obj.Bool
 	}
@@ -171,5 +187,3 @@ func (v *NullableAddSpecTemplateRequestSpecTemplateConfigCloudformationCAPABILIT
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,8 +20,8 @@ var _ MappedNullable = &UpdateLayoutPermissionsRequest{}
 
 // UpdateLayoutPermissionsRequest struct for UpdateLayoutPermissionsRequest
 type UpdateLayoutPermissionsRequest struct {
-	InstanceTypeLayout *UpdateLayoutPermissionsRequestInstanceTypeLayout `json:"instanceTypeLayout,omitempty"`
-	AdditionalProperties map[string]interface{}
+	InstanceTypeLayout   *UpdateLayoutPermissionsRequestInstanceTypeLayout `json:"instanceTypeLayout,omitempty"`
+	AdditionalProperties map[string]interface{}                            `json:",remain"`
 }
 
 type _UpdateLayoutPermissionsRequest UpdateLayoutPermissionsRequest
@@ -76,7 +76,7 @@ func (o *UpdateLayoutPermissionsRequest) SetInstanceTypeLayout(v UpdateLayoutPer
 }
 
 func (o UpdateLayoutPermissionsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o UpdateLayoutPermissionsRequest) ToMap() (map[string]interface{}, error) 
 
 	return toSerialize, nil
 }
-
 func (o *UpdateLayoutPermissionsRequest) UnmarshalJSON(data []byte) (err error) {
-	varUpdateLayoutPermissionsRequest := _UpdateLayoutPermissionsRequest{}
-
-	err = json.Unmarshal(data, &varUpdateLayoutPermissionsRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateLayoutPermissionsRequest(varUpdateLayoutPermissionsRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "instanceTypeLayout")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateLayoutPermissionsRequest struct {
-	value *UpdateLayoutPermissionsRequest
-	isSet bool
-}
-
-func (v NullableUpdateLayoutPermissionsRequest) Get() *UpdateLayoutPermissionsRequest {
-	return v.value
-}
-
-func (v *NullableUpdateLayoutPermissionsRequest) Set(val *UpdateLayoutPermissionsRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateLayoutPermissionsRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateLayoutPermissionsRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateLayoutPermissionsRequest(val *UpdateLayoutPermissionsRequest) *NullableUpdateLayoutPermissionsRequest {
-	return &NullableUpdateLayoutPermissionsRequest{value: val, isSet: true}
-}
-
-func (v NullableUpdateLayoutPermissionsRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateLayoutPermissionsRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -20,18 +20,18 @@ var _ MappedNullable = &ListBlueprints200ResponseAllOfBlueprintsInner{}
 
 // ListBlueprints200ResponseAllOfBlueprintsInner struct for ListBlueprints200ResponseAllOfBlueprintsInner
 type ListBlueprints200ResponseAllOfBlueprintsInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Labels []string `json:"labels,omitempty"`
-	Type *string `json:"type,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Category *string `json:"category,omitempty"`
-	Config map[string]interface{} `json:"config,omitempty"`
-	Visibility *string `json:"visibility,omitempty"`
-	ResourcePermission map[string]interface{} `json:"resourcePermission,omitempty"`
-	Owner *ListActivity200ResponseAllOfActivityInnerActivityInnerUser `json:"owner,omitempty"`
-	Tenant *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"tenant,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                  `json:"id,omitempty"`
+	Name                 *string                                                                 `json:"name,omitempty"`
+	Labels               []string                                                                `json:"labels,omitempty"`
+	Type                 *string                                                                 `json:"type,omitempty"`
+	Description          *string                                                                 `json:"description,omitempty"`
+	Category             *string                                                                 `json:"category,omitempty"`
+	Config               map[string]interface{}                                                  `json:"config,omitempty"`
+	Visibility           *string                                                                 `json:"visibility,omitempty"`
+	ResourcePermission   map[string]interface{}                                                  `json:"resourcePermission,omitempty"`
+	Owner                *ListActivity200ResponseAllOfActivityInnerActivityInnerUser             `json:"owner,omitempty"`
+	Tenant               *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"tenant,omitempty"`
+	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
 }
 
 type _ListBlueprints200ResponseAllOfBlueprintsInner ListBlueprints200ResponseAllOfBlueprintsInner
@@ -406,7 +406,7 @@ func (o *ListBlueprints200ResponseAllOfBlueprintsInner) SetTenant(v ListApplianc
 }
 
 func (o ListBlueprints200ResponseAllOfBlueprintsInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -455,72 +455,8 @@ func (o ListBlueprints200ResponseAllOfBlueprintsInner) ToMap() (map[string]inter
 
 	return toSerialize, nil
 }
-
 func (o *ListBlueprints200ResponseAllOfBlueprintsInner) UnmarshalJSON(data []byte) (err error) {
-	varListBlueprints200ResponseAllOfBlueprintsInner := _ListBlueprints200ResponseAllOfBlueprintsInner{}
-
-	err = json.Unmarshal(data, &varListBlueprints200ResponseAllOfBlueprintsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListBlueprints200ResponseAllOfBlueprintsInner(varListBlueprints200ResponseAllOfBlueprintsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "resourcePermission")
-		delete(additionalProperties, "owner")
-		delete(additionalProperties, "tenant")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListBlueprints200ResponseAllOfBlueprintsInner struct {
-	value *ListBlueprints200ResponseAllOfBlueprintsInner
-	isSet bool
-}
-
-func (v NullableListBlueprints200ResponseAllOfBlueprintsInner) Get() *ListBlueprints200ResponseAllOfBlueprintsInner {
-	return v.value
-}
-
-func (v *NullableListBlueprints200ResponseAllOfBlueprintsInner) Set(val *ListBlueprints200ResponseAllOfBlueprintsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListBlueprints200ResponseAllOfBlueprintsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListBlueprints200ResponseAllOfBlueprintsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListBlueprints200ResponseAllOfBlueprintsInner(val *ListBlueprints200ResponseAllOfBlueprintsInner) *NullableListBlueprints200ResponseAllOfBlueprintsInner {
-	return &NullableListBlueprints200ResponseAllOfBlueprintsInner{value: val, isSet: true}
-}
-
-func (v NullableListBlueprints200ResponseAllOfBlueprintsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListBlueprints200ResponseAllOfBlueprintsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

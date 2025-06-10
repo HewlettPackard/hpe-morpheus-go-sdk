@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the ResizeInstance200ResponseAllOfOneOf type satisfies the MappedNullable interface at compile time
@@ -23,8 +22,8 @@ var _ MappedNullable = &ResizeInstance200ResponseAllOfOneOf{}
 type ResizeInstance200ResponseAllOfOneOf struct {
 	Instance UpdateInstance200ResponseAllOfOneOfInstance `json:"instance"`
 	// The Cloud ID to provision the instance onto.
-	ZoneId int64 `json:"zoneId"`
-	AdditionalProperties map[string]interface{}
+	ZoneId               int64                  `json:"zoneId"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ResizeInstance200ResponseAllOfOneOf ResizeInstance200ResponseAllOfOneOf
@@ -97,7 +96,7 @@ func (o *ResizeInstance200ResponseAllOfOneOf) SetZoneId(v int64) {
 }
 
 func (o ResizeInstance200ResponseAllOfOneOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -115,85 +114,8 @@ func (o ResizeInstance200ResponseAllOfOneOf) ToMap() (map[string]interface{}, er
 
 	return toSerialize, nil
 }
-
 func (o *ResizeInstance200ResponseAllOfOneOf) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"instance",
-		"zoneId",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varResizeInstance200ResponseAllOfOneOf := _ResizeInstance200ResponseAllOfOneOf{}
-
-	err = json.Unmarshal(data, &varResizeInstance200ResponseAllOfOneOf)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ResizeInstance200ResponseAllOfOneOf(varResizeInstance200ResponseAllOfOneOf)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "instance")
-		delete(additionalProperties, "zoneId")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableResizeInstance200ResponseAllOfOneOf struct {
-	value *ResizeInstance200ResponseAllOfOneOf
-	isSet bool
-}
-
-func (v NullableResizeInstance200ResponseAllOfOneOf) Get() *ResizeInstance200ResponseAllOfOneOf {
-	return v.value
-}
-
-func (v *NullableResizeInstance200ResponseAllOfOneOf) Set(val *ResizeInstance200ResponseAllOfOneOf) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableResizeInstance200ResponseAllOfOneOf) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableResizeInstance200ResponseAllOfOneOf) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableResizeInstance200ResponseAllOfOneOf(val *ResizeInstance200ResponseAllOfOneOf) *NullableResizeInstance200ResponseAllOfOneOf {
-	return &NullableResizeInstance200ResponseAllOfOneOf{value: val, isSet: true}
-}
-
-func (v NullableResizeInstance200ResponseAllOfOneOf) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableResizeInstance200ResponseAllOfOneOf) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

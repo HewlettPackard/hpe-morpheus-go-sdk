@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the InstanceCreateSuccess type satisfies the MappedNullable interface at compile time
@@ -21,8 +20,8 @@ var _ MappedNullable = &InstanceCreateSuccess{}
 
 // InstanceCreateSuccess struct for InstanceCreateSuccess
 type InstanceCreateSuccess struct {
-	Instance AddInstance200ResponseAllOfOneOfInstance `json:"instance"`
-	AdditionalProperties map[string]interface{}
+	Instance             AddInstance200ResponseAllOfOneOfInstance `json:"instance"`
+	AdditionalProperties map[string]interface{}                   `json:",remain"`
 }
 
 type _InstanceCreateSuccess InstanceCreateSuccess
@@ -70,7 +69,7 @@ func (o *InstanceCreateSuccess) SetInstance(v AddInstance200ResponseAllOfOneOfIn
 }
 
 func (o InstanceCreateSuccess) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -87,83 +86,8 @@ func (o InstanceCreateSuccess) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *InstanceCreateSuccess) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"instance",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varInstanceCreateSuccess := _InstanceCreateSuccess{}
-
-	err = json.Unmarshal(data, &varInstanceCreateSuccess)
-
-	if err != nil {
-		return err
-	}
-
-	*o = InstanceCreateSuccess(varInstanceCreateSuccess)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "instance")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableInstanceCreateSuccess struct {
-	value *InstanceCreateSuccess
-	isSet bool
-}
-
-func (v NullableInstanceCreateSuccess) Get() *InstanceCreateSuccess {
-	return v.value
-}
-
-func (v *NullableInstanceCreateSuccess) Set(val *InstanceCreateSuccess) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableInstanceCreateSuccess) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableInstanceCreateSuccess) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableInstanceCreateSuccess(val *InstanceCreateSuccess) *NullableInstanceCreateSuccess {
-	return &NullableInstanceCreateSuccess{value: val, isSet: true}
-}
-
-func (v NullableInstanceCreateSuccess) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableInstanceCreateSuccess) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

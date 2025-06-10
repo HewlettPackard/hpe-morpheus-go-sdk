@@ -18,17 +18,16 @@ import (
 	"io"
 	"net/http"
 	"net/url"
-	"strings"
 	"os"
+	"strings"
 )
-
 
 // CatalogItemsAPIService CatalogItemsAPI service
 type CatalogItemsAPIService service
 
 type ApiAddCatalogItemTypeRequest struct {
-	ctx context.Context
-	ApiService *CatalogItemsAPIService
+	ctx                       context.Context
+	ApiService                *CatalogItemsAPIService
 	addCatalogItemTypeRequest *AddCatalogItemTypeRequest
 }
 
@@ -46,24 +45,25 @@ AddCatalogItemType Create a Catalog Item Type
 
 Use this command to create a catalog item type.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddCatalogItemTypeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddCatalogItemTypeRequest
 */
 func (a *CatalogItemsAPIService) AddCatalogItemType(ctx context.Context) ApiAddCatalogItemTypeRequest {
 	return ApiAddCatalogItemTypeRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddCatalogItemType200Response
+//
+//	@return AddCatalogItemType200Response
 func (a *CatalogItemsAPIService) AddCatalogItemTypeExecute(r ApiAddCatalogItemTypeRequest) (*AddCatalogItemType200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddCatalogItemType200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddCatalogItemType200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CatalogItemsAPIService.AddCatalogItemType")
@@ -115,7 +115,7 @@ func (a *CatalogItemsAPIService) AddCatalogItemTypeExecute(r ApiAddCatalogItemTy
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -124,8 +124,8 @@ func (a *CatalogItemsAPIService) AddCatalogItemTypeExecute(r ApiAddCatalogItemTy
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -135,8 +135,8 @@ func (a *CatalogItemsAPIService) AddCatalogItemTypeExecute(r ApiAddCatalogItemTy
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -144,8 +144,8 @@ func (a *CatalogItemsAPIService) AddCatalogItemTypeExecute(r ApiAddCatalogItemTy
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -154,9 +154,9 @@ func (a *CatalogItemsAPIService) AddCatalogItemTypeExecute(r ApiAddCatalogItemTy
 }
 
 type ApiGetCatalogItemTypeRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *CatalogItemsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetCatalogItemTypeRequest) Execute() (*GetCatalogItemType200Response, *http.Response, error) {
@@ -168,26 +168,27 @@ GetCatalogItemType Get a Specific Catalog Item Type
 
 This endpoint retrieves a specific category item type.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetCatalogItemTypeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetCatalogItemTypeRequest
 */
 func (a *CatalogItemsAPIService) GetCatalogItemType(ctx context.Context, id int64) ApiGetCatalogItemTypeRequest {
 	return ApiGetCatalogItemTypeRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetCatalogItemType200Response
+//
+//	@return GetCatalogItemType200Response
 func (a *CatalogItemsAPIService) GetCatalogItemTypeExecute(r ApiGetCatalogItemTypeRequest) (*GetCatalogItemType200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetCatalogItemType200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetCatalogItemType200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CatalogItemsAPIService.GetCatalogItemType")
@@ -238,7 +239,7 @@ func (a *CatalogItemsAPIService) GetCatalogItemTypeExecute(r ApiGetCatalogItemTy
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -247,8 +248,8 @@ func (a *CatalogItemsAPIService) GetCatalogItemTypeExecute(r ApiGetCatalogItemTy
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -258,8 +259,8 @@ func (a *CatalogItemsAPIService) GetCatalogItemTypeExecute(r ApiGetCatalogItemTy
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -267,8 +268,8 @@ func (a *CatalogItemsAPIService) GetCatalogItemTypeExecute(r ApiGetCatalogItemTy
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -277,20 +278,20 @@ func (a *CatalogItemsAPIService) GetCatalogItemTypeExecute(r ApiGetCatalogItemTy
 }
 
 type ApiListCatalogItemTypesRequest struct {
-	ctx context.Context
-	ApiService *CatalogItemsAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	name *string
+	ctx         context.Context
+	ApiService  *CatalogItemsAPIService
+	max         *int64
+	offset      *int64
+	sort        *string
+	direction   *string
+	phrase      *string
+	name        *string
 	description *string
-	enabled *bool
-	featured *bool
-	labels *string
-	allLabels *string
-	code *string
+	enabled     *bool
+	featured    *bool
+	labels      *string
+	allLabels   *string
+	code        *string
 }
 
 // Maximum number of records to return
@@ -374,24 +375,25 @@ ListCatalogItemTypes Get All Catalog Item Types
 
 This endpoint retrieves all catalog item types.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListCatalogItemTypesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListCatalogItemTypesRequest
 */
 func (a *CatalogItemsAPIService) ListCatalogItemTypes(ctx context.Context) ApiListCatalogItemTypesRequest {
 	return ApiListCatalogItemTypesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListCatalogItemTypes200Response
+//
+//	@return ListCatalogItemTypes200Response
 func (a *CatalogItemsAPIService) ListCatalogItemTypesExecute(r ApiListCatalogItemTypesRequest) (*ListCatalogItemTypes200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListCatalogItemTypes200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListCatalogItemTypes200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CatalogItemsAPIService.ListCatalogItemTypes")
@@ -489,7 +491,7 @@ func (a *CatalogItemsAPIService) ListCatalogItemTypesExecute(r ApiListCatalogIte
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -498,8 +500,8 @@ func (a *CatalogItemsAPIService) ListCatalogItemTypesExecute(r ApiListCatalogIte
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -509,8 +511,8 @@ func (a *CatalogItemsAPIService) ListCatalogItemTypesExecute(r ApiListCatalogIte
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -518,8 +520,8 @@ func (a *CatalogItemsAPIService) ListCatalogItemTypesExecute(r ApiListCatalogIte
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -528,9 +530,9 @@ func (a *CatalogItemsAPIService) ListCatalogItemTypesExecute(r ApiListCatalogIte
 }
 
 type ApiRemoveCatalogItemTypeRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *CatalogItemsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiRemoveCatalogItemTypeRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -542,26 +544,27 @@ RemoveCatalogItemType Delete a Catalog Item Type
 
 Will delete a catalog item type.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiRemoveCatalogItemTypeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiRemoveCatalogItemTypeRequest
 */
 func (a *CatalogItemsAPIService) RemoveCatalogItemType(ctx context.Context, id int64) ApiRemoveCatalogItemTypeRequest {
 	return ApiRemoveCatalogItemTypeRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *CatalogItemsAPIService) RemoveCatalogItemTypeExecute(r ApiRemoveCatalogItemTypeRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CatalogItemsAPIService.RemoveCatalogItemType")
@@ -612,7 +615,7 @@ func (a *CatalogItemsAPIService) RemoveCatalogItemTypeExecute(r ApiRemoveCatalog
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -621,8 +624,8 @@ func (a *CatalogItemsAPIService) RemoveCatalogItemTypeExecute(r ApiRemoveCatalog
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -632,8 +635,8 @@ func (a *CatalogItemsAPIService) RemoveCatalogItemTypeExecute(r ApiRemoveCatalog
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -641,8 +644,8 @@ func (a *CatalogItemsAPIService) RemoveCatalogItemTypeExecute(r ApiRemoveCatalog
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -651,9 +654,9 @@ func (a *CatalogItemsAPIService) RemoveCatalogItemTypeExecute(r ApiRemoveCatalog
 }
 
 type ApiUpdateCatalogItemTypeRequest struct {
-	ctx context.Context
-	ApiService *CatalogItemsAPIService
-	id int64
+	ctx                          context.Context
+	ApiService                   *CatalogItemsAPIService
+	id                           int64
 	updateCatalogItemTypeRequest *UpdateCatalogItemTypeRequest
 }
 
@@ -671,26 +674,27 @@ UpdateCatalogItemType Update a Catalog Item Type
 
 Use this command to update an existing catalog item type.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateCatalogItemTypeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateCatalogItemTypeRequest
 */
 func (a *CatalogItemsAPIService) UpdateCatalogItemType(ctx context.Context, id int64) ApiUpdateCatalogItemTypeRequest {
 	return ApiUpdateCatalogItemTypeRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return UpdateCatalogItemType200Response
+//
+//	@return UpdateCatalogItemType200Response
 func (a *CatalogItemsAPIService) UpdateCatalogItemTypeExecute(r ApiUpdateCatalogItemTypeRequest) (*UpdateCatalogItemType200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UpdateCatalogItemType200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UpdateCatalogItemType200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CatalogItemsAPIService.UpdateCatalogItemType")
@@ -743,7 +747,7 @@ func (a *CatalogItemsAPIService) UpdateCatalogItemTypeExecute(r ApiUpdateCatalog
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -752,8 +756,8 @@ func (a *CatalogItemsAPIService) UpdateCatalogItemTypeExecute(r ApiUpdateCatalog
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -763,8 +767,8 @@ func (a *CatalogItemsAPIService) UpdateCatalogItemTypeExecute(r ApiUpdateCatalog
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -772,8 +776,8 @@ func (a *CatalogItemsAPIService) UpdateCatalogItemTypeExecute(r ApiUpdateCatalog
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -782,10 +786,10 @@ func (a *CatalogItemsAPIService) UpdateCatalogItemTypeExecute(r ApiUpdateCatalog
 }
 
 type ApiUpdateCatalogItemTypeLogoRequest struct {
-	ctx context.Context
-	ApiService *CatalogItemsAPIService
-	id int64
-	catalogItemTypeLogo *os.File
+	ctx                     context.Context
+	ApiService              *CatalogItemsAPIService
+	id                      int64
+	catalogItemTypeLogo     *os.File
 	catalogItemTypeDarkLogo *os.File
 }
 
@@ -810,26 +814,27 @@ UpdateCatalogItemTypeLogo Update Logo For Catalog Item Type
 
 Use this command to update the logo and dark logo images for an existing catalog item type. This endpoint expects multipart form data as the request format, not JSON.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateCatalogItemTypeLogoRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateCatalogItemTypeLogoRequest
 */
 func (a *CatalogItemsAPIService) UpdateCatalogItemTypeLogo(ctx context.Context, id int64) ApiUpdateCatalogItemTypeLogoRequest {
 	return ApiUpdateCatalogItemTypeLogoRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return UpdateCatalogItemType200Response
+//
+//	@return UpdateCatalogItemType200Response
 func (a *CatalogItemsAPIService) UpdateCatalogItemTypeLogoExecute(r ApiUpdateCatalogItemTypeLogoRequest) (*UpdateCatalogItemType200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UpdateCatalogItemType200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UpdateCatalogItemType200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CatalogItemsAPIService.UpdateCatalogItemTypeLogo")
@@ -862,8 +867,8 @@ func (a *CatalogItemsAPIService) UpdateCatalogItemTypeLogoExecute(r ApiUpdateCat
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	var catalogItemTypeLogoLocalVarFormFileName string
-	var catalogItemTypeLogoLocalVarFileName     string
-	var catalogItemTypeLogoLocalVarFileBytes    []byte
+	var catalogItemTypeLogoLocalVarFileName string
+	var catalogItemTypeLogoLocalVarFileBytes []byte
 
 	catalogItemTypeLogoLocalVarFormFileName = "catalogItemType.logo"
 	catalogItemTypeLogoLocalVarFile := r.catalogItemTypeLogo
@@ -877,8 +882,8 @@ func (a *CatalogItemsAPIService) UpdateCatalogItemTypeLogoExecute(r ApiUpdateCat
 		formFiles = append(formFiles, formFile{fileBytes: catalogItemTypeLogoLocalVarFileBytes, fileName: catalogItemTypeLogoLocalVarFileName, formFileName: catalogItemTypeLogoLocalVarFormFileName})
 	}
 	var catalogItemTypeDarkLogoLocalVarFormFileName string
-	var catalogItemTypeDarkLogoLocalVarFileName     string
-	var catalogItemTypeDarkLogoLocalVarFileBytes    []byte
+	var catalogItemTypeDarkLogoLocalVarFileName string
+	var catalogItemTypeDarkLogoLocalVarFileBytes []byte
 
 	catalogItemTypeDarkLogoLocalVarFormFileName = "catalogItemType.darkLogo"
 	catalogItemTypeDarkLogoLocalVarFile := r.catalogItemTypeDarkLogo
@@ -910,7 +915,7 @@ func (a *CatalogItemsAPIService) UpdateCatalogItemTypeLogoExecute(r ApiUpdateCat
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -919,8 +924,8 @@ func (a *CatalogItemsAPIService) UpdateCatalogItemTypeLogoExecute(r ApiUpdateCat
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -930,8 +935,8 @@ func (a *CatalogItemsAPIService) UpdateCatalogItemTypeLogoExecute(r ApiUpdateCat
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -939,8 +944,8 @@ func (a *CatalogItemsAPIService) UpdateCatalogItemTypeLogoExecute(r ApiUpdateCat
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

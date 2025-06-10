@@ -20,13 +20,13 @@ var _ MappedNullable = &ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksIn
 
 // ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile struct for ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile
 type ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile struct {
-	Id *int64 `json:"id,omitempty"`
-	SourceType *string `json:"sourceType,omitempty"`
-	ContentRef *string `json:"contentRef,omitempty"`
-	ContentPath *string `json:"contentPath,omitempty"`
-	Repository *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"repository,omitempty"`
-	Content *string `json:"content,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                             `json:"id,omitempty"`
+	SourceType           *string                                            `json:"sourceType,omitempty"`
+	ContentRef           *string                                            `json:"contentRef,omitempty"`
+	ContentPath          *string                                            `json:"contentPath,omitempty"`
+	Repository           *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"repository,omitempty"`
+	Content              *string                                            `json:"content,omitempty"`
+	AdditionalProperties map[string]interface{}                             `json:",remain"`
 }
 
 type _ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile
@@ -241,7 +241,7 @@ func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile) Se
 }
 
 func (o ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -275,67 +275,8 @@ func (o ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile) ToM
 
 	return toSerialize, nil
 }
-
 func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile) UnmarshalJSON(data []byte) (err error) {
-	varListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile := _ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile{}
-
-	err = json.Unmarshal(data, &varListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile(varListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "sourceType")
-		delete(additionalProperties, "contentRef")
-		delete(additionalProperties, "contentPath")
-		delete(additionalProperties, "repository")
-		delete(additionalProperties, "content")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile struct {
-	value *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile
-	isSet bool
-}
-
-func (v NullableListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile) Get() *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile {
-	return v.value
-}
-
-func (v *NullableListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile) Set(val *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile(val *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile) *NullableListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile {
-	return &NullableListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile{value: val, isSet: true}
-}
-
-func (v NullableListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskFile) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

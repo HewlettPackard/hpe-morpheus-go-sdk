@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the CredentialAccessSecretKeyConfig type satisfies the MappedNullable interface at compile time
@@ -28,13 +27,13 @@ type CredentialAccessSecretKeyConfig struct {
 	// Optional Description
 	Description *string `json:"description,omitempty"`
 	// Credential enabled
-	Enabled *bool `json:"enabled,omitempty"`
+	Enabled     *bool                                            `json:"enabled,omitempty"`
 	Integration *AddCredentialsRequestCredentialOneOfIntegration `json:"integration,omitempty"`
 	// Access Key
 	Username string `json:"username"`
 	// Secret Key
-	Password string `json:"password"`
-	AdditionalProperties map[string]interface{}
+	Password             string                 `json:"password"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _CredentialAccessSecretKeyConfig CredentialAccessSecretKeyConfig
@@ -257,7 +256,7 @@ func (o *CredentialAccessSecretKeyConfig) SetPassword(v string) {
 }
 
 func (o CredentialAccessSecretKeyConfig) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -286,92 +285,8 @@ func (o CredentialAccessSecretKeyConfig) ToMap() (map[string]interface{}, error)
 
 	return toSerialize, nil
 }
-
 func (o *CredentialAccessSecretKeyConfig) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"type",
-		"name",
-		"username",
-		"password",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varCredentialAccessSecretKeyConfig := _CredentialAccessSecretKeyConfig{}
-
-	err = json.Unmarshal(data, &varCredentialAccessSecretKeyConfig)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CredentialAccessSecretKeyConfig(varCredentialAccessSecretKeyConfig)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "integration")
-		delete(additionalProperties, "username")
-		delete(additionalProperties, "password")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCredentialAccessSecretKeyConfig struct {
-	value *CredentialAccessSecretKeyConfig
-	isSet bool
-}
-
-func (v NullableCredentialAccessSecretKeyConfig) Get() *CredentialAccessSecretKeyConfig {
-	return v.value
-}
-
-func (v *NullableCredentialAccessSecretKeyConfig) Set(val *CredentialAccessSecretKeyConfig) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCredentialAccessSecretKeyConfig) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCredentialAccessSecretKeyConfig) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCredentialAccessSecretKeyConfig(val *CredentialAccessSecretKeyConfig) *NullableCredentialAccessSecretKeyConfig {
-	return &NullableCredentialAccessSecretKeyConfig{value: val, isSet: true}
-}
-
-func (v NullableCredentialAccessSecretKeyConfig) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCredentialAccessSecretKeyConfig) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

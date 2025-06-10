@@ -21,16 +21,15 @@ import (
 	"strings"
 )
 
-
 // ClusterLayoutsAPIService ClusterLayoutsAPI service
 type ClusterLayoutsAPIService service
 
 type ApiAddClusterLayoutCloneRequest struct {
-	ctx context.Context
-	ApiService *ClusterLayoutsAPIService
-	id int64
-	name *string
-	description *string
+	ctx            context.Context
+	ApiService     *ClusterLayoutsAPIService
+	id             int64
+	name           *string
+	description    *string
 	computeVersion *string
 }
 
@@ -61,26 +60,27 @@ AddClusterLayoutClone Clone a Cluster Layout
 
 Use this command to clone a cluster layout.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiAddClusterLayoutCloneRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiAddClusterLayoutCloneRequest
 */
 func (a *ClusterLayoutsAPIService) AddClusterLayoutClone(ctx context.Context, id int64) ApiAddClusterLayoutCloneRequest {
 	return ApiAddClusterLayoutCloneRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddClusterLayouts200Response
+//
+//	@return AddClusterLayouts200Response
 func (a *ClusterLayoutsAPIService) AddClusterLayoutCloneExecute(r ApiAddClusterLayoutCloneRequest) (*AddClusterLayouts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddClusterLayouts200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddClusterLayouts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClusterLayoutsAPIService.AddClusterLayoutClone")
@@ -140,7 +140,7 @@ func (a *ClusterLayoutsAPIService) AddClusterLayoutCloneExecute(r ApiAddClusterL
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -149,8 +149,8 @@ func (a *ClusterLayoutsAPIService) AddClusterLayoutCloneExecute(r ApiAddClusterL
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -160,8 +160,8 @@ func (a *ClusterLayoutsAPIService) AddClusterLayoutCloneExecute(r ApiAddClusterL
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -169,8 +169,8 @@ func (a *ClusterLayoutsAPIService) AddClusterLayoutCloneExecute(r ApiAddClusterL
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -179,8 +179,8 @@ func (a *ClusterLayoutsAPIService) AddClusterLayoutCloneExecute(r ApiAddClusterL
 }
 
 type ApiAddClusterLayoutsRequest struct {
-	ctx context.Context
-	ApiService *ClusterLayoutsAPIService
+	ctx                      context.Context
+	ApiService               *ClusterLayoutsAPIService
 	addClusterLayoutsRequest *AddClusterLayoutsRequest
 }
 
@@ -198,24 +198,25 @@ AddClusterLayouts Create a Cluster Layout
 
 Use this command to create a cluster layout.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddClusterLayoutsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddClusterLayoutsRequest
 */
 func (a *ClusterLayoutsAPIService) AddClusterLayouts(ctx context.Context) ApiAddClusterLayoutsRequest {
 	return ApiAddClusterLayoutsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddClusterLayouts200Response
+//
+//	@return AddClusterLayouts200Response
 func (a *ClusterLayoutsAPIService) AddClusterLayoutsExecute(r ApiAddClusterLayoutsRequest) (*AddClusterLayouts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddClusterLayouts200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddClusterLayouts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClusterLayoutsAPIService.AddClusterLayouts")
@@ -267,7 +268,7 @@ func (a *ClusterLayoutsAPIService) AddClusterLayoutsExecute(r ApiAddClusterLayou
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -276,8 +277,8 @@ func (a *ClusterLayoutsAPIService) AddClusterLayoutsExecute(r ApiAddClusterLayou
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -287,8 +288,8 @@ func (a *ClusterLayoutsAPIService) AddClusterLayoutsExecute(r ApiAddClusterLayou
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -296,8 +297,8 @@ func (a *ClusterLayoutsAPIService) AddClusterLayoutsExecute(r ApiAddClusterLayou
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -306,9 +307,9 @@ func (a *ClusterLayoutsAPIService) AddClusterLayoutsExecute(r ApiAddClusterLayou
 }
 
 type ApiDeleteClusterLayoutRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClusterLayoutsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiDeleteClusterLayoutRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -320,26 +321,27 @@ DeleteClusterLayout Delete a Cluster Layout
 
 Will delete a cluster layout
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiDeleteClusterLayoutRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeleteClusterLayoutRequest
 */
 func (a *ClusterLayoutsAPIService) DeleteClusterLayout(ctx context.Context, id int64) ApiDeleteClusterLayoutRequest {
 	return ApiDeleteClusterLayoutRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *ClusterLayoutsAPIService) DeleteClusterLayoutExecute(r ApiDeleteClusterLayoutRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClusterLayoutsAPIService.DeleteClusterLayout")
@@ -390,7 +392,7 @@ func (a *ClusterLayoutsAPIService) DeleteClusterLayoutExecute(r ApiDeleteCluster
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -399,8 +401,8 @@ func (a *ClusterLayoutsAPIService) DeleteClusterLayoutExecute(r ApiDeleteCluster
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -410,8 +412,8 @@ func (a *ClusterLayoutsAPIService) DeleteClusterLayoutExecute(r ApiDeleteCluster
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -419,8 +421,8 @@ func (a *ClusterLayoutsAPIService) DeleteClusterLayoutExecute(r ApiDeleteCluster
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -429,9 +431,9 @@ func (a *ClusterLayoutsAPIService) DeleteClusterLayoutExecute(r ApiDeleteCluster
 }
 
 type ApiGetClusterLayoutRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ClusterLayoutsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetClusterLayoutRequest) Execute() (*GetClusterLayout200Response, *http.Response, error) {
@@ -443,26 +445,27 @@ GetClusterLayout Get a Specific Cluster Layout
 
 This endpoint retrieves a specific cluster layout.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetClusterLayoutRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetClusterLayoutRequest
 */
 func (a *ClusterLayoutsAPIService) GetClusterLayout(ctx context.Context, id int64) ApiGetClusterLayoutRequest {
 	return ApiGetClusterLayoutRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetClusterLayout200Response
+//
+//	@return GetClusterLayout200Response
 func (a *ClusterLayoutsAPIService) GetClusterLayoutExecute(r ApiGetClusterLayoutRequest) (*GetClusterLayout200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetClusterLayout200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetClusterLayout200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClusterLayoutsAPIService.GetClusterLayout")
@@ -513,7 +516,7 @@ func (a *ClusterLayoutsAPIService) GetClusterLayoutExecute(r ApiGetClusterLayout
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -522,8 +525,8 @@ func (a *ClusterLayoutsAPIService) GetClusterLayoutExecute(r ApiGetClusterLayout
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -533,8 +536,8 @@ func (a *ClusterLayoutsAPIService) GetClusterLayoutExecute(r ApiGetClusterLayout
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -542,8 +545,8 @@ func (a *ClusterLayoutsAPIService) GetClusterLayoutExecute(r ApiGetClusterLayout
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -552,16 +555,16 @@ func (a *ClusterLayoutsAPIService) GetClusterLayoutExecute(r ApiGetClusterLayout
 }
 
 type ApiListClusterLayoutsRequest struct {
-	ctx context.Context
-	ApiService *ClusterLayoutsAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
+	ctx           context.Context
+	ApiService    *ClusterLayoutsAPIService
+	max           *int64
+	offset        *int64
+	sort          *string
+	direction     *string
+	phrase        *string
 	provisionType *string
-	labels *string
-	allLabels *string
+	labels        *string
+	allLabels     *string
 }
 
 // Maximum number of records to return
@@ -594,7 +597,7 @@ func (r ApiListClusterLayoutsRequest) Phrase(phrase string) ApiListClusterLayout
 	return r
 }
 
-// Filter by &#x60;Provision Type&#x60; code. Refer to &#x60;Provision Types&#x60; API for up to date listings. 
+// Filter by &#x60;Provision Type&#x60; code. Refer to &#x60;Provision Types&#x60; API for up to date listings.
 func (r ApiListClusterLayoutsRequest) ProvisionType(provisionType string) ApiListClusterLayoutsRequest {
 	r.provisionType = &provisionType
 	return r
@@ -621,24 +624,25 @@ ListClusterLayouts Get All Cluster Layouts
 
 This endpoint retrieves all cluster layouts.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListClusterLayoutsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListClusterLayoutsRequest
 */
 func (a *ClusterLayoutsAPIService) ListClusterLayouts(ctx context.Context) ApiListClusterLayoutsRequest {
 	return ApiListClusterLayoutsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListClusterLayouts200Response
+//
+//	@return ListClusterLayouts200Response
 func (a *ClusterLayoutsAPIService) ListClusterLayoutsExecute(r ApiListClusterLayoutsRequest) (*ListClusterLayouts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListClusterLayouts200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListClusterLayouts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClusterLayoutsAPIService.ListClusterLayouts")
@@ -724,7 +728,7 @@ func (a *ClusterLayoutsAPIService) ListClusterLayoutsExecute(r ApiListClusterLay
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -733,8 +737,8 @@ func (a *ClusterLayoutsAPIService) ListClusterLayoutsExecute(r ApiListClusterLay
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -744,8 +748,8 @@ func (a *ClusterLayoutsAPIService) ListClusterLayoutsExecute(r ApiListClusterLay
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -753,8 +757,8 @@ func (a *ClusterLayoutsAPIService) ListClusterLayoutsExecute(r ApiListClusterLay
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -763,9 +767,9 @@ func (a *ClusterLayoutsAPIService) ListClusterLayoutsExecute(r ApiListClusterLay
 }
 
 type ApiUpdateClusterLayoutRequest struct {
-	ctx context.Context
-	ApiService *ClusterLayoutsAPIService
-	id int64
+	ctx                        context.Context
+	ApiService                 *ClusterLayoutsAPIService
+	id                         int64
 	updateClusterLayoutRequest *UpdateClusterLayoutRequest
 }
 
@@ -783,26 +787,27 @@ UpdateClusterLayout Update a Cluster Layout
 
 Use this command to update an existing cluster layout.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateClusterLayoutRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateClusterLayoutRequest
 */
 func (a *ClusterLayoutsAPIService) UpdateClusterLayout(ctx context.Context, id int64) ApiUpdateClusterLayoutRequest {
 	return ApiUpdateClusterLayoutRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddClusterLayouts200Response
+//
+//	@return AddClusterLayouts200Response
 func (a *ClusterLayoutsAPIService) UpdateClusterLayoutExecute(r ApiUpdateClusterLayoutRequest) (*AddClusterLayouts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddClusterLayouts200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddClusterLayouts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClusterLayoutsAPIService.UpdateClusterLayout")
@@ -855,7 +860,7 @@ func (a *ClusterLayoutsAPIService) UpdateClusterLayoutExecute(r ApiUpdateCluster
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -864,8 +869,8 @@ func (a *ClusterLayoutsAPIService) UpdateClusterLayoutExecute(r ApiUpdateCluster
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -875,8 +880,8 @@ func (a *ClusterLayoutsAPIService) UpdateClusterLayoutExecute(r ApiUpdateCluster
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -884,8 +889,8 @@ func (a *ClusterLayoutsAPIService) UpdateClusterLayoutExecute(r ApiUpdateCluster
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

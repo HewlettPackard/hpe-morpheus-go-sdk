@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the PhpIPAMNetworkPoolServer type satisfies the MappedNullable interface at compile time
@@ -38,10 +37,10 @@ type PhpIPAMNetworkPoolServer struct {
 	// Disable SSL SNI Verification
 	IgnoreSsl *bool `json:"ignoreSsl,omitempty"`
 	// Network Filter
-	NetworkFilter *string `json:"networkFilter,omitempty"`
-	Config PhpIPAMNetworkPoolServerConfig `json:"config"`
-	Credential *NSXNetworkServerCredential `json:"credential,omitempty"`
-	AdditionalProperties map[string]interface{}
+	NetworkFilter        *string                        `json:"networkFilter,omitempty"`
+	Config               PhpIPAMNetworkPoolServerConfig `json:"config"`
+	Credential           *NSXNetworkServerCredential    `json:"credential,omitempty"`
+	AdditionalProperties map[string]interface{}         `json:",remain"`
 }
 
 type _PhpIPAMNetworkPoolServer PhpIPAMNetworkPoolServer
@@ -400,7 +399,7 @@ func (o *PhpIPAMNetworkPoolServer) SetCredential(v NSXNetworkServerCredential) {
 }
 
 func (o PhpIPAMNetworkPoolServer) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -441,96 +440,8 @@ func (o PhpIPAMNetworkPoolServer) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *PhpIPAMNetworkPoolServer) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"type",
-		"name",
-		"serviceUrl",
-		"config",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varPhpIPAMNetworkPoolServer := _PhpIPAMNetworkPoolServer{}
-
-	err = json.Unmarshal(data, &varPhpIPAMNetworkPoolServer)
-
-	if err != nil {
-		return err
-	}
-
-	*o = PhpIPAMNetworkPoolServer(varPhpIPAMNetworkPoolServer)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "serviceUrl")
-		delete(additionalProperties, "serviceUsername")
-		delete(additionalProperties, "servicePassword")
-		delete(additionalProperties, "serviceThrottleRate")
-		delete(additionalProperties, "ignoreSsl")
-		delete(additionalProperties, "networkFilter")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "credential")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullablePhpIPAMNetworkPoolServer struct {
-	value *PhpIPAMNetworkPoolServer
-	isSet bool
-}
-
-func (v NullablePhpIPAMNetworkPoolServer) Get() *PhpIPAMNetworkPoolServer {
-	return v.value
-}
-
-func (v *NullablePhpIPAMNetworkPoolServer) Set(val *PhpIPAMNetworkPoolServer) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullablePhpIPAMNetworkPoolServer) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullablePhpIPAMNetworkPoolServer) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullablePhpIPAMNetworkPoolServer(val *PhpIPAMNetworkPoolServer) *NullablePhpIPAMNetworkPoolServer {
-	return &NullablePhpIPAMNetworkPoolServer{value: val, isSet: true}
-}
-
-func (v NullablePhpIPAMNetworkPoolServer) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullablePhpIPAMNetworkPoolServer) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

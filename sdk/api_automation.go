@@ -21,13 +21,12 @@ import (
 	"strings"
 )
 
-
 // AutomationAPIService AutomationAPI service
 type AutomationAPIService service
 
 type ApiAddExecuteSchedulesRequest struct {
-	ctx context.Context
-	ApiService *AutomationAPIService
+	ctx                        context.Context
+	ApiService                 *AutomationAPIService
 	addExecuteSchedulesRequest *AddExecuteSchedulesRequest
 }
 
@@ -45,25 +44,25 @@ AddExecuteSchedules Creates a Execute Schedule
 
 Creates a execute schedule.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddExecuteSchedulesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddExecuteSchedulesRequest
 */
 func (a *AutomationAPIService) AddExecuteSchedules(ctx context.Context) ApiAddExecuteSchedulesRequest {
 	return ApiAddExecuteSchedulesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddExecuteSchedules200Response
+//
+//	@return AddExecuteSchedules200Response
 func (a *AutomationAPIService) AddExecuteSchedulesExecute(r ApiAddExecuteSchedulesRequest) (*AddExecuteSchedules200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddExecuteSchedules200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddExecuteSchedules200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomationAPIService.AddExecuteSchedules")
@@ -115,7 +114,7 @@ func (a *AutomationAPIService) AddExecuteSchedulesExecute(r ApiAddExecuteSchedul
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -124,8 +123,8 @@ func (a *AutomationAPIService) AddExecuteSchedulesExecute(r ApiAddExecuteSchedul
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -135,8 +134,8 @@ func (a *AutomationAPIService) AddExecuteSchedulesExecute(r ApiAddExecuteSchedul
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -144,8 +143,8 @@ func (a *AutomationAPIService) AddExecuteSchedulesExecute(r ApiAddExecuteSchedul
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -154,9 +153,9 @@ func (a *AutomationAPIService) AddExecuteSchedulesExecute(r ApiAddExecuteSchedul
 }
 
 type ApiAddPowerScheduleInstancesRequest struct {
-	ctx context.Context
-	ApiService *AutomationAPIService
-	id int64
+	ctx                              context.Context
+	ApiService                       *AutomationAPIService
+	id                               int64
 	addPowerScheduleInstancesRequest *AddPowerScheduleInstancesRequest
 }
 
@@ -174,27 +173,27 @@ AddPowerScheduleInstances Add Instances to a Power Schedule
 
 Add Instances to a Power Schedule.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiAddPowerScheduleInstancesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiAddPowerScheduleInstancesRequest
 */
 func (a *AutomationAPIService) AddPowerScheduleInstances(ctx context.Context, id int64) ApiAddPowerScheduleInstancesRequest {
 	return ApiAddPowerScheduleInstancesRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddPowerScheduleInstances200Response
+//
+//	@return AddPowerScheduleInstances200Response
 func (a *AutomationAPIService) AddPowerScheduleInstancesExecute(r ApiAddPowerScheduleInstancesRequest) (*AddPowerScheduleInstances200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddPowerScheduleInstances200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddPowerScheduleInstances200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomationAPIService.AddPowerScheduleInstances")
@@ -247,7 +246,7 @@ func (a *AutomationAPIService) AddPowerScheduleInstancesExecute(r ApiAddPowerSch
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -256,8 +255,8 @@ func (a *AutomationAPIService) AddPowerScheduleInstancesExecute(r ApiAddPowerSch
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -267,8 +266,8 @@ func (a *AutomationAPIService) AddPowerScheduleInstancesExecute(r ApiAddPowerSch
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -276,8 +275,8 @@ func (a *AutomationAPIService) AddPowerScheduleInstancesExecute(r ApiAddPowerSch
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -286,9 +285,9 @@ func (a *AutomationAPIService) AddPowerScheduleInstancesExecute(r ApiAddPowerSch
 }
 
 type ApiAddPowerScheduleServersRequest struct {
-	ctx context.Context
-	ApiService *AutomationAPIService
-	id int64
+	ctx                            context.Context
+	ApiService                     *AutomationAPIService
+	id                             int64
 	addPowerScheduleServersRequest *AddPowerScheduleServersRequest
 }
 
@@ -306,27 +305,27 @@ AddPowerScheduleServers Add Servers to a Power Schedule
 
 Add Servers to a Power Schedule.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiAddPowerScheduleServersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiAddPowerScheduleServersRequest
 */
 func (a *AutomationAPIService) AddPowerScheduleServers(ctx context.Context, id int64) ApiAddPowerScheduleServersRequest {
 	return ApiAddPowerScheduleServersRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddPowerScheduleInstances200Response
+//
+//	@return AddPowerScheduleInstances200Response
 func (a *AutomationAPIService) AddPowerScheduleServersExecute(r ApiAddPowerScheduleServersRequest) (*AddPowerScheduleInstances200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddPowerScheduleInstances200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddPowerScheduleInstances200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomationAPIService.AddPowerScheduleServers")
@@ -379,7 +378,7 @@ func (a *AutomationAPIService) AddPowerScheduleServersExecute(r ApiAddPowerSched
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -388,8 +387,8 @@ func (a *AutomationAPIService) AddPowerScheduleServersExecute(r ApiAddPowerSched
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -399,8 +398,8 @@ func (a *AutomationAPIService) AddPowerScheduleServersExecute(r ApiAddPowerSched
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -408,8 +407,8 @@ func (a *AutomationAPIService) AddPowerScheduleServersExecute(r ApiAddPowerSched
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -418,8 +417,8 @@ func (a *AutomationAPIService) AddPowerScheduleServersExecute(r ApiAddPowerSched
 }
 
 type ApiAddPowerSchedulesRequest struct {
-	ctx context.Context
-	ApiService *AutomationAPIService
+	ctx                      context.Context
+	ApiService               *AutomationAPIService
 	addPowerSchedulesRequest *AddPowerSchedulesRequest
 }
 
@@ -437,25 +436,25 @@ AddPowerSchedules Creates a Power Schedule
 
 Creates a power schedule.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddPowerSchedulesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddPowerSchedulesRequest
 */
 func (a *AutomationAPIService) AddPowerSchedules(ctx context.Context) ApiAddPowerSchedulesRequest {
 	return ApiAddPowerSchedulesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddPowerSchedules200Response
+//
+//	@return AddPowerSchedules200Response
 func (a *AutomationAPIService) AddPowerSchedulesExecute(r ApiAddPowerSchedulesRequest) (*AddPowerSchedules200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddPowerSchedules200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddPowerSchedules200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomationAPIService.AddPowerSchedules")
@@ -507,7 +506,7 @@ func (a *AutomationAPIService) AddPowerSchedulesExecute(r ApiAddPowerSchedulesRe
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -516,8 +515,8 @@ func (a *AutomationAPIService) AddPowerSchedulesExecute(r ApiAddPowerSchedulesRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -527,8 +526,8 @@ func (a *AutomationAPIService) AddPowerSchedulesExecute(r ApiAddPowerSchedulesRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -536,8 +535,8 @@ func (a *AutomationAPIService) AddPowerSchedulesExecute(r ApiAddPowerSchedulesRe
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -546,8 +545,8 @@ func (a *AutomationAPIService) AddPowerSchedulesExecute(r ApiAddPowerSchedulesRe
 }
 
 type ApiAddScaleThresholdsRequest struct {
-	ctx context.Context
-	ApiService *AutomationAPIService
+	ctx                       context.Context
+	ApiService                *AutomationAPIService
 	addScaleThresholdsRequest *AddScaleThresholdsRequest
 }
 
@@ -565,25 +564,25 @@ AddScaleThresholds Creates a Scale Threshold
 
 Creates a scale threshold.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddScaleThresholdsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddScaleThresholdsRequest
 */
 func (a *AutomationAPIService) AddScaleThresholds(ctx context.Context) ApiAddScaleThresholdsRequest {
 	return ApiAddScaleThresholdsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddScaleThresholds200Response
+//
+//	@return AddScaleThresholds200Response
 func (a *AutomationAPIService) AddScaleThresholdsExecute(r ApiAddScaleThresholdsRequest) (*AddScaleThresholds200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddScaleThresholds200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddScaleThresholds200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomationAPIService.AddScaleThresholds")
@@ -635,7 +634,7 @@ func (a *AutomationAPIService) AddScaleThresholdsExecute(r ApiAddScaleThresholds
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -644,8 +643,8 @@ func (a *AutomationAPIService) AddScaleThresholdsExecute(r ApiAddScaleThresholds
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -655,8 +654,8 @@ func (a *AutomationAPIService) AddScaleThresholdsExecute(r ApiAddScaleThresholds
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -664,8 +663,8 @@ func (a *AutomationAPIService) AddScaleThresholdsExecute(r ApiAddScaleThresholds
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -674,8 +673,8 @@ func (a *AutomationAPIService) AddScaleThresholdsExecute(r ApiAddScaleThresholds
 }
 
 type ApiAddTasksRequest struct {
-	ctx context.Context
-	ApiService *AutomationAPIService
+	ctx             context.Context
+	ApiService      *AutomationAPIService
 	addTasksRequest *AddTasksRequest
 }
 
@@ -693,25 +692,25 @@ AddTasks Creates a Task
 
 Creates a task.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddTasksRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddTasksRequest
 */
 func (a *AutomationAPIService) AddTasks(ctx context.Context) ApiAddTasksRequest {
 	return ApiAddTasksRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddTasks200Response
+//
+//	@return AddTasks200Response
 func (a *AutomationAPIService) AddTasksExecute(r ApiAddTasksRequest) (*AddTasks200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddTasks200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddTasks200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomationAPIService.AddTasks")
@@ -763,7 +762,7 @@ func (a *AutomationAPIService) AddTasksExecute(r ApiAddTasksRequest) (*AddTasks2
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -772,8 +771,8 @@ func (a *AutomationAPIService) AddTasksExecute(r ApiAddTasksRequest) (*AddTasks2
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -783,8 +782,8 @@ func (a *AutomationAPIService) AddTasksExecute(r ApiAddTasksRequest) (*AddTasks2
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -792,8 +791,8 @@ func (a *AutomationAPIService) AddTasksExecute(r ApiAddTasksRequest) (*AddTasks2
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -802,8 +801,8 @@ func (a *AutomationAPIService) AddTasksExecute(r ApiAddTasksRequest) (*AddTasks2
 }
 
 type ApiAddWorkflowsRequest struct {
-	ctx context.Context
-	ApiService *AutomationAPIService
+	ctx                 context.Context
+	ApiService          *AutomationAPIService
 	addWorkflowsRequest *AddWorkflowsRequest
 }
 
@@ -821,25 +820,25 @@ AddWorkflows Creates a Workflow
 
 Creates a workflow.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddWorkflowsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddWorkflowsRequest
 */
 func (a *AutomationAPIService) AddWorkflows(ctx context.Context) ApiAddWorkflowsRequest {
 	return ApiAddWorkflowsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddWorkflows200Response
+//
+//	@return AddWorkflows200Response
 func (a *AutomationAPIService) AddWorkflowsExecute(r ApiAddWorkflowsRequest) (*AddWorkflows200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddWorkflows200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddWorkflows200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomationAPIService.AddWorkflows")
@@ -891,7 +890,7 @@ func (a *AutomationAPIService) AddWorkflowsExecute(r ApiAddWorkflowsRequest) (*A
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -900,8 +899,8 @@ func (a *AutomationAPIService) AddWorkflowsExecute(r ApiAddWorkflowsRequest) (*A
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -911,8 +910,8 @@ func (a *AutomationAPIService) AddWorkflowsExecute(r ApiAddWorkflowsRequest) (*A
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -920,8 +919,8 @@ func (a *AutomationAPIService) AddWorkflowsExecute(r ApiAddWorkflowsRequest) (*A
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -930,9 +929,9 @@ func (a *AutomationAPIService) AddWorkflowsExecute(r ApiAddWorkflowsRequest) (*A
 }
 
 type ApiDeletePowerScheduleInstancesRequest struct {
-	ctx context.Context
-	ApiService *AutomationAPIService
-	id int64
+	ctx                              context.Context
+	ApiService                       *AutomationAPIService
+	id                               int64
 	addPowerScheduleInstancesRequest *AddPowerScheduleInstancesRequest
 }
 
@@ -950,27 +949,27 @@ DeletePowerScheduleInstances Remove Instances from a Power Schedule
 
 Remove Instances from a Power Schedule.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiDeletePowerScheduleInstancesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeletePowerScheduleInstancesRequest
 */
 func (a *AutomationAPIService) DeletePowerScheduleInstances(ctx context.Context, id int64) ApiDeletePowerScheduleInstancesRequest {
 	return ApiDeletePowerScheduleInstancesRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddPowerScheduleInstances200Response
+//
+//	@return AddPowerScheduleInstances200Response
 func (a *AutomationAPIService) DeletePowerScheduleInstancesExecute(r ApiDeletePowerScheduleInstancesRequest) (*AddPowerScheduleInstances200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddPowerScheduleInstances200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddPowerScheduleInstances200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomationAPIService.DeletePowerScheduleInstances")
@@ -1023,7 +1022,7 @@ func (a *AutomationAPIService) DeletePowerScheduleInstancesExecute(r ApiDeletePo
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1032,8 +1031,8 @@ func (a *AutomationAPIService) DeletePowerScheduleInstancesExecute(r ApiDeletePo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1043,8 +1042,8 @@ func (a *AutomationAPIService) DeletePowerScheduleInstancesExecute(r ApiDeletePo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1052,8 +1051,8 @@ func (a *AutomationAPIService) DeletePowerScheduleInstancesExecute(r ApiDeletePo
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1062,9 +1061,9 @@ func (a *AutomationAPIService) DeletePowerScheduleInstancesExecute(r ApiDeletePo
 }
 
 type ApiDeletePowerScheduleServersRequest struct {
-	ctx context.Context
-	ApiService *AutomationAPIService
-	id int64
+	ctx                            context.Context
+	ApiService                     *AutomationAPIService
+	id                             int64
 	addPowerScheduleServersRequest *AddPowerScheduleServersRequest
 }
 
@@ -1082,27 +1081,27 @@ DeletePowerScheduleServers Remove Servers from a Power Schedule
 
 Remove Servers from a Power Schedule.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiDeletePowerScheduleServersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeletePowerScheduleServersRequest
 */
 func (a *AutomationAPIService) DeletePowerScheduleServers(ctx context.Context, id int64) ApiDeletePowerScheduleServersRequest {
 	return ApiDeletePowerScheduleServersRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddPowerScheduleInstances200Response
+//
+//	@return AddPowerScheduleInstances200Response
 func (a *AutomationAPIService) DeletePowerScheduleServersExecute(r ApiDeletePowerScheduleServersRequest) (*AddPowerScheduleInstances200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddPowerScheduleInstances200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddPowerScheduleInstances200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomationAPIService.DeletePowerScheduleServers")
@@ -1155,7 +1154,7 @@ func (a *AutomationAPIService) DeletePowerScheduleServersExecute(r ApiDeletePowe
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1164,8 +1163,8 @@ func (a *AutomationAPIService) DeletePowerScheduleServersExecute(r ApiDeletePowe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1175,8 +1174,8 @@ func (a *AutomationAPIService) DeletePowerScheduleServersExecute(r ApiDeletePowe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1184,8 +1183,8 @@ func (a *AutomationAPIService) DeletePowerScheduleServersExecute(r ApiDeletePowe
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1194,11 +1193,11 @@ func (a *AutomationAPIService) DeletePowerScheduleServersExecute(r ApiDeletePowe
 }
 
 type ApiExecuteExecutionRequestRequest struct {
-	ctx context.Context
-	ApiService *AutomationAPIService
-	instanceId *int64
-	containerId *int64
-	serverId *int64
+	ctx                            context.Context
+	ApiService                     *AutomationAPIService
+	instanceId                     *int64
+	containerId                    *int64
+	serverId                       *int64
 	executeExecutionRequestRequest *ExecuteExecutionRequestRequest
 }
 
@@ -1234,25 +1233,25 @@ ExecuteExecutionRequest Executes an Execution Request
 
 Provides API interfaces for executing an arbitrary script or command on an instance, container or host.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExecuteExecutionRequestRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExecuteExecutionRequestRequest
 */
 func (a *AutomationAPIService) ExecuteExecutionRequest(ctx context.Context) ApiExecuteExecutionRequestRequest {
 	return ApiExecuteExecutionRequestRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ExecuteExecutionRequest200Response
+//
+//	@return ExecuteExecutionRequest200Response
 func (a *AutomationAPIService) ExecuteExecutionRequestExecute(r ApiExecuteExecutionRequestRequest) (*ExecuteExecutionRequest200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ExecuteExecutionRequest200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ExecuteExecutionRequest200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomationAPIService.ExecuteExecutionRequest")
@@ -1313,7 +1312,7 @@ func (a *AutomationAPIService) ExecuteExecutionRequestExecute(r ApiExecuteExecut
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1322,8 +1321,8 @@ func (a *AutomationAPIService) ExecuteExecutionRequestExecute(r ApiExecuteExecut
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1333,8 +1332,8 @@ func (a *AutomationAPIService) ExecuteExecutionRequestExecute(r ApiExecuteExecut
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1342,8 +1341,8 @@ func (a *AutomationAPIService) ExecuteExecutionRequestExecute(r ApiExecuteExecut
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1352,9 +1351,9 @@ func (a *AutomationAPIService) ExecuteExecutionRequestExecute(r ApiExecuteExecut
 }
 
 type ApiExecuteTasksRequest struct {
-	ctx context.Context
-	ApiService *AutomationAPIService
-	id int64
+	ctx                 context.Context
+	ApiService          *AutomationAPIService
+	id                  int64
 	executeTasksRequest *ExecuteTasksRequest
 }
 
@@ -1372,27 +1371,27 @@ ExecuteTasks Executes a Task
 
 Executes a task.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiExecuteTasksRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiExecuteTasksRequest
 */
 func (a *AutomationAPIService) ExecuteTasks(ctx context.Context, id int64) ApiExecuteTasksRequest {
 	return ApiExecuteTasksRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ExecuteTasks200Response
+//
+//	@return ExecuteTasks200Response
 func (a *AutomationAPIService) ExecuteTasksExecute(r ApiExecuteTasksRequest) (*ExecuteTasks200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ExecuteTasks200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ExecuteTasks200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomationAPIService.ExecuteTasks")
@@ -1445,7 +1444,7 @@ func (a *AutomationAPIService) ExecuteTasksExecute(r ApiExecuteTasksRequest) (*E
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1454,8 +1453,8 @@ func (a *AutomationAPIService) ExecuteTasksExecute(r ApiExecuteTasksRequest) (*E
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1465,8 +1464,8 @@ func (a *AutomationAPIService) ExecuteTasksExecute(r ApiExecuteTasksRequest) (*E
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1474,8 +1473,8 @@ func (a *AutomationAPIService) ExecuteTasksExecute(r ApiExecuteTasksRequest) (*E
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1484,9 +1483,9 @@ func (a *AutomationAPIService) ExecuteTasksExecute(r ApiExecuteTasksRequest) (*E
 }
 
 type ApiExecuteWorkflowsRequest struct {
-	ctx context.Context
-	ApiService *AutomationAPIService
-	id int64
+	ctx                 context.Context
+	ApiService          *AutomationAPIService
+	id                  int64
 	executeTasksRequest *ExecuteTasksRequest
 }
 
@@ -1504,27 +1503,27 @@ ExecuteWorkflows Executes a Workflow
 
 Executes a workflow.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiExecuteWorkflowsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiExecuteWorkflowsRequest
 */
 func (a *AutomationAPIService) ExecuteWorkflows(ctx context.Context, id int64) ApiExecuteWorkflowsRequest {
 	return ApiExecuteWorkflowsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ExecuteTasks200Response
+//
+//	@return ExecuteTasks200Response
 func (a *AutomationAPIService) ExecuteWorkflowsExecute(r ApiExecuteWorkflowsRequest) (*ExecuteTasks200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ExecuteTasks200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ExecuteTasks200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomationAPIService.ExecuteWorkflows")
@@ -1577,7 +1576,7 @@ func (a *AutomationAPIService) ExecuteWorkflowsExecute(r ApiExecuteWorkflowsRequ
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1586,8 +1585,8 @@ func (a *AutomationAPIService) ExecuteWorkflowsExecute(r ApiExecuteWorkflowsRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1597,8 +1596,8 @@ func (a *AutomationAPIService) ExecuteWorkflowsExecute(r ApiExecuteWorkflowsRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1606,8 +1605,8 @@ func (a *AutomationAPIService) ExecuteWorkflowsExecute(r ApiExecuteWorkflowsRequ
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1616,9 +1615,9 @@ func (a *AutomationAPIService) ExecuteWorkflowsExecute(r ApiExecuteWorkflowsRequ
 }
 
 type ApiGetExecuteSchedulesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AutomationAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetExecuteSchedulesRequest) Execute() (*GetExecuteSchedules200Response, *http.Response, error) {
@@ -1630,27 +1629,27 @@ GetExecuteSchedules Retrieves a Specific Execute Schedule
 
 Retrieves a specific execute schedule.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetExecuteSchedulesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetExecuteSchedulesRequest
 */
 func (a *AutomationAPIService) GetExecuteSchedules(ctx context.Context, id int64) ApiGetExecuteSchedulesRequest {
 	return ApiGetExecuteSchedulesRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetExecuteSchedules200Response
+//
+//	@return GetExecuteSchedules200Response
 func (a *AutomationAPIService) GetExecuteSchedulesExecute(r ApiGetExecuteSchedulesRequest) (*GetExecuteSchedules200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetExecuteSchedules200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetExecuteSchedules200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomationAPIService.GetExecuteSchedules")
@@ -1701,7 +1700,7 @@ func (a *AutomationAPIService) GetExecuteSchedulesExecute(r ApiGetExecuteSchedul
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1710,8 +1709,8 @@ func (a *AutomationAPIService) GetExecuteSchedulesExecute(r ApiGetExecuteSchedul
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1721,8 +1720,8 @@ func (a *AutomationAPIService) GetExecuteSchedulesExecute(r ApiGetExecuteSchedul
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1730,8 +1729,8 @@ func (a *AutomationAPIService) GetExecuteSchedulesExecute(r ApiGetExecuteSchedul
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1740,9 +1739,9 @@ func (a *AutomationAPIService) GetExecuteSchedulesExecute(r ApiGetExecuteSchedul
 }
 
 type ApiGetExecutionRequestRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AutomationAPIService
-	uniqueId string
+	uniqueId   string
 }
 
 func (r ApiGetExecutionRequestRequest) Execute() (*GetExecutionRequest200Response, *http.Response, error) {
@@ -1754,27 +1753,27 @@ GetExecutionRequest Retrieves a Specific Execution Request
 
 Retrieves a specific execution request.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param uniqueId The Unique ID of the execution request
- @return ApiGetExecutionRequestRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param uniqueId The Unique ID of the execution request
+	@return ApiGetExecutionRequestRequest
 */
 func (a *AutomationAPIService) GetExecutionRequest(ctx context.Context, uniqueId string) ApiGetExecutionRequestRequest {
 	return ApiGetExecutionRequestRequest{
 		ApiService: a,
-		ctx: ctx,
-		uniqueId: uniqueId,
+		ctx:        ctx,
+		uniqueId:   uniqueId,
 	}
 }
 
 // Execute executes the request
-//  @return GetExecutionRequest200Response
+//
+//	@return GetExecutionRequest200Response
 func (a *AutomationAPIService) GetExecutionRequestExecute(r ApiGetExecutionRequestRequest) (*GetExecutionRequest200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetExecutionRequest200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetExecutionRequest200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomationAPIService.GetExecutionRequest")
@@ -1825,7 +1824,7 @@ func (a *AutomationAPIService) GetExecutionRequestExecute(r ApiGetExecutionReque
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1834,8 +1833,8 @@ func (a *AutomationAPIService) GetExecutionRequestExecute(r ApiGetExecutionReque
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1845,8 +1844,8 @@ func (a *AutomationAPIService) GetExecutionRequestExecute(r ApiGetExecutionReque
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1854,8 +1853,8 @@ func (a *AutomationAPIService) GetExecutionRequestExecute(r ApiGetExecutionReque
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1864,9 +1863,9 @@ func (a *AutomationAPIService) GetExecutionRequestExecute(r ApiGetExecutionReque
 }
 
 type ApiGetPowerSchedulesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AutomationAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetPowerSchedulesRequest) Execute() (*GetPowerSchedules200Response, *http.Response, error) {
@@ -1878,27 +1877,27 @@ GetPowerSchedules Retrieves a Specific Power Schedule
 
 Retrieves a specific power schedule.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetPowerSchedulesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetPowerSchedulesRequest
 */
 func (a *AutomationAPIService) GetPowerSchedules(ctx context.Context, id int64) ApiGetPowerSchedulesRequest {
 	return ApiGetPowerSchedulesRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetPowerSchedules200Response
+//
+//	@return GetPowerSchedules200Response
 func (a *AutomationAPIService) GetPowerSchedulesExecute(r ApiGetPowerSchedulesRequest) (*GetPowerSchedules200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetPowerSchedules200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetPowerSchedules200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomationAPIService.GetPowerSchedules")
@@ -1949,7 +1948,7 @@ func (a *AutomationAPIService) GetPowerSchedulesExecute(r ApiGetPowerSchedulesRe
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1958,8 +1957,8 @@ func (a *AutomationAPIService) GetPowerSchedulesExecute(r ApiGetPowerSchedulesRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1969,8 +1968,8 @@ func (a *AutomationAPIService) GetPowerSchedulesExecute(r ApiGetPowerSchedulesRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1978,8 +1977,8 @@ func (a *AutomationAPIService) GetPowerSchedulesExecute(r ApiGetPowerSchedulesRe
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1988,9 +1987,9 @@ func (a *AutomationAPIService) GetPowerSchedulesExecute(r ApiGetPowerSchedulesRe
 }
 
 type ApiGetScaleThresholdsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AutomationAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetScaleThresholdsRequest) Execute() (*GetScaleThresholds200Response, *http.Response, error) {
@@ -2002,27 +2001,27 @@ GetScaleThresholds Retrieves a Specific Scale Threshold
 
 Retrieves a specific scale threshold.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetScaleThresholdsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetScaleThresholdsRequest
 */
 func (a *AutomationAPIService) GetScaleThresholds(ctx context.Context, id int64) ApiGetScaleThresholdsRequest {
 	return ApiGetScaleThresholdsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetScaleThresholds200Response
+//
+//	@return GetScaleThresholds200Response
 func (a *AutomationAPIService) GetScaleThresholdsExecute(r ApiGetScaleThresholdsRequest) (*GetScaleThresholds200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetScaleThresholds200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetScaleThresholds200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomationAPIService.GetScaleThresholds")
@@ -2073,7 +2072,7 @@ func (a *AutomationAPIService) GetScaleThresholdsExecute(r ApiGetScaleThresholds
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2082,8 +2081,8 @@ func (a *AutomationAPIService) GetScaleThresholdsExecute(r ApiGetScaleThresholds
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2093,8 +2092,8 @@ func (a *AutomationAPIService) GetScaleThresholdsExecute(r ApiGetScaleThresholds
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2102,8 +2101,8 @@ func (a *AutomationAPIService) GetScaleThresholdsExecute(r ApiGetScaleThresholds
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2112,9 +2111,9 @@ func (a *AutomationAPIService) GetScaleThresholdsExecute(r ApiGetScaleThresholds
 }
 
 type ApiGetTaskTypesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AutomationAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetTaskTypesRequest) Execute() (*GetTaskTypes200Response, *http.Response, error) {
@@ -2126,27 +2125,27 @@ GetTaskTypes Retrieves a Specific Task Type
 
 Retrieves a specific task type.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetTaskTypesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetTaskTypesRequest
 */
 func (a *AutomationAPIService) GetTaskTypes(ctx context.Context, id int64) ApiGetTaskTypesRequest {
 	return ApiGetTaskTypesRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetTaskTypes200Response
+//
+//	@return GetTaskTypes200Response
 func (a *AutomationAPIService) GetTaskTypesExecute(r ApiGetTaskTypesRequest) (*GetTaskTypes200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetTaskTypes200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetTaskTypes200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomationAPIService.GetTaskTypes")
@@ -2197,7 +2196,7 @@ func (a *AutomationAPIService) GetTaskTypesExecute(r ApiGetTaskTypesRequest) (*G
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2206,8 +2205,8 @@ func (a *AutomationAPIService) GetTaskTypesExecute(r ApiGetTaskTypesRequest) (*G
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2217,8 +2216,8 @@ func (a *AutomationAPIService) GetTaskTypesExecute(r ApiGetTaskTypesRequest) (*G
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2226,8 +2225,8 @@ func (a *AutomationAPIService) GetTaskTypesExecute(r ApiGetTaskTypesRequest) (*G
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2236,9 +2235,9 @@ func (a *AutomationAPIService) GetTaskTypesExecute(r ApiGetTaskTypesRequest) (*G
 }
 
 type ApiGetTasksRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AutomationAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetTasksRequest) Execute() (*GetTasks200Response, *http.Response, error) {
@@ -2250,27 +2249,27 @@ GetTasks Retrieves a Specific Task
 
 Retrieves a specific task.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetTasksRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetTasksRequest
 */
 func (a *AutomationAPIService) GetTasks(ctx context.Context, id int64) ApiGetTasksRequest {
 	return ApiGetTasksRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetTasks200Response
+//
+//	@return GetTasks200Response
 func (a *AutomationAPIService) GetTasksExecute(r ApiGetTasksRequest) (*GetTasks200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetTasks200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetTasks200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomationAPIService.GetTasks")
@@ -2321,7 +2320,7 @@ func (a *AutomationAPIService) GetTasksExecute(r ApiGetTasksRequest) (*GetTasks2
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2330,8 +2329,8 @@ func (a *AutomationAPIService) GetTasksExecute(r ApiGetTasksRequest) (*GetTasks2
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2341,8 +2340,8 @@ func (a *AutomationAPIService) GetTasksExecute(r ApiGetTasksRequest) (*GetTasks2
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2350,8 +2349,8 @@ func (a *AutomationAPIService) GetTasksExecute(r ApiGetTasksRequest) (*GetTasks2
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2360,9 +2359,9 @@ func (a *AutomationAPIService) GetTasksExecute(r ApiGetTasksRequest) (*GetTasks2
 }
 
 type ApiGetWorkflowsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AutomationAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetWorkflowsRequest) Execute() (*GetWorkflows200Response, *http.Response, error) {
@@ -2374,27 +2373,27 @@ GetWorkflows Retrieves a Specific Workflow
 
 Retrieves a specific workflow.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetWorkflowsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetWorkflowsRequest
 */
 func (a *AutomationAPIService) GetWorkflows(ctx context.Context, id int64) ApiGetWorkflowsRequest {
 	return ApiGetWorkflowsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetWorkflows200Response
+//
+//	@return GetWorkflows200Response
 func (a *AutomationAPIService) GetWorkflowsExecute(r ApiGetWorkflowsRequest) (*GetWorkflows200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetWorkflows200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetWorkflows200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomationAPIService.GetWorkflows")
@@ -2445,7 +2444,7 @@ func (a *AutomationAPIService) GetWorkflowsExecute(r ApiGetWorkflowsRequest) (*G
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2454,8 +2453,8 @@ func (a *AutomationAPIService) GetWorkflowsExecute(r ApiGetWorkflowsRequest) (*G
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2465,8 +2464,8 @@ func (a *AutomationAPIService) GetWorkflowsExecute(r ApiGetWorkflowsRequest) (*G
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2474,8 +2473,8 @@ func (a *AutomationAPIService) GetWorkflowsExecute(r ApiGetWorkflowsRequest) (*G
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2484,14 +2483,14 @@ func (a *AutomationAPIService) GetWorkflowsExecute(r ApiGetWorkflowsRequest) (*G
 }
 
 type ApiListExecuteSchedulesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AutomationAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	name *string
+	max        *int64
+	offset     *int64
+	sort       *string
+	direction  *string
+	phrase     *string
+	name       *string
 }
 
 // Maximum number of records to return
@@ -2539,25 +2538,25 @@ ListExecuteSchedules Retrieves all Execute Schedules
 
 Retrieves all execute schedules.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListExecuteSchedulesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListExecuteSchedulesRequest
 */
 func (a *AutomationAPIService) ListExecuteSchedules(ctx context.Context) ApiListExecuteSchedulesRequest {
 	return ApiListExecuteSchedulesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListExecuteSchedules200Response
+//
+//	@return ListExecuteSchedules200Response
 func (a *AutomationAPIService) ListExecuteSchedulesExecute(r ApiListExecuteSchedulesRequest) (*ListExecuteSchedules200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListExecuteSchedules200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListExecuteSchedules200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomationAPIService.ListExecuteSchedules")
@@ -2637,7 +2636,7 @@ func (a *AutomationAPIService) ListExecuteSchedulesExecute(r ApiListExecuteSched
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2646,8 +2645,8 @@ func (a *AutomationAPIService) ListExecuteSchedulesExecute(r ApiListExecuteSched
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2657,8 +2656,8 @@ func (a *AutomationAPIService) ListExecuteSchedulesExecute(r ApiListExecuteSched
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2666,8 +2665,8 @@ func (a *AutomationAPIService) ListExecuteSchedulesExecute(r ApiListExecuteSched
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2676,14 +2675,14 @@ func (a *AutomationAPIService) ListExecuteSchedulesExecute(r ApiListExecuteSched
 }
 
 type ApiListPowerSchedulesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AutomationAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	name *string
+	max        *int64
+	offset     *int64
+	sort       *string
+	direction  *string
+	phrase     *string
+	name       *string
 }
 
 // Maximum number of records to return
@@ -2731,25 +2730,25 @@ ListPowerSchedules Retrieves all Power Schedules
 
 Retrieves all power schedules.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListPowerSchedulesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListPowerSchedulesRequest
 */
 func (a *AutomationAPIService) ListPowerSchedules(ctx context.Context) ApiListPowerSchedulesRequest {
 	return ApiListPowerSchedulesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListPowerSchedules200Response
+//
+//	@return ListPowerSchedules200Response
 func (a *AutomationAPIService) ListPowerSchedulesExecute(r ApiListPowerSchedulesRequest) (*ListPowerSchedules200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListPowerSchedules200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListPowerSchedules200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomationAPIService.ListPowerSchedules")
@@ -2829,7 +2828,7 @@ func (a *AutomationAPIService) ListPowerSchedulesExecute(r ApiListPowerSchedules
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2838,8 +2837,8 @@ func (a *AutomationAPIService) ListPowerSchedulesExecute(r ApiListPowerSchedules
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2849,8 +2848,8 @@ func (a *AutomationAPIService) ListPowerSchedulesExecute(r ApiListPowerSchedules
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2858,8 +2857,8 @@ func (a *AutomationAPIService) ListPowerSchedulesExecute(r ApiListPowerSchedules
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2868,14 +2867,14 @@ func (a *AutomationAPIService) ListPowerSchedulesExecute(r ApiListPowerSchedules
 }
 
 type ApiListScaleThresholdsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AutomationAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	name *string
+	max        *int64
+	offset     *int64
+	sort       *string
+	direction  *string
+	phrase     *string
+	name       *string
 }
 
 // Maximum number of records to return
@@ -2923,25 +2922,25 @@ ListScaleThresholds Retrieves all Scale Thresholds
 
 Retrieves all scale thresholds.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListScaleThresholdsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListScaleThresholdsRequest
 */
 func (a *AutomationAPIService) ListScaleThresholds(ctx context.Context) ApiListScaleThresholdsRequest {
 	return ApiListScaleThresholdsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListScaleThresholds200Response
+//
+//	@return ListScaleThresholds200Response
 func (a *AutomationAPIService) ListScaleThresholdsExecute(r ApiListScaleThresholdsRequest) (*ListScaleThresholds200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListScaleThresholds200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListScaleThresholds200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomationAPIService.ListScaleThresholds")
@@ -3021,7 +3020,7 @@ func (a *AutomationAPIService) ListScaleThresholdsExecute(r ApiListScaleThreshol
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -3030,8 +3029,8 @@ func (a *AutomationAPIService) ListScaleThresholdsExecute(r ApiListScaleThreshol
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -3041,8 +3040,8 @@ func (a *AutomationAPIService) ListScaleThresholdsExecute(r ApiListScaleThreshol
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3050,8 +3049,8 @@ func (a *AutomationAPIService) ListScaleThresholdsExecute(r ApiListScaleThreshol
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3060,10 +3059,10 @@ func (a *AutomationAPIService) ListScaleThresholdsExecute(r ApiListScaleThreshol
 }
 
 type ApiListTaskTypesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AutomationAPIService
-	name *string
-	code *string
+	name       *string
+	code       *string
 }
 
 // Filter by name
@@ -3088,25 +3087,25 @@ ListTaskTypes Retrieves all Task Types
 A Task Type is a type of automation task.
 Each type defines its own set of options to be configured for each task.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListTaskTypesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListTaskTypesRequest
 */
 func (a *AutomationAPIService) ListTaskTypes(ctx context.Context) ApiListTaskTypesRequest {
 	return ApiListTaskTypesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListTaskTypes200Response
+//
+//	@return ListTaskTypes200Response
 func (a *AutomationAPIService) ListTaskTypesExecute(r ApiListTaskTypesRequest) (*ListTaskTypes200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListTaskTypes200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListTaskTypes200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomationAPIService.ListTaskTypes")
@@ -3162,7 +3161,7 @@ func (a *AutomationAPIService) ListTaskTypesExecute(r ApiListTaskTypesRequest) (
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -3171,8 +3170,8 @@ func (a *AutomationAPIService) ListTaskTypesExecute(r ApiListTaskTypesRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -3182,8 +3181,8 @@ func (a *AutomationAPIService) ListTaskTypesExecute(r ApiListTaskTypesRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3191,8 +3190,8 @@ func (a *AutomationAPIService) ListTaskTypesExecute(r ApiListTaskTypesRequest) (
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3201,20 +3200,20 @@ func (a *AutomationAPIService) ListTaskTypesExecute(r ApiListTaskTypesRequest) (
 }
 
 type ApiListTasksRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AutomationAPIService
-	type_ *string
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	name *string
-	labels *string
-	allLabels *string
+	type_      *string
+	max        *int64
+	offset     *int64
+	sort       *string
+	direction  *string
+	phrase     *string
+	name       *string
+	labels     *string
+	allLabels  *string
 }
 
-// If specified will return all tasks by &#x60;task type&#x60; code. Refer to &#x60;Task Types&#x60; API for up to date listings. 
+// If specified will return all tasks by &#x60;task type&#x60; code. Refer to &#x60;Task Types&#x60; API for up to date listings.
 func (r ApiListTasksRequest) Type_(type_ string) ApiListTasksRequest {
 	r.type_ = &type_
 	return r
@@ -3277,25 +3276,25 @@ ListTasks Retrieves all Tasks
 
 Retrieves all tasks.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListTasksRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListTasksRequest
 */
 func (a *AutomationAPIService) ListTasks(ctx context.Context) ApiListTasksRequest {
 	return ApiListTasksRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListTasks200Response
+//
+//	@return ListTasks200Response
 func (a *AutomationAPIService) ListTasksExecute(r ApiListTasksRequest) (*ListTasks200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListTasks200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListTasks200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomationAPIService.ListTasks")
@@ -3384,7 +3383,7 @@ func (a *AutomationAPIService) ListTasksExecute(r ApiListTasksRequest) (*ListTas
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -3393,8 +3392,8 @@ func (a *AutomationAPIService) ListTasksExecute(r ApiListTasksRequest) (*ListTas
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -3404,8 +3403,8 @@ func (a *AutomationAPIService) ListTasksExecute(r ApiListTasksRequest) (*ListTas
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3413,8 +3412,8 @@ func (a *AutomationAPIService) ListTasksExecute(r ApiListTasksRequest) (*ListTas
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3423,17 +3422,17 @@ func (a *AutomationAPIService) ListTasksExecute(r ApiListTasksRequest) (*ListTas
 }
 
 type ApiListWorkflowsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AutomationAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	name *string
-	labels *string
-	allLabels *string
-	type_ *string
+	max        *int64
+	offset     *int64
+	sort       *string
+	direction  *string
+	phrase     *string
+	name       *string
+	labels     *string
+	allLabels  *string
+	type_      *string
 }
 
 // Maximum number of records to return
@@ -3499,25 +3498,25 @@ ListWorkflows Retrieves all Workflows
 
 Retrieves all workflows.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListWorkflowsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListWorkflowsRequest
 */
 func (a *AutomationAPIService) ListWorkflows(ctx context.Context) ApiListWorkflowsRequest {
 	return ApiListWorkflowsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListWorkflows200Response
+//
+//	@return ListWorkflows200Response
 func (a *AutomationAPIService) ListWorkflowsExecute(r ApiListWorkflowsRequest) (*ListWorkflows200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListWorkflows200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListWorkflows200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomationAPIService.ListWorkflows")
@@ -3606,7 +3605,7 @@ func (a *AutomationAPIService) ListWorkflowsExecute(r ApiListWorkflowsRequest) (
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -3615,8 +3614,8 @@ func (a *AutomationAPIService) ListWorkflowsExecute(r ApiListWorkflowsRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -3626,8 +3625,8 @@ func (a *AutomationAPIService) ListWorkflowsExecute(r ApiListWorkflowsRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3635,8 +3634,8 @@ func (a *AutomationAPIService) ListWorkflowsExecute(r ApiListWorkflowsRequest) (
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3645,9 +3644,9 @@ func (a *AutomationAPIService) ListWorkflowsExecute(r ApiListWorkflowsRequest) (
 }
 
 type ApiRemoveExecuteSchedulesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AutomationAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiRemoveExecuteSchedulesRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -3659,27 +3658,27 @@ RemoveExecuteSchedules Deletes a Execute Schedule
 
 Deletes a specified execute schedule.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiRemoveExecuteSchedulesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiRemoveExecuteSchedulesRequest
 */
 func (a *AutomationAPIService) RemoveExecuteSchedules(ctx context.Context, id int64) ApiRemoveExecuteSchedulesRequest {
 	return ApiRemoveExecuteSchedulesRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *AutomationAPIService) RemoveExecuteSchedulesExecute(r ApiRemoveExecuteSchedulesRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomationAPIService.RemoveExecuteSchedules")
@@ -3730,7 +3729,7 @@ func (a *AutomationAPIService) RemoveExecuteSchedulesExecute(r ApiRemoveExecuteS
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -3739,8 +3738,8 @@ func (a *AutomationAPIService) RemoveExecuteSchedulesExecute(r ApiRemoveExecuteS
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -3750,8 +3749,8 @@ func (a *AutomationAPIService) RemoveExecuteSchedulesExecute(r ApiRemoveExecuteS
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3759,8 +3758,8 @@ func (a *AutomationAPIService) RemoveExecuteSchedulesExecute(r ApiRemoveExecuteS
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3769,9 +3768,9 @@ func (a *AutomationAPIService) RemoveExecuteSchedulesExecute(r ApiRemoveExecuteS
 }
 
 type ApiRemovePowerSchedulesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AutomationAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiRemovePowerSchedulesRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -3783,27 +3782,27 @@ RemovePowerSchedules Deletes a Power Schedule
 
 Deletes a specified power schedule.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiRemovePowerSchedulesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiRemovePowerSchedulesRequest
 */
 func (a *AutomationAPIService) RemovePowerSchedules(ctx context.Context, id int64) ApiRemovePowerSchedulesRequest {
 	return ApiRemovePowerSchedulesRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *AutomationAPIService) RemovePowerSchedulesExecute(r ApiRemovePowerSchedulesRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomationAPIService.RemovePowerSchedules")
@@ -3854,7 +3853,7 @@ func (a *AutomationAPIService) RemovePowerSchedulesExecute(r ApiRemovePowerSched
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -3863,8 +3862,8 @@ func (a *AutomationAPIService) RemovePowerSchedulesExecute(r ApiRemovePowerSched
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -3874,8 +3873,8 @@ func (a *AutomationAPIService) RemovePowerSchedulesExecute(r ApiRemovePowerSched
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3883,8 +3882,8 @@ func (a *AutomationAPIService) RemovePowerSchedulesExecute(r ApiRemovePowerSched
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3893,9 +3892,9 @@ func (a *AutomationAPIService) RemovePowerSchedulesExecute(r ApiRemovePowerSched
 }
 
 type ApiRemoveScaleThresholdsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AutomationAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiRemoveScaleThresholdsRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -3907,27 +3906,27 @@ RemoveScaleThresholds Deletes a Scale Threshold
 
 Deletes a specified scale threshold.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiRemoveScaleThresholdsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiRemoveScaleThresholdsRequest
 */
 func (a *AutomationAPIService) RemoveScaleThresholds(ctx context.Context, id int64) ApiRemoveScaleThresholdsRequest {
 	return ApiRemoveScaleThresholdsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *AutomationAPIService) RemoveScaleThresholdsExecute(r ApiRemoveScaleThresholdsRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomationAPIService.RemoveScaleThresholds")
@@ -3978,7 +3977,7 @@ func (a *AutomationAPIService) RemoveScaleThresholdsExecute(r ApiRemoveScaleThre
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -3987,8 +3986,8 @@ func (a *AutomationAPIService) RemoveScaleThresholdsExecute(r ApiRemoveScaleThre
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -3998,8 +3997,8 @@ func (a *AutomationAPIService) RemoveScaleThresholdsExecute(r ApiRemoveScaleThre
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4007,8 +4006,8 @@ func (a *AutomationAPIService) RemoveScaleThresholdsExecute(r ApiRemoveScaleThre
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4017,9 +4016,9 @@ func (a *AutomationAPIService) RemoveScaleThresholdsExecute(r ApiRemoveScaleThre
 }
 
 type ApiRemoveTasksRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AutomationAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiRemoveTasksRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -4031,27 +4030,27 @@ RemoveTasks Deletes a Task
 
 Deletes a specified task.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiRemoveTasksRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiRemoveTasksRequest
 */
 func (a *AutomationAPIService) RemoveTasks(ctx context.Context, id int64) ApiRemoveTasksRequest {
 	return ApiRemoveTasksRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *AutomationAPIService) RemoveTasksExecute(r ApiRemoveTasksRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomationAPIService.RemoveTasks")
@@ -4102,7 +4101,7 @@ func (a *AutomationAPIService) RemoveTasksExecute(r ApiRemoveTasksRequest) (*Del
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -4111,8 +4110,8 @@ func (a *AutomationAPIService) RemoveTasksExecute(r ApiRemoveTasksRequest) (*Del
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -4122,8 +4121,8 @@ func (a *AutomationAPIService) RemoveTasksExecute(r ApiRemoveTasksRequest) (*Del
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4131,8 +4130,8 @@ func (a *AutomationAPIService) RemoveTasksExecute(r ApiRemoveTasksRequest) (*Del
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4141,9 +4140,9 @@ func (a *AutomationAPIService) RemoveTasksExecute(r ApiRemoveTasksRequest) (*Del
 }
 
 type ApiRemoveWorkflowsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AutomationAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiRemoveWorkflowsRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -4155,27 +4154,27 @@ RemoveWorkflows Deletes a Workflow
 
 Deletes a specified workflow.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiRemoveWorkflowsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiRemoveWorkflowsRequest
 */
 func (a *AutomationAPIService) RemoveWorkflows(ctx context.Context, id int64) ApiRemoveWorkflowsRequest {
 	return ApiRemoveWorkflowsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *AutomationAPIService) RemoveWorkflowsExecute(r ApiRemoveWorkflowsRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomationAPIService.RemoveWorkflows")
@@ -4226,7 +4225,7 @@ func (a *AutomationAPIService) RemoveWorkflowsExecute(r ApiRemoveWorkflowsReques
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -4235,8 +4234,8 @@ func (a *AutomationAPIService) RemoveWorkflowsExecute(r ApiRemoveWorkflowsReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -4246,8 +4245,8 @@ func (a *AutomationAPIService) RemoveWorkflowsExecute(r ApiRemoveWorkflowsReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4255,8 +4254,8 @@ func (a *AutomationAPIService) RemoveWorkflowsExecute(r ApiRemoveWorkflowsReques
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4265,9 +4264,9 @@ func (a *AutomationAPIService) RemoveWorkflowsExecute(r ApiRemoveWorkflowsReques
 }
 
 type ApiUpdateExecuteSchedulesRequest struct {
-	ctx context.Context
-	ApiService *AutomationAPIService
-	id int64
+	ctx                           context.Context
+	ApiService                    *AutomationAPIService
+	id                            int64
 	updateExecuteSchedulesRequest *UpdateExecuteSchedulesRequest
 }
 
@@ -4285,27 +4284,27 @@ UpdateExecuteSchedules Updates a Execute Schedule
 
 Updates a execute schedule.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateExecuteSchedulesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateExecuteSchedulesRequest
 */
 func (a *AutomationAPIService) UpdateExecuteSchedules(ctx context.Context, id int64) ApiUpdateExecuteSchedulesRequest {
 	return ApiUpdateExecuteSchedulesRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddExecuteSchedules200Response
+//
+//	@return AddExecuteSchedules200Response
 func (a *AutomationAPIService) UpdateExecuteSchedulesExecute(r ApiUpdateExecuteSchedulesRequest) (*AddExecuteSchedules200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddExecuteSchedules200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddExecuteSchedules200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomationAPIService.UpdateExecuteSchedules")
@@ -4358,7 +4357,7 @@ func (a *AutomationAPIService) UpdateExecuteSchedulesExecute(r ApiUpdateExecuteS
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -4367,8 +4366,8 @@ func (a *AutomationAPIService) UpdateExecuteSchedulesExecute(r ApiUpdateExecuteS
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -4378,8 +4377,8 @@ func (a *AutomationAPIService) UpdateExecuteSchedulesExecute(r ApiUpdateExecuteS
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4387,8 +4386,8 @@ func (a *AutomationAPIService) UpdateExecuteSchedulesExecute(r ApiUpdateExecuteS
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4397,9 +4396,9 @@ func (a *AutomationAPIService) UpdateExecuteSchedulesExecute(r ApiUpdateExecuteS
 }
 
 type ApiUpdatePowerSchedulesRequest struct {
-	ctx context.Context
-	ApiService *AutomationAPIService
-	id int64
+	ctx                         context.Context
+	ApiService                  *AutomationAPIService
+	id                          int64
 	updatePowerSchedulesRequest *UpdatePowerSchedulesRequest
 }
 
@@ -4417,27 +4416,27 @@ UpdatePowerSchedules Updates a Power Schedule
 
 Updates a power schedule.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdatePowerSchedulesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdatePowerSchedulesRequest
 */
 func (a *AutomationAPIService) UpdatePowerSchedules(ctx context.Context, id int64) ApiUpdatePowerSchedulesRequest {
 	return ApiUpdatePowerSchedulesRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddPowerSchedules200Response
+//
+//	@return AddPowerSchedules200Response
 func (a *AutomationAPIService) UpdatePowerSchedulesExecute(r ApiUpdatePowerSchedulesRequest) (*AddPowerSchedules200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddPowerSchedules200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddPowerSchedules200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomationAPIService.UpdatePowerSchedules")
@@ -4490,7 +4489,7 @@ func (a *AutomationAPIService) UpdatePowerSchedulesExecute(r ApiUpdatePowerSched
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -4499,8 +4498,8 @@ func (a *AutomationAPIService) UpdatePowerSchedulesExecute(r ApiUpdatePowerSched
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -4510,8 +4509,8 @@ func (a *AutomationAPIService) UpdatePowerSchedulesExecute(r ApiUpdatePowerSched
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4519,8 +4518,8 @@ func (a *AutomationAPIService) UpdatePowerSchedulesExecute(r ApiUpdatePowerSched
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4529,9 +4528,9 @@ func (a *AutomationAPIService) UpdatePowerSchedulesExecute(r ApiUpdatePowerSched
 }
 
 type ApiUpdateScaleThresholdsRequest struct {
-	ctx context.Context
-	ApiService *AutomationAPIService
-	id int64
+	ctx                          context.Context
+	ApiService                   *AutomationAPIService
+	id                           int64
 	updateScaleThresholdsRequest *UpdateScaleThresholdsRequest
 }
 
@@ -4549,27 +4548,27 @@ UpdateScaleThresholds Updates a Scale Threshold
 
 Updates a scale threshold.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateScaleThresholdsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateScaleThresholdsRequest
 */
 func (a *AutomationAPIService) UpdateScaleThresholds(ctx context.Context, id int64) ApiUpdateScaleThresholdsRequest {
 	return ApiUpdateScaleThresholdsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddScaleThresholds200Response
+//
+//	@return AddScaleThresholds200Response
 func (a *AutomationAPIService) UpdateScaleThresholdsExecute(r ApiUpdateScaleThresholdsRequest) (*AddScaleThresholds200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddScaleThresholds200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddScaleThresholds200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomationAPIService.UpdateScaleThresholds")
@@ -4622,7 +4621,7 @@ func (a *AutomationAPIService) UpdateScaleThresholdsExecute(r ApiUpdateScaleThre
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -4631,8 +4630,8 @@ func (a *AutomationAPIService) UpdateScaleThresholdsExecute(r ApiUpdateScaleThre
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -4642,8 +4641,8 @@ func (a *AutomationAPIService) UpdateScaleThresholdsExecute(r ApiUpdateScaleThre
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4651,8 +4650,8 @@ func (a *AutomationAPIService) UpdateScaleThresholdsExecute(r ApiUpdateScaleThre
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4661,9 +4660,9 @@ func (a *AutomationAPIService) UpdateScaleThresholdsExecute(r ApiUpdateScaleThre
 }
 
 type ApiUpdateTasksRequest struct {
-	ctx context.Context
-	ApiService *AutomationAPIService
-	id int64
+	ctx                context.Context
+	ApiService         *AutomationAPIService
+	id                 int64
 	updateTasksRequest *UpdateTasksRequest
 }
 
@@ -4681,27 +4680,27 @@ UpdateTasks Updates a Task
 
 Updates a task.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateTasksRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateTasksRequest
 */
 func (a *AutomationAPIService) UpdateTasks(ctx context.Context, id int64) ApiUpdateTasksRequest {
 	return ApiUpdateTasksRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddTasks200Response
+//
+//	@return AddTasks200Response
 func (a *AutomationAPIService) UpdateTasksExecute(r ApiUpdateTasksRequest) (*AddTasks200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddTasks200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddTasks200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomationAPIService.UpdateTasks")
@@ -4754,7 +4753,7 @@ func (a *AutomationAPIService) UpdateTasksExecute(r ApiUpdateTasksRequest) (*Add
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -4763,8 +4762,8 @@ func (a *AutomationAPIService) UpdateTasksExecute(r ApiUpdateTasksRequest) (*Add
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -4774,8 +4773,8 @@ func (a *AutomationAPIService) UpdateTasksExecute(r ApiUpdateTasksRequest) (*Add
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4783,8 +4782,8 @@ func (a *AutomationAPIService) UpdateTasksExecute(r ApiUpdateTasksRequest) (*Add
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4793,9 +4792,9 @@ func (a *AutomationAPIService) UpdateTasksExecute(r ApiUpdateTasksRequest) (*Add
 }
 
 type ApiUpdateWorkflowsRequest struct {
-	ctx context.Context
-	ApiService *AutomationAPIService
-	id int64
+	ctx                    context.Context
+	ApiService             *AutomationAPIService
+	id                     int64
 	updateWorkflowsRequest *UpdateWorkflowsRequest
 }
 
@@ -4813,27 +4812,27 @@ UpdateWorkflows Updates a Workflow
 
 Updates a workflow.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateWorkflowsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateWorkflowsRequest
 */
 func (a *AutomationAPIService) UpdateWorkflows(ctx context.Context, id int64) ApiUpdateWorkflowsRequest {
 	return ApiUpdateWorkflowsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddWorkflows200Response
+//
+//	@return AddWorkflows200Response
 func (a *AutomationAPIService) UpdateWorkflowsExecute(r ApiUpdateWorkflowsRequest) (*AddWorkflows200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddWorkflows200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddWorkflows200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomationAPIService.UpdateWorkflows")
@@ -4886,7 +4885,7 @@ func (a *AutomationAPIService) UpdateWorkflowsExecute(r ApiUpdateWorkflowsReques
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -4895,8 +4894,8 @@ func (a *AutomationAPIService) UpdateWorkflowsExecute(r ApiUpdateWorkflowsReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -4906,8 +4905,8 @@ func (a *AutomationAPIService) UpdateWorkflowsExecute(r ApiUpdateWorkflowsReques
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4915,8 +4914,8 @@ func (a *AutomationAPIService) UpdateWorkflowsExecute(r ApiUpdateWorkflowsReques
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

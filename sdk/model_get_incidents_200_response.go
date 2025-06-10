@@ -20,8 +20,8 @@ var _ MappedNullable = &GetIncidents200Response{}
 
 // GetIncidents200Response struct for GetIncidents200Response
 type GetIncidents200Response struct {
-	Incident *GetCheckApps200ResponseOpenIncidentsInner `json:"incident,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Incident             *GetCheckApps200ResponseOpenIncidentsInner `json:"incident,omitempty"`
+	AdditionalProperties map[string]interface{}                     `json:",remain"`
 }
 
 type _GetIncidents200Response GetIncidents200Response
@@ -76,7 +76,7 @@ func (o *GetIncidents200Response) SetIncident(v GetCheckApps200ResponseOpenIncid
 }
 
 func (o GetIncidents200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o GetIncidents200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *GetIncidents200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetIncidents200Response := _GetIncidents200Response{}
-
-	err = json.Unmarshal(data, &varGetIncidents200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetIncidents200Response(varGetIncidents200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "incident")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetIncidents200Response struct {
-	value *GetIncidents200Response
-	isSet bool
-}
-
-func (v NullableGetIncidents200Response) Get() *GetIncidents200Response {
-	return v.value
-}
-
-func (v *NullableGetIncidents200Response) Set(val *GetIncidents200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetIncidents200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetIncidents200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetIncidents200Response(val *GetIncidents200Response) *NullableGetIncidents200Response {
-	return &NullableGetIncidents200Response{value: val, isSet: true}
-}
-
-func (v NullableGetIncidents200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetIncidents200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

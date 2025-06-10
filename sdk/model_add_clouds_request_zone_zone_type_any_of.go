@@ -20,8 +20,8 @@ var _ MappedNullable = &AddCloudsRequestZoneZoneTypeAnyOf{}
 
 // AddCloudsRequestZoneZoneTypeAnyOf Map containing the Cloud (zone) type ID. See the zone-types API to fetch a list of all available Cloud (zone) types and their IDs.
 type AddCloudsRequestZoneZoneTypeAnyOf struct {
-	Id *int64 `json:"id,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddCloudsRequestZoneZoneTypeAnyOf AddCloudsRequestZoneZoneTypeAnyOf
@@ -76,7 +76,7 @@ func (o *AddCloudsRequestZoneZoneTypeAnyOf) SetId(v int64) {
 }
 
 func (o AddCloudsRequestZoneZoneTypeAnyOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o AddCloudsRequestZoneZoneTypeAnyOf) ToMap() (map[string]interface{}, erro
 
 	return toSerialize, nil
 }
-
 func (o *AddCloudsRequestZoneZoneTypeAnyOf) UnmarshalJSON(data []byte) (err error) {
-	varAddCloudsRequestZoneZoneTypeAnyOf := _AddCloudsRequestZoneZoneTypeAnyOf{}
-
-	err = json.Unmarshal(data, &varAddCloudsRequestZoneZoneTypeAnyOf)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddCloudsRequestZoneZoneTypeAnyOf(varAddCloudsRequestZoneZoneTypeAnyOf)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddCloudsRequestZoneZoneTypeAnyOf struct {
-	value *AddCloudsRequestZoneZoneTypeAnyOf
-	isSet bool
-}
-
-func (v NullableAddCloudsRequestZoneZoneTypeAnyOf) Get() *AddCloudsRequestZoneZoneTypeAnyOf {
-	return v.value
-}
-
-func (v *NullableAddCloudsRequestZoneZoneTypeAnyOf) Set(val *AddCloudsRequestZoneZoneTypeAnyOf) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddCloudsRequestZoneZoneTypeAnyOf) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddCloudsRequestZoneZoneTypeAnyOf) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddCloudsRequestZoneZoneTypeAnyOf(val *AddCloudsRequestZoneZoneTypeAnyOf) *NullableAddCloudsRequestZoneZoneTypeAnyOf {
-	return &NullableAddCloudsRequestZoneZoneTypeAnyOf{value: val, isSet: true}
-}
-
-func (v NullableAddCloudsRequestZoneZoneTypeAnyOf) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddCloudsRequestZoneZoneTypeAnyOf) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

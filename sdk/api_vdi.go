@@ -21,13 +21,12 @@ import (
 	"strings"
 )
 
-
 // VDIAPIService VDIAPI service
 type VDIAPIService service
 
 type ApiAddVDIAppsRequest struct {
-	ctx context.Context
-	ApiService *VDIAPIService
+	ctx               context.Context
+	ApiService        *VDIAPIService
 	addVDIAppsRequest *AddVDIAppsRequest
 }
 
@@ -45,25 +44,25 @@ AddVDIApps Creates a VDI App
 
 Creates a VDI app.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddVDIAppsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddVDIAppsRequest
 */
 func (a *VDIAPIService) AddVDIApps(ctx context.Context) ApiAddVDIAppsRequest {
 	return ApiAddVDIAppsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddVDIApps200Response
+//
+//	@return AddVDIApps200Response
 func (a *VDIAPIService) AddVDIAppsExecute(r ApiAddVDIAppsRequest) (*AddVDIApps200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddVDIApps200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddVDIApps200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VDIAPIService.AddVDIApps")
@@ -115,7 +114,7 @@ func (a *VDIAPIService) AddVDIAppsExecute(r ApiAddVDIAppsRequest) (*AddVDIApps20
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -124,8 +123,8 @@ func (a *VDIAPIService) AddVDIAppsExecute(r ApiAddVDIAppsRequest) (*AddVDIApps20
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -135,8 +134,8 @@ func (a *VDIAPIService) AddVDIAppsExecute(r ApiAddVDIAppsRequest) (*AddVDIApps20
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -144,8 +143,8 @@ func (a *VDIAPIService) AddVDIAppsExecute(r ApiAddVDIAppsRequest) (*AddVDIApps20
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -154,8 +153,8 @@ func (a *VDIAPIService) AddVDIAppsExecute(r ApiAddVDIAppsRequest) (*AddVDIApps20
 }
 
 type ApiAddVDIGatewaysRequest struct {
-	ctx context.Context
-	ApiService *VDIAPIService
+	ctx                   context.Context
+	ApiService            *VDIAPIService
 	addVDIGatewaysRequest *AddVDIGatewaysRequest
 }
 
@@ -173,25 +172,25 @@ AddVDIGateways Creates a VDI Gateway
 
 Creates a VDI gateway.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddVDIGatewaysRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddVDIGatewaysRequest
 */
 func (a *VDIAPIService) AddVDIGateways(ctx context.Context) ApiAddVDIGatewaysRequest {
 	return ApiAddVDIGatewaysRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddVDIGateways200Response
+//
+//	@return AddVDIGateways200Response
 func (a *VDIAPIService) AddVDIGatewaysExecute(r ApiAddVDIGatewaysRequest) (*AddVDIGateways200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddVDIGateways200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddVDIGateways200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VDIAPIService.AddVDIGateways")
@@ -243,7 +242,7 @@ func (a *VDIAPIService) AddVDIGatewaysExecute(r ApiAddVDIGatewaysRequest) (*AddV
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -252,8 +251,8 @@ func (a *VDIAPIService) AddVDIGatewaysExecute(r ApiAddVDIGatewaysRequest) (*AddV
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -263,8 +262,8 @@ func (a *VDIAPIService) AddVDIGatewaysExecute(r ApiAddVDIGatewaysRequest) (*AddV
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -272,8 +271,8 @@ func (a *VDIAPIService) AddVDIGatewaysExecute(r ApiAddVDIGatewaysRequest) (*AddV
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -282,8 +281,8 @@ func (a *VDIAPIService) AddVDIGatewaysExecute(r ApiAddVDIGatewaysRequest) (*AddV
 }
 
 type ApiAddVDIPoolsRequest struct {
-	ctx context.Context
-	ApiService *VDIAPIService
+	ctx                context.Context
+	ApiService         *VDIAPIService
 	addVDIPoolsRequest *AddVDIPoolsRequest
 }
 
@@ -301,25 +300,25 @@ AddVDIPools Creates a VDI Pool
 
 Creates a VDI pool.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddVDIPoolsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddVDIPoolsRequest
 */
 func (a *VDIAPIService) AddVDIPools(ctx context.Context) ApiAddVDIPoolsRequest {
 	return ApiAddVDIPoolsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddVDIPools200Response
+//
+//	@return AddVDIPools200Response
 func (a *VDIAPIService) AddVDIPoolsExecute(r ApiAddVDIPoolsRequest) (*AddVDIPools200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddVDIPools200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddVDIPools200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VDIAPIService.AddVDIPools")
@@ -371,7 +370,7 @@ func (a *VDIAPIService) AddVDIPoolsExecute(r ApiAddVDIPoolsRequest) (*AddVDIPool
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -380,8 +379,8 @@ func (a *VDIAPIService) AddVDIPoolsExecute(r ApiAddVDIPoolsRequest) (*AddVDIPool
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -391,8 +390,8 @@ func (a *VDIAPIService) AddVDIPoolsExecute(r ApiAddVDIPoolsRequest) (*AddVDIPool
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -400,8 +399,8 @@ func (a *VDIAPIService) AddVDIPoolsExecute(r ApiAddVDIPoolsRequest) (*AddVDIPool
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -410,9 +409,9 @@ func (a *VDIAPIService) AddVDIPoolsExecute(r ApiAddVDIPoolsRequest) (*AddVDIPool
 }
 
 type ApiAddVdiAllocationRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *VDIAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiAddVdiAllocationRequest) Execute() (*AddVdiAllocation200Response, *http.Response, error) {
@@ -424,27 +423,27 @@ AddVdiAllocation Allocate Virtual Desktop
 
 This endpoint allocates a specific virtual desktop for use by your user. It will return the desktop and its allocation for your user, or an error if allocation fails, which will occur if the desktop is fully allocated already. If your user already has an allocation, the desktop and allocation will still be returned succesfully and the server does not make any changes.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiAddVdiAllocationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiAddVdiAllocationRequest
 */
 func (a *VDIAPIService) AddVdiAllocation(ctx context.Context, id int64) ApiAddVdiAllocationRequest {
 	return ApiAddVdiAllocationRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddVdiAllocation200Response
+//
+//	@return AddVdiAllocation200Response
 func (a *VDIAPIService) AddVdiAllocationExecute(r ApiAddVdiAllocationRequest) (*AddVdiAllocation200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddVdiAllocation200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddVdiAllocation200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VDIAPIService.AddVdiAllocation")
@@ -495,7 +494,7 @@ func (a *VDIAPIService) AddVdiAllocationExecute(r ApiAddVdiAllocationRequest) (*
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -504,8 +503,8 @@ func (a *VDIAPIService) AddVdiAllocationExecute(r ApiAddVdiAllocationRequest) (*
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -515,8 +514,8 @@ func (a *VDIAPIService) AddVdiAllocationExecute(r ApiAddVdiAllocationRequest) (*
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -524,8 +523,8 @@ func (a *VDIAPIService) AddVdiAllocationExecute(r ApiAddVdiAllocationRequest) (*
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -534,9 +533,9 @@ func (a *VDIAPIService) AddVdiAllocationExecute(r ApiAddVdiAllocationRequest) (*
 }
 
 type ApiGetVDIAllocationsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *VDIAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetVDIAllocationsRequest) Execute() (*GetVDIAllocations200Response, *http.Response, error) {
@@ -548,27 +547,27 @@ GetVDIAllocations Retrieves a Specific VDI Allocation
 
 Retrieves a specific VDI allocation.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetVDIAllocationsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetVDIAllocationsRequest
 */
 func (a *VDIAPIService) GetVDIAllocations(ctx context.Context, id int64) ApiGetVDIAllocationsRequest {
 	return ApiGetVDIAllocationsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetVDIAllocations200Response
+//
+//	@return GetVDIAllocations200Response
 func (a *VDIAPIService) GetVDIAllocationsExecute(r ApiGetVDIAllocationsRequest) (*GetVDIAllocations200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetVDIAllocations200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetVDIAllocations200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VDIAPIService.GetVDIAllocations")
@@ -619,7 +618,7 @@ func (a *VDIAPIService) GetVDIAllocationsExecute(r ApiGetVDIAllocationsRequest) 
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -628,8 +627,8 @@ func (a *VDIAPIService) GetVDIAllocationsExecute(r ApiGetVDIAllocationsRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -639,8 +638,8 @@ func (a *VDIAPIService) GetVDIAllocationsExecute(r ApiGetVDIAllocationsRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -648,8 +647,8 @@ func (a *VDIAPIService) GetVDIAllocationsExecute(r ApiGetVDIAllocationsRequest) 
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -658,9 +657,9 @@ func (a *VDIAPIService) GetVDIAllocationsExecute(r ApiGetVDIAllocationsRequest) 
 }
 
 type ApiGetVDIAppsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *VDIAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetVDIAppsRequest) Execute() (*AddVDIApps200ResponseAnyOf, *http.Response, error) {
@@ -672,27 +671,27 @@ GetVDIApps Retrieves a Specific VDI App
 
 Retrieves a specific VDI app.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetVDIAppsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetVDIAppsRequest
 */
 func (a *VDIAPIService) GetVDIApps(ctx context.Context, id int64) ApiGetVDIAppsRequest {
 	return ApiGetVDIAppsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddVDIApps200ResponseAnyOf
+//
+//	@return AddVDIApps200ResponseAnyOf
 func (a *VDIAPIService) GetVDIAppsExecute(r ApiGetVDIAppsRequest) (*AddVDIApps200ResponseAnyOf, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddVDIApps200ResponseAnyOf
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddVDIApps200ResponseAnyOf
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VDIAPIService.GetVDIApps")
@@ -743,7 +742,7 @@ func (a *VDIAPIService) GetVDIAppsExecute(r ApiGetVDIAppsRequest) (*AddVDIApps20
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -752,8 +751,8 @@ func (a *VDIAPIService) GetVDIAppsExecute(r ApiGetVDIAppsRequest) (*AddVDIApps20
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -763,8 +762,8 @@ func (a *VDIAPIService) GetVDIAppsExecute(r ApiGetVDIAppsRequest) (*AddVDIApps20
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -772,8 +771,8 @@ func (a *VDIAPIService) GetVDIAppsExecute(r ApiGetVDIAppsRequest) (*AddVDIApps20
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -782,9 +781,9 @@ func (a *VDIAPIService) GetVDIAppsExecute(r ApiGetVDIAppsRequest) (*AddVDIApps20
 }
 
 type ApiGetVDIGatewaysRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *VDIAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetVDIGatewaysRequest) Execute() (*AddVDIGateways200ResponseAnyOf, *http.Response, error) {
@@ -796,27 +795,27 @@ GetVDIGateways Retrieves a Specific VDI Gateway
 
 Retrieves a specific VDI gateway.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetVDIGatewaysRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetVDIGatewaysRequest
 */
 func (a *VDIAPIService) GetVDIGateways(ctx context.Context, id int64) ApiGetVDIGatewaysRequest {
 	return ApiGetVDIGatewaysRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddVDIGateways200ResponseAnyOf
+//
+//	@return AddVDIGateways200ResponseAnyOf
 func (a *VDIAPIService) GetVDIGatewaysExecute(r ApiGetVDIGatewaysRequest) (*AddVDIGateways200ResponseAnyOf, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddVDIGateways200ResponseAnyOf
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddVDIGateways200ResponseAnyOf
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VDIAPIService.GetVDIGateways")
@@ -867,7 +866,7 @@ func (a *VDIAPIService) GetVDIGatewaysExecute(r ApiGetVDIGatewaysRequest) (*AddV
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -876,8 +875,8 @@ func (a *VDIAPIService) GetVDIGatewaysExecute(r ApiGetVDIGatewaysRequest) (*AddV
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -887,8 +886,8 @@ func (a *VDIAPIService) GetVDIGatewaysExecute(r ApiGetVDIGatewaysRequest) (*AddV
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -896,8 +895,8 @@ func (a *VDIAPIService) GetVDIGatewaysExecute(r ApiGetVDIGatewaysRequest) (*AddV
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -906,9 +905,9 @@ func (a *VDIAPIService) GetVDIGatewaysExecute(r ApiGetVDIGatewaysRequest) (*AddV
 }
 
 type ApiGetVDIPoolsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *VDIAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetVDIPoolsRequest) Execute() (*AddVDIPools200ResponseAnyOf, *http.Response, error) {
@@ -920,27 +919,27 @@ GetVDIPools Retrieves a Specific VDI Pool
 
 Retrieves a specific VDI pool.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetVDIPoolsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetVDIPoolsRequest
 */
 func (a *VDIAPIService) GetVDIPools(ctx context.Context, id int64) ApiGetVDIPoolsRequest {
 	return ApiGetVDIPoolsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddVDIPools200ResponseAnyOf
+//
+//	@return AddVDIPools200ResponseAnyOf
 func (a *VDIAPIService) GetVDIPoolsExecute(r ApiGetVDIPoolsRequest) (*AddVDIPools200ResponseAnyOf, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddVDIPools200ResponseAnyOf
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddVDIPools200ResponseAnyOf
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VDIAPIService.GetVDIPools")
@@ -991,7 +990,7 @@ func (a *VDIAPIService) GetVDIPoolsExecute(r ApiGetVDIPoolsRequest) (*AddVDIPool
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1000,8 +999,8 @@ func (a *VDIAPIService) GetVDIPoolsExecute(r ApiGetVDIPoolsRequest) (*AddVDIPool
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1011,8 +1010,8 @@ func (a *VDIAPIService) GetVDIPoolsExecute(r ApiGetVDIPoolsRequest) (*AddVDIPool
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1020,8 +1019,8 @@ func (a *VDIAPIService) GetVDIPoolsExecute(r ApiGetVDIPoolsRequest) (*AddVDIPool
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1030,9 +1029,9 @@ func (a *VDIAPIService) GetVDIPoolsExecute(r ApiGetVDIPoolsRequest) (*AddVDIPool
 }
 
 type ApiGetVdiRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *VDIAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetVdiRequest) Execute() (*GetVdi200Response, *http.Response, error) {
@@ -1044,27 +1043,27 @@ GetVdi Get a Specific Virtual Desktop
 
 This endpoint retrieves a specific virtual desktop along with the allocation for your user if one exists.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetVdiRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetVdiRequest
 */
 func (a *VDIAPIService) GetVdi(ctx context.Context, id int64) ApiGetVdiRequest {
 	return ApiGetVdiRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetVdi200Response
+//
+//	@return GetVdi200Response
 func (a *VDIAPIService) GetVdiExecute(r ApiGetVdiRequest) (*GetVdi200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetVdi200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetVdi200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VDIAPIService.GetVdi")
@@ -1115,7 +1114,7 @@ func (a *VDIAPIService) GetVdiExecute(r ApiGetVdiRequest) (*GetVdi200Response, *
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1124,8 +1123,8 @@ func (a *VDIAPIService) GetVdiExecute(r ApiGetVdiRequest) (*GetVdi200Response, *
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1135,8 +1134,8 @@ func (a *VDIAPIService) GetVdiExecute(r ApiGetVdiRequest) (*GetVdi200Response, *
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1144,8 +1143,8 @@ func (a *VDIAPIService) GetVdiExecute(r ApiGetVdiRequest) (*GetVdi200Response, *
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1154,18 +1153,18 @@ func (a *VDIAPIService) GetVdiExecute(r ApiGetVdiRequest) (*GetVdi200Response, *
 }
 
 type ApiListVDIAllocationsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *VDIAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	name *string
-	id *string
-	status *string
-	poolId *int64
-	userId *int64
+	max        *int64
+	offset     *int64
+	sort       *string
+	direction  *string
+	phrase     *string
+	name       *string
+	id         *string
+	status     *string
+	poolId     *int64
+	userId     *int64
 }
 
 // Maximum number of records to return
@@ -1237,25 +1236,25 @@ ListVDIAllocations Retrieves all VDI Allocations
 
 Retrieves all VDI allocations.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListVDIAllocationsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListVDIAllocationsRequest
 */
 func (a *VDIAPIService) ListVDIAllocations(ctx context.Context) ApiListVDIAllocationsRequest {
 	return ApiListVDIAllocationsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListVDIAllocations200Response
+//
+//	@return ListVDIAllocations200Response
 func (a *VDIAPIService) ListVDIAllocationsExecute(r ApiListVDIAllocationsRequest) (*ListVDIAllocations200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListVDIAllocations200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListVDIAllocations200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VDIAPIService.ListVDIAllocations")
@@ -1347,7 +1346,7 @@ func (a *VDIAPIService) ListVDIAllocationsExecute(r ApiListVDIAllocationsRequest
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1356,8 +1355,8 @@ func (a *VDIAPIService) ListVDIAllocationsExecute(r ApiListVDIAllocationsRequest
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1367,8 +1366,8 @@ func (a *VDIAPIService) ListVDIAllocationsExecute(r ApiListVDIAllocationsRequest
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1376,8 +1375,8 @@ func (a *VDIAPIService) ListVDIAllocationsExecute(r ApiListVDIAllocationsRequest
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1386,14 +1385,14 @@ func (a *VDIAPIService) ListVDIAllocationsExecute(r ApiListVDIAllocationsRequest
 }
 
 type ApiListVDIAppsRequest struct {
-	ctx context.Context
-	ApiService *VDIAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	name *string
+	ctx         context.Context
+	ApiService  *VDIAPIService
+	max         *int64
+	offset      *int64
+	sort        *string
+	direction   *string
+	phrase      *string
+	name        *string
 	description *string
 }
 
@@ -1448,25 +1447,25 @@ ListVDIApps Retrieves all VDI Apps
 
 Retrieves all VDI apps.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListVDIAppsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListVDIAppsRequest
 */
 func (a *VDIAPIService) ListVDIApps(ctx context.Context) ApiListVDIAppsRequest {
 	return ApiListVDIAppsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListVDIApps200Response
+//
+//	@return ListVDIApps200Response
 func (a *VDIAPIService) ListVDIAppsExecute(r ApiListVDIAppsRequest) (*ListVDIApps200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListVDIApps200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListVDIApps200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VDIAPIService.ListVDIApps")
@@ -1549,7 +1548,7 @@ func (a *VDIAPIService) ListVDIAppsExecute(r ApiListVDIAppsRequest) (*ListVDIApp
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1558,8 +1557,8 @@ func (a *VDIAPIService) ListVDIAppsExecute(r ApiListVDIAppsRequest) (*ListVDIApp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1569,8 +1568,8 @@ func (a *VDIAPIService) ListVDIAppsExecute(r ApiListVDIAppsRequest) (*ListVDIApp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1578,8 +1577,8 @@ func (a *VDIAPIService) ListVDIAppsExecute(r ApiListVDIAppsRequest) (*ListVDIApp
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1588,14 +1587,14 @@ func (a *VDIAPIService) ListVDIAppsExecute(r ApiListVDIAppsRequest) (*ListVDIApp
 }
 
 type ApiListVDIGatewaysRequest struct {
-	ctx context.Context
-	ApiService *VDIAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	name *string
+	ctx         context.Context
+	ApiService  *VDIAPIService
+	max         *int64
+	offset      *int64
+	sort        *string
+	direction   *string
+	phrase      *string
+	name        *string
 	description *string
 }
 
@@ -1650,25 +1649,25 @@ ListVDIGateways Retrieves all VDI Gateways
 
 Retrieves all VDI gateways.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListVDIGatewaysRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListVDIGatewaysRequest
 */
 func (a *VDIAPIService) ListVDIGateways(ctx context.Context) ApiListVDIGatewaysRequest {
 	return ApiListVDIGatewaysRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListVDIGateways200Response
+//
+//	@return ListVDIGateways200Response
 func (a *VDIAPIService) ListVDIGatewaysExecute(r ApiListVDIGatewaysRequest) (*ListVDIGateways200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListVDIGateways200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListVDIGateways200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VDIAPIService.ListVDIGateways")
@@ -1751,7 +1750,7 @@ func (a *VDIAPIService) ListVDIGatewaysExecute(r ApiListVDIGatewaysRequest) (*Li
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1760,8 +1759,8 @@ func (a *VDIAPIService) ListVDIGatewaysExecute(r ApiListVDIGatewaysRequest) (*Li
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1771,8 +1770,8 @@ func (a *VDIAPIService) ListVDIGatewaysExecute(r ApiListVDIGatewaysRequest) (*Li
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1780,8 +1779,8 @@ func (a *VDIAPIService) ListVDIGatewaysExecute(r ApiListVDIGatewaysRequest) (*Li
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1790,16 +1789,16 @@ func (a *VDIAPIService) ListVDIGatewaysExecute(r ApiListVDIGatewaysRequest) (*Li
 }
 
 type ApiListVDIPoolsRequest struct {
-	ctx context.Context
-	ApiService *VDIAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	name *string
+	ctx         context.Context
+	ApiService  *VDIAPIService
+	max         *int64
+	offset      *int64
+	sort        *string
+	direction   *string
+	phrase      *string
+	name        *string
 	description *string
-	enabled *bool
+	enabled     *bool
 }
 
 // Maximum number of records to return
@@ -1859,25 +1858,25 @@ ListVDIPools Retrieves all VDI Pools
 
 Retrieves all VDI pools.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListVDIPoolsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListVDIPoolsRequest
 */
 func (a *VDIAPIService) ListVDIPools(ctx context.Context) ApiListVDIPoolsRequest {
 	return ApiListVDIPoolsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListVDIPools200Response
+//
+//	@return ListVDIPools200Response
 func (a *VDIAPIService) ListVDIPoolsExecute(r ApiListVDIPoolsRequest) (*ListVDIPools200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListVDIPools200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListVDIPools200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VDIAPIService.ListVDIPools")
@@ -1963,7 +1962,7 @@ func (a *VDIAPIService) ListVDIPoolsExecute(r ApiListVDIPoolsRequest) (*ListVDIP
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1972,8 +1971,8 @@ func (a *VDIAPIService) ListVDIPoolsExecute(r ApiListVDIPoolsRequest) (*ListVDIP
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1983,8 +1982,8 @@ func (a *VDIAPIService) ListVDIPoolsExecute(r ApiListVDIPoolsRequest) (*ListVDIP
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1992,8 +1991,8 @@ func (a *VDIAPIService) ListVDIPoolsExecute(r ApiListVDIPoolsRequest) (*ListVDIP
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2002,14 +2001,14 @@ func (a *VDIAPIService) ListVDIPoolsExecute(r ApiListVDIPoolsRequest) (*ListVDIP
 }
 
 type ApiListVdiRequest struct {
-	ctx context.Context
-	ApiService *VDIAPIService
-	phrase *string
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	name *string
+	ctx         context.Context
+	ApiService  *VDIAPIService
+	phrase      *string
+	max         *int64
+	offset      *int64
+	sort        *string
+	direction   *string
+	name        *string
 	description *string
 }
 
@@ -2064,25 +2063,25 @@ ListVdi List Virtual Desktops
 
 This endpoint retrieves all virtual desktops along with the allocation for your user if one exists.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListVdiRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListVdiRequest
 */
 func (a *VDIAPIService) ListVdi(ctx context.Context) ApiListVdiRequest {
 	return ApiListVdiRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListVdi200Response
+//
+//	@return ListVdi200Response
 func (a *VDIAPIService) ListVdiExecute(r ApiListVdiRequest) (*ListVdi200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListVdi200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListVdi200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VDIAPIService.ListVdi")
@@ -2165,7 +2164,7 @@ func (a *VDIAPIService) ListVdiExecute(r ApiListVdiRequest) (*ListVdi200Response
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2174,8 +2173,8 @@ func (a *VDIAPIService) ListVdiExecute(r ApiListVdiRequest) (*ListVdi200Response
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2185,8 +2184,8 @@ func (a *VDIAPIService) ListVdiExecute(r ApiListVdiRequest) (*ListVdi200Response
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2194,8 +2193,8 @@ func (a *VDIAPIService) ListVdiExecute(r ApiListVdiRequest) (*ListVdi200Response
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2204,9 +2203,9 @@ func (a *VDIAPIService) ListVdiExecute(r ApiListVdiRequest) (*ListVdi200Response
 }
 
 type ApiRemoveVDIAppsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *VDIAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiRemoveVDIAppsRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -2218,27 +2217,27 @@ RemoveVDIApps Deletes a VDI App
 
 Deletes a specified VDI App.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiRemoveVDIAppsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiRemoveVDIAppsRequest
 */
 func (a *VDIAPIService) RemoveVDIApps(ctx context.Context, id int64) ApiRemoveVDIAppsRequest {
 	return ApiRemoveVDIAppsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *VDIAPIService) RemoveVDIAppsExecute(r ApiRemoveVDIAppsRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VDIAPIService.RemoveVDIApps")
@@ -2289,7 +2288,7 @@ func (a *VDIAPIService) RemoveVDIAppsExecute(r ApiRemoveVDIAppsRequest) (*Delete
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2298,8 +2297,8 @@ func (a *VDIAPIService) RemoveVDIAppsExecute(r ApiRemoveVDIAppsRequest) (*Delete
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2309,8 +2308,8 @@ func (a *VDIAPIService) RemoveVDIAppsExecute(r ApiRemoveVDIAppsRequest) (*Delete
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2318,8 +2317,8 @@ func (a *VDIAPIService) RemoveVDIAppsExecute(r ApiRemoveVDIAppsRequest) (*Delete
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2328,9 +2327,9 @@ func (a *VDIAPIService) RemoveVDIAppsExecute(r ApiRemoveVDIAppsRequest) (*Delete
 }
 
 type ApiRemoveVDIGatewaysRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *VDIAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiRemoveVDIGatewaysRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -2342,27 +2341,27 @@ RemoveVDIGateways Deletes a VDI Gateway
 
 Deletes a specified VDI Gateway.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiRemoveVDIGatewaysRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiRemoveVDIGatewaysRequest
 */
 func (a *VDIAPIService) RemoveVDIGateways(ctx context.Context, id int64) ApiRemoveVDIGatewaysRequest {
 	return ApiRemoveVDIGatewaysRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *VDIAPIService) RemoveVDIGatewaysExecute(r ApiRemoveVDIGatewaysRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VDIAPIService.RemoveVDIGateways")
@@ -2413,7 +2412,7 @@ func (a *VDIAPIService) RemoveVDIGatewaysExecute(r ApiRemoveVDIGatewaysRequest) 
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2422,8 +2421,8 @@ func (a *VDIAPIService) RemoveVDIGatewaysExecute(r ApiRemoveVDIGatewaysRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2433,8 +2432,8 @@ func (a *VDIAPIService) RemoveVDIGatewaysExecute(r ApiRemoveVDIGatewaysRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2442,8 +2441,8 @@ func (a *VDIAPIService) RemoveVDIGatewaysExecute(r ApiRemoveVDIGatewaysRequest) 
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2452,9 +2451,9 @@ func (a *VDIAPIService) RemoveVDIGatewaysExecute(r ApiRemoveVDIGatewaysRequest) 
 }
 
 type ApiRemoveVDIPoolsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *VDIAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiRemoveVDIPoolsRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -2466,27 +2465,27 @@ RemoveVDIPools Deletes a VDI Pool
 
 Deletes a specified VDI Pool.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiRemoveVDIPoolsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiRemoveVDIPoolsRequest
 */
 func (a *VDIAPIService) RemoveVDIPools(ctx context.Context, id int64) ApiRemoveVDIPoolsRequest {
 	return ApiRemoveVDIPoolsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *VDIAPIService) RemoveVDIPoolsExecute(r ApiRemoveVDIPoolsRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VDIAPIService.RemoveVDIPools")
@@ -2537,7 +2536,7 @@ func (a *VDIAPIService) RemoveVDIPoolsExecute(r ApiRemoveVDIPoolsRequest) (*Dele
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2546,8 +2545,8 @@ func (a *VDIAPIService) RemoveVDIPoolsExecute(r ApiRemoveVDIPoolsRequest) (*Dele
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2557,8 +2556,8 @@ func (a *VDIAPIService) RemoveVDIPoolsExecute(r ApiRemoveVDIPoolsRequest) (*Dele
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2566,8 +2565,8 @@ func (a *VDIAPIService) RemoveVDIPoolsExecute(r ApiRemoveVDIPoolsRequest) (*Dele
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2576,9 +2575,9 @@ func (a *VDIAPIService) RemoveVDIPoolsExecute(r ApiRemoveVDIPoolsRequest) (*Dele
 }
 
 type ApiUpdateVDIAppsRequest struct {
-	ctx context.Context
-	ApiService *VDIAPIService
-	id int64
+	ctx                  context.Context
+	ApiService           *VDIAPIService
+	id                   int64
 	updateVDIAppsRequest *UpdateVDIAppsRequest
 }
 
@@ -2596,27 +2595,27 @@ UpdateVDIApps Updates a VDI App Configuration or Icon
 
 Updates a VDI App configuration or icon.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateVDIAppsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateVDIAppsRequest
 */
 func (a *VDIAPIService) UpdateVDIApps(ctx context.Context, id int64) ApiUpdateVDIAppsRequest {
 	return ApiUpdateVDIAppsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddVDIApps200Response
+//
+//	@return AddVDIApps200Response
 func (a *VDIAPIService) UpdateVDIAppsExecute(r ApiUpdateVDIAppsRequest) (*AddVDIApps200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddVDIApps200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddVDIApps200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VDIAPIService.UpdateVDIApps")
@@ -2669,7 +2668,7 @@ func (a *VDIAPIService) UpdateVDIAppsExecute(r ApiUpdateVDIAppsRequest) (*AddVDI
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2678,8 +2677,8 @@ func (a *VDIAPIService) UpdateVDIAppsExecute(r ApiUpdateVDIAppsRequest) (*AddVDI
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2689,8 +2688,8 @@ func (a *VDIAPIService) UpdateVDIAppsExecute(r ApiUpdateVDIAppsRequest) (*AddVDI
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2698,8 +2697,8 @@ func (a *VDIAPIService) UpdateVDIAppsExecute(r ApiUpdateVDIAppsRequest) (*AddVDI
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2708,9 +2707,9 @@ func (a *VDIAPIService) UpdateVDIAppsExecute(r ApiUpdateVDIAppsRequest) (*AddVDI
 }
 
 type ApiUpdateVDIGatewaysRequest struct {
-	ctx context.Context
-	ApiService *VDIAPIService
-	id int64
+	ctx                      context.Context
+	ApiService               *VDIAPIService
+	id                       int64
 	updateVDIGatewaysRequest *UpdateVDIGatewaysRequest
 }
 
@@ -2728,27 +2727,27 @@ UpdateVDIGateways Updates a VDI Gateway Configuration
 
 Updates a VDI Gateway configuration or icon.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateVDIGatewaysRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateVDIGatewaysRequest
 */
 func (a *VDIAPIService) UpdateVDIGateways(ctx context.Context, id int64) ApiUpdateVDIGatewaysRequest {
 	return ApiUpdateVDIGatewaysRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddVDIGateways200Response
+//
+//	@return AddVDIGateways200Response
 func (a *VDIAPIService) UpdateVDIGatewaysExecute(r ApiUpdateVDIGatewaysRequest) (*AddVDIGateways200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddVDIGateways200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddVDIGateways200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VDIAPIService.UpdateVDIGateways")
@@ -2801,7 +2800,7 @@ func (a *VDIAPIService) UpdateVDIGatewaysExecute(r ApiUpdateVDIGatewaysRequest) 
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2810,8 +2809,8 @@ func (a *VDIAPIService) UpdateVDIGatewaysExecute(r ApiUpdateVDIGatewaysRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2821,8 +2820,8 @@ func (a *VDIAPIService) UpdateVDIGatewaysExecute(r ApiUpdateVDIGatewaysRequest) 
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2830,8 +2829,8 @@ func (a *VDIAPIService) UpdateVDIGatewaysExecute(r ApiUpdateVDIGatewaysRequest) 
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2840,9 +2839,9 @@ func (a *VDIAPIService) UpdateVDIGatewaysExecute(r ApiUpdateVDIGatewaysRequest) 
 }
 
 type ApiUpdateVDIPoolsRequest struct {
-	ctx context.Context
-	ApiService *VDIAPIService
-	id int64
+	ctx                   context.Context
+	ApiService            *VDIAPIService
+	id                    int64
 	updateVDIPoolsRequest *UpdateVDIPoolsRequest
 }
 
@@ -2860,27 +2859,27 @@ UpdateVDIPools Updates a VDI Pool Configuration or Icon
 
 Updates a VDI Pool configuration or icon.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateVDIPoolsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateVDIPoolsRequest
 */
 func (a *VDIAPIService) UpdateVDIPools(ctx context.Context, id int64) ApiUpdateVDIPoolsRequest {
 	return ApiUpdateVDIPoolsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddVDIPools200Response
+//
+//	@return AddVDIPools200Response
 func (a *VDIAPIService) UpdateVDIPoolsExecute(r ApiUpdateVDIPoolsRequest) (*AddVDIPools200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddVDIPools200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddVDIPools200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VDIAPIService.UpdateVDIPools")
@@ -2933,7 +2932,7 @@ func (a *VDIAPIService) UpdateVDIPoolsExecute(r ApiUpdateVDIPoolsRequest) (*AddV
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2942,8 +2941,8 @@ func (a *VDIAPIService) UpdateVDIPoolsExecute(r ApiUpdateVDIPoolsRequest) (*AddV
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2953,8 +2952,8 @@ func (a *VDIAPIService) UpdateVDIPoolsExecute(r ApiUpdateVDIPoolsRequest) (*AddV
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2962,8 +2961,8 @@ func (a *VDIAPIService) UpdateVDIPoolsExecute(r ApiUpdateVDIPoolsRequest) (*AddV
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

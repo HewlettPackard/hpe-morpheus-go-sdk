@@ -14,6 +14,7 @@ package sdk
 import (
 	"encoding/json"
 	"fmt"
+
 	"gopkg.in/validator.v2"
 )
 
@@ -22,7 +23,7 @@ var _ fmt.Stringer
 
 // AddIdentitySourcesRequestUserSourceConfig - struct for AddIdentitySourcesRequestUserSourceConfig
 type AddIdentitySourcesRequestUserSourceConfig struct {
-	AddIdentitySourcesRequestUserSourceConfigOneOf *AddIdentitySourcesRequestUserSourceConfigOneOf
+	AddIdentitySourcesRequestUserSourceConfigOneOf  *AddIdentitySourcesRequestUserSourceConfigOneOf
 	AddIdentitySourcesRequestUserSourceConfigOneOf1 *AddIdentitySourcesRequestUserSourceConfigOneOf1
 	AddIdentitySourcesRequestUserSourceConfigOneOf2 *AddIdentitySourcesRequestUserSourceConfigOneOf2
 	AddIdentitySourcesRequestUserSourceConfigOneOf3 *AddIdentitySourcesRequestUserSourceConfigOneOf3
@@ -88,6 +89,45 @@ func AddIdentitySourcesRequestUserSourceConfigOneOf7AsAddIdentitySourcesRequestU
 	}
 }
 
+func (dst *AddIdentitySourcesRequestUserSourceConfig) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddIdentitySourcesRequestUserSourceConfig{}
+	}
+
+	if out, ok := data.(AddIdentitySourcesRequestUserSourceConfigOneOf); ok {
+		dst.AddIdentitySourcesRequestUserSourceConfigOneOf = &out
+	}
+
+	if out, ok := data.(AddIdentitySourcesRequestUserSourceConfigOneOf1); ok {
+		dst.AddIdentitySourcesRequestUserSourceConfigOneOf1 = &out
+	}
+
+	if out, ok := data.(AddIdentitySourcesRequestUserSourceConfigOneOf2); ok {
+		dst.AddIdentitySourcesRequestUserSourceConfigOneOf2 = &out
+	}
+
+	if out, ok := data.(AddIdentitySourcesRequestUserSourceConfigOneOf3); ok {
+		dst.AddIdentitySourcesRequestUserSourceConfigOneOf3 = &out
+	}
+
+	if out, ok := data.(AddIdentitySourcesRequestUserSourceConfigOneOf4); ok {
+		dst.AddIdentitySourcesRequestUserSourceConfigOneOf4 = &out
+	}
+
+	if out, ok := data.(AddIdentitySourcesRequestUserSourceConfigOneOf5); ok {
+		dst.AddIdentitySourcesRequestUserSourceConfigOneOf5 = &out
+	}
+
+	if out, ok := data.(AddIdentitySourcesRequestUserSourceConfigOneOf6); ok {
+		dst.AddIdentitySourcesRequestUserSourceConfigOneOf6 = &out
+	}
+
+	if out, ok := data.(AddIdentitySourcesRequestUserSourceConfigOneOf7); ok {
+		dst.AddIdentitySourcesRequestUserSourceConfigOneOf7 = &out
+	}
+
+	return dst, nil
+}
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddIdentitySourcesRequestUserSourceConfig) UnmarshalJSON(data []byte) error {
@@ -286,7 +326,7 @@ func (src AddIdentitySourcesRequestUserSourceConfig) MarshalJSON() ([]byte, erro
 }
 
 // Get the actual instance
-func (obj *AddIdentitySourcesRequestUserSourceConfig) GetActualInstance() (interface{}) {
+func (obj *AddIdentitySourcesRequestUserSourceConfig) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -327,7 +367,7 @@ func (obj *AddIdentitySourcesRequestUserSourceConfig) GetActualInstance() (inter
 }
 
 // Get the actual instance value
-func (obj AddIdentitySourcesRequestUserSourceConfig) GetActualInstanceValue() (interface{}) {
+func (obj AddIdentitySourcesRequestUserSourceConfig) GetActualInstanceValue() interface{} {
 	if obj.AddIdentitySourcesRequestUserSourceConfigOneOf != nil {
 		return *obj.AddIdentitySourcesRequestUserSourceConfigOneOf
 	}
@@ -399,5 +439,3 @@ func (v *NullableAddIdentitySourcesRequestUserSourceConfig) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

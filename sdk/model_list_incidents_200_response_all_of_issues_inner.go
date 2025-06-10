@@ -21,26 +21,26 @@ var _ MappedNullable = &ListIncidents200ResponseAllOfIssuesInner{}
 
 // ListIncidents200ResponseAllOfIssuesInner struct for ListIncidents200ResponseAllOfIssuesInner
 type ListIncidents200ResponseAllOfIssuesInner struct {
-	Id *int64 `json:"id,omitempty"`
-	AttachmentType *string `json:"attachmentType,omitempty"`
-	App *string `json:"app,omitempty"`
-	Available *bool `json:"available,omitempty"`
-	Check *string `json:"check,omitempty"`
-	CheckGroup *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"checkGroup,omitempty"`
-	CheckStatus *string `json:"checkStatus,omitempty"`
-	EndDate *time.Time `json:"endDate,omitempty"`
-	Health *int64 `json:"health,omitempty"`
-	InUptime *bool `json:"inUptime,omitempty"`
-	Incident *GetAlerts200ResponseAllOfChecksInnerAccount `json:"incident,omitempty"`
-	LastCheckTime *time.Time `json:"lastCheckTime,omitempty"`
-	LastError *string `json:"lastError,omitempty"`
-	LastMessage *string `json:"lastMessage,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Severity *string `json:"severity,omitempty"`
-	SeverityId *int64 `json:"severityId,omitempty"`
-	StartDate *time.Time `json:"startDate,omitempty"`
-	Status *string `json:"status,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                  `json:"id,omitempty"`
+	AttachmentType       *string                                                                 `json:"attachmentType,omitempty"`
+	App                  *string                                                                 `json:"app,omitempty"`
+	Available            *bool                                                                   `json:"available,omitempty"`
+	Check                *string                                                                 `json:"check,omitempty"`
+	CheckGroup           *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"checkGroup,omitempty"`
+	CheckStatus          *string                                                                 `json:"checkStatus,omitempty"`
+	EndDate              *time.Time                                                              `json:"endDate,omitempty"`
+	Health               *int64                                                                  `json:"health,omitempty"`
+	InUptime             *bool                                                                   `json:"inUptime,omitempty"`
+	Incident             *GetAlerts200ResponseAllOfChecksInnerAccount                            `json:"incident,omitempty"`
+	LastCheckTime        *time.Time                                                              `json:"lastCheckTime,omitempty"`
+	LastError            *string                                                                 `json:"lastError,omitempty"`
+	LastMessage          *string                                                                 `json:"lastMessage,omitempty"`
+	Name                 *string                                                                 `json:"name,omitempty"`
+	Severity             *string                                                                 `json:"severity,omitempty"`
+	SeverityId           *int64                                                                  `json:"severityId,omitempty"`
+	StartDate            *time.Time                                                              `json:"startDate,omitempty"`
+	Status               *string                                                                 `json:"status,omitempty"`
+	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
 }
 
 type _ListIncidents200ResponseAllOfIssuesInner ListIncidents200ResponseAllOfIssuesInner
@@ -671,7 +671,7 @@ func (o *ListIncidents200ResponseAllOfIssuesInner) SetStatus(v string) {
 }
 
 func (o ListIncidents200ResponseAllOfIssuesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -744,80 +744,8 @@ func (o ListIncidents200ResponseAllOfIssuesInner) ToMap() (map[string]interface{
 
 	return toSerialize, nil
 }
-
 func (o *ListIncidents200ResponseAllOfIssuesInner) UnmarshalJSON(data []byte) (err error) {
-	varListIncidents200ResponseAllOfIssuesInner := _ListIncidents200ResponseAllOfIssuesInner{}
-
-	err = json.Unmarshal(data, &varListIncidents200ResponseAllOfIssuesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListIncidents200ResponseAllOfIssuesInner(varListIncidents200ResponseAllOfIssuesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "attachmentType")
-		delete(additionalProperties, "app")
-		delete(additionalProperties, "available")
-		delete(additionalProperties, "check")
-		delete(additionalProperties, "checkGroup")
-		delete(additionalProperties, "checkStatus")
-		delete(additionalProperties, "endDate")
-		delete(additionalProperties, "health")
-		delete(additionalProperties, "inUptime")
-		delete(additionalProperties, "incident")
-		delete(additionalProperties, "lastCheckTime")
-		delete(additionalProperties, "lastError")
-		delete(additionalProperties, "lastMessage")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "severity")
-		delete(additionalProperties, "severityId")
-		delete(additionalProperties, "startDate")
-		delete(additionalProperties, "status")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListIncidents200ResponseAllOfIssuesInner struct {
-	value *ListIncidents200ResponseAllOfIssuesInner
-	isSet bool
-}
-
-func (v NullableListIncidents200ResponseAllOfIssuesInner) Get() *ListIncidents200ResponseAllOfIssuesInner {
-	return v.value
-}
-
-func (v *NullableListIncidents200ResponseAllOfIssuesInner) Set(val *ListIncidents200ResponseAllOfIssuesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListIncidents200ResponseAllOfIssuesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListIncidents200ResponseAllOfIssuesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListIncidents200ResponseAllOfIssuesInner(val *ListIncidents200ResponseAllOfIssuesInner) *NullableListIncidents200ResponseAllOfIssuesInner {
-	return &NullableListIncidents200ResponseAllOfIssuesInner{value: val, isSet: true}
-}
-
-func (v NullableListIncidents200ResponseAllOfIssuesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListIncidents200ResponseAllOfIssuesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -20,14 +20,14 @@ var _ MappedNullable = &ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4C
 
 // ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4Config struct for ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4Config
 type ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4Config struct {
-	CherwellCustomCmdbMapping *string `json:"cherwellCustomCmdbMapping,omitempty"`
-	CherwellClientKey *string `json:"cherwellClientKey,omitempty"`
-	CherwellCreatedBy *string `json:"cherwellCreatedBy,omitempty"`
-	CherwellStartDate *string `json:"cherwellStartDate,omitempty"`
-	CherwellEndDate *string `json:"cherwellEndDate,omitempty"`
-	CherwellIgnoreSSLErrors *string `json:"cherwellIgnoreSSLErrors,omitempty"`
-	CherwellBusinessObject *string `json:"cherwellBusinessObject,omitempty"`
-	AdditionalProperties map[string]interface{}
+	CherwellCustomCmdbMapping *string                `json:"cherwellCustomCmdbMapping,omitempty"`
+	CherwellClientKey         *string                `json:"cherwellClientKey,omitempty"`
+	CherwellCreatedBy         *string                `json:"cherwellCreatedBy,omitempty"`
+	CherwellStartDate         *string                `json:"cherwellStartDate,omitempty"`
+	CherwellEndDate           *string                `json:"cherwellEndDate,omitempty"`
+	CherwellIgnoreSSLErrors   *string                `json:"cherwellIgnoreSSLErrors,omitempty"`
+	CherwellBusinessObject    *string                `json:"cherwellBusinessObject,omitempty"`
+	AdditionalProperties      map[string]interface{} `json:",remain"`
 }
 
 type _ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4Config ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4Config
@@ -274,7 +274,7 @@ func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4Config) SetCherw
 }
 
 func (o ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4Config) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -311,68 +311,8 @@ func (o ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4Config) ToMap() (
 
 	return toSerialize, nil
 }
-
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4Config) UnmarshalJSON(data []byte) (err error) {
-	varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4Config := _ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4Config{}
-
-	err = json.Unmarshal(data, &varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4Config)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4Config(varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4Config)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "cherwellCustomCmdbMapping")
-		delete(additionalProperties, "cherwellClientKey")
-		delete(additionalProperties, "cherwellCreatedBy")
-		delete(additionalProperties, "cherwellStartDate")
-		delete(additionalProperties, "cherwellEndDate")
-		delete(additionalProperties, "cherwellIgnoreSSLErrors")
-		delete(additionalProperties, "cherwellBusinessObject")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4Config struct {
-	value *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4Config
-	isSet bool
-}
-
-func (v NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4Config) Get() *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4Config {
-	return v.value
-}
-
-func (v *NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4Config) Set(val *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4Config) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4Config) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4Config) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4Config(val *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4Config) *NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4Config {
-	return &NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4Config{value: val, isSet: true}
-}
-
-func (v NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4Config) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4Config) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

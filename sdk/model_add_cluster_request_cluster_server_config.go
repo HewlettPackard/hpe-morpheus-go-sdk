@@ -18,11 +18,11 @@ import (
 // checks if the AddClusterRequestClusterServerConfig type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &AddClusterRequestClusterServerConfig{}
 
-// AddClusterRequestClusterServerConfig Key for specific host type configuration  The config parameter is for configuration options that are specific to each Provision Type. The Provision Types api can be used to see which options are available. 
+// AddClusterRequestClusterServerConfig Key for specific host type configuration  The config parameter is for configuration options that are specific to each Provision Type. The Provision Types api can be used to see which options are available.
 type AddClusterRequestClusterServerConfig struct {
 	// Default Git Account to be used when pulling images.  Default behavior is to be anonymous, which does have limits on allowed image pulls from public Docker Repos.
-	DefaultRepoAccount *int32 `json:"defaultRepoAccount,omitempty"`
-	AdditionalProperties map[string]interface{}
+	DefaultRepoAccount   *int32                 `json:"defaultRepoAccount,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddClusterRequestClusterServerConfig AddClusterRequestClusterServerConfig
@@ -77,7 +77,7 @@ func (o *AddClusterRequestClusterServerConfig) SetDefaultRepoAccount(v int32) {
 }
 
 func (o AddClusterRequestClusterServerConfig) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -96,62 +96,8 @@ func (o AddClusterRequestClusterServerConfig) ToMap() (map[string]interface{}, e
 
 	return toSerialize, nil
 }
-
 func (o *AddClusterRequestClusterServerConfig) UnmarshalJSON(data []byte) (err error) {
-	varAddClusterRequestClusterServerConfig := _AddClusterRequestClusterServerConfig{}
-
-	err = json.Unmarshal(data, &varAddClusterRequestClusterServerConfig)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddClusterRequestClusterServerConfig(varAddClusterRequestClusterServerConfig)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "defaultRepoAccount")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddClusterRequestClusterServerConfig struct {
-	value *AddClusterRequestClusterServerConfig
-	isSet bool
-}
-
-func (v NullableAddClusterRequestClusterServerConfig) Get() *AddClusterRequestClusterServerConfig {
-	return v.value
-}
-
-func (v *NullableAddClusterRequestClusterServerConfig) Set(val *AddClusterRequestClusterServerConfig) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddClusterRequestClusterServerConfig) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddClusterRequestClusterServerConfig) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddClusterRequestClusterServerConfig(val *AddClusterRequestClusterServerConfig) *NullableAddClusterRequestClusterServerConfig {
-	return &NullableAddClusterRequestClusterServerConfig{value: val, isSet: true}
-}
-
-func (v NullableAddClusterRequestClusterServerConfig) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddClusterRequestClusterServerConfig) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -20,9 +20,9 @@ var _ MappedNullable = &SuccessError{}
 
 // SuccessError struct for SuccessError
 type SuccessError struct {
-	Success *bool `json:"success,omitempty"`
-	Errors map[string]interface{} `json:"errors,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Success              *bool                  `json:"success,omitempty"`
+	Errors               map[string]interface{} `json:"errors,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _SuccessError SuccessError
@@ -109,7 +109,7 @@ func (o *SuccessError) SetErrors(v map[string]interface{}) {
 }
 
 func (o SuccessError) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o SuccessError) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *SuccessError) UnmarshalJSON(data []byte) (err error) {
-	varSuccessError := _SuccessError{}
-
-	err = json.Unmarshal(data, &varSuccessError)
-
-	if err != nil {
-		return err
-	}
-
-	*o = SuccessError(varSuccessError)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "success")
-		delete(additionalProperties, "errors")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableSuccessError struct {
-	value *SuccessError
-	isSet bool
-}
-
-func (v NullableSuccessError) Get() *SuccessError {
-	return v.value
-}
-
-func (v *NullableSuccessError) Set(val *SuccessError) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSuccessError) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSuccessError) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSuccessError(val *SuccessError) *NullableSuccessError {
-	return &NullableSuccessError{value: val, isSet: true}
-}
-
-func (v NullableSuccessError) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSuccessError) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

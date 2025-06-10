@@ -22,14 +22,13 @@ import (
 	"time"
 )
 
-
 // TenantsAPIService TenantsAPI service
 type TenantsAPIService service
 
 type ApiAddSubtenantIdentitySourcesRequest struct {
-	ctx context.Context
-	ApiService *TenantsAPIService
-	accountId int64
+	ctx                       context.Context
+	ApiService                *TenantsAPIService
+	accountId                 int64
 	addIdentitySourcesRequest *AddIdentitySourcesRequest
 }
 
@@ -47,27 +46,27 @@ AddSubtenantIdentitySources Creates a Subtenant Identity Source
 
 Creates an identity source for the provided subtenant ID.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param accountId The ID of the subtenant account
- @return ApiAddSubtenantIdentitySourcesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param accountId The ID of the subtenant account
+	@return ApiAddSubtenantIdentitySourcesRequest
 */
 func (a *TenantsAPIService) AddSubtenantIdentitySources(ctx context.Context, accountId int64) ApiAddSubtenantIdentitySourcesRequest {
 	return ApiAddSubtenantIdentitySourcesRequest{
 		ApiService: a,
-		ctx: ctx,
-		accountId: accountId,
+		ctx:        ctx,
+		accountId:  accountId,
 	}
 }
 
 // Execute executes the request
-//  @return AddIdentitySources200Response
+//
+//	@return AddIdentitySources200Response
 func (a *TenantsAPIService) AddSubtenantIdentitySourcesExecute(r ApiAddSubtenantIdentitySourcesRequest) (*AddIdentitySources200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddIdentitySources200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddIdentitySources200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenantsAPIService.AddSubtenantIdentitySources")
@@ -120,7 +119,7 @@ func (a *TenantsAPIService) AddSubtenantIdentitySourcesExecute(r ApiAddSubtenant
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -129,8 +128,8 @@ func (a *TenantsAPIService) AddSubtenantIdentitySourcesExecute(r ApiAddSubtenant
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -140,8 +139,8 @@ func (a *TenantsAPIService) AddSubtenantIdentitySourcesExecute(r ApiAddSubtenant
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -149,8 +148,8 @@ func (a *TenantsAPIService) AddSubtenantIdentitySourcesExecute(r ApiAddSubtenant
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -159,8 +158,8 @@ func (a *TenantsAPIService) AddSubtenantIdentitySourcesExecute(r ApiAddSubtenant
 }
 
 type ApiAddTenantRequest struct {
-	ctx context.Context
-	ApiService *TenantsAPIService
+	ctx              context.Context
+	ApiService       *TenantsAPIService
 	addTenantRequest *AddTenantRequest
 }
 
@@ -178,24 +177,25 @@ AddTenant Create a Tenant
 
 Create a new tenant. This new account will be a sub-tenant with the master tenant as its parent.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddTenantRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddTenantRequest
 */
 func (a *TenantsAPIService) AddTenant(ctx context.Context) ApiAddTenantRequest {
 	return ApiAddTenantRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddTenant200Response
+//
+//	@return AddTenant200Response
 func (a *TenantsAPIService) AddTenantExecute(r ApiAddTenantRequest) (*AddTenant200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddTenant200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddTenant200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenantsAPIService.AddTenant")
@@ -247,7 +247,7 @@ func (a *TenantsAPIService) AddTenantExecute(r ApiAddTenantRequest) (*AddTenant2
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -256,8 +256,8 @@ func (a *TenantsAPIService) AddTenantExecute(r ApiAddTenantRequest) (*AddTenant2
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -267,8 +267,8 @@ func (a *TenantsAPIService) AddTenantExecute(r ApiAddTenantRequest) (*AddTenant2
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -276,8 +276,8 @@ func (a *TenantsAPIService) AddTenantExecute(r ApiAddTenantRequest) (*AddTenant2
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -286,9 +286,9 @@ func (a *TenantsAPIService) AddTenantExecute(r ApiAddTenantRequest) (*AddTenant2
 }
 
 type ApiAddUserTenantRequest struct {
-	ctx context.Context
-	ApiService *TenantsAPIService
-	accountId int64
+	ctx                  context.Context
+	ApiService           *TenantsAPIService
+	accountId            int64
 	addUserTenantRequest *AddUserTenantRequest
 }
 
@@ -306,26 +306,27 @@ AddUserTenant Create a User For a Tenant
 
 Create a User For a Tenant.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param accountId The ID of the subtenant account
- @return ApiAddUserTenantRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param accountId The ID of the subtenant account
+	@return ApiAddUserTenantRequest
 */
 func (a *TenantsAPIService) AddUserTenant(ctx context.Context, accountId int64) ApiAddUserTenantRequest {
 	return ApiAddUserTenantRequest{
 		ApiService: a,
-		ctx: ctx,
-		accountId: accountId,
+		ctx:        ctx,
+		accountId:  accountId,
 	}
 }
 
 // Execute executes the request
-//  @return AddUserTenant200Response
+//
+//	@return AddUserTenant200Response
 func (a *TenantsAPIService) AddUserTenantExecute(r ApiAddUserTenantRequest) (*AddUserTenant200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddUserTenant200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddUserTenant200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenantsAPIService.AddUserTenant")
@@ -378,7 +379,7 @@ func (a *TenantsAPIService) AddUserTenantExecute(r ApiAddUserTenantRequest) (*Ad
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -387,8 +388,8 @@ func (a *TenantsAPIService) AddUserTenantExecute(r ApiAddUserTenantRequest) (*Ad
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -398,8 +399,8 @@ func (a *TenantsAPIService) AddUserTenantExecute(r ApiAddUserTenantRequest) (*Ad
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -407,8 +408,8 @@ func (a *TenantsAPIService) AddUserTenantExecute(r ApiAddUserTenantRequest) (*Ad
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -417,9 +418,9 @@ func (a *TenantsAPIService) AddUserTenantExecute(r ApiAddUserTenantRequest) (*Ad
 }
 
 type ApiCreateTenantSubtenantGroupRequest struct {
-	ctx context.Context
-	ApiService *TenantsAPIService
-	accountId int64
+	ctx                               context.Context
+	ApiService                        *TenantsAPIService
+	accountId                         int64
 	createTenantSubtenantGroupRequest *CreateTenantSubtenantGroupRequest
 }
 
@@ -437,26 +438,27 @@ CreateTenantSubtenantGroup Create a Group for Subtenant
 
 Create a Group for Subtenant.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param accountId The ID of the subtenant account
- @return ApiCreateTenantSubtenantGroupRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param accountId The ID of the subtenant account
+	@return ApiCreateTenantSubtenantGroupRequest
 */
 func (a *TenantsAPIService) CreateTenantSubtenantGroup(ctx context.Context, accountId int64) ApiCreateTenantSubtenantGroupRequest {
 	return ApiCreateTenantSubtenantGroupRequest{
 		ApiService: a,
-		ctx: ctx,
-		accountId: accountId,
+		ctx:        ctx,
+		accountId:  accountId,
 	}
 }
 
 // Execute executes the request
-//  @return CreateTenantSubtenantGroup200Response
+//
+//	@return CreateTenantSubtenantGroup200Response
 func (a *TenantsAPIService) CreateTenantSubtenantGroupExecute(r ApiCreateTenantSubtenantGroupRequest) (*CreateTenantSubtenantGroup200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CreateTenantSubtenantGroup200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CreateTenantSubtenantGroup200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenantsAPIService.CreateTenantSubtenantGroup")
@@ -509,7 +511,7 @@ func (a *TenantsAPIService) CreateTenantSubtenantGroupExecute(r ApiCreateTenantS
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -518,8 +520,8 @@ func (a *TenantsAPIService) CreateTenantSubtenantGroupExecute(r ApiCreateTenantS
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -529,8 +531,8 @@ func (a *TenantsAPIService) CreateTenantSubtenantGroupExecute(r ApiCreateTenantS
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -538,8 +540,8 @@ func (a *TenantsAPIService) CreateTenantSubtenantGroupExecute(r ApiCreateTenantS
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -548,9 +550,9 @@ func (a *TenantsAPIService) CreateTenantSubtenantGroupExecute(r ApiCreateTenantS
 }
 
 type ApiGetTenantRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *TenantsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetTenantRequest) Execute() (*GetTenant200Response, *http.Response, error) {
@@ -562,26 +564,27 @@ GetTenant Get tenant
 
 Get details about a tenant
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetTenantRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetTenantRequest
 */
 func (a *TenantsAPIService) GetTenant(ctx context.Context, id int64) ApiGetTenantRequest {
 	return ApiGetTenantRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetTenant200Response
+//
+//	@return GetTenant200Response
 func (a *TenantsAPIService) GetTenantExecute(r ApiGetTenantRequest) (*GetTenant200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetTenant200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetTenant200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenantsAPIService.GetTenant")
@@ -632,7 +635,7 @@ func (a *TenantsAPIService) GetTenantExecute(r ApiGetTenantRequest) (*GetTenant2
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -641,8 +644,8 @@ func (a *TenantsAPIService) GetTenantExecute(r ApiGetTenantRequest) (*GetTenant2
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -652,8 +655,8 @@ func (a *TenantsAPIService) GetTenantExecute(r ApiGetTenantRequest) (*GetTenant2
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -661,8 +664,8 @@ func (a *TenantsAPIService) GetTenantExecute(r ApiGetTenantRequest) (*GetTenant2
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -671,10 +674,10 @@ func (a *TenantsAPIService) GetTenantExecute(r ApiGetTenantRequest) (*GetTenant2
 }
 
 type ApiGetTenantSubtenantGroupRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *TenantsAPIService
-	accountId int64
-	id int64
+	accountId  int64
+	id         int64
 }
 
 func (r ApiGetTenantSubtenantGroupRequest) Execute() (*GetTenantSubtenantGroup200Response, *http.Response, error) {
@@ -686,28 +689,29 @@ GetTenantSubtenantGroup Get a Specific Group for Subtenant
 
 This endpoint retrieves a specific group.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param accountId The ID of the subtenant account
- @param id Morpheus ID of the Object being referenced
- @return ApiGetTenantSubtenantGroupRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param accountId The ID of the subtenant account
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetTenantSubtenantGroupRequest
 */
 func (a *TenantsAPIService) GetTenantSubtenantGroup(ctx context.Context, accountId int64, id int64) ApiGetTenantSubtenantGroupRequest {
 	return ApiGetTenantSubtenantGroupRequest{
 		ApiService: a,
-		ctx: ctx,
-		accountId: accountId,
-		id: id,
+		ctx:        ctx,
+		accountId:  accountId,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetTenantSubtenantGroup200Response
+//
+//	@return GetTenantSubtenantGroup200Response
 func (a *TenantsAPIService) GetTenantSubtenantGroupExecute(r ApiGetTenantSubtenantGroupRequest) (*GetTenantSubtenantGroup200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetTenantSubtenantGroup200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetTenantSubtenantGroup200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenantsAPIService.GetTenantSubtenantGroup")
@@ -759,7 +763,7 @@ func (a *TenantsAPIService) GetTenantSubtenantGroupExecute(r ApiGetTenantSubtena
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -768,8 +772,8 @@ func (a *TenantsAPIService) GetTenantSubtenantGroupExecute(r ApiGetTenantSubtena
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -779,8 +783,8 @@ func (a *TenantsAPIService) GetTenantSubtenantGroupExecute(r ApiGetTenantSubtena
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -788,8 +792,8 @@ func (a *TenantsAPIService) GetTenantSubtenantGroupExecute(r ApiGetTenantSubtena
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -798,11 +802,11 @@ func (a *TenantsAPIService) GetTenantSubtenantGroupExecute(r ApiGetTenantSubtena
 }
 
 type ApiListTenantSubtenantGroupsRequest struct {
-	ctx context.Context
-	ApiService *TenantsAPIService
-	accountId int64
-	phrase *string
-	name *string
+	ctx         context.Context
+	ApiService  *TenantsAPIService
+	accountId   int64
+	phrase      *string
+	name        *string
 	lastUpdated *time.Time
 }
 
@@ -835,27 +839,27 @@ Groups belonging to a subtenant can be managed by the master account.
 
 This endpoint retrieves all groups and a list of zones associated with the group by id.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param accountId The ID of the subtenant account
- @return ApiListTenantSubtenantGroupsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param accountId The ID of the subtenant account
+	@return ApiListTenantSubtenantGroupsRequest
 */
 func (a *TenantsAPIService) ListTenantSubtenantGroups(ctx context.Context, accountId int64) ApiListTenantSubtenantGroupsRequest {
 	return ApiListTenantSubtenantGroupsRequest{
 		ApiService: a,
-		ctx: ctx,
-		accountId: accountId,
+		ctx:        ctx,
+		accountId:  accountId,
 	}
 }
 
 // Execute executes the request
-//  @return ListTenantSubtenantGroups200Response
+//
+//	@return ListTenantSubtenantGroups200Response
 func (a *TenantsAPIService) ListTenantSubtenantGroupsExecute(r ApiListTenantSubtenantGroupsRequest) (*ListTenantSubtenantGroups200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListTenantSubtenantGroups200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListTenantSubtenantGroups200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenantsAPIService.ListTenantSubtenantGroups")
@@ -915,7 +919,7 @@ func (a *TenantsAPIService) ListTenantSubtenantGroupsExecute(r ApiListTenantSubt
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -924,8 +928,8 @@ func (a *TenantsAPIService) ListTenantSubtenantGroupsExecute(r ApiListTenantSubt
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -935,8 +939,8 @@ func (a *TenantsAPIService) ListTenantSubtenantGroupsExecute(r ApiListTenantSubt
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -944,8 +948,8 @@ func (a *TenantsAPIService) ListTenantSubtenantGroupsExecute(r ApiListTenantSubt
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -954,14 +958,14 @@ func (a *TenantsAPIService) ListTenantSubtenantGroupsExecute(r ApiListTenantSubt
 }
 
 type ApiListTenantSubtenantIdentitySourcesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *TenantsAPIService
-	accountId int64
-	max *int64
-	offset *int64
-	direction *string
-	phrase *string
-	name *string
+	accountId  int64
+	max        *int64
+	offset     *int64
+	direction  *string
+	phrase     *string
+	name       *string
 }
 
 // Maximum number of records to return
@@ -1003,27 +1007,27 @@ ListTenantSubtenantIdentitySources Get Subtenant Identity Sources
 
 This endpoint retrieves all identity sources associated with the subtenant by id.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param accountId The ID of the subtenant account
- @return ApiListTenantSubtenantIdentitySourcesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param accountId The ID of the subtenant account
+	@return ApiListTenantSubtenantIdentitySourcesRequest
 */
 func (a *TenantsAPIService) ListTenantSubtenantIdentitySources(ctx context.Context, accountId int64) ApiListTenantSubtenantIdentitySourcesRequest {
 	return ApiListTenantSubtenantIdentitySourcesRequest{
 		ApiService: a,
-		ctx: ctx,
-		accountId: accountId,
+		ctx:        ctx,
+		accountId:  accountId,
 	}
 }
 
 // Execute executes the request
-//  @return ListIdentitySources200Response
+//
+//	@return ListIdentitySources200Response
 func (a *TenantsAPIService) ListTenantSubtenantIdentitySourcesExecute(r ApiListTenantSubtenantIdentitySourcesRequest) (*ListIdentitySources200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListIdentitySources200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListIdentitySources200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenantsAPIService.ListTenantSubtenantIdentitySources")
@@ -1098,7 +1102,7 @@ func (a *TenantsAPIService) ListTenantSubtenantIdentitySourcesExecute(r ApiListT
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1107,8 +1111,8 @@ func (a *TenantsAPIService) ListTenantSubtenantIdentitySourcesExecute(r ApiListT
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1118,8 +1122,8 @@ func (a *TenantsAPIService) ListTenantSubtenantIdentitySourcesExecute(r ApiListT
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1127,8 +1131,8 @@ func (a *TenantsAPIService) ListTenantSubtenantIdentitySourcesExecute(r ApiListT
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1137,14 +1141,14 @@ func (a *TenantsAPIService) ListTenantSubtenantIdentitySourcesExecute(r ApiListT
 }
 
 type ApiListTenantsRequest struct {
-	ctx context.Context
-	ApiService *TenantsAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	name *string
+	ctx         context.Context
+	ApiService  *TenantsAPIService
+	max         *int64
+	offset      *int64
+	sort        *string
+	direction   *string
+	phrase      *string
+	name        *string
 	lastUpdated *time.Time
 }
 
@@ -1199,24 +1203,25 @@ ListTenants List All Tenants
 
 Get a list of tenants. A tenant is also referred to as an account.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListTenantsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListTenantsRequest
 */
 func (a *TenantsAPIService) ListTenants(ctx context.Context) ApiListTenantsRequest {
 	return ApiListTenantsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListTenants200Response
+//
+//	@return ListTenants200Response
 func (a *TenantsAPIService) ListTenantsExecute(r ApiListTenantsRequest) (*ListTenants200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListTenants200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListTenants200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenantsAPIService.ListTenants")
@@ -1299,7 +1304,7 @@ func (a *TenantsAPIService) ListTenantsExecute(r ApiListTenantsRequest) (*ListTe
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1308,8 +1313,8 @@ func (a *TenantsAPIService) ListTenantsExecute(r ApiListTenantsRequest) (*ListTe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1319,8 +1324,8 @@ func (a *TenantsAPIService) ListTenantsExecute(r ApiListTenantsRequest) (*ListTe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1328,8 +1333,8 @@ func (a *TenantsAPIService) ListTenantsExecute(r ApiListTenantsRequest) (*ListTe
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1338,7 +1343,7 @@ func (a *TenantsAPIService) ListTenantsExecute(r ApiListTenantsRequest) (*ListTe
 }
 
 type ApiListTenantsAvailableRolesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *TenantsAPIService
 }
 
@@ -1351,24 +1356,25 @@ ListTenantsAvailableRoles List available roles for a tenant
 
 Get a list of available roles that can be assigned as the default base role for a sub tenant account.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListTenantsAvailableRolesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListTenantsAvailableRolesRequest
 */
 func (a *TenantsAPIService) ListTenantsAvailableRoles(ctx context.Context) ApiListTenantsAvailableRolesRequest {
 	return ApiListTenantsAvailableRolesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListTenantsAvailableRoles200Response
+//
+//	@return ListTenantsAvailableRoles200Response
 func (a *TenantsAPIService) ListTenantsAvailableRolesExecute(r ApiListTenantsAvailableRolesRequest) (*ListTenantsAvailableRoles200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListTenantsAvailableRoles200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListTenantsAvailableRoles200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenantsAPIService.ListTenantsAvailableRoles")
@@ -1418,7 +1424,7 @@ func (a *TenantsAPIService) ListTenantsAvailableRolesExecute(r ApiListTenantsAva
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1427,8 +1433,8 @@ func (a *TenantsAPIService) ListTenantsAvailableRolesExecute(r ApiListTenantsAva
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1438,8 +1444,8 @@ func (a *TenantsAPIService) ListTenantsAvailableRolesExecute(r ApiListTenantsAva
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1447,8 +1453,8 @@ func (a *TenantsAPIService) ListTenantsAvailableRolesExecute(r ApiListTenantsAva
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1457,9 +1463,9 @@ func (a *TenantsAPIService) ListTenantsAvailableRolesExecute(r ApiListTenantsAva
 }
 
 type ApiRemoveTenantRequest struct {
-	ctx context.Context
-	ApiService *TenantsAPIService
-	id int64
+	ctx             context.Context
+	ApiService      *TenantsAPIService
+	id              int64
 	removeResources *bool
 }
 
@@ -1478,26 +1484,27 @@ RemoveTenant Delete a Specific Tenant
 
 Delete an existing tenant. This action is not reversible and will result in the removal of all data pertaining to this tenant as well as potentially any provisioned assets depending on the value of `removeResources`.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiRemoveTenantRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiRemoveTenantRequest
 */
 func (a *TenantsAPIService) RemoveTenant(ctx context.Context, id int64) ApiRemoveTenantRequest {
 	return ApiRemoveTenantRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *TenantsAPIService) RemoveTenantExecute(r ApiRemoveTenantRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenantsAPIService.RemoveTenant")
@@ -1554,7 +1561,7 @@ func (a *TenantsAPIService) RemoveTenantExecute(r ApiRemoveTenantRequest) (*Dele
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
 			var v ListActivity4XXResponse
@@ -1563,8 +1570,8 @@ func (a *TenantsAPIService) RemoveTenantExecute(r ApiRemoveTenantRequest) (*Dele
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
@@ -1574,8 +1581,8 @@ func (a *TenantsAPIService) RemoveTenantExecute(r ApiRemoveTenantRequest) (*Dele
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1585,8 +1592,8 @@ func (a *TenantsAPIService) RemoveTenantExecute(r ApiRemoveTenantRequest) (*Dele
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1594,8 +1601,8 @@ func (a *TenantsAPIService) RemoveTenantExecute(r ApiRemoveTenantRequest) (*Dele
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1604,10 +1611,10 @@ func (a *TenantsAPIService) RemoveTenantExecute(r ApiRemoveTenantRequest) (*Dele
 }
 
 type ApiRemoveTenantSubtenantGroupRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *TenantsAPIService
-	accountId int64
-	id int64
+	accountId  int64
+	id         int64
 }
 
 func (r ApiRemoveTenantSubtenantGroupRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -1619,28 +1626,29 @@ RemoveTenantSubtenantGroup Delete a Group for Subtenant
 
 If a group has zones or servers still tied to it, a delete action will fail.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param accountId The ID of the subtenant account
- @param id Morpheus ID of the Object being referenced
- @return ApiRemoveTenantSubtenantGroupRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param accountId The ID of the subtenant account
+	@param id Morpheus ID of the Object being referenced
+	@return ApiRemoveTenantSubtenantGroupRequest
 */
 func (a *TenantsAPIService) RemoveTenantSubtenantGroup(ctx context.Context, accountId int64, id int64) ApiRemoveTenantSubtenantGroupRequest {
 	return ApiRemoveTenantSubtenantGroupRequest{
 		ApiService: a,
-		ctx: ctx,
-		accountId: accountId,
-		id: id,
+		ctx:        ctx,
+		accountId:  accountId,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *TenantsAPIService) RemoveTenantSubtenantGroupExecute(r ApiRemoveTenantSubtenantGroupRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenantsAPIService.RemoveTenantSubtenantGroup")
@@ -1692,7 +1700,7 @@ func (a *TenantsAPIService) RemoveTenantSubtenantGroupExecute(r ApiRemoveTenantS
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1701,8 +1709,8 @@ func (a *TenantsAPIService) RemoveTenantSubtenantGroupExecute(r ApiRemoveTenantS
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1712,8 +1720,8 @@ func (a *TenantsAPIService) RemoveTenantSubtenantGroupExecute(r ApiRemoveTenantS
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1721,8 +1729,8 @@ func (a *TenantsAPIService) RemoveTenantSubtenantGroupExecute(r ApiRemoveTenantS
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1731,9 +1739,9 @@ func (a *TenantsAPIService) RemoveTenantSubtenantGroupExecute(r ApiRemoveTenantS
 }
 
 type ApiUpdateTenantRequest struct {
-	ctx context.Context
-	ApiService *TenantsAPIService
-	id int64
+	ctx                 context.Context
+	ApiService          *TenantsAPIService
+	id                  int64
 	updateTenantRequest *UpdateTenantRequest
 }
 
@@ -1751,26 +1759,27 @@ UpdateTenant Update tenant
 
 Update an existing tenant.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateTenantRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateTenantRequest
 */
 func (a *TenantsAPIService) UpdateTenant(ctx context.Context, id int64) ApiUpdateTenantRequest {
 	return ApiUpdateTenantRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return UpdateTenant200Response
+//
+//	@return UpdateTenant200Response
 func (a *TenantsAPIService) UpdateTenantExecute(r ApiUpdateTenantRequest) (*UpdateTenant200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UpdateTenant200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UpdateTenant200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenantsAPIService.UpdateTenant")
@@ -1823,7 +1832,7 @@ func (a *TenantsAPIService) UpdateTenantExecute(r ApiUpdateTenantRequest) (*Upda
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1832,8 +1841,8 @@ func (a *TenantsAPIService) UpdateTenantExecute(r ApiUpdateTenantRequest) (*Upda
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1843,8 +1852,8 @@ func (a *TenantsAPIService) UpdateTenantExecute(r ApiUpdateTenantRequest) (*Upda
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1852,8 +1861,8 @@ func (a *TenantsAPIService) UpdateTenantExecute(r ApiUpdateTenantRequest) (*Upda
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1862,10 +1871,10 @@ func (a *TenantsAPIService) UpdateTenantExecute(r ApiUpdateTenantRequest) (*Upda
 }
 
 type ApiUpdateTenantSubtenantGroupRequest struct {
-	ctx context.Context
-	ApiService *TenantsAPIService
-	accountId int64
-	id int64
+	ctx                               context.Context
+	ApiService                        *TenantsAPIService
+	accountId                         int64
+	id                                int64
 	updateTenantSubtenantGroupRequest *UpdateTenantSubtenantGroupRequest
 }
 
@@ -1883,28 +1892,29 @@ UpdateTenantSubtenantGroup Updating a Group for Subtenant
 
 Updating a Group for Subtenant.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param accountId The ID of the subtenant account
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateTenantSubtenantGroupRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param accountId The ID of the subtenant account
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateTenantSubtenantGroupRequest
 */
 func (a *TenantsAPIService) UpdateTenantSubtenantGroup(ctx context.Context, accountId int64, id int64) ApiUpdateTenantSubtenantGroupRequest {
 	return ApiUpdateTenantSubtenantGroupRequest{
 		ApiService: a,
-		ctx: ctx,
-		accountId: accountId,
-		id: id,
+		ctx:        ctx,
+		accountId:  accountId,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return CreateTenantSubtenantGroup200Response
+//
+//	@return CreateTenantSubtenantGroup200Response
 func (a *TenantsAPIService) UpdateTenantSubtenantGroupExecute(r ApiUpdateTenantSubtenantGroupRequest) (*CreateTenantSubtenantGroup200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CreateTenantSubtenantGroup200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CreateTenantSubtenantGroup200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenantsAPIService.UpdateTenantSubtenantGroup")
@@ -1958,7 +1968,7 @@ func (a *TenantsAPIService) UpdateTenantSubtenantGroupExecute(r ApiUpdateTenantS
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1967,8 +1977,8 @@ func (a *TenantsAPIService) UpdateTenantSubtenantGroupExecute(r ApiUpdateTenantS
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1978,8 +1988,8 @@ func (a *TenantsAPIService) UpdateTenantSubtenantGroupExecute(r ApiUpdateTenantS
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1987,8 +1997,8 @@ func (a *TenantsAPIService) UpdateTenantSubtenantGroupExecute(r ApiUpdateTenantS
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1997,10 +2007,10 @@ func (a *TenantsAPIService) UpdateTenantSubtenantGroupExecute(r ApiUpdateTenantS
 }
 
 type ApiUpdateTenantSubtenantGroupZonesRequest struct {
-	ctx context.Context
-	ApiService *TenantsAPIService
-	accountId int64
-	id int64
+	ctx                                    context.Context
+	ApiService                             *TenantsAPIService
+	accountId                              int64
+	id                                     int64
 	updateTenantSubtenantGroupZonesRequest *UpdateTenantSubtenantGroupZonesRequest
 }
 
@@ -2018,28 +2028,29 @@ UpdateTenantSubtenantGroupZones Updating Group Zones for Subtenant
 
 This will update the zones that are assigned to the group. Any zones that are not passed in the zones parameter will be removed from the group.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param accountId The ID of the subtenant account
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateTenantSubtenantGroupZonesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param accountId The ID of the subtenant account
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateTenantSubtenantGroupZonesRequest
 */
 func (a *TenantsAPIService) UpdateTenantSubtenantGroupZones(ctx context.Context, accountId int64, id int64) ApiUpdateTenantSubtenantGroupZonesRequest {
 	return ApiUpdateTenantSubtenantGroupZonesRequest{
 		ApiService: a,
-		ctx: ctx,
-		accountId: accountId,
-		id: id,
+		ctx:        ctx,
+		accountId:  accountId,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *TenantsAPIService) UpdateTenantSubtenantGroupZonesExecute(r ApiUpdateTenantSubtenantGroupZonesRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenantsAPIService.UpdateTenantSubtenantGroupZones")
@@ -2093,7 +2104,7 @@ func (a *TenantsAPIService) UpdateTenantSubtenantGroupZonesExecute(r ApiUpdateTe
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2102,8 +2113,8 @@ func (a *TenantsAPIService) UpdateTenantSubtenantGroupZonesExecute(r ApiUpdateTe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2113,8 +2124,8 @@ func (a *TenantsAPIService) UpdateTenantSubtenantGroupZonesExecute(r ApiUpdateTe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2122,8 +2133,8 @@ func (a *TenantsAPIService) UpdateTenantSubtenantGroupZonesExecute(r ApiUpdateTe
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

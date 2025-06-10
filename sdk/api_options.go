@@ -21,13 +21,12 @@ import (
 	"strings"
 )
 
-
 // OptionsAPIService OptionsAPI service
 type OptionsAPIService service
 
 type ApiGetOptionSourceDataRequest struct {
-	ctx context.Context
-	ApiService *OptionsAPIService
+	ctx          context.Context
+	ApiService   *OptionsAPIService
 	optionSource string
 }
 
@@ -40,27 +39,27 @@ GetOptionSourceData Get Option Source Data
 
 Returns a list of name/value pairs for option-type models. Some option-types depend on input data for proper representation. This typically includes zoneId or siteId for the item being provisioned as request parameters or sometimes previous option type parameters. Each option returned has a `value`, which is often the `id`, but may be a `code` or other attribute.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param optionSource `optionSource` to be listed
- @return ApiGetOptionSourceDataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param optionSource `optionSource` to be listed
+	@return ApiGetOptionSourceDataRequest
 */
 func (a *OptionsAPIService) GetOptionSourceData(ctx context.Context, optionSource string) ApiGetOptionSourceDataRequest {
 	return ApiGetOptionSourceDataRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:   a,
+		ctx:          ctx,
 		optionSource: optionSource,
 	}
 }
 
 // Execute executes the request
-//  @return GetOptionSourceData200Response
+//
+//	@return GetOptionSourceData200Response
 func (a *OptionsAPIService) GetOptionSourceDataExecute(r ApiGetOptionSourceDataRequest) (*GetOptionSourceData200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetOptionSourceData200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetOptionSourceData200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OptionsAPIService.GetOptionSourceData")
@@ -111,7 +110,7 @@ func (a *OptionsAPIService) GetOptionSourceDataExecute(r ApiGetOptionSourceDataR
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -120,8 +119,8 @@ func (a *OptionsAPIService) GetOptionSourceDataExecute(r ApiGetOptionSourceDataR
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -131,8 +130,8 @@ func (a *OptionsAPIService) GetOptionSourceDataExecute(r ApiGetOptionSourceDataR
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -140,8 +139,8 @@ func (a *OptionsAPIService) GetOptionSourceDataExecute(r ApiGetOptionSourceDataR
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -150,8 +149,8 @@ func (a *OptionsAPIService) GetOptionSourceDataExecute(r ApiGetOptionSourceDataR
 }
 
 type ApiListCodeRepositoriesRequest struct {
-	ctx context.Context
-	ApiService *OptionsAPIService
+	ctx           context.Context
+	ApiService    *OptionsAPIService
 	integrationId *int64
 }
 
@@ -170,25 +169,25 @@ ListCodeRepositories Retrieves a list of Code/GIT Repositories
 
 Retrieves a list of Code/GIT Repositories
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListCodeRepositoriesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListCodeRepositoriesRequest
 */
 func (a *OptionsAPIService) ListCodeRepositories(ctx context.Context) ApiListCodeRepositoriesRequest {
 	return ApiListCodeRepositoriesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListCodeRepositories200Response
+//
+//	@return ListCodeRepositories200Response
 func (a *OptionsAPIService) ListCodeRepositoriesExecute(r ApiListCodeRepositoriesRequest) (*ListCodeRepositories200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListCodeRepositories200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListCodeRepositories200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OptionsAPIService.ListCodeRepositories")
@@ -241,7 +240,7 @@ func (a *OptionsAPIService) ListCodeRepositoriesExecute(r ApiListCodeRepositorie
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -250,8 +249,8 @@ func (a *OptionsAPIService) ListCodeRepositoriesExecute(r ApiListCodeRepositorie
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -261,8 +260,8 @@ func (a *OptionsAPIService) ListCodeRepositoriesExecute(r ApiListCodeRepositorie
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -270,8 +269,8 @@ func (a *OptionsAPIService) ListCodeRepositoriesExecute(r ApiListCodeRepositorie
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -280,12 +279,12 @@ func (a *OptionsAPIService) ListCodeRepositoriesExecute(r ApiListCodeRepositorie
 }
 
 type ApiListOptionAnsibleTowerInventoryOptionsRequest struct {
-	ctx context.Context
-	ApiService *OptionsAPIService
-	zoneId *int64
-	siteId *int64
-	taskId *int64
-	accountId *int64
+	ctx                       context.Context
+	ApiService                *OptionsAPIService
+	zoneId                    *int64
+	siteId                    *int64
+	taskId                    *int64
+	accountId                 *int64
 	ansibleTowerIntegrationId *int64
 }
 
@@ -328,25 +327,25 @@ ListOptionAnsibleTowerInventoryOptions Retrieves available Ansible Tower Invento
 
 This endpoint can be used to see which Ansible Tower Inventories are available for the current user/tenant
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListOptionAnsibleTowerInventoryOptionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListOptionAnsibleTowerInventoryOptionsRequest
 */
 func (a *OptionsAPIService) ListOptionAnsibleTowerInventoryOptions(ctx context.Context) ApiListOptionAnsibleTowerInventoryOptionsRequest {
 	return ApiListOptionAnsibleTowerInventoryOptionsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListOptionAnsibleTowerInventoryOptions200Response
+//
+//	@return ListOptionAnsibleTowerInventoryOptions200Response
 func (a *OptionsAPIService) ListOptionAnsibleTowerInventoryOptionsExecute(r ApiListOptionAnsibleTowerInventoryOptionsRequest) (*ListOptionAnsibleTowerInventoryOptions200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListOptionAnsibleTowerInventoryOptions200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListOptionAnsibleTowerInventoryOptions200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OptionsAPIService.ListOptionAnsibleTowerInventoryOptions")
@@ -411,7 +410,7 @@ func (a *OptionsAPIService) ListOptionAnsibleTowerInventoryOptionsExecute(r ApiL
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -420,8 +419,8 @@ func (a *OptionsAPIService) ListOptionAnsibleTowerInventoryOptionsExecute(r ApiL
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -431,8 +430,8 @@ func (a *OptionsAPIService) ListOptionAnsibleTowerInventoryOptionsExecute(r ApiL
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -440,8 +439,8 @@ func (a *OptionsAPIService) ListOptionAnsibleTowerInventoryOptionsExecute(r ApiL
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -450,12 +449,12 @@ func (a *OptionsAPIService) ListOptionAnsibleTowerInventoryOptionsExecute(r ApiL
 }
 
 type ApiListOptionAnsibleTowerJobTemplateOptionsRequest struct {
-	ctx context.Context
-	ApiService *OptionsAPIService
-	zoneId *int64
-	siteId *int64
-	taskId *int64
-	accountId *int64
+	ctx                       context.Context
+	ApiService                *OptionsAPIService
+	zoneId                    *int64
+	siteId                    *int64
+	taskId                    *int64
+	accountId                 *int64
 	ansibleTowerIntegrationId *int64
 }
 
@@ -498,25 +497,25 @@ ListOptionAnsibleTowerJobTemplateOptions Retrieves available Ansible Tower Job T
 
 This endpoint can be used to see which Ansible Tower Job Templates are available for the current user/tenant
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListOptionAnsibleTowerJobTemplateOptionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListOptionAnsibleTowerJobTemplateOptionsRequest
 */
 func (a *OptionsAPIService) ListOptionAnsibleTowerJobTemplateOptions(ctx context.Context) ApiListOptionAnsibleTowerJobTemplateOptionsRequest {
 	return ApiListOptionAnsibleTowerJobTemplateOptionsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListOptionAnsibleTowerInventoryOptions200Response
+//
+//	@return ListOptionAnsibleTowerInventoryOptions200Response
 func (a *OptionsAPIService) ListOptionAnsibleTowerJobTemplateOptionsExecute(r ApiListOptionAnsibleTowerJobTemplateOptionsRequest) (*ListOptionAnsibleTowerInventoryOptions200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListOptionAnsibleTowerInventoryOptions200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListOptionAnsibleTowerInventoryOptions200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OptionsAPIService.ListOptionAnsibleTowerJobTemplateOptions")
@@ -581,7 +580,7 @@ func (a *OptionsAPIService) ListOptionAnsibleTowerJobTemplateOptionsExecute(r Ap
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -590,8 +589,8 @@ func (a *OptionsAPIService) ListOptionAnsibleTowerJobTemplateOptionsExecute(r Ap
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -601,8 +600,8 @@ func (a *OptionsAPIService) ListOptionAnsibleTowerJobTemplateOptionsExecute(r Ap
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -610,8 +609,8 @@ func (a *OptionsAPIService) ListOptionAnsibleTowerJobTemplateOptionsExecute(r Ap
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -620,9 +619,9 @@ func (a *OptionsAPIService) ListOptionAnsibleTowerJobTemplateOptionsExecute(r Ap
 }
 
 type ApiListOptionChefServerOptionsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *OptionsAPIService
-	accountId *int64
+	accountId  *int64
 }
 
 // Filter by Tenant ID. This is only available to master tenant users with permission to manage tenants and users.
@@ -640,25 +639,25 @@ ListOptionChefServerOptions Retrieves available Chef Servers
 
 This endpoint can be used to see which Chef Servers are available for the current user/tenant
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListOptionChefServerOptionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListOptionChefServerOptionsRequest
 */
 func (a *OptionsAPIService) ListOptionChefServerOptions(ctx context.Context) ApiListOptionChefServerOptionsRequest {
 	return ApiListOptionChefServerOptionsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListOptionAnsibleTowerInventoryOptions200Response
+//
+//	@return ListOptionAnsibleTowerInventoryOptions200Response
 func (a *OptionsAPIService) ListOptionChefServerOptionsExecute(r ApiListOptionChefServerOptionsRequest) (*ListOptionAnsibleTowerInventoryOptions200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListOptionAnsibleTowerInventoryOptions200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListOptionAnsibleTowerInventoryOptions200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OptionsAPIService.ListOptionChefServerOptions")
@@ -711,7 +710,7 @@ func (a *OptionsAPIService) ListOptionChefServerOptionsExecute(r ApiListOptionCh
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -720,8 +719,8 @@ func (a *OptionsAPIService) ListOptionChefServerOptionsExecute(r ApiListOptionCh
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -731,8 +730,8 @@ func (a *OptionsAPIService) ListOptionChefServerOptionsExecute(r ApiListOptionCh
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -740,8 +739,8 @@ func (a *OptionsAPIService) ListOptionChefServerOptionsExecute(r ApiListOptionCh
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -750,9 +749,9 @@ func (a *OptionsAPIService) ListOptionChefServerOptionsExecute(r ApiListOptionCh
 }
 
 type ApiListOptionNetworkOptionsRequest struct {
-	ctx context.Context
-	ApiService *OptionsAPIService
-	zoneId *int64
+	ctx             context.Context
+	ApiService      *OptionsAPIService
+	zoneId          *int64
 	provisionTypeId *int64
 }
 
@@ -777,25 +776,25 @@ ListOptionNetworkOptions Retrieves network options by zone/cloud
 
 This endpoint can be used to see which network options are available for a given cloud (zoneId) and provision type.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListOptionNetworkOptionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListOptionNetworkOptionsRequest
 */
 func (a *OptionsAPIService) ListOptionNetworkOptions(ctx context.Context) ApiListOptionNetworkOptionsRequest {
 	return ApiListOptionNetworkOptionsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListOptionNetworkOptions200Response
+//
+//	@return ListOptionNetworkOptions200Response
 func (a *OptionsAPIService) ListOptionNetworkOptionsExecute(r ApiListOptionNetworkOptionsRequest) (*ListOptionNetworkOptions200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListOptionNetworkOptions200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListOptionNetworkOptions200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OptionsAPIService.ListOptionNetworkOptions")
@@ -851,7 +850,7 @@ func (a *OptionsAPIService) ListOptionNetworkOptionsExecute(r ApiListOptionNetwo
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -860,8 +859,8 @@ func (a *OptionsAPIService) ListOptionNetworkOptionsExecute(r ApiListOptionNetwo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -871,8 +870,8 @@ func (a *OptionsAPIService) ListOptionNetworkOptionsExecute(r ApiListOptionNetwo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -880,8 +879,8 @@ func (a *OptionsAPIService) ListOptionNetworkOptionsExecute(r ApiListOptionNetwo
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -890,10 +889,10 @@ func (a *OptionsAPIService) ListOptionNetworkOptionsExecute(r ApiListOptionNetwo
 }
 
 type ApiListOptionServiceNowWorkflowsOptionsRequest struct {
-	ctx context.Context
-	ApiService *OptionsAPIService
-	accountId *int64
-	config *map[string]interface{}
+	ctx                  context.Context
+	ApiService           *OptionsAPIService
+	accountId            *int64
+	config               *map[string]interface{}
 	accountIntegrationId *int64
 }
 
@@ -924,25 +923,25 @@ ListOptionServiceNowWorkflowsOptions Retrieves available ServiceNow workflows
 
 This endpoint can be used to see which ServiceNow workflows are available for the current user/tenant
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListOptionServiceNowWorkflowsOptionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListOptionServiceNowWorkflowsOptionsRequest
 */
 func (a *OptionsAPIService) ListOptionServiceNowWorkflowsOptions(ctx context.Context) ApiListOptionServiceNowWorkflowsOptionsRequest {
 	return ApiListOptionServiceNowWorkflowsOptionsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListOptionAnsibleTowerInventoryOptions200Response
+//
+//	@return ListOptionAnsibleTowerInventoryOptions200Response
 func (a *OptionsAPIService) ListOptionServiceNowWorkflowsOptionsExecute(r ApiListOptionServiceNowWorkflowsOptionsRequest) (*ListOptionAnsibleTowerInventoryOptions200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListOptionAnsibleTowerInventoryOptions200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListOptionAnsibleTowerInventoryOptions200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OptionsAPIService.ListOptionServiceNowWorkflowsOptions")
@@ -1001,7 +1000,7 @@ func (a *OptionsAPIService) ListOptionServiceNowWorkflowsOptionsExecute(r ApiLis
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1010,8 +1009,8 @@ func (a *OptionsAPIService) ListOptionServiceNowWorkflowsOptionsExecute(r ApiLis
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1021,8 +1020,8 @@ func (a *OptionsAPIService) ListOptionServiceNowWorkflowsOptionsExecute(r ApiLis
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1030,8 +1029,8 @@ func (a *OptionsAPIService) ListOptionServiceNowWorkflowsOptionsExecute(r ApiLis
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1040,10 +1039,10 @@ func (a *OptionsAPIService) ListOptionServiceNowWorkflowsOptionsExecute(r ApiLis
 }
 
 type ApiListOptionValuesRequest struct {
-	ctx context.Context
-	ApiService *OptionsAPIService
+	ctx          context.Context
+	ApiService   *OptionsAPIService
 	optionTypeId *int64
-	config *map[string]interface{}
+	config       *map[string]interface{}
 }
 
 // Input or Option Type ID
@@ -1067,25 +1066,25 @@ ListOptionValues Retrieves input option values
 
 Retrieves all input option values.  Can be used with parameters to supply dependent input values.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListOptionValuesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListOptionValuesRequest
 */
 func (a *OptionsAPIService) ListOptionValues(ctx context.Context) ApiListOptionValuesRequest {
 	return ApiListOptionValuesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListOptionValues200Response
+//
+//	@return ListOptionValues200Response
 func (a *OptionsAPIService) ListOptionValuesExecute(r ApiListOptionValuesRequest) (*ListOptionValues200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListOptionValues200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListOptionValues200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OptionsAPIService.ListOptionValues")
@@ -1142,7 +1141,7 @@ func (a *OptionsAPIService) ListOptionValuesExecute(r ApiListOptionValuesRequest
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1151,8 +1150,8 @@ func (a *OptionsAPIService) ListOptionValuesExecute(r ApiListOptionValuesRequest
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1162,8 +1161,8 @@ func (a *OptionsAPIService) ListOptionValuesExecute(r ApiListOptionValuesRequest
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1171,8 +1170,8 @@ func (a *OptionsAPIService) ListOptionValuesExecute(r ApiListOptionValuesRequest
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1181,7 +1180,7 @@ func (a *OptionsAPIService) ListOptionValuesExecute(r ApiListOptionValuesRequest
 }
 
 type ApiListOptionZoneTypesOptionsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *OptionsAPIService
 }
 
@@ -1194,25 +1193,25 @@ ListOptionZoneTypesOptions Retrieves enabled zones/clouds
 
 This endpoint can be used to see which zone/cloud types are enabled for the current tenant
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListOptionZoneTypesOptionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListOptionZoneTypesOptionsRequest
 */
 func (a *OptionsAPIService) ListOptionZoneTypesOptions(ctx context.Context) ApiListOptionZoneTypesOptionsRequest {
 	return ApiListOptionZoneTypesOptionsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListOptionZoneTypesOptions200Response
+//
+//	@return ListOptionZoneTypesOptions200Response
 func (a *OptionsAPIService) ListOptionZoneTypesOptionsExecute(r ApiListOptionZoneTypesOptionsRequest) (*ListOptionZoneTypesOptions200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListOptionZoneTypesOptions200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListOptionZoneTypesOptions200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OptionsAPIService.ListOptionZoneTypesOptions")
@@ -1262,7 +1261,7 @@ func (a *OptionsAPIService) ListOptionZoneTypesOptionsExecute(r ApiListOptionZon
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1271,8 +1270,8 @@ func (a *OptionsAPIService) ListOptionZoneTypesOptionsExecute(r ApiListOptionZon
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1282,8 +1281,8 @@ func (a *OptionsAPIService) ListOptionZoneTypesOptionsExecute(r ApiListOptionZon
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1291,8 +1290,8 @@ func (a *OptionsAPIService) ListOptionZoneTypesOptionsExecute(r ApiListOptionZon
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

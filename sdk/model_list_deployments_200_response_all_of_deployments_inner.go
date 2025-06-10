@@ -21,15 +21,15 @@ var _ MappedNullable = &ListDeployments200ResponseAllOfDeploymentsInner{}
 
 // ListDeployments200ResponseAllOfDeploymentsInner struct for ListDeployments200ResponseAllOfDeploymentsInner
 type ListDeployments200ResponseAllOfDeploymentsInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	AccountId *int64 `json:"accountId,omitempty"`
-	ExternalId *string `json:"externalId,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	VersionCount *int64 `json:"versionCount,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	Description          *string                `json:"description,omitempty"`
+	AccountId            *int64                 `json:"accountId,omitempty"`
+	ExternalId           *string                `json:"externalId,omitempty"`
+	DateCreated          *time.Time             `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time             `json:"lastUpdated,omitempty"`
+	VersionCount         *int64                 `json:"versionCount,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListDeployments200ResponseAllOfDeploymentsInner ListDeployments200ResponseAllOfDeploymentsInner
@@ -308,7 +308,7 @@ func (o *ListDeployments200ResponseAllOfDeploymentsInner) SetVersionCount(v int6
 }
 
 func (o ListDeployments200ResponseAllOfDeploymentsInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -348,69 +348,8 @@ func (o ListDeployments200ResponseAllOfDeploymentsInner) ToMap() (map[string]int
 
 	return toSerialize, nil
 }
-
 func (o *ListDeployments200ResponseAllOfDeploymentsInner) UnmarshalJSON(data []byte) (err error) {
-	varListDeployments200ResponseAllOfDeploymentsInner := _ListDeployments200ResponseAllOfDeploymentsInner{}
-
-	err = json.Unmarshal(data, &varListDeployments200ResponseAllOfDeploymentsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListDeployments200ResponseAllOfDeploymentsInner(varListDeployments200ResponseAllOfDeploymentsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "accountId")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "versionCount")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListDeployments200ResponseAllOfDeploymentsInner struct {
-	value *ListDeployments200ResponseAllOfDeploymentsInner
-	isSet bool
-}
-
-func (v NullableListDeployments200ResponseAllOfDeploymentsInner) Get() *ListDeployments200ResponseAllOfDeploymentsInner {
-	return v.value
-}
-
-func (v *NullableListDeployments200ResponseAllOfDeploymentsInner) Set(val *ListDeployments200ResponseAllOfDeploymentsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListDeployments200ResponseAllOfDeploymentsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListDeployments200ResponseAllOfDeploymentsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListDeployments200ResponseAllOfDeploymentsInner(val *ListDeployments200ResponseAllOfDeploymentsInner) *NullableListDeployments200ResponseAllOfDeploymentsInner {
-	return &NullableListDeployments200ResponseAllOfDeploymentsInner{value: val, isSet: true}
-}
-
-func (v NullableListDeployments200ResponseAllOfDeploymentsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListDeployments200ResponseAllOfDeploymentsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

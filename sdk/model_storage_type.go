@@ -20,15 +20,15 @@ var _ MappedNullable = &StorageType{}
 
 // StorageType struct for StorageType
 type StorageType struct {
-	Id *int64 `json:"id,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Name *string `json:"name,omitempty"`
-	DisplayOrder *int64 `json:"displayOrder,omitempty"`
-	DefaultType *bool `json:"defaultType,omitempty"`
-	CustomLabel *bool `json:"customLabel,omitempty"`
-	CustomSize *bool `json:"customSize,omitempty"`
-	CustomSizeOptions *string `json:"customSizeOptions,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Code                 *string                `json:"code,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	DisplayOrder         *int64                 `json:"displayOrder,omitempty"`
+	DefaultType          *bool                  `json:"defaultType,omitempty"`
+	CustomLabel          *bool                  `json:"customLabel,omitempty"`
+	CustomSize           *bool                  `json:"customSize,omitempty"`
+	CustomSizeOptions    *string                `json:"customSizeOptions,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _StorageType StorageType
@@ -307,7 +307,7 @@ func (o *StorageType) SetCustomSizeOptions(v string) {
 }
 
 func (o StorageType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -347,69 +347,8 @@ func (o StorageType) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *StorageType) UnmarshalJSON(data []byte) (err error) {
-	varStorageType := _StorageType{}
-
-	err = json.Unmarshal(data, &varStorageType)
-
-	if err != nil {
-		return err
-	}
-
-	*o = StorageType(varStorageType)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "displayOrder")
-		delete(additionalProperties, "defaultType")
-		delete(additionalProperties, "customLabel")
-		delete(additionalProperties, "customSize")
-		delete(additionalProperties, "customSizeOptions")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableStorageType struct {
-	value *StorageType
-	isSet bool
-}
-
-func (v NullableStorageType) Get() *StorageType {
-	return v.value
-}
-
-func (v *NullableStorageType) Set(val *StorageType) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableStorageType) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableStorageType) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableStorageType(val *StorageType) *NullableStorageType {
-	return &NullableStorageType{value: val, isSet: true}
-}
-
-func (v NullableStorageType) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableStorageType) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

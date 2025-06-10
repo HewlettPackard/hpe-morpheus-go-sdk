@@ -23,8 +23,8 @@ type AddSecurityGroupsRequestSecurityGroupTenantPermissions struct {
 	// Array of tenant account ids that are allowed access
 	Accounts []int64 `json:"accounts,omitempty"`
 	// Array of tenant account ids that can manage
-	CanManageAccounts []int64 `json:"canManageAccounts,omitempty"`
-	AdditionalProperties map[string]interface{}
+	CanManageAccounts    []int64                `json:"canManageAccounts,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddSecurityGroupsRequestSecurityGroupTenantPermissions AddSecurityGroupsRequestSecurityGroupTenantPermissions
@@ -111,7 +111,7 @@ func (o *AddSecurityGroupsRequestSecurityGroupTenantPermissions) SetCanManageAcc
 }
 
 func (o AddSecurityGroupsRequestSecurityGroupTenantPermissions) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -133,63 +133,8 @@ func (o AddSecurityGroupsRequestSecurityGroupTenantPermissions) ToMap() (map[str
 
 	return toSerialize, nil
 }
-
 func (o *AddSecurityGroupsRequestSecurityGroupTenantPermissions) UnmarshalJSON(data []byte) (err error) {
-	varAddSecurityGroupsRequestSecurityGroupTenantPermissions := _AddSecurityGroupsRequestSecurityGroupTenantPermissions{}
-
-	err = json.Unmarshal(data, &varAddSecurityGroupsRequestSecurityGroupTenantPermissions)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddSecurityGroupsRequestSecurityGroupTenantPermissions(varAddSecurityGroupsRequestSecurityGroupTenantPermissions)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "accounts")
-		delete(additionalProperties, "canManageAccounts")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddSecurityGroupsRequestSecurityGroupTenantPermissions struct {
-	value *AddSecurityGroupsRequestSecurityGroupTenantPermissions
-	isSet bool
-}
-
-func (v NullableAddSecurityGroupsRequestSecurityGroupTenantPermissions) Get() *AddSecurityGroupsRequestSecurityGroupTenantPermissions {
-	return v.value
-}
-
-func (v *NullableAddSecurityGroupsRequestSecurityGroupTenantPermissions) Set(val *AddSecurityGroupsRequestSecurityGroupTenantPermissions) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddSecurityGroupsRequestSecurityGroupTenantPermissions) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddSecurityGroupsRequestSecurityGroupTenantPermissions) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddSecurityGroupsRequestSecurityGroupTenantPermissions(val *AddSecurityGroupsRequestSecurityGroupTenantPermissions) *NullableAddSecurityGroupsRequestSecurityGroupTenantPermissions {
-	return &NullableAddSecurityGroupsRequestSecurityGroupTenantPermissions{value: val, isSet: true}
-}
-
-func (v NullableAddSecurityGroupsRequestSecurityGroupTenantPermissions) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddSecurityGroupsRequestSecurityGroupTenantPermissions) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -21,17 +21,17 @@ var _ MappedNullable = &GetDeployment200ResponseDeploymentVersionsInner{}
 
 // GetDeployment200ResponseDeploymentVersionsInner struct for GetDeployment200ResponseDeploymentVersionsInner
 type GetDeployment200ResponseDeploymentVersionsInner struct {
-	Id *int64 `json:"id,omitempty"`
-	DeployType *string `json:"deployType,omitempty"`
-	FetchUrl *string `json:"fetchUrl,omitempty"`
-	GitUrl *string `json:"gitUrl,omitempty"`
-	GitRef *string `json:"gitRef,omitempty"`
-	UserVersion *string `json:"userVersion,omitempty"`
-	Version *string `json:"version,omitempty"`
-	Status *string `json:"status,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	DeployType           *string                `json:"deployType,omitempty"`
+	FetchUrl             *string                `json:"fetchUrl,omitempty"`
+	GitUrl               *string                `json:"gitUrl,omitempty"`
+	GitRef               *string                `json:"gitRef,omitempty"`
+	UserVersion          *string                `json:"userVersion,omitempty"`
+	Version              *string                `json:"version,omitempty"`
+	Status               *string                `json:"status,omitempty"`
+	DateCreated          *time.Time             `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time             `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _GetDeployment200ResponseDeploymentVersionsInner GetDeployment200ResponseDeploymentVersionsInner
@@ -374,7 +374,7 @@ func (o *GetDeployment200ResponseDeploymentVersionsInner) SetLastUpdated(v time.
 }
 
 func (o GetDeployment200ResponseDeploymentVersionsInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -420,71 +420,8 @@ func (o GetDeployment200ResponseDeploymentVersionsInner) ToMap() (map[string]int
 
 	return toSerialize, nil
 }
-
 func (o *GetDeployment200ResponseDeploymentVersionsInner) UnmarshalJSON(data []byte) (err error) {
-	varGetDeployment200ResponseDeploymentVersionsInner := _GetDeployment200ResponseDeploymentVersionsInner{}
-
-	err = json.Unmarshal(data, &varGetDeployment200ResponseDeploymentVersionsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetDeployment200ResponseDeploymentVersionsInner(varGetDeployment200ResponseDeploymentVersionsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "deployType")
-		delete(additionalProperties, "fetchUrl")
-		delete(additionalProperties, "gitUrl")
-		delete(additionalProperties, "gitRef")
-		delete(additionalProperties, "userVersion")
-		delete(additionalProperties, "version")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetDeployment200ResponseDeploymentVersionsInner struct {
-	value *GetDeployment200ResponseDeploymentVersionsInner
-	isSet bool
-}
-
-func (v NullableGetDeployment200ResponseDeploymentVersionsInner) Get() *GetDeployment200ResponseDeploymentVersionsInner {
-	return v.value
-}
-
-func (v *NullableGetDeployment200ResponseDeploymentVersionsInner) Set(val *GetDeployment200ResponseDeploymentVersionsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetDeployment200ResponseDeploymentVersionsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetDeployment200ResponseDeploymentVersionsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetDeployment200ResponseDeploymentVersionsInner(val *GetDeployment200ResponseDeploymentVersionsInner) *NullableGetDeployment200ResponseDeploymentVersionsInner {
-	return &NullableGetDeployment200ResponseDeploymentVersionsInner{value: val, isSet: true}
-}
-
-func (v NullableGetDeployment200ResponseDeploymentVersionsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetDeployment200ResponseDeploymentVersionsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

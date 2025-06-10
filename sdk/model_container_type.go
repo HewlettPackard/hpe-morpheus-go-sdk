@@ -20,23 +20,23 @@ var _ MappedNullable = &ContainerType{}
 
 // ContainerType struct for ContainerType
 type ContainerType struct {
-	Id *int32 `json:"id,omitempty"`
-	Account *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount `json:"account,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Labels []string `json:"labels,omitempty"`
-	ShortName *string `json:"shortName,omitempty"`
-	Code *string `json:"code,omitempty"`
-	ContainerVersion *string `json:"containerVersion,omitempty"`
-	ProvisionType *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerProvisionType `json:"provisionType,omitempty"`
-	VirtualImage *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount `json:"virtualImage,omitempty"`
-	OsType *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount `json:"osType,omitempty"`
-	Category *string `json:"category,omitempty"`
-	Config map[string]interface{} `json:"config,omitempty"`
-	ContainerPorts []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInner `json:"containerPorts,omitempty"`
-	ContainerScripts []map[string]interface{} `json:"containerScripts,omitempty"`
-	ContainerTemplates []map[string]interface{} `json:"containerTemplates,omitempty"`
-	EnvironmentVariables []map[string]interface{} `json:"environmentVariables,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int32                                                                                                                  `json:"id,omitempty"`
+	Account              *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount              `json:"account,omitempty"`
+	Name                 *string                                                                                                                 `json:"name,omitempty"`
+	Labels               []string                                                                                                                `json:"labels,omitempty"`
+	ShortName            *string                                                                                                                 `json:"shortName,omitempty"`
+	Code                 *string                                                                                                                 `json:"code,omitempty"`
+	ContainerVersion     *string                                                                                                                 `json:"containerVersion,omitempty"`
+	ProvisionType        *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerProvisionType        `json:"provisionType,omitempty"`
+	VirtualImage         *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount              `json:"virtualImage,omitempty"`
+	OsType               *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount              `json:"osType,omitempty"`
+	Category             *string                                                                                                                 `json:"category,omitempty"`
+	Config               map[string]interface{}                                                                                                  `json:"config,omitempty"`
+	ContainerPorts       []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInner `json:"containerPorts,omitempty"`
+	ContainerScripts     []map[string]interface{}                                                                                                `json:"containerScripts,omitempty"`
+	ContainerTemplates   []map[string]interface{}                                                                                                `json:"containerTemplates,omitempty"`
+	EnvironmentVariables []map[string]interface{}                                                                                                `json:"environmentVariables,omitempty"`
+	AdditionalProperties map[string]interface{}                                                                                                  `json:",remain"`
 }
 
 type _ContainerType ContainerType
@@ -571,7 +571,7 @@ func (o *ContainerType) SetEnvironmentVariables(v []map[string]interface{}) {
 }
 
 func (o ContainerType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -635,77 +635,8 @@ func (o ContainerType) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ContainerType) UnmarshalJSON(data []byte) (err error) {
-	varContainerType := _ContainerType{}
-
-	err = json.Unmarshal(data, &varContainerType)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ContainerType(varContainerType)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "shortName")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "containerVersion")
-		delete(additionalProperties, "provisionType")
-		delete(additionalProperties, "virtualImage")
-		delete(additionalProperties, "osType")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "containerPorts")
-		delete(additionalProperties, "containerScripts")
-		delete(additionalProperties, "containerTemplates")
-		delete(additionalProperties, "environmentVariables")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableContainerType struct {
-	value *ContainerType
-	isSet bool
-}
-
-func (v NullableContainerType) Get() *ContainerType {
-	return v.value
-}
-
-func (v *NullableContainerType) Set(val *ContainerType) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableContainerType) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableContainerType) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableContainerType(val *ContainerType) *NullableContainerType {
-	return &NullableContainerType{value: val, isSet: true}
-}
-
-func (v NullableContainerType) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableContainerType) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

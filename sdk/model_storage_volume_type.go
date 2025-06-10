@@ -20,21 +20,21 @@ var _ MappedNullable = &StorageVolumeType{}
 
 // StorageVolumeType struct for StorageVolumeType
 type StorageVolumeType struct {
-	Id *int64 `json:"id,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	DisplayOrder *int64 `json:"displayOrder,omitempty"`
-	DefaultType *bool `json:"defaultType,omitempty"`
-	CustomLabel *bool `json:"customLabel,omitempty"`
-	CustomSize *bool `json:"customSize,omitempty"`
-	CustomSizeOptions *string `json:"customSizeOptions,omitempty"`
-	ConfigurableIOPS *bool `json:"configurableIOPS,omitempty"`
-	HasDatastore *bool `json:"hasDatastore,omitempty"`
-	Category *string `json:"category,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	OptionTypes []ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                          `json:"id,omitempty"`
+	Code                 *string                                                                         `json:"code,omitempty"`
+	Name                 *string                                                                         `json:"name,omitempty"`
+	Description          *string                                                                         `json:"description,omitempty"`
+	DisplayOrder         *int64                                                                          `json:"displayOrder,omitempty"`
+	DefaultType          *bool                                                                           `json:"defaultType,omitempty"`
+	CustomLabel          *bool                                                                           `json:"customLabel,omitempty"`
+	CustomSize           *bool                                                                           `json:"customSize,omitempty"`
+	CustomSizeOptions    *string                                                                         `json:"customSizeOptions,omitempty"`
+	ConfigurableIOPS     *bool                                                                           `json:"configurableIOPS,omitempty"`
+	HasDatastore         *bool                                                                           `json:"hasDatastore,omitempty"`
+	Category             *string                                                                         `json:"category,omitempty"`
+	Enabled              *bool                                                                           `json:"enabled,omitempty"`
+	OptionTypes          []ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
+	AdditionalProperties map[string]interface{}                                                          `json:",remain"`
 }
 
 type _StorageVolumeType StorageVolumeType
@@ -505,7 +505,7 @@ func (o *StorageVolumeType) SetOptionTypes(v []ListStorageServerTypes200Response
 }
 
 func (o StorageVolumeType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -563,75 +563,8 @@ func (o StorageVolumeType) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *StorageVolumeType) UnmarshalJSON(data []byte) (err error) {
-	varStorageVolumeType := _StorageVolumeType{}
-
-	err = json.Unmarshal(data, &varStorageVolumeType)
-
-	if err != nil {
-		return err
-	}
-
-	*o = StorageVolumeType(varStorageVolumeType)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "displayOrder")
-		delete(additionalProperties, "defaultType")
-		delete(additionalProperties, "customLabel")
-		delete(additionalProperties, "customSize")
-		delete(additionalProperties, "customSizeOptions")
-		delete(additionalProperties, "configurableIOPS")
-		delete(additionalProperties, "hasDatastore")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "optionTypes")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableStorageVolumeType struct {
-	value *StorageVolumeType
-	isSet bool
-}
-
-func (v NullableStorageVolumeType) Get() *StorageVolumeType {
-	return v.value
-}
-
-func (v *NullableStorageVolumeType) Set(val *StorageVolumeType) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableStorageVolumeType) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableStorageVolumeType) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableStorageVolumeType(val *StorageVolumeType) *NullableStorageVolumeType {
-	return &NullableStorageVolumeType{value: val, isSet: true}
-}
-
-func (v NullableStorageVolumeType) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableStorageVolumeType) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

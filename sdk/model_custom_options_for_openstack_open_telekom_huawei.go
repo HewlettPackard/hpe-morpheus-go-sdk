@@ -21,8 +21,8 @@ var _ MappedNullable = &CustomOptionsForOpenstackOpenTelekomHuawei{}
 // CustomOptionsForOpenstackOpenTelekomHuawei struct for CustomOptionsForOpenstackOpenTelekomHuawei
 type CustomOptionsForOpenstackOpenTelekomHuawei struct {
 	// Resource Pool ID (applicable to cloud types Openstack/OpenTelekom/Huawei)
-	ResourcePoolId *int64 `json:"resourcePoolId,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ResourcePoolId       *int64                 `json:"resourcePoolId,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _CustomOptionsForOpenstackOpenTelekomHuawei CustomOptionsForOpenstackOpenTelekomHuawei
@@ -77,7 +77,7 @@ func (o *CustomOptionsForOpenstackOpenTelekomHuawei) SetResourcePoolId(v int64) 
 }
 
 func (o CustomOptionsForOpenstackOpenTelekomHuawei) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -96,62 +96,8 @@ func (o CustomOptionsForOpenstackOpenTelekomHuawei) ToMap() (map[string]interfac
 
 	return toSerialize, nil
 }
-
 func (o *CustomOptionsForOpenstackOpenTelekomHuawei) UnmarshalJSON(data []byte) (err error) {
-	varCustomOptionsForOpenstackOpenTelekomHuawei := _CustomOptionsForOpenstackOpenTelekomHuawei{}
-
-	err = json.Unmarshal(data, &varCustomOptionsForOpenstackOpenTelekomHuawei)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CustomOptionsForOpenstackOpenTelekomHuawei(varCustomOptionsForOpenstackOpenTelekomHuawei)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "resourcePoolId")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCustomOptionsForOpenstackOpenTelekomHuawei struct {
-	value *CustomOptionsForOpenstackOpenTelekomHuawei
-	isSet bool
-}
-
-func (v NullableCustomOptionsForOpenstackOpenTelekomHuawei) Get() *CustomOptionsForOpenstackOpenTelekomHuawei {
-	return v.value
-}
-
-func (v *NullableCustomOptionsForOpenstackOpenTelekomHuawei) Set(val *CustomOptionsForOpenstackOpenTelekomHuawei) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCustomOptionsForOpenstackOpenTelekomHuawei) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCustomOptionsForOpenstackOpenTelekomHuawei) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCustomOptionsForOpenstackOpenTelekomHuawei(val *CustomOptionsForOpenstackOpenTelekomHuawei) *NullableCustomOptionsForOpenstackOpenTelekomHuawei {
-	return &NullableCustomOptionsForOpenstackOpenTelekomHuawei{value: val, isSet: true}
-}
-
-func (v NullableCustomOptionsForOpenstackOpenTelekomHuawei) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCustomOptionsForOpenstackOpenTelekomHuawei) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

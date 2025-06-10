@@ -21,49 +21,49 @@ var _ MappedNullable = &GetContainer200ResponseContainer{}
 
 // GetContainer200ResponseContainer struct for GetContainer200ResponseContainer
 type GetContainer200ResponseContainer struct {
-	Id *int32 `json:"id,omitempty"`
-	Uuid *string `json:"uuid,omitempty"`
-	AccountId *int32 `json:"accountId,omitempty"`
-	Instance *GetContainer200ResponseContainerInstance `json:"instance,omitempty"`
-	ContainerType *GetContainer200ResponseContainerContainerType `json:"containerType,omitempty"`
-	ContainerTypeSet *GetContainer200ResponseContainerContainerTypeSet `json:"containerTypeSet,omitempty"`
-	Server *GetContainer200ResponseContainerInstance `json:"server,omitempty"`
-	Cloud *GetContainer200ResponseContainerInstance `json:"cloud,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Ip *string `json:"ip,omitempty"`
-	InternalIp *string `json:"internalIp,omitempty"`
-	InternalHostname *string `json:"internalHostname,omitempty"`
-	ExternalHostname *string `json:"externalHostname,omitempty"`
-	ExternalDomain *string `json:"externalDomain,omitempty"`
-	ExternalFqdn *string `json:"externalFqdn,omitempty"`
-	Ports []GetContainer200ResponseContainerPortsInner `json:"ports,omitempty"`
-	Plan *GetContainer200ResponseContainerPlan `json:"plan,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	StatsEnabled *bool `json:"statsEnabled,omitempty"`
-	Status *string `json:"status,omitempty"`
-	UserStatus *string `json:"userStatus,omitempty"`
-	EnvironmentPrefix *string `json:"environmentPrefix,omitempty"`
-	Stats *GetContainer200ResponseContainerStats `json:"stats,omitempty"`
-	RuntimeInfo map[string]interface{} `json:"runtimeInfo,omitempty"`
-	ContainerVersion *string `json:"containerVersion,omitempty"`
-	RepositoryImage *string `json:"repositoryImage,omitempty"`
-	PlanCategory *string `json:"planCategory,omitempty"`
-	Hostname *string `json:"hostname,omitempty"`
-	DomainName *string `json:"domainName,omitempty"`
-	VolumeCreated *bool `json:"volumeCreated,omitempty"`
-	ContainerCreated *bool `json:"containerCreated,omitempty"`
-	MaxStorage *int32 `json:"maxStorage,omitempty"`
-	MaxMemory *int32 `json:"maxMemory,omitempty"`
-	MaxCores *int32 `json:"maxCores,omitempty"`
-	MaxCpu *int32 `json:"maxCpu,omitempty"`
-	AvailableActions []map[string]interface{} `json:"availableActions,omitempty"`
-	ConfigGroup *string `json:"configGroup,omitempty"`
-	ConfigId *string `json:"configId,omitempty"`
-	ConfigRole *string `json:"configRole,omitempty"`
-	HourlyCost *float64 `json:"hourlyCost,omitempty"`
-	HourlyPrice *float64 `json:"hourlyPrice,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int32                                            `json:"id,omitempty"`
+	Uuid                 *string                                           `json:"uuid,omitempty"`
+	AccountId            *int32                                            `json:"accountId,omitempty"`
+	Instance             *GetContainer200ResponseContainerInstance         `json:"instance,omitempty"`
+	ContainerType        *GetContainer200ResponseContainerContainerType    `json:"containerType,omitempty"`
+	ContainerTypeSet     *GetContainer200ResponseContainerContainerTypeSet `json:"containerTypeSet,omitempty"`
+	Server               *GetContainer200ResponseContainerInstance         `json:"server,omitempty"`
+	Cloud                *GetContainer200ResponseContainerInstance         `json:"cloud,omitempty"`
+	Name                 *string                                           `json:"name,omitempty"`
+	Ip                   *string                                           `json:"ip,omitempty"`
+	InternalIp           *string                                           `json:"internalIp,omitempty"`
+	InternalHostname     *string                                           `json:"internalHostname,omitempty"`
+	ExternalHostname     *string                                           `json:"externalHostname,omitempty"`
+	ExternalDomain       *string                                           `json:"externalDomain,omitempty"`
+	ExternalFqdn         *string                                           `json:"externalFqdn,omitempty"`
+	Ports                []GetContainer200ResponseContainerPortsInner      `json:"ports,omitempty"`
+	Plan                 *GetContainer200ResponseContainerPlan             `json:"plan,omitempty"`
+	DateCreated          *time.Time                                        `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                        `json:"lastUpdated,omitempty"`
+	StatsEnabled         *bool                                             `json:"statsEnabled,omitempty"`
+	Status               *string                                           `json:"status,omitempty"`
+	UserStatus           *string                                           `json:"userStatus,omitempty"`
+	EnvironmentPrefix    *string                                           `json:"environmentPrefix,omitempty"`
+	Stats                *GetContainer200ResponseContainerStats            `json:"stats,omitempty"`
+	RuntimeInfo          map[string]interface{}                            `json:"runtimeInfo,omitempty"`
+	ContainerVersion     *string                                           `json:"containerVersion,omitempty"`
+	RepositoryImage      *string                                           `json:"repositoryImage,omitempty"`
+	PlanCategory         *string                                           `json:"planCategory,omitempty"`
+	Hostname             *string                                           `json:"hostname,omitempty"`
+	DomainName           *string                                           `json:"domainName,omitempty"`
+	VolumeCreated        *bool                                             `json:"volumeCreated,omitempty"`
+	ContainerCreated     *bool                                             `json:"containerCreated,omitempty"`
+	MaxStorage           *int32                                            `json:"maxStorage,omitempty"`
+	MaxMemory            *int32                                            `json:"maxMemory,omitempty"`
+	MaxCores             *int32                                            `json:"maxCores,omitempty"`
+	MaxCpu               *int32                                            `json:"maxCpu,omitempty"`
+	AvailableActions     []map[string]interface{}                          `json:"availableActions,omitempty"`
+	ConfigGroup          *string                                           `json:"configGroup,omitempty"`
+	ConfigId             *string                                           `json:"configId,omitempty"`
+	ConfigRole           *string                                           `json:"configRole,omitempty"`
+	HourlyCost           *float64                                          `json:"hourlyCost,omitempty"`
+	HourlyPrice          *float64                                          `json:"hourlyPrice,omitempty"`
+	AdditionalProperties map[string]interface{}                            `json:",remain"`
 }
 
 type _GetContainer200ResponseContainer GetContainer200ResponseContainer
@@ -1430,7 +1430,7 @@ func (o *GetContainer200ResponseContainer) SetHourlyPrice(v float64) {
 }
 
 func (o GetContainer200ResponseContainer) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1572,103 +1572,8 @@ func (o GetContainer200ResponseContainer) ToMap() (map[string]interface{}, error
 
 	return toSerialize, nil
 }
-
 func (o *GetContainer200ResponseContainer) UnmarshalJSON(data []byte) (err error) {
-	varGetContainer200ResponseContainer := _GetContainer200ResponseContainer{}
-
-	err = json.Unmarshal(data, &varGetContainer200ResponseContainer)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetContainer200ResponseContainer(varGetContainer200ResponseContainer)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "uuid")
-		delete(additionalProperties, "accountId")
-		delete(additionalProperties, "instance")
-		delete(additionalProperties, "containerType")
-		delete(additionalProperties, "containerTypeSet")
-		delete(additionalProperties, "server")
-		delete(additionalProperties, "cloud")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "ip")
-		delete(additionalProperties, "internalIp")
-		delete(additionalProperties, "internalHostname")
-		delete(additionalProperties, "externalHostname")
-		delete(additionalProperties, "externalDomain")
-		delete(additionalProperties, "externalFqdn")
-		delete(additionalProperties, "ports")
-		delete(additionalProperties, "plan")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "statsEnabled")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "userStatus")
-		delete(additionalProperties, "environmentPrefix")
-		delete(additionalProperties, "stats")
-		delete(additionalProperties, "runtimeInfo")
-		delete(additionalProperties, "containerVersion")
-		delete(additionalProperties, "repositoryImage")
-		delete(additionalProperties, "planCategory")
-		delete(additionalProperties, "hostname")
-		delete(additionalProperties, "domainName")
-		delete(additionalProperties, "volumeCreated")
-		delete(additionalProperties, "containerCreated")
-		delete(additionalProperties, "maxStorage")
-		delete(additionalProperties, "maxMemory")
-		delete(additionalProperties, "maxCores")
-		delete(additionalProperties, "maxCpu")
-		delete(additionalProperties, "availableActions")
-		delete(additionalProperties, "configGroup")
-		delete(additionalProperties, "configId")
-		delete(additionalProperties, "configRole")
-		delete(additionalProperties, "hourlyCost")
-		delete(additionalProperties, "hourlyPrice")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetContainer200ResponseContainer struct {
-	value *GetContainer200ResponseContainer
-	isSet bool
-}
-
-func (v NullableGetContainer200ResponseContainer) Get() *GetContainer200ResponseContainer {
-	return v.value
-}
-
-func (v *NullableGetContainer200ResponseContainer) Set(val *GetContainer200ResponseContainer) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetContainer200ResponseContainer) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetContainer200ResponseContainer) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetContainer200ResponseContainer(val *GetContainer200ResponseContainer) *NullableGetContainer200ResponseContainer {
-	return &NullableGetContainer200ResponseContainer{value: val, isSet: true}
-}
-
-func (v NullableGetContainer200ResponseContainer) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetContainer200ResponseContainer) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

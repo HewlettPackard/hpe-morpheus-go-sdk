@@ -20,15 +20,15 @@ var _ MappedNullable = &ListClusterDatastores200ResponseAllOfDatastoresInnerReso
 
 // ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions struct for ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions
 type ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions struct {
-	DefaultStore *bool `json:"defaultStore,omitempty"`
-	AllPlans *bool `json:"allPlans,omitempty"`
-	DefaultTarget *bool `json:"defaultTarget,omitempty"`
-	CanManage *bool `json:"canManage,omitempty"`
-	All *bool `json:"all,omitempty"`
-	Account *GetAlerts200ResponseAllOfChecksInnerAccount `json:"account,omitempty"`
-	Sites []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner `json:"sites,omitempty"`
-	Plans []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner `json:"plans,omitempty"`
-	AdditionalProperties map[string]interface{}
+	DefaultStore         *bool                                                                            `json:"defaultStore,omitempty"`
+	AllPlans             *bool                                                                            `json:"allPlans,omitempty"`
+	DefaultTarget        *bool                                                                            `json:"defaultTarget,omitempty"`
+	CanManage            *bool                                                                            `json:"canManage,omitempty"`
+	All                  *bool                                                                            `json:"all,omitempty"`
+	Account              *GetAlerts200ResponseAllOfChecksInnerAccount                                     `json:"account,omitempty"`
+	Sites                []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner `json:"sites,omitempty"`
+	Plans                []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner `json:"plans,omitempty"`
+	AdditionalProperties map[string]interface{}                                                           `json:",remain"`
 }
 
 type _ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions
@@ -307,7 +307,7 @@ func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions
 }
 
 func (o ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -347,69 +347,8 @@ func (o ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions)
 
 	return toSerialize, nil
 }
-
 func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions) UnmarshalJSON(data []byte) (err error) {
-	varListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions := _ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions{}
-
-	err = json.Unmarshal(data, &varListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions(varListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "defaultStore")
-		delete(additionalProperties, "allPlans")
-		delete(additionalProperties, "defaultTarget")
-		delete(additionalProperties, "canManage")
-		delete(additionalProperties, "all")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "sites")
-		delete(additionalProperties, "plans")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions struct {
-	value *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions
-	isSet bool
-}
-
-func (v NullableListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions) Get() *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions {
-	return v.value
-}
-
-func (v *NullableListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions) Set(val *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions(val *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions) *NullableListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions {
-	return &NullableListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions{value: val, isSet: true}
-}
-
-func (v NullableListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

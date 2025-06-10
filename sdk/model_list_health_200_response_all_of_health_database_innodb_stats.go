@@ -20,19 +20,19 @@ var _ MappedNullable = &ListHealth200ResponseAllOfHealthDatabaseInnodbStats{}
 
 // ListHealth200ResponseAllOfHealthDatabaseInnodbStats struct for ListHealth200ResponseAllOfHealthDatabaseInnodbStats
 type ListHealth200ResponseAllOfHealthDatabaseInnodbStats struct {
-	LargeMemory *int64 `json:"largeMemory,omitempty"`
-	DictionaryMemory *int64 `json:"dictionaryMemory,omitempty"`
-	BufferPoolSize *int64 `json:"bufferPoolSize,omitempty"`
-	FreeBuffers *int64 `json:"freeBuffers,omitempty"`
-	DatabasePages *int64 `json:"databasePages,omitempty"`
-	OldPages *int64 `json:"oldPages,omitempty"`
-	PendingReads *int64 `json:"pendingReads,omitempty"`
-	InsertsPerSecond *float32 `json:"insertsPerSecond,omitempty"`
-	UpdatesPerSecond *float32 `json:"updatesPerSecond,omitempty"`
-	DeletesPerSecond *float32 `json:"deletesPerSecond,omitempty"`
-	ReadsPerSecond *float32 `json:"readsPerSecond,omitempty"`
-	BufferHitRate *int64 `json:"bufferHitRate,omitempty"`
-	AdditionalProperties map[string]interface{}
+	LargeMemory          *int64                 `json:"largeMemory,omitempty"`
+	DictionaryMemory     *int64                 `json:"dictionaryMemory,omitempty"`
+	BufferPoolSize       *int64                 `json:"bufferPoolSize,omitempty"`
+	FreeBuffers          *int64                 `json:"freeBuffers,omitempty"`
+	DatabasePages        *int64                 `json:"databasePages,omitempty"`
+	OldPages             *int64                 `json:"oldPages,omitempty"`
+	PendingReads         *int64                 `json:"pendingReads,omitempty"`
+	InsertsPerSecond     *float32               `json:"insertsPerSecond,omitempty"`
+	UpdatesPerSecond     *float32               `json:"updatesPerSecond,omitempty"`
+	DeletesPerSecond     *float32               `json:"deletesPerSecond,omitempty"`
+	ReadsPerSecond       *float32               `json:"readsPerSecond,omitempty"`
+	BufferHitRate        *int64                 `json:"bufferHitRate,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListHealth200ResponseAllOfHealthDatabaseInnodbStats ListHealth200ResponseAllOfHealthDatabaseInnodbStats
@@ -439,7 +439,7 @@ func (o *ListHealth200ResponseAllOfHealthDatabaseInnodbStats) SetBufferHitRate(v
 }
 
 func (o ListHealth200ResponseAllOfHealthDatabaseInnodbStats) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -491,73 +491,8 @@ func (o ListHealth200ResponseAllOfHealthDatabaseInnodbStats) ToMap() (map[string
 
 	return toSerialize, nil
 }
-
 func (o *ListHealth200ResponseAllOfHealthDatabaseInnodbStats) UnmarshalJSON(data []byte) (err error) {
-	varListHealth200ResponseAllOfHealthDatabaseInnodbStats := _ListHealth200ResponseAllOfHealthDatabaseInnodbStats{}
-
-	err = json.Unmarshal(data, &varListHealth200ResponseAllOfHealthDatabaseInnodbStats)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListHealth200ResponseAllOfHealthDatabaseInnodbStats(varListHealth200ResponseAllOfHealthDatabaseInnodbStats)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "largeMemory")
-		delete(additionalProperties, "dictionaryMemory")
-		delete(additionalProperties, "bufferPoolSize")
-		delete(additionalProperties, "freeBuffers")
-		delete(additionalProperties, "databasePages")
-		delete(additionalProperties, "oldPages")
-		delete(additionalProperties, "pendingReads")
-		delete(additionalProperties, "insertsPerSecond")
-		delete(additionalProperties, "updatesPerSecond")
-		delete(additionalProperties, "deletesPerSecond")
-		delete(additionalProperties, "readsPerSecond")
-		delete(additionalProperties, "bufferHitRate")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListHealth200ResponseAllOfHealthDatabaseInnodbStats struct {
-	value *ListHealth200ResponseAllOfHealthDatabaseInnodbStats
-	isSet bool
-}
-
-func (v NullableListHealth200ResponseAllOfHealthDatabaseInnodbStats) Get() *ListHealth200ResponseAllOfHealthDatabaseInnodbStats {
-	return v.value
-}
-
-func (v *NullableListHealth200ResponseAllOfHealthDatabaseInnodbStats) Set(val *ListHealth200ResponseAllOfHealthDatabaseInnodbStats) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListHealth200ResponseAllOfHealthDatabaseInnodbStats) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListHealth200ResponseAllOfHealthDatabaseInnodbStats) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListHealth200ResponseAllOfHealthDatabaseInnodbStats(val *ListHealth200ResponseAllOfHealthDatabaseInnodbStats) *NullableListHealth200ResponseAllOfHealthDatabaseInnodbStats {
-	return &NullableListHealth200ResponseAllOfHealthDatabaseInnodbStats{value: val, isSet: true}
-}
-
-func (v NullableListHealth200ResponseAllOfHealthDatabaseInnodbStats) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListHealth200ResponseAllOfHealthDatabaseInnodbStats) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

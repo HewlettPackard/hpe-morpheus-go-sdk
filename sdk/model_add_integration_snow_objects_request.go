@@ -20,8 +20,8 @@ var _ MappedNullable = &AddIntegrationSnowObjectsRequest{}
 
 // AddIntegrationSnowObjectsRequest struct for AddIntegrationSnowObjectsRequest
 type AddIntegrationSnowObjectsRequest struct {
-	Object *AddIntegrationSnowObjectsRequestObject `json:"object,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Object               *AddIntegrationSnowObjectsRequestObject `json:"object,omitempty"`
+	AdditionalProperties map[string]interface{}                  `json:",remain"`
 }
 
 type _AddIntegrationSnowObjectsRequest AddIntegrationSnowObjectsRequest
@@ -76,7 +76,7 @@ func (o *AddIntegrationSnowObjectsRequest) SetObject(v AddIntegrationSnowObjects
 }
 
 func (o AddIntegrationSnowObjectsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o AddIntegrationSnowObjectsRequest) ToMap() (map[string]interface{}, error
 
 	return toSerialize, nil
 }
-
 func (o *AddIntegrationSnowObjectsRequest) UnmarshalJSON(data []byte) (err error) {
-	varAddIntegrationSnowObjectsRequest := _AddIntegrationSnowObjectsRequest{}
-
-	err = json.Unmarshal(data, &varAddIntegrationSnowObjectsRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddIntegrationSnowObjectsRequest(varAddIntegrationSnowObjectsRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "object")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddIntegrationSnowObjectsRequest struct {
-	value *AddIntegrationSnowObjectsRequest
-	isSet bool
-}
-
-func (v NullableAddIntegrationSnowObjectsRequest) Get() *AddIntegrationSnowObjectsRequest {
-	return v.value
-}
-
-func (v *NullableAddIntegrationSnowObjectsRequest) Set(val *AddIntegrationSnowObjectsRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddIntegrationSnowObjectsRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddIntegrationSnowObjectsRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddIntegrationSnowObjectsRequest(val *AddIntegrationSnowObjectsRequest) *NullableAddIntegrationSnowObjectsRequest {
-	return &NullableAddIntegrationSnowObjectsRequest{value: val, isSet: true}
-}
-
-func (v NullableAddIntegrationSnowObjectsRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddIntegrationSnowObjectsRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

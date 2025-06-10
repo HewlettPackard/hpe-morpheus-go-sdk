@@ -20,27 +20,27 @@ var _ MappedNullable = &GetCloudResourcePools200ResponseAllOfResourcePool{}
 
 // GetCloudResourcePools200ResponseAllOfResourcePool struct for GetCloudResourcePools200ResponseAllOfResourcePool
 type GetCloudResourcePools200ResponseAllOfResourcePool struct {
-	Id *int64 `json:"id,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Zone *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"zone,omitempty"`
-	Parent *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"parent,omitempty"`
-	Type *string `json:"type,omitempty"`
-	ExternalId *string `json:"externalId,omitempty"`
-	RegionCode *string `json:"regionCode,omitempty"`
-	IacId *string `json:"iacId,omitempty"`
-	Visibility *string `json:"visibility,omitempty"`
-	ReadOnly *bool `json:"readOnly,omitempty"`
-	DefaultPool *bool `json:"defaultPool,omitempty"`
-	Active *bool `json:"active,omitempty"`
-	Status *string `json:"status,omitempty"`
-	Inventory *bool `json:"inventory,omitempty"`
-	Config *AddCloudResourcePool200ResponseResourcePoolAllOfConfig `json:"config,omitempty"`
-	Name *string `json:"name,omitempty"`
-	DisplayName *string `json:"displayName,omitempty"`
-	Tenants []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"tenants,omitempty"`
-	ResourcePermission *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission `json:"resourcePermission,omitempty"`
-	Depth *int64 `json:"depth,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                   `json:"id,omitempty"`
+	Description          *string                                                                  `json:"description,omitempty"`
+	Zone                 *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner  `json:"zone,omitempty"`
+	Parent               *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                       `json:"parent,omitempty"`
+	Type                 *string                                                                  `json:"type,omitempty"`
+	ExternalId           *string                                                                  `json:"externalId,omitempty"`
+	RegionCode           *string                                                                  `json:"regionCode,omitempty"`
+	IacId                *string                                                                  `json:"iacId,omitempty"`
+	Visibility           *string                                                                  `json:"visibility,omitempty"`
+	ReadOnly             *bool                                                                    `json:"readOnly,omitempty"`
+	DefaultPool          *bool                                                                    `json:"defaultPool,omitempty"`
+	Active               *bool                                                                    `json:"active,omitempty"`
+	Status               *string                                                                  `json:"status,omitempty"`
+	Inventory            *bool                                                                    `json:"inventory,omitempty"`
+	Config               *AddCloudResourcePool200ResponseResourcePoolAllOfConfig                  `json:"config,omitempty"`
+	Name                 *string                                                                  `json:"name,omitempty"`
+	DisplayName          *string                                                                  `json:"displayName,omitempty"`
+	Tenants              []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"tenants,omitempty"`
+	ResourcePermission   *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission    `json:"resourcePermission,omitempty"`
+	Depth                *int64                                                                   `json:"depth,omitempty"`
+	AdditionalProperties map[string]interface{}                                                   `json:",remain"`
 }
 
 type _GetCloudResourcePools200ResponseAllOfResourcePool GetCloudResourcePools200ResponseAllOfResourcePool
@@ -703,7 +703,7 @@ func (o *GetCloudResourcePools200ResponseAllOfResourcePool) SetDepth(v int64) {
 }
 
 func (o GetCloudResourcePools200ResponseAllOfResourcePool) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -779,81 +779,8 @@ func (o GetCloudResourcePools200ResponseAllOfResourcePool) ToMap() (map[string]i
 
 	return toSerialize, nil
 }
-
 func (o *GetCloudResourcePools200ResponseAllOfResourcePool) UnmarshalJSON(data []byte) (err error) {
-	varGetCloudResourcePools200ResponseAllOfResourcePool := _GetCloudResourcePools200ResponseAllOfResourcePool{}
-
-	err = json.Unmarshal(data, &varGetCloudResourcePools200ResponseAllOfResourcePool)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetCloudResourcePools200ResponseAllOfResourcePool(varGetCloudResourcePools200ResponseAllOfResourcePool)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "zone")
-		delete(additionalProperties, "parent")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "regionCode")
-		delete(additionalProperties, "iacId")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "readOnly")
-		delete(additionalProperties, "defaultPool")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "inventory")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "displayName")
-		delete(additionalProperties, "tenants")
-		delete(additionalProperties, "resourcePermission")
-		delete(additionalProperties, "depth")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetCloudResourcePools200ResponseAllOfResourcePool struct {
-	value *GetCloudResourcePools200ResponseAllOfResourcePool
-	isSet bool
-}
-
-func (v NullableGetCloudResourcePools200ResponseAllOfResourcePool) Get() *GetCloudResourcePools200ResponseAllOfResourcePool {
-	return v.value
-}
-
-func (v *NullableGetCloudResourcePools200ResponseAllOfResourcePool) Set(val *GetCloudResourcePools200ResponseAllOfResourcePool) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetCloudResourcePools200ResponseAllOfResourcePool) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetCloudResourcePools200ResponseAllOfResourcePool) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetCloudResourcePools200ResponseAllOfResourcePool(val *GetCloudResourcePools200ResponseAllOfResourcePool) *NullableGetCloudResourcePools200ResponseAllOfResourcePool {
-	return &NullableGetCloudResourcePools200ResponseAllOfResourcePool{value: val, isSet: true}
-}
-
-func (v NullableGetCloudResourcePools200ResponseAllOfResourcePool) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetCloudResourcePools200ResponseAllOfResourcePool) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

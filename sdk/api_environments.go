@@ -21,13 +21,12 @@ import (
 	"strings"
 )
 
-
 // EnvironmentsAPIService EnvironmentsAPI service
 type EnvironmentsAPIService service
 
 type ApiAddEnvironmentsRequest struct {
-	ctx context.Context
-	ApiService *EnvironmentsAPIService
+	ctx                    context.Context
+	ApiService             *EnvironmentsAPIService
 	addEnvironmentsRequest *AddEnvironmentsRequest
 }
 
@@ -45,24 +44,25 @@ AddEnvironments Create a New Environment
 
 Create a new environment.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddEnvironmentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddEnvironmentsRequest
 */
 func (a *EnvironmentsAPIService) AddEnvironments(ctx context.Context) ApiAddEnvironmentsRequest {
 	return ApiAddEnvironmentsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddEnvironments200Response
+//
+//	@return AddEnvironments200Response
 func (a *EnvironmentsAPIService) AddEnvironmentsExecute(r ApiAddEnvironmentsRequest) (*AddEnvironments200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddEnvironments200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddEnvironments200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EnvironmentsAPIService.AddEnvironments")
@@ -114,7 +114,7 @@ func (a *EnvironmentsAPIService) AddEnvironmentsExecute(r ApiAddEnvironmentsRequ
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -123,8 +123,8 @@ func (a *EnvironmentsAPIService) AddEnvironmentsExecute(r ApiAddEnvironmentsRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -134,8 +134,8 @@ func (a *EnvironmentsAPIService) AddEnvironmentsExecute(r ApiAddEnvironmentsRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -143,8 +143,8 @@ func (a *EnvironmentsAPIService) AddEnvironmentsExecute(r ApiAddEnvironmentsRequ
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -153,9 +153,9 @@ func (a *EnvironmentsAPIService) AddEnvironmentsExecute(r ApiAddEnvironmentsRequ
 }
 
 type ApiDeleteEnvironmentsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *EnvironmentsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiDeleteEnvironmentsRequest) Execute() (*RestartClusterContainer200Response, *http.Response, error) {
@@ -167,26 +167,27 @@ DeleteEnvironments Delete a Specific Environment
 
 Delete an existing environment.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiDeleteEnvironmentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeleteEnvironmentsRequest
 */
 func (a *EnvironmentsAPIService) DeleteEnvironments(ctx context.Context, id int64) ApiDeleteEnvironmentsRequest {
 	return ApiDeleteEnvironmentsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return RestartClusterContainer200Response
+//
+//	@return RestartClusterContainer200Response
 func (a *EnvironmentsAPIService) DeleteEnvironmentsExecute(r ApiDeleteEnvironmentsRequest) (*RestartClusterContainer200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *RestartClusterContainer200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *RestartClusterContainer200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EnvironmentsAPIService.DeleteEnvironments")
@@ -237,7 +238,7 @@ func (a *EnvironmentsAPIService) DeleteEnvironmentsExecute(r ApiDeleteEnvironmen
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -246,8 +247,8 @@ func (a *EnvironmentsAPIService) DeleteEnvironmentsExecute(r ApiDeleteEnvironmen
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -257,8 +258,8 @@ func (a *EnvironmentsAPIService) DeleteEnvironmentsExecute(r ApiDeleteEnvironmen
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -266,8 +267,8 @@ func (a *EnvironmentsAPIService) DeleteEnvironmentsExecute(r ApiDeleteEnvironmen
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -276,9 +277,9 @@ func (a *EnvironmentsAPIService) DeleteEnvironmentsExecute(r ApiDeleteEnvironmen
 }
 
 type ApiGetEnvironmentsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *EnvironmentsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetEnvironmentsRequest) Execute() (*GetEnvironments200Response, *http.Response, error) {
@@ -290,26 +291,27 @@ GetEnvironments Get a Specific Environment
 
 This endpoint will retrieve a specific environment by id.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetEnvironmentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetEnvironmentsRequest
 */
 func (a *EnvironmentsAPIService) GetEnvironments(ctx context.Context, id int64) ApiGetEnvironmentsRequest {
 	return ApiGetEnvironmentsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetEnvironments200Response
+//
+//	@return GetEnvironments200Response
 func (a *EnvironmentsAPIService) GetEnvironmentsExecute(r ApiGetEnvironmentsRequest) (*GetEnvironments200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetEnvironments200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetEnvironments200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EnvironmentsAPIService.GetEnvironments")
@@ -360,7 +362,7 @@ func (a *EnvironmentsAPIService) GetEnvironmentsExecute(r ApiGetEnvironmentsRequ
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -369,8 +371,8 @@ func (a *EnvironmentsAPIService) GetEnvironmentsExecute(r ApiGetEnvironmentsRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -380,8 +382,8 @@ func (a *EnvironmentsAPIService) GetEnvironmentsExecute(r ApiGetEnvironmentsRequ
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -389,8 +391,8 @@ func (a *EnvironmentsAPIService) GetEnvironmentsExecute(r ApiGetEnvironmentsRequ
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -399,15 +401,15 @@ func (a *EnvironmentsAPIService) GetEnvironmentsExecute(r ApiGetEnvironmentsRequ
 }
 
 type ApiListEnvironmentsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *EnvironmentsAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	name *string
-	code *string
+	max        *int64
+	offset     *int64
+	sort       *string
+	direction  *string
+	phrase     *string
+	name       *string
+	code       *string
 }
 
 // Maximum number of records to return
@@ -461,24 +463,25 @@ ListEnvironments List All Environments
 
 This endpoint retrieves all environments.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListEnvironmentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListEnvironmentsRequest
 */
 func (a *EnvironmentsAPIService) ListEnvironments(ctx context.Context) ApiListEnvironmentsRequest {
 	return ApiListEnvironmentsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListEnvironments200Response
+//
+//	@return ListEnvironments200Response
 func (a *EnvironmentsAPIService) ListEnvironmentsExecute(r ApiListEnvironmentsRequest) (*ListEnvironments200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListEnvironments200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListEnvironments200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EnvironmentsAPIService.ListEnvironments")
@@ -561,7 +564,7 @@ func (a *EnvironmentsAPIService) ListEnvironmentsExecute(r ApiListEnvironmentsRe
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -570,8 +573,8 @@ func (a *EnvironmentsAPIService) ListEnvironmentsExecute(r ApiListEnvironmentsRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -581,8 +584,8 @@ func (a *EnvironmentsAPIService) ListEnvironmentsExecute(r ApiListEnvironmentsRe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -590,8 +593,8 @@ func (a *EnvironmentsAPIService) ListEnvironmentsExecute(r ApiListEnvironmentsRe
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -600,9 +603,9 @@ func (a *EnvironmentsAPIService) ListEnvironmentsExecute(r ApiListEnvironmentsRe
 }
 
 type ApiUpdateEnvironmentsRequest struct {
-	ctx context.Context
-	ApiService *EnvironmentsAPIService
-	id int64
+	ctx                       context.Context
+	ApiService                *EnvironmentsAPIService
+	id                        int64
 	updateEnvironmentsRequest *UpdateEnvironmentsRequest
 }
 
@@ -620,26 +623,27 @@ UpdateEnvironments Update Environment
 
 Update an existing environment.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateEnvironmentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateEnvironmentsRequest
 */
 func (a *EnvironmentsAPIService) UpdateEnvironments(ctx context.Context, id int64) ApiUpdateEnvironmentsRequest {
 	return ApiUpdateEnvironmentsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddEnvironments200Response
+//
+//	@return AddEnvironments200Response
 func (a *EnvironmentsAPIService) UpdateEnvironmentsExecute(r ApiUpdateEnvironmentsRequest) (*AddEnvironments200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddEnvironments200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddEnvironments200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EnvironmentsAPIService.UpdateEnvironments")
@@ -692,7 +696,7 @@ func (a *EnvironmentsAPIService) UpdateEnvironmentsExecute(r ApiUpdateEnvironmen
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -701,8 +705,8 @@ func (a *EnvironmentsAPIService) UpdateEnvironmentsExecute(r ApiUpdateEnvironmen
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -712,8 +716,8 @@ func (a *EnvironmentsAPIService) UpdateEnvironmentsExecute(r ApiUpdateEnvironmen
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -721,8 +725,8 @@ func (a *EnvironmentsAPIService) UpdateEnvironmentsExecute(r ApiUpdateEnvironmen
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -731,10 +735,10 @@ func (a *EnvironmentsAPIService) UpdateEnvironmentsExecute(r ApiUpdateEnvironmen
 }
 
 type ApiUpdateEnvironmentsActiveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *EnvironmentsAPIService
-	id int64
-	active *bool
+	id         int64
+	active     *bool
 }
 
 // True or False flag for Active
@@ -752,26 +756,27 @@ UpdateEnvironmentsActive Toggle Active State of Environment
 
 Toggle Active State of Environment. Default is to toggle the current value.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateEnvironmentsActiveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateEnvironmentsActiveRequest
 */
 func (a *EnvironmentsAPIService) UpdateEnvironmentsActive(ctx context.Context, id int64) ApiUpdateEnvironmentsActiveRequest {
 	return ApiUpdateEnvironmentsActiveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddEnvironments200Response
+//
+//	@return AddEnvironments200Response
 func (a *EnvironmentsAPIService) UpdateEnvironmentsActiveExecute(r ApiUpdateEnvironmentsActiveRequest) (*AddEnvironments200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddEnvironments200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddEnvironments200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EnvironmentsAPIService.UpdateEnvironmentsActive")
@@ -825,7 +830,7 @@ func (a *EnvironmentsAPIService) UpdateEnvironmentsActiveExecute(r ApiUpdateEnvi
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -834,8 +839,8 @@ func (a *EnvironmentsAPIService) UpdateEnvironmentsActiveExecute(r ApiUpdateEnvi
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -845,8 +850,8 @@ func (a *EnvironmentsAPIService) UpdateEnvironmentsActiveExecute(r ApiUpdateEnvi
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -854,8 +859,8 @@ func (a *EnvironmentsAPIService) UpdateEnvironmentsActiveExecute(r ApiUpdateEnvi
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

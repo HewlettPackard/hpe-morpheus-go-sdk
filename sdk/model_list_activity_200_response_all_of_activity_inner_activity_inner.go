@@ -21,16 +21,16 @@ var _ MappedNullable = &ListActivity200ResponseAllOfActivityInnerActivityInner{}
 
 // ListActivity200ResponseAllOfActivityInnerActivityInner struct for ListActivity200ResponseAllOfActivityInnerActivityInner
 type ListActivity200ResponseAllOfActivityInnerActivityInner struct {
-	Id *string `json:"_id,omitempty"`
-	Success *bool `json:"success,omitempty"`
-	ActivityType *string `json:"activityType,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Message *string `json:"message,omitempty"`
-	ObjectType *string `json:"objectType,omitempty"`
-	ObjectId *int64 `json:"objectId,omitempty"`
-	User *ListActivity200ResponseAllOfActivityInnerActivityInnerUser `json:"user,omitempty"`
-	Ts *time.Time `json:"ts,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *string                                                     `json:"_id,omitempty"`
+	Success              *bool                                                       `json:"success,omitempty"`
+	ActivityType         *string                                                     `json:"activityType,omitempty"`
+	Name                 *string                                                     `json:"name,omitempty"`
+	Message              *string                                                     `json:"message,omitempty"`
+	ObjectType           *string                                                     `json:"objectType,omitempty"`
+	ObjectId             *int64                                                      `json:"objectId,omitempty"`
+	User                 *ListActivity200ResponseAllOfActivityInnerActivityInnerUser `json:"user,omitempty"`
+	Ts                   *time.Time                                                  `json:"ts,omitempty"`
+	AdditionalProperties map[string]interface{}                                      `json:",remain"`
 }
 
 type _ListActivity200ResponseAllOfActivityInnerActivityInner ListActivity200ResponseAllOfActivityInnerActivityInner
@@ -341,7 +341,7 @@ func (o *ListActivity200ResponseAllOfActivityInnerActivityInner) SetTs(v time.Ti
 }
 
 func (o ListActivity200ResponseAllOfActivityInnerActivityInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -384,70 +384,8 @@ func (o ListActivity200ResponseAllOfActivityInnerActivityInner) ToMap() (map[str
 
 	return toSerialize, nil
 }
-
 func (o *ListActivity200ResponseAllOfActivityInnerActivityInner) UnmarshalJSON(data []byte) (err error) {
-	varListActivity200ResponseAllOfActivityInnerActivityInner := _ListActivity200ResponseAllOfActivityInnerActivityInner{}
-
-	err = json.Unmarshal(data, &varListActivity200ResponseAllOfActivityInnerActivityInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListActivity200ResponseAllOfActivityInnerActivityInner(varListActivity200ResponseAllOfActivityInnerActivityInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "_id")
-		delete(additionalProperties, "success")
-		delete(additionalProperties, "activityType")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "message")
-		delete(additionalProperties, "objectType")
-		delete(additionalProperties, "objectId")
-		delete(additionalProperties, "user")
-		delete(additionalProperties, "ts")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListActivity200ResponseAllOfActivityInnerActivityInner struct {
-	value *ListActivity200ResponseAllOfActivityInnerActivityInner
-	isSet bool
-}
-
-func (v NullableListActivity200ResponseAllOfActivityInnerActivityInner) Get() *ListActivity200ResponseAllOfActivityInnerActivityInner {
-	return v.value
-}
-
-func (v *NullableListActivity200ResponseAllOfActivityInnerActivityInner) Set(val *ListActivity200ResponseAllOfActivityInnerActivityInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListActivity200ResponseAllOfActivityInnerActivityInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListActivity200ResponseAllOfActivityInnerActivityInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListActivity200ResponseAllOfActivityInnerActivityInner(val *ListActivity200ResponseAllOfActivityInnerActivityInner) *NullableListActivity200ResponseAllOfActivityInnerActivityInner {
-	return &NullableListActivity200ResponseAllOfActivityInnerActivityInner{value: val, isSet: true}
-}
-
-func (v NullableListActivity200ResponseAllOfActivityInnerActivityInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListActivity200ResponseAllOfActivityInnerActivityInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

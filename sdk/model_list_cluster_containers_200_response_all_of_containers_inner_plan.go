@@ -20,10 +20,10 @@ var _ MappedNullable = &ListClusterContainers200ResponseAllOfContainersInnerPlan
 
 // ListClusterContainers200ResponseAllOfContainersInnerPlan struct for ListClusterContainers200ResponseAllOfContainersInnerPlan
 type ListClusterContainers200ResponseAllOfContainersInnerPlan struct {
-	Id *string `json:"id,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Name *string `json:"name,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *string                `json:"id,omitempty"`
+	Code                 *string                `json:"code,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListClusterContainers200ResponseAllOfContainersInnerPlan ListClusterContainers200ResponseAllOfContainersInnerPlan
@@ -142,7 +142,7 @@ func (o *ListClusterContainers200ResponseAllOfContainersInnerPlan) SetName(v str
 }
 
 func (o ListClusterContainers200ResponseAllOfContainersInnerPlan) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -167,64 +167,8 @@ func (o ListClusterContainers200ResponseAllOfContainersInnerPlan) ToMap() (map[s
 
 	return toSerialize, nil
 }
-
 func (o *ListClusterContainers200ResponseAllOfContainersInnerPlan) UnmarshalJSON(data []byte) (err error) {
-	varListClusterContainers200ResponseAllOfContainersInnerPlan := _ListClusterContainers200ResponseAllOfContainersInnerPlan{}
-
-	err = json.Unmarshal(data, &varListClusterContainers200ResponseAllOfContainersInnerPlan)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListClusterContainers200ResponseAllOfContainersInnerPlan(varListClusterContainers200ResponseAllOfContainersInnerPlan)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "name")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListClusterContainers200ResponseAllOfContainersInnerPlan struct {
-	value *ListClusterContainers200ResponseAllOfContainersInnerPlan
-	isSet bool
-}
-
-func (v NullableListClusterContainers200ResponseAllOfContainersInnerPlan) Get() *ListClusterContainers200ResponseAllOfContainersInnerPlan {
-	return v.value
-}
-
-func (v *NullableListClusterContainers200ResponseAllOfContainersInnerPlan) Set(val *ListClusterContainers200ResponseAllOfContainersInnerPlan) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListClusterContainers200ResponseAllOfContainersInnerPlan) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListClusterContainers200ResponseAllOfContainersInnerPlan) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListClusterContainers200ResponseAllOfContainersInnerPlan(val *ListClusterContainers200ResponseAllOfContainersInnerPlan) *NullableListClusterContainers200ResponseAllOfContainersInnerPlan {
-	return &NullableListClusterContainers200ResponseAllOfContainersInnerPlan{value: val, isSet: true}
-}
-
-func (v NullableListClusterContainers200ResponseAllOfContainersInnerPlan) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListClusterContainers200ResponseAllOfContainersInnerPlan) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -20,32 +20,32 @@ var _ MappedNullable = &ListVirtualImageLocations200ResponseAllOfLocationsInner{
 
 // ListVirtualImageLocations200ResponseAllOfLocationsInner struct for ListVirtualImageLocations200ResponseAllOfLocationsInner
 type ListVirtualImageLocations200ResponseAllOfLocationsInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Cloud *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"cloud,omitempty"`
-	Code *string `json:"code,omitempty"`
-	InternalId *string `json:"internalId,omitempty"`
-	ExternalId *string `json:"externalId,omitempty"`
-	ExternalDiskId *string `json:"externalDiskId,omitempty"`
-	RemotePath *string `json:"remotePath,omitempty"`
-	ImagePath *string `json:"imagePath,omitempty"`
-	ImageName *string `json:"imageName,omitempty"`
-	ImageRegion *string `json:"imageRegion,omitempty"`
-	ImageFolder *string `json:"imageFolder,omitempty"`
-	RefType *string `json:"refType,omitempty"`
-	RefId *int64 `json:"refId,omitempty"`
-	NodeRefType *string `json:"nodeRefType,omitempty"`
-	NodeRefId *string `json:"nodeRefId,omitempty"`
-	SubRefType *string `json:"subRefType,omitempty"`
-	SubRefId *string `json:"subRefId,omitempty"`
-	IsPublic *bool `json:"isPublic,omitempty"`
-	SystemImage *bool `json:"systemImage,omitempty"`
-	DiskIndex *int64 `json:"diskIndex,omitempty"`
-	PricePlan *string `json:"pricePlan,omitempty"`
-	Volumes []map[string]interface{} `json:"volumes,omitempty"`
-	StorageControllers []map[string]interface{} `json:"storageControllers,omitempty"`
-	NetworkInterfaces []map[string]interface{} `json:"networkInterfaces,omitempty"`
-	VirtualImage *ListVirtualImageLocations200ResponseAllOfLocationsInnerVirtualImage `json:"virtualImage,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                               `json:"id,omitempty"`
+	Cloud                *ListBackupSettings200ResponseBackupSettingsDefaultSchedule          `json:"cloud,omitempty"`
+	Code                 *string                                                              `json:"code,omitempty"`
+	InternalId           *string                                                              `json:"internalId,omitempty"`
+	ExternalId           *string                                                              `json:"externalId,omitempty"`
+	ExternalDiskId       *string                                                              `json:"externalDiskId,omitempty"`
+	RemotePath           *string                                                              `json:"remotePath,omitempty"`
+	ImagePath            *string                                                              `json:"imagePath,omitempty"`
+	ImageName            *string                                                              `json:"imageName,omitempty"`
+	ImageRegion          *string                                                              `json:"imageRegion,omitempty"`
+	ImageFolder          *string                                                              `json:"imageFolder,omitempty"`
+	RefType              *string                                                              `json:"refType,omitempty"`
+	RefId                *int64                                                               `json:"refId,omitempty"`
+	NodeRefType          *string                                                              `json:"nodeRefType,omitempty"`
+	NodeRefId            *string                                                              `json:"nodeRefId,omitempty"`
+	SubRefType           *string                                                              `json:"subRefType,omitempty"`
+	SubRefId             *string                                                              `json:"subRefId,omitempty"`
+	IsPublic             *bool                                                                `json:"isPublic,omitempty"`
+	SystemImage          *bool                                                                `json:"systemImage,omitempty"`
+	DiskIndex            *int64                                                               `json:"diskIndex,omitempty"`
+	PricePlan            *string                                                              `json:"pricePlan,omitempty"`
+	Volumes              []map[string]interface{}                                             `json:"volumes,omitempty"`
+	StorageControllers   []map[string]interface{}                                             `json:"storageControllers,omitempty"`
+	NetworkInterfaces    []map[string]interface{}                                             `json:"networkInterfaces,omitempty"`
+	VirtualImage         *ListVirtualImageLocations200ResponseAllOfLocationsInnerVirtualImage `json:"virtualImage,omitempty"`
+	AdditionalProperties map[string]interface{}                                               `json:",remain"`
 }
 
 type _ListVirtualImageLocations200ResponseAllOfLocationsInner ListVirtualImageLocations200ResponseAllOfLocationsInner
@@ -868,7 +868,7 @@ func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) SetVirtualImag
 }
 
 func (o ListVirtualImageLocations200ResponseAllOfLocationsInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -959,86 +959,8 @@ func (o ListVirtualImageLocations200ResponseAllOfLocationsInner) ToMap() (map[st
 
 	return toSerialize, nil
 }
-
 func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) UnmarshalJSON(data []byte) (err error) {
-	varListVirtualImageLocations200ResponseAllOfLocationsInner := _ListVirtualImageLocations200ResponseAllOfLocationsInner{}
-
-	err = json.Unmarshal(data, &varListVirtualImageLocations200ResponseAllOfLocationsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListVirtualImageLocations200ResponseAllOfLocationsInner(varListVirtualImageLocations200ResponseAllOfLocationsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "cloud")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "internalId")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "externalDiskId")
-		delete(additionalProperties, "remotePath")
-		delete(additionalProperties, "imagePath")
-		delete(additionalProperties, "imageName")
-		delete(additionalProperties, "imageRegion")
-		delete(additionalProperties, "imageFolder")
-		delete(additionalProperties, "refType")
-		delete(additionalProperties, "refId")
-		delete(additionalProperties, "nodeRefType")
-		delete(additionalProperties, "nodeRefId")
-		delete(additionalProperties, "subRefType")
-		delete(additionalProperties, "subRefId")
-		delete(additionalProperties, "isPublic")
-		delete(additionalProperties, "systemImage")
-		delete(additionalProperties, "diskIndex")
-		delete(additionalProperties, "pricePlan")
-		delete(additionalProperties, "volumes")
-		delete(additionalProperties, "storageControllers")
-		delete(additionalProperties, "networkInterfaces")
-		delete(additionalProperties, "virtualImage")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListVirtualImageLocations200ResponseAllOfLocationsInner struct {
-	value *ListVirtualImageLocations200ResponseAllOfLocationsInner
-	isSet bool
-}
-
-func (v NullableListVirtualImageLocations200ResponseAllOfLocationsInner) Get() *ListVirtualImageLocations200ResponseAllOfLocationsInner {
-	return v.value
-}
-
-func (v *NullableListVirtualImageLocations200ResponseAllOfLocationsInner) Set(val *ListVirtualImageLocations200ResponseAllOfLocationsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListVirtualImageLocations200ResponseAllOfLocationsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListVirtualImageLocations200ResponseAllOfLocationsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListVirtualImageLocations200ResponseAllOfLocationsInner(val *ListVirtualImageLocations200ResponseAllOfLocationsInner) *NullableListVirtualImageLocations200ResponseAllOfLocationsInner {
-	return &NullableListVirtualImageLocations200ResponseAllOfLocationsInner{value: val, isSet: true}
-}
-
-func (v NullableListVirtualImageLocations200ResponseAllOfLocationsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListVirtualImageLocations200ResponseAllOfLocationsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

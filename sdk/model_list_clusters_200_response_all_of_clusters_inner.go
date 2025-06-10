@@ -21,60 +21,60 @@ var _ MappedNullable = &ListClusters200ResponseAllOfClustersInner{}
 
 // ListClusters200ResponseAllOfClustersInner struct for ListClusters200ResponseAllOfClustersInner
 type ListClusters200ResponseAllOfClustersInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Category *string `json:"category,omitempty"`
-	Visibility *string `json:"visibility,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Location *string `json:"location,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	ServiceUrl *string `json:"serviceUrl,omitempty"`
-	ServiceHost *string `json:"serviceHost,omitempty"`
-	ServicePath *string `json:"servicePath,omitempty"`
-	ServiceHostname *string `json:"serviceHostname,omitempty"`
-	ServicePort *int64 `json:"servicePort,omitempty"`
-	ServiceUsername *string `json:"serviceUsername,omitempty"`
-	ServicePassword *string `json:"servicePassword,omitempty"`
-	ServicePasswordHash *string `json:"servicePasswordHash,omitempty"`
-	ServiceToken *string `json:"serviceToken,omitempty"`
-	ServiceTokenHash *string `json:"serviceTokenHash,omitempty"`
-	ServiceAccess *string `json:"serviceAccess,omitempty"`
-	ServiceAccessHash *string `json:"serviceAccessHash,omitempty"`
-	ServiceCert *string `json:"serviceCert,omitempty"`
-	ServiceCertHash *string `json:"serviceCertHash,omitempty"`
-	ServiceVersion *string `json:"serviceVersion,omitempty"`
-	SearchDomains *string `json:"searchDomains,omitempty"`
-	EnableInternalDns *bool `json:"enableInternalDns,omitempty"`
-	InternalId *string `json:"internalId,omitempty"`
-	ExternalId *string `json:"externalId,omitempty"`
-	DatacenterId *string `json:"datacenterId,omitempty"`
-	Status *string `json:"status,omitempty"`
-	StatusDate *time.Time `json:"statusDate,omitempty"`
-	StatusMessage *string `json:"statusMessage,omitempty"`
-	InventoryLevel *string `json:"inventoryLevel,omitempty"`
-	LastSync *time.Time `json:"lastSync,omitempty"`
-	NextRunDate *time.Time `json:"nextRunDate,omitempty"`
-	LastSyncDuration *int64 `json:"lastSyncDuration,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	Managed *bool `json:"managed,omitempty"`
-	Labels []string `json:"labels,omitempty"`
-	AutoRecoverPowerState *bool `json:"autoRecoverPowerState,omitempty"`
-	ServiceEntry *string `json:"serviceEntry,omitempty"`
-	CreatedBy *ListActivity200ResponseAllOfActivityInnerActivityInnerUser `json:"createdBy,omitempty"`
-	UserGroup *string `json:"userGroup,omitempty"`
-	Layout *ListClusters200ResponseAllOfClustersInnerLayout `json:"layout,omitempty"`
-	Owner *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"owner,omitempty"`
-	Servers []ListClusters200ResponseAllOfClustersInnerServersInner `json:"servers,omitempty"`
-	Accounts []map[string]interface{} `json:"accounts,omitempty"`
-	Integrations []map[string]interface{} `json:"integrations,omitempty"`
-	Site *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"site,omitempty"`
-	Type *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"type,omitempty"`
-	Zone *ListClusters200ResponseAllOfClustersInnerZone `json:"zone,omitempty"`
-	WorkerStats *ListClusters200ResponseAllOfClustersInnerWorkerStats `json:"workerStats,omitempty"`
-	Config map[string]interface{} `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                    *int64                                                                  `json:"id,omitempty"`
+	Name                  *string                                                                 `json:"name,omitempty"`
+	Code                  *string                                                                 `json:"code,omitempty"`
+	Category              *string                                                                 `json:"category,omitempty"`
+	Visibility            *string                                                                 `json:"visibility,omitempty"`
+	Description           *string                                                                 `json:"description,omitempty"`
+	Location              *string                                                                 `json:"location,omitempty"`
+	Enabled               *bool                                                                   `json:"enabled,omitempty"`
+	ServiceUrl            *string                                                                 `json:"serviceUrl,omitempty"`
+	ServiceHost           *string                                                                 `json:"serviceHost,omitempty"`
+	ServicePath           *string                                                                 `json:"servicePath,omitempty"`
+	ServiceHostname       *string                                                                 `json:"serviceHostname,omitempty"`
+	ServicePort           *int64                                                                  `json:"servicePort,omitempty"`
+	ServiceUsername       *string                                                                 `json:"serviceUsername,omitempty"`
+	ServicePassword       *string                                                                 `json:"servicePassword,omitempty"`
+	ServicePasswordHash   *string                                                                 `json:"servicePasswordHash,omitempty"`
+	ServiceToken          *string                                                                 `json:"serviceToken,omitempty"`
+	ServiceTokenHash      *string                                                                 `json:"serviceTokenHash,omitempty"`
+	ServiceAccess         *string                                                                 `json:"serviceAccess,omitempty"`
+	ServiceAccessHash     *string                                                                 `json:"serviceAccessHash,omitempty"`
+	ServiceCert           *string                                                                 `json:"serviceCert,omitempty"`
+	ServiceCertHash       *string                                                                 `json:"serviceCertHash,omitempty"`
+	ServiceVersion        *string                                                                 `json:"serviceVersion,omitempty"`
+	SearchDomains         *string                                                                 `json:"searchDomains,omitempty"`
+	EnableInternalDns     *bool                                                                   `json:"enableInternalDns,omitempty"`
+	InternalId            *string                                                                 `json:"internalId,omitempty"`
+	ExternalId            *string                                                                 `json:"externalId,omitempty"`
+	DatacenterId          *string                                                                 `json:"datacenterId,omitempty"`
+	Status                *string                                                                 `json:"status,omitempty"`
+	StatusDate            *time.Time                                                              `json:"statusDate,omitempty"`
+	StatusMessage         *string                                                                 `json:"statusMessage,omitempty"`
+	InventoryLevel        *string                                                                 `json:"inventoryLevel,omitempty"`
+	LastSync              *time.Time                                                              `json:"lastSync,omitempty"`
+	NextRunDate           *time.Time                                                              `json:"nextRunDate,omitempty"`
+	LastSyncDuration      *int64                                                                  `json:"lastSyncDuration,omitempty"`
+	DateCreated           *time.Time                                                              `json:"dateCreated,omitempty"`
+	LastUpdated           *time.Time                                                              `json:"lastUpdated,omitempty"`
+	Managed               *bool                                                                   `json:"managed,omitempty"`
+	Labels                []string                                                                `json:"labels,omitempty"`
+	AutoRecoverPowerState *bool                                                                   `json:"autoRecoverPowerState,omitempty"`
+	ServiceEntry          *string                                                                 `json:"serviceEntry,omitempty"`
+	CreatedBy             *ListActivity200ResponseAllOfActivityInnerActivityInnerUser             `json:"createdBy,omitempty"`
+	UserGroup             *string                                                                 `json:"userGroup,omitempty"`
+	Layout                *ListClusters200ResponseAllOfClustersInnerLayout                        `json:"layout,omitempty"`
+	Owner                 *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"owner,omitempty"`
+	Servers               []ListClusters200ResponseAllOfClustersInnerServersInner                 `json:"servers,omitempty"`
+	Accounts              []map[string]interface{}                                                `json:"accounts,omitempty"`
+	Integrations          []map[string]interface{}                                                `json:"integrations,omitempty"`
+	Site                  *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"site,omitempty"`
+	Type                  *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"type,omitempty"`
+	Zone                  *ListClusters200ResponseAllOfClustersInnerZone                          `json:"zone,omitempty"`
+	WorkerStats           *ListClusters200ResponseAllOfClustersInnerWorkerStats                   `json:"workerStats,omitempty"`
+	Config                map[string]interface{}                                                  `json:"config,omitempty"`
+	AdditionalProperties  map[string]interface{}                                                  `json:",remain"`
 }
 
 type _ListClusters200ResponseAllOfClustersInner ListClusters200ResponseAllOfClustersInner
@@ -1793,7 +1793,7 @@ func (o *ListClusters200ResponseAllOfClustersInner) SetConfig(v map[string]inter
 }
 
 func (o ListClusters200ResponseAllOfClustersInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1968,114 +1968,8 @@ func (o ListClusters200ResponseAllOfClustersInner) ToMap() (map[string]interface
 
 	return toSerialize, nil
 }
-
 func (o *ListClusters200ResponseAllOfClustersInner) UnmarshalJSON(data []byte) (err error) {
-	varListClusters200ResponseAllOfClustersInner := _ListClusters200ResponseAllOfClustersInner{}
-
-	err = json.Unmarshal(data, &varListClusters200ResponseAllOfClustersInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListClusters200ResponseAllOfClustersInner(varListClusters200ResponseAllOfClustersInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "location")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "serviceUrl")
-		delete(additionalProperties, "serviceHost")
-		delete(additionalProperties, "servicePath")
-		delete(additionalProperties, "serviceHostname")
-		delete(additionalProperties, "servicePort")
-		delete(additionalProperties, "serviceUsername")
-		delete(additionalProperties, "servicePassword")
-		delete(additionalProperties, "servicePasswordHash")
-		delete(additionalProperties, "serviceToken")
-		delete(additionalProperties, "serviceTokenHash")
-		delete(additionalProperties, "serviceAccess")
-		delete(additionalProperties, "serviceAccessHash")
-		delete(additionalProperties, "serviceCert")
-		delete(additionalProperties, "serviceCertHash")
-		delete(additionalProperties, "serviceVersion")
-		delete(additionalProperties, "searchDomains")
-		delete(additionalProperties, "enableInternalDns")
-		delete(additionalProperties, "internalId")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "datacenterId")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "statusDate")
-		delete(additionalProperties, "statusMessage")
-		delete(additionalProperties, "inventoryLevel")
-		delete(additionalProperties, "lastSync")
-		delete(additionalProperties, "nextRunDate")
-		delete(additionalProperties, "lastSyncDuration")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "managed")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "autoRecoverPowerState")
-		delete(additionalProperties, "serviceEntry")
-		delete(additionalProperties, "createdBy")
-		delete(additionalProperties, "userGroup")
-		delete(additionalProperties, "layout")
-		delete(additionalProperties, "owner")
-		delete(additionalProperties, "servers")
-		delete(additionalProperties, "accounts")
-		delete(additionalProperties, "integrations")
-		delete(additionalProperties, "site")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "zone")
-		delete(additionalProperties, "workerStats")
-		delete(additionalProperties, "config")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListClusters200ResponseAllOfClustersInner struct {
-	value *ListClusters200ResponseAllOfClustersInner
-	isSet bool
-}
-
-func (v NullableListClusters200ResponseAllOfClustersInner) Get() *ListClusters200ResponseAllOfClustersInner {
-	return v.value
-}
-
-func (v *NullableListClusters200ResponseAllOfClustersInner) Set(val *ListClusters200ResponseAllOfClustersInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListClusters200ResponseAllOfClustersInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListClusters200ResponseAllOfClustersInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListClusters200ResponseAllOfClustersInner(val *ListClusters200ResponseAllOfClustersInner) *NullableListClusters200ResponseAllOfClustersInner {
-	return &NullableListClusters200ResponseAllOfClustersInner{value: val, isSet: true}
-}
-
-func (v NullableListClusters200ResponseAllOfClustersInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListClusters200ResponseAllOfClustersInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

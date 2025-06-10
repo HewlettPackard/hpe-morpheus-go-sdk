@@ -25,12 +25,12 @@ type BlueprintCreateSuccess struct {
 	// A name for the blueprint
 	Name *string `json:"name,omitempty"`
 	// A description for the blueprint
-	Description *string `json:"description,omitempty"`
-	Labels []string `json:"labels,omitempty"`
+	Description *string  `json:"description,omitempty"`
+	Labels      []string `json:"labels,omitempty"`
 	// Category
-	Category *string `json:"category,omitempty"`
-	Config *AddBlueprint200ResponseAllOfBlueprintConfig `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Category             *string                                      `json:"category,omitempty"`
+	Config               *AddBlueprint200ResponseAllOfBlueprintConfig `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}                       `json:",remain"`
 }
 
 type _BlueprintCreateSuccess BlueprintCreateSuccess
@@ -245,7 +245,7 @@ func (o *BlueprintCreateSuccess) SetConfig(v AddBlueprint200ResponseAllOfBluepri
 }
 
 func (o BlueprintCreateSuccess) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -279,67 +279,8 @@ func (o BlueprintCreateSuccess) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *BlueprintCreateSuccess) UnmarshalJSON(data []byte) (err error) {
-	varBlueprintCreateSuccess := _BlueprintCreateSuccess{}
-
-	err = json.Unmarshal(data, &varBlueprintCreateSuccess)
-
-	if err != nil {
-		return err
-	}
-
-	*o = BlueprintCreateSuccess(varBlueprintCreateSuccess)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "config")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableBlueprintCreateSuccess struct {
-	value *BlueprintCreateSuccess
-	isSet bool
-}
-
-func (v NullableBlueprintCreateSuccess) Get() *BlueprintCreateSuccess {
-	return v.value
-}
-
-func (v *NullableBlueprintCreateSuccess) Set(val *BlueprintCreateSuccess) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableBlueprintCreateSuccess) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableBlueprintCreateSuccess) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableBlueprintCreateSuccess(val *BlueprintCreateSuccess) *NullableBlueprintCreateSuccess {
-	return &NullableBlueprintCreateSuccess{value: val, isSet: true}
-}
-
-func (v NullableBlueprintCreateSuccess) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableBlueprintCreateSuccess) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

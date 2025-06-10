@@ -21,13 +21,12 @@ import (
 	"strings"
 )
 
-
 // BackupsAPIService BackupsAPI service
 type BackupsAPIService service
 
 type ApiAddBackupJobsRequest struct {
-	ctx context.Context
-	ApiService *BackupsAPIService
+	ctx                  context.Context
+	ApiService           *BackupsAPIService
 	addBackupJobsRequest *AddBackupJobsRequest
 }
 
@@ -45,25 +44,25 @@ AddBackupJobs Creates a Backup Job
 
 This endpoint allows creating a Backup Job.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddBackupJobsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddBackupJobsRequest
 */
 func (a *BackupsAPIService) AddBackupJobs(ctx context.Context) ApiAddBackupJobsRequest {
 	return ApiAddBackupJobsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddBackupJobs200Response
+//
+//	@return AddBackupJobs200Response
 func (a *BackupsAPIService) AddBackupJobsExecute(r ApiAddBackupJobsRequest) (*AddBackupJobs200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddBackupJobs200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddBackupJobs200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BackupsAPIService.AddBackupJobs")
@@ -115,7 +114,7 @@ func (a *BackupsAPIService) AddBackupJobsExecute(r ApiAddBackupJobsRequest) (*Ad
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -124,8 +123,8 @@ func (a *BackupsAPIService) AddBackupJobsExecute(r ApiAddBackupJobsRequest) (*Ad
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -135,8 +134,8 @@ func (a *BackupsAPIService) AddBackupJobsExecute(r ApiAddBackupJobsRequest) (*Ad
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -144,8 +143,8 @@ func (a *BackupsAPIService) AddBackupJobsExecute(r ApiAddBackupJobsRequest) (*Ad
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -154,8 +153,8 @@ func (a *BackupsAPIService) AddBackupJobsExecute(r ApiAddBackupJobsRequest) (*Ad
 }
 
 type ApiAddBackupsRequest struct {
-	ctx context.Context
-	ApiService *BackupsAPIService
+	ctx               context.Context
+	ApiService        *BackupsAPIService
 	addBackupsRequest *AddBackupsRequest
 }
 
@@ -173,25 +172,25 @@ AddBackups Creates a Backup
 
 This endpoint allows creating a Backup.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddBackupsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddBackupsRequest
 */
 func (a *BackupsAPIService) AddBackups(ctx context.Context) ApiAddBackupsRequest {
 	return ApiAddBackupsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddBackups200Response
+//
+//	@return AddBackups200Response
 func (a *BackupsAPIService) AddBackupsExecute(r ApiAddBackupsRequest) (*AddBackups200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddBackups200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddBackups200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BackupsAPIService.AddBackups")
@@ -243,7 +242,7 @@ func (a *BackupsAPIService) AddBackupsExecute(r ApiAddBackupsRequest) (*AddBacku
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -252,8 +251,8 @@ func (a *BackupsAPIService) AddBackupsExecute(r ApiAddBackupsRequest) (*AddBacku
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -263,8 +262,8 @@ func (a *BackupsAPIService) AddBackupsExecute(r ApiAddBackupsRequest) (*AddBacku
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -272,8 +271,8 @@ func (a *BackupsAPIService) AddBackupsExecute(r ApiAddBackupsRequest) (*AddBacku
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -282,10 +281,10 @@ func (a *BackupsAPIService) AddBackupsExecute(r ApiAddBackupsRequest) (*AddBacku
 }
 
 type ApiExecuteBackupJobsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *BackupsAPIService
-	id int64
-	body *map[string]interface{}
+	id         int64
+	body       *map[string]interface{}
 }
 
 func (r ApiExecuteBackupJobsRequest) Body(body map[string]interface{}) ApiExecuteBackupJobsRequest {
@@ -302,27 +301,27 @@ ExecuteBackupJobs Executes a Backup Job
 
 Executes a backup job.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiExecuteBackupJobsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiExecuteBackupJobsRequest
 */
 func (a *BackupsAPIService) ExecuteBackupJobs(ctx context.Context, id int64) ApiExecuteBackupJobsRequest {
 	return ApiExecuteBackupJobsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddBackupJobs200Response
+//
+//	@return AddBackupJobs200Response
 func (a *BackupsAPIService) ExecuteBackupJobsExecute(r ApiExecuteBackupJobsRequest) (*AddBackupJobs200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddBackupJobs200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddBackupJobs200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BackupsAPIService.ExecuteBackupJobs")
@@ -375,7 +374,7 @@ func (a *BackupsAPIService) ExecuteBackupJobsExecute(r ApiExecuteBackupJobsReque
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -384,8 +383,8 @@ func (a *BackupsAPIService) ExecuteBackupJobsExecute(r ApiExecuteBackupJobsReque
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -395,8 +394,8 @@ func (a *BackupsAPIService) ExecuteBackupJobsExecute(r ApiExecuteBackupJobsReque
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -404,8 +403,8 @@ func (a *BackupsAPIService) ExecuteBackupJobsExecute(r ApiExecuteBackupJobsReque
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -414,8 +413,8 @@ func (a *BackupsAPIService) ExecuteBackupJobsExecute(r ApiExecuteBackupJobsReque
 }
 
 type ApiExecuteBackupRestoreRequest struct {
-	ctx context.Context
-	ApiService *BackupsAPIService
+	ctx                         context.Context
+	ApiService                  *BackupsAPIService
 	executeBackupRestoreRequest *ExecuteBackupRestoreRequest
 }
 
@@ -433,25 +432,25 @@ ExecuteBackupRestore Executes a Backup Restore
 
 Executes a backup restore.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExecuteBackupRestoreRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExecuteBackupRestoreRequest
 */
 func (a *BackupsAPIService) ExecuteBackupRestore(ctx context.Context) ApiExecuteBackupRestoreRequest {
 	return ApiExecuteBackupRestoreRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddBackups200Response
+//
+//	@return AddBackups200Response
 func (a *BackupsAPIService) ExecuteBackupRestoreExecute(r ApiExecuteBackupRestoreRequest) (*AddBackups200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddBackups200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddBackups200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BackupsAPIService.ExecuteBackupRestore")
@@ -503,7 +502,7 @@ func (a *BackupsAPIService) ExecuteBackupRestoreExecute(r ApiExecuteBackupRestor
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -512,8 +511,8 @@ func (a *BackupsAPIService) ExecuteBackupRestoreExecute(r ApiExecuteBackupRestor
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -523,8 +522,8 @@ func (a *BackupsAPIService) ExecuteBackupRestoreExecute(r ApiExecuteBackupRestor
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -532,8 +531,8 @@ func (a *BackupsAPIService) ExecuteBackupRestoreExecute(r ApiExecuteBackupRestor
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -542,10 +541,10 @@ func (a *BackupsAPIService) ExecuteBackupRestoreExecute(r ApiExecuteBackupRestor
 }
 
 type ApiExecuteBackupsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *BackupsAPIService
-	id int64
-	body *map[string]interface{}
+	id         int64
+	body       *map[string]interface{}
 }
 
 func (r ApiExecuteBackupsRequest) Body(body map[string]interface{}) ApiExecuteBackupsRequest {
@@ -562,27 +561,27 @@ ExecuteBackups Executes a Backup
 
 Executes a backup.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiExecuteBackupsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiExecuteBackupsRequest
 */
 func (a *BackupsAPIService) ExecuteBackups(ctx context.Context, id int64) ApiExecuteBackupsRequest {
 	return ApiExecuteBackupsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddBackups200Response
+//
+//	@return AddBackups200Response
 func (a *BackupsAPIService) ExecuteBackupsExecute(r ApiExecuteBackupsRequest) (*AddBackups200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddBackups200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddBackups200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BackupsAPIService.ExecuteBackups")
@@ -635,7 +634,7 @@ func (a *BackupsAPIService) ExecuteBackupsExecute(r ApiExecuteBackupsRequest) (*
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -644,8 +643,8 @@ func (a *BackupsAPIService) ExecuteBackupsExecute(r ApiExecuteBackupsRequest) (*
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -655,8 +654,8 @@ func (a *BackupsAPIService) ExecuteBackupsExecute(r ApiExecuteBackupsRequest) (*
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -664,8 +663,8 @@ func (a *BackupsAPIService) ExecuteBackupsExecute(r ApiExecuteBackupsRequest) (*
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -674,9 +673,9 @@ func (a *BackupsAPIService) ExecuteBackupsExecute(r ApiExecuteBackupsRequest) (*
 }
 
 type ApiGetBackupJobsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *BackupsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetBackupJobsRequest) Execute() (*GetBackupJobs200Response, *http.Response, error) {
@@ -688,27 +687,27 @@ GetBackupJobs Retrieves a Specific Backup Job
 
 Retrieves a specific backup job.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetBackupJobsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetBackupJobsRequest
 */
 func (a *BackupsAPIService) GetBackupJobs(ctx context.Context, id int64) ApiGetBackupJobsRequest {
 	return ApiGetBackupJobsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetBackupJobs200Response
+//
+//	@return GetBackupJobs200Response
 func (a *BackupsAPIService) GetBackupJobsExecute(r ApiGetBackupJobsRequest) (*GetBackupJobs200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetBackupJobs200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetBackupJobs200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BackupsAPIService.GetBackupJobs")
@@ -759,7 +758,7 @@ func (a *BackupsAPIService) GetBackupJobsExecute(r ApiGetBackupJobsRequest) (*Ge
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -768,8 +767,8 @@ func (a *BackupsAPIService) GetBackupJobsExecute(r ApiGetBackupJobsRequest) (*Ge
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -779,8 +778,8 @@ func (a *BackupsAPIService) GetBackupJobsExecute(r ApiGetBackupJobsRequest) (*Ge
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -788,8 +787,8 @@ func (a *BackupsAPIService) GetBackupJobsExecute(r ApiGetBackupJobsRequest) (*Ge
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -798,9 +797,9 @@ func (a *BackupsAPIService) GetBackupJobsExecute(r ApiGetBackupJobsRequest) (*Ge
 }
 
 type ApiGetBackupRestoresRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *BackupsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetBackupRestoresRequest) Execute() (*GetBackupRestores200Response, *http.Response, error) {
@@ -812,27 +811,27 @@ GetBackupRestores Retrieves a Specific Backup Restore
 
 Retrieves a specific backup restore.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetBackupRestoresRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetBackupRestoresRequest
 */
 func (a *BackupsAPIService) GetBackupRestores(ctx context.Context, id int64) ApiGetBackupRestoresRequest {
 	return ApiGetBackupRestoresRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetBackupRestores200Response
+//
+//	@return GetBackupRestores200Response
 func (a *BackupsAPIService) GetBackupRestoresExecute(r ApiGetBackupRestoresRequest) (*GetBackupRestores200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetBackupRestores200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetBackupRestores200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BackupsAPIService.GetBackupRestores")
@@ -883,7 +882,7 @@ func (a *BackupsAPIService) GetBackupRestoresExecute(r ApiGetBackupRestoresReque
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -892,8 +891,8 @@ func (a *BackupsAPIService) GetBackupRestoresExecute(r ApiGetBackupRestoresReque
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -903,8 +902,8 @@ func (a *BackupsAPIService) GetBackupRestoresExecute(r ApiGetBackupRestoresReque
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -912,8 +911,8 @@ func (a *BackupsAPIService) GetBackupRestoresExecute(r ApiGetBackupRestoresReque
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -922,9 +921,9 @@ func (a *BackupsAPIService) GetBackupRestoresExecute(r ApiGetBackupRestoresReque
 }
 
 type ApiGetBackupResultsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *BackupsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetBackupResultsRequest) Execute() (*GetBackupResults200Response, *http.Response, error) {
@@ -936,27 +935,27 @@ GetBackupResults Retrieves a Specific Backup Result
 
 Retrieves a specific backup result.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetBackupResultsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetBackupResultsRequest
 */
 func (a *BackupsAPIService) GetBackupResults(ctx context.Context, id int64) ApiGetBackupResultsRequest {
 	return ApiGetBackupResultsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetBackupResults200Response
+//
+//	@return GetBackupResults200Response
 func (a *BackupsAPIService) GetBackupResultsExecute(r ApiGetBackupResultsRequest) (*GetBackupResults200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetBackupResults200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetBackupResults200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BackupsAPIService.GetBackupResults")
@@ -1007,7 +1006,7 @@ func (a *BackupsAPIService) GetBackupResultsExecute(r ApiGetBackupResultsRequest
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1016,8 +1015,8 @@ func (a *BackupsAPIService) GetBackupResultsExecute(r ApiGetBackupResultsRequest
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1027,8 +1026,8 @@ func (a *BackupsAPIService) GetBackupResultsExecute(r ApiGetBackupResultsRequest
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1036,8 +1035,8 @@ func (a *BackupsAPIService) GetBackupResultsExecute(r ApiGetBackupResultsRequest
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1046,9 +1045,9 @@ func (a *BackupsAPIService) GetBackupResultsExecute(r ApiGetBackupResultsRequest
 }
 
 type ApiGetBackupsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *BackupsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetBackupsRequest) Execute() (*GetBackups200Response, *http.Response, error) {
@@ -1060,27 +1059,27 @@ GetBackups Retrieves a Specific Backup
 
 Retrieves a specific backup.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetBackupsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetBackupsRequest
 */
 func (a *BackupsAPIService) GetBackups(ctx context.Context, id int64) ApiGetBackupsRequest {
 	return ApiGetBackupsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetBackups200Response
+//
+//	@return GetBackups200Response
 func (a *BackupsAPIService) GetBackupsExecute(r ApiGetBackupsRequest) (*GetBackups200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetBackups200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetBackups200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BackupsAPIService.GetBackups")
@@ -1131,7 +1130,7 @@ func (a *BackupsAPIService) GetBackupsExecute(r ApiGetBackupsRequest) (*GetBacku
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1140,8 +1139,8 @@ func (a *BackupsAPIService) GetBackupsExecute(r ApiGetBackupsRequest) (*GetBacku
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1151,8 +1150,8 @@ func (a *BackupsAPIService) GetBackupsExecute(r ApiGetBackupsRequest) (*GetBacku
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1160,8 +1159,8 @@ func (a *BackupsAPIService) GetBackupsExecute(r ApiGetBackupsRequest) (*GetBacku
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1170,15 +1169,15 @@ func (a *BackupsAPIService) GetBackupsExecute(r ApiGetBackupsRequest) (*GetBacku
 }
 
 type ApiListBackupJobsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *BackupsAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	name *string
-	code *string
+	max        *int64
+	offset     *int64
+	sort       *string
+	direction  *string
+	phrase     *string
+	name       *string
+	code       *string
 	externalId *string
 }
 
@@ -1239,25 +1238,25 @@ ListBackupJobs Retrieves all Backup Jobs
 
 Retrieves all backup jobs.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListBackupJobsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListBackupJobsRequest
 */
 func (a *BackupsAPIService) ListBackupJobs(ctx context.Context) ApiListBackupJobsRequest {
 	return ApiListBackupJobsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListBackupJobs200Response
+//
+//	@return ListBackupJobs200Response
 func (a *BackupsAPIService) ListBackupJobsExecute(r ApiListBackupJobsRequest) (*ListBackupJobs200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListBackupJobs200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListBackupJobs200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BackupsAPIService.ListBackupJobs")
@@ -1343,7 +1342,7 @@ func (a *BackupsAPIService) ListBackupJobsExecute(r ApiListBackupJobsRequest) (*
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1352,8 +1351,8 @@ func (a *BackupsAPIService) ListBackupJobsExecute(r ApiListBackupJobsRequest) (*
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1363,8 +1362,8 @@ func (a *BackupsAPIService) ListBackupJobsExecute(r ApiListBackupJobsRequest) (*
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1372,8 +1371,8 @@ func (a *BackupsAPIService) ListBackupJobsExecute(r ApiListBackupJobsRequest) (*
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1382,17 +1381,17 @@ func (a *BackupsAPIService) ListBackupJobsExecute(r ApiListBackupJobsRequest) (*
 }
 
 type ApiListBackupRestoresRequest struct {
-	ctx context.Context
-	ApiService *BackupsAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	name *string
-	phrase *string
-	backupId *int64
+	ctx            context.Context
+	ApiService     *BackupsAPIService
+	max            *int64
+	offset         *int64
+	sort           *string
+	direction      *string
+	name           *string
+	phrase         *string
+	backupId       *int64
 	backupResultId *string
-	containerId *int64
+	containerId    *int64
 }
 
 // Maximum number of records to return
@@ -1425,7 +1424,7 @@ func (r ApiListBackupRestoresRequest) Name(name string) ApiListBackupRestoresReq
 	return r
 }
 
-// Search phrase for partial matches on backup name, wildcard may be specified as %, eg. example-% 
+// Search phrase for partial matches on backup name, wildcard may be specified as %, eg. example-%
 func (r ApiListBackupRestoresRequest) Phrase(phrase string) ApiListBackupRestoresRequest {
 	r.phrase = &phrase
 	return r
@@ -1458,25 +1457,25 @@ ListBackupRestores Retrieves all Backup Restores
 
 Retrieves all backup restores.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListBackupRestoresRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListBackupRestoresRequest
 */
 func (a *BackupsAPIService) ListBackupRestores(ctx context.Context) ApiListBackupRestoresRequest {
 	return ApiListBackupRestoresRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListBackupRestores200Response
+//
+//	@return ListBackupRestores200Response
 func (a *BackupsAPIService) ListBackupRestoresExecute(r ApiListBackupRestoresRequest) (*ListBackupRestores200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListBackupRestores200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListBackupRestores200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BackupsAPIService.ListBackupRestores")
@@ -1562,7 +1561,7 @@ func (a *BackupsAPIService) ListBackupRestoresExecute(r ApiListBackupRestoresReq
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1571,8 +1570,8 @@ func (a *BackupsAPIService) ListBackupRestoresExecute(r ApiListBackupRestoresReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1582,8 +1581,8 @@ func (a *BackupsAPIService) ListBackupRestoresExecute(r ApiListBackupRestoresReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1591,8 +1590,8 @@ func (a *BackupsAPIService) ListBackupRestoresExecute(r ApiListBackupRestoresReq
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1601,19 +1600,19 @@ func (a *BackupsAPIService) ListBackupRestoresExecute(r ApiListBackupRestoresReq
 }
 
 type ApiListBackupResultsRequest struct {
-	ctx context.Context
-	ApiService *BackupsAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	name *string
-	phrase *string
-	backupId *int64
+	ctx         context.Context
+	ApiService  *BackupsAPIService
+	max         *int64
+	offset      *int64
+	sort        *string
+	direction   *string
+	name        *string
+	phrase      *string
+	backupId    *int64
 	backupSetId *string
-	instanceId *int64
+	instanceId  *int64
 	containerId *int64
-	serverId *int64
+	serverId    *int64
 }
 
 // Maximum number of records to return
@@ -1646,7 +1645,7 @@ func (r ApiListBackupResultsRequest) Name(name string) ApiListBackupResultsReque
 	return r
 }
 
-// Search phrase for partial matches on backupName, wildcard may be specified as %, eg. example-% 
+// Search phrase for partial matches on backupName, wildcard may be specified as %, eg. example-%
 func (r ApiListBackupResultsRequest) Phrase(phrase string) ApiListBackupResultsRequest {
 	r.phrase = &phrase
 	return r
@@ -1691,25 +1690,25 @@ ListBackupResults Retrieves all Backup Results
 
 Retrieves all backup results.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListBackupResultsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListBackupResultsRequest
 */
 func (a *BackupsAPIService) ListBackupResults(ctx context.Context) ApiListBackupResultsRequest {
 	return ApiListBackupResultsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListBackupResults200Response
+//
+//	@return ListBackupResults200Response
 func (a *BackupsAPIService) ListBackupResultsExecute(r ApiListBackupResultsRequest) (*ListBackupResults200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListBackupResults200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListBackupResults200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BackupsAPIService.ListBackupResults")
@@ -1804,7 +1803,7 @@ func (a *BackupsAPIService) ListBackupResultsExecute(r ApiListBackupResultsReque
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1813,8 +1812,8 @@ func (a *BackupsAPIService) ListBackupResultsExecute(r ApiListBackupResultsReque
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1824,8 +1823,8 @@ func (a *BackupsAPIService) ListBackupResultsExecute(r ApiListBackupResultsReque
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1833,8 +1832,8 @@ func (a *BackupsAPIService) ListBackupResultsExecute(r ApiListBackupResultsReque
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1843,14 +1842,14 @@ func (a *BackupsAPIService) ListBackupResultsExecute(r ApiListBackupResultsReque
 }
 
 type ApiListBackupsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *BackupsAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	name *string
+	max        *int64
+	offset     *int64
+	sort       *string
+	direction  *string
+	phrase     *string
+	name       *string
 }
 
 // Maximum number of records to return
@@ -1898,25 +1897,25 @@ ListBackups Retrieves all Backups
 
 Retrieves all backups.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListBackupsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListBackupsRequest
 */
 func (a *BackupsAPIService) ListBackups(ctx context.Context) ApiListBackupsRequest {
 	return ApiListBackupsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListBackups200Response
+//
+//	@return ListBackups200Response
 func (a *BackupsAPIService) ListBackupsExecute(r ApiListBackupsRequest) (*ListBackups200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListBackups200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListBackups200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BackupsAPIService.ListBackups")
@@ -1996,7 +1995,7 @@ func (a *BackupsAPIService) ListBackupsExecute(r ApiListBackupsRequest) (*ListBa
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2005,8 +2004,8 @@ func (a *BackupsAPIService) ListBackupsExecute(r ApiListBackupsRequest) (*ListBa
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2016,8 +2015,8 @@ func (a *BackupsAPIService) ListBackupsExecute(r ApiListBackupsRequest) (*ListBa
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2025,8 +2024,8 @@ func (a *BackupsAPIService) ListBackupsExecute(r ApiListBackupsRequest) (*ListBa
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2035,9 +2034,9 @@ func (a *BackupsAPIService) ListBackupsExecute(r ApiListBackupsRequest) (*ListBa
 }
 
 type ApiRemoveBackupJobsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *BackupsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiRemoveBackupJobsRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -2049,27 +2048,27 @@ RemoveBackupJobs Deletes a Backup Job
 
 Deletes a specified backup job.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiRemoveBackupJobsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiRemoveBackupJobsRequest
 */
 func (a *BackupsAPIService) RemoveBackupJobs(ctx context.Context, id int64) ApiRemoveBackupJobsRequest {
 	return ApiRemoveBackupJobsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *BackupsAPIService) RemoveBackupJobsExecute(r ApiRemoveBackupJobsRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BackupsAPIService.RemoveBackupJobs")
@@ -2120,7 +2119,7 @@ func (a *BackupsAPIService) RemoveBackupJobsExecute(r ApiRemoveBackupJobsRequest
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2129,8 +2128,8 @@ func (a *BackupsAPIService) RemoveBackupJobsExecute(r ApiRemoveBackupJobsRequest
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2140,8 +2139,8 @@ func (a *BackupsAPIService) RemoveBackupJobsExecute(r ApiRemoveBackupJobsRequest
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2149,8 +2148,8 @@ func (a *BackupsAPIService) RemoveBackupJobsExecute(r ApiRemoveBackupJobsRequest
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2159,9 +2158,9 @@ func (a *BackupsAPIService) RemoveBackupJobsExecute(r ApiRemoveBackupJobsRequest
 }
 
 type ApiRemoveBackupRestoresRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *BackupsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiRemoveBackupRestoresRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -2173,27 +2172,27 @@ RemoveBackupRestores Deletes a Backup Restore
 
 Deletes a specified backup restore.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiRemoveBackupRestoresRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiRemoveBackupRestoresRequest
 */
 func (a *BackupsAPIService) RemoveBackupRestores(ctx context.Context, id int64) ApiRemoveBackupRestoresRequest {
 	return ApiRemoveBackupRestoresRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *BackupsAPIService) RemoveBackupRestoresExecute(r ApiRemoveBackupRestoresRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BackupsAPIService.RemoveBackupRestores")
@@ -2244,7 +2243,7 @@ func (a *BackupsAPIService) RemoveBackupRestoresExecute(r ApiRemoveBackupRestore
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2253,8 +2252,8 @@ func (a *BackupsAPIService) RemoveBackupRestoresExecute(r ApiRemoveBackupRestore
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2264,8 +2263,8 @@ func (a *BackupsAPIService) RemoveBackupRestoresExecute(r ApiRemoveBackupRestore
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2273,8 +2272,8 @@ func (a *BackupsAPIService) RemoveBackupRestoresExecute(r ApiRemoveBackupRestore
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2283,9 +2282,9 @@ func (a *BackupsAPIService) RemoveBackupRestoresExecute(r ApiRemoveBackupRestore
 }
 
 type ApiRemoveBackupResultsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *BackupsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiRemoveBackupResultsRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -2297,27 +2296,27 @@ RemoveBackupResults Deletes a Backup Result
 
 Deletes a specified backup result.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiRemoveBackupResultsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiRemoveBackupResultsRequest
 */
 func (a *BackupsAPIService) RemoveBackupResults(ctx context.Context, id int64) ApiRemoveBackupResultsRequest {
 	return ApiRemoveBackupResultsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *BackupsAPIService) RemoveBackupResultsExecute(r ApiRemoveBackupResultsRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BackupsAPIService.RemoveBackupResults")
@@ -2368,7 +2367,7 @@ func (a *BackupsAPIService) RemoveBackupResultsExecute(r ApiRemoveBackupResultsR
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2377,8 +2376,8 @@ func (a *BackupsAPIService) RemoveBackupResultsExecute(r ApiRemoveBackupResultsR
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2388,8 +2387,8 @@ func (a *BackupsAPIService) RemoveBackupResultsExecute(r ApiRemoveBackupResultsR
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2397,8 +2396,8 @@ func (a *BackupsAPIService) RemoveBackupResultsExecute(r ApiRemoveBackupResultsR
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2407,9 +2406,9 @@ func (a *BackupsAPIService) RemoveBackupResultsExecute(r ApiRemoveBackupResultsR
 }
 
 type ApiRemoveBackupsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *BackupsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiRemoveBackupsRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -2421,27 +2420,27 @@ RemoveBackups Deletes a Backup
 
 Deletes a specified backup.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiRemoveBackupsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiRemoveBackupsRequest
 */
 func (a *BackupsAPIService) RemoveBackups(ctx context.Context, id int64) ApiRemoveBackupsRequest {
 	return ApiRemoveBackupsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *BackupsAPIService) RemoveBackupsExecute(r ApiRemoveBackupsRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BackupsAPIService.RemoveBackups")
@@ -2492,7 +2491,7 @@ func (a *BackupsAPIService) RemoveBackupsExecute(r ApiRemoveBackupsRequest) (*De
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2501,8 +2500,8 @@ func (a *BackupsAPIService) RemoveBackupsExecute(r ApiRemoveBackupsRequest) (*De
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2512,8 +2511,8 @@ func (a *BackupsAPIService) RemoveBackupsExecute(r ApiRemoveBackupsRequest) (*De
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2521,8 +2520,8 @@ func (a *BackupsAPIService) RemoveBackupsExecute(r ApiRemoveBackupsRequest) (*De
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2531,9 +2530,9 @@ func (a *BackupsAPIService) RemoveBackupsExecute(r ApiRemoveBackupsRequest) (*De
 }
 
 type ApiUpdateBackupJobsRequest struct {
-	ctx context.Context
-	ApiService *BackupsAPIService
-	id int64
+	ctx                     context.Context
+	ApiService              *BackupsAPIService
+	id                      int64
 	updateBackupJobsRequest *UpdateBackupJobsRequest
 }
 
@@ -2551,27 +2550,27 @@ UpdateBackupJobs Updates a Backup Job
 
 Updates a backup job.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateBackupJobsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateBackupJobsRequest
 */
 func (a *BackupsAPIService) UpdateBackupJobs(ctx context.Context, id int64) ApiUpdateBackupJobsRequest {
 	return ApiUpdateBackupJobsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddBackupJobs200Response
+//
+//	@return AddBackupJobs200Response
 func (a *BackupsAPIService) UpdateBackupJobsExecute(r ApiUpdateBackupJobsRequest) (*AddBackupJobs200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddBackupJobs200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddBackupJobs200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BackupsAPIService.UpdateBackupJobs")
@@ -2624,7 +2623,7 @@ func (a *BackupsAPIService) UpdateBackupJobsExecute(r ApiUpdateBackupJobsRequest
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2633,8 +2632,8 @@ func (a *BackupsAPIService) UpdateBackupJobsExecute(r ApiUpdateBackupJobsRequest
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2644,8 +2643,8 @@ func (a *BackupsAPIService) UpdateBackupJobsExecute(r ApiUpdateBackupJobsRequest
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2653,8 +2652,8 @@ func (a *BackupsAPIService) UpdateBackupJobsExecute(r ApiUpdateBackupJobsRequest
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2663,9 +2662,9 @@ func (a *BackupsAPIService) UpdateBackupJobsExecute(r ApiUpdateBackupJobsRequest
 }
 
 type ApiUpdateBackupsRequest struct {
-	ctx context.Context
-	ApiService *BackupsAPIService
-	id int64
+	ctx                  context.Context
+	ApiService           *BackupsAPIService
+	id                   int64
 	updateBackupsRequest *UpdateBackupsRequest
 }
 
@@ -2683,27 +2682,27 @@ UpdateBackups Updates a Backup
 
 Updates a backup.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateBackupsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateBackupsRequest
 */
 func (a *BackupsAPIService) UpdateBackups(ctx context.Context, id int64) ApiUpdateBackupsRequest {
 	return ApiUpdateBackupsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddBackups200Response
+//
+//	@return AddBackups200Response
 func (a *BackupsAPIService) UpdateBackupsExecute(r ApiUpdateBackupsRequest) (*AddBackups200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddBackups200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddBackups200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BackupsAPIService.UpdateBackups")
@@ -2756,7 +2755,7 @@ func (a *BackupsAPIService) UpdateBackupsExecute(r ApiUpdateBackupsRequest) (*Ad
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2765,8 +2764,8 @@ func (a *BackupsAPIService) UpdateBackupsExecute(r ApiUpdateBackupsRequest) (*Ad
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2776,8 +2775,8 @@ func (a *BackupsAPIService) UpdateBackupsExecute(r ApiUpdateBackupsRequest) (*Ad
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2785,8 +2784,8 @@ func (a *BackupsAPIService) UpdateBackupsExecute(r ApiUpdateBackupsRequest) (*Ad
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

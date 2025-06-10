@@ -21,13 +21,12 @@ import (
 	"strings"
 )
 
-
 // LoadBalancersAPIService LoadBalancersAPI service
 type LoadBalancersAPIService service
 
 type ApiCreateLoadBalancerRequest struct {
-	ctx context.Context
-	ApiService *LoadBalancersAPIService
+	ctx                       context.Context
+	ApiService                *LoadBalancersAPIService
 	createLoadBalancerRequest *CreateLoadBalancerRequest
 }
 
@@ -43,29 +42,29 @@ func (r ApiCreateLoadBalancerRequest) Execute() (*CreateLoadBalancer200Response,
 /*
 CreateLoadBalancer Create a Load Balancer
 
-Available for NSX load balancers only
+# Available for NSX load balancers only
 
 Use this command to create a load balancer.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateLoadBalancerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCreateLoadBalancerRequest
 */
 func (a *LoadBalancersAPIService) CreateLoadBalancer(ctx context.Context) ApiCreateLoadBalancerRequest {
 	return ApiCreateLoadBalancerRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return CreateLoadBalancer200Response
+//
+//	@return CreateLoadBalancer200Response
 func (a *LoadBalancersAPIService) CreateLoadBalancerExecute(r ApiCreateLoadBalancerRequest) (*CreateLoadBalancer200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CreateLoadBalancer200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CreateLoadBalancer200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoadBalancersAPIService.CreateLoadBalancer")
@@ -117,7 +116,7 @@ func (a *LoadBalancersAPIService) CreateLoadBalancerExecute(r ApiCreateLoadBalan
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -126,8 +125,8 @@ func (a *LoadBalancersAPIService) CreateLoadBalancerExecute(r ApiCreateLoadBalan
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -137,8 +136,8 @@ func (a *LoadBalancersAPIService) CreateLoadBalancerExecute(r ApiCreateLoadBalan
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -146,8 +145,8 @@ func (a *LoadBalancersAPIService) CreateLoadBalancerExecute(r ApiCreateLoadBalan
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -156,9 +155,9 @@ func (a *LoadBalancersAPIService) CreateLoadBalancerExecute(r ApiCreateLoadBalan
 }
 
 type ApiCreateLoadBalancerMonitorRequest struct {
-	ctx context.Context
-	ApiService *LoadBalancersAPIService
-	loadBalancerId float32
+	ctx                              context.Context
+	ApiService                       *LoadBalancersAPIService
+	loadBalancerId                   float32
 	createLoadBalancerMonitorRequest *CreateLoadBalancerMonitorRequest
 }
 
@@ -178,27 +177,27 @@ Use this command to create a load balancer Monitor.
 
 This endpoint allows creating a Load Balancer Monitor. Configuration options vary by Load Balancer Type.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param loadBalancerId Load Balancer ID
- @return ApiCreateLoadBalancerMonitorRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param loadBalancerId Load Balancer ID
+	@return ApiCreateLoadBalancerMonitorRequest
 */
 func (a *LoadBalancersAPIService) CreateLoadBalancerMonitor(ctx context.Context, loadBalancerId float32) ApiCreateLoadBalancerMonitorRequest {
 	return ApiCreateLoadBalancerMonitorRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		loadBalancerId: loadBalancerId,
 	}
 }
 
 // Execute executes the request
-//  @return CreateLoadBalancerMonitor200Response
+//
+//	@return CreateLoadBalancerMonitor200Response
 func (a *LoadBalancersAPIService) CreateLoadBalancerMonitorExecute(r ApiCreateLoadBalancerMonitorRequest) (*CreateLoadBalancerMonitor200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CreateLoadBalancerMonitor200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CreateLoadBalancerMonitor200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoadBalancersAPIService.CreateLoadBalancerMonitor")
@@ -251,7 +250,7 @@ func (a *LoadBalancersAPIService) CreateLoadBalancerMonitorExecute(r ApiCreateLo
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -260,8 +259,8 @@ func (a *LoadBalancersAPIService) CreateLoadBalancerMonitorExecute(r ApiCreateLo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -271,8 +270,8 @@ func (a *LoadBalancersAPIService) CreateLoadBalancerMonitorExecute(r ApiCreateLo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -280,8 +279,8 @@ func (a *LoadBalancersAPIService) CreateLoadBalancerMonitorExecute(r ApiCreateLo
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -290,9 +289,9 @@ func (a *LoadBalancersAPIService) CreateLoadBalancerMonitorExecute(r ApiCreateLo
 }
 
 type ApiCreateLoadBalancerPoolRequest struct {
-	ctx context.Context
-	ApiService *LoadBalancersAPIService
-	loadBalancerId float32
+	ctx                           context.Context
+	ApiService                    *LoadBalancersAPIService
+	loadBalancerId                float32
 	createLoadBalancerPoolRequest *CreateLoadBalancerPoolRequest
 }
 
@@ -312,27 +311,27 @@ Use this command to create a load balancer pool.
 
 This endpoint allows creating a Load Balancer Pool. Configuration options vary by Load Balancer Type.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param loadBalancerId Load Balancer ID
- @return ApiCreateLoadBalancerPoolRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param loadBalancerId Load Balancer ID
+	@return ApiCreateLoadBalancerPoolRequest
 */
 func (a *LoadBalancersAPIService) CreateLoadBalancerPool(ctx context.Context, loadBalancerId float32) ApiCreateLoadBalancerPoolRequest {
 	return ApiCreateLoadBalancerPoolRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		loadBalancerId: loadBalancerId,
 	}
 }
 
 // Execute executes the request
-//  @return CreateLoadBalancerPool200Response
+//
+//	@return CreateLoadBalancerPool200Response
 func (a *LoadBalancersAPIService) CreateLoadBalancerPoolExecute(r ApiCreateLoadBalancerPoolRequest) (*CreateLoadBalancerPool200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CreateLoadBalancerPool200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CreateLoadBalancerPool200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoadBalancersAPIService.CreateLoadBalancerPool")
@@ -385,7 +384,7 @@ func (a *LoadBalancersAPIService) CreateLoadBalancerPoolExecute(r ApiCreateLoadB
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -394,8 +393,8 @@ func (a *LoadBalancersAPIService) CreateLoadBalancerPoolExecute(r ApiCreateLoadB
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -405,8 +404,8 @@ func (a *LoadBalancersAPIService) CreateLoadBalancerPoolExecute(r ApiCreateLoadB
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -414,8 +413,8 @@ func (a *LoadBalancersAPIService) CreateLoadBalancerPoolExecute(r ApiCreateLoadB
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -424,9 +423,9 @@ func (a *LoadBalancersAPIService) CreateLoadBalancerPoolExecute(r ApiCreateLoadB
 }
 
 type ApiCreateLoadBalancerPoolNodeRequest struct {
-	ctx context.Context
-	ApiService *LoadBalancersAPIService
-	loadBalancerPoolId float32
+	ctx                               context.Context
+	ApiService                        *LoadBalancersAPIService
+	loadBalancerPoolId                float32
 	createLoadBalancerPoolNodeRequest *CreateLoadBalancerPoolNodeRequest
 }
 
@@ -446,27 +445,27 @@ Use this command to create a load balancer pool node.
 
 This endpoint allows creating a Load Balancer Pool Node. Configuration options vary by Load Balancer Type.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param loadBalancerPoolId Load Balancer Pool ID
- @return ApiCreateLoadBalancerPoolNodeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param loadBalancerPoolId Load Balancer Pool ID
+	@return ApiCreateLoadBalancerPoolNodeRequest
 */
 func (a *LoadBalancersAPIService) CreateLoadBalancerPoolNode(ctx context.Context, loadBalancerPoolId float32) ApiCreateLoadBalancerPoolNodeRequest {
 	return ApiCreateLoadBalancerPoolNodeRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:         a,
+		ctx:                ctx,
 		loadBalancerPoolId: loadBalancerPoolId,
 	}
 }
 
 // Execute executes the request
-//  @return CreateLoadBalancerPoolNode200Response
+//
+//	@return CreateLoadBalancerPoolNode200Response
 func (a *LoadBalancersAPIService) CreateLoadBalancerPoolNodeExecute(r ApiCreateLoadBalancerPoolNodeRequest) (*CreateLoadBalancerPoolNode200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CreateLoadBalancerPoolNode200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CreateLoadBalancerPoolNode200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoadBalancersAPIService.CreateLoadBalancerPoolNode")
@@ -519,7 +518,7 @@ func (a *LoadBalancersAPIService) CreateLoadBalancerPoolNodeExecute(r ApiCreateL
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -528,8 +527,8 @@ func (a *LoadBalancersAPIService) CreateLoadBalancerPoolNodeExecute(r ApiCreateL
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -539,8 +538,8 @@ func (a *LoadBalancersAPIService) CreateLoadBalancerPoolNodeExecute(r ApiCreateL
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -548,8 +547,8 @@ func (a *LoadBalancersAPIService) CreateLoadBalancerPoolNodeExecute(r ApiCreateL
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -558,9 +557,9 @@ func (a *LoadBalancersAPIService) CreateLoadBalancerPoolNodeExecute(r ApiCreateL
 }
 
 type ApiCreateLoadBalancerProfileRequest struct {
-	ctx context.Context
-	ApiService *LoadBalancersAPIService
-	loadBalancerId float32
+	ctx                              context.Context
+	ApiService                       *LoadBalancersAPIService
+	loadBalancerId                   float32
 	createLoadBalancerProfileRequest *CreateLoadBalancerProfileRequest
 }
 
@@ -580,27 +579,27 @@ Use this command to create a load balancer Profile.
 
 This endpoint allows creating a Load Balancer Profile. Configuration options vary by Load Balancer Type.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param loadBalancerId Load Balancer ID
- @return ApiCreateLoadBalancerProfileRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param loadBalancerId Load Balancer ID
+	@return ApiCreateLoadBalancerProfileRequest
 */
 func (a *LoadBalancersAPIService) CreateLoadBalancerProfile(ctx context.Context, loadBalancerId float32) ApiCreateLoadBalancerProfileRequest {
 	return ApiCreateLoadBalancerProfileRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		loadBalancerId: loadBalancerId,
 	}
 }
 
 // Execute executes the request
-//  @return CreateLoadBalancerProfile200Response
+//
+//	@return CreateLoadBalancerProfile200Response
 func (a *LoadBalancersAPIService) CreateLoadBalancerProfileExecute(r ApiCreateLoadBalancerProfileRequest) (*CreateLoadBalancerProfile200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CreateLoadBalancerProfile200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CreateLoadBalancerProfile200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoadBalancersAPIService.CreateLoadBalancerProfile")
@@ -653,7 +652,7 @@ func (a *LoadBalancersAPIService) CreateLoadBalancerProfileExecute(r ApiCreateLo
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -662,8 +661,8 @@ func (a *LoadBalancersAPIService) CreateLoadBalancerProfileExecute(r ApiCreateLo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -673,8 +672,8 @@ func (a *LoadBalancersAPIService) CreateLoadBalancerProfileExecute(r ApiCreateLo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -682,8 +681,8 @@ func (a *LoadBalancersAPIService) CreateLoadBalancerProfileExecute(r ApiCreateLo
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -692,9 +691,9 @@ func (a *LoadBalancersAPIService) CreateLoadBalancerProfileExecute(r ApiCreateLo
 }
 
 type ApiCreateLoadBalancerVirtualServerRequest struct {
-	ctx context.Context
-	ApiService *LoadBalancersAPIService
-	loadBalancerId float32
+	ctx                                    context.Context
+	ApiService                             *LoadBalancersAPIService
+	loadBalancerId                         float32
 	createLoadBalancerVirtualServerRequest *CreateLoadBalancerVirtualServerRequest
 }
 
@@ -714,27 +713,27 @@ Use this command to create a load balancer virtual server.
 
 This endpoint allows creating a Load Balancer Virtual Server. Configuration options vary by Load Balancer Type.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param loadBalancerId Load Balancer ID
- @return ApiCreateLoadBalancerVirtualServerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param loadBalancerId Load Balancer ID
+	@return ApiCreateLoadBalancerVirtualServerRequest
 */
 func (a *LoadBalancersAPIService) CreateLoadBalancerVirtualServer(ctx context.Context, loadBalancerId float32) ApiCreateLoadBalancerVirtualServerRequest {
 	return ApiCreateLoadBalancerVirtualServerRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		loadBalancerId: loadBalancerId,
 	}
 }
 
 // Execute executes the request
-//  @return CreateLoadBalancerVirtualServer200Response
+//
+//	@return CreateLoadBalancerVirtualServer200Response
 func (a *LoadBalancersAPIService) CreateLoadBalancerVirtualServerExecute(r ApiCreateLoadBalancerVirtualServerRequest) (*CreateLoadBalancerVirtualServer200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CreateLoadBalancerVirtualServer200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CreateLoadBalancerVirtualServer200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoadBalancersAPIService.CreateLoadBalancerVirtualServer")
@@ -787,7 +786,7 @@ func (a *LoadBalancersAPIService) CreateLoadBalancerVirtualServerExecute(r ApiCr
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -796,8 +795,8 @@ func (a *LoadBalancersAPIService) CreateLoadBalancerVirtualServerExecute(r ApiCr
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -807,8 +806,8 @@ func (a *LoadBalancersAPIService) CreateLoadBalancerVirtualServerExecute(r ApiCr
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -816,8 +815,8 @@ func (a *LoadBalancersAPIService) CreateLoadBalancerVirtualServerExecute(r ApiCr
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -826,8 +825,8 @@ func (a *LoadBalancersAPIService) CreateLoadBalancerVirtualServerExecute(r ApiCr
 }
 
 type ApiDeleteLoadBalancerRequest struct {
-	ctx context.Context
-	ApiService *LoadBalancersAPIService
+	ctx            context.Context
+	ApiService     *LoadBalancersAPIService
 	loadBalancerId float32
 }
 
@@ -840,26 +839,27 @@ DeleteLoadBalancer Delete a Load Balancer
 
 Will delete a Load Balancer from the system and make it no longer usable.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param loadBalancerId Load Balancer ID
- @return ApiDeleteLoadBalancerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param loadBalancerId Load Balancer ID
+	@return ApiDeleteLoadBalancerRequest
 */
 func (a *LoadBalancersAPIService) DeleteLoadBalancer(ctx context.Context, loadBalancerId float32) ApiDeleteLoadBalancerRequest {
 	return ApiDeleteLoadBalancerRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		loadBalancerId: loadBalancerId,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *LoadBalancersAPIService) DeleteLoadBalancerExecute(r ApiDeleteLoadBalancerRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoadBalancersAPIService.DeleteLoadBalancer")
@@ -910,7 +910,7 @@ func (a *LoadBalancersAPIService) DeleteLoadBalancerExecute(r ApiDeleteLoadBalan
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -919,8 +919,8 @@ func (a *LoadBalancersAPIService) DeleteLoadBalancerExecute(r ApiDeleteLoadBalan
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -930,8 +930,8 @@ func (a *LoadBalancersAPIService) DeleteLoadBalancerExecute(r ApiDeleteLoadBalan
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -939,8 +939,8 @@ func (a *LoadBalancersAPIService) DeleteLoadBalancerExecute(r ApiDeleteLoadBalan
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -949,10 +949,10 @@ func (a *LoadBalancersAPIService) DeleteLoadBalancerExecute(r ApiDeleteLoadBalan
 }
 
 type ApiDeleteLoadBalancerMonitorRequest struct {
-	ctx context.Context
-	ApiService *LoadBalancersAPIService
+	ctx            context.Context
+	ApiService     *LoadBalancersAPIService
 	loadBalancerId float32
-	id int64
+	id             int64
 }
 
 func (r ApiDeleteLoadBalancerMonitorRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -964,28 +964,29 @@ DeleteLoadBalancerMonitor Delete a Load Balancer Monitor
 
 Will delete a Load Balancer Monitor from the system and make it no longer usable.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param loadBalancerId Load Balancer ID
- @param id Morpheus ID of the Object being referenced
- @return ApiDeleteLoadBalancerMonitorRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param loadBalancerId Load Balancer ID
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeleteLoadBalancerMonitorRequest
 */
 func (a *LoadBalancersAPIService) DeleteLoadBalancerMonitor(ctx context.Context, loadBalancerId float32, id int64) ApiDeleteLoadBalancerMonitorRequest {
 	return ApiDeleteLoadBalancerMonitorRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		loadBalancerId: loadBalancerId,
-		id: id,
+		id:             id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *LoadBalancersAPIService) DeleteLoadBalancerMonitorExecute(r ApiDeleteLoadBalancerMonitorRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoadBalancersAPIService.DeleteLoadBalancerMonitor")
@@ -1037,7 +1038,7 @@ func (a *LoadBalancersAPIService) DeleteLoadBalancerMonitorExecute(r ApiDeleteLo
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1046,8 +1047,8 @@ func (a *LoadBalancersAPIService) DeleteLoadBalancerMonitorExecute(r ApiDeleteLo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1057,8 +1058,8 @@ func (a *LoadBalancersAPIService) DeleteLoadBalancerMonitorExecute(r ApiDeleteLo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1066,8 +1067,8 @@ func (a *LoadBalancersAPIService) DeleteLoadBalancerMonitorExecute(r ApiDeleteLo
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1076,10 +1077,10 @@ func (a *LoadBalancersAPIService) DeleteLoadBalancerMonitorExecute(r ApiDeleteLo
 }
 
 type ApiDeleteLoadBalancerPoolRequest struct {
-	ctx context.Context
-	ApiService *LoadBalancersAPIService
+	ctx            context.Context
+	ApiService     *LoadBalancersAPIService
 	loadBalancerId float32
-	id int64
+	id             int64
 }
 
 func (r ApiDeleteLoadBalancerPoolRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -1091,28 +1092,29 @@ DeleteLoadBalancerPool Delete a Load Balancer Pool
 
 Will delete a Load Balancer Pool from the system and make it no longer usable.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param loadBalancerId Load Balancer ID
- @param id Morpheus ID of the Object being referenced
- @return ApiDeleteLoadBalancerPoolRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param loadBalancerId Load Balancer ID
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeleteLoadBalancerPoolRequest
 */
 func (a *LoadBalancersAPIService) DeleteLoadBalancerPool(ctx context.Context, loadBalancerId float32, id int64) ApiDeleteLoadBalancerPoolRequest {
 	return ApiDeleteLoadBalancerPoolRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		loadBalancerId: loadBalancerId,
-		id: id,
+		id:             id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *LoadBalancersAPIService) DeleteLoadBalancerPoolExecute(r ApiDeleteLoadBalancerPoolRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoadBalancersAPIService.DeleteLoadBalancerPool")
@@ -1164,7 +1166,7 @@ func (a *LoadBalancersAPIService) DeleteLoadBalancerPoolExecute(r ApiDeleteLoadB
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1173,8 +1175,8 @@ func (a *LoadBalancersAPIService) DeleteLoadBalancerPoolExecute(r ApiDeleteLoadB
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1184,8 +1186,8 @@ func (a *LoadBalancersAPIService) DeleteLoadBalancerPoolExecute(r ApiDeleteLoadB
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1193,8 +1195,8 @@ func (a *LoadBalancersAPIService) DeleteLoadBalancerPoolExecute(r ApiDeleteLoadB
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1203,10 +1205,10 @@ func (a *LoadBalancersAPIService) DeleteLoadBalancerPoolExecute(r ApiDeleteLoadB
 }
 
 type ApiDeleteLoadBalancerPoolNodeRequest struct {
-	ctx context.Context
-	ApiService *LoadBalancersAPIService
+	ctx                context.Context
+	ApiService         *LoadBalancersAPIService
 	loadBalancerPoolId float32
-	id int64
+	id                 int64
 }
 
 func (r ApiDeleteLoadBalancerPoolNodeRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -1218,28 +1220,29 @@ DeleteLoadBalancerPoolNode Delete a Load Balancer Pool Node
 
 Will delete a Load Balancer Pool Node from the system and make it no longer usable.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param loadBalancerPoolId Load Balancer Pool ID
- @param id Morpheus ID of the Object being referenced
- @return ApiDeleteLoadBalancerPoolNodeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param loadBalancerPoolId Load Balancer Pool ID
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeleteLoadBalancerPoolNodeRequest
 */
 func (a *LoadBalancersAPIService) DeleteLoadBalancerPoolNode(ctx context.Context, loadBalancerPoolId float32, id int64) ApiDeleteLoadBalancerPoolNodeRequest {
 	return ApiDeleteLoadBalancerPoolNodeRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:         a,
+		ctx:                ctx,
 		loadBalancerPoolId: loadBalancerPoolId,
-		id: id,
+		id:                 id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *LoadBalancersAPIService) DeleteLoadBalancerPoolNodeExecute(r ApiDeleteLoadBalancerPoolNodeRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoadBalancersAPIService.DeleteLoadBalancerPoolNode")
@@ -1291,7 +1294,7 @@ func (a *LoadBalancersAPIService) DeleteLoadBalancerPoolNodeExecute(r ApiDeleteL
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1300,8 +1303,8 @@ func (a *LoadBalancersAPIService) DeleteLoadBalancerPoolNodeExecute(r ApiDeleteL
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1311,8 +1314,8 @@ func (a *LoadBalancersAPIService) DeleteLoadBalancerPoolNodeExecute(r ApiDeleteL
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1320,8 +1323,8 @@ func (a *LoadBalancersAPIService) DeleteLoadBalancerPoolNodeExecute(r ApiDeleteL
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1330,10 +1333,10 @@ func (a *LoadBalancersAPIService) DeleteLoadBalancerPoolNodeExecute(r ApiDeleteL
 }
 
 type ApiDeleteLoadBalancerProfileRequest struct {
-	ctx context.Context
-	ApiService *LoadBalancersAPIService
+	ctx            context.Context
+	ApiService     *LoadBalancersAPIService
 	loadBalancerId float32
-	id int64
+	id             int64
 }
 
 func (r ApiDeleteLoadBalancerProfileRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -1345,28 +1348,29 @@ DeleteLoadBalancerProfile Delete a Load Balancer Profile
 
 Will delete a Load Balancer Profile from the system and make it no longer usable.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param loadBalancerId Load Balancer ID
- @param id Morpheus ID of the Object being referenced
- @return ApiDeleteLoadBalancerProfileRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param loadBalancerId Load Balancer ID
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeleteLoadBalancerProfileRequest
 */
 func (a *LoadBalancersAPIService) DeleteLoadBalancerProfile(ctx context.Context, loadBalancerId float32, id int64) ApiDeleteLoadBalancerProfileRequest {
 	return ApiDeleteLoadBalancerProfileRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		loadBalancerId: loadBalancerId,
-		id: id,
+		id:             id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *LoadBalancersAPIService) DeleteLoadBalancerProfileExecute(r ApiDeleteLoadBalancerProfileRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoadBalancersAPIService.DeleteLoadBalancerProfile")
@@ -1418,7 +1422,7 @@ func (a *LoadBalancersAPIService) DeleteLoadBalancerProfileExecute(r ApiDeleteLo
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1427,8 +1431,8 @@ func (a *LoadBalancersAPIService) DeleteLoadBalancerProfileExecute(r ApiDeleteLo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1438,8 +1442,8 @@ func (a *LoadBalancersAPIService) DeleteLoadBalancerProfileExecute(r ApiDeleteLo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1447,8 +1451,8 @@ func (a *LoadBalancersAPIService) DeleteLoadBalancerProfileExecute(r ApiDeleteLo
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1457,10 +1461,10 @@ func (a *LoadBalancersAPIService) DeleteLoadBalancerProfileExecute(r ApiDeleteLo
 }
 
 type ApiDeleteLoadBalancerVirtualServerRequest struct {
-	ctx context.Context
-	ApiService *LoadBalancersAPIService
+	ctx            context.Context
+	ApiService     *LoadBalancersAPIService
 	loadBalancerId float32
-	id int64
+	id             int64
 }
 
 func (r ApiDeleteLoadBalancerVirtualServerRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -1472,28 +1476,29 @@ DeleteLoadBalancerVirtualServer Delete a Load Balancer Virtual Server
 
 Will delete a Load Balancer Virtual Server from the system and make it no longer usable.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param loadBalancerId Load Balancer ID
- @param id Morpheus ID of the Object being referenced
- @return ApiDeleteLoadBalancerVirtualServerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param loadBalancerId Load Balancer ID
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeleteLoadBalancerVirtualServerRequest
 */
 func (a *LoadBalancersAPIService) DeleteLoadBalancerVirtualServer(ctx context.Context, loadBalancerId float32, id int64) ApiDeleteLoadBalancerVirtualServerRequest {
 	return ApiDeleteLoadBalancerVirtualServerRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		loadBalancerId: loadBalancerId,
-		id: id,
+		id:             id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *LoadBalancersAPIService) DeleteLoadBalancerVirtualServerExecute(r ApiDeleteLoadBalancerVirtualServerRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoadBalancersAPIService.DeleteLoadBalancerVirtualServer")
@@ -1545,7 +1550,7 @@ func (a *LoadBalancersAPIService) DeleteLoadBalancerVirtualServerExecute(r ApiDe
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1554,8 +1559,8 @@ func (a *LoadBalancersAPIService) DeleteLoadBalancerVirtualServerExecute(r ApiDe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1565,8 +1570,8 @@ func (a *LoadBalancersAPIService) DeleteLoadBalancerVirtualServerExecute(r ApiDe
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1574,8 +1579,8 @@ func (a *LoadBalancersAPIService) DeleteLoadBalancerVirtualServerExecute(r ApiDe
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1584,8 +1589,8 @@ func (a *LoadBalancersAPIService) DeleteLoadBalancerVirtualServerExecute(r ApiDe
 }
 
 type ApiGetLoadBalancerRequest struct {
-	ctx context.Context
-	ApiService *LoadBalancersAPIService
+	ctx            context.Context
+	ApiService     *LoadBalancersAPIService
 	loadBalancerId float32
 }
 
@@ -1598,26 +1603,27 @@ GetLoadBalancer Get a Specific Load Balancer
 
 This endpoint retrieves a specific Load Balancer.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param loadBalancerId Load Balancer ID
- @return ApiGetLoadBalancerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param loadBalancerId Load Balancer ID
+	@return ApiGetLoadBalancerRequest
 */
 func (a *LoadBalancersAPIService) GetLoadBalancer(ctx context.Context, loadBalancerId float32) ApiGetLoadBalancerRequest {
 	return ApiGetLoadBalancerRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		loadBalancerId: loadBalancerId,
 	}
 }
 
 // Execute executes the request
-//  @return CreateLoadBalancer200Response
+//
+//	@return CreateLoadBalancer200Response
 func (a *LoadBalancersAPIService) GetLoadBalancerExecute(r ApiGetLoadBalancerRequest) (*CreateLoadBalancer200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CreateLoadBalancer200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CreateLoadBalancer200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoadBalancersAPIService.GetLoadBalancer")
@@ -1668,7 +1674,7 @@ func (a *LoadBalancersAPIService) GetLoadBalancerExecute(r ApiGetLoadBalancerReq
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1677,8 +1683,8 @@ func (a *LoadBalancersAPIService) GetLoadBalancerExecute(r ApiGetLoadBalancerReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1688,8 +1694,8 @@ func (a *LoadBalancersAPIService) GetLoadBalancerExecute(r ApiGetLoadBalancerReq
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1697,8 +1703,8 @@ func (a *LoadBalancersAPIService) GetLoadBalancerExecute(r ApiGetLoadBalancerReq
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1707,10 +1713,10 @@ func (a *LoadBalancersAPIService) GetLoadBalancerExecute(r ApiGetLoadBalancerReq
 }
 
 type ApiGetLoadBalancerMonitorRequest struct {
-	ctx context.Context
-	ApiService *LoadBalancersAPIService
+	ctx            context.Context
+	ApiService     *LoadBalancersAPIService
 	loadBalancerId float32
-	id int64
+	id             int64
 }
 
 func (r ApiGetLoadBalancerMonitorRequest) Execute() (*GetLoadBalancerMonitor200Response, *http.Response, error) {
@@ -1722,28 +1728,29 @@ GetLoadBalancerMonitor Get a Specific Load Balancer Monitor
 
 This endpoint retrieves a specific Load Balancer Monitor.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param loadBalancerId Load Balancer ID
- @param id Morpheus ID of the Object being referenced
- @return ApiGetLoadBalancerMonitorRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param loadBalancerId Load Balancer ID
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetLoadBalancerMonitorRequest
 */
 func (a *LoadBalancersAPIService) GetLoadBalancerMonitor(ctx context.Context, loadBalancerId float32, id int64) ApiGetLoadBalancerMonitorRequest {
 	return ApiGetLoadBalancerMonitorRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		loadBalancerId: loadBalancerId,
-		id: id,
+		id:             id,
 	}
 }
 
 // Execute executes the request
-//  @return GetLoadBalancerMonitor200Response
+//
+//	@return GetLoadBalancerMonitor200Response
 func (a *LoadBalancersAPIService) GetLoadBalancerMonitorExecute(r ApiGetLoadBalancerMonitorRequest) (*GetLoadBalancerMonitor200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetLoadBalancerMonitor200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetLoadBalancerMonitor200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoadBalancersAPIService.GetLoadBalancerMonitor")
@@ -1795,7 +1802,7 @@ func (a *LoadBalancersAPIService) GetLoadBalancerMonitorExecute(r ApiGetLoadBala
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1804,8 +1811,8 @@ func (a *LoadBalancersAPIService) GetLoadBalancerMonitorExecute(r ApiGetLoadBala
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1815,8 +1822,8 @@ func (a *LoadBalancersAPIService) GetLoadBalancerMonitorExecute(r ApiGetLoadBala
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1824,8 +1831,8 @@ func (a *LoadBalancersAPIService) GetLoadBalancerMonitorExecute(r ApiGetLoadBala
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1834,10 +1841,10 @@ func (a *LoadBalancersAPIService) GetLoadBalancerMonitorExecute(r ApiGetLoadBala
 }
 
 type ApiGetLoadBalancerPoolRequest struct {
-	ctx context.Context
-	ApiService *LoadBalancersAPIService
+	ctx            context.Context
+	ApiService     *LoadBalancersAPIService
 	loadBalancerId float32
-	id int64
+	id             int64
 }
 
 func (r ApiGetLoadBalancerPoolRequest) Execute() (*GetLoadBalancerPool200Response, *http.Response, error) {
@@ -1849,28 +1856,29 @@ GetLoadBalancerPool Get a Specific Load Balancer Pool
 
 This endpoint retrieves a specific Load Balancer Pool.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param loadBalancerId Load Balancer ID
- @param id Morpheus ID of the Object being referenced
- @return ApiGetLoadBalancerPoolRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param loadBalancerId Load Balancer ID
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetLoadBalancerPoolRequest
 */
 func (a *LoadBalancersAPIService) GetLoadBalancerPool(ctx context.Context, loadBalancerId float32, id int64) ApiGetLoadBalancerPoolRequest {
 	return ApiGetLoadBalancerPoolRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		loadBalancerId: loadBalancerId,
-		id: id,
+		id:             id,
 	}
 }
 
 // Execute executes the request
-//  @return GetLoadBalancerPool200Response
+//
+//	@return GetLoadBalancerPool200Response
 func (a *LoadBalancersAPIService) GetLoadBalancerPoolExecute(r ApiGetLoadBalancerPoolRequest) (*GetLoadBalancerPool200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetLoadBalancerPool200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetLoadBalancerPool200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoadBalancersAPIService.GetLoadBalancerPool")
@@ -1922,7 +1930,7 @@ func (a *LoadBalancersAPIService) GetLoadBalancerPoolExecute(r ApiGetLoadBalance
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1931,8 +1939,8 @@ func (a *LoadBalancersAPIService) GetLoadBalancerPoolExecute(r ApiGetLoadBalance
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1942,8 +1950,8 @@ func (a *LoadBalancersAPIService) GetLoadBalancerPoolExecute(r ApiGetLoadBalance
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1951,8 +1959,8 @@ func (a *LoadBalancersAPIService) GetLoadBalancerPoolExecute(r ApiGetLoadBalance
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1961,10 +1969,10 @@ func (a *LoadBalancersAPIService) GetLoadBalancerPoolExecute(r ApiGetLoadBalance
 }
 
 type ApiGetLoadBalancerPoolNodeRequest struct {
-	ctx context.Context
-	ApiService *LoadBalancersAPIService
+	ctx                context.Context
+	ApiService         *LoadBalancersAPIService
 	loadBalancerPoolId float32
-	id int64
+	id                 int64
 }
 
 func (r ApiGetLoadBalancerPoolNodeRequest) Execute() (*GetLoadBalancerPoolNode200Response, *http.Response, error) {
@@ -1976,28 +1984,29 @@ GetLoadBalancerPoolNode Get a Specific Load Balancer Pool Node
 
 This endpoint retrieves a specific Load Balancer Pool Node.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param loadBalancerPoolId Load Balancer Pool ID
- @param id Morpheus ID of the Object being referenced
- @return ApiGetLoadBalancerPoolNodeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param loadBalancerPoolId Load Balancer Pool ID
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetLoadBalancerPoolNodeRequest
 */
 func (a *LoadBalancersAPIService) GetLoadBalancerPoolNode(ctx context.Context, loadBalancerPoolId float32, id int64) ApiGetLoadBalancerPoolNodeRequest {
 	return ApiGetLoadBalancerPoolNodeRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:         a,
+		ctx:                ctx,
 		loadBalancerPoolId: loadBalancerPoolId,
-		id: id,
+		id:                 id,
 	}
 }
 
 // Execute executes the request
-//  @return GetLoadBalancerPoolNode200Response
+//
+//	@return GetLoadBalancerPoolNode200Response
 func (a *LoadBalancersAPIService) GetLoadBalancerPoolNodeExecute(r ApiGetLoadBalancerPoolNodeRequest) (*GetLoadBalancerPoolNode200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetLoadBalancerPoolNode200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetLoadBalancerPoolNode200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoadBalancersAPIService.GetLoadBalancerPoolNode")
@@ -2049,7 +2058,7 @@ func (a *LoadBalancersAPIService) GetLoadBalancerPoolNodeExecute(r ApiGetLoadBal
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2058,8 +2067,8 @@ func (a *LoadBalancersAPIService) GetLoadBalancerPoolNodeExecute(r ApiGetLoadBal
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2069,8 +2078,8 @@ func (a *LoadBalancersAPIService) GetLoadBalancerPoolNodeExecute(r ApiGetLoadBal
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2078,8 +2087,8 @@ func (a *LoadBalancersAPIService) GetLoadBalancerPoolNodeExecute(r ApiGetLoadBal
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2088,10 +2097,10 @@ func (a *LoadBalancersAPIService) GetLoadBalancerPoolNodeExecute(r ApiGetLoadBal
 }
 
 type ApiGetLoadBalancerProfileRequest struct {
-	ctx context.Context
-	ApiService *LoadBalancersAPIService
+	ctx            context.Context
+	ApiService     *LoadBalancersAPIService
 	loadBalancerId float32
-	id int64
+	id             int64
 }
 
 func (r ApiGetLoadBalancerProfileRequest) Execute() (*GetLoadBalancerProfile200Response, *http.Response, error) {
@@ -2103,28 +2112,29 @@ GetLoadBalancerProfile Get a Specific Load Balancer Profile
 
 This endpoint retrieves a specific Load Balancer Profile.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param loadBalancerId Load Balancer ID
- @param id Morpheus ID of the Object being referenced
- @return ApiGetLoadBalancerProfileRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param loadBalancerId Load Balancer ID
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetLoadBalancerProfileRequest
 */
 func (a *LoadBalancersAPIService) GetLoadBalancerProfile(ctx context.Context, loadBalancerId float32, id int64) ApiGetLoadBalancerProfileRequest {
 	return ApiGetLoadBalancerProfileRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		loadBalancerId: loadBalancerId,
-		id: id,
+		id:             id,
 	}
 }
 
 // Execute executes the request
-//  @return GetLoadBalancerProfile200Response
+//
+//	@return GetLoadBalancerProfile200Response
 func (a *LoadBalancersAPIService) GetLoadBalancerProfileExecute(r ApiGetLoadBalancerProfileRequest) (*GetLoadBalancerProfile200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetLoadBalancerProfile200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetLoadBalancerProfile200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoadBalancersAPIService.GetLoadBalancerProfile")
@@ -2176,7 +2186,7 @@ func (a *LoadBalancersAPIService) GetLoadBalancerProfileExecute(r ApiGetLoadBala
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2185,8 +2195,8 @@ func (a *LoadBalancersAPIService) GetLoadBalancerProfileExecute(r ApiGetLoadBala
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2196,8 +2206,8 @@ func (a *LoadBalancersAPIService) GetLoadBalancerProfileExecute(r ApiGetLoadBala
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2205,8 +2215,8 @@ func (a *LoadBalancersAPIService) GetLoadBalancerProfileExecute(r ApiGetLoadBala
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2215,9 +2225,9 @@ func (a *LoadBalancersAPIService) GetLoadBalancerProfileExecute(r ApiGetLoadBala
 }
 
 type ApiGetLoadBalancerTypeRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *LoadBalancersAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetLoadBalancerTypeRequest) Execute() (*GetLoadBalancerType200Response, *http.Response, error) {
@@ -2229,26 +2239,27 @@ GetLoadBalancerType Get a Specific Load Balancer Type
 
 This endpoint will retrieve a specific load balancer type by id.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetLoadBalancerTypeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetLoadBalancerTypeRequest
 */
 func (a *LoadBalancersAPIService) GetLoadBalancerType(ctx context.Context, id int64) ApiGetLoadBalancerTypeRequest {
 	return ApiGetLoadBalancerTypeRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetLoadBalancerType200Response
+//
+//	@return GetLoadBalancerType200Response
 func (a *LoadBalancersAPIService) GetLoadBalancerTypeExecute(r ApiGetLoadBalancerTypeRequest) (*GetLoadBalancerType200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetLoadBalancerType200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetLoadBalancerType200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoadBalancersAPIService.GetLoadBalancerType")
@@ -2299,7 +2310,7 @@ func (a *LoadBalancersAPIService) GetLoadBalancerTypeExecute(r ApiGetLoadBalance
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2308,8 +2319,8 @@ func (a *LoadBalancersAPIService) GetLoadBalancerTypeExecute(r ApiGetLoadBalance
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2319,8 +2330,8 @@ func (a *LoadBalancersAPIService) GetLoadBalancerTypeExecute(r ApiGetLoadBalance
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2328,8 +2339,8 @@ func (a *LoadBalancersAPIService) GetLoadBalancerTypeExecute(r ApiGetLoadBalance
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2338,10 +2349,10 @@ func (a *LoadBalancersAPIService) GetLoadBalancerTypeExecute(r ApiGetLoadBalance
 }
 
 type ApiGetLoadBalancerVirtualServerRequest struct {
-	ctx context.Context
-	ApiService *LoadBalancersAPIService
+	ctx            context.Context
+	ApiService     *LoadBalancersAPIService
 	loadBalancerId float32
-	id int64
+	id             int64
 }
 
 func (r ApiGetLoadBalancerVirtualServerRequest) Execute() (*CreateLoadBalancerVirtualServer200Response, *http.Response, error) {
@@ -2353,28 +2364,29 @@ GetLoadBalancerVirtualServer Get a Specific Load Balancer Virtual Server
 
 This endpoint retrieves a specific Load Balancer Virtual Server.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param loadBalancerId Load Balancer ID
- @param id Morpheus ID of the Object being referenced
- @return ApiGetLoadBalancerVirtualServerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param loadBalancerId Load Balancer ID
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetLoadBalancerVirtualServerRequest
 */
 func (a *LoadBalancersAPIService) GetLoadBalancerVirtualServer(ctx context.Context, loadBalancerId float32, id int64) ApiGetLoadBalancerVirtualServerRequest {
 	return ApiGetLoadBalancerVirtualServerRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		loadBalancerId: loadBalancerId,
-		id: id,
+		id:             id,
 	}
 }
 
 // Execute executes the request
-//  @return CreateLoadBalancerVirtualServer200Response
+//
+//	@return CreateLoadBalancerVirtualServer200Response
 func (a *LoadBalancersAPIService) GetLoadBalancerVirtualServerExecute(r ApiGetLoadBalancerVirtualServerRequest) (*CreateLoadBalancerVirtualServer200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CreateLoadBalancerVirtualServer200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CreateLoadBalancerVirtualServer200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoadBalancersAPIService.GetLoadBalancerVirtualServer")
@@ -2426,7 +2438,7 @@ func (a *LoadBalancersAPIService) GetLoadBalancerVirtualServerExecute(r ApiGetLo
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2435,8 +2447,8 @@ func (a *LoadBalancersAPIService) GetLoadBalancerVirtualServerExecute(r ApiGetLo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2446,8 +2458,8 @@ func (a *LoadBalancersAPIService) GetLoadBalancerVirtualServerExecute(r ApiGetLo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2455,8 +2467,8 @@ func (a *LoadBalancersAPIService) GetLoadBalancerVirtualServerExecute(r ApiGetLo
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2465,15 +2477,15 @@ func (a *LoadBalancersAPIService) GetLoadBalancerVirtualServerExecute(r ApiGetLo
 }
 
 type ApiListLoadBalancerMonitorsRequest struct {
-	ctx context.Context
-	ApiService *LoadBalancersAPIService
+	ctx            context.Context
+	ApiService     *LoadBalancersAPIService
 	loadBalancerId float32
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	name *string
-	phrase *string
+	max            *int64
+	offset         *int64
+	sort           *string
+	direction      *string
+	name           *string
+	phrase         *string
 }
 
 // Maximum number of records to return
@@ -2521,26 +2533,27 @@ ListLoadBalancerMonitors Get All Load Balancer Monitors For Load Balancer
 
 This endpoint retrieves all load balancer monitors associated with a specified load balancer.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param loadBalancerId Load Balancer ID
- @return ApiListLoadBalancerMonitorsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param loadBalancerId Load Balancer ID
+	@return ApiListLoadBalancerMonitorsRequest
 */
 func (a *LoadBalancersAPIService) ListLoadBalancerMonitors(ctx context.Context, loadBalancerId float32) ApiListLoadBalancerMonitorsRequest {
 	return ApiListLoadBalancerMonitorsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		loadBalancerId: loadBalancerId,
 	}
 }
 
 // Execute executes the request
-//  @return ListLoadBalancerMonitors200Response
+//
+//	@return ListLoadBalancerMonitors200Response
 func (a *LoadBalancersAPIService) ListLoadBalancerMonitorsExecute(r ApiListLoadBalancerMonitorsRequest) (*ListLoadBalancerMonitors200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListLoadBalancerMonitors200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListLoadBalancerMonitors200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoadBalancersAPIService.ListLoadBalancerMonitors")
@@ -2621,7 +2634,7 @@ func (a *LoadBalancersAPIService) ListLoadBalancerMonitorsExecute(r ApiListLoadB
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2630,8 +2643,8 @@ func (a *LoadBalancersAPIService) ListLoadBalancerMonitorsExecute(r ApiListLoadB
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2641,8 +2654,8 @@ func (a *LoadBalancersAPIService) ListLoadBalancerMonitorsExecute(r ApiListLoadB
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2650,8 +2663,8 @@ func (a *LoadBalancersAPIService) ListLoadBalancerMonitorsExecute(r ApiListLoadB
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2660,14 +2673,14 @@ func (a *LoadBalancersAPIService) ListLoadBalancerMonitorsExecute(r ApiListLoadB
 }
 
 type ApiListLoadBalancerPoolNodesRequest struct {
-	ctx context.Context
-	ApiService *LoadBalancersAPIService
+	ctx                context.Context
+	ApiService         *LoadBalancersAPIService
 	loadBalancerPoolId float32
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
+	max                *int64
+	offset             *int64
+	sort               *string
+	direction          *string
+	phrase             *string
 }
 
 // Maximum number of records to return
@@ -2709,26 +2722,27 @@ ListLoadBalancerPoolNodes Get All Load Balancer Pool Nodes For Load Balancer Poo
 
 This endpoint retrieves all load balancer pool nodes associated with a specified load balancer pool.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param loadBalancerPoolId Load Balancer Pool ID
- @return ApiListLoadBalancerPoolNodesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param loadBalancerPoolId Load Balancer Pool ID
+	@return ApiListLoadBalancerPoolNodesRequest
 */
 func (a *LoadBalancersAPIService) ListLoadBalancerPoolNodes(ctx context.Context, loadBalancerPoolId float32) ApiListLoadBalancerPoolNodesRequest {
 	return ApiListLoadBalancerPoolNodesRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:         a,
+		ctx:                ctx,
 		loadBalancerPoolId: loadBalancerPoolId,
 	}
 }
 
 // Execute executes the request
-//  @return ListLoadBalancerPoolNodes200Response
+//
+//	@return ListLoadBalancerPoolNodes200Response
 func (a *LoadBalancersAPIService) ListLoadBalancerPoolNodesExecute(r ApiListLoadBalancerPoolNodesRequest) (*ListLoadBalancerPoolNodes200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListLoadBalancerPoolNodes200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListLoadBalancerPoolNodes200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoadBalancersAPIService.ListLoadBalancerPoolNodes")
@@ -2806,7 +2820,7 @@ func (a *LoadBalancersAPIService) ListLoadBalancerPoolNodesExecute(r ApiListLoad
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -2815,8 +2829,8 @@ func (a *LoadBalancersAPIService) ListLoadBalancerPoolNodesExecute(r ApiListLoad
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -2826,8 +2840,8 @@ func (a *LoadBalancersAPIService) ListLoadBalancerPoolNodesExecute(r ApiListLoad
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2835,8 +2849,8 @@ func (a *LoadBalancersAPIService) ListLoadBalancerPoolNodesExecute(r ApiListLoad
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -2845,15 +2859,15 @@ func (a *LoadBalancersAPIService) ListLoadBalancerPoolNodesExecute(r ApiListLoad
 }
 
 type ApiListLoadBalancerPoolsRequest struct {
-	ctx context.Context
-	ApiService *LoadBalancersAPIService
+	ctx            context.Context
+	ApiService     *LoadBalancersAPIService
 	loadBalancerId float32
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	name *string
-	phrase *string
+	max            *int64
+	offset         *int64
+	sort           *string
+	direction      *string
+	name           *string
+	phrase         *string
 }
 
 // Maximum number of records to return
@@ -2901,26 +2915,27 @@ ListLoadBalancerPools Get All Load Balancer Pools For Load Balancer
 
 This endpoint retrieves all load balancer pools associated with a specified load balancer.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param loadBalancerId Load Balancer ID
- @return ApiListLoadBalancerPoolsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param loadBalancerId Load Balancer ID
+	@return ApiListLoadBalancerPoolsRequest
 */
 func (a *LoadBalancersAPIService) ListLoadBalancerPools(ctx context.Context, loadBalancerId float32) ApiListLoadBalancerPoolsRequest {
 	return ApiListLoadBalancerPoolsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		loadBalancerId: loadBalancerId,
 	}
 }
 
 // Execute executes the request
-//  @return ListLoadBalancerPools200Response
+//
+//	@return ListLoadBalancerPools200Response
 func (a *LoadBalancersAPIService) ListLoadBalancerPoolsExecute(r ApiListLoadBalancerPoolsRequest) (*ListLoadBalancerPools200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListLoadBalancerPools200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListLoadBalancerPools200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoadBalancersAPIService.ListLoadBalancerPools")
@@ -3001,7 +3016,7 @@ func (a *LoadBalancersAPIService) ListLoadBalancerPoolsExecute(r ApiListLoadBala
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -3010,8 +3025,8 @@ func (a *LoadBalancersAPIService) ListLoadBalancerPoolsExecute(r ApiListLoadBala
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -3021,8 +3036,8 @@ func (a *LoadBalancersAPIService) ListLoadBalancerPoolsExecute(r ApiListLoadBala
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3030,8 +3045,8 @@ func (a *LoadBalancersAPIService) ListLoadBalancerPoolsExecute(r ApiListLoadBala
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3040,15 +3055,15 @@ func (a *LoadBalancersAPIService) ListLoadBalancerPoolsExecute(r ApiListLoadBala
 }
 
 type ApiListLoadBalancerProfilesRequest struct {
-	ctx context.Context
-	ApiService *LoadBalancersAPIService
+	ctx            context.Context
+	ApiService     *LoadBalancersAPIService
 	loadBalancerId float32
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	name *string
-	phrase *string
+	max            *int64
+	offset         *int64
+	sort           *string
+	direction      *string
+	name           *string
+	phrase         *string
 }
 
 // Maximum number of records to return
@@ -3096,26 +3111,27 @@ ListLoadBalancerProfiles Get All Load Balancer Profiles For Load Balancer
 
 This endpoint retrieves all load balancer profiles associated with a specified load balancer.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param loadBalancerId Load Balancer ID
- @return ApiListLoadBalancerProfilesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param loadBalancerId Load Balancer ID
+	@return ApiListLoadBalancerProfilesRequest
 */
 func (a *LoadBalancersAPIService) ListLoadBalancerProfiles(ctx context.Context, loadBalancerId float32) ApiListLoadBalancerProfilesRequest {
 	return ApiListLoadBalancerProfilesRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		loadBalancerId: loadBalancerId,
 	}
 }
 
 // Execute executes the request
-//  @return ListLoadBalancerProfiles200Response
+//
+//	@return ListLoadBalancerProfiles200Response
 func (a *LoadBalancersAPIService) ListLoadBalancerProfilesExecute(r ApiListLoadBalancerProfilesRequest) (*ListLoadBalancerProfiles200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListLoadBalancerProfiles200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListLoadBalancerProfiles200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoadBalancersAPIService.ListLoadBalancerProfiles")
@@ -3196,7 +3212,7 @@ func (a *LoadBalancersAPIService) ListLoadBalancerProfilesExecute(r ApiListLoadB
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -3205,8 +3221,8 @@ func (a *LoadBalancersAPIService) ListLoadBalancerProfilesExecute(r ApiListLoadB
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -3216,8 +3232,8 @@ func (a *LoadBalancersAPIService) ListLoadBalancerProfilesExecute(r ApiListLoadB
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3225,8 +3241,8 @@ func (a *LoadBalancersAPIService) ListLoadBalancerProfilesExecute(r ApiListLoadB
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3235,16 +3251,16 @@ func (a *LoadBalancersAPIService) ListLoadBalancerProfilesExecute(r ApiListLoadB
 }
 
 type ApiListLoadBalancerTypesRequest struct {
-	ctx context.Context
-	ApiService *LoadBalancersAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
+	ctx         context.Context
+	ApiService  *LoadBalancersAPIService
+	max         *int64
+	offset      *int64
+	sort        *string
+	direction   *string
 	optionTypes *bool
-	phrase *string
-	name *string
-	code *string
+	phrase      *string
+	name        *string
+	code        *string
 }
 
 // Maximum number of records to return
@@ -3304,24 +3320,25 @@ ListLoadBalancerTypes Get All Load Balancer Types
 
 This endpoint retrieves all Load Balancer Types.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListLoadBalancerTypesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListLoadBalancerTypesRequest
 */
 func (a *LoadBalancersAPIService) ListLoadBalancerTypes(ctx context.Context) ApiListLoadBalancerTypesRequest {
 	return ApiListLoadBalancerTypesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListLoadBalancerTypes200Response
+//
+//	@return ListLoadBalancerTypes200Response
 func (a *LoadBalancersAPIService) ListLoadBalancerTypesExecute(r ApiListLoadBalancerTypesRequest) (*ListLoadBalancerTypes200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListLoadBalancerTypes200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListLoadBalancerTypes200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoadBalancersAPIService.ListLoadBalancerTypes")
@@ -3410,7 +3427,7 @@ func (a *LoadBalancersAPIService) ListLoadBalancerTypesExecute(r ApiListLoadBala
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -3419,8 +3436,8 @@ func (a *LoadBalancersAPIService) ListLoadBalancerTypesExecute(r ApiListLoadBala
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -3430,8 +3447,8 @@ func (a *LoadBalancersAPIService) ListLoadBalancerTypesExecute(r ApiListLoadBala
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3439,8 +3456,8 @@ func (a *LoadBalancersAPIService) ListLoadBalancerTypesExecute(r ApiListLoadBala
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3449,17 +3466,17 @@ func (a *LoadBalancersAPIService) ListLoadBalancerTypesExecute(r ApiListLoadBala
 }
 
 type ApiListLoadBalancerVirtualServersRequest struct {
-	ctx context.Context
-	ApiService *LoadBalancersAPIService
+	ctx            context.Context
+	ApiService     *LoadBalancersAPIService
 	loadBalancerId float32
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	vipName *string
-	vipAddress *string
-	vipHostname *string
+	max            *int64
+	offset         *int64
+	sort           *string
+	direction      *string
+	phrase         *string
+	vipName        *string
+	vipAddress     *string
+	vipHostname    *string
 }
 
 // Maximum number of records to return
@@ -3519,26 +3536,27 @@ ListLoadBalancerVirtualServers Get All Load Balancer Virtual Servers For Load Ba
 
 This endpoint retrieves load balancer virtual servers associated with a specified load balancer.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param loadBalancerId Load Balancer ID
- @return ApiListLoadBalancerVirtualServersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param loadBalancerId Load Balancer ID
+	@return ApiListLoadBalancerVirtualServersRequest
 */
 func (a *LoadBalancersAPIService) ListLoadBalancerVirtualServers(ctx context.Context, loadBalancerId float32) ApiListLoadBalancerVirtualServersRequest {
 	return ApiListLoadBalancerVirtualServersRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		loadBalancerId: loadBalancerId,
 	}
 }
 
 // Execute executes the request
-//  @return ListLoadBalancerVirtualServers200Response
+//
+//	@return ListLoadBalancerVirtualServers200Response
 func (a *LoadBalancersAPIService) ListLoadBalancerVirtualServersExecute(r ApiListLoadBalancerVirtualServersRequest) (*ListLoadBalancerVirtualServers200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListLoadBalancerVirtualServers200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListLoadBalancerVirtualServers200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoadBalancersAPIService.ListLoadBalancerVirtualServers")
@@ -3625,7 +3643,7 @@ func (a *LoadBalancersAPIService) ListLoadBalancerVirtualServersExecute(r ApiLis
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -3634,8 +3652,8 @@ func (a *LoadBalancersAPIService) ListLoadBalancerVirtualServersExecute(r ApiLis
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -3645,8 +3663,8 @@ func (a *LoadBalancersAPIService) ListLoadBalancerVirtualServersExecute(r ApiLis
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3654,8 +3672,8 @@ func (a *LoadBalancersAPIService) ListLoadBalancerVirtualServersExecute(r ApiLis
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3664,14 +3682,14 @@ func (a *LoadBalancersAPIService) ListLoadBalancerVirtualServersExecute(r ApiLis
 }
 
 type ApiListLoadBalancersRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *LoadBalancersAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	name *string
-	phrase *string
+	max        *int64
+	offset     *int64
+	sort       *string
+	direction  *string
+	name       *string
+	phrase     *string
 }
 
 // Maximum number of records to return
@@ -3719,24 +3737,25 @@ ListLoadBalancers Get All Load Balancers
 
 This endpoint retrieves all load balancers associated with the account.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListLoadBalancersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListLoadBalancersRequest
 */
 func (a *LoadBalancersAPIService) ListLoadBalancers(ctx context.Context) ApiListLoadBalancersRequest {
 	return ApiListLoadBalancersRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListLoadBalancers200Response
+//
+//	@return ListLoadBalancers200Response
 func (a *LoadBalancersAPIService) ListLoadBalancersExecute(r ApiListLoadBalancersRequest) (*ListLoadBalancers200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListLoadBalancers200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListLoadBalancers200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoadBalancersAPIService.ListLoadBalancers")
@@ -3816,7 +3835,7 @@ func (a *LoadBalancersAPIService) ListLoadBalancersExecute(r ApiListLoadBalancer
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -3825,8 +3844,8 @@ func (a *LoadBalancersAPIService) ListLoadBalancersExecute(r ApiListLoadBalancer
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -3836,8 +3855,8 @@ func (a *LoadBalancersAPIService) ListLoadBalancersExecute(r ApiListLoadBalancer
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3845,8 +3864,8 @@ func (a *LoadBalancersAPIService) ListLoadBalancersExecute(r ApiListLoadBalancer
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3855,8 +3874,8 @@ func (a *LoadBalancersAPIService) ListLoadBalancersExecute(r ApiListLoadBalancer
 }
 
 type ApiRefreshLoadBalancerRequest struct {
-	ctx context.Context
-	ApiService *LoadBalancersAPIService
+	ctx            context.Context
+	ApiService     *LoadBalancersAPIService
 	loadBalancerId float32
 }
 
@@ -3869,26 +3888,27 @@ RefreshLoadBalancer Refresh a Load Balancer
 
 Will refresh a Load Balancer.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param loadBalancerId Load Balancer ID
- @return ApiRefreshLoadBalancerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param loadBalancerId Load Balancer ID
+	@return ApiRefreshLoadBalancerRequest
 */
 func (a *LoadBalancersAPIService) RefreshLoadBalancer(ctx context.Context, loadBalancerId float32) ApiRefreshLoadBalancerRequest {
 	return ApiRefreshLoadBalancerRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		loadBalancerId: loadBalancerId,
 	}
 }
 
 // Execute executes the request
-//  @return RefreshLoadBalancer200Response
+//
+//	@return RefreshLoadBalancer200Response
 func (a *LoadBalancersAPIService) RefreshLoadBalancerExecute(r ApiRefreshLoadBalancerRequest) (*RefreshLoadBalancer200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *RefreshLoadBalancer200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *RefreshLoadBalancer200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoadBalancersAPIService.RefreshLoadBalancer")
@@ -3939,7 +3959,7 @@ func (a *LoadBalancersAPIService) RefreshLoadBalancerExecute(r ApiRefreshLoadBal
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -3948,8 +3968,8 @@ func (a *LoadBalancersAPIService) RefreshLoadBalancerExecute(r ApiRefreshLoadBal
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -3959,8 +3979,8 @@ func (a *LoadBalancersAPIService) RefreshLoadBalancerExecute(r ApiRefreshLoadBal
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3968,8 +3988,8 @@ func (a *LoadBalancersAPIService) RefreshLoadBalancerExecute(r ApiRefreshLoadBal
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -3978,9 +3998,9 @@ func (a *LoadBalancersAPIService) RefreshLoadBalancerExecute(r ApiRefreshLoadBal
 }
 
 type ApiUpdateLoadBalancerRequest struct {
-	ctx context.Context
-	ApiService *LoadBalancersAPIService
-	loadBalancerId float32
+	ctx                       context.Context
+	ApiService                *LoadBalancersAPIService
+	loadBalancerId            float32
 	updateLoadBalancerRequest *UpdateLoadBalancerRequest
 }
 
@@ -3996,31 +4016,31 @@ func (r ApiUpdateLoadBalancerRequest) Execute() (*CreateLoadBalancer200Response,
 /*
 UpdateLoadBalancer Update a Load Balancer
 
-Available for NSX load balancers only
+# Available for NSX load balancers only
 
 Use this command to update an existing load balancer.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param loadBalancerId Load Balancer ID
- @return ApiUpdateLoadBalancerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param loadBalancerId Load Balancer ID
+	@return ApiUpdateLoadBalancerRequest
 */
 func (a *LoadBalancersAPIService) UpdateLoadBalancer(ctx context.Context, loadBalancerId float32) ApiUpdateLoadBalancerRequest {
 	return ApiUpdateLoadBalancerRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		loadBalancerId: loadBalancerId,
 	}
 }
 
 // Execute executes the request
-//  @return CreateLoadBalancer200Response
+//
+//	@return CreateLoadBalancer200Response
 func (a *LoadBalancersAPIService) UpdateLoadBalancerExecute(r ApiUpdateLoadBalancerRequest) (*CreateLoadBalancer200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CreateLoadBalancer200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CreateLoadBalancer200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoadBalancersAPIService.UpdateLoadBalancer")
@@ -4073,7 +4093,7 @@ func (a *LoadBalancersAPIService) UpdateLoadBalancerExecute(r ApiUpdateLoadBalan
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -4082,8 +4102,8 @@ func (a *LoadBalancersAPIService) UpdateLoadBalancerExecute(r ApiUpdateLoadBalan
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -4093,8 +4113,8 @@ func (a *LoadBalancersAPIService) UpdateLoadBalancerExecute(r ApiUpdateLoadBalan
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4102,8 +4122,8 @@ func (a *LoadBalancersAPIService) UpdateLoadBalancerExecute(r ApiUpdateLoadBalan
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4112,10 +4132,10 @@ func (a *LoadBalancersAPIService) UpdateLoadBalancerExecute(r ApiUpdateLoadBalan
 }
 
 type ApiUpdateLoadBalancerMonitorRequest struct {
-	ctx context.Context
-	ApiService *LoadBalancersAPIService
-	loadBalancerId float32
-	id int64
+	ctx                              context.Context
+	ApiService                       *LoadBalancersAPIService
+	loadBalancerId                   float32
+	id                               int64
 	createLoadBalancerMonitorRequest *CreateLoadBalancerMonitorRequest
 }
 
@@ -4135,29 +4155,29 @@ Use this command to update an existing load balancer monitor.
 
 This endpoint allows updating a Load Balancer Monitor. Configuration options vary by Load Balancer Type.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param loadBalancerId Load Balancer ID
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateLoadBalancerMonitorRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param loadBalancerId Load Balancer ID
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateLoadBalancerMonitorRequest
 */
 func (a *LoadBalancersAPIService) UpdateLoadBalancerMonitor(ctx context.Context, loadBalancerId float32, id int64) ApiUpdateLoadBalancerMonitorRequest {
 	return ApiUpdateLoadBalancerMonitorRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		loadBalancerId: loadBalancerId,
-		id: id,
+		id:             id,
 	}
 }
 
 // Execute executes the request
-//  @return CreateLoadBalancerMonitor200Response
+//
+//	@return CreateLoadBalancerMonitor200Response
 func (a *LoadBalancersAPIService) UpdateLoadBalancerMonitorExecute(r ApiUpdateLoadBalancerMonitorRequest) (*CreateLoadBalancerMonitor200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CreateLoadBalancerMonitor200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CreateLoadBalancerMonitor200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoadBalancersAPIService.UpdateLoadBalancerMonitor")
@@ -4211,7 +4231,7 @@ func (a *LoadBalancersAPIService) UpdateLoadBalancerMonitorExecute(r ApiUpdateLo
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -4220,8 +4240,8 @@ func (a *LoadBalancersAPIService) UpdateLoadBalancerMonitorExecute(r ApiUpdateLo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -4231,8 +4251,8 @@ func (a *LoadBalancersAPIService) UpdateLoadBalancerMonitorExecute(r ApiUpdateLo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4240,8 +4260,8 @@ func (a *LoadBalancersAPIService) UpdateLoadBalancerMonitorExecute(r ApiUpdateLo
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4250,10 +4270,10 @@ func (a *LoadBalancersAPIService) UpdateLoadBalancerMonitorExecute(r ApiUpdateLo
 }
 
 type ApiUpdateLoadBalancerPoolRequest struct {
-	ctx context.Context
-	ApiService *LoadBalancersAPIService
-	loadBalancerId float32
-	id int64
+	ctx                           context.Context
+	ApiService                    *LoadBalancersAPIService
+	loadBalancerId                float32
+	id                            int64
 	createLoadBalancerPoolRequest *CreateLoadBalancerPoolRequest
 }
 
@@ -4271,28 +4291,29 @@ UpdateLoadBalancerPool Update a Load Balancer Pool
 
 Use this command to update an existing load balancer pool.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param loadBalancerId Load Balancer ID
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateLoadBalancerPoolRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param loadBalancerId Load Balancer ID
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateLoadBalancerPoolRequest
 */
 func (a *LoadBalancersAPIService) UpdateLoadBalancerPool(ctx context.Context, loadBalancerId float32, id int64) ApiUpdateLoadBalancerPoolRequest {
 	return ApiUpdateLoadBalancerPoolRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		loadBalancerId: loadBalancerId,
-		id: id,
+		id:             id,
 	}
 }
 
 // Execute executes the request
-//  @return CreateLoadBalancerPool200Response
+//
+//	@return CreateLoadBalancerPool200Response
 func (a *LoadBalancersAPIService) UpdateLoadBalancerPoolExecute(r ApiUpdateLoadBalancerPoolRequest) (*CreateLoadBalancerPool200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CreateLoadBalancerPool200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CreateLoadBalancerPool200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoadBalancersAPIService.UpdateLoadBalancerPool")
@@ -4346,7 +4367,7 @@ func (a *LoadBalancersAPIService) UpdateLoadBalancerPoolExecute(r ApiUpdateLoadB
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -4355,8 +4376,8 @@ func (a *LoadBalancersAPIService) UpdateLoadBalancerPoolExecute(r ApiUpdateLoadB
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -4366,8 +4387,8 @@ func (a *LoadBalancersAPIService) UpdateLoadBalancerPoolExecute(r ApiUpdateLoadB
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4375,8 +4396,8 @@ func (a *LoadBalancersAPIService) UpdateLoadBalancerPoolExecute(r ApiUpdateLoadB
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4385,10 +4406,10 @@ func (a *LoadBalancersAPIService) UpdateLoadBalancerPoolExecute(r ApiUpdateLoadB
 }
 
 type ApiUpdateLoadBalancerPoolNodeRequest struct {
-	ctx context.Context
-	ApiService *LoadBalancersAPIService
-	loadBalancerPoolId float32
-	id int64
+	ctx                               context.Context
+	ApiService                        *LoadBalancersAPIService
+	loadBalancerPoolId                float32
+	id                                int64
 	createLoadBalancerPoolNodeRequest *CreateLoadBalancerPoolNodeRequest
 }
 
@@ -4406,28 +4427,29 @@ UpdateLoadBalancerPoolNode Update a Load Balancer Pool Node
 
 Use this command to update an existing load balancer pool node.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param loadBalancerPoolId Load Balancer Pool ID
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateLoadBalancerPoolNodeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param loadBalancerPoolId Load Balancer Pool ID
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateLoadBalancerPoolNodeRequest
 */
 func (a *LoadBalancersAPIService) UpdateLoadBalancerPoolNode(ctx context.Context, loadBalancerPoolId float32, id int64) ApiUpdateLoadBalancerPoolNodeRequest {
 	return ApiUpdateLoadBalancerPoolNodeRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:         a,
+		ctx:                ctx,
 		loadBalancerPoolId: loadBalancerPoolId,
-		id: id,
+		id:                 id,
 	}
 }
 
 // Execute executes the request
-//  @return CreateLoadBalancerPoolNode200Response
+//
+//	@return CreateLoadBalancerPoolNode200Response
 func (a *LoadBalancersAPIService) UpdateLoadBalancerPoolNodeExecute(r ApiUpdateLoadBalancerPoolNodeRequest) (*CreateLoadBalancerPoolNode200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CreateLoadBalancerPoolNode200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CreateLoadBalancerPoolNode200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoadBalancersAPIService.UpdateLoadBalancerPoolNode")
@@ -4481,7 +4503,7 @@ func (a *LoadBalancersAPIService) UpdateLoadBalancerPoolNodeExecute(r ApiUpdateL
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -4490,8 +4512,8 @@ func (a *LoadBalancersAPIService) UpdateLoadBalancerPoolNodeExecute(r ApiUpdateL
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -4501,8 +4523,8 @@ func (a *LoadBalancersAPIService) UpdateLoadBalancerPoolNodeExecute(r ApiUpdateL
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4510,8 +4532,8 @@ func (a *LoadBalancersAPIService) UpdateLoadBalancerPoolNodeExecute(r ApiUpdateL
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4520,10 +4542,10 @@ func (a *LoadBalancersAPIService) UpdateLoadBalancerPoolNodeExecute(r ApiUpdateL
 }
 
 type ApiUpdateLoadBalancerProfileRequest struct {
-	ctx context.Context
-	ApiService *LoadBalancersAPIService
-	loadBalancerId float32
-	id int64
+	ctx                              context.Context
+	ApiService                       *LoadBalancersAPIService
+	loadBalancerId                   float32
+	id                               int64
 	createLoadBalancerProfileRequest *CreateLoadBalancerProfileRequest
 }
 
@@ -4541,28 +4563,29 @@ UpdateLoadBalancerProfile Update a Load Balancer Profile
 
 Use this command to update an existing load balancer Profile.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param loadBalancerId Load Balancer ID
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateLoadBalancerProfileRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param loadBalancerId Load Balancer ID
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateLoadBalancerProfileRequest
 */
 func (a *LoadBalancersAPIService) UpdateLoadBalancerProfile(ctx context.Context, loadBalancerId float32, id int64) ApiUpdateLoadBalancerProfileRequest {
 	return ApiUpdateLoadBalancerProfileRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		loadBalancerId: loadBalancerId,
-		id: id,
+		id:             id,
 	}
 }
 
 // Execute executes the request
-//  @return CreateLoadBalancerProfile200Response
+//
+//	@return CreateLoadBalancerProfile200Response
 func (a *LoadBalancersAPIService) UpdateLoadBalancerProfileExecute(r ApiUpdateLoadBalancerProfileRequest) (*CreateLoadBalancerProfile200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CreateLoadBalancerProfile200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CreateLoadBalancerProfile200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoadBalancersAPIService.UpdateLoadBalancerProfile")
@@ -4616,7 +4639,7 @@ func (a *LoadBalancersAPIService) UpdateLoadBalancerProfileExecute(r ApiUpdateLo
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -4625,8 +4648,8 @@ func (a *LoadBalancersAPIService) UpdateLoadBalancerProfileExecute(r ApiUpdateLo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -4636,8 +4659,8 @@ func (a *LoadBalancersAPIService) UpdateLoadBalancerProfileExecute(r ApiUpdateLo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4645,8 +4668,8 @@ func (a *LoadBalancersAPIService) UpdateLoadBalancerProfileExecute(r ApiUpdateLo
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4655,10 +4678,10 @@ func (a *LoadBalancersAPIService) UpdateLoadBalancerProfileExecute(r ApiUpdateLo
 }
 
 type ApiUpdateLoadBalancerVirtualServerRequest struct {
-	ctx context.Context
-	ApiService *LoadBalancersAPIService
-	loadBalancerId float32
-	id int64
+	ctx                                    context.Context
+	ApiService                             *LoadBalancersAPIService
+	loadBalancerId                         float32
+	id                                     int64
 	updateLoadBalancerVirtualServerRequest *UpdateLoadBalancerVirtualServerRequest
 }
 
@@ -4676,28 +4699,29 @@ UpdateLoadBalancerVirtualServer Update a Load Balancer Virtual Server
 
 Use this command to update an existing load balancer virtual server.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param loadBalancerId Load Balancer ID
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateLoadBalancerVirtualServerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param loadBalancerId Load Balancer ID
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateLoadBalancerVirtualServerRequest
 */
 func (a *LoadBalancersAPIService) UpdateLoadBalancerVirtualServer(ctx context.Context, loadBalancerId float32, id int64) ApiUpdateLoadBalancerVirtualServerRequest {
 	return ApiUpdateLoadBalancerVirtualServerRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		loadBalancerId: loadBalancerId,
-		id: id,
+		id:             id,
 	}
 }
 
 // Execute executes the request
-//  @return CreateLoadBalancerVirtualServer200Response
+//
+//	@return CreateLoadBalancerVirtualServer200Response
 func (a *LoadBalancersAPIService) UpdateLoadBalancerVirtualServerExecute(r ApiUpdateLoadBalancerVirtualServerRequest) (*CreateLoadBalancerVirtualServer200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CreateLoadBalancerVirtualServer200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CreateLoadBalancerVirtualServer200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoadBalancersAPIService.UpdateLoadBalancerVirtualServer")
@@ -4751,7 +4775,7 @@ func (a *LoadBalancersAPIService) UpdateLoadBalancerVirtualServerExecute(r ApiUp
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -4760,8 +4784,8 @@ func (a *LoadBalancersAPIService) UpdateLoadBalancerVirtualServerExecute(r ApiUp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -4771,8 +4795,8 @@ func (a *LoadBalancersAPIService) UpdateLoadBalancerVirtualServerExecute(r ApiUp
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -4780,8 +4804,8 @@ func (a *LoadBalancersAPIService) UpdateLoadBalancerVirtualServerExecute(r ApiUp
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

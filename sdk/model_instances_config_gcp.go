@@ -31,8 +31,8 @@ type InstancesConfigGCP struct {
 	// Service Account
 	ServiceAccount *string `json:"serviceAccount,omitempty"`
 	// Access Scope
-	AccessScope *string `json:"accessScope,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AccessScope          *string                `json:"accessScope,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _InstancesConfigGCP InstancesConfigGCP
@@ -251,7 +251,7 @@ func (o *InstancesConfigGCP) SetAccessScope(v string) {
 }
 
 func (o InstancesConfigGCP) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -285,67 +285,8 @@ func (o InstancesConfigGCP) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *InstancesConfigGCP) UnmarshalJSON(data []byte) (err error) {
-	varInstancesConfigGCP := _InstancesConfigGCP{}
-
-	err = json.Unmarshal(data, &varInstancesConfigGCP)
-
-	if err != nil {
-		return err
-	}
-
-	*o = InstancesConfigGCP(varInstancesConfigGCP)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "noAgent")
-		delete(additionalProperties, "googleZoneId")
-		delete(additionalProperties, "externalIpType")
-		delete(additionalProperties, "networkTags")
-		delete(additionalProperties, "serviceAccount")
-		delete(additionalProperties, "accessScope")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableInstancesConfigGCP struct {
-	value *InstancesConfigGCP
-	isSet bool
-}
-
-func (v NullableInstancesConfigGCP) Get() *InstancesConfigGCP {
-	return v.value
-}
-
-func (v *NullableInstancesConfigGCP) Set(val *InstancesConfigGCP) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableInstancesConfigGCP) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableInstancesConfigGCP) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableInstancesConfigGCP(val *InstancesConfigGCP) *NullableInstancesConfigGCP {
-	return &NullableInstancesConfigGCP{value: val, isSet: true}
-}
-
-func (v NullableInstancesConfigGCP) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableInstancesConfigGCP) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

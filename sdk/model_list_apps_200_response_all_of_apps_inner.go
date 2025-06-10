@@ -21,30 +21,30 @@ var _ MappedNullable = &ListApps200ResponseAllOfAppsInner{}
 
 // ListApps200ResponseAllOfAppsInner struct for ListApps200ResponseAllOfAppsInner
 type ListApps200ResponseAllOfAppsInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Labels []string `json:"labels,omitempty"`
-	Environment *string `json:"environment,omitempty"`
-	AccountId *int64 `json:"accountId,omitempty"`
-	Account *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
-	Owner *ListActivity200ResponseAllOfActivityInnerActivityInnerUser `json:"owner,omitempty"`
-	SiteId *int64 `json:"siteId,omitempty"`
-	Group *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"group,omitempty"`
-	Blueprint *ListApps200ResponseAllOfAppsInnerBlueprint `json:"blueprint,omitempty"`
-	Type *string `json:"type,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	RemovalDate *time.Time `json:"removalDate,omitempty"`
-	AppContext *string `json:"appContext,omitempty"`
-	Status *string `json:"status,omitempty"`
-	AppStatus *string `json:"appStatus,omitempty"`
-	InstanceCount *int64 `json:"instanceCount,omitempty"`
-	ContainerCount *int64 `json:"containerCount,omitempty"`
-	AppTiers []map[string]interface{} `json:"appTiers,omitempty"`
-	Instances []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"instances,omitempty"`
-	Stats *ListApps200ResponseAllOfAppsInnerStats `json:"stats,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                   `json:"id,omitempty"`
+	Name                 *string                                                                  `json:"name,omitempty"`
+	Description          *string                                                                  `json:"description,omitempty"`
+	Labels               []string                                                                 `json:"labels,omitempty"`
+	Environment          *string                                                                  `json:"environment,omitempty"`
+	AccountId            *int64                                                                   `json:"accountId,omitempty"`
+	Account              *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner  `json:"account,omitempty"`
+	Owner                *ListActivity200ResponseAllOfActivityInnerActivityInnerUser              `json:"owner,omitempty"`
+	SiteId               *int64                                                                   `json:"siteId,omitempty"`
+	Group                *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner  `json:"group,omitempty"`
+	Blueprint            *ListApps200ResponseAllOfAppsInnerBlueprint                              `json:"blueprint,omitempty"`
+	Type                 *string                                                                  `json:"type,omitempty"`
+	DateCreated          *time.Time                                                               `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                               `json:"lastUpdated,omitempty"`
+	RemovalDate          *time.Time                                                               `json:"removalDate,omitempty"`
+	AppContext           *string                                                                  `json:"appContext,omitempty"`
+	Status               *string                                                                  `json:"status,omitempty"`
+	AppStatus            *string                                                                  `json:"appStatus,omitempty"`
+	InstanceCount        *int64                                                                   `json:"instanceCount,omitempty"`
+	ContainerCount       *int64                                                                   `json:"containerCount,omitempty"`
+	AppTiers             []map[string]interface{}                                                 `json:"appTiers,omitempty"`
+	Instances            []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"instances,omitempty"`
+	Stats                *ListApps200ResponseAllOfAppsInnerStats                                  `json:"stats,omitempty"`
+	AdditionalProperties map[string]interface{}                                                   `json:",remain"`
 }
 
 type _ListApps200ResponseAllOfAppsInner ListApps200ResponseAllOfAppsInner
@@ -803,7 +803,7 @@ func (o *ListApps200ResponseAllOfAppsInner) SetStats(v ListApps200ResponseAllOfA
 }
 
 func (o ListApps200ResponseAllOfAppsInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -888,84 +888,8 @@ func (o ListApps200ResponseAllOfAppsInner) ToMap() (map[string]interface{}, erro
 
 	return toSerialize, nil
 }
-
 func (o *ListApps200ResponseAllOfAppsInner) UnmarshalJSON(data []byte) (err error) {
-	varListApps200ResponseAllOfAppsInner := _ListApps200ResponseAllOfAppsInner{}
-
-	err = json.Unmarshal(data, &varListApps200ResponseAllOfAppsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListApps200ResponseAllOfAppsInner(varListApps200ResponseAllOfAppsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "environment")
-		delete(additionalProperties, "accountId")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "owner")
-		delete(additionalProperties, "siteId")
-		delete(additionalProperties, "group")
-		delete(additionalProperties, "blueprint")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "removalDate")
-		delete(additionalProperties, "appContext")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "appStatus")
-		delete(additionalProperties, "instanceCount")
-		delete(additionalProperties, "containerCount")
-		delete(additionalProperties, "appTiers")
-		delete(additionalProperties, "instances")
-		delete(additionalProperties, "stats")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListApps200ResponseAllOfAppsInner struct {
-	value *ListApps200ResponseAllOfAppsInner
-	isSet bool
-}
-
-func (v NullableListApps200ResponseAllOfAppsInner) Get() *ListApps200ResponseAllOfAppsInner {
-	return v.value
-}
-
-func (v *NullableListApps200ResponseAllOfAppsInner) Set(val *ListApps200ResponseAllOfAppsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListApps200ResponseAllOfAppsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListApps200ResponseAllOfAppsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListApps200ResponseAllOfAppsInner(val *ListApps200ResponseAllOfAppsInner) *NullableListApps200ResponseAllOfAppsInner {
-	return &NullableListApps200ResponseAllOfAppsInner{value: val, isSet: true}
-}
-
-func (v NullableListApps200ResponseAllOfAppsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListApps200ResponseAllOfAppsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

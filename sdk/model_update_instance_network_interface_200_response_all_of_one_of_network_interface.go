@@ -20,43 +20,43 @@ var _ MappedNullable = &UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetwo
 
 // UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface struct for UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface
 type UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface struct {
-	Id *int64 `json:"id,omitempty"`
-	Addresses []map[string]interface{} `json:"addresses,omitempty"`
-	InternalId *string `json:"internalId,omitempty"`
-	InterfaceId *string `json:"interfaceId,omitempty"`
-	DisplayOrder *int64 `json:"displayOrder,omitempty"`
-	NetworkPool map[string]interface{} `json:"networkPool,omitempty"`
-	Dhcp *bool `json:"dhcp,omitempty"`
-	Uuid *string `json:"uuid,omitempty"`
-	Active *bool `json:"active,omitempty"`
-	UniqueId *string `json:"uniqueId,omitempty"`
-	Subnet *string `json:"subnet,omitempty"`
-	ReplaceHostRecord *bool `json:"replaceHostRecord,omitempty"`
-	IpMode *string `json:"ipMode,omitempty"`
-	Version *string `json:"version,omitempty"`
-	IpSubnet *string `json:"ipSubnet,omitempty"`
-	Config *string `json:"config,omitempty"`
-	PublicIpAddress *string `json:"publicIpAddress,omitempty"`
-	FabricId *string `json:"fabricId,omitempty"`
-	Ipv6Subnet *string `json:"ipv6Subnet,omitempty"`
-	MacAddress *string `json:"macAddress,omitempty"`
-	PublicIpv6Address *string `json:"publicIpv6Address,omitempty"`
-	RefType *string `json:"refType,omitempty"`
-	NetworkGroup *string `json:"networkGroup,omitempty"`
-	RefId *string `json:"refId,omitempty"`
-	NetworkDomain *string `json:"networkDomain,omitempty"`
-	Name *string `json:"name,omitempty"`
-	PrimaryInterface *bool `json:"primaryInterface,omitempty"`
-	NetworkPoolIPv6 map[string]interface{} `json:"networkPoolIPv6,omitempty"`
-	Network *GetAlerts200ResponseAllOfChecksInnerAccount `json:"network,omitempty"`
-	VlanId *string `json:"vlanId,omitempty"`
-	Type *GetAlerts200ResponseAllOfChecksInnerAccount `json:"type,omitempty"`
-	NetworkPosition *string `json:"networkPosition,omitempty"`
-	PoolAssigned *bool `json:"poolAssigned,omitempty"`
-	Description *string `json:"description,omitempty"`
-	ExternalType *string `json:"externalType,omitempty"`
-	ExternalId *string `json:"externalId,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                       `json:"id,omitempty"`
+	Addresses            []map[string]interface{}                     `json:"addresses,omitempty"`
+	InternalId           *string                                      `json:"internalId,omitempty"`
+	InterfaceId          *string                                      `json:"interfaceId,omitempty"`
+	DisplayOrder         *int64                                       `json:"displayOrder,omitempty"`
+	NetworkPool          map[string]interface{}                       `json:"networkPool,omitempty"`
+	Dhcp                 *bool                                        `json:"dhcp,omitempty"`
+	Uuid                 *string                                      `json:"uuid,omitempty"`
+	Active               *bool                                        `json:"active,omitempty"`
+	UniqueId             *string                                      `json:"uniqueId,omitempty"`
+	Subnet               *string                                      `json:"subnet,omitempty"`
+	ReplaceHostRecord    *bool                                        `json:"replaceHostRecord,omitempty"`
+	IpMode               *string                                      `json:"ipMode,omitempty"`
+	Version              *string                                      `json:"version,omitempty"`
+	IpSubnet             *string                                      `json:"ipSubnet,omitempty"`
+	Config               *string                                      `json:"config,omitempty"`
+	PublicIpAddress      *string                                      `json:"publicIpAddress,omitempty"`
+	FabricId             *string                                      `json:"fabricId,omitempty"`
+	Ipv6Subnet           *string                                      `json:"ipv6Subnet,omitempty"`
+	MacAddress           *string                                      `json:"macAddress,omitempty"`
+	PublicIpv6Address    *string                                      `json:"publicIpv6Address,omitempty"`
+	RefType              *string                                      `json:"refType,omitempty"`
+	NetworkGroup         *string                                      `json:"networkGroup,omitempty"`
+	RefId                *string                                      `json:"refId,omitempty"`
+	NetworkDomain        *string                                      `json:"networkDomain,omitempty"`
+	Name                 *string                                      `json:"name,omitempty"`
+	PrimaryInterface     *bool                                        `json:"primaryInterface,omitempty"`
+	NetworkPoolIPv6      map[string]interface{}                       `json:"networkPoolIPv6,omitempty"`
+	Network              *GetAlerts200ResponseAllOfChecksInnerAccount `json:"network,omitempty"`
+	VlanId               *string                                      `json:"vlanId,omitempty"`
+	Type                 *GetAlerts200ResponseAllOfChecksInnerAccount `json:"type,omitempty"`
+	NetworkPosition      *string                                      `json:"networkPosition,omitempty"`
+	PoolAssigned         *bool                                        `json:"poolAssigned,omitempty"`
+	Description          *string                                      `json:"description,omitempty"`
+	ExternalType         *string                                      `json:"externalType,omitempty"`
+	ExternalId           *string                                      `json:"externalId,omitempty"`
+	AdditionalProperties map[string]interface{}                       `json:",remain"`
 }
 
 type _UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface
@@ -1231,7 +1231,7 @@ func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) Se
 }
 
 func (o UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1355,97 +1355,8 @@ func (o UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) ToM
 
 	return toSerialize, nil
 }
-
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) UnmarshalJSON(data []byte) (err error) {
-	varUpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface := _UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface{}
-
-	err = json.Unmarshal(data, &varUpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface(varUpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "addresses")
-		delete(additionalProperties, "internalId")
-		delete(additionalProperties, "interfaceId")
-		delete(additionalProperties, "displayOrder")
-		delete(additionalProperties, "networkPool")
-		delete(additionalProperties, "dhcp")
-		delete(additionalProperties, "uuid")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "uniqueId")
-		delete(additionalProperties, "subnet")
-		delete(additionalProperties, "replaceHostRecord")
-		delete(additionalProperties, "ipMode")
-		delete(additionalProperties, "version")
-		delete(additionalProperties, "ipSubnet")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "publicIpAddress")
-		delete(additionalProperties, "fabricId")
-		delete(additionalProperties, "ipv6Subnet")
-		delete(additionalProperties, "macAddress")
-		delete(additionalProperties, "publicIpv6Address")
-		delete(additionalProperties, "refType")
-		delete(additionalProperties, "networkGroup")
-		delete(additionalProperties, "refId")
-		delete(additionalProperties, "networkDomain")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "primaryInterface")
-		delete(additionalProperties, "networkPoolIPv6")
-		delete(additionalProperties, "network")
-		delete(additionalProperties, "vlanId")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "networkPosition")
-		delete(additionalProperties, "poolAssigned")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "externalType")
-		delete(additionalProperties, "externalId")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface struct {
-	value *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface
-	isSet bool
-}
-
-func (v NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) Get() *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface {
-	return v.value
-}
-
-func (v *NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) Set(val *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface(val *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) *NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface {
-	return &NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface{value: val, isSet: true}
-}
-
-func (v NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

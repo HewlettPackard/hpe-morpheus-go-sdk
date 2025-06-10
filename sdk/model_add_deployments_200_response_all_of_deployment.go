@@ -21,15 +21,15 @@ var _ MappedNullable = &AddDeployments200ResponseAllOfDeployment{}
 
 // AddDeployments200ResponseAllOfDeployment struct for AddDeployments200ResponseAllOfDeployment
 type AddDeployments200ResponseAllOfDeployment struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	AccountId *int64 `json:"accountId,omitempty"`
-	ExternalId *string `json:"externalId,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	VersionCount *int64 `json:"versionCount,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	Description          *string                `json:"description,omitempty"`
+	AccountId            *int64                 `json:"accountId,omitempty"`
+	ExternalId           *string                `json:"externalId,omitempty"`
+	DateCreated          *time.Time             `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time             `json:"lastUpdated,omitempty"`
+	VersionCount         *int64                 `json:"versionCount,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddDeployments200ResponseAllOfDeployment AddDeployments200ResponseAllOfDeployment
@@ -308,7 +308,7 @@ func (o *AddDeployments200ResponseAllOfDeployment) SetVersionCount(v int64) {
 }
 
 func (o AddDeployments200ResponseAllOfDeployment) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -348,69 +348,8 @@ func (o AddDeployments200ResponseAllOfDeployment) ToMap() (map[string]interface{
 
 	return toSerialize, nil
 }
-
 func (o *AddDeployments200ResponseAllOfDeployment) UnmarshalJSON(data []byte) (err error) {
-	varAddDeployments200ResponseAllOfDeployment := _AddDeployments200ResponseAllOfDeployment{}
-
-	err = json.Unmarshal(data, &varAddDeployments200ResponseAllOfDeployment)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddDeployments200ResponseAllOfDeployment(varAddDeployments200ResponseAllOfDeployment)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "accountId")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "versionCount")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddDeployments200ResponseAllOfDeployment struct {
-	value *AddDeployments200ResponseAllOfDeployment
-	isSet bool
-}
-
-func (v NullableAddDeployments200ResponseAllOfDeployment) Get() *AddDeployments200ResponseAllOfDeployment {
-	return v.value
-}
-
-func (v *NullableAddDeployments200ResponseAllOfDeployment) Set(val *AddDeployments200ResponseAllOfDeployment) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddDeployments200ResponseAllOfDeployment) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddDeployments200ResponseAllOfDeployment) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddDeployments200ResponseAllOfDeployment(val *AddDeployments200ResponseAllOfDeployment) *NullableAddDeployments200ResponseAllOfDeployment {
-	return &NullableAddDeployments200ResponseAllOfDeployment{value: val, isSet: true}
-}
-
-func (v NullableAddDeployments200ResponseAllOfDeployment) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddDeployments200ResponseAllOfDeployment) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

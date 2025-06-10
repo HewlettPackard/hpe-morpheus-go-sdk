@@ -20,9 +20,9 @@ var _ MappedNullable = &UserSettings{}
 
 // UserSettings struct for UserSettings
 type UserSettings struct {
-	User *ListUserSettings200ResponseAllOfUser `json:"user,omitempty"`
-	AccessTokens []ListUserSettings200ResponseAllOfAccessTokensInner `json:"accessTokens,omitempty"`
-	AdditionalProperties map[string]interface{}
+	User                 *ListUserSettings200ResponseAllOfUser               `json:"user,omitempty"`
+	AccessTokens         []ListUserSettings200ResponseAllOfAccessTokensInner `json:"accessTokens,omitempty"`
+	AdditionalProperties map[string]interface{}                              `json:",remain"`
 }
 
 type _UserSettings UserSettings
@@ -109,7 +109,7 @@ func (o *UserSettings) SetAccessTokens(v []ListUserSettings200ResponseAllOfAcces
 }
 
 func (o UserSettings) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o UserSettings) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *UserSettings) UnmarshalJSON(data []byte) (err error) {
-	varUserSettings := _UserSettings{}
-
-	err = json.Unmarshal(data, &varUserSettings)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UserSettings(varUserSettings)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "user")
-		delete(additionalProperties, "accessTokens")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUserSettings struct {
-	value *UserSettings
-	isSet bool
-}
-
-func (v NullableUserSettings) Get() *UserSettings {
-	return v.value
-}
-
-func (v *NullableUserSettings) Set(val *UserSettings) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUserSettings) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUserSettings) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUserSettings(val *UserSettings) *NullableUserSettings {
-	return &NullableUserSettings{value: val, isSet: true}
-}
-
-func (v NullableUserSettings) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUserSettings) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

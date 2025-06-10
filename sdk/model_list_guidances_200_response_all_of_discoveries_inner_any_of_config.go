@@ -20,49 +20,49 @@ var _ MappedNullable = &ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig
 
 // ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig struct for ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig
 type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig struct {
-	Exists *bool `json:"exists,omitempty"`
-	ObjectId *int64 `json:"objectId,omitempty"`
-	CpuTotalTimeCount *float32 `json:"cpuTotalTimeCount,omitempty"`
-	CpuTotalTimeMin *float32 `json:"cpuTotalTimeMin,omitempty"`
-	CpuTotalTimeMax *float32 `json:"cpuTotalTimeMax,omitempty"`
-	CpuTotalTimeAvg *float32 `json:"cpuTotalTimeAvg,omitempty"`
-	CpuTotalTimeSum *float32 `json:"cpuTotalTimeSum,omitempty"`
-	CpuIdleTimeCount *float32 `json:"cpuIdleTimeCount,omitempty"`
-	CpuIdleTimeMin *float32 `json:"cpuIdleTimeMin,omitempty"`
-	CpuIdleTimeMax *float32 `json:"cpuIdleTimeMax,omitempty"`
-	CpuIdleTimeAvg *float32 `json:"cpuIdleTimeAvg,omitempty"`
-	CpuIdleTimeSum *float32 `json:"cpuIdleTimeSum,omitempty"`
-	CpuUsageCount *float32 `json:"cpuUsageCount,omitempty"`
-	CpuUsageMin *float32 `json:"cpuUsageMin,omitempty"`
-	CpuUsageMax *float32 `json:"cpuUsageMax,omitempty"`
-	CpuUsageAvg *float32 `json:"cpuUsageAvg,omitempty"`
-	CpuUsageSum *float32 `json:"cpuUsageSum,omitempty"`
-	MaxMemoryCount *float32 `json:"maxMemoryCount,omitempty"`
-	MaxMemoryMin *float32 `json:"maxMemoryMin,omitempty"`
-	MaxMemoryMax *float32 `json:"maxMemoryMax,omitempty"`
-	MaxMemoryAvg *float32 `json:"maxMemoryAvg,omitempty"`
-	MaxMemorySum *float32 `json:"maxMemorySum,omitempty"`
-	CpuUserTimeCount *float32 `json:"cpuUserTimeCount,omitempty"`
-	CpuUserTimeMin *float32 `json:"cpuUserTimeMin,omitempty"`
-	CpuUserTimeMax *float32 `json:"cpuUserTimeMax,omitempty"`
-	CpuUserTimeAvg *float32 `json:"cpuUserTimeAvg,omitempty"`
-	CpuUserTimeSum *float32 `json:"cpuUserTimeSum,omitempty"`
-	CpuSystemTimeCount *float32 `json:"cpuSystemTimeCount,omitempty"`
-	CpuSystemTimeMin *float32 `json:"cpuSystemTimeMin,omitempty"`
-	CpuSystemTimeMax *float32 `json:"cpuSystemTimeMax,omitempty"`
-	CpuSystemTimeAvg *float32 `json:"cpuSystemTimeAvg,omitempty"`
-	CpuSystemTimeSum *float32 `json:"cpuSystemTimeSum,omitempty"`
-	UsedMemoryCount *float32 `json:"usedMemoryCount,omitempty"`
-	UsedMemoryMin *float32 `json:"usedMemoryMin,omitempty"`
-	UsedMemoryMax *float32 `json:"usedMemoryMax,omitempty"`
-	UsedMemoryAvg *float32 `json:"usedMemoryAvg,omitempty"`
-	UsedMemorySum *float32 `json:"usedMemorySum,omitempty"`
-	FreeMemoryCount *float32 `json:"freeMemoryCount,omitempty"`
-	FreeMemoryMin *float32 `json:"freeMemoryMin,omitempty"`
-	FreeMemoryMax *float32 `json:"freeMemoryMax,omitempty"`
-	FreeMemoryAvg *float32 `json:"freeMemoryAvg,omitempty"`
-	FreeMemorySum *float32 `json:"freeMemorySum,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Exists               *bool                  `json:"exists,omitempty"`
+	ObjectId             *int64                 `json:"objectId,omitempty"`
+	CpuTotalTimeCount    *float32               `json:"cpuTotalTimeCount,omitempty"`
+	CpuTotalTimeMin      *float32               `json:"cpuTotalTimeMin,omitempty"`
+	CpuTotalTimeMax      *float32               `json:"cpuTotalTimeMax,omitempty"`
+	CpuTotalTimeAvg      *float32               `json:"cpuTotalTimeAvg,omitempty"`
+	CpuTotalTimeSum      *float32               `json:"cpuTotalTimeSum,omitempty"`
+	CpuIdleTimeCount     *float32               `json:"cpuIdleTimeCount,omitempty"`
+	CpuIdleTimeMin       *float32               `json:"cpuIdleTimeMin,omitempty"`
+	CpuIdleTimeMax       *float32               `json:"cpuIdleTimeMax,omitempty"`
+	CpuIdleTimeAvg       *float32               `json:"cpuIdleTimeAvg,omitempty"`
+	CpuIdleTimeSum       *float32               `json:"cpuIdleTimeSum,omitempty"`
+	CpuUsageCount        *float32               `json:"cpuUsageCount,omitempty"`
+	CpuUsageMin          *float32               `json:"cpuUsageMin,omitempty"`
+	CpuUsageMax          *float32               `json:"cpuUsageMax,omitempty"`
+	CpuUsageAvg          *float32               `json:"cpuUsageAvg,omitempty"`
+	CpuUsageSum          *float32               `json:"cpuUsageSum,omitempty"`
+	MaxMemoryCount       *float32               `json:"maxMemoryCount,omitempty"`
+	MaxMemoryMin         *float32               `json:"maxMemoryMin,omitempty"`
+	MaxMemoryMax         *float32               `json:"maxMemoryMax,omitempty"`
+	MaxMemoryAvg         *float32               `json:"maxMemoryAvg,omitempty"`
+	MaxMemorySum         *float32               `json:"maxMemorySum,omitempty"`
+	CpuUserTimeCount     *float32               `json:"cpuUserTimeCount,omitempty"`
+	CpuUserTimeMin       *float32               `json:"cpuUserTimeMin,omitempty"`
+	CpuUserTimeMax       *float32               `json:"cpuUserTimeMax,omitempty"`
+	CpuUserTimeAvg       *float32               `json:"cpuUserTimeAvg,omitempty"`
+	CpuUserTimeSum       *float32               `json:"cpuUserTimeSum,omitempty"`
+	CpuSystemTimeCount   *float32               `json:"cpuSystemTimeCount,omitempty"`
+	CpuSystemTimeMin     *float32               `json:"cpuSystemTimeMin,omitempty"`
+	CpuSystemTimeMax     *float32               `json:"cpuSystemTimeMax,omitempty"`
+	CpuSystemTimeAvg     *float32               `json:"cpuSystemTimeAvg,omitempty"`
+	CpuSystemTimeSum     *float32               `json:"cpuSystemTimeSum,omitempty"`
+	UsedMemoryCount      *float32               `json:"usedMemoryCount,omitempty"`
+	UsedMemoryMin        *float32               `json:"usedMemoryMin,omitempty"`
+	UsedMemoryMax        *float32               `json:"usedMemoryMax,omitempty"`
+	UsedMemoryAvg        *float32               `json:"usedMemoryAvg,omitempty"`
+	UsedMemorySum        *float32               `json:"usedMemorySum,omitempty"`
+	FreeMemoryCount      *float32               `json:"freeMemoryCount,omitempty"`
+	FreeMemoryMin        *float32               `json:"freeMemoryMin,omitempty"`
+	FreeMemoryMax        *float32               `json:"freeMemoryMax,omitempty"`
+	FreeMemoryAvg        *float32               `json:"freeMemoryAvg,omitempty"`
+	FreeMemorySum        *float32               `json:"freeMemorySum,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig
@@ -1429,7 +1429,7 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) SetFreeMemory
 }
 
 func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1571,103 +1571,8 @@ func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) ToMap() (map[s
 
 	return toSerialize, nil
 }
-
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnmarshalJSON(data []byte) (err error) {
-	varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig := _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig{}
-
-	err = json.Unmarshal(data, &varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig(varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "exists")
-		delete(additionalProperties, "objectId")
-		delete(additionalProperties, "cpuTotalTimeCount")
-		delete(additionalProperties, "cpuTotalTimeMin")
-		delete(additionalProperties, "cpuTotalTimeMax")
-		delete(additionalProperties, "cpuTotalTimeAvg")
-		delete(additionalProperties, "cpuTotalTimeSum")
-		delete(additionalProperties, "cpuIdleTimeCount")
-		delete(additionalProperties, "cpuIdleTimeMin")
-		delete(additionalProperties, "cpuIdleTimeMax")
-		delete(additionalProperties, "cpuIdleTimeAvg")
-		delete(additionalProperties, "cpuIdleTimeSum")
-		delete(additionalProperties, "cpuUsageCount")
-		delete(additionalProperties, "cpuUsageMin")
-		delete(additionalProperties, "cpuUsageMax")
-		delete(additionalProperties, "cpuUsageAvg")
-		delete(additionalProperties, "cpuUsageSum")
-		delete(additionalProperties, "maxMemoryCount")
-		delete(additionalProperties, "maxMemoryMin")
-		delete(additionalProperties, "maxMemoryMax")
-		delete(additionalProperties, "maxMemoryAvg")
-		delete(additionalProperties, "maxMemorySum")
-		delete(additionalProperties, "cpuUserTimeCount")
-		delete(additionalProperties, "cpuUserTimeMin")
-		delete(additionalProperties, "cpuUserTimeMax")
-		delete(additionalProperties, "cpuUserTimeAvg")
-		delete(additionalProperties, "cpuUserTimeSum")
-		delete(additionalProperties, "cpuSystemTimeCount")
-		delete(additionalProperties, "cpuSystemTimeMin")
-		delete(additionalProperties, "cpuSystemTimeMax")
-		delete(additionalProperties, "cpuSystemTimeAvg")
-		delete(additionalProperties, "cpuSystemTimeSum")
-		delete(additionalProperties, "usedMemoryCount")
-		delete(additionalProperties, "usedMemoryMin")
-		delete(additionalProperties, "usedMemoryMax")
-		delete(additionalProperties, "usedMemoryAvg")
-		delete(additionalProperties, "usedMemorySum")
-		delete(additionalProperties, "freeMemoryCount")
-		delete(additionalProperties, "freeMemoryMin")
-		delete(additionalProperties, "freeMemoryMax")
-		delete(additionalProperties, "freeMemoryAvg")
-		delete(additionalProperties, "freeMemorySum")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig struct {
-	value *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig
-	isSet bool
-}
-
-func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) Get() *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig {
-	return v.value
-}
-
-func (v *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) Set(val *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig(val *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig {
-	return &NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig{value: val, isSet: true}
-}
-
-func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

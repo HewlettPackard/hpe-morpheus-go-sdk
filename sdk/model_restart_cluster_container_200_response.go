@@ -20,9 +20,9 @@ var _ MappedNullable = &RestartClusterContainer200Response{}
 
 // RestartClusterContainer200Response struct for RestartClusterContainer200Response
 type RestartClusterContainer200Response struct {
-	Success *bool `json:"success,omitempty"`
-	Errors map[string]interface{} `json:"errors,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Success              *bool                  `json:"success,omitempty"`
+	Errors               map[string]interface{} `json:"errors,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _RestartClusterContainer200Response RestartClusterContainer200Response
@@ -109,7 +109,7 @@ func (o *RestartClusterContainer200Response) SetErrors(v map[string]interface{})
 }
 
 func (o RestartClusterContainer200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o RestartClusterContainer200Response) ToMap() (map[string]interface{}, err
 
 	return toSerialize, nil
 }
-
 func (o *RestartClusterContainer200Response) UnmarshalJSON(data []byte) (err error) {
-	varRestartClusterContainer200Response := _RestartClusterContainer200Response{}
-
-	err = json.Unmarshal(data, &varRestartClusterContainer200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = RestartClusterContainer200Response(varRestartClusterContainer200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "success")
-		delete(additionalProperties, "errors")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableRestartClusterContainer200Response struct {
-	value *RestartClusterContainer200Response
-	isSet bool
-}
-
-func (v NullableRestartClusterContainer200Response) Get() *RestartClusterContainer200Response {
-	return v.value
-}
-
-func (v *NullableRestartClusterContainer200Response) Set(val *RestartClusterContainer200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableRestartClusterContainer200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableRestartClusterContainer200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableRestartClusterContainer200Response(val *RestartClusterContainer200Response) *NullableRestartClusterContainer200Response {
-	return &NullableRestartClusterContainer200Response{value: val, isSet: true}
-}
-
-func (v NullableRestartClusterContainer200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableRestartClusterContainer200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

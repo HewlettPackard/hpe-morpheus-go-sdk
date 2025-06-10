@@ -21,13 +21,12 @@ import (
 	"strings"
 )
 
-
 // ProvisioningLicensesAPIService ProvisioningLicensesAPI service
 type ProvisioningLicensesAPIService service
 
 type ApiAddProvisioningLicenseRequest struct {
-	ctx context.Context
-	ApiService *ProvisioningLicensesAPIService
+	ctx                           context.Context
+	ApiService                    *ProvisioningLicensesAPIService
 	addProvisioningLicenseRequest *AddProvisioningLicenseRequest
 }
 
@@ -45,24 +44,25 @@ AddProvisioningLicense Create a License
 
 Use this command to create a new license.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddProvisioningLicenseRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddProvisioningLicenseRequest
 */
 func (a *ProvisioningLicensesAPIService) AddProvisioningLicense(ctx context.Context) ApiAddProvisioningLicenseRequest {
 	return ApiAddProvisioningLicenseRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddProvisioningLicense200Response
+//
+//	@return AddProvisioningLicense200Response
 func (a *ProvisioningLicensesAPIService) AddProvisioningLicenseExecute(r ApiAddProvisioningLicenseRequest) (*AddProvisioningLicense200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddProvisioningLicense200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddProvisioningLicense200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProvisioningLicensesAPIService.AddProvisioningLicense")
@@ -114,7 +114,7 @@ func (a *ProvisioningLicensesAPIService) AddProvisioningLicenseExecute(r ApiAddP
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -123,8 +123,8 @@ func (a *ProvisioningLicensesAPIService) AddProvisioningLicenseExecute(r ApiAddP
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -134,8 +134,8 @@ func (a *ProvisioningLicensesAPIService) AddProvisioningLicenseExecute(r ApiAddP
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -143,8 +143,8 @@ func (a *ProvisioningLicensesAPIService) AddProvisioningLicenseExecute(r ApiAddP
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -153,9 +153,9 @@ func (a *ProvisioningLicensesAPIService) AddProvisioningLicenseExecute(r ApiAddP
 }
 
 type ApiGetProvisioningLicenseRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ProvisioningLicensesAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetProvisioningLicenseRequest) Execute() (*GetProvisioningLicense200Response, *http.Response, error) {
@@ -167,26 +167,27 @@ GetProvisioningLicense Get a Specific License
 
 This endpoint retrieves a specific license.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetProvisioningLicenseRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetProvisioningLicenseRequest
 */
 func (a *ProvisioningLicensesAPIService) GetProvisioningLicense(ctx context.Context, id int64) ApiGetProvisioningLicenseRequest {
 	return ApiGetProvisioningLicenseRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetProvisioningLicense200Response
+//
+//	@return GetProvisioningLicense200Response
 func (a *ProvisioningLicensesAPIService) GetProvisioningLicenseExecute(r ApiGetProvisioningLicenseRequest) (*GetProvisioningLicense200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetProvisioningLicense200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetProvisioningLicense200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProvisioningLicensesAPIService.GetProvisioningLicense")
@@ -237,7 +238,7 @@ func (a *ProvisioningLicensesAPIService) GetProvisioningLicenseExecute(r ApiGetP
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -246,8 +247,8 @@ func (a *ProvisioningLicensesAPIService) GetProvisioningLicenseExecute(r ApiGetP
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -257,8 +258,8 @@ func (a *ProvisioningLicensesAPIService) GetProvisioningLicenseExecute(r ApiGetP
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -266,8 +267,8 @@ func (a *ProvisioningLicensesAPIService) GetProvisioningLicenseExecute(r ApiGetP
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -276,9 +277,9 @@ func (a *ProvisioningLicensesAPIService) GetProvisioningLicenseExecute(r ApiGetP
 }
 
 type ApiGetProvisioningLicenseReservationsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ProvisioningLicensesAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetProvisioningLicenseReservationsRequest) Execute() (*GetProvisioningLicenseReservations200Response, *http.Response, error) {
@@ -290,26 +291,27 @@ GetProvisioningLicenseReservations Get Reservations for Specific License
 
 This endpoint retrieves all reservations for a specific license. Each time a license is applied to a new server, a reservation is created, reducing the available copies for the license.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetProvisioningLicenseReservationsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetProvisioningLicenseReservationsRequest
 */
 func (a *ProvisioningLicensesAPIService) GetProvisioningLicenseReservations(ctx context.Context, id int64) ApiGetProvisioningLicenseReservationsRequest {
 	return ApiGetProvisioningLicenseReservationsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetProvisioningLicenseReservations200Response
+//
+//	@return GetProvisioningLicenseReservations200Response
 func (a *ProvisioningLicensesAPIService) GetProvisioningLicenseReservationsExecute(r ApiGetProvisioningLicenseReservationsRequest) (*GetProvisioningLicenseReservations200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetProvisioningLicenseReservations200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetProvisioningLicenseReservations200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProvisioningLicensesAPIService.GetProvisioningLicenseReservations")
@@ -360,7 +362,7 @@ func (a *ProvisioningLicensesAPIService) GetProvisioningLicenseReservationsExecu
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -369,8 +371,8 @@ func (a *ProvisioningLicensesAPIService) GetProvisioningLicenseReservationsExecu
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -380,8 +382,8 @@ func (a *ProvisioningLicensesAPIService) GetProvisioningLicenseReservationsExecu
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -389,8 +391,8 @@ func (a *ProvisioningLicensesAPIService) GetProvisioningLicenseReservationsExecu
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -399,18 +401,18 @@ func (a *ProvisioningLicensesAPIService) GetProvisioningLicenseReservationsExecu
 }
 
 type ApiListProvisioningLicensesRequest struct {
-	ctx context.Context
-	ApiService *ProvisioningLicensesAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	name *string
-	licenseType *string
+	ctx            context.Context
+	ApiService     *ProvisioningLicensesAPIService
+	max            *int64
+	offset         *int64
+	sort           *string
+	direction      *string
+	phrase         *string
+	name           *string
+	licenseType    *string
 	licenseVersion *string
-	orgName *string
-	fullName *string
+	orgName        *string
+	fullName       *string
 }
 
 // Maximum number of records to return
@@ -482,24 +484,25 @@ ListProvisioningLicenses Get All Licenses
 
 This endpoint retrieves all licenses.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListProvisioningLicensesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListProvisioningLicensesRequest
 */
 func (a *ProvisioningLicensesAPIService) ListProvisioningLicenses(ctx context.Context) ApiListProvisioningLicensesRequest {
 	return ApiListProvisioningLicensesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListProvisioningLicenses200Response
+//
+//	@return ListProvisioningLicenses200Response
 func (a *ProvisioningLicensesAPIService) ListProvisioningLicensesExecute(r ApiListProvisioningLicensesRequest) (*ListProvisioningLicenses200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListProvisioningLicenses200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListProvisioningLicenses200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProvisioningLicensesAPIService.ListProvisioningLicenses")
@@ -591,7 +594,7 @@ func (a *ProvisioningLicensesAPIService) ListProvisioningLicensesExecute(r ApiLi
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -600,8 +603,8 @@ func (a *ProvisioningLicensesAPIService) ListProvisioningLicensesExecute(r ApiLi
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -611,8 +614,8 @@ func (a *ProvisioningLicensesAPIService) ListProvisioningLicensesExecute(r ApiLi
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -620,8 +623,8 @@ func (a *ProvisioningLicensesAPIService) ListProvisioningLicensesExecute(r ApiLi
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -630,9 +633,9 @@ func (a *ProvisioningLicensesAPIService) ListProvisioningLicensesExecute(r ApiLi
 }
 
 type ApiRemoveProvisioningLicenseRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ProvisioningLicensesAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiRemoveProvisioningLicenseRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -644,26 +647,27 @@ RemoveProvisioningLicense Delete a License
 
 Will delete a license.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiRemoveProvisioningLicenseRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiRemoveProvisioningLicenseRequest
 */
 func (a *ProvisioningLicensesAPIService) RemoveProvisioningLicense(ctx context.Context, id int64) ApiRemoveProvisioningLicenseRequest {
 	return ApiRemoveProvisioningLicenseRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *ProvisioningLicensesAPIService) RemoveProvisioningLicenseExecute(r ApiRemoveProvisioningLicenseRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProvisioningLicensesAPIService.RemoveProvisioningLicense")
@@ -714,7 +718,7 @@ func (a *ProvisioningLicensesAPIService) RemoveProvisioningLicenseExecute(r ApiR
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -723,8 +727,8 @@ func (a *ProvisioningLicensesAPIService) RemoveProvisioningLicenseExecute(r ApiR
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -734,8 +738,8 @@ func (a *ProvisioningLicensesAPIService) RemoveProvisioningLicenseExecute(r ApiR
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -743,8 +747,8 @@ func (a *ProvisioningLicensesAPIService) RemoveProvisioningLicenseExecute(r ApiR
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -753,9 +757,9 @@ func (a *ProvisioningLicensesAPIService) RemoveProvisioningLicenseExecute(r ApiR
 }
 
 type ApiUpdateProvisioningLicenseRequest struct {
-	ctx context.Context
-	ApiService *ProvisioningLicensesAPIService
-	id int64
+	ctx                              context.Context
+	ApiService                       *ProvisioningLicensesAPIService
+	id                               int64
 	updateProvisioningLicenseRequest *UpdateProvisioningLicenseRequest
 }
 
@@ -773,26 +777,27 @@ UpdateProvisioningLicense Update a License
 
 Use this command to update an existing license.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateProvisioningLicenseRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateProvisioningLicenseRequest
 */
 func (a *ProvisioningLicensesAPIService) UpdateProvisioningLicense(ctx context.Context, id int64) ApiUpdateProvisioningLicenseRequest {
 	return ApiUpdateProvisioningLicenseRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddProvisioningLicense200Response
+//
+//	@return AddProvisioningLicense200Response
 func (a *ProvisioningLicensesAPIService) UpdateProvisioningLicenseExecute(r ApiUpdateProvisioningLicenseRequest) (*AddProvisioningLicense200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddProvisioningLicense200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddProvisioningLicense200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProvisioningLicensesAPIService.UpdateProvisioningLicense")
@@ -845,7 +850,7 @@ func (a *ProvisioningLicensesAPIService) UpdateProvisioningLicenseExecute(r ApiU
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -854,8 +859,8 @@ func (a *ProvisioningLicensesAPIService) UpdateProvisioningLicenseExecute(r ApiU
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -865,8 +870,8 @@ func (a *ProvisioningLicensesAPIService) UpdateProvisioningLicenseExecute(r ApiU
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -874,8 +879,8 @@ func (a *ProvisioningLicensesAPIService) UpdateProvisioningLicenseExecute(r ApiU
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

@@ -47,8 +47,8 @@ type InstanceTypeUpdate struct {
 	// Array of price set objects
 	PriceSets []AddInstanceTypeRequestInstanceTypePriceSetsInner `json:"priceSets,omitempty"`
 	// Array of instance type option type IDs
-	OptionTypes []int64 `json:"optionTypes,omitempty"`
-	AdditionalProperties map[string]interface{}
+	OptionTypes          []int64                `json:"optionTypes,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _InstanceTypeUpdate InstanceTypeUpdate
@@ -523,7 +523,7 @@ func (o *InstanceTypeUpdate) SetOptionTypes(v []int64) {
 }
 
 func (o InstanceTypeUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -581,75 +581,8 @@ func (o InstanceTypeUpdate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *InstanceTypeUpdate) UnmarshalJSON(data []byte) (err error) {
-	varInstanceTypeUpdate := _InstanceTypeUpdate{}
-
-	err = json.Unmarshal(data, &varInstanceTypeUpdate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = InstanceTypeUpdate(varInstanceTypeUpdate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "featured")
-		delete(additionalProperties, "hasSettings")
-		delete(additionalProperties, "hasAutoScale")
-		delete(additionalProperties, "hasDeployment")
-		delete(additionalProperties, "environmentPrefix")
-		delete(additionalProperties, "environmentVariables")
-		delete(additionalProperties, "priceSets")
-		delete(additionalProperties, "optionTypes")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableInstanceTypeUpdate struct {
-	value *InstanceTypeUpdate
-	isSet bool
-}
-
-func (v NullableInstanceTypeUpdate) Get() *InstanceTypeUpdate {
-	return v.value
-}
-
-func (v *NullableInstanceTypeUpdate) Set(val *InstanceTypeUpdate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableInstanceTypeUpdate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableInstanceTypeUpdate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableInstanceTypeUpdate(val *InstanceTypeUpdate) *NullableInstanceTypeUpdate {
-	return &NullableInstanceTypeUpdate{value: val, isSet: true}
-}
-
-func (v NullableInstanceTypeUpdate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableInstanceTypeUpdate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

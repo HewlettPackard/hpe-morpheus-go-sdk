@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the ScriptCreate type satisfies the MappedNullable interface at compile time
@@ -38,8 +37,8 @@ type ScriptCreate struct {
 	// Run as a specific user.
 	RunAsUser *string `json:"runAsUser,omitempty"`
 	// Sudo, whether or not to run with sudo.
-	SudoUser *bool `json:"sudoUser,omitempty"`
-	AdditionalProperties map[string]interface{}
+	SudoUser             *bool                  `json:"sudoUser,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ScriptCreate ScriptCreate
@@ -355,7 +354,7 @@ func (o *ScriptCreate) SetSudoUser(v bool) {
 }
 
 func (o ScriptCreate) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -396,91 +395,8 @@ func (o ScriptCreate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ScriptCreate) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varScriptCreate := _ScriptCreate{}
-
-	err = json.Unmarshal(data, &varScriptCreate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ScriptCreate(varScriptCreate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "scriptVersion")
-		delete(additionalProperties, "scriptPhase")
-		delete(additionalProperties, "scriptType")
-		delete(additionalProperties, "script")
-		delete(additionalProperties, "runAsUser")
-		delete(additionalProperties, "sudoUser")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableScriptCreate struct {
-	value *ScriptCreate
-	isSet bool
-}
-
-func (v NullableScriptCreate) Get() *ScriptCreate {
-	return v.value
-}
-
-func (v *NullableScriptCreate) Set(val *ScriptCreate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableScriptCreate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableScriptCreate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableScriptCreate(val *ScriptCreate) *NullableScriptCreate {
-	return &NullableScriptCreate{value: val, isSet: true}
-}
-
-func (v NullableScriptCreate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableScriptCreate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

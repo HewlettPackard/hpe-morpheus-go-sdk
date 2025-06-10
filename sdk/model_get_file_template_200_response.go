@@ -20,8 +20,8 @@ var _ MappedNullable = &GetFileTemplate200Response{}
 
 // GetFileTemplate200Response struct for GetFileTemplate200Response
 type GetFileTemplate200Response struct {
-	ContainerTemplate *ListFileTemplates200ResponseAllOfContainerTemplatesInner `json:"containerTemplate,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ContainerTemplate    *ListFileTemplates200ResponseAllOfContainerTemplatesInner `json:"containerTemplate,omitempty"`
+	AdditionalProperties map[string]interface{}                                    `json:",remain"`
 }
 
 type _GetFileTemplate200Response GetFileTemplate200Response
@@ -76,7 +76,7 @@ func (o *GetFileTemplate200Response) SetContainerTemplate(v ListFileTemplates200
 }
 
 func (o GetFileTemplate200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o GetFileTemplate200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *GetFileTemplate200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetFileTemplate200Response := _GetFileTemplate200Response{}
-
-	err = json.Unmarshal(data, &varGetFileTemplate200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetFileTemplate200Response(varGetFileTemplate200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "containerTemplate")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetFileTemplate200Response struct {
-	value *GetFileTemplate200Response
-	isSet bool
-}
-
-func (v NullableGetFileTemplate200Response) Get() *GetFileTemplate200Response {
-	return v.value
-}
-
-func (v *NullableGetFileTemplate200Response) Set(val *GetFileTemplate200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetFileTemplate200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetFileTemplate200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetFileTemplate200Response(val *GetFileTemplate200Response) *NullableGetFileTemplate200Response {
-	return &NullableGetFileTemplate200Response{value: val, isSet: true}
-}
-
-func (v NullableGetFileTemplate200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetFileTemplate200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

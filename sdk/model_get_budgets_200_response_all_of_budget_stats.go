@@ -20,11 +20,11 @@ var _ MappedNullable = &GetBudgets200ResponseAllOfBudgetStats{}
 
 // GetBudgets200ResponseAllOfBudgetStats struct for GetBudgets200ResponseAllOfBudgetStats
 type GetBudgets200ResponseAllOfBudgetStats struct {
-	Currency *string `json:"currency,omitempty"`
-	ConversionRate *int64 `json:"conversionRate,omitempty"`
-	Intervals []GetBudgets200ResponseAllOfBudgetStatsIntervalsInner `json:"intervals,omitempty"`
-	Current *GetBudgets200ResponseAllOfBudgetStatsCurrent `json:"current,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Currency             *string                                               `json:"currency,omitempty"`
+	ConversionRate       *int64                                                `json:"conversionRate,omitempty"`
+	Intervals            []GetBudgets200ResponseAllOfBudgetStatsIntervalsInner `json:"intervals,omitempty"`
+	Current              *GetBudgets200ResponseAllOfBudgetStatsCurrent         `json:"current,omitempty"`
+	AdditionalProperties map[string]interface{}                                `json:",remain"`
 }
 
 type _GetBudgets200ResponseAllOfBudgetStats GetBudgets200ResponseAllOfBudgetStats
@@ -175,7 +175,7 @@ func (o *GetBudgets200ResponseAllOfBudgetStats) SetCurrent(v GetBudgets200Respon
 }
 
 func (o GetBudgets200ResponseAllOfBudgetStats) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -203,65 +203,8 @@ func (o GetBudgets200ResponseAllOfBudgetStats) ToMap() (map[string]interface{}, 
 
 	return toSerialize, nil
 }
-
 func (o *GetBudgets200ResponseAllOfBudgetStats) UnmarshalJSON(data []byte) (err error) {
-	varGetBudgets200ResponseAllOfBudgetStats := _GetBudgets200ResponseAllOfBudgetStats{}
-
-	err = json.Unmarshal(data, &varGetBudgets200ResponseAllOfBudgetStats)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetBudgets200ResponseAllOfBudgetStats(varGetBudgets200ResponseAllOfBudgetStats)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "currency")
-		delete(additionalProperties, "conversionRate")
-		delete(additionalProperties, "intervals")
-		delete(additionalProperties, "current")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetBudgets200ResponseAllOfBudgetStats struct {
-	value *GetBudgets200ResponseAllOfBudgetStats
-	isSet bool
-}
-
-func (v NullableGetBudgets200ResponseAllOfBudgetStats) Get() *GetBudgets200ResponseAllOfBudgetStats {
-	return v.value
-}
-
-func (v *NullableGetBudgets200ResponseAllOfBudgetStats) Set(val *GetBudgets200ResponseAllOfBudgetStats) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetBudgets200ResponseAllOfBudgetStats) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetBudgets200ResponseAllOfBudgetStats) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetBudgets200ResponseAllOfBudgetStats(val *GetBudgets200ResponseAllOfBudgetStats) *NullableGetBudgets200ResponseAllOfBudgetStats {
-	return &NullableGetBudgets200ResponseAllOfBudgetStats{value: val, isSet: true}
-}
-
-func (v NullableGetBudgets200ResponseAllOfBudgetStats) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetBudgets200ResponseAllOfBudgetStats) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

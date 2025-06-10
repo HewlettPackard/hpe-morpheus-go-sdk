@@ -20,12 +20,11 @@ import (
 	"net/url"
 )
 
-
 // ProvisioningSettingsAPIService ProvisioningSettingsAPI service
 type ProvisioningSettingsAPIService service
 
 type ApiListProvisioningSettingsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ProvisioningSettingsAPIService
 }
 
@@ -38,24 +37,25 @@ ListProvisioningSettings Get Provisioning Settings
 
 This endpoint retrieves provisioning settings.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListProvisioningSettingsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListProvisioningSettingsRequest
 */
 func (a *ProvisioningSettingsAPIService) ListProvisioningSettings(ctx context.Context) ApiListProvisioningSettingsRequest {
 	return ApiListProvisioningSettingsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListProvisioningSettings200Response
+//
+//	@return ListProvisioningSettings200Response
 func (a *ProvisioningSettingsAPIService) ListProvisioningSettingsExecute(r ApiListProvisioningSettingsRequest) (*ListProvisioningSettings200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListProvisioningSettings200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListProvisioningSettings200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProvisioningSettingsAPIService.ListProvisioningSettings")
@@ -105,7 +105,7 @@ func (a *ProvisioningSettingsAPIService) ListProvisioningSettingsExecute(r ApiLi
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -114,8 +114,8 @@ func (a *ProvisioningSettingsAPIService) ListProvisioningSettingsExecute(r ApiLi
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -125,8 +125,8 @@ func (a *ProvisioningSettingsAPIService) ListProvisioningSettingsExecute(r ApiLi
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -134,8 +134,8 @@ func (a *ProvisioningSettingsAPIService) ListProvisioningSettingsExecute(r ApiLi
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -144,8 +144,8 @@ func (a *ProvisioningSettingsAPIService) ListProvisioningSettingsExecute(r ApiLi
 }
 
 type ApiUpdateProvisioningSettingsRequest struct {
-	ctx context.Context
-	ApiService *ProvisioningSettingsAPIService
+	ctx                               context.Context
+	ApiService                        *ProvisioningSettingsAPIService
 	updateProvisioningSettingsRequest *UpdateProvisioningSettingsRequest
 }
 
@@ -163,24 +163,25 @@ UpdateProvisioningSettings Update Provisioning Settings
 
 Update Provisioning Settings
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiUpdateProvisioningSettingsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiUpdateProvisioningSettingsRequest
 */
 func (a *ProvisioningSettingsAPIService) UpdateProvisioningSettings(ctx context.Context) ApiUpdateProvisioningSettingsRequest {
 	return ApiUpdateProvisioningSettingsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *ProvisioningSettingsAPIService) UpdateProvisioningSettingsExecute(r ApiUpdateProvisioningSettingsRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProvisioningSettingsAPIService.UpdateProvisioningSettings")
@@ -232,7 +233,7 @@ func (a *ProvisioningSettingsAPIService) UpdateProvisioningSettingsExecute(r Api
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -241,8 +242,8 @@ func (a *ProvisioningSettingsAPIService) UpdateProvisioningSettingsExecute(r Api
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -252,8 +253,8 @@ func (a *ProvisioningSettingsAPIService) UpdateProvisioningSettingsExecute(r Api
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -261,8 +262,8 @@ func (a *ProvisioningSettingsAPIService) UpdateProvisioningSettingsExecute(r Api
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

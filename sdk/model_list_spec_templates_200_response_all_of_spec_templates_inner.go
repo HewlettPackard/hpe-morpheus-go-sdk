@@ -21,23 +21,23 @@ var _ MappedNullable = &ListSpecTemplates200ResponseAllOfSpecTemplatesInner{}
 
 // ListSpecTemplates200ResponseAllOfSpecTemplatesInner struct for ListSpecTemplates200ResponseAllOfSpecTemplatesInner
 type ListSpecTemplates200ResponseAllOfSpecTemplatesInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Account *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Labels []string `json:"labels,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Type *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"type,omitempty"`
-	ExternalId *string `json:"externalId,omitempty"`
-	ExternalType *string `json:"externalType,omitempty"`
-	DeploymentId *string `json:"deploymentId,omitempty"`
-	Status *string `json:"status,omitempty"`
-	File *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile `json:"file,omitempty"`
-	Config map[string]interface{} `json:"config,omitempty"`
-	CreatedBy *string `json:"createdBy,omitempty"`
-	UpdatedBy *string `json:"updatedBy,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                  `json:"id,omitempty"`
+	Account              *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
+	Name                 *string                                                                 `json:"name,omitempty"`
+	Labels               []string                                                                `json:"labels,omitempty"`
+	Code                 *string                                                                 `json:"code,omitempty"`
+	Type                 *ListBackupSettings200ResponseBackupSettingsDefaultSchedule             `json:"type,omitempty"`
+	ExternalId           *string                                                                 `json:"externalId,omitempty"`
+	ExternalType         *string                                                                 `json:"externalType,omitempty"`
+	DeploymentId         *string                                                                 `json:"deploymentId,omitempty"`
+	Status               *string                                                                 `json:"status,omitempty"`
+	File                 *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile   `json:"file,omitempty"`
+	Config               map[string]interface{}                                                  `json:"config,omitempty"`
+	CreatedBy            *string                                                                 `json:"createdBy,omitempty"`
+	UpdatedBy            *string                                                                 `json:"updatedBy,omitempty"`
+	DateCreated          *time.Time                                                              `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                              `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
 }
 
 type _ListSpecTemplates200ResponseAllOfSpecTemplatesInner ListSpecTemplates200ResponseAllOfSpecTemplatesInner
@@ -572,7 +572,7 @@ func (o *ListSpecTemplates200ResponseAllOfSpecTemplatesInner) SetLastUpdated(v t
 }
 
 func (o ListSpecTemplates200ResponseAllOfSpecTemplatesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -636,77 +636,8 @@ func (o ListSpecTemplates200ResponseAllOfSpecTemplatesInner) ToMap() (map[string
 
 	return toSerialize, nil
 }
-
 func (o *ListSpecTemplates200ResponseAllOfSpecTemplatesInner) UnmarshalJSON(data []byte) (err error) {
-	varListSpecTemplates200ResponseAllOfSpecTemplatesInner := _ListSpecTemplates200ResponseAllOfSpecTemplatesInner{}
-
-	err = json.Unmarshal(data, &varListSpecTemplates200ResponseAllOfSpecTemplatesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListSpecTemplates200ResponseAllOfSpecTemplatesInner(varListSpecTemplates200ResponseAllOfSpecTemplatesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "externalType")
-		delete(additionalProperties, "deploymentId")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "file")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "createdBy")
-		delete(additionalProperties, "updatedBy")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListSpecTemplates200ResponseAllOfSpecTemplatesInner struct {
-	value *ListSpecTemplates200ResponseAllOfSpecTemplatesInner
-	isSet bool
-}
-
-func (v NullableListSpecTemplates200ResponseAllOfSpecTemplatesInner) Get() *ListSpecTemplates200ResponseAllOfSpecTemplatesInner {
-	return v.value
-}
-
-func (v *NullableListSpecTemplates200ResponseAllOfSpecTemplatesInner) Set(val *ListSpecTemplates200ResponseAllOfSpecTemplatesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListSpecTemplates200ResponseAllOfSpecTemplatesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListSpecTemplates200ResponseAllOfSpecTemplatesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListSpecTemplates200ResponseAllOfSpecTemplatesInner(val *ListSpecTemplates200ResponseAllOfSpecTemplatesInner) *NullableListSpecTemplates200ResponseAllOfSpecTemplatesInner {
-	return &NullableListSpecTemplates200ResponseAllOfSpecTemplatesInner{value: val, isSet: true}
-}
-
-func (v NullableListSpecTemplates200ResponseAllOfSpecTemplatesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListSpecTemplates200ResponseAllOfSpecTemplatesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

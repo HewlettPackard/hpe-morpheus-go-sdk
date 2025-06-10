@@ -23,14 +23,14 @@ type AddArchiveBucketRequestArchiveBucket struct {
 	// A name for the archive bucket. Must be globally unique.
 	Name *string `json:"name,omitempty"`
 	// A description for the archive bucket
-	Description *string `json:"description,omitempty"`
+	Description     *string                                              `json:"description,omitempty"`
 	StorageProvider *AddArchiveBucketRequestArchiveBucketStorageProvider `json:"storageProvider,omitempty"`
 	// Visibility - Set to public to allow all tenants
 	Visibility *string `json:"visibility,omitempty"`
 	// Public URL - Set to true to allow anonymous access
-	IsPublic *bool `json:"isPublic,omitempty"`
-	Accounts *GetAlerts200ResponseAllOfChecksInnerAccount `json:"accounts,omitempty"`
-	AdditionalProperties map[string]interface{}
+	IsPublic             *bool                                        `json:"isPublic,omitempty"`
+	Accounts             *GetAlerts200ResponseAllOfChecksInnerAccount `json:"accounts,omitempty"`
+	AdditionalProperties map[string]interface{}                       `json:",remain"`
 }
 
 type _AddArchiveBucketRequestArchiveBucket AddArchiveBucketRequestArchiveBucket
@@ -253,7 +253,7 @@ func (o *AddArchiveBucketRequestArchiveBucket) SetAccounts(v GetAlerts200Respons
 }
 
 func (o AddArchiveBucketRequestArchiveBucket) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -287,67 +287,8 @@ func (o AddArchiveBucketRequestArchiveBucket) ToMap() (map[string]interface{}, e
 
 	return toSerialize, nil
 }
-
 func (o *AddArchiveBucketRequestArchiveBucket) UnmarshalJSON(data []byte) (err error) {
-	varAddArchiveBucketRequestArchiveBucket := _AddArchiveBucketRequestArchiveBucket{}
-
-	err = json.Unmarshal(data, &varAddArchiveBucketRequestArchiveBucket)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddArchiveBucketRequestArchiveBucket(varAddArchiveBucketRequestArchiveBucket)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "storageProvider")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "isPublic")
-		delete(additionalProperties, "accounts")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddArchiveBucketRequestArchiveBucket struct {
-	value *AddArchiveBucketRequestArchiveBucket
-	isSet bool
-}
-
-func (v NullableAddArchiveBucketRequestArchiveBucket) Get() *AddArchiveBucketRequestArchiveBucket {
-	return v.value
-}
-
-func (v *NullableAddArchiveBucketRequestArchiveBucket) Set(val *AddArchiveBucketRequestArchiveBucket) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddArchiveBucketRequestArchiveBucket) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddArchiveBucketRequestArchiveBucket) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddArchiveBucketRequestArchiveBucket(val *AddArchiveBucketRequestArchiveBucket) *NullableAddArchiveBucketRequestArchiveBucket {
-	return &NullableAddArchiveBucketRequestArchiveBucket{value: val, isSet: true}
-}
-
-func (v NullableAddArchiveBucketRequestArchiveBucket) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddArchiveBucketRequestArchiveBucket) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

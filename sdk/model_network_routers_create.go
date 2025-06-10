@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the NetworkRoutersCreate type satisfies the MappedNullable interface at compile time
@@ -22,14 +21,14 @@ var _ MappedNullable = &NetworkRoutersCreate{}
 // NetworkRoutersCreate struct for NetworkRoutersCreate
 type NetworkRoutersCreate struct {
 	// Name
-	Name string `json:"name"`
+	Name string                                      `json:"name"`
 	Type CreateNetworkRouterRequestNetworkRouterType `json:"type"`
 	Site CreateNetworkRouterRequestNetworkRouterSite `json:"site"`
 	// Can be used to enable / disable the network router (true, false). Default is on
-	Enabled *bool `json:"enabled,omitempty"`
-	Zone *CreateNetworkRouterRequestNetworkRouterZone `json:"zone,omitempty"`
-	NetworkServer *CreateNetworkRouterRequestNetworkRouterNetworkServer `json:"networkServer,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Enabled              *bool                                                 `json:"enabled,omitempty"`
+	Zone                 *CreateNetworkRouterRequestNetworkRouterZone          `json:"zone,omitempty"`
+	NetworkServer        *CreateNetworkRouterRequestNetworkRouterNetworkServer `json:"networkServer,omitempty"`
+	AdditionalProperties map[string]interface{}                                `json:",remain"`
 }
 
 type _NetworkRoutersCreate NetworkRoutersCreate
@@ -223,7 +222,7 @@ func (o *NetworkRoutersCreate) SetNetworkServer(v CreateNetworkRouterRequestNetw
 }
 
 func (o NetworkRoutersCreate) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -251,90 +250,8 @@ func (o NetworkRoutersCreate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *NetworkRoutersCreate) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-		"type",
-		"site",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varNetworkRoutersCreate := _NetworkRoutersCreate{}
-
-	err = json.Unmarshal(data, &varNetworkRoutersCreate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = NetworkRoutersCreate(varNetworkRoutersCreate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "site")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "zone")
-		delete(additionalProperties, "networkServer")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableNetworkRoutersCreate struct {
-	value *NetworkRoutersCreate
-	isSet bool
-}
-
-func (v NullableNetworkRoutersCreate) Get() *NetworkRoutersCreate {
-	return v.value
-}
-
-func (v *NullableNetworkRoutersCreate) Set(val *NetworkRoutersCreate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableNetworkRoutersCreate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableNetworkRoutersCreate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableNetworkRoutersCreate(val *NetworkRoutersCreate) *NullableNetworkRoutersCreate {
-	return &NullableNetworkRoutersCreate{value: val, isSet: true}
-}
-
-func (v NullableNetworkRoutersCreate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableNetworkRoutersCreate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

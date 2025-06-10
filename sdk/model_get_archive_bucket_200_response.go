@@ -20,12 +20,12 @@ var _ MappedNullable = &GetArchiveBucket200Response{}
 
 // GetArchiveBucket200Response struct for GetArchiveBucket200Response
 type GetArchiveBucket200Response struct {
-	ArchiveBucket *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner `json:"archiveBucket,omitempty"`
-	IsOwner *bool `json:"isOwner,omitempty"`
-	ParentDirectory *string `json:"parentDirectory,omitempty"`
-	ArchiveFiles []GetArchiveBucket200ResponseArchiveFilesInner `json:"archiveFiles,omitempty"`
-	ArchiveFileCount *int64 `json:"archiveFileCount,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ArchiveBucket        *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner `json:"archiveBucket,omitempty"`
+	IsOwner              *bool                                                  `json:"isOwner,omitempty"`
+	ParentDirectory      *string                                                `json:"parentDirectory,omitempty"`
+	ArchiveFiles         []GetArchiveBucket200ResponseArchiveFilesInner         `json:"archiveFiles,omitempty"`
+	ArchiveFileCount     *int64                                                 `json:"archiveFileCount,omitempty"`
+	AdditionalProperties map[string]interface{}                                 `json:",remain"`
 }
 
 type _GetArchiveBucket200Response GetArchiveBucket200Response
@@ -208,7 +208,7 @@ func (o *GetArchiveBucket200Response) SetArchiveFileCount(v int64) {
 }
 
 func (o GetArchiveBucket200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -239,66 +239,8 @@ func (o GetArchiveBucket200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *GetArchiveBucket200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetArchiveBucket200Response := _GetArchiveBucket200Response{}
-
-	err = json.Unmarshal(data, &varGetArchiveBucket200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetArchiveBucket200Response(varGetArchiveBucket200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "archiveBucket")
-		delete(additionalProperties, "isOwner")
-		delete(additionalProperties, "parentDirectory")
-		delete(additionalProperties, "archiveFiles")
-		delete(additionalProperties, "archiveFileCount")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetArchiveBucket200Response struct {
-	value *GetArchiveBucket200Response
-	isSet bool
-}
-
-func (v NullableGetArchiveBucket200Response) Get() *GetArchiveBucket200Response {
-	return v.value
-}
-
-func (v *NullableGetArchiveBucket200Response) Set(val *GetArchiveBucket200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetArchiveBucket200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetArchiveBucket200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetArchiveBucket200Response(val *GetArchiveBucket200Response) *NullableGetArchiveBucket200Response {
-	return &NullableGetArchiveBucket200Response{value: val, isSet: true}
-}
-
-func (v NullableGetArchiveBucket200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetArchiveBucket200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

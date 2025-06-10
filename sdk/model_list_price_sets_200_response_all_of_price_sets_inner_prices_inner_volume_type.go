@@ -20,10 +20,10 @@ var _ MappedNullable = &ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVo
 
 // ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType struct for ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType
 type ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType struct {
-	Id *int64 `json:"id,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Name *string `json:"name,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Code                 *string                `json:"code,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType
@@ -142,7 +142,7 @@ func (o *ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType) SetNa
 }
 
 func (o ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -167,64 +167,8 @@ func (o ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType) ToMap(
 
 	return toSerialize, nil
 }
-
 func (o *ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType) UnmarshalJSON(data []byte) (err error) {
-	varListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType := _ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType{}
-
-	err = json.Unmarshal(data, &varListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType(varListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "name")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType struct {
-	value *ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType
-	isSet bool
-}
-
-func (v NullableListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType) Get() *ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType {
-	return v.value
-}
-
-func (v *NullableListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType) Set(val *ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType(val *ListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType) *NullableListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType {
-	return &NullableListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType{value: val, isSet: true}
-}
-
-func (v NullableListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListPriceSets200ResponseAllOfPriceSetsInnerPricesInnerVolumeType) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

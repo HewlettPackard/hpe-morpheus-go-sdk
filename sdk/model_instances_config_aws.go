@@ -33,8 +33,8 @@ type InstancesConfigAWS struct {
 	// IAM Profile
 	InstanceProfile *string `json:"instanceProfile,omitempty"`
 	// KMS Key ID
-	KmsKeyId *string `json:"kmsKeyId,omitempty"`
-	AdditionalProperties map[string]interface{}
+	KmsKeyId             *string                `json:"kmsKeyId,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _InstancesConfigAWS InstancesConfigAWS
@@ -289,7 +289,7 @@ func (o *InstancesConfigAWS) SetKmsKeyId(v string) {
 }
 
 func (o InstancesConfigAWS) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -326,68 +326,8 @@ func (o InstancesConfigAWS) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *InstancesConfigAWS) UnmarshalJSON(data []byte) (err error) {
-	varInstancesConfigAWS := _InstancesConfigAWS{}
-
-	err = json.Unmarshal(data, &varInstancesConfigAWS)
-
-	if err != nil {
-		return err
-	}
-
-	*o = InstancesConfigAWS(varInstancesConfigAWS)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "noAgent")
-		delete(additionalProperties, "isEC2")
-		delete(additionalProperties, "availabilityId")
-		delete(additionalProperties, "securityId")
-		delete(additionalProperties, "publicIpType")
-		delete(additionalProperties, "instanceProfile")
-		delete(additionalProperties, "kmsKeyId")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableInstancesConfigAWS struct {
-	value *InstancesConfigAWS
-	isSet bool
-}
-
-func (v NullableInstancesConfigAWS) Get() *InstancesConfigAWS {
-	return v.value
-}
-
-func (v *NullableInstancesConfigAWS) Set(val *InstancesConfigAWS) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableInstancesConfigAWS) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableInstancesConfigAWS) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableInstancesConfigAWS(val *InstancesConfigAWS) *NullableInstancesConfigAWS {
-	return &NullableInstancesConfigAWS{value: val, isSet: true}
-}
-
-func (v NullableInstancesConfigAWS) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableInstancesConfigAWS) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

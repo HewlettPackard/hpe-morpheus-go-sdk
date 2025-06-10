@@ -20,9 +20,9 @@ var _ MappedNullable = &SnapshotsInstance200ResponseSnapshotsInnerZone{}
 
 // SnapshotsInstance200ResponseSnapshotsInnerZone struct for SnapshotsInstance200ResponseSnapshotsInnerZone
 type SnapshotsInstance200ResponseSnapshotsInnerZone struct {
-	Id *int32 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int32                 `json:"id,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _SnapshotsInstance200ResponseSnapshotsInnerZone SnapshotsInstance200ResponseSnapshotsInnerZone
@@ -109,7 +109,7 @@ func (o *SnapshotsInstance200ResponseSnapshotsInnerZone) SetName(v string) {
 }
 
 func (o SnapshotsInstance200ResponseSnapshotsInnerZone) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o SnapshotsInstance200ResponseSnapshotsInnerZone) ToMap() (map[string]inte
 
 	return toSerialize, nil
 }
-
 func (o *SnapshotsInstance200ResponseSnapshotsInnerZone) UnmarshalJSON(data []byte) (err error) {
-	varSnapshotsInstance200ResponseSnapshotsInnerZone := _SnapshotsInstance200ResponseSnapshotsInnerZone{}
-
-	err = json.Unmarshal(data, &varSnapshotsInstance200ResponseSnapshotsInnerZone)
-
-	if err != nil {
-		return err
-	}
-
-	*o = SnapshotsInstance200ResponseSnapshotsInnerZone(varSnapshotsInstance200ResponseSnapshotsInnerZone)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableSnapshotsInstance200ResponseSnapshotsInnerZone struct {
-	value *SnapshotsInstance200ResponseSnapshotsInnerZone
-	isSet bool
-}
-
-func (v NullableSnapshotsInstance200ResponseSnapshotsInnerZone) Get() *SnapshotsInstance200ResponseSnapshotsInnerZone {
-	return v.value
-}
-
-func (v *NullableSnapshotsInstance200ResponseSnapshotsInnerZone) Set(val *SnapshotsInstance200ResponseSnapshotsInnerZone) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSnapshotsInstance200ResponseSnapshotsInnerZone) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSnapshotsInstance200ResponseSnapshotsInnerZone) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSnapshotsInstance200ResponseSnapshotsInnerZone(val *SnapshotsInstance200ResponseSnapshotsInnerZone) *NullableSnapshotsInstance200ResponseSnapshotsInnerZone {
-	return &NullableSnapshotsInstance200ResponseSnapshotsInnerZone{value: val, isSet: true}
-}
-
-func (v NullableSnapshotsInstance200ResponseSnapshotsInnerZone) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSnapshotsInstance200ResponseSnapshotsInnerZone) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

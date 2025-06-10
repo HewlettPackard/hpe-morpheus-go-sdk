@@ -20,8 +20,8 @@ var _ MappedNullable = &Model500Error{}
 
 // Model500Error struct for Model500Error
 type Model500Error struct {
-	Msg *string `json:"msg,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Msg                  *string                `json:"msg,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _Model500Error Model500Error
@@ -76,7 +76,7 @@ func (o *Model500Error) SetMsg(v string) {
 }
 
 func (o Model500Error) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o Model500Error) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *Model500Error) UnmarshalJSON(data []byte) (err error) {
-	varModel500Error := _Model500Error{}
-
-	err = json.Unmarshal(data, &varModel500Error)
-
-	if err != nil {
-		return err
-	}
-
-	*o = Model500Error(varModel500Error)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "msg")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableModel500Error struct {
-	value *Model500Error
-	isSet bool
-}
-
-func (v NullableModel500Error) Get() *Model500Error {
-	return v.value
-}
-
-func (v *NullableModel500Error) Set(val *Model500Error) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableModel500Error) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableModel500Error) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableModel500Error(val *Model500Error) *NullableModel500Error {
-	return &NullableModel500Error{value: val, isSet: true}
-}
-
-func (v NullableModel500Error) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableModel500Error) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

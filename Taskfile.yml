@@ -27,11 +27,16 @@ tasks:
     cmds:
       - npm install @openapitools/openapi-generator-cli -g
       - openapi-generator-cli version-manager set 7.12.0
+  
+  install-goimports:
+    internal: true
+    cmds:
+      - go install golang.org/x/tools/cmd/goimports@latest
 
   # perform tooling installations in parallel
   install-tools:
-    desc: install redocly, openapi-generator
-    deps: [install-redocly, install-openapi-generator]
+    desc: install redocly, openapi-generator, goimports
+    deps: [install-redocly, install-openapi-generator, install-goimports]
 
   generate:
     desc: generate a Go SDK from the local OpenAPI spec
@@ -48,6 +53,7 @@ tasks:
           -c {{.GENERATORCONFIG}}
           {{if .TEMPLATEDIR -}}-t {{.TEMPLATEDIR}} {{end}}
           -o {{.OUTPUTDIR}}
+      - goimports -w .
   
   clone-spec:
     silent: true

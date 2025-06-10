@@ -20,12 +20,12 @@ var _ MappedNullable = &ListAlerts200ResponseAllOfAlertsInnerContactsInner{}
 
 // ListAlerts200ResponseAllOfAlertsInnerContactsInner struct for ListAlerts200ResponseAllOfAlertsInnerContactsInner
 type ListAlerts200ResponseAllOfAlertsInnerContactsInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Method *string `json:"method,omitempty"`
-	Notify *bool `json:"notify,omitempty"`
-	Close *bool `json:"close,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	Method               *string                `json:"method,omitempty"`
+	Notify               *bool                  `json:"notify,omitempty"`
+	Close                *bool                  `json:"close,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListAlerts200ResponseAllOfAlertsInnerContactsInner ListAlerts200ResponseAllOfAlertsInnerContactsInner
@@ -208,7 +208,7 @@ func (o *ListAlerts200ResponseAllOfAlertsInnerContactsInner) SetClose(v bool) {
 }
 
 func (o ListAlerts200ResponseAllOfAlertsInnerContactsInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -239,66 +239,8 @@ func (o ListAlerts200ResponseAllOfAlertsInnerContactsInner) ToMap() (map[string]
 
 	return toSerialize, nil
 }
-
 func (o *ListAlerts200ResponseAllOfAlertsInnerContactsInner) UnmarshalJSON(data []byte) (err error) {
-	varListAlerts200ResponseAllOfAlertsInnerContactsInner := _ListAlerts200ResponseAllOfAlertsInnerContactsInner{}
-
-	err = json.Unmarshal(data, &varListAlerts200ResponseAllOfAlertsInnerContactsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListAlerts200ResponseAllOfAlertsInnerContactsInner(varListAlerts200ResponseAllOfAlertsInnerContactsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "method")
-		delete(additionalProperties, "notify")
-		delete(additionalProperties, "close")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListAlerts200ResponseAllOfAlertsInnerContactsInner struct {
-	value *ListAlerts200ResponseAllOfAlertsInnerContactsInner
-	isSet bool
-}
-
-func (v NullableListAlerts200ResponseAllOfAlertsInnerContactsInner) Get() *ListAlerts200ResponseAllOfAlertsInnerContactsInner {
-	return v.value
-}
-
-func (v *NullableListAlerts200ResponseAllOfAlertsInnerContactsInner) Set(val *ListAlerts200ResponseAllOfAlertsInnerContactsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListAlerts200ResponseAllOfAlertsInnerContactsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListAlerts200ResponseAllOfAlertsInnerContactsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListAlerts200ResponseAllOfAlertsInnerContactsInner(val *ListAlerts200ResponseAllOfAlertsInnerContactsInner) *NullableListAlerts200ResponseAllOfAlertsInnerContactsInner {
-	return &NullableListAlerts200ResponseAllOfAlertsInnerContactsInner{value: val, isSet: true}
-}
-
-func (v NullableListAlerts200ResponseAllOfAlertsInnerContactsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListAlerts200ResponseAllOfAlertsInnerContactsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

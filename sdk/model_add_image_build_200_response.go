@@ -21,14 +21,14 @@ var _ MappedNullable = &AddImageBuild200Response{}
 // AddImageBuild200Response struct for AddImageBuild200Response
 type AddImageBuild200Response struct {
 	ImageBuild *AddImageBuild200ResponseAllOfImageBuild `json:"imageBuild,omitempty"`
-	ErrorCode *string `json:"errorCode,omitempty"`
+	ErrorCode  *string                                  `json:"errorCode,omitempty"`
 	// Success indicator, true when the request succeeded and false when an error occurred
 	Success *bool `json:"success,omitempty"`
 	// Message containing a description of the result, usually a message about the error that occurred
 	Msg *string `json:"msg,omitempty"`
 	// Validation errors, with a key for Object containing error messages for each invalid parameter (key)
-	Errors map[string]interface{} `json:"errors,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Errors               map[string]interface{} `json:"errors,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddImageBuild200Response AddImageBuild200Response
@@ -215,7 +215,7 @@ func (o *AddImageBuild200Response) SetErrors(v map[string]interface{}) {
 }
 
 func (o AddImageBuild200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -246,66 +246,8 @@ func (o AddImageBuild200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *AddImageBuild200Response) UnmarshalJSON(data []byte) (err error) {
-	varAddImageBuild200Response := _AddImageBuild200Response{}
-
-	err = json.Unmarshal(data, &varAddImageBuild200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddImageBuild200Response(varAddImageBuild200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "imageBuild")
-		delete(additionalProperties, "errorCode")
-		delete(additionalProperties, "success")
-		delete(additionalProperties, "msg")
-		delete(additionalProperties, "errors")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddImageBuild200Response struct {
-	value *AddImageBuild200Response
-	isSet bool
-}
-
-func (v NullableAddImageBuild200Response) Get() *AddImageBuild200Response {
-	return v.value
-}
-
-func (v *NullableAddImageBuild200Response) Set(val *AddImageBuild200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddImageBuild200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddImageBuild200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddImageBuild200Response(val *AddImageBuild200Response) *NullableAddImageBuild200Response {
-	return &NullableAddImageBuild200Response{value: val, isSet: true}
-}
-
-func (v NullableAddImageBuild200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddImageBuild200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

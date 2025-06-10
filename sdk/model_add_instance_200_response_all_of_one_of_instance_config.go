@@ -20,36 +20,36 @@ var _ MappedNullable = &AddInstance200ResponseAllOfOneOfInstanceConfig{}
 
 // AddInstance200ResponseAllOfOneOfInstanceConfig struct for AddInstance200ResponseAllOfOneOfInstanceConfig
 type AddInstance200ResponseAllOfOneOfInstanceConfig struct {
-	CreateUser *bool `json:"createUser,omitempty"`
-	IsEC2 *bool `json:"isEC2,omitempty"`
-	IsVpcSelectable *bool `json:"isVpcSelectable,omitempty"`
-	NoAgent *AddInstance200ResponseAllOfOneOfInstanceConfigNoAgent `json:"noAgent,omitempty"`
-	SecurityGroups []ListInstances200ResponseAllOfInstancesInnerConfigUserGroup `json:"securityGroups,omitempty"`
-	SmbiosAssetTag *string `json:"smbiosAssetTag,omitempty"`
-	NestedVirtualization *string `json:"nestedVirtualization,omitempty"`
-	VmwareFolderId *string `json:"vmwareFolderId,omitempty"`
-	CustomOptions map[string]interface{} `json:"customOptions,omitempty"`
-	ResourcePoolId *AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId `json:"resourcePoolId,omitempty"`
-	PoolProviderType *string `json:"poolProviderType,omitempty"`
-	UserGroup *ListInstances200ResponseAllOfInstancesInnerConfigUserGroup `json:"userGroup,omitempty"`
-	ExpireDays *string `json:"expireDays,omitempty"`
-	ShutdownDays *string `json:"shutdownDays,omitempty"`
-	Name *string `json:"name,omitempty"`
-	HostName *string `json:"hostName,omitempty"`
-	InstanceType *AddInstance200ResponseAllOfOneOfInstanceConfigInstanceType `json:"instanceType,omitempty"`
-	Site *GetAlerts200ResponseAllOfChecksInnerAccount `json:"site,omitempty"`
-	EnvironmentPrefix *string `json:"environmentPrefix,omitempty"`
-	Layout *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigPlan `json:"layout,omitempty"`
-	Type *string `json:"type,omitempty"`
-	InstanceContext *string `json:"instanceContext,omitempty"`
-	MemoryDisplay *string `json:"memoryDisplay,omitempty"`
-	Expose []map[string]interface{} `json:"expose,omitempty"`
-	CreateBackup *bool `json:"createBackup,omitempty"`
-	Backup *ListInstances200ResponseAllOfInstancesInnerConfigBackup `json:"backup,omitempty"`
-	ReplicationGroup *AddInstance200ResponseAllOfOneOfInstanceConfigReplicationGroup `json:"replicationGroup,omitempty"`
-	LayoutSize *int64 `json:"layoutSize,omitempty"`
-	LbInstances []map[string]interface{} `json:"lbInstances,omitempty"`
-	AdditionalProperties map[string]interface{}
+	CreateUser           *bool                                                           `json:"createUser,omitempty"`
+	IsEC2                *bool                                                           `json:"isEC2,omitempty"`
+	IsVpcSelectable      *bool                                                           `json:"isVpcSelectable,omitempty"`
+	NoAgent              *AddInstance200ResponseAllOfOneOfInstanceConfigNoAgent          `json:"noAgent,omitempty"`
+	SecurityGroups       []ListInstances200ResponseAllOfInstancesInnerConfigUserGroup    `json:"securityGroups,omitempty"`
+	SmbiosAssetTag       *string                                                         `json:"smbiosAssetTag,omitempty"`
+	NestedVirtualization *string                                                         `json:"nestedVirtualization,omitempty"`
+	VmwareFolderId       *string                                                         `json:"vmwareFolderId,omitempty"`
+	CustomOptions        map[string]interface{}                                          `json:"customOptions,omitempty"`
+	ResourcePoolId       *AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId   `json:"resourcePoolId,omitempty"`
+	PoolProviderType     *string                                                         `json:"poolProviderType,omitempty"`
+	UserGroup            *ListInstances200ResponseAllOfInstancesInnerConfigUserGroup     `json:"userGroup,omitempty"`
+	ExpireDays           *string                                                         `json:"expireDays,omitempty"`
+	ShutdownDays         *string                                                         `json:"shutdownDays,omitempty"`
+	Name                 *string                                                         `json:"name,omitempty"`
+	HostName             *string                                                         `json:"hostName,omitempty"`
+	InstanceType         *AddInstance200ResponseAllOfOneOfInstanceConfigInstanceType     `json:"instanceType,omitempty"`
+	Site                 *GetAlerts200ResponseAllOfChecksInnerAccount                    `json:"site,omitempty"`
+	EnvironmentPrefix    *string                                                         `json:"environmentPrefix,omitempty"`
+	Layout               *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigPlan      `json:"layout,omitempty"`
+	Type                 *string                                                         `json:"type,omitempty"`
+	InstanceContext      *string                                                         `json:"instanceContext,omitempty"`
+	MemoryDisplay        *string                                                         `json:"memoryDisplay,omitempty"`
+	Expose               []map[string]interface{}                                        `json:"expose,omitempty"`
+	CreateBackup         *bool                                                           `json:"createBackup,omitempty"`
+	Backup               *ListInstances200ResponseAllOfInstancesInnerConfigBackup        `json:"backup,omitempty"`
+	ReplicationGroup     *AddInstance200ResponseAllOfOneOfInstanceConfigReplicationGroup `json:"replicationGroup,omitempty"`
+	LayoutSize           *int64                                                          `json:"layoutSize,omitempty"`
+	LbInstances          []map[string]interface{}                                        `json:"lbInstances,omitempty"`
+	AdditionalProperties map[string]interface{}                                          `json:",remain"`
 }
 
 type _AddInstance200ResponseAllOfOneOfInstanceConfig AddInstance200ResponseAllOfOneOfInstanceConfig
@@ -1000,7 +1000,7 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetLbInstances(v []map[
 }
 
 func (o AddInstance200ResponseAllOfOneOfInstanceConfig) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1103,90 +1103,8 @@ func (o AddInstance200ResponseAllOfOneOfInstanceConfig) ToMap() (map[string]inte
 
 	return toSerialize, nil
 }
-
 func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) UnmarshalJSON(data []byte) (err error) {
-	varAddInstance200ResponseAllOfOneOfInstanceConfig := _AddInstance200ResponseAllOfOneOfInstanceConfig{}
-
-	err = json.Unmarshal(data, &varAddInstance200ResponseAllOfOneOfInstanceConfig)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddInstance200ResponseAllOfOneOfInstanceConfig(varAddInstance200ResponseAllOfOneOfInstanceConfig)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "createUser")
-		delete(additionalProperties, "isEC2")
-		delete(additionalProperties, "isVpcSelectable")
-		delete(additionalProperties, "noAgent")
-		delete(additionalProperties, "securityGroups")
-		delete(additionalProperties, "smbiosAssetTag")
-		delete(additionalProperties, "nestedVirtualization")
-		delete(additionalProperties, "vmwareFolderId")
-		delete(additionalProperties, "customOptions")
-		delete(additionalProperties, "resourcePoolId")
-		delete(additionalProperties, "poolProviderType")
-		delete(additionalProperties, "userGroup")
-		delete(additionalProperties, "expireDays")
-		delete(additionalProperties, "shutdownDays")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "hostName")
-		delete(additionalProperties, "instanceType")
-		delete(additionalProperties, "site")
-		delete(additionalProperties, "environmentPrefix")
-		delete(additionalProperties, "layout")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "instanceContext")
-		delete(additionalProperties, "memoryDisplay")
-		delete(additionalProperties, "expose")
-		delete(additionalProperties, "createBackup")
-		delete(additionalProperties, "backup")
-		delete(additionalProperties, "replicationGroup")
-		delete(additionalProperties, "layoutSize")
-		delete(additionalProperties, "lbInstances")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddInstance200ResponseAllOfOneOfInstanceConfig struct {
-	value *AddInstance200ResponseAllOfOneOfInstanceConfig
-	isSet bool
-}
-
-func (v NullableAddInstance200ResponseAllOfOneOfInstanceConfig) Get() *AddInstance200ResponseAllOfOneOfInstanceConfig {
-	return v.value
-}
-
-func (v *NullableAddInstance200ResponseAllOfOneOfInstanceConfig) Set(val *AddInstance200ResponseAllOfOneOfInstanceConfig) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddInstance200ResponseAllOfOneOfInstanceConfig) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddInstance200ResponseAllOfOneOfInstanceConfig) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddInstance200ResponseAllOfOneOfInstanceConfig(val *AddInstance200ResponseAllOfOneOfInstanceConfig) *NullableAddInstance200ResponseAllOfOneOfInstanceConfig {
-	return &NullableAddInstance200ResponseAllOfOneOfInstanceConfig{value: val, isSet: true}
-}
-
-func (v NullableAddInstance200ResponseAllOfOneOfInstanceConfig) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddInstance200ResponseAllOfOneOfInstanceConfig) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

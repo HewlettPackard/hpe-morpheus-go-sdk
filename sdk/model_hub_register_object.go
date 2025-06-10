@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the HubRegisterObject type satisfies the MappedNullable interface at compile time
@@ -21,8 +20,8 @@ var _ MappedNullable = &HubRegisterObject{}
 
 // HubRegisterObject Object for registering with the [Morpheus Hub](https://morpheushub.com). This is only required for `hubmode=register`.
 type HubRegisterObject struct {
-	Hub SetupRequestAnyOf1OneOf1Hub `json:"hub"`
-	AdditionalProperties map[string]interface{}
+	Hub                  SetupRequestAnyOf1OneOf1Hub `json:"hub"`
+	AdditionalProperties map[string]interface{}      `json:",remain"`
 }
 
 type _HubRegisterObject HubRegisterObject
@@ -70,7 +69,7 @@ func (o *HubRegisterObject) SetHub(v SetupRequestAnyOf1OneOf1Hub) {
 }
 
 func (o HubRegisterObject) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -87,83 +86,8 @@ func (o HubRegisterObject) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *HubRegisterObject) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"hub",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varHubRegisterObject := _HubRegisterObject{}
-
-	err = json.Unmarshal(data, &varHubRegisterObject)
-
-	if err != nil {
-		return err
-	}
-
-	*o = HubRegisterObject(varHubRegisterObject)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "hub")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableHubRegisterObject struct {
-	value *HubRegisterObject
-	isSet bool
-}
-
-func (v NullableHubRegisterObject) Get() *HubRegisterObject {
-	return v.value
-}
-
-func (v *NullableHubRegisterObject) Set(val *HubRegisterObject) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableHubRegisterObject) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableHubRegisterObject) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableHubRegisterObject(val *HubRegisterObject) *NullableHubRegisterObject {
-	return &NullableHubRegisterObject{value: val, isSet: true}
-}
-
-func (v NullableHubRegisterObject) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableHubRegisterObject) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

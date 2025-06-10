@@ -20,16 +20,16 @@ var _ MappedNullable = &GetAppState200Response{}
 
 // GetAppState200Response struct for GetAppState200Response
 type GetAppState200Response struct {
-	Workloads []GetAppState200ResponseAllOfWorkloadsInner `json:"workloads,omitempty"`
-	IacDrift *bool `json:"iacDrift,omitempty"`
-	PlanResources []map[string]interface{} `json:"planResources,omitempty"`
-	Specs []GetAppState200ResponseAllOfSpecsInner `json:"specs,omitempty"`
-	StateData *string `json:"stateData,omitempty"`
-	PlanData *string `json:"planData,omitempty"`
-	Input *GetAppState200ResponseAllOfInput `json:"input,omitempty"`
-	Output *GetAppState200ResponseAllOfOutput `json:"output,omitempty"`
-	Success *bool `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Workloads            []GetAppState200ResponseAllOfWorkloadsInner `json:"workloads,omitempty"`
+	IacDrift             *bool                                       `json:"iacDrift,omitempty"`
+	PlanResources        []map[string]interface{}                    `json:"planResources,omitempty"`
+	Specs                []GetAppState200ResponseAllOfSpecsInner     `json:"specs,omitempty"`
+	StateData            *string                                     `json:"stateData,omitempty"`
+	PlanData             *string                                     `json:"planData,omitempty"`
+	Input                *GetAppState200ResponseAllOfInput           `json:"input,omitempty"`
+	Output               *GetAppState200ResponseAllOfOutput          `json:"output,omitempty"`
+	Success              *bool                                       `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}                      `json:",remain"`
 }
 
 type _GetAppState200Response GetAppState200Response
@@ -340,7 +340,7 @@ func (o *GetAppState200Response) SetSuccess(v bool) {
 }
 
 func (o GetAppState200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -383,70 +383,8 @@ func (o GetAppState200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *GetAppState200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetAppState200Response := _GetAppState200Response{}
-
-	err = json.Unmarshal(data, &varGetAppState200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetAppState200Response(varGetAppState200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "workloads")
-		delete(additionalProperties, "iacDrift")
-		delete(additionalProperties, "planResources")
-		delete(additionalProperties, "specs")
-		delete(additionalProperties, "stateData")
-		delete(additionalProperties, "planData")
-		delete(additionalProperties, "input")
-		delete(additionalProperties, "output")
-		delete(additionalProperties, "success")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetAppState200Response struct {
-	value *GetAppState200Response
-	isSet bool
-}
-
-func (v NullableGetAppState200Response) Get() *GetAppState200Response {
-	return v.value
-}
-
-func (v *NullableGetAppState200Response) Set(val *GetAppState200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetAppState200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetAppState200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetAppState200Response(val *GetAppState200Response) *NullableGetAppState200Response {
-	return &NullableGetAppState200Response{value: val, isSet: true}
-}
-
-func (v NullableGetAppState200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetAppState200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

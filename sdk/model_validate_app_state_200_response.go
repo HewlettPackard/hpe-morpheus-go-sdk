@@ -20,9 +20,9 @@ var _ MappedNullable = &ValidateAppState200Response{}
 
 // ValidateAppState200Response struct for ValidateAppState200Response
 type ValidateAppState200Response struct {
-	ExecutionId *string `json:"executionId,omitempty"`
-	Success *bool `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ExecutionId          *string                `json:"executionId,omitempty"`
+	Success              *bool                  `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ValidateAppState200Response ValidateAppState200Response
@@ -109,7 +109,7 @@ func (o *ValidateAppState200Response) SetSuccess(v bool) {
 }
 
 func (o ValidateAppState200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o ValidateAppState200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ValidateAppState200Response) UnmarshalJSON(data []byte) (err error) {
-	varValidateAppState200Response := _ValidateAppState200Response{}
-
-	err = json.Unmarshal(data, &varValidateAppState200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ValidateAppState200Response(varValidateAppState200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "executionId")
-		delete(additionalProperties, "success")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableValidateAppState200Response struct {
-	value *ValidateAppState200Response
-	isSet bool
-}
-
-func (v NullableValidateAppState200Response) Get() *ValidateAppState200Response {
-	return v.value
-}
-
-func (v *NullableValidateAppState200Response) Set(val *ValidateAppState200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableValidateAppState200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableValidateAppState200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableValidateAppState200Response(val *ValidateAppState200Response) *NullableValidateAppState200Response {
-	return &NullableValidateAppState200Response{value: val, isSet: true}
-}
-
-func (v NullableValidateAppState200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableValidateAppState200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

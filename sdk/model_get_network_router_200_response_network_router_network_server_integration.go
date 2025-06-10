@@ -21,25 +21,25 @@ var _ MappedNullable = &GetNetworkRouter200ResponseNetworkRouterNetworkServerInt
 
 // GetNetworkRouter200ResponseNetworkRouterNetworkServerIntegration struct for GetNetworkRouter200ResponseNetworkRouterNetworkServerIntegration
 type GetNetworkRouter200ResponseNetworkRouterNetworkServerIntegration struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	Type *string `json:"type,omitempty"`
-	IntegrationType *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"integrationType,omitempty"`
-	Url *string `json:"url,omitempty"`
-	Port *string `json:"port,omitempty"`
-	Username *string `json:"username,omitempty"`
-	Password *string `json:"password,omitempty"`
-	RefType *string `json:"refType,omitempty"`
-	RefId *string `json:"refId,omitempty"`
-	IsPlugin *bool `json:"isPlugin,omitempty"`
-	Config map[string]interface{} `json:"config,omitempty"`
-	Status *string `json:"status,omitempty"`
-	StatusDate *time.Time `json:"statusDate,omitempty"`
-	StatusMessage *string `json:"statusMessage,omitempty"`
-	LastSync *time.Time `json:"lastSync,omitempty"`
-	LastSyncDuration *int64 `json:"lastSyncDuration,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                      `json:"id,omitempty"`
+	Name                 *string                                                     `json:"name,omitempty"`
+	Enabled              *bool                                                       `json:"enabled,omitempty"`
+	Type                 *string                                                     `json:"type,omitempty"`
+	IntegrationType      *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"integrationType,omitempty"`
+	Url                  *string                                                     `json:"url,omitempty"`
+	Port                 *string                                                     `json:"port,omitempty"`
+	Username             *string                                                     `json:"username,omitempty"`
+	Password             *string                                                     `json:"password,omitempty"`
+	RefType              *string                                                     `json:"refType,omitempty"`
+	RefId                *string                                                     `json:"refId,omitempty"`
+	IsPlugin             *bool                                                       `json:"isPlugin,omitempty"`
+	Config               map[string]interface{}                                      `json:"config,omitempty"`
+	Status               *string                                                     `json:"status,omitempty"`
+	StatusDate           *time.Time                                                  `json:"statusDate,omitempty"`
+	StatusMessage        *string                                                     `json:"statusMessage,omitempty"`
+	LastSync             *time.Time                                                  `json:"lastSync,omitempty"`
+	LastSyncDuration     *int64                                                      `json:"lastSyncDuration,omitempty"`
+	AdditionalProperties map[string]interface{}                                      `json:",remain"`
 }
 
 type _GetNetworkRouter200ResponseNetworkRouterNetworkServerIntegration GetNetworkRouter200ResponseNetworkRouterNetworkServerIntegration
@@ -638,7 +638,7 @@ func (o *GetNetworkRouter200ResponseNetworkRouterNetworkServerIntegration) SetLa
 }
 
 func (o GetNetworkRouter200ResponseNetworkRouterNetworkServerIntegration) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -708,79 +708,8 @@ func (o GetNetworkRouter200ResponseNetworkRouterNetworkServerIntegration) ToMap(
 
 	return toSerialize, nil
 }
-
 func (o *GetNetworkRouter200ResponseNetworkRouterNetworkServerIntegration) UnmarshalJSON(data []byte) (err error) {
-	varGetNetworkRouter200ResponseNetworkRouterNetworkServerIntegration := _GetNetworkRouter200ResponseNetworkRouterNetworkServerIntegration{}
-
-	err = json.Unmarshal(data, &varGetNetworkRouter200ResponseNetworkRouterNetworkServerIntegration)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetNetworkRouter200ResponseNetworkRouterNetworkServerIntegration(varGetNetworkRouter200ResponseNetworkRouterNetworkServerIntegration)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "integrationType")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "port")
-		delete(additionalProperties, "username")
-		delete(additionalProperties, "password")
-		delete(additionalProperties, "refType")
-		delete(additionalProperties, "refId")
-		delete(additionalProperties, "isPlugin")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "statusDate")
-		delete(additionalProperties, "statusMessage")
-		delete(additionalProperties, "lastSync")
-		delete(additionalProperties, "lastSyncDuration")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetNetworkRouter200ResponseNetworkRouterNetworkServerIntegration struct {
-	value *GetNetworkRouter200ResponseNetworkRouterNetworkServerIntegration
-	isSet bool
-}
-
-func (v NullableGetNetworkRouter200ResponseNetworkRouterNetworkServerIntegration) Get() *GetNetworkRouter200ResponseNetworkRouterNetworkServerIntegration {
-	return v.value
-}
-
-func (v *NullableGetNetworkRouter200ResponseNetworkRouterNetworkServerIntegration) Set(val *GetNetworkRouter200ResponseNetworkRouterNetworkServerIntegration) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetNetworkRouter200ResponseNetworkRouterNetworkServerIntegration) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetNetworkRouter200ResponseNetworkRouterNetworkServerIntegration) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetNetworkRouter200ResponseNetworkRouterNetworkServerIntegration(val *GetNetworkRouter200ResponseNetworkRouterNetworkServerIntegration) *NullableGetNetworkRouter200ResponseNetworkRouterNetworkServerIntegration {
-	return &NullableGetNetworkRouter200ResponseNetworkRouterNetworkServerIntegration{value: val, isSet: true}
-}
-
-func (v NullableGetNetworkRouter200ResponseNetworkRouterNetworkServerIntegration) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetNetworkRouter200ResponseNetworkRouterNetworkServerIntegration) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

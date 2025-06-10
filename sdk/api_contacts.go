@@ -21,13 +21,12 @@ import (
 	"strings"
 )
 
-
 // ContactsAPIService ContactsAPI service
 type ContactsAPIService service
 
 type ApiAddContactsRequest struct {
-	ctx context.Context
-	ApiService *ContactsAPIService
+	ctx                context.Context
+	ApiService         *ContactsAPIService
 	addContactsRequest *AddContactsRequest
 }
 
@@ -45,24 +44,25 @@ AddContacts Create a New Contact
 
 Create a new monitoring contact.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddContactsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddContactsRequest
 */
 func (a *ContactsAPIService) AddContacts(ctx context.Context) ApiAddContactsRequest {
 	return ApiAddContactsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddContacts200Response
+//
+//	@return AddContacts200Response
 func (a *ContactsAPIService) AddContactsExecute(r ApiAddContactsRequest) (*AddContacts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddContacts200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddContacts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ContactsAPIService.AddContacts")
@@ -114,7 +114,7 @@ func (a *ContactsAPIService) AddContactsExecute(r ApiAddContactsRequest) (*AddCo
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -123,8 +123,8 @@ func (a *ContactsAPIService) AddContactsExecute(r ApiAddContactsRequest) (*AddCo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -134,8 +134,8 @@ func (a *ContactsAPIService) AddContactsExecute(r ApiAddContactsRequest) (*AddCo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -143,8 +143,8 @@ func (a *ContactsAPIService) AddContactsExecute(r ApiAddContactsRequest) (*AddCo
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -153,9 +153,9 @@ func (a *ContactsAPIService) AddContactsExecute(r ApiAddContactsRequest) (*AddCo
 }
 
 type ApiDeleteContactsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ContactsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiDeleteContactsRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -167,26 +167,27 @@ DeleteContacts Delete a Specific Contact
 
 Delete an existing monitoring contact.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiDeleteContactsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeleteContactsRequest
 */
 func (a *ContactsAPIService) DeleteContacts(ctx context.Context, id int64) ApiDeleteContactsRequest {
 	return ApiDeleteContactsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *ContactsAPIService) DeleteContactsExecute(r ApiDeleteContactsRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ContactsAPIService.DeleteContacts")
@@ -237,7 +238,7 @@ func (a *ContactsAPIService) DeleteContactsExecute(r ApiDeleteContactsRequest) (
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -246,8 +247,8 @@ func (a *ContactsAPIService) DeleteContactsExecute(r ApiDeleteContactsRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -257,8 +258,8 @@ func (a *ContactsAPIService) DeleteContactsExecute(r ApiDeleteContactsRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -266,8 +267,8 @@ func (a *ContactsAPIService) DeleteContactsExecute(r ApiDeleteContactsRequest) (
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -276,9 +277,9 @@ func (a *ContactsAPIService) DeleteContactsExecute(r ApiDeleteContactsRequest) (
 }
 
 type ApiGetContactsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ContactsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetContactsRequest) Execute() (*GetContacts200Response, *http.Response, error) {
@@ -290,26 +291,27 @@ GetContacts Get a Specific Contact
 
 Get details about a specific monitoring contact.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetContactsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetContactsRequest
 */
 func (a *ContactsAPIService) GetContacts(ctx context.Context, id int64) ApiGetContactsRequest {
 	return ApiGetContactsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetContacts200Response
+//
+//	@return GetContacts200Response
 func (a *ContactsAPIService) GetContactsExecute(r ApiGetContactsRequest) (*GetContacts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetContacts200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetContacts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ContactsAPIService.GetContacts")
@@ -360,7 +362,7 @@ func (a *ContactsAPIService) GetContactsExecute(r ApiGetContactsRequest) (*GetCo
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -369,8 +371,8 @@ func (a *ContactsAPIService) GetContactsExecute(r ApiGetContactsRequest) (*GetCo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -380,8 +382,8 @@ func (a *ContactsAPIService) GetContactsExecute(r ApiGetContactsRequest) (*GetCo
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -389,8 +391,8 @@ func (a *ContactsAPIService) GetContactsExecute(r ApiGetContactsRequest) (*GetCo
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -399,12 +401,12 @@ func (a *ContactsAPIService) GetContactsExecute(r ApiGetContactsRequest) (*GetCo
 }
 
 type ApiListContactsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ContactsAPIService
-	max *int64
-	offset *int64
-	name *string
-	phrase *string
+	max        *int64
+	offset     *int64
+	name       *string
+	phrase     *string
 }
 
 // Maximum number of records to return
@@ -440,24 +442,25 @@ ListContacts List All Contacts
 
 Get a list of monitoring contacts.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListContactsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListContactsRequest
 */
 func (a *ContactsAPIService) ListContacts(ctx context.Context) ApiListContactsRequest {
 	return ApiListContactsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListContacts200Response
+//
+//	@return ListContacts200Response
 func (a *ContactsAPIService) ListContactsExecute(r ApiListContactsRequest) (*ListContacts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListContacts200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListContacts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ContactsAPIService.ListContacts")
@@ -525,7 +528,7 @@ func (a *ContactsAPIService) ListContactsExecute(r ApiListContactsRequest) (*Lis
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -534,8 +537,8 @@ func (a *ContactsAPIService) ListContactsExecute(r ApiListContactsRequest) (*Lis
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -545,8 +548,8 @@ func (a *ContactsAPIService) ListContactsExecute(r ApiListContactsRequest) (*Lis
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -554,8 +557,8 @@ func (a *ContactsAPIService) ListContactsExecute(r ApiListContactsRequest) (*Lis
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -564,9 +567,9 @@ func (a *ContactsAPIService) ListContactsExecute(r ApiListContactsRequest) (*Lis
 }
 
 type ApiUpdateContactsRequest struct {
-	ctx context.Context
-	ApiService *ContactsAPIService
-	id int64
+	ctx                   context.Context
+	ApiService            *ContactsAPIService
+	id                    int64
 	updateContactsRequest *UpdateContactsRequest
 }
 
@@ -584,26 +587,27 @@ UpdateContacts Update Contact
 
 Update an existing monitoring contact.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateContactsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateContactsRequest
 */
 func (a *ContactsAPIService) UpdateContacts(ctx context.Context, id int64) ApiUpdateContactsRequest {
 	return ApiUpdateContactsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddContacts200Response
+//
+//	@return AddContacts200Response
 func (a *ContactsAPIService) UpdateContactsExecute(r ApiUpdateContactsRequest) (*AddContacts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddContacts200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddContacts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ContactsAPIService.UpdateContacts")
@@ -656,7 +660,7 @@ func (a *ContactsAPIService) UpdateContactsExecute(r ApiUpdateContactsRequest) (
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -665,8 +669,8 @@ func (a *ContactsAPIService) UpdateContactsExecute(r ApiUpdateContactsRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -676,8 +680,8 @@ func (a *ContactsAPIService) UpdateContactsExecute(r ApiUpdateContactsRequest) (
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -685,8 +689,8 @@ func (a *ContactsAPIService) UpdateContactsExecute(r ApiUpdateContactsRequest) (
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

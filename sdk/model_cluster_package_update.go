@@ -37,8 +37,8 @@ type ClusterPackageUpdate struct {
 	// Icon Path, relative location of an icon image, eg. /assets/containers-png/nginx.png.
 	IconPath *string `json:"iconPath,omitempty"`
 	// Array of resource spec templates
-	SpecTemplates []GetAlerts200ResponseAllOfChecksInnerAccount `json:"specTemplates,omitempty"`
-	AdditionalProperties map[string]interface{}
+	SpecTemplates        []GetAlerts200ResponseAllOfChecksInnerAccount `json:"specTemplates,omitempty"`
+	AdditionalProperties map[string]interface{}                        `json:",remain"`
 }
 
 type _ClusterPackageUpdate ClusterPackageUpdate
@@ -353,7 +353,7 @@ func (o *ClusterPackageUpdate) SetSpecTemplates(v []GetAlerts200ResponseAllOfChe
 }
 
 func (o ClusterPackageUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -396,70 +396,8 @@ func (o ClusterPackageUpdate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ClusterPackageUpdate) UnmarshalJSON(data []byte) (err error) {
-	varClusterPackageUpdate := _ClusterPackageUpdate{}
-
-	err = json.Unmarshal(data, &varClusterPackageUpdate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ClusterPackageUpdate(varClusterPackageUpdate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "packageVersion")
-		delete(additionalProperties, "packageType")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "iconPath")
-		delete(additionalProperties, "specTemplates")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableClusterPackageUpdate struct {
-	value *ClusterPackageUpdate
-	isSet bool
-}
-
-func (v NullableClusterPackageUpdate) Get() *ClusterPackageUpdate {
-	return v.value
-}
-
-func (v *NullableClusterPackageUpdate) Set(val *ClusterPackageUpdate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableClusterPackageUpdate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableClusterPackageUpdate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableClusterPackageUpdate(val *ClusterPackageUpdate) *NullableClusterPackageUpdate {
-	return &NullableClusterPackageUpdate{value: val, isSet: true}
-}
-
-func (v NullableClusterPackageUpdate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableClusterPackageUpdate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

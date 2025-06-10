@@ -14,6 +14,7 @@ package sdk
 import (
 	"encoding/json"
 	"fmt"
+
 	"gopkg.in/validator.v2"
 )
 
@@ -22,7 +23,7 @@ var _ fmt.Stringer
 
 // UpdateRoleBlueprintAccessRequest - struct for UpdateRoleBlueprintAccessRequest
 type UpdateRoleBlueprintAccessRequest struct {
-	UpdateRoleBlueprintAccessRequestOneOf *UpdateRoleBlueprintAccessRequestOneOf
+	UpdateRoleBlueprintAccessRequestOneOf  *UpdateRoleBlueprintAccessRequestOneOf
 	UpdateRoleBlueprintAccessRequestOneOf1 *UpdateRoleBlueprintAccessRequestOneOf1
 }
 
@@ -40,6 +41,21 @@ func UpdateRoleBlueprintAccessRequestOneOf1AsUpdateRoleBlueprintAccessRequest(v 
 	}
 }
 
+func (dst *UpdateRoleBlueprintAccessRequest) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &UpdateRoleBlueprintAccessRequest{}
+	}
+
+	if out, ok := data.(UpdateRoleBlueprintAccessRequestOneOf); ok {
+		dst.UpdateRoleBlueprintAccessRequestOneOf = &out
+	}
+
+	if out, ok := data.(UpdateRoleBlueprintAccessRequestOneOf1); ok {
+		dst.UpdateRoleBlueprintAccessRequestOneOf1 = &out
+	}
+
+	return dst, nil
+}
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *UpdateRoleBlueprintAccessRequest) UnmarshalJSON(data []byte) error {
@@ -106,7 +122,7 @@ func (src UpdateRoleBlueprintAccessRequest) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *UpdateRoleBlueprintAccessRequest) GetActualInstance() (interface{}) {
+func (obj *UpdateRoleBlueprintAccessRequest) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -123,7 +139,7 @@ func (obj *UpdateRoleBlueprintAccessRequest) GetActualInstance() (interface{}) {
 }
 
 // Get the actual instance value
-func (obj UpdateRoleBlueprintAccessRequest) GetActualInstanceValue() (interface{}) {
+func (obj UpdateRoleBlueprintAccessRequest) GetActualInstanceValue() interface{} {
 	if obj.UpdateRoleBlueprintAccessRequestOneOf != nil {
 		return *obj.UpdateRoleBlueprintAccessRequestOneOf
 	}
@@ -171,5 +187,3 @@ func (v *NullableUpdateRoleBlueprintAccessRequest) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

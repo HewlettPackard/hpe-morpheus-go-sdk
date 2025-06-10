@@ -20,8 +20,8 @@ var _ MappedNullable = &GetScaleThresholds200Response{}
 
 // GetScaleThresholds200Response struct for GetScaleThresholds200Response
 type GetScaleThresholds200Response struct {
-	ScaleThreshold *ListScaleThresholds200ResponseAllOfScaleThresholdsInner `json:"scaleThreshold,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ScaleThreshold       *ListScaleThresholds200ResponseAllOfScaleThresholdsInner `json:"scaleThreshold,omitempty"`
+	AdditionalProperties map[string]interface{}                                   `json:",remain"`
 }
 
 type _GetScaleThresholds200Response GetScaleThresholds200Response
@@ -76,7 +76,7 @@ func (o *GetScaleThresholds200Response) SetScaleThreshold(v ListScaleThresholds2
 }
 
 func (o GetScaleThresholds200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o GetScaleThresholds200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *GetScaleThresholds200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetScaleThresholds200Response := _GetScaleThresholds200Response{}
-
-	err = json.Unmarshal(data, &varGetScaleThresholds200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetScaleThresholds200Response(varGetScaleThresholds200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "scaleThreshold")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetScaleThresholds200Response struct {
-	value *GetScaleThresholds200Response
-	isSet bool
-}
-
-func (v NullableGetScaleThresholds200Response) Get() *GetScaleThresholds200Response {
-	return v.value
-}
-
-func (v *NullableGetScaleThresholds200Response) Set(val *GetScaleThresholds200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetScaleThresholds200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetScaleThresholds200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetScaleThresholds200Response(val *GetScaleThresholds200Response) *NullableGetScaleThresholds200Response {
-	return &NullableGetScaleThresholds200Response{value: val, isSet: true}
-}
-
-func (v NullableGetScaleThresholds200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetScaleThresholds200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

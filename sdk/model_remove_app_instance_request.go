@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the RemoveAppInstanceRequest type satisfies the MappedNullable interface at compile time
@@ -22,8 +21,8 @@ var _ MappedNullable = &RemoveAppInstanceRequest{}
 // RemoveAppInstanceRequest struct for RemoveAppInstanceRequest
 type RemoveAppInstanceRequest struct {
 	// The ID of the instance being removed
-	InstanceId int64 `json:"instanceId"`
-	AdditionalProperties map[string]interface{}
+	InstanceId           int64                  `json:"instanceId"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _RemoveAppInstanceRequest RemoveAppInstanceRequest
@@ -71,7 +70,7 @@ func (o *RemoveAppInstanceRequest) SetInstanceId(v int64) {
 }
 
 func (o RemoveAppInstanceRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -88,83 +87,8 @@ func (o RemoveAppInstanceRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *RemoveAppInstanceRequest) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"instanceId",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varRemoveAppInstanceRequest := _RemoveAppInstanceRequest{}
-
-	err = json.Unmarshal(data, &varRemoveAppInstanceRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = RemoveAppInstanceRequest(varRemoveAppInstanceRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "instanceId")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableRemoveAppInstanceRequest struct {
-	value *RemoveAppInstanceRequest
-	isSet bool
-}
-
-func (v NullableRemoveAppInstanceRequest) Get() *RemoveAppInstanceRequest {
-	return v.value
-}
-
-func (v *NullableRemoveAppInstanceRequest) Set(val *RemoveAppInstanceRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableRemoveAppInstanceRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableRemoveAppInstanceRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableRemoveAppInstanceRequest(val *RemoveAppInstanceRequest) *NullableRemoveAppInstanceRequest {
-	return &NullableRemoveAppInstanceRequest{value: val, isSet: true}
-}
-
-func (v NullableRemoveAppInstanceRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableRemoveAppInstanceRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -21,23 +21,23 @@ var _ MappedNullable = &SpecTemplate{}
 
 // SpecTemplate struct for SpecTemplate
 type SpecTemplate struct {
-	Id *int64 `json:"id,omitempty"`
-	Account *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Labels []string `json:"labels,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Type *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"type,omitempty"`
-	ExternalId *string `json:"externalId,omitempty"`
-	ExternalType *string `json:"externalType,omitempty"`
-	DeploymentId *string `json:"deploymentId,omitempty"`
-	Status *string `json:"status,omitempty"`
-	File *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile `json:"file,omitempty"`
-	Config map[string]interface{} `json:"config,omitempty"`
-	CreatedBy *string `json:"createdBy,omitempty"`
-	UpdatedBy *string `json:"updatedBy,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                  `json:"id,omitempty"`
+	Account              *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"account,omitempty"`
+	Name                 *string                                                                 `json:"name,omitempty"`
+	Labels               []string                                                                `json:"labels,omitempty"`
+	Code                 *string                                                                 `json:"code,omitempty"`
+	Type                 *ListBackupSettings200ResponseBackupSettingsDefaultSchedule             `json:"type,omitempty"`
+	ExternalId           *string                                                                 `json:"externalId,omitempty"`
+	ExternalType         *string                                                                 `json:"externalType,omitempty"`
+	DeploymentId         *string                                                                 `json:"deploymentId,omitempty"`
+	Status               *string                                                                 `json:"status,omitempty"`
+	File                 *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile   `json:"file,omitempty"`
+	Config               map[string]interface{}                                                  `json:"config,omitempty"`
+	CreatedBy            *string                                                                 `json:"createdBy,omitempty"`
+	UpdatedBy            *string                                                                 `json:"updatedBy,omitempty"`
+	DateCreated          *time.Time                                                              `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                              `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}                                                  `json:",remain"`
 }
 
 type _SpecTemplate SpecTemplate
@@ -572,7 +572,7 @@ func (o *SpecTemplate) SetLastUpdated(v time.Time) {
 }
 
 func (o SpecTemplate) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -636,77 +636,8 @@ func (o SpecTemplate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *SpecTemplate) UnmarshalJSON(data []byte) (err error) {
-	varSpecTemplate := _SpecTemplate{}
-
-	err = json.Unmarshal(data, &varSpecTemplate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = SpecTemplate(varSpecTemplate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "externalType")
-		delete(additionalProperties, "deploymentId")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "file")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "createdBy")
-		delete(additionalProperties, "updatedBy")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableSpecTemplate struct {
-	value *SpecTemplate
-	isSet bool
-}
-
-func (v NullableSpecTemplate) Get() *SpecTemplate {
-	return v.value
-}
-
-func (v *NullableSpecTemplate) Set(val *SpecTemplate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSpecTemplate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSpecTemplate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSpecTemplate(val *SpecTemplate) *NullableSpecTemplate {
-	return &NullableSpecTemplate{value: val, isSet: true}
-}
-
-func (v NullableSpecTemplate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSpecTemplate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

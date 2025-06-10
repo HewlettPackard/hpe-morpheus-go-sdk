@@ -7,6 +7,8 @@ import (
 	"fmt"
 	"reflect"
 	"time"
+
+	"github.com/go-viper/mapstructure/v2"
 )
 
 // PtrBool is a helper routine that returns a pointer to given boolean value.
@@ -349,4 +351,96 @@ func newStrictDecoder(data []byte) *json.Decoder {
 // Prevent trying to import "fmt"
 func reportError(format string, a ...interface{}) error {
 	return fmt.Errorf(format, a...)
+}
+
+// Allow custom unmarshal methods on anyOf/oneOf types
+// There is a PR to add this functionality to mapstructures, but it hasn't
+// been merged yet. 
+// https://github.com/go-viper/mapstructure/pull/11
+type Unmarshaler interface {
+	UnmarshalMapstructure(data any) (any, error)
+}
+
+func decodeUnmarshaler(src reflect.Type, tgt reflect.Type, data any) (any, error) {
+	unmarshalerType := reflect.TypeOf((*Unmarshaler)(nil)).Elem()
+
+	if !tgt.Implements(unmarshalerType) {
+		return data, nil
+	}
+
+	v := reflect.New(tgt).Elem().Interface().(Unmarshaler)
+	return v.UnmarshalMapstructure(data)
+}
+
+// bools are sometimes returned as "on" or "off". This will only apply 
+// to the types where the bool value is defined in the OpenAPI spec 
+// only as a `boolean`.
+func decodeUIBools(src reflect.Type, tgt reflect.Type, data any) (any, error) {
+	if tgt.Kind() != reflect.Bool {
+		return data, nil
+	}
+
+	if src.Kind() != reflect.String {
+		return data, nil
+	}
+
+	s := data.(string)
+	if s == "on" {
+		return true, nil
+	}
+
+	if s == "off" {
+		return false, nil
+	}
+
+	// pass the data on
+	return data, nil
+}
+
+func decodeTime(src reflect.Type, tgt reflect.Type, data any) (any, error) {
+	if tgt != reflect.TypeOf(time.Time{}) {
+		return data, nil
+	}
+
+	if src.Kind() != reflect.String {
+		return data, nil
+	}
+
+	s := data.(string)
+
+	return time.Parse(time.RFC3339, s)
+}
+
+func decode(data []byte, v any, decodeFuncs ...mapstructure.DecodeHookFunc) error {
+	m := make(map[string]any)
+	jdec := json.NewDecoder(bytes.NewBuffer(data))
+	if err := jdec.Decode(&m); err != nil {
+		return err
+	}
+
+	dec, err := mapstructure.NewDecoder(&mapstructure.DecoderConfig{
+		DecodeHook: mapstructure.ComposeDecodeHookFunc(
+			decodeUnmarshaler,
+			mapstructure.ComposeDecodeHookFunc(decodeFuncs...),
+			decodeUIBools,
+			decodeTime,
+		),
+		// WeaklyTypedInput will attempt to automatically convert certain types
+		WeaklyTypedInput: true,
+		// Re-use the json tag name for mapstructure. It's difficult to update
+		// the actual tags on structs, so this is an easy workaround.
+		TagName: "json",
+		Result: &v,
+		
+	})
+
+	if err != nil {
+		return err
+	}
+
+	if err := dec.Decode(m); err != nil {
+		return err
+	}
+
+	return nil
 }

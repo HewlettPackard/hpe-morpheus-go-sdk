@@ -20,11 +20,11 @@ var _ MappedNullable = &GetGuidanceStats200ResponseStatsSeverity{}
 
 // GetGuidanceStats200ResponseStatsSeverity struct for GetGuidanceStats200ResponseStatsSeverity
 type GetGuidanceStats200ResponseStatsSeverity struct {
-	Low *int64 `json:"low,omitempty"`
-	Info *int64 `json:"info,omitempty"`
-	Warning *int64 `json:"warning,omitempty"`
-	Critical *int64 `json:"critical,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Low                  *int64                 `json:"low,omitempty"`
+	Info                 *int64                 `json:"info,omitempty"`
+	Warning              *int64                 `json:"warning,omitempty"`
+	Critical             *int64                 `json:"critical,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _GetGuidanceStats200ResponseStatsSeverity GetGuidanceStats200ResponseStatsSeverity
@@ -175,7 +175,7 @@ func (o *GetGuidanceStats200ResponseStatsSeverity) SetCritical(v int64) {
 }
 
 func (o GetGuidanceStats200ResponseStatsSeverity) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -203,65 +203,8 @@ func (o GetGuidanceStats200ResponseStatsSeverity) ToMap() (map[string]interface{
 
 	return toSerialize, nil
 }
-
 func (o *GetGuidanceStats200ResponseStatsSeverity) UnmarshalJSON(data []byte) (err error) {
-	varGetGuidanceStats200ResponseStatsSeverity := _GetGuidanceStats200ResponseStatsSeverity{}
-
-	err = json.Unmarshal(data, &varGetGuidanceStats200ResponseStatsSeverity)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetGuidanceStats200ResponseStatsSeverity(varGetGuidanceStats200ResponseStatsSeverity)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "low")
-		delete(additionalProperties, "info")
-		delete(additionalProperties, "warning")
-		delete(additionalProperties, "critical")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetGuidanceStats200ResponseStatsSeverity struct {
-	value *GetGuidanceStats200ResponseStatsSeverity
-	isSet bool
-}
-
-func (v NullableGetGuidanceStats200ResponseStatsSeverity) Get() *GetGuidanceStats200ResponseStatsSeverity {
-	return v.value
-}
-
-func (v *NullableGetGuidanceStats200ResponseStatsSeverity) Set(val *GetGuidanceStats200ResponseStatsSeverity) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetGuidanceStats200ResponseStatsSeverity) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetGuidanceStats200ResponseStatsSeverity) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetGuidanceStats200ResponseStatsSeverity(val *GetGuidanceStats200ResponseStatsSeverity) *NullableGetGuidanceStats200ResponseStatsSeverity {
-	return &NullableGetGuidanceStats200ResponseStatsSeverity{value: val, isSet: true}
-}
-
-func (v NullableGetGuidanceStats200ResponseStatsSeverity) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetGuidanceStats200ResponseStatsSeverity) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

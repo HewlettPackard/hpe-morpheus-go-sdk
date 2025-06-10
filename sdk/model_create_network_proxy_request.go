@@ -20,8 +20,8 @@ var _ MappedNullable = &CreateNetworkProxyRequest{}
 
 // CreateNetworkProxyRequest struct for CreateNetworkProxyRequest
 type CreateNetworkProxyRequest struct {
-	NetworkProxy *CreateNetworkProxyRequestNetworkProxy `json:"networkProxy,omitempty"`
-	AdditionalProperties map[string]interface{}
+	NetworkProxy         *CreateNetworkProxyRequestNetworkProxy `json:"networkProxy,omitempty"`
+	AdditionalProperties map[string]interface{}                 `json:",remain"`
 }
 
 type _CreateNetworkProxyRequest CreateNetworkProxyRequest
@@ -76,7 +76,7 @@ func (o *CreateNetworkProxyRequest) SetNetworkProxy(v CreateNetworkProxyRequestN
 }
 
 func (o CreateNetworkProxyRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o CreateNetworkProxyRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *CreateNetworkProxyRequest) UnmarshalJSON(data []byte) (err error) {
-	varCreateNetworkProxyRequest := _CreateNetworkProxyRequest{}
-
-	err = json.Unmarshal(data, &varCreateNetworkProxyRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CreateNetworkProxyRequest(varCreateNetworkProxyRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "networkProxy")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCreateNetworkProxyRequest struct {
-	value *CreateNetworkProxyRequest
-	isSet bool
-}
-
-func (v NullableCreateNetworkProxyRequest) Get() *CreateNetworkProxyRequest {
-	return v.value
-}
-
-func (v *NullableCreateNetworkProxyRequest) Set(val *CreateNetworkProxyRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCreateNetworkProxyRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCreateNetworkProxyRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCreateNetworkProxyRequest(val *CreateNetworkProxyRequest) *NullableCreateNetworkProxyRequest {
-	return &NullableCreateNetworkProxyRequest{value: val, isSet: true}
-}
-
-func (v NullableCreateNetworkProxyRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCreateNetworkProxyRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

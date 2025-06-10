@@ -21,13 +21,12 @@ import (
 	"strings"
 )
 
-
 // CredentialsAPIService CredentialsAPI service
 type CredentialsAPIService service
 
 type ApiAddCredentialsRequest struct {
-	ctx context.Context
-	ApiService *CredentialsAPIService
+	ctx                   context.Context
+	ApiService            *CredentialsAPIService
 	addCredentialsRequest *AddCredentialsRequest
 }
 
@@ -45,25 +44,25 @@ AddCredentials Creates a Credential
 
 Creates a credential.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddCredentialsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddCredentialsRequest
 */
 func (a *CredentialsAPIService) AddCredentials(ctx context.Context) ApiAddCredentialsRequest {
 	return ApiAddCredentialsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddCredentials200Response
+//
+//	@return AddCredentials200Response
 func (a *CredentialsAPIService) AddCredentialsExecute(r ApiAddCredentialsRequest) (*AddCredentials200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddCredentials200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddCredentials200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CredentialsAPIService.AddCredentials")
@@ -115,7 +114,7 @@ func (a *CredentialsAPIService) AddCredentialsExecute(r ApiAddCredentialsRequest
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -124,8 +123,8 @@ func (a *CredentialsAPIService) AddCredentialsExecute(r ApiAddCredentialsRequest
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -135,8 +134,8 @@ func (a *CredentialsAPIService) AddCredentialsExecute(r ApiAddCredentialsRequest
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -144,8 +143,8 @@ func (a *CredentialsAPIService) AddCredentialsExecute(r ApiAddCredentialsRequest
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -154,9 +153,9 @@ func (a *CredentialsAPIService) AddCredentialsExecute(r ApiAddCredentialsRequest
 }
 
 type ApiGetCredentialTypeRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *CredentialsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetCredentialTypeRequest) Execute() (*GetCredentialType200Response, *http.Response, error) {
@@ -168,27 +167,27 @@ GetCredentialType Get a Specific Credential Type
 
 This endpoint retrieves a specific credential type.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetCredentialTypeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetCredentialTypeRequest
 */
 func (a *CredentialsAPIService) GetCredentialType(ctx context.Context, id int64) ApiGetCredentialTypeRequest {
 	return ApiGetCredentialTypeRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetCredentialType200Response
+//
+//	@return GetCredentialType200Response
 func (a *CredentialsAPIService) GetCredentialTypeExecute(r ApiGetCredentialTypeRequest) (*GetCredentialType200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetCredentialType200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetCredentialType200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CredentialsAPIService.GetCredentialType")
@@ -239,7 +238,7 @@ func (a *CredentialsAPIService) GetCredentialTypeExecute(r ApiGetCredentialTypeR
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -248,8 +247,8 @@ func (a *CredentialsAPIService) GetCredentialTypeExecute(r ApiGetCredentialTypeR
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -259,8 +258,8 @@ func (a *CredentialsAPIService) GetCredentialTypeExecute(r ApiGetCredentialTypeR
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -268,8 +267,8 @@ func (a *CredentialsAPIService) GetCredentialTypeExecute(r ApiGetCredentialTypeR
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -278,9 +277,9 @@ func (a *CredentialsAPIService) GetCredentialTypeExecute(r ApiGetCredentialTypeR
 }
 
 type ApiGetCredentialsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *CredentialsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiGetCredentialsRequest) Execute() (*GetCredentials200Response, *http.Response, error) {
@@ -292,27 +291,27 @@ GetCredentials Retrieves a Specific Credential
 
 Retrieves a specific credential.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiGetCredentialsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiGetCredentialsRequest
 */
 func (a *CredentialsAPIService) GetCredentials(ctx context.Context, id int64) ApiGetCredentialsRequest {
 	return ApiGetCredentialsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return GetCredentials200Response
+//
+//	@return GetCredentials200Response
 func (a *CredentialsAPIService) GetCredentialsExecute(r ApiGetCredentialsRequest) (*GetCredentials200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetCredentials200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetCredentials200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CredentialsAPIService.GetCredentials")
@@ -363,7 +362,7 @@ func (a *CredentialsAPIService) GetCredentialsExecute(r ApiGetCredentialsRequest
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -372,8 +371,8 @@ func (a *CredentialsAPIService) GetCredentialsExecute(r ApiGetCredentialsRequest
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -383,8 +382,8 @@ func (a *CredentialsAPIService) GetCredentialsExecute(r ApiGetCredentialsRequest
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -392,8 +391,8 @@ func (a *CredentialsAPIService) GetCredentialsExecute(r ApiGetCredentialsRequest
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -402,15 +401,15 @@ func (a *CredentialsAPIService) GetCredentialsExecute(r ApiGetCredentialsRequest
 }
 
 type ApiListCredentialTypesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *CredentialsAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	name *string
-	code *string
+	max        *int64
+	offset     *int64
+	sort       *string
+	direction  *string
+	phrase     *string
+	name       *string
+	code       *string
 }
 
 // Maximum number of records to return
@@ -464,25 +463,25 @@ ListCredentialTypes Get All Credential Types
 
 Get All Credential Types.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListCredentialTypesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListCredentialTypesRequest
 */
 func (a *CredentialsAPIService) ListCredentialTypes(ctx context.Context) ApiListCredentialTypesRequest {
 	return ApiListCredentialTypesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListCredentialTypes200Response
+//
+//	@return ListCredentialTypes200Response
 func (a *CredentialsAPIService) ListCredentialTypesExecute(r ApiListCredentialTypesRequest) (*ListCredentialTypes200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListCredentialTypes200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListCredentialTypes200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CredentialsAPIService.ListCredentialTypes")
@@ -565,7 +564,7 @@ func (a *CredentialsAPIService) ListCredentialTypesExecute(r ApiListCredentialTy
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -574,8 +573,8 @@ func (a *CredentialsAPIService) ListCredentialTypesExecute(r ApiListCredentialTy
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -585,8 +584,8 @@ func (a *CredentialsAPIService) ListCredentialTypesExecute(r ApiListCredentialTy
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -594,8 +593,8 @@ func (a *CredentialsAPIService) ListCredentialTypesExecute(r ApiListCredentialTy
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -604,15 +603,15 @@ func (a *CredentialsAPIService) ListCredentialTypesExecute(r ApiListCredentialTy
 }
 
 type ApiListCredentialsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *CredentialsAPIService
-	max *int64
-	offset *int64
-	sort *string
-	direction *string
-	phrase *string
-	name *string
-	type_ *string
+	max        *int64
+	offset     *int64
+	sort       *string
+	direction  *string
+	phrase     *string
+	name       *string
+	type_      *string
 }
 
 // Maximum number of records to return
@@ -666,25 +665,25 @@ ListCredentials Retrieves all Credentials
 
 Retrieves all credentials.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListCredentialsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListCredentialsRequest
 */
 func (a *CredentialsAPIService) ListCredentials(ctx context.Context) ApiListCredentialsRequest {
 	return ApiListCredentialsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListCredentials200Response
+//
+//	@return ListCredentials200Response
 func (a *CredentialsAPIService) ListCredentialsExecute(r ApiListCredentialsRequest) (*ListCredentials200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListCredentials200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListCredentials200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CredentialsAPIService.ListCredentials")
@@ -767,7 +766,7 @@ func (a *CredentialsAPIService) ListCredentialsExecute(r ApiListCredentialsReque
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -776,8 +775,8 @@ func (a *CredentialsAPIService) ListCredentialsExecute(r ApiListCredentialsReque
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -787,8 +786,8 @@ func (a *CredentialsAPIService) ListCredentialsExecute(r ApiListCredentialsReque
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -796,8 +795,8 @@ func (a *CredentialsAPIService) ListCredentialsExecute(r ApiListCredentialsReque
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -806,9 +805,9 @@ func (a *CredentialsAPIService) ListCredentialsExecute(r ApiListCredentialsReque
 }
 
 type ApiRemoveCredentialsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *CredentialsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiRemoveCredentialsRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -820,27 +819,27 @@ RemoveCredentials Deletes a Credential
 
 Deletes a specified credential.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiRemoveCredentialsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiRemoveCredentialsRequest
 */
 func (a *CredentialsAPIService) RemoveCredentials(ctx context.Context, id int64) ApiRemoveCredentialsRequest {
 	return ApiRemoveCredentialsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *CredentialsAPIService) RemoveCredentialsExecute(r ApiRemoveCredentialsRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CredentialsAPIService.RemoveCredentials")
@@ -891,7 +890,7 @@ func (a *CredentialsAPIService) RemoveCredentialsExecute(r ApiRemoveCredentialsR
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -900,8 +899,8 @@ func (a *CredentialsAPIService) RemoveCredentialsExecute(r ApiRemoveCredentialsR
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -911,8 +910,8 @@ func (a *CredentialsAPIService) RemoveCredentialsExecute(r ApiRemoveCredentialsR
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -920,8 +919,8 @@ func (a *CredentialsAPIService) RemoveCredentialsExecute(r ApiRemoveCredentialsR
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -930,9 +929,9 @@ func (a *CredentialsAPIService) RemoveCredentialsExecute(r ApiRemoveCredentialsR
 }
 
 type ApiUpdateCredentialsRequest struct {
-	ctx context.Context
-	ApiService *CredentialsAPIService
-	id int64
+	ctx                      context.Context
+	ApiService               *CredentialsAPIService
+	id                       int64
 	updateCredentialsRequest *UpdateCredentialsRequest
 }
 
@@ -950,27 +949,27 @@ UpdateCredentials Updates a Credential
 
 Updates a credential.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiUpdateCredentialsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiUpdateCredentialsRequest
 */
 func (a *CredentialsAPIService) UpdateCredentials(ctx context.Context, id int64) ApiUpdateCredentialsRequest {
 	return ApiUpdateCredentialsRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return AddCredentials200Response
+//
+//	@return AddCredentials200Response
 func (a *CredentialsAPIService) UpdateCredentialsExecute(r ApiUpdateCredentialsRequest) (*AddCredentials200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddCredentials200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddCredentials200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CredentialsAPIService.UpdateCredentials")
@@ -1023,7 +1022,7 @@ func (a *CredentialsAPIService) UpdateCredentialsExecute(r ApiUpdateCredentialsR
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -1032,8 +1031,8 @@ func (a *CredentialsAPIService) UpdateCredentialsExecute(r ApiUpdateCredentialsR
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -1043,8 +1042,8 @@ func (a *CredentialsAPIService) UpdateCredentialsExecute(r ApiUpdateCredentialsR
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -1052,8 +1051,8 @@ func (a *CredentialsAPIService) UpdateCredentialsExecute(r ApiUpdateCredentialsR
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

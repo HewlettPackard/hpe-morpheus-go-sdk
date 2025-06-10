@@ -18,13 +18,13 @@ import (
 // checks if the CheckPush type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &CheckPush{}
 
-// CheckPush A push Check is not polled regularly by the standard monitoring system. Instead it is expected that an external API push updates as to the status of the check timed closely with the configured check interval setting. This is used to throttle the push from performing too many status updates. To push an update using the api key one must send a json payload like so: `curl -XPOST https://<morpheus url>/api/monitoring/push?apiKey=<apiKey> -H 'Content-Type: application/json' -d '{\"success\":true, \"message\": \"any comment goes here\"}'` The API Key will be returned on successful creation or can be found by getting this check. 
+// CheckPush A push Check is not polled regularly by the standard monitoring system. Instead it is expected that an external API push updates as to the status of the check timed closely with the configured check interval setting. This is used to throttle the push from performing too many status updates. To push an update using the api key one must send a json payload like so: `curl -XPOST https://<morpheus url>/api/monitoring/push?apiKey=<apiKey> -H 'Content-Type: application/json' -d '{\"success\":true, \"message\": \"any comment goes here\"}'` The API Key will be returned on successful creation or can be found by getting this check.
 type CheckPush struct {
 	// Unique name scoped to your account for the check
 	Name *string `json:"name,omitempty"`
 	// Optional description field
-	Description *string `json:"description,omitempty"`
-	CheckType *AddChecksRequestCheckOneOf4CheckType `json:"checkType,omitempty"`
+	Description *string                               `json:"description,omitempty"`
+	CheckType   *AddChecksRequestCheckOneOf4CheckType `json:"checkType,omitempty"`
 	// Number of seconds you want between check executions (minimum value is 60, depending on your subscription plan)
 	CheckInterval *int32 `json:"checkInterval,omitempty"`
 	// Used to determine if check should affect account wide availability calculations
@@ -32,8 +32,8 @@ type CheckPush struct {
 	// Used to determine if check should be scheduled to execute
 	Active *bool `json:"active,omitempty"`
 	// Severity level threshold for sending notifications.
-	Severity *string `json:"severity,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Severity             *string                `json:"severity,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _CheckPush CheckPush
@@ -296,7 +296,7 @@ func (o *CheckPush) SetSeverity(v string) {
 }
 
 func (o CheckPush) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -333,68 +333,8 @@ func (o CheckPush) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *CheckPush) UnmarshalJSON(data []byte) (err error) {
-	varCheckPush := _CheckPush{}
-
-	err = json.Unmarshal(data, &varCheckPush)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CheckPush(varCheckPush)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "checkType")
-		delete(additionalProperties, "checkInterval")
-		delete(additionalProperties, "inUptime")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "severity")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCheckPush struct {
-	value *CheckPush
-	isSet bool
-}
-
-func (v NullableCheckPush) Get() *CheckPush {
-	return v.value
-}
-
-func (v *NullableCheckPush) Set(val *CheckPush) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCheckPush) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCheckPush) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCheckPush(val *CheckPush) *NullableCheckPush {
-	return &NullableCheckPush{value: val, isSet: true}
-}
-
-func (v NullableCheckPush) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCheckPush) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -20,22 +20,22 @@ var _ MappedNullable = &IntegrationType{}
 
 // IntegrationType struct for IntegrationType
 type IntegrationType struct {
-	Id *int64 `json:"id,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Category *string `json:"category,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	Creatable *bool `json:"creatable,omitempty"`
-	HasCMDB *bool `json:"hasCMDB,omitempty"`
-	HasCMDBDiscovery *bool `json:"hasCMDBDiscovery,omitempty"`
-	HasCM *bool `json:"hasCM,omitempty"`
-	HasDNS *bool `json:"hasDNS,omitempty"`
-	HasApprovals *bool `json:"hasApprovals,omitempty"`
-	HasDeleteApprovals *bool `json:"hasDeleteApprovals,omitempty"`
-	HasReconfigureApprovals *bool `json:"hasReconfigureApprovals,omitempty"`
-	IsPlugin *bool `json:"isPlugin,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                      *int64                 `json:"id,omitempty"`
+	Code                    *string                `json:"code,omitempty"`
+	Name                    *string                `json:"name,omitempty"`
+	Description             *string                `json:"description,omitempty"`
+	Category                *string                `json:"category,omitempty"`
+	Enabled                 *bool                  `json:"enabled,omitempty"`
+	Creatable               *bool                  `json:"creatable,omitempty"`
+	HasCMDB                 *bool                  `json:"hasCMDB,omitempty"`
+	HasCMDBDiscovery        *bool                  `json:"hasCMDBDiscovery,omitempty"`
+	HasCM                   *bool                  `json:"hasCM,omitempty"`
+	HasDNS                  *bool                  `json:"hasDNS,omitempty"`
+	HasApprovals            *bool                  `json:"hasApprovals,omitempty"`
+	HasDeleteApprovals      *bool                  `json:"hasDeleteApprovals,omitempty"`
+	HasReconfigureApprovals *bool                  `json:"hasReconfigureApprovals,omitempty"`
+	IsPlugin                *bool                  `json:"isPlugin,omitempty"`
+	AdditionalProperties    map[string]interface{} `json:",remain"`
 }
 
 type _IntegrationType IntegrationType
@@ -538,7 +538,7 @@ func (o *IntegrationType) SetIsPlugin(v bool) {
 }
 
 func (o IntegrationType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -599,76 +599,8 @@ func (o IntegrationType) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *IntegrationType) UnmarshalJSON(data []byte) (err error) {
-	varIntegrationType := _IntegrationType{}
-
-	err = json.Unmarshal(data, &varIntegrationType)
-
-	if err != nil {
-		return err
-	}
-
-	*o = IntegrationType(varIntegrationType)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "creatable")
-		delete(additionalProperties, "hasCMDB")
-		delete(additionalProperties, "hasCMDBDiscovery")
-		delete(additionalProperties, "hasCM")
-		delete(additionalProperties, "hasDNS")
-		delete(additionalProperties, "hasApprovals")
-		delete(additionalProperties, "hasDeleteApprovals")
-		delete(additionalProperties, "hasReconfigureApprovals")
-		delete(additionalProperties, "isPlugin")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableIntegrationType struct {
-	value *IntegrationType
-	isSet bool
-}
-
-func (v NullableIntegrationType) Get() *IntegrationType {
-	return v.value
-}
-
-func (v *NullableIntegrationType) Set(val *IntegrationType) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableIntegrationType) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableIntegrationType) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableIntegrationType(val *IntegrationType) *NullableIntegrationType {
-	return &NullableIntegrationType{value: val, isSet: true}
-}
-
-func (v NullableIntegrationType) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableIntegrationType) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

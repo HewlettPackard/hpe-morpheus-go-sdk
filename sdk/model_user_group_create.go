@@ -20,13 +20,13 @@ var _ MappedNullable = &UserGroupCreate{}
 
 // UserGroupCreate struct for UserGroupCreate
 type UserGroupCreate struct {
-	Name *string `json:"name,omitempty"`
+	Name        *string `json:"name,omitempty"`
 	Description *string `json:"description,omitempty"`
-	SudoUser *bool `json:"sudoUser,omitempty"`
+	SudoUser    *bool   `json:"sudoUser,omitempty"`
 	ServerGroup *string `json:"serverGroup,omitempty"`
 	// A list of IDs of users that are in the user group
-	Users []int64 `json:"users,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Users                []int64                `json:"users,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UserGroupCreate UserGroupCreate
@@ -209,7 +209,7 @@ func (o *UserGroupCreate) SetUsers(v []int64) {
 }
 
 func (o UserGroupCreate) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -240,66 +240,8 @@ func (o UserGroupCreate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *UserGroupCreate) UnmarshalJSON(data []byte) (err error) {
-	varUserGroupCreate := _UserGroupCreate{}
-
-	err = json.Unmarshal(data, &varUserGroupCreate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UserGroupCreate(varUserGroupCreate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "sudoUser")
-		delete(additionalProperties, "serverGroup")
-		delete(additionalProperties, "users")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUserGroupCreate struct {
-	value *UserGroupCreate
-	isSet bool
-}
-
-func (v NullableUserGroupCreate) Get() *UserGroupCreate {
-	return v.value
-}
-
-func (v *NullableUserGroupCreate) Set(val *UserGroupCreate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUserGroupCreate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUserGroupCreate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUserGroupCreate(val *UserGroupCreate) *NullableUserGroupCreate {
-	return &NullableUserGroupCreate{value: val, isSet: true}
-}
-
-func (v NullableUserGroupCreate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUserGroupCreate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

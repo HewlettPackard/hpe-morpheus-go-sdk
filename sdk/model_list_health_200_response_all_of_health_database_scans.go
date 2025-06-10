@@ -20,14 +20,14 @@ var _ MappedNullable = &ListHealth200ResponseAllOfHealthDatabaseScans{}
 
 // ListHealth200ResponseAllOfHealthDatabaseScans struct for ListHealth200ResponseAllOfHealthDatabaseScans
 type ListHealth200ResponseAllOfHealthDatabaseScans struct {
-	HandlerReadFirst *string `json:"Handler_read_first,omitempty"`
-	HandlerReadKey *string `json:"Handler_read_key,omitempty"`
-	HandlerReadLast *string `json:"Handler_read_last,omitempty"`
-	HandlerReadNext *string `json:"Handler_read_next,omitempty"`
-	HandlerReadPrev *string `json:"Handler_read_prev,omitempty"`
-	HandlerReadRnd *string `json:"Handler_read_rnd,omitempty"`
-	HandlerReadRndNext *string `json:"Handler_read_rnd_next,omitempty"`
-	AdditionalProperties map[string]interface{}
+	HandlerReadFirst     *string                `json:"Handler_read_first,omitempty"`
+	HandlerReadKey       *string                `json:"Handler_read_key,omitempty"`
+	HandlerReadLast      *string                `json:"Handler_read_last,omitempty"`
+	HandlerReadNext      *string                `json:"Handler_read_next,omitempty"`
+	HandlerReadPrev      *string                `json:"Handler_read_prev,omitempty"`
+	HandlerReadRnd       *string                `json:"Handler_read_rnd,omitempty"`
+	HandlerReadRndNext   *string                `json:"Handler_read_rnd_next,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListHealth200ResponseAllOfHealthDatabaseScans ListHealth200ResponseAllOfHealthDatabaseScans
@@ -274,7 +274,7 @@ func (o *ListHealth200ResponseAllOfHealthDatabaseScans) SetHandlerReadRndNext(v 
 }
 
 func (o ListHealth200ResponseAllOfHealthDatabaseScans) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -311,68 +311,8 @@ func (o ListHealth200ResponseAllOfHealthDatabaseScans) ToMap() (map[string]inter
 
 	return toSerialize, nil
 }
-
 func (o *ListHealth200ResponseAllOfHealthDatabaseScans) UnmarshalJSON(data []byte) (err error) {
-	varListHealth200ResponseAllOfHealthDatabaseScans := _ListHealth200ResponseAllOfHealthDatabaseScans{}
-
-	err = json.Unmarshal(data, &varListHealth200ResponseAllOfHealthDatabaseScans)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListHealth200ResponseAllOfHealthDatabaseScans(varListHealth200ResponseAllOfHealthDatabaseScans)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "Handler_read_first")
-		delete(additionalProperties, "Handler_read_key")
-		delete(additionalProperties, "Handler_read_last")
-		delete(additionalProperties, "Handler_read_next")
-		delete(additionalProperties, "Handler_read_prev")
-		delete(additionalProperties, "Handler_read_rnd")
-		delete(additionalProperties, "Handler_read_rnd_next")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListHealth200ResponseAllOfHealthDatabaseScans struct {
-	value *ListHealth200ResponseAllOfHealthDatabaseScans
-	isSet bool
-}
-
-func (v NullableListHealth200ResponseAllOfHealthDatabaseScans) Get() *ListHealth200ResponseAllOfHealthDatabaseScans {
-	return v.value
-}
-
-func (v *NullableListHealth200ResponseAllOfHealthDatabaseScans) Set(val *ListHealth200ResponseAllOfHealthDatabaseScans) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListHealth200ResponseAllOfHealthDatabaseScans) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListHealth200ResponseAllOfHealthDatabaseScans) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListHealth200ResponseAllOfHealthDatabaseScans(val *ListHealth200ResponseAllOfHealthDatabaseScans) *NullableListHealth200ResponseAllOfHealthDatabaseScans {
-	return &NullableListHealth200ResponseAllOfHealthDatabaseScans{value: val, isSet: true}
-}
-
-func (v NullableListHealth200ResponseAllOfHealthDatabaseScans) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListHealth200ResponseAllOfHealthDatabaseScans) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

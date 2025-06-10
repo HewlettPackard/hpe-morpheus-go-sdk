@@ -20,8 +20,8 @@ var _ MappedNullable = &DeleteAlerts200Response{}
 
 // DeleteAlerts200Response struct for DeleteAlerts200Response
 type DeleteAlerts200Response struct {
-	Success *bool `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Success              *bool                  `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _DeleteAlerts200Response DeleteAlerts200Response
@@ -76,7 +76,7 @@ func (o *DeleteAlerts200Response) SetSuccess(v bool) {
 }
 
 func (o DeleteAlerts200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o DeleteAlerts200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *DeleteAlerts200Response) UnmarshalJSON(data []byte) (err error) {
-	varDeleteAlerts200Response := _DeleteAlerts200Response{}
-
-	err = json.Unmarshal(data, &varDeleteAlerts200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = DeleteAlerts200Response(varDeleteAlerts200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "success")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableDeleteAlerts200Response struct {
-	value *DeleteAlerts200Response
-	isSet bool
-}
-
-func (v NullableDeleteAlerts200Response) Get() *DeleteAlerts200Response {
-	return v.value
-}
-
-func (v *NullableDeleteAlerts200Response) Set(val *DeleteAlerts200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableDeleteAlerts200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableDeleteAlerts200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableDeleteAlerts200Response(val *DeleteAlerts200Response) *NullableDeleteAlerts200Response {
-	return &NullableDeleteAlerts200Response{value: val, isSet: true}
-}
-
-func (v NullableDeleteAlerts200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableDeleteAlerts200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

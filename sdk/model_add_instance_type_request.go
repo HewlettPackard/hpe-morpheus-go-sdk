@@ -20,8 +20,8 @@ var _ MappedNullable = &AddInstanceTypeRequest{}
 
 // AddInstanceTypeRequest struct for AddInstanceTypeRequest
 type AddInstanceTypeRequest struct {
-	InstanceType *AddInstanceTypeRequestInstanceType `json:"instanceType,omitempty"`
-	AdditionalProperties map[string]interface{}
+	InstanceType         *AddInstanceTypeRequestInstanceType `json:"instanceType,omitempty"`
+	AdditionalProperties map[string]interface{}              `json:",remain"`
 }
 
 type _AddInstanceTypeRequest AddInstanceTypeRequest
@@ -76,7 +76,7 @@ func (o *AddInstanceTypeRequest) SetInstanceType(v AddInstanceTypeRequestInstanc
 }
 
 func (o AddInstanceTypeRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o AddInstanceTypeRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *AddInstanceTypeRequest) UnmarshalJSON(data []byte) (err error) {
-	varAddInstanceTypeRequest := _AddInstanceTypeRequest{}
-
-	err = json.Unmarshal(data, &varAddInstanceTypeRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddInstanceTypeRequest(varAddInstanceTypeRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "instanceType")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddInstanceTypeRequest struct {
-	value *AddInstanceTypeRequest
-	isSet bool
-}
-
-func (v NullableAddInstanceTypeRequest) Get() *AddInstanceTypeRequest {
-	return v.value
-}
-
-func (v *NullableAddInstanceTypeRequest) Set(val *AddInstanceTypeRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddInstanceTypeRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddInstanceTypeRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddInstanceTypeRequest(val *AddInstanceTypeRequest) *NullableAddInstanceTypeRequest {
-	return &NullableAddInstanceTypeRequest{value: val, isSet: true}
-}
-
-func (v NullableAddInstanceTypeRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddInstanceTypeRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

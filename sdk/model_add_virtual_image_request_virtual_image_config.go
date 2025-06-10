@@ -14,6 +14,7 @@ package sdk
 import (
 	"encoding/json"
 	"fmt"
+
 	"gopkg.in/validator.v2"
 )
 
@@ -23,7 +24,7 @@ var _ fmt.Stringer
 // AddVirtualImageRequestVirtualImageConfig - Map of configuration properties, varies by image type.
 type AddVirtualImageRequestVirtualImageConfig struct {
 	AddVirtualImageRequestVirtualImageConfigOneOf *AddVirtualImageRequestVirtualImageConfigOneOf
-	MapmapOfStringAny *map[string]interface{}
+	MapmapOfStringAny                             *map[string]interface{}
 }
 
 // AddVirtualImageRequestVirtualImageConfigOneOfAsAddVirtualImageRequestVirtualImageConfig is a convenience function that returns AddVirtualImageRequestVirtualImageConfigOneOf wrapped in AddVirtualImageRequestVirtualImageConfig
@@ -40,6 +41,21 @@ func MapmapOfStringAnyAsAddVirtualImageRequestVirtualImageConfig(v *map[string]i
 	}
 }
 
+func (dst *AddVirtualImageRequestVirtualImageConfig) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddVirtualImageRequestVirtualImageConfig{}
+	}
+
+	if out, ok := data.(AddVirtualImageRequestVirtualImageConfigOneOf); ok {
+		dst.AddVirtualImageRequestVirtualImageConfigOneOf = &out
+	}
+
+	if out, ok := data.(map[string]interface{}); ok {
+		dst.MapmapOfStringAny = &out
+	}
+
+	return dst, nil
+}
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddVirtualImageRequestVirtualImageConfig) UnmarshalJSON(data []byte) error {
@@ -106,7 +122,7 @@ func (src AddVirtualImageRequestVirtualImageConfig) MarshalJSON() ([]byte, error
 }
 
 // Get the actual instance
-func (obj *AddVirtualImageRequestVirtualImageConfig) GetActualInstance() (interface{}) {
+func (obj *AddVirtualImageRequestVirtualImageConfig) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -123,7 +139,7 @@ func (obj *AddVirtualImageRequestVirtualImageConfig) GetActualInstance() (interf
 }
 
 // Get the actual instance value
-func (obj AddVirtualImageRequestVirtualImageConfig) GetActualInstanceValue() (interface{}) {
+func (obj AddVirtualImageRequestVirtualImageConfig) GetActualInstanceValue() interface{} {
 	if obj.AddVirtualImageRequestVirtualImageConfigOneOf != nil {
 		return *obj.AddVirtualImageRequestVirtualImageConfigOneOf
 	}
@@ -171,5 +187,3 @@ func (v *NullableAddVirtualImageRequestVirtualImageConfig) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -28,8 +28,8 @@ type UpdateVDIAppsRequestVdiAppOneOf struct {
 	// Icon Path. A relative location of an icon image
 	IconPath **os.File `json:"iconPath,omitempty"`
 	// The RDS App Name Prefix.  Must start with '||'
-	LaunchPrefix *string `json:"launchPrefix,omitempty"`
-	AdditionalProperties map[string]interface{}
+	LaunchPrefix         *string                `json:"launchPrefix,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UpdateVDIAppsRequestVdiAppOneOf UpdateVDIAppsRequestVdiAppOneOf
@@ -180,7 +180,7 @@ func (o *UpdateVDIAppsRequestVdiAppOneOf) SetLaunchPrefix(v string) {
 }
 
 func (o UpdateVDIAppsRequestVdiAppOneOf) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -208,65 +208,8 @@ func (o UpdateVDIAppsRequestVdiAppOneOf) ToMap() (map[string]interface{}, error)
 
 	return toSerialize, nil
 }
-
 func (o *UpdateVDIAppsRequestVdiAppOneOf) UnmarshalJSON(data []byte) (err error) {
-	varUpdateVDIAppsRequestVdiAppOneOf := _UpdateVDIAppsRequestVdiAppOneOf{}
-
-	err = json.Unmarshal(data, &varUpdateVDIAppsRequestVdiAppOneOf)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateVDIAppsRequestVdiAppOneOf(varUpdateVDIAppsRequestVdiAppOneOf)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "iconPath")
-		delete(additionalProperties, "launchPrefix")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateVDIAppsRequestVdiAppOneOf struct {
-	value *UpdateVDIAppsRequestVdiAppOneOf
-	isSet bool
-}
-
-func (v NullableUpdateVDIAppsRequestVdiAppOneOf) Get() *UpdateVDIAppsRequestVdiAppOneOf {
-	return v.value
-}
-
-func (v *NullableUpdateVDIAppsRequestVdiAppOneOf) Set(val *UpdateVDIAppsRequestVdiAppOneOf) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateVDIAppsRequestVdiAppOneOf) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateVDIAppsRequestVdiAppOneOf) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateVDIAppsRequestVdiAppOneOf(val *UpdateVDIAppsRequestVdiAppOneOf) *NullableUpdateVDIAppsRequestVdiAppOneOf {
-	return &NullableUpdateVDIAppsRequestVdiAppOneOf{value: val, isSet: true}
-}
-
-func (v NullableUpdateVDIAppsRequestVdiAppOneOf) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateVDIAppsRequestVdiAppOneOf) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

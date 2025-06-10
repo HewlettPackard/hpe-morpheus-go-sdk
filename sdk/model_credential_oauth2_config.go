@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the CredentialOauth2Config type satisfies the MappedNullable interface at compile time
@@ -28,14 +27,14 @@ type CredentialOauth2Config struct {
 	// Optional Description
 	Description *string `json:"description,omitempty"`
 	// Credential enabled
-	Enabled *bool `json:"enabled,omitempty"`
+	Enabled     *bool                                            `json:"enabled,omitempty"`
 	Integration *AddCredentialsRequestCredentialOneOfIntegration `json:"integration,omitempty"`
 	// Username
 	Username *string `json:"username,omitempty"`
 	// Password
-	Password *string `json:"password,omitempty"`
-	Config AddCredentialsRequestCredentialOneOf8Config `json:"config"`
-	AdditionalProperties map[string]interface{}
+	Password             *string                                     `json:"password,omitempty"`
+	Config               AddCredentialsRequestCredentialOneOf8Config `json:"config"`
+	AdditionalProperties map[string]interface{}                      `json:",remain"`
 }
 
 type _CredentialOauth2Config CredentialOauth2Config
@@ -297,7 +296,7 @@ func (o *CredentialOauth2Config) SetConfig(v AddCredentialsRequestCredentialOneO
 }
 
 func (o CredentialOauth2Config) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -331,92 +330,8 @@ func (o CredentialOauth2Config) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *CredentialOauth2Config) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"type",
-		"name",
-		"config",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varCredentialOauth2Config := _CredentialOauth2Config{}
-
-	err = json.Unmarshal(data, &varCredentialOauth2Config)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CredentialOauth2Config(varCredentialOauth2Config)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "integration")
-		delete(additionalProperties, "username")
-		delete(additionalProperties, "password")
-		delete(additionalProperties, "config")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableCredentialOauth2Config struct {
-	value *CredentialOauth2Config
-	isSet bool
-}
-
-func (v NullableCredentialOauth2Config) Get() *CredentialOauth2Config {
-	return v.value
-}
-
-func (v *NullableCredentialOauth2Config) Set(val *CredentialOauth2Config) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCredentialOauth2Config) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCredentialOauth2Config) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCredentialOauth2Config(val *CredentialOauth2Config) *NullableCredentialOauth2Config {
-	return &NullableCredentialOauth2Config{value: val, isSet: true}
-}
-
-func (v NullableCredentialOauth2Config) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCredentialOauth2Config) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the UpdateRoleTaskAccessRequestOneOf1 type satisfies the MappedNullable interface at compile time
@@ -24,8 +23,8 @@ type UpdateRoleTaskAccessRequestOneOf1 struct {
 	// Apply to all tasks
 	AllTasks bool `json:"allTasks"`
 	// The new access level.
-	Access string `json:"access"`
-	AdditionalProperties map[string]interface{}
+	Access               string                 `json:"access"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UpdateRoleTaskAccessRequestOneOf1 UpdateRoleTaskAccessRequestOneOf1
@@ -98,7 +97,7 @@ func (o *UpdateRoleTaskAccessRequestOneOf1) SetAccess(v string) {
 }
 
 func (o UpdateRoleTaskAccessRequestOneOf1) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -116,85 +115,8 @@ func (o UpdateRoleTaskAccessRequestOneOf1) ToMap() (map[string]interface{}, erro
 
 	return toSerialize, nil
 }
-
 func (o *UpdateRoleTaskAccessRequestOneOf1) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"allTasks",
-		"access",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varUpdateRoleTaskAccessRequestOneOf1 := _UpdateRoleTaskAccessRequestOneOf1{}
-
-	err = json.Unmarshal(data, &varUpdateRoleTaskAccessRequestOneOf1)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateRoleTaskAccessRequestOneOf1(varUpdateRoleTaskAccessRequestOneOf1)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "allTasks")
-		delete(additionalProperties, "access")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateRoleTaskAccessRequestOneOf1 struct {
-	value *UpdateRoleTaskAccessRequestOneOf1
-	isSet bool
-}
-
-func (v NullableUpdateRoleTaskAccessRequestOneOf1) Get() *UpdateRoleTaskAccessRequestOneOf1 {
-	return v.value
-}
-
-func (v *NullableUpdateRoleTaskAccessRequestOneOf1) Set(val *UpdateRoleTaskAccessRequestOneOf1) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateRoleTaskAccessRequestOneOf1) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateRoleTaskAccessRequestOneOf1) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateRoleTaskAccessRequestOneOf1(val *UpdateRoleTaskAccessRequestOneOf1) *NullableUpdateRoleTaskAccessRequestOneOf1 {
-	return &NullableUpdateRoleTaskAccessRequestOneOf1{value: val, isSet: true}
-}
-
-func (v NullableUpdateRoleTaskAccessRequestOneOf1) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateRoleTaskAccessRequestOneOf1) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

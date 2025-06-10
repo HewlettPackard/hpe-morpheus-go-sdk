@@ -20,12 +20,12 @@ var _ MappedNullable = &ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf
 
 // ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3Config struct for ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3Config
 type ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3Config struct {
-	Url *string `json:"url,omitempty"`
-	AdministratorAPIToken *string `json:"administratorAPIToken,omitempty"`
-	RequiredGroup *string `json:"requiredGroup,omitempty"`
-	RequiredGroupId *string `json:"requiredGroupId,omitempty"`
-	AdministratorAPITokenHash *string `json:"administratorAPITokenHash,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Url                       *string                `json:"url,omitempty"`
+	AdministratorAPIToken     *string                `json:"administratorAPIToken,omitempty"`
+	RequiredGroup             *string                `json:"requiredGroup,omitempty"`
+	RequiredGroupId           *string                `json:"requiredGroupId,omitempty"`
+	AdministratorAPITokenHash *string                `json:"administratorAPITokenHash,omitempty"`
+	AdditionalProperties      map[string]interface{} `json:",remain"`
 }
 
 type _ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3Config ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3Config
@@ -208,7 +208,7 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3Config) SetAdm
 }
 
 func (o ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3Config) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -239,66 +239,8 @@ func (o ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3Config) ToMap()
 
 	return toSerialize, nil
 }
-
 func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3Config) UnmarshalJSON(data []byte) (err error) {
-	varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3Config := _ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3Config{}
-
-	err = json.Unmarshal(data, &varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3Config)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3Config(varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3Config)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "administratorAPIToken")
-		delete(additionalProperties, "requiredGroup")
-		delete(additionalProperties, "requiredGroupId")
-		delete(additionalProperties, "administratorAPITokenHash")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3Config struct {
-	value *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3Config
-	isSet bool
-}
-
-func (v NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3Config) Get() *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3Config {
-	return v.value
-}
-
-func (v *NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3Config) Set(val *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3Config) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3Config) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3Config) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3Config(val *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3Config) *NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3Config {
-	return &NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3Config{value: val, isSet: true}
-}
-
-func (v NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3Config) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3Config) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

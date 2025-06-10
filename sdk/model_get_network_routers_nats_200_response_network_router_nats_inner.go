@@ -21,29 +21,29 @@ var _ MappedNullable = &GetNetworkRoutersNats200ResponseNetworkRouterNATsInner{}
 
 // GetNetworkRoutersNats200ResponseNetworkRouterNATsInner struct for GetNetworkRoutersNats200ResponseNetworkRouterNATsInner
 type GetNetworkRoutersNats200ResponseNetworkRouterNATsInner struct {
-	Id *int32 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	SourceNetwork *string `json:"sourceNetwork,omitempty"`
-	DestinationNetwork *string `json:"destinationNetwork,omitempty"`
-	TranslatedNetwork *string `json:"translatedNetwork,omitempty"`
-	SourcePorts *string `json:"sourcePorts,omitempty"`
-	DestinationPorts *string `json:"destinationPorts,omitempty"`
-	TranslatedPorts *string `json:"translatedPorts,omitempty"`
-	Priority *int32 `json:"priority,omitempty"`
-	Protocol *string `json:"protocol,omitempty"`
-	MatchIpv6DestinationPrefix *string `json:"matchIpv6DestinationPrefix,omitempty"`
-	TranslatedIpv4SourcePrefix *string `json:"translatedIpv4SourcePrefix,omitempty"`
-	RefType *string `json:"refType,omitempty"`
-	RefId *string `json:"refId,omitempty"`
-	SyncSource *string `json:"syncSource,omitempty"`
-	InternalId *string `json:"internalId,omitempty"`
-	ExternalId *string `json:"externalId,omitempty"`
-	ProviderId *string `json:"providerId,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                         *int32                 `json:"id,omitempty"`
+	Name                       *string                `json:"name,omitempty"`
+	Description                *string                `json:"description,omitempty"`
+	Enabled                    *bool                  `json:"enabled,omitempty"`
+	SourceNetwork              *string                `json:"sourceNetwork,omitempty"`
+	DestinationNetwork         *string                `json:"destinationNetwork,omitempty"`
+	TranslatedNetwork          *string                `json:"translatedNetwork,omitempty"`
+	SourcePorts                *string                `json:"sourcePorts,omitempty"`
+	DestinationPorts           *string                `json:"destinationPorts,omitempty"`
+	TranslatedPorts            *string                `json:"translatedPorts,omitempty"`
+	Priority                   *int32                 `json:"priority,omitempty"`
+	Protocol                   *string                `json:"protocol,omitempty"`
+	MatchIpv6DestinationPrefix *string                `json:"matchIpv6DestinationPrefix,omitempty"`
+	TranslatedIpv4SourcePrefix *string                `json:"translatedIpv4SourcePrefix,omitempty"`
+	RefType                    *string                `json:"refType,omitempty"`
+	RefId                      *string                `json:"refId,omitempty"`
+	SyncSource                 *string                `json:"syncSource,omitempty"`
+	InternalId                 *string                `json:"internalId,omitempty"`
+	ExternalId                 *string                `json:"externalId,omitempty"`
+	ProviderId                 *string                `json:"providerId,omitempty"`
+	DateCreated                *time.Time             `json:"dateCreated,omitempty"`
+	LastUpdated                *time.Time             `json:"lastUpdated,omitempty"`
+	AdditionalProperties       map[string]interface{} `json:",remain"`
 }
 
 type _GetNetworkRoutersNats200ResponseNetworkRouterNATsInner GetNetworkRoutersNats200ResponseNetworkRouterNATsInner
@@ -770,7 +770,7 @@ func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) SetLastUpdated(
 }
 
 func (o GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -852,83 +852,8 @@ func (o GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) ToMap() (map[str
 
 	return toSerialize, nil
 }
-
 func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) UnmarshalJSON(data []byte) (err error) {
-	varGetNetworkRoutersNats200ResponseNetworkRouterNATsInner := _GetNetworkRoutersNats200ResponseNetworkRouterNATsInner{}
-
-	err = json.Unmarshal(data, &varGetNetworkRoutersNats200ResponseNetworkRouterNATsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetNetworkRoutersNats200ResponseNetworkRouterNATsInner(varGetNetworkRoutersNats200ResponseNetworkRouterNATsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "sourceNetwork")
-		delete(additionalProperties, "destinationNetwork")
-		delete(additionalProperties, "translatedNetwork")
-		delete(additionalProperties, "sourcePorts")
-		delete(additionalProperties, "destinationPorts")
-		delete(additionalProperties, "translatedPorts")
-		delete(additionalProperties, "priority")
-		delete(additionalProperties, "protocol")
-		delete(additionalProperties, "matchIpv6DestinationPrefix")
-		delete(additionalProperties, "translatedIpv4SourcePrefix")
-		delete(additionalProperties, "refType")
-		delete(additionalProperties, "refId")
-		delete(additionalProperties, "syncSource")
-		delete(additionalProperties, "internalId")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "providerId")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetNetworkRoutersNats200ResponseNetworkRouterNATsInner struct {
-	value *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner
-	isSet bool
-}
-
-func (v NullableGetNetworkRoutersNats200ResponseNetworkRouterNATsInner) Get() *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner {
-	return v.value
-}
-
-func (v *NullableGetNetworkRoutersNats200ResponseNetworkRouterNATsInner) Set(val *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetNetworkRoutersNats200ResponseNetworkRouterNATsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetNetworkRoutersNats200ResponseNetworkRouterNATsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetNetworkRoutersNats200ResponseNetworkRouterNATsInner(val *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) *NullableGetNetworkRoutersNats200ResponseNetworkRouterNATsInner {
-	return &NullableGetNetworkRoutersNats200ResponseNetworkRouterNATsInner{value: val, isSet: true}
-}
-
-func (v NullableGetNetworkRoutersNats200ResponseNetworkRouterNATsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetNetworkRoutersNats200ResponseNetworkRouterNATsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

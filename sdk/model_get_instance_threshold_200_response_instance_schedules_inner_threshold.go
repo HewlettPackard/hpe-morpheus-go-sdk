@@ -47,8 +47,8 @@ type GetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold struct {
 	// Min Disk (%)
 	MinDisk *float64 `json:"minDisk,omitempty"`
 	// Max Disk (%)
-	MaxDisk *float64 `json:"maxDisk,omitempty"`
-	AdditionalProperties map[string]interface{}
+	MaxDisk              *float64               `json:"maxDisk,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _GetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold GetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold
@@ -567,7 +567,7 @@ func (o *GetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold) SetMaxD
 }
 
 func (o GetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -625,75 +625,8 @@ func (o GetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold) ToMap() 
 
 	return toSerialize, nil
 }
-
 func (o *GetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold) UnmarshalJSON(data []byte) (err error) {
-	varGetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold := _GetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold{}
-
-	err = json.Unmarshal(data, &varGetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold(varGetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "autoUp")
-		delete(additionalProperties, "autoDown")
-		delete(additionalProperties, "minCount")
-		delete(additionalProperties, "maxCount")
-		delete(additionalProperties, "scaleIncrement")
-		delete(additionalProperties, "cpuEnabled")
-		delete(additionalProperties, "minCpu")
-		delete(additionalProperties, "maxCpu")
-		delete(additionalProperties, "memoryEnabled")
-		delete(additionalProperties, "minMemory")
-		delete(additionalProperties, "maxMemory")
-		delete(additionalProperties, "diskEnabled")
-		delete(additionalProperties, "minDisk")
-		delete(additionalProperties, "maxDisk")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold struct {
-	value *GetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold
-	isSet bool
-}
-
-func (v NullableGetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold) Get() *GetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold {
-	return v.value
-}
-
-func (v *NullableGetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold) Set(val *GetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold(val *GetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold) *NullableGetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold {
-	return &NullableGetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold{value: val, isSet: true}
-}
-
-func (v NullableGetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

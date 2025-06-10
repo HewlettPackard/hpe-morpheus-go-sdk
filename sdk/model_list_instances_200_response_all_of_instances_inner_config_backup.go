@@ -20,11 +20,11 @@ var _ MappedNullable = &ListInstances200ResponseAllOfInstancesInnerConfigBackup{
 
 // ListInstances200ResponseAllOfInstancesInnerConfigBackup struct for ListInstances200ResponseAllOfInstancesInnerConfigBackup
 type ListInstances200ResponseAllOfInstancesInnerConfigBackup struct {
-	CreateBackup *bool `json:"createBackup,omitempty"`
-	JobAction *string `json:"jobAction,omitempty"`
-	JobRetentionCount *string `json:"jobRetentionCount,omitempty"`
-	ProviderBackupType *int64 `json:"providerBackupType,omitempty"`
-	AdditionalProperties map[string]interface{}
+	CreateBackup         *bool                  `json:"createBackup,omitempty"`
+	JobAction            *string                `json:"jobAction,omitempty"`
+	JobRetentionCount    *string                `json:"jobRetentionCount,omitempty"`
+	ProviderBackupType   *int64                 `json:"providerBackupType,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListInstances200ResponseAllOfInstancesInnerConfigBackup ListInstances200ResponseAllOfInstancesInnerConfigBackup
@@ -175,7 +175,7 @@ func (o *ListInstances200ResponseAllOfInstancesInnerConfigBackup) SetProviderBac
 }
 
 func (o ListInstances200ResponseAllOfInstancesInnerConfigBackup) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -203,65 +203,8 @@ func (o ListInstances200ResponseAllOfInstancesInnerConfigBackup) ToMap() (map[st
 
 	return toSerialize, nil
 }
-
 func (o *ListInstances200ResponseAllOfInstancesInnerConfigBackup) UnmarshalJSON(data []byte) (err error) {
-	varListInstances200ResponseAllOfInstancesInnerConfigBackup := _ListInstances200ResponseAllOfInstancesInnerConfigBackup{}
-
-	err = json.Unmarshal(data, &varListInstances200ResponseAllOfInstancesInnerConfigBackup)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListInstances200ResponseAllOfInstancesInnerConfigBackup(varListInstances200ResponseAllOfInstancesInnerConfigBackup)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "createBackup")
-		delete(additionalProperties, "jobAction")
-		delete(additionalProperties, "jobRetentionCount")
-		delete(additionalProperties, "providerBackupType")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListInstances200ResponseAllOfInstancesInnerConfigBackup struct {
-	value *ListInstances200ResponseAllOfInstancesInnerConfigBackup
-	isSet bool
-}
-
-func (v NullableListInstances200ResponseAllOfInstancesInnerConfigBackup) Get() *ListInstances200ResponseAllOfInstancesInnerConfigBackup {
-	return v.value
-}
-
-func (v *NullableListInstances200ResponseAllOfInstancesInnerConfigBackup) Set(val *ListInstances200ResponseAllOfInstancesInnerConfigBackup) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListInstances200ResponseAllOfInstancesInnerConfigBackup) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListInstances200ResponseAllOfInstancesInnerConfigBackup) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListInstances200ResponseAllOfInstancesInnerConfigBackup(val *ListInstances200ResponseAllOfInstancesInnerConfigBackup) *NullableListInstances200ResponseAllOfInstancesInnerConfigBackup {
-	return &NullableListInstances200ResponseAllOfInstancesInnerConfigBackup{value: val, isSet: true}
-}
-
-func (v NullableListInstances200ResponseAllOfInstancesInnerConfigBackup) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListInstances200ResponseAllOfInstancesInnerConfigBackup) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

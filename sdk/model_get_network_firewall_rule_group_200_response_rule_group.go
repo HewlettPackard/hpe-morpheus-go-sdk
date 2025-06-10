@@ -20,13 +20,13 @@ var _ MappedNullable = &GetNetworkFirewallRuleGroup200ResponseRuleGroup{}
 
 // GetNetworkFirewallRuleGroup200ResponseRuleGroup struct for GetNetworkFirewallRuleGroup200ResponseRuleGroup
 type GetNetworkFirewallRuleGroup200ResponseRuleGroup struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Priority *int64 `json:"priority,omitempty"`
-	GroupLayer *string `json:"groupLayer,omitempty"`
-	Rules []GetNetworkFirewallRuleGroup200ResponseRuleGroupRulesInner `json:"rules,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                      `json:"id,omitempty"`
+	Name                 *string                                                     `json:"name,omitempty"`
+	Description          *string                                                     `json:"description,omitempty"`
+	Priority             *int64                                                      `json:"priority,omitempty"`
+	GroupLayer           *string                                                     `json:"groupLayer,omitempty"`
+	Rules                []GetNetworkFirewallRuleGroup200ResponseRuleGroupRulesInner `json:"rules,omitempty"`
+	AdditionalProperties map[string]interface{}                                      `json:",remain"`
 }
 
 type _GetNetworkFirewallRuleGroup200ResponseRuleGroup GetNetworkFirewallRuleGroup200ResponseRuleGroup
@@ -241,7 +241,7 @@ func (o *GetNetworkFirewallRuleGroup200ResponseRuleGroup) SetRules(v []GetNetwor
 }
 
 func (o GetNetworkFirewallRuleGroup200ResponseRuleGroup) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -275,67 +275,8 @@ func (o GetNetworkFirewallRuleGroup200ResponseRuleGroup) ToMap() (map[string]int
 
 	return toSerialize, nil
 }
-
 func (o *GetNetworkFirewallRuleGroup200ResponseRuleGroup) UnmarshalJSON(data []byte) (err error) {
-	varGetNetworkFirewallRuleGroup200ResponseRuleGroup := _GetNetworkFirewallRuleGroup200ResponseRuleGroup{}
-
-	err = json.Unmarshal(data, &varGetNetworkFirewallRuleGroup200ResponseRuleGroup)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetNetworkFirewallRuleGroup200ResponseRuleGroup(varGetNetworkFirewallRuleGroup200ResponseRuleGroup)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "priority")
-		delete(additionalProperties, "groupLayer")
-		delete(additionalProperties, "rules")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetNetworkFirewallRuleGroup200ResponseRuleGroup struct {
-	value *GetNetworkFirewallRuleGroup200ResponseRuleGroup
-	isSet bool
-}
-
-func (v NullableGetNetworkFirewallRuleGroup200ResponseRuleGroup) Get() *GetNetworkFirewallRuleGroup200ResponseRuleGroup {
-	return v.value
-}
-
-func (v *NullableGetNetworkFirewallRuleGroup200ResponseRuleGroup) Set(val *GetNetworkFirewallRuleGroup200ResponseRuleGroup) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetNetworkFirewallRuleGroup200ResponseRuleGroup) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetNetworkFirewallRuleGroup200ResponseRuleGroup) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetNetworkFirewallRuleGroup200ResponseRuleGroup(val *GetNetworkFirewallRuleGroup200ResponseRuleGroup) *NullableGetNetworkFirewallRuleGroup200ResponseRuleGroup {
-	return &NullableGetNetworkFirewallRuleGroup200ResponseRuleGroup{value: val, isSet: true}
-}
-
-func (v NullableGetNetworkFirewallRuleGroup200ResponseRuleGroup) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetNetworkFirewallRuleGroup200ResponseRuleGroup) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

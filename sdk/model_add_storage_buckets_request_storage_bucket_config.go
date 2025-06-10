@@ -14,6 +14,7 @@ package sdk
 import (
 	"encoding/json"
 	"fmt"
+
 	"gopkg.in/validator.v2"
 )
 
@@ -22,7 +23,7 @@ var _ fmt.Stringer
 
 // AddStorageBucketsRequestStorageBucketConfig - struct for AddStorageBucketsRequestStorageBucketConfig
 type AddStorageBucketsRequestStorageBucketConfig struct {
-	AddStorageBucketsRequestStorageBucketConfigOneOf *AddStorageBucketsRequestStorageBucketConfigOneOf
+	AddStorageBucketsRequestStorageBucketConfigOneOf  *AddStorageBucketsRequestStorageBucketConfigOneOf
 	AddStorageBucketsRequestStorageBucketConfigOneOf1 *AddStorageBucketsRequestStorageBucketConfigOneOf1
 	AddStorageBucketsRequestStorageBucketConfigOneOf2 *AddStorageBucketsRequestStorageBucketConfigOneOf2
 	AddStorageBucketsRequestStorageBucketConfigOneOf3 *AddStorageBucketsRequestStorageBucketConfigOneOf3
@@ -80,6 +81,41 @@ func AddStorageBucketsRequestStorageBucketConfigOneOf6AsAddStorageBucketsRequest
 	}
 }
 
+func (dst *AddStorageBucketsRequestStorageBucketConfig) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddStorageBucketsRequestStorageBucketConfig{}
+	}
+
+	if out, ok := data.(AddStorageBucketsRequestStorageBucketConfigOneOf); ok {
+		dst.AddStorageBucketsRequestStorageBucketConfigOneOf = &out
+	}
+
+	if out, ok := data.(AddStorageBucketsRequestStorageBucketConfigOneOf1); ok {
+		dst.AddStorageBucketsRequestStorageBucketConfigOneOf1 = &out
+	}
+
+	if out, ok := data.(AddStorageBucketsRequestStorageBucketConfigOneOf2); ok {
+		dst.AddStorageBucketsRequestStorageBucketConfigOneOf2 = &out
+	}
+
+	if out, ok := data.(AddStorageBucketsRequestStorageBucketConfigOneOf3); ok {
+		dst.AddStorageBucketsRequestStorageBucketConfigOneOf3 = &out
+	}
+
+	if out, ok := data.(AddStorageBucketsRequestStorageBucketConfigOneOf4); ok {
+		dst.AddStorageBucketsRequestStorageBucketConfigOneOf4 = &out
+	}
+
+	if out, ok := data.(AddStorageBucketsRequestStorageBucketConfigOneOf5); ok {
+		dst.AddStorageBucketsRequestStorageBucketConfigOneOf5 = &out
+	}
+
+	if out, ok := data.(AddStorageBucketsRequestStorageBucketConfigOneOf6); ok {
+		dst.AddStorageBucketsRequestStorageBucketConfigOneOf6 = &out
+	}
+
+	return dst, nil
+}
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddStorageBucketsRequestStorageBucketConfig) UnmarshalJSON(data []byte) error {
@@ -256,7 +292,7 @@ func (src AddStorageBucketsRequestStorageBucketConfig) MarshalJSON() ([]byte, er
 }
 
 // Get the actual instance
-func (obj *AddStorageBucketsRequestStorageBucketConfig) GetActualInstance() (interface{}) {
+func (obj *AddStorageBucketsRequestStorageBucketConfig) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -293,7 +329,7 @@ func (obj *AddStorageBucketsRequestStorageBucketConfig) GetActualInstance() (int
 }
 
 // Get the actual instance value
-func (obj AddStorageBucketsRequestStorageBucketConfig) GetActualInstanceValue() (interface{}) {
+func (obj AddStorageBucketsRequestStorageBucketConfig) GetActualInstanceValue() interface{} {
 	if obj.AddStorageBucketsRequestStorageBucketConfigOneOf != nil {
 		return *obj.AddStorageBucketsRequestStorageBucketConfigOneOf
 	}
@@ -361,5 +397,3 @@ func (v *NullableAddStorageBucketsRequestStorageBucketConfig) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

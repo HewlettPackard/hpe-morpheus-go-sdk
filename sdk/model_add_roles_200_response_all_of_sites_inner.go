@@ -20,10 +20,10 @@ var _ MappedNullable = &AddRoles200ResponseAllOfSitesInner{}
 
 // AddRoles200ResponseAllOfSitesInner struct for AddRoles200ResponseAllOfSitesInner
 type AddRoles200ResponseAllOfSitesInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Access *string `json:"access,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	Access               *string                `json:"access,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddRoles200ResponseAllOfSitesInner AddRoles200ResponseAllOfSitesInner
@@ -142,7 +142,7 @@ func (o *AddRoles200ResponseAllOfSitesInner) SetAccess(v string) {
 }
 
 func (o AddRoles200ResponseAllOfSitesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -167,64 +167,8 @@ func (o AddRoles200ResponseAllOfSitesInner) ToMap() (map[string]interface{}, err
 
 	return toSerialize, nil
 }
-
 func (o *AddRoles200ResponseAllOfSitesInner) UnmarshalJSON(data []byte) (err error) {
-	varAddRoles200ResponseAllOfSitesInner := _AddRoles200ResponseAllOfSitesInner{}
-
-	err = json.Unmarshal(data, &varAddRoles200ResponseAllOfSitesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddRoles200ResponseAllOfSitesInner(varAddRoles200ResponseAllOfSitesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "access")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddRoles200ResponseAllOfSitesInner struct {
-	value *AddRoles200ResponseAllOfSitesInner
-	isSet bool
-}
-
-func (v NullableAddRoles200ResponseAllOfSitesInner) Get() *AddRoles200ResponseAllOfSitesInner {
-	return v.value
-}
-
-func (v *NullableAddRoles200ResponseAllOfSitesInner) Set(val *AddRoles200ResponseAllOfSitesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddRoles200ResponseAllOfSitesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddRoles200ResponseAllOfSitesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddRoles200ResponseAllOfSitesInner(val *AddRoles200ResponseAllOfSitesInner) *NullableAddRoles200ResponseAllOfSitesInner {
-	return &NullableAddRoles200ResponseAllOfSitesInner{value: val, isSet: true}
-}
-
-func (v NullableAddRoles200ResponseAllOfSitesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddRoles200ResponseAllOfSitesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

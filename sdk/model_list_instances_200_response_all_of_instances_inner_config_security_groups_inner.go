@@ -20,8 +20,8 @@ var _ MappedNullable = &ListInstances200ResponseAllOfInstancesInnerConfigSecurit
 
 // ListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner struct for ListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner
 type ListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner struct {
-	Id *string `json:"id,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *string                `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner ListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner
@@ -76,7 +76,7 @@ func (o *ListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner) S
 }
 
 func (o ListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o ListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner) To
 
 	return toSerialize, nil
 }
-
 func (o *ListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner) UnmarshalJSON(data []byte) (err error) {
-	varListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner := _ListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner{}
-
-	err = json.Unmarshal(data, &varListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner(varListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner struct {
-	value *ListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner
-	isSet bool
-}
-
-func (v NullableListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner) Get() *ListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner {
-	return v.value
-}
-
-func (v *NullableListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner) Set(val *ListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner(val *ListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner) *NullableListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner {
-	return &NullableListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner{value: val, isSet: true}
-}
-
-func (v NullableListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

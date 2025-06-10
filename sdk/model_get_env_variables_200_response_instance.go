@@ -20,10 +20,10 @@ var _ MappedNullable = &GetEnvVariables200ResponseInstance{}
 
 // GetEnvVariables200ResponseInstance struct for GetEnvVariables200ResponseInstance
 type GetEnvVariables200ResponseInstance struct {
-	Envs []GetEnvVariables200ResponseInstanceEnvsInner `json:"envs,omitempty"`
-	ReadOnlyEnvs []GetEnvVariables200ResponseInstanceEnvsInner `json:"readOnlyEnvs,omitempty"`
-	ImportedEnvs []GetEnvVariables200ResponseInstanceEnvsInner `json:"importedEnvs,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Envs                 []GetEnvVariables200ResponseInstanceEnvsInner `json:"envs,omitempty"`
+	ReadOnlyEnvs         []GetEnvVariables200ResponseInstanceEnvsInner `json:"readOnlyEnvs,omitempty"`
+	ImportedEnvs         []GetEnvVariables200ResponseInstanceEnvsInner `json:"importedEnvs,omitempty"`
+	AdditionalProperties map[string]interface{}                        `json:",remain"`
 }
 
 type _GetEnvVariables200ResponseInstance GetEnvVariables200ResponseInstance
@@ -142,7 +142,7 @@ func (o *GetEnvVariables200ResponseInstance) SetImportedEnvs(v []GetEnvVariables
 }
 
 func (o GetEnvVariables200ResponseInstance) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -167,64 +167,8 @@ func (o GetEnvVariables200ResponseInstance) ToMap() (map[string]interface{}, err
 
 	return toSerialize, nil
 }
-
 func (o *GetEnvVariables200ResponseInstance) UnmarshalJSON(data []byte) (err error) {
-	varGetEnvVariables200ResponseInstance := _GetEnvVariables200ResponseInstance{}
-
-	err = json.Unmarshal(data, &varGetEnvVariables200ResponseInstance)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetEnvVariables200ResponseInstance(varGetEnvVariables200ResponseInstance)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "envs")
-		delete(additionalProperties, "readOnlyEnvs")
-		delete(additionalProperties, "importedEnvs")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetEnvVariables200ResponseInstance struct {
-	value *GetEnvVariables200ResponseInstance
-	isSet bool
-}
-
-func (v NullableGetEnvVariables200ResponseInstance) Get() *GetEnvVariables200ResponseInstance {
-	return v.value
-}
-
-func (v *NullableGetEnvVariables200ResponseInstance) Set(val *GetEnvVariables200ResponseInstance) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetEnvVariables200ResponseInstance) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetEnvVariables200ResponseInstance) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetEnvVariables200ResponseInstance(val *GetEnvVariables200ResponseInstance) *NullableGetEnvVariables200ResponseInstance {
-	return &NullableGetEnvVariables200ResponseInstance{value: val, isSet: true}
-}
-
-func (v NullableGetEnvVariables200ResponseInstance) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetEnvVariables200ResponseInstance) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

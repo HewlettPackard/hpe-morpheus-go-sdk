@@ -20,22 +20,22 @@ var _ MappedNullable = &ListPolicies200ResponseAllOfPoliciesInner{}
 
 // ListPolicies200ResponseAllOfPoliciesInner struct for ListPolicies200ResponseAllOfPoliciesInner
 type ListPolicies200ResponseAllOfPoliciesInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	PolicyType *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"policyType,omitempty"`
-	Zone *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"zone,omitempty"`
-	Site *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"site,omitempty"`
-	User *GetAlerts200ResponseAllOfChecksInnerCreatedBy `json:"user,omitempty"`
-	Role *ListPolicies200ResponseAllOfPoliciesInnerRole `json:"role,omitempty"`
-	RefType *string `json:"refType,omitempty"`
-	RefId *string `json:"refId,omitempty"`
-	EachUser *bool `json:"eachUser,omitempty"`
-	Config *ListPolicies200ResponseAllOfPoliciesInnerConfig `json:"config,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	Owner *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"owner,omitempty"`
-	Accounts []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"accounts,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                   `json:"id,omitempty"`
+	Name                 *string                                                                  `json:"name,omitempty"`
+	Description          *string                                                                  `json:"description,omitempty"`
+	PolicyType           *ListBackupSettings200ResponseBackupSettingsDefaultSchedule              `json:"policyType,omitempty"`
+	Zone                 *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                       `json:"zone,omitempty"`
+	Site                 *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                       `json:"site,omitempty"`
+	User                 *GetAlerts200ResponseAllOfChecksInnerCreatedBy                           `json:"user,omitempty"`
+	Role                 *ListPolicies200ResponseAllOfPoliciesInnerRole                           `json:"role,omitempty"`
+	RefType              *string                                                                  `json:"refType,omitempty"`
+	RefId                *string                                                                  `json:"refId,omitempty"`
+	EachUser             *bool                                                                    `json:"eachUser,omitempty"`
+	Config               *ListPolicies200ResponseAllOfPoliciesInnerConfig                         `json:"config,omitempty"`
+	Enabled              *bool                                                                    `json:"enabled,omitempty"`
+	Owner                *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner  `json:"owner,omitempty"`
+	Accounts             []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"accounts,omitempty"`
+	AdditionalProperties map[string]interface{}                                                   `json:",remain"`
 }
 
 type _ListPolicies200ResponseAllOfPoliciesInner ListPolicies200ResponseAllOfPoliciesInner
@@ -538,7 +538,7 @@ func (o *ListPolicies200ResponseAllOfPoliciesInner) SetAccounts(v []ListApplianc
 }
 
 func (o ListPolicies200ResponseAllOfPoliciesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -599,76 +599,8 @@ func (o ListPolicies200ResponseAllOfPoliciesInner) ToMap() (map[string]interface
 
 	return toSerialize, nil
 }
-
 func (o *ListPolicies200ResponseAllOfPoliciesInner) UnmarshalJSON(data []byte) (err error) {
-	varListPolicies200ResponseAllOfPoliciesInner := _ListPolicies200ResponseAllOfPoliciesInner{}
-
-	err = json.Unmarshal(data, &varListPolicies200ResponseAllOfPoliciesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListPolicies200ResponseAllOfPoliciesInner(varListPolicies200ResponseAllOfPoliciesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "policyType")
-		delete(additionalProperties, "zone")
-		delete(additionalProperties, "site")
-		delete(additionalProperties, "user")
-		delete(additionalProperties, "role")
-		delete(additionalProperties, "refType")
-		delete(additionalProperties, "refId")
-		delete(additionalProperties, "eachUser")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "owner")
-		delete(additionalProperties, "accounts")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListPolicies200ResponseAllOfPoliciesInner struct {
-	value *ListPolicies200ResponseAllOfPoliciesInner
-	isSet bool
-}
-
-func (v NullableListPolicies200ResponseAllOfPoliciesInner) Get() *ListPolicies200ResponseAllOfPoliciesInner {
-	return v.value
-}
-
-func (v *NullableListPolicies200ResponseAllOfPoliciesInner) Set(val *ListPolicies200ResponseAllOfPoliciesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListPolicies200ResponseAllOfPoliciesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListPolicies200ResponseAllOfPoliciesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListPolicies200ResponseAllOfPoliciesInner(val *ListPolicies200ResponseAllOfPoliciesInner) *NullableListPolicies200ResponseAllOfPoliciesInner {
-	return &NullableListPolicies200ResponseAllOfPoliciesInner{value: val, isSet: true}
-}
-
-func (v NullableListPolicies200ResponseAllOfPoliciesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListPolicies200ResponseAllOfPoliciesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

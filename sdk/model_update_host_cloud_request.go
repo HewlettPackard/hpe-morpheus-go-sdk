@@ -23,8 +23,8 @@ type UpdateHostCloudRequest struct {
 	// The cloud/zone ID we are moving the set of servers to
 	CloudId *int64 `json:"cloudId,omitempty"`
 	// A JSON array of source: and target: server ids to be moved. If the target is blank Morpheus will automatically try to match by the servers unique or externalId
-	Servers []UpdateHostCloudRequestServersInner `json:"servers,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Servers              []UpdateHostCloudRequestServersInner `json:"servers,omitempty"`
+	AdditionalProperties map[string]interface{}               `json:",remain"`
 }
 
 type _UpdateHostCloudRequest UpdateHostCloudRequest
@@ -111,7 +111,7 @@ func (o *UpdateHostCloudRequest) SetServers(v []UpdateHostCloudRequestServersInn
 }
 
 func (o UpdateHostCloudRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -133,63 +133,8 @@ func (o UpdateHostCloudRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *UpdateHostCloudRequest) UnmarshalJSON(data []byte) (err error) {
-	varUpdateHostCloudRequest := _UpdateHostCloudRequest{}
-
-	err = json.Unmarshal(data, &varUpdateHostCloudRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateHostCloudRequest(varUpdateHostCloudRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "cloudId")
-		delete(additionalProperties, "servers")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateHostCloudRequest struct {
-	value *UpdateHostCloudRequest
-	isSet bool
-}
-
-func (v NullableUpdateHostCloudRequest) Get() *UpdateHostCloudRequest {
-	return v.value
-}
-
-func (v *NullableUpdateHostCloudRequest) Set(val *UpdateHostCloudRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateHostCloudRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateHostCloudRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateHostCloudRequest(val *UpdateHostCloudRequest) *NullableUpdateHostCloudRequest {
-	return &NullableUpdateHostCloudRequest{value: val, isSet: true}
-}
-
-func (v NullableUpdateHostCloudRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateHostCloudRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

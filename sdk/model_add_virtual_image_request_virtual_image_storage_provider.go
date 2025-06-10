@@ -20,8 +20,8 @@ var _ MappedNullable = &AddVirtualImageRequestVirtualImageStorageProvider{}
 
 // AddVirtualImageRequestVirtualImageStorageProvider A Map containing the id of the Storage Provider
 type AddVirtualImageRequestVirtualImageStorageProvider struct {
-	Id *int64 `json:"id,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddVirtualImageRequestVirtualImageStorageProvider AddVirtualImageRequestVirtualImageStorageProvider
@@ -76,7 +76,7 @@ func (o *AddVirtualImageRequestVirtualImageStorageProvider) SetId(v int64) {
 }
 
 func (o AddVirtualImageRequestVirtualImageStorageProvider) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o AddVirtualImageRequestVirtualImageStorageProvider) ToMap() (map[string]i
 
 	return toSerialize, nil
 }
-
 func (o *AddVirtualImageRequestVirtualImageStorageProvider) UnmarshalJSON(data []byte) (err error) {
-	varAddVirtualImageRequestVirtualImageStorageProvider := _AddVirtualImageRequestVirtualImageStorageProvider{}
-
-	err = json.Unmarshal(data, &varAddVirtualImageRequestVirtualImageStorageProvider)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddVirtualImageRequestVirtualImageStorageProvider(varAddVirtualImageRequestVirtualImageStorageProvider)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddVirtualImageRequestVirtualImageStorageProvider struct {
-	value *AddVirtualImageRequestVirtualImageStorageProvider
-	isSet bool
-}
-
-func (v NullableAddVirtualImageRequestVirtualImageStorageProvider) Get() *AddVirtualImageRequestVirtualImageStorageProvider {
-	return v.value
-}
-
-func (v *NullableAddVirtualImageRequestVirtualImageStorageProvider) Set(val *AddVirtualImageRequestVirtualImageStorageProvider) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddVirtualImageRequestVirtualImageStorageProvider) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddVirtualImageRequestVirtualImageStorageProvider) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddVirtualImageRequestVirtualImageStorageProvider(val *AddVirtualImageRequestVirtualImageStorageProvider) *NullableAddVirtualImageRequestVirtualImageStorageProvider {
-	return &NullableAddVirtualImageRequestVirtualImageStorageProvider{value: val, isSet: true}
-}
-
-func (v NullableAddVirtualImageRequestVirtualImageStorageProvider) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddVirtualImageRequestVirtualImageStorageProvider) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

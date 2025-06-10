@@ -20,8 +20,8 @@ var _ MappedNullable = &GetHostType200Response{}
 
 // GetHostType200Response struct for GetHostType200Response
 type GetHostType200Response struct {
-	ServerType *ListHostTypes200ResponseAllOfServerTypesInner `json:"serverType,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ServerType           *ListHostTypes200ResponseAllOfServerTypesInner `json:"serverType,omitempty"`
+	AdditionalProperties map[string]interface{}                         `json:",remain"`
 }
 
 type _GetHostType200Response GetHostType200Response
@@ -76,7 +76,7 @@ func (o *GetHostType200Response) SetServerType(v ListHostTypes200ResponseAllOfSe
 }
 
 func (o GetHostType200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o GetHostType200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *GetHostType200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetHostType200Response := _GetHostType200Response{}
-
-	err = json.Unmarshal(data, &varGetHostType200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetHostType200Response(varGetHostType200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "serverType")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetHostType200Response struct {
-	value *GetHostType200Response
-	isSet bool
-}
-
-func (v NullableGetHostType200Response) Get() *GetHostType200Response {
-	return v.value
-}
-
-func (v *NullableGetHostType200Response) Set(val *GetHostType200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetHostType200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetHostType200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetHostType200Response(val *GetHostType200Response) *NullableGetHostType200Response {
-	return &NullableGetHostType200Response{value: val, isSet: true}
-}
-
-func (v NullableGetHostType200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetHostType200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

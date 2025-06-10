@@ -20,11 +20,11 @@ var _ MappedNullable = &AddInstance200ResponseAllOfOneOfInstanceLayout{}
 
 // AddInstance200ResponseAllOfOneOfInstanceLayout struct for AddInstance200ResponseAllOfOneOfInstanceLayout
 type AddInstance200ResponseAllOfOneOfInstanceLayout struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	ProvisionTypeId *int64 `json:"provisionTypeId,omitempty"`
-	ProvisionTypeCode *string `json:"provisionTypeCode,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	ProvisionTypeId      *int64                 `json:"provisionTypeId,omitempty"`
+	ProvisionTypeCode    *string                `json:"provisionTypeCode,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddInstance200ResponseAllOfOneOfInstanceLayout AddInstance200ResponseAllOfOneOfInstanceLayout
@@ -175,7 +175,7 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceLayout) SetProvisionTypeCode(v 
 }
 
 func (o AddInstance200ResponseAllOfOneOfInstanceLayout) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -203,65 +203,8 @@ func (o AddInstance200ResponseAllOfOneOfInstanceLayout) ToMap() (map[string]inte
 
 	return toSerialize, nil
 }
-
 func (o *AddInstance200ResponseAllOfOneOfInstanceLayout) UnmarshalJSON(data []byte) (err error) {
-	varAddInstance200ResponseAllOfOneOfInstanceLayout := _AddInstance200ResponseAllOfOneOfInstanceLayout{}
-
-	err = json.Unmarshal(data, &varAddInstance200ResponseAllOfOneOfInstanceLayout)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddInstance200ResponseAllOfOneOfInstanceLayout(varAddInstance200ResponseAllOfOneOfInstanceLayout)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "provisionTypeId")
-		delete(additionalProperties, "provisionTypeCode")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddInstance200ResponseAllOfOneOfInstanceLayout struct {
-	value *AddInstance200ResponseAllOfOneOfInstanceLayout
-	isSet bool
-}
-
-func (v NullableAddInstance200ResponseAllOfOneOfInstanceLayout) Get() *AddInstance200ResponseAllOfOneOfInstanceLayout {
-	return v.value
-}
-
-func (v *NullableAddInstance200ResponseAllOfOneOfInstanceLayout) Set(val *AddInstance200ResponseAllOfOneOfInstanceLayout) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddInstance200ResponseAllOfOneOfInstanceLayout) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddInstance200ResponseAllOfOneOfInstanceLayout) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddInstance200ResponseAllOfOneOfInstanceLayout(val *AddInstance200ResponseAllOfOneOfInstanceLayout) *NullableAddInstance200ResponseAllOfOneOfInstanceLayout {
-	return &NullableAddInstance200ResponseAllOfOneOfInstanceLayout{value: val, isSet: true}
-}
-
-func (v NullableAddInstance200ResponseAllOfOneOfInstanceLayout) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddInstance200ResponseAllOfOneOfInstanceLayout) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

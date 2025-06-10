@@ -14,6 +14,7 @@ package sdk
 import (
 	"encoding/json"
 	"fmt"
+
 	"gopkg.in/validator.v2"
 )
 
@@ -23,7 +24,7 @@ var _ fmt.Stringer
 // GetAppState200ResponseAllOfInputDataInnerName - struct for GetAppState200ResponseAllOfInputDataInnerName
 type GetAppState200ResponseAllOfInputDataInnerName struct {
 	MapmapOfStringAny *map[string]interface{}
-	String *string
+	String            *string
 }
 
 // map[string]interface{}AsGetAppState200ResponseAllOfInputDataInnerName is a convenience function that returns map[string]interface{} wrapped in GetAppState200ResponseAllOfInputDataInnerName
@@ -40,6 +41,21 @@ func StringAsGetAppState200ResponseAllOfInputDataInnerName(v *string) GetAppStat
 	}
 }
 
+func (dst *GetAppState200ResponseAllOfInputDataInnerName) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &GetAppState200ResponseAllOfInputDataInnerName{}
+	}
+
+	if out, ok := data.(map[string]interface{}); ok {
+		dst.MapmapOfStringAny = &out
+	}
+
+	if out, ok := data.(string); ok {
+		dst.String = &out
+	}
+
+	return dst, nil
+}
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *GetAppState200ResponseAllOfInputDataInnerName) UnmarshalJSON(data []byte) error {
@@ -106,7 +122,7 @@ func (src GetAppState200ResponseAllOfInputDataInnerName) MarshalJSON() ([]byte, 
 }
 
 // Get the actual instance
-func (obj *GetAppState200ResponseAllOfInputDataInnerName) GetActualInstance() (interface{}) {
+func (obj *GetAppState200ResponseAllOfInputDataInnerName) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -123,7 +139,7 @@ func (obj *GetAppState200ResponseAllOfInputDataInnerName) GetActualInstance() (i
 }
 
 // Get the actual instance value
-func (obj GetAppState200ResponseAllOfInputDataInnerName) GetActualInstanceValue() (interface{}) {
+func (obj GetAppState200ResponseAllOfInputDataInnerName) GetActualInstanceValue() interface{} {
 	if obj.MapmapOfStringAny != nil {
 		return *obj.MapmapOfStringAny
 	}
@@ -171,5 +187,3 @@ func (v *NullableGetAppState200ResponseAllOfInputDataInnerName) UnmarshalJSON(sr
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

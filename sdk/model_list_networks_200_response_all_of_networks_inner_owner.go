@@ -23,8 +23,8 @@ type ListNetworks200ResponseAllOfNetworksInnerOwner struct {
 	// Owner Tenant ID
 	Id *int64 `json:"id,omitempty"`
 	// Owner Tenant Name
-	Name *string `json:"name,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Name                 *string                `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListNetworks200ResponseAllOfNetworksInnerOwner ListNetworks200ResponseAllOfNetworksInnerOwner
@@ -111,7 +111,7 @@ func (o *ListNetworks200ResponseAllOfNetworksInnerOwner) SetName(v string) {
 }
 
 func (o ListNetworks200ResponseAllOfNetworksInnerOwner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -133,63 +133,8 @@ func (o ListNetworks200ResponseAllOfNetworksInnerOwner) ToMap() (map[string]inte
 
 	return toSerialize, nil
 }
-
 func (o *ListNetworks200ResponseAllOfNetworksInnerOwner) UnmarshalJSON(data []byte) (err error) {
-	varListNetworks200ResponseAllOfNetworksInnerOwner := _ListNetworks200ResponseAllOfNetworksInnerOwner{}
-
-	err = json.Unmarshal(data, &varListNetworks200ResponseAllOfNetworksInnerOwner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListNetworks200ResponseAllOfNetworksInnerOwner(varListNetworks200ResponseAllOfNetworksInnerOwner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListNetworks200ResponseAllOfNetworksInnerOwner struct {
-	value *ListNetworks200ResponseAllOfNetworksInnerOwner
-	isSet bool
-}
-
-func (v NullableListNetworks200ResponseAllOfNetworksInnerOwner) Get() *ListNetworks200ResponseAllOfNetworksInnerOwner {
-	return v.value
-}
-
-func (v *NullableListNetworks200ResponseAllOfNetworksInnerOwner) Set(val *ListNetworks200ResponseAllOfNetworksInnerOwner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListNetworks200ResponseAllOfNetworksInnerOwner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListNetworks200ResponseAllOfNetworksInnerOwner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListNetworks200ResponseAllOfNetworksInnerOwner(val *ListNetworks200ResponseAllOfNetworksInnerOwner) *NullableListNetworks200ResponseAllOfNetworksInnerOwner {
-	return &NullableListNetworks200ResponseAllOfNetworksInnerOwner{value: val, isSet: true}
-}
-
-func (v NullableListNetworks200ResponseAllOfNetworksInnerOwner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListNetworks200ResponseAllOfNetworksInnerOwner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

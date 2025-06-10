@@ -20,23 +20,23 @@ var _ MappedNullable = &NetworkRouterType{}
 
 // NetworkRouterType struct for NetworkRouterType
 type NetworkRouterType struct {
-	Id *int64 `json:"id,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	Creatable *bool `json:"creatable,omitempty"`
-	Selectable *bool `json:"selectable,omitempty"`
-	HasFirewall *bool `json:"hasFirewall,omitempty"`
-	HasDhcp *bool `json:"hasDhcp,omitempty"`
-	HasRouting *bool `json:"hasRouting,omitempty"`
-	HasNetworkServer *bool `json:"hasNetworkServer,omitempty"`
-	OptionTypes []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
-	RuleOptionTypes []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"ruleOptionTypes,omitempty"`
+	Id                   *int64                                                                      `json:"id,omitempty"`
+	Code                 *string                                                                     `json:"code,omitempty"`
+	Name                 *string                                                                     `json:"name,omitempty"`
+	Description          *string                                                                     `json:"description,omitempty"`
+	Enabled              *bool                                                                       `json:"enabled,omitempty"`
+	Creatable            *bool                                                                       `json:"creatable,omitempty"`
+	Selectable           *bool                                                                       `json:"selectable,omitempty"`
+	HasFirewall          *bool                                                                       `json:"hasFirewall,omitempty"`
+	HasDhcp              *bool                                                                       `json:"hasDhcp,omitempty"`
+	HasRouting           *bool                                                                       `json:"hasRouting,omitempty"`
+	HasNetworkServer     *bool                                                                       `json:"hasNetworkServer,omitempty"`
+	OptionTypes          []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
+	RuleOptionTypes      []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"ruleOptionTypes,omitempty"`
 	RuleGroupOptionTypes []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"ruleGroupOptionTypes,omitempty"`
-	NatOptionTypes []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"natOptionTypes,omitempty"`
-	BgpOptionTypes []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"bgpOptionTypes,omitempty"`
-	AdditionalProperties map[string]interface{}
+	NatOptionTypes       []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"natOptionTypes,omitempty"`
+	BgpOptionTypes       []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"bgpOptionTypes,omitempty"`
+	AdditionalProperties map[string]interface{}                                                      `json:",remain"`
 }
 
 type _NetworkRouterType NetworkRouterType
@@ -571,7 +571,7 @@ func (o *NetworkRouterType) SetBgpOptionTypes(v []ListCatalogItemTypes200Respons
 }
 
 func (o NetworkRouterType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -635,77 +635,8 @@ func (o NetworkRouterType) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *NetworkRouterType) UnmarshalJSON(data []byte) (err error) {
-	varNetworkRouterType := _NetworkRouterType{}
-
-	err = json.Unmarshal(data, &varNetworkRouterType)
-
-	if err != nil {
-		return err
-	}
-
-	*o = NetworkRouterType(varNetworkRouterType)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "creatable")
-		delete(additionalProperties, "selectable")
-		delete(additionalProperties, "hasFirewall")
-		delete(additionalProperties, "hasDhcp")
-		delete(additionalProperties, "hasRouting")
-		delete(additionalProperties, "hasNetworkServer")
-		delete(additionalProperties, "optionTypes")
-		delete(additionalProperties, "ruleOptionTypes")
-		delete(additionalProperties, "ruleGroupOptionTypes")
-		delete(additionalProperties, "natOptionTypes")
-		delete(additionalProperties, "bgpOptionTypes")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableNetworkRouterType struct {
-	value *NetworkRouterType
-	isSet bool
-}
-
-func (v NullableNetworkRouterType) Get() *NetworkRouterType {
-	return v.value
-}
-
-func (v *NullableNetworkRouterType) Set(val *NetworkRouterType) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableNetworkRouterType) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableNetworkRouterType) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableNetworkRouterType(val *NetworkRouterType) *NullableNetworkRouterType {
-	return &NullableNetworkRouterType{value: val, isSet: true}
-}
-
-func (v NullableNetworkRouterType) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableNetworkRouterType) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

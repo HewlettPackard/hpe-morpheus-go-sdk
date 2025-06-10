@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddWikiRequestPage type satisfies the MappedNullable interface at compile time
@@ -21,10 +20,10 @@ var _ MappedNullable = &AddWikiRequestPage{}
 
 // AddWikiRequestPage struct for AddWikiRequestPage
 type AddWikiRequestPage struct {
-	Name string `json:"name"`
-	Category string `json:"category"`
-	Content string `json:"content"`
-	AdditionalProperties map[string]interface{}
+	Name                 string                 `json:"name"`
+	Category             string                 `json:"category"`
+	Content              string                 `json:"content"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddWikiRequestPage AddWikiRequestPage
@@ -122,7 +121,7 @@ func (o *AddWikiRequestPage) SetContent(v string) {
 }
 
 func (o AddWikiRequestPage) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -141,87 +140,8 @@ func (o AddWikiRequestPage) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *AddWikiRequestPage) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-		"category",
-		"content",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddWikiRequestPage := _AddWikiRequestPage{}
-
-	err = json.Unmarshal(data, &varAddWikiRequestPage)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddWikiRequestPage(varAddWikiRequestPage)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "content")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddWikiRequestPage struct {
-	value *AddWikiRequestPage
-	isSet bool
-}
-
-func (v NullableAddWikiRequestPage) Get() *AddWikiRequestPage {
-	return v.value
-}
-
-func (v *NullableAddWikiRequestPage) Set(val *AddWikiRequestPage) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddWikiRequestPage) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddWikiRequestPage) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddWikiRequestPage(val *AddWikiRequestPage) *NullableAddWikiRequestPage {
-	return &NullableAddWikiRequestPage{value: val, isSet: true}
-}
-
-func (v NullableAddWikiRequestPage) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddWikiRequestPage) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -21,32 +21,32 @@ var _ MappedNullable = &LoadBalancer{}
 
 // LoadBalancer struct for LoadBalancer
 type LoadBalancer struct {
-	Id *int64 `json:"id,omitempty"`
-	Uuid *string `json:"uuid,omitempty"`
-	Name *string `json:"name,omitempty"`
-	AccountId *int64 `json:"accountId,omitempty"`
-	Cloud *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"cloud,omitempty"`
-	Type *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"type,omitempty"`
-	Owner *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"owner,omitempty"`
-	Visibility *string `json:"visibility,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Host *string `json:"host,omitempty"`
-	Port *int64 `json:"port,omitempty"`
-	Username *string `json:"username,omitempty"`
-	Ip *string `json:"ip,omitempty"`
-	InternalIp *string `json:"internalIp,omitempty"`
-	ExternalIp *string `json:"externalIp,omitempty"`
-	ApiPort *string `json:"apiPort,omitempty"`
-	AdminPort *string `json:"adminPort,omitempty"`
-	SslEnabled *bool `json:"sslEnabled,omitempty"`
-	SslCert *string `json:"sslCert,omitempty"`
-	Config map[string]interface{} `json:"config,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	Credential *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential `json:"credential,omitempty"`
-	Tenants []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"tenants,omitempty"`
-	ResourcePermission *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission `json:"resourcePermission,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                   `json:"id,omitempty"`
+	Uuid                 *string                                                                  `json:"uuid,omitempty"`
+	Name                 *string                                                                  `json:"name,omitempty"`
+	AccountId            *int64                                                                   `json:"accountId,omitempty"`
+	Cloud                *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner  `json:"cloud,omitempty"`
+	Type                 *ListBackupSettings200ResponseBackupSettingsDefaultSchedule              `json:"type,omitempty"`
+	Owner                *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                       `json:"owner,omitempty"`
+	Visibility           *string                                                                  `json:"visibility,omitempty"`
+	Description          *string                                                                  `json:"description,omitempty"`
+	Host                 *string                                                                  `json:"host,omitempty"`
+	Port                 *int64                                                                   `json:"port,omitempty"`
+	Username             *string                                                                  `json:"username,omitempty"`
+	Ip                   *string                                                                  `json:"ip,omitempty"`
+	InternalIp           *string                                                                  `json:"internalIp,omitempty"`
+	ExternalIp           *string                                                                  `json:"externalIp,omitempty"`
+	ApiPort              *string                                                                  `json:"apiPort,omitempty"`
+	AdminPort            *string                                                                  `json:"adminPort,omitempty"`
+	SslEnabled           *bool                                                                    `json:"sslEnabled,omitempty"`
+	SslCert              *string                                                                  `json:"sslCert,omitempty"`
+	Config               map[string]interface{}                                                   `json:"config,omitempty"`
+	DateCreated          *time.Time                                                               `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                               `json:"lastUpdated,omitempty"`
+	Credential           *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential        `json:"credential,omitempty"`
+	Tenants              []ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"tenants,omitempty"`
+	ResourcePermission   *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission    `json:"resourcePermission,omitempty"`
+	AdditionalProperties map[string]interface{}                                                   `json:",remain"`
 }
 
 type _LoadBalancer LoadBalancer
@@ -869,7 +869,7 @@ func (o *LoadBalancer) SetResourcePermission(v ListCloudDatastores200ResponseAll
 }
 
 func (o LoadBalancer) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -960,86 +960,8 @@ func (o LoadBalancer) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *LoadBalancer) UnmarshalJSON(data []byte) (err error) {
-	varLoadBalancer := _LoadBalancer{}
-
-	err = json.Unmarshal(data, &varLoadBalancer)
-
-	if err != nil {
-		return err
-	}
-
-	*o = LoadBalancer(varLoadBalancer)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "uuid")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "accountId")
-		delete(additionalProperties, "cloud")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "owner")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "host")
-		delete(additionalProperties, "port")
-		delete(additionalProperties, "username")
-		delete(additionalProperties, "ip")
-		delete(additionalProperties, "internalIp")
-		delete(additionalProperties, "externalIp")
-		delete(additionalProperties, "apiPort")
-		delete(additionalProperties, "adminPort")
-		delete(additionalProperties, "sslEnabled")
-		delete(additionalProperties, "sslCert")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "credential")
-		delete(additionalProperties, "tenants")
-		delete(additionalProperties, "resourcePermission")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableLoadBalancer struct {
-	value *LoadBalancer
-	isSet bool
-}
-
-func (v NullableLoadBalancer) Get() *LoadBalancer {
-	return v.value
-}
-
-func (v *NullableLoadBalancer) Set(val *LoadBalancer) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableLoadBalancer) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableLoadBalancer) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableLoadBalancer(val *LoadBalancer) *NullableLoadBalancer {
-	return &NullableLoadBalancer{value: val, isSet: true}
-}
-
-func (v NullableLoadBalancer) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableLoadBalancer) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -21,20 +21,20 @@ var _ MappedNullable = &ListHealth200ResponseAllOfHealth{}
 
 // ListHealth200ResponseAllOfHealth struct for ListHealth200ResponseAllOfHealth
 type ListHealth200ResponseAllOfHealth struct {
-	Success *bool `json:"success,omitempty"`
-	StatusMessage *string `json:"statusMessage,omitempty"`
-	ApplianceUrl *string `json:"applianceUrl,omitempty"`
-	BuildVersion *string `json:"buildVersion,omitempty"`
-	Uuid *string `json:"uuid,omitempty"`
-	SetupNeeded *bool `json:"setupNeeded,omitempty"`
-	Date *time.Time `json:"date,omitempty"`
-	Cpu *ListHealth200ResponseAllOfHealthCpu `json:"cpu,omitempty"`
-	Memory *ListHealth200ResponseAllOfHealthMemory `json:"memory,omitempty"`
-	Threads *ListHealth200ResponseAllOfHealthThreads `json:"threads,omitempty"`
-	Database *ListHealth200ResponseAllOfHealthDatabase `json:"database,omitempty"`
-	Elastic *ListHealth200ResponseAllOfHealthElastic `json:"elastic,omitempty"`
-	Rabbit *ListHealth200ResponseAllOfHealthRabbit `json:"rabbit,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Success              *bool                                     `json:"success,omitempty"`
+	StatusMessage        *string                                   `json:"statusMessage,omitempty"`
+	ApplianceUrl         *string                                   `json:"applianceUrl,omitempty"`
+	BuildVersion         *string                                   `json:"buildVersion,omitempty"`
+	Uuid                 *string                                   `json:"uuid,omitempty"`
+	SetupNeeded          *bool                                     `json:"setupNeeded,omitempty"`
+	Date                 *time.Time                                `json:"date,omitempty"`
+	Cpu                  *ListHealth200ResponseAllOfHealthCpu      `json:"cpu,omitempty"`
+	Memory               *ListHealth200ResponseAllOfHealthMemory   `json:"memory,omitempty"`
+	Threads              *ListHealth200ResponseAllOfHealthThreads  `json:"threads,omitempty"`
+	Database             *ListHealth200ResponseAllOfHealthDatabase `json:"database,omitempty"`
+	Elastic              *ListHealth200ResponseAllOfHealthElastic  `json:"elastic,omitempty"`
+	Rabbit               *ListHealth200ResponseAllOfHealthRabbit   `json:"rabbit,omitempty"`
+	AdditionalProperties map[string]interface{}                    `json:",remain"`
 }
 
 type _ListHealth200ResponseAllOfHealth ListHealth200ResponseAllOfHealth
@@ -473,7 +473,7 @@ func (o *ListHealth200ResponseAllOfHealth) SetRabbit(v ListHealth200ResponseAllO
 }
 
 func (o ListHealth200ResponseAllOfHealth) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -528,74 +528,8 @@ func (o ListHealth200ResponseAllOfHealth) ToMap() (map[string]interface{}, error
 
 	return toSerialize, nil
 }
-
 func (o *ListHealth200ResponseAllOfHealth) UnmarshalJSON(data []byte) (err error) {
-	varListHealth200ResponseAllOfHealth := _ListHealth200ResponseAllOfHealth{}
-
-	err = json.Unmarshal(data, &varListHealth200ResponseAllOfHealth)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListHealth200ResponseAllOfHealth(varListHealth200ResponseAllOfHealth)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "success")
-		delete(additionalProperties, "statusMessage")
-		delete(additionalProperties, "applianceUrl")
-		delete(additionalProperties, "buildVersion")
-		delete(additionalProperties, "uuid")
-		delete(additionalProperties, "setupNeeded")
-		delete(additionalProperties, "date")
-		delete(additionalProperties, "cpu")
-		delete(additionalProperties, "memory")
-		delete(additionalProperties, "threads")
-		delete(additionalProperties, "database")
-		delete(additionalProperties, "elastic")
-		delete(additionalProperties, "rabbit")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListHealth200ResponseAllOfHealth struct {
-	value *ListHealth200ResponseAllOfHealth
-	isSet bool
-}
-
-func (v NullableListHealth200ResponseAllOfHealth) Get() *ListHealth200ResponseAllOfHealth {
-	return v.value
-}
-
-func (v *NullableListHealth200ResponseAllOfHealth) Set(val *ListHealth200ResponseAllOfHealth) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListHealth200ResponseAllOfHealth) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListHealth200ResponseAllOfHealth) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListHealth200ResponseAllOfHealth(val *ListHealth200ResponseAllOfHealth) *NullableListHealth200ResponseAllOfHealth {
-	return &NullableListHealth200ResponseAllOfHealth{value: val, isSet: true}
-}
-
-func (v NullableListHealth200ResponseAllOfHealth) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListHealth200ResponseAllOfHealth) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

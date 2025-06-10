@@ -19,20 +19,43 @@ import (
 // very silly way of avoiding `"fmt" imported and not used` errors
 var _ fmt.Stringer
 
-
 // ListClouds200ResponseAllOfZonesInnerConfig struct for ListClouds200ResponseAllOfZonesInnerConfig
 type ListClouds200ResponseAllOfZonesInnerConfig struct {
-	ListClouds200ResponseAllOfZonesInnerConfigAnyOf *ListClouds200ResponseAllOfZonesInnerConfigAnyOf
+	ListClouds200ResponseAllOfZonesInnerConfigAnyOf  *ListClouds200ResponseAllOfZonesInnerConfigAnyOf
 	ListClouds200ResponseAllOfZonesInnerConfigAnyOf1 *ListClouds200ResponseAllOfZonesInnerConfigAnyOf1
 	ListClouds200ResponseAllOfZonesInnerConfigAnyOf2 *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2
 	ListClouds200ResponseAllOfZonesInnerConfigAnyOf3 *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3
+}
+
+func (dst *ListClouds200ResponseAllOfZonesInnerConfig) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &ListClouds200ResponseAllOfZonesInnerConfig{}
+	}
+
+	if out, ok := data.(ListClouds200ResponseAllOfZonesInnerConfigAnyOf); ok {
+		dst.ListClouds200ResponseAllOfZonesInnerConfigAnyOf = &out
+	}
+
+	if out, ok := data.(ListClouds200ResponseAllOfZonesInnerConfigAnyOf1); ok {
+		dst.ListClouds200ResponseAllOfZonesInnerConfigAnyOf1 = &out
+	}
+
+	if out, ok := data.(ListClouds200ResponseAllOfZonesInnerConfigAnyOf2); ok {
+		dst.ListClouds200ResponseAllOfZonesInnerConfigAnyOf2 = &out
+	}
+
+	if out, ok := data.(ListClouds200ResponseAllOfZonesInnerConfigAnyOf3); ok {
+		dst.ListClouds200ResponseAllOfZonesInnerConfigAnyOf3 = &out
+	}
+
+	return dst, nil
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ListClouds200ResponseAllOfZonesInnerConfig) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into ListClouds200ResponseAllOfZonesInnerConfigAnyOf
-	err = json.Unmarshal(data, &dst.ListClouds200ResponseAllOfZonesInnerConfigAnyOf);
+	err = json.Unmarshal(data, &dst.ListClouds200ResponseAllOfZonesInnerConfigAnyOf)
 	if err == nil {
 		jsonListClouds200ResponseAllOfZonesInnerConfigAnyOf, _ := json.Marshal(dst.ListClouds200ResponseAllOfZonesInnerConfigAnyOf)
 		if string(jsonListClouds200ResponseAllOfZonesInnerConfigAnyOf) == "{}" { // empty struct
@@ -45,7 +68,7 @@ func (dst *ListClouds200ResponseAllOfZonesInnerConfig) UnmarshalJSON(data []byte
 	}
 
 	// try to unmarshal JSON data into ListClouds200ResponseAllOfZonesInnerConfigAnyOf1
-	err = json.Unmarshal(data, &dst.ListClouds200ResponseAllOfZonesInnerConfigAnyOf1);
+	err = json.Unmarshal(data, &dst.ListClouds200ResponseAllOfZonesInnerConfigAnyOf1)
 	if err == nil {
 		jsonListClouds200ResponseAllOfZonesInnerConfigAnyOf1, _ := json.Marshal(dst.ListClouds200ResponseAllOfZonesInnerConfigAnyOf1)
 		if string(jsonListClouds200ResponseAllOfZonesInnerConfigAnyOf1) == "{}" { // empty struct
@@ -58,7 +81,7 @@ func (dst *ListClouds200ResponseAllOfZonesInnerConfig) UnmarshalJSON(data []byte
 	}
 
 	// try to unmarshal JSON data into ListClouds200ResponseAllOfZonesInnerConfigAnyOf2
-	err = json.Unmarshal(data, &dst.ListClouds200ResponseAllOfZonesInnerConfigAnyOf2);
+	err = json.Unmarshal(data, &dst.ListClouds200ResponseAllOfZonesInnerConfigAnyOf2)
 	if err == nil {
 		jsonListClouds200ResponseAllOfZonesInnerConfigAnyOf2, _ := json.Marshal(dst.ListClouds200ResponseAllOfZonesInnerConfigAnyOf2)
 		if string(jsonListClouds200ResponseAllOfZonesInnerConfigAnyOf2) == "{}" { // empty struct
@@ -71,7 +94,7 @@ func (dst *ListClouds200ResponseAllOfZonesInnerConfig) UnmarshalJSON(data []byte
 	}
 
 	// try to unmarshal JSON data into ListClouds200ResponseAllOfZonesInnerConfigAnyOf3
-	err = json.Unmarshal(data, &dst.ListClouds200ResponseAllOfZonesInnerConfigAnyOf3);
+	err = json.Unmarshal(data, &dst.ListClouds200ResponseAllOfZonesInnerConfigAnyOf3)
 	if err == nil {
 		jsonListClouds200ResponseAllOfZonesInnerConfigAnyOf3, _ := json.Marshal(dst.ListClouds200ResponseAllOfZonesInnerConfigAnyOf3)
 		if string(jsonListClouds200ResponseAllOfZonesInnerConfigAnyOf3) == "{}" { // empty struct
@@ -106,7 +129,6 @@ func (src ListClouds200ResponseAllOfZonesInnerConfig) MarshalJSON() ([]byte, err
 
 	return nil, nil // no data in anyOf schemas
 }
-
 
 type NullableListClouds200ResponseAllOfZonesInnerConfig struct {
 	value *ListClouds200ResponseAllOfZonesInnerConfig
@@ -143,5 +165,3 @@ func (v *NullableListClouds200ResponseAllOfZonesInnerConfig) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,10 +20,10 @@ var _ MappedNullable = &ListVDIAllocations200ResponseAllOfVdiAllocationsInnerUse
 
 // ListVDIAllocations200ResponseAllOfVdiAllocationsInnerUser struct for ListVDIAllocations200ResponseAllOfVdiAllocationsInnerUser
 type ListVDIAllocations200ResponseAllOfVdiAllocationsInnerUser struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Username *string `json:"username,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	Username             *string                `json:"username,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListVDIAllocations200ResponseAllOfVdiAllocationsInnerUser ListVDIAllocations200ResponseAllOfVdiAllocationsInnerUser
@@ -142,7 +142,7 @@ func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInnerUser) SetUsername(
 }
 
 func (o ListVDIAllocations200ResponseAllOfVdiAllocationsInnerUser) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -167,64 +167,8 @@ func (o ListVDIAllocations200ResponseAllOfVdiAllocationsInnerUser) ToMap() (map[
 
 	return toSerialize, nil
 }
-
 func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInnerUser) UnmarshalJSON(data []byte) (err error) {
-	varListVDIAllocations200ResponseAllOfVdiAllocationsInnerUser := _ListVDIAllocations200ResponseAllOfVdiAllocationsInnerUser{}
-
-	err = json.Unmarshal(data, &varListVDIAllocations200ResponseAllOfVdiAllocationsInnerUser)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListVDIAllocations200ResponseAllOfVdiAllocationsInnerUser(varListVDIAllocations200ResponseAllOfVdiAllocationsInnerUser)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "username")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListVDIAllocations200ResponseAllOfVdiAllocationsInnerUser struct {
-	value *ListVDIAllocations200ResponseAllOfVdiAllocationsInnerUser
-	isSet bool
-}
-
-func (v NullableListVDIAllocations200ResponseAllOfVdiAllocationsInnerUser) Get() *ListVDIAllocations200ResponseAllOfVdiAllocationsInnerUser {
-	return v.value
-}
-
-func (v *NullableListVDIAllocations200ResponseAllOfVdiAllocationsInnerUser) Set(val *ListVDIAllocations200ResponseAllOfVdiAllocationsInnerUser) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListVDIAllocations200ResponseAllOfVdiAllocationsInnerUser) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListVDIAllocations200ResponseAllOfVdiAllocationsInnerUser) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListVDIAllocations200ResponseAllOfVdiAllocationsInnerUser(val *ListVDIAllocations200ResponseAllOfVdiAllocationsInnerUser) *NullableListVDIAllocations200ResponseAllOfVdiAllocationsInnerUser {
-	return &NullableListVDIAllocations200ResponseAllOfVdiAllocationsInnerUser{value: val, isSet: true}
-}
-
-func (v NullableListVDIAllocations200ResponseAllOfVdiAllocationsInnerUser) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListVDIAllocations200ResponseAllOfVdiAllocationsInnerUser) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

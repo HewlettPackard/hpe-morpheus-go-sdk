@@ -21,48 +21,48 @@ var _ MappedNullable = &ListClusterContainers200ResponseAllOfContainersInner{}
 
 // ListClusterContainers200ResponseAllOfContainersInner struct for ListClusterContainers200ResponseAllOfContainersInner
 type ListClusterContainers200ResponseAllOfContainersInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Uuid *string `json:"uuid,omitempty"`
-	AccountId *int64 `json:"accountId,omitempty"`
-	Instance *string `json:"instance,omitempty"`
-	ContainerType *ListClusterContainers200ResponseAllOfContainersInnerContainerType `json:"containerType,omitempty"`
-	ContainerTypeSet *ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet `json:"containerTypeSet,omitempty"`
-	Server *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"server,omitempty"`
-	Cloud *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner `json:"cloud,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Ip *string `json:"ip,omitempty"`
-	InternalIp *string `json:"internalIp,omitempty"`
-	InternalHostname *string `json:"internalHostname,omitempty"`
-	ExternalHostname *string `json:"externalHostname,omitempty"`
-	ExternalDomain *string `json:"externalDomain,omitempty"`
-	ExternalFqdn *string `json:"externalFqdn,omitempty"`
-	Ports []map[string]interface{} `json:"ports,omitempty"`
-	Plan *ListClusterContainers200ResponseAllOfContainersInnerPlan `json:"plan,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	StatsEnabled *bool `json:"statsEnabled,omitempty"`
-	Status *string `json:"status,omitempty"`
-	UserStatus *string `json:"userStatus,omitempty"`
-	EnvironmentPrefix *string `json:"environmentPrefix,omitempty"`
-	ConfigGroup *string `json:"configGroup,omitempty"`
-	ConfigId *string `json:"configId,omitempty"`
-	ConfigRole *string `json:"configRole,omitempty"`
-	Stats *ListClusterContainers200ResponseAllOfContainersInnerStats `json:"stats,omitempty"`
-	RuntimeInfo map[string]interface{} `json:"runtimeInfo,omitempty"`
-	ContainerVersion *string `json:"containerVersion,omitempty"`
-	RepositoryImage *string `json:"repositoryImage,omitempty"`
-	PlanCategory *string `json:"planCategory,omitempty"`
-	Hostname *string `json:"hostname,omitempty"`
-	DomainName *string `json:"domainName,omitempty"`
-	VolumeCreated *bool `json:"volumeCreated,omitempty"`
-	ContainerCreated *bool `json:"containerCreated,omitempty"`
-	MaxStorage *string `json:"maxStorage,omitempty"`
-	MaxMemory *string `json:"maxMemory,omitempty"`
-	MaxCores *string `json:"maxCores,omitempty"`
-	MaxCpu *string `json:"maxCpu,omitempty"`
-	HourlyPrice *float32 `json:"hourlyPrice,omitempty"`
-	AvailableActions []ListClusterContainers200ResponseAllOfContainersInnerAvailableActionsInner `json:"availableActions,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                                                                      `json:"id,omitempty"`
+	Uuid                 *string                                                                     `json:"uuid,omitempty"`
+	AccountId            *int64                                                                      `json:"accountId,omitempty"`
+	Instance             *string                                                                     `json:"instance,omitempty"`
+	ContainerType        *ListClusterContainers200ResponseAllOfContainersInnerContainerType          `json:"containerType,omitempty"`
+	ContainerTypeSet     *ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet       `json:"containerTypeSet,omitempty"`
+	Server               *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner     `json:"server,omitempty"`
+	Cloud                *ListApplianceSettings200ResponseApplianceSettingsEnabledZoneTypesInner     `json:"cloud,omitempty"`
+	Name                 *string                                                                     `json:"name,omitempty"`
+	Ip                   *string                                                                     `json:"ip,omitempty"`
+	InternalIp           *string                                                                     `json:"internalIp,omitempty"`
+	InternalHostname     *string                                                                     `json:"internalHostname,omitempty"`
+	ExternalHostname     *string                                                                     `json:"externalHostname,omitempty"`
+	ExternalDomain       *string                                                                     `json:"externalDomain,omitempty"`
+	ExternalFqdn         *string                                                                     `json:"externalFqdn,omitempty"`
+	Ports                []map[string]interface{}                                                    `json:"ports,omitempty"`
+	Plan                 *ListClusterContainers200ResponseAllOfContainersInnerPlan                   `json:"plan,omitempty"`
+	DateCreated          *time.Time                                                                  `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                                  `json:"lastUpdated,omitempty"`
+	StatsEnabled         *bool                                                                       `json:"statsEnabled,omitempty"`
+	Status               *string                                                                     `json:"status,omitempty"`
+	UserStatus           *string                                                                     `json:"userStatus,omitempty"`
+	EnvironmentPrefix    *string                                                                     `json:"environmentPrefix,omitempty"`
+	ConfigGroup          *string                                                                     `json:"configGroup,omitempty"`
+	ConfigId             *string                                                                     `json:"configId,omitempty"`
+	ConfigRole           *string                                                                     `json:"configRole,omitempty"`
+	Stats                *ListClusterContainers200ResponseAllOfContainersInnerStats                  `json:"stats,omitempty"`
+	RuntimeInfo          map[string]interface{}                                                      `json:"runtimeInfo,omitempty"`
+	ContainerVersion     *string                                                                     `json:"containerVersion,omitempty"`
+	RepositoryImage      *string                                                                     `json:"repositoryImage,omitempty"`
+	PlanCategory         *string                                                                     `json:"planCategory,omitempty"`
+	Hostname             *string                                                                     `json:"hostname,omitempty"`
+	DomainName           *string                                                                     `json:"domainName,omitempty"`
+	VolumeCreated        *bool                                                                       `json:"volumeCreated,omitempty"`
+	ContainerCreated     *bool                                                                       `json:"containerCreated,omitempty"`
+	MaxStorage           *string                                                                     `json:"maxStorage,omitempty"`
+	MaxMemory            *string                                                                     `json:"maxMemory,omitempty"`
+	MaxCores             *string                                                                     `json:"maxCores,omitempty"`
+	MaxCpu               *string                                                                     `json:"maxCpu,omitempty"`
+	HourlyPrice          *float32                                                                    `json:"hourlyPrice,omitempty"`
+	AvailableActions     []ListClusterContainers200ResponseAllOfContainersInnerAvailableActionsInner `json:"availableActions,omitempty"`
+	AdditionalProperties map[string]interface{}                                                      `json:",remain"`
 }
 
 type _ListClusterContainers200ResponseAllOfContainersInner ListClusterContainers200ResponseAllOfContainersInner
@@ -1397,7 +1397,7 @@ func (o *ListClusterContainers200ResponseAllOfContainersInner) SetAvailableActio
 }
 
 func (o ListClusterContainers200ResponseAllOfContainersInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1536,102 +1536,8 @@ func (o ListClusterContainers200ResponseAllOfContainersInner) ToMap() (map[strin
 
 	return toSerialize, nil
 }
-
 func (o *ListClusterContainers200ResponseAllOfContainersInner) UnmarshalJSON(data []byte) (err error) {
-	varListClusterContainers200ResponseAllOfContainersInner := _ListClusterContainers200ResponseAllOfContainersInner{}
-
-	err = json.Unmarshal(data, &varListClusterContainers200ResponseAllOfContainersInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListClusterContainers200ResponseAllOfContainersInner(varListClusterContainers200ResponseAllOfContainersInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "uuid")
-		delete(additionalProperties, "accountId")
-		delete(additionalProperties, "instance")
-		delete(additionalProperties, "containerType")
-		delete(additionalProperties, "containerTypeSet")
-		delete(additionalProperties, "server")
-		delete(additionalProperties, "cloud")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "ip")
-		delete(additionalProperties, "internalIp")
-		delete(additionalProperties, "internalHostname")
-		delete(additionalProperties, "externalHostname")
-		delete(additionalProperties, "externalDomain")
-		delete(additionalProperties, "externalFqdn")
-		delete(additionalProperties, "ports")
-		delete(additionalProperties, "plan")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "statsEnabled")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "userStatus")
-		delete(additionalProperties, "environmentPrefix")
-		delete(additionalProperties, "configGroup")
-		delete(additionalProperties, "configId")
-		delete(additionalProperties, "configRole")
-		delete(additionalProperties, "stats")
-		delete(additionalProperties, "runtimeInfo")
-		delete(additionalProperties, "containerVersion")
-		delete(additionalProperties, "repositoryImage")
-		delete(additionalProperties, "planCategory")
-		delete(additionalProperties, "hostname")
-		delete(additionalProperties, "domainName")
-		delete(additionalProperties, "volumeCreated")
-		delete(additionalProperties, "containerCreated")
-		delete(additionalProperties, "maxStorage")
-		delete(additionalProperties, "maxMemory")
-		delete(additionalProperties, "maxCores")
-		delete(additionalProperties, "maxCpu")
-		delete(additionalProperties, "hourlyPrice")
-		delete(additionalProperties, "availableActions")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListClusterContainers200ResponseAllOfContainersInner struct {
-	value *ListClusterContainers200ResponseAllOfContainersInner
-	isSet bool
-}
-
-func (v NullableListClusterContainers200ResponseAllOfContainersInner) Get() *ListClusterContainers200ResponseAllOfContainersInner {
-	return v.value
-}
-
-func (v *NullableListClusterContainers200ResponseAllOfContainersInner) Set(val *ListClusterContainers200ResponseAllOfContainersInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListClusterContainers200ResponseAllOfContainersInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListClusterContainers200ResponseAllOfContainersInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListClusterContainers200ResponseAllOfContainersInner(val *ListClusterContainers200ResponseAllOfContainersInner) *NullableListClusterContainers200ResponseAllOfContainersInner {
-	return &NullableListClusterContainers200ResponseAllOfContainersInner{value: val, isSet: true}
-}
-
-func (v NullableListClusterContainers200ResponseAllOfContainersInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListClusterContainers200ResponseAllOfContainersInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

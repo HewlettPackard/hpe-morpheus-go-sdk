@@ -20,13 +20,13 @@ var _ MappedNullable = &ListGroups200ResponseAllOfGroupsInnerConfig{}
 
 // ListGroups200ResponseAllOfGroupsInnerConfig struct for ListGroups200ResponseAllOfGroupsInnerConfig
 type ListGroups200ResponseAllOfGroupsInnerConfig struct {
-	DnsIntegrationId *string `json:"dnsIntegrationId,omitempty"`
-	ConfigCmdbId *string `json:"configCmdbId,omitempty"`
-	ConfigCmId *string `json:"configCmId,omitempty"`
-	ServiceRegistryId *string `json:"serviceRegistryId,omitempty"`
-	ConfigManagementId *string `json:"configManagementId,omitempty"`
-	ConfigCmdbDiscovery *bool `json:"configCmdbDiscovery,omitempty"`
-	AdditionalProperties map[string]interface{}
+	DnsIntegrationId     *string                `json:"dnsIntegrationId,omitempty"`
+	ConfigCmdbId         *string                `json:"configCmdbId,omitempty"`
+	ConfigCmId           *string                `json:"configCmId,omitempty"`
+	ServiceRegistryId    *string                `json:"serviceRegistryId,omitempty"`
+	ConfigManagementId   *string                `json:"configManagementId,omitempty"`
+	ConfigCmdbDiscovery  *bool                  `json:"configCmdbDiscovery,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListGroups200ResponseAllOfGroupsInnerConfig ListGroups200ResponseAllOfGroupsInnerConfig
@@ -241,7 +241,7 @@ func (o *ListGroups200ResponseAllOfGroupsInnerConfig) SetConfigCmdbDiscovery(v b
 }
 
 func (o ListGroups200ResponseAllOfGroupsInnerConfig) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -275,67 +275,8 @@ func (o ListGroups200ResponseAllOfGroupsInnerConfig) ToMap() (map[string]interfa
 
 	return toSerialize, nil
 }
-
 func (o *ListGroups200ResponseAllOfGroupsInnerConfig) UnmarshalJSON(data []byte) (err error) {
-	varListGroups200ResponseAllOfGroupsInnerConfig := _ListGroups200ResponseAllOfGroupsInnerConfig{}
-
-	err = json.Unmarshal(data, &varListGroups200ResponseAllOfGroupsInnerConfig)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListGroups200ResponseAllOfGroupsInnerConfig(varListGroups200ResponseAllOfGroupsInnerConfig)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "dnsIntegrationId")
-		delete(additionalProperties, "configCmdbId")
-		delete(additionalProperties, "configCmId")
-		delete(additionalProperties, "serviceRegistryId")
-		delete(additionalProperties, "configManagementId")
-		delete(additionalProperties, "configCmdbDiscovery")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListGroups200ResponseAllOfGroupsInnerConfig struct {
-	value *ListGroups200ResponseAllOfGroupsInnerConfig
-	isSet bool
-}
-
-func (v NullableListGroups200ResponseAllOfGroupsInnerConfig) Get() *ListGroups200ResponseAllOfGroupsInnerConfig {
-	return v.value
-}
-
-func (v *NullableListGroups200ResponseAllOfGroupsInnerConfig) Set(val *ListGroups200ResponseAllOfGroupsInnerConfig) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListGroups200ResponseAllOfGroupsInnerConfig) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListGroups200ResponseAllOfGroupsInnerConfig) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListGroups200ResponseAllOfGroupsInnerConfig(val *ListGroups200ResponseAllOfGroupsInnerConfig) *NullableListGroups200ResponseAllOfGroupsInnerConfig {
-	return &NullableListGroups200ResponseAllOfGroupsInnerConfig{value: val, isSet: true}
-}
-
-func (v NullableListGroups200ResponseAllOfGroupsInnerConfig) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListGroups200ResponseAllOfGroupsInnerConfig) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

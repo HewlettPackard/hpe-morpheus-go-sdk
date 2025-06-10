@@ -20,32 +20,32 @@ var _ MappedNullable = &GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeI
 
 // GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner struct for GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner
 type GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Category *string `json:"category,omitempty"`
-	ExternalType *string `json:"externalType,omitempty"`
-	Creatable *bool `json:"creatable,omitempty"`
-	Overlay *bool `json:"overlay,omitempty"`
-	NameEditable *bool `json:"nameEditable,omitempty"`
-	CidrRequired *bool `json:"cidrRequired,omitempty"`
-	CidrEditable *bool `json:"cidrEditable,omitempty"`
-	DhcpServerEditable *bool `json:"dhcpServerEditable,omitempty"`
-	DnsEditable *bool `json:"dnsEditable,omitempty"`
-	GatewayEditable *bool `json:"gatewayEditable,omitempty"`
-	VlanIdEditable *bool `json:"vlanIdEditable,omitempty"`
-	StaticOverrideEditable *bool `json:"staticOverrideEditable,omitempty"`
-	NetworkDomainEditable *bool `json:"networkDomainEditable,omitempty"`
-	CanAssignPool *bool `json:"canAssignPool,omitempty"`
-	Deletable *bool `json:"deletable,omitempty"`
-	HasNetworkServer *bool `json:"hasNetworkServer,omitempty"`
-	HasCidr *bool `json:"hasCidr,omitempty"`
-	HasStaticRoutes *bool `json:"hasStaticRoutes,omitempty"`
-	HasFloatingIps *bool `json:"hasFloatingIps,omitempty"`
-	OptionTypes []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
-	RouteOptionTypes []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner `json:"routeOptionTypes,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                     *int64                                                                                                                               `json:"id,omitempty"`
+	Code                   *string                                                                                                                              `json:"code,omitempty"`
+	Name                   *string                                                                                                                              `json:"name,omitempty"`
+	Description            *string                                                                                                                              `json:"description,omitempty"`
+	Category               *string                                                                                                                              `json:"category,omitempty"`
+	ExternalType           *string                                                                                                                              `json:"externalType,omitempty"`
+	Creatable              *bool                                                                                                                                `json:"creatable,omitempty"`
+	Overlay                *bool                                                                                                                                `json:"overlay,omitempty"`
+	NameEditable           *bool                                                                                                                                `json:"nameEditable,omitempty"`
+	CidrRequired           *bool                                                                                                                                `json:"cidrRequired,omitempty"`
+	CidrEditable           *bool                                                                                                                                `json:"cidrEditable,omitempty"`
+	DhcpServerEditable     *bool                                                                                                                                `json:"dhcpServerEditable,omitempty"`
+	DnsEditable            *bool                                                                                                                                `json:"dnsEditable,omitempty"`
+	GatewayEditable        *bool                                                                                                                                `json:"gatewayEditable,omitempty"`
+	VlanIdEditable         *bool                                                                                                                                `json:"vlanIdEditable,omitempty"`
+	StaticOverrideEditable *bool                                                                                                                                `json:"staticOverrideEditable,omitempty"`
+	NetworkDomainEditable  *bool                                                                                                                                `json:"networkDomainEditable,omitempty"`
+	CanAssignPool          *bool                                                                                                                                `json:"canAssignPool,omitempty"`
+	Deletable              *bool                                                                                                                                `json:"deletable,omitempty"`
+	HasNetworkServer       *bool                                                                                                                                `json:"hasNetworkServer,omitempty"`
+	HasCidr                *bool                                                                                                                                `json:"hasCidr,omitempty"`
+	HasStaticRoutes        *bool                                                                                                                                `json:"hasStaticRoutes,omitempty"`
+	HasFloatingIps         *bool                                                                                                                                `json:"hasFloatingIps,omitempty"`
+	OptionTypes            []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner                                                          `json:"optionTypes,omitempty"`
+	RouteOptionTypes       []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner `json:"routeOptionTypes,omitempty"`
+	AdditionalProperties   map[string]interface{}                                                                                                               `json:",remain"`
 }
 
 type _GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner
@@ -868,7 +868,7 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 }
 
 func (o GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -959,86 +959,8 @@ func (o GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayou
 
 	return toSerialize, nil
 }
-
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) UnmarshalJSON(data []byte) (err error) {
-	varGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner := _GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner{}
-
-	err = json.Unmarshal(data, &varGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner(varGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "externalType")
-		delete(additionalProperties, "creatable")
-		delete(additionalProperties, "overlay")
-		delete(additionalProperties, "nameEditable")
-		delete(additionalProperties, "cidrRequired")
-		delete(additionalProperties, "cidrEditable")
-		delete(additionalProperties, "dhcpServerEditable")
-		delete(additionalProperties, "dnsEditable")
-		delete(additionalProperties, "gatewayEditable")
-		delete(additionalProperties, "vlanIdEditable")
-		delete(additionalProperties, "staticOverrideEditable")
-		delete(additionalProperties, "networkDomainEditable")
-		delete(additionalProperties, "canAssignPool")
-		delete(additionalProperties, "deletable")
-		delete(additionalProperties, "hasNetworkServer")
-		delete(additionalProperties, "hasCidr")
-		delete(additionalProperties, "hasStaticRoutes")
-		delete(additionalProperties, "hasFloatingIps")
-		delete(additionalProperties, "optionTypes")
-		delete(additionalProperties, "routeOptionTypes")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner struct {
-	value *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner
-	isSet bool
-}
-
-func (v NullableGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) Get() *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner {
-	return v.value
-}
-
-func (v *NullableGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) Set(val *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner(val *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) *NullableGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner {
-	return &NullableGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner{value: val, isSet: true}
-}
-
-func (v NullableGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

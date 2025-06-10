@@ -19,18 +19,33 @@ import (
 // very silly way of avoiding `"fmt" imported and not used` errors
 var _ fmt.Stringer
 
-
 // AddCloudResourcePoolRequestResourcePoolConfig struct for AddCloudResourcePoolRequestResourcePoolConfig
 type AddCloudResourcePoolRequestResourcePoolConfig struct {
-	AddCloudResourcePoolRequestResourcePoolConfigAnyOf *AddCloudResourcePoolRequestResourcePoolConfigAnyOf
+	AddCloudResourcePoolRequestResourcePoolConfigAnyOf  *AddCloudResourcePoolRequestResourcePoolConfigAnyOf
 	AddCloudResourcePoolRequestResourcePoolConfigAnyOf1 *AddCloudResourcePoolRequestResourcePoolConfigAnyOf1
+}
+
+func (dst *AddCloudResourcePoolRequestResourcePoolConfig) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddCloudResourcePoolRequestResourcePoolConfig{}
+	}
+
+	if out, ok := data.(AddCloudResourcePoolRequestResourcePoolConfigAnyOf); ok {
+		dst.AddCloudResourcePoolRequestResourcePoolConfigAnyOf = &out
+	}
+
+	if out, ok := data.(AddCloudResourcePoolRequestResourcePoolConfigAnyOf1); ok {
+		dst.AddCloudResourcePoolRequestResourcePoolConfigAnyOf1 = &out
+	}
+
+	return dst, nil
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AddCloudResourcePoolRequestResourcePoolConfig) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into AddCloudResourcePoolRequestResourcePoolConfigAnyOf
-	err = json.Unmarshal(data, &dst.AddCloudResourcePoolRequestResourcePoolConfigAnyOf);
+	err = json.Unmarshal(data, &dst.AddCloudResourcePoolRequestResourcePoolConfigAnyOf)
 	if err == nil {
 		jsonAddCloudResourcePoolRequestResourcePoolConfigAnyOf, _ := json.Marshal(dst.AddCloudResourcePoolRequestResourcePoolConfigAnyOf)
 		if string(jsonAddCloudResourcePoolRequestResourcePoolConfigAnyOf) == "{}" { // empty struct
@@ -43,7 +58,7 @@ func (dst *AddCloudResourcePoolRequestResourcePoolConfig) UnmarshalJSON(data []b
 	}
 
 	// try to unmarshal JSON data into AddCloudResourcePoolRequestResourcePoolConfigAnyOf1
-	err = json.Unmarshal(data, &dst.AddCloudResourcePoolRequestResourcePoolConfigAnyOf1);
+	err = json.Unmarshal(data, &dst.AddCloudResourcePoolRequestResourcePoolConfigAnyOf1)
 	if err == nil {
 		jsonAddCloudResourcePoolRequestResourcePoolConfigAnyOf1, _ := json.Marshal(dst.AddCloudResourcePoolRequestResourcePoolConfigAnyOf1)
 		if string(jsonAddCloudResourcePoolRequestResourcePoolConfigAnyOf1) == "{}" { // empty struct
@@ -70,7 +85,6 @@ func (src AddCloudResourcePoolRequestResourcePoolConfig) MarshalJSON() ([]byte, 
 
 	return nil, nil // no data in anyOf schemas
 }
-
 
 type NullableAddCloudResourcePoolRequestResourcePoolConfig struct {
 	value *AddCloudResourcePoolRequestResourcePoolConfig
@@ -107,5 +121,3 @@ func (v *NullableAddCloudResourcePoolRequestResourcePoolConfig) UnmarshalJSON(sr
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,10 +20,10 @@ var _ MappedNullable = &ListClouds200ResponseAllOfZonesInnerGroupsInner{}
 
 // ListClouds200ResponseAllOfZonesInnerGroupsInner struct for ListClouds200ResponseAllOfZonesInnerGroupsInner
 type ListClouds200ResponseAllOfZonesInnerGroupsInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	AccountId *int64 `json:"accountId,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	AccountId            *int64                 `json:"accountId,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListClouds200ResponseAllOfZonesInnerGroupsInner ListClouds200ResponseAllOfZonesInnerGroupsInner
@@ -142,7 +142,7 @@ func (o *ListClouds200ResponseAllOfZonesInnerGroupsInner) SetAccountId(v int64) 
 }
 
 func (o ListClouds200ResponseAllOfZonesInnerGroupsInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -167,64 +167,8 @@ func (o ListClouds200ResponseAllOfZonesInnerGroupsInner) ToMap() (map[string]int
 
 	return toSerialize, nil
 }
-
 func (o *ListClouds200ResponseAllOfZonesInnerGroupsInner) UnmarshalJSON(data []byte) (err error) {
-	varListClouds200ResponseAllOfZonesInnerGroupsInner := _ListClouds200ResponseAllOfZonesInnerGroupsInner{}
-
-	err = json.Unmarshal(data, &varListClouds200ResponseAllOfZonesInnerGroupsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListClouds200ResponseAllOfZonesInnerGroupsInner(varListClouds200ResponseAllOfZonesInnerGroupsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "accountId")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListClouds200ResponseAllOfZonesInnerGroupsInner struct {
-	value *ListClouds200ResponseAllOfZonesInnerGroupsInner
-	isSet bool
-}
-
-func (v NullableListClouds200ResponseAllOfZonesInnerGroupsInner) Get() *ListClouds200ResponseAllOfZonesInnerGroupsInner {
-	return v.value
-}
-
-func (v *NullableListClouds200ResponseAllOfZonesInnerGroupsInner) Set(val *ListClouds200ResponseAllOfZonesInnerGroupsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListClouds200ResponseAllOfZonesInnerGroupsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListClouds200ResponseAllOfZonesInnerGroupsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListClouds200ResponseAllOfZonesInnerGroupsInner(val *ListClouds200ResponseAllOfZonesInnerGroupsInner) *NullableListClouds200ResponseAllOfZonesInnerGroupsInner {
-	return &NullableListClouds200ResponseAllOfZonesInnerGroupsInner{value: val, isSet: true}
-}
-
-func (v NullableListClouds200ResponseAllOfZonesInnerGroupsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListClouds200ResponseAllOfZonesInnerGroupsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

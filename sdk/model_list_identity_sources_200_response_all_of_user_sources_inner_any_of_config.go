@@ -20,20 +20,20 @@ var _ MappedNullable = &ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf
 
 // ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig struct for ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig
 type ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig struct {
-	Url *string `json:"url,omitempty"`
-	BindingUsername *string `json:"bindingUsername,omitempty"`
-	BindingPassword *string `json:"bindingPassword,omitempty"`
-	UserFqnExpression *string `json:"userFqnExpression,omitempty"`
-	RequiredRoleFqn *string `json:"requiredRoleFqn,omitempty"`
-	UsernameAttribute *string `json:"usernameAttribute,omitempty"`
-	CommonNameAttribute *string `json:"commonNameAttribute,omitempty"`
-	FirstNameAttribute *string `json:"firstNameAttribute,omitempty"`
-	LastNameAttribute *string `json:"lastNameAttribute,omitempty"`
-	EmailAttribute *string `json:"emailAttribute,omitempty"`
-	UniqueMemberAttribute *string `json:"uniqueMemberAttribute,omitempty"`
-	MemberOfAttribute *string `json:"memberOfAttribute,omitempty"`
-	BindingPasswordHash *string `json:"bindingPasswordHash,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Url                   *string                `json:"url,omitempty"`
+	BindingUsername       *string                `json:"bindingUsername,omitempty"`
+	BindingPassword       *string                `json:"bindingPassword,omitempty"`
+	UserFqnExpression     *string                `json:"userFqnExpression,omitempty"`
+	RequiredRoleFqn       *string                `json:"requiredRoleFqn,omitempty"`
+	UsernameAttribute     *string                `json:"usernameAttribute,omitempty"`
+	CommonNameAttribute   *string                `json:"commonNameAttribute,omitempty"`
+	FirstNameAttribute    *string                `json:"firstNameAttribute,omitempty"`
+	LastNameAttribute     *string                `json:"lastNameAttribute,omitempty"`
+	EmailAttribute        *string                `json:"emailAttribute,omitempty"`
+	UniqueMemberAttribute *string                `json:"uniqueMemberAttribute,omitempty"`
+	MemberOfAttribute     *string                `json:"memberOfAttribute,omitempty"`
+	BindingPasswordHash   *string                `json:"bindingPasswordHash,omitempty"`
+	AdditionalProperties  map[string]interface{} `json:",remain"`
 }
 
 type _ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig
@@ -472,7 +472,7 @@ func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig) SetBind
 }
 
 func (o ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -527,74 +527,8 @@ func (o ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig) ToMap() 
 
 	return toSerialize, nil
 }
-
 func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig) UnmarshalJSON(data []byte) (err error) {
-	varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig := _ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig{}
-
-	err = json.Unmarshal(data, &varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig(varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "bindingUsername")
-		delete(additionalProperties, "bindingPassword")
-		delete(additionalProperties, "userFqnExpression")
-		delete(additionalProperties, "requiredRoleFqn")
-		delete(additionalProperties, "usernameAttribute")
-		delete(additionalProperties, "commonNameAttribute")
-		delete(additionalProperties, "firstNameAttribute")
-		delete(additionalProperties, "lastNameAttribute")
-		delete(additionalProperties, "emailAttribute")
-		delete(additionalProperties, "uniqueMemberAttribute")
-		delete(additionalProperties, "memberOfAttribute")
-		delete(additionalProperties, "bindingPasswordHash")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig struct {
-	value *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig
-	isSet bool
-}
-
-func (v NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig) Get() *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig {
-	return v.value
-}
-
-func (v *NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig) Set(val *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig(val *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig) *NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig {
-	return &NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig{value: val, isSet: true}
-}
-
-func (v NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfConfig) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

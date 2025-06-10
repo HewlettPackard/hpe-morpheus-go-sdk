@@ -20,9 +20,9 @@ var _ MappedNullable = &ListClusterWorkers200Response{}
 
 // ListClusterWorkers200Response struct for ListClusterWorkers200Response
 type ListClusterWorkers200Response struct {
-	Workers []GetClusterMasters200ResponseMastersInner `json:"workers,omitempty"`
-	Meta *ListActivity200ResponseAllOfMeta `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Workers              []GetClusterMasters200ResponseMastersInner `json:"workers,omitempty"`
+	Meta                 *ListActivity200ResponseAllOfMeta          `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}                     `json:",remain"`
 }
 
 type _ListClusterWorkers200Response ListClusterWorkers200Response
@@ -109,7 +109,7 @@ func (o *ListClusterWorkers200Response) SetMeta(v ListActivity200ResponseAllOfMe
 }
 
 func (o ListClusterWorkers200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o ListClusterWorkers200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ListClusterWorkers200Response) UnmarshalJSON(data []byte) (err error) {
-	varListClusterWorkers200Response := _ListClusterWorkers200Response{}
-
-	err = json.Unmarshal(data, &varListClusterWorkers200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListClusterWorkers200Response(varListClusterWorkers200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "workers")
-		delete(additionalProperties, "meta")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListClusterWorkers200Response struct {
-	value *ListClusterWorkers200Response
-	isSet bool
-}
-
-func (v NullableListClusterWorkers200Response) Get() *ListClusterWorkers200Response {
-	return v.value
-}
-
-func (v *NullableListClusterWorkers200Response) Set(val *ListClusterWorkers200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListClusterWorkers200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListClusterWorkers200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListClusterWorkers200Response(val *ListClusterWorkers200Response) *NullableListClusterWorkers200Response {
-	return &NullableListClusterWorkers200Response{value: val, isSet: true}
-}
-
-func (v NullableListClusterWorkers200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListClusterWorkers200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

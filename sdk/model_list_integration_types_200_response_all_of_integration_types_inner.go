@@ -20,22 +20,22 @@ var _ MappedNullable = &ListIntegrationTypes200ResponseAllOfIntegrationTypesInne
 
 // ListIntegrationTypes200ResponseAllOfIntegrationTypesInner struct for ListIntegrationTypes200ResponseAllOfIntegrationTypesInner
 type ListIntegrationTypes200ResponseAllOfIntegrationTypesInner struct {
-	Id *int64 `json:"id,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Category *string `json:"category,omitempty"`
-	Enabled *bool `json:"enabled,omitempty"`
-	Creatable *bool `json:"creatable,omitempty"`
-	HasCMDB *bool `json:"hasCMDB,omitempty"`
-	HasCMDBDiscovery *bool `json:"hasCMDBDiscovery,omitempty"`
-	HasCM *bool `json:"hasCM,omitempty"`
-	HasDNS *bool `json:"hasDNS,omitempty"`
-	HasApprovals *bool `json:"hasApprovals,omitempty"`
-	HasDeleteApprovals *bool `json:"hasDeleteApprovals,omitempty"`
-	HasReconfigureApprovals *bool `json:"hasReconfigureApprovals,omitempty"`
-	IsPlugin *bool `json:"isPlugin,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                      *int64                 `json:"id,omitempty"`
+	Code                    *string                `json:"code,omitempty"`
+	Name                    *string                `json:"name,omitempty"`
+	Description             *string                `json:"description,omitempty"`
+	Category                *string                `json:"category,omitempty"`
+	Enabled                 *bool                  `json:"enabled,omitempty"`
+	Creatable               *bool                  `json:"creatable,omitempty"`
+	HasCMDB                 *bool                  `json:"hasCMDB,omitempty"`
+	HasCMDBDiscovery        *bool                  `json:"hasCMDBDiscovery,omitempty"`
+	HasCM                   *bool                  `json:"hasCM,omitempty"`
+	HasDNS                  *bool                  `json:"hasDNS,omitempty"`
+	HasApprovals            *bool                  `json:"hasApprovals,omitempty"`
+	HasDeleteApprovals      *bool                  `json:"hasDeleteApprovals,omitempty"`
+	HasReconfigureApprovals *bool                  `json:"hasReconfigureApprovals,omitempty"`
+	IsPlugin                *bool                  `json:"isPlugin,omitempty"`
+	AdditionalProperties    map[string]interface{} `json:",remain"`
 }
 
 type _ListIntegrationTypes200ResponseAllOfIntegrationTypesInner ListIntegrationTypes200ResponseAllOfIntegrationTypesInner
@@ -538,7 +538,7 @@ func (o *ListIntegrationTypes200ResponseAllOfIntegrationTypesInner) SetIsPlugin(
 }
 
 func (o ListIntegrationTypes200ResponseAllOfIntegrationTypesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -599,76 +599,8 @@ func (o ListIntegrationTypes200ResponseAllOfIntegrationTypesInner) ToMap() (map[
 
 	return toSerialize, nil
 }
-
 func (o *ListIntegrationTypes200ResponseAllOfIntegrationTypesInner) UnmarshalJSON(data []byte) (err error) {
-	varListIntegrationTypes200ResponseAllOfIntegrationTypesInner := _ListIntegrationTypes200ResponseAllOfIntegrationTypesInner{}
-
-	err = json.Unmarshal(data, &varListIntegrationTypes200ResponseAllOfIntegrationTypesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListIntegrationTypes200ResponseAllOfIntegrationTypesInner(varListIntegrationTypes200ResponseAllOfIntegrationTypesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "creatable")
-		delete(additionalProperties, "hasCMDB")
-		delete(additionalProperties, "hasCMDBDiscovery")
-		delete(additionalProperties, "hasCM")
-		delete(additionalProperties, "hasDNS")
-		delete(additionalProperties, "hasApprovals")
-		delete(additionalProperties, "hasDeleteApprovals")
-		delete(additionalProperties, "hasReconfigureApprovals")
-		delete(additionalProperties, "isPlugin")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListIntegrationTypes200ResponseAllOfIntegrationTypesInner struct {
-	value *ListIntegrationTypes200ResponseAllOfIntegrationTypesInner
-	isSet bool
-}
-
-func (v NullableListIntegrationTypes200ResponseAllOfIntegrationTypesInner) Get() *ListIntegrationTypes200ResponseAllOfIntegrationTypesInner {
-	return v.value
-}
-
-func (v *NullableListIntegrationTypes200ResponseAllOfIntegrationTypesInner) Set(val *ListIntegrationTypes200ResponseAllOfIntegrationTypesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListIntegrationTypes200ResponseAllOfIntegrationTypesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListIntegrationTypes200ResponseAllOfIntegrationTypesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListIntegrationTypes200ResponseAllOfIntegrationTypesInner(val *ListIntegrationTypes200ResponseAllOfIntegrationTypesInner) *NullableListIntegrationTypes200ResponseAllOfIntegrationTypesInner {
-	return &NullableListIntegrationTypes200ResponseAllOfIntegrationTypesInner{value: val, isSet: true}
-}
-
-func (v NullableListIntegrationTypes200ResponseAllOfIntegrationTypesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListIntegrationTypes200ResponseAllOfIntegrationTypesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

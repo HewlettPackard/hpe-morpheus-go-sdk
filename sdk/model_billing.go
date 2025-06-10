@@ -21,16 +21,16 @@ var _ MappedNullable = &Billing{}
 
 // Billing struct for Billing
 type Billing struct {
-	AccountId *int64 `json:"accountId,omitempty"`
-	AccountUUID *string `json:"accountUUID,omitempty"`
-	Name *string `json:"name,omitempty"`
-	StartDate *time.Time `json:"startDate,omitempty"`
-	EndDate *time.Time `json:"endDate,omitempty"`
-	PriceUnit *string `json:"priceUnit,omitempty"`
-	Price *float32 `json:"price,omitempty"`
-	Cost *float32 `json:"cost,omitempty"`
-	Zones []ListBillingAccount200ResponseAllOfBillingInfoZonesInner `json:"zones,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AccountId            *int64                                                    `json:"accountId,omitempty"`
+	AccountUUID          *string                                                   `json:"accountUUID,omitempty"`
+	Name                 *string                                                   `json:"name,omitempty"`
+	StartDate            *time.Time                                                `json:"startDate,omitempty"`
+	EndDate              *time.Time                                                `json:"endDate,omitempty"`
+	PriceUnit            *string                                                   `json:"priceUnit,omitempty"`
+	Price                *float32                                                  `json:"price,omitempty"`
+	Cost                 *float32                                                  `json:"cost,omitempty"`
+	Zones                []ListBillingAccount200ResponseAllOfBillingInfoZonesInner `json:"zones,omitempty"`
+	AdditionalProperties map[string]interface{}                                    `json:",remain"`
 }
 
 type _Billing Billing
@@ -341,7 +341,7 @@ func (o *Billing) SetZones(v []ListBillingAccount200ResponseAllOfBillingInfoZone
 }
 
 func (o Billing) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -384,70 +384,8 @@ func (o Billing) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *Billing) UnmarshalJSON(data []byte) (err error) {
-	varBilling := _Billing{}
-
-	err = json.Unmarshal(data, &varBilling)
-
-	if err != nil {
-		return err
-	}
-
-	*o = Billing(varBilling)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "accountId")
-		delete(additionalProperties, "accountUUID")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "startDate")
-		delete(additionalProperties, "endDate")
-		delete(additionalProperties, "priceUnit")
-		delete(additionalProperties, "price")
-		delete(additionalProperties, "cost")
-		delete(additionalProperties, "zones")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableBilling struct {
-	value *Billing
-	isSet bool
-}
-
-func (v NullableBilling) Get() *Billing {
-	return v.value
-}
-
-func (v *NullableBilling) Set(val *Billing) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableBilling) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableBilling) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableBilling(val *Billing) *NullableBilling {
-	return &NullableBilling{value: val, isSet: true}
-}
-
-func (v NullableBilling) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableBilling) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

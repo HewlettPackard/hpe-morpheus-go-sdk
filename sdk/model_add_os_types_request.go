@@ -20,8 +20,8 @@ var _ MappedNullable = &AddOsTypesRequest{}
 
 // AddOsTypesRequest struct for AddOsTypesRequest
 type AddOsTypesRequest struct {
-	OsType *AddOsTypesRequestOsType `json:"osType,omitempty"`
-	AdditionalProperties map[string]interface{}
+	OsType               *AddOsTypesRequestOsType `json:"osType,omitempty"`
+	AdditionalProperties map[string]interface{}   `json:",remain"`
 }
 
 type _AddOsTypesRequest AddOsTypesRequest
@@ -76,7 +76,7 @@ func (o *AddOsTypesRequest) SetOsType(v AddOsTypesRequestOsType) {
 }
 
 func (o AddOsTypesRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o AddOsTypesRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *AddOsTypesRequest) UnmarshalJSON(data []byte) (err error) {
-	varAddOsTypesRequest := _AddOsTypesRequest{}
-
-	err = json.Unmarshal(data, &varAddOsTypesRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddOsTypesRequest(varAddOsTypesRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "osType")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddOsTypesRequest struct {
-	value *AddOsTypesRequest
-	isSet bool
-}
-
-func (v NullableAddOsTypesRequest) Get() *AddOsTypesRequest {
-	return v.value
-}
-
-func (v *NullableAddOsTypesRequest) Set(val *AddOsTypesRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddOsTypesRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddOsTypesRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddOsTypesRequest(val *AddOsTypesRequest) *NullableAddOsTypesRequest {
-	return &NullableAddOsTypesRequest{value: val, isSet: true}
-}
-
-func (v NullableAddOsTypesRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddOsTypesRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -21,21 +21,21 @@ var _ MappedNullable = &SnapshotsInstance200ResponseSnapshotsInner{}
 
 // SnapshotsInstance200ResponseSnapshotsInner struct for SnapshotsInstance200ResponseSnapshotsInner
 type SnapshotsInstance200ResponseSnapshotsInner struct {
-	Id *int32 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	ExternalId *string `json:"externalId,omitempty"`
-	Status *string `json:"status,omitempty"`
-	State *string `json:"state,omitempty"`
-	SnapshotType *string `json:"snapshotType,omitempty"`
-	SnapshotCreated *time.Time `json:"snapshotCreated,omitempty"`
-	Zone *SnapshotsInstance200ResponseSnapshotsInnerZone `json:"zone,omitempty"`
-	Datastore *string `json:"datastore,omitempty"`
-	ParentSnapshot *string `json:"parentSnapshot,omitempty"`
-	SnapshotFiles []SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInner `json:"snapshotFiles,omitempty"`
-	CurrentlyActive *bool `json:"currentlyActive,omitempty"`
-	DateCreated *time.Time `json:"dateCreated,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int32                                                         `json:"id,omitempty"`
+	Name                 *string                                                        `json:"name,omitempty"`
+	Description          *string                                                        `json:"description,omitempty"`
+	ExternalId           *string                                                        `json:"externalId,omitempty"`
+	Status               *string                                                        `json:"status,omitempty"`
+	State                *string                                                        `json:"state,omitempty"`
+	SnapshotType         *string                                                        `json:"snapshotType,omitempty"`
+	SnapshotCreated      *time.Time                                                     `json:"snapshotCreated,omitempty"`
+	Zone                 *SnapshotsInstance200ResponseSnapshotsInnerZone                `json:"zone,omitempty"`
+	Datastore            *string                                                        `json:"datastore,omitempty"`
+	ParentSnapshot       *string                                                        `json:"parentSnapshot,omitempty"`
+	SnapshotFiles        []SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInner `json:"snapshotFiles,omitempty"`
+	CurrentlyActive      *bool                                                          `json:"currentlyActive,omitempty"`
+	DateCreated          *time.Time                                                     `json:"dateCreated,omitempty"`
+	AdditionalProperties map[string]interface{}                                         `json:",remain"`
 }
 
 type _SnapshotsInstance200ResponseSnapshotsInner SnapshotsInstance200ResponseSnapshotsInner
@@ -506,7 +506,7 @@ func (o *SnapshotsInstance200ResponseSnapshotsInner) SetDateCreated(v time.Time)
 }
 
 func (o SnapshotsInstance200ResponseSnapshotsInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -564,75 +564,8 @@ func (o SnapshotsInstance200ResponseSnapshotsInner) ToMap() (map[string]interfac
 
 	return toSerialize, nil
 }
-
 func (o *SnapshotsInstance200ResponseSnapshotsInner) UnmarshalJSON(data []byte) (err error) {
-	varSnapshotsInstance200ResponseSnapshotsInner := _SnapshotsInstance200ResponseSnapshotsInner{}
-
-	err = json.Unmarshal(data, &varSnapshotsInstance200ResponseSnapshotsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = SnapshotsInstance200ResponseSnapshotsInner(varSnapshotsInstance200ResponseSnapshotsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "state")
-		delete(additionalProperties, "snapshotType")
-		delete(additionalProperties, "snapshotCreated")
-		delete(additionalProperties, "zone")
-		delete(additionalProperties, "datastore")
-		delete(additionalProperties, "parentSnapshot")
-		delete(additionalProperties, "snapshotFiles")
-		delete(additionalProperties, "currentlyActive")
-		delete(additionalProperties, "dateCreated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableSnapshotsInstance200ResponseSnapshotsInner struct {
-	value *SnapshotsInstance200ResponseSnapshotsInner
-	isSet bool
-}
-
-func (v NullableSnapshotsInstance200ResponseSnapshotsInner) Get() *SnapshotsInstance200ResponseSnapshotsInner {
-	return v.value
-}
-
-func (v *NullableSnapshotsInstance200ResponseSnapshotsInner) Set(val *SnapshotsInstance200ResponseSnapshotsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSnapshotsInstance200ResponseSnapshotsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSnapshotsInstance200ResponseSnapshotsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSnapshotsInstance200ResponseSnapshotsInner(val *SnapshotsInstance200ResponseSnapshotsInner) *NullableSnapshotsInstance200ResponseSnapshotsInner {
-	return &NullableSnapshotsInstance200ResponseSnapshotsInner{value: val, isSet: true}
-}
-
-func (v NullableSnapshotsInstance200ResponseSnapshotsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSnapshotsInstance200ResponseSnapshotsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

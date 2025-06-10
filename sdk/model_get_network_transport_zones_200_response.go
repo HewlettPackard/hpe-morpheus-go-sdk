@@ -20,9 +20,9 @@ var _ MappedNullable = &GetNetworkTransportZones200Response{}
 
 // GetNetworkTransportZones200Response struct for GetNetworkTransportZones200Response
 type GetNetworkTransportZones200Response struct {
-	NetworkScopes interface{} `json:"networkScopes,omitempty"`
-	Meta *ListActivity200ResponseAllOfMeta `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}
+	NetworkScopes        interface{}                       `json:"networkScopes,omitempty"`
+	Meta                 *ListActivity200ResponseAllOfMeta `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}            `json:",remain"`
 }
 
 type _GetNetworkTransportZones200Response GetNetworkTransportZones200Response
@@ -110,7 +110,7 @@ func (o *GetNetworkTransportZones200Response) SetMeta(v ListActivity200ResponseA
 }
 
 func (o GetNetworkTransportZones200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -132,63 +132,8 @@ func (o GetNetworkTransportZones200Response) ToMap() (map[string]interface{}, er
 
 	return toSerialize, nil
 }
-
 func (o *GetNetworkTransportZones200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetNetworkTransportZones200Response := _GetNetworkTransportZones200Response{}
-
-	err = json.Unmarshal(data, &varGetNetworkTransportZones200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetNetworkTransportZones200Response(varGetNetworkTransportZones200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "networkScopes")
-		delete(additionalProperties, "meta")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetNetworkTransportZones200Response struct {
-	value *GetNetworkTransportZones200Response
-	isSet bool
-}
-
-func (v NullableGetNetworkTransportZones200Response) Get() *GetNetworkTransportZones200Response {
-	return v.value
-}
-
-func (v *NullableGetNetworkTransportZones200Response) Set(val *GetNetworkTransportZones200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetNetworkTransportZones200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetNetworkTransportZones200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetNetworkTransportZones200Response(val *GetNetworkTransportZones200Response) *NullableGetNetworkTransportZones200Response {
-	return &NullableGetNetworkTransportZones200Response{value: val, isSet: true}
-}
-
-func (v NullableGetNetworkTransportZones200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetNetworkTransportZones200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

@@ -20,24 +20,24 @@ var _ MappedNullable = &ZoneGcpConfig{}
 
 // ZoneGcpConfig struct for ZoneGcpConfig
 type ZoneGcpConfig struct {
-	PrivateKey *string `json:"privateKey,omitempty"`
-	ClientEmail *string `json:"clientEmail,omitempty"`
-	ProjectId *string `json:"projectId,omitempty"`
-	GoogleRegionId *string `json:"googleRegionId,omitempty"`
-	ImportExisting *string `json:"importExisting,omitempty"`
-	ApplianceUrl *string `json:"applianceUrl,omitempty"`
-	DatacenterName *string `json:"datacenterName,omitempty"`
-	NetworkServerId *string `json:"networkServer.id,omitempty"`
-	NetworkServer *ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer `json:"networkServer,omitempty"`
-	SecurityServer *string `json:"securityServer,omitempty"`
-	CertificateProvider *string `json:"certificateProvider,omitempty"`
-	BackupMode *string `json:"backupMode,omitempty"`
-	ReplicationMode *string `json:"replicationMode,omitempty"`
-	DnsIntegrationId *string `json:"dnsIntegrationId,omitempty"`
-	ServiceRegistryId *string `json:"serviceRegistryId,omitempty"`
-	ConfigManagementId *string `json:"configManagementId,omitempty"`
-	PrivateKeyHash *string `json:"privateKeyHash,omitempty"`
-	AdditionalProperties map[string]interface{}
+	PrivateKey           *string                                                       `json:"privateKey,omitempty"`
+	ClientEmail          *string                                                       `json:"clientEmail,omitempty"`
+	ProjectId            *string                                                       `json:"projectId,omitempty"`
+	GoogleRegionId       *string                                                       `json:"googleRegionId,omitempty"`
+	ImportExisting       *string                                                       `json:"importExisting,omitempty"`
+	ApplianceUrl         *string                                                       `json:"applianceUrl,omitempty"`
+	DatacenterName       *string                                                       `json:"datacenterName,omitempty"`
+	NetworkServerId      *string                                                       `json:"networkServer.id,omitempty"`
+	NetworkServer        *ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer `json:"networkServer,omitempty"`
+	SecurityServer       *string                                                       `json:"securityServer,omitempty"`
+	CertificateProvider  *string                                                       `json:"certificateProvider,omitempty"`
+	BackupMode           *string                                                       `json:"backupMode,omitempty"`
+	ReplicationMode      *string                                                       `json:"replicationMode,omitempty"`
+	DnsIntegrationId     *string                                                       `json:"dnsIntegrationId,omitempty"`
+	ServiceRegistryId    *string                                                       `json:"serviceRegistryId,omitempty"`
+	ConfigManagementId   *string                                                       `json:"configManagementId,omitempty"`
+	PrivateKeyHash       *string                                                       `json:"privateKeyHash,omitempty"`
+	AdditionalProperties map[string]interface{}                                        `json:",remain"`
 }
 
 type _ZoneGcpConfig ZoneGcpConfig
@@ -604,7 +604,7 @@ func (o *ZoneGcpConfig) SetPrivateKeyHash(v string) {
 }
 
 func (o ZoneGcpConfig) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -671,78 +671,8 @@ func (o ZoneGcpConfig) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ZoneGcpConfig) UnmarshalJSON(data []byte) (err error) {
-	varZoneGcpConfig := _ZoneGcpConfig{}
-
-	err = json.Unmarshal(data, &varZoneGcpConfig)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ZoneGcpConfig(varZoneGcpConfig)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "privateKey")
-		delete(additionalProperties, "clientEmail")
-		delete(additionalProperties, "projectId")
-		delete(additionalProperties, "googleRegionId")
-		delete(additionalProperties, "importExisting")
-		delete(additionalProperties, "applianceUrl")
-		delete(additionalProperties, "datacenterName")
-		delete(additionalProperties, "networkServer.id")
-		delete(additionalProperties, "networkServer")
-		delete(additionalProperties, "securityServer")
-		delete(additionalProperties, "certificateProvider")
-		delete(additionalProperties, "backupMode")
-		delete(additionalProperties, "replicationMode")
-		delete(additionalProperties, "dnsIntegrationId")
-		delete(additionalProperties, "serviceRegistryId")
-		delete(additionalProperties, "configManagementId")
-		delete(additionalProperties, "privateKeyHash")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableZoneGcpConfig struct {
-	value *ZoneGcpConfig
-	isSet bool
-}
-
-func (v NullableZoneGcpConfig) Get() *ZoneGcpConfig {
-	return v.value
-}
-
-func (v *NullableZoneGcpConfig) Set(val *ZoneGcpConfig) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableZoneGcpConfig) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableZoneGcpConfig) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableZoneGcpConfig(val *ZoneGcpConfig) *NullableZoneGcpConfig {
-	return &NullableZoneGcpConfig{value: val, isSet: true}
-}
-
-func (v NullableZoneGcpConfig) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableZoneGcpConfig) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

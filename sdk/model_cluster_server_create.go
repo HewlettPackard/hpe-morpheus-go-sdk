@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the ClusterServerCreate type satisfies the MappedNullable interface at compile time
@@ -21,21 +20,21 @@ var _ MappedNullable = &ClusterServerCreate{}
 
 // ClusterServerCreate struct for ClusterServerCreate
 type ClusterServerCreate struct {
-	Config AddClusterRequestClusterServerConfig `json:"config"`
+	Config     AddClusterRequestClusterServerConfig      `json:"config"`
 	ServerType *AddClusterRequestClusterServerServerType `json:"serverType,omitempty"`
 	// Name to be used for host(s) created in the cluster
-	Name string `json:"name"`
-	Plan AddClusterRequestClusterServerPlan `json:"plan"`
+	Name               string                                                                 `json:"name"`
+	Plan               AddClusterRequestClusterServerPlan                                     `json:"plan"`
 	ServicePlanOptions *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigServicePlanOptions `json:"servicePlanOptions,omitempty"`
 	// The (optional) volumes parameter is for LV configuration, can create additional LVs at provision It should be passed as an array of Objects
 	Volumes []AddClusterRequestClusterServerVolumesInner `json:"volumes,omitempty"`
-	// The networkInterfaces parameter is for network configuration.  The Options API /api/options/zoneNetworkOptions can be used to see which options are available.  It should be passed as an array of Objects with the following attributes 
+	// The networkInterfaces parameter is for network configuration.  The Options API /api/options/zoneNetworkOptions can be used to see which options are available.  It should be passed as an array of Objects with the following attributes
 	NetworkInterfaces []AddClusterRequestClusterServerNetworkInterfacesInner `json:"networkInterfaces,omitempty"`
 	// Key for security group configuration.
 	SecurityGroups []string `json:"securityGroups,omitempty"`
 	// Visibility for server host
-	Visibility *string `json:"visibility,omitempty"`
-	UserGroup *AddClusterRequestClusterServerUserGroup `json:"userGroup,omitempty"`
+	Visibility *string                                  `json:"visibility,omitempty"`
+	UserGroup  *AddClusterRequestClusterServerUserGroup `json:"userGroup,omitempty"`
 	// Network domain
 	NetworkDomain *string `json:"networkDomain,omitempty"`
 	// Hostname for server host
@@ -51,9 +50,9 @@ type ClusterServerCreate struct {
 	// SSH Username
 	SshUsername *string `json:"sshUsername,omitempty"`
 	// SSH Password
-	SshPassword *string `json:"sshPassword,omitempty"`
-	SshKeyPair *AddClusterRequestClusterServerSshKeyPair `json:"sshKeyPair,omitempty"`
-	AdditionalProperties map[string]interface{}
+	SshPassword          *string                                   `json:"sshPassword,omitempty"`
+	SshKeyPair           *AddClusterRequestClusterServerSshKeyPair `json:"sshKeyPair,omitempty"`
+	AdditionalProperties map[string]interface{}                    `json:",remain"`
 }
 
 type _ClusterServerCreate ClusterServerCreate
@@ -667,7 +666,7 @@ func (o *ClusterServerCreate) SetSshKeyPair(v AddClusterRequestClusterServerSshK
 }
 
 func (o ClusterServerCreate) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -734,103 +733,8 @@ func (o ClusterServerCreate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ClusterServerCreate) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"config",
-		"name",
-		"plan",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varClusterServerCreate := _ClusterServerCreate{}
-
-	err = json.Unmarshal(data, &varClusterServerCreate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ClusterServerCreate(varClusterServerCreate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "serverType")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "plan")
-		delete(additionalProperties, "servicePlanOptions")
-		delete(additionalProperties, "volumes")
-		delete(additionalProperties, "networkInterfaces")
-		delete(additionalProperties, "securityGroups")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "userGroup")
-		delete(additionalProperties, "networkDomain")
-		delete(additionalProperties, "hostname")
-		delete(additionalProperties, "nodeCount")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "sshHosts")
-		delete(additionalProperties, "sshUsername")
-		delete(additionalProperties, "sshPassword")
-		delete(additionalProperties, "sshKeyPair")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableClusterServerCreate struct {
-	value *ClusterServerCreate
-	isSet bool
-}
-
-func (v NullableClusterServerCreate) Get() *ClusterServerCreate {
-	return v.value
-}
-
-func (v *NullableClusterServerCreate) Set(val *ClusterServerCreate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableClusterServerCreate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableClusterServerCreate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableClusterServerCreate(val *ClusterServerCreate) *NullableClusterServerCreate {
-	return &NullableClusterServerCreate{value: val, isSet: true}
-}
-
-func (v NullableClusterServerCreate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableClusterServerCreate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

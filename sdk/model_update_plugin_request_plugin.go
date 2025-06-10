@@ -23,8 +23,8 @@ type UpdatePluginRequestPlugin struct {
 	// Can be used to disable the plugin
 	Enabled *bool `json:"enabled,omitempty"`
 	// Configuration object that contains settings for the applicable option types.
-	Config map[string]interface{} `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Config               map[string]interface{} `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UpdatePluginRequestPlugin UpdatePluginRequestPlugin
@@ -111,7 +111,7 @@ func (o *UpdatePluginRequestPlugin) SetConfig(v map[string]interface{}) {
 }
 
 func (o UpdatePluginRequestPlugin) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -133,63 +133,8 @@ func (o UpdatePluginRequestPlugin) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *UpdatePluginRequestPlugin) UnmarshalJSON(data []byte) (err error) {
-	varUpdatePluginRequestPlugin := _UpdatePluginRequestPlugin{}
-
-	err = json.Unmarshal(data, &varUpdatePluginRequestPlugin)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdatePluginRequestPlugin(varUpdatePluginRequestPlugin)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "config")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdatePluginRequestPlugin struct {
-	value *UpdatePluginRequestPlugin
-	isSet bool
-}
-
-func (v NullableUpdatePluginRequestPlugin) Get() *UpdatePluginRequestPlugin {
-	return v.value
-}
-
-func (v *NullableUpdatePluginRequestPlugin) Set(val *UpdatePluginRequestPlugin) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdatePluginRequestPlugin) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdatePluginRequestPlugin) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdatePluginRequestPlugin(val *UpdatePluginRequestPlugin) *NullableUpdatePluginRequestPlugin {
-	return &NullableUpdatePluginRequestPlugin{value: val, isSet: true}
-}
-
-func (v NullableUpdatePluginRequestPlugin) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdatePluginRequestPlugin) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

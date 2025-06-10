@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the UpdateServicePlansRequest type satisfies the MappedNullable interface at compile time
@@ -21,8 +20,8 @@ var _ MappedNullable = &UpdateServicePlansRequest{}
 
 // UpdateServicePlansRequest struct for UpdateServicePlansRequest
 type UpdateServicePlansRequest struct {
-	ServicePlan UpdateServicePlansRequestServicePlan `json:"servicePlan"`
-	AdditionalProperties map[string]interface{}
+	ServicePlan          UpdateServicePlansRequestServicePlan `json:"servicePlan"`
+	AdditionalProperties map[string]interface{}               `json:",remain"`
 }
 
 type _UpdateServicePlansRequest UpdateServicePlansRequest
@@ -70,7 +69,7 @@ func (o *UpdateServicePlansRequest) SetServicePlan(v UpdateServicePlansRequestSe
 }
 
 func (o UpdateServicePlansRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -87,83 +86,8 @@ func (o UpdateServicePlansRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *UpdateServicePlansRequest) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"servicePlan",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varUpdateServicePlansRequest := _UpdateServicePlansRequest{}
-
-	err = json.Unmarshal(data, &varUpdateServicePlansRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateServicePlansRequest(varUpdateServicePlansRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "servicePlan")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUpdateServicePlansRequest struct {
-	value *UpdateServicePlansRequest
-	isSet bool
-}
-
-func (v NullableUpdateServicePlansRequest) Get() *UpdateServicePlansRequest {
-	return v.value
-}
-
-func (v *NullableUpdateServicePlansRequest) Set(val *UpdateServicePlansRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateServicePlansRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateServicePlansRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateServicePlansRequest(val *UpdateServicePlansRequest) *NullableUpdateServicePlansRequest {
-	return &NullableUpdateServicePlansRequest{value: val, isSet: true}
-}
-
-func (v NullableUpdateServicePlansRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateServicePlansRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

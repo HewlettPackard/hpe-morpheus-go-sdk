@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddIntegrationsRequestOneOf2Integration type satisfies the MappedNullable interface at compile time
@@ -27,16 +26,16 @@ type AddIntegrationsRequestOneOf2Integration struct {
 	Type string `json:"type"`
 	// Set `true` to enable integration
 	Enabled *bool `json:"enabled,omitempty"`
-	// Pass `false` to skip refresh.  By default, refresh is done on update, when it is supported by the integration type. 
+	// Pass `false` to skip refresh.  By default, refresh is done on update, when it is supported by the integration type.
 	Refresh *bool `json:"refresh,omitempty"`
 	// ServiceNow Host
 	ServiceUrl string `json:"serviceUrl"`
 	// ServiceNow Username
 	ServiceUsername string `json:"serviceUsername"`
 	// ServiceNow Password
-	ServicePassword string `json:"servicePassword"`
-	Config *AddIntegrationsRequestOneOf2IntegrationConfig `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ServicePassword      string                                         `json:"servicePassword"`
+	Config               *AddIntegrationsRequestOneOf2IntegrationConfig `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}                         `json:",remain"`
 }
 
 type _AddIntegrationsRequestOneOf2Integration AddIntegrationsRequestOneOf2Integration
@@ -284,7 +283,7 @@ func (o *AddIntegrationsRequestOneOf2Integration) SetConfig(v AddIntegrationsReq
 }
 
 func (o AddIntegrationsRequestOneOf2Integration) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -314,94 +313,8 @@ func (o AddIntegrationsRequestOneOf2Integration) ToMap() (map[string]interface{}
 
 	return toSerialize, nil
 }
-
 func (o *AddIntegrationsRequestOneOf2Integration) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-		"type",
-		"serviceUrl",
-		"serviceUsername",
-		"servicePassword",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddIntegrationsRequestOneOf2Integration := _AddIntegrationsRequestOneOf2Integration{}
-
-	err = json.Unmarshal(data, &varAddIntegrationsRequestOneOf2Integration)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddIntegrationsRequestOneOf2Integration(varAddIntegrationsRequestOneOf2Integration)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "refresh")
-		delete(additionalProperties, "serviceUrl")
-		delete(additionalProperties, "serviceUsername")
-		delete(additionalProperties, "servicePassword")
-		delete(additionalProperties, "config")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddIntegrationsRequestOneOf2Integration struct {
-	value *AddIntegrationsRequestOneOf2Integration
-	isSet bool
-}
-
-func (v NullableAddIntegrationsRequestOneOf2Integration) Get() *AddIntegrationsRequestOneOf2Integration {
-	return v.value
-}
-
-func (v *NullableAddIntegrationsRequestOneOf2Integration) Set(val *AddIntegrationsRequestOneOf2Integration) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddIntegrationsRequestOneOf2Integration) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddIntegrationsRequestOneOf2Integration) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddIntegrationsRequestOneOf2Integration(val *AddIntegrationsRequestOneOf2Integration) *NullableAddIntegrationsRequestOneOf2Integration {
-	return &NullableAddIntegrationsRequestOneOf2Integration{value: val, isSet: true}
-}
-
-func (v NullableAddIntegrationsRequestOneOf2Integration) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddIntegrationsRequestOneOf2Integration) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

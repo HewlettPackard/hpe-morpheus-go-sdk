@@ -20,8 +20,8 @@ var _ MappedNullable = &AddClusterWorkerRequest{}
 
 // AddClusterWorkerRequest struct for AddClusterWorkerRequest
 type AddClusterWorkerRequest struct {
-	Server *AddClusterRequestClusterServer `json:"server,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Server               *AddClusterRequestClusterServer `json:"server,omitempty"`
+	AdditionalProperties map[string]interface{}          `json:",remain"`
 }
 
 type _AddClusterWorkerRequest AddClusterWorkerRequest
@@ -76,7 +76,7 @@ func (o *AddClusterWorkerRequest) SetServer(v AddClusterRequestClusterServer) {
 }
 
 func (o AddClusterWorkerRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o AddClusterWorkerRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *AddClusterWorkerRequest) UnmarshalJSON(data []byte) (err error) {
-	varAddClusterWorkerRequest := _AddClusterWorkerRequest{}
-
-	err = json.Unmarshal(data, &varAddClusterWorkerRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddClusterWorkerRequest(varAddClusterWorkerRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "server")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableAddClusterWorkerRequest struct {
-	value *AddClusterWorkerRequest
-	isSet bool
-}
-
-func (v NullableAddClusterWorkerRequest) Get() *AddClusterWorkerRequest {
-	return v.value
-}
-
-func (v *NullableAddClusterWorkerRequest) Set(val *AddClusterWorkerRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddClusterWorkerRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddClusterWorkerRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddClusterWorkerRequest(val *AddClusterWorkerRequest) *NullableAddClusterWorkerRequest {
-	return &NullableAddClusterWorkerRequest{value: val, isSet: true}
-}
-
-func (v NullableAddClusterWorkerRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddClusterWorkerRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

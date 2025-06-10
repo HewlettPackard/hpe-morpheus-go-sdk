@@ -28,10 +28,10 @@ type ListUsages200ResponseMeta struct {
 	// Number of records returned in the response
 	Size *int64 `json:"size,omitempty"`
 	// Total number of records found
-	Total *int64 `json:"total,omitempty"`
-	StartDate *time.Time `json:"startDate,omitempty"`
-	EndDate *time.Time `json:"endDate,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Total                *int64                 `json:"total,omitempty"`
+	StartDate            *time.Time             `json:"startDate,omitempty"`
+	EndDate              *time.Time             `json:"endDate,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListUsages200ResponseMeta ListUsages200ResponseMeta
@@ -262,7 +262,7 @@ func (o *ListUsages200ResponseMeta) SetEndDate(v time.Time) {
 }
 
 func (o ListUsages200ResponseMeta) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -296,67 +296,8 @@ func (o ListUsages200ResponseMeta) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *ListUsages200ResponseMeta) UnmarshalJSON(data []byte) (err error) {
-	varListUsages200ResponseMeta := _ListUsages200ResponseMeta{}
-
-	err = json.Unmarshal(data, &varListUsages200ResponseMeta)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListUsages200ResponseMeta(varListUsages200ResponseMeta)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "offset")
-		delete(additionalProperties, "max")
-		delete(additionalProperties, "size")
-		delete(additionalProperties, "total")
-		delete(additionalProperties, "startDate")
-		delete(additionalProperties, "endDate")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableListUsages200ResponseMeta struct {
-	value *ListUsages200ResponseMeta
-	isSet bool
-}
-
-func (v NullableListUsages200ResponseMeta) Get() *ListUsages200ResponseMeta {
-	return v.value
-}
-
-func (v *NullableListUsages200ResponseMeta) Set(val *ListUsages200ResponseMeta) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListUsages200ResponseMeta) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListUsages200ResponseMeta) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListUsages200ResponseMeta(val *ListUsages200ResponseMeta) *NullableListUsages200ResponseMeta {
-	return &NullableListUsages200ResponseMeta{value: val, isSet: true}
-}
-
-func (v NullableListUsages200ResponseMeta) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListUsages200ResponseMeta) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

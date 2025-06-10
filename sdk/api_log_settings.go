@@ -21,13 +21,12 @@ import (
 	"strings"
 )
 
-
 // LogSettingsAPIService LogSettingsAPI service
 type LogSettingsAPIService service
 
 type ApiAddLogSettingsSyslogRulesRequest struct {
-	ctx context.Context
-	ApiService *LogSettingsAPIService
+	ctx                              context.Context
+	ApiService                       *LogSettingsAPIService
 	addLogSettingsSyslogRulesRequest *AddLogSettingsSyslogRulesRequest
 }
 
@@ -45,24 +44,25 @@ AddLogSettingsSyslogRules Create a New Syslog Rule
 
 Creates a new syslog rule. This command will also update existing syslog rule by specified name if already exists
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddLogSettingsSyslogRulesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddLogSettingsSyslogRulesRequest
 */
 func (a *LogSettingsAPIService) AddLogSettingsSyslogRules(ctx context.Context) ApiAddLogSettingsSyslogRulesRequest {
 	return ApiAddLogSettingsSyslogRulesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *LogSettingsAPIService) AddLogSettingsSyslogRulesExecute(r ApiAddLogSettingsSyslogRulesRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogSettingsAPIService.AddLogSettingsSyslogRules")
@@ -114,7 +114,7 @@ func (a *LogSettingsAPIService) AddLogSettingsSyslogRulesExecute(r ApiAddLogSett
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -123,8 +123,8 @@ func (a *LogSettingsAPIService) AddLogSettingsSyslogRulesExecute(r ApiAddLogSett
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -134,8 +134,8 @@ func (a *LogSettingsAPIService) AddLogSettingsSyslogRulesExecute(r ApiAddLogSett
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -143,8 +143,8 @@ func (a *LogSettingsAPIService) AddLogSettingsSyslogRulesExecute(r ApiAddLogSett
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -153,9 +153,9 @@ func (a *LogSettingsAPIService) AddLogSettingsSyslogRulesExecute(r ApiAddLogSett
 }
 
 type ApiDeleteLogSettingsSyslogRulesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *LogSettingsAPIService
-	id int64
+	id         int64
 }
 
 func (r ApiDeleteLogSettingsSyslogRulesRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -167,26 +167,27 @@ DeleteLogSettingsSyslogRules Delete a Specific Syslog Rule
 
 Will delete the syslog rule matching the specified name.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Morpheus ID of the Object being referenced
- @return ApiDeleteLogSettingsSyslogRulesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiDeleteLogSettingsSyslogRulesRequest
 */
 func (a *LogSettingsAPIService) DeleteLogSettingsSyslogRules(ctx context.Context, id int64) ApiDeleteLogSettingsSyslogRulesRequest {
 	return ApiDeleteLogSettingsSyslogRulesRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeleteAlerts200Response
+//
+//	@return DeleteAlerts200Response
 func (a *LogSettingsAPIService) DeleteLogSettingsSyslogRulesExecute(r ApiDeleteLogSettingsSyslogRulesRequest) (*DeleteAlerts200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeleteAlerts200Response
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteAlerts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogSettingsAPIService.DeleteLogSettingsSyslogRules")
@@ -237,7 +238,7 @@ func (a *LogSettingsAPIService) DeleteLogSettingsSyslogRulesExecute(r ApiDeleteL
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -246,8 +247,8 @@ func (a *LogSettingsAPIService) DeleteLogSettingsSyslogRulesExecute(r ApiDeleteL
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -257,8 +258,8 @@ func (a *LogSettingsAPIService) DeleteLogSettingsSyslogRulesExecute(r ApiDeleteL
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -266,8 +267,8 @@ func (a *LogSettingsAPIService) DeleteLogSettingsSyslogRulesExecute(r ApiDeleteL
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -276,7 +277,7 @@ func (a *LogSettingsAPIService) DeleteLogSettingsSyslogRulesExecute(r ApiDeleteL
 }
 
 type ApiListLogSettingsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *LogSettingsAPIService
 }
 
@@ -289,24 +290,25 @@ ListLogSettings List All Log Settings
 
 This endpoint retrieves log settings.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListLogSettingsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListLogSettingsRequest
 */
 func (a *LogSettingsAPIService) ListLogSettings(ctx context.Context) ApiListLogSettingsRequest {
 	return ApiListLogSettingsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListLogSettings200Response
+//
+//	@return ListLogSettings200Response
 func (a *LogSettingsAPIService) ListLogSettingsExecute(r ApiListLogSettingsRequest) (*ListLogSettings200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ListLogSettings200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListLogSettings200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogSettingsAPIService.ListLogSettings")
@@ -356,7 +358,7 @@ func (a *LogSettingsAPIService) ListLogSettingsExecute(r ApiListLogSettingsReque
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -365,8 +367,8 @@ func (a *LogSettingsAPIService) ListLogSettingsExecute(r ApiListLogSettingsReque
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -376,8 +378,8 @@ func (a *LogSettingsAPIService) ListLogSettingsExecute(r ApiListLogSettingsReque
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -385,8 +387,8 @@ func (a *LogSettingsAPIService) ListLogSettingsExecute(r ApiListLogSettingsReque
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -395,8 +397,8 @@ func (a *LogSettingsAPIService) ListLogSettingsExecute(r ApiListLogSettingsReque
 }
 
 type ApiUpdateLogSettingsRequest struct {
-	ctx context.Context
-	ApiService *LogSettingsAPIService
+	ctx                        context.Context
+	ApiService                 *LogSettingsAPIService
 	listLogSettings200Response *ListLogSettings200Response
 }
 
@@ -414,24 +416,25 @@ UpdateLogSettings Update Log Settings
 
 Update Log Settings
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiUpdateLogSettingsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiUpdateLogSettingsRequest
 */
 func (a *LogSettingsAPIService) UpdateLogSettings(ctx context.Context) ApiUpdateLogSettingsRequest {
 	return ApiUpdateLogSettingsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return UpdateGuidanceSettings200Response
+//
+//	@return UpdateGuidanceSettings200Response
 func (a *LogSettingsAPIService) UpdateLogSettingsExecute(r ApiUpdateLogSettingsRequest) (*UpdateGuidanceSettings200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *UpdateGuidanceSettings200Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UpdateGuidanceSettings200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogSettingsAPIService.UpdateLogSettings")
@@ -483,7 +486,7 @@ func (a *LogSettingsAPIService) UpdateLogSettingsExecute(r ApiUpdateLogSettingsR
 
 	if localVarHTTPResponse.StatusCode >= 300 {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
+			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
 			var v ListActivity4XXResponse
@@ -492,8 +495,8 @@ func (a *LogSettingsAPIService) UpdateLogSettingsExecute(r ApiUpdateLogSettingsR
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
@@ -503,8 +506,8 @@ func (a *LogSettingsAPIService) UpdateLogSettingsExecute(r ApiUpdateLogSettingsR
 				newErr.err = err
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-					newErr.model = v
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -512,8 +515,8 @@ func (a *LogSettingsAPIService) UpdateLogSettingsExecute(r ApiUpdateLogSettingsR
 	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
 		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			err: err,
+			body: localVarBody,
+			err:  err,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

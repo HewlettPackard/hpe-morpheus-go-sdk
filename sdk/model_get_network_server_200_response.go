@@ -20,8 +20,8 @@ var _ MappedNullable = &GetNetworkServer200Response{}
 
 // GetNetworkServer200Response struct for GetNetworkServer200Response
 type GetNetworkServer200Response struct {
-	NetworkServer *ListNetworkServers200ResponseAllOfNetworkServersInner `json:"networkServer,omitempty"`
-	AdditionalProperties map[string]interface{}
+	NetworkServer        *ListNetworkServers200ResponseAllOfNetworkServersInner `json:"networkServer,omitempty"`
+	AdditionalProperties map[string]interface{}                                 `json:",remain"`
 }
 
 type _GetNetworkServer200Response GetNetworkServer200Response
@@ -76,7 +76,7 @@ func (o *GetNetworkServer200Response) SetNetworkServer(v ListNetworkServers200Re
 }
 
 func (o GetNetworkServer200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -95,62 +95,8 @@ func (o GetNetworkServer200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *GetNetworkServer200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetNetworkServer200Response := _GetNetworkServer200Response{}
-
-	err = json.Unmarshal(data, &varGetNetworkServer200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetNetworkServer200Response(varGetNetworkServer200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "networkServer")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableGetNetworkServer200Response struct {
-	value *GetNetworkServer200Response
-	isSet bool
-}
-
-func (v NullableGetNetworkServer200Response) Get() *GetNetworkServer200Response {
-	return v.value
-}
-
-func (v *NullableGetNetworkServer200Response) Set(val *GetNetworkServer200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetNetworkServer200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetNetworkServer200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetNetworkServer200Response(val *GetNetworkServer200Response) *NullableGetNetworkServer200Response {
-	return &NullableGetNetworkServer200Response{value: val, isSet: true}
-}
-
-func (v NullableGetNetworkServer200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetNetworkServer200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache

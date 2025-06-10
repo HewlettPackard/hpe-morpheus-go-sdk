@@ -19,18 +19,33 @@ import (
 // very silly way of avoiding `"fmt" imported and not used` errors
 var _ fmt.Stringer
 
-
 // AddCloudsRequestZoneZoneType struct for AddCloudsRequestZoneZoneType
 type AddCloudsRequestZoneZoneType struct {
-	AddCloudsRequestZoneZoneTypeAnyOf *AddCloudsRequestZoneZoneTypeAnyOf
+	AddCloudsRequestZoneZoneTypeAnyOf  *AddCloudsRequestZoneZoneTypeAnyOf
 	AddCloudsRequestZoneZoneTypeAnyOf1 *AddCloudsRequestZoneZoneTypeAnyOf1
+}
+
+func (dst *AddCloudsRequestZoneZoneType) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddCloudsRequestZoneZoneType{}
+	}
+
+	if out, ok := data.(AddCloudsRequestZoneZoneTypeAnyOf); ok {
+		dst.AddCloudsRequestZoneZoneTypeAnyOf = &out
+	}
+
+	if out, ok := data.(AddCloudsRequestZoneZoneTypeAnyOf1); ok {
+		dst.AddCloudsRequestZoneZoneTypeAnyOf1 = &out
+	}
+
+	return dst, nil
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AddCloudsRequestZoneZoneType) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into AddCloudsRequestZoneZoneTypeAnyOf
-	err = json.Unmarshal(data, &dst.AddCloudsRequestZoneZoneTypeAnyOf);
+	err = json.Unmarshal(data, &dst.AddCloudsRequestZoneZoneTypeAnyOf)
 	if err == nil {
 		jsonAddCloudsRequestZoneZoneTypeAnyOf, _ := json.Marshal(dst.AddCloudsRequestZoneZoneTypeAnyOf)
 		if string(jsonAddCloudsRequestZoneZoneTypeAnyOf) == "{}" { // empty struct
@@ -43,7 +58,7 @@ func (dst *AddCloudsRequestZoneZoneType) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into AddCloudsRequestZoneZoneTypeAnyOf1
-	err = json.Unmarshal(data, &dst.AddCloudsRequestZoneZoneTypeAnyOf1);
+	err = json.Unmarshal(data, &dst.AddCloudsRequestZoneZoneTypeAnyOf1)
 	if err == nil {
 		jsonAddCloudsRequestZoneZoneTypeAnyOf1, _ := json.Marshal(dst.AddCloudsRequestZoneZoneTypeAnyOf1)
 		if string(jsonAddCloudsRequestZoneZoneTypeAnyOf1) == "{}" { // empty struct
@@ -70,7 +85,6 @@ func (src AddCloudsRequestZoneZoneType) MarshalJSON() ([]byte, error) {
 
 	return nil, nil // no data in anyOf schemas
 }
-
 
 type NullableAddCloudsRequestZoneZoneType struct {
 	value *AddCloudsRequestZoneZoneType
@@ -107,5 +121,3 @@ func (v *NullableAddCloudsRequestZoneZoneType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

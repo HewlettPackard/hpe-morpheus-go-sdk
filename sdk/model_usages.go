@@ -20,9 +20,9 @@ var _ MappedNullable = &Usages{}
 
 // Usages struct for Usages
 type Usages struct {
-	Activity []ListUsages200ResponseActivityInner `json:"activity,omitempty"`
-	Meta *ListUsages200ResponseMeta `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Activity             []ListUsages200ResponseActivityInner `json:"activity,omitempty"`
+	Meta                 *ListUsages200ResponseMeta           `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}               `json:",remain"`
 }
 
 type _Usages Usages
@@ -109,7 +109,7 @@ func (o *Usages) SetMeta(v ListUsages200ResponseMeta) {
 }
 
 func (o Usages) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -131,63 +131,8 @@ func (o Usages) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-
 func (o *Usages) UnmarshalJSON(data []byte) (err error) {
-	varUsages := _Usages{}
-
-	err = json.Unmarshal(data, &varUsages)
-
-	if err != nil {
-		return err
-	}
-
-	*o = Usages(varUsages)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "activity")
-		delete(additionalProperties, "meta")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
+	return decode(data, &o)
 }
 
-type NullableUsages struct {
-	value *Usages
-	isSet bool
-}
-
-func (v NullableUsages) Get() *Usages {
-	return v.value
-}
-
-func (v *NullableUsages) Set(val *Usages) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUsages) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUsages) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUsages(val *Usages) *NullableUsages {
-	return &NullableUsages{value: val, isSet: true}
-}
-
-func (v NullableUsages) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUsages) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
-
+// - model_simple.mustache
